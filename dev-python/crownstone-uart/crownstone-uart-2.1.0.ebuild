@@ -3,9 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="UNKNOWN"
 HOMEPAGE="
@@ -27,7 +27,8 @@ GENERATED_DEPEND="
 	dev-python/crownstone-core[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/crownstone-core-3.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/crownstone-core-3.0[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-3.4[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

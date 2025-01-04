@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="Control Steamist steam systems"
@@ -27,7 +27,8 @@ GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
 	>=dev-python/xmltodict-0.12.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

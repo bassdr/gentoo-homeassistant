@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Library implementing EZSP"
@@ -24,7 +24,8 @@ GENERATED_DEPEND="
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 	dev-python/zigpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/click[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/click-log-0.2.1[${PYTHON_USEDEP}]
 	~dev-python/pure-pcapy3-1.0.1[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]

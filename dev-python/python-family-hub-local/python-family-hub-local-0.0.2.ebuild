@@ -3,16 +3,17 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
+
+SRC_URI="$(pypi_sdist_url --no-normalize "python-family-hub-local" "0.0.2" ".zip")"
 
 DESCRIPTION="Python API for accessing information from Samsung FamilyHub fridges locally."
 HOMEPAGE="
   https://pypi.org/project/python-family-hub-local/
 "
-SRC_URI="$(pypi_sdist_url --no-normalize "${PN}" "${PV}" ".zip" )"
 
 LICENSE="MIT"
 SLOT="0"
@@ -23,11 +24,12 @@ RESTRICT="!test? ( test )"
 #DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/aiohttp[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]"
 BDEPEND="

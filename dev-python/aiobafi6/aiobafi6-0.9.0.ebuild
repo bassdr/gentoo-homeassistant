@@ -3,7 +3,7 @@
 
 EAPI=8
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi
 DESCRIPTION="Big Ass Fans i6/Haiku protocol asynchronous Python library"
 HOMEPAGE="
@@ -23,7 +23,8 @@ GENERATED_DEPEND="
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/protobuf-python-3.20[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/protobuf-python-3.20[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.38.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

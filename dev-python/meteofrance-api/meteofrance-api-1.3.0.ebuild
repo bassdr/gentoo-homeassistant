@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,11 +25,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/urllib3[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/urllib3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/requests-2.25.1[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/requests-2.25.1[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.6[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2020.4[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]"

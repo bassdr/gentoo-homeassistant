@@ -3,7 +3,7 @@
 
 EAPI=8
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi
 
 DESCRIPTION="Asynchronous Python client for GeoSphere Austria (ZAMG) weather data."
@@ -27,7 +27,8 @@ GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/aresponses[${PYTHON_USEDEP}]

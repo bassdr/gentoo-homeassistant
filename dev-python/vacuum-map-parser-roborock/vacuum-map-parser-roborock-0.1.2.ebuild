@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,10 +25,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/vacuum-map-parser-base[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/vacuum-map-parser-base[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/pillow[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/pillow[${PYTHON_USEDEP}]
 	~dev-python/vacuum-map-parser-base-0.1.2[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

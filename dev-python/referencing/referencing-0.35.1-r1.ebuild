@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -28,7 +28,7 @@ GENERATED_DEPEND="
 	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/rpds-py[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	>=dev-python/rpds-py-0.7.0[${PYTHON_USEDEP}]
 "

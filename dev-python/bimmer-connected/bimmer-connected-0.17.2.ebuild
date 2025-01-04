@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Library to read data from the BMW Connected Drive portal"
@@ -23,12 +23,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/pyjwt[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	dev-python/pyjwt[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/httpx[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodome-3.4[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.1.0[${PYTHON_USEDEP}]
 	china? ( dev-python/pillow[${PYTHON_USEDEP}] )"

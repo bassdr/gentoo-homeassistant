@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -26,7 +26,8 @@ GENERATED_DEPEND="
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} $(python_gen_cond_dep '>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]' python3_{9..10})
+RDEPEND="${GENERATED_DEPEND}
+	$(python_gen_cond_dep '>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]' python3_{9..10})
 	>=dev-python/cryptography-35.0.0[${PYTHON_USEDEP}]
 	>=dev-python/ifaddr-0.1.7[${PYTHON_USEDEP}]"
 

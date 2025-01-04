@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 DESCRIPTION="Asynchronous library to control Rollease Acmeda Automate roller blinds via a version 1 Pulse Hub."

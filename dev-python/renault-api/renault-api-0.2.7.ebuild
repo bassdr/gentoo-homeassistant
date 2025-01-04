@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -24,13 +24,14 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/six[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/marshmallow-dataclass[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	dev-python/marshmallow-dataclass[${PYTHON_USEDEP}]
+	dev-python/pyjwt[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}   >=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.5[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-dataclass-8.2.0[${PYTHON_USEDEP}]

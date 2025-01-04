@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -22,12 +22,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/pre-commit[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/unasync[${PYTHON_USEDEP}]
 	dev-python/loguru[${PYTHON_USEDEP}]
+	dev-python/pre-commit[${PYTHON_USEDEP}]
+	dev-python/unasync[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/aiohttp[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/unasync[${PYTHON_USEDEP}]
 	dev-python/loguru[${PYTHON_USEDEP}]"
 

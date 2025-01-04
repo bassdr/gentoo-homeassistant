@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 optfeature
 
@@ -28,7 +28,7 @@ GENERATED_DEPEND="
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/h11[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	<dev-python/anyio-5[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	<dev-python/h11-0.15[${PYTHON_USEDEP}]

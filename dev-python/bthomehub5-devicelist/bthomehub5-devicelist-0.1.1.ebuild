@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -20,10 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+GENERATED_DEPEND="
+	dev-python/html-table-parser-python3[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_DEPEND}"
+
 distutils_enable_tests pytest
-
-# Requires could not be inserted in this ebuild
-# Content: html-table-parser-python3, requests
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

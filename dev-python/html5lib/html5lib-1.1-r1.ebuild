@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="xml(+)"
 
 inherit distutils-r1 pypi
@@ -26,7 +26,7 @@ GENERATED_DEPEND="
 	dev-python/six[${PYTHON_USEDEP}]
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/six-1.9[${PYTHON_USEDEP}]
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -18,15 +18,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/icalendar[${PYTHON_USEDEP}]
-	dev-python/vobject[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
-	dev-python/tzlocal[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/recurring-ical-events[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/tzlocal[${PYTHON_USEDEP}]
+	dev-python/vobject[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/icalendar[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	>=dev-python/recurring-ical-events-2.0.0[${PYTHON_USEDEP}]

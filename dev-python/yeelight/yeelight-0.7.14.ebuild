@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=flit
 inherit distutils-r1 pypi
 
@@ -25,7 +25,8 @@ GENERATED_DEPEND="
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/ifaddr[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/ifaddr[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

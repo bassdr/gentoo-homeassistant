@@ -3,15 +3,16 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
+SRC_URI="$(pypi_sdist_url --no-normalize "nsapi" "3.0.5" ".zip")"
 
 DESCRIPTION="api wrapper for Dutch Railways (NS)"
 HOMEPAGE="
   https://pypi.org/project/nsapi/
 "
-SRC_URI="$(pypi_sdist_url "${PN}" "${PV}" ".zip")"
 
 LICENSE="MIT"
 SLOT="0"
@@ -25,7 +26,8 @@ GENERATED_DEPEND="
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/pytz-2018.5[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/pytz-2018.5[${PYTHON_USEDEP}]"
 BDEPEND="
 	app-arch/unzip
 	test? (

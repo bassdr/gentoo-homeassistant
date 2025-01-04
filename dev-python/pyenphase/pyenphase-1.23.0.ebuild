@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,15 +25,16 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/pyjwt[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
-	dev-python/tenacity[${PYTHON_USEDEP}]
-	dev-python/envoy-utils[${PYTHON_USEDEP}]
-	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
+	dev-python/envoy-utils[${PYTHON_USEDEP}]
+	dev-python/httpx[${PYTHON_USEDEP}]
+	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	dev-python/pyjwt[${PYTHON_USEDEP}]
+	dev-python/tenacity[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.9.2[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.7.0[${PYTHON_USEDEP}]
 	>=dev-python/awesomeversion-22.9.0[${PYTHON_USEDEP}]

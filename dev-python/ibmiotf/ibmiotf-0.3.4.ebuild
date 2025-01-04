@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,15 +21,16 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]
-	dev-python/paho-mqtt[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/iso8601[${PYTHON_USEDEP}]
-	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
 	dev-python/dicttoxml[${PYTHON_USEDEP}]
+	dev-python/iso8601[${PYTHON_USEDEP}]
+	dev-python/paho-mqtt[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
+	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/iso8601-0.1.12[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/iso8601-0.1.12[${PYTHON_USEDEP}]
 	>=dev-python/paho-mqtt-1.3.1[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2017.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.18.4[${PYTHON_USEDEP}]

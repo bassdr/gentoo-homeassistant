@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -24,7 +24,8 @@ GENERATED_DEPEND="
 	dev-python/dacite[${PYTHON_USEDEP}]
 	dev-python/pysnmp[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/dacite-1.7.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/dacite-1.7.0[${PYTHON_USEDEP}]
 	>=dev-python/pysnmp-6.2.6[${PYTHON_USEDEP}]"
 BDEPEND="
 	dev-python/pytest-runner[${PYTHON_USEDEP}]"

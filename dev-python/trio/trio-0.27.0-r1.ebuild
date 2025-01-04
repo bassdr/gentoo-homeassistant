@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -26,12 +26,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
 	dev-python/attrs[${PYTHON_USEDEP}]
-	dev-python/outcome[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
-	dev-python/sortedcontainers[${PYTHON_USEDEP}]
+	dev-python/outcome[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
+	dev-python/sortedcontainers[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/attrs-23.2.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/exceptiongroup-1.2.1[${PYTHON_USEDEP}]

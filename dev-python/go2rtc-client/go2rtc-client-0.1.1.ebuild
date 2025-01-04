@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 
@@ -25,13 +25,14 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
+	dev-python/mashumaro[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/webrtc-models[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/aiohttp[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]

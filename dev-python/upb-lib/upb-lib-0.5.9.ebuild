@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="Library for interacting with UPB PIM."
@@ -21,10 +21,10 @@ RESTRICT="!test? ( test )"
 DOCS="CHANGELOG.md"
 
 GENERATED_DEPEND="
-	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 "

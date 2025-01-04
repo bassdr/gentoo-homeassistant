@@ -3,15 +3,15 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="jaraco_net"
+
+PYPI_PN="jaraco.net"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Networking tools by jaraco"
 HOMEPAGE="
-  https://pypi.org/project/jaraco_net/
+  https://pypi.org/project/jaraco.net/
   Source, https://github.com/jaraco/jaraco.net
 "
 
@@ -24,25 +24,26 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/feedparser[${PYTHON_USEDEP}]
-	dev-python/jaraco-logging[${PYTHON_USEDEP}]
-	dev-python/jsonpickle[${PYTHON_USEDEP}]
-	dev-python/path[${PYTHON_USEDEP}]
-	dev-python/icmplib[${PYTHON_USEDEP}]
-	dev-python/jaraco-text[${PYTHON_USEDEP}]
-	dev-python/keyring[${PYTHON_USEDEP}]
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/autocommand[${PYTHON_USEDEP}]
+	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+	dev-python/feedparser[${PYTHON_USEDEP}]
+	dev-python/icmplib[${PYTHON_USEDEP}]
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/mechanize[${PYTHON_USEDEP}]
-	dev-python/jaraco-functools[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/jaraco-email[${PYTHON_USEDEP}]
-	dev-python/pathvalidate[${PYTHON_USEDEP}]
+	dev-python/jaraco-functools[${PYTHON_USEDEP}]
+	dev-python/jaraco-logging[${PYTHON_USEDEP}]
+	dev-python/jaraco-text[${PYTHON_USEDEP}]
+	dev-python/jsonpickle[${PYTHON_USEDEP}]
+	dev-python/keyring[${PYTHON_USEDEP}]
+	dev-python/mechanize[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
+	dev-python/path[${PYTHON_USEDEP}]
+	dev-python/pathvalidate[${PYTHON_USEDEP}]
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/more-itertools[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/mechanize[${PYTHON_USEDEP}]
 	>=dev-python/keyring-0.6[${PYTHON_USEDEP}]

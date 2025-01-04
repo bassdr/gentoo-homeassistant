@@ -3,14 +3,15 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="aemet_opendata"
 
+PYPI_PN="AEMET-OpenData"
 inherit distutils-r1 pypi
+
 DESCRIPTION="AEMET OpenData Rest API library"
 HOMEPAGE="
-  https://pypi.org/project/aemet_opendata/
+  https://pypi.org/project/AEMET-OpenData/
   Homepage, https://github.com/Noltari/AEMET-OpenData
   Bug Tracker, https://github.com/Noltari/AEMET-OpenData/issues
 "
@@ -24,10 +25,10 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	sci-geosciences/geopy[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	sci-geosciences/geopy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	sci-geosciences/geopy[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,10 +21,11 @@ RESTRICT="!test? ( test )"
 DOCS="docs/index.txt"
 
 GENERATED_DEPEND="
-	dev-python/google-auth-oauthlib[${PYTHON_USEDEP}]
 	dev-python/google-auth[${PYTHON_USEDEP}]
+	dev-python/google-auth-oauthlib[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/google-auth-1.12.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/google-auth-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.4.1[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

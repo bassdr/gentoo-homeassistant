@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="A Python 3, asyncio-based library to interact with the PurpleAir API"
@@ -26,7 +26,8 @@ GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.2[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

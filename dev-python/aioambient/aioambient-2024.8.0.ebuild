@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="A clean, async-friendly library for the Ambient Weather API"
@@ -23,14 +23,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/python-engineio[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/websockets[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
+	dev-python/python-engineio[${PYTHON_USEDEP}]
 	dev-python/python-socketio[${PYTHON_USEDEP}]
+	dev-python/websockets[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.7.22[${PYTHON_USEDEP}]
 	>=dev-python/python-socketio-4.6[${PYTHON_USEDEP}]
 	>=dev-python/python-engineio-3.13.1[${PYTHON_USEDEP}]

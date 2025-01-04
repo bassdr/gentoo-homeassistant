@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -21,14 +21,15 @@ RESTRICT="!test? ( test )"
 REQUIRED_USE="pandas? ( aio )"
 
 GENERATED_DEPEND="
-	dev-python/ijson[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/azure-identity[${PYTHON_USEDEP}]
 	dev-python/azure-core[${PYTHON_USEDEP}]
+	dev-python/azure-identity[${PYTHON_USEDEP}]
+	dev-python/ijson[${PYTHON_USEDEP}]
 	dev-python/msal[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/python-dateutil-2.8.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/python-dateutil-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.13.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-identity-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/msal-1.9.0[${PYTHON_USEDEP}]

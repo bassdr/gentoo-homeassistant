@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -18,10 +18,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+GENERATED_DEPEND="
+	dev-python/zeroconf[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_DEPEND}"
+
 distutils_enable_tests pytest
-
-# Requires could not be inserted in this ebuild
-# Content: zeroconf
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -24,10 +24,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/requests-oauthlib[${PYTHON_USEDEP}]
 	dev-python/google-auth[${PYTHON_USEDEP}]
+	dev-python/requests-oauthlib[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/click-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-2.15.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-oauthlib-0.7.0[${PYTHON_USEDEP}]

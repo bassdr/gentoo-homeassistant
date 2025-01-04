@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,15 +25,16 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/awesomeversion[${PYTHON_USEDEP}]
+	dev-python/backoff[${PYTHON_USEDEP}]
 	dev-python/cachetools[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/backoff[${PYTHON_USEDEP}]
-	dev-python/awesomeversion[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/awesomeversion-22.1.0[${PYTHON_USEDEP}]
 	>=dev-python/backoff-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/cachetools-4.0.0[${PYTHON_USEDEP}]

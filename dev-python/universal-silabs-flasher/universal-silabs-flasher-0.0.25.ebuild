@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -22,17 +22,18 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/bellows[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
-	dev-python/gpiod[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/crc[${PYTHON_USEDEP}]
-	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
-	dev-python/zigpy[${PYTHON_USEDEP}]
 	dev-python/coloredlogs[${PYTHON_USEDEP}]
+	dev-python/crc[${PYTHON_USEDEP}]
+	dev-python/gpiod[${PYTHON_USEDEP}]
+	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	dev-python/zigpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/click[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 	dev-python/crc[${PYTHON_USEDEP}]
 	>=dev-python/bellows-0.42.0[${PYTHON_USEDEP}]

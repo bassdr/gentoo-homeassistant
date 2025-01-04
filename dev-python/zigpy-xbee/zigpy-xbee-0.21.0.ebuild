@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="A library which communicates with XBee radios for zigpy"
@@ -23,7 +23,8 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/zigpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/zigpy-0.60.0[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/zigpy-0.60.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/asynctest[${PYTHON_USEDEP}]

@@ -2,15 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
+SRC_URI="$(pypi_sdist_url --no-normalize "vultr" "0.1.2" ".zip")"
 
 DESCRIPTION="Vultr.com API Client"
 HOMEPAGE="
   https://pypi.org/project/vultr/
 "
-SRC_URI="$(pypi_sdist_url "${PN}" "${PV}" ".zip")"
 
 LICENSE="MIT"
 SLOT="0"
@@ -23,7 +24,8 @@ DOCS="README.rst"
 GENERATED_DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/requests[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/requests[${PYTHON_USEDEP}]"
 BDEPEND="
 	app-arch/unzip
 	test? (

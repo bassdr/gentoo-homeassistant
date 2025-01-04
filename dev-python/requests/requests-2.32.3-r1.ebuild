@@ -5,7 +5,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
 inherit distutils-r1 pypi
@@ -25,10 +25,10 @@ IUSE="socks5 test-rust"
 GENERATED_DEPEND="
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/charset-normalizer[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
+	dev-python/urllib3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	<dev-python/charset-normalizer-4[${PYTHON_USEDEP}]
 	<dev-python/idna-4[${PYTHON_USEDEP}]

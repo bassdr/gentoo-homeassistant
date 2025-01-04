@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,15 +25,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/backoff[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
+	dev-python/backoff[${PYTHON_USEDEP}]
+	dev-python/mashumaro[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10)
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
 	>=dev-python/backoff-2.2.1[${PYTHON_USEDEP}]

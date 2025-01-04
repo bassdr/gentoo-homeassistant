@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/html5lib-1.0.1-r1[${PYTHON_USEDEP}]
 "

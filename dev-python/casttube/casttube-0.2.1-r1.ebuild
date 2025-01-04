@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -20,7 +20,8 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/requests[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/requests[${PYTHON_USEDEP}]"
 
 src_prepare() {
 	sed -e '/data_files/d' -i setup.py || die

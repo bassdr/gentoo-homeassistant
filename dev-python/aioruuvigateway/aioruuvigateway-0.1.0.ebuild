@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 DESCRIPTION=""
@@ -23,10 +23,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
+	dev-python/httpx[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/bluetooth-data-tools-0.3.1[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/bluetooth-data-tools-0.3.1[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

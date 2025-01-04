@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="A simple Python 3 library for Notion Home Monitoring"
@@ -23,15 +23,16 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/pyjwt[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/ciso8601[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
+	dev-python/ciso8601[${PYTHON_USEDEP}]
 	dev-python/frozenlist[${PYTHON_USEDEP}]
+	dev-python/mashumaro[${PYTHON_USEDEP}]
+	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.7.22[${PYTHON_USEDEP}]
 	>=dev-python/ciso8601-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/frozenlist-1.4.0[${PYTHON_USEDEP}]

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -28,7 +28,7 @@ GENERATED_DEPEND="
 	dev-python/idna[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/idna-2.8[${PYTHON_USEDEP}]
 	>=dev-python/sniffio-1.1[${PYTHON_USEDEP}]
 	>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]

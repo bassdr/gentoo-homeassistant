@@ -6,7 +6,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 # pypy bundles a modified version of cffi. Use python_gen_cond_dep instead.
 PYTHON_COMPAT=( python3_{10..13} )
 
@@ -35,7 +35,7 @@ DEPEND="
 	>=dev-libs/libffi-3.4.4-r1:=
 "
 # setuptools as a modern distutils provider
-RDEPEND="${GENERATED_DEPEND}  
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	dev-python/pycparser[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

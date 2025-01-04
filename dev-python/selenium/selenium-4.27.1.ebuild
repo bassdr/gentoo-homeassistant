@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_TESTED=( python3_{10..12} pypy3 )
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -30,14 +30,14 @@ KEYWORDS="amd64 arm64"
 IUSE="test-rust"
 
 GENERATED_DEPEND="
+	dev-python/certifi[${PYTHON_USEDEP}]
+	dev-python/trio[${PYTHON_USEDEP}]
+	dev-python/trio-websocket[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 	dev-python/websocket-client[${PYTHON_USEDEP}]
-	dev-python/trio-websocket[${PYTHON_USEDEP}]
-	dev-python/trio[${PYTHON_USEDEP}]
-	dev-python/certifi[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/certifi-2021.10.8[${PYTHON_USEDEP}]
 	<dev-python/trio-1[${PYTHON_USEDEP}]
 	>=dev-python/trio-0.17[${PYTHON_USEDEP}]

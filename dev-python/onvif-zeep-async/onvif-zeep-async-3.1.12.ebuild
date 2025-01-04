@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -22,11 +22,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/ciso8601[${PYTHON_USEDEP}]
+	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/zeep[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}  >=dev-python/httpx-0.19.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/httpx-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/zeep-4.2.1[async,${PYTHON_USEDEP}]
 	>=dev-python/ciso8601-2.1.3[${PYTHON_USEDEP}]"
 BDEPEND="

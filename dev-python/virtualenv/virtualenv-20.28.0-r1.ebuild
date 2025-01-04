@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 multiprocessing pypi
 
@@ -22,11 +22,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/platformdirs[${PYTHON_USEDEP}]
-	dev-python/filelock[${PYTHON_USEDEP}]
 	dev-python/distlib[${PYTHON_USEDEP}]
+	dev-python/filelock[${PYTHON_USEDEP}]
+	dev-python/platformdirs[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/distlib-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.12.2[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-3.9.1[${PYTHON_USEDEP}]

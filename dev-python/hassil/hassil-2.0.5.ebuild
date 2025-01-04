@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -24,7 +24,8 @@ GENERATED_DEPEND="
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/unicode-rbnf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 	~dev-python/unicode-rbnf-1.1.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

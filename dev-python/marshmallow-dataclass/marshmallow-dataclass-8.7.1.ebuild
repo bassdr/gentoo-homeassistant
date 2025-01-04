@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,11 +21,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/typing-inspect[${PYTHON_USEDEP}]
 	dev-python/marshmallow[${PYTHON_USEDEP}]
 	dev-python/typeguard[${PYTHON_USEDEP}]
+	dev-python/typing-inspect[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}   >=dev-python/marshmallow-3.13.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/marshmallow-3.13.0[${PYTHON_USEDEP}]
 	<dev-python/marshmallow-4.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-inspect-0.7.1[${PYTHON_USEDEP}]"
 BDEPEND="

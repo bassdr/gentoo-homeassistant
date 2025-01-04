@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=pdm-backend
 inherit distutils-r1 pypi
 
@@ -25,7 +25,8 @@ DOCS="README.rst"
 GENERATED_DEPEND="
 	dev-python/astral[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/pytz[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/pytz[${PYTHON_USEDEP}]
 	>=dev-python/astral-2.2[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

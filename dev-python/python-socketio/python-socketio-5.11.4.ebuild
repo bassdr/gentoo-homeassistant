@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -26,7 +26,8 @@ GENERATED_DEPEND="
 	dev-python/bidict[${PYTHON_USEDEP}]
 	dev-python/python-engineio[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
 	>=dev-python/python-engineio-4.8.0[${PYTHON_USEDEP}]
 	client? (
 		>=dev-python/requests-2.21.0

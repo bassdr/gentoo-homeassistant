@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Blockchain API library (v1)"
@@ -21,6 +21,7 @@ GENERATED_DEPEND="
 	dev-python/enum-compat[${PYTHON_USEDEP}]
 	dev-python/future[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/enum-compat[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/enum-compat[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

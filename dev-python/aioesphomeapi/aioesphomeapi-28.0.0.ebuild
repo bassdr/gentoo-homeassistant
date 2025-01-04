@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Python API for interacting with ESPHome devices."
@@ -20,15 +20,16 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/noiseprotocol[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
-	dev-python/zeroconf[${PYTHON_USEDEP}]
-	dev-python/chacha20poly1305-reuseable[${PYTHON_USEDEP}]
 	dev-python/aiohappyeyeballs[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/async-interrupt[${PYTHON_USEDEP}]
+	dev-python/chacha20poly1305-reuseable[${PYTHON_USEDEP}]
+	dev-python/cryptography[${PYTHON_USEDEP}]
+	dev-python/noiseprotocol[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
+	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/async-interrupt-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-python-3.19.0[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.132.2[${PYTHON_USEDEP}]

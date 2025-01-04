@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="An async GeoRSS client library for GDACS feeds."
@@ -20,10 +20,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/aio-georss-client[${PYTHON_USEDEP}]
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aio-georss-client-0.13[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aio-georss-client-0.13[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.9.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

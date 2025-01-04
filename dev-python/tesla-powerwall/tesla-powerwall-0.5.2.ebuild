@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
@@ -25,11 +25,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/urllib3[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	dev-python/urllib3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.18[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.0[${PYTHON_USEDEP}]"
 BDEPEND=">=dev-python/packaging-20.0[${PYTHON_USEDEP}]"

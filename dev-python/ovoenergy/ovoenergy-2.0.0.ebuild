@@ -3,9 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="OVO Energy"
 HOMEPAGE="
@@ -26,7 +26,8 @@ GENERATED_DEPEND="
 	dev-python/incremental[${PYTHON_USEDEP}]
 	dev-python/typer[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	>=dev-python/incremental-22.10.0[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.6.1[${PYTHON_USEDEP}]"
 BDEPEND=">=dev-python/incremental-22.10.0[${PYTHON_USEDEP}]"

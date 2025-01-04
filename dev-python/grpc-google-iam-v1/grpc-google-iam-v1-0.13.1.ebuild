@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -19,15 +19,16 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+GENERATED_DEPEND="
+	dev-python/googleapis-common-protos[${PYTHON_USEDEP}]
+	dev-python/grpcio[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_DEPEND}"
+
 distutils_enable_tests pytest
 
 python_install_all() {
 	distutils-r1_python_install_all
 	find "${ED}" -name '*.pth' -delete || die
 }
-
-# Requires could not be inserted in this ebuild
-# Content: googleapis-common-protos, grpcio, protobuf
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

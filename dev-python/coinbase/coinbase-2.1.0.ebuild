@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Coinbase API client library"
@@ -20,11 +20,12 @@ RESTRICT="!test? ( test )"
 DOCS="PYPIREADME.rst"
 
 GENERATED_DEPEND="
-	dev-python/six[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/requests-2.5[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/requests-2.5[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodome-3.4.11[${PYTHON_USEDEP}]"
 

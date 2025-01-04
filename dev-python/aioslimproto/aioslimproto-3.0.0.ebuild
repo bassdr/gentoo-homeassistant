@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Python module to talk to Logitech Squeezebox players directly (without Logitech server)."
@@ -20,10 +20,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
 "
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
@@ -33,6 +34,3 @@ BDEPEND="dev-python/aiohttp[${PYTHON_USEDEP}]
 	)"
 
 distutils_enable_tests pytest
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

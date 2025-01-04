@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -29,11 +29,11 @@ KEYWORDS="amd64 arm64"
 IUSE="+native-extensions"
 
 GENERATED_DEPEND="
-	dev-python/propcache[${PYTHON_USEDEP}]
-	dev-python/multidict[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
+	dev-python/multidict[${PYTHON_USEDEP}]
+	dev-python/propcache[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/idna-2.0[${PYTHON_USEDEP}]
 	>=dev-python/multidict-4.0[${PYTHON_USEDEP}]
 	>=dev-python/propcache-0.2.0[${PYTHON_USEDEP}]

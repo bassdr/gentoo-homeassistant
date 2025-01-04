@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="Tools for converting bluetooth data and packets"
@@ -25,6 +25,7 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/cryptography[${PYTHON_USEDEP}]
 "
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	>=dev-python/cryptography-41.0.3[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
@@ -33,6 +34,3 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

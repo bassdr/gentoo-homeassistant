@@ -3,10 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="unifi_ap"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Python API for UniFi accesspoints"
@@ -27,7 +26,8 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/paramiko[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/paramiko[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/paramiko[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

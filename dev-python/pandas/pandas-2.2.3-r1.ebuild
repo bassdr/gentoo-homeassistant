@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=meson-python
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
 VIRTUALX_REQUIRED="manual"
@@ -28,9 +28,9 @@ RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/tzdata[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
+	dev-python/tzdata[${PYTHON_USEDEP}]
 "
 RECOMMENDED_DEPEND="
 	>=dev-python/bottleneck-1.3.4[${PYTHON_USEDEP}]
@@ -98,7 +98,7 @@ BDEPEND="
 		x11-misc/xsel
 	)
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	${COMMON_DEPEND}
 	dev-python/tzdata[${PYTHON_USEDEP}]
 	!minimal? ( ${RECOMMENDED_DEPEND} )

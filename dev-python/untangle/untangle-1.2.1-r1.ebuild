@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 "
 

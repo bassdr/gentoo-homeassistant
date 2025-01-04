@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,24 +25,25 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/pyjwt[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/rich[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/dateparser[${PYTHON_USEDEP}]
+	dev-python/aioshutil[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
-	dev-python/typer[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
+	dev-python/convertertools[${PYTHON_USEDEP}]
+	dev-python/dateparser[${PYTHON_USEDEP}]
+	dev-python/orjson[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/platformdirs[${PYTHON_USEDEP}]
 	dev-python/propcache[${PYTHON_USEDEP}]
-	dev-python/convertertools[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
-	dev-python/aioshutil[${PYTHON_USEDEP}]
+	dev-python/pydantic[${PYTHON_USEDEP}]
+	dev-python/pyjwt[${PYTHON_USEDEP}]
+	dev-python/rich[${PYTHON_USEDEP}]
+	dev-python/typer[${PYTHON_USEDEP}]
+	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/rich[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/rich[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
 	>=dev-python/aioshutil-1.3[${PYTHON_USEDEP}]

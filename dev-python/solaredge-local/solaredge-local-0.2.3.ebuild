@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="API wrapper to communicate locally with SolarEdge Inverters"
@@ -18,10 +18,11 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
-	dev-python/uplink-protobuf[${PYTHON_USEDEP}]
 	dev-python/uplink[${PYTHON_USEDEP}]
+	dev-python/uplink-protobuf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/uplink-0.9.7[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/uplink-0.9.7[${PYTHON_USEDEP}]
 	>=dev-python/uplink-protobuf-0.1.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

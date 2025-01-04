@@ -5,7 +5,7 @@ EAPI=8
 
 MY_PN=${PN/-/_}
 MY_P=${MY_PN}-${PV}
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1
@@ -27,11 +27,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
-	dev-python/grpcio[${PYTHON_USEDEP}]
 	dev-python/google-auth[${PYTHON_USEDEP}]
+	dev-python/grpcio[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
 "
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	dev-python/google-auth[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]
@@ -41,6 +42,3 @@ BDEPEND="
 S="${WORKDIR}/${MY_P}"
 
 distutils_enable_tests pytest
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

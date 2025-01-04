@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -20,6 +20,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/pbr[${PYTHON_USEDEP}]
 "
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	>=dev-python/pbr-2.0.0[${PYTHON_USEDEP}]
 	test? (
@@ -44,6 +45,3 @@ python_prepare_all() {
 
 	distutils-r1_python_prepare_all
 }
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

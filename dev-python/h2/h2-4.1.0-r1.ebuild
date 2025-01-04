@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/hyperframe[${PYTHON_USEDEP}]
 	dev-python/hpack[${PYTHON_USEDEP}]
+	dev-python/hyperframe[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/hyperframe-6.0[${PYTHON_USEDEP}]
 	<dev-python/hyperframe-7[${PYTHON_USEDEP}]
 	>=dev-python/hpack-4.0[${PYTHON_USEDEP}]

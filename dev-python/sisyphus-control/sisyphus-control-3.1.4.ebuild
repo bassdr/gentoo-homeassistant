@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1
 
@@ -24,11 +24,12 @@ DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/python-socketio-v4[${PYTHON_USEDEP}]
-	dev-python/python-engineio-v3[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]
+	dev-python/python-engineio-v3[${PYTHON_USEDEP}]
+	dev-python/python-socketio-v4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/aiohttp[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]
 	>=dev-python/python-socketio-4.6.1[${PYTHON_USEDEP}]
 	>=dev-python/python-engineio-3.14.2[${PYTHON_USEDEP}]"

@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -28,7 +28,7 @@ GENERATED_DEPEND="
 DEPEND="
 	dev-libs/libsodium:=
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.4.1[${PYTHON_USEDEP}]

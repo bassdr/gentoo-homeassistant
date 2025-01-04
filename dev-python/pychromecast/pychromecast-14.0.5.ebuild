@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PyChromecast"
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -25,7 +25,7 @@ GENERATED_DEPEND="
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/casttube-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-python-4.25.1[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.135[${PYTHON_USEDEP}]

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi
 
 DESCRIPTION="A Python library for SNMP"
@@ -24,7 +24,7 @@ GENERATED_DEPEND="
 	dev-python/pysmi[${PYTHON_USEDEP}]
 	dev-python/pysnmpcrypto[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-0.4.8[${PYTHON_USEDEP}]
 	>=dev-python/pysmi-1.5.7[${PYTHON_USEDEP}]

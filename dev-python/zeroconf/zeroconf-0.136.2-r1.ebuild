@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/ifaddr-0.1.7[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]

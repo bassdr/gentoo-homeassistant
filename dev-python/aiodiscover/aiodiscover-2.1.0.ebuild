@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,14 +21,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/netifaces[${PYTHON_USEDEP}]
-	dev-python/ifaddr[${PYTHON_USEDEP}]
-	dev-python/pyroute2[${PYTHON_USEDEP}]
 	dev-python/aiodns[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/cached-ipaddress[${PYTHON_USEDEP}]
+	dev-python/ifaddr[${PYTHON_USEDEP}]
+	dev-python/netifaces[${PYTHON_USEDEP}]
+	dev-python/pyroute2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/netifaces-0.11.0[${PYTHON_USEDEP}]
 	>=dev-python/aiodns-3.1.1[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]

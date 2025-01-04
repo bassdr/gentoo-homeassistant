@@ -3,20 +3,15 @@
 
 EAPI=8
 
-[[ ${PV} == *_p20190421 ]] && COMMIT=5465d037b30e334cb0997f2315ec1e451b8ad4c1
-
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Fast javascript parser (based on esprima.js)"
 HOMEPAGE="
   https://pypi.org/project/pyjsparser/
 "
-SRC_URI="https://github.com/PiotrDabkowski/${PN}/archive/${COMMIT}.tar.gz
-	-> ${P}.tar.gz"
-S="${WORKDIR}"/${PN}-${COMMIT}
 
 RESTRICT="!test? ( test )"
 LICENSE="MIT"

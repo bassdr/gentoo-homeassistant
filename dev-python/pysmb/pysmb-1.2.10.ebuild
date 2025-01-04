@@ -3,9 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="pysmb is an experimental SMB/CIFS library written in Python to support file sharing between Windows and Linux machines"
 HOMEPAGE="
@@ -21,10 +21,11 @@ KEYWORDS="amd64 arm64"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]
+	dev-python/tqdm[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/tqdm[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

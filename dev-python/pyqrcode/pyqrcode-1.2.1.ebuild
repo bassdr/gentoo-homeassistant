@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1
@@ -38,4 +38,3 @@ src_prepare() {
 }
 
 # PYPI_PN could not be inserted in this ebuild
-# Content: 

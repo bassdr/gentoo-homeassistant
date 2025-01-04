@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 DESCRIPTION="An api allowing control of AC state (temperature, on/off, mode) of an Airtouch 4 controller locally over TCP"

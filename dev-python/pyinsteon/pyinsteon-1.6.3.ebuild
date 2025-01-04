@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,14 +21,14 @@ KEYWORDS="amd64 arm64"
 DOCS="DESCRIPTION.rst"
 
 GENERATED_DEPEND="
-	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/voluptuous[${PYTHON_USEDEP}]
 	dev-python/pypubsub[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
+	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
+	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/PyPubSub[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]

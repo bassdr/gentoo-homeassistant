@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,6 +21,7 @@ RESTRICT="!test? ( test )"
 GENERATED_DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 "
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -29,6 +30,3 @@ BDEPEND="
 python_test() {
 	py.test -v -v || die
 }
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

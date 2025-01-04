@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -21,12 +21,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/dataclasses-json[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/websockets[${PYTHON_USEDEP}]
+	dev-python/dataclasses-json[${PYTHON_USEDEP}]
 	dev-python/marshmallow[${PYTHON_USEDEP}]
+	dev-python/websockets[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}  >=dev-python/dataclasses-json-0.6.3[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/dataclasses-json-0.6.3[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-3.20.1[${PYTHON_USEDEP}]
 	dev-python/websockets[${PYTHON_USEDEP}]"

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -18,11 +18,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 	dev-python/cachetools[${PYTHON_USEDEP}]
+	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 	dev-python/rsa[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	<dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-modules-0.2.1[${PYTHON_USEDEP}]

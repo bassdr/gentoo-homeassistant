@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1
@@ -25,12 +25,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/yagrc[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	dev-python/yagrc[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-python-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/yagrc-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]"

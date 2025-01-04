@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -19,12 +19,13 @@ RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
 	dev-python/cryptography[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/py-vapid[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
 	dev-python/http-ece[${PYTHON_USEDEP}]
+	dev-python/py-vapid[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/cryptography-2.6.1[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/cryptography-2.6.1[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.15.0[${PYTHON_USEDEP}]
 	>=dev-python/http-ece-1.1.0[${PYTHON_USEDEP}]

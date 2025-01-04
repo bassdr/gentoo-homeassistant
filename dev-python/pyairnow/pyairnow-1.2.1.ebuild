@@ -3,7 +3,7 @@
 
 EAPI=8
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi
 
 DESCRIPTION="A lightweight Python wrapper for EPA AirNow Air Quality API"
@@ -23,7 +23,8 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

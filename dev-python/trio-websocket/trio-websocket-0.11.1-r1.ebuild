@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -24,10 +24,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/wsproto[${PYTHON_USEDEP}]
 	dev-python/trio[${PYTHON_USEDEP}]
+	dev-python/wsproto[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep '
 		dev-python/exceptiongroup[${PYTHON_USEDEP}]
 	' 3.10)

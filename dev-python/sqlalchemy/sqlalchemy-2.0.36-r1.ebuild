@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN=SQLAlchemy
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="sqlite?"
 
 inherit distutils-r1 optfeature pypi
@@ -27,7 +27,7 @@ GENERATED_DEPEND="
 	dev-python/greenlet[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 "
 BDEPEND="

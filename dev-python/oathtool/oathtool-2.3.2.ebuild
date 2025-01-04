@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,10 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+GENERATED_DEPEND="
+	dev-python/autocommand[${PYTHON_USEDEP}]
+	dev-python/path[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_DEPEND}"
+
 distutils_enable_tests pytest
-
-# Requires could not be inserted in this ebuild
-# Content: autocommand, path
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 vcs-snapshot
 
@@ -31,7 +31,8 @@ CDEPEND="dev-python/six[${PYTHON_USEDEP}]
 		dev-python/httplib2[${PYTHON_USEDEP}]
 		dev-python/PySocks[${PYTHON_USEDEP}]"
 
-RDEPEND="${GENERATED_DEPEND} ${CDEPEND}"
+RDEPEND="${GENERATED_DEPEND}
+	${CDEPEND}"
 DEPEND="test? (
 			${CDEPEND}
 		)"

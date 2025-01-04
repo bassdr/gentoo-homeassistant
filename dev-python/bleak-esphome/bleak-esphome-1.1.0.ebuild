@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,13 +25,14 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/lru-dict[${PYTHON_USEDEP}]
 	dev-python/aioesphomeapi[${PYTHON_USEDEP}]
-	dev-python/habluetooth[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
 	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
+	dev-python/habluetooth[${PYTHON_USEDEP}]
+	dev-python/lru-dict[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aioesphomeapi-22.0.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aioesphomeapi-22.0.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.21.1[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-data-tools-1.18.0[${PYTHON_USEDEP}]
 	>=dev-python/habluetooth-1.0.0[${PYTHON_USEDEP}]

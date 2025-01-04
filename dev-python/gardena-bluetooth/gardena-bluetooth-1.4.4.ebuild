@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -22,6 +22,7 @@ GENERATED_DEPEND="
 	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.0.2[${PYTHON_USEDEP}]
 	>=dev-python/tzlocal-5.0.1[${PYTHON_USEDEP}]"

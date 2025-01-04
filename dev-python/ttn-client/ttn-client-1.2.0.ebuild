@@ -3,10 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
 PYPI_PN="ttn_client"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="A python client to fetch/receive and parse uplink messages from The Thinks Network"

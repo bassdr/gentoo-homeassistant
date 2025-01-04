@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="A library which communicates with Deconz radios for zigpy"
@@ -21,10 +21,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/zigpy[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
+	dev-python/zigpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/zigpy-0.68.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/zigpy-0.68.0[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

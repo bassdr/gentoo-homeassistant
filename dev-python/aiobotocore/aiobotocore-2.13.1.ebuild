@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Async client for aws services using botocore and aiohttp"
@@ -20,12 +20,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/wrapt[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/botocore[${PYTHON_USEDEP}]
 	dev-python/aioitertools[${PYTHON_USEDEP}]
+	dev-python/botocore[${PYTHON_USEDEP}]
+	dev-python/wrapt[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}] <dev-python/wrapt-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.34.70[${PYTHON_USEDEP}] <dev-python/botocore-1.34.132[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}] <dev-python/aioitertools-1.0.0[${PYTHON_USEDEP}]

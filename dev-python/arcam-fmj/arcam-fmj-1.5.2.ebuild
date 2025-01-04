@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="A python library for speaking to Arcam receivers"
@@ -22,7 +22,8 @@ DOCS="README.rst"
 GENERATED_DEPEND="
 	dev-python/attrs[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/attrs-18.1[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/asynctest[${PYTHON_USEDEP}]

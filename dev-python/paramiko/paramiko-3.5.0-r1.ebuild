@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
 inherit distutils-r1
@@ -33,7 +33,7 @@ GENERATED_DEPEND="
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/pynacl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]
 	>=dev-python/pynacl-1.0.1[${PYTHON_USEDEP}]

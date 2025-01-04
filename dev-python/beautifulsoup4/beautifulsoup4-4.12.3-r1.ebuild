@@ -4,10 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 PYPI_PN="BeautifulSoup4"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Screen-scraping library"
@@ -24,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/soupsieve[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/soupsieve-1.3[${PYTHON_USEDEP}]
 	dev-python/html5lib[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]

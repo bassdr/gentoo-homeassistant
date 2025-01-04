@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="A library which communicates with ZiGate radios for zigpy"
@@ -19,12 +19,13 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
-	dev-python/zigpy[${PYTHON_USEDEP}]
-	dev-python/pyusb[${PYTHON_USEDEP}]
 	dev-python/gpiozero[${PYTHON_USEDEP}]
+	dev-python/pyusb[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
+	dev-python/zigpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/voluptuous[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/voluptuous[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.60.2[${PYTHON_USEDEP}]
 	>=dev-python/pyusb-1.1.0[${PYTHON_USEDEP}]
 	dev-python/gpiozero[${PYTHON_USEDEP}]

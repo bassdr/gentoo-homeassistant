@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="A module for grabbing the color palette from an image."
@@ -20,6 +20,7 @@ RESTRICT="!test? ( test )"
 GENERATED_DEPEND="
 	dev-python/pillow[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/pillow[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/pillow[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

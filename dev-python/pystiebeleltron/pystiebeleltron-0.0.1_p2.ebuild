@@ -3,16 +3,17 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1
+inherit distutils-r1 pypi
+
+SRC_URI="$(pypi_sdist_url --no-normalize "pystiebeleltron" "0.0.1.dev2")"
+S="${WORKDIR}/pystiebeleltron-0.0.1.dev2"
 
 DESCRIPTION="Python API for interacting with the Stiebel Eltron ISG web gateway via Modbus for controlling integral ventilation units and heat pumps."
 HOMEPAGE="
   https://pypi.org/project/pystiebeleltron/
 "
-MY_PN="python-stiebel-eltron"
-COMMIT="536367f6b272b13f33437ad33a6cc6b5c6ab55d3"
 
 LICENSE="MIT"
 SLOT="0"
@@ -25,7 +26,8 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/pymodbus[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/pymodbus-2.1.0[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/pymodbus-2.1.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	app-arch/unzip
 	test? (
@@ -42,6 +44,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-
-# SRC_URI could not be inserted in this ebuild
-# Content: 

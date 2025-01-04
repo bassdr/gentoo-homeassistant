@@ -3,15 +3,17 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1
+inherit distutils-r1 pypi
+
+SRC_URI="$(pypi_sdist_url --no-normalize "guppy3" "3.1.4.post1")"
+S="${WORKDIR}/guppy3-3.1.4.post1"
 
 DESCRIPTION="Guppy 3 -- Guppy-PE ported to Python 3"
 HOMEPAGE="
   https://pypi.org/project/guppy3/
 "
-# https://github.com/zhuyifei1999/guppy3/archive/refs/tags/v3.1.4.post1.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,7 +23,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-distutils_enable_tests pytest
+RDEPEND=""
 
-# SRC_URI could not be inserted in this ebuild
-# Content: 
+distutils_enable_tests pytest

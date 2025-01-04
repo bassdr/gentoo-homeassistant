@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="Async Python client to interact with internal OverKiz API (e.g. used by Somfy TaHoma)."
@@ -21,14 +21,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/pyhumps[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/backoff[${PYTHON_USEDEP}]
-	dev-python/warrant-lite[${PYTHON_USEDEP}]
 	dev-python/boto3[${PYTHON_USEDEP}]
+	dev-python/pyhumps[${PYTHON_USEDEP}]
+	dev-python/warrant-lite[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
 	>=dev-python/pyhumps-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/backoff-1.10.0[${PYTHON_USEDEP}]
 	>=dev-python/attrs-21.2.0[${PYTHON_USEDEP}]

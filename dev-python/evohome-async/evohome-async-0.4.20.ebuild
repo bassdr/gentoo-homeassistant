@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1
 SRC_URI="https://github.com/zxdavb/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
@@ -27,7 +27,8 @@ GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.15.2[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

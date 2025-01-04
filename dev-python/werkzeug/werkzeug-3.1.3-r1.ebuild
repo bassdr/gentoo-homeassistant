@@ -4,10 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 PYPI_PN="Werkzeug"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="The comprehensive WSGI web application library."
@@ -29,7 +28,7 @@ IUSE="test-rust"
 GENERATED_DEPEND="
 	dev-python/markupsafe[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/markupsafe-2.1.1[${PYTHON_USEDEP}]
 "
 BDEPEND="

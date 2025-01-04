@@ -3,10 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="music_assistant_models"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Music Assistant Base Models"
@@ -26,7 +25,8 @@ GENERATED_DEPEND="
 	dev-python/mashumaro[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/orjson[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]"
 
 src_prepare() {

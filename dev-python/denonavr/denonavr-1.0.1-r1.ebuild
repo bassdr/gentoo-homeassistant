@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="xml(+)"
 
 inherit distutils-r1 pypi
@@ -22,14 +22,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/netifaces[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
-	dev-python/ftfy[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/asyncstdlib[${PYTHON_USEDEP}]
+	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
+	dev-python/ftfy[${PYTHON_USEDEP}]
+	dev-python/httpx[${PYTHON_USEDEP}]
+	dev-python/netifaces[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/asyncstdlib-3.10.2[${PYTHON_USEDEP}]
 	>=dev-python/attrs-21.2.0[${PYTHON_USEDEP}]
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]

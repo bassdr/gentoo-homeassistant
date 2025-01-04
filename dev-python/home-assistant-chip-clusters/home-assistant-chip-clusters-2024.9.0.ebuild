@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=standalone
 inherit distutils-r1 pypi
 
@@ -19,10 +19,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/dacite[${PYTHON_USEDEP}]
 	dev-python/aenum[${PYTHON_USEDEP}]
+	dev-python/dacite[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/unicode-rbnf[${PYTHON_USEDEP}]
 	~dev-python/aenum-3.1.15[${PYTHON_USEDEP}]
 	dev-python/aiorun[${PYTHON_USEDEP}]

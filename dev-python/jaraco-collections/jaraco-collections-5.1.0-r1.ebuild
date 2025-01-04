@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=flit
 PYPI_PN="jaraco.collections"
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/jaraco-text[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/jaraco-text[${PYTHON_USEDEP}]
 "
 

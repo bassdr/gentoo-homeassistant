@@ -3,10 +3,10 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1
-SRC_URI="https://github.com/cnico/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cnico/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 DESCRIPTION="Python library for DIO Chacon wifi's protocol for shutters and switches"
 HOMEPAGE="
@@ -26,5 +26,6 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest

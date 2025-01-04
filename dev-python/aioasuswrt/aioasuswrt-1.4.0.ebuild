@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Api wrapper for Asuswrt https://www.asus.com/ASUSWRT/"
@@ -21,7 +21,8 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/asyncssh[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/asyncssh[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/asyncssh[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/pytest-runner[${PYTHON_USEDEP}]
 	dev-python/setuptools-markdown[${PYTHON_USEDEP}]
 	test? (

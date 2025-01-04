@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,17 +21,18 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	app-crypt/acme[${PYTHON_USEDEP}]
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}]
+	dev-python/attrs[${PYTHON_USEDEP}]
+	dev-python/ciso8601[${PYTHON_USEDEP}]
+	dev-python/cryptography[${PYTHON_USEDEP}]
+	dev-python/pycognito[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/snitun[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/ciso8601[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
-	dev-python/pycognito[${PYTHON_USEDEP}]
-	dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}]
 	dev-python/webrtc-models[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	app-crypt/acme[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
 	>=dev-python/atomicwrites-homeassistant-1.4.1[${PYTHON_USEDEP}]

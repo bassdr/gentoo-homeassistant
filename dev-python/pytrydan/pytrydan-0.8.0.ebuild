@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -26,12 +26,13 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/httpx[${PYTHON_USEDEP}]
+	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/rich[${PYTHON_USEDEP}]
 	dev-python/tenacity[${PYTHON_USEDEP}]
 	dev-python/typer[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/rich-10[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/rich-10[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/tenacity-8.2.2[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]

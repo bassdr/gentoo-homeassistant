@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -26,11 +26,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
 	dev-python/attrs[${PYTHON_USEDEP}]
-	dev-python/rpds-py[${PYTHON_USEDEP}]
-	dev-python/referencing[${PYTHON_USEDEP}]
 	dev-python/jsonschema-specifications[${PYTHON_USEDEP}]
+	dev-python/referencing[${PYTHON_USEDEP}]
+	dev-python/rpds-py[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-specifications-2023.03.6[${PYTHON_USEDEP}]
 	>=dev-python/referencing-0.28.4[${PYTHON_USEDEP}]

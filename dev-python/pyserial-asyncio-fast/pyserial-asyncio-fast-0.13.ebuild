@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
@@ -24,6 +24,7 @@ DOCS="README.rst"
 GENERATED_DEPEND="
 	dev-python/pyserial[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/pyserial-3.1.1[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/pyserial-3.1.1[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

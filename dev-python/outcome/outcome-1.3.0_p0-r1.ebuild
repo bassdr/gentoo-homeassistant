@@ -4,11 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
-MY_P=${P/_p/.post}
+SRC_URI="$(pypi_sdist_url --no-normalize "outcome" "1.3.0.post0")"
+S="${WORKDIR}/outcome-1.3.0.post0"
+
 DESCRIPTION="Capture the outcome of Python function calls."
 HOMEPAGE="
   https://pypi.org/project/outcome/
@@ -24,7 +26,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/attrs[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -37,6 +39,3 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source \
 	dev-python/sphinxcontrib-trio \
 	dev-python/sphinx-rtd-theme
-
-# SRC_URI could not be inserted in this ebuild
-# Content: 

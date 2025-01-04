@@ -3,16 +3,14 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="azure_storage_blob"
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="Microsoft Azure Blob Storage Client Library for Python"
 HOMEPAGE="
-  https://pypi.org/project/azure_storage_blob/
+  https://pypi.org/project/azure-storage-blob/
 "
 
 LICENSE="MIT"
@@ -25,11 +23,12 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/azure-core[${PYTHON_USEDEP}]
-	dev-python/isodate[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	dev-python/isodate[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/azure-core-1.28.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/azure-core-1.28.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.1.4[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.1[${PYTHON_USEDEP}]

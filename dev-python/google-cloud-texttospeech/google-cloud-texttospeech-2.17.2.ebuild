@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1 pypi
@@ -23,11 +23,12 @@ DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/google-api-core[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
-	dev-python/proto-plus[${PYTHON_USEDEP}]
 	dev-python/google-auth[${PYTHON_USEDEP}]
+	dev-python/proto-plus[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/google-api-core-1.34.1[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/google-api-core-1.34.1[${PYTHON_USEDEP}]
 	>=dev-python/proto-plus-1.22.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-python-3.19.5[${PYTHON_USEDEP}]"
 

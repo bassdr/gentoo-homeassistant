@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -22,10 +22,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/portalocker[${PYTHON_USEDEP}]
 	dev-python/msal[${PYTHON_USEDEP}]
+	dev-python/portalocker[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/msal-1.29[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/msal-1.29[${PYTHON_USEDEP}]
 	dev-python/portalocker[${PYTHON_USEDEP}]
 	dev-python/pygobject[${PYTHON_USEDEP}]"
 

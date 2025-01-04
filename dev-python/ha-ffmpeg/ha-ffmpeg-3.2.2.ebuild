@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1
 
 DESCRIPTION="A library that handling with ffmpeg for home-assistant"
@@ -23,5 +23,6 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/async-timeout[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/async-timeout[${PYTHON_USEDEP}]
 	media-video/ffmpeg"

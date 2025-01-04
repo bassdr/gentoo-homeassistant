@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -24,7 +24,8 @@ GENERATED_DEPEND="
 	dev-python/construct[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/construct-2.5.2[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/construct-2.5.2[${PYTHON_USEDEP}]"
 BDEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/construct-2.5.2[${PYTHON_USEDEP}]

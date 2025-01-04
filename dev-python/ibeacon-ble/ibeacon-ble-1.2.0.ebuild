@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -25,11 +25,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	dev-python/aiooui[${PYTHON_USEDEP}]
 	dev-python/home-assistant-bluetooth[${PYTHON_USEDEP}]
 	dev-python/mac-vendor-lookup[${PYTHON_USEDEP}]
-	dev-python/aiooui[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/mac-vendor-lookup[${PYTHON_USEDEP}]"
 

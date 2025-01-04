@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="pushbullet.py"
 PYPI_NO_NORMALIZE=1
@@ -24,10 +24,11 @@ DOCS="readme.rst"
 
 GENERATED_DEPEND="
 	dev-python/python-magic[${PYTHON_USEDEP}]
-	dev-python/websocket-client[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/websocket-client[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/requests[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/python-magic[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-0.53.0[${PYTHON_USEDEP}]"
 BDEPEND="

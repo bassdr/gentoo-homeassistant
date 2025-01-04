@@ -48,10 +48,14 @@ CRATES="
 inherit cargo distutils-r1 flag-o-matic multiprocessing pypi
 
 VEC_P=cryptography_vectors-$(ver_cut 1-3)
-DESCRIPTION="Library providing cryptographic recipes and primitives"
+DESCRIPTION="cryptography is a package which provides cryptographic recipes and primitives to Python developers."
 HOMEPAGE="
-	https://github.com/pyca/cryptography/
-	https://pypi.org/project/cryptography/
+  https://pypi.org/project/cryptography/
+  homepage, https://github.com/pyca/cryptography
+  documentation, https://cryptography.io/
+  source, https://github.com/pyca/cryptography/
+  issues, https://github.com/pyca/cryptography/issues
+  changelog, https://cryptography.io/en/latest/changelog/
 "
 SRC_URI+="
 	${CARGO_CRATE_URIS}
@@ -66,9 +70,12 @@ LICENSE+="
 	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD MIT Unicode-DFS-2016
 "
 SLOT="0"
-KEYWORDS="amd64 arm arm64 x86"
+KEYWORDS="amd64 arm64"
 
-RDEPEND="
+GENERATED_DEPEND="
+	dev-python/cffi[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-libs/openssl-1.0.2o-r6:0=
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.8:=[${PYTHON_USEDEP}]

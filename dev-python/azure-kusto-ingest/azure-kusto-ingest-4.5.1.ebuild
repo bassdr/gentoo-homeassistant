@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -22,12 +22,13 @@ RESTRICT="!test? ( test )"
 #DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/azure-storage-queue[${PYTHON_USEDEP}]
-	dev-python/azure-storage-blob[${PYTHON_USEDEP}]
-	dev-python/tenacity[${PYTHON_USEDEP}]
 	dev-python/azure-kusto-data[${PYTHON_USEDEP}]
+	dev-python/azure-storage-blob[${PYTHON_USEDEP}]
+	dev-python/azure-storage-queue[${PYTHON_USEDEP}]
+	dev-python/tenacity[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} ~dev-python/azure-kusto-data-${PV}[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	~dev-python/azure-kusto-data-${PV}[${PYTHON_USEDEP}]
 	>=dev-python/azure-storage-blob-12[${PYTHON_USEDEP}]
 	>=dev-python/azure-storage-queue-12[${PYTHON_USEDEP}]
 	>=dev-python/tenacity-8.0.0[${PYTHON_USEDEP}]"

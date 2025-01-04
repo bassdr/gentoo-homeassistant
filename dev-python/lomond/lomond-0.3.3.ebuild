@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -23,7 +23,8 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/six-1.10.0[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	test? (

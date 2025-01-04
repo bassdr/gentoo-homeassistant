@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,16 +21,17 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	dev-python/awesomeversion[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
+	dev-python/crcmod[${PYTHON_USEDEP}]
+	dev-python/getmac[${PYTHON_USEDEP}]
+	dev-python/intelhex[${PYTHON_USEDEP}]
+	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
-	dev-python/intelhex[${PYTHON_USEDEP}]
-	dev-python/awesomeversion[${PYTHON_USEDEP}]
-	dev-python/pyserial[${PYTHON_USEDEP}]
-	dev-python/getmac[${PYTHON_USEDEP}]
-	dev-python/crcmod[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/awesomeversion[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/awesomeversion[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/crcmod-1.7[${PYTHON_USEDEP}]
 	dev-python/getmac[${PYTHON_USEDEP}]

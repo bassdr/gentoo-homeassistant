@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 DESCRIPTION="An asynchronous serial port library of Python"
@@ -22,6 +22,7 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/pyserial[${PYTHON_USEDEP}]
 "
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -32,6 +33,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-
-# RDEPEND could not be inserted in this ebuild
-# Content: 

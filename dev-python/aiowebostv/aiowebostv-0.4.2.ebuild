@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Library to control webOS based LG TV devices"
@@ -22,6 +22,7 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/websockets[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/websockets-10.3[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/websockets-10.3[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

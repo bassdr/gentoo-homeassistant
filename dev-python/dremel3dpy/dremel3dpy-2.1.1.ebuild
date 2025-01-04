@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -19,15 +19,16 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
-	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev-python/imageio[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/validators[${PYTHON_USEDEP}]
-	dev-python/imutils[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
+	dev-python/imageio[${PYTHON_USEDEP}]
+	dev-python/imutils[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/tqdm[${PYTHON_USEDEP}]
+	dev-python/validators[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/decorator-5.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/decorator-5.0[${PYTHON_USEDEP}]
 	>=dev-python/imageio-2.0[${PYTHON_USEDEP}]
 	>=dev-python/imutils-0.5[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.0[${PYTHON_USEDEP}]

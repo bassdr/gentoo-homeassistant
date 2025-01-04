@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -28,10 +28,10 @@ distutils_enable_sphinx docs/source \
 distutils_enable_tests pytest
 
 GENERATED_DEPEND="
-	dev-python/tokenize-rt[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/tokenize-rt[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/tokenize-rt[${PYTHON_USEDEP}]
 "

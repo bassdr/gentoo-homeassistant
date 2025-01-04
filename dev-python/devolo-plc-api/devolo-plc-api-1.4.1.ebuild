@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -25,11 +25,12 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
-	dev-python/zeroconf[${PYTHON_USEDEP}]
-	dev-python/segno[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
+	dev-python/segno[${PYTHON_USEDEP}]
+	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/ifaddr[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/ifaddr[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.21[${PYTHON_USEDEP}]
 	dev-python/protobuf-python[${PYTHON_USEDEP}]
 	>=dev-python/segno-1.5.2[${PYTHON_USEDEP}]

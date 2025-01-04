@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -21,11 +21,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/bitstring[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	dev-python/bitstring[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/async-timeout-4.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/async-timeout-4.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.8.4[${PYTHON_USEDEP}]
 	>=dev-python/bitstring-3.1.5[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-asyncio-0.6[${PYTHON_USEDEP}]"

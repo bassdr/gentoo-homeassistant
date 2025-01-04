@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN=${PN^}
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -22,8 +22,9 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="doc"
+IUSE="doc test"
 
+RDEPEND=""
 BDEPEND="
 	test? (
 		dev-python/pygments[${PYTHON_USEDEP}]

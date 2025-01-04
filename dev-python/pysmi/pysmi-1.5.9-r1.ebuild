@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi
 
 DESCRIPTION="A pure-Python implementation of SNMP/SMI MIB parsing and conversion library."
@@ -18,11 +18,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/ply[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/ply[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/jinja2-3.1.3[${PYTHON_USEDEP}]
 	>=dev-python/ply-3.11[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]

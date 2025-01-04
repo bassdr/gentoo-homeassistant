@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -28,7 +28,8 @@ GENERATED_DEPEND="
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodome-3.19.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.0[${PYTHON_USEDEP}]"
 

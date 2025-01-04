@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="An generic async GeoJSON client library."
@@ -25,10 +25,11 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/aio-geojson-client[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/geojson[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aio-geojson-client-0.20[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aio-geojson-client-0.20[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]
 	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>=dev-python/geojson-2.4.0[${PYTHON_USEDEP}]

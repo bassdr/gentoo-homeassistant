@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/humanfriendly[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/humanfriendly-9.1[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

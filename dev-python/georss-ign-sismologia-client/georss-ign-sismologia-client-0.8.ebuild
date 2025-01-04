@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="A GeoRSS client library for the IGN Sismologia feed."
@@ -23,7 +23,8 @@ GENERATED_DEPEND="
 	dev-python/dateparser[${PYTHON_USEDEP}]
 	dev-python/georss-client[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/dateparser-1.2.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/dateparser-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/georss-client-0.17[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

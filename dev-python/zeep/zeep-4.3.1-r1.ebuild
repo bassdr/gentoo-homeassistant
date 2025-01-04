@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -22,16 +22,16 @@ KEYWORDS="amd64 arm64"
 IUSE="+async"
 
 GENERATED_DEPEND="
+	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/isodate[${PYTHON_USEDEP}]
+	dev-python/lxml[${PYTHON_USEDEP}]
+	dev-python/platformdirs[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
-	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/requests-file[${PYTHON_USEDEP}]
-	dev-python/platformdirs[${PYTHON_USEDEP}]
+	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/attrs-17.2.0[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.5.4[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.6.0[${PYTHON_USEDEP}]

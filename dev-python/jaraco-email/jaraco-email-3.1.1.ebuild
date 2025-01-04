@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="jaraco.email"
 PYPI_NO_NORMALIZE=1
@@ -24,11 +24,12 @@ DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/aiosmtpd[${PYTHON_USEDEP}]
+	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	dev-python/jaraco-text[${PYTHON_USEDEP}]
 	dev-python/keyring[${PYTHON_USEDEP}]
-	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/jaraco-text-1.3[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/jaraco-text-1.3[${PYTHON_USEDEP}]
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	dev-python/keyring[${PYTHON_USEDEP}]"
 BDEPEND="

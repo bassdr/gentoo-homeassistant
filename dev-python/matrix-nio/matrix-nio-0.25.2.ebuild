@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -31,12 +31,12 @@ GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/aiohttp-socks[${PYTHON_USEDEP}]
 	dev-python/h11[${PYTHON_USEDEP}]
-	dev-python/jsonschema[${PYTHON_USEDEP}]
 	dev-python/h2[${PYTHON_USEDEP}]
+	dev-python/jsonschema[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/unpaddedbase64[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/python-olm-3.2.15[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-socks-0.8.4[${PYTHON_USEDEP}]

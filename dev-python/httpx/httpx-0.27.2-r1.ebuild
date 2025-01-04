@@ -4,15 +4,17 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( pypy3 python3_{10..13} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 optfeature
 
-DESCRIPTION="Fully-featured HTTP client which provides sync and async APIs"
+DESCRIPTION="The next generation HTTP client."
 HOMEPAGE="
-	https://www.python-httpx.org/
-	https://github.com/encode/httpx/
-	https://pypi.org/project/httpx/
+  https://pypi.org/project/httpx/
+  Changelog, https://github.com/encode/httpx/blob/master/CHANGELOG.md
+  Documentation, https://www.python-httpx.org
+  Homepage, https://github.com/encode/httpx
+  Source, https://github.com/encode/httpx
 "
 SRC_URI="
 	https://github.com/encode/httpx/archive/${PV}.tar.gz
@@ -21,10 +23,17 @@ SRC_URI="
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 hppa ~loong ~mips ppc ppc64 ~riscv ~s390 sparc x86"
+KEYWORDS="amd64 arm64"
 IUSE="brotli cli http2 +socks zstd"
 
-RDEPEND="
+GENERATED_DEPEND="
+	dev-python/anyio[${PYTHON_USEDEP}]
+	dev-python/certifi[${PYTHON_USEDEP}]
+	dev-python/httpcore[${PYTHON_USEDEP}]
+	dev-python/idna[${PYTHON_USEDEP}]
+	dev-python/sniffio[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/anyio[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	=dev-python/httpcore-1*[${PYTHON_USEDEP}]

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -19,11 +19,12 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
-	dev-python/enum-compat[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+	dev-python/enum-compat[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/pyserial-3.0[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/pyserial-3.0[${PYTHON_USEDEP}]
 	>=dev-python/beautifulsoup4-4.3.2[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

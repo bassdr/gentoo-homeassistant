@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_TESTED=( python3_{10..13} pypy3 )
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -27,10 +27,10 @@ RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
 	dev-python/iniconfig[${PYTHON_USEDEP}]
-	dev-python/pluggy[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pluggy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/iniconfig[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	<dev-python/pluggy-2[${PYTHON_USEDEP}]

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -21,14 +21,15 @@ RESTRICT="!test? ( test )"
 DOCS=""
 
 GENERATED_DEPEND="
-	dev-python/appdirs[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/appdirs[${PYTHON_USEDEP}]
+	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/async-upnp-client[${PYTHON_USEDEP}]
 	dev-python/deprecated[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
 	>=dev-python/async-upnp-client-0.36.2[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2.14[${PYTHON_USEDEP}]

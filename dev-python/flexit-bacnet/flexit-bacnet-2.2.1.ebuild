@@ -3,10 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="flexit_bacnet"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Client BACnet library for Flexit Nordic series of air handling units."

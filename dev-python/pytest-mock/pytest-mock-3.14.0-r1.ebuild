@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYTHON_TESTED=( python3_{10..13} pypy3 )
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_DEPEND="
 	dev-python/pytest[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
 "
 BDEPEND="

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 
@@ -25,17 +25,17 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
-	dev-python/oauthlib[${PYTHON_USEDEP}]
-	dev-python/firebase-messaging[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/asyncclick[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
-	dev-python/websockets[${PYTHON_USEDEP}]
+	dev-python/asyncclick[${PYTHON_USEDEP}]
+	dev-python/firebase-messaging[${PYTHON_USEDEP}]
+	dev-python/oauthlib[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	dev-python/websockets[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/oauthlib-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2022.0[${PYTHON_USEDEP}]
 	>=dev-python/asyncclick-8.1.7.1[${PYTHON_USEDEP}]

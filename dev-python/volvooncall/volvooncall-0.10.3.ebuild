@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="Communicate with VOC"
@@ -20,7 +20,8 @@ RESTRICT="!test? ( test )"
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/aiohttp[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
 	console? ( dev-python/certifi[${PYTHON_USEDEP}] >=sci-geosciences/geopy-1.14.0[${PYTHON_USEDEP}] )
 	mqtt? ( dev-python/certifi[${PYTHON_USEDEP}] dev-python/amqtt[${PYTHON_USEDEP}] )"
 BDEPEND="

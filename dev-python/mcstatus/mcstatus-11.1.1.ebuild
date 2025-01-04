@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
@@ -22,10 +22,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/dnspython[${PYTHON_USEDEP}]
 	dev-python/asyncio-dgram[${PYTHON_USEDEP}]
+	dev-python/dnspython[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/asyncio-dgram-2.1.2[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/asyncio-dgram-2.1.2[${PYTHON_USEDEP}]
 	>=dev-python/dnspython-2.4.2[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

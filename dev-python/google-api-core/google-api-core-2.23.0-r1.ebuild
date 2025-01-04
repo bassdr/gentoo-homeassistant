@@ -33,7 +33,7 @@ GENERATED_DEPEND="
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/proto-plus[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} 
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/googleapis-common-protos-1.56.2[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-1.25.0[${PYTHON_USEDEP}]
 	>=dev-python/proto-plus-1.25.0[${PYTHON_USEDEP}]

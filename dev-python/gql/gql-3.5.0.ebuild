@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 DESCRIPTION="GraphQL client for Python"
@@ -20,12 +20,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/graphql-core[${PYTHON_USEDEP}]
-	dev-python/backoff[${PYTHON_USEDEP}]
 	dev-python/anyio[${PYTHON_USEDEP}]
+	dev-python/backoff[${PYTHON_USEDEP}]
+	dev-python/graphql-core[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} >=dev-python/graphql-core-3.3.0_alpha2[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	>=dev-python/graphql-core-3.3.0_alpha2[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6[${PYTHON_USEDEP}]
 	>=dev-python/backoff-1.11.1[${PYTHON_USEDEP}]"
 BDEPEND="

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -19,10 +19,11 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
-	dev-python/six[${PYTHON_USEDEP}]
 	dev-python/pbr[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/pbr[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/pbr[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
