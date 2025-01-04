@@ -1,0 +1,27 @@
+# Copyright 1999-2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+PYTHON_COMPAT=( python3_{12,13,13t} )
+DISTUTILS_USE_PEP517=setuptools
+inherit distutils-r1
+
+DESCRIPTION="Guppy 3 -- Guppy-PE ported to Python 3"
+HOMEPAGE="
+  https://pypi.org/project/guppy3/
+"
+# https://github.com/zhuyifei1999/guppy3/archive/refs/tags/v3.1.4.post1.tar.gz
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="amd64 arm64"
+IUSE="test"
+RESTRICT="!test? ( test )"
+
+DOCS="README.md"
+
+distutils_enable_tests pytest
+
+# SRC_URI could not be inserted in this ebuild
+# Content: 
