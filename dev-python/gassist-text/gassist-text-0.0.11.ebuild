@@ -36,7 +36,6 @@ RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	dev-python/google-auth[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]
-	dev-python/protobuf-python[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	"
 S="${WORKDIR}/${MY_P}"

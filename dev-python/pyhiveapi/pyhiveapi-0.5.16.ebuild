@@ -27,10 +27,10 @@ GENERATED_DEPEND="
 	dev-python/boto3[${PYTHON_USEDEP}]
 	dev-python/botocore[${PYTHON_USEDEP}]
 	dev-python/loguru[${PYTHON_USEDEP}]
-	dev-python/pre-commit[${PYTHON_USEDEP}]
 	dev-python/pyquery[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/unasync[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/mutagen-1.47.0[${PYTHON_USEDEP}]
+	~media-libs/mutagen-1.47.0[${PYTHON_USEDEP}]
 "

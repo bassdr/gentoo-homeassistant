@@ -31,8 +31,8 @@ RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/websocket-client-0.58.0[${PYTHON_USEDEP}]
 	dev-python/zeroconf[${PYTHON_USEDEP}]"
 BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]

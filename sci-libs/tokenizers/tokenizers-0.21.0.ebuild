@@ -14,14 +14,9 @@ CRATES="
 	adler2@2.0.0
 	aho-corasick@1.1.3
 	anes@0.1.6
-	anstream@0.6.15
-	anstyle-parse@0.2.5
-	anstyle-query@1.1.1
-	anstyle-wincon@3.0.4
 	anstyle@1.0.8
 	assert_approx_eq@1.1.0
 	autocfg@1.4.0
-	autocfg@1.3.0
 	base64@0.13.1
 	base64@0.22.1
 	bit-set@0.5.3
@@ -39,7 +34,6 @@ CRATES="
 	clap@4.5.19
 	clap_builder@4.5.19
 	clap_lex@0.7.2
-	colorchoice@1.0.2
 	console@0.15.8
 	core-foundation-sys@0.8.7
 	core-foundation@0.9.4
@@ -56,20 +50,14 @@ CRATES="
 	derive_builder@0.20.1
 	derive_builder_core@0.20.1
 	derive_builder_macro@0.20.1
-	derive_builder@0.20.0
-	derive_builder_core@0.20.0
-	derive_builder_macro@0.20.0
 	dirs-sys@0.4.1
 	dirs@5.0.1
 	either@1.13.0
 	encode_unicode@0.3.6
-	env_filter@0.1.2
-	env_logger@0.11.5
 	errno@0.3.9
 	esaxx-rs@0.1.10
 	fancy-regex@0.13.0
 	fastrand@2.1.1
-	fastrand@2.1.0
 	flate2@1.0.34
 	fnv@1.0.7
 	foreign-types-shared@0.1.1
@@ -79,45 +67,33 @@ CRATES="
 	half@2.4.1
 	hermit-abi@0.4.0
 	hf-hub@0.3.2
-	heck@0.4.1
-	humantime@2.1.0
 	ident_case@1.0.1
 	idna@0.5.0
 	indicatif@0.17.8
-	indoc@2.0.5
 	instant@0.1.13
 	is-terminal@0.4.13
-	is_terminal_polyfill@1.70.1
 	itertools@0.10.5
 	itertools@0.11.0
 	itertools@0.12.1
 	itoa@1.0.11
 	js-sys@0.3.70
 	lazy_static@1.5.0
-	libc@0.2.155
 	libc@0.2.159
 	libredox@0.1.3
 	linux-raw-sys@0.4.14
-	lock_api@0.4.12
 	log@0.4.22
 	macro_rules_attribute-proc_macro@0.2.0
 	macro_rules_attribute@0.2.0
-	matrixmultiply@0.3.9
 	memchr@2.7.4
-	memoffset@0.9.1
 	minimal-lexical@0.2.1
 	miniz_oxide@0.8.0
 	monostate-impl@0.1.13
 	monostate@0.1.13
 	native-tls@0.2.12
-	ndarray@0.15.6
 	nom@7.1.3
 	nu-ansi-term@0.46.0
-	num-complex@0.4.6
-	num-integer@0.1.46
 	num-traits@0.2.19
 	number_prefix@0.4.0
-	numpy@0.21.0
 	once_cell@1.20.1
 	onig@6.4.0
 	onig_sys@69.8.1
@@ -128,13 +104,9 @@ CRATES="
 	openssl@0.10.66
 	option-ext@0.2.0
 	overload@0.1.1
-	parking_lot@0.12.3
-	parking_lot_core@0.9.10
 	paste@1.0.15
 	percent-encoding@2.3.1
 	pin-project-lite@0.2.14
-	pkg-config@0.3.30
-	portable-atomic@1.7.0
 	pkg-config@0.3.31
 	plotters-backend@0.3.7
 	plotters-svg@0.3.7
@@ -142,31 +114,18 @@ CRATES="
 	portable-atomic@1.9.0
 	ppv-lite86@0.2.20
 	proc-macro2@1.0.86
-	pyo3-build-config@0.21.2
-	pyo3-ffi@0.21.2
-	pyo3-macros-backend@0.21.2
-	pyo3-macros@0.21.2
-	pyo3@0.21.2
-	quote@1.0.36
 	quote@1.0.37
 	rand@0.8.5
 	rand_chacha@0.3.1
 	rand_core@0.6.4
-	rawpointer@0.2.1
 	rayon-cond@0.3.0
 	rayon-core@1.12.1
 	rayon@1.10.0
 	redox_users@0.4.6
 	regex-automata@0.4.8
 	regex-syntax@0.8.5
-	redox_syscall@0.5.7
-	regex-automata@0.4.7
-	regex-syntax@0.8.4
-	regex@1.10.6
 	regex@1.11.0
 	ring@0.17.8
-	rustc-hash@1.1.0
-	rustix@0.38.34
 	rustix@0.38.37
 	rustls-pki-types@1.9.0
 	rustls-webpki@0.102.8
@@ -176,12 +135,8 @@ CRATES="
 	schannel@0.1.24
 	security-framework-sys@2.12.0
 	security-framework@2.11.1
-	scopeguard@1.2.0
-	serde@1.0.205
 	serde@1.0.210
-	serde_derive@1.0.205
 	serde_derive@1.0.210
-	serde_json@1.0.122
 	serde_json@1.0.128
 	sharded-slab@0.1.7
 	shlex@1.3.0
@@ -190,14 +145,9 @@ CRATES="
 	spm_precompiled@0.1.4
 	strsim@0.11.1
 	subtle@2.6.1
-	syn@2.0.72
 	syn@2.0.79
-	target-lexicon@0.12.16
-	tempfile@3.12.0
 	tempfile@3.13.0
-	thiserror-impl@1.0.63
 	thiserror-impl@1.0.64
-	thiserror@1.0.63
 	thiserror@1.0.64
 	thread_local@1.1.8
 	tinytemplate@1.2.1
@@ -209,20 +159,15 @@ CRATES="
 	tracing-subscriber@0.3.18
 	tracing@0.1.40
 	unicode-bidi@0.3.17
-	unicode-ident@1.0.12
 	unicode-ident@1.0.13
 	unicode-normalization-alignments@0.1.12
 	unicode-normalization@0.1.24
-	unicode-segmentation@1.11.0
 	unicode-segmentation@1.12.0
-	unicode-width@0.1.13
 	unicode-width@0.1.14
 	unicode_categories@0.1.1
-	unindent@0.2.3
 	untrusted@0.9.0
 	ureq@2.10.1
 	url@2.5.2
-	utf8parse@0.2.2
 	valuable@0.1.0
 	vcpkg@0.2.15
 	walkdir@2.5.0
@@ -279,16 +224,14 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 # Dependent crate licenses
-LICENSE+="
-	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD ISC MIT MPL-2.0
-	Unicode-DFS-2016
-"
+LICENSE+=" Apache-2.0 BSD ISC MIT MPL-2.0 Unicode-DFS-2016"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
-	dev-python/huggingface-hub[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'dev-python/huggingface-hub[${PYTHON_USEDEP}]')
 "
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	test? ( sci-libs/datasets[${PYTHON_SINGLE_USEDEP}] )
 	$(python_gen_cond_dep '
@@ -386,5 +329,3 @@ src_install() {
 	cd ../bindings/python
 	distutils-r1_src_install
 }
-
-# RDEPEND could not be inserted in this ebuild

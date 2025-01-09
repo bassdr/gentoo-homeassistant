@@ -25,9 +25,7 @@ GENERATED_DEPEND="
 	dev-python/pint[${PYTHON_USEDEP}]
 	dev-python/psychrolib[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-	dev-python/PsychroLib[${PYTHON_USEDEP}]
-	dev-python/Pint[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

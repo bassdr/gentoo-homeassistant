@@ -33,15 +33,6 @@ GENERATED_DEPEND="
 	dev-python/uonet-request-signer-hebe[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-	dev-python/pyopenssl[${PYTHON_USEDEP}]
-	dev-python/uonet-request-signer-hebe[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/aenum[${PYTHON_USEDEP}]
-	dev-python/related[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/cchardet[${PYTHON_USEDEP}]
-	dev-python/aiodns[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest

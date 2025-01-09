@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13,13t} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
@@ -27,11 +27,11 @@ KEYWORDS="amd64 arm64"
 IUSE="grpc"
 
 GENERATED_DEPEND="
-	dev-python/googleapis-common-protos[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/google-auth[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
+	dev-python/googleapis-common-protos[${PYTHON_USEDEP}]
 	dev-python/proto-plus[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/googleapis-common-protos-1.56.2[${PYTHON_USEDEP}]

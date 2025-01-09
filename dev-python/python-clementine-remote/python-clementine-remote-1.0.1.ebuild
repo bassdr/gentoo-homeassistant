@@ -24,8 +24,7 @@ RESTRICT="!test? ( test )"
 GENERATED_DEPEND="
 	dev-python/protobuf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-	dev-python/protobuf-python[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

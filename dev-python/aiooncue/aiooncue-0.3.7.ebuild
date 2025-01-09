@@ -24,7 +24,6 @@ GENERATED_DEPEND="
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"
-BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]"
+BDEPEND="test? ( dev-python/pytest-runner[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest

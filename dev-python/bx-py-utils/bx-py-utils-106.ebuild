@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-DISTUTILS_USE_PEP517=poetry
+DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
 DESCRIPTION="Various Python utility functions"
@@ -21,10 +21,5 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
-
-src_prepare() {
-	sed -e '/include =/,/]/d' -i pyproject.toml || die
-	eapply_user
-}
 
 distutils_enable_tests pytest

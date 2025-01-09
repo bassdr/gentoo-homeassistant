@@ -32,7 +32,6 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.21[${PYTHON_USEDEP}]
-	dev-python/protobuf-python[${PYTHON_USEDEP}]
 	>=dev-python/segno-1.5.2[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.70.0[${PYTHON_USEDEP}]"
 BDEPEND="

@@ -27,8 +27,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"
 BDEPEND="
-	dev-python/pytest-runner
 	test? (
+		dev-python/pytest-runner
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 

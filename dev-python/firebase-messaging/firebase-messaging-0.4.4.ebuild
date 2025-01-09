@@ -31,7 +31,6 @@ GENERATED_DEPEND="
 	dev-python/protobuf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
-	dev-python/protobuf-python[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/http-ece[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]

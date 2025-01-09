@@ -27,15 +27,14 @@ GENERATED_DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-CDEPEND="dev-python/six[${PYTHON_USEDEP}]
-		dev-python/httplib2[${PYTHON_USEDEP}]
-		dev-python/PySocks[${PYTHON_USEDEP}]"
 
 RDEPEND="${GENERATED_DEPEND}
-	${CDEPEND}"
+	>=dev-python/pyjwt-1.4.2[${PYTHON_USEDEP}]
+"
 DEPEND="test? (
-			${CDEPEND}
-		)"
+		${GENERATED_DEPEND}
+		>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
+	)"
 
 python_test() {
 	nosetests tests || die "Tests fail with ${EPYTHON}"

@@ -27,8 +27,8 @@ RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-1.0.0[${PYTHON_USEDEP}]"
 BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/deepmerge[${PYTHON_USEDEP}]
 	)"

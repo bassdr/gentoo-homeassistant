@@ -27,8 +27,6 @@ GENERATED_DEPEND="
 	dev-python/authlib[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-	dev-python/Authlib[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest

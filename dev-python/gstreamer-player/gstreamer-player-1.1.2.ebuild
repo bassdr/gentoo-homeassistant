@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
-	dev-python/mutagen[${PYTHON_USEDEP}]
+	media-libs/mutagen[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=media-libs/mutagen-1.36.2[${PYTHON_USEDEP}]

@@ -1,0 +1,32 @@
+diff '--color=auto' -ur pexpect-4.6.0.old/pexpect/replwrap.py pexpect-4.6.0/pexpect/replwrap.py
+--- pexpect-4.6.0.old/pexpect/replwrap.py	2025-01-14 23:10:01.709947872 -0500
++++ pexpect-4.6.0/pexpect/replwrap.py	2025-01-14 23:12:56.621417853 -0500
+@@ -35,7 +35,7 @@
+                  continuation_prompt=PEXPECT_CONTINUATION_PROMPT,
+                  extra_init_cmd=None):
+         if isinstance(cmd_or_spawn, basestring):
+-            self.child = pexpect.spawn(cmd_or_spawn, echo=False, encoding='utf-8')
++            self.child = pexpect.spawn(cmd_or_spawn, echo=False, encoding='utf-8', env={'NO_COLOR': '1'})
+         else:
+             self.child = cmd_or_spawn
+         if self.child.echo:
+diff '--color=auto' -ur pexpect-4.6.0.old/tests/test_replwrap.py pexpect-4.6.0/tests/test_replwrap.py
+--- pexpect-4.6.0.old/tests/test_replwrap.py	2025-01-14 23:10:01.706614511 -0500
++++ pexpect-4.6.0/tests/test_replwrap.py	2025-01-14 23:15:11.772553723 -0500
+@@ -2,6 +2,7 @@
+ import unittest
+ import re
+ import os
++import sys
+ 
+ import pexpect
+ from pexpect import replwrap
+@@ -101,7 +102,7 @@
+         if platform.python_implementation() == 'PyPy':
+             raise unittest.SkipTest(skip_pypy)
+ 
+-        child = pexpect.spawn('python', echo=False, timeout=5, encoding='utf-8')
++        child = pexpect.spawn(sys.executable, echo=False, timeout=5, encoding='utf-8', env={'NO_COLOR': '1'})
+         # prompt_change=None should mean no prompt change
+         py = replwrap.REPLWrapper(child, u">>> ", prompt_change=None,
+                                   continuation_prompt=u"... ")

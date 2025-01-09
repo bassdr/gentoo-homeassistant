@@ -26,7 +26,6 @@ GENERATED_DEPEND="
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
-	>=dev-python/graphql-core-3.3.0_alpha2[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6[${PYTHON_USEDEP}]
 	>=dev-python/backoff-1.11.1[${PYTHON_USEDEP}]"
 BDEPEND="

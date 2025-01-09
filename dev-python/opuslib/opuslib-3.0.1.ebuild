@@ -19,10 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-RDEPEND=">=dev-python/coverage-4.4.1[${PYTHON_USEDEP}]
-	>=dev-python/nose-1.3.7[${PYTHON_USEDEP}]"
+RDEPEND=""
 BDEPEND="
 	test? (
+		>=dev-python/coverage-4.4.1[${PYTHON_USEDEP}]
+		>=dev-python/nose-1.3.7[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 

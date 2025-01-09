@@ -32,7 +32,7 @@ GENERATED_DEPEND="
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
-	>=dev-python/protobuf-python-3.6.0[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/yagrc-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]"
 BDEPEND="

@@ -27,7 +27,6 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/dacite-1.7.0[${PYTHON_USEDEP}]
 	>=dev-python/pysnmp-6.2.6[${PYTHON_USEDEP}]"
-BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]"
+BDEPEND="test? ( dev-python/pytest-runner[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest

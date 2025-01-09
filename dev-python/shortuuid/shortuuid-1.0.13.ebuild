@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 src_prepare() {
-	remove unneccesary include
+	# remove unneccesary include
 	sed "20d" -i pyproject.toml || die
 	eapply_user
 }

@@ -21,11 +21,11 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/asyncssh[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-	dev-python/asyncssh[${PYTHON_USEDEP}]"
-BDEPEND="dev-python/pytest-runner[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND}"
+BDEPEND="
 	dev-python/setuptools-markdown[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]

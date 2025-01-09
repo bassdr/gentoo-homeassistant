@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/yt-dlp-2024.12.03[default,${PYTHON_USEDEP}]
+	~net-misc/yt-dlp-2024.12.03[default,${PYTHON_USEDEP}]
 "

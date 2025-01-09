@@ -32,8 +32,8 @@ RDEPEND="${GENERATED_DEPEND}
 	dev-python/tenacity[${PYTHON_USEDEP}]
 	dev-python/aqipy-atmotech[${PYTHON_USEDEP}]"
 BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	)"

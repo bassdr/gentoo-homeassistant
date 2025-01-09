@@ -26,8 +26,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]"
 BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 

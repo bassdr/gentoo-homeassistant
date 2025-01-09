@@ -24,9 +24,8 @@ GENERATED_DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
-	dev-python/protobuf-python[${PYTHON_USEDEP}]
-		 dev-python/pycryptodome[${PYTHON_USEDEP}]
-		 dev-python/requests[${PYTHON_USEDEP}]"
+	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

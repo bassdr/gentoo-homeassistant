@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Pure Python reimplementation of pcapy. This package is API compatible and a drop-in replacement."
 HOMEPAGE="
-  https://pypi.org/project/pure_pcapy3/
+  https://pypi.org/project/pure-pcapy3/
 "
 
 LICENSE="BSD"

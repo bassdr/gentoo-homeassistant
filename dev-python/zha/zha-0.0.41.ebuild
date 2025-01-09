@@ -32,15 +32,6 @@ GENERATED_DEPEND="
 	dev-python/zigpy-zigate[${PYTHON_USEDEP}]
 	dev-python/zigpy-znp[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-	~dev-python/zigpy-0.71.0[${PYTHON_USEDEP}]
-	~dev-python/bellows-0.42.0[${PYTHON_USEDEP}]
-	~dev-python/zigpy-znp-0.13.1[${PYTHON_USEDEP}]
-	~dev-python/zigpy-deconz-0.24.1[${PYTHON_USEDEP}]
-	~dev-python/zigpy-xbee-0.21.0[${PYTHON_USEDEP}]
-	~dev-python/zigpy-zigate-0.13.2[${PYTHON_USEDEP}]
-	~dev-python/zha-quirks-0.0.124[${PYTHON_USEDEP}]
-	~dev-python/pyserial-3.5[${PYTHON_USEDEP}]
-	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest

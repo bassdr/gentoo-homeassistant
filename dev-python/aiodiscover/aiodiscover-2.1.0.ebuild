@@ -36,8 +36,8 @@ RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pyroute2-0.7.3[${PYTHON_USEDEP}]
 	dev-python/cached-ipaddress[${PYTHON_USEDEP}]"
 BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 	)"

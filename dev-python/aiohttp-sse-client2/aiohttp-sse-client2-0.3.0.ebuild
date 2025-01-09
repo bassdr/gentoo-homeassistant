@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Server-Sent Event python client base on aiohttp"
 HOMEPAGE="
-  https://pypi.org/project/aiohttp_sse_client2/
+  https://pypi.org/project/aiohttp-sse-client2/
 "
 
 LICENSE="Apache-2.0"
@@ -34,8 +34,8 @@ RDEPEND="${GENERATED_DEPEND}
 	dev-python/multidict[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]"
 BDEPEND="
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 

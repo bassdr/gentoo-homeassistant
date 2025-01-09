@@ -18,11 +18,10 @@ KEYWORDS="amd64 arm64"
 IUSE="+async test"
 RESTRICT="!test? ( test )"
 
-RDEPEND="async? ( dev-python/aiocoap[${PYTHON_USEDEP}] dev-python/DTLSSocket[${PYTHON_USEDEP}] )"
-
 DOCS="README.md"
 
-DEPEND="${DEPEND}
+RDEPEND="async? ( dev-python/aiocoap[${PYTHON_USEDEP}] dev-python/dtlssocket[${PYTHON_USEDEP}] )"
+BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

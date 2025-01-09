@@ -63,6 +63,13 @@ BDEPEND="
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 
+python_install() {
+        distutils-r1_python_install
+        # remove tests folder in sitedir
+        # https://bugs.gentoo.org/834522
+        rm -r "${D}$(python_get_sitedir)"/tests || die
+}
+
 python_test() {
 	py.test -v -v || die
 }
