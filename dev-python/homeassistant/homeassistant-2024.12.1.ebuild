@@ -25,8 +25,6 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 # external deps
 GENERATED_DEPEND="
@@ -86,101 +84,9 @@ RDEPEND="${RDEPEND}
 	!app-misc/homeassistant-min
 	!app-misc/homeassistant-full"
 
-# Home Assistant Core dependencies
-# from package_constraints.txt
-RDEPEND="${RDEPEND}
-	~dev-python/aiodhcpwatcher-1.0.2[${PYTHON_USEDEP}]
-	~dev-python/aiodiscover-2.1.0[${PYTHON_USEDEP}]
-	~dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
-	~dev-python/aiohttp-fast-zlib-0.1.1[${PYTHON_USEDEP}]
-	~dev-python/aiohttp-3.10.8[${PYTHON_USEDEP}]
-	~dev-python/aiohttp-cors-0.7.0[${PYTHON_USEDEP}]
-	~dev-python/aiozoneinfo-0.2.1[${PYTHON_USEDEP}]
-	~dev-python/anyio-4.6.0[${PYTHON_USEDEP}]
-	~dev-python/astral-2.2[${PYTHON_USEDEP}]
-	~dev-python/async-interrupt-1.2.0[${PYTHON_USEDEP}]
-	~dev-python/async-upnp-client-0.40.0[${PYTHON_USEDEP}]
-	~dev-python/atomicwrites-homeassistant-1.4.1[${PYTHON_USEDEP}]
-	~dev-python/attrs-23.2.0[${PYTHON_USEDEP}]
-	~dev-python/awesomeversion-24.6.0[${PYTHON_USEDEP}]
-	>=dev-python/backoff-2.0[${PYTHON_USEDEP}]
-	~dev-python/bcrypt-4.2.0[${PYTHON_USEDEP}]
-	~dev-python/bleak-retry-connector-3.5.0[${PYTHON_USEDEP}]
-	~dev-python/bleak-0.22.2[${PYTHON_USEDEP}]
-	~dev-python/bluetooth-adapters-0.19.4[${PYTHON_USEDEP}]
-	~dev-python/bluetooth-auto-recovery-1.4.2[${PYTHON_USEDEP}]
-	~dev-python/bluetooth-data-tools-1.20.0[${PYTHON_USEDEP}]
-	>=dev-python/btlewrap-0.0.10[${PYTHON_USEDEP}]
-	~dev-python/cached-ipaddress-0.6.0[${PYTHON_USEDEP}]
-	>=dev-python/certifi-2021.5.30[${PYTHON_USEDEP}]
-	>=dev-python/chacha20poly1305-reuseable-0.13.0[${PYTHON_USEDEP}]
-	~dev-python/charset-normalizer-3.2.0[${PYTHON_USEDEP}]
-	~dev-python/ciso8601-2.3.1[${PYTHON_USEDEP}]
-	~dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]
-	>=dev-python/dacite-1.7.0[${PYTHON_USEDEP}]
-	~dev-python/dbus-fast-2.24.0[${PYTHON_USEDEP}]
-	>=dev-python/faust-cchardet-2.1.18[${PYTHON_USEDEP}]
-	~dev-python/fnv-hash-fast-1.0.2[${PYTHON_USEDEP}]
-	~dev-python/grpcio-reflection-1.59.0[${PYTHON_USEDEP}]
-	~dev-python/grpcio-status-1.59.0[${PYTHON_USEDEP}]
-	~dev-python/grpcio-1.59.0[${PYTHON_USEDEP}]
-	~dev-python/h11-0.14.0[${PYTHON_USEDEP}]
-	~dev-python/ha-av-10.1.1[${PYTHON_USEDEP}]
-	~dev-python/ha-ffmpeg-3.2.0[${PYTHON_USEDEP}]
-	~dev-python/habluetooth-3.4.0[${PYTHON_USEDEP}]
-	~dev-python/hass-nabucasa-0.81.1[${PYTHON_USEDEP}]
-	~dev-python/hassil-1.7.4[${PYTHON_USEDEP}]
-	~dev-python/home-assistant-bluetooth-1.13.0[${PYTHON_USEDEP}]
-	~dev-python/home-assistant-frontend-20241002.4[${PYTHON_USEDEP}]
-	~dev-python/home-assistant-intents-2024.10.2[${PYTHON_USEDEP}]
-	~dev-python/httpcore-1.0.5[${PYTHON_USEDEP}]
-	>=dev-python/httplib2-0.19.0[${PYTHON_USEDEP}]
-	~dev-python/httpx-0.27.2[${PYTHON_USEDEP}]
-	>=dev-python/hyperframe-5.2.0[${PYTHON_USEDEP}]
-	~dev-python/ifaddr-0.2.0[${PYTHON_USEDEP}]
-	~dev-python/jinja-3.1.4[${PYTHON_USEDEP}]
-	~dev-python/lru-dict-1.3.0[${PYTHON_USEDEP}]
-	>=dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}]
-	>=dev-python/multidict-6.0.2[${PYTHON_USEDEP}]
-	~media-libs/mutagen-1.47.0[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.26.4[${PYTHON_USEDEP}]
-	~dev-python/orjson-3.10.7[${PYTHON_USEDEP}]
-	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
-	~dev-python/paho-mqtt-1.6.1[${PYTHON_USEDEP}]
-	~dev-python/pandas-2.1.4[${PYTHON_USEDEP}]
-	~dev-python/pillow-10.4.0[${PYTHON_USEDEP}]
-	~dev-python/protobuf-python-4.25.4[${PYTHON_USEDEP}]
-	~dev-python/psutil-home-assistant-0.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pycountry-23.12.11[${PYTHON_USEDEP}]
-	>=dev-python/pycryptodome-3.6.6[${PYTHON_USEDEP}]
-	~dev-python/pydantic-1.10.17[${PYTHON_USEDEP}]
-	~dev-python/pyjwt-2.9.0[${PYTHON_USEDEP}]
-	~dev-python/pymicro-vad-1.0.1[${PYTHON_USEDEP}]
-	~dev-python/pynacl-1.5.0[${PYTHON_USEDEP}]
-	~dev-python/pyopenssl-24.2.1[${PYTHON_USEDEP}]
-	~dev-python/pyserial-3.5[${PYTHON_USEDEP}]
-	~dev-python/pyspeex-noise-1.0.2[${PYTHON_USEDEP}]
-	~dev-python/python-slugify-8.0.4[${PYTHON_USEDEP}]
-	~dev-python/PyTurboJPEG-1.7.5[${PYTHON_USEDEP}]
-	~dev-python/pyudev-0.24.1[${PYTHON_USEDEP}]
-	~dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}]
-	~dev-python/requests-2.32.3[${PYTHON_USEDEP}]
-	>=net-analyzer/scapy-2.5.0[${PYTHON_USEDEP}]
-	~dev-python/sqlalchemy-2.0.31[${PYTHON_USEDEP}]
-	>=dev-python/tuf-4.0.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
-	~dev-python/ulid-transform-1.0.2[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
-	~dev-python/uv-0.4.15
-	~dev-python/voluptuous-openapi-0.0.5[${PYTHON_USEDEP}]
-	~dev-python/voluptuous-serialize-2.6.0[${PYTHON_USEDEP}]
-	~dev-python/voluptuous-0.15.2[${PYTHON_USEDEP}]
-	>=dev-python/websockets-11.0.1[${PYTHON_USEDEP}]
-	~dev-python/yarl-1.13.1[${PYTHON_USEDEP}]
-	~dev-python/zeroconf-0.135.0[${PYTHON_USEDEP}]"
+distutils_enable_tests pytest
 
-BDEPEND="${RDEPEND}
+BDEPEND+="
 	test? (
 		~dev-python/astroid-3.3.4[${PYTHON_USEDEP}]
 		~dev-python/coverage-7.6.1[${PYTHON_USEDEP}]
@@ -211,6 +117,7 @@ BDEPEND="${RDEPEND}
 	)
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]"
+
 
 src_prepare() {
     if use test ; then
@@ -263,4 +170,4 @@ pkg_postinst() {
 	readme.gentoo_print_elog
 }
 
-distutils_enable_tests pytest
+
