@@ -18,7 +18,8 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples"
+GENERATED_IUSE="diagrams"
+IUSE="${GENERATED_IUSE} examples"
 
 distutils_enable_tests pytest
 
@@ -56,3 +57,5 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild

@@ -18,13 +18,17 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="isal zlib_ng test"
+GENERATED_IUSE="isal zlib-ng"
+IUSE="${GENERATED_IUSE} isal zlib_ng test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	isal? ( >=dev-python/isal-1.6.1[${PYTHON_USEDEP}] )
+	zlib-ng? ( >=dev-python/zlib-ng-0.4.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]

@@ -24,6 +24,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/referencing-0.31.0[${PYTHON_USEDEP}]
 	dev-python/referencing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

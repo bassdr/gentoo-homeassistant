@@ -72,8 +72,31 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="docs docstest nox pep8test sdist ssh test test-randomorder"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	ssh? ( >=dev-python/bcrypt-3.1.5[${PYTHON_USEDEP}] )
+	sdist? ( dev-python/build[${PYTHON_USEDEP}] )
+	test? ( dev-python/certifi[${PYTHON_USEDEP}] )
+	>=dev-python/cffi-1.12[${PYTHON_USEDEP}]
 	dev-python/cffi[${PYTHON_USEDEP}]
+	pep8test? ( dev-python/check-sdist[${PYTHON_USEDEP}] )
+	pep8test? ( dev-python/click[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/cryptography-vectors-43.0.1[${PYTHON_USEDEP}] )
+	pep8test? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	nox? ( dev-python/nox[${PYTHON_USEDEP}] )
+	test? ( dev-python/pretend[${PYTHON_USEDEP}] )
+	docstest? ( >=dev-python/pyenchant-1.6.11[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-6.2.0[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	test-randomorder? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
+	docstest? ( dev-python/readme-renderer[${PYTHON_USEDEP}] )
+	pep8test? ( dev-python/ruff[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.3.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.1.1[${PYTHON_USEDEP}] )
+	docstest? ( >=dev-python/sphinxcontrib-spelling-4.0.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-libs/openssl-1.0.2o-r6:0=

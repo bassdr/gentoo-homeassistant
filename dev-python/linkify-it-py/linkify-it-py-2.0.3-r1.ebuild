@@ -1,0 +1,48 @@
+# Copyright 2022-2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{12,13{,t}} )
+
+inherit distutils-r1
+
+DESCRIPTION="Links recognition library with FULL unicode support."
+HOMEPAGE="
+  https://pypi.org/project/linkify-it-py/
+  Homepage, https://github.com/tsutsu3/linkify-it-py
+"
+# no tests in sdist, as of 2.0.1
+SRC_URI="
+	https://github.com/tsutsu3/linkify-it-py/archive/v${PV}.tar.gz
+		-> ${P}.gh.tar.gz
+"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="amd64 arm64"
+
+GENERATED_IUSE="benchmark dev doc test"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	dev? ( dev-python/black[${PYTHON_USEDEP}] )
+	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	dev? ( dev-python/isort[${PYTHON_USEDEP}] )
+	doc? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pyproject-flake8[${PYTHON_USEDEP}] )
+	benchmark? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	benchmark? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	doc? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
+	dev-python/uc-micro-py[${PYTHON_USEDEP}]
+	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
+	dev-python/uc-micro-py[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

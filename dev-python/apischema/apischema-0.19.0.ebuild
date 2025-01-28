@@ -17,12 +17,24 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="examples graphql"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-RDEPEND="dev-python/graphql-core[${PYTHON_USEDEP}]"
+GENERATED_DEPEND="
+	examples? ( dev-python/attrs[${PYTHON_USEDEP}] )
+	examples? ( dev-python/bson[${PYTHON_USEDEP}] )
+	examples? ( dev-python/docstring-parser[${PYTHON_USEDEP}] )
+	examples? ( >=dev-python/graphql-core-3.0.0[${PYTHON_USEDEP}] )
+	graphql? ( >=dev-python/graphql-core-3.0.0[${PYTHON_USEDEP}] )
+	examples? ( dev-python/orjson[${PYTHON_USEDEP}] )
+	examples? ( dev-python/pydantic[${PYTHON_USEDEP}] )
+	examples? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	examples? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND} dev-python/graphql-core[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

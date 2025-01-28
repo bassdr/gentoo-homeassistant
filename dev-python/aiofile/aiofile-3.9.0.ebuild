@@ -20,6 +20,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	<dev-python/caio-0.10.0[${PYTHON_USEDEP}]
 	dev-python/caio[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

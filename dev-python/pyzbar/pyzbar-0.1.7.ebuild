@@ -17,7 +17,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+GENERATED_IUSE="scripts"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	scripts? ( >=dev-python/pillow-3.2.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
 	media-gfx/zbar
 "

@@ -17,16 +17,31 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs testing"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/aiosmtpd[${PYTHON_USEDEP}]
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
+	>=dev-python/jaraco-text-1.3[${PYTHON_USEDEP}]
 	dev-python/jaraco-text[${PYTHON_USEDEP}]
 	dev-python/keyring[${PYTHON_USEDEP}]
+	testing? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
+	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
+	testing? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
+	>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
+	testing? ( dev-python/pytest-ruff[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-7.2.5[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/jaraco-text-1.3[${PYTHON_USEDEP}]

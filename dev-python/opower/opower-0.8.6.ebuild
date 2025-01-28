@@ -17,17 +17,25 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/aiozoneinfo-0.1[${PYTHON_USEDEP}]
 	dev-python/aiozoneinfo[${PYTHON_USEDEP}]
+	>=dev-python/arrow-1.2[${PYTHON_USEDEP}]
 	dev-python/arrow[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-43.0.0[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	>=dev-python/pyotp-2.0[${PYTHON_USEDEP}]
 	dev-python/pyotp[${PYTHON_USEDEP}]
+	dev? ( <dev-python/pytest-8[${PYTHON_USEDEP}] )
+	dev? ( <dev-python/python-dotenv-2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}]

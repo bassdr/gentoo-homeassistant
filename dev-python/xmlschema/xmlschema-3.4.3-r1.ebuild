@@ -16,11 +16,30 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="codegen dev docs"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
+	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	<dev-python/elementpath-5.0.0[${PYTHON_USEDEP}]
+	codegen? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
 	dev-python/elementpath[${PYTHON_USEDEP}]
+	dev? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	codegen? ( dev-python/jinja2[${PYTHON_USEDEP}] )
+	dev? ( dev-python/jinja2[${PYTHON_USEDEP}] )
+	docs? ( dev-python/jinja2[${PYTHON_USEDEP}] )
+	dev? ( dev-python/lxml[${PYTHON_USEDEP}] )
+	dev? ( dev-python/lxml-stubs[${PYTHON_USEDEP}] )
+	dev? ( dev-python/memory-profiler[${PYTHON_USEDEP}] )
+	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	dev? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	<dev-python/elementpath-5[${PYTHON_USEDEP}]

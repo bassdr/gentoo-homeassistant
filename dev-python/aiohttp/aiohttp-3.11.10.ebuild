@@ -28,12 +28,22 @@ KEYWORDS="amd64 arm64"
 IUSE="+native-extensions test-rust"
 
 GENERATED_DEPEND="
+	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	dev-python/aiohappyeyeballs[${PYTHON_USEDEP}]
+	>=dev-python/aiosignal-1.1.2[${PYTHON_USEDEP}]
 	dev-python/aiosignal[${PYTHON_USEDEP}]
+	>=dev-python/attrs-17.3.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
+	dev-python/brotli[${PYTHON_USEDEP}]
+	dev-python/brotlicffi[${PYTHON_USEDEP}]
+	>=dev-python/frozenlist-1.1.1[${PYTHON_USEDEP}]
 	dev-python/frozenlist[${PYTHON_USEDEP}]
+	<dev-python/multidict-7.0[${PYTHON_USEDEP}]
 	dev-python/multidict[${PYTHON_USEDEP}]
+	>=dev-python/propcache-0.2.0[${PYTHON_USEDEP}]
 	dev-python/propcache[${PYTHON_USEDEP}]
+	<dev-python/yarl-2.0[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

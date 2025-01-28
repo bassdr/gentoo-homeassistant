@@ -3,19 +3,21 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PyBluez"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Bluetooth Python extension module"
-HOMEPAGE="https://github.com/pybluez/pybluez/ https://pypi.org/project/PyBluez/"
+HOMEPAGE="
+  https://pypi.org/project/PyBluez/
+"
 SRC_URI="$(pypi_sdist_url --no-normalize "${PYPI_PN}" "${PV}" ".zip")"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm arm64 x86"
+KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 

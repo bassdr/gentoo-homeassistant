@@ -13,13 +13,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/asyncssh[${PYTHON_USEDEP}]
+	dev? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="

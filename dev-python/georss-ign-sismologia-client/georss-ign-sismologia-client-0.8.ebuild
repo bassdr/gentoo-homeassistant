@@ -20,7 +20,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/dateparser-1.2.0[${PYTHON_USEDEP}]
 	dev-python/dateparser[${PYTHON_USEDEP}]
+	>=dev-python/georss-client-0.17[${PYTHON_USEDEP}]
 	dev-python/georss-client[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

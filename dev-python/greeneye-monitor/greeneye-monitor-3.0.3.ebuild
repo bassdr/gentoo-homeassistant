@@ -24,6 +24,7 @@ DOCS="README.rst"
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/siobrultech-protocols[${PYTHON_USEDEP}]
+	~dev-python/siobrultech-protocols-0.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/siobrultech-protocols-0.5.0[${PYTHON_USEDEP}]"

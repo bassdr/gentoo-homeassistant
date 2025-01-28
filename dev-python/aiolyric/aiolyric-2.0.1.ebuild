@@ -20,7 +20,10 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]' python3_12)
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/incremental-22.10.0[${PYTHON_USEDEP}]
 	dev-python/incremental[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

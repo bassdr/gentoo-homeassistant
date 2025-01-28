@@ -26,10 +26,15 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-3.10[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
+	~dev-python/awesomeversion-24.6[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
+	~dev-python/mashumaro-3.13[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	~dev-python/orjson-3.10[${PYTHON_USEDEP}]
 	dev-python/webrtc-models[${PYTHON_USEDEP}]
+	~dev-python/webrtc-models-0.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

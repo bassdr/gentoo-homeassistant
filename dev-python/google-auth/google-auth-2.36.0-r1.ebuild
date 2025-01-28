@@ -17,9 +17,22 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="aiohttp enterprise-cert pyopenssl reauth requests"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	aiohttp? ( <dev-python/aiohttp-4.0.0_p0[${PYTHON_USEDEP}] )
+	<dev-python/cachetools-6.0[${PYTHON_USEDEP}]
 	dev-python/cachetools[${PYTHON_USEDEP}]
+	enterprise-cert? ( dev-python/cryptography[${PYTHON_USEDEP}] )
+	pyopenssl? ( >=dev-python/cryptography-38.0.3[${PYTHON_USEDEP}] )
+	>=dev-python/pyasn1-modules-0.2.1[${PYTHON_USEDEP}]
 	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
+	enterprise-cert? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
+	pyopenssl? ( >=dev-python/pyopenssl-20.0.0[${PYTHON_USEDEP}] )
+	reauth? ( >=dev-python/pyu2f-0.1.5[${PYTHON_USEDEP}] )
+	aiohttp? ( <dev-python/requests-3.0.0_p0[${PYTHON_USEDEP}] )
+	requests? ( <dev-python/requests-3.0.0_p0[${PYTHON_USEDEP}] )
+	<dev-python/rsa-5[${PYTHON_USEDEP}]
 	dev-python/rsa[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

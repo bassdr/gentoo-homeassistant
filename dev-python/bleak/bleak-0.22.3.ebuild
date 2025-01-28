@@ -24,7 +24,21 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	<dev-python/bleak-winrt-2.0.0[${PYTHON_USEDEP}]
+	<dev-python/dbus-fast-3[${PYTHON_USEDEP}]
 	dev-python/dbus-fast[${PYTHON_USEDEP}]
+	<dev-python/pyobjc-core-11.0[${PYTHON_USEDEP}]
+	<dev-python/pyobjc-framework-corebluetooth-11.0[${PYTHON_USEDEP}]
+	<dev-python/pyobjc-framework-libdispatch-11.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]' python3_12)
+	<dev-python/winrt-runtime-3[${PYTHON_USEDEP}]
+	<dev-python/winrt-windows-devices-bluetooth-3[${PYTHON_USEDEP}]
+	<dev-python/winrt-windows-devices-bluetooth-advertisement-3[${PYTHON_USEDEP}]
+	<dev-python/winrt-windows-devices-bluetooth-genericattributeprofile-3[${PYTHON_USEDEP}]
+	<dev-python/winrt-windows-devices-enumeration-3[${PYTHON_USEDEP}]
+	<dev-python/winrt-windows-foundation-3[${PYTHON_USEDEP}]
+	<dev-python/winrt-windows-foundation-collections-3[${PYTHON_USEDEP}]
+	<dev-python/winrt-windows-storage-streams-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_{10..11})

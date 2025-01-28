@@ -23,9 +23,20 @@ SRC_URI="https://github.com/secdev/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="all cli doc"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+GENERATED_DEPEND="
+	all? ( >=dev-python/cryptography-2.0[${PYTHON_USEDEP}] )
+	all? ( dev-python/ipython[${PYTHON_USEDEP}] )
+	cli? ( dev-python/ipython[${PYTHON_USEDEP}] )
+	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
+	all? ( dev-python/pyx[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-7.0.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/tox-3.0.0[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/mock[${PYTHON_USEDEP}]

@@ -7,6 +7,9 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 
+SRC_URI="$(pypi_sdist_url --no-normalize "python-homewizard-energy" "v7.0.0")"
+S="${WORKDIR}/python-homewizard-energy-v7.0.0"
+
 DESCRIPTION="Asynchronous Python client for the HomeWizard Energy"
 HOMEPAGE="
   https://pypi.org/project/python-homewizard-energy/
@@ -25,9 +28,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	<dev-python/async-timeout-5.0.0[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	<dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
 	dev-python/backoff[${PYTHON_USEDEP}]
+	<dev-python/multidict-7.0.0[${PYTHON_USEDEP}]
 	dev-python/multidict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

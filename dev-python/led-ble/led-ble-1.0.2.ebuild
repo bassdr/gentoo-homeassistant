@@ -19,15 +19,22 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
+	>=dev-python/bleak-retry-connector-2.3.0[${PYTHON_USEDEP}]
 	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
+	>=dev-python/flux-led-0.28.32[${PYTHON_USEDEP}]
 	dev-python/flux-led[${PYTHON_USEDEP}]
+	docs? ( <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]

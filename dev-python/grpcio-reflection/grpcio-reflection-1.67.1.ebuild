@@ -21,7 +21,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/grpcio-1.67.1[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]
+	<dev-python/protobuf-6.0dev[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

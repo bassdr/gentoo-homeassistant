@@ -25,11 +25,18 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-3.10[${PYTHON_USEDEP}]
+	<dev-python/aiomqtt-3.0[${PYTHON_USEDEP}]
 	dev-python/aiomqtt[${PYTHON_USEDEP}]
+	<dev-python/cachetools-6.0[${PYTHON_USEDEP}]
 	dev-python/cachetools[${PYTHON_USEDEP}]
+	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
+	<dev-python/numpy-3.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
+	<dev-python/pillow-12[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
+	>=dev-python/svg-py-1.4.2[${PYTHON_USEDEP}]
 	dev-python/svg-py[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

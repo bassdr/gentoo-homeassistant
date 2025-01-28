@@ -15,13 +15,20 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-automodapi[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxcontrib-httpdomain[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]"

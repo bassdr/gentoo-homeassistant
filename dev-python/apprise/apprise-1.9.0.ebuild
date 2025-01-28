@@ -20,6 +20,7 @@ IUSE="+dbus mqtt"
 
 GENERATED_DEPEND="
 	dev-python/certifi[${PYTHON_USEDEP}]
+	>=dev-python/click-5.0[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/markdown[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]

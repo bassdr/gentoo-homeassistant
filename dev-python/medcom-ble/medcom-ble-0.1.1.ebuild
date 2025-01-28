@@ -23,7 +23,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
+	>=dev-python/bleak-retry-connector-1.8.0[${PYTHON_USEDEP}]
 	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

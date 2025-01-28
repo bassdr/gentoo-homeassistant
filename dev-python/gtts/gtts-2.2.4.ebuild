@@ -16,15 +16,27 @@ SRC_URI="https://github.com/pndurette/${PN}/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs tests"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/click[${PYTHON_USEDEP}]
+	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	tests? ( dev-python/mock[${PYTHON_USEDEP}] )
+	tests? ( ~dev-python/pytest-4.6.11[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
+	tests? ( dev-python/six[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-click[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	tests? ( dev-python/testfixtures[${PYTHON_USEDEP}] )
+	docs? ( dev-python/towncrier[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 dev-python/six[${PYTHON_USEDEP}]

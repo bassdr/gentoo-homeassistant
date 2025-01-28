@@ -21,10 +21,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/bitstring[${PYTHON_USEDEP}]
+	<dev-python/click-8.2.0[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
+	<dev-python/inquirerpy-0.4.0[${PYTHON_USEDEP}]
 	dev-python/inquirerpy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

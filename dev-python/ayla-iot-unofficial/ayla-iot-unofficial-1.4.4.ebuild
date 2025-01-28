@@ -23,8 +23,11 @@ RESTRICT="!test? ( test )"
 DOCS=""
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.8.4[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	>=dev-python/ujson-5.8.0[${PYTHON_USEDEP}]
 	dev-python/ujson[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

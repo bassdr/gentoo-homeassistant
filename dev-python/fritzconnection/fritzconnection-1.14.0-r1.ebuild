@@ -15,13 +15,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test +qr"
+GENERATED_IUSE="qr"
+IUSE="${GENERATED_IUSE} test +qr"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	qr? ( >=dev-python/segno-1.4.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]

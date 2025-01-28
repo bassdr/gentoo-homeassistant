@@ -16,11 +16,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
+	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	test? ( dev-python/mock[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-futures[${PYTHON_USEDEP}]
 "

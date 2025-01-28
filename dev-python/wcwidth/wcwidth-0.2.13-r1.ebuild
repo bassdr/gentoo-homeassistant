@@ -28,3 +28,5 @@ python_install_all() {
 	dodoc docs/intro.rst
 	distutils-r1_python_install_all
 }
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild

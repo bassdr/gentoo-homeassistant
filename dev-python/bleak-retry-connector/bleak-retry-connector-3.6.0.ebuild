@@ -24,8 +24,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
+	>=dev-python/bluetooth-adapters-0.15.2[${PYTHON_USEDEP}]
 	dev-python/bluetooth-adapters[${PYTHON_USEDEP}]
+	>=dev-python/dbus-fast-1.14.0[${PYTHON_USEDEP}]
 	dev-python/dbus-fast[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

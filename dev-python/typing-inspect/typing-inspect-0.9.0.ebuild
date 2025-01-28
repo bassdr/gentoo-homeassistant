@@ -21,7 +21,10 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/mypy-extensions-0.3.0[${PYTHON_USEDEP}]
 	dev-python/mypy-extensions[${PYTHON_USEDEP}]
+	>=dev-python/typing-3.7.4[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -20,6 +20,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiolifx-0.8.6[${PYTHON_USEDEP}]
 	dev-python/aiolifx[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

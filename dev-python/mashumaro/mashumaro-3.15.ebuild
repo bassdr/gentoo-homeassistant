@@ -15,12 +15,18 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="msgpack orjson toml yaml"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	msgpack? ( >=dev-python/msgpack-0.5.6[${PYTHON_USEDEP}] )
+	orjson? ( dev-python/orjson[${PYTHON_USEDEP}] )
+	yaml? ( >=dev-python/pyyaml-3.13[${PYTHON_USEDEP}] )
+	toml? ( >=dev-python/tomli-w-1.0[${PYTHON_USEDEP}] )
+	>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

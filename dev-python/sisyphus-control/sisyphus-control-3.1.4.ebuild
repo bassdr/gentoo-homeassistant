@@ -23,9 +23,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	<dev-python/netifaces-0.12.0[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]
+	<dev-python/python-engineio-v3-4.0.0[${PYTHON_USEDEP}]
 	dev-python/python-engineio-v3[${PYTHON_USEDEP}]
+	<dev-python/python-socketio-v4-5.0.0[${PYTHON_USEDEP}]
 	dev-python/python-socketio-v4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

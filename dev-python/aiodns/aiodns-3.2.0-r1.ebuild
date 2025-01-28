@@ -22,6 +22,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 GENERATED_DEPEND="
+	>=dev-python/pycares-4.0.0[${PYTHON_USEDEP}]
 	dev-python/pycares[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

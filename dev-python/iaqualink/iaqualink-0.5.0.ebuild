@@ -23,6 +23,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/httpx[${PYTHON_USEDEP}]
+	dev-python/httpx[http2,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"

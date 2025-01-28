@@ -22,7 +22,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/pint-0.19[${PYTHON_USEDEP}]
 	dev-python/pint[${PYTHON_USEDEP}]
+	>=dev-python/psychrolib-2.5.0[${PYTHON_USEDEP}]
 	dev-python/psychrolib[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

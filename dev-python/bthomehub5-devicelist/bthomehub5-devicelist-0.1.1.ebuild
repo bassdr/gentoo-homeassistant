@@ -22,6 +22,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/html-table-parser-python3[${PYTHON_USEDEP}]
+	~dev-python/html-table-parser-python3-0.1.5[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

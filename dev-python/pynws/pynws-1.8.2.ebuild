@@ -17,7 +17,8 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+retry test"
+GENERATED_IUSE="retry"
+IUSE="${GENERATED_IUSE} +retry test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
@@ -25,6 +26,7 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/metar[${PYTHON_USEDEP}]
+	retry? ( dev-python/tenacity[${PYTHON_USEDEP}] )
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

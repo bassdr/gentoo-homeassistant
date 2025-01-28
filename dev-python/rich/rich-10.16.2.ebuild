@@ -22,10 +22,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="jupyter"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	>=dev-python/colorama-0.4.0[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
+	>=dev-python/commonmark-0.9.0[${PYTHON_USEDEP}]
 	dev-python/commonmark[${PYTHON_USEDEP}]
+	>=dev-python/dataclasses-0.7[${PYTHON_USEDEP}]
+	jupyter? ( >=dev-python/ipywidgets-7.5.1[${PYTHON_USEDEP}] )
+	>=dev-python/pygments-2.6.0[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/colorama[${PYTHON_USEDEP}]

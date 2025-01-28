@@ -21,16 +21,36 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/codespell-2.3.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/coverage-7.6.0[${PYTHON_USEDEP}] )
+	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
+	<dev-python/orjson-4.0.0[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/orjson-3.10.6[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-8.2.2[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/ruff-0.5.2[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
+	<dev-python/yarl-2.0.0[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/yarl-1.9.4[${PYTHON_USEDEP}] )
+	dev? ( ~dev-vcs/pre-commit-3.7.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.3.0[${PYTHON_USEDEP}]

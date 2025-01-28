@@ -24,6 +24,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

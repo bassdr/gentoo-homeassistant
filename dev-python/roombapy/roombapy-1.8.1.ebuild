@@ -16,15 +16,21 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test +mqtt"
+GENERATED_IUSE="cli"
+IUSE="${GENERATED_IUSE} test +mqtt"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	cli? ( <dev-python/click-9.0[${PYTHON_USEDEP}] )
+	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
+	>=dev-python/orjson-3.9.13[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	<dev-python/paho-mqtt-1.7.0[${PYTHON_USEDEP}]
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
+	cli? ( <dev-python/tabulate-0.10[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	mqtt? ( >=dev-python/paho-mqtt-1.6.1[${PYTHON_USEDEP}] )

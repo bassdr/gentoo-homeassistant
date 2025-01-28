@@ -20,12 +20,38 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="serial test repl simulator"
+GENERATED_IUSE="all development documentation repl serial"
+IUSE="${GENERATED_IUSE} serial test repl simulator"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-RDEPEND="
+GENERATED_DEPEND="
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.6[${PYTHON_USEDEP}]' python3_12)
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_12)
+	development? ( >=dev-python/build-1.1.1[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/codespell-2.2.6[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/coverage-7.4.3[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/pylint-3.1.0[${PYTHON_USEDEP}] )
+	all? ( dev-python/pymodbus[development,documentation,repl,serial,simulator,${PYTHON_USEDEP}] )
+	repl? ( >=dev-python/pymodbus-repl-2.0.3[${PYTHON_USEDEP}] )
+	serial? ( >=dev-python/pyserial-3.5[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/pytest-8.1.0[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/pytest-asyncio-0.23.5_p1[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/pytest-profiling-1.7.0[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/pytest-xdist-3.5.0[${PYTHON_USEDEP}] )
+	documentation? ( >=dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/ruff-0.3.3[${PYTHON_USEDEP}] )
+	documentation? ( >=dev-python/sphinx-5.3.0[${PYTHON_USEDEP}] )
+	documentation? ( >=dev-python/sphinx-rtd-theme-1.1.1[${PYTHON_USEDEP}] )
+	development? ( >=dev-python/twine-5.0.0[${PYTHON_USEDEP}] )
+	development? ( dev-python/types-pygments[${PYTHON_USEDEP}] )
+	development? ( dev-python/types-pyserial[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	serial? (
 		>=dev-python/pyserial-3.5[${PYTHON_USEDEP}]
 	)

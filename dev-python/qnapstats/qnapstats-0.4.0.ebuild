@@ -21,7 +21,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/requests-1.0.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	>=dev-python/xmltodict-0.10.0[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

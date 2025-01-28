@@ -16,12 +16,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="aiohttp"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	aiohttp? ( <dev-python/aiohttp-4.0.0[speedups,${PYTHON_USEDEP}] )
+	<dev-python/mashumaro-4.0.0[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

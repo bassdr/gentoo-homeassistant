@@ -22,6 +22,29 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev docs ssh test"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	dev? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
+	test? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
+	dev-python/importlib-resources[${PYTHON_USEDEP}]
+	dev? ( dev-python/paramiko[${PYTHON_USEDEP}] )
+	ssh? ( dev-python/paramiko[${PYTHON_USEDEP}] )
+	test? ( dev-python/paramiko[${PYTHON_USEDEP}] )
+	dev? ( dev-python/psutil[${PYTHON_USEDEP}] )
+	test? ( dev-python/psutil[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
+	dev-python/pywin32[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (

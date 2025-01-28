@@ -22,8 +22,10 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/aenum[${PYTHON_USEDEP}]
+	<dev-python/pydantic-3[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	<dev-python/urllib3-2.1.0[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

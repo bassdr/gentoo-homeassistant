@@ -17,11 +17,19 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="all gssapi lz4 snappy zstd"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	all? ( dev-python/cramjam[${PYTHON_USEDEP}] )
+	snappy? ( dev-python/cramjam[${PYTHON_USEDEP}] )
+	zstd? ( dev-python/cramjam[${PYTHON_USEDEP}] )
+	all? ( dev-python/gssapi[${PYTHON_USEDEP}] )
+	gssapi? ( dev-python/gssapi[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/lz4-3.1.3[${PYTHON_USEDEP}] )
+	lz4? ( >=dev-python/lz4-3.1.3[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

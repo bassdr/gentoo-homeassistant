@@ -26,6 +26,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/pycrc16[${PYTHON_USEDEP}]
+	~dev-python/pycrc16-0.1.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pycrc16[${PYTHON_USEDEP}]"

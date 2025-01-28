@@ -23,6 +23,7 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/colorlog[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.12.4[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

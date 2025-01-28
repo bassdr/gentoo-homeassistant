@@ -25,9 +25,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/attrs-23.2.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
+	>=dev-python/cffi-1.14[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
 	dev-python/outcome[${PYTHON_USEDEP}]
+	>=dev-python/sniffio-1.3.0[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
 	dev-python/sortedcontainers[${PYTHON_USEDEP}]
 "

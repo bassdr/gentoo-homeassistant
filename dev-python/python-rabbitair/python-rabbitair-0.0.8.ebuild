@@ -24,6 +24,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

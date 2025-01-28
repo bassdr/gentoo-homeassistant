@@ -23,6 +23,8 @@ DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/anyio[${PYTHON_USEDEP}]
+	dev-python/colorama[${PYTHON_USEDEP}]
+	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/anyio[${PYTHON_USEDEP}]"

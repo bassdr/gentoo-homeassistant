@@ -19,20 +19,33 @@ HOMEPAGE="
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/aiofiles-23[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	>=dev-python/asyncclick-8.1.7.1[${PYTHON_USEDEP}]
 	dev-python/asyncclick[${PYTHON_USEDEP}]
+	>=dev-python/firebase-messaging-0.4.0[${PYTHON_USEDEP}]
 	dev-python/firebase-messaging[${PYTHON_USEDEP}]
+	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
+	<dev-python/oauthlib-4[${PYTHON_USEDEP}]
 	dev-python/oauthlib[${PYTHON_USEDEP}]
+	>=dev-python/pytz-2022.0[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
+	docs? ( <dev-python/sphinx-7.2.6[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] )
+	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	>=dev-python/websockets-13.0.0[${PYTHON_USEDEP}]
 	dev-python/websockets[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

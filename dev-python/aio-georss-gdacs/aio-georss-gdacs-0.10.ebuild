@@ -20,7 +20,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aio-georss-client-0.13[${PYTHON_USEDEP}]
 	dev-python/aio-georss-client[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.9.0[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

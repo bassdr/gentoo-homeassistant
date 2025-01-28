@@ -21,6 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	<dev-python/pycryptodome-4[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "

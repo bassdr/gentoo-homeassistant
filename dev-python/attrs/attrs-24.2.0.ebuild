@@ -22,6 +22,51 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="benchmark cov dev docs tests"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	docs? ( dev-python/cogapp[${PYTHON_USEDEP}] )
+	cov? ( >=dev-python/coverage-5.3[toml,${PYTHON_USEDEP}] )
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	benchmark? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+	cov? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+	dev? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+	tests? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+	dev-python/importlib-metadata[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
+	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
+	benchmark? ( dev-python/pympler[${PYTHON_USEDEP}] )
+	cov? ( dev-python/pympler[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pympler[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pympler[${PYTHON_USEDEP}] )
+	benchmark? ( >=dev-python/pytest-4.3.0[${PYTHON_USEDEP}] )
+	cov? ( >=dev-python/pytest-4.3.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-4.3.0[${PYTHON_USEDEP}] )
+	tests? ( >=dev-python/pytest-4.3.0[${PYTHON_USEDEP}] )
+	benchmark? ( dev-python/pytest-codspeed[${PYTHON_USEDEP}] )
+	dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]
+	dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]
+	dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]
+	dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]
+	dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]
+	benchmark? ( dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}] )
+	cov? ( dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxcontrib-towncrier[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/towncrier-24.7[${PYTHON_USEDEP}] )
+	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	>=dev-python/hatch-fancy-pypi-readme-23.2.0[${PYTHON_USEDEP}]
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]

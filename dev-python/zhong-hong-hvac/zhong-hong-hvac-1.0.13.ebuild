@@ -22,6 +22,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/attrs-23.1.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

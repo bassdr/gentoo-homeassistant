@@ -21,7 +21,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
 	dev-python/bitarray[${PYTHON_USEDEP}]
+	<dev-python/crc-5.0.0[${PYTHON_USEDEP}]
 	dev-python/crc[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

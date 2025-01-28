@@ -17,13 +17,24 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="ci dev lint test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	test? ( >=dev-python/betamax-0.8[${PYTHON_USEDEP}] )
+	ci? ( dev-python/coveralls[${PYTHON_USEDEP}] )
+	dev? ( dev-python/packaging[${PYTHON_USEDEP}] )
+	dev? ( dev-python/prawcore[lint,${PYTHON_USEDEP}] )
+	dev? ( dev-python/prawcore[test,${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-2.7.3[${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.6.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	lint? ( >=dev-python/ruff-0.0.291[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/urllib3-1.26*[${PYTHON_USEDEP}] )
+	lint? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/requests-2.6.0[${PYTHON_USEDEP}]"

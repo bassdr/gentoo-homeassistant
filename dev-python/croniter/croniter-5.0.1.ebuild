@@ -19,6 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	>dev-python/pytz-2021.1[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

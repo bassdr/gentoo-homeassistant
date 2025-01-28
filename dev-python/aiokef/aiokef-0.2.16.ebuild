@@ -14,14 +14,24 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev docs test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	docs? ( dev-python/m2r2[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxcontrib-apidoc[${PYTHON_USEDEP}] )
 	dev-python/tenacity[${PYTHON_USEDEP}]
+	test? ( dev-python/tox[${PYTHON_USEDEP}] )
+	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/tenacity[${PYTHON_USEDEP}]

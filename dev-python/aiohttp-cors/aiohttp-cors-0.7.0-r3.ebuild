@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION="CORS support for aiohttp"
 HOMEPAGE="
-  https://pypi.org/project/aiohttp_cors/
+  https://pypi.org/project/aiohttp-cors/
 "
 SRC_URI="
 	https://github.com/aio-libs/aiohttp-cors/archive/v${PV}.tar.gz
@@ -22,7 +22,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-1.1[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/typing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-1.1.1[${PYTHON_USEDEP}]
@@ -56,4 +58,3 @@ python_test() {
 	epytest -o addopts= -p aiohttp -p asyncio --asyncio-mode=auto
 }
 
-# PYPI_PN could not be inserted in this ebuild

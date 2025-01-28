@@ -17,16 +17,26 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="lint test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	test? ( ~dev-python/asynctest-0.13.0[${PYTHON_USEDEP}] )
+	>=dev-python/backoff-2.2.1[${PYTHON_USEDEP}]
 	dev-python/backoff[${PYTHON_USEDEP}]
+	lint? ( ~dev-python/black-23.3.0[${PYTHON_USEDEP}] )
+	>=dev-python/cryptography-42.0.4[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	lint? ( ~dev-python/isort-5.12.0[${PYTHON_USEDEP}] )
+	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	test? ( ~dev-python/requests-mock-1.11.0[${PYTHON_USEDEP}] )
+	>=dev-python/websockets-12.0[${PYTHON_USEDEP}]
 	dev-python/websockets[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

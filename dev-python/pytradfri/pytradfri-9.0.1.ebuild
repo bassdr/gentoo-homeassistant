@@ -15,12 +15,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+async test"
+GENERATED_IUSE="async"
+IUSE="${GENERATED_IUSE} +async test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-RDEPEND="async? ( dev-python/aiocoap[${PYTHON_USEDEP}] dev-python/dtlssocket[${PYTHON_USEDEP}] )"
+GENERATED_DEPEND="
+	async? ( ~dev-python/aiocoap-0.4.5[${PYTHON_USEDEP}] )
+	async? ( ~dev-python/dtlssocket-0.1.12[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND} async? ( dev-python/aiocoap[${PYTHON_USEDEP}] dev-python/dtlssocket[${PYTHON_USEDEP}] )"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

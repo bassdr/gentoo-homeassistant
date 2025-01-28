@@ -21,6 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

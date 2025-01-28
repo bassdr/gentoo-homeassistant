@@ -21,7 +21,10 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	dev-python/importlib-resources[${PYTHON_USEDEP}]
+	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
+	<dev-python/unicode-rbnf-3[${PYTHON_USEDEP}]
 	dev-python/unicode-rbnf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

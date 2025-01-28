@@ -21,6 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

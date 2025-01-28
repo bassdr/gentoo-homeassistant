@@ -21,8 +21,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/async-timeout-4.0[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	>=dev-python/bitstring-3.1[${PYTHON_USEDEP}]
 	dev-python/bitstring[${PYTHON_USEDEP}]
+	>=dev-python/pyserial-asyncio-0.6[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

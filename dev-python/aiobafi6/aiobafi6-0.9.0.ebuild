@@ -20,7 +20,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/protobuf-3.20[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
+	>=dev-python/zeroconf-0.38[${PYTHON_USEDEP}]
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

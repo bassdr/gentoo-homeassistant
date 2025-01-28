@@ -14,11 +14,21 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="socks tests"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+GENERATED_DEPEND="
+	tests? ( dev-python/async-timeout[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	socks? ( >=dev-python/siosocks-0.2.0[${PYTHON_USEDEP}] )
+	tests? ( dev-python/siosocks[${PYTHON_USEDEP}] )
+	tests? ( dev-python/trustme[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

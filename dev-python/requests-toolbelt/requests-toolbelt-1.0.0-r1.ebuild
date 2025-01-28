@@ -26,6 +26,7 @@ KEYWORDS="amd64 arm64"
 IUSE="test-rust"
 
 GENERATED_DEPEND="
+	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

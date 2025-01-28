@@ -7,12 +7,11 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="pyEGPS"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Controlling Energenie Power Strips with python."
 HOMEPAGE="
-  https://pypi.org/project/pyegps/
+  https://pypi.org/project/pyEGPS/
   Homepage, https://github.com/gnumpi/pyegps
 "
 

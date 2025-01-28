@@ -22,8 +22,10 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/docopt[${PYTHON_USEDEP}]
+	>=dev-python/pytz-2014.9[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-0.7.8[${PYTHON_USEDEP}]
 	dev-python/sqlalchemy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

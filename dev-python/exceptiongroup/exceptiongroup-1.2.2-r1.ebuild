@@ -26,3 +26,6 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

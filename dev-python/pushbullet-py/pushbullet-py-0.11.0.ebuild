@@ -24,6 +24,7 @@ DOCS="readme.rst"
 
 GENERATED_DEPEND="
 	dev-python/python-magic[${PYTHON_USEDEP}]
+	>=dev-python/requests-1.0.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/websocket-client[${PYTHON_USEDEP}]
 "

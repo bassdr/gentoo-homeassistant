@@ -23,6 +23,7 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/netifaces[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	~dev-python/pycryptodome-3.10[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/netifaces[${PYTHON_USEDEP}]

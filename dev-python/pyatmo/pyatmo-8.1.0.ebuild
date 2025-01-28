@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/oauthlib[${PYTHON_USEDEP}]
+	~dev-python/oauthlib-3.1[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	~dev-python/requests-2.24[${PYTHON_USEDEP}]
+	<dev-python/requests-oauthlib-3.0[${PYTHON_USEDEP}]
 	dev-python/requests-oauthlib[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

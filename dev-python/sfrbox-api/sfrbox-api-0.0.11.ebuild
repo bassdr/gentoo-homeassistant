@@ -18,14 +18,19 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="cli"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	cli? ( >=dev-python/click-8.0.1[${PYTHON_USEDEP}] )
+	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.23.1[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
+	>=dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

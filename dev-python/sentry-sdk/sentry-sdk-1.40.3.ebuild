@@ -25,8 +25,51 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="aiohttp arq asyncpg beam bottle celery chalice clickhouse-driver django falcon fastapi flask grpcio httpx huey loguru opentelemetry opentelemetry-experimental pure_eval pymongo pyspark quart rq sanic sqlalchemy starlette starlite tornado"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	aiohttp? ( >=dev-python/aiohttp-3.5[${PYTHON_USEDEP}] )
+	beam? ( >=dev-python/apache-beam-2.12[${PYTHON_USEDEP}] )
+	arq? ( >=dev-python/arq-0.23[${PYTHON_USEDEP}] )
+	pure_eval? ( dev-python/asttokens[${PYTHON_USEDEP}] )
+	asyncpg? ( >=dev-python/asyncpg-0.23[${PYTHON_USEDEP}] )
+	flask? ( >=dev-python/blinker-1.1[${PYTHON_USEDEP}] )
+	quart? ( >=dev-python/blinker-1.1[${PYTHON_USEDEP}] )
+	bottle? ( >=dev-python/bottle-0.12.13[${PYTHON_USEDEP}] )
+	celery? ( >=dev-python/celery-3[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
+	chalice? ( >=dev-python/chalice-1.16.0[${PYTHON_USEDEP}] )
+	clickhouse-driver? ( >=dev-python/clickhouse-driver-0.2.0[${PYTHON_USEDEP}] )
+	django? ( >=dev-python/django-1.8[${PYTHON_USEDEP}] )
+	pure_eval? ( dev-python/executing[${PYTHON_USEDEP}] )
+	falcon? ( >=dev-python/falcon-1.4[${PYTHON_USEDEP}] )
+	fastapi? ( >=dev-python/fastapi-0.79.0[${PYTHON_USEDEP}] )
+	flask? ( >=dev-python/flask-0.11[${PYTHON_USEDEP}] )
+	grpcio? ( >=dev-python/grpcio-1.21.1[${PYTHON_USEDEP}] )
+	httpx? ( >=dev-python/httpx-0.16.0[${PYTHON_USEDEP}] )
+	huey? ( >=dev-python/huey-2[${PYTHON_USEDEP}] )
+	loguru? ( >=dev-python/loguru-0.5[${PYTHON_USEDEP}] )
+	flask? ( dev-python/markupsafe[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-distro-0.40_beta0[${PYTHON_USEDEP}] )
+	opentelemetry? ( >=dev-python/opentelemetry-distro-0.35_beta0[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-instrumentation-aiohttp-client-0.40_beta0[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-instrumentation-django-0.40_beta0[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-instrumentation-fastapi-0.40_beta0[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-instrumentation-flask-0.40_beta0[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-instrumentation-requests-0.40_beta0[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-instrumentation-sqlite3-0.40_beta0[${PYTHON_USEDEP}] )
+	opentelemetry-experimental? ( ~dev-python/opentelemetry-instrumentation-urllib-0.40_beta0[${PYTHON_USEDEP}] )
+	pure_eval? ( dev-python/pure-eval[${PYTHON_USEDEP}] )
+	pymongo? ( >=dev-python/pymongo-3.1[${PYTHON_USEDEP}] )
+	pyspark? ( >=dev-python/pyspark-2.4.4[${PYTHON_USEDEP}] )
+	quart? ( >=dev-python/quart-0.16.1[${PYTHON_USEDEP}] )
+	rq? ( >=dev-python/rq-0.6[${PYTHON_USEDEP}] )
+	sanic? ( >=dev-python/sanic-0.8[${PYTHON_USEDEP}] )
+	sqlalchemy? ( >=dev-python/sqlalchemy-1.2[${PYTHON_USEDEP}] )
+	starlette? ( >=dev-python/starlette-0.19.1[${PYTHON_USEDEP}] )
+	starlite? ( >=dev-python/starlite-1.48[${PYTHON_USEDEP}] )
+	tornado? ( >=dev-python/tornado-5[${PYTHON_USEDEP}] )
+	>=dev-python/urllib3-1.25.7[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

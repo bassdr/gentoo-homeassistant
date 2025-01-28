@@ -16,11 +16,23 @@ SRC_URI="https://github.com/konradhalas/${PN}/archive/refs/tags/v${PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+GENERATED_DEPEND="
+	dev? ( dev-python/black[${PYTHON_USEDEP}] )
+	dev? ( dev-python/coveralls[${PYTHON_USEDEP}] )
+	dev-python/dataclasses[${PYTHON_USEDEP}]
+	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pylint[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-5[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

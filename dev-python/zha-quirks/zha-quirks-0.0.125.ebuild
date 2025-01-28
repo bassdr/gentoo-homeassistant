@@ -15,12 +15,15 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="testing"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 	dev-python/zigpy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -23,8 +23,15 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
+	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	test? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	dev-python/tzdata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

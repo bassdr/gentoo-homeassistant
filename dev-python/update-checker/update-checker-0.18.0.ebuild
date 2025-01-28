@@ -15,7 +15,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev lint test"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	dev? ( dev-python/black[${PYTHON_USEDEP}] )
+	lint? ( dev-python/black[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	lint? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-2.7.3[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-2.7.3[${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.3.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

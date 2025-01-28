@@ -25,7 +25,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/marshmallow-4.0.0[${PYTHON_USEDEP}]
 	dev-python/marshmallow[${PYTHON_USEDEP}]
+	<dev-python/typing-inspect-1[${PYTHON_USEDEP}]
 	dev-python/typing-inspect[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

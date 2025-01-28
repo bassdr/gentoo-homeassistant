@@ -25,11 +25,17 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/async-interrupt-1.1.1[${PYTHON_USEDEP}]
 	dev-python/async-interrupt[${PYTHON_USEDEP}]
+	>=dev-python/bleak-0.21.1[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
+	>=dev-python/bleak-retry-connector-3.3.0[${PYTHON_USEDEP}]
 	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
+	>=dev-python/bluetooth-adapters-0.16.1[${PYTHON_USEDEP}]
 	dev-python/bluetooth-adapters[${PYTHON_USEDEP}]
+	>=dev-python/bluetooth-auto-recovery-1.2.3[${PYTHON_USEDEP}]
 	dev-python/bluetooth-auto-recovery[${PYTHON_USEDEP}]
+	>=dev-python/bluetooth-data-tools-1.16.0[${PYTHON_USEDEP}]
 	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

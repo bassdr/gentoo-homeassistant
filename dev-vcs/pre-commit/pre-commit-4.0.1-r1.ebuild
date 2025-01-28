@@ -23,7 +23,18 @@ KEYWORDS="amd64 arm64"
 LICENSE="MIT"
 SLOT="0"
 
-GENERATED_DEPEND=""
+GENERATED_DEPEND="
+	>=dev-python/cfgv-2.0.0[${PYTHON_USEDEP}]
+	dev-python/cfgv[${PYTHON_USEDEP}]
+	>=dev-python/identify-1.0.0[${PYTHON_USEDEP}]
+	dev-python/identify[${PYTHON_USEDEP}]
+	>=dev-python/nodeenv-0.11.1[${PYTHON_USEDEP}]
+	dev-python/nodeenv[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	>=dev-python/virtualenv-20.10.0[${PYTHON_USEDEP}]
+	dev-python/virtualenv[${PYTHON_USEDEP}]
+"
 RDEPEND="${GENERATED_DEPEND}
 
 	dev-vcs/git

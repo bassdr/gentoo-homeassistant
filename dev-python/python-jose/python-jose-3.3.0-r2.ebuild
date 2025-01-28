@@ -27,9 +27,17 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # TODO: require only one crypto backend?
+GENERATED_IUSE="cryptography pycrypto pycryptodome"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	cryptography? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )
+	!=dev-python/ecdsa-0.15[${PYTHON_USEDEP}]
 	dev-python/ecdsa[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]
+	pycrypto? ( dev-python/pyasn1[${PYTHON_USEDEP}] )
+	pycryptodome? ( dev-python/pyasn1[${PYTHON_USEDEP}] )
+	pycrypto? ( <dev-python/pycrypto-2.7.0[${PYTHON_USEDEP}] )
+	pycryptodome? ( <dev-python/pycryptodome-4.0.0[${PYTHON_USEDEP}] )
 	dev-python/rsa[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

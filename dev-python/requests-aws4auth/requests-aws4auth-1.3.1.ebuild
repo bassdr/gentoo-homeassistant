@@ -5,22 +5,25 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
+PYPI_PN="requests_aws4auth"
 inherit distutils-r1 pypi
 
 DESCRIPTION="AWS4 authentication for Requests"
 HOMEPAGE="
-  https://pypi.org/project/requests-aws4auth/
+  https://pypi.org/project/requests_aws4auth/
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="httpx"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	httpx? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

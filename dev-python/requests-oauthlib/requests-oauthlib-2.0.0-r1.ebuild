@@ -21,8 +21,13 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="rsa"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	>=dev-python/oauthlib-3.0.0[${PYTHON_USEDEP}]
 	dev-python/oauthlib[${PYTHON_USEDEP}]
+	rsa? ( >=dev-python/oauthlib-3.0.0[signedtoken,${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -12,7 +12,7 @@ inherit distutils-r1
 MY_P=${P/_}
 DESCRIPTION="YAML parser and emitter for Python"
 HOMEPAGE="
-  https://pypi.org/project/PyYAML/
+  https://pypi.org/project/pyyaml/
   Bug Tracker, https://github.com/yaml/pyyaml/issues
   CI, https://github.com/yaml/pyyaml/actions
   Documentation, https://pyyaml.org/wiki/PyYAMLDocumentation
@@ -62,4 +62,3 @@ python_install_all() {
 		docompress -x /usr/share/doc/${PF}
 	fi
 }
-# PYPI_PN could not be inserted in this ebuild

@@ -17,15 +17,19 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+china test"
+GENERATED_IUSE="china"
+IUSE="${GENERATED_IUSE} +china test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/httpx[${PYTHON_USEDEP}]
+	china? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	dev-python/pillow[${PYTHON_USEDEP}]
+	>=dev-python/pycryptodome-3.4[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-2.1.0[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

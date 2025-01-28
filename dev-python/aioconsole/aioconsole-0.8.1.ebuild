@@ -15,11 +15,19 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+GENERATED_DEPEND="
+	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-repeat[${PYTHON_USEDEP}] )
+	dev-python/uvloop[${PYTHON_USEDEP}]
+"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

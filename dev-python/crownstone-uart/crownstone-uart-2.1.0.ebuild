@@ -25,7 +25,9 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/crownstone-core[${PYTHON_USEDEP}]
+	~dev-python/crownstone-core-3.0[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
+	~dev-python/pyserial-3.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/crownstone-core-3.0[${PYTHON_USEDEP}]

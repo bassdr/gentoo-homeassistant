@@ -23,6 +23,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/opuslib[${PYTHON_USEDEP}]
+	~dev-python/opuslib-3.0.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/opuslib-3.0.1[${PYTHON_USEDEP}]"

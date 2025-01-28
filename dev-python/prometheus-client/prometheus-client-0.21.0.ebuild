@@ -17,7 +17,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+GENERATED_IUSE="twisted"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/twisted[${PYTHON_USEDEP}]
 "
 

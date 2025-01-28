@@ -15,15 +15,26 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	test? ( ~dev-python/codespell-2.3.0[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/isort-5.13.2[${PYTHON_USEDEP}] )
 	dev-python/music-assistant-models[${PYTHON_USEDEP}]
+	~dev-python/music-assistant-models-1.1.3[${PYTHON_USEDEP}]
+	test? ( ~dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )
+	>=dev-python/orjson-3.9[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	test? ( ~dev-python/pre-commit-hooks-5.0.0[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/ruff-0.7.4[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/tomli-2.1.0[${PYTHON_USEDEP}] )
+	test? ( ~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

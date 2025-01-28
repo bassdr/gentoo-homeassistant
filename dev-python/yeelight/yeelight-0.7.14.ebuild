@@ -16,14 +16,23 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8-docstrings[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8-import-order[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8-tidy-imports[${PYTHON_USEDEP}] )
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
+	dev-python/importlib-metadata[${PYTHON_USEDEP}]
+	dev? ( dev-python/pep8-naming[${PYTHON_USEDEP}] )
+	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	dev? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]"

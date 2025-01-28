@@ -14,13 +14,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="tests"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/protobuf[${PYTHON_USEDEP}]
+	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
+	>=dev-python/uplink-0.6.0[${PYTHON_USEDEP}]
 	dev-python/uplink[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

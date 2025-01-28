@@ -25,9 +25,11 @@ GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/attr[${PYTHON_USEDEP}]
 	dev-python/aws-request-signer[${PYTHON_USEDEP}]
+	dev-python/aws-request-signer[${PYTHON_USEDEP}]
 	dev-python/boto3[${PYTHON_USEDEP}]
 	dev-python/botocore[${PYTHON_USEDEP}]
 	dev-python/pycognito[${PYTHON_USEDEP}]
+	dev-python/requests-aws4auth[${PYTHON_USEDEP}]
 	dev-python/requests-aws4auth[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

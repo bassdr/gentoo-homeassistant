@@ -25,6 +25,8 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/backports-zoneinfo-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/tzdata-2024.1[${PYTHON_USEDEP}]
 	dev-python/tzdata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

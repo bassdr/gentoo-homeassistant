@@ -20,8 +20,21 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples"
+GENERATED_IUSE="dev discord notebook slack telegram"
+IUSE="${GENERATED_IUSE} examples"
 
+GENERATED_DEPEND="
+	dev-python/colorama[${PYTHON_USEDEP}]
+	notebook? ( >=dev-python/ipywidgets-6[${PYTHON_USEDEP}] )
+	dev? ( dev-python/nbval[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-asyncio-0.24[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
+	discord? ( dev-python/requests[${PYTHON_USEDEP}] )
+	telegram? ( dev-python/requests[${PYTHON_USEDEP}] )
+	slack? ( dev-python/slack-sdk[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (

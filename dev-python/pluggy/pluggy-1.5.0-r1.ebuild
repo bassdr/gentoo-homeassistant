@@ -17,6 +17,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev testing"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
+	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
+	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "

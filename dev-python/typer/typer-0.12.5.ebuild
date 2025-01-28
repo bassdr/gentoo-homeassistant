@@ -26,9 +26,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
+	>=dev-python/rich-10.11.0[${PYTHON_USEDEP}]
 	dev-python/rich[${PYTHON_USEDEP}]
+	>=dev-python/shellingham-1.3.0[${PYTHON_USEDEP}]
 	dev-python/shellingham[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

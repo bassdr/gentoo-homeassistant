@@ -21,7 +21,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/dacite-1.7.0[${PYTHON_USEDEP}]
 	dev-python/dacite[${PYTHON_USEDEP}]
+	<dev-python/pysnmp-7.0[${PYTHON_USEDEP}]
 	dev-python/pysnmp[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

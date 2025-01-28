@@ -21,6 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/pycryptodome-3.6.6[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

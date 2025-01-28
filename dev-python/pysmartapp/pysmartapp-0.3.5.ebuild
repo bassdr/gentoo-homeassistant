@@ -20,6 +20,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/httpsig-2.0.0[${PYTHON_USEDEP}]
 	dev-python/httpsig[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -17,7 +17,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="css"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	css? ( <dev-python/tinycss2-1.5[${PYTHON_USEDEP}] )
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

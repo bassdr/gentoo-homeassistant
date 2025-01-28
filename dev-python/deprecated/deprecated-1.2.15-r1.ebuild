@@ -21,7 +21,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	dev? ( <dev-python/bump2version-1[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
+	dev? ( <dev-python/sphinx-2[${PYTHON_USEDEP}] )
+	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
+	<dev-python/wrapt-2[${PYTHON_USEDEP}]
 	dev-python/wrapt[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

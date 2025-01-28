@@ -19,9 +19,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	<dev-python/aiohttp-retry-3.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp-retry[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
+	~dev-python/pyjwt-2*[crypto,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

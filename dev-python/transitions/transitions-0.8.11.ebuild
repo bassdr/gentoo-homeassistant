@@ -20,9 +20,12 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples"
+GENERATED_IUSE="diagrams test"
+IUSE="${GENERATED_IUSE} examples"
 
 GENERATED_DEPEND="
+	diagrams? ( dev-python/pygraphviz[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

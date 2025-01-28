@@ -24,6 +24,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/habluetooth-3.0[${PYTHON_USEDEP}]
 	dev-python/habluetooth[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

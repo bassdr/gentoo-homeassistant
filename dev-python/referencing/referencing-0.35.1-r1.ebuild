@@ -25,7 +25,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
+	>=dev-python/rpds-py-0.7.0[${PYTHON_USEDEP}]
 	dev-python/rpds-py[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

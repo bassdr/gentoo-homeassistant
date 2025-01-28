@@ -17,6 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_DEPEND="
+	dev-python/pyreadline[${PYTHON_USEDEP}]
+	dev-python/pyreadline3[${PYTHON_USEDEP}]
+"
 BDEPEND="
 	test? (
 		dev-python/capturer[${PYTHON_USEDEP}]

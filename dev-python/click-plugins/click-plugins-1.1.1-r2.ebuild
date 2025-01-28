@@ -18,8 +18,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	>=dev-python/click-4.0[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
+	dev? ( dev-python/coveralls[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-3.6[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/click[${PYTHON_USEDEP}]

@@ -25,8 +25,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/cryptography-46[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	<dev-python/pyjwt-3[crypto,${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
+	<dev-python/pymsalruntime-0.18[${PYTHON_USEDEP}]
+	<dev-python/pymsalruntime-0.18[${PYTHON_USEDEP}]
+	<dev-python/requests-3[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

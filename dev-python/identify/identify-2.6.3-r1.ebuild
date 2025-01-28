@@ -21,7 +21,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+GENERATED_IUSE="license"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	license? ( dev-python/ukkonen[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/ukkonen[${PYTHON_USEDEP}]
 "
 

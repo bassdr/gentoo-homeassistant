@@ -22,6 +22,7 @@ DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/dpkt[${PYTHON_USEDEP}]
+	~dev-python/dpkt-1.9[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/dpkt[${PYTHON_USEDEP}]"

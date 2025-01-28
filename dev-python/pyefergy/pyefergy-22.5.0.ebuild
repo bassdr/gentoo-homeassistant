@@ -22,9 +22,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	<dev-python/codecov-3.0.0[${PYTHON_USEDEP}]
 	dev-python/codecov[${PYTHON_USEDEP}]
+	>=dev-python/iso4217-1.2.20150619[${PYTHON_USEDEP}]
 	dev-python/iso4217[${PYTHON_USEDEP}]
+	>=dev-python/types-pytz-2021.3.1[${PYTHON_USEDEP}]
 	dev-python/types-pytz[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

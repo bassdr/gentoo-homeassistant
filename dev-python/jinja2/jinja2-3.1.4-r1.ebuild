@@ -24,7 +24,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="i18n"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	i18n? ( >=dev-python/babel-2.7[${PYTHON_USEDEP}] )
+	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]
 	dev-python/markupsafe[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

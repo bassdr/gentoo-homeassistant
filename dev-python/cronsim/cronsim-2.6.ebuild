@@ -15,7 +15,7 @@ HOMEPAGE="
   Changelog, https://github.com/cuu508/cronsim/blob/main/CHANGELOG.md
 "
 
-LICENSE=""
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 

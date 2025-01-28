@@ -24,13 +24,26 @@ S=${WORKDIR}/${MY_P}
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="grpc"
+GENERATED_IUSE="async-rest grpc grpcgcp grpcio-gcp"
+IUSE="${GENERATED_IUSE} grpc"
 
 GENERATED_DEPEND="
+	<dev-python/google-auth-3.0_p0[${PYTHON_USEDEP}]
+	async-rest? ( <dev-python/google-auth-3.0_p0[aiohttp,${PYTHON_USEDEP}] )
 	dev-python/google-auth[${PYTHON_USEDEP}]
+	<dev-python/googleapis-common-protos-2.0_p0[${PYTHON_USEDEP}]
 	dev-python/googleapis-common-protos[${PYTHON_USEDEP}]
+	<dev-python/grpcio-2.0dev[${PYTHON_USEDEP}]
+	grpc? ( <dev-python/grpcio-2.0dev[${PYTHON_USEDEP}] )
+	grpcgcp? ( <dev-python/grpcio-gcp-1.0_p0[${PYTHON_USEDEP}] )
+	grpcio-gcp? ( <dev-python/grpcio-gcp-1.0_p0[${PYTHON_USEDEP}] )
+	<dev-python/grpcio-status-2.0_p0[${PYTHON_USEDEP}]
+	grpc? ( <dev-python/grpcio-status-2.0_p0[${PYTHON_USEDEP}] )
+	<dev-python/proto-plus-2.0.0dev[${PYTHON_USEDEP}]
 	dev-python/proto-plus[${PYTHON_USEDEP}]
+	!=dev-python/protobuf-3.20.0[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
+	<dev-python/requests-3.0.0_p0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

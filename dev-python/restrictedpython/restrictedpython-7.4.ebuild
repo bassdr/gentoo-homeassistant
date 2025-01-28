@@ -22,11 +22,18 @@ S=${WORKDIR}/${PN}-${MY_PV}
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+GENERATED_DEPEND="
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
 DEPEND="
 	test? (
 		dev-python/pytest-mock[${PYTHON_USEDEP}]

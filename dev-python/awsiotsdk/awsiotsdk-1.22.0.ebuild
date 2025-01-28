@@ -22,6 +22,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/awscrt[${PYTHON_USEDEP}]
+	~dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]"

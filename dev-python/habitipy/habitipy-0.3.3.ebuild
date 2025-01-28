@@ -15,10 +15,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test emoji +aio"
+GENERATED_IUSE="aio emoji"
+IUSE="${GENERATED_IUSE} test emoji +aio"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
+	aio? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
+	emoji? ( dev-python/emoji[${PYTHON_USEDEP}] )
 	dev-python/plumbum[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

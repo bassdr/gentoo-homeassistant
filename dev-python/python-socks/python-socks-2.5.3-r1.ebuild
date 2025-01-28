@@ -24,7 +24,14 @@ KEYWORDS="amd64 arm64"
 # curio is not packaged
 # asyncio is the only backend we have, so dep on its deps unconditionally
 # TODO: revisit
-RDEPEND="
+GENERATED_IUSE="anyio curio trio"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	anyio? ( <dev-python/anyio-5.0.0[${PYTHON_USEDEP}] )
+	curio? ( >=dev-python/curio-1.4[${PYTHON_USEDEP}] )
+	trio? ( >=dev-python/trio-0.16.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep '
 		dev-python/async-timeout[${PYTHON_USEDEP}]
 	' 3.10)

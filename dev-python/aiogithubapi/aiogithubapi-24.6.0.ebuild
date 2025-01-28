@@ -15,15 +15,22 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="deprecated-verify"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	<dev-python/async-timeout-5[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	<dev-python/backoff-3[${PYTHON_USEDEP}]
 	dev-python/backoff[${PYTHON_USEDEP}]
+	deprecated-verify? ( <dev-python/securesystemslib-1[${PYTHON_USEDEP}] )
+	deprecated-verify? ( >=dev-python/setuptools-60.0.0[${PYTHON_USEDEP}] )
+	deprecated-verify? ( <dev-python/sigstore-2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}]

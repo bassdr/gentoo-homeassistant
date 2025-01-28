@@ -27,3 +27,6 @@ EPYTEST_DESELECT=(
 	# requires eth-hash
 	tests/crypto_addresses/test_eth_address.py
 )
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

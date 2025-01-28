@@ -18,12 +18,36 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="oscore test tinydtls ws"
+GENERATED_IUSE="all docs oscore prettyprint tinydtls ws"
+IUSE="${GENERATED_IUSE} oscore test tinydtls ws"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-RDEPEND="
+GENERATED_DEPEND="
+	all? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
+	prettyprint? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
+	all? ( dev-python/cbor2[${PYTHON_USEDEP}] )
+	oscore? ( dev-python/cbor2[${PYTHON_USEDEP}] )
+	prettyprint? ( dev-python/cbor2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/cryptography-2.5[${PYTHON_USEDEP}] )
+	oscore? ( >=dev-python/cryptography-2.5[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/dtlssocket-0.1.18[${PYTHON_USEDEP}] )
+	tinydtls? ( >=dev-python/dtlssocket-0.1.18[${PYTHON_USEDEP}] )
+	all? ( dev-python/filelock[${PYTHON_USEDEP}] )
+	oscore? ( dev-python/filelock[${PYTHON_USEDEP}] )
+	all? ( dev-python/ge25519[${PYTHON_USEDEP}] )
+	oscore? ( dev-python/ge25519[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/lakers-python-0.4.1[${PYTHON_USEDEP}] )
+	oscore? ( ~dev-python/lakers-python-0.4.1[${PYTHON_USEDEP}] )
+	all? ( dev-python/pygments[${PYTHON_USEDEP}] )
+	prettyprint? ( >=dev-python/pygments-2.1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-argparse[${PYTHON_USEDEP}] )
+	all? ( <dev-python/websockets-14[${PYTHON_USEDEP}] )
+	ws? ( <dev-python/websockets-14[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	oscore? ( dev-python/cbor2[${PYTHON_USEDEP}] dev-python/cryptography[${PYTHON_USEDEP}] dev-python/filelock[${PYTHON_USEDEP}]  )
 	tinydtls? ( >=dev-python/DTLSSocket-0.1.11_alpha1[${PYTHON_USEDEP}] )
 	ws? ( dev-python/websockets[${PYTHON_USEDEP}] )

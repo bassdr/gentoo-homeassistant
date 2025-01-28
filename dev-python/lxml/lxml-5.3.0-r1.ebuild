@@ -23,10 +23,18 @@ S=${WORKDIR}/lxml-${P}
 LICENSE="BSD ElementTree GPL-2 PSF-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="doc examples +threads test"
+GENERATED_IUSE="cssselect html-clean html5 htmlsoup source"
+IUSE="${GENERATED_IUSE} doc examples +threads test"
 RESTRICT="!test? ( test )"
 
 # Note: lib{xml2,xslt} are used as C libraries, not Python modules.
+GENERATED_DEPEND="
+	htmlsoup? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
+	cssselect? ( >=dev-python/cssselect-0.7[${PYTHON_USEDEP}] )
+	source? ( >=dev-python/cython-3.0.11[${PYTHON_USEDEP}] )
+	html5? ( dev-python/html5lib[${PYTHON_USEDEP}] )
+	html-clean? ( dev-python/lxml-html-clean[${PYTHON_USEDEP}] )
+"
 DEPEND="
 	>=dev-libs/libxml2-2.10.3
 	>=dev-libs/libxslt-1.1.38

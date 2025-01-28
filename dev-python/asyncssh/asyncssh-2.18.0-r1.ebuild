@@ -17,13 +17,23 @@ HOMEPAGE="
 LICENSE="ECL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="bcrypt fido2 gssapi libnacl pkcs11 pyopenssl pywin32"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	bcrypt? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
+	>=dev-python/cryptography-39.0[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	fido2? ( >=dev-python/fido2-0.9.2[${PYTHON_USEDEP}] )
+	gssapi? ( >=dev-python/gssapi-1.2.0[${PYTHON_USEDEP}] )
+	libnacl? ( >=dev-python/libnacl-1.4.2[${PYTHON_USEDEP}] )
+	pyopenssl? ( >=dev-python/pyopenssl-23.0.0[${PYTHON_USEDEP}] )
+	pkcs11? ( >=dev-python/python-pkcs11-0.7.0[${PYTHON_USEDEP}] )
+	pywin32? ( >=dev-python/pywin32-227[${PYTHON_USEDEP}] )
+	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

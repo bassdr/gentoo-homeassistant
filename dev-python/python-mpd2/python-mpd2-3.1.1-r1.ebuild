@@ -21,9 +21,13 @@ SRC_URI="
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples +twisted"
+GENERATED_IUSE="twisted"
+IUSE="${GENERATED_IUSE} examples +twisted"
 
-RDEPEND="
+GENERATED_DEPEND="
+	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
 "
 BDEPEND="

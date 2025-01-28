@@ -27,9 +27,68 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="all-plugins all-plugins-pypy build dev docs ffmpeg fits full gdal itk linting pillow-heif pyav rawpy test tifffile"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	all-plugins? ( dev-python/astropy[${PYTHON_USEDEP}] )
+	fits? ( dev-python/astropy[${PYTHON_USEDEP}] )
+	full? ( dev-python/astropy[${PYTHON_USEDEP}] )
+	all-plugins-pypy? ( dev-python/av[${PYTHON_USEDEP}] )
+	all-plugins? ( dev-python/av[${PYTHON_USEDEP}] )
+	full? ( dev-python/av[${PYTHON_USEDEP}] )
+	pyav? ( dev-python/av[${PYTHON_USEDEP}] )
+	dev? ( dev-python/black[${PYTHON_USEDEP}] )
+	full? ( dev-python/black[${PYTHON_USEDEP}] )
+	linting? ( dev-python/black[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	full? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	linting? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	dev? ( dev-python/fsspec[github,${PYTHON_USEDEP}] )
+	full? ( dev-python/fsspec[github,${PYTHON_USEDEP}] )
+	test? ( dev-python/fsspec[github,${PYTHON_USEDEP}] )
+	full? ( dev-python/gdal[${PYTHON_USEDEP}] )
+	gdal? ( dev-python/gdal[${PYTHON_USEDEP}] )
+	all-plugins-pypy? ( dev-python/imageio-ffmpeg[${PYTHON_USEDEP}] )
+	all-plugins? ( dev-python/imageio-ffmpeg[${PYTHON_USEDEP}] )
+	ffmpeg? ( dev-python/imageio-ffmpeg[${PYTHON_USEDEP}] )
+	full? ( dev-python/imageio-ffmpeg[${PYTHON_USEDEP}] )
+	full? ( dev-python/itk[${PYTHON_USEDEP}] )
+	itk? ( dev-python/itk[${PYTHON_USEDEP}] )
+	all-plugins? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
+	full? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
+	rawpy? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
+	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
+	full? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
+	>=dev-python/pillow-8.3.2[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
+	all-plugins-pypy? ( dev-python/pillow-heif[${PYTHON_USEDEP}] )
+	all-plugins? ( dev-python/pillow-heif[${PYTHON_USEDEP}] )
+	full? ( dev-python/pillow-heif[${PYTHON_USEDEP}] )
+	pillow-heif? ( dev-python/pillow-heif[${PYTHON_USEDEP}] )
+	all-plugins-pypy? ( dev-python/psutil[${PYTHON_USEDEP}] )
+	all-plugins? ( dev-python/psutil[${PYTHON_USEDEP}] )
+	ffmpeg? ( dev-python/psutil[${PYTHON_USEDEP}] )
+	full? ( dev-python/psutil[${PYTHON_USEDEP}] )
+	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
+	full? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	full? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	full? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	all-plugins? ( dev-python/rawpy[${PYTHON_USEDEP}] )
+	full? ( dev-python/rawpy[${PYTHON_USEDEP}] )
+	rawpy? ( dev-python/rawpy[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-6[${PYTHON_USEDEP}] )
+	full? ( <dev-python/sphinx-6[${PYTHON_USEDEP}] )
+	all-plugins-pypy? ( dev-python/tifffile[${PYTHON_USEDEP}] )
+	all-plugins? ( dev-python/tifffile[${PYTHON_USEDEP}] )
+	full? ( dev-python/tifffile[${PYTHON_USEDEP}] )
+	tifffile? ( dev-python/tifffile[${PYTHON_USEDEP}] )
+	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
+	full? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]

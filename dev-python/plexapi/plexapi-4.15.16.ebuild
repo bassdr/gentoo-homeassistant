@@ -16,13 +16,15 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="alert"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
+	alert? ( >=dev-python/websocket-client-1.3.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 dev-python/requests[${PYTHON_USEDEP}]

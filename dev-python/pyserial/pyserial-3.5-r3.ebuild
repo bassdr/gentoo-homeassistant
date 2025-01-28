@@ -16,7 +16,8 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples"
+GENERATED_IUSE="cp2110"
+IUSE="${GENERATED_IUSE} examples"
 
 DOCS=( CHANGES.rst README.rst )
 
@@ -38,3 +39,5 @@ python_install_all() {
 		docompress -x /usr/share/doc/${PF}/examples
 	fi
 }
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild

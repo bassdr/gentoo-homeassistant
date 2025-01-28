@@ -21,11 +21,17 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/httpx-0.21.2[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.9.2[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
+	<dev-python/pydantic-core-3.0.0[${PYTHON_USEDEP}]
 	dev-python/pydantic-core[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.20[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	>=dev-python/websockets-11.0[${PYTHON_USEDEP}]
 	dev-python/websockets[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

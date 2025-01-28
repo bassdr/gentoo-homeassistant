@@ -21,9 +21,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="testing"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	>=dev-python/coverage-7.5[toml,${PYTHON_USEDEP}]
 	dev-python/coverage[${PYTHON_USEDEP}]
+	testing? ( dev-python/fields[${PYTHON_USEDEP}] )
+	testing? ( dev-python/hunter[${PYTHON_USEDEP}] )
+	testing? ( dev-python/process-tests[${PYTHON_USEDEP}] )
+	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
+	testing? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
+	testing? ( dev-python/virtualenv[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/py-1.4.22[${PYTHON_USEDEP}]

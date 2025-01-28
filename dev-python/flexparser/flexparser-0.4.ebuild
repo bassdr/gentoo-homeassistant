@@ -17,7 +17,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-mpl[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

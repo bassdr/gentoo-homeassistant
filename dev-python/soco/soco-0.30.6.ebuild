@@ -16,16 +16,29 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="events-asyncio testing"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	events-asyncio? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-python/appdirs[${PYTHON_USEDEP}]
+	testing? ( dev-python/coveralls[${PYTHON_USEDEP}] )
+	testing? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	testing? ( dev-python/graphviz[${PYTHON_USEDEP}] )
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
+	testing? ( dev-python/pylint[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-2.5[${PYTHON_USEDEP}] )
+	testing? ( <dev-python/pytest-cov-2.6.0[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
+	testing? ( dev-python/requests-mock[${PYTHON_USEDEP}] )
+	testing? ( ~dev-python/sphinx-4.5.0[${PYTHON_USEDEP}] )
+	testing? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	testing? ( dev-python/twine[${PYTHON_USEDEP}] )
+	testing? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

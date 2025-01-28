@@ -20,9 +20,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.11.1[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/bluetooth-data-tools-1.19.0[${PYTHON_USEDEP}]
 	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
+	>=dev-python/habluetooth-2.1.0[${PYTHON_USEDEP}]
 	dev-python/habluetooth[${PYTHON_USEDEP}]
+	>=dev-python/orjson-3.8.1[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "

@@ -23,6 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
 	dev-python/click[${PYTHON_USEDEP}]
+	>=dev-python/icalendar-6.1.0[${PYTHON_USEDEP}]
 	dev-python/icalendar[${PYTHON_USEDEP}]
 	dev-python/tzdata[${PYTHON_USEDEP}]
 "

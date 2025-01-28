@@ -23,6 +23,7 @@ RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
 	dev-python/coverage[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.7.9[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

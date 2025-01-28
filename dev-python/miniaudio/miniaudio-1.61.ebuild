@@ -20,6 +20,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}]
 	dev-python/cffi[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

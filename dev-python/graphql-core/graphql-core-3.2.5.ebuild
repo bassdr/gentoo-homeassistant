@@ -24,6 +24,8 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+GENERATED_DEPEND="
+"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

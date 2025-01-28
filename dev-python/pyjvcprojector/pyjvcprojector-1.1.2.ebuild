@@ -21,6 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
 	dev-python/aiodns[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

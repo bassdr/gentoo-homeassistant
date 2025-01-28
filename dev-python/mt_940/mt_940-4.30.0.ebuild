@@ -17,12 +17,24 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs tests"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-RDEPEND="!dev-python/mt_940[${PYTHON_USEDEP}]"
+GENERATED_DEPEND="
+	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/gitpython-2.1.9[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cache[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cover[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-flake8[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-1.7.2[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx2rst[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND} !dev-python/mt_940[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

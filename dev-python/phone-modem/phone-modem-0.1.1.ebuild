@@ -22,6 +22,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/aioserial[${PYTHON_USEDEP}]
+	~dev-python/aioserial-1.3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/aioserial-1.3.0[${PYTHON_USEDEP}]"

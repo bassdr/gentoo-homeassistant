@@ -23,3 +23,6 @@ KEYWORDS="amd64 arm64"
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" "${DISTDIR}/${P}-py3-none-any.whl"
 }
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

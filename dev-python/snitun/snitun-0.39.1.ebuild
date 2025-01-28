@@ -17,16 +17,26 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="lint test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	lint? ( ~dev-python/pylint-3.1.0[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/pytest-8.2.0[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/ruff-0.4.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]

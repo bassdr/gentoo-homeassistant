@@ -21,7 +21,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	test? ( >=dev-python/pytest-3.0.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 BDEPEND="

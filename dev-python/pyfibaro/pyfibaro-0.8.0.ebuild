@@ -22,6 +22,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
+	~dev-python/requests-2.28[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]"

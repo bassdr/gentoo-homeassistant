@@ -16,7 +16,8 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="testing"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
@@ -25,7 +26,13 @@ GENERATED_DEPEND="
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/coloredlogs[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
+	testing? ( >=dev-python/pytest-7.3.1[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	dev-python/voluptuous[${PYTHON_USEDEP}]
+	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 	dev-python/zigpy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

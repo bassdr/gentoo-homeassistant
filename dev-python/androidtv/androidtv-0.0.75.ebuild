@@ -13,13 +13,19 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+async test usb"
+GENERATED_IUSE="async usb"
+IUSE="${GENERATED_IUSE} +async test usb"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/adb-shell-0.4.0[${PYTHON_USEDEP}]
 	dev-python/adb-shell[${PYTHON_USEDEP}]
+	usb? ( >=dev-python/adb-shell-0.4.0[usb,${PYTHON_USEDEP}] )
+	async? ( >=dev-python/aiofiles-0.4.0[${PYTHON_USEDEP}] )
+	async? ( >=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/pure-python-adb-0.3.0_p0[${PYTHON_USEDEP}]
 	dev-python/pure-python-adb[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

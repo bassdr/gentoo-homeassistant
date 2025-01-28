@@ -19,7 +19,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
+GENERATED_IUSE="spark test"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	test? ( ~dev-python/bandit-1.7.5[toml,${PYTHON_USEDEP}] )
+	test? ( ~dev-python/black-23.3.0[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/check-manifest-0.49[${PYTHON_USEDEP}] )
+	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/flake8-bugbear-23.5.9[${PYTHON_USEDEP}] )
+	test? ( dev-python/flake8-docstrings[${PYTHON_USEDEP}] )
+	test? ( dev-python/flake8-formatter-junit-xml[${PYTHON_USEDEP}] )
+	test? ( dev-python/flake8-pyproject[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/pylint-2.17.4[${PYTHON_USEDEP}] )
+	test? ( dev-python/pylint-junit[${PYTHON_USEDEP}] )
+	spark? ( >=dev-python/pyspark-3.0.0[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/pytest-7.3.1[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-github-actions-annotate-failures[${PYTHON_USEDEP}] )
+	test? ( <dev-python/pytest-mock-3.10.1[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-runner[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/shellcheck-py-0.9.0.2[${PYTHON_USEDEP}] )
+	test? ( ~dev-vcs/pre-commit-3.3.1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

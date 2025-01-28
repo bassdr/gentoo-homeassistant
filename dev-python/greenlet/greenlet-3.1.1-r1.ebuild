@@ -21,8 +21,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs test"
+IUSE="${GENERATED_IUSE} test"
 
+GENERATED_DEPEND="
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	test? ( dev-python/objgraph[${PYTHON_USEDEP}] )
+	test? ( dev-python/psutil[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/objgraph[${PYTHON_USEDEP}]

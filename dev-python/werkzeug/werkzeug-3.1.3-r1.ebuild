@@ -23,10 +23,13 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test-rust"
+GENERATED_IUSE="watchdog"
+IUSE="${GENERATED_IUSE} test-rust"
 
 GENERATED_DEPEND="
+	>=dev-python/markupsafe-2.1.1[${PYTHON_USEDEP}]
 	dev-python/markupsafe[${PYTHON_USEDEP}]
+	watchdog? ( >=dev-python/watchdog-2.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/markupsafe-2.1.1[${PYTHON_USEDEP}]

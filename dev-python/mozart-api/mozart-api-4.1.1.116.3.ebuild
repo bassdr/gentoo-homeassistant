@@ -24,14 +24,23 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aenum-3.1.11[${PYTHON_USEDEP}]
 	dev-python/aenum[${PYTHON_USEDEP}]
+	>=dev-python/aioconsole-0.4.1[${PYTHON_USEDEP}]
 	dev-python/aioconsole[${PYTHON_USEDEP}]
+	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/inflection-0.5.1[${PYTHON_USEDEP}]
 	dev-python/inflection[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.10[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.7.1[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.25.3[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
+	>=dev-python/zeroconf-0.25.1[${PYTHON_USEDEP}]
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

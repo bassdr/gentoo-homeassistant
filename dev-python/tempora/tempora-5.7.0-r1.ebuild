@@ -19,9 +19,28 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="doc test"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
+	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
+	>=dev-python/jaraco-functools-1.20[${PYTHON_USEDEP}]
 	dev-python/jaraco-functools[${PYTHON_USEDEP}]
+	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
+	test? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-freezer[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
+	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
+	test? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
+	dev-python/tzdata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/jaraco-functools-1.20[${PYTHON_USEDEP}]

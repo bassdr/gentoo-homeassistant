@@ -22,6 +22,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/zeep-4.2.1[${PYTHON_USEDEP}]
 	dev-python/zeep[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

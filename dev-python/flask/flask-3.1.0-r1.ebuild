@@ -27,13 +27,21 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="examples"
+GENERATED_IUSE="async dotenv"
+IUSE="${GENERATED_IUSE} examples"
 
 GENERATED_DEPEND="
+	async? ( >=dev-python/asgiref-3.2[${PYTHON_USEDEP}] )
+	>=dev-python/blinker-1.9[${PYTHON_USEDEP}]
 	dev-python/blinker[${PYTHON_USEDEP}]
+	>=dev-python/click-8.1.3[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
+	>=dev-python/itsdangerous-2.2[${PYTHON_USEDEP}]
 	dev-python/itsdangerous[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
+	dotenv? ( dev-python/python-dotenv[${PYTHON_USEDEP}] )
+	>=dev-python/werkzeug-3.1[${PYTHON_USEDEP}]
 	dev-python/werkzeug[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

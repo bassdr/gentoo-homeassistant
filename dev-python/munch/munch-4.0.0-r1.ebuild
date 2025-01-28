@@ -17,6 +17,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="testing yaml"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	testing? ( >=dev-python/astroid-2.0[${PYTHON_USEDEP}] )
+	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	>=dev-python/importlib-metadata-1.7.0[${PYTHON_USEDEP}]
+	testing? ( ~dev-python/pylint-2.3.1[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	yaml? ( >=dev-python/pyyaml-5.1.0[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	dev-python/pbr[${PYTHON_USEDEP}]
 	test? (

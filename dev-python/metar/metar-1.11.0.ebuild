@@ -16,7 +16,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

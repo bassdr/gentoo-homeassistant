@@ -18,7 +18,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # optional extras hard set as RDEPs. See setup.py
-RDEPEND="
+GENERATED_IUSE="rsa signals signedtoken"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	signals? ( >=dev-python/blinker-1.4.0[${PYTHON_USEDEP}] )
+	rsa? ( >=dev-python/cryptography-3.0.0[${PYTHON_USEDEP}] )
+	signedtoken? ( >=dev-python/cryptography-3.0.0[${PYTHON_USEDEP}] )
+	signedtoken? ( <dev-python/pyjwt-3[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pyjwt-1.0.0[${PYTHON_USEDEP}]
 	dev-python/blinker[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]

@@ -21,8 +21,20 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+native-extensions"
+GENERATED_IUSE="benchmarks doc test"
+IUSE="${GENERATED_IUSE} +native-extensions"
 
+GENERATED_DEPEND="
+	test? ( >=dev-python/coverage-7[${PYTHON_USEDEP}] )
+	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	benchmarks? ( ~dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
+	$(python_gen_cond_dep 'dev-python/typing-extensions[${PYTHON_USEDEP}]' python3_12)
+"
 BDEPEND="
 	>=dev-python/setuptools-61[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.4[${PYTHON_USEDEP}]

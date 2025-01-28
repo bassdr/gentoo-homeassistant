@@ -15,13 +15,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="cli optimize"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	cli? ( ~dev-python/click-8.1.3[${PYTHON_USEDEP}] )
+	<dev-python/ordered-set-4.2.0[${PYTHON_USEDEP}]
 	dev-python/ordered-set[${PYTHON_USEDEP}]
+	optimize? ( dev-python/orjson[${PYTHON_USEDEP}] )
+	cli? ( ~dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/ordered-set-4.0.2[${PYTHON_USEDEP}]"

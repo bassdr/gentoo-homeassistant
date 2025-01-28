@@ -24,6 +24,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/incremental-24.7.2[${PYTHON_USEDEP}]
 	dev-python/incremental[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

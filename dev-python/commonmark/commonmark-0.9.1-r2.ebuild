@@ -16,9 +16,14 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+GENERATED_DEPEND="
+	test? ( ~dev-python/flake8-3.7.8[${PYTHON_USEDEP}] )
+	test? ( ~dev-python/hypothesis-3.55.3[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		>=dev-python/hypothesis-3.7.1[${PYTHON_USEDEP}]

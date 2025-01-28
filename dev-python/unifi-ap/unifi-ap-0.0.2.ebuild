@@ -25,6 +25,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/paramiko[${PYTHON_USEDEP}]
+	~dev-python/paramiko-3.5.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/paramiko[${PYTHON_USEDEP}]"

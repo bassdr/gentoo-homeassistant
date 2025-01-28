@@ -19,8 +19,14 @@ KEYWORDS="amd64 arm64"
 
 DOCS="README.rst"
 
+GENERATED_IUSE="asyncio-client client"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
+	client? ( >=dev-python/requests-2.21.0[${PYTHON_USEDEP}] )
+	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
+	client? ( >=dev-python/websocket-client-0.54.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]

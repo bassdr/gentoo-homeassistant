@@ -19,16 +19,25 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiooui-0.1.1[${PYTHON_USEDEP}]
 	dev-python/aiooui[${PYTHON_USEDEP}]
+	>=dev-python/bleak-0.21.1[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
+	>=dev-python/dbus-fast-1.21.0[${PYTHON_USEDEP}]
 	dev-python/dbus-fast[${PYTHON_USEDEP}]
+	docs? ( <dev-python/myst-parser-3.1[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-rtd-theme-4[${PYTHON_USEDEP}] )
+	>=dev-python/uart-devices-0.1.0[${PYTHON_USEDEP}]
 	dev-python/uart-devices[${PYTHON_USEDEP}]
+	>=dev-python/usb-devices-0.4.5[${PYTHON_USEDEP}]
 	dev-python/usb-devices[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -16,14 +16,26 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="testing typing"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	dev-python/importlib-metadata[${PYTHON_USEDEP}]
+	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	testing? ( dev-python/pydocstyle[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pylint[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-cases[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
+	testing? ( dev-python/tox[${PYTHON_USEDEP}] )
+	typing? ( dev-python/types-pytz[${PYTHON_USEDEP}] )
+	typing? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pycryptodome-3.9.7[${PYTHON_USEDEP}]

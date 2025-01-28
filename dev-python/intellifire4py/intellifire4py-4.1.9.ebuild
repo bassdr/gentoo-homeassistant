@@ -25,9 +25,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aenum-3.1.11[${PYTHON_USEDEP}]
 	dev-python/aenum[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.10.8[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
+	>=dev-python/rich-10.0.0[${PYTHON_USEDEP}]
 	dev-python/rich[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

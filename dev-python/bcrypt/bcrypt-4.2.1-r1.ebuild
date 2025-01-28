@@ -66,6 +66,12 @@ LICENSE+=" Apache-2.0-with-LLVM-exceptions BSD MIT Unicode-DFS-2016"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="tests typecheck"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	typecheck? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	tests? ( !=dev-python/pytest-3.3.0[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	>=dev-python/setuptools-rust-1.7.0[${PYTHON_USEDEP}]
 "

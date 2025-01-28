@@ -16,11 +16,17 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="develop"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+GENERATED_DEPEND="
+	develop? ( dev-python/aiomisc-pytest[${PYTHON_USEDEP}] )
+	develop? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

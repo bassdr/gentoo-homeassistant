@@ -19,9 +19,14 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]' python3_12)
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/incremental-24.7.2[${PYTHON_USEDEP}]
 	dev-python/incremental[${PYTHON_USEDEP}]
+	>=dev-python/packaging-24.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
+	>=dev-python/systembridgemodels-4.2.4[${PYTHON_USEDEP}]
 	dev-python/systembridgemodels[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

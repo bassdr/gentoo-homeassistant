@@ -17,6 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/importlib-resources-6.0[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

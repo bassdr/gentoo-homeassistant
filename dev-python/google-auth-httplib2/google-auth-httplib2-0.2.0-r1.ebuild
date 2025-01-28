@@ -25,6 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
 	dev-python/google-auth[${PYTHON_USEDEP}]
+	>=dev-python/httplib2-0.19.0[${PYTHON_USEDEP}]
 	dev-python/httplib2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

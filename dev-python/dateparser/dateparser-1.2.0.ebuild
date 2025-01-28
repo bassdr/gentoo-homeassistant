@@ -15,14 +15,20 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="calendars fasttext langdetect"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	calendars? ( dev-python/convertdate[${PYTHON_USEDEP}] )
+	fasttext? ( dev-python/fasttext[${PYTHON_USEDEP}] )
+	calendars? ( dev-python/hijri-converter[${PYTHON_USEDEP}] )
+	langdetect? ( dev-python/langdetect[${PYTHON_USEDEP}] )
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
+	!=dev-python/regex-2019.02.19[${PYTHON_USEDEP}]
 	dev-python/regex[${PYTHON_USEDEP}]
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 "

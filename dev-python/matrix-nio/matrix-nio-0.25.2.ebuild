@@ -26,15 +26,50 @@ KEYWORDS="amd64 arm64"
 PROPERTIES="test_network"
 RESTRICT="test !test? ( test )"
 
+GENERATED_IUSE="dev docs e2e"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
 	dev-python/aiofiles[${PYTHON_USEDEP}]
+	~dev-python/aiofiles-24.1[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-3.10[${PYTHON_USEDEP}]
 	dev-python/aiohttp-socks[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-socks-0.8[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/aioresponses-0.7[${PYTHON_USEDEP}] )
+	e2e? ( ~dev-python/atomicwrites-1.4[${PYTHON_USEDEP}] )
+	e2e? ( ~dev-python/cachetools-5.3[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/faker-8.0[${PYTHON_USEDEP}] )
 	dev-python/h11[${PYTHON_USEDEP}]
+	~dev-python/h11-0.14[${PYTHON_USEDEP}]
 	dev-python/h2[${PYTHON_USEDEP}]
+	~dev-python/h2-4.0[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/hpack-4.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/hyperframe-6.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/hypothesis-6.8[${PYTHON_USEDEP}] )
 	dev-python/jsonschema[${PYTHON_USEDEP}]
+	~dev-python/jsonschema-4.14[${PYTHON_USEDEP}]
+	dev? ( dev-python/matrix-nio[e2e,${PYTHON_USEDEP}] )
+	docs? ( dev-python/matrix-nio[dev,${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/mypy-1.11[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/mypy-extensions-1.0[${PYTHON_USEDEP}] )
+	e2e? ( ~dev-python/peewee-3.14[${PYTHON_USEDEP}] )
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	~dev-python/pycryptodome-3.10[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/pytest-8.2[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-aiohttp-0.3[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-asyncio-0.24[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-benchmark-4.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-cov-2.11[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-flake8-1.2[${PYTHON_USEDEP}] )
+	e2e? ( ~dev-python/python-olm-3.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/setuptools-61.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-7.4[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-autodoc-typehints-2.1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-mdinclude-0.5[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 	dev-python/unpaddedbase64[${PYTHON_USEDEP}]
+	~dev-python/unpaddedbase64-2.1[${PYTHON_USEDEP}]
+	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/python-olm-3.2.15[${PYTHON_USEDEP}]

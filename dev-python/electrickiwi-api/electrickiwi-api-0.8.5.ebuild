@@ -17,6 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.md"
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

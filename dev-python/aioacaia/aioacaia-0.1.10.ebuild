@@ -17,10 +17,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 
 GENERATED_DEPEND="
+	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
+	dev? ( ~dev-python/covdefaults-2.3.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/coverage-7.6.7[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}] )
+	dev? ( ~dev-python/syrupy-4.7.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="test? ( ${GENERATED_DEPEND} )"

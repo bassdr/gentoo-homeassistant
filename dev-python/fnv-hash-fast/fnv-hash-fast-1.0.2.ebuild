@@ -24,6 +24,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/fnvhash-0.2.0[${PYTHON_USEDEP}]
 	dev-python/fnvhash[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

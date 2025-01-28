@@ -17,15 +17,26 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="tests"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	tests? ( dev-python/aioresponses[${PYTHON_USEDEP}] )
+	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	>=dev-python/geojson-3.1.0[${PYTHON_USEDEP}]
 	dev-python/geojson[${PYTHON_USEDEP}]
+	>=dev-python/haversine-2.8.1[${PYTHON_USEDEP}]
 	dev-python/haversine[${PYTHON_USEDEP}]
+	tests? ( dev-python/mock[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]

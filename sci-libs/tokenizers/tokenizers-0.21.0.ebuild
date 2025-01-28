@@ -228,8 +228,21 @@ LICENSE+=" Apache-2.0 BSD ISC MIT MPL-2.0 Unicode-DFS-2016"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev docs testing"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
-	$(python_gen_cond_dep 'dev-python/huggingface-hub[${PYTHON_USEDEP}]')
+	testing? ( ~dev-python/black-22.3[${PYTHON_USEDEP}] )
+	testing? ( dev-python/datasets[${PYTHON_USEDEP}] )
+	<dev-python/huggingface-hub-1.0[${PYTHON_USEDEP}]
+	dev-python/huggingface-hub[${PYTHON_USEDEP}]
+	testing? ( dev-python/numpy[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	testing? ( dev-python/requests[${PYTHON_USEDEP}] )
+	testing? ( dev-python/ruff[${PYTHON_USEDEP}] )
+	docs? ( dev-python/setuptools-rust[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	dev? ( sci-libs/tokenizers[testing,${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="

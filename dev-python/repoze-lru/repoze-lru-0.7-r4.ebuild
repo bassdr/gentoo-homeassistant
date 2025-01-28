@@ -32,4 +32,7 @@ python_compile() {
 	find "${BUILD_DIR}" -name '*.pth' -delete || die
 }
 
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild
 # PYPI_PN could not be inserted in this ebuild

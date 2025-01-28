@@ -18,7 +18,9 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
+	>=dev-python/future-0.16.0[${PYTHON_USEDEP}]
 	dev-python/future[${PYTHON_USEDEP}]
+	>=dev-python/pyserial-3.2.1[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

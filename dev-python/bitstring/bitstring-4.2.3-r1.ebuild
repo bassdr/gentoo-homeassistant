@@ -20,6 +20,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	<dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
 	dev-python/bitarray[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

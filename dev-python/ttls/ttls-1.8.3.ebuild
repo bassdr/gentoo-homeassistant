@@ -21,7 +21,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	<dev-python/colour-0.2.0[${PYTHON_USEDEP}]
 	dev-python/colour[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

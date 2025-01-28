@@ -24,7 +24,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/rich-10[${PYTHON_USEDEP}]
 	dev-python/rich[${PYTHON_USEDEP}]
+	<dev-python/typer-0.13.0[all,${PYTHON_USEDEP}]
 	dev-python/typer[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

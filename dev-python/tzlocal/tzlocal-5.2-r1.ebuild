@@ -25,6 +25,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="devenv"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
+	devenv? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
+	devenv? ( >=dev-python/pytest-4.3[${PYTHON_USEDEP}] )
+	devenv? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	devenv? ( >=dev-python/pytest-mock-3.3[${PYTHON_USEDEP}] )
+	dev-python/tzdata[${PYTHON_USEDEP}]
+	devenv? ( dev-python/zest-releaser[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/pytest-mock[${PYTHON_USEDEP}]

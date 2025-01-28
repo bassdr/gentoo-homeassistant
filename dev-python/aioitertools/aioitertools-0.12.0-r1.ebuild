@@ -22,3 +22,6 @@ KEYWORDS="amd64 arm64"
 python_test() {
 	"${EPYTHON}" -m aioitertools.tests || die
 }
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

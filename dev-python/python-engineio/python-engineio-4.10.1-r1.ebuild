@@ -23,8 +23,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="asyncio-client client docs"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
+	client? ( >=dev-python/requests-2.21.0[${PYTHON_USEDEP}] )
+	>=dev-python/simple-websocket-0.10.0[${PYTHON_USEDEP}]
 	dev-python/simple-websocket[${PYTHON_USEDEP}]
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	client? ( >=dev-python/websocket-client-0.54.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

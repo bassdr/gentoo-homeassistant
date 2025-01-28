@@ -17,19 +17,31 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="bedrock vertex"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/anyio-5[${PYTHON_USEDEP}]
 	dev-python/anyio[${PYTHON_USEDEP}]
+	bedrock? ( >=dev-python/boto3-1.28.57[${PYTHON_USEDEP}] )
+	bedrock? ( >=dev-python/botocore-1.31.57[${PYTHON_USEDEP}] )
+	dev-python/cached-property[${PYTHON_USEDEP}]
+	<dev-python/distro-2[${PYTHON_USEDEP}]
 	dev-python/distro[${PYTHON_USEDEP}]
+	vertex? ( <dev-python/google-auth-3[${PYTHON_USEDEP}] )
+	<dev-python/httpx-1[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
+	<dev-python/jiter-1[${PYTHON_USEDEP}]
 	dev-python/jiter[${PYTHON_USEDEP}]
+	<dev-python/pydantic-3[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
+	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	>=sci-libs/tokenizers-0.13.0[${PYTHON_USEDEP}]
 	sci-libs/tokenizers[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

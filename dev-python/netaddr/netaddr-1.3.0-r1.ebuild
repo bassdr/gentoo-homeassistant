@@ -22,6 +22,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="nicer-shell"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	nicer-shell? ( dev-python/ipython[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/packaging[${PYTHON_USEDEP}]

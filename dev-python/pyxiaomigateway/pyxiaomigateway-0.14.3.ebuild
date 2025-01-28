@@ -22,6 +22,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/cryptography-2.1.1[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

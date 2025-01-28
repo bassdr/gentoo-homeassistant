@@ -22,13 +22,20 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	>=dev-python/click-8[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
+	<dev-python/construct-3.0.0[${PYTHON_USEDEP}]
 	dev-python/construct[${PYTHON_USEDEP}]
+	<dev-python/dacite-2.0.0[${PYTHON_USEDEP}]
 	dev-python/dacite[${PYTHON_USEDEP}]
+	<dev-python/paho-mqtt-2.0.0[${PYTHON_USEDEP}]
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
+	<dev-python/pycryptodome-4.0[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	<dev-python/pycryptodomex-4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

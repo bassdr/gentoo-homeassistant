@@ -15,15 +15,23 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="all test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.4[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]
+	all? ( >=dev-python/pytest-6.2.2[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-6.2.2[${PYTHON_USEDEP}] )
+	all? ( dev-python/pytest-aio[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-aio[${PYTHON_USEDEP}] )
+	all? ( dev-python/pytest-aiohttp[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-aiohttp[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.4[${PYTHON_USEDEP}]

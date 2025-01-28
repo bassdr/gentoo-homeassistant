@@ -17,8 +17,19 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples"
+GENERATED_IUSE="test trio"
+IUSE="${GENERATED_IUSE} examples"
 
+GENERATED_DEPEND="
+	trio? ( dev-python/async-generator[${PYTHON_USEDEP}] )
+	test? ( dev-python/async-timeout[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-trio[${PYTHON_USEDEP}] )
+	test? ( dev-python/testpath[${PYTHON_USEDEP}] )
+	test? ( dev-python/trio[${PYTHON_USEDEP}] )
+	trio? ( dev-python/trio[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/async-timeout[${PYTHON_USEDEP}]

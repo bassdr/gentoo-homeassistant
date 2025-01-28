@@ -28,4 +28,3 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}
 dev-python/aiohttp[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest
-# PYPI_PN could not be inserted in this ebuild

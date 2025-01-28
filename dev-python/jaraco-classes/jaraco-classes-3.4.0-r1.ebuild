@@ -19,8 +19,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="docs testing"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
 	dev-python/more-itertools[${PYTHON_USEDEP}]
+	testing? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	testing? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 

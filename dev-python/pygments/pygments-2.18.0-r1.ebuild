@@ -23,6 +23,11 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="windows-terminal"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	windows-terminal? ( >=dev-python/colorama-0.4.6[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/lxml[${PYTHON_USEDEP}]

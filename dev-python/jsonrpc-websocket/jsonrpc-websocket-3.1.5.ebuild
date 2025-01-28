@@ -22,8 +22,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	>=dev-python/jsonrpc-base-2.1.0[${PYTHON_USEDEP}]
 	dev-python/jsonrpc-base[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

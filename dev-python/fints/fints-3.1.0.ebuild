@@ -25,6 +25,7 @@ GENERATED_DEPEND="
 	dev-python/mt_940[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/sepaxml[${PYTHON_USEDEP}]
+	~dev-python/sepaxml-2.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/bleach[${PYTHON_USEDEP}]

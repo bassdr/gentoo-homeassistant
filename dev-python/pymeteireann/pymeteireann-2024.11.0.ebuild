@@ -6,7 +6,6 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="PyMetEireann"
-
 inherit distutils-r1 pypi
 DESCRIPTION="A library to communicate with the Met Éireann Public Weather Forecast and Weather Warning APIs"
 HOMEPAGE="

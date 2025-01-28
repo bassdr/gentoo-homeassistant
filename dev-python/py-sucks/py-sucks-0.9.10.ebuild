@@ -16,16 +16,24 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/click-6[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
+	>=dev-python/pycountry-convert-0.5[${PYTHON_USEDEP}]
 	dev-python/pycountry-convert[${PYTHON_USEDEP}]
+	>=dev-python/pycryptodome-3.4[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
+	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.18[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	dev? ( >=dev-python/requests-mock-1.3[${PYTHON_USEDEP}] )
+	>=dev-python/sleekxmppfs-1.4.1[${PYTHON_USEDEP}]
 	dev-python/sleekxmppfs[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

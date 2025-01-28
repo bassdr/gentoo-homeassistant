@@ -20,6 +20,10 @@ KEYWORDS="amd64 arm64"
 # tests need root access
 RESTRICT="test"
 
+GENERATED_DEPEND="
+	dev-python/importlib-metadata[${PYTHON_USEDEP}]
+	dev-python/win-inet-pton[${PYTHON_USEDEP}]
+"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "

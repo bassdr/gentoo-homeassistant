@@ -31,6 +31,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="protobuf"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	protobuf? ( >=dev-python/grpcio-tools-1.67.1[${PYTHON_USEDEP}] )
+"
 DEPEND="
 	dev-libs/openssl:=
 	net-dns/c-ares:=

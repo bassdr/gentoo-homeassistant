@@ -17,14 +17,24 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="testing"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	testing? ( dev-python/black[${PYTHON_USEDEP}] )
 	dev-python/defusedxml[${PYTHON_USEDEP}]
+	testing? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	testing? ( dev-python/mock[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
+	testing? ( dev-python/pytest-vcr[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
+	testing? ( dev-python/requests-mock[${PYTHON_USEDEP}] )
+	testing? ( dev-python/tox[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]

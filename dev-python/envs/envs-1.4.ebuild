@@ -15,12 +15,18 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="cli test"
+GENERATED_IUSE="cli"
+IUSE="${GENERATED_IUSE} cli test"
 RESTRICT="!test? ( test )"
 
 # missing DOCS="README.md"
 
-RDEPEND="cli? (
+GENERATED_DEPEND="
+	cli? ( >=dev-python/click-8.0.3[cli,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/jinja2-3.0.3[cli,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/terminaltables-3.1.10[cli,${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND} cli? (
 			  >=dev-python/jinja-3.0.3[${PYTHON_USEDEP}]
 			  >=dev-python/click-8.0.3[${PYTHON_USEDEP}]
 			  >=dev-python/terminaltables-3.1.10[${PYTHON_USEDEP}]

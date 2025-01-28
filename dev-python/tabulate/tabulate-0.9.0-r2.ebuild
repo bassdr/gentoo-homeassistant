@@ -24,7 +24,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+GENERATED_IUSE="widechars"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	widechars? ( dev-python/wcwidth[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/wcwidth[${PYTHON_USEDEP}]
 "
 BDEPEND="

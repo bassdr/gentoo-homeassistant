@@ -10,7 +10,7 @@ PYPI_PN="Rx"
 inherit distutils-r1 virtualx pypi
 DESCRIPTION="Reactive Extensions (Rx) for Python"
 HOMEPAGE="
-  https://pypi.org/project/rx/
+  https://pypi.org/project/Rx/
 "
 
 LICENSE="MIT"

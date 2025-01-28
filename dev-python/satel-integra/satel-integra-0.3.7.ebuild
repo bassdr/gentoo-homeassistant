@@ -20,6 +20,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/click-6.0[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

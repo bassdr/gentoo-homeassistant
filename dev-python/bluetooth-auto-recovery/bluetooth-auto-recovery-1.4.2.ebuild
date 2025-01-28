@@ -18,15 +18,23 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/bluetooth-adapters-0.16.0[${PYTHON_USEDEP}]
 	dev-python/bluetooth-adapters[${PYTHON_USEDEP}]
+	>=dev-python/btsocket-0.2.0[${PYTHON_USEDEP}]
 	dev-python/btsocket[${PYTHON_USEDEP}]
+	docs? ( <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
+	>=dev-python/pyric-0.1.6.3[${PYTHON_USEDEP}]
 	dev-python/pyric[${PYTHON_USEDEP}]
+	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
+	>=dev-python/usb-devices-0.4.1[${PYTHON_USEDEP}]
 	dev-python/usb-devices[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

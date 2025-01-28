@@ -18,6 +18,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	<dev-python/h11-1[${PYTHON_USEDEP}]
 	dev-python/h11[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

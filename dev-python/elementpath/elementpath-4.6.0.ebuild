@@ -17,6 +17,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
+	dev? ( dev-python/lxml[${PYTHON_USEDEP}] )
+	dev? ( dev-python/lxml-stubs[${PYTHON_USEDEP}] )
+	dev? ( dev-python/memory-profiler[${PYTHON_USEDEP}] )
+	dev? ( dev-python/memray[${PYTHON_USEDEP}] )
+	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/lxml[${PYTHON_USEDEP}]

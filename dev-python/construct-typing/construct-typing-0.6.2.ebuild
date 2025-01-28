@@ -23,6 +23,8 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/construct[${PYTHON_USEDEP}]
+	~dev-python/construct-2.10.68[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -24,3 +24,6 @@ KEYWORDS="amd64 arm64"
 
 distutils_enable_sphinx docs/source
 distutils_enable_tests pytest
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

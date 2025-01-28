@@ -14,13 +14,23 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="tests"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	tests? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
+	>dev-python/attrs-18.1[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
+	tests? ( dev-python/coveralls[${PYTHON_USEDEP}] )
+	tests? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
+	tests? ( >dev-python/pytest-3.6.4[${PYTHON_USEDEP}] )
+	tests? ( >=dev-python/pytest-aiohttp-1.0.0[${PYTHON_USEDEP}] )
+	tests? ( ~dev-python/pytest-asyncio-0.21.2[${PYTHON_USEDEP}] )
+	tests? ( >=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]"

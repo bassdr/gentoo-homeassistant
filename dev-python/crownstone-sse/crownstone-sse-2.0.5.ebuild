@@ -22,6 +22,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-3.7[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

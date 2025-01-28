@@ -17,7 +17,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
+GENERATED_IUSE="tests"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	tests? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pycodestyle[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pylint[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

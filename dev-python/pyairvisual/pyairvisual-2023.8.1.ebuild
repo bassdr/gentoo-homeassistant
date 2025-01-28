@@ -24,10 +24,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.22.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
+	>=dev-python/pygments-2.15.0[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
+	>=dev-python/pysmb-1.2.6[${PYTHON_USEDEP}]
 	dev-python/pysmb[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

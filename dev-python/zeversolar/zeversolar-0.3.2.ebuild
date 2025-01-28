@@ -19,7 +19,9 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
+	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	<dev-python/retry2-0.10.0[${PYTHON_USEDEP}]
 	dev-python/retry2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

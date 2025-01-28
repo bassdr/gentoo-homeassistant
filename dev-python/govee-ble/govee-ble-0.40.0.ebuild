@@ -19,17 +19,26 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/bluetooth-data-tools-0.1.2[${PYTHON_USEDEP}]
 	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
+	>=dev-python/bluetooth-sensor-state-data-1.5.0[${PYTHON_USEDEP}]
 	dev-python/bluetooth-sensor-state-data[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
 	dev-python/home-assistant-bluetooth[${PYTHON_USEDEP}]
+	docs? ( <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
+	>=dev-python/sensor-state-data-2.18.0[${PYTHON_USEDEP}]
 	dev-python/sensor-state-data[${PYTHON_USEDEP}]
+	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]

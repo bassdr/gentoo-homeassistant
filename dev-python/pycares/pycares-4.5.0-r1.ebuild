@@ -17,13 +17,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="idna"
+IUSE="${GENERATED_IUSE} test"
 # Tests fail with network-sandbox, since they try to resolve google.com
 PROPERTIES="test_network"
 RESTRICT="test"
 
 GENERATED_DEPEND="
+	>=dev-python/cffi-1.5.0[${PYTHON_USEDEP}]
 	dev-python/cffi[${PYTHON_USEDEP}]
+	idna? ( >=dev-python/idna-2.1[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	net-dns/c-ares:=

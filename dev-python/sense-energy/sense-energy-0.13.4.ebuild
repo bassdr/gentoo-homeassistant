@@ -21,8 +21,10 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/ciso8601[${PYTHON_USEDEP}]
+	>=dev-python/kasa-crypt-0.2.0[${PYTHON_USEDEP}]
 	dev-python/kasa-crypt[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

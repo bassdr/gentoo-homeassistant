@@ -27,6 +27,7 @@ DOCS="README.md"
 GENERATED_DEPEND="
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/vacuum-map-parser-base[${PYTHON_USEDEP}]
+	~dev-python/vacuum-map-parser-base-0.1.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]

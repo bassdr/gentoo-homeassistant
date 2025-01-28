@@ -20,8 +20,11 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
+	<dev-python/googleapis-common-protos-2.0.0dev[grpc,${PYTHON_USEDEP}]
 	dev-python/googleapis-common-protos[${PYTHON_USEDEP}]
+	<dev-python/grpcio-2.0.0dev[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]
+	!=dev-python/protobuf-4.21.1[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

@@ -18,13 +18,17 @@ SRC_URI="https://github.com/gurumitts/pylutron-caseta/archive/v${PV}.tar.gz -> $
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="cli test"
+GENERATED_IUSE="cli"
+IUSE="${GENERATED_IUSE} cli test"
 RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md README.md"
 
 GENERATED_DEPEND="
+	cli? ( ~dev-python/click-8.1.2[${PYTHON_USEDEP}] )
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	cli? ( ~dev-python/xdg-5.1.1[${PYTHON_USEDEP}] )
+	cli? ( ~dev-python/zeroconf-0.38.4[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]

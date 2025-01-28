@@ -21,8 +21,11 @@ KEYWORDS="amd64 arm64"
 RESTRICT="test"
 
 GENERATED_DEPEND="
+	>=dev-python/pyjsparser-2.5.1[${PYTHON_USEDEP}]
 	dev-python/pyjsparser[${PYTHON_USEDEP}]
+	>=dev-python/six-1.10[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
+	>=dev-python/tzlocal-1.2[${PYTHON_USEDEP}]
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

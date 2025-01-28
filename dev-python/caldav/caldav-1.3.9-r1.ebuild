@@ -17,14 +17,22 @@ LICENSE="|| ( GPL-3 Apache-2.0 )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	dev-python/icalendar[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-coverage[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
+	>=dev-python/recurring-ical-events-2.0.0[${PYTHON_USEDEP}]
 	dev-python/recurring-ical-events[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	test? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 	dev-python/vobject[${PYTHON_USEDEP}]
+	test? ( dev-python/xandikos[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/icalendar[${PYTHON_USEDEP}]

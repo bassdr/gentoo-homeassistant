@@ -25,6 +25,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/pyasn1-0.1.3[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

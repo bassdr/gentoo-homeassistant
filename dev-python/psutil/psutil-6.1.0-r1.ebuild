@@ -88,3 +88,6 @@ python_compile() {
 	local MAKEOPTS=-j1
 	distutils-r1_python_compile
 }
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

@@ -24,6 +24,20 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="docs redis tests"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	tests? ( >=dev-python/pytest-5.4.1[${PYTHON_USEDEP}] )
+	tests? ( >=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}] )
+	tests? ( >=dev-python/pytest-mypy-0.8.0[${PYTHON_USEDEP}] )
+	tests? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
+	>=dev-python/pywin32-226[${PYTHON_USEDEP}]
+	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
+	tests? ( dev-python/redis[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-1.7.1[${PYTHON_USEDEP}] )
+	tests? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
+	tests? ( dev-python/types-redis[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/redis[${PYTHON_USEDEP}]

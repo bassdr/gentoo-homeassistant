@@ -28,6 +28,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/frozenlist-1.1.0[${PYTHON_USEDEP}]
 	dev-python/frozenlist[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

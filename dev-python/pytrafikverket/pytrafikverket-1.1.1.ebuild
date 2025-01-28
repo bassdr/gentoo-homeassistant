@@ -25,9 +25,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/aiozoneinfo-0.2.1[${PYTHON_USEDEP}]
 	dev-python/aiozoneinfo[${PYTHON_USEDEP}]
+	>=dev-python/lxml-5.1.0[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
+	>=dev-python/yarl-1.9.4[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

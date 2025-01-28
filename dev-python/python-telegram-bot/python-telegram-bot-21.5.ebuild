@@ -23,14 +23,39 @@ HOMEPAGE="
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="all callback-data ext http2 job-queue passport rate-limiter +socks test webhooks"
+GENERATED_IUSE="all callback-data ext http2 job-queue passport rate-limiter socks webhooks"
+IUSE="${GENERATED_IUSE} all callback-data ext http2 job-queue passport rate-limiter +socks test webhooks"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="all? ( ext http2 passport socks )
 	ext? ( callback-data job-queue rate-limiter webhooks )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	all? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
+	ext? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
+	rate-limiter? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] )
+	ext? ( ~dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] )
+	job-queue? ( ~dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] )
+	all? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
+	callback-data? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
+	ext? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
+	>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]
+	>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]
+	all? ( !=dev-python/cryptography-3.4[${PYTHON_USEDEP}] )
+	passport? ( !=dev-python/cryptography-3.4[${PYTHON_USEDEP}] )
+	all? ( dev-python/httpx[http2,${PYTHON_USEDEP}] )
+	all? ( dev-python/httpx[socks,${PYTHON_USEDEP}] )
 	dev-python/httpx[${PYTHON_USEDEP}]
+	http2? ( dev-python/httpx[http2,${PYTHON_USEDEP}] )
+	socks? ( dev-python/httpx[socks,${PYTHON_USEDEP}] )
+	~dev-python/httpx-0.27[${PYTHON_USEDEP}]
+	all? ( >=dev-python/pytz-2018.6[${PYTHON_USEDEP}] )
+	ext? ( >=dev-python/pytz-2018.6[${PYTHON_USEDEP}] )
+	job-queue? ( >=dev-python/pytz-2018.6[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/tornado-6.4[${PYTHON_USEDEP}] )
+	ext? ( ~dev-python/tornado-6.4[${PYTHON_USEDEP}] )
+	webhooks? ( ~dev-python/tornado-6.4[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/httpx-0.27.0[${PYTHON_USEDEP}] <dev-python/httpx-0.28.0[${PYTHON_USEDEP}]

@@ -26,6 +26,7 @@ GENERATED_DEPEND="
 	dev-python/docopt[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
+	dev-python/typing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]

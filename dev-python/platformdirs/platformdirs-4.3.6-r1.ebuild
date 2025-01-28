@@ -17,6 +17,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="docs test type"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	test? ( ~dev-python/appdirs-1.4.4[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/covdefaults-2.3[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	type? ( >=dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/proselint-0.14[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-8.3.2[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-cov-5[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-8.0.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-autodoc-typehints-2.4[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/appdirs[${PYTHON_USEDEP}]

@@ -15,7 +15,10 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 distutils_enable_tests pytest
+# Requires could not be inserted in this ebuild
+# RDEPEND could not be inserted in this ebuild

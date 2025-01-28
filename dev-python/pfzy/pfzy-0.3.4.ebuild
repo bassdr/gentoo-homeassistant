@@ -17,12 +17,20 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-RDEPEND="dev-python/furo[${PYTHON_USEDEP}]"
+GENERATED_DEPEND="
+	docs? ( >=dev-python/furo-2021.8.17_beta.43[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-0.15.1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-4.1.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-copybutton-0.4.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND} dev-python/furo[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

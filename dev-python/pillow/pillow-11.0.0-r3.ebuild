@@ -34,10 +34,32 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="HPND"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples imagequant +jpeg jpeg2k lcms test tiff tk truetype webp xcb zlib"
+GENERATED_IUSE="docs fpx mic tests xmp"
+IUSE="${GENERATED_IUSE} examples imagequant +jpeg jpeg2k lcms test tiff tk truetype webp xcb zlib"
 REQUIRED_USE="test? ( jpeg jpeg2k lcms tiff truetype )"
 RESTRICT="!test? ( test )"
 
+GENERATED_DEPEND="
+	tests? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
+	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	tests? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
+	xmp? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	tests? ( dev-python/markdown2[${PYTHON_USEDEP}] )
+	docs? ( dev-python/olefile[${PYTHON_USEDEP}] )
+	fpx? ( dev-python/olefile[${PYTHON_USEDEP}] )
+	mic? ( dev-python/olefile[${PYTHON_USEDEP}] )
+	tests? ( dev-python/olefile[${PYTHON_USEDEP}] )
+	tests? ( dev-python/packaging[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pyroma[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-8.1[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxext-opengraph[${PYTHON_USEDEP}] )
+"
 DEPEND="
 	imagequant? ( media-gfx/libimagequant:= )
 	jpeg? ( media-libs/libjpeg-turbo:= )

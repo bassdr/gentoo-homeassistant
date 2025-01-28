@@ -20,6 +20,7 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/alarmdecoder[${PYTHON_USEDEP}]
+	~dev-python/alarmdecoder-1.13.11[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/alarmdecoder-1.13.11[${PYTHON_USEDEP}]"

@@ -18,7 +18,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	<dev-python/hpack-5[${PYTHON_USEDEP}]
 	dev-python/hpack[${PYTHON_USEDEP}]
+	<dev-python/hyperframe-7[${PYTHON_USEDEP}]
 	dev-python/hyperframe[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

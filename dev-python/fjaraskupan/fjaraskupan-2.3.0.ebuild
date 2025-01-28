@@ -15,13 +15,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="tests"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	>=dev-python/bleak-0.19[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
+	tests? ( >dev-python/pytest-3.6.4[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.19[${PYTHON_USEDEP}]"

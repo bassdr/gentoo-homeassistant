@@ -20,7 +20,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="cchardet chardet charset-normalizer html5lib lxml"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	cchardet? ( dev-python/cchardet[${PYTHON_USEDEP}] )
+	chardet? ( dev-python/chardet[${PYTHON_USEDEP}] )
+	charset-normalizer? ( dev-python/charset-normalizer[${PYTHON_USEDEP}] )
+	html5lib? ( dev-python/html5lib[${PYTHON_USEDEP}] )
+	lxml? ( dev-python/lxml[${PYTHON_USEDEP}] )
+	>dev-python/soupsieve-1.2[${PYTHON_USEDEP}]
 	dev-python/soupsieve[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -18,6 +18,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/decorator-3.4.2[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

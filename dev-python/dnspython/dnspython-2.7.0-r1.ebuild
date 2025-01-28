@@ -24,9 +24,33 @@ SRC_URI="
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="dnssec examples"
+GENERATED_IUSE="dev dnssec doh doq idna trio wmi"
+IUSE="${GENERATED_IUSE} dnssec examples"
 
-RDEPEND="
+GENERATED_DEPEND="
+	doq? ( >=dev-python/aioquic-1.0.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/black-23.1.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/coverage-7.0[${PYTHON_USEDEP}] )
+	dnssec? ( >=dev-python/cryptography-43[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/flake8-7[${PYTHON_USEDEP}] )
+	doh? ( >=dev-python/h2-4.1.0[${PYTHON_USEDEP}] )
+	doh? ( >=dev-python/httpcore-1.0.0[${PYTHON_USEDEP}] )
+	doh? ( >=dev-python/httpx-0.26.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/hypercorn-0.16.0[${PYTHON_USEDEP}] )
+	idna? ( >=dev-python/idna-3.7[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/mypy-1.8[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pylint-3[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-7.4[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/quart-trio-0.11.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/sphinx-7.2.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] )
+	trio? ( >=dev-python/trio-0.23[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/twine-4.0.0[${PYTHON_USEDEP}] )
+	dev? ( >=dev-python/wheel-0.42.0[${PYTHON_USEDEP}] )
+	wmi? ( >=dev-python/wmi-1.5.1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	dnssec? (
 		>=dev-python/cryptography-41[${PYTHON_USEDEP}]
 	)

@@ -22,8 +22,10 @@ DOCS="README.rst"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/async-upnp-client-0.32[${PYTHON_USEDEP}]
 	dev-python/async-upnp-client[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
+	>=dev-python/click-8[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

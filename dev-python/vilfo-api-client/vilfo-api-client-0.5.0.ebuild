@@ -16,12 +16,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="dev test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="
 	dev-python/getmac[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	dev? ( dev-python/responses[${PYTHON_USEDEP}] )
+	test? ( dev-python/responses[${PYTHON_USEDEP}] )
 	dev-python/semver[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

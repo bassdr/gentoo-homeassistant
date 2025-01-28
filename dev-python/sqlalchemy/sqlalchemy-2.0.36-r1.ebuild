@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN=SQLAlchemy
+PYPI_PN="SQLAlchemy"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="sqlite?"
 
@@ -13,7 +13,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Database Abstraction Library"
 HOMEPAGE="
-  https://pypi.org/project/sqlalchemy/
+  https://pypi.org/project/SQLAlchemy/
   Documentation, https://docs.sqlalchemy.org
   Issue Tracker, https://github.com/sqlalchemy/sqlalchemy/
 "
@@ -21,10 +21,43 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples +sqlite test"
+GENERATED_IUSE="aiomysql aioodbc aiosqlite asyncio asyncmy mariadb-connector mssql mssql-pymssql mssql-pyodbc mypy mysql mysql-connector oracle oracle-oracledb postgresql postgresql-asyncpg postgresql-pg8000 postgresql-psycopg postgresql-psycopg2binary postgresql-psycopg2cffi postgresql-psycopgbinary pymysql sqlcipher"
+IUSE="${GENERATED_IUSE} examples +sqlite test"
 
 GENERATED_DEPEND="
+	aiomysql? ( >=dev-python/aiomysql-0.2.0[${PYTHON_USEDEP}] )
+	aioodbc? ( dev-python/aioodbc[${PYTHON_USEDEP}] )
+	aiosqlite? ( dev-python/aiosqlite[${PYTHON_USEDEP}] )
+	asyncmy? ( !=dev-python/asyncmy-0.2.4[${PYTHON_USEDEP}] )
+	postgresql-asyncpg? ( dev-python/asyncpg[${PYTHON_USEDEP}] )
+	oracle? ( >=dev-python/cx-oracle-8[${PYTHON_USEDEP}] )
+	!=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}]
+	aiomysql? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
+	aioodbc? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
+	aiosqlite? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
+	asyncio? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
+	asyncmy? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
 	dev-python/greenlet[${PYTHON_USEDEP}]
+	postgresql-asyncpg? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
+	dev-python/importlib-metadata[${PYTHON_USEDEP}]
+	mariadb-connector? ( !=dev-python/mariadb-1.1.10[${PYTHON_USEDEP}] )
+	mypy? ( >=dev-python/mypy-0.910[${PYTHON_USEDEP}] )
+	mysql-connector? ( dev-python/mysql-connector-python[${PYTHON_USEDEP}] )
+	mysql? ( >=dev-python/mysqlclient-1.4.0[${PYTHON_USEDEP}] )
+	oracle-oracledb? ( >=dev-python/oracledb-1.0.1[${PYTHON_USEDEP}] )
+	postgresql-pg8000? ( >=dev-python/pg8000-1.29.1[${PYTHON_USEDEP}] )
+	postgresql-psycopg? ( >=dev-python/psycopg-3.0.7[${PYTHON_USEDEP}] )
+	postgresql-psycopgbinary? ( >=dev-python/psycopg-3.0.7[binary,${PYTHON_USEDEP}] )
+	postgresql? ( >=dev-python/psycopg2-2.7[${PYTHON_USEDEP}] )
+	postgresql-psycopg2binary? ( dev-python/psycopg2-binary[${PYTHON_USEDEP}] )
+	postgresql-psycopg2cffi? ( dev-python/psycopg2cffi[${PYTHON_USEDEP}] )
+	mssql-pymssql? ( dev-python/pymssql[${PYTHON_USEDEP}] )
+	pymysql? ( dev-python/pymysql[${PYTHON_USEDEP}] )
+	mssql-pyodbc? ( dev-python/pyodbc[${PYTHON_USEDEP}] )
+	mssql? ( dev-python/pyodbc[${PYTHON_USEDEP}] )
+	sqlcipher? ( dev-python/sqlcipher3-binary[${PYTHON_USEDEP}] )
+	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
+	aiosqlite? ( !=dev-python/typing-extensions-3.10.0.1[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

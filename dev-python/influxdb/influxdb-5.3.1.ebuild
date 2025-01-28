@@ -16,11 +16,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	test? ( dev-python/mock[${PYTHON_USEDEP}] )
 	dev-python/msgpack[${PYTHON_USEDEP}]
+	test? ( dev-python/nose[${PYTHON_USEDEP}] )
+	test? ( dev-python/nose-cov[${PYTHON_USEDEP}] )
+	>=dev-python/python-dateutil-2.6.0[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.17.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	test? ( dev-python/requests-mock[${PYTHON_USEDEP}] )
+	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

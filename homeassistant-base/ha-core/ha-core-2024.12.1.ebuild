@@ -21,7 +21,6 @@ RDEPEND="
 	~dev-python/async-interrupt-1.2.0[${PYTHON_USEDEP}]
 	~dev-python/atomicwrites-homeassistant-1.4.1[${PYTHON_USEDEP}]
 	~dev-python/attrs-24.2.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '~dev-python/audioop-lts-0.2.1[${PYTHON_USEDEP}]' python3_13{,t})
 	~dev-python/awesomeversion-24.6.0[${PYTHON_USEDEP}]
 	~dev-python/bcrypt-4.2.1[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2021.5.30[${PYTHON_USEDEP}]
@@ -47,12 +46,10 @@ RDEPEND="
 	~dev-python/requests-2.32.3[${PYTHON_USEDEP}]
 	~dev-python/securetar-2024.11.0[${PYTHON_USEDEP}]
 	~dev-python/sqlalchemy-2.0.36[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '~dev-python/standard-aifc-3.13.0[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '~dev-python/standard-telnetlib-3.13.0[${PYTHON_USEDEP}]' python3_13{,t})
-	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}] <dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}]
 	~dev-python/ulid-transform-1.0.2[${PYTHON_USEDEP}]
-	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}] <dev-python/urllib3-2[${PYTHON_USEDEP}]
-	~dev-python/uv-0.5.6
+	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
+	~dev-python/uv-0.5.6[${PYTHON_USEDEP}]
 	~dev-python/voluptuous-0.15.2[${PYTHON_USEDEP}]
 	~dev-python/voluptuous-openapi-0.0.5[${PYTHON_USEDEP}]
 	~dev-python/voluptuous-serialize-2.6.0[${PYTHON_USEDEP}]

@@ -21,9 +21,15 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="crt"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	crt? ( ~dev-python/awscrt-0.20.11[${PYTHON_USEDEP}] )
+	<dev-python/jmespath-2.0.0[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
+	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	!=dev-python/urllib3-2.2.0[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

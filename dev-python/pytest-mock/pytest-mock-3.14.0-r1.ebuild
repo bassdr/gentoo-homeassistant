@@ -24,8 +24,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="dev"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
+	dev? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
+	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
+	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]

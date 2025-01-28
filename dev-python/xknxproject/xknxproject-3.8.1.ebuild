@@ -22,7 +22,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/pyzipper-0.3.6[${PYTHON_USEDEP}]
 	dev-python/pyzipper[${PYTHON_USEDEP}]
+	>=dev-python/striprtf-0.0.26[${PYTHON_USEDEP}]
 	dev-python/striprtf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

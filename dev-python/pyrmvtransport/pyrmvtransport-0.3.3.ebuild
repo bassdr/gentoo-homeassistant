@@ -16,15 +16,33 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="test"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
+	test? ( dev-python/asynctest[${PYTHON_USEDEP}] )
+	test? ( dev-python/bandit[${PYTHON_USEDEP}] )
+	test? ( dev-python/black[${PYTHON_USEDEP}] )
+	test? ( dev-python/codecov[${PYTHON_USEDEP}] )
+	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
+	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
+	test? ( dev-python/mock[${PYTHON_USEDEP}] )
+	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	test? ( dev-python/pylint[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-5.2.2[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-httpx[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
+	test? ( dev-python/tox[${PYTHON_USEDEP}] )
+	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 dev-python/async-timeout[${PYTHON_USEDEP}]

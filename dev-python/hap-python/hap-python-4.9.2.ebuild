@@ -6,7 +6,6 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="HAP-python"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="HomeKit Accessory Protocol implementation in python"
@@ -20,16 +19,22 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="qrcode"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	dev-python/async-timeout[${PYTHON_USEDEP}]
+	qrcode? ( dev-python/base36[${PYTHON_USEDEP}] )
 	dev-python/chacha20poly1305-reuseable[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/h11[${PYTHON_USEDEP}]
+	>=dev-python/orjson-3.7.2[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	qrcode? ( dev-python/pyqrcode[${PYTHON_USEDEP}] )
+	>=dev-python/zeroconf-0.36.2[${PYTHON_USEDEP}]
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

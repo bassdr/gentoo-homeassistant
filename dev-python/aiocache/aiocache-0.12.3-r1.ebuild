@@ -14,11 +14,17 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="memcached msgpack redis"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+GENERATED_DEPEND="
+	memcached? ( >=dev-python/aiomcache-0.5.2[${PYTHON_USEDEP}] )
+	msgpack? ( >=dev-python/msgpack-0.5.5[${PYTHON_USEDEP}] )
+	redis? ( >=dev-python/redis-4.2.0[${PYTHON_USEDEP}] )
+"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

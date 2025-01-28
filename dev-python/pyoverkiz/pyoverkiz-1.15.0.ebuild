@@ -21,11 +21,17 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	<dev-python/attrs-25.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
+	<dev-python/backoff-3.0[${PYTHON_USEDEP}]
 	dev-python/backoff[${PYTHON_USEDEP}]
+	<dev-python/boto3-2.0.0[${PYTHON_USEDEP}]
 	dev-python/boto3[${PYTHON_USEDEP}]
+	<dev-python/pyhumps-4.0.0[${PYTHON_USEDEP}]
 	dev-python/pyhumps[${PYTHON_USEDEP}]
+	<dev-python/warrant-lite-2.0.0[${PYTHON_USEDEP}]
 	dev-python/warrant-lite[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

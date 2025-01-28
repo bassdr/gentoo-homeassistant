@@ -15,18 +15,28 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="libcst"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
 	dev-python/google-api-core[${PYTHON_USEDEP}]
+	<dev-python/google-auth-3.0.0dev[${PYTHON_USEDEP}]
 	dev-python/google-auth[${PYTHON_USEDEP}]
+	<dev-python/grpc-google-iam-v1-1.0.0dev[${PYTHON_USEDEP}]
 	dev-python/grpc-google-iam-v1[${PYTHON_USEDEP}]
+	<dev-python/grpcio-2.0dev[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-status-1.33.2[${PYTHON_USEDEP}]
 	dev-python/grpcio-status[${PYTHON_USEDEP}]
+	libcst? ( >=dev-python/libcst-0.3.10[${PYTHON_USEDEP}] )
+	<dev-python/proto-plus-2.0.0dev[${PYTHON_USEDEP}]
+	<dev-python/proto-plus-2.0.0dev[${PYTHON_USEDEP}]
 	dev-python/proto-plus[${PYTHON_USEDEP}]
+	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

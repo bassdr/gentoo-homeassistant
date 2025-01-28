@@ -22,7 +22,9 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/msal-2[${PYTHON_USEDEP}]
 	dev-python/msal[${PYTHON_USEDEP}]
+	<dev-python/portalocker-3[${PYTHON_USEDEP}]
 	dev-python/portalocker[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

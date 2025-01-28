@@ -23,8 +23,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/dnspython-2.3.0[${PYTHON_USEDEP}]
 	dev-python/dnspython[${PYTHON_USEDEP}]
+	>=dev-python/tenacity-8.2.3[${PYTHON_USEDEP}]
 	dev-python/tenacity[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

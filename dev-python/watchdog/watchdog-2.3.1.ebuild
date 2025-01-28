@@ -21,7 +21,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+GENERATED_IUSE="watchmedo"
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="
+	watchmedo? ( >=dev-python/pyyaml-3.10[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
 BDEPEND="

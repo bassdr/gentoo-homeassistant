@@ -20,6 +20,7 @@ KEYWORDS="amd64 arm64"
 IUSE="examples"
 
 GENERATED_DEPEND="
+	>=dev-python/ptyprocess-0.5[${PYTHON_USEDEP}]
 	dev-python/ptyprocess[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

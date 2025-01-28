@@ -22,6 +22,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="
+	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

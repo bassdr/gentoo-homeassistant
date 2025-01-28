@@ -19,19 +19,29 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="cli"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/awesomeversion-22.1.0[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
+	>=dev-python/backoff-2.2.0[${PYTHON_USEDEP}]
 	dev-python/backoff[${PYTHON_USEDEP}]
+	>=dev-python/cachetools-4.0.0[${PYTHON_USEDEP}]
 	dev-python/cachetools[${PYTHON_USEDEP}]
+	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
+	>=dev-python/orjson-3.9.8[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
+	cli? ( <dev-python/typer-0.13.0[all,${PYTHON_USEDEP}] )
+	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
+	cli? ( <dev-python/zeroconf-0.133.0[all,${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]

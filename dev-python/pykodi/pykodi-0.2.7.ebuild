@@ -22,7 +22,9 @@ DOCS="README.md"
 
 GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	>=dev-python/jsonrpc-async-2.0.0[${PYTHON_USEDEP}]
 	dev-python/jsonrpc-async[${PYTHON_USEDEP}]
+	>=dev-python/jsonrpc-websocket-3.0.0[${PYTHON_USEDEP}]
 	dev-python/jsonrpc-websocket[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

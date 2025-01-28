@@ -17,7 +17,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="crt"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	<dev-python/botocore-2.0a.0[${PYTHON_USEDEP}]
+	crt? ( <dev-python/botocore-2.0a.0[crt,${PYTHON_USEDEP}] )
 	dev-python/botocore[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -25,6 +25,7 @@ GENERATED_DEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/pypubsub[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
+	>=dev-python/pyserial-asyncio-0.5[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "

@@ -23,6 +23,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 GENERATED_DEPEND="
+	<dev-python/astral-3.0[${PYTHON_USEDEP}]
 	dev-python/astral[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

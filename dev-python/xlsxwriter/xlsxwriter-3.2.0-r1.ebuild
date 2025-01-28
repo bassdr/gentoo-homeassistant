@@ -12,7 +12,7 @@ TAG=RELEASE_${PV}
 MY_P=XlsxWriter-${TAG}
 DESCRIPTION="A Python module for creating Excel XLSX files."
 HOMEPAGE="
-  https://pypi.org/project/XlsxWriter/
+  https://pypi.org/project/xlsxwriter/
 "
 SRC_URI="
 	https://github.com/jmcnamara/XlsxWriter/archive/${TAG}.tar.gz
@@ -31,4 +31,3 @@ python_test() {
 	epytest
 }
 
-# PYPI_PN could not be inserted in this ebuild

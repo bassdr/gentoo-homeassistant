@@ -21,8 +21,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="
+	<dev-python/ciso8601-3[${PYTHON_USEDEP}]
 	dev-python/ciso8601[${PYTHON_USEDEP}]
+	<dev-python/requests-3[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
+	<dev-python/urllib3-3[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

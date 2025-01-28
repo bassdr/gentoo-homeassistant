@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="PyOpenSSL"
+PYPI_PN="pyOpenSSL"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
@@ -12,7 +12,7 @@ inherit distutils-r1 toolchain-funcs pypi
 
 DESCRIPTION="Python wrapper module around the OpenSSL library"
 HOMEPAGE="
-  https://pypi.org/project/PyOpenSSL/
+  https://pypi.org/project/pyOpenSSL/
   Source, https://github.com/pyca/pyopenssl
 "
 
@@ -20,8 +20,16 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_IUSE="docs test"
+IUSE="${GENERATED_IUSE}"
 GENERATED_DEPEND="
+	<dev-python/cryptography-44[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	test? ( dev-python/pretend[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/pytest-3.0.1[${PYTHON_USEDEP}] )
+	test? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
+	docs? ( !=dev-python/sphinx-5.2.0[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	<dev-python/cryptography-45[${PYTHON_USEDEP}]
