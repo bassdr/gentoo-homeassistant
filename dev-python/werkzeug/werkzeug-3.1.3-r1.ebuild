@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="The comprehensive WSGI web application library."
 HOMEPAGE="
-  https://pypi.org/project/Werkzeug/
+  https://pypi.org/project/werkzeug/
   Changes, https://werkzeug.palletsprojects.com/changes/
   Chat, https://discord.gg/pallets
   Documentation, https://werkzeug.palletsprojects.com/
@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="watchdog"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/markupsafe-2.1.1[${PYTHON_USEDEP}]
 	dev-python/markupsafe[${PYTHON_USEDEP}]
 	watchdog? ( >=dev-python/watchdog-2.3[${PYTHON_USEDEP}] )

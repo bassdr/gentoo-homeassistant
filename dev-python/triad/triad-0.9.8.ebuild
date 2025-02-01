@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	ciso8601? ( dev-python/ciso8601[${PYTHON_USEDEP}] )
 	dev-python/fs[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2022.5.0[${PYTHON_USEDEP}]

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="basic dev docs gpl-license pixeldata"
+GENERATED_IUSE="basic docs gpl-license pixeldata"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,25 +17,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( ~dev-python/black-24.8.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
 	basic? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	pixeldata? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	pixeldata? ( dev-python/pillow[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pydicom-data[${PYTHON_USEDEP}] )
 	pixeldata? ( dev-python/pyjpegls[${PYTHON_USEDEP}] )
 	gpl-license? ( dev-python/pylibjpeg[libjpeg,${PYTHON_USEDEP}] )
 	pixeldata? ( dev-python/pylibjpeg[openjpeg,${PYTHON_USEDEP}] )
 	pixeldata? ( dev-python/pylibjpeg[rle,${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	pixeldata? ( dev-python/python-gdcm[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ruff-0.6.3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-gallery[${PYTHON_USEDEP}] )
@@ -43,9 +37,17 @@ GENERATED_DEPEND="
 	docs? ( dev-python/sphinxcontrib-jquery[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-napoleon[${PYTHON_USEDEP}] )
 	basic? ( dev-python/types-pydicom[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-requests[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-24.8.0[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.11.2[${PYTHON_USEDEP}]
+	dev-python/pydicom-data[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.6.3[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

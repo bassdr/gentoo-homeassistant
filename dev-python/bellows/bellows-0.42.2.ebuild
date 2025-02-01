@@ -18,7 +18,7 @@ GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/click-log-0.2.1[${PYTHON_USEDEP}]
 	dev-python/click-log[${PYTHON_USEDEP}]

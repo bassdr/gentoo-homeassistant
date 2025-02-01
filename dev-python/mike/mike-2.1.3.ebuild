@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,13 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/flake8-3.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/flake8-3.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8-quotes[${PYTHON_USEDEP}] )
-	test? ( dev-python/flake8-quotes[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.7[${PYTHON_USEDEP}]
@@ -31,10 +25,18 @@ GENERATED_DEPEND="
 	>=dev-python/pyparsing-3.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 	dev-python/pyyaml-env-tag[${PYTHON_USEDEP}]
-	dev? ( dev-python/shtab[${PYTHON_USEDEP}] )
-	test? ( dev-python/shtab[${PYTHON_USEDEP}] )
 	dev-python/verspec[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	>=dev-python/flake8-3.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-3.0[${PYTHON_USEDEP}]
+	dev-python/flake8-quotes[${PYTHON_USEDEP}]
+	dev-python/flake8-quotes[${PYTHON_USEDEP}]
+	dev-python/shtab[${PYTHON_USEDEP}]
+	dev-python/shtab[${PYTHON_USEDEP}]
+)"

@@ -22,13 +22,11 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint release test"
+GENERATED_IUSE="lint release"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	release? ( dev-python/build[${PYTHON_USEDEP}] )
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	release? ( dev-python/towncrier[${PYTHON_USEDEP}] )
 	release? ( dev-python/twine[${PYTHON_USEDEP}] )
@@ -41,3 +39,8 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
+# RDEPEND could not be inserted in this ebuild

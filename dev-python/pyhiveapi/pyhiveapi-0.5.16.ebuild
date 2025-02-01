@@ -17,13 +17,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/boto3-1.16.10[${PYTHON_USEDEP}]
 	dev-python/boto3[${PYTHON_USEDEP}]
@@ -32,7 +32,6 @@ GENERATED_DEPEND="
 	dev-python/loguru[${PYTHON_USEDEP}]
 	dev-python/pyquery[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
 	dev-python/unasync[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 "
@@ -47,3 +46,6 @@ RDEPEND="${GENERATED_DEPEND}
 	dev-python/loguru[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/tox[${PYTHON_USEDEP}]
+)"

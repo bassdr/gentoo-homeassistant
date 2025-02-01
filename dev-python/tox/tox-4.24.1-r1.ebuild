@@ -16,20 +16,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/cachetools-5.5[${PYTHON_USEDEP}]
 	>=dev-python/chardet-5.2[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
-	test? ( >=dev-python/devpi-process-1.0.2[${PYTHON_USEDEP}] )
 	>=dev-python/filelock-3.16.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-4.3.6[${PYTHON_USEDEP}]
 	>=dev-python/pluggy-1.5[${PYTHON_USEDEP}]
 	>=dev-python/pyproject-api-1.8[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}] )
 	>=dev-python/virtualenv-20.27.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -64,6 +61,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/devpi-process-1.0.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	# upstream lower bounds are meaningless

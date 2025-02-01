@@ -16,7 +16,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/django-4.2[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
 "

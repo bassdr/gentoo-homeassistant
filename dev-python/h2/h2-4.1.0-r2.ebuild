@@ -17,7 +17,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/hpack-5[${PYTHON_USEDEP}]
 	dev-python/hpack[${PYTHON_USEDEP}]
 	<dev-python/hyperframe-7[${PYTHON_USEDEP}]

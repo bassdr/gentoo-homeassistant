@@ -18,8 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dev"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( dev-python/jinja2[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 BDEPEND="
 	test? (
@@ -34,3 +33,7 @@ PATCHES=(
 )
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/jinja2[${PYTHON_USEDEP}]
+)"
+# RDEPEND could not be inserted in this ebuild

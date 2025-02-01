@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( ~dev-python/collective-checkdocs-0.2[${PYTHON_USEDEP}] )
 	tests? ( ~dev-python/crc32c-2.3[${PYTHON_USEDEP}] )
 	dev-python/dvc[${PYTHON_USEDEP}]

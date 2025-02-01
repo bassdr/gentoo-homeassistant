@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( >=dev-python/black-24.2.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/build[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/flake8-6.0.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8-pyproject[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/isort-5.11.2[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pyright-1.1.348[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6.2.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/syrupy-4.6.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	dev? ( >=dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/black-24.2.0[${PYTHON_USEDEP}]
+	dev-python/build[${PYTHON_USEDEP}]
+	>=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
+	dev-python/flake8-pyproject[${PYTHON_USEDEP}]
+	>=dev-python/isort-5.11.2[${PYTHON_USEDEP}]
+	>=dev-python/pyright-1.1.348[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+	>=dev-python/syrupy-4.6.0[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}]
+)"

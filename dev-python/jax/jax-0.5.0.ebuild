@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cuda12-local? ( ~dev-python/jax-cuda12-plugin-0.5.0[${PYTHON_USEDEP}] )
 	cuda12-pip? ( <=dev-python/jax-cuda12-plugin-0.5.0[with_cuda,${PYTHON_USEDEP}] )
 	cuda12? ( <=dev-python/jax-cuda12-plugin-0.5.0[with_cuda,${PYTHON_USEDEP}] )

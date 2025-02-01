@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/jaraco-context[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
@@ -29,7 +29,6 @@ GENERATED_DEPEND="
 	testing? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
 	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
-	dev-python/pytest-mypy[${PYTHON_USEDEP}]
 	testing? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
 	testing? ( dev-python/pytest-subprocess[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )

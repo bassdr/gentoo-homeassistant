@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	elmo? ( dev-python/allennlp[${PYTHON_USEDEP}] )
 	dev-python/dill[${PYTHON_USEDEP}]
 	dev-python/nltk[${PYTHON_USEDEP}]

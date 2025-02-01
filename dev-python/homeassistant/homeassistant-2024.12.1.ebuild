@@ -27,7 +27,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # external deps
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/aiodns[${PYTHON_USEDEP}]
 	~dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
 	dev-python/aiohasupervisor[${PYTHON_USEDEP}]

@@ -16,7 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-19.3.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]

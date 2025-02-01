@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cli? ( dev-python/fire[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-4.0.0[${PYTHON_USEDEP}]
 	typing? ( >=dev-python/mypy-1.0.0[${PYTHON_USEDEP}] )

@@ -14,12 +14,23 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev docs rel test"
+GENERATED_IUSE="docs rel"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/bumpversion[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/pycodestyle[${PYTHON_USEDEP}]
+	dev-python/pycodestyle[${PYTHON_USEDEP}]
+	dev-python/pygments[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+)"
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

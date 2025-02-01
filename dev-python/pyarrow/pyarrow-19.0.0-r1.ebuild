@@ -34,12 +34,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="test"
 IUSE="${GENERATED_IUSE} +parquet +snappy ssl"
 
-GENERATED_DEPEND="
-	test? ( dev-python/cffi[${PYTHON_USEDEP}] )
-	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
-	test? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytz[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-libs/apache-arrow-${PV}[compute,dataset,json,parquet?,re2,snappy?,ssl?]
@@ -57,6 +52,13 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/cffi[${PYTHON_USEDEP}]
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare

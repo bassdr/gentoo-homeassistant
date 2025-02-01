@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pyhamcrest-2.0.2[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-4.6[${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/click-7.1.2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/coincidence-0.1.0[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/coincidence-0.1.0[${PYTHON_USEDEP}] )

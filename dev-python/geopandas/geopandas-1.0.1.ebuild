@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev"
+GENERATED_IUSE="all"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,9 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev? ( dev-python/codecov[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/folium[${PYTHON_USEDEP}] )
 	all? ( dev-python/geoalchemy2[${PYTHON_USEDEP}] )
 	all? ( dev-python/mapclassify[${PYTHON_USEDEP}] )
@@ -31,15 +29,19 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/pyarrow-8.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyogrio-0.7.2[${PYTHON_USEDEP}]
 	>=dev-python/pyproj-3.3.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pytest-3.1.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/shapely-2.0.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/sqlalchemy-1.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/xyzservices[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 	all? ( sci-geosciences/geopy[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/codecov[${PYTHON_USEDEP}]
+	>=dev-python/pytest-3.1.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

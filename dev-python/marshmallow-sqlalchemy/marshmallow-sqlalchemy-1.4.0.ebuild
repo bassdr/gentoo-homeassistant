@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs tests"
+GENERATED_IUSE="docs tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,10 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/marshmallow-sqlalchemy[tests,${PYTHON_USEDEP}] )
 	tests? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
@@ -29,9 +28,12 @@ GENERATED_DEPEND="
 	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
 	<dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
-	dev? ( <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/marshmallow-sqlalchemy[tests,${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+)"

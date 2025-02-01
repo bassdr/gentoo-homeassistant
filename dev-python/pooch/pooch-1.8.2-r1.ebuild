@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="progress sftp xxhash"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 	sftp? ( >=dev-python/paramiko-2.7.0[${PYTHON_USEDEP}] )
 	>=dev-python/platformdirs-2.5.0[${PYTHON_USEDEP}]

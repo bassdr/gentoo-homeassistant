@@ -16,12 +16,11 @@ SRC_URI="https://github.com/Zulko/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="doc lint test"
+GENERATED_IUSE="doc lint"
 IUSE="${GENERATED_IUSE} test"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( >=dev-python/black-23.7.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/coveralls-4.0[${PYTHON_USEDEP}] )
 	<dev-python/decorator-6.0[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/flake8-6.0.0[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/flake8-absolute-import-1.0[${PYTHON_USEDEP}] )
@@ -36,8 +35,6 @@ GENERATED_DEPEND="
 	<dev-python/pillow-11.0[${PYTHON_USEDEP}]
 	<=dev-python/proglog-1.0.0[${PYTHON_USEDEP}]
 	doc? ( ~dev-python/pydata-sphinx-theme-0.13[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-cov-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/python-dotenv-0.10[${PYTHON_USEDEP}]
 	doc? ( ~dev-python/sphinx-6*[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
@@ -53,3 +50,8 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/coveralls-4.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-cov-3.0[${PYTHON_USEDEP}]
+)"

@@ -21,7 +21,7 @@ IUSE="${GENERATED_IUSE} +aio pandas test"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="pandas? ( aio )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aio? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	aio? ( <dev-python/asgiref-4[${PYTHON_USEDEP}] )
 	<dev-python/azure-core-2[${PYTHON_USEDEP}]

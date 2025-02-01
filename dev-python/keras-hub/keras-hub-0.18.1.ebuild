@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	dev-python/kagglehub[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
@@ -26,7 +26,6 @@ GENERATED_DEPEND="
 	dev-python/rich[${PYTHON_USEDEP}]
 	extras? ( dev-python/rouge-score[${PYTHON_USEDEP}] )
 	extras? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
-	dev-python/tensorflow-text[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

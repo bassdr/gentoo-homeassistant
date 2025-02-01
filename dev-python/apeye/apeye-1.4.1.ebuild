@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/apeye-core-1.0.0_beta2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cachecontrol-0.12.6[filecache,${PYTHON_USEDEP}] )
 	limiter? ( >=dev-python/cachecontrol-0.12.6[filecache,${PYTHON_USEDEP}] )

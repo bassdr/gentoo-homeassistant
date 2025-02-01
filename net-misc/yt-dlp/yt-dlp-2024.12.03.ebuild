@@ -27,13 +27,11 @@ SLOT="0"
 # was major/breaking changes) given website changes breaks it on a whim
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="build default dev pyinstaller secretstorage static-analysis test"
+GENERATED_IUSE="build default pyinstaller secretstorage static-analysis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( ~dev-python/autopep8-2.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	static-analysis? ( ~dev-python/autopep8-2.0[${PYTHON_USEDEP}] )
 	dev-python/brotli[${PYTHON_USEDEP}]
-	dev-python/brotlicffi[${PYTHON_USEDEP}]
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	default? ( dev-python/certifi[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/cffi[${PYTHON_USEDEP}] )
@@ -43,19 +41,13 @@ GENERATED_DEPEND="
 	build? ( dev-python/pip[${PYTHON_USEDEP}] )
 	default? ( dev-python/pycryptodomex[${PYTHON_USEDEP}] )
 	pyinstaller? ( >=dev-python/pyinstaller-6.11.1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-8.1[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-8.1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}] )
 	default? ( <dev-python/requests-3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
 	static-analysis? ( ~dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/secretstorage[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/setuptools-71.0.2[${PYTHON_USEDEP}] )
 	default? ( <dev-python/urllib3-3[${PYTHON_USEDEP}] )
 	default? ( >=dev-python/websockets-13.0[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 	default? ( media-libs/mutagen[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -64,6 +56,15 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/autopep8-2.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.1[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.1[${PYTHON_USEDEP}]
+	~dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.8.0[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

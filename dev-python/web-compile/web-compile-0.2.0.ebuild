@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/click-7.1.2[${PYTHON_USEDEP}]
 	~dev-python/gitpython-3.1.8[${PYTHON_USEDEP}]
 	~dev-python/jinja2-2.11.2[${PYTHON_USEDEP}]

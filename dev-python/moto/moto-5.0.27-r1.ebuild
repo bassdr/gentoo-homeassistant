@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all apigateway apigatewayv2 appsync awslambda batch cloudformation cognitoidp dynamodb dynamodbstreams events glue proxy quicksight resourcegroupstaggingapi s3 s3crc32c server ssm stepfunctions xray"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/antlr4-python3-runtime[${PYTHON_USEDEP}] )
 	proxy? ( dev-python/antlr4-python3-runtime[${PYTHON_USEDEP}] )
 	server? ( dev-python/antlr4-python3-runtime[${PYTHON_USEDEP}] )

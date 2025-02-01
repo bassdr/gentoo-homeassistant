@@ -7,11 +7,12 @@ EAPI=8
 DISTUTILS_USE_PEP517=standalone
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_PN="setuptools_scm"
 inherit distutils-r1 pypi
 
 DESCRIPTION="the blessed package to manage your versions by scm tags"
 HOMEPAGE="
-  https://pypi.org/project/setuptools-scm/
+  https://pypi.org/project/setuptools_scm/
   documentation, https://setuptools-scm.readthedocs.io/
   repository, https://github.com/pypa/setuptools_scm/
 "
@@ -21,10 +22,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # there's an optional dep on rich for cute logs
-GENERATED_IUSE="docs rich test"
+GENERATED_IUSE="docs rich"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/build[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( ~dev-python/entangled-cli-2.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs-entangled-plugin[${PYTHON_USEDEP}] )
@@ -33,11 +33,8 @@ GENERATED_DEPEND="
 	>=dev-python/packaging-20[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	docs? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	rich? ( dev-python/rich[${PYTHON_USEDEP}] )
-	test? ( dev-python/rich[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	test? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -56,6 +53,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/rich[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

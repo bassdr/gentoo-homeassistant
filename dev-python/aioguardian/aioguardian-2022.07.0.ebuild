@@ -5,7 +5,10 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
+
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 2022.7.0)"
+
 DESCRIPTION="A Python3 library for Elexa Guardian water valves and sensors"
 HOMEPAGE="
   https://pypi.org/project/aioguardian/
@@ -15,12 +18,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/asyncio-dgram-2.0.0[${PYTHON_USEDEP}]
@@ -32,15 +36,14 @@ RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/asyncio-dgram-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.11.7[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/asynctest[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
-	)"
 
 python_test() {
 	py.test -v -v || die
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/asynctest[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
+)"

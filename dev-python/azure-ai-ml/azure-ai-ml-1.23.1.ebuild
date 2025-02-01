@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/azure-common-1.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-core-1.23.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.3.0[${PYTHON_USEDEP}]

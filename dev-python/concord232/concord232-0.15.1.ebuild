@@ -15,10 +15,11 @@ LICENSE="all-rights-reserved"
 
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test ) mirror"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]

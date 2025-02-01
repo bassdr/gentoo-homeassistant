@@ -17,10 +17,11 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+cpudetection examples test"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} +cpudetection examples test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/blosc2-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/numexpr-2.6.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
@@ -38,7 +39,7 @@ DEPEND="
 	>=dev-python/numpy-1.19.0:=[${PYTHON_USEDEP}]
 	>=sci-libs/hdf5-1.8.4:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	>=dev-python/numexpr-2.6.2[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

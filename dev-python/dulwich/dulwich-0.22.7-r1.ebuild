@@ -50,16 +50,14 @@ LICENSE+=" )"
 
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev fastimport https paramiko pgp"
+GENERATED_IUSE="fastimport https paramiko pgp"
 IUSE="${GENERATED_IUSE} doc examples +native-extensions test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	fastimport? ( dev-python/fastimport[${PYTHON_USEDEP}] )
 	pgp? ( dev-python/gpg[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )
 	paramiko? ( dev-python/paramiko[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ruff-0.8.3[${PYTHON_USEDEP}] )
 	>=dev-python/urllib3-1.25[${PYTHON_USEDEP}]
 	https? ( >=dev-python/urllib3-1.24.1[${PYTHON_USEDEP}] )
 "
@@ -121,3 +119,4 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# BDEPEND could not be inserted in this ebuild

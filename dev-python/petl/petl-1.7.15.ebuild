@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	http? ( >=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}] )
 	bcolz? ( >=dev-python/bcolz-1.2.1[${PYTHON_USEDEP}] )
 	hdf5? ( >=dev-python/cython-0.29.13[${PYTHON_USEDEP}] )

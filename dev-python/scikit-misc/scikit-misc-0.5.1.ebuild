@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all build dev doc lint test"
+GENERATED_IUSE="all build doc lint"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	build? ( dev-python/cython[${PYTHON_USEDEP}] )
 	build? ( dev-python/meson[${PYTHON_USEDEP}] )
@@ -25,7 +25,6 @@ GENERATED_DEPEND="
 	build? ( dev-python/ninja[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	all? ( dev-python/scikit-misc[build,${PYTHON_USEDEP}] )
 	all? ( dev-python/scikit-misc[dev,${PYTHON_USEDEP}] )
@@ -34,9 +33,12 @@ GENERATED_DEPEND="
 	all? ( dev-python/scikit-misc[test,${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	build? ( dev-python/spin[${PYTHON_USEDEP}] )
-	dev? ( dev-python/twine[${PYTHON_USEDEP}] )
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"

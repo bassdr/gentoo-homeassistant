@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/covdefaults-2.3[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/pytest-8.3.2[${PYTHON_USEDEP}] )

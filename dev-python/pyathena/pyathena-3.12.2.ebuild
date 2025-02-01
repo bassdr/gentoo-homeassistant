@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/boto3-1.26.4[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.29.4[${PYTHON_USEDEP}]
 	fastparquet? ( >=dev-python/fastparquet-0.4.0[${PYTHON_USEDEP}] )

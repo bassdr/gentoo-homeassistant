@@ -21,7 +21,7 @@ GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE} blosc bzip2 mpi test szip zstd"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/cftime[${PYTHON_USEDEP}]
 	tests? ( dev-python/cython[${PYTHON_USEDEP}] )
@@ -34,7 +34,7 @@ DEPEND="
 	sci-libs/hdf5:=
 	sci-libs/netcdf:=[blosc(-)=,bzip2(-)=,hdf5,mpi=,szip=,zstd(-)=]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/cftime[${PYTHON_USEDEP}]

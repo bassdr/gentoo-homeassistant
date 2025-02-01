@@ -16,13 +16,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/betterproto-2.0.0_beta6[${PYTHON_USEDEP}]
-	dev? ( dev-python/build[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/betterproto-2.0.0_beta7[${PYTHON_USEDEP}]
 	=dev-python/pydantic-2*[${PYTHON_USEDEP}]
 "
+# BDEPEND could not be inserted in this ebuild

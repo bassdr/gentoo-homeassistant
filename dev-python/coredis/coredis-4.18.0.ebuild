@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	recipes? ( >=dev-python/aiobotocore-2.15.2[${PYTHON_USEDEP}] )
 	<dev-python/async-timeout-6[${PYTHON_USEDEP}]
 	recipes? ( >=dev-python/asyncache-0.3.1[${PYTHON_USEDEP}] )

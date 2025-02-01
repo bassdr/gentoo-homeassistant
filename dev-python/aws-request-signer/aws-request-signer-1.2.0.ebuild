@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	requests? ( >=dev-python/requests-2.21[${PYTHON_USEDEP}] )
 	demo? ( >=dev-python/requests-toolbelt-0.8.0[${PYTHON_USEDEP}] )
 "

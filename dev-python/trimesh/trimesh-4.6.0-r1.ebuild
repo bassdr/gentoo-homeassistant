@@ -20,9 +20,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all deprecated easy recommend test test-more"
+GENERATED_IUSE="all deprecated easy recommend test-more"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	recommend? ( dev-python/cascadio[${PYTHON_USEDEP}] )
 	easy? ( dev-python/chardet[${PYTHON_USEDEP}] )
 	easy? ( dev-python/colorlog[${PYTHON_USEDEP}] )
@@ -45,14 +45,10 @@ GENERATED_DEPEND="
 	recommend? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	easy? ( dev-python/pycollada[${PYTHON_USEDEP}] )
 	recommend? ( <dev-python/pyglet-2[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyinstrument[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/pymeshlab[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/pyright[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/pytest-beartype[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	easy? ( dev-python/rtree[${PYTHON_USEDEP}] )
-	test? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	recommend? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
 	easy? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	easy? ( dev-python/setuptools[${PYTHON_USEDEP}] )
@@ -94,6 +90,12 @@ BDEPEND="
 EPYTEST_TIMEOUT=1800
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pyinstrument[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

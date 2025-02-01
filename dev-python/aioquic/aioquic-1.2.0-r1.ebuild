@@ -17,11 +17,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/certifi[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/coverage-7.2.2[toml,${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
 	<dev-python/pylsqpack-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-24[${PYTHON_USEDEP}]
@@ -30,7 +29,7 @@ GENERATED_DEPEND="
 DEPEND="
 	dev-libs/openssl:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
@@ -41,3 +40,6 @@ RDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-7.2.2[toml,${PYTHON_USEDEP}]
+)"

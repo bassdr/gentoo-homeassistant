@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs subunit test"
+GENERATED_IUSE="docs subunit"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="zope.testrunner"
@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	subunit? ( >=dev-python/python-subunit-1.4.3[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
@@ -26,8 +26,10 @@ GENERATED_DEPEND="
 	subunit? ( >=dev-python/testtools-0.9.30[${PYTHON_USEDEP}] )
 	dev-python/zope-exceptions[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+)"

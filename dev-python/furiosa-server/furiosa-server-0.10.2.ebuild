@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="openvino test"
+GENERATED_IUSE="openvino"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,30 +17,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/datamodel-code-generator[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/fastapi[${PYTHON_USEDEP}]
 	~dev-python/furiosa-runtime-0.10*[${PYTHON_USEDEP}]
 	dev-python/grpcio-tools[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/mypy-extensions[${PYTHON_USEDEP}] )
-	test? ( dev-python/mypy-protobuf[${PYTHON_USEDEP}] )
 	openvino? ( dev-python/openvino[${PYTHON_USEDEP}] )
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/pydantic-settings[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-2.7.3[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/requests[${PYTHON_USEDEP}] )
-	test? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	dev-python/toml[${PYTHON_USEDEP}]
 	dev-python/typer[${PYTHON_USEDEP}]
-	test? ( dev-python/types-protobuf[${PYTHON_USEDEP}] )
-	test? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
 	dev-python/uvicorn[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/datamodel-code-generator[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/mypy-extensions[${PYTHON_USEDEP}]
+	dev-python/mypy-protobuf[${PYTHON_USEDEP}]
+	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	~dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/types-protobuf[${PYTHON_USEDEP}]
+	dev-python/types-pyyaml[${PYTHON_USEDEP}]
+)"

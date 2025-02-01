@@ -19,34 +19,24 @@ HOMEPAGE="
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="ci dev lint readthedocs test"
+GENERATED_IUSE="ci lint readthedocs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
-	dev? ( <dev-python/betamax-0.9[${PYTHON_USEDEP}] )
-	test? ( <dev-python/betamax-0.9[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}] )
-	test? ( <dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	ci? ( dev-python/coveralls[${PYTHON_USEDEP}] )
-	dev? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	<dev-python/prawcore-3[${PYTHON_USEDEP}]
 	dev-python/prawcore[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pytest-2.7.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-2.7.3[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	lint? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	readthedocs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	lint? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	readthedocs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	>=dev-python/update-checker-0.18[${PYTHON_USEDEP}]
 	dev-python/update-checker[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-0.54.0[${PYTHON_USEDEP}]
 	dev-python/websocket-client[${PYTHON_USEDEP}]
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 	lint? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -62,3 +52,15 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/betamax-0.9[${PYTHON_USEDEP}]
+	<dev-python/betamax-0.9[${PYTHON_USEDEP}]
+	<dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}]
+	<dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

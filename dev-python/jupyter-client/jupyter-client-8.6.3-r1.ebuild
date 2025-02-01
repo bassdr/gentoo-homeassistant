@@ -17,21 +17,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/ipykernel-6.14[${PYTHON_USEDEP}] )
 	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	dev-python/paramiko[${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-8.2.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-jupyter-0.4.1[client,${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/pyzmq-23.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-4[${PYTHON_USEDEP}] )
@@ -40,7 +32,6 @@ GENERATED_DEPEND="
 	docs? ( dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}] )
 	>=dev-python/tornado-6.2[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5.3[${PYTHON_USEDEP}]
-	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/jupyter-core-5.1[${PYTHON_USEDEP}]
@@ -63,6 +54,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	<dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/pytest-jupyter-0.4.1[client,${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

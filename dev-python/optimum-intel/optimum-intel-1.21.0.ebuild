@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	neural-compressor? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	tests? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )

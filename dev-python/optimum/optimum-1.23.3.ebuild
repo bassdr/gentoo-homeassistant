@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="amd benchmark dev diffusers doc-build exporters exporters-gpu exporters-tf furiosa graphcore habana intel ipex neural-compressor neuron neuronx nncf onnxruntime onnxruntime-gpu openvino quality quanto tests"
+GENERATED_IUSE="amd benchmark diffusers doc-build exporters exporters-gpu exporters-tf furiosa graphcore habana intel ipex neural-compressor neuron neuronx nncf onnxruntime onnxruntime-gpu openvino quality quanto tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/accelerate[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc-build? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	onnxruntime-gpu? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	tests? ( dev-python/accelerate[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
 	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
 	dev-python/coloredlogs[${PYTHON_USEDEP}]
 	dev-python/datasets[${PYTHON_USEDEP}]
 	exporters-tf? ( <=dev-python/datasets-2.16[${PYTHON_USEDEP}] )
 	onnxruntime-gpu? ( >=dev-python/datasets-1.2.1[${PYTHON_USEDEP}] )
 	onnxruntime? ( >=dev-python/datasets-1.2.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/diffusers-0.17.0[${PYTHON_USEDEP}] )
 	diffusers? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/diffusers-0.17.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/einops[${PYTHON_USEDEP}] )
 	tests? ( dev-python/einops[${PYTHON_USEDEP}] )
 	benchmark? ( >=dev-python/evaluate-0.2.0[${PYTHON_USEDEP}] )
 	onnxruntime-gpu? ( dev-python/evaluate[${PYTHON_USEDEP}] )
@@ -65,43 +61,30 @@ GENERATED_DEPEND="
 	quanto? ( >=dev-python/optimum-quanto-0.2.4[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/optuna[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	tests? ( dev-python/parameterized[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	onnxruntime-gpu? ( >=dev-python/protobuf-3.20.1[${PYTHON_USEDEP}] )
 	onnxruntime? ( >=dev-python/protobuf-3.20.1[${PYTHON_USEDEP}] )
-	dev? ( <=dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
 	tests? ( <=dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev? ( dev-python/requests[${PYTHON_USEDEP}] )
 	tests? ( dev-python/requests[${PYTHON_USEDEP}] )
-	dev? ( dev-python/rjieba[${PYTHON_USEDEP}] )
 	tests? ( dev-python/rjieba[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ruff-0.1.5[${PYTHON_USEDEP}] )
 	quality? ( ~dev-python/ruff-0.1.5[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sacremoses[${PYTHON_USEDEP}] )
 	tests? ( dev-python/sacremoses[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-	dev? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	tests? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
 	tests? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/seqeval[${PYTHON_USEDEP}] )
 	dev-python/sympy[${PYTHON_USEDEP}]
 	exporters-tf? ( <=dev-python/tensorflow-2.12.1[${PYTHON_USEDEP}] )
 	exporters-tf? ( dev-python/tf2onnx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/timm[${PYTHON_USEDEP}] )
 	exporters-gpu? ( dev-python/timm[${PYTHON_USEDEP}] )
 	exporters-tf? ( dev-python/timm[${PYTHON_USEDEP}] )
 	exporters? ( dev-python/timm[${PYTHON_USEDEP}] )
 	tests? ( dev-python/timm[${PYTHON_USEDEP}] )
 	>=dev-python/torch-1.11[${PYTHON_USEDEP}]
-	dev? ( dev-python/torchaudio[${PYTHON_USEDEP}] )
 	tests? ( dev-python/torchaudio[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/torchvision[${PYTHON_USEDEP}] )
-	dev? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	tests? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	>=dev-python/transformers-4.29[${PYTHON_USEDEP}]
@@ -117,3 +100,22 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/accelerate[${PYTHON_USEDEP}]
+	~dev-python/black-23.1[${PYTHON_USEDEP}]
+	>=dev-python/diffusers-0.17.0[${PYTHON_USEDEP}]
+	dev-python/einops[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/rjieba[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.1.5[${PYTHON_USEDEP}]
+	dev-python/sacremoses[${PYTHON_USEDEP}]
+	dev-python/scikit-learn[${PYTHON_USEDEP}]
+	dev-python/sentencepiece[${PYTHON_USEDEP}]
+	dev-python/timm[${PYTHON_USEDEP}]
+	dev-python/torchaudio[${PYTHON_USEDEP}]
+	dev-python/torchvision[${PYTHON_USEDEP}]
+)"

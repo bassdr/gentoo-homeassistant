@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs test tooling"
+GENERATED_IUSE="docs tooling"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="ConfigSpace"
@@ -18,10 +18,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/black[${PYTHON_USEDEP}] )
 	docs? ( dev-python/cairosvg[${PYTHON_USEDEP}] )
-	dev? ( dev-python/configspace[docs,test,tooling,${PYTHON_USEDEP}] )
 	docs? ( dev-python/markdown-exec[ansi,${PYTHON_USEDEP}] )
 	docs? ( dev-python/mike[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs[${PYTHON_USEDEP}] )
@@ -36,9 +35,6 @@ GENERATED_DEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
 	docs? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	dev-python/pyparsing[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-7[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cases[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	tooling? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	dev-python/scipy[${PYTHON_USEDEP}]
 	tooling? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
@@ -48,3 +44,9 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/configspace[docs,test,tooling,${PYTHON_USEDEP}]
+	>=dev-python/pytest-7[${PYTHON_USEDEP}]
+	dev-python/pytest-cases[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"

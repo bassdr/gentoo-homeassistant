@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="argon2 bcrypt build_docs totp"
 IUSE="${GENERATED_IUSE} doc test-rust"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	argon2? ( >=dev-python/argon2-cffi-18.2.0[${PYTHON_USEDEP}] )
 	bcrypt? ( >=dev-python/bcrypt-3.1.0[${PYTHON_USEDEP}] )
 	build_docs? ( >=dev-python/cloud-sptheme-1.10.1[${PYTHON_USEDEP}] )
@@ -76,3 +76,4 @@ pkg_postinst() {
 	optfeature "scrypt support" dev-python/scrypt
 	optfeature "Time-based One-Time Password (TOTP) support" dev-python/cryptography
 }
+# RDEPEND could not be inserted in this ebuild

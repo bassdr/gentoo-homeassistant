@@ -17,9 +17,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="default developer doc example extra test"
+GENERATED_IUSE="default developer doc example extra"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	example? ( >=dev-python/cairocffi-1.7[${PYTHON_USEDEP}] )
 	developer? ( ~dev-python/changelist-0.5[${PYTHON_USEDEP}] )
 	example? ( >=dev-python/contextily-1.6[${PYTHON_USEDEP}] )
@@ -38,8 +38,6 @@ GENERATED_DEPEND="
 	doc? ( >=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/pydot-3.0.1[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/pygraphviz-1.14[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}] )
 	developer? ( dev-python/rtoml[${PYTHON_USEDEP}] )
 	example? ( >=dev-python/scikit-learn-1.5[${PYTHON_USEDEP}] )
 	default? ( !=dev-python/scipy-1.11.0[${PYTHON_USEDEP}] )
@@ -63,6 +61,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
+)"
 
 src_test() {
 	virtx distutils-r1_src_test
@@ -94,3 +96,4 @@ pkg_postinst() {
 	optfeature "shapefile format reading and writing" "sci-libs/gdal[python]"
 	optfeature "GraphML XML format" "dev-python/lxml"
 }
+# RDEPEND could not be inserted in this ebuild

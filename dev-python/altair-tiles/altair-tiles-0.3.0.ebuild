@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev doc"
+GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,23 +17,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/altair[${PYTHON_USEDEP}]
-	dev? ( dev-python/geopandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ghp-import[${PYTHON_USEDEP}] )
-	dev? ( dev-python/hatch[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	doc? ( dev-python/jupyter-book[${PYTHON_USEDEP}] )
 	dev-python/mercantile[${PYTHON_USEDEP}]
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/ruff-0.1.4[${PYTHON_USEDEP}] )
-	dev? ( dev-python/vega-datasets[${PYTHON_USEDEP}] )
-	dev? ( dev-python/vl-convert-python[${PYTHON_USEDEP}] )
 	doc? ( dev-python/vl-convert-python[${PYTHON_USEDEP}] )
 	dev-python/xyzservices[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/geopandas[${PYTHON_USEDEP}]
+	dev-python/ghp-import[${PYTHON_USEDEP}]
+	dev-python/hatch[${PYTHON_USEDEP}]
+	dev-python/ipykernel[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.1.4[${PYTHON_USEDEP}]
+	dev-python/vega-datasets[${PYTHON_USEDEP}]
+	dev-python/vl-convert-python[${PYTHON_USEDEP}]
+)"

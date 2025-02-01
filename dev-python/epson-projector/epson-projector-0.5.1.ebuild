@@ -17,7 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-3.3.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]

@@ -15,12 +15,13 @@ SRC_URI="$(pypi_sdist_url)"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2021[${PYTHON_USEDEP}]

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="deepspeed dev quality rich sagemaker test-dev test-prod test-trackers testing"
+GENERATED_IUSE="deepspeed quality rich sagemaker test-dev test-prod test-trackers testing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,70 +17,51 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	test-dev? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )
 	testing? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
 	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
 	test-trackers? ( dev-python/comet-ml[${PYTHON_USEDEP}] )
-	dev? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	testing? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	deepspeed? ( dev-python/deepspeed[${PYTHON_USEDEP}] )
-	dev? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	testing? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	test-trackers? ( dev-python/dvclive[${PYTHON_USEDEP}] )
-	dev? ( dev-python/evaluate[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/evaluate[${PYTHON_USEDEP}] )
 	testing? ( dev-python/evaluate[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/hf-doc-builder-0.3.0[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/hf-doc-builder-0.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.21.0[${PYTHON_USEDEP}]
 	<dev-python/numpy-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	test-prod? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	testing? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	dev-python/psutil[${PYTHON_USEDEP}]
-	dev? ( <=dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
 	test-prod? ( <=dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
 	testing? ( <=dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
 	test-prod? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
 	testing? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	test-prod? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	testing? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev? ( dev-python/rich[${PYTHON_USEDEP}] )
 	rich? ( dev-python/rich[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ruff-0.6.4[${PYTHON_USEDEP}] )
 	quality? ( ~dev-python/ruff-0.6.4[${PYTHON_USEDEP}] )
 	>=dev-python/safetensors-0.4.3[${PYTHON_USEDEP}]
 	sagemaker? ( dev-python/sagemaker[${PYTHON_USEDEP}] )
-	dev? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	testing? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-	dev? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	testing? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	test-trackers? ( dev-python/tensorboard[${PYTHON_USEDEP}] )
-	dev? ( dev-python/timm[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/timm[${PYTHON_USEDEP}] )
 	testing? ( dev-python/timm[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/torchdata-0.8.0[${PYTHON_USEDEP}] )
 	test-dev? ( >=dev-python/torchdata-0.8.0[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/torchdata-0.8.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/torchpippy-0.2.0[${PYTHON_USEDEP}] )
 	test-dev? ( >=dev-python/torchpippy-0.2.0[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/torchpippy-0.2.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	testing? ( dev-python/tqdm[${PYTHON_USEDEP}] )
-	dev? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	testing? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	test-trackers? ( dev-python/wandb[${PYTHON_USEDEP}] )
@@ -88,3 +69,24 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/bitsandbytes[${PYTHON_USEDEP}]
+	~dev-python/black-23.1[${PYTHON_USEDEP}]
+	dev-python/datasets[${PYTHON_USEDEP}]
+	dev-python/diffusers[${PYTHON_USEDEP}]
+	dev-python/evaluate[${PYTHON_USEDEP}]
+	>=dev-python/hf-doc-builder-0.3.0[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+	dev-python/pytest-subtests[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/rich[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.6.4[${PYTHON_USEDEP}]
+	dev-python/scikit-learn[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
+	dev-python/timm[${PYTHON_USEDEP}]
+	>=dev-python/torchdata-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/torchpippy-0.2.0[${PYTHON_USEDEP}]
+	dev-python/tqdm[${PYTHON_USEDEP}]
+	dev-python/transformers[${PYTHON_USEDEP}]
+)"

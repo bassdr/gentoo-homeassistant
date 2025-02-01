@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/clearml-1.10.0_rc0[${PYTHON_USEDEP}] )
 	clearml? ( dev-python/clearml[${PYTHON_USEDEP}] )
 	cucim? ( dev-python/cucim-cu12[${PYTHON_USEDEP}] )

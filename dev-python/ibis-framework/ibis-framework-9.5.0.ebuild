@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/atpublic-6[${PYTHON_USEDEP}]
 	decompiler? ( <dev-python/black-25[${PYTHON_USEDEP}] )
 	clickhouse? ( <dev-python/clickhouse-connect-1[arrow,numpy,pandas,${PYTHON_USEDEP}] )

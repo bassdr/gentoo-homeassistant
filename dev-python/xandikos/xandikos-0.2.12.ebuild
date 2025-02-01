@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	prometheus? ( dev-python/aiohttp-openmetrics[${PYTHON_USEDEP}] )
 	dev-python/defusedxml[${PYTHON_USEDEP}]

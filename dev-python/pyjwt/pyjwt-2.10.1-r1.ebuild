@@ -19,22 +19,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="crypto dev docs tests"
+GENERATED_IUSE="crypto docs tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( ~dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( ~dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}] )
 	crypto? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
 	tests? ( <dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	dev? ( dev-python/zope-interface[${PYTHON_USEDEP}] )
 	docs? ( dev-python/zope-interface[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	!dev-python/python-jwt
@@ -46,6 +39,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}]
+	>=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+	dev-python/zope-interface[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_DESELECT=(
 	# Internet

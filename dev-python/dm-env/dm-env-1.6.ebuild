@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/dm_env/"
+  https://pypi.org/project/dm-env/"
 
 LICENSE=""
 SLOT="0"

@@ -20,9 +20,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 BDEPEND="
 	test? (
@@ -31,3 +29,8 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
+# RDEPEND could not be inserted in this ebuild

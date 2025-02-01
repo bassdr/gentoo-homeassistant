@@ -17,17 +17,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc test"
+GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/flaky[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/ipykernel-4.1[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-4.1[${PYTHON_USEDEP}]
 	dev-python/jupyter-core[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-qt[${PYTHON_USEDEP}] )
 	>=dev-python/qtpy-2.4.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-1.3[${PYTHON_USEDEP}] )
 	!=dev-python/traitlets-5.2.1[${PYTHON_USEDEP}]
@@ -55,6 +52,11 @@ PDEPEND="
 
 distutils_enable_sphinx docs/source dev-python/sphinx-rtd-theme
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flaky[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-qt[${PYTHON_USEDEP}]
+)"
 
 src_test() {
 	virtx distutils-r1_src_test

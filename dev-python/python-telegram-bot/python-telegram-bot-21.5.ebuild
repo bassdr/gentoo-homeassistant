@@ -30,7 +30,7 @@ REQUIRED_USE="all? ( ext http2 passport socks )
 	ext? ( callback-data job-queue rate-limiter webhooks )"
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
 	ext? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
 	rate-limiter? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )

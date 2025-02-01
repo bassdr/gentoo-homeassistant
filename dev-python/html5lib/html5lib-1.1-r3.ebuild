@@ -24,7 +24,7 @@ PATCHES=(
 
 GENERATED_IUSE="all chardet genshi"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/chardet-2.2[${PYTHON_USEDEP}] )
 	chardet? ( >=dev-python/chardet-2.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/genshi[${PYTHON_USEDEP}] )

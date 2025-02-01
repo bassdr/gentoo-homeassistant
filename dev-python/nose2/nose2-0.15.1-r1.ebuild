@@ -16,13 +16,10 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="coverage-plugin dev"
+GENERATED_IUSE="coverage-plugin"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	coverage-plugin? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-issues[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/coverage-4.4.1[${PYTHON_USEDEP}]
@@ -35,3 +32,4 @@ distutils_enable_sphinx docs \
 python_test() {
 	"${EPYTHON}" -m nose2.__main__ -vv || die "tests failed under ${EPYTHON}"
 }
+# BDEPEND could not be inserted in this ebuild

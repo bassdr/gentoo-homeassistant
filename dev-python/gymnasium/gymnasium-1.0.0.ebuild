@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/ale-py-0.9[${PYTHON_USEDEP}] )
 	atari? ( >=dev-python/ale-py-0.9[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/box2d-py-2.3.5[${PYTHON_USEDEP}] )

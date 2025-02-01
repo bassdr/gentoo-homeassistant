@@ -16,34 +16,17 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="animations dev jupyterlite parallel recommender show-api-usage show-memory"
+GENERATED_IUSE="animations jupyterlite parallel recommender show-api-usage show-memory"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( dev-python/absl-py[${PYTHON_USEDEP}] )
-	dev? ( dev-python/graphviz[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	show-api-usage? ( dev-python/graphviz[${PYTHON_USEDEP}] )
-	dev? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	dev? ( dev-python/joblib[${PYTHON_USEDEP}] )
 	parallel? ( dev-python/joblib[${PYTHON_USEDEP}] )
-	dev? ( dev-python/jupyterlite-sphinx[${PYTHON_USEDEP}] )
 	jupyterlite? ( dev-python/jupyterlite-sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/lxml[${PYTHON_USEDEP}] )
-	dev? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	show-memory? ( dev-python/memory-profiler[${PYTHON_USEDEP}] )
-	dev? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	recommender? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	dev-python/pillow[${PYTHON_USEDEP}]
-	dev? ( dev-python/plotly[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-coverage[${PYTHON_USEDEP}] )
-	dev? ( dev-python/seaborn[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]
 	animations? ( dev-python/sphinxcontrib-video[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinxcontrib-video[${PYTHON_USEDEP}] )
-	dev? ( dev-python/statsmodels[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -58,6 +41,25 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/absl-py[${PYTHON_USEDEP}]
+	dev-python/graphviz[${PYTHON_USEDEP}]
+	dev-python/intersphinx-registry[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/joblib[${PYTHON_USEDEP}]
+	dev-python/jupyterlite-sphinx[${PYTHON_USEDEP}]
+	dev-python/lxml[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/plotly[${PYTHON_USEDEP}]
+	dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-coverage[${PYTHON_USEDEP}]
+	dev-python/seaborn[${PYTHON_USEDEP}]
+	dev-python/sphinxcontrib-video[${PYTHON_USEDEP}]
+	dev-python/statsmodels[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

@@ -20,7 +20,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/enum34-1.1[${PYTHON_USEDEP}]
 	>=dev-python/pastel-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pylev-1.3[${PYTHON_USEDEP}]

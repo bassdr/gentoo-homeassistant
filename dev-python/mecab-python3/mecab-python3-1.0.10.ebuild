@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	unidic? ( dev-python/unidic[${PYTHON_USEDEP}] )
 	unidic-lite? ( dev-python/unidic-lite[${PYTHON_USEDEP}] )
 "

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	validators? ( dev-python/cerberus[${PYTHON_USEDEP}] )
 	validators? ( dev-python/django[${PYTHON_USEDEP}] )
 	validators? ( dev-python/djangorestframework[${PYTHON_USEDEP}] )

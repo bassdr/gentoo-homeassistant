@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cle? ( >=dev-python/cryptography-35.0[${PYTHON_USEDEP}] )
 	<dev-python/geomet-0.3[${PYTHON_USEDEP}]
 	graph? ( ~dev-python/gremlinpython-3.4.6[${PYTHON_USEDEP}] )

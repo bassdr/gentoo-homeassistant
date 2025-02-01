@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiomysql-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	amazon? ( dev-python/apache-airflow-providers-amazon[${PYTHON_USEDEP}] )
@@ -27,7 +27,6 @@ GENERATED_DEPEND="
 	trino? ( dev-python/apache-airflow-providers-trino[${PYTHON_USEDEP}] )
 	vertica? ( dev-python/apache-airflow-providers-vertica[${PYTHON_USEDEP}] )
 	>=dev-python/mysql-connector-python-8.0.29[${PYTHON_USEDEP}]
-	>=dev-python/mysqlclient-1.4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

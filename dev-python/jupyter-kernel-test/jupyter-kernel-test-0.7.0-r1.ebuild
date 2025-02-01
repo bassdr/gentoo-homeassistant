@@ -16,13 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
@@ -35,3 +33,7 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/ipykernel[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

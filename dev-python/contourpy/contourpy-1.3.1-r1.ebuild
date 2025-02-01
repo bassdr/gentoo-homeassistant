@@ -21,18 +21,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="bokeh docs mypy test test-no-images"
+GENERATED_IUSE="bokeh docs mypy test-no-images"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	bokeh? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/contourpy[bokeh,docs,${PYTHON_USEDEP}] )
-	test? ( dev-python/contourpy[test-no-images,${PYTHON_USEDEP}] )
 	mypy? ( dev-python/docutils-stubs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
-	test? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	test-no-images? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-no-images? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	test-no-images? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
@@ -62,6 +59,11 @@ DISTUTILS_ARGS=(
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/contourpy[test-no-images,${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_IGNORE=(

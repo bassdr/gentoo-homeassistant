@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/dask-2.22.0[${PYTHON_USEDEP}] )
 	dask? ( >=dev-python/dask-2.22.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/dataframe-api-compat-0.2.7[${PYTHON_USEDEP}] )

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev libjpeg openjpeg rle"
+GENERATED_IUSE="all libjpeg openjpeg rle"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,9 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( >=dev-python/black-23.12[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/mypy-1.8[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	all? ( dev-python/pylibjpeg-libjpeg[${PYTHON_USEDEP}] )
 	libjpeg? ( dev-python/pylibjpeg-libjpeg[${PYTHON_USEDEP}] )
@@ -27,9 +25,13 @@ GENERATED_DEPEND="
 	openjpeg? ( dev-python/pylibjpeg-openjpeg[${PYTHON_USEDEP}] )
 	all? ( dev-python/pylibjpeg-rle[${PYTHON_USEDEP}] )
 	rle? ( dev-python/pylibjpeg-rle[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/black-23.12[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.8[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"

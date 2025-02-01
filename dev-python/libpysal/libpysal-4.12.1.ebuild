@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs plus tests"
+GENERATED_IUSE="docs plus tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/beautifulsoup4-4.10[${PYTHON_USEDEP}]
 	tests? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/geodatasets-2023.3.0[${PYTHON_USEDEP}] )
@@ -40,7 +40,6 @@ GENERATED_DEPEND="
 	tests? ( dev-python/pytest-mpl[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.27[${PYTHON_USEDEP}]
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	>=dev-python/scikit-learn-1.1[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 	>=dev-python/shapely-2.0.1[${PYTHON_USEDEP}]
@@ -48,11 +47,14 @@ GENERATED_DEPEND="
 	docs? ( dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-bibtex[${PYTHON_USEDEP}] )
 	plus? ( >=dev-python/sqlalchemy-2.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/watermark[${PYTHON_USEDEP}] )
 	plus? ( >=dev-python/xarray-2022.3[${PYTHON_USEDEP}] )
 	plus? ( dev-python/zstd[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/watermark[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

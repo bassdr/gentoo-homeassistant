@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	alembic? ( dev-python/alembic[${PYTHON_USEDEP}] )
 	all? ( dev-python/alembic[${PYTHON_USEDEP}] )
 	all? ( dev-python/geoalchemy2[${PYTHON_USEDEP}] )

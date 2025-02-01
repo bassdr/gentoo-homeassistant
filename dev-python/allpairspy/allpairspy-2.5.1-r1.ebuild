@@ -17,6 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-md-report-0.3[${PYTHON_USEDEP}]
+)"
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

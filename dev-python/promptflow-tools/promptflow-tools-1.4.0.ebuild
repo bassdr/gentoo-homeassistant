@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	azure? ( ~dev-python/azure-mgmt-cognitiveservices-13.5.0[${PYTHON_USEDEP}] )
 	~dev-python/google-search-results-2.4.1[${PYTHON_USEDEP}]
 	>=dev-python/openai-1.0.0[${PYTHON_USEDEP}]

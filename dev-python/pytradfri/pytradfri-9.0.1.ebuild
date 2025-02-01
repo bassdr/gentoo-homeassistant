@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	async? ( ~dev-python/aiocoap-0.4.5[${PYTHON_USEDEP}] )
 	async? ( ~dev-python/dtlssocket-0.1.12[${PYTHON_USEDEP}] )
 "

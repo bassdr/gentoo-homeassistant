@@ -17,13 +17,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-5.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-2.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-2.0[${PYTHON_USEDEP}]
+	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+)"

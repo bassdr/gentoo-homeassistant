@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	development? ( dev-python/mock[${PYTHON_USEDEP}] )
 	development? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	development? ( dev-python/pytest[${PYTHON_USEDEP}] )

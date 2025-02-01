@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/email-validator-2.0.0[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/email-validator-2.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/fastapi-cli-0.0.5[standard,${PYTHON_USEDEP}] )

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,18 +17,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pandas-1.2.5[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-7.4.4[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/responses-0.23.1[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/ruff-0.3.3[${PYTHON_USEDEP}] )
-	test? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
-	test? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/mypy[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
+	>=dev-python/responses-0.23.1[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.3.3[${PYTHON_USEDEP}]
+	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+)"

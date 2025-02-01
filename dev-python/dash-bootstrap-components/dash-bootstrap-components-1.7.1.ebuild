@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/dash-2.0.0[${PYTHON_USEDEP}]
 	pandas? ( >=dev-python/numpy-2.0.2[${PYTHON_USEDEP}] )
 	pandas? ( >=dev-python/pandas-2.2.3[${PYTHON_USEDEP}] )

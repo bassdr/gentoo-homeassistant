@@ -19,7 +19,7 @@ GENERATED_IUSE="aio emoji"
 IUSE="${GENERATED_IUSE} test emoji +aio"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aio? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	emoji? ( dev-python/emoji[${PYTHON_USEDEP}] )
 	dev-python/plumbum[${PYTHON_USEDEP}]

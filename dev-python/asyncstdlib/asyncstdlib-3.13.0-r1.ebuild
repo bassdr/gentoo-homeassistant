@@ -19,19 +19,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc test typetest"
+GENERATED_IUSE="doc typetest"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/black[${PYTHON_USEDEP}] )
-	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	test? ( dev-python/flake8-bugbear[${PYTHON_USEDEP}] )
-	test? ( dev-python/flake8_2020[${PYTHON_USEDEP}] )
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	typetest? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	typetest? ( dev-python/pyright[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinxcontrib-trio[${PYTHON_USEDEP}] )
 	typetest? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
@@ -43,8 +35,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/flake8-bugbear[${PYTHON_USEDEP}]
+	dev-python/flake8_2020[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# RDEPEND could not be inserted in this ebuild

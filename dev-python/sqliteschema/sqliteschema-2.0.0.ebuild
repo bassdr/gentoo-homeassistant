@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cli dumps logging test"
+GENERATED_IUSE="cli dumps logging"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cli? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
 	cli? ( <dev-python/pytablewriter-2[${PYTHON_USEDEP}] )
 	dumps? ( <dev-python/pytablewriter-2[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytablewriter-2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-discord-0.1.6[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-md-report-0.5.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}] )
 	<dev-python/tabledata-2[${PYTHON_USEDEP}]
 	<dev-python/typepy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/pytablewriter-2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-discord-0.1.6[${PYTHON_USEDEP}]
+	>=dev-python/pytest-md-report-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}]
+)"

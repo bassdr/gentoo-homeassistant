@@ -28,11 +28,11 @@ SRC_URI+="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all-non-platform conch dev dev-release gtk-platform http2 macos-platform mypy osx-platform serial test tls windows-platform"
+GENERATED_IUSE="all-non-platform conch dev-release gtk-platform http2 macos-platform mypy osx-platform serial tls windows-platform"
 IUSE="${GENERATED_IUSE} conch http2 serial ssl test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all-non-platform? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
 	conch? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
@@ -53,7 +53,6 @@ GENERATED_DEPEND="
 	windows-platform? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
 	>=dev-python/constantly-15.1[${PYTHON_USEDEP}]
 	dev-python/constantly[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/coverage-7.5[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/coverage-7.5[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
 	conch? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
@@ -63,12 +62,10 @@ GENERATED_DEPEND="
 	osx-platform? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
 	all-non-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
 	gtk-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
 	macos-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
 	mypy? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
 	osx-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	test? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
 	windows-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
 	all-non-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
 	gtk-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
@@ -78,22 +75,18 @@ GENERATED_DEPEND="
 	osx-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
 	windows-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	macos-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	osx-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
-	test? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	>=dev-python/hyperlink-17.1.1[${PYTHON_USEDEP}]
 	dev-python/hyperlink[${PYTHON_USEDEP}]
 	all-non-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	macos-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	osx-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/idna-2.4[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/idna-2.4[${PYTHON_USEDEP}] )
@@ -114,18 +107,14 @@ GENERATED_DEPEND="
 	osx-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
 	windows-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
 	dev-release? ( ~dev-python/pydoctor-23.9.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pydoctor-23.9.0[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/pydoctor-23.9.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pyflakes-2.2[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/pyflakes-2.2[${PYTHON_USEDEP}] )
 	gtk-platform? ( dev-python/pygobject[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
 	macos-platform? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
 	osx-platform? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/pyhamcrest-2[${PYTHON_USEDEP}] )
 	macos-platform? ( dev-python/pyobjc-core[${PYTHON_USEDEP}] )
 	osx-platform? ( dev-python/pyobjc-core[${PYTHON_USEDEP}] )
@@ -147,20 +136,7 @@ GENERATED_DEPEND="
 	osx-platform? ( >=dev-python/pyserial-3.0[${PYTHON_USEDEP}] )
 	serial? ( >=dev-python/pyserial-3.0[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/pyserial-3.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/python-subunit-1.4[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/python-subunit-1.4[${PYTHON_USEDEP}] )
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
-	!=dev-python/pywin32-226[${PYTHON_USEDEP}]
 	windows-platform? ( !=dev-python/pywin32-226[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
@@ -170,16 +146,12 @@ GENERATED_DEPEND="
 	tls? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	dev-release? ( <dev-python/sphinx-7[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	mypy? ( <dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	dev-release? ( ~dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] )
 	dev-release? ( ~dev-python/towncrier-23.6[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/towncrier-23.6[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/towncrier-23.6[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/twisted-iocpsupport-1.0.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/twistedchecker-0.7[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/twistedchecker-0.7[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-pyopenssl[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
@@ -321,3 +293,4 @@ pkg_postrm() {
 		python_foreach_impl python_postrm
 	fi
 }
+# BDEPEND could not be inserted in this ebuild

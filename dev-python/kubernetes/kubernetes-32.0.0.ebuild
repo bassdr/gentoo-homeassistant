@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	adal? ( >=dev-python/adal-1.0.2[${PYTHON_USEDEP}] )
 	>=dev-python/certifi-14.05.14[${PYTHON_USEDEP}]
 	>=dev-python/durationpy-0.7[${PYTHON_USEDEP}]

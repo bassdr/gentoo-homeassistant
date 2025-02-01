@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all cli codemods crosshair dateutil django dpcontracts ghostwriter lark numpy pandas pytest pytz redis"
 IUSE="${GENERATED_IUSE} cli"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )

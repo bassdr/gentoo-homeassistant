@@ -6,11 +6,12 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 IUSE=""
 
+PYPI_PN="gitignore_parser"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/gitignore-parser/"
+  https://pypi.org/project/gitignore_parser/"
 
 LICENSE="MIT"
 SLOT="0"

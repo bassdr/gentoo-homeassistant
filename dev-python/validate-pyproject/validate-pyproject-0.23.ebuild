@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all store test typecheck"
+GENERATED_IUSE="all store typecheck"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<=dev-python/fastjsonschema-3[${PYTHON_USEDEP}]
 	typecheck? ( dev-python/importlib-resources[${PYTHON_USEDEP}] )
 	typecheck? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/packaging-24.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	dev-python/repo-review[${PYTHON_USEDEP}]
-	test? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/trove-classifiers-2021.10.20[${PYTHON_USEDEP}] )
 	store? ( dev-python/validate-pyproject-schema-store[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-randomly[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+)"

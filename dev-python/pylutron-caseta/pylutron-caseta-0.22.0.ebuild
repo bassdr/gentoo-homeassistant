@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cli? ( ~dev-python/click-8.1.2[${PYTHON_USEDEP}] )
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	cli? ( ~dev-python/xdg-5.1.1[${PYTHON_USEDEP}] )

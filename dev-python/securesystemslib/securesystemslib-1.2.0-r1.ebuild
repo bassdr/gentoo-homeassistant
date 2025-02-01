@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="awskms azurekms crypto gcpkms hsm pyspx sigstore vault"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	hsm? ( dev-python/asn1crypto[${PYTHON_USEDEP}] )
 	azurekms? ( dev-python/azure-identity[${PYTHON_USEDEP}] )
 	azurekms? ( dev-python/azure-keyvault-keys[${PYTHON_USEDEP}] )

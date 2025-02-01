@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	tests? ( dev-python/anyjson[${PYTHON_USEDEP}] )
 	flask? ( >=dev-python/blinker-1.1[${PYTHON_USEDEP}] )

@@ -19,7 +19,7 @@ GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/gpiozero[${PYTHON_USEDEP}]
 	testing? ( >=dev-python/pytest-7.1.2[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}] )

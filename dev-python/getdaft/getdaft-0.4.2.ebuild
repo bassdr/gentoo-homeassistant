@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aws? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	sql? ( dev-python/connectorx[${PYTHON_USEDEP}] )
 	deltalake? ( dev-python/deltalake[${PYTHON_USEDEP}] )
@@ -31,8 +31,6 @@ GENERATED_DEPEND="
 	>=dev-python/pyarrow-8.0.0[${PYTHON_USEDEP}]
 	hudi? ( >=dev-python/pyarrow-8.0.0[${PYTHON_USEDEP}] )
 	iceberg? ( >=dev-python/pyiceberg-0.4.0[${PYTHON_USEDEP}] )
-	>=dev-python/ray-2.0.0[client,data,${PYTHON_USEDEP}]
-	>=dev-python/ray-2.10.0[client,data,${PYTHON_USEDEP}]
 	sql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
 	sql? ( dev-python/sqlglot[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]

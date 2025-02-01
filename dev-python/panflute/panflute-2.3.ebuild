@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev extras pypi"
+GENERATED_IUSE="extras pypi"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,18 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/click-9[${PYTHON_USEDEP}]
-	dev? ( dev-python/configparser[${PYTHON_USEDEP}] )
-	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	pypi? ( dev-python/docutils[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandocfilters[${PYTHON_USEDEP}] )
 	pypi? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	dev? ( dev-python/requests[${PYTHON_USEDEP}] )
 	pypi? ( dev-python/twine[${PYTHON_USEDEP}] )
 	pypi? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	extras? ( <dev-python/yamlloader-2[${PYTHON_USEDEP}] )
@@ -36,3 +29,12 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/configparser[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/pandocfilters[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+)"

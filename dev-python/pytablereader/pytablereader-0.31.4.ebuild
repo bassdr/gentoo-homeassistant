@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all excel gs logging md mediawiki sqlite test url"
+GENERATED_IUSE="all excel gs logging md mediawiki sqlite url"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,12 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/beautifulsoup4-5[${PYTHON_USEDEP}]
 	<dev-python/dataproperty-2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}] )
 	excel? ( >=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/gspread[${PYTHON_USEDEP}] )
 	gs? ( dev-python/gspread[${PYTHON_USEDEP}] )
 	<dev-python/jsonschema-5[${PYTHON_USEDEP}]
@@ -30,7 +29,6 @@ GENERATED_DEPEND="
 	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/markdown-4[${PYTHON_USEDEP}] )
 	md? ( <dev-python/markdown-4[${PYTHON_USEDEP}] )
-	test? ( <dev-python/markdown-4[${PYTHON_USEDEP}] )
 	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
 	all? ( dev-python/oauth2client[${PYTHON_USEDEP}] )
 	gs? ( dev-python/oauth2client[${PYTHON_USEDEP}] )
@@ -40,22 +38,26 @@ GENERATED_DEPEND="
 	gs? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	all? ( dev-python/pypandoc[${PYTHON_USEDEP}] )
 	mediawiki? ( dev-python/pypandoc[${PYTHON_USEDEP}] )
-	test? ( dev-python/pypandoc[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytablewriter-0.50[excel,${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-5[${PYTHON_USEDEP}] )
-	test? ( dev-python/responses[${PYTHON_USEDEP}] )
 	all? ( <dev-python/retryrequests-1[${PYTHON_USEDEP}] )
-	test? ( <dev-python/retryrequests-1[${PYTHON_USEDEP}] )
 	url? ( <dev-python/retryrequests-1[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-38.3.0[${PYTHON_USEDEP}]
 	all? ( <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
 	gs? ( <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
 	sqlite? ( <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
-	test? ( <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
-	test? ( dev-python/subprocrunner[${PYTHON_USEDEP}] )
 	<dev-python/tabledata-2[${PYTHON_USEDEP}]
 	<dev-python/typepy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}]
+	<dev-python/markdown-4[${PYTHON_USEDEP}]
+	dev-python/pypandoc[${PYTHON_USEDEP}]
+	>=dev-python/pytablewriter-0.50[excel,${PYTHON_USEDEP}]
+	>=dev-python/pytest-5[${PYTHON_USEDEP}]
+	dev-python/responses[${PYTHON_USEDEP}]
+	<dev-python/retryrequests-1[${PYTHON_USEDEP}]
+	<dev-python/simplesqlite-2[${PYTHON_USEDEP}]
+	dev-python/subprocrunner[${PYTHON_USEDEP}]
+)"

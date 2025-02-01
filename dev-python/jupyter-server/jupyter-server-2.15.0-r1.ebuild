@@ -16,14 +16,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/anyio-3.1.0[${PYTHON_USEDEP}]
 	>=dev-python/argon2-cffi-21.1[${PYTHON_USEDEP}]
-	test? ( dev-python/flaky[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
-	test? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	>=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	>=dev-python/jupyter-client-7.4.4[${PYTHON_USEDEP}]
@@ -40,13 +38,7 @@ GENERATED_DEPEND="
 	>=dev-python/prometheus-client-0.9[${PYTHON_USEDEP}]
 	docs? ( dev-python/prometheus-client[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-console-scripts[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-jupyter-0.7[server,${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	>=dev-python/pywinpty-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/pyzmq-24[${PYTHON_USEDEP}]
-	test? ( dev-python/requests[${PYTHON_USEDEP}] )
 	>=dev-python/send2trash-1.8.2[${PYTHON_USEDEP}]
 	docs? ( dev-python/send2trash[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
@@ -60,7 +52,6 @@ GENERATED_DEPEND="
 	>=dev-python/traitlets-5.6.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 	>=dev-python/websocket-client-1.7[${PYTHON_USEDEP}]
-	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/anyio-3.1.0[${PYTHON_USEDEP}]
@@ -97,6 +88,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flaky[${PYTHON_USEDEP}]
+	dev-python/ipykernel[${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
+	>=dev-python/pytest-jupyter-0.7[server,${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

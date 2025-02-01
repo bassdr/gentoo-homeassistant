@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cdk? ( <dev-python/aws-cdk-aws-iam-2.0[${PYTHON_USEDEP}] )
 	cdk? ( <dev-python/aws-cdk-aws-s3-assets-2.0[${PYTHON_USEDEP}] )
 	cdk? ( <dev-python/aws-cdk-cloudformation-include-2.0[${PYTHON_USEDEP}] )

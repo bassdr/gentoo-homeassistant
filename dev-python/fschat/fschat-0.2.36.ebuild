@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev llm_judge model_worker train webui"
+GENERATED_IUSE="llm_judge model_worker train webui"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,11 +17,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	model_worker? ( >=dev-python/accelerate-0.21[${PYTHON_USEDEP}] )
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	llm_judge? ( >=dev-python/anthropic-0.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-23.3.0[${PYTHON_USEDEP}] )
 	train? ( dev-python/einops[${PYTHON_USEDEP}] )
 	dev-python/fastapi[${PYTHON_USEDEP}]
 	train? ( >=dev-python/flash-attn-2.0[${PYTHON_USEDEP}] )
@@ -35,7 +34,6 @@ GENERATED_DEPEND="
 	>=dev-python/prompt-toolkit-3.0.0[${PYTHON_USEDEP}]
 	model_worker? ( dev-python/protobuf[${PYTHON_USEDEP}] )
 	dev-python/pydantic[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/pylint-2.8.2[${PYTHON_USEDEP}] )
 	llm_judge? ( dev-python/ray[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/rich-10.0.0[${PYTHON_USEDEP}]
@@ -50,3 +48,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-23.3.0[${PYTHON_USEDEP}]
+	~dev-python/pylint-2.8.2[${PYTHON_USEDEP}]
+)"

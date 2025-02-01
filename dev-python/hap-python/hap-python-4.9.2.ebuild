@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	qrcode? ( dev-python/base36[${PYTHON_USEDEP}] )
 	dev-python/chacha20poly1305-reuseable[${PYTHON_USEDEP}]

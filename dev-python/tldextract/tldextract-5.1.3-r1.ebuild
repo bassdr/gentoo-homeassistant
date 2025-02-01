@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="release testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	release? ( dev-python/build[${PYTHON_USEDEP}] )
 	>=dev-python/filelock-3.0.8[${PYTHON_USEDEP}]
 	dev-python/filelock[${PYTHON_USEDEP}]

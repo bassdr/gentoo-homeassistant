@@ -29,7 +29,7 @@ MY_P=${MY_PN}-${PV}
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/PySide6/"
+  https://pypi.org/project/pyside6/"
 SRC_URI="https://github.com/qtproject/${MY_PN}/archive/refs/tags/v${PV}.tar.gz -> ${MY_P}.gh.tar.gz"
 S="${WORKDIR}/${MY_P}/sources/pyside6"
 
@@ -40,7 +40,8 @@ S="${WORKDIR}/${MY_P}/sources/pyside6"
 LICENSE="|| ( GPL-2 GPL-3+ LGPL-3 )"
 SLOT="6/${PV}"
 KEYWORDS="amd64 arm64"
-IUSE="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}
 	3d bluetooth charts +concurrent +dbus designer gles2-only +gui help
 	httpserver location multimedia +network network-auth nfc positioning +opengl
 	pdfium positioning +printsupport qml quick quick3d remoteobjects serialport
@@ -87,7 +88,7 @@ RESTRICT="test"
 # Minimal supported version of Qt.
 QT_PV="$(ver_cut 1-3)*:6"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/pyside6-addons-6.8.1.1[${PYTHON_USEDEP}]
 	~dev-python/pyside6-essentials-6.8.1.1[${PYTHON_USEDEP}]
 	~dev-python/shiboken6-6.8.1.1[${PYTHON_USEDEP}]
@@ -257,4 +258,3 @@ src_install() {
 	sed -i -e 's~pyside6-python[[:digit:]]\+\.[[:digit:]]\+~pyside6${PYTHON_CONFIG_SUFFIX}~g' \
 		"${ED}/usr/$(get_libdir)/cmake/PySide6/PySide6Targets-${CMAKE_BUILD_TYPE,,}.cmake" || die
 }
-# PYPI_PN could not be inserted in this ebuild

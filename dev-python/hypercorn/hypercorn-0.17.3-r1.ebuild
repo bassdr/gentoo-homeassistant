@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs h3 trio"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	h3? ( <dev-python/aioquic-1.0[${PYTHON_USEDEP}] )
 	dev-python/h11[${PYTHON_USEDEP}]
 	>=dev-python/h2-3.1.0[${PYTHON_USEDEP}]
@@ -30,7 +30,6 @@ GENERATED_DEPEND="
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-mermaid[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.22.0[${PYTHON_USEDEP}] )
-	>=dev-python/uvloop-0.18[${PYTHON_USEDEP}]
 	>=dev-python/wsproto-0.14.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

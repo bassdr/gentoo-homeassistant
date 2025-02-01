@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="logging test"
+GENERATED_IUSE="logging"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="DataProperty"
@@ -18,14 +18,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/tcolorpy-0.1.2[${PYTHON_USEDEP}] )
 	<dev-python/typepy-2[datetime,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
+	>=dev-python/tcolorpy-0.1.2[${PYTHON_USEDEP}]
+)"

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/bokeh-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/cartopy-0.18.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/datashader[${PYTHON_USEDEP}] )

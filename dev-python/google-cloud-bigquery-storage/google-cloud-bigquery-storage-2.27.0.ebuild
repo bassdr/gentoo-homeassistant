@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	fastavro? ( >=dev-python/fastavro-0.21.2[${PYTHON_USEDEP}] )
 	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
 	<dev-python/google-auth-3.0.0dev[${PYTHON_USEDEP}]

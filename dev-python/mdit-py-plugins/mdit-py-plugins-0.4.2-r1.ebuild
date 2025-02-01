@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code-style rtd testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	<dev-python/markdown-it-py-4.0.0[${PYTHON_USEDEP}]
 	rtd? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

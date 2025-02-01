@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/importlib-resources-5.1.0[${PYTHON_USEDEP}]
 	cli? ( ~dev-python/rich-9.10.0[${PYTHON_USEDEP}] )
 "

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cache-tasks gcp test"
+GENERATED_IUSE="cache-tasks gcp"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	cache-tasks? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	dev-python/clu[${PYTHON_USEDEP}]
@@ -33,7 +33,6 @@ GENERATED_DEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]
 	<=dev-python/protobuf-3.20.3[${PYTHON_USEDEP}]
 	dev-python/pyglove[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/sentencepiece[${PYTHON_USEDEP}]
 	dev-python/tensorflow-text[${PYTHON_USEDEP}]
 	~dev-python/tfds-nightly-4.9.2_p202308090034[${PYTHON_USEDEP}]
@@ -41,3 +40,6 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs test zcml"
+GENERATED_IUSE="docs zcml"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="zope.size"
@@ -18,19 +18,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-component[zcml,${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-component[zcml,${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	dev-python/zope-i18nmessageid[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-security[zcml,${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-security[zcml,${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/zope-component[zcml,${PYTHON_USEDEP}]
+	dev-python/zope-configuration[${PYTHON_USEDEP}]
+	dev-python/zope-security[zcml,${PYTHON_USEDEP}]
+)"

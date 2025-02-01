@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	plot? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	plot? ( dev-python/colorcet[${PYTHON_USEDEP}] )
 	plot? ( dev-python/datashader[${PYTHON_USEDEP}] )

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="amd dev transformers trl"
+GENERATED_IUSE="amd transformers trl"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( >=dev-python/black-24.4.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/datasets-2.19.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/flake8-4.0.1.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/isort-5.13.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/matplotlib-3.7.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-7.1.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev? ( dev-python/seaborn[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	amd? ( >=dev-python/setuptools-scm-8[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.1.2[${PYTHON_USEDEP}]
 	amd? ( >=dev-python/torch-2.6.0_p[${PYTHON_USEDEP}] )
 	amd? ( >=dev-python/torchvision-0.20.0_p[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/torchvision-0.16.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/transformers-4.44.2[${PYTHON_USEDEP}] )
 	transformers? ( ~dev-python/transformers-4.0[${PYTHON_USEDEP}] )
 	>=dev-python/triton-2.3.1[${PYTHON_USEDEP}]
 	amd? ( >=dev-python/triton-3.0.0[${PYTHON_USEDEP}] )
@@ -41,3 +30,16 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/black-24.4.2[${PYTHON_USEDEP}]
+	>=dev-python/datasets-2.19.2[${PYTHON_USEDEP}]
+	>=dev-python/flake8-4.0.1.1[${PYTHON_USEDEP}]
+	>=dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.7.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/seaborn[${PYTHON_USEDEP}]
+	>=dev-python/torchvision-0.16.2[${PYTHON_USEDEP}]
+	>=dev-python/transformers-4.44.2[${PYTHON_USEDEP}]
+)"

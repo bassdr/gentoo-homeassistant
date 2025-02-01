@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	!=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}]
 	crc? ( dev-python/crcmod[${PYTHON_USEDEP}] )
 	>dev-python/decorator-4.1.2[${PYTHON_USEDEP}]

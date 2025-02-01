@@ -16,14 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/jupyter-server-1.0.1[${PYTHON_USEDEP}]
 	<dev-python/notebook-7[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-console-scripts[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-tornasync[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/ipykernel[${PYTHON_USEDEP}]
@@ -47,6 +44,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
+	dev-python/pytest-tornasync[${PYTHON_USEDEP}]
+)"
 distutils_enable_sphinx docs/source \
 	dev-python/pydata-sphinx-theme \
 	dev-python/nbsphinx \

@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/httpx[${PYTHON_USEDEP}]
 	china? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	dev-python/pillow[${PYTHON_USEDEP}]

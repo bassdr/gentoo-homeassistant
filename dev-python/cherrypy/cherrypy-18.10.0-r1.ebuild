@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs json memcached-session routes-dispatcher ssl testing xcgi"
 IUSE="${GENERATED_IUSE} ssl test"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/alabaster[${PYTHON_USEDEP}] )
 	>=dev-python/cheroot-8.2.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
@@ -38,7 +38,6 @@ GENERATED_DEPEND="
 	testing? ( >=dev-python/pytest-services-2[${PYTHON_USEDEP}] )
 	testing? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
 	memcached-session? ( >=dev-python/python-memcached-1.58[${PYTHON_USEDEP}] )
-	>=dev-python/pywin32-227[${PYTHON_USEDEP}]
 	testing? ( dev-python/requests-toolbelt[${PYTHON_USEDEP}] )
 	routes-dispatcher? ( >=dev-python/routes-2.3.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.11[${PYTHON_USEDEP}] )

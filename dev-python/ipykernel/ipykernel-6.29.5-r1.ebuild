@@ -17,16 +17,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="cov docs pyqt5 pyside6 test"
+GENERATED_IUSE="cov docs pyqt5 pyside6"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev-python/appnope[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/comm-0.1.1[${PYTHON_USEDEP}]
 	cov? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
 	cov? ( dev-python/curio[${PYTHON_USEDEP}] )
 	>=dev-python/debugpy-1.6.5[${PYTHON_USEDEP}]
-	test? ( dev-python/flaky[${PYTHON_USEDEP}] )
-	test? ( dev-python/ipyparallel[${PYTHON_USEDEP}] )
 	>=dev-python/ipython-7.23.1[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-6.1.12[${PYTHON_USEDEP}]
 	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
@@ -39,11 +36,7 @@ GENERATED_DEPEND="
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	pyqt5? ( dev-python/pyqt5[${PYTHON_USEDEP}] )
 	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-asyncio-0.23.5[${PYTHON_USEDEP}] )
 	cov? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	>=dev-python/pyzmq-24[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
@@ -53,7 +46,6 @@ GENERATED_DEPEND="
 	>=dev-python/traitlets-5.4.0[${PYTHON_USEDEP}]
 	cov? ( dev-python/trio[${PYTHON_USEDEP}] )
 	docs? ( dev-python/trio[${PYTHON_USEDEP}] )
-	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/comm-0.1.1[${PYTHON_USEDEP}]
@@ -86,6 +78,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flaky[${PYTHON_USEDEP}]
+	dev-python/ipyparallel[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-asyncio-0.23.5[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	# debugpy is actually optional

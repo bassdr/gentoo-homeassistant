@@ -20,7 +20,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( >=dev-python/absl-py-0.9[${PYTHON_USEDEP}] )
 	ogb_examples? ( >=dev-python/absl-py-0.9[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/dm-haiku-0.0.2[${PYTHON_USEDEP}] )

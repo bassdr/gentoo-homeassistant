@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="proj"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/protobuf-6.0.0[${PYTHON_USEDEP}]
 	<dev-python/pyclipper-2.0.0[${PYTHON_USEDEP}]
 	proj? ( <dev-python/pyproj-4.0.0[${PYTHON_USEDEP}] )

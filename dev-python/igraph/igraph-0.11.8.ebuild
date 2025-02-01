@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cairo doc plotly plotting test test-musl"
+GENERATED_IUSE="cairo doc plotly plotting test-musl"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,26 +17,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cairo? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
 	plotting? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
 	test-musl? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
-	>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
 	test-musl? ( >=dev-python/networkx-2.5[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/networkx-2.5[${PYTHON_USEDEP}] )
-	>=dev-python/numpy-1.19.0[${PYTHON_USEDEP}]
-	>=dev-python/pandas-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/pillow-9[${PYTHON_USEDEP}]
 	plotly? ( >=dev-python/plotly-5.3.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/plotly-5.3.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/pydoctor-23.4.0[${PYTHON_USEDEP}] )
 	test-musl? ( >=dev-python/pytest-7.0.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.0.1[${PYTHON_USEDEP}] )
 	test-musl? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	>=dev-python/scipy-1.5.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-7.0.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-gallery-0.14.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
@@ -45,3 +34,10 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}]
+	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]
+	>=dev-python/plotly-5.3.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+)"

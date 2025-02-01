@@ -17,16 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( ~dev-python/black-24.4.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/coverage-7.5.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-7.0.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/isort-5.13.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-8.2.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-asyncio-0.11.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-mock-3.14.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-24.4.2[${PYTHON_USEDEP}]
+	~dev-python/coverage-7.5.3[${PYTHON_USEDEP}]
+	~dev-python/cython-3.0.10[${PYTHON_USEDEP}]
+	~dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
+	~dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
+	~dev-python/pytest-asyncio-0.11.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-mock-3.14.0[${PYTHON_USEDEP}]
+)"

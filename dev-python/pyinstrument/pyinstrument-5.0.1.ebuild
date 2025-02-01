@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="bin docs examples test types"
+GENERATED_IUSE="bin docs examples types"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,26 +17,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/cffi-1.17.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	bin? ( dev-python/click[${PYTHON_USEDEP}] )
 	examples? ( dev-python/django[${PYTHON_USEDEP}] )
-	test? ( dev-python/flaky[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/furo-2024.7.18[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/greenlet-3[${PYTHON_USEDEP}] )
-	test? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	examples? ( dev-python/litestar[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/myst-parser-3.0.1[${PYTHON_USEDEP}] )
 	bin? ( dev-python/nox[${PYTHON_USEDEP}] )
 	examples? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-asyncio-0.23.8[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-7.4.7[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-autobuild-2024.4.16[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
-	test? ( dev-python/trio[${PYTHON_USEDEP}] )
 	types? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/cffi-1.17.0[${PYTHON_USEDEP}]
+	dev-python/flaky[${PYTHON_USEDEP}]
+	>=dev-python/greenlet-3[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	~dev-python/pytest-asyncio-0.23.8[${PYTHON_USEDEP}]
+	dev-python/trio[${PYTHON_USEDEP}]
+)"

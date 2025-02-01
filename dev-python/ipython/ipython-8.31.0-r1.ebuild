@@ -16,13 +16,12 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all black doc kernel matplotlib nbconvert nbformat notebook parallel qtconsole test test-extra"
+GENERATED_IUSE="all black doc kernel matplotlib nbconvert nbformat notebook parallel qtconsole test-extra"
 IUSE="${GENERATED_IUSE} examples notebook nbconvert qt5 +smp test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	black? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev-python/colorama[${PYTHON_USEDEP}]
 	test-extra? ( dev-python/curio[${PYTHON_USEDEP}] )
 	dev-python/decorator[${PYTHON_USEDEP}]
 	doc? ( dev-python/docrepr[${PYTHON_USEDEP}] )
@@ -46,21 +45,15 @@ GENERATED_DEPEND="
 	test-extra? ( dev-python/nbformat[${PYTHON_USEDEP}] )
 	notebook? ( dev-python/notebook[${PYTHON_USEDEP}] )
 	test-extra? ( >=dev-python/numpy-1.23[${PYTHON_USEDEP}] )
-	test? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	test-extra? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	>dev-python/pexpect-4.3[${PYTHON_USEDEP}]
-	test? ( dev-python/pickleshare[${PYTHON_USEDEP}] )
 	<dev-python/prompt-toolkit-3.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.4.0[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-asyncio-0.22[${PYTHON_USEDEP}] )
 	qtconsole? ( dev-python/qtconsole[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/setuptools-18.5[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-1.3[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinxcontrib-jquery[${PYTHON_USEDEP}] )
 	dev-python/stack-data[${PYTHON_USEDEP}]
-	test? ( dev-python/testpath[${PYTHON_USEDEP}] )
 	>=dev-python/traitlets-5.13.0[${PYTHON_USEDEP}]
 	test-extra? ( dev-python/trio[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]' python3_12)
@@ -102,6 +95,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pickleshare[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	<dev-python/pytest-asyncio-0.22[${PYTHON_USEDEP}]
+	dev-python/testpath[${PYTHON_USEDEP}]
+)"
 
 RDEPEND+="
 	nbconvert? (

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-retry-2.5.0[${PYTHON_USEDEP}]
 	tests? ( dev-python/dvc[testing,${PYTHON_USEDEP}] )
 	tests? ( ~dev-python/flaky-3.7.0[${PYTHON_USEDEP}] )

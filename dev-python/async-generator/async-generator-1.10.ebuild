@@ -6,11 +6,12 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 IUSE=""
 
+PYPI_PN="async_generator"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/async-generator/"
+  https://pypi.org/project/async_generator/"
 
 LICENSE=""
 SLOT="0"

@@ -26,7 +26,7 @@ RESTRICT="test"
 
 GENERATED_IUSE="develop"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	develop? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
 	develop? ( dev-python/furo[${PYTHON_USEDEP}] )

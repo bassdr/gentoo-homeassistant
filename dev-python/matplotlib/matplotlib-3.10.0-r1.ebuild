@@ -27,23 +27,19 @@ SRC_URI+="
 LICENSE="BitstreamVera BSD matplotlib MIT OFL-1.1"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE} cairo excel gtk3 latex qt5 tk webagg wxwidgets"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/cycler-0.10[${PYTHON_USEDEP}]
 	>=dev-python/fonttools-4.22.0[${PYTHON_USEDEP}]
 	>=dev-python/kiwisolver-1.3.1[${PYTHON_USEDEP}]
-	dev? ( <dev-python/meson-python-0.17.0[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-8[${PYTHON_USEDEP}]
-	dev? ( !=dev-python/pybind11-2.13.3[${PYTHON_USEDEP}] )
 	>=dev-python/pyparsing-2.3.1[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.7[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/setuptools-64[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/setuptools-scm-7[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	media-libs/freetype:2
@@ -52,7 +48,7 @@ DEPEND="
 "
 # internal copy of pycxx highly patched
 #	dev-python/pycxx
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/cycler-0.10.0-r1[${PYTHON_USEDEP}]
@@ -127,6 +123,12 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/meson-python-0.17.0[${PYTHON_USEDEP}]
+	!=dev-python/pybind11-2.13.3[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-64[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
+)"
 
 src_unpack() {
 	# do not unpack freetype

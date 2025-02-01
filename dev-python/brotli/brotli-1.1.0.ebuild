@@ -6,11 +6,12 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 IUSE=""
 
+PYPI_PN="Brotli"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Python bindings for the Brotli compression library"
 HOMEPAGE="
-  https://pypi.org/project/brotli/
+  https://pypi.org/project/Brotli/
 "
 
 LICENSE="MIT"

@@ -14,7 +14,7 @@ inherit distutils-r1 pypi
 CLDR_PV=45.0
 DESCRIPTION="Internationalization utilities"
 HOMEPAGE="
-  https://pypi.org/project/Babel/
+  https://pypi.org/project/babel/
   Source, https://github.com/python-babel/babel
 "
 SRC_URI+="
@@ -26,12 +26,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # RDEPEND in BDEPEND for import_cldr.py usage, bug #852158
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( ~dev-python/freezegun-1.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pytz-2015.7[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -44,6 +41,11 @@ BDEPEND="
 
 distutils_enable_sphinx docs
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/freezegun-1.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	rm babel/locale-data/*.dat || die
@@ -61,3 +63,4 @@ python_test() {
 	local -x TZ=UTC
 	epytest
 }
+# RDEPEND could not be inserted in this ebuild

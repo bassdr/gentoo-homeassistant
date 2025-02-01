@@ -17,11 +17,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	lz4? ( >=dev-python/clickhouse-cityhash-1.0.2.1[${PYTHON_USEDEP}] )
 	zstd? ( >=dev-python/clickhouse-cityhash-1.0.2.1[${PYTHON_USEDEP}] )
-	<=dev-python/lz4-3.0.1[${PYTHON_USEDEP}]
-	dev-python/lz4[${PYTHON_USEDEP}]
 	numpy? ( >=dev-python/numpy-1.12.0[${PYTHON_USEDEP}] )
 	numpy? ( >=dev-python/pandas-0.24.0[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]

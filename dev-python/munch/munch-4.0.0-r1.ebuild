@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="testing yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/astroid-2.0[${PYTHON_USEDEP}] )
 	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-1.7.0[${PYTHON_USEDEP}]
@@ -40,3 +40,4 @@ PATCHES=(
 	# https://github.com/Infinidat/munch/pull/104
 	"${FILESDIR}/${P}-py313.patch"
 )
+# RDEPEND could not be inserted in this ebuild

@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/black[${PYTHON_USEDEP}] )
 	>=dev-python/boolean-py-4.0[${PYTHON_USEDEP}]
 	dev-python/boolean-py[${PYTHON_USEDEP}]

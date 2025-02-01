@@ -20,5 +20,9 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/check-manifest[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+)"
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

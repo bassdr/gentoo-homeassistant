@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs test test-cov test-external test-functional test-integration test-ui"
+GENERATED_IUSE="docs test-cov test-external test-functional test-integration test-ui"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,68 +17,70 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/autopep8[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	test-external? ( dev-python/autopep8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/black[${PYTHON_USEDEP}] )
 	test-ui? ( dev-python/calysto-bash[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/gitpython[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/gitpython[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	test-cov? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	test-integration? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
-	dev? ( dev-python/isort[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/isort[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/jupyter-fs-1.0[${PYTHON_USEDEP}] )
 	test-external? ( >=dev-python/jupyter-fs-1.0[${PYTHON_USEDEP}] )
-	dev? ( !=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
 	test-cov? ( !=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
 	test-external? ( !=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
 	test-integration? ( !=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
 	>=dev-python/markdown-it-py-1.0[${PYTHON_USEDEP}]
 	dev-python/mdit-py-plugins[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	dev? ( dev-python/nbconvert[${PYTHON_USEDEP}] )
 	test-cov? ( dev-python/nbconvert[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/nbconvert[${PYTHON_USEDEP}] )
 	test-integration? ( dev-python/nbconvert[${PYTHON_USEDEP}] )
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-cov? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-functional? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-integration? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}] )
 	test-cov? ( >=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
 	test-cov? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
 	test-functional? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
 	test-integration? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	test-cov? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	test-functional? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	test-integration? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test-external? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}] )
 	test-external? ( <dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 	test-external? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/autopep8[${PYTHON_USEDEP}]
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/gitpython[${PYTHON_USEDEP}]
+	dev-python/ipykernel[${PYTHON_USEDEP}]
+	dev-python/isort[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-fs-1.0[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}]
+	dev-python/nbconvert[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
+	dev-python/pytest-randomly[${PYTHON_USEDEP}]
+	dev-python/pytest-randomly[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	<dev-python/sphinx-8[${PYTHON_USEDEP}]
+	<dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

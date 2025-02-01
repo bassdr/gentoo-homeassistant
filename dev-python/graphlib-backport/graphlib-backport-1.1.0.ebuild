@@ -6,11 +6,12 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 IUSE=""
 
+PYPI_PN="graphlib_backport"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/graphlib-backport/"
+  https://pypi.org/project/graphlib_backport/"
 
 LICENSE=""
 SLOT="0"

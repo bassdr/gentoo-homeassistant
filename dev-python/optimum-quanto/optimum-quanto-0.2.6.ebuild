@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev examples"
+GENERATED_IUSE="examples"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,15 +17,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	examples? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	examples? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	dev-python/huggingface-hub[${PYTHON_USEDEP}]
 	dev-python/ninja[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	dev-python/safetensors[${PYTHON_USEDEP}]
 	examples? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	examples? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
@@ -36,3 +34,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+)"

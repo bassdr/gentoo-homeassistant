@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/bleak-0.19[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
 	tests? ( >dev-python/pytest-3.6.4[${PYTHON_USEDEP}] )

@@ -21,15 +21,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs readme test"
+GENERATED_IUSE="docs readme"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( >=dev-python/allpairspy-2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/click-6.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/faker-1.0.8[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	readme? ( <dev-python/path-17[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}] )
 	readme? ( >=dev-python/readmemaker-1.1.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-2.4[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.2.2[${PYTHON_USEDEP}] )
@@ -46,3 +41,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/allpairspy-2[${PYTHON_USEDEP}]
+	>=dev-python/click-6.2[${PYTHON_USEDEP}]
+	>=dev-python/faker-1.0.8[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
+)"

@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	testing? ( dev-python/jaraco-test[${PYTHON_USEDEP}] )
@@ -56,3 +56,4 @@ src_configure() {
 		description = "Backport of CPython tarfile module"
 	EOF
 }
+# RDEPEND could not be inserted in this ebuild

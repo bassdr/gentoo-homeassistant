@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all datashade default io networkx numba pandas repr scipy suitesparse suitesparse-udf test viz"
+GENERATED_IUSE="all datashade default io networkx numba pandas repr scipy suitesparse suitesparse-udf viz"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	io? ( >=dev-python/awkward-1.9[${PYTHON_USEDEP}] )
 	datashade? ( >=dev-python/datashader-0.12[${PYTHON_USEDEP}] )
 	>=dev-python/donfig-0.6[${PYTHON_USEDEP}]
@@ -28,9 +28,7 @@ GENERATED_DEPEND="
 	>=dev-python/numba-0.55[${PYTHON_USEDEP}]
 	numba? ( >=dev-python/numba-0.55[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.22[${PYTHON_USEDEP}]
-	test? ( >=dev-python/packaging-21[${PYTHON_USEDEP}] )
 	pandas? ( >=dev-python/pandas-1.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/python-graphblas[default,io,test,viz,${PYTHON_USEDEP}] )
 	datashade? ( dev-python/python-graphblas[numba,pandas,scipy,${PYTHON_USEDEP}] )
 	default? ( dev-python/python-graphblas[pandas,scipy,suitesparse,${PYTHON_USEDEP}] )
@@ -40,15 +38,19 @@ GENERATED_DEPEND="
 	io? ( dev-python/python-graphblas[networkx,scipy,${PYTHON_USEDEP}] )
 	repr? ( dev-python/python-graphblas[pandas,${PYTHON_USEDEP}] )
 	suitesparse-udf? ( dev-python/python-graphblas[numba,suitesparse,${PYTHON_USEDEP}] )
-	test? ( dev-python/python-graphblas[pandas,scipy,suitesparse,${PYTHON_USEDEP}] )
 	viz? ( dev-python/python-graphblas[networkx,scipy,${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
 	scipy? ( >=dev-python/scipy-1.9[${PYTHON_USEDEP}] )
 	>=dev-python/sparse-0.13[${PYTHON_USEDEP}]
 	<dev-python/suitesparse-graphblas-9[${PYTHON_USEDEP}]
 	suitesparse? ( <dev-python/suitesparse-graphblas-9[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/tomli-1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/packaging-21[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
+	dev-python/python-graphblas[pandas,scipy,suitesparse,${PYTHON_USEDEP}]
+	>=dev-python/tomli-1[${PYTHON_USEDEP}]
+)"

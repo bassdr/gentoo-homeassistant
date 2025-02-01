@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/coverage-6.0[${PYTHON_USEDEP}] )
 	myst? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )

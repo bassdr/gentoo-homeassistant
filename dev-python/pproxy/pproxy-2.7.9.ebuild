@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	quic? ( >=dev-python/aioquic-0.9.7[${PYTHON_USEDEP}] )
 	sshtunnel? ( >=dev-python/asyncssh-2.5.0[${PYTHON_USEDEP}] )
 	accelerated? ( >=dev-python/pycryptodome-3.7.2[${PYTHON_USEDEP}] )

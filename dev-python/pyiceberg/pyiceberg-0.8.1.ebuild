@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	adlfs? ( >=dev-python/adlfs-2023.1.0[${PYTHON_USEDEP}] )
 	glue? ( >=dev-python/boto3-1.24.59[${PYTHON_USEDEP}] )
 	<dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]

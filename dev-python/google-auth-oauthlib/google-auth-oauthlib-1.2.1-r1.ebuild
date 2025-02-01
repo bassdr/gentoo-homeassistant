@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tool"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tool? ( >=dev-python/click-6.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/google-auth-2.15.0[${PYTHON_USEDEP}]
 	dev-python/google-auth[${PYTHON_USEDEP}]

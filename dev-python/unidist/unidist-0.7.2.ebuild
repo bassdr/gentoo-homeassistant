@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
 	all? ( >=dev-python/dask-2.22.0[complete,${PYTHON_USEDEP}] )
 	dask? ( >=dev-python/dask-2.22.0[complete,${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	colorization? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	parproc? ( dev-python/rich[${PYTHON_USEDEP}] )
 "

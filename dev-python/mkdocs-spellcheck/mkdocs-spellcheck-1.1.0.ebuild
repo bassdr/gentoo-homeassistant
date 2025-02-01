@@ -17,7 +17,7 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	codespell? ( >=dev-python/codespell-2.2.2[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-resources-6.4[${PYTHON_USEDEP}]
 	all? ( dev-python/mkdocs-spellcheck[codespell,symspellpy,${PYTHON_USEDEP}] )

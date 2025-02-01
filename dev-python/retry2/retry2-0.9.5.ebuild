@@ -17,7 +17,9 @@ LICENSE="Apache2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/decorator-3.4.2[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
 "

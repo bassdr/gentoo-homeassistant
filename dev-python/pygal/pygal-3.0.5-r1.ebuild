@@ -21,24 +21,17 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs lxml moulinrouge png test"
+GENERATED_IUSE="docs lxml moulinrouge png"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	png? ( dev-python/cairosvg[${PYTHON_USEDEP}] )
-	test? ( dev-python/cairosvg[${PYTHON_USEDEP}] )
-	test? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	moulinrouge? ( dev-python/flask[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	lxml? ( dev-python/lxml[${PYTHON_USEDEP}] )
-	test? ( dev-python/lxml[${PYTHON_USEDEP}] )
 	moulinrouge? ( dev-python/pygal-maps-ch[${PYTHON_USEDEP}] )
 	moulinrouge? ( dev-python/pygal-maps-fr[${PYTHON_USEDEP}] )
 	moulinrouge? ( dev-python/pygal-maps-world[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pygal-sphinx-directives[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyquery[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/ruff-0.5.6[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
@@ -59,6 +52,15 @@ DOCS=( docs/changelog.rst README.md )
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/cairosvg[${PYTHON_USEDEP}]
+	dev-python/coveralls[${PYTHON_USEDEP}]
+	dev-python/lxml[${PYTHON_USEDEP}]
+	dev-python/pyquery[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.5.6[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	# Not actually required unless we want to do setup.py test

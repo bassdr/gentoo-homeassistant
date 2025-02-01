@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
@@ -43,3 +43,4 @@ src_prepare() {
 	distutils-r1_src_prepare
 	sed -i -e '/--cov/d' setup.cfg || die
 }
+# RDEPEND could not be inserted in this ebuild

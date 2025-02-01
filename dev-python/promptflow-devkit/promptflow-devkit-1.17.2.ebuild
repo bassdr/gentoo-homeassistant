@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/argcomplete-3.2.3[${PYTHON_USEDEP}]
 	<dev-python/azure-monitor-opentelemetry-exporter-2.0.0[${PYTHON_USEDEP}]
 	executable? ( dev-python/bs4[${PYTHON_USEDEP}] )
@@ -38,7 +38,6 @@ GENERATED_DEPEND="
 	<dev-python/pydash-8.0.0[${PYTHON_USEDEP}]
 	executable? ( >=dev-python/pyinstaller-5.13.2[${PYTHON_USEDEP}] )
 	<dev-python/python-dotenv-2.0.0[${PYTHON_USEDEP}]
-	dev-python/pywin32[${PYTHON_USEDEP}]
 	<dev-python/sqlalchemy-3.0.0[${PYTHON_USEDEP}]
 	executable? ( >=dev-python/streamlit-1.26.0[${PYTHON_USEDEP}] )
 	executable? ( <dev-python/streamlit-quill-0.1.0[${PYTHON_USEDEP}] )

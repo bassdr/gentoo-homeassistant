@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/covdefaults-2.3[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/coverage-7.6.1[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/diff-cover-9.2[${PYTHON_USEDEP}] )
@@ -48,3 +48,4 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+# RDEPEND could not be inserted in this ebuild

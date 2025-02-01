@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
 	tests? ( dev-python/cython[${PYTHON_USEDEP}] )
 	>=dev-python/executing-1.2.0[${PYTHON_USEDEP}]

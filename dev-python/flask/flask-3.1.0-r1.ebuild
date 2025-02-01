@@ -30,7 +30,7 @@ SLOT="0"
 GENERATED_IUSE="async dotenv"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	async? ( >=dev-python/asgiref-3.2[${PYTHON_USEDEP}] )
 	>=dev-python/blinker-1.9[${PYTHON_USEDEP}]
 	dev-python/blinker[${PYTHON_USEDEP}]

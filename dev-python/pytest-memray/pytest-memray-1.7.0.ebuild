@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs lint test"
+GENERATED_IUSE="docs lint"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +17,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/anyio-4.4.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( ~dev-python/black-22.12[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/covdefaults-2.2.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/coverage-7.0.5[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/flaky-3.7[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/furo-2022.12.7[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/isort-5.11.4[${PYTHON_USEDEP}] )
 	>=dev-python/memray-1.12[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/mypy-0.991[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-7.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-xdist-3.1[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/ruff-0.0.272[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-argparse-0.4[${PYTHON_USEDEP}] )
@@ -40,3 +34,11 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/anyio-4.4.0[${PYTHON_USEDEP}]
+	>=dev-python/covdefaults-2.2.2[${PYTHON_USEDEP}]
+	>=dev-python/coverage-7.0.5[${PYTHON_USEDEP}]
+	>=dev-python/flaky-3.7[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-3.1[${PYTHON_USEDEP}]
+)"

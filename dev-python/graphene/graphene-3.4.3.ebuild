@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,27 +17,29 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( <dev-python/coveralls-5[${PYTHON_USEDEP}] )
-	test? ( <dev-python/coveralls-5[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/graphql-core-3.3[${PYTHON_USEDEP}]
 	<dev-python/graphql-relay-3.3[${PYTHON_USEDEP}]
-	dev? ( <dev-python/mypy-2[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pytest-asyncio-2[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-asyncio-2[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pytest-benchmark-5[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-benchmark-5[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pytest-cov-6[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-cov-6[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pytest-mock-4[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-mock-4[${PYTHON_USEDEP}] )
 	<dev-python/python-dateutil-3[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/ruff-0.5.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/types-python-dateutil-3[${PYTHON_USEDEP}] )
 	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/coveralls-5[${PYTHON_USEDEP}]
+	<dev-python/coveralls-5[${PYTHON_USEDEP}]
+	<dev-python/mypy-2[${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	<dev-python/pytest-asyncio-2[${PYTHON_USEDEP}]
+	<dev-python/pytest-asyncio-2[${PYTHON_USEDEP}]
+	<dev-python/pytest-benchmark-5[${PYTHON_USEDEP}]
+	<dev-python/pytest-benchmark-5[${PYTHON_USEDEP}]
+	<dev-python/pytest-cov-6[${PYTHON_USEDEP}]
+	<dev-python/pytest-cov-6[${PYTHON_USEDEP}]
+	<dev-python/pytest-mock-4[${PYTHON_USEDEP}]
+	<dev-python/pytest-mock-4[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.5.0[${PYTHON_USEDEP}]
+	<dev-python/types-python-dateutil-3[${PYTHON_USEDEP}]
+)"

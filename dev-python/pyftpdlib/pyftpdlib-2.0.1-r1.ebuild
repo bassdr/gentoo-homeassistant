@@ -16,28 +16,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev ssl test"
+GENERATED_IUSE="ssl"
 IUSE="${GENERATED_IUSE} examples ssl"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	test? ( dev-python/psutil[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	$(python_gen_cond_dep 'dev-python/pyasynchat[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep 'dev-python/pyasyncore[${PYTHON_USEDEP}]' python3_13{,t})
-	dev? ( dev-python/pylint[${PYTHON_USEDEP}] )
 	ssl? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev? ( dev-python/rstcheck[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	test? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	dev? ( dev-python/toml-sort[${PYTHON_USEDEP}] )
-	dev? ( dev-python/twine[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep '
@@ -54,6 +39,23 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/check-manifest[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/psutil[${PYTHON_USEDEP}]
+	dev-python/pylint[${PYTHON_USEDEP}]
+	dev-python/pyopenssl[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/rstcheck[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/toml-sort[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+)"
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 python_test() {

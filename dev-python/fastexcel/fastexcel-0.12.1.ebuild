@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	pandas? ( >=dev-python/pandas-1.4.4[${PYTHON_USEDEP}] )
 	polars? ( >=dev-python/polars-0.16.14[${PYTHON_USEDEP}] )
 	>=dev-python/pyarrow-8.0.0[${PYTHON_USEDEP}]

@@ -19,17 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dev"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/lxml[${PYTHON_USEDEP}] )
-	dev? ( dev-python/lxml-stubs[${PYTHON_USEDEP}] )
-	dev? ( dev-python/memory-profiler[${PYTHON_USEDEP}] )
-	dev? ( dev-python/memray[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 BDEPEND="
 	test? (
@@ -39,8 +29,21 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/lxml[${PYTHON_USEDEP}]
+	dev-python/lxml-stubs[${PYTHON_USEDEP}]
+	dev-python/memory-profiler[${PYTHON_USEDEP}]
+	dev-python/memray[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	>=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_IGNORE=(
 	# fails for some reason, more fit for upstream testing anyway
 	tests/test_typing.py
 )
+# RDEPEND could not be inserted in this ebuild

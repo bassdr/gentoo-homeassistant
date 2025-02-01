@@ -11,19 +11,20 @@ inherit distutils-r1 flag-o-matic pypi
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/numba/"
-IUSE="tbb"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} tbb"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/llvmlite-0.45[${PYTHON_USEDEP}]
 	<dev-python/numpy-2.2[${PYTHON_USEDEP}]
 "
 DEPEND="tbb? ( <dev-cpp/tbb-2021.5.0-r1 )
 	<dev-python/numpy-2.2.0[${PYTHON_USEDEP}]"
-RDEPEND="dev-python/llvmlite[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_DEPEND} dev-python/llvmlite[${PYTHON_USEDEP}]
 	dev-python/setuptools:0[${PYTHON_USEDEP}]"
 
 src_configure() {

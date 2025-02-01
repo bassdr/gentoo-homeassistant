@@ -20,7 +20,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/sphinx-2.1[${PYTHON_USEDEP}]
 "
 DEPEND="
@@ -29,3 +31,4 @@ DEPEND="
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/alabaster
+# RDEPEND could not be inserted in this ebuild

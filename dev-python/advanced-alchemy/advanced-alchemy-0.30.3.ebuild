@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="cli nanoid uuid"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/alembic-1.12.0[${PYTHON_USEDEP}]
 	dev-python/eval-type-backport[${PYTHON_USEDEP}]
 	nanoid? ( >=dev-python/fastnanoid-0.4.1[${PYTHON_USEDEP}] )

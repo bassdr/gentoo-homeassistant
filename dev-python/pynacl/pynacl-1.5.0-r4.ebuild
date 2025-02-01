@@ -11,7 +11,7 @@ inherit distutils-r1
 
 DESCRIPTION="Python binding to the Networking and Cryptography (NaCl) library"
 HOMEPAGE="
-  https://pypi.org/project/pynacl/
+  https://pypi.org/project/PyNaCl/
 "
 SRC_URI="
 	https://github.com/pyca/pynacl/archive/${PV}.tar.gz
@@ -22,7 +22,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/cffi[${PYTHON_USEDEP}]
 "
 DEPEND="
@@ -50,3 +52,4 @@ src_compile() {
 	local -x SODIUM_INSTALL=system
 	distutils-r1_src_compile
 }
+# PYPI_PN could not be inserted in this ebuild

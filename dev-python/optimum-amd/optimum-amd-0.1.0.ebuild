@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
 	dev-python/onnx[${PYTHON_USEDEP}]
 	<dev-python/onnxruntime-1.16.0[${PYTHON_USEDEP}]

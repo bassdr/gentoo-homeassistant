@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	ocsp? ( >=dev-python/cryptography-36.0.1[${PYTHON_USEDEP}] )
 	libvalkey? ( >=dev-python/libvalkey-4.0.0[${PYTHON_USEDEP}] )
 	ocsp? ( ~dev-python/pyopenssl-23.2.1[${PYTHON_USEDEP}] )

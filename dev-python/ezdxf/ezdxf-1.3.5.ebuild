@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev dev5 draw draw5"
+GENERATED_IUSE="dev5 draw draw5"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,36 +17,38 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev5? ( dev-python/cython[${PYTHON_USEDEP}] )
-	dev? ( dev-python/cython[${PYTHON_USEDEP}] )
 	dev-python/fonttools[${PYTHON_USEDEP}]
 	dev5? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	dev? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	draw5? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	draw? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev5? ( dev-python/pillow[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	draw5? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	draw? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	dev5? ( >=dev-python/pymupdf-1.20.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pymupdf-1.20.0[${PYTHON_USEDEP}] )
 	draw5? ( >=dev-python/pymupdf-1.20.0[${PYTHON_USEDEP}] )
 	draw? ( >=dev-python/pymupdf-1.20.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyparsing-2.0.1[${PYTHON_USEDEP}]
 	dev5? ( dev-python/pyqt5[${PYTHON_USEDEP}] )
 	draw5? ( dev-python/pyqt5[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyside6[${PYTHON_USEDEP}] )
 	draw? ( dev-python/pyside6[${PYTHON_USEDEP}] )
 	dev5? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev5? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	dev? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	dev5? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/cython[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	>=dev-python/pymupdf-1.20.0[${PYTHON_USEDEP}]
+	dev-python/pyside6[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"

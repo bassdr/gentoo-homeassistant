@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 	docker-compose-v1? ( <dev-python/docker-compose-2.0[${PYTHON_USEDEP}] )
 	tests? ( <dev-python/mypy-2.000[${PYTHON_USEDEP}] )

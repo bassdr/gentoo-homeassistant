@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="babel lingua testing"
 IUSE="${GENERATED_IUSE} doc"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	babel? ( dev-python/babel[${PYTHON_USEDEP}] )
 	lingua? ( dev-python/lingua[${PYTHON_USEDEP}] )
 	>=dev-python/markupsafe-0.9.2[${PYTHON_USEDEP}]

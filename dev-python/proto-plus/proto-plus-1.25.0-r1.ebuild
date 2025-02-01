@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/google-api-core-1.31.5[${PYTHON_USEDEP}] )
 	<dev-python/protobuf-6.0.0dev[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]

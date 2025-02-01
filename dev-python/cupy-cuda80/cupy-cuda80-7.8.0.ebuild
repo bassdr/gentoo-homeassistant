@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="appveyor docs doctest jenkins setup stylecheck test travis"
+GENERATED_IUSE="appveyor docs doctest jenkins setup stylecheck travis"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,10 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	appveyor? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	stylecheck? ( ~dev-python/autopep8-1.4.4[${PYTHON_USEDEP}] )
 	travis? ( ~dev-python/autopep8-1.4.4[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
@@ -32,7 +31,6 @@ GENERATED_DEPEND="
 	doctest? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	appveyor? ( dev-python/mock[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/mock[${PYTHON_USEDEP}] )
-	test? ( dev-python/mock[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.9.0[${PYTHON_USEDEP}]
 	stylecheck? ( ~dev-python/pbr-4.0.4[${PYTHON_USEDEP}] )
 	travis? ( ~dev-python/pbr-4.0.4[${PYTHON_USEDEP}] )
@@ -40,7 +38,6 @@ GENERATED_DEPEND="
 	travis? ( ~dev-python/pycodestyle-2.5.0[${PYTHON_USEDEP}] )
 	appveyor? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
@@ -52,3 +49,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
+	dev-python/mock[${PYTHON_USEDEP}]
+	<dev-python/pytest-4.2.0[${PYTHON_USEDEP}]
+)"

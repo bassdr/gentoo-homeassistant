@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="aiomysql aioodbc aiosqlite asyncio asyncmy mariadb-connector mssql mssql-pymssql mssql-pyodbc mypy mysql mysql-connector oracle oracle-oracledb postgresql postgresql-asyncpg postgresql-pg8000 postgresql-psycopg postgresql-psycopg2binary postgresql-psycopg2cffi postgresql-psycopgbinary pymysql sqlcipher"
 IUSE="${GENERATED_IUSE} examples +sqlite test"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aiomysql? ( >=dev-python/aiomysql-0.2.0[${PYTHON_USEDEP}] )
 	aioodbc? ( dev-python/aioodbc[${PYTHON_USEDEP}] )
 	aiosqlite? ( dev-python/aiosqlite[${PYTHON_USEDEP}] )

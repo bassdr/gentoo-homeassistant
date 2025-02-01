@@ -16,20 +16,16 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="binarytest fast test"
+GENERATED_IUSE="binarytest fast"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	binarytest? ( dev-python/html5-parser[${PYTHON_USEDEP}] )
 	fast? ( >=dev-python/html5-parser-0.4.4[${PYTHON_USEDEP}] )
 	>=dev-python/html5lib-0.999999999[${PYTHON_USEDEP}]
 	dev-python/html5lib[${PYTHON_USEDEP}]
-	test? ( dev-python/html5lib[${PYTHON_USEDEP}] )
 	binarytest? ( dev-python/lxml[${PYTHON_USEDEP}] )
-	test? ( dev-python/service-identity[${PYTHON_USEDEP}] )
-	test? ( dev-python/six[${PYTHON_USEDEP}] )
-	test? ( dev-python/twisted[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/html5lib-0.999999999[${PYTHON_USEDEP}]
@@ -43,3 +39,4 @@ BDEPEND="
 python_test() {
 	"${EPYTHON}" run_tests.py -v || die
 }
+# BDEPEND could not be inserted in this ebuild

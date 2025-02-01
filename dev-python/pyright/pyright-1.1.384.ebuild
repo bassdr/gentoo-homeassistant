@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev nodejs"
+GENERATED_IUSE="all nodejs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,14 +17,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/nodeenv-1.6.0[${PYTHON_USEDEP}]
 	all? ( dev-python/nodejs-wheel-binaries[${PYTHON_USEDEP}] )
 	nodejs? ( dev-python/nodejs-wheel-binaries[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/twine-3.4.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/twine-3.4.1[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/twine-3.4.1[${PYTHON_USEDEP}]
+)"

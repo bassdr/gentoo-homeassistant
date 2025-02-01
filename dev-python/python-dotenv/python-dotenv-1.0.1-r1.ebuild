@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cli? ( >=dev-python/click-5.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -45,3 +45,4 @@ src_install() {
 	# Avoid collision with dev-ruby/dotenv (bug #798648)
 	mv "${ED}"/usr/bin/{,python-}dotenv || die
 }
+# RDEPEND could not be inserted in this ebuild

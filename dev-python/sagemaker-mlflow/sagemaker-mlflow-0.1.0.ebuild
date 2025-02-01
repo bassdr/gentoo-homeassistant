@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test test-prerelease"
+GENERATED_IUSE="test-prerelease"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +17,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/boto3-1.34[${PYTHON_USEDEP}]
-	test? ( dev-python/boto3[${PYTHON_USEDEP}] )
-	test? ( <dev-python/coverage-6.2[${PYTHON_USEDEP}] )
 	>=dev-python/mlflow-2.8[${PYTHON_USEDEP}]
 	test-prerelease? ( dev-python/mlflow[${PYTHON_USEDEP}] )
-	test? ( dev-python/mlflow[${PYTHON_USEDEP}] )
 	test-prerelease? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	test-prerelease? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	test? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/boto3[${PYTHON_USEDEP}]
+	<dev-python/coverage-6.2[${PYTHON_USEDEP}]
+	dev-python/mlflow[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/scikit-learn[${PYTHON_USEDEP}]
+)"

@@ -21,10 +21,7 @@ GENERATED_IUSE="dev"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
-	dev? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 BDEPEND="
 	test? (
@@ -36,3 +33,5 @@ BDEPEND="
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" "${DISTDIR}/${P}-py3-none-any.whl"
 }
+# RDEPEND could not be inserted in this ebuild
+# BDEPEND could not be inserted in this ebuild

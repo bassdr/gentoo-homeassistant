@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="alipan all databricks dev docs hf simulator spark testing"
+GENERATED_IUSE="alipan all databricks docs hf simulator spark testing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	alipan? ( <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/altair-6[${PYTHON_USEDEP}] )
@@ -31,13 +31,10 @@ GENERATED_DEPEND="
 	all? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
 	databricks? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/datasets-4[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/datasets-4[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/docformatter-1.4[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/docformatter-1.4[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/fastapi-0.115.6[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/fastapi-0.115.6[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/gitpython-3.1.42[${PYTHON_USEDEP}] )
@@ -48,12 +45,10 @@ GENERATED_DEPEND="
 	all? ( <dev-python/humanize-5[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/humanize-5[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
 	<dev-python/matplotlib-4[${PYTHON_USEDEP}]
 	all? ( <dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}] )
 	testing? ( <dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}] )
 	all? ( <dev-python/moto-6[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/moto-6[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
@@ -68,21 +63,15 @@ GENERATED_DEPEND="
 	docs? ( ~dev-python/pandoc-2.3[${PYTHON_USEDEP}] )
 	<dev-python/paramiko-4[${PYTHON_USEDEP}]
 	all? ( >dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] )
-	dev? ( >dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/pydantic-2.10.5[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pydantic-2.10.5[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/pypandoc-1.13[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/pypandoc-1.13[${PYTHON_USEDEP}] )
 	all? ( <dev-python/pyspark-4[${PYTHON_USEDEP}] )
 	spark? ( <dev-python/pyspark-4[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/pytest-8.3.4[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-8.3.4[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/pytest-cov-7[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pytest-cov-7[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/pytest-split-0.10.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-split-0.10.0[${PYTHON_USEDEP}] )
 	<dev-python/python-snappy-1[${PYTHON_USEDEP}]
 	all? ( <dev-python/pyyaml-7[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/pyyaml-7[${PYTHON_USEDEP}] )
@@ -111,22 +100,35 @@ GENERATED_DEPEND="
 	all? ( <dev-python/streamlit-2[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/streamlit-2[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/toml-0.10.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/toml-0.10.2[${PYTHON_USEDEP}] )
 	<dev-python/torch-3[${PYTHON_USEDEP}]
 	>=dev-python/torchvision-0.10[${PYTHON_USEDEP}]
 	<dev-python/tqdm-5[${PYTHON_USEDEP}]
 	<dev-python/transformers-5[${PYTHON_USEDEP}]
 	all? ( ~dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/wandb-1[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/wandb-1[${PYTHON_USEDEP}] )
 	<dev-python/xxhash-4[${PYTHON_USEDEP}]
 	all? ( ~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
 	<dev-python/zstd-2[${PYTHON_USEDEP}]
 	all? ( <dev-vcs/pre-commit-4[${PYTHON_USEDEP}] )
-	dev? ( <dev-vcs/pre-commit-4[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/datasets-4[${PYTHON_USEDEP}]
+	>=dev-python/docformatter-1.4[${PYTHON_USEDEP}]
+	~dev-python/fastapi-0.115.6[${PYTHON_USEDEP}]
+	~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
+	<dev-python/moto-6[${PYTHON_USEDEP}]
+	>dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}]
+	~dev-python/pydantic-2.10.5[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+	~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-cov-7[${PYTHON_USEDEP}]
+	~dev-python/pytest-split-0.10.0[${PYTHON_USEDEP}]
+	~dev-python/toml-0.10.2[${PYTHON_USEDEP}]
+	~dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}]
+	~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-4[${PYTHON_USEDEP}]
+)"

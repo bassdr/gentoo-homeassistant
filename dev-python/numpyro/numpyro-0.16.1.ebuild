@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cpu cuda dev doc examples test tpu"
+GENERATED_IUSE="cpu cuda doc examples tpu"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,48 +17,50 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( dev-python/arviz[${PYTHON_USEDEP}] )
-	dev? ( dev-python/dm-haiku[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flax[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/funsor-0.4.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/graphviz[${PYTHON_USEDEP}] )
-	test? ( <dev-python/importlib-metadata-5.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	>=dev-python/jax-0.4.25[${PYTHON_USEDEP}]
 	cpu? ( >=dev-python/jax-0.4.25[cpu,${PYTHON_USEDEP}] )
 	cuda? ( >=dev-python/jax-0.4.25[cuda,${PYTHON_USEDEP}] )
 	tpu? ( >=dev-python/jax-0.4.25[tpu,${PYTHON_USEDEP}] )
 	>=dev-python/jaxlib-0.4.25[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/jaxns-2.6.3[${PYTHON_USEDEP}] )
 	examples? ( dev-python/jupyter[${PYTHON_USEDEP}] )
-	dev? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	examples? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	dev-python/multipledispatch[${PYTHON_USEDEP}]
-	test? ( >=dev-python/mypy-1.13[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/nbsphinx-0.8.9[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/optax-0.0.6[${PYTHON_USEDEP}] )
 	examples? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pylab-sdk[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pyro-api-0.1.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-4.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/readthedocs-sphinx-search-0.3.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/requests[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/ruff-0.1.8[${PYTHON_USEDEP}] )
 	examples? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-	test? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/scipy-1.9[${PYTHON_USEDEP}] )
 	examples? ( dev-python/seaborn[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-gallery[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tensorflow-probability-0.18.0[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	examples? ( dev-python/wordcloud[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/dm-haiku[${PYTHON_USEDEP}]
+	dev-python/flax[${PYTHON_USEDEP}]
+	>=dev-python/funsor-0.4.1[${PYTHON_USEDEP}]
+	dev-python/graphviz[${PYTHON_USEDEP}]
+	<dev-python/importlib-metadata-5.0[${PYTHON_USEDEP}]
+	~dev-python/jaxns-2.6.3[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.13[${PYTHON_USEDEP}]
+	>=dev-python/optax-0.0.6[${PYTHON_USEDEP}]
+	dev-python/pylab-sdk[${PYTHON_USEDEP}]
+	>=dev-python/pyro-api-0.1.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-4.1[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.1.8[${PYTHON_USEDEP}]
+	dev-python/scikit-learn[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.9[${PYTHON_USEDEP}]
+	>=dev-python/tensorflow-probability-0.18.0[${PYTHON_USEDEP}]
+)"

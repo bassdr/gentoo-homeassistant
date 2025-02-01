@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	eventlet? ( !=dev-python/eventlet-0.36.0[${PYTHON_USEDEP}] )
 	testing? ( dev-python/eventlet[${PYTHON_USEDEP}] )

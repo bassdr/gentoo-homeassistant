@@ -22,7 +22,7 @@ GENERATED_IUSE="i18n plugin"
 IUSE="${GENERATED_IUSE} doc examples test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	i18n? ( >=dev-python/babel-0.8[${PYTHON_USEDEP}] )
 	plugin? ( >=dev-python/setuptools-0.6_alpha2[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]

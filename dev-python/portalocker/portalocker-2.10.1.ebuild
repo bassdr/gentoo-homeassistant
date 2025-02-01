@@ -26,12 +26,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs redis tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( >=dev-python/pytest-5.4.1[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-mypy-0.8.0[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	>=dev-python/pywin32-226[${PYTHON_USEDEP}]
 	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
 	tests? ( dev-python/redis[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.1[${PYTHON_USEDEP}] )
@@ -58,3 +57,4 @@ src_prepare() {
 pkg_postinst() {
 	optfeature "redis support" dev-python/redis
 }
+# RDEPEND could not be inserted in this ebuild

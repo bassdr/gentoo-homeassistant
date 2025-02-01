@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/accelerate[${PYTHON_USEDEP}]
 	eval? ( dev-python/bert-score[${PYTHON_USEDEP}] )
 	train? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )

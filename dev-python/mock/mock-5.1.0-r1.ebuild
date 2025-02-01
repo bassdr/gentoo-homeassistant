@@ -17,6 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 DOCS=( CHANGELOG.rst README.rst )
 # Requires could not be inserted in this ebuild

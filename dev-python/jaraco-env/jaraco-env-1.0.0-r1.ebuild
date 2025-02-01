@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
@@ -39,3 +39,4 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+# RDEPEND could not be inserted in this ebuild

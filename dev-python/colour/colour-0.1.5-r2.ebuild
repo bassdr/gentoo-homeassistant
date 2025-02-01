@@ -18,6 +18,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/nose[${PYTHON_USEDEP}]
+)"
 
 src_configure() {
 	# Upstream uses dead & broken d2to1, just make a quick flit config
@@ -40,4 +43,3 @@ python_test() {
 }
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

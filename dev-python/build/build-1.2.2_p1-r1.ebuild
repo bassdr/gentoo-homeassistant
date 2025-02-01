@@ -22,29 +22,17 @@ S=${WORKDIR}/${MY_P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs test typing uv virtualenv"
+GENERATED_IUSE="docs typing uv virtualenv"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="
-	test? ( dev-python/build[uv,virtualenv,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	typing? ( dev-python/build[uv,${PYTHON_USEDEP}] )
-	dev-python/colorama[${PYTHON_USEDEP}]
-	test? ( >=dev-python/filelock-3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/furo-2023.08.17[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-4.6[${PYTHON_USEDEP}]
 	typing? ( >=dev-python/importlib-metadata-5.1[${PYTHON_USEDEP}] )
 	typing? ( ~dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-19.1[${PYTHON_USEDEP}]
 	dev-python/pyproject-hooks[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-6.2.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-2.12[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-mock-2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-rerunfailures-9.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-7.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-argparse-cli-1.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-1.10[${PYTHON_USEDEP}] )
@@ -53,7 +41,6 @@ GENERATED_DEPEND="
 	typing? ( >=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}] )
 	uv? ( >=dev-python/uv-0.1.18[${PYTHON_USEDEP}] )
 	virtualenv? ( >=dev-python/virtualenv-20.0.35[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/wheel-0.36.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/packaging-19.1[${PYTHON_USEDEP}]
@@ -80,6 +67,20 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/build[uv,virtualenv,${PYTHON_USEDEP}]
+	>=dev-python/filelock-3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.12[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mock-2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-rerunfailures-9.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}]
+	>=dev-python/wheel-0.36.0[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	if ! has "${EPYTHON/./_}" "${PYTHON_TESTED[@]}"; then

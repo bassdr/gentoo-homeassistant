@@ -16,18 +16,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/flaky[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-7.0.0[${PYTHON_USEDEP}]
 	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
-	test? ( dev-python/pexpect[${PYTHON_USEDEP}] )
 	>=dev-python/prompt-toolkit-3.0.30[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	>=dev-python/pyzmq-17[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5.4[${PYTHON_USEDEP}]
 "
@@ -51,3 +48,8 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flaky[${PYTHON_USEDEP}]
+	dev-python/pexpect[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

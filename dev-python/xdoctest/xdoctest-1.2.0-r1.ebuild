@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all all-strict docs docs-strict jupyter jupyter-strict optional optional-strict"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all-strict? ( ~dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	jupyter-strict? ( ~dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
@@ -31,12 +31,6 @@ GENERATED_DEPEND="
 	optional? ( >=dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/cmake-3.25.0[${PYTHON_USEDEP}]
 	~dev-python/cmake-3.25.0[${PYTHON_USEDEP}]
-	>=dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
-	>=dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
-	>=dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]

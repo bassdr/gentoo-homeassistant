@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +17,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/cffi-2[${PYTHON_USEDEP}]
-	test? ( <dev-python/cffi-2[${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-40[${PYTHON_USEDEP}]
-	test? ( >=dev-python/cryptography-2[${PYTHON_USEDEP}] )
 	>=dev-python/httpx-0.25.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pymongo-4[aws,${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/respx[${PYTHON_USEDEP}] )
-	test? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	test? ( dev-python/unasync[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/cffi-2[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-2[${PYTHON_USEDEP}]
+	>=dev-python/pymongo-4[aws,${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+	dev-python/respx[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/unasync[${PYTHON_USEDEP}]
+)"

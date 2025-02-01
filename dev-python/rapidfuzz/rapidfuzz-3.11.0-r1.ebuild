@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 # all these are header-only libraries
 GENERATED_IUSE="all"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/numpy[${PYTHON_USEDEP}] )
 "
 DEPEND="
@@ -60,3 +60,4 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# RDEPEND could not be inserted in this ebuild

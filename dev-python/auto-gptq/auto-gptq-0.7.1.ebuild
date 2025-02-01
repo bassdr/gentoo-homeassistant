@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="quality test triton"
+GENERATED_IUSE="quality triton"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,14 +17,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/accelerate-0.26.0[${PYTHON_USEDEP}]
 	dev-python/datasets[${PYTHON_USEDEP}]
 	dev-python/gekko[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	test? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	>=dev-python/peft-0.5.0[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/rouge[${PYTHON_USEDEP}]
 	quality? ( ~dev-python/ruff-0.1.5[${PYTHON_USEDEP}] )
 	dev-python/safetensors[${PYTHON_USEDEP}]
@@ -37,3 +35,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs x"
+GENERATED_IUSE="docs x"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,32 +17,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/accelerate[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	x? ( dev-python/accelerate[${PYTHON_USEDEP}] )
-	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	dev? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/ivy-1.0.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/ivy-1.0.0.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/kornia-moons[${PYTHON_USEDEP}] )
 	>=dev-python/kornia-rs-0.1.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/numpy-3[${PYTHON_USEDEP}] )
-	dev? ( dev-python/onnx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/onnx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/onnxruntime[${PYTHON_USEDEP}] )
 	docs? ( dev-python/onnxruntime[${PYTHON_USEDEP}] )
-	>=dev-python/onnxruntime-gpu-1.16[${PYTHON_USEDEP}]
 	docs? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev? ( dev-python/pillow[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-8.3.4[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pyyaml-5.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/requests[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/setuptools-61.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc-defaultargs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
@@ -53,10 +39,25 @@ GENERATED_DEPEND="
 	docs? ( dev-python/sphinxcontrib-gtagjs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-youtube[${PYTHON_USEDEP}] )
 	>=dev-python/torch-1.9.1[${PYTHON_USEDEP}]
-	dev? ( dev-python/transformers[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-requests[${PYTHON_USEDEP}] )
-	dev? ( >=dev-vcs/pre-commit-2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/accelerate[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/diffusers[${PYTHON_USEDEP}]
+	>=dev-python/ivy-1.0.0.0[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	<dev-python/numpy-3[${PYTHON_USEDEP}]
+	dev-python/onnx[${PYTHON_USEDEP}]
+	dev-python/onnxruntime[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-61.2[${PYTHON_USEDEP}]
+	dev-python/transformers[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2[${PYTHON_USEDEP}]
+)"

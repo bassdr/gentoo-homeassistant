@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/pydocstyle[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 	tests? ( dev-python/pytest-isort[${PYTHON_USEDEP}] )

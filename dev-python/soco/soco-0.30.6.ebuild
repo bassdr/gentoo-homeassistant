@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	events-asyncio? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-python/appdirs[${PYTHON_USEDEP}]
 	testing? ( dev-python/coveralls[${PYTHON_USEDEP}] )

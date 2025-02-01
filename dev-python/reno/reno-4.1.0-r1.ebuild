@@ -16,21 +16,15 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="sphinx test"
+GENERATED_IUSE="sphinx"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( !=dev-python/coverage-4.4[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	sphinx? ( >=dev-python/docutils-0.11[${PYTHON_USEDEP}] )
 	>=dev-python/dulwich-0.15.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/openstackdocstheme-2.2.1[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20.4[${PYTHON_USEDEP}]
 	dev-python/pbr[${PYTHON_USEDEP}]
-	test? ( >=dev-python/python-subunit-0.0.18[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
 	sphinx? ( !=dev-python/sphinx-2.1.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/stestr-2.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testscenarios-0.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testtools-1.4.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pbr[${PYTHON_USEDEP}]
@@ -50,6 +44,14 @@ BDEPEND="
 
 # The doc needs to be built from a git repository
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	!=dev-python/coverage-4.4[${PYTHON_USEDEP}]
+	>=dev-python/openstackdocstheme-2.2.1[${PYTHON_USEDEP}]
+	>=dev-python/python-subunit-0.0.18[${PYTHON_USEDEP}]
+	>=dev-python/stestr-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+	>=dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	# Some tests need to be run from a git repository

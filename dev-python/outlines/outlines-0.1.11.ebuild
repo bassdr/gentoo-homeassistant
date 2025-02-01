@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="exllamav2 llamacpp mlxlm openai serve test transformers vllm"
+GENERATED_IUSE="exllamav2 llamacpp mlxlm openai serve transformers vllm"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,30 +17,21 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/accelerate[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	transformers? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	dev-python/airportsdata[${PYTHON_USEDEP}]
-	test? ( <dev-python/beartype-0.16.0[${PYTHON_USEDEP}] )
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
-	test? ( >=dev-python/coverage-5.1[toml,${PYTHON_USEDEP}] )
 	llamacpp? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	mlxlm? ( dev-python/datasets[${PYTHON_USEDEP}] )
-	test? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	transformers? ( dev-python/datasets[${PYTHON_USEDEP}] )
-	test? ( dev-python/diff-cover[${PYTHON_USEDEP}] )
 	dev-python/diskcache[${PYTHON_USEDEP}]
 	exllamav2? ( dev-python/exllamav2[${PYTHON_USEDEP}] )
-	test? ( dev-python/exllamav2[${PYTHON_USEDEP}] )
 	serve? ( dev-python/fastapi[${PYTHON_USEDEP}] )
-	test? ( dev-python/huggingface-hub[${PYTHON_USEDEP}] )
 	dev-python/interegular[${PYTHON_USEDEP}]
-	test? ( dev-python/jax[${PYTHON_USEDEP}] )
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 	dev-python/lark[${PYTHON_USEDEP}]
 	llamacpp? ( dev-python/llama-cpp-python[${PYTHON_USEDEP}] )
-	test? ( dev-python/llama-cpp-python[${PYTHON_USEDEP}] )
 	>=dev-python/mlx-lm-0.19.2[${PYTHON_USEDEP}]
 	mlxlm? ( dev-python/mlx-lm[${PYTHON_USEDEP}] )
 	dev-python/nest-asyncio[${PYTHON_USEDEP}]
@@ -49,32 +40,42 @@ GENERATED_DEPEND="
 	transformers? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
 	vllm? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
 	openai? ( dev-python/openai[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/openai-1.0.0[${PYTHON_USEDEP}] )
 	~dev-python/outlines-core-0.1.26[${PYTHON_USEDEP}]
-	test? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	dev-python/pycountry[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.0[${PYTHON_USEDEP}]
 	serve? ( >=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	dev-python/referencing[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	test? ( dev-python/responses[${PYTHON_USEDEP}] )
 	dev-python/torch[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	llamacpp? ( dev-python/transformers[${PYTHON_USEDEP}] )
-	test? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	transformers? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	vllm? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	serve? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
-	dev-python/vllm[${PYTHON_USEDEP}]
 	serve? ( >=dev-python/vllm-0.3.0[${PYTHON_USEDEP}] )
 	vllm? ( dev-python/vllm[${PYTHON_USEDEP}] )
-	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/accelerate[${PYTHON_USEDEP}]
+	<dev-python/beartype-0.16.0[${PYTHON_USEDEP}]
+	>=dev-python/coverage-5.1[toml,${PYTHON_USEDEP}]
+	dev-python/datasets[${PYTHON_USEDEP}]
+	dev-python/diff-cover[${PYTHON_USEDEP}]
+	dev-python/exllamav2[${PYTHON_USEDEP}]
+	dev-python/huggingface-hub[${PYTHON_USEDEP}]
+	dev-python/jax[${PYTHON_USEDEP}]
+	dev-python/llama-cpp-python[${PYTHON_USEDEP}]
+	>=dev-python/openai-1.0.0[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/responses[${PYTHON_USEDEP}]
+	dev-python/transformers[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

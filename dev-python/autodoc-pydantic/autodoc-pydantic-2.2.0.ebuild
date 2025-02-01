@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs erdantic linting security test type-checking"
+GENERATED_IUSE="docs erdantic linting security type-checking"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="autodoc_pydantic"
@@ -18,9 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( <dev-python/coverage-8[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	erdantic? ( <dev-python/erdantic-2.0[${PYTHON_USEDEP}] )
 	>dev-python/importlib-metadata-1[${PYTHON_USEDEP}]
 	type-checking? ( <dev-python/mypy-2.0[${PYTHON_USEDEP}] )
@@ -28,8 +26,6 @@ GENERATED_DEPEND="
 	security? ( <dev-python/pip-audit-3.0.0[${PYTHON_USEDEP}] )
 	<dev-python/pydantic-3.0.0[${PYTHON_USEDEP}]
 	<dev-python/pydantic-settings-3.0.0[${PYTHON_USEDEP}]
-	test? ( <dev-python/pytest-9.0.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-sugar-2.0.0[${PYTHON_USEDEP}] )
 	linting? ( <dev-python/ruff-0.5.0[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-4.0[${PYTHON_USEDEP}]
 	docs? ( <dev-python/sphinx-copybutton-0.6.0[${PYTHON_USEDEP}] )
@@ -42,3 +38,9 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/coverage-8[${PYTHON_USEDEP}]
+	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
+	<dev-python/pytest-9.0.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-sugar-2.0.0[${PYTHON_USEDEP}]
+)"

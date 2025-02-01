@@ -25,14 +25,13 @@ KEYWORDS="amd64 arm64"
 # don't ask me why they use both
 GENERATED_IUSE="test"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( >=dev-python/cython-0.29.24[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 DEPEND="
 	net-libs/http-parser:=
 	net-libs/llhttp:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -40,6 +39,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/cython-0.29.24[${PYTHON_USEDEP}]
+)"
 
 src_configure() {
 	cat > setup.cfg <<-EOF || die

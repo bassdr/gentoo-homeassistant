@@ -26,7 +26,7 @@ fi
 
 GENERATED_IUSE="safer-xml-parsing xep-0363 xep-0444-compliance xep-0454"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiodns-1.0[${PYTHON_USEDEP}]
 	dev-python/aiodns[${PYTHON_USEDEP}]
 	xep-0363? ( dev-python/aiohttp[${PYTHON_USEDEP}] )

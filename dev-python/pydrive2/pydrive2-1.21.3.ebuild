@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	fsspec? ( >=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] )
 	tests? ( ~dev-python/black-24.10.0[${PYTHON_USEDEP}] )
 	<dev-python/cryptography-44[${PYTHON_USEDEP}]

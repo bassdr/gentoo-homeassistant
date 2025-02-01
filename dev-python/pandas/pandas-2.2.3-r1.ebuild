@@ -23,11 +23,11 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all aws clipboard compression computation consortium-standard excel feather fss gcp hdf5 html mysql output-formatting parquet performance plot postgresql pyarrow spss sql-other test xml"
+GENERATED_IUSE="all aws clipboard compression computation consortium-standard excel feather fss gcp hdf5 html mysql output-formatting parquet performance plot postgresql pyarrow spss sql-other xml"
 IUSE="${GENERATED_IUSE} big-endian full-support minimal test X"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
 	postgresql? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
 	sql-other? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
@@ -47,7 +47,6 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/html5lib-1.1[${PYTHON_USEDEP}] )
 	html? ( >=dev-python/html5lib-1.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
 	output-formatting? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/lxml-4.9.2[${PYTHON_USEDEP}] )
@@ -80,9 +79,7 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/pyreadstat-1.2.0[${PYTHON_USEDEP}] )
 	spss? ( >=dev-python/pyreadstat-1.2.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pytest-7.3.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.3.2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pytest-xdist-2.2.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-xdist-2.2.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/python-calamine-0.1.7[${PYTHON_USEDEP}] )
 	excel? ( >=dev-python/python-calamine-0.1.7[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
@@ -191,6 +188,11 @@ RDEPEND="${GENERATED_DEPEND}
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.3.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-2.2.0[${PYTHON_USEDEP}]
+)"
 
 src_test() {
 	virtx distutils-r1_src_test

@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/glcontext-3.0.0[${PYTHON_USEDEP}]
 	headless? ( >=dev-python/glcontext-3.0.0[${PYTHON_USEDEP}] )
 "

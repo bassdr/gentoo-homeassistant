@@ -132,13 +132,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dev"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
-	dev? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-5.30[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 DEPEND="
 	app-arch/bzip2:=
@@ -149,7 +143,7 @@ DEPEND="
 	dev-libs/c-blosc2:=
 	dev-libs/isa-l:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -160,6 +154,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-22.3.0[${PYTHON_USEDEP}]
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5.30[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"
 
 QA_FLAGS_IGNORED="usr/lib/py.*/site-packages/cramjam/cramjam.*.so"
 

@@ -22,16 +22,14 @@ S=${WORKDIR}/${PN}-${MY_PV}
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
 DEPEND="
@@ -42,4 +40,9 @@ DEPEND="
 PYTHON_MODULES="${PN}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+)"
+# RDEPEND could not be inserted in this ebuild
 # PYPI_PN could not be inserted in this ebuild

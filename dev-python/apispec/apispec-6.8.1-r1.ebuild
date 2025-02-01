@@ -16,10 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev docs marshmallow tests yaml"
+GENERATED_IUSE="docs marshmallow tests yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( dev-python/apispec[tests,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/apispec[marshmallow,${PYTHON_USEDEP}] )
 	tests? ( dev-python/apispec[marshmallow,yaml,${PYTHON_USEDEP}] )
 	marshmallow? ( >=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}] )
@@ -31,8 +30,6 @@ GENERATED_DEPEND="
 	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-rtd-theme-3.0.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
-	dev? ( <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
@@ -46,6 +43,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/apispec[tests,${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+)"
 distutils_enable_sphinx docs \
 	dev-python/sphinx-issues \
 	dev-python/sphinx-rtd-theme

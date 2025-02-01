@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs pycryptodome test"
+GENERATED_IUSE="docs pycryptodome"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,30 +17,32 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( >=dev-python/build-0.9.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/bump-my-version-0.19.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.10.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	pycryptodome? ( <dev-python/pycryptodome-4[${PYTHON_USEDEP}] )
 	<dev-python/pysha3-2.0.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/towncrier-25[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/towncrier-25[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tox-4.0.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/twine[${PYTHON_USEDEP}] )
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	dev? ( >=dev-vcs/pre-commit-3.4.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/build-0.9.0[${PYTHON_USEDEP}]
+	>=dev-python/bump-my-version-0.19.0[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}]
+	<dev-python/towncrier-25[${PYTHON_USEDEP}]
+	>=dev-python/tox-4.0.0[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-3.4.0[${PYTHON_USEDEP}]
+)"

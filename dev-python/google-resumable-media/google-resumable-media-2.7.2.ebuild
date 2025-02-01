@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aiohttp? ( <dev-python/aiohttp-4.0.0dev[${PYTHON_USEDEP}] )
 	aiohttp? ( <dev-python/google-auth-2.0dev[${PYTHON_USEDEP}] )
 	<dev-python/google-crc32c-2.0dev[${PYTHON_USEDEP}]

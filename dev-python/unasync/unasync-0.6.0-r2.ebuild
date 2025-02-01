@@ -27,7 +27,9 @@ distutils_enable_sphinx docs/source \
 
 distutils_enable_tests pytest
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/tokenize-rt[${PYTHON_USEDEP}]
 "

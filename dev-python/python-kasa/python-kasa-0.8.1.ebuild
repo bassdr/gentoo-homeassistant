@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/asyncclick-8.1.7[${PYTHON_USEDEP}]
@@ -43,7 +43,6 @@ GENERATED_DEPEND="
 	docs? ( >=dev-python/sphinx-7.4.7[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinxcontrib-programoutput-0.0[${PYTHON_USEDEP}] )
-	>=dev-python/tzdata-2024.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/asyncclick-8.1.7[${PYTHON_USEDEP}]

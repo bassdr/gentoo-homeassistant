@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/importlib-metadata-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/natsort-7.0.1[${PYTHON_USEDEP}]

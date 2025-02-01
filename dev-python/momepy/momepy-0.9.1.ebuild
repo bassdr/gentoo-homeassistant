@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	plus? ( dev-python/esda[${PYTHON_USEDEP}] )
 	>=dev-python/geopandas-0.12.0[${PYTHON_USEDEP}]
 	plus? ( dev-python/inequality[${PYTHON_USEDEP}] )

@@ -16,11 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/latexcodec-1.0.4[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-3.01[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
@@ -31,6 +30,9 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.22.2-fix-test-installation.patch"

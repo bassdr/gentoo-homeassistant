@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,37 +17,39 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( <dev-python/black-24.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/build[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/docker-8.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/flaky[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/furo-2023.5.20[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/isort-5.13[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/mypy-1.6[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/myst-parser-2.1[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/petname-2.6[${PYTHON_USEDEP}] )
 	<dev-python/pydantic-3.0[${PYTHON_USEDEP}]
-	dev? ( <dev-python/pytest-8.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-sphinx[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	<dev-python/rich-14.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	dev? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/sphinx-7.0.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/sphinx-autodoc-typehints-1.23.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/sphinx-inline-tabs-2022.1.2_beta11[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/twine-1.11.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-cachetools[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-requests[${PYTHON_USEDEP}] )
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/black-24.0[${PYTHON_USEDEP}]
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/flaky[${PYTHON_USEDEP}]
+	~dev-python/furo-2023.5.20[${PYTHON_USEDEP}]
+	<dev-python/isort-5.13[${PYTHON_USEDEP}]
+	<dev-python/mypy-1.6[${PYTHON_USEDEP}]
+	<dev-python/myst-parser-2.1[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	~dev-python/petname-2.6[${PYTHON_USEDEP}]
+	<dev-python/pytest-8.0[${PYTHON_USEDEP}]
+	dev-python/pytest-sphinx[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	<dev-python/sphinx-7.0.2[${PYTHON_USEDEP}]
+	~dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}]
+	~dev-python/sphinx-autodoc-typehints-1.23.3[${PYTHON_USEDEP}]
+	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+	~dev-python/sphinx-inline-tabs-2022.1.2_beta11[${PYTHON_USEDEP}]
+	>=dev-python/twine-1.11.0[${PYTHON_USEDEP}]
+	dev-python/types-cachetools[${PYTHON_USEDEP}]
+	dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"

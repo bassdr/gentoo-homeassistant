@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}]
 	tests? ( dev-python/arrow[${PYTHON_USEDEP}] )
 	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]

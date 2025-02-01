@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/anyio-4.7.0[${PYTHON_USEDEP}]
 	examples? ( dev-python/fastapi[${PYTHON_USEDEP}] )
 	>=dev-python/starlette-0.41.3[${PYTHON_USEDEP}]

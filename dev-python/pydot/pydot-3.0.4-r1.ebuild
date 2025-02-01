@@ -15,20 +15,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev release tests"
+GENERATED_IUSE="release tests"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/chardet[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/chardet[${PYTHON_USEDEP}] )
-	dev? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	tests? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	>=dev-python/pyparsing-3.0.9[${PYTHON_USEDEP}]
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}] )
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	tests? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	tests? ( dev-python/tox[${PYTHON_USEDEP}] )
 	release? ( dev-python/zest-releaser[recommended,${PYTHON_USEDEP}] )
@@ -45,3 +42,8 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/chardet[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+)"

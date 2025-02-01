@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="format format-nongpl"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	format-nongpl? ( dev-python/fqdn[${PYTHON_USEDEP}] )

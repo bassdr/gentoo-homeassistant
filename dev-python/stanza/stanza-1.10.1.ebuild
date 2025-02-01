@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="datasets dev test tokenizers transformers visualization"
+GENERATED_IUSE="datasets tokenizers transformers visualization"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,9 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
-	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	datasets? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	dev-python/emoji[${PYTHON_USEDEP}]
 	visualization? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -28,7 +26,6 @@ GENERATED_DEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
 	transformers? ( >=dev-python/peft-0.6.1[${PYTHON_USEDEP}] )
 	>=dev-python/protobuf-3.15.0[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tokenizers? ( dev-python/pythainlp[${PYTHON_USEDEP}] )
 	tokenizers? ( dev-python/python-crfsuite[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
@@ -44,3 +41,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/check-manifest[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

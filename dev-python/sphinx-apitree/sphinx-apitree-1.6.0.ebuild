@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev ext"
+GENERATED_IUSE="ext"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +17,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/etils[edc,enp,epath,epy,etree,${PYTHON_USEDEP}]
-	dev? ( dev-python/etils[ecolab,${PYTHON_USEDEP}] )
 	ext? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyink[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pylint-2.6.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-3.4[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	ext? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-apitree[ext,${PYTHON_USEDEP}] )
 	ext? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/etils[ecolab,${PYTHON_USEDEP}]
+	dev-python/pyink[${PYTHON_USEDEP}]
+	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-3.4[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/sphinx-apitree[ext,${PYTHON_USEDEP}]
+)"

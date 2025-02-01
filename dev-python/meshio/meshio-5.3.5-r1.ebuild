@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all"
 IUSE="${GENERATED_IUSE} hdf5 netcdf"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	all? ( dev-python/netcdf4[${PYTHON_USEDEP}] )

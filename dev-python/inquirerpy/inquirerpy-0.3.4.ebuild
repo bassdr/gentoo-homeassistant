@@ -26,7 +26,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( >=dev-python/furo-2021.8.17_beta.43[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-0.15.1[${PYTHON_USEDEP}] )
 	>=dev-python/pfzy-0.3.1[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	curio? ( dev-python/curio-compat[${PYTHON_USEDEP}] )
 	dev-python/pytest[${PYTHON_USEDEP}]
 	trio? ( dev-python/trio[${PYTHON_USEDEP}] )

@@ -22,13 +22,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all all-strict docs docs-strict optional optional-strict tests tests-strict types types-strict"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	types-strict? ( ~dev-python/autoflake-1.4[${PYTHON_USEDEP}] )
 	types? ( >=dev-python/autoflake-1.4[${PYTHON_USEDEP}] )
-	>=dev-python/colorama-0.4.3[${PYTHON_USEDEP}]
-	>=dev-python/colorama-0.4.3[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4.3[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4.3[${PYTHON_USEDEP}]
 	>=dev-python/coverage-5.3.1[${PYTHON_USEDEP}]
 	>=dev-python/coverage-5.3.1[${PYTHON_USEDEP}]
 	>=dev-python/coverage-6.1.1[${PYTHON_USEDEP}]
@@ -45,10 +41,6 @@ GENERATED_DEPEND="
 	~dev-python/coverage-6.1.1[${PYTHON_USEDEP}]
 	~dev-python/coverage-7.3.0[${PYTHON_USEDEP}]
 	~dev-python/coverage-7.3.0[${PYTHON_USEDEP}]
-	>=dev-python/jaraco-windows-3.9.1[${PYTHON_USEDEP}]
-	>=dev-python/jaraco-windows-3.9.1[${PYTHON_USEDEP}]
-	~dev-python/jaraco-windows-3.9.1[${PYTHON_USEDEP}]
-	~dev-python/jaraco-windows-3.9.1[${PYTHON_USEDEP}]
 	types-strict? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	types? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	docs-strict? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
@@ -217,3 +209,4 @@ EPYTEST_IGNORE=(
 	# asserts for running on win32 in global scope
 	ubelt/_win32_jaraco.py
 )
+# RDEPEND could not be inserted in this ebuild

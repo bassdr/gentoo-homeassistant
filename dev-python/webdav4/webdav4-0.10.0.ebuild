@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev docs fsspec http2 qa tests"
+GENERATED_IUSE="all docs fsspec http2 qa tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,48 +17,50 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/cheroot[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/cheroot[${PYTHON_USEDEP}] )
-	dev? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	tests? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/fsspec-2021.7[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/fsspec-2021.7[${PYTHON_USEDEP}] )
 	fsspec? ( >=dev-python/fsspec-2021.7[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/furo-2024.5.6[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/furo-2024.5.6[${PYTHON_USEDEP}] )
 	<dev-python/httpx-1[${PYTHON_USEDEP}]
 	all? ( <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
-	dev? ( <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
 	http2? ( <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
 	qa? ( ~dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
-	dev? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-colorama[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-colorama[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-pkg-resources[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-pkg-resources[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
-	dev? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 	tests? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
-	dev? ( dev-python/wsgidav[${PYTHON_USEDEP}] )
 	tests? ( dev-python/wsgidav[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 	qa? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/cheroot[${PYTHON_USEDEP}]
+	dev-python/colorama[${PYTHON_USEDEP}]
+	>=dev-python/fsspec-2021.7[${PYTHON_USEDEP}]
+	~dev-python/furo-2024.5.6[${PYTHON_USEDEP}]
+	<dev-python/httpx-1[http2,${PYTHON_USEDEP}]
+	~dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
+	<dev-python/myst-parser-4[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	<dev-python/sphinx-8[${PYTHON_USEDEP}]
+	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+	dev-python/types-colorama[${PYTHON_USEDEP}]
+	dev-python/types-pkg-resources[${PYTHON_USEDEP}]
+	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	dev-python/wsgidav[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

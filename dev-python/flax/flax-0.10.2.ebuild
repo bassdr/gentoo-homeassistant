@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev docs testing"
+GENERATED_IUSE="all docs testing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}] )
 	testing? ( dev-python/clu[${PYTHON_USEDEP}] )
 	docs? ( dev-python/dm-haiku[${PYTHON_USEDEP}] )
@@ -63,13 +63,14 @@ GENERATED_DEPEND="
 	docs? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/tensorflow-2.12.0[${PYTHON_USEDEP}] )
 	testing? ( dev-python/tensorflow-datasets[${PYTHON_USEDEP}] )
-	>=dev-python/tensorflow-text-2.11.0[${PYTHON_USEDEP}]
 	dev-python/tensorstore[${PYTHON_USEDEP}]
 	testing? ( dev-python/torch[${PYTHON_USEDEP}] )
 	>=dev-python/treescope-0.1.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.2[${PYTHON_USEDEP}]
-	dev? ( >=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
+)"

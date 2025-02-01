@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aio? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

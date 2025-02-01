@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/click[${PYTHON_USEDEP}]
 	all? ( dev-python/google-auth[${PYTHON_USEDEP}] )
 	google_auth? ( dev-python/google-auth[${PYTHON_USEDEP}] )

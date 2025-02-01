@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cpu dev eval kernels"
+GENERATED_IUSE="cpu eval kernels"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +17,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/accelerate[${PYTHON_USEDEP}]
 	kernels? ( dev-python/autoawq-kernels[${PYTHON_USEDEP}] )
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
 	>=dev-python/datasets-2.20[${PYTHON_USEDEP}]
 	eval? ( dev-python/evaluate[${PYTHON_USEDEP}] )
 	kernels? ( >=dev-python/flash-attn-2.2.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/griffe-typingdoc[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.26.5[${PYTHON_USEDEP}]
 	cpu? ( >=dev-python/intel-extension-for-pytorch-2.4.0[${PYTHON_USEDEP}] )
 	eval? ( ~dev-python/lm-eval-0.4.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mkdocs-material[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mkdocstrings-python[${PYTHON_USEDEP}] )
 	eval? ( dev-python/protobuf[${PYTHON_USEDEP}] )
 	eval? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	eval? ( dev-python/tabulate[${PYTHON_USEDEP}] )
@@ -43,3 +39,9 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/griffe-typingdoc[${PYTHON_USEDEP}]
+	dev-python/mkdocs-material[${PYTHON_USEDEP}]
+	dev-python/mkdocstrings-python[${PYTHON_USEDEP}]
+)"

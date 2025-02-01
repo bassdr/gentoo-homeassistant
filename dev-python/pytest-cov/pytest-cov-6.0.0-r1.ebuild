@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/coverage-7.5[toml,${PYTHON_USEDEP}]
 	dev-python/coverage[${PYTHON_USEDEP}]
 	testing? ( dev-python/fields[${PYTHON_USEDEP}] )

@@ -17,22 +17,18 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/fastjsonschema-2.15[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-2.6[${PYTHON_USEDEP}]
 	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	test? ( dev-python/pep440[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-github-alt[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}] )
-	test? ( dev-python/testpath[${PYTHON_USEDEP}] )
 	>=dev-python/traitlets-5.1[${PYTHON_USEDEP}]
-	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/fastjsonschema-2.15[${PYTHON_USEDEP}]
@@ -53,6 +49,12 @@ distutils_enable_sphinx docs \
 	dev-python/sphinxcontrib-github-alt \
 	dev-python/sphinxcontrib-spelling
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pep440[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/testpath[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_IGNORE=(
 	# requires pep440 package, which is not really relevant for us

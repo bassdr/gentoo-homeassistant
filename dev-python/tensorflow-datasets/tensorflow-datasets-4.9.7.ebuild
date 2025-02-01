@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="aflw2k3d beir ble-wind-field c4 c4-wsrs cats-vs-dogs colorectal-histology common-voice dev duke-ultrasound eurosat groove gtzan huggingface imagenet2012-corrupted librispeech lsun matplotlib nsynth ogbg-molpcba pet-finder qm9 robonet smartwatch-gestures svhn tensorflow tensorflow-data-validation tests-all tf-nightly the300w-lp wake-vision wider-face wiki-dialog wikipedia wsc273 youtube-vis"
+GENERATED_IUSE="aflw2k3d beir ble-wind-field c4 c4-wsrs cats-vs-dogs colorectal-histology common-voice duke-ultrasound eurosat groove gtzan huggingface imagenet2012-corrupted librispeech lsun matplotlib nsynth ogbg-molpcba pet-finder qm9 robonet smartwatch-gestures svhn tensorflow tensorflow-data-validation tests-all tf-nightly the300w-lp wake-vision wider-face wiki-dialog wikipedia wsc273 youtube-vis"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,12 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	beir? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	c4-wsrs? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	c4? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
-	dev? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	wiki-dialog? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	wikipedia? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
@@ -31,12 +30,10 @@ GENERATED_DEPEND="
 	tests-all? ( dev-python/bs4[${PYTHON_USEDEP}] )
 	wsc273? ( dev-python/bs4[${PYTHON_USEDEP}] )
 	dev-python/click[${PYTHON_USEDEP}]
-	dev? ( dev-python/conllu[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/conllu[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/conllu[${PYTHON_USEDEP}] )
 	nsynth? ( >=dev-python/crepe-0.0.11[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/datasets[${PYTHON_USEDEP}] )
-	dev? ( dev-python/dill[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/dill[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/dill[${PYTHON_USEDEP}] )
 	dev-python/dm-tree[${PYTHON_USEDEP}]
@@ -59,10 +56,8 @@ GENERATED_DEPEND="
 	tests-all? ( dev-python/imagecodecs[${PYTHON_USEDEP}] )
 	dev-python/immutabledict[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
 	huggingface? ( ~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
 	tests-all? ( ~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
-	dev? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	c4? ( dev-python/langdetect[${PYTHON_USEDEP}] )
@@ -76,7 +71,6 @@ GENERATED_DEPEND="
 	huggingface? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	matplotlib? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/mlcroissant-1.0.9[${PYTHON_USEDEP}] )
 	huggingface? ( >=dev-python/mlcroissant-1.0.9[${PYTHON_USEDEP}] )
 	tests-all? ( >=dev-python/mlcroissant-1.0.9[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/mwparserfromhell[${PYTHON_USEDEP}] )
@@ -95,7 +89,6 @@ GENERATED_DEPEND="
 	huggingface? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
 	imagenet2012-corrupted? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	ogbg-molpcba? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	pet-finder? ( dev-python/pandas[${PYTHON_USEDEP}] )
@@ -118,23 +111,17 @@ GENERATED_DEPEND="
 	tests-all? ( dev-python/pycocotools[${PYTHON_USEDEP}] )
 	youtube-vis? ( dev-python/pycocotools[${PYTHON_USEDEP}] )
 	common-voice? ( dev-python/pydub[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pydub[${PYTHON_USEDEP}] )
 	groove? ( dev-python/pydub[${PYTHON_USEDEP}] )
 	gtzan? ( dev-python/pydub[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/pydub[${PYTHON_USEDEP}] )
 	librispeech? ( dev-python/pydub[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/pydub[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pylint-2.6.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-shard[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/pytest-shard[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/pytest-shard[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
@@ -169,7 +156,6 @@ GENERATED_DEPEND="
 	dev-python/toml[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/wrapt[${PYTHON_USEDEP}]
-	dev? ( dev-python/yapf[${PYTHON_USEDEP}] )
 	ble-wind-field? ( dev-python/zarr[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/zarr[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/zarr[${PYTHON_USEDEP}] )
@@ -177,3 +163,19 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/apache-beam[${PYTHON_USEDEP}]
+	dev-python/conllu[${PYTHON_USEDEP}]
+	dev-python/dill[${PYTHON_USEDEP}]
+	~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}]
+	dev-python/jupyter[${PYTHON_USEDEP}]
+	>=dev-python/mlcroissant-1.0.9[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/pydub[${PYTHON_USEDEP}]
+	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-shard[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/yapf[${PYTHON_USEDEP}]
+)"

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all calc s3 test"
+GENERATED_IUSE="all calc s3"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,8 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 	s3? ( >=dev-python/boto3-1.3.1[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
@@ -26,14 +25,17 @@ GENERATED_DEPEND="
 	>=dev-python/click-plugins-1.0[${PYTHON_USEDEP}]
 	>=dev-python/cligj-0.5[${PYTHON_USEDEP}]
 	all? ( dev-python/fiona[calc,s3,test,${PYTHON_USEDEP}] )
-	test? ( dev-python/fiona[s3,${PYTHON_USEDEP}] )
-	test? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	calc? ( dev-python/pyparsing[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	calc? ( dev-python/shapely[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/fiona[s3,${PYTHON_USEDEP}]
+	dev-python/fsspec[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
+)"

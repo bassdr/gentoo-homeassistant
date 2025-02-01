@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="pep257 test"
+GENERATED_IUSE="pep257"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,18 +17,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( !=dev-python/coverage-4.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/ddt-1.2.1[${PYTHON_USEDEP}] )
-	test? ( !=dev-python/eventlet-0.18.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
 	pep257? ( ~dev-python/flake8-docstrings-1.7.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/python-subunit-1.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/stestr-2.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testscenarios-0.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testtools-2.2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/coverage-4.4[${PYTHON_USEDEP}]
+	>=dev-python/ddt-1.2.1[${PYTHON_USEDEP}]
+	!=dev-python/eventlet-0.18.3[${PYTHON_USEDEP}]
+	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-subunit-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/stestr-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+	>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
+)"

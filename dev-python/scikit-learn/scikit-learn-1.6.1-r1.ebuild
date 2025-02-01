@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="benchmark build docs examples install maintenance tests"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( >=dev-python/black-24.3.0[${PYTHON_USEDEP}] )
 	maintenance? ( ~dev-python/conda-lock-2.5.6[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
@@ -86,7 +86,7 @@ DEPEND="
 	virtual/cblas:=
 	>=dev-python/numpy-1.19.5:=[${PYTHON_USEDEP}]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	>=dev-python/joblib-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]

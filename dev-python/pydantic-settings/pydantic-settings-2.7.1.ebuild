@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	azure-key-vault? ( >=dev-python/azure-identity-1.16.0[${PYTHON_USEDEP}] )
 	azure-key-vault? ( >=dev-python/azure-keyvault-secrets-4.8.0[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2.7.0[${PYTHON_USEDEP}]

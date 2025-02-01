@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/absl-py-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/apache-beam-3[gcp,${PYTHON_USEDEP}]
 	all? ( <dev-python/ipython-8[${PYTHON_USEDEP}] )

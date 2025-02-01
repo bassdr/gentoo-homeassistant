@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,21 +17,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( ~dev-python/bump2version-1.0.1[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/click-8.1.7[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/flake8-7.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/jinja2-3.1.3[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/nox-2024.3.2[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pyfakefs-5.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-5[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-subprocess[${PYTHON_USEDEP}] )
 	>=dev-python/ruamel-yaml-0.18.6[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	>=dev-python/toml-0.10.2[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/wheel-0.43.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
+	~dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
+	~dev-python/nox-2024.3.2[${PYTHON_USEDEP}]
+	~dev-python/pyfakefs-5.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5[${PYTHON_USEDEP}]
+	dev-python/pytest-subprocess[${PYTHON_USEDEP}]
+	~dev-python/wheel-0.43.0[${PYTHON_USEDEP}]
+)"

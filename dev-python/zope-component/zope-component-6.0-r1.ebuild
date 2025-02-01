@@ -18,34 +18,26 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs mintests persistentregistry security test zcml"
+GENERATED_IUSE="docs mintests persistentregistry security zcml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	persistentregistry? ( dev-python/persistent[${PYTHON_USEDEP}] )
-	test? ( dev-python/persistent[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/zodb[${PYTHON_USEDEP}] )
 	mintests? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	dev-python/zope-event[${PYTHON_USEDEP}]
 	>=dev-python/zope-hookable-4.2.0[${PYTHON_USEDEP}]
 	mintests? ( dev-python/zope-i18nmessageid[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-i18nmessageid[${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-i18nmessageid[${PYTHON_USEDEP}] )
 	>=dev-python/zope-interface-5.3[${PYTHON_USEDEP}]
 	security? ( dev-python/zope-location[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-location[${PYTHON_USEDEP}] )
 	security? ( dev-python/zope-proxy[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-proxy[${PYTHON_USEDEP}] )
 	security? ( dev-python/zope-security[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-security[${PYTHON_USEDEP}] )
 	mintests? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 	mintests? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/zope-event[${PYTHON_USEDEP}]
@@ -62,6 +54,16 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/persistent[${PYTHON_USEDEP}]
+	dev-python/zope-configuration[${PYTHON_USEDEP}]
+	dev-python/zope-i18nmessageid[${PYTHON_USEDEP}]
+	dev-python/zope-location[${PYTHON_USEDEP}]
+	dev-python/zope-proxy[${PYTHON_USEDEP}]
+	dev-python/zope-security[${PYTHON_USEDEP}]
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	# strip rdep specific to namespaces

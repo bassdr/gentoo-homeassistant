@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/cython[${PYTHON_USEDEP}] )
 	tests? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
 	tests? ( dev-python/mpmath[${PYTHON_USEDEP}] )
@@ -36,7 +36,7 @@ DEPEND="
 	>=dev-libs/mpfr-3.1.2:=
 	dev-libs/gmp:0=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="

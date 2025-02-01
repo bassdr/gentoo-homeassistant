@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cachelib? ( >=dev-python/cachelib-0.10.2[${PYTHON_USEDEP}] )
 	dev-python/cachelib[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.2[${PYTHON_USEDEP}]

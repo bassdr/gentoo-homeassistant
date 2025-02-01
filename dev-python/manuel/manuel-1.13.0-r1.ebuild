@@ -19,7 +19,7 @@ GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	tests? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 "
@@ -41,3 +41,4 @@ python_test() {
 	local -x PYTHONPATH=src
 	"${EPYTHON}" -m unittest -vv manuel.tests.test_suite || die
 }
+# RDEPEND could not be inserted in this ebuild

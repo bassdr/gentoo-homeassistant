@@ -23,7 +23,7 @@ IUSE="${GENERATED_IUSE} test"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/cffi-1.5.0[${PYTHON_USEDEP}]
 	dev-python/cffi[${PYTHON_USEDEP}]
 	idna? ( >=dev-python/idna-2.1[${PYTHON_USEDEP}] )

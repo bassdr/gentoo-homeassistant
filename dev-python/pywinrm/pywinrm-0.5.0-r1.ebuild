@@ -18,12 +18,10 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="credssp"
 IUSE="${GENERATED_IUSE} kerberos"
 
-GENERATED_DEPEND="
-	<dev-python/pykerberos-2.0.0[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/requests-2.9.1[${PYTHON_USEDEP}]
 	credssp? ( >=dev-python/requests-credssp-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-ntlm-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/winkerberos-0.5.0[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -31,11 +31,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc test"
+GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/ruff[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	>=dev-python/webencodings-0.4[${PYTHON_USEDEP}]
@@ -46,6 +44,10 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	if use test; then

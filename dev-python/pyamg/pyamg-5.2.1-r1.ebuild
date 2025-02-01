@@ -21,7 +21,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.11.0[${PYTHON_USEDEP}]
 "
@@ -29,7 +31,7 @@ DEPEND="
 	dev-python/pybind11[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/cppheaderparser[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]

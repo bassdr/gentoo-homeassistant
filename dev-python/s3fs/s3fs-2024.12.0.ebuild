@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/aiobotocore-3.0.0[${PYTHON_USEDEP}]
 	awscli? ( <dev-python/aiobotocore-3.0.0[awscli,${PYTHON_USEDEP}] )
 	boto3? ( <dev-python/aiobotocore-3.0.0[boto3,${PYTHON_USEDEP}] )

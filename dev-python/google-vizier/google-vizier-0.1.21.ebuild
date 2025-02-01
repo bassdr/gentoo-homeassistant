@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="algorithms all benchmarks jax test tf"
+GENERATED_IUSE="algorithms all benchmarks jax tf"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	all? ( dev-python/ale-py[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/ale-py[${PYTHON_USEDEP}] )
@@ -25,7 +25,6 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/chex-0.1.87[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/chex-0.1.87[${PYTHON_USEDEP}] )
 	all? ( <=dev-python/coverage-6.4.2[${PYTHON_USEDEP}] )
-	test? ( <=dev-python/coverage-6.4.2[${PYTHON_USEDEP}] )
 	algorithms? ( ~dev-python/cvxopt-1.3.0[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/cvxopt-1.3.0[${PYTHON_USEDEP}] )
 	algorithms? ( ~dev-python/cvxpy-1.2.1[${PYTHON_USEDEP}] )
@@ -54,7 +53,6 @@ GENERATED_DEPEND="
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	all? ( <=dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
-	test? ( <=dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/nats-bench[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/nats-bench[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.21.5[${PYTHON_USEDEP}]
@@ -67,7 +65,6 @@ GENERATED_DEPEND="
 	>=dev-python/portpicker-1.3.1[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.6[${PYTHON_USEDEP}]
 	all? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/ray-2.3.1[${PYTHON_USEDEP}] )
 	benchmarks? ( ~dev-python/ray-2.3.1[${PYTHON_USEDEP}] )
 	algorithms? ( ~dev-python/scikit-learn-1.1.2[${PYTHON_USEDEP}] )
@@ -85,3 +82,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<=dev-python/coverage-6.4.2[${PYTHON_USEDEP}]
+	<=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

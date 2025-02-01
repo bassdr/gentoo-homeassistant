@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code_style live-dev testing themes"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	~dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}]
 	themes? ( ~dev-python/myst-parser-0.12.9[${PYTHON_USEDEP}] )

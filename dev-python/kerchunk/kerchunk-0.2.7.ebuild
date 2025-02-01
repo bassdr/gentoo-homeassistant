@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cftime dev fits grib2 hdf netcdf3"
+GENERATED_IUSE="cftime fits grib2 hdf netcdf3"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,29 +17,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/cfgrib[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	grib2? ( dev-python/cfgrib[${PYTHON_USEDEP}] )
 	cftime? ( dev-python/cftime[${PYTHON_USEDEP}] )
-	dev? ( dev-python/cftime[${PYTHON_USEDEP}] )
-	dev? ( dev-python/dask[${PYTHON_USEDEP}] )
-	dev? ( dev-python/fastparquet[${PYTHON_USEDEP}] )
 	dev-python/fsspec[${PYTHON_USEDEP}]
-	dev? ( dev-python/h5netcdf[${PYTHON_USEDEP}] )
-	dev? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	hdf? ( dev-python/h5py[${PYTHON_USEDEP}] )
-	dev? ( dev-python/jinja2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/netcdf4[${PYTHON_USEDEP}] )
 	dev-python/numcodecs[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/s3fs[${PYTHON_USEDEP}] )
-	dev? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	netcdf3? ( dev-python/scipy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-ujson[${PYTHON_USEDEP}] )
 	dev-python/ujson[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/xarray-2024.10.0[${PYTHON_USEDEP}] )
 	fits? ( dev-python/xarray[${PYTHON_USEDEP}] )
 	hdf? ( dev-python/xarray[${PYTHON_USEDEP}] )
 	<dev-python/zarr-3[${PYTHON_USEDEP}]
@@ -47,3 +33,19 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/cfgrib[${PYTHON_USEDEP}]
+	dev-python/cftime[${PYTHON_USEDEP}]
+	dev-python/dask[${PYTHON_USEDEP}]
+	dev-python/fastparquet[${PYTHON_USEDEP}]
+	dev-python/h5netcdf[${PYTHON_USEDEP}]
+	dev-python/h5py[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/netcdf4[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/s3fs[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
+	dev-python/types-ujson[${PYTHON_USEDEP}]
+	>=dev-python/xarray-2024.10.0[${PYTHON_USEDEP}]
+)"

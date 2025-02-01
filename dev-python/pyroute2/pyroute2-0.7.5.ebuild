@@ -20,10 +20,12 @@ KEYWORDS="amd64 arm64"
 # tests need root access
 RESTRICT="test"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	dev-python/win-inet-pton[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
+# RDEPEND could not be inserted in this ebuild

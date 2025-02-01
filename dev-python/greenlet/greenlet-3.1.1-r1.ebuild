@@ -21,13 +21,11 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	test? ( dev-python/objgraph[${PYTHON_USEDEP}] )
-	test? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -40,6 +38,10 @@ BDEPEND="
 distutils_enable_sphinx docs \
 	dev-python/furo
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/objgraph[${PYTHON_USEDEP}]
+	dev-python/psutil[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare
@@ -55,3 +57,4 @@ src_prepare() {
 python_test() {
 	eunittest greenlet.tests
 }
+# RDEPEND could not be inserted in this ebuild

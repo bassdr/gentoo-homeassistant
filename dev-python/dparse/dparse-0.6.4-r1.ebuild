@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 # Break circular dependency
 GENERATED_IUSE="all conda pipenv poetry"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	all? ( dev-python/pipenv[${PYTHON_USEDEP}] )
 	pipenv? ( dev-python/pipenv[${PYTHON_USEDEP}] )
@@ -38,3 +38,4 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+# RDEPEND could not be inserted in this ebuild

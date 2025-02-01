@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-18.0[${PYTHON_USEDEP}]
 	azure? ( >=dev-python/azure-storage-blob-12.0.0[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.9[${PYTHON_USEDEP}] )

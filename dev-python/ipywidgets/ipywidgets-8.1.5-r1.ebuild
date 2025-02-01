@@ -17,17 +17,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/comm-0.1.3[${PYTHON_USEDEP}]
-	test? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	>=dev-python/ipython-6.1.0[${PYTHON_USEDEP}]
-	test? ( dev-python/jsonschema[${PYTHON_USEDEP}] )
 	~dev-python/jupyterlab-widgets-3.0.12[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-3.6.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	>=dev-python/traitlets-4.3.1[${PYTHON_USEDEP}]
 	~dev-python/widgetsnbextension-4.0.12[${PYTHON_USEDEP}]
 "
@@ -50,6 +45,13 @@ PDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/ipykernel[${PYTHON_USEDEP}]
+	dev-python/jsonschema[${PYTHON_USEDEP}]
+	>=dev-python/pytest-3.6.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=()

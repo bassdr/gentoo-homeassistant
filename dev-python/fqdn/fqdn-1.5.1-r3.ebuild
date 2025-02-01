@@ -25,3 +25,4 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

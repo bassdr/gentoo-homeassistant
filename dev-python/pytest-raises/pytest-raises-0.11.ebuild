@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	develop? ( dev-python/pylint[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-3.2.2[${PYTHON_USEDEP}]
 	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )

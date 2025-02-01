@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tensorflow? ( <dev-python/tensorflow-2.17.0[${PYTHON_USEDEP}] )
 	tensorflow-aarch64? ( <dev-python/tensorflow-aarch64-2.17.0[${PYTHON_USEDEP}] )
 	tensorflow-cpu? ( <dev-python/tensorflow-cpu-2.17.0[${PYTHON_USEDEP}] )

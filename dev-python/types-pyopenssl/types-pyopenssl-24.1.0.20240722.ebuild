@@ -4,20 +4,21 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="types-pyOpenSSL"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/types-pyOpenSSL/"
+  https://pypi.org/project/types-pyopenssl/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/cryptography-35.0.0[${PYTHON_USEDEP}]
 	dev-python/types-cffi[${PYTHON_USEDEP}]
 "

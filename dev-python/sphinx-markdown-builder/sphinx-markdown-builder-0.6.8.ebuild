@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,23 +17,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev? ( dev-python/bumpver[${PYTHON_USEDEP}] )
-	dev? ( dev-python/coveralls[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/docutils[${PYTHON_USEDEP}]
-	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/isort[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pip-tools[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pylint[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-5.1.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/sphinx-5.3.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinxcontrib-httpdomain[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinxcontrib-plantuml[${PYTHON_USEDEP}] )
 	dev-python/tabulate[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/bumpver[${PYTHON_USEDEP}]
+	dev-python/coveralls[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/isort[${PYTHON_USEDEP}]
+	dev-python/pip-tools[${PYTHON_USEDEP}]
+	dev-python/pylint[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-5.3.0[${PYTHON_USEDEP}]
+	dev-python/sphinxcontrib-httpdomain[${PYTHON_USEDEP}]
+	dev-python/sphinxcontrib-plantuml[${PYTHON_USEDEP}]
+)"

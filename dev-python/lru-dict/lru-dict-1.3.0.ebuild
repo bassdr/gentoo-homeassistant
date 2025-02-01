@@ -24,5 +24,8 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

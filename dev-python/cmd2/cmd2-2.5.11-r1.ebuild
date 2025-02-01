@@ -16,10 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	>=dev-python/gnureadline-8[${PYTHON_USEDEP}]
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pyperclip-1.8[${PYTHON_USEDEP}]
-	>=dev-python/pyreadline3-3.4[${PYTHON_USEDEP}]
 	>=dev-python/wcwidth-0.2.10[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

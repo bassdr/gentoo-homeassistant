@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}]
 	testing? ( >=dev-python/protobuf-4.21.9[${PYTHON_USEDEP}] )
 "

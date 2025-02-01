@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	optional? ( >dev-python/aiodns-1.0[${PYTHON_USEDEP}] )
 	>dev-python/aiohttp-3.5.2[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]

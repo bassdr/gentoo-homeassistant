@@ -17,7 +17,7 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	comparators? ( dev-python/androguard[${PYTHON_USEDEP}] )
 	cmdline? ( dev-python/argcomplete[${PYTHON_USEDEP}] )
 	comparators? ( dev-python/binwalk[${PYTHON_USEDEP}] )

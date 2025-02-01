@@ -24,30 +24,17 @@ SRC_URI="
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev dnssec doh doq idna trio wmi"
+GENERATED_IUSE="dnssec doh doq idna trio wmi"
 IUSE="${GENERATED_IUSE} dnssec examples"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doq? ( >=dev-python/aioquic-1.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/black-23.1.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/coverage-7.0[${PYTHON_USEDEP}] )
 	dnssec? ( >=dev-python/cryptography-43[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/flake8-7[${PYTHON_USEDEP}] )
 	doh? ( >=dev-python/h2-4.1.0[${PYTHON_USEDEP}] )
 	doh? ( >=dev-python/httpcore-1.0.0[${PYTHON_USEDEP}] )
 	doh? ( >=dev-python/httpx-0.26.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/hypercorn-0.16.0[${PYTHON_USEDEP}] )
 	idna? ( >=dev-python/idna-3.7[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/mypy-1.8[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pylint-3[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-7.4[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/quart-trio-0.11.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-7.2.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.23[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/twine-4.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/wheel-0.42.0[${PYTHON_USEDEP}] )
 	wmi? ( >=dev-python/wmi-1.5.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -65,6 +52,21 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
+	>=dev-python/coverage-7.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-7[${PYTHON_USEDEP}]
+	>=dev-python/hypercorn-0.16.0[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.8[${PYTHON_USEDEP}]
+	>=dev-python/pylint-3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	>=dev-python/quart-trio-0.11.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-7.2.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/twine-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/wheel-0.42.0[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

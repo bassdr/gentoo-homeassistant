@@ -12,13 +12,13 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/qdrant_client/"
+  https://pypi.org/project/qdrant-client/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	fastembed? ( ~dev-python/fastembed-0.5.1[${PYTHON_USEDEP}] )
 	fastembed-gpu? ( ~dev-python/fastembed-gpu-0.5.1[${PYTHON_USEDEP}] )
 	>=dev-python/grpcio-1.41.0[${PYTHON_USEDEP}]

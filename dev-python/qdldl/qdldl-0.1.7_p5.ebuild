@@ -4,7 +4,8 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -19,7 +20,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/numpy-1.7[${PYTHON_USEDEP}]
 	>=dev-python/scipy-0.13.2[${PYTHON_USEDEP}]
 "

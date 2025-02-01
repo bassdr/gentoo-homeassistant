@@ -17,7 +17,7 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/astunparse-1.6[${PYTHON_USEDEP}]
 	>=dev-python/cached-property-1.5[${PYTHON_USEDEP}]
 	numpy-style? ( >=dev-python/docstring-parser-0.7[${PYTHON_USEDEP}] )

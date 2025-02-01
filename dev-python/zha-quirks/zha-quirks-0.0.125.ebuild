@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 	dev-python/zigpy[${PYTHON_USEDEP}]

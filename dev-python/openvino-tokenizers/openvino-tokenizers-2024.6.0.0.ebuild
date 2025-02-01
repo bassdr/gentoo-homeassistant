@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all benchmark dev fuzzing torch transformers"
+GENERATED_IUSE="all benchmark fuzzing torch transformers"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +17,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	fuzzing? ( dev-python/atheris[${PYTHON_USEDEP}] )
-	dev? ( dev-python/bandit[${PYTHON_USEDEP}] )
 	~dev-python/openvino-2024.6.0_p[${PYTHON_USEDEP}]
 	all? ( dev-python/openvino-tokenizers[dev,transformers,${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/openvino-tokenizers[transformers,${PYTHON_USEDEP}] )
-	dev? ( dev-python/openvino-tokenizers[torch,transformers,${PYTHON_USEDEP}] )
 	fuzzing? ( dev-python/openvino-tokenizers[transformers,${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-harvest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/seaborn[${PYTHON_USEDEP}] )
 	transformers? ( dev-python/tiktoken[${PYTHON_USEDEP}] )
 	torch? ( dev-python/torch[${PYTHON_USEDEP}] )
@@ -39,3 +33,11 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/bandit[${PYTHON_USEDEP}]
+	dev-python/openvino-tokenizers[torch,transformers,${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-harvest[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+)"

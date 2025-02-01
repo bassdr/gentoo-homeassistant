@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="benchmark docs jax lint numpy test torch"
+GENERATED_IUSE="benchmark docs jax lint numpy torch"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( dev-python/black[${PYTHON_USEDEP}] )
 	lint? ( dev-python/cpplint[${PYTHON_USEDEP}] )
 	benchmark? ( <dev-python/dm-tree-0.2.0_alpha0[${PYTHON_USEDEP}] )
@@ -39,9 +39,6 @@ GENERATED_DEPEND="
 	lint? ( dev-python/pydocstyle[${PYTHON_USEDEP}] )
 	lint? ( dev-python/pyenchant[${PYTHON_USEDEP}] )
 	lint? ( dev-python/pylint[spelling,${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autoapi[${PYTHON_USEDEP}] )
@@ -63,3 +60,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"

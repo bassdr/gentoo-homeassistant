@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs test testing"
+GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="zope.dublincore"
@@ -18,8 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/btrees[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/btrees[${PYTHON_USEDEP}] )
 	dev-python/persistent[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
@@ -28,21 +27,24 @@ GENERATED_DEPEND="
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	dev-python/zope-annotation[${PYTHON_USEDEP}]
 	dev-python/zope-component[zcml,${PYTHON_USEDEP}]
-	test? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	testing? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	dev-python/zope-datetime[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
 	dev-python/zope-lifecycleevent[${PYTHON_USEDEP}]
 	dev-python/zope-location[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-publisher[${PYTHON_USEDEP}] )
 	dev-python/zope-schema[${PYTHON_USEDEP}]
 	>=dev-python/zope-security-3.8[zcml,${PYTHON_USEDEP}]
 	docs? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/zope-testing-3.8[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/zope-testing-3.8[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 	testing? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/btrees[${PYTHON_USEDEP}]
+	dev-python/zope-configuration[${PYTHON_USEDEP}]
+	dev-python/zope-publisher[${PYTHON_USEDEP}]
+	>=dev-python/zope-testing-3.8[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"

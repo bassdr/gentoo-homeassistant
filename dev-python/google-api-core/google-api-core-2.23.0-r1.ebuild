@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="async-rest grpc grpcgcp grpcio-gcp"
 IUSE="${GENERATED_IUSE} grpc"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/google-auth-3.0_p0[${PYTHON_USEDEP}]
 	async-rest? ( <dev-python/google-auth-3.0_p0[aiohttp,${PYTHON_USEDEP}] )
 	dev-python/google-auth[${PYTHON_USEDEP}]

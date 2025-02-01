@@ -16,16 +16,17 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
 "
 DEPEND="
 	>=dev-python/numpy-1.17.3:=[${PYTHON_USEDEP}]
 	>=sci-libs/hdf5-1.10.4:=[hl(+)]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 

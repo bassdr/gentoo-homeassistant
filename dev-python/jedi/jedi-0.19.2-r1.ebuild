@@ -30,7 +30,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs qa testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( ~dev-python/alabaster-0.7.12[${PYTHON_USEDEP}] )
 	testing? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/babel-2.9.1[${PYTHON_USEDEP}] )

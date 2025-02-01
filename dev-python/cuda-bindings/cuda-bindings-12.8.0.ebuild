@@ -17,10 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/nvidia-cuda-nvrtc-cu12[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/nvidia-nvjitlink-cu12-12.3[${PYTHON_USEDEP}] )
-	dev-python/pywin32[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

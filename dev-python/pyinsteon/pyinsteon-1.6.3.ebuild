@@ -20,7 +20,9 @@ KEYWORDS="amd64 arm64"
 
 DOCS="DESCRIPTION.rst"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/pypubsub[${PYTHON_USEDEP}]

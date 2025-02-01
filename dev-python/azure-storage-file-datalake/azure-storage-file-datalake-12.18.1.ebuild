@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/azure-core-1.30.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/azure-core-1.30.0[aio,${PYTHON_USEDEP}] )
 	>=dev-python/azure-storage-blob-12.24.1[${PYTHON_USEDEP}]

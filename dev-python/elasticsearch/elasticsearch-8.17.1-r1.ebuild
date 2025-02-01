@@ -22,40 +22,19 @@ LICENSE="Apache-2.0"
 SLOT="0/$(ver_cut 1)"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="async dev docs orjson pyarrow requests vectorstore-mmr"
+GENERATED_IUSE="async docs orjson pyarrow requests vectorstore-mmr"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	async? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
-	dev? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev? ( dev-python/build[${PYTHON_USEDEP}] )
-	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	<dev-python/elastic-transport-9[${PYTHON_USEDEP}]
-	dev? ( dev-python/isort[${PYTHON_USEDEP}] )
-	dev? ( dev-python/jinja2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mapbox-vector-tile[${PYTHON_USEDEP}] )
-	dev? ( dev-python/nox[${PYTHON_USEDEP}] )
-	dev? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	vectorstore-mmr? ( >=dev-python/numpy-1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/orjson[${PYTHON_USEDEP}] )
 	orjson? ( >=dev-python/orjson-3[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
 	pyarrow? ( >=dev-python/pyarrow-1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/python-dateutil[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pyyaml-5.4[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/requests-3[${PYTHON_USEDEP}] )
 	requests? ( !=dev-python/requests-2.32.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/simsimd[${PYTHON_USEDEP}] )
 	vectorstore-mmr? ( >=dev-python/simsimd-3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/twine[${PYTHON_USEDEP}] )
-	dev? ( dev-python/unasync[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
@@ -86,6 +65,29 @@ distutils_enable_sphinx docs/sphinx \
 	dev-python/sphinx-autodoc-typehints \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/isort[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/mapbox-vector-tile[${PYTHON_USEDEP}]
+	dev-python/nox[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/orjson[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/pyarrow[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
+	<dev-python/requests-3[${PYTHON_USEDEP}]
+	dev-python/simsimd[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+	dev-python/unasync[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_IGNORE=(

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="aws azure check doc gcs test"
+GENERATED_IUSE="aws azure check doc gcs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,14 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	azure? ( dev-python/adlfs[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/adlfs-2024.4.1[${PYTHON_USEDEP}] )
 	<dev-python/appdirs-2[${PYTHON_USEDEP}]
-	test? ( dev-python/fastparquet[${PYTHON_USEDEP}] )
 	>=dev-python/fsspec-2022.2[${PYTHON_USEDEP}]
 	gcs? ( dev-python/gcsfs[${PYTHON_USEDEP}] )
-	test? ( dev-python/gcsfs[${PYTHON_USEDEP}] )
 	>=dev-python/humanize-1[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-4.4[${PYTHON_USEDEP}]
 	>=dev-python/importlib-resources-1.3[${PYTHON_USEDEP}]
@@ -35,19 +32,11 @@ GENERATED_DEPEND="
 	doc? ( dev-python/nbclient[${PYTHON_USEDEP}] )
 	doc? ( dev-python/nbformat[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-0.23[${PYTHON_USEDEP}]
-	test? ( dev-python/pip-tools[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
 	check? ( ~dev-python/pyright-1.1.372[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-7.1.3[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cases[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-dotenv[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-parallel[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
 	doc? ( dev-python/quartodoc[${PYTHON_USEDEP}] )
-	test? ( dev-python/rdata[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	aws? ( dev-python/s3fs[${PYTHON_USEDEP}] )
-	test? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	check? ( dev-python/types-appdirs[${PYTHON_USEDEP}] )
 	>=dev-python/xxhash-1[${PYTHON_USEDEP}]
 	check? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
@@ -55,3 +44,16 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/adlfs-2024.4.1[${PYTHON_USEDEP}]
+	dev-python/fastparquet[${PYTHON_USEDEP}]
+	dev-python/gcsfs[${PYTHON_USEDEP}]
+	dev-python/pip-tools[${PYTHON_USEDEP}]
+	dev-python/pyarrow[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.1.3[${PYTHON_USEDEP}]
+	dev-python/pytest-cases[${PYTHON_USEDEP}]
+	dev-python/pytest-dotenv[${PYTHON_USEDEP}]
+	dev-python/pytest-parallel[${PYTHON_USEDEP}]
+	dev-python/rdata[${PYTHON_USEDEP}]
+	dev-python/s3fs[${PYTHON_USEDEP}]
+)"

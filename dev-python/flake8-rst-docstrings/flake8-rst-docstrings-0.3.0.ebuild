@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	develop? ( dev-python/build[${PYTHON_USEDEP}] )
 	>=dev-python/flake8-3[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/astunparse-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/flatbuffers-24.3.25[${PYTHON_USEDEP}]
@@ -48,7 +48,6 @@ GENERATED_DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/six-1.12.0[${PYTHON_USEDEP}]
 	<dev-python/tensorboard-2.19[${PYTHON_USEDEP}]
-	~dev-python/tensorflow-intel-2.18.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/tensorflow-io-gcs-filesystem-0.23.1[${PYTHON_USEDEP}]' python3_12)
 	>=dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.6.6[${PYTHON_USEDEP}]

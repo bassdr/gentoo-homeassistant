@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/azure-core-1.30.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/azure-core-1.30.0[aio,${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-2.1.4[${PYTHON_USEDEP}]

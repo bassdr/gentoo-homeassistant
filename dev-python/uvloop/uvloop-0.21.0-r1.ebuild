@@ -17,18 +17,10 @@ SRC_URI+=" https://dev.gentoo.org/~sam/distfiles/${CATEGORY}/${PN}/${PN}-0.19.0-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/cython-3.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/flake8-5.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/mypy-0.800[${PYTHON_USEDEP}] )
-	test? ( dev-python/psutil[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pycodestyle-2.9.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pyopenssl-23.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/setuptools-60[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( ~dev-python/sphinx-4.1.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-rtd-theme-0.5.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinxcontrib-asyncio-0.3.0[${PYTHON_USEDEP}] )
@@ -36,7 +28,7 @@ GENERATED_DEPEND="
 DEPEND="
 	>=dev-libs/libuv-1.11.0:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -49,6 +41,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
+	~dev-python/cython-3.0[${PYTHON_USEDEP}]
+	~dev-python/flake8-5.0[${PYTHON_USEDEP}]
+	>=dev-python/mypy-0.800[${PYTHON_USEDEP}]
+	dev-python/psutil[${PYTHON_USEDEP}]
+	~dev-python/pycodestyle-2.9.0[${PYTHON_USEDEP}]
+	~dev-python/pyopenssl-23.0.0[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-60[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	rm -r vendor || die

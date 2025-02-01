@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	anthropic? ( <dev-python/anthropic-1[vertexai,${PYTHON_USEDEP}] )
 	<dev-python/google-cloud-aiplatform-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/google-cloud-storage-3.0.0[${PYTHON_USEDEP}]

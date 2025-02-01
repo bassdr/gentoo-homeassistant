@@ -16,14 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev lint test"
+GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( ~dev-python/changelist-0.5[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-7.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}] )
 	lint? ( ~dev-vcs/pre-commit-3.7.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -31,3 +28,8 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/changelist-0.5[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
+)"

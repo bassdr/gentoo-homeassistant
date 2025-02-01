@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="recommended test"
+GENERATED_IUSE="recommended"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="zest.releaser"
@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/build-1.0.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 	dev-python/colorama[${PYTHON_USEDEP}]
@@ -29,10 +29,12 @@ GENERATED_DEPEND="
 	>=dev-python/setuptools-61.0.0[${PYTHON_USEDEP}]
 	>=dev-python/twine-1.6.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	test? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/wheel[${PYTHON_USEDEP}]
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"

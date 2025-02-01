@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/limits-2.3[${PYTHON_USEDEP}]
 	redis? ( >=dev-python/redis-3.4.1[${PYTHON_USEDEP}] )
 "

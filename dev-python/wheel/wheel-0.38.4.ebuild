@@ -23,8 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="test"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( >=dev-python/pytest-3.0.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -41,6 +40,9 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-3.0.0[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare

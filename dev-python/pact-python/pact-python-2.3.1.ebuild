@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	devel-test? ( ~dev-python/aiohttp-3.0[speedups,${PYTHON_USEDEP}] )
 	devel? ( ~dev-python/aiohttp-3.0[speedups,${PYTHON_USEDEP}] )
 	~dev-python/cffi-1.0[${PYTHON_USEDEP}]

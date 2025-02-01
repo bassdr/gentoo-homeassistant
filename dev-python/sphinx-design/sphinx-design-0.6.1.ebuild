@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing-no-myst? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	testing? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	theme-furo? ( ~dev-python/furo-2024.7.18[${PYTHON_USEDEP}] )

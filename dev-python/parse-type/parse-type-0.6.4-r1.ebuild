@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="develop docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	develop? ( >=dev-python/build-0.5.1[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/coverage-4.4[${PYTHON_USEDEP}] )
 	dev-python/enum34[${PYTHON_USEDEP}]

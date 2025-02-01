@@ -26,7 +26,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/aiohttp-3.10.10[${PYTHON_USEDEP}] )

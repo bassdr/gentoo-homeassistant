@@ -19,7 +19,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	ninja? ( >=dev-python/ninja-1.8.2[${PYTHON_USEDEP}] )
 	progress? ( dev-python/tqdm[${PYTHON_USEDEP}] )

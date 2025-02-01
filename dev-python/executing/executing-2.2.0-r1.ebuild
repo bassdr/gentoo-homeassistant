@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( >=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}] )
 	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	tests? ( dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}] )
@@ -72,3 +72,4 @@ python_test() {
 pkg_postinst() {
 	optfeature "getting node's source code" dev-python/asttokens
 }
+# RDEPEND could not be inserted in this ebuild

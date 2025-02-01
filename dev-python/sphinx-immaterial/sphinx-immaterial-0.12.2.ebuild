@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/appdirs[${PYTHON_USEDEP}]
 	black? ( dev-python/black[${PYTHON_USEDEP}] )
 	clang-format? ( dev-python/clang-format[${PYTHON_USEDEP}] )

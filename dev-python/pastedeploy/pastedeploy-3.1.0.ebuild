@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs paste testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	paste? ( dev-python/paste[${PYTHON_USEDEP}] )
 	testing? ( dev-python/paste[${PYTHON_USEDEP}] )

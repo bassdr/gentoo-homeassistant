@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="check cover doc enabler test type"
+GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="jaraco.mongodb"
@@ -18,12 +18,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/autocommand[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/backports-tarfile[${PYTHON_USEDEP}]' python3_12)
 	dev-python/cachetools[${PYTHON_USEDEP}]
 	doc? ( dev-python/cherrypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/cherrypy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-collections-2[${PYTHON_USEDEP}]
 	>=dev-python/jaraco-context-2[${PYTHON_USEDEP}]
@@ -36,12 +35,10 @@ GENERATED_DEPEND="
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/portend[${PYTHON_USEDEP}]
 	>=dev-python/pymongo-3.5[${PYTHON_USEDEP}]
-	test? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
 	check? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytimeparse[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
@@ -54,3 +51,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/cherrypy[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+)"

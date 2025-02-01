@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/boto3-1.26.0[${PYTHON_USEDEP}] )
 	aws-iam? ( >=dev-python/boto3-1.26.0[${PYTHON_USEDEP}] )
 	<dev-python/lakefs-sdk-2[${PYTHON_USEDEP}]

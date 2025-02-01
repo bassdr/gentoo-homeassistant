@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 	<dev-python/python-engineio-v3-4[${PYTHON_USEDEP}]
 	dev-python/python-engineio-v3[${PYTHON_USEDEP}]

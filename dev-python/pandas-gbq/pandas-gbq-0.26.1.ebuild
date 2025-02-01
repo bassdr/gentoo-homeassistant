@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/db-dtypes-2.0.0[${PYTHON_USEDEP}]
 	geopandas? ( >=dev-python/geopandas-0.9.0[${PYTHON_USEDEP}] )
 	<dev-python/google-api-core-3.0.0dev[${PYTHON_USEDEP}]

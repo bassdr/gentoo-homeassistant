@@ -16,14 +16,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc test xcb"
+GENERATED_IUSE="doc xcb"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/cffi-1.1.0[${PYTHON_USEDEP}]
-	test? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	test? ( dev-python/pikepdf[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	xcb? ( >=dev-python/xcffib-1.4.0[${PYTHON_USEDEP}] )
@@ -33,7 +29,7 @@ DEPEND="
 	x11-libs/cairo:0=[X,xcb(+)]
 	x11-libs/gdk-pixbuf[jpeg]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.1.0:=[${PYTHON_USEDEP}]
@@ -51,6 +47,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pikepdf[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+)"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.8.0-tests.patch

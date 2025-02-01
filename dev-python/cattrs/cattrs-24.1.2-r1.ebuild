@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="bson cbor2 msgpack pyyaml tomlkit ujson"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-23.1.0[${PYTHON_USEDEP}]
 	cbor2? ( >=dev-python/cbor2-5.4.6[${PYTHON_USEDEP}] )
 	msgpack? ( >=dev-python/msgpack-1.0.5[${PYTHON_USEDEP}] )

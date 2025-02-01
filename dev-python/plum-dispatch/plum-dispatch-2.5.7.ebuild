@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,27 +17,29 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/beartype-0.16.2[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/black-23.9.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/build[${PYTHON_USEDEP}] )
-	dev? ( dev-python/coveralls[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ghp-import[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	dev? ( dev-python/jupyter-book[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pyright-1.1.331[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	>=dev-python/rich-10.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/ruff-0.2.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sybil[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.9.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-23.9.0[${PYTHON_USEDEP}]
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/coveralls[${PYTHON_USEDEP}]
+	dev-python/ghp-import[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/jupyter-book[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	>=dev-python/pyright-1.1.331[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.2.1[${PYTHON_USEDEP}]
+	dev-python/sybil[${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

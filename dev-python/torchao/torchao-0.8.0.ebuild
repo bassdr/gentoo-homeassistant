@@ -17,31 +17,33 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )
-	dev? ( dev-python/blobfile[${PYTHON_USEDEP}] )
-	dev? ( dev-python/diskcache[${PYTHON_USEDEP}] )
-	dev? ( dev-python/expecttest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/fire[${PYTHON_USEDEP}] )
-	dev? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
-	dev? ( dev-python/importlib-metadata[${PYTHON_USEDEP}] )
-	dev? ( dev-python/lm-eval[${PYTHON_USEDEP}] )
-	dev? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ninja[${PYTHON_USEDEP}] )
-	dev? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/parameterized[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pycocotools[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ruff-0.6.8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tabulate[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tiktoken[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tqdm[${PYTHON_USEDEP}] )
-	dev? ( dev-python/transformers[${PYTHON_USEDEP}] )
-	dev? ( dev-python/unittest-xml-reporting[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/bitsandbytes[${PYTHON_USEDEP}]
+	dev-python/blobfile[${PYTHON_USEDEP}]
+	dev-python/diskcache[${PYTHON_USEDEP}]
+	dev-python/expecttest[${PYTHON_USEDEP}]
+	dev-python/fire[${PYTHON_USEDEP}]
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/importlib-metadata[${PYTHON_USEDEP}]
+	dev-python/lm-eval[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	dev-python/ninja[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/pycocotools[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.6.8[${PYTHON_USEDEP}]
+	dev-python/sentencepiece[${PYTHON_USEDEP}]
+	dev-python/tabulate[${PYTHON_USEDEP}]
+	dev-python/tiktoken[${PYTHON_USEDEP}]
+	dev-python/tqdm[${PYTHON_USEDEP}]
+	dev-python/transformers[${PYTHON_USEDEP}]
+	dev-python/unittest-xml-reporting[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

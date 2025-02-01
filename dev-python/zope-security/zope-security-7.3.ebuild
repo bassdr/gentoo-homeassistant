@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs pytz test untrustedpython zcml"
+GENERATED_IUSE="docs pytz untrustedpython zcml"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="zope.security"
@@ -18,29 +18,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/btrees[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	pytz? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	dev-python/zope-component[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-component[${PYTHON_USEDEP}] )
 	docs? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	dev-python/zope-i18nmessageid[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
 	dev-python/zope-location[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-location[${PYTHON_USEDEP}] )
 	>=dev-python/zope-proxy-5.2[${PYTHON_USEDEP}]
 	>=dev-python/zope-schema-4.2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 	untrustedpython? ( >=dev-python/zope-untrustedpython-5.0_p0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/btrees[${PYTHON_USEDEP}]
+	dev-python/zope-component[${PYTHON_USEDEP}]
+	dev-python/zope-configuration[${PYTHON_USEDEP}]
+	dev-python/zope-location[${PYTHON_USEDEP}]
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"

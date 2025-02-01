@@ -16,7 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/build-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/cachecontrol-0.15.0[filecache,${PYTHON_USEDEP}]
 	<dev-python/cleo-3.0.0[${PYTHON_USEDEP}]
@@ -35,7 +37,6 @@ GENERATED_DEPEND="
 	<dev-python/tomlkit-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/trove-classifiers-2022.5.19[${PYTHON_USEDEP}]
 	<dev-python/virtualenv-21.0.0[${PYTHON_USEDEP}]
-	<dev-python/xattr-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/poetry-core-2.0.1[${PYTHON_USEDEP}]

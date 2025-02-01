@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test uv"
+GENERATED_IUSE="uv"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,16 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/build-1.2[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/pathspec[${PYTHON_USEDEP}]
-	test? ( !=dev-python/pyproject-hooks-1.1.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-3[${PYTHON_USEDEP}] )
 	uv? ( dev-python/uv[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/validate-pyproject-0.16[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/pyproject-hooks-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-3[${PYTHON_USEDEP}]
+	>=dev-python/validate-pyproject-0.16[${PYTHON_USEDEP}]
+)"

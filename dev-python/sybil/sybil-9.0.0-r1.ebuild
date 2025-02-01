@@ -21,20 +21,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="build pytest test"
+GENERATED_IUSE="build pytest"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	build? ( dev-python/furo[${PYTHON_USEDEP}] )
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	pytest? ( >=dev-python/pytest-8[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-8[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/seedir[${PYTHON_USEDEP}] )
 	build? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( dev-python/testfixtures[${PYTHON_USEDEP}] )
 	build? ( dev-python/twine[${PYTHON_USEDEP}] )
-	test? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
 	build? ( <dev-python/urllib3-2[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
@@ -50,6 +43,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/myst-parser[${PYTHON_USEDEP}]
+	>=dev-python/pytest-8[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/seedir[${PYTHON_USEDEP}]
+	dev-python/testfixtures[${PYTHON_USEDEP}]
+	dev-python/types-pyyaml[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

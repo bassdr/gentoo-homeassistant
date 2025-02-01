@@ -20,13 +20,15 @@ LICENSE="|| ( BSD GPL-3 )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/setuptools-19.0[${PYTHON_USEDEP}]
 "
 DEPEND="
 	>=dev-libs/hidapi-$(ver_cut 1-3)
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="

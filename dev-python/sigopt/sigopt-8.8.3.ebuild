@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev hyperopt lite orchestrate xgboost"
+GENERATED_IUSE="hyperopt lite orchestrate xgboost"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,51 +17,53 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/backoff-2.0.0[${PYTHON_USEDEP}]
-	dev? ( <dev-python/boto3-2.0.0[${PYTHON_USEDEP}] )
 	orchestrate? ( <dev-python/boto3-2.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/certifi-2022.12.7[${PYTHON_USEDEP}] )
 	orchestrate? ( >=dev-python/certifi-2022.12.7[${PYTHON_USEDEP}] )
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
-	dev? ( <dev-python/docker-5.0.0[${PYTHON_USEDEP}] )
 	orchestrate? ( <dev-python/docker-5.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/gitpython-2.0.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/hyperopt-0.2.7[${PYTHON_USEDEP}] )
 	hyperopt? ( >=dev-python/hyperopt-0.2.7[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/kubernetes-13.0.0[${PYTHON_USEDEP}] )
 	orchestrate? ( <dev-python/kubernetes-13.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/mock-3.0.5[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/nose-1.3.7[${PYTHON_USEDEP}] )
-	dev? ( dev-python/notebook[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/numpy-2.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/numpy-1.15.0[${PYTHON_USEDEP}] )
 	xgboost? ( >=dev-python/numpy-1.15.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
-	dev? ( dev-python/pillow[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pint-0.17.0[${PYTHON_USEDEP}] )
 	orchestrate? ( <dev-python/pint-0.17.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pylint-2.9.6[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pymongo-4[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pyopenssl-20.0.0[${PYTHON_USEDEP}] )
 	orchestrate? ( >=dev-python/pyopenssl-20.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/pypng-0.0.20[${PYTHON_USEDEP}]
-	dev? ( dev-python/pyspark[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-7.2.1[${PYTHON_USEDEP}] )
 	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
 	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/scikit-learn-0.23.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/setuptools-47.3.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sigoptlite-0.1.1[${PYTHON_USEDEP}] )
 	lite? ( >=dev-python/sigoptlite-0.1.1[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/twine-4.0.0[${PYTHON_USEDEP}] )
 	<dev-python/urllib3-2.0.0[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/vulture-2.7[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/xgboost-1.3.1[${PYTHON_USEDEP}] )
 	xgboost? ( >=dev-python/xgboost-1.3.1[${PYTHON_USEDEP}] )
-	dev? ( <dev-vcs/pre-commit-3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/boto3-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/certifi-2022.12.7[${PYTHON_USEDEP}]
+	<dev-python/docker-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/hyperopt-0.2.7[${PYTHON_USEDEP}]
+	<dev-python/kubernetes-13.0.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}]
+	>=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
+	~dev-python/nose-1.3.7[${PYTHON_USEDEP}]
+	dev-python/notebook[${PYTHON_USEDEP}]
+	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.15.0[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	<dev-python/pint-0.17.0[${PYTHON_USEDEP}]
+	~dev-python/pylint-2.9.6[${PYTHON_USEDEP}]
+	<dev-python/pymongo-4[${PYTHON_USEDEP}]
+	>=dev-python/pyopenssl-20.0.0[${PYTHON_USEDEP}]
+	dev-python/pyspark[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.2.1[${PYTHON_USEDEP}]
+	>=dev-python/scikit-learn-0.23.2[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-47.3.1[${PYTHON_USEDEP}]
+	>=dev-python/sigoptlite-0.1.1[${PYTHON_USEDEP}]
+	<dev-python/twine-4.0.0[${PYTHON_USEDEP}]
+	~dev-python/vulture-2.7[${PYTHON_USEDEP}]
+	>=dev-python/xgboost-1.3.1[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-3[${PYTHON_USEDEP}]
+)"

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs extras notebook"
+GENERATED_IUSE="docs extras notebook"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +17,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/absl-py-1.4.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/flax-0.8.2[${PYTHON_USEDEP}] )
 	extras? ( >=dev-python/flax-0.8.2[${PYTHON_USEDEP}] )
 	notebook? ( >=dev-python/flax-0.8.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/ipython-8.8.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	extras? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	notebook? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	>=dev-python/jax-0.4.23[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jax-0.4.23[cpu,${PYTHON_USEDEP}] )
-	dev? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-3.0.1[${PYTHON_USEDEP}] )
@@ -41,10 +39,6 @@ GENERATED_DEPEND="
 	>=dev-python/ordered-set-4.1.0[${PYTHON_USEDEP}]
 	docs? ( ~dev-python/packaging-24.1[${PYTHON_USEDEP}] )
 	notebook? ( dev-python/palettable[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pyink-24.3.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pylint-2.6.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-8.2.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytype[${PYTHON_USEDEP}] )
 	docs? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-7.3.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-book-theme-1.0.1[${PYTHON_USEDEP}] )
@@ -60,3 +54,11 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/jupyter[${PYTHON_USEDEP}]
+	>=dev-python/pyink-24.3.0[${PYTHON_USEDEP}]
+	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
+	dev-python/pytype[${PYTHON_USEDEP}]
+)"

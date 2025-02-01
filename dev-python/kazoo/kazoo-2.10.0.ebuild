@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="alldeps dev docs eventlet gevent sasl test typing"
+GENERATED_IUSE="alldeps docs eventlet gevent sasl typing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,24 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/eventlet-0.17.1[${PYTHON_USEDEP}]
 	alldeps? ( >=dev-python/eventlet-0.17.1[${PYTHON_USEDEP}] )
 	eventlet? ( >=dev-python/eventlet-0.17.1[${PYTHON_USEDEP}] )
 	alldeps? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	>=dev-python/gevent-1.2[${PYTHON_USEDEP}]
 	alldeps? ( >=dev-python/gevent-1.2[${PYTHON_USEDEP}] )
 	gevent? ( >=dev-python/gevent-1.2[${PYTHON_USEDEP}] )
 	alldeps? ( >=dev-python/mypy-0.991[${PYTHON_USEDEP}] )
 	typing? ( >=dev-python/mypy-0.991[${PYTHON_USEDEP}] )
-	test? ( dev-python/objgraph[${PYTHON_USEDEP}] )
 	alldeps? ( >=dev-python/pure-sasl-0.5.1[${PYTHON_USEDEP}] )
 	sasl? ( >=dev-python/pure-sasl-0.5.1[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyjks[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	alldeps? ( >=dev-python/sphinx-1.2.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.2.2[${PYTHON_USEDEP}] )
 	alldeps? ( >=dev-python/sphinx-autodoc-typehints-1[${PYTHON_USEDEP}] )
@@ -43,3 +37,11 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/objgraph[${PYTHON_USEDEP}]
+	dev-python/pyjks[${PYTHON_USEDEP}]
+	dev-python/pyopenssl[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"

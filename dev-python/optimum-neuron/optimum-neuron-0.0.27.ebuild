@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/accelerate-0.29.2[${PYTHON_USEDEP}]
 	quality? ( dev-python/black[${PYTHON_USEDEP}] )
 	tests? ( dev-python/compel[${PYTHON_USEDEP}] )

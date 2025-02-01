@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	mypy? ( >=dev-python/mypy-0.920[${PYTHON_USEDEP}] )
 	>=dev-python/mypy-extensions-0.4.2[${PYTHON_USEDEP}]
 	>=dev-python/trio-0.16.0[${PYTHON_USEDEP}]

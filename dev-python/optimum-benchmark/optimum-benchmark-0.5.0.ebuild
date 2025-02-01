@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/accelerate[${PYTHON_USEDEP}]
 	auto-gptq? ( dev-python/auto-gptq[${PYTHON_USEDEP}] )
 	autoawq? ( dev-python/autoawq[${PYTHON_USEDEP}] )

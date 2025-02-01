@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev fugue"
+GENERATED_IUSE="fugue"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,30 +17,32 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( ~dev-python/black-22.10.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/dask-2024.4.1[dataframe,${PYTHON_USEDEP}]
 	>=dev-python/distributed-2024.4.1[${PYTHON_USEDEP}]
 	>=dev-python/fastapi-0.92.0[${PYTHON_USEDEP}]
 	fugue? ( >=dev-python/fugue-0.7.3[${PYTHON_USEDEP}] )
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/intake-0.6.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/isort-5.12.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/prompt-toolkit-3.0.8[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/pygments-2.7.1[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/scikit-learn-1.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-3.2.1[${PYTHON_USEDEP}] )
 	dev-python/tabulate[${PYTHON_USEDEP}]
 	fugue? ( <dev-python/triad-0.9.2[${PYTHON_USEDEP}] )
 	>=dev-python/tzlocal-2.1[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.14[${PYTHON_USEDEP}]
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-22.10.0[${PYTHON_USEDEP}]
+	>=dev-python/intake-0.6.0[${PYTHON_USEDEP}]
+	~dev-python/isort-5.12.0[${PYTHON_USEDEP}]
+	>=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+	>=dev-python/scikit-learn-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-3.2.1[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

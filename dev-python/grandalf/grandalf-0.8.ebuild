@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	full? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	full? ( dev-python/ply[${PYTHON_USEDEP}] )
 	dev-python/pyparsing[${PYTHON_USEDEP}]

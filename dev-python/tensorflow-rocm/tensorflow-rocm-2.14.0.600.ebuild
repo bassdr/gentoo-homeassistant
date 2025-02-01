@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/astunparse-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/flatbuffers-23.5.26[${PYTHON_USEDEP}]
@@ -47,7 +47,6 @@ GENERATED_DEPEND="
 	<dev-python/tensorboard-2.15[${PYTHON_USEDEP}]
 	~dev-python/tensorflow-cpu-aws-2.14.0.600[${PYTHON_USEDEP}]
 	<dev-python/tensorflow-estimator-2.15[${PYTHON_USEDEP}]
-	~dev-python/tensorflow-intel-2.14.0.600[${PYTHON_USEDEP}]
 	>=dev-python/tensorflow-io-gcs-filesystem-0.23.1[${PYTHON_USEDEP}]
 	and-cuda? ( ~dev-python/tensorrt-8.5.3.1[${PYTHON_USEDEP}] )
 	>=dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]

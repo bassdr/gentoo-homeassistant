@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/ast-decompiler-1.0[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/black-23.12.1[${PYTHON_USEDEP}] )
 	<dev-python/flake8-8.0.0[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/flake8-bugbear-23.12.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-noqa-1.3.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/isort-5.13.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.8.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pre-commit-hooks-4.5.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyflakes-2.1.1[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/pytest-7.4.4[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-xdist-3.5.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/types-pyflakes-4[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-23.12.1[${PYTHON_USEDEP}]
+	~dev-python/flake8-bugbear-23.12.2[${PYTHON_USEDEP}]
+	~dev-python/flake8-noqa-1.3.2[${PYTHON_USEDEP}]
+	~dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
+	~dev-python/pre-commit-hooks-4.5.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
+	~dev-python/pytest-xdist-3.5.0[${PYTHON_USEDEP}]
+	<dev-python/types-pyflakes-4[${PYTHON_USEDEP}]
+)"

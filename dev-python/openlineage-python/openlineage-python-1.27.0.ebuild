@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs kafka msk-iam test"
+GENERATED_IUSE="docs kafka msk-iam"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,21 +17,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-20.0[${PYTHON_USEDEP}]
 	msk-iam? ( >=dev-python/aws-msk-iam-sasl-signer-python-1.0.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/beautifulsoup4-4.12.0[${PYTHON_USEDEP}] )
 	kafka? ( >=dev-python/confluent-kafka-2.1.1[${PYTHON_USEDEP}] )
 	msk-iam? ( >=dev-python/confluent-kafka-2.1.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/covdefaults-2.3[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-21.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pydata-sphinx-theme-0.13[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.3.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-mock-3.10[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pyyaml-5.4[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-7.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-2.0.0[${PYTHON_USEDEP}] )
@@ -39,3 +34,10 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mock-3.10[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
+)"

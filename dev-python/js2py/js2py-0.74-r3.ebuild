@@ -20,7 +20,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 RESTRICT="test"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pyjsparser-2.5.1[${PYTHON_USEDEP}]
 	dev-python/pyjsparser[${PYTHON_USEDEP}]
 	>=dev-python/six-1.10[${PYTHON_USEDEP}]

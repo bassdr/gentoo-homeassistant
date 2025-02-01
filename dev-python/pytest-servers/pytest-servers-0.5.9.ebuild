@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all azure dev docker gcs s3 tests"
+GENERATED_IUSE="all azure docker gcs s3 tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	azure? ( >=dev-python/adlfs-2022.02.22[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/botocore-1.31.17[${PYTHON_USEDEP}] )
 	tests? ( >dev-python/coverage-6[toml,${PYTHON_USEDEP}] )
@@ -31,8 +31,6 @@ GENERATED_DEPEND="
 	>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
 	all? ( dev-python/pytest-servers[azure,gcs,s3,${PYTHON_USEDEP}] )
 	azure? ( dev-python/pytest-servers[docker,${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-servers[all,${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-servers[tests,${PYTHON_USEDEP}] )
 	gcs? ( dev-python/pytest-servers[docker,${PYTHON_USEDEP}] )
 	tests? ( ~dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}] )
 	tests? ( ~dev-python/pytest-xdist-3.6.1[${PYTHON_USEDEP}] )
@@ -44,3 +42,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest-servers[all,${PYTHON_USEDEP}]
+	dev-python/pytest-servers[tests,${PYTHON_USEDEP}]
+)"

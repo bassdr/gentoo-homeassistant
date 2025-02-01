@@ -25,15 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="test"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/black[${PYTHON_USEDEP}] )
-	test? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
-	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	test? ( dev-python/pillow[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyroma[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/zest-releaser[recommended,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 BDEPEND="
 	test? (
@@ -42,6 +34,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/check-manifest[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/pyroma[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/zest-releaser[recommended,${PYTHON_USEDEP}]
+)"
 
 EPYTEST_DESELECT=(
 	# broken with new pillow version (also potentially super-fragile)
@@ -49,4 +51,5 @@ EPYTEST_DESELECT=(
 	tests/test_boundingbox_image.py::BoundingBoxImageTest::test_image
 	tests/test_image.py::ImageTest::test_image
 )
+# RDEPEND could not be inserted in this ebuild
 # PYPI_PN could not be inserted in this ebuild

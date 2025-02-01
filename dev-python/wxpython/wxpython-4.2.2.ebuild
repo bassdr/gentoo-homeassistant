@@ -19,13 +19,14 @@ HOMEPAGE="
 LICENSE="wxWinLL-3"
 SLOT="4.0"
 KEYWORDS="amd64 arm64"
-IUSE="test webkit"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} test webkit"
 RESTRICT="!test? ( test )"
 
 # wxPython doesn't seem to be able to optionally disable features. webkit is
 # optionally patched out because it's so huge, but other elements are not,
 # which makes us have to require all features from wxGTK
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
@@ -35,7 +36,7 @@ DEPEND="
 	media-libs/tiff:=
 	media-libs/libjpeg-turbo:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="

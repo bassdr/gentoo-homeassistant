@@ -17,12 +17,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="build devel dist static-analysis test"
+GENERATED_IUSE="build devel dist static-analysis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	build? ( dev-python/changelog-chug[${PYTHON_USEDEP}] )
-	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	build? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	static-analysis? ( ~dev-python/isort-5.13[${PYTHON_USEDEP}] )
 	>=dev-python/lockfile-0.10[${PYTHON_USEDEP}]
@@ -32,10 +31,7 @@ GENERATED_DEPEND="
 	build? ( dev-python/python-daemon[doc,${PYTHON_USEDEP}] )
 	devel? ( dev-python/python-daemon[dist,test,${PYTHON_USEDEP}] )
 	dist? ( dev-python/python-daemon[build,${PYTHON_USEDEP}] )
-	test? ( dev-python/python-daemon[build,static-analysis,${PYTHON_USEDEP}] )
 	static-analysis? ( ~dev-python/pyupgrade-3.17[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testscenarios-0.4[${PYTHON_USEDEP}] )
-	test? ( dev-python/testtools[${PYTHON_USEDEP}] )
 	dist? ( dev-python/twine[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
@@ -52,6 +48,12 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/python-daemon[build,static-analysis,${PYTHON_USEDEP}]
+	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+	dev-python/testtools[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare

@@ -17,6 +17,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/build-1.2.2_p1[${PYTHON_USEDEP}]
+	~dev-python/coverage-7.5.3[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+	~dev-python/pip-24.3.1[${PYTHON_USEDEP}]
+	~dev-python/pylint-3.2.3[${PYTHON_USEDEP}]
+	~dev-python/ruff-0.7.3[${PYTHON_USEDEP}]
+	~dev-python/twine-5.1.1[${PYTHON_USEDEP}]
+	~dev-python/uv-0.5.1[${PYTHON_USEDEP}]
+)"
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

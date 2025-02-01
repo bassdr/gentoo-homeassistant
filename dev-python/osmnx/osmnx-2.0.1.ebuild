@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/geopandas-1.0[${PYTHON_USEDEP}]
 	visualization? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )
 	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]

@@ -21,19 +21,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev lint test"
+GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( dev-python/bandit[${PYTHON_USEDEP}] )
-	dev? ( dev-python/build[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/bump-1.3.2[${PYTHON_USEDEP}] )
-	test? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
-	dev? ( dev-python/id[lint,test,${PYTHON_USEDEP}] )
 	lint? ( dev-python/interrogate[${PYTHON_USEDEP}] )
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/pretend[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	lint? ( <dev-python/ruff-0.8.2[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-requests[${PYTHON_USEDEP}] )
@@ -48,6 +41,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/build[${PYTHON_USEDEP}]
+	>=dev-python/bump-1.3.2[${PYTHON_USEDEP}]
+	dev-python/coverage[toml,${PYTHON_USEDEP}]
+	dev-python/id[lint,test,${PYTHON_USEDEP}]
+	dev-python/pretend[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=()

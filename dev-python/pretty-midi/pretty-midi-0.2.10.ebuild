@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/pretty_midi/"
+  https://pypi.org/project/pretty-midi/"
 
 LICENSE="MIT"
 SLOT="0"

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs speed test voice"
+GENERATED_IUSE="docs speed voice"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="discord.py"
@@ -18,17 +18,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	speed? ( >=dev-python/aiodns-1.1[${PYTHON_USEDEP}] )
 	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	speed? ( dev-python/brotli[${PYTHON_USEDEP}] )
-	test? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
 	speed? ( >=dev-python/orjson-3.5.4[${PYTHON_USEDEP}] )
 	voice? ( <dev-python/pynacl-1.6[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-inline-tabs-2023.4.21[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinxcontrib-applehelp-1.0.4[${PYTHON_USEDEP}] )
@@ -40,9 +35,15 @@ GENERATED_DEPEND="
 	docs? ( ~dev-python/sphinxcontrib-trio-1.1.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinxcontrib-websupport-1.2.4[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/typing-extensions-5[${PYTHON_USEDEP}] )
-	test? ( <dev-python/typing-extensions-5[${PYTHON_USEDEP}] )
-	dev-python/tzdata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[toml,${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
+)"

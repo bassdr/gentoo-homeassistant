@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="bf json lua"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	json? ( <dev-python/jsonpath-ng-2.0[${PYTHON_USEDEP}] )
 	lua? ( <dev-python/lupa-3.0[${PYTHON_USEDEP}] )
 	bf? ( <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] )

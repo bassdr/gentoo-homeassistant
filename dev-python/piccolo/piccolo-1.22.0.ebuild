@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/aiosqlite-0.16.0[${PYTHON_USEDEP}] )
 	sqlite? ( >=dev-python/aiosqlite-0.16.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/asyncpg-0.30.0[${PYTHON_USEDEP}] )
@@ -33,8 +33,6 @@ GENERATED_DEPEND="
 	~dev-python/pydantic-2*[email,${PYTHON_USEDEP}]
 	>=dev-python/targ-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]
-	>=dev-python/uvloop-0.12.0[${PYTHON_USEDEP}]
-	>=dev-python/uvloop-0.12.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all docs ipython plot s3 test"
+GENERATED_IUSE="all docs ipython plot s3"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +17,19 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/affine[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	all? ( >=dev-python/boto3-1.2.4[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.2.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/boto3-1.2.4[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/click-4.0[${PYTHON_USEDEP}]
 	dev-python/click-plugins[${PYTHON_USEDEP}]
 	>=dev-python/cligj-0.5[${PYTHON_USEDEP}]
 	all? ( dev-python/fsspec[${PYTHON_USEDEP}] )
-	test? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	all? ( dev-python/ghp-import[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ghp-import[${PYTHON_USEDEP}] )
 	all? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
-	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/ipython-2.0[${PYTHON_USEDEP}] )
 	ipython? ( >=dev-python/ipython-2.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
@@ -41,14 +38,10 @@ GENERATED_DEPEND="
 	all? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	all? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	dev-python/pyparsing[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pytest-2.8.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-2.8.2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pytest-cov-2.2.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-2.2.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/shapely[${PYTHON_USEDEP}] )
-	test? ( dev-python/shapely[${PYTHON_USEDEP}] )
 	all? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	all? ( dev-python/sphinx-click[${PYTHON_USEDEP}] )
@@ -59,3 +52,12 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/boto3-1.2.4[${PYTHON_USEDEP}]
+	dev-python/fsspec[${PYTHON_USEDEP}]
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	>=dev-python/pytest-2.8.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.2.0[${PYTHON_USEDEP}]
+	dev-python/shapely[${PYTHON_USEDEP}]
+)"

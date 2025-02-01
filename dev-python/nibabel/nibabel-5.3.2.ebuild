@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev dicom dicomfs doc doctest minc2 spm style test typing zstd"
+GENERATED_IUSE="all dicom dicomfs doc doctest minc2 spm style typing zstd"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,8 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/coverage-7.2[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	minc2? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/importlib-resources-5.12[${PYTHON_USEDEP}]' python3_12)
@@ -31,18 +30,12 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/pydicom-2.3[${PYTHON_USEDEP}] )
 	dicom? ( >=dev-python/pydicom-2.3[${PYTHON_USEDEP}] )
 	dicomfs? ( >=dev-python/pydicom-2.3[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-httpserver[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pyzstd-0.14.3[${PYTHON_USEDEP}] )
 	zstd? ( >=dev-python/pyzstd-0.14.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	spm? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/texext[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
 	doctest? ( dev-python/tox[${PYTHON_USEDEP}] )
 	style? ( dev-python/tox[${PYTHON_USEDEP}] )
 	typing? ( dev-python/tox[${PYTHON_USEDEP}] )
@@ -51,3 +44,12 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-7.2[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+	dev-python/pytest-httpserver[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+)"

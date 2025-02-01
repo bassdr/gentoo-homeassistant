@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev doc hg plugs test virtualenv"
+GENERATED_IUSE="doc hg plugs virtualenv"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,38 +17,35 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	plugs? ( dev-python/asv-bench-memray[${PYTHON_USEDEP}] )
 	>=dev-python/asv-runner-0.2.1[${PYTHON_USEDEP}]
 	dev-python/build[${PYTHON_USEDEP}]
-	dev-python/colorama[${PYTHON_USEDEP}]
-	test? ( dev-python/feedparser[${PYTHON_USEDEP}] )
-	test? ( dev-python/filelock[${PYTHON_USEDEP}] )
-	test? ( dev-python/flaky[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/isort-5.11.5[${PYTHON_USEDEP}] )
 	dev-python/json5[${PYTHON_USEDEP}]
-	test? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	virtualenv? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	dev-python/pympler[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-rerunfailures-10.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev-python/python-hglib[${PYTHON_USEDEP}]
 	hg? ( dev-python/python-hglib[${PYTHON_USEDEP}] )
-	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/rpy2[${PYTHON_USEDEP}]
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	dev-python/scipy[${PYTHON_USEDEP}]
-	test? ( dev-python/selenium[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}] )
 	dev-python/tabulate[${PYTHON_USEDEP}]
 	dev-python/virtualenv[${PYTHON_USEDEP}]
-	test? ( dev-python/virtualenv[${PYTHON_USEDEP}] )
 	virtualenv? ( dev-python/virtualenv[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/feedparser[${PYTHON_USEDEP}]
+	dev-python/filelock[${PYTHON_USEDEP}]
+	dev-python/flaky[${PYTHON_USEDEP}]
+	>=dev-python/isort-5.11.5[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	>=dev-python/pytest-rerunfailures-10.0[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/selenium[${PYTHON_USEDEP}]
+	dev-python/virtualenv[${PYTHON_USEDEP}]
+)"

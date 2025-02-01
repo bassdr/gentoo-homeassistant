@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	develop? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	dev-python/enum34[${PYTHON_USEDEP}]
 	develop? ( >=dev-python/invoke-0.21.0[${PYTHON_USEDEP}] )

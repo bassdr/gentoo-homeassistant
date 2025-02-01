@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/adlfs-2023.12.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-identity-1.4.0[${PYTHON_USEDEP}]
 	tests? ( ~dev-python/collective-checkdocs-0.2[${PYTHON_USEDEP}] )

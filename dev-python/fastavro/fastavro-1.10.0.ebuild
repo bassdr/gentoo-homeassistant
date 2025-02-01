@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	codecs? ( dev-python/cramjam[${PYTHON_USEDEP}] )
 	snappy? ( dev-python/cramjam[${PYTHON_USEDEP}] )
 	codecs? ( dev-python/lz4[${PYTHON_USEDEP}] )

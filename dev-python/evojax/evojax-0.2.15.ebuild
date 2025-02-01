@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	extra? ( dev-python/brax[${PYTHON_USEDEP}] )
 	dev-python/cma[${PYTHON_USEDEP}]
 	extra? ( dev-python/evosax[${PYTHON_USEDEP}] )

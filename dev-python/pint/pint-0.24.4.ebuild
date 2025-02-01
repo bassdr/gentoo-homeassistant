@@ -19,13 +19,13 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="babel bench dask mip numpy pandas test testbase uncertainties xarray"
+GENERATED_IUSE="babel bench dask mip numpy pandas testbase uncertainties xarray"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	babel? ( <=dev-python/babel-2.8[${PYTHON_USEDEP}] )
 	dask? ( dev-python/dask[${PYTHON_USEDEP}] )
 	>=dev-python/flexcache-0.3[${PYTHON_USEDEP}]
@@ -38,15 +38,10 @@ GENERATED_DEPEND="
 	>=dev-python/platformdirs-2.1.0[${PYTHON_USEDEP}]
 	dev-python/platformdirs[${PYTHON_USEDEP}]
 	bench? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	testbase? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
 	testbase? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
 	bench? ( dev-python/pytest-codspeed[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	testbase? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mpl[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
 	testbase? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
@@ -63,4 +58,11 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mpl[${PYTHON_USEDEP}]
+	dev-python/pytest-subtests[${PYTHON_USEDEP}]
+)"
 # RDEPEND could not be inserted in this ebuild

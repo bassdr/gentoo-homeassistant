@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="psutil setproctitle testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/execnet-2.1[${PYTHON_USEDEP}]
 	testing? ( dev-python/filelock[${PYTHON_USEDEP}] )
 	psutil? ( >=dev-python/psutil-3.0[${PYTHON_USEDEP}] )

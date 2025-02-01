@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/adagio[${PYTHON_USEDEP}]
 	<dev-python/antlr4-python3-runtime-4.12[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cloudpickle-1.4.0[${PYTHON_USEDEP}] )

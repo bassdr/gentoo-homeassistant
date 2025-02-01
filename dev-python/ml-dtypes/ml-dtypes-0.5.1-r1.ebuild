@@ -14,7 +14,7 @@ EIGEN_CommitId="7bf2968fed5f246c0589e1111004cb420fcd7c71"
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/ml-dtypes/"
+  https://pypi.org/project/ml_dtypes/"
 SRC_URI="
 	https://github.com/jax-ml/ml_dtypes/archive/v${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -26,23 +26,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( dev-python/absl-py[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/numpy-1.21.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.3[${PYTHON_USEDEP}]
-	dev? ( dev-python/pyink[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pylint-2.6.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	>=dev-python/numpy-1.21:=[${PYTHON_USEDEP}]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -53,6 +48,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/absl-py[${PYTHON_USEDEP}]
+	dev-python/pyink[${PYTHON_USEDEP}]
+	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	rmdir third_party/eigen || die
@@ -67,3 +69,4 @@ src_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	distutils-r1_src_test
 }
+# PYPI_PN could not be inserted in this ebuild

@@ -16,7 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/asttokens-2.0.5[${PYTHON_USEDEP}]
 	>=dev-python/black-23.3.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.1.4[${PYTHON_USEDEP}]

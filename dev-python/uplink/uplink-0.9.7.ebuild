@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-2.3.0[${PYTHON_USEDEP}]
 	marshmallow? ( >=dev-python/marshmallow-2.15.0[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-1.6.1[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/blis-1.1.0[${PYTHON_USEDEP}]
 	<dev-python/catalogue-2.1.0[${PYTHON_USEDEP}]
 	<dev-python/confection-1.0.0[${PYTHON_USEDEP}]

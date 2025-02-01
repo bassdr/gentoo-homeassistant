@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all configobj ini redis test toml vault yaml"
+GENERATED_IUSE="all configobj ini redis toml vault yaml"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,30 +17,32 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/configobj[${PYTHON_USEDEP}] )
 	configobj? ( dev-python/configobj[${PYTHON_USEDEP}] )
 	ini? ( dev-python/configobj[${PYTHON_USEDEP}] )
-	test? ( dev-python/configobj[${PYTHON_USEDEP}] )
-	test? ( dev-python/django[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/flask-0.12[${PYTHON_USEDEP}] )
 	all? ( dev-python/hvac[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/hvac-1.1.0[${PYTHON_USEDEP}] )
 	vault? ( dev-python/hvac[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	test? ( dev-python/python-dotenv[${PYTHON_USEDEP}] )
-	test? ( dev-python/radon[${PYTHON_USEDEP}] )
 	all? ( dev-python/redis[${PYTHON_USEDEP}] )
 	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
-	test? ( dev-python/redis[${PYTHON_USEDEP}] )
 	all? ( dev-python/ruamel-yaml[${PYTHON_USEDEP}] )
 	yaml? ( dev-python/ruamel-yaml[${PYTHON_USEDEP}] )
-	test? ( dev-python/toml[${PYTHON_USEDEP}] )
 	toml? ( dev-python/toml[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/configobj[${PYTHON_USEDEP}]
+	dev-python/django[${PYTHON_USEDEP}]
+	>=dev-python/flask-0.12[${PYTHON_USEDEP}]
+	>=dev-python/hvac-1.1.0[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/python-dotenv[${PYTHON_USEDEP}]
+	dev-python/radon[${PYTHON_USEDEP}]
+	dev-python/redis[${PYTHON_USEDEP}]
+	dev-python/toml[${PYTHON_USEDEP}]
+)"

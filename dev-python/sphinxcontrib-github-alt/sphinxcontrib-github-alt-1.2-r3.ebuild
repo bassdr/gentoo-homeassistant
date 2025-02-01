@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=sphinxcontrib_github_alt-${PV}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sphinxcontrib_github_alt/"
+  https://pypi.org/project/sphinxcontrib-github-alt/"
 SRC_URI="
 	https://github.com/jupyter/sphinxcontrib_github_alt/archive/${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -22,7 +22,9 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
@@ -33,4 +35,3 @@ RDEPEND="${GENERATED_DEPEND}
 BDEPEND="
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
-# PYPI_PN could not be inserted in this ebuild

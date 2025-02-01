@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/gym[${PYTHON_USEDEP}]
 	docs? ( dev-python/m2r[${PYTHON_USEDEP}] )
 	~dev-python/pyglet-1*[${PYTHON_USEDEP}]

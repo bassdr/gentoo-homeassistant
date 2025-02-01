@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="develop test"
+GENERATED_IUSE="develop"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -20,36 +20,38 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	develop? ( dev-python/boto3[${PYTHON_USEDEP}] )
-	test? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/bump2version-1.0.0_p1[${PYTHON_USEDEP}] )
 	develop? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
-	test? ( dev-python/docker[${PYTHON_USEDEP}] )
 	>=dev-python/fs-2.4.11[${PYTHON_USEDEP}]
 	develop? ( dev-python/fs-miniofs[${PYTHON_USEDEP}] )
-	test? ( dev-python/fs-miniofs[${PYTHON_USEDEP}] )
 	>=dev-python/fs-s3fs-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/fs-smbfs-0.6.3[${PYTHON_USEDEP}]
 	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]
 	<dev-python/jupyterlab-5[${PYTHON_USEDEP}]
-	test? ( dev-python/mock[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pysmb[${PYTHON_USEDEP}] )
-	test? ( dev-python/pysmb[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-jupyter[server,${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-jupyter[server,${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	develop? ( <dev-python/ruff-0.4[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/boto3[${PYTHON_USEDEP}]
+	dev-python/docker[${PYTHON_USEDEP}]
+	dev-python/fs-miniofs[${PYTHON_USEDEP}]
+	dev-python/mock[${PYTHON_USEDEP}]
+	dev-python/pysmb[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-jupyter[server,${PYTHON_USEDEP}]
+	dev-python/pytest-sugar[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"

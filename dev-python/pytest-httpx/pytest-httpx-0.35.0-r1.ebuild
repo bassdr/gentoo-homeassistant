@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/httpx-0.28*[${PYTHON_USEDEP}]
 	~dev-python/pytest-8*[${PYTHON_USEDEP}]
 	testing? ( ~dev-python/pytest-asyncio-0.24*[${PYTHON_USEDEP}] )

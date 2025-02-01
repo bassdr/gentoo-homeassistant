@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all data dev examples extra fabric-all fabric-dev fabric-examples fabric-test pytorch-all pytorch-dev pytorch-examples pytorch-extra pytorch-test test"
+GENERATED_IUSE="all data examples extra fabric-all fabric-dev fabric-examples fabric-test pytorch-all pytorch-dev pytorch-examples pytorch-extra pytorch-test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -20,7 +20,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
 	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
 	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
@@ -31,30 +31,14 @@ GENERATED_DEPEND="
 	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
 	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
 	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/click-8.1.7[${PYTHON_USEDEP}] )
 	fabric-dev? ( ~dev-python/click-8.1.7[${PYTHON_USEDEP}] )
 	fabric-test? ( ~dev-python/click-8.1.7[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/click-8.1.7[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/cloudpickle-3.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/cloudpickle-3.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/cloudpickle-3.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/cloudpickle-3.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
 	fabric-dev? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
 	fabric-test? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
 	pytorch-dev? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
 	pytorch-test? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
@@ -64,32 +48,26 @@ GENERATED_DEPEND="
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
-	dev? ( dev-python/fastapi[${PYTHON_USEDEP}] )
 	pytorch-dev? ( dev-python/fastapi[${PYTHON_USEDEP}] )
 	pytorch-test? ( dev-python/fastapi[${PYTHON_USEDEP}] )
-	test? ( dev-python/fastapi[${PYTHON_USEDEP}] )
 	<dev-python/fsspec-2026.0[http,${PYTHON_USEDEP}]
 	all? ( <dev-python/hydra-core-2.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/hydra-core-2.0[${PYTHON_USEDEP}] )
 	extra? ( <dev-python/hydra-core-2.0[${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/hydra-core-2.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/hydra-core-2.0[${PYTHON_USEDEP}] )
 	pytorch-extra? ( <dev-python/hydra-core-2.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/ipython-9.0[all,${PYTHON_USEDEP}] )
-	dev? ( <dev-python/ipython-9.0[all,${PYTHON_USEDEP}] )
 	examples? ( <dev-python/ipython-9.0[all,${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/ipython-9.0[all,${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/ipython-9.0[all,${PYTHON_USEDEP}] )
 	pytorch-examples? ( <dev-python/ipython-9.0[all,${PYTHON_USEDEP}] )
 	all? ( <dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}] )
-	dev? ( <dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}] )
 	extra? ( <dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}] )
 	pytorch-extra? ( <dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}] )
 	<dev-python/lightning-utilities-2.0[${PYTHON_USEDEP}]
 	all? ( <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
 	examples? ( <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
 	fabric-all? ( <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
@@ -99,106 +77,74 @@ GENERATED_DEPEND="
 	pytorch-examples? ( <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
 	data? ( <dev-python/litdata-1.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
 	extra? ( <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
 	pytorch-extra? ( <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/numpy-2.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( <dev-python/numpy-2.0[${PYTHON_USEDEP}] )
 	fabric-test? ( <dev-python/numpy-2.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/numpy-2.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/numpy-2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/numpy-2.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/omegaconf-3.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/omegaconf-3.0[${PYTHON_USEDEP}] )
 	extra? ( <dev-python/omegaconf-3.0[${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/omegaconf-3.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/omegaconf-3.0[${PYTHON_USEDEP}] )
 	pytorch-extra? ( <dev-python/omegaconf-3.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/onnx-2.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/onnx-2.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/onnx-2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/onnx-2.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/onnxruntime-2.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/onnxruntime-2.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/onnxruntime-2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/onnxruntime-2.0[${PYTHON_USEDEP}] )
 	<dev-python/packaging-25.0[${PYTHON_USEDEP}]
-	dev? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/psutil-6.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/psutil-6.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/psutil-6.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/psutil-6.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
 	fabric-test? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
 	fabric-test? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
 	fabric-test? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
 	fabric-test? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	fabric-test? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	dev-python/pytorch-lightning[${PYTHON_USEDEP}]
 	<dev-python/pyyaml-8.0[${PYTHON_USEDEP}]
 	all? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
 	examples? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
 	pytorch-examples? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/rich-14.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/rich-14.0[${PYTHON_USEDEP}] )
 	extra? ( <dev-python/rich-14.0[${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/rich-14.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/rich-14.0[${PYTHON_USEDEP}] )
 	pytorch-extra? ( <dev-python/rich-14.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/scikit-learn-2.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/scikit-learn-2.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/scikit-learn-2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/scikit-learn-2.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/tensorboard-3.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/tensorboard-3.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/tensorboard-3.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/tensorboard-3.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
 	extra? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
 	fabric-test? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
 	pytorch-all? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
 	pytorch-extra? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/tensorboardx-3.0[${PYTHON_USEDEP}] )
 	<dev-python/torch-4.0[${PYTHON_USEDEP}]
 	<dev-python/torchmetrics-3.0[${PYTHON_USEDEP}]
 	all? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
 	examples? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
 	fabric-all? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
@@ -208,9 +154,7 @@ GENERATED_DEPEND="
 	pytorch-all? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
 	pytorch-examples? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/torchmetrics-2.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/torchvision-1.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/torchvision-1.0[${PYTHON_USEDEP}] )
 	examples? ( <dev-python/torchvision-1.0[${PYTHON_USEDEP}] )
 	fabric-all? ( <dev-python/torchvision-1.0[${PYTHON_USEDEP}] )
 	fabric-dev? ( <dev-python/torchvision-1.0[${PYTHON_USEDEP}] )
@@ -220,11 +164,59 @@ GENERATED_DEPEND="
 	pytorch-examples? ( <dev-python/torchvision-1.0[${PYTHON_USEDEP}] )
 	<dev-python/tqdm-6.0[${PYTHON_USEDEP}]
 	<dev-python/typing-extensions-6.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 	pytorch-dev? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 	pytorch-test? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
-	test? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/click-8.1.7[${PYTHON_USEDEP}]
+	~dev-python/click-8.1.7[${PYTHON_USEDEP}]
+	<dev-python/cloudpickle-3.0[${PYTHON_USEDEP}]
+	<dev-python/cloudpickle-3.0[${PYTHON_USEDEP}]
+	~dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+	~dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+	dev-python/fastapi[${PYTHON_USEDEP}]
+	dev-python/fastapi[${PYTHON_USEDEP}]
+	<dev-python/hydra-core-2.0[${PYTHON_USEDEP}]
+	<dev-python/ipython-9.0[all,${PYTHON_USEDEP}]
+	<dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}]
+	<dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}]
+	<dev-python/matplotlib-4.0[${PYTHON_USEDEP}]
+	<dev-python/numpy-2.0[${PYTHON_USEDEP}]
+	<dev-python/numpy-2.0[${PYTHON_USEDEP}]
+	<dev-python/omegaconf-3.0[${PYTHON_USEDEP}]
+	<dev-python/onnx-2.0[${PYTHON_USEDEP}]
+	<dev-python/onnx-2.0[${PYTHON_USEDEP}]
+	<dev-python/onnxruntime-2.0[${PYTHON_USEDEP}]
+	<dev-python/onnxruntime-2.0[${PYTHON_USEDEP}]
+	<dev-python/pandas-3.0[${PYTHON_USEDEP}]
+	<dev-python/pandas-3.0[${PYTHON_USEDEP}]
+	<dev-python/psutil-6.0[${PYTHON_USEDEP}]
+	<dev-python/psutil-6.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	<dev-python/requests-3.0[${PYTHON_USEDEP}]
+	<dev-python/rich-14.0[${PYTHON_USEDEP}]
+	<dev-python/scikit-learn-2.0[${PYTHON_USEDEP}]
+	<dev-python/scikit-learn-2.0[${PYTHON_USEDEP}]
+	<dev-python/tensorboard-3.0[${PYTHON_USEDEP}]
+	<dev-python/tensorboard-3.0[${PYTHON_USEDEP}]
+	<dev-python/tensorboardx-3.0[${PYTHON_USEDEP}]
+	<dev-python/tensorboardx-3.0[${PYTHON_USEDEP}]
+	<dev-python/torchmetrics-2.0[${PYTHON_USEDEP}]
+	<dev-python/torchmetrics-2.0[${PYTHON_USEDEP}]
+	<dev-python/torchmetrics-2.0[${PYTHON_USEDEP}]
+	<dev-python/torchvision-1.0[${PYTHON_USEDEP}]
+	dev-python/uvicorn[${PYTHON_USEDEP}]
+	dev-python/uvicorn[${PYTHON_USEDEP}]
+)"

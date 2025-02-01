@@ -25,28 +25,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/build[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/cython-3.0.3[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( >=dev-python/furo-2023.5.20[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/meson-0.63.3[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/meson-1.2.3[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/meson[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	test? ( >=dev-python/packaging-23.1[${PYTHON_USEDEP}] )
 	>=dev-python/pyproject-metadata-0.7.1[${PYTHON_USEDEP}]
 	dev-python/pyproject-metadata[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[toml,${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-6.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-copybutton-0.5.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-design-0.1.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxext-opengraph-0.7.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pyproject-metadata-0.7.1[${PYTHON_USEDEP}]
@@ -67,6 +60,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/build[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.0.3[${PYTHON_USEDEP}]
+	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[toml,${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"
 
 src_test() {
 	# required by tests/test_sdist.py::test_reproducible

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="check cover doc enabler test type"
+GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="jaraco.develop"
@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/build[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/ini2toml[full,${PYTHON_USEDEP}]
@@ -31,13 +31,10 @@ GENERATED_DEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/path[${PYTHON_USEDEP}]
 	dev-python/pynacl[${PYTHON_USEDEP}]
-	test? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
 	check? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-home[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-file[${PYTHON_USEDEP}]
 	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
@@ -47,10 +44,14 @@ GENERATED_DEPEND="
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 	dev-python/subprocess-tee[${PYTHON_USEDEP}]
 	dev-python/typer[${PYTHON_USEDEP}]
-	test? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	type? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	dev-python/pytest-home[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+)"

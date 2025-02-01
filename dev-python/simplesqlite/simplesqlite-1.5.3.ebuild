@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs logging test"
+GENERATED_IUSE="docs logging"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="SimpleSQLite"
@@ -18,16 +18,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/beautifulsoup4-4.10[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/dataproperty-2[${PYTHON_USEDEP}]
 	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
 	<dev-python/pathvalidate-4[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytablereader-0.31.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytablewriter-0.50[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-2.4[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.2.2[${PYTHON_USEDEP}] )
 	<dev-python/sqliteschema-3[${PYTHON_USEDEP}]
@@ -37,3 +32,10 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/beautifulsoup4-4.10[${PYTHON_USEDEP}]
+	>=dev-python/pytablereader-0.31.3[${PYTHON_USEDEP}]
+	>=dev-python/pytablewriter-0.50[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
+)"

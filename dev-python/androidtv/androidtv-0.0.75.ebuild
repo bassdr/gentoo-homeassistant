@@ -19,7 +19,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/adb-shell-0.4.0[${PYTHON_USEDEP}]
 	dev-python/adb-shell[${PYTHON_USEDEP}]
 	usb? ( >=dev-python/adb-shell-0.4.0[usb,${PYTHON_USEDEP}] )

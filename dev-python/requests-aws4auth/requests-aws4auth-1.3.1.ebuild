@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="AWS4 authentication for Requests"
 HOMEPAGE="
-  https://pypi.org/project/requests_aws4auth/
+  https://pypi.org/project/requests-aws4auth/
 "
 
 LICENSE="MIT"
@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	httpx? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 "

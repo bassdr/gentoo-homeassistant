@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,17 +17,19 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/neptune-1.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-5.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}] )
 	>=dev-python/scikit-learn-0.24.1[${PYTHON_USEDEP}]
 	>=dev-python/scikit-plot-0.3.7[${PYTHON_USEDEP}]
 	<dev-python/scipy-1.12[${PYTHON_USEDEP}]
 	>=dev-python/yellowbrick-1.3[${PYTHON_USEDEP}]
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/neptune-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

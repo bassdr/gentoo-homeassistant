@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/enum34-1.1.6[${PYTHON_USEDEP}]
 	>=dev-python/google-api-python-client-2.50.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.7.1[${PYTHON_USEDEP}]

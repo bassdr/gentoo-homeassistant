@@ -20,7 +20,7 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/audioread-2.1.9[${PYTHON_USEDEP}]
 	>=dev-python/decorator-4.3.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/ipython-7.0[${PYTHON_USEDEP}] )

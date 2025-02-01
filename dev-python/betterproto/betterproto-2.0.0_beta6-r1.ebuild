@@ -36,7 +36,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="compiler"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	compiler? ( >=dev-python/black-19.3_beta0[${PYTHON_USEDEP}] )
 	>=dev-python/grpclib-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-1.6.0[${PYTHON_USEDEP}]

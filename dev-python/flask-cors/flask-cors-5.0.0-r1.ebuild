@@ -21,12 +21,14 @@ fi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/flask_cors/"
+  https://pypi.org/project/flask-cors/"
 
 LICENSE="MIT"
 SLOT="0"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/flask-0.9[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -42,4 +44,3 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs \
 	dev-python/sphinx-rtd-theme \
 	dev-python/sphinxcontrib-httpdomain
-# PYPI_PN could not be inserted in this ebuild

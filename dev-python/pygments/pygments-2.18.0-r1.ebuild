@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="windows-terminal"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	windows-terminal? ( >=dev-python/colorama-0.4.6[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -52,3 +52,4 @@ src_install() {
 	distutils-r1_src_install
 	newbashcomp external/pygments.bashcomp pygmentize
 }
+# RDEPEND could not be inserted in this ebuild

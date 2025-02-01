@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	examples? ( dev-python/bson[${PYTHON_USEDEP}] )
 	examples? ( dev-python/docstring-parser[${PYTHON_USEDEP}] )

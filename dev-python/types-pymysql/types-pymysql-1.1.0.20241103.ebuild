@@ -6,11 +6,12 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 IUSE=""
 
+PYPI_PN="types-PyMySQL"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/types-pymysql/"
+  https://pypi.org/project/types-PyMySQL/"
 
 LICENSE="Apache-2.0"
 SLOT="0"

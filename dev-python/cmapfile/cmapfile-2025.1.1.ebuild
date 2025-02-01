@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/h5py[${PYTHON_USEDEP}]
 	all? ( dev-python/imagecodecs[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]

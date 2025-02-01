@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev tests"
+GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-retry-2.5.0[${PYTHON_USEDEP}]
 	tests? ( <dev-python/aioresponses-0.8[${PYTHON_USEDEP}] )
 	<dev-python/asyncssh-3[${PYTHON_USEDEP}]
@@ -25,7 +25,6 @@ GENERATED_DEPEND="
 	>=dev-python/fsspec-2024.2.0[tqdm,${PYTHON_USEDEP}]
 	>=dev-python/funcy-1.14[${PYTHON_USEDEP}]
 	>dev-python/gitpython-3[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )
 	tests? ( <dev-python/paramiko-4[${PYTHON_USEDEP}] )
 	>=dev-python/pathspec-0.9.0[${PYTHON_USEDEP}]
 	tests? ( dev-python/proxy-py[${PYTHON_USEDEP}] )
@@ -38,13 +37,16 @@ GENERATED_DEPEND="
 	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
 	tests? ( <dev-python/pytest-test-utils-0.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/scmrepo[tests,${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev? ( dev-python/types-certifi[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-mock[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-paramiko[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-tqdm[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+	dev-python/scmrepo[tests,${PYTHON_USEDEP}]
+	dev-python/types-certifi[${PYTHON_USEDEP}]
+	dev-python/types-mock[${PYTHON_USEDEP}]
+	dev-python/types-paramiko[${PYTHON_USEDEP}]
+	dev-python/types-tqdm[${PYTHON_USEDEP}]
+)"

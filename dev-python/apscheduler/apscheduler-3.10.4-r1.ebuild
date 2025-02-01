@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc gevent mongodb redis rethinkdb sqlalchemy testing tornado twisted zookeeper"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	gevent? ( dev-python/gevent[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-3.6.0[${PYTHON_USEDEP}]
 	zookeeper? ( dev-python/kazoo[${PYTHON_USEDEP}] )

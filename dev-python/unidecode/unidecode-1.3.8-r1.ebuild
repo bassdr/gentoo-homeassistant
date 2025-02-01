@@ -5,14 +5,14 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
-PYPI_PN=${PN^}
+PYPI_PN="Unidecode"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/unidecode/"
+  https://pypi.org/project/Unidecode/"
 
 LICENSE="GPL-2+"
 SLOT="0"

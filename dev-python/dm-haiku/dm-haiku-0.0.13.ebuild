@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/absl-py-0.7.1[${PYTHON_USEDEP}]
 	flax? ( >=dev-python/flax-0.7.1[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jax-0.4.28[${PYTHON_USEDEP}] )

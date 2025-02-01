@@ -22,7 +22,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	patchelf? ( dev-python/patchelf[${PYTHON_USEDEP}] )
 	zig? ( <dev-python/ziglang-0.13.0[${PYTHON_USEDEP}] )
 "

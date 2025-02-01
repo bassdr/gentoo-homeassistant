@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	carbon? ( <dev-python/aiocarbon-0.16[${PYTHON_USEDEP}] )
 	aiohttp? ( >dev-python/aiohttp-3[${PYTHON_USEDEP}] )
 	asgi? ( <dev-python/aiohttp-asgi-0.6.0[${PYTHON_USEDEP}] )

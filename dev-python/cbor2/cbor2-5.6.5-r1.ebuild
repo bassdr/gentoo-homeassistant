@@ -21,14 +21,11 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="benchmarks doc test"
+GENERATED_IUSE="benchmarks doc"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/coverage-7[${PYTHON_USEDEP}] )
-	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	benchmarks? ( ~dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
@@ -44,6 +41,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-7[${PYTHON_USEDEP}]
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	# remove pytest-cov dep
@@ -59,3 +61,4 @@ python_compile() {
 	fi
 	distutils-r1_python_compile
 }
+# RDEPEND could not be inserted in this ebuild

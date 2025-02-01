@@ -20,10 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="test"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 PDEPEND="
 	>=dev-python/sphinx-2.0[${PYTHON_USEDEP}]
@@ -33,6 +30,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	# This is already fixed in upstream, remove it on next version bump,
@@ -51,3 +53,4 @@ python_test() {
 	cd "${T}" || die
 	epytest "${S}"/tests
 }
+# RDEPEND could not be inserted in this ebuild

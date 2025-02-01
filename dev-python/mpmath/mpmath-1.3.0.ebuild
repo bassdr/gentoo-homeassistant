@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="develop docs tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	develop? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	>=dev-python/gmpy2-2.1.0_alpha4[${PYTHON_USEDEP}]
 	develop? ( dev-python/pycodestyle[${PYTHON_USEDEP}] )
@@ -85,3 +85,4 @@ pkg_postinst() {
 	optfeature "gmp support" dev-python/gmpy2
 	optfeature "matplotlib support" dev-python/matplotlib
 }
+# RDEPEND could not be inserted in this ebuild

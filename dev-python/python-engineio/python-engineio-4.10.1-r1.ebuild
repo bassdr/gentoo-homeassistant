@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="asyncio-client client docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 	client? ( >=dev-python/requests-2.21.0[${PYTHON_USEDEP}] )
 	>=dev-python/simple-websocket-0.10.0[${PYTHON_USEDEP}]

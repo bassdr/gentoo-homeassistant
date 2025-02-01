@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crystal python python-legacy"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]
 	>=dev-python/markdown-3.6[${PYTHON_USEDEP}]

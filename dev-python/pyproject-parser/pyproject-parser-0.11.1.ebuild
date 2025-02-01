@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/apeye-core-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/attrs-20.3.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/click-7.1.2[${PYTHON_USEDEP}] )

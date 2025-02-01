@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/ijson[${PYTHON_USEDEP}]
 	jdbc? ( dev-python/jaydebeapi[${PYTHON_USEDEP}] )
 	jdbc? ( dev-python/jpype1[${PYTHON_USEDEP}] )

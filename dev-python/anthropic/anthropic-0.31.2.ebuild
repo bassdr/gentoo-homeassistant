@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/anyio-5[${PYTHON_USEDEP}]
 	dev-python/anyio[${PYTHON_USEDEP}]
 	bedrock? ( >=dev-python/boto3-1.28.57[${PYTHON_USEDEP}] )

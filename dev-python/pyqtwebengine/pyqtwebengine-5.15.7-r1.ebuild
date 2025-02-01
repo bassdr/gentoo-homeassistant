@@ -18,9 +18,10 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="debug"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} debug"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pyqt5-5.15.4[${PYTHON_USEDEP}]
 	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
 	<dev-python/pyqtwebengine-qt5-5.16.0[${PYTHON_USEDEP}]
@@ -33,7 +34,7 @@ DEPEND="
 	dev-qt/qtwidgets:5
 	dev-qt/qtwebengine:5[widgets]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	>=dev-python/pyqt5-sip-12.15:=[${PYTHON_USEDEP}]
 "

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs tests typing"
+GENERATED_IUSE="docs tests typing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,12 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-23.2[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	>dev-python/click-8[${PYTHON_USEDEP}]
 	tests? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
-	dev? ( dev-python/doc2dash[tests,typing,${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs-callouts[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs-click[${PYTHON_USEDEP}] )
@@ -30,7 +29,6 @@ GENERATED_DEPEND="
 	docs? ( dev-python/mkdocs-material[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocstrings[python,${PYTHON_USEDEP}] )
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/nox[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/rich[${PYTHON_USEDEP}]
 	typing? ( dev-python/types-urllib3[${PYTHON_USEDEP}] )
@@ -38,3 +36,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/doc2dash[tests,typing,${PYTHON_USEDEP}]
+	dev-python/nox[${PYTHON_USEDEP}]
+)"

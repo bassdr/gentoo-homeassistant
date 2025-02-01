@@ -22,12 +22,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test yaml"
+GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/mock[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	yaml? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -37,6 +34,11 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/mock[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+)"
 
 PATCHES=(
 	# https://github.com/bw2/ConfigArgParse/pull/295
@@ -47,3 +49,4 @@ src_test() {
 	local -x COLUMNS=80
 	distutils-r1_src_test
 }
+# RDEPEND could not be inserted in this ebuild

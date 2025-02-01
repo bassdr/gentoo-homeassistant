@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	attacut? ( >=dev-python/attacut-1.0.6[${PYTHON_USEDEP}] )
 	full? ( >=dev-python/attacut-1.0.4[${PYTHON_USEDEP}] )
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
@@ -105,7 +105,6 @@ GENERATED_DEPEND="
 	wangchanberta? ( >=dev-python/transformers-4.6.0[${PYTHON_USEDEP}] )
 	wangchanglm? ( >=dev-python/transformers-4.6.0[${PYTHON_USEDEP}] )
 	wtp? ( >=dev-python/transformers-4.6.0[${PYTHON_USEDEP}] )
-	dev-python/tzdata[${PYTHON_USEDEP}]
 	dependency-parsing? ( >=dev-python/ufal-chu-liu-edmonds-1.0.2[${PYTHON_USEDEP}] )
 	full? ( >=dev-python/ufal-chu-liu-edmonds-1.0.2[${PYTHON_USEDEP}] )
 	transformers-ud? ( >=dev-python/ufal-chu-liu-edmonds-1.0.2[${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	pyexecjs? ( dev-python/pyexecjs[${PYTHON_USEDEP}] )
 	pymongo? ( dev-python/pymongo[${PYTHON_USEDEP}] )

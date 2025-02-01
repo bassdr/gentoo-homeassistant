@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( ~dev-python/distro-1.9.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/flake8-6.1[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/flake8-pyi-24.1.0[${PYTHON_USEDEP}] )
-	dev-python/gssapi[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/gssapi[${PYTHON_USEDEP}]
 	dev-python/k5test[${PYTHON_USEDEP}]
-	test? ( ~dev-python/mypy-1.8.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.2.2[${PYTHON_USEDEP}] )
-	dev-python/sspilib[${PYTHON_USEDEP}]
-	dev-python/sspilib[${PYTHON_USEDEP}]
 	>=dev-python/uvloop-0.15.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/distro-1.9.0[${PYTHON_USEDEP}]
+	~dev-python/flake8-6.1[${PYTHON_USEDEP}]
+	~dev-python/flake8-pyi-24.1.0[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
+)"

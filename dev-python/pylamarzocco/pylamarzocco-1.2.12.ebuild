@@ -19,19 +19,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/bleak-0.20.0[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/covdefaults-2.3.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/coverage-7.6.7[${PYTHON_USEDEP}] )
 	>=dev-python/httpx-0.16.0[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/syrupy-4.7.2[${PYTHON_USEDEP}] )
 	>=dev-python/websockets-13.1[${PYTHON_USEDEP}]
 	dev-python/websockets[${PYTHON_USEDEP}]
 "
@@ -39,3 +33,11 @@ RDEPEND="${GENERATED_DEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/covdefaults-2.3.0[${PYTHON_USEDEP}]
+	~dev-python/coverage-7.6.7[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+	~dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
+	~dev-python/syrupy-4.7.2[${PYTHON_USEDEP}]
+)"

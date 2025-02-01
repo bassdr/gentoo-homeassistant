@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="lint test"
+GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,26 +17,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
 	lint? ( <dev-python/bandit-2.0[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/black-22.0[${PYTHON_USEDEP}] )
 	>=dev-python/kedro-0.18.0[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/mypy-1.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-xdist-2.2.1[psutil,${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}] )
 	~dev-python/requests-2.20[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/ruff-0.0.290[${PYTHON_USEDEP}] )
 	lint? ( <dev-python/trufflehog-3.0[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-toml[${PYTHON_USEDEP}] )
-	test? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	lint? ( >=dev-vcs/pre-commit-2.9.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	~dev-python/pytest-xdist-2.2.1[psutil,${PYTHON_USEDEP}]
+	~dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"

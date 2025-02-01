@@ -18,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	tzdata? ( dev-python/tzdata[${PYTHON_USEDEP}] )
 "

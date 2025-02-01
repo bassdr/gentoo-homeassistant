@@ -20,7 +20,7 @@ GENERATED_IUSE="cache database email search testing"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	database? ( dev-python/dj-database-url[${PYTHON_USEDEP}] )
 	testing? ( dev-python/dj-database-url[${PYTHON_USEDEP}] )
 	email? ( dev-python/dj-email-url[${PYTHON_USEDEP}] )

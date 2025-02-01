@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/asv-runner-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/memray-1.7.0[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/ruff-0.0.265[${PYTHON_USEDEP}] )

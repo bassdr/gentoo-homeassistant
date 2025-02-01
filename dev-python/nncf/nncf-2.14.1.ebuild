@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/jsonschema-3.2.0[${PYTHON_USEDEP}]
 	>=dev-python/jstyleson-0.0.2[${PYTHON_USEDEP}]
 	plots? ( >=dev-python/kaleido-0.2.1[${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aiohttp? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	fast-parse? ( dev-python/fast-mail-parser[${PYTHON_USEDEP}] )
 	nkeys? ( dev-python/nkeys[${PYTHON_USEDEP}] )

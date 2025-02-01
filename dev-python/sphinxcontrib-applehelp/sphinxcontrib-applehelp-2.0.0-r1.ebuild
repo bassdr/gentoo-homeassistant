@@ -22,11 +22,10 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint standalone test"
+GENERATED_IUSE="lint standalone"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/ruff-0.5.5[${PYTHON_USEDEP}] )
 	standalone? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-docutils[${PYTHON_USEDEP}] )
@@ -39,3 +38,7 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
+# RDEPEND could not be inserted in this ebuild

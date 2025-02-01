@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/pytest_codeblocks/"
+  https://pypi.org/project/pytest-codeblocks/"
 SRC_URI="
 	https://github.com/nschloe/pytest-codeblocks/archive/v${PV}.tar.gz
 		-> ${P}.gh.tar.gz
@@ -20,7 +20,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -32,4 +34,3 @@ distutils_enable_tests pytest
 python_test() {
 	epytest -p pytester
 }
-# PYPI_PN could not be inserted in this ebuild

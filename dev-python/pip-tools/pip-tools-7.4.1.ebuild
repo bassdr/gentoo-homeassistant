@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/build-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8[${PYTHON_USEDEP}]
 	coverage? ( dev-python/covdefaults[${PYTHON_USEDEP}] )

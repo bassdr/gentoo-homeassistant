@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/gitpython[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
@@ -30,7 +30,7 @@ GENERATED_DEPEND="
 DEPEND="
 	>=dev-python/numpy-1.9.1:=[${PYTHON_USEDEP}]
 "
-RDEPEND="${DEPEND}"
+RDEPEND="${GENERATED_DEPEND} ${DEPEND}"
 
 distutils_enable_tests pytest
 

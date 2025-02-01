@@ -16,12 +16,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/msal-2[${PYTHON_USEDEP}]
 	dev-python/msal[${PYTHON_USEDEP}]
 	<dev-python/portalocker-3[${PYTHON_USEDEP}]

@@ -16,7 +16,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/funcsigs[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -24,3 +26,4 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+# RDEPEND could not be inserted in this ebuild

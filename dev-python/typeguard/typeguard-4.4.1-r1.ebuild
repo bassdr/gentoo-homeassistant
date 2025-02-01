@@ -21,13 +21,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc test"
+GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( >=dev-python/coverage-7[toml,${PYTHON_USEDEP}] )
-	>=dev-python/mypy-1.2.0[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
@@ -42,6 +39,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-7[toml,${PYTHON_USEDEP}]
+	>=dev-python/pytest-7[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_IGNORE=(

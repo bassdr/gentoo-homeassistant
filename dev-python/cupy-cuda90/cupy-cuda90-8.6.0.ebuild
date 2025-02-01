@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="jenkins setup stylecheck test"
+GENERATED_IUSE="jenkins setup stylecheck"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,9 +17,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	jenkins? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	stylecheck? ( ~dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/coverage-5[${PYTHON_USEDEP}] )
@@ -32,10 +31,13 @@ GENERATED_DEPEND="
 	stylecheck? ( ~dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
 	stylecheck? ( ~dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-cov-2.10[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-4.2.0[${PYTHON_USEDEP}]
+)"

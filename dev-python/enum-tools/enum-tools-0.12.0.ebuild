@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pygments-2.6.1[${PYTHON_USEDEP}]
 	all? ( >=dev-python/sphinx-3.4.0[${PYTHON_USEDEP}] )
 	sphinx? ( >=dev-python/sphinx-3.4.0[${PYTHON_USEDEP}] )

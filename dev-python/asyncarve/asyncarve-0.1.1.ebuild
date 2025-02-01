@@ -15,22 +15,19 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev? ( dev-python/aresponses[${PYTHON_USEDEP}] )
 	>=dev-python/mashumaro-3.12[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]
 	>=dev-python/orjson-2.0.1[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/twine[${PYTHON_USEDEP}] )
 	>=dev-python/yarl-1.9.4[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
@@ -41,3 +38,8 @@ RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/yarl-1.9.4[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/aresponses[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+)"

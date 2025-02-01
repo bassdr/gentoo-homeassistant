@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
 HOMEPAGE="
-  https://pypi.org/project/PrettyTable/
+  https://pypi.org/project/prettytable/
   Changelog, https://github.com/prettytable/prettytable/releases
   Funding, https://tidelift.com/subscription/pkg/pypi-prettytable?utm_source=pypi-prettytable&utm_medium=pypi
   Homepage, https://github.com/prettytable/prettytable
@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}] )

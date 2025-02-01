@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm64"
 # TODO: revisit
 GENERATED_IUSE="anyio curio trio"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	anyio? ( <dev-python/anyio-5.0.0[${PYTHON_USEDEP}] )
 	curio? ( >=dev-python/curio-1.4[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.16.0[${PYTHON_USEDEP}] )

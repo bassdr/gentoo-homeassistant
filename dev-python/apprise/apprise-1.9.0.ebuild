@@ -16,9 +16,10 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+dbus mqtt"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} +dbus mqtt"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/click-5.0[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

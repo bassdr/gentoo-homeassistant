@@ -18,16 +18,14 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test testing"
+GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 	testing? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 	testing? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -37,6 +35,10 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	# strip rdep specific to namespaces
@@ -52,3 +54,4 @@ python_compile() {
 python_test() {
 	eunittest -s "${BUILD_DIR}/install$(python_get_sitedir)/zope/hookable/tests"
 }
+# RDEPEND could not be inserted in this ebuild

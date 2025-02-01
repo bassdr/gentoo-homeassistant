@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	all? ( dev-python/colorcet[doc,${PYTHON_USEDEP}] )
 	all? ( dev-python/colorcet[examples,${PYTHON_USEDEP}] )

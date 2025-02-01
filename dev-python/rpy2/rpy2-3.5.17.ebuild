@@ -18,15 +18,14 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all doc test test-minimal types"
+GENERATED_IUSE="all doc test-minimal types"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	>=dev-python/cffi-1.15.1[${PYTHON_USEDEP}]
 	test-minimal? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	doc? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	all? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	test? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	doc? ( dev-python/jupytext[${PYTHON_USEDEP}] )
 	doc? ( dev-python/multipledispatch[${PYTHON_USEDEP}] )
@@ -37,7 +36,6 @@ GENERATED_DEPEND="
 	<dev-python/numpy-1.26[${PYTHON_USEDEP}]
 	<dev-python/numpy-1.26[${PYTHON_USEDEP}]
 	doc? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
@@ -45,7 +43,6 @@ GENERATED_DEPEND="
 	doc? ( dev-python/pygraphviz[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-minimal? ( >=dev-python/pytest-8[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-minimal? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	types? ( dev-python/types-tzlocal[${PYTHON_USEDEP}] )
@@ -69,6 +66,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
 
 pkg_postinst() {
 	optfeature "ipython integration" dev-python/ipython

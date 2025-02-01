@@ -20,7 +20,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/crashtest-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/rapidfuzz-3.0.0[${PYTHON_USEDEP}]
 "

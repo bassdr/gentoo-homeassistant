@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( ~dev-python/promptflow-azure-1.17.2[${PYTHON_USEDEP}] )
 	azure? ( ~dev-python/promptflow-azure-1.17.2[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/promptflow-core-1.17.2[executor-service,${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	cli? ( dev-python/tomli[${PYTHON_USEDEP}] )
 "

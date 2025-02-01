@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 	>=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
 	dev-python/bidict[${PYTHON_USEDEP}]

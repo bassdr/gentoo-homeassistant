@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
 	<dev-python/google-cloud-core-3.0dev[${PYTHON_USEDEP}]
 	<dev-python/grpc-google-iam-v1-1.0.0dev[${PYTHON_USEDEP}]

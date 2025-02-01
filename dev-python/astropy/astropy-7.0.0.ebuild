@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev dev-all docs ipython jupyter recommended test test-all typing"
+GENERATED_IUSE="all dev-all docs ipython jupyter recommended test-all typing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	test-all? ( dev-python/array-api-strict[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/asdf-2.8.3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/asdf-astropy-0.3[${PYTHON_USEDEP}] )
@@ -26,10 +26,6 @@ GENERATED_DEPEND="
 	all? ( dev-python/astropy[recommended,${PYTHON_USEDEP}] )
 	dev-all? ( dev-python/astropy[dev,${PYTHON_USEDEP}] )
 	dev-all? ( dev-python/astropy[test_all,${PYTHON_USEDEP}] )
-	dev? ( dev-python/astropy[docs,${PYTHON_USEDEP}] )
-	dev? ( dev-python/astropy[recommended,${PYTHON_USEDEP}] )
-	dev? ( dev-python/astropy[test,${PYTHON_USEDEP}] )
-	dev? ( dev-python/astropy[typing,${PYTHON_USEDEP}] )
 	docs? ( dev-python/astropy[recommended,${PYTHON_USEDEP}] )
 	jupyter? ( dev-python/astropy[ipython,${PYTHON_USEDEP}] )
 	test-all? ( dev-python/astropy[all,${PYTHON_USEDEP}] )
@@ -39,7 +35,6 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/bleach-3.2.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/bottleneck-1.3.3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/certifi-2022.6.15.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/coverage-6.4.4[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/dask-2022.5.1[array,${PYTHON_USEDEP}] )
 	all? ( >=dev-python/fsspec-2023.4.0[http,${PYTHON_USEDEP}] )
 	all? ( >=dev-python/h5py-3.8.0[${PYTHON_USEDEP}] )
@@ -62,11 +57,6 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/pyarrow-10.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/pyerfa-2.0.1.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pytest-7.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.3.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-astropy-0.10.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-astropy-header-0.2.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-doctestplus-0.12[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pytz-2016.10[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/s3fs-2023.4.0[${PYTHON_USEDEP}] )
@@ -79,10 +69,22 @@ GENERATED_DEPEND="
 	docs? ( >=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-globalsubs-0.1.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/threadpoolctl-3.0.0[${PYTHON_USEDEP}] )
 	dev-all? ( dev-python/tox[${PYTHON_USEDEP}] )
-	test? ( >=dev-vcs/pre-commit-2.9.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/astropy[docs,${PYTHON_USEDEP}]
+	dev-python/astropy[recommended,${PYTHON_USEDEP}]
+	dev-python/astropy[test,${PYTHON_USEDEP}]
+	dev-python/astropy[typing,${PYTHON_USEDEP}]
+	>=dev-python/coverage-6.4.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.3.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-astropy-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-astropy-header-0.2.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-doctestplus-0.12[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
+	>=dev-python/threadpoolctl-3.0.0[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2.9.3[${PYTHON_USEDEP}]
+)"

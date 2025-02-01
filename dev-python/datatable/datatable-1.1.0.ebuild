@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( >=dev-python/docutils-0.14[${PYTHON_USEDEP}] )
 	optional? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	optional? ( dev-python/pandas[${PYTHON_USEDEP}] )

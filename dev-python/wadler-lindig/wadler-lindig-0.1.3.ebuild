@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( ~dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/mkdocs-autorefs-1.0.1[${PYTHON_USEDEP}] )
@@ -28,13 +28,15 @@ GENERATED_DEPEND="
 	docs? ( ~dev-python/mknotebooks-0.7.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/nbconvert-6.5.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/nbformat-5.4.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/pygments-2.14.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/pymdown-extensions-9.4[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/pytkdocs-tweaks-0.0.8[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

@@ -16,12 +16,13 @@ HOMEPAGE="
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 #DOCS="DESCRIPTION.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/jsonpickle[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all azure dev gdrive gs hdfs lint oss s3 ssh ssh-gssapi testing tests webdav webhdfs webhdfs-kerberos"
+GENERATED_IUSE="all azure gdrive gs hdfs lint oss s3 ssh ssh-gssapi testing tests webdav webhdfs webhdfs-kerberos"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	tests? ( >=dev-python/beautifulsoup4-4.4[${PYTHON_USEDEP}] )
 	dev-python/celery[${PYTHON_USEDEP}]
@@ -27,7 +27,6 @@ GENERATED_DEPEND="
 	<dev-python/dpath-3[${PYTHON_USEDEP}]
 	dev-python/dulwich[${PYTHON_USEDEP}]
 	all? ( dev-python/dvc[azure,gdrive,gs,hdfs,oss,s3,ssh,webdav,webhdfs,${PYTHON_USEDEP}] )
-	dev? ( dev-python/dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs,${PYTHON_USEDEP}] )
 	tests? ( dev-python/dvc[testing,${PYTHON_USEDEP}] )
 	azure? ( <dev-python/dvc-azure-4[${PYTHON_USEDEP}] )
 	<dev-python/dvc-data-3.17[${PYTHON_USEDEP}]
@@ -79,7 +78,6 @@ GENERATED_DEPEND="
 	tests? ( dev-python/pytest-test-utils[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-timeout-2[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}] )
-	>=dev-python/pywin32-225[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
 	>=dev-python/rich-12[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.17.11[${PYTHON_USEDEP}]
@@ -98,7 +96,6 @@ GENERATED_DEPEND="
 	lint? ( dev-python/types-toml[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-tqdm[${PYTHON_USEDEP}] )
 	lint? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
-	dev-python/tzdata[${PYTHON_USEDEP}]
 	testing? ( dev-python/uv[${PYTHON_USEDEP}] )
 	>=dev-python/voluptuous-0.11.7[${PYTHON_USEDEP}]
 	>=dev-python/zc-lockfile-1.2.1[${PYTHON_USEDEP}]
@@ -106,3 +103,6 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs,${PYTHON_USEDEP}]
+)"

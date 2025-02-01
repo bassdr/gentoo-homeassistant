@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev doc maintainer test"
+GENERATED_IUSE="all doc maintainer"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,27 +17,29 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( >=dev-python/autodocsumm-0.1.10[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/bump2version-0.5.11[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/coverage-4.5.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/coverage-4.5.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/flask-1.1.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/flask-1.1.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pylint-1.8.3[${PYTHON_USEDEP}] )
 	>=dev-python/python-json-logger-3.2.1[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
 	all? ( >=dev-python/requests-2.24.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/requests-2.24.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-1.7.9[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.11.1[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-rtd-theme-0.4.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tox-3.25.0[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/twine-3.1.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-4.5.1[${PYTHON_USEDEP}]
+	>=dev-python/coverage-4.5.1[${PYTHON_USEDEP}]
+	>=dev-python/flask-1.1.1[${PYTHON_USEDEP}]
+	>=dev-python/pylint-1.8.3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.24.0[${PYTHON_USEDEP}]
+	~dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}]
+	~dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}]
+	>=dev-python/tox-3.25.0[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
+)"

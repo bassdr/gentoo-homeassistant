@@ -18,17 +18,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev test twisted"
+GENERATED_IUSE="twisted"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	twisted? ( dev-python/fixtures[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ruff-0.4.8[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	test? ( dev-python/testresources[${PYTHON_USEDEP}] )
-	test? ( dev-python/testscenarios[${PYTHON_USEDEP}] )
 	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -56,3 +53,5 @@ python_test() {
 	"${EPYTHON}" -m testtools.run test_suite.test_suite ||
 		die "tests failed under ${EPYTHON}"
 }
+# RDEPEND could not be inserted in this ebuild
+# BDEPEND could not be inserted in this ebuild

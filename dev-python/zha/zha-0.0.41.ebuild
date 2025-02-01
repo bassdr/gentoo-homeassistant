@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/bellows[${PYTHON_USEDEP}]
 	~dev-python/bellows-0.42.2[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]

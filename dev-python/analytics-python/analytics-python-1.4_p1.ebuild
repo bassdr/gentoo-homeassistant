@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -20,12 +20,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/backoff-1.10.0[${PYTHON_USEDEP}]
-	test? ( ~dev-python/flake8-3.7.9[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/mock-2.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/monotonic-1.5[${PYTHON_USEDEP}]
-	test? ( ~dev-python/pylint-1.9.3[${PYTHON_USEDEP}] )
 	>dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
 	<dev-python/requests-3.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
@@ -33,3 +30,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/flake8-3.7.9[${PYTHON_USEDEP}]
+	~dev-python/mock-2.0.0[${PYTHON_USEDEP}]
+	~dev-python/pylint-1.9.3[${PYTHON_USEDEP}]
+)"

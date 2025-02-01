@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	dev-python/astropy-sphinx-theme[${PYTHON_USEDEP}]
 	dev-python/numpydoc[${PYTHON_USEDEP}]

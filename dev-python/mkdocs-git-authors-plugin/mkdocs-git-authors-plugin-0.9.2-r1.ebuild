@@ -9,7 +9,9 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 # Requires self to be installed to build docs
 # TODO: Do this a bit better
 DOCS_BUILDER="mkdocs"
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/mkdocs-1.0[${PYTHON_USEDEP}]
 "
 DOCS_DEPEND="
@@ -33,7 +35,7 @@ KEYWORDS="amd64 arm64"
 # Tests are broken outside of upstream git repo
 RESTRICT="test"
 
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	dev-python/gitpython[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.0[${PYTHON_USEDEP}]
 "

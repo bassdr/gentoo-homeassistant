@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	azureml-serving? ( <dev-python/azure-ai-ml-2.0.0[${PYTHON_USEDEP}] )
 	azureml-serving? ( <dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}] )
 	azureml-serving? ( <dev-python/azureml-ai-monitoring-1.0.0[${PYTHON_USEDEP}] )

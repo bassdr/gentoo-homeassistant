@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs test zcml zodb"
+GENERATED_IUSE="docs zcml zodb"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="zope.container"
@@ -18,20 +18,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/btrees[${PYTHON_USEDEP}]
 	>=dev-python/persistent-4.1.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/zodb-3.10[${PYTHON_USEDEP}] )
 	zodb? ( >=dev-python/zodb-3.10[${PYTHON_USEDEP}] )
 	dev-python/zope-cachedescriptors[${PYTHON_USEDEP}]
 	dev-python/zope-component[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-component[zcml,${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-component[zcml,${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	dev-python/zope-deferredimport[${PYTHON_USEDEP}]
 	dev-python/zope-dottedname[${PYTHON_USEDEP}]
@@ -45,13 +42,18 @@ GENERATED_DEPEND="
 	dev-python/zope-publisher[${PYTHON_USEDEP}]
 	dev-python/zope-schema[${PYTHON_USEDEP}]
 	dev-python/zope-security[${PYTHON_USEDEP}]
-	test? ( >=dev-python/zope-security-4.0.0_alpha3[zcml,${PYTHON_USEDEP}] )
 	zcml? ( >=dev-python/zope-security-4.0.0_alpha3[zcml,${PYTHON_USEDEP}] )
 	dev-python/zope-size[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 	>=dev-python/zope-traversing-4.0.0_alpha1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/zodb-3.10[${PYTHON_USEDEP}]
+	dev-python/zope-component[zcml,${PYTHON_USEDEP}]
+	dev-python/zope-configuration[${PYTHON_USEDEP}]
+	>=dev-python/zope-security-4.0.0_alpha3[zcml,${PYTHON_USEDEP}]
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"

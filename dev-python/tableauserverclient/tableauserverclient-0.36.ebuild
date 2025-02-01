@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( ~dev-python/black-24.8[${PYTHON_USEDEP}] )
-	test? ( dev-python/build[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
-	test? ( ~dev-python/mypy-1.4[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-7.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.32[${PYTHON_USEDEP}]
-	test? ( <dev-python/requests-mock-2.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
 	<dev-python/urllib3-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-24.8[${PYTHON_USEDEP}]
+	dev-python/build[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-subtests[${PYTHON_USEDEP}]
+	<dev-python/requests-mock-2.0[${PYTHON_USEDEP}]
+)"

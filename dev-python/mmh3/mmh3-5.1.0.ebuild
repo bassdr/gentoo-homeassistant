@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="benchmark docs lint plot test type"
+GENERATED_IUSE="benchmark docs lint plot type"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( ~dev-python/black-24.10.0[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/clang-format-19.1.7[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/isort-5.13.2[${PYTHON_USEDEP}] )
@@ -28,8 +28,6 @@ GENERATED_DEPEND="
 	lint? ( ~dev-python/pylint-3.3.3[${PYTHON_USEDEP}] )
 	benchmark? ( ~dev-python/pymmh3-0.0.5[${PYTHON_USEDEP}] )
 	benchmark? ( ~dev-python/pyperf-2.8.1[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-8.3.4[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/shibuya-2024.12.21[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
@@ -38,3 +36,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+	~dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}]
+)"

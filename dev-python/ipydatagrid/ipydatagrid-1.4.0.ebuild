@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,15 +17,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/bqplot-0.11.6[${PYTHON_USEDEP}]
 	<dev-python/ipywidgets-9[${PYTHON_USEDEP}]
-	test? ( >=dev-python/nbval-0.10[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
 	>=dev-python/py2vega-0.5[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pytest-7.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/nbval-0.10[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
+)"

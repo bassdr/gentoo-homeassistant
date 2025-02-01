@@ -18,7 +18,9 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>dev-python/importlib-resources-5.12.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -33,3 +35,4 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -o addopts= -o required_plugins=
 }
+# RDEPEND could not be inserted in this ebuild

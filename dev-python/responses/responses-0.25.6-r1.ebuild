@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 # However, keeping it unconditional here for backwards compatibility.
 GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( >=dev-python/coverage-6.0.0[${PYTHON_USEDEP}] )
 	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	tests? ( dev-python/mypy[${PYTHON_USEDEP}] )

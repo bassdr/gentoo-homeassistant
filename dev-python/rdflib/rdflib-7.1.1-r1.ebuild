@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="berkeleydb html lxml networkx orjson"
 IUSE="${GENERATED_IUSE} examples sqlite"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	berkeleydb? ( <dev-python/berkeleydb-19.0.0[${PYTHON_USEDEP}] )
 	html? ( <dev-python/html5rdf-2[${PYTHON_USEDEP}] )
 	lxml? ( <dev-python/lxml-6.0[${PYTHON_USEDEP}] )

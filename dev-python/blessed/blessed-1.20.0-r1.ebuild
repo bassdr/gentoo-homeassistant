@@ -16,9 +16,10 @@ SLOT="0"
 LICENSE="MIT"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/backports-functools-lru-cache-1.2.1[${PYTHON_USEDEP}]
-	>=dev-python/jinxed-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/wcwidth-0.1.4[${PYTHON_USEDEP}]
 "

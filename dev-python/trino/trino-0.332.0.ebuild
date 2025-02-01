@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/black[${PYTHON_USEDEP}] )
 	tests? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	tests? ( <dev-python/httpretty-1.1[${PYTHON_USEDEP}] )

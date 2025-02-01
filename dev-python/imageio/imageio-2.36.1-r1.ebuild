@@ -27,9 +27,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all-plugins all-plugins-pypy build dev docs ffmpeg fits full gdal itk linting pillow-heif pyav rawpy test tifffile"
+GENERATED_IUSE="all-plugins all-plugins-pypy build docs ffmpeg fits full gdal itk linting pillow-heif pyav rawpy tifffile"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all-plugins? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	fits? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	full? ( dev-python/astropy[${PYTHON_USEDEP}] )
@@ -37,15 +37,11 @@ GENERATED_DEPEND="
 	all-plugins? ( dev-python/av[${PYTHON_USEDEP}] )
 	full? ( dev-python/av[${PYTHON_USEDEP}] )
 	pyav? ( dev-python/av[${PYTHON_USEDEP}] )
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
 	full? ( dev-python/black[${PYTHON_USEDEP}] )
 	linting? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	full? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	linting? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/fsspec[github,${PYTHON_USEDEP}] )
 	full? ( dev-python/fsspec[github,${PYTHON_USEDEP}] )
-	test? ( dev-python/fsspec[github,${PYTHON_USEDEP}] )
 	full? ( dev-python/gdal[${PYTHON_USEDEP}] )
 	gdal? ( dev-python/gdal[${PYTHON_USEDEP}] )
 	all-plugins-pypy? ( dev-python/imageio-ffmpeg[${PYTHON_USEDEP}] )
@@ -72,12 +68,8 @@ GENERATED_DEPEND="
 	full? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	full? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	full? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	full? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	all-plugins? ( dev-python/rawpy[${PYTHON_USEDEP}] )
 	full? ( dev-python/rawpy[${PYTHON_USEDEP}] )
 	rawpy? ( dev-python/rawpy[${PYTHON_USEDEP}] )
@@ -108,6 +100,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/fsspec[github,${PYTHON_USEDEP}]
+	dev-python/fsspec[github,${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	local PATCHES=(

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="azure clip dev docs embeddings tests"
+GENERATED_IUSE="azure clip docs embeddings tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	azure? ( >=dev-python/adlfs-2024.2.0[${PYTHON_USEDEP}] )
 	tests? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/awscli-1.29.57[${PYTHON_USEDEP}] )
@@ -48,20 +48,22 @@ GENERATED_DEPEND="
 	tests? ( dev-python/pyarrow-stubs[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-1.10[${PYTHON_USEDEP}]
 	~dev-python/pylance-0.22.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/pyright[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/requests-2.31.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/sentence-transformers[${PYTHON_USEDEP}] )
 	tests? ( dev-python/tantivy[${PYTHON_USEDEP}] )
 	clip? ( dev-python/torch[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/torch[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.27.0[${PYTHON_USEDEP}]
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pyright[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

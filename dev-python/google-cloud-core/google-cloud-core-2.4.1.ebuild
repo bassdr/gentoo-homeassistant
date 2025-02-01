@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
 	<dev-python/google-auth-3.0dev[${PYTHON_USEDEP}]
 	grpc? ( <dev-python/grpcio-2.0dev[${PYTHON_USEDEP}] )

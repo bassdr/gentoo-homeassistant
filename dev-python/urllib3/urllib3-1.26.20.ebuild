@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="secure socks"
 IUSE="${GENERATED_IUSE} brotli +secure +socks"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/brotli-1.0.9[${PYTHON_USEDEP}]
 	~dev-python/brotli-1.0.9[${PYTHON_USEDEP}]
 	>=dev-python/brotlicffi-0.8.0[${PYTHON_USEDEP}]

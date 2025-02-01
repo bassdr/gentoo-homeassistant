@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/cffi-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/glfw-2.0.0[${PYTHON_USEDEP}]
-	test? ( ~dev-python/gym-0.17.2[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/gym-retro-0.8.0[${PYTHON_USEDEP}] )
 	<dev-python/imageio-3.0.0[${PYTHON_USEDEP}]
 	<dev-python/imageio-ffmpeg-0.4.0[${PYTHON_USEDEP}]
 	<dev-python/moderngl-6.0.0[${PYTHON_USEDEP}]
-	test? ( ~dev-python/mpi4py-3.0.3[${PYTHON_USEDEP}] )
 	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
-	test? ( ~dev-python/pytest-5.2.1[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-benchmark-3.2.2[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/tensorflow-1.15.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/gym-0.17.2[${PYTHON_USEDEP}]
+	~dev-python/gym-retro-0.8.0[${PYTHON_USEDEP}]
+	~dev-python/mpi4py-3.0.3[${PYTHON_USEDEP}]
+	~dev-python/pytest-5.2.1[${PYTHON_USEDEP}]
+	~dev-python/pytest-benchmark-3.2.2[${PYTHON_USEDEP}]
+	~dev-python/tensorflow-1.15.0[${PYTHON_USEDEP}]
+)"

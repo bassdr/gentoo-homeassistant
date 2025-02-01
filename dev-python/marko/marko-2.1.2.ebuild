@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	repr? ( dev-python/objprint[${PYTHON_USEDEP}] )
 	codehilite? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	toc? ( dev-python/python-slugify[${PYTHON_USEDEP}] )

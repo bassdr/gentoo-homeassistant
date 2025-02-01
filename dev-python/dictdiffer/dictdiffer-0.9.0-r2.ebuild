@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all docs tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/check-manifest-0.42[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/check-manifest-0.42[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/mock-1.3.0[${PYTHON_USEDEP}] )
@@ -76,3 +76,4 @@ python_prepare_all() {
 
 	distutils-r1_python_prepare_all
 }
+# RDEPEND could not be inserted in this ebuild

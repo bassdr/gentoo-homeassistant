@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/black[${PYTHON_USEDEP}]
 	testing? ( dev-python/devpi-process[${PYTHON_USEDEP}] )
 	<dev-python/flake8-7[${PYTHON_USEDEP}]

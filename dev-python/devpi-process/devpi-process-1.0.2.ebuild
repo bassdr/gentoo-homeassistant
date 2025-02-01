@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/covdefaults-2.3[${PYTHON_USEDEP}] )
 	>=dev-python/devpi-client-7.1[${PYTHON_USEDEP}]
 	>=dev-python/devpi-server-6.12.1[${PYTHON_USEDEP}]

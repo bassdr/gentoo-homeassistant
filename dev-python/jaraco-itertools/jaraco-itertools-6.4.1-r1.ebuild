@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/inflect[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/adagio-0.2.4[${PYTHON_USEDEP}]
 	>=dev-python/dask-2024.4.0[dataframe,distributed,${PYTHON_USEDEP}]
 	all? ( >=dev-python/dask-2023.5.0[dataframe,distributed,${PYTHON_USEDEP}] )

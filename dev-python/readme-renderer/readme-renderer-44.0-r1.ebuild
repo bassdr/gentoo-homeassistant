@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="md"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	md? ( >=dev-python/cmarkgfm-0.8.0[${PYTHON_USEDEP}] )
 	>=dev-python/docutils-0.21.2[${PYTHON_USEDEP}]
 	>=dev-python/nh3-0.2.14[${PYTHON_USEDEP}]

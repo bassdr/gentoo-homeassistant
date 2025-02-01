@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/docstring_parser/"
+  https://pypi.org/project/docstring-parser/"
 
 LICENSE="MIT"
 SLOT="0"

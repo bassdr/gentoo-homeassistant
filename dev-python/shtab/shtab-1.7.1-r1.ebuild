@@ -18,16 +18,19 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dev"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-6[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	# Disable pytest-cov
 	epytest -o addopts=
 }
+# RDEPEND could not be inserted in this ebuild

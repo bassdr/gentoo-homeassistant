@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="check test type"
+GENERATED_IUSE="check type"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,23 +17,25 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	check? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/coverage-5.2[toml,${PYTHON_USEDEP}] )
-	test? ( >=dev-python/coveralls-2.1.1[${PYTHON_USEDEP}] )
 	check? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	check? ( dev-python/flake8-black[${PYTHON_USEDEP}] )
-	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
 	check? ( >=dev-python/isort-5.0.3[${PYTHON_USEDEP}] )
 	type? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	type? ( dev-python/mypy-extensions[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyannotate[${PYTHON_USEDEP}] )
 	check? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	check? ( dev-python/readme-renderer[${PYTHON_USEDEP}] )
 	check? ( dev-python/twine[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-5.2[toml,${PYTHON_USEDEP}]
+	>=dev-python/coveralls-2.1.1[${PYTHON_USEDEP}]
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/pyannotate[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"

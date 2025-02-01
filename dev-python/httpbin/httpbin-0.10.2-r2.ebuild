@@ -15,10 +15,10 @@ HOMEPAGE="
 LICENSE="|| ( MIT ISC )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="mainapp test"
+GENERATED_IUSE="mainapp"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/brotlicffi[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/flasgger[${PYTHON_USEDEP}]
@@ -28,9 +28,7 @@ GENERATED_DEPEND="
 	$(python_gen_cond_dep '>=dev-python/greenlet-3.0.0_alpha1[${PYTHON_USEDEP}]' python3_13{,t})
 	mainapp? ( dev-python/gunicorn[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]
-	test? ( dev-python/tox[${PYTHON_USEDEP}] )
 	>=dev-python/werkzeug-2.2.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -51,6 +49,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	local PATCHES=(

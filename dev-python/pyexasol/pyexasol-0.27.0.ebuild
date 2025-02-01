@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	numpy? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
 	orjson? ( >=dev-python/orjson-3.6[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]

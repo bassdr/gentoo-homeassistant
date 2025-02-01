@@ -4,7 +4,8 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -16,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/entangled-cli-2.0.0_alpha6[${PYTHON_USEDEP}]
 	>=dev-python/mawk-0.1.4[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.4.2[${PYTHON_USEDEP}]

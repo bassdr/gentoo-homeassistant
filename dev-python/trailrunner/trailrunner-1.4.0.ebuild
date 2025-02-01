@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev docs"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +17,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( ~dev-python/attribution-1.6.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/click-8.1.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/coverage-6.5[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-4.0.1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-bugbear-23.2.13[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flit-3.7.1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.1.1[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pathspec-0.8.1[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/rich-13.3.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-mdinclude-0.5.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/ufmt-2.0.1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/usort-1.0.5[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/attribution-1.6.2[${PYTHON_USEDEP}]
+	~dev-python/black-22.3.0[${PYTHON_USEDEP}]
+	~dev-python/click-8.1.3[${PYTHON_USEDEP}]
+	~dev-python/coverage-6.5[${PYTHON_USEDEP}]
+	~dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+	~dev-python/flake8-bugbear-23.2.13[${PYTHON_USEDEP}]
+	~dev-python/flit-3.7.1[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.1.1[${PYTHON_USEDEP}]
+	~dev-python/rich-13.3.2[${PYTHON_USEDEP}]
+	~dev-python/ufmt-2.0.1[${PYTHON_USEDEP}]
+	~dev-python/usort-1.0.5[${PYTHON_USEDEP}]
+)"

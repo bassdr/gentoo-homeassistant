@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	>dev-python/attrs-18.1[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]

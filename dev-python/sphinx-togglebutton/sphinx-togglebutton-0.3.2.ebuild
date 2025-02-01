@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	sphinx? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/myst-nb[${PYTHON_USEDEP}] )

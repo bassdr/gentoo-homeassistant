@@ -16,20 +16,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev tests"
+GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev? ( dev-python/sphinx-issues[tests,${PYTHON_USEDEP}] )
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
-	dev? ( <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/sphinx-issues[tests,${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_DESELECT=(
 	# doesn't work in our pep517 install

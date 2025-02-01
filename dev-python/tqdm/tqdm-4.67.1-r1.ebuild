@@ -20,17 +20,11 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev discord notebook slack telegram"
+GENERATED_IUSE="discord notebook slack telegram"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="
-	dev-python/colorama[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${PYTHON_DEPS}
 	notebook? ( >=dev-python/ipywidgets-6[${PYTHON_USEDEP}] )
-	dev? ( dev-python/nbval[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-asyncio-0.24[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	discord? ( dev-python/requests[${PYTHON_USEDEP}] )
 	telegram? ( dev-python/requests[${PYTHON_USEDEP}] )
 	slack? ( dev-python/slack-sdk[${PYTHON_USEDEP}] )
@@ -44,6 +38,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/nbval[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6[${PYTHON_USEDEP}]
+	>=dev-python/pytest-asyncio-0.24[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_IGNORE=(
 	# Skip unpredictable performance tests
@@ -59,3 +60,4 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# RDEPEND could not be inserted in this ebuild

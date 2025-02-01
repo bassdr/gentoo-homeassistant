@@ -26,7 +26,8 @@ SRC_URI="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="examples"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} examples"
 
 distutils_enable_sphinx docs \
 	'>=dev-python/docutils-0.14' \

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="aiohttp django falcon flask requests starlette"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aiohttp? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/asgiref-3.6.0[${PYTHON_USEDEP}]
 	django? ( >=dev-python/django-3.0[${PYTHON_USEDEP}] )

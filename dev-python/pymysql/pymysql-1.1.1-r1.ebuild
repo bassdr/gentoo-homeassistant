@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 # TODO: support other mysql variants
 GENERATED_IUSE="ed25519 rsa"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	rsa? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	ed25519? ( >=dev-python/pynacl-1.4.0[${PYTHON_USEDEP}] )
 "
@@ -120,3 +120,4 @@ python_test() {
 
 	epytest
 }
+# RDEPEND could not be inserted in this ebuild

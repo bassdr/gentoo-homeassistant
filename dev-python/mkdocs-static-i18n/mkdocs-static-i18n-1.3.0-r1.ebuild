@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="material"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/mkdocs-1.5.2[${PYTHON_USEDEP}]
 	material? ( >=dev-python/mkdocs-material-9.2.5[${PYTHON_USEDEP}] )
 "

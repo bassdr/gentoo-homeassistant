@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Screen-scraping library"
 HOMEPAGE="
-  https://pypi.org/project/BeautifulSoup4/
+  https://pypi.org/project/beautifulsoup4/
   Download, https://www.crummy.com/software/BeautifulSoup/bs4/download/
   Homepage, https://www.crummy.com/software/BeautifulSoup/bs4/
 "
@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cchardet chardet charset-normalizer html5lib lxml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cchardet? ( dev-python/cchardet[${PYTHON_USEDEP}] )
 	chardet? ( dev-python/chardet[${PYTHON_USEDEP}] )
 	charset-normalizer? ( dev-python/charset-normalizer[${PYTHON_USEDEP}] )

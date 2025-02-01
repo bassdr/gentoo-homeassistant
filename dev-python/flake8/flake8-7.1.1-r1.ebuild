@@ -20,7 +20,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/mccabe-0.8.0[${PYTHON_USEDEP}]
 	<dev-python/pycodestyle-2.13.0[${PYTHON_USEDEP}]
 	<dev-python/pyflakes-3.3.0[${PYTHON_USEDEP}]

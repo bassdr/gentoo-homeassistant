@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	arrow? ( >=dev-python/cffi-1.15.1[${PYTHON_USEDEP}] )
 	dask? ( >=dev-python/dask-2.0.0[array,dataframe,distributed,${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]

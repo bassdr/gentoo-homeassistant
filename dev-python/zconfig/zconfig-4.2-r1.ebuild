@@ -17,15 +17,11 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/docutils[${PYTHON_USEDEP}] )
-	test? ( dev-python/manuel[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-programoutput[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-exceptions[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	test? (
@@ -39,9 +35,16 @@ BDEPEND="
 DOCS=( CHANGES.rst README.rst )
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/docutils[${PYTHON_USEDEP}]
+	dev-python/manuel[${PYTHON_USEDEP}]
+	dev-python/zope-exceptions[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"
 distutils_enable_sphinx docs \
 	dev-python/sphinxcontrib-programoutput
 
 python_test() {
 	eunittest -s src/ZConfig/tests
 }
+# RDEPEND could not be inserted in this ebuild

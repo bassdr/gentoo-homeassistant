@@ -4,20 +4,21 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="aws-cdk.aws-iam"
+PYPI_PN="aws_cdk.aws_iam"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/aws-cdk.aws-iam/"
+  https://pypi.org/project/aws_cdk.aws_iam/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/aws-cdk-core-1.204.0[${PYTHON_USEDEP}]
 	~dev-python/aws-cdk-cx-api-1.204.0[${PYTHON_USEDEP}]
 	~dev-python/aws-cdk-region-info-1.204.0[${PYTHON_USEDEP}]

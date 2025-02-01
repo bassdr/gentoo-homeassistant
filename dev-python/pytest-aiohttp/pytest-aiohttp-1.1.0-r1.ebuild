@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/aiohttp-3.11.0_beta0[${PYTHON_USEDEP}]
 	testing? ( ~dev-python/coverage-6.2[${PYTHON_USEDEP}] )
 	testing? ( ~dev-python/mypy-1.12.1[${PYTHON_USEDEP}] )

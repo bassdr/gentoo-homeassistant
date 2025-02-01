@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	!=dev-python/bashlex-0.13[${PYTHON_USEDEP}]
 	dev-python/bracex[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]

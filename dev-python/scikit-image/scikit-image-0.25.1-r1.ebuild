@@ -23,11 +23,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="build data developer docs optional test"
+GENERATED_IUSE="build data developer docs optional"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	optional? ( >=dev-python/astropy-5.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/asv[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/build-1.2.1[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/cloudpickle-0.2.1[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.8[${PYTHON_USEDEP}] )
@@ -49,7 +48,6 @@ GENERATED_DEPEND="
 	>=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	build? ( >=dev-python/numpy-2.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/numpydoc-1.7[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/numpydoc-1.7[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-21[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pandas-2.0[${PYTHON_USEDEP}] )
 	>=dev-python/pillow-10.1[${PYTHON_USEDEP}]
@@ -57,15 +55,9 @@ GENERATED_DEPEND="
 	data? ( >=dev-python/pooch-1.6.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pooch-1.6[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/pooch-1.6.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pooch-1.6.0[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/pyamg-5.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pydata-sphinx-theme-0.16[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-2.11.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-faulthandler[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-localserver[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/pythran-0.16[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pywavelets-1.6[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/pywavelets-1.6[${PYTHON_USEDEP}] )
@@ -104,6 +96,16 @@ BDEPEND="
 
 # xdist does not work with this test suite
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/asv[${PYTHON_USEDEP}]
+	>=dev-python/numpydoc-1.7[${PYTHON_USEDEP}]
+	>=dev-python/pooch-1.6.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.11.0[${PYTHON_USEDEP}]
+	dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+	dev-python/pytest-faulthandler[${PYTHON_USEDEP}]
+	dev-python/pytest-localserver[${PYTHON_USEDEP}]
+)"
 # There is a programmable error in your configuration file:
 #distutils_enable_sphinx doc/source dev-python/numpydoc dev-python/myst-parser
 

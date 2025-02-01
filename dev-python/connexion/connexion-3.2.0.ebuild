@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	flask? ( >=dev-python/a2wsgi-1.7[${PYTHON_USEDEP}] )
 	>=dev-python/asgiref-3.4[${PYTHON_USEDEP}]
 	flask? ( >=dev-python/flask-2.2[async,${PYTHON_USEDEP}] )

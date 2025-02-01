@@ -7,17 +7,18 @@ PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_PN="intersphinx_registry"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/intersphinx-registry/"
+  https://pypi.org/project/intersphinx_registry/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-7.0[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )

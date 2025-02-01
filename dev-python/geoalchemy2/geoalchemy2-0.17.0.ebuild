@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	shapely? ( >=dev-python/shapely-1.7[${PYTHON_USEDEP}] )
 	>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]

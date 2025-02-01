@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="accelerate dev"
+GENERATED_IUSE="accelerate"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,18 +17,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	accelerate? ( dev-python/accelerate[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-22.12.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/isort-5.8.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/nbconvert-7.16.3[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pytest-6.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/torch-1.7.0[${PYTHON_USEDEP}]
 	dev-python/transformers[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/wheel-0.36.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-22.12.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
+	~dev-python/isort-5.8.0[${PYTHON_USEDEP}]
+	>=dev-python/nbconvert-7.16.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/wheel-0.36.2[${PYTHON_USEDEP}]
+)"

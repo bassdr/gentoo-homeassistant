@@ -26,14 +26,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cffi"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	>=dev-python/cffi-1.11[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cffi? ( >=dev-python/cffi-1.11[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	app-arch/zstd:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.14.0-r2:=[${PYTHON_USEDEP}]

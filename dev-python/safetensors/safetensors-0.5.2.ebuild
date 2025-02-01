@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev jax mlx numpy paddlepaddle pinned-tf quality tensorflow testing torch"
+GENERATED_IUSE="all jax mlx numpy paddlepaddle pinned-tf quality tensorflow testing torch"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	quality? ( ~dev-python/black-22.3[${PYTHON_USEDEP}] )
 	quality? ( ~dev-python/click-8.0.4[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
@@ -40,7 +40,6 @@ GENERATED_DEPEND="
 	all? ( dev-python/safetensors[quality,${PYTHON_USEDEP}] )
 	all? ( dev-python/safetensors[testing,${PYTHON_USEDEP}] )
 	all? ( dev-python/safetensors[torch,${PYTHON_USEDEP}] )
-	dev? ( dev-python/safetensors[all,${PYTHON_USEDEP}] )
 	jax? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	paddlepaddle? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	pinned-tf? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
@@ -55,3 +54,6 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/safetensors[all,${PYTHON_USEDEP}]
+)"

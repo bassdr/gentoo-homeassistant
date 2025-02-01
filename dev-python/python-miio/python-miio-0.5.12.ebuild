@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/android-backup-0[${PYTHON_USEDEP}]
 	dev-python/android-backup[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1[${PYTHON_USEDEP}]

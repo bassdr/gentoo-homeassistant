@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-coverage? ( !=dev-python/coverage-6.1.1[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>dev-python/importlib-metadata-6[${PYTHON_USEDEP}]' python3_12)
 	dev-type-checking? ( >=dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )

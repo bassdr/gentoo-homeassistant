@@ -25,26 +25,17 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="crypto cryptodome dev docs full image"
+GENERATED_IUSE="crypto cryptodome docs full image"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	crypto? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	full? ( dev-python/cryptography[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flit[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	full? ( >=dev-python/pillow-8.0.0[${PYTHON_USEDEP}] )
 	image? ( >=dev-python/pillow-8.0.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pip-tools[${PYTHON_USEDEP}] )
 	cryptodome? ( dev-python/pycryptodome[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-socket[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
-	dev? ( <dev-vcs/pre-commit-2.18.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep '
@@ -60,6 +51,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/flit[${PYTHON_USEDEP}]
+	dev-python/pip-tools[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-socket[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-2.18.0[${PYTHON_USEDEP}]
+)"
 
 src_unpack() {
 	default

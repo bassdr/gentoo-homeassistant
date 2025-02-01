@@ -16,13 +16,12 @@ LICENSE="|| ( Apache-2.0 BSD )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs streams test"
+GENERATED_IUSE="docs streams"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	>=dev-python/pbr-5.7.0[${PYTHON_USEDEP}]
 	streams? ( dev-python/testtools[${PYTHON_USEDEP}] )
-	test? ( dev-python/testtools[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pbr-5.7.0[${PYTHON_USEDEP}]
@@ -30,3 +29,6 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/testtools[${PYTHON_USEDEP}]
+)"

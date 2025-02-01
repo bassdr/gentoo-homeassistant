@@ -29,17 +29,14 @@ S=${WORKDIR}/${MY_P}
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs lint test"
+GENERATED_IUSE="docs lint"
 IUSE="${GENERATED_IUSE} doc latex"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/alabaster-0.7.14[${PYTHON_USEDEP}]
 	dev-python/alabaster[${PYTHON_USEDEP}]
 	>=dev-python/babel-2.13[${PYTHON_USEDEP}]
 	dev-python/babel[${PYTHON_USEDEP}]
-	>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
-	test? ( >=dev-python/cython-3.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}] )
 	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/flake8-6.0[${PYTHON_USEDEP}] )
@@ -54,11 +51,9 @@ GENERATED_DEPEND="
 	dev-python/pygments[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/pyright-1.1.384[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-8.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.30.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/ruff-0.6.9[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/setuptools-70.0[${PYTHON_USEDEP}] )
 	>=dev-python/snowballstemmer-2.2[${PYTHON_USEDEP}]
 	dev-python/snowballstemmer[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/sphinx-lint-0.9[${PYTHON_USEDEP}] )
@@ -83,7 +78,6 @@ GENERATED_DEPEND="
 	lint? ( ~dev-python/types-pygments-2.18.0.20240506[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/types-requests-2.32.0.20240914[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/types-urllib3-1.26.25.14[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/alabaster-0.7.14[${PYTHON_USEDEP}]
@@ -135,6 +129,13 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/cython-3.0[${PYTHON_USEDEP}]
+	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-8.0[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-70.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	# disable internet access

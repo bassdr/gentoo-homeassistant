@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cairosvg? ( >=dev-python/cairosvg-1.0[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-1.6.3[${PYTHON_USEDEP}]
 "

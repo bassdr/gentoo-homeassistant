@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/argcomplete-4.0[${PYTHON_USEDEP}]
 	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
 	<dev-python/genson-2.0[${PYTHON_USEDEP}]

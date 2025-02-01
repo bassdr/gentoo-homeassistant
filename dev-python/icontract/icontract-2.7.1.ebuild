@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,21 +17,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( ~dev-python/astor-0.8.1[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/asttokens-3[${PYTHON_USEDEP}]
-	dev? ( <dev-python/coverage-7[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/docutils-1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/dpcontracts-0.6.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/py-cpuinfo-6[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pydocstyle-7[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/pygments-3[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/tabulate-1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tox-3.0.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/typeguard-5[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/astor-0.8.1[${PYTHON_USEDEP}]
+	<dev-python/coverage-7[${PYTHON_USEDEP}]
+	<dev-python/docutils-1[${PYTHON_USEDEP}]
+	~dev-python/dpcontracts-0.6.0[${PYTHON_USEDEP}]
+	<dev-python/numpy-2[${PYTHON_USEDEP}]
+	<dev-python/py-cpuinfo-6[${PYTHON_USEDEP}]
+	<dev-python/pydocstyle-7[${PYTHON_USEDEP}]
+	<dev-python/pygments-3[${PYTHON_USEDEP}]
+	<dev-python/tabulate-1[${PYTHON_USEDEP}]
+	>=dev-python/tox-3.0.0[${PYTHON_USEDEP}]
+	<dev-python/typeguard-5[${PYTHON_USEDEP}]
+)"

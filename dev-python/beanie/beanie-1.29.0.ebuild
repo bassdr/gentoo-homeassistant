@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="aws ci doc encryption gssapi ocsp queue snappy test zstd"
+GENERATED_IUSE="aws ci doc encryption gssapi ocsp queue snappy zstd"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,13 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/asgi-lifespan-1.0.1[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	queue? ( >=dev-python/beanie-batteries-queue-0.2[${PYTHON_USEDEP}] )
 	>=dev-python/click-7[${PYTHON_USEDEP}]
-	test? ( >=dev-python/dnspython-2.1.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/fastapi-0.100[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/httpx-0.23.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
 	~dev-python/lazy-model-0.2.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/markdown-3.3[${PYTHON_USEDEP}] )
@@ -37,22 +33,28 @@ GENERATED_DEPEND="
 	snappy? ( <dev-python/motor-4.0.0[snappy,${PYTHON_USEDEP}] )
 	zstd? ( <dev-python/motor-4.0.0[zstd,${PYTHON_USEDEP}] )
 	<dev-python/pydantic-3.0[${PYTHON_USEDEP}]
-	test? ( dev-python/pydantic[email,${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pydantic-extra-types-2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pydantic-settings-2[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/pydoc-markdown-4.8[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/pygments-2.8.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pyright-0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}] )
 	ci? ( dev-python/requests[${PYTHON_USEDEP}] )
 	ci? ( dev-python/toml[${PYTHON_USEDEP}] )
 	dev-python/toml[${PYTHON_USEDEP}]
 	ci? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.7[${PYTHON_USEDEP}]
-	test? ( >=dev-vcs/pre-commit-3.5.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/asgi-lifespan-1.0.1[${PYTHON_USEDEP}]
+	>=dev-python/dnspython-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/fastapi-0.100[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]
+	dev-python/pydantic[email,${PYTHON_USEDEP}]
+	>=dev-python/pydantic-extra-types-2[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-settings-2[${PYTHON_USEDEP}]
+	>=dev-python/pyright-0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-3.5.0[${PYTHON_USEDEP}]
+)"

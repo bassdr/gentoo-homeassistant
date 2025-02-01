@@ -24,11 +24,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="cov dev docs packaging testing"
+GENERATED_IUSE="cov docs packaging testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	$(python_gen_cond_dep '~dev-python/atheris-2.3.0[${PYTHON_USEDEP}]' python3_12)
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
 	testing? ( dev-python/bson[${PYTHON_USEDEP}] )
 	packaging? ( dev-python/build[${PYTHON_USEDEP}] )
 	testing? ( dev-python/ecdsa[${PYTHON_USEDEP}] )
@@ -45,7 +44,6 @@ GENERATED_DEPEND="
 	cov? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/pytest-enabler-1.0.1[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyupgrade[${PYTHON_USEDEP}] )
 	testing? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	testing? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
@@ -72,6 +70,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/pyupgrade[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	distutils-r1_python_prepare_all
@@ -101,3 +103,4 @@ pkg_postinst() {
 	optfeature "encoding pandas objects" dev-python/pandas
 	optfeature "fast JSON backend" dev-python/simplejson
 }
+# RDEPEND could not be inserted in this ebuild

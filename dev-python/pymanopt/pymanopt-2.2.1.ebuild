@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all autograd backends ci dev docs jax tensorflow torch"
+GENERATED_IUSE="all autograd backends ci docs jax tensorflow torch"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,29 +17,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	autograd? ( >=dev-python/autograd-1.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-22.3.0[jupyter,${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/build-0.8.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/docutils-0.16[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-5.0.4[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-bugbear-22.12.6[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-docstrings-1.6.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-import-order-0.18.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/flake8-pyproject-1.2.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/ipykernel-6.4.2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/isort-5.11.5[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jax-0.2.0[${PYTHON_USEDEP}] )
 	jax? ( dev-python/jaxlib[${PYTHON_USEDEP}] )
-	dev? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/nbsphinx-0.8.7[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.16.0[${PYTHON_USEDEP}]
 	ci? ( ~dev-python/pip-22.3.1[${PYTHON_USEDEP}] )
 	all? ( dev-python/pymanopt[backends,dev,${PYTHON_USEDEP}] )
 	backends? ( dev-python/pymanopt[autograd,jax,tensorflow,torch,${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-7.2.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}] )
 	!=dev-python/scipy-1.10*[${PYTHON_USEDEP}]
 	ci? ( ~dev-python/setuptools-66.1.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-4.2.0[${PYTHON_USEDEP}] )
@@ -48,8 +38,20 @@ GENERATED_DEPEND="
 	tensorflow? ( >=dev-python/tensorflow-2.0.0[${PYTHON_USEDEP}] )
 	torch? ( >=dev-python/torch-1.0.0[${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/wheel-0.38.4[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/black-22.3.0[jupyter,${PYTHON_USEDEP}]
+	~dev-python/flake8-5.0.4[${PYTHON_USEDEP}]
+	~dev-python/flake8-bugbear-22.12.6[${PYTHON_USEDEP}]
+	~dev-python/flake8-docstrings-1.6.0[${PYTHON_USEDEP}]
+	~dev-python/flake8-import-order-0.18.2[${PYTHON_USEDEP}]
+	~dev-python/flake8-pyproject-1.2.2[${PYTHON_USEDEP}]
+	~dev-python/isort-5.11.5[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

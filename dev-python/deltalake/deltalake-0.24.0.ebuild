@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	devel? ( ~dev-python/azure-storage-blob-12.20.0[${PYTHON_USEDEP}] )
 	pyspark? ( dev-python/delta-spark[${PYTHON_USEDEP}] )
 	lakefs? ( ~dev-python/lakefs-0.8.0[${PYTHON_USEDEP}] )

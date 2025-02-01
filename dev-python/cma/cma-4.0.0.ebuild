@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	plotting? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	constrained-solution-tracking? ( dev-python/moarchiving[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test testlayer"
+GENERATED_IUSE="testlayer"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="zope.app.wsgi"
@@ -18,30 +18,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/transaction[${PYTHON_USEDEP}]
-	test? ( dev-python/webtest[${PYTHON_USEDEP}] )
 	testlayer? ( dev-python/webtest[${PYTHON_USEDEP}] )
 	dev-python/zconfig[${PYTHON_USEDEP}]
 	>=dev-python/zope-app-appsetup-4.0[${PYTHON_USEDEP}]
 	>=dev-python/zope-app-publication-4.0[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-authentication[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-browserpage[${PYTHON_USEDEP}] )
 	dev-python/zope-component[${PYTHON_USEDEP}]
 	>=dev-python/zope-container-4.0.0_alpha1[${PYTHON_USEDEP}]
 	dev-python/zope-event[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
-	test? ( >=dev-python/zope-principalregistry-4.0.0_alpha1[${PYTHON_USEDEP}] )
 	dev-python/zope-processlifetime[${PYTHON_USEDEP}]
 	>=dev-python/zope-publisher-4.0.0_alpha3[${PYTHON_USEDEP}]
 	>dev-python/zope-security-4.0.0_alpha2[${PYTHON_USEDEP}]
-	test? ( >=dev-python/zope-securitypolicy-4.0.0_alpha1[${PYTHON_USEDEP}] )
 	>=dev-python/zope-site-4.0.0_alpha1[${PYTHON_USEDEP}]
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 	>=dev-python/zope-traversing-4.0.0_alpha1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/webtest[${PYTHON_USEDEP}]
+	dev-python/zope-authentication[${PYTHON_USEDEP}]
+	dev-python/zope-browserpage[${PYTHON_USEDEP}]
+	>=dev-python/zope-principalregistry-4.0.0_alpha1[${PYTHON_USEDEP}]
+	>=dev-python/zope-securitypolicy-4.0.0_alpha1[${PYTHON_USEDEP}]
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+	dev-python/zope-testrunner[${PYTHON_USEDEP}]
+)"

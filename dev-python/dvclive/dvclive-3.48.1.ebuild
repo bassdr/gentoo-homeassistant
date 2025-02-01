@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev fastai huggingface image lgbm lightning markdown mmcv optuna plots sklearn tests tf xgb"
+GENERATED_IUSE="all fastai huggingface image lgbm lightning markdown mmcv optuna plots sklearn tests tf xgb"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,14 +17,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	huggingface? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	tests? ( dev-python/dpath[${PYTHON_USEDEP}] )
 	>=dev-python/dvc-3.48.4[${PYTHON_USEDEP}]
 	<dev-python/dvc-render-2[${PYTHON_USEDEP}]
 	<dev-python/dvc-studio-client-1[${PYTHON_USEDEP}]
 	all? ( dev-python/dvclive[fastai,huggingface,image,lgbm,lightning,markdown,mmcv,optuna,plots,tf,xgb,${PYTHON_USEDEP}] )
-	dev? ( dev-python/dvclive[all,tests,${PYTHON_USEDEP}] )
 	tests? ( dev-python/dvclive[image,markdown,plots,${PYTHON_USEDEP}] )
 	fastai? ( dev-python/fastai[${PYTHON_USEDEP}] )
 	dev-python/funcy[${PYTHON_USEDEP}]
@@ -35,7 +34,6 @@ GENERATED_DEPEND="
 	lightning? ( >=dev-python/lightning-2.0[${PYTHON_USEDEP}] )
 	markdown? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	mmcv? ( dev-python/mmcv[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )
 	image? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	plots? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	optuna? ( dev-python/optuna[${PYTHON_USEDEP}] )
@@ -57,9 +55,13 @@ GENERATED_DEPEND="
 	lightning? ( dev-python/torch[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	tests? ( dev-python/transformers[torch,${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
 	xgb? ( dev-python/xgboost[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/dvclive[all,tests,${PYTHON_USEDEP}]
+	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+	dev-python/types-pyyaml[${PYTHON_USEDEP}]
+)"

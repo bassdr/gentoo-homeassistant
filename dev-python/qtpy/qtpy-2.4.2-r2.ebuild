@@ -23,7 +23,7 @@ _IUSE_QT_MODULES="
 	spatialaudio speech +sql svg testlib webchannel webengine websockets
 	+widgets +xml
 "
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE} +pyqt6 pyside6 ${_IUSE_QT_MODULES}"
 unset _IUSE_QT_MODULES
 
@@ -48,11 +48,8 @@ REQUIRED_USE="|| ( pyqt6 pyside6 )"
 #
 # Webengine is a special case, because PyQt6 provides this in a separate package
 # while PySide6 ships it in the same package.
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/packaging[${PYTHON_USEDEP}]
-	test? ( !=dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-qt[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -107,6 +104,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+	dev-python/pytest-qt[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev insights test tutorials"
+GENERATED_IUSE="insights tutorials"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,45 +17,47 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/annoy[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flask[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	insights? ( dev-python/flask[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/flask[${PYTHON_USEDEP}] )
-	dev? ( dev-python/flask-compress[${PYTHON_USEDEP}] )
 	insights? ( dev-python/flask-compress[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/flask-compress[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	insights? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
 	insights? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
-	dev? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	insights? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	dev-python/matplotlib[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/mypy-0.760[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev? ( dev-python/parameterized[${PYTHON_USEDEP}] )
-	test? ( dev-python/parameterized[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinxcontrib-katex[${PYTHON_USEDEP}] )
 	>=dev-python/torch-1.6[${PYTHON_USEDEP}]
 	tutorials? ( dev-python/torchtext[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev? ( dev-python/ufmt[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/usort-1.0.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/annoy[${PYTHON_USEDEP}]
+	~dev-python/black-22.3.0[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/flask[${PYTHON_USEDEP}]
+	dev-python/flask-compress[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/ipywidgets[${PYTHON_USEDEP}]
+	dev-python/jupyter[${PYTHON_USEDEP}]
+	>=dev-python/mypy-0.760[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/scikit-learn[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+	dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}]
+	dev-python/sphinxcontrib-katex[${PYTHON_USEDEP}]
+	dev-python/ufmt[${PYTHON_USEDEP}]
+	~dev-python/usort-1.0.2[${PYTHON_USEDEP}]
+)"

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}]
 	>=dev-python/googleapis-common-protos-1.56.4[${PYTHON_USEDEP}]
 	connect? ( >=dev-python/googleapis-common-protos-1.56.4[${PYTHON_USEDEP}] )

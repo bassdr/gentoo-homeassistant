@@ -68,7 +68,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tests typecheck"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	typecheck? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	tests? ( !=dev-python/pytest-3.3.0[${PYTHON_USEDEP}] )
 "
@@ -101,3 +101,4 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest tests
 }
+# RDEPEND could not be inserted in this ebuild

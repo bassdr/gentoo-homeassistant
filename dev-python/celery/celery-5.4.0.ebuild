@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	azureblockblob? ( >=dev-python/azure-storage-blob-12.15.0[${PYTHON_USEDEP}] )
 	>=dev-python/backports-zoneinfo-0.2.1[${PYTHON_USEDEP}]
 	<dev-python/billiard-5.0[${PYTHON_USEDEP}]
@@ -25,7 +25,6 @@ GENERATED_DEPEND="
 	s3? ( >=dev-python/boto3-1.26.143[${PYTHON_USEDEP}] )
 	sqs? ( >=dev-python/boto3-1.26.143[${PYTHON_USEDEP}] )
 	>=dev-python/brotli-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/brotlipy-0.7.0[${PYTHON_USEDEP}]
 	cassandra? ( <dev-python/cassandra-driver-4[${PYTHON_USEDEP}] )
 	<dev-python/click-9.0[${PYTHON_USEDEP}]
 	>=dev-python/click-didyoumean-0.3.0[${PYTHON_USEDEP}]
@@ -36,7 +35,6 @@ GENERATED_DEPEND="
 	django? ( >=dev-python/django-2.2.28[${PYTHON_USEDEP}] )
 	elasticsearch? ( <=dev-python/elastic-transport-8.13.0[${PYTHON_USEDEP}] )
 	elasticsearch? ( <=dev-python/elasticsearch-8.13.0[${PYTHON_USEDEP}] )
-	~dev-python/ephem-4.1.5[${PYTHON_USEDEP}]
 	gevent? ( >=dev-python/gevent-1.5.0[${PYTHON_USEDEP}] )
 	gcs? ( >=dev-python/google-cloud-storage-2.10.0[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
@@ -48,7 +46,6 @@ GENERATED_DEPEND="
 	couchdb? ( ~dev-python/pycouchdb-1.14.2[${PYTHON_USEDEP}] )
 	>=dev-python/pycurl-7.43.0.5[${PYTHON_USEDEP}]
 	cosmosdbsql? ( ~dev-python/pydocumentdb-2.3.5[${PYTHON_USEDEP}] )
-	~dev-python/pylibmc-1.6.3[${PYTHON_USEDEP}]
 	mongodb? ( >=dev-python/pymongo-4.0.2[srv,${PYTHON_USEDEP}] )
 	pytest? ( >=dev-python/pytest-celery-1.0.0[all,${PYTHON_USEDEP}] )
 	consul? ( ~dev-python/python-consul2-0.1.5[${PYTHON_USEDEP}] )

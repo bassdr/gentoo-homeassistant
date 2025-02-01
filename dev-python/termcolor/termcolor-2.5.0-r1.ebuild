@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 "
@@ -36,3 +36,4 @@ src_prepare() {
 	# avoid dep on coverage (to ignore warnings from coverage)
 	sed -i -e '/coverage/d' pyproject.toml || die
 }
+# RDEPEND could not be inserted in this ebuild

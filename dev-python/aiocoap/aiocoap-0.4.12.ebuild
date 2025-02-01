@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
 	prettyprint? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
 	all? ( dev-python/cbor2[${PYTHON_USEDEP}] )

@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="keyring"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/id[${PYTHON_USEDEP}]
 	>=dev-python/keyring-15.1[${PYTHON_USEDEP}]
 	keyring? ( >=dev-python/keyring-15.1[${PYTHON_USEDEP}] )

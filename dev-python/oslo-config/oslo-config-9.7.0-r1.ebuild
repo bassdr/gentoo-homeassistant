@@ -18,27 +18,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="rst-generator test"
+GENERATED_IUSE="rst-generator"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( >=dev-python/coverage-4.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/debtcollector-1.2.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/mypy-0.720[${PYTHON_USEDEP}] )
 	>=dev-python/netaddr-0.7.18[${PYTHON_USEDEP}]
 	>=dev-python/oslo-i18n-3.15.3[${PYTHON_USEDEP}]
-	test? ( >=dev-python/oslo-log-3.36.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.18.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/requests-mock-1.5.0[${PYTHON_USEDEP}] )
 	>=dev-python/rfc3986-1.2.0[${PYTHON_USEDEP}]
 	rst-generator? ( >=dev-python/rst2txt-1.1.0[${PYTHON_USEDEP}] )
 	rst-generator? ( >=dev-python/sphinx-1.8.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/stestr-2.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/stevedore-1.20.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/testscenarios-0.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testtools-2.2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
@@ -63,6 +54,17 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	>=dev-python/coverage-4.0[${PYTHON_USEDEP}]
+	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/mypy-0.720[${PYTHON_USEDEP}]
+	>=dev-python/oslo-log-3.36.0[${PYTHON_USEDEP}]
+	>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-mock-1.5.0[${PYTHON_USEDEP}]
+	>=dev-python/stestr-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+	>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	# broken by some dep upgrade

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="datetime test"
+GENERATED_IUSE="datetime"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,17 +17,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
 	datetime? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] )
 	datetime? ( <dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}] )
-	test? ( <dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}] )
 	datetime? ( >=dev-python/pytz-2018.9[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytz-2018.9[${PYTHON_USEDEP}] )
-	test? ( dev-python/tcolorpy[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/packaging[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytz-2018.9[${PYTHON_USEDEP}]
+	dev-python/tcolorpy[${PYTHON_USEDEP}]
+)"

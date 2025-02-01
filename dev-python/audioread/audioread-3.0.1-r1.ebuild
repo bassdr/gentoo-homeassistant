@@ -19,8 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="test"
 IUSE="${GENERATED_IUSE} ffmpeg gstreamer mad"
 
-GENERATED_DEPEND="
-	test? ( dev-python/tox[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 RDEPEND="${GENERATED_DEPEND}
 	ffmpeg? (
@@ -42,3 +41,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/tox[${PYTHON_USEDEP}]
+)"

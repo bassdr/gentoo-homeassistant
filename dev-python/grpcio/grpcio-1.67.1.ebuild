@@ -33,7 +33,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="protobuf"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	protobuf? ( >=dev-python/grpcio-tools-1.67.1[${PYTHON_USEDEP}] )
 "
 DEPEND="
@@ -41,7 +41,7 @@ DEPEND="
 	net-dns/c-ares:=
 	sys-libs/zlib:=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 # TODO: try to remove coverage dep

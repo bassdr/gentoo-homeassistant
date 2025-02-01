@@ -13,7 +13,7 @@ EGIT_COMMIT="674a77b5eaf850d063f518bd90c243ee34ad6b5d"
 
 DESCRIPTION="A QR code generator written purely in Python with SVG, EPS, PNG and terminal output."
 HOMEPAGE="
-  https://pypi.org/project/pyqrcode/
+  https://pypi.org/project/PyQRCode/
 "
 SRC_URI="https://github.com/mnooner256/pyqrcode/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 S=${WORKDIR}/${PN}-${EGIT_COMMIT}
@@ -37,3 +37,4 @@ src_prepare() {
 	distutils-r1_src_prepare
 }
 
+# PYPI_PN could not be inserted in this ebuild

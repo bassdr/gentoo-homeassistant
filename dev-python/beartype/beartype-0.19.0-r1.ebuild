@@ -16,14 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev doc-rtd test test-tox test-tox-coverage"
+GENERATED_IUSE="doc-rtd test-tox test-tox-coverage"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( >=dev-python/autoapi-0.9.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc-rtd? ( >=dev-python/autoapi-0.9.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/coverage-5.5[${PYTHON_USEDEP}] )
 	test-tox-coverage? ( >=dev-python/coverage-5.5[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/coverage-5.5[${PYTHON_USEDEP}] )
 	dev-python/equinox[${PYTHON_USEDEP}]
 	dev-python/equinox[${PYTHON_USEDEP}]
 	dev-python/equinox[${PYTHON_USEDEP}]
@@ -33,38 +30,18 @@ GENERATED_DEPEND="
 	dev-python/jaxtyping[${PYTHON_USEDEP}]
 	dev-python/jaxtyping[${PYTHON_USEDEP}]
 	dev-python/jaxtyping[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.800[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.800[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.800[${PYTHON_USEDEP}]
-	dev? ( dev-python/numba[${PYTHON_USEDEP}] )
 	test-tox? ( dev-python/numba[${PYTHON_USEDEP}] )
-	test? ( dev-python/numba[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev? ( dev-python/pandera[${PYTHON_USEDEP}] )
 	test-tox? ( dev-python/pandera[${PYTHON_USEDEP}] )
-	test? ( dev-python/pandera[${PYTHON_USEDEP}] )
-	dev? ( <=dev-python/pydata-sphinx-theme-0.7.2[${PYTHON_USEDEP}] )
 	doc-rtd? ( <=dev-python/pydata-sphinx-theme-0.7.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	test-tox? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	test? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pyright-1.1.370[${PYTHON_USEDEP}] )
 	test-tox? ( >=dev-python/pyright-1.1.370[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pyright-1.1.370[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-4.0.0[${PYTHON_USEDEP}] )
 	test-tox? ( >=dev-python/pytest-4.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-4.0.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
 	doc-rtd? ( <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinxext-opengraph-0.7.5[${PYTHON_USEDEP}] )
 	doc-rtd? ( >=dev-python/sphinxext-opengraph-0.7.5[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tox-3.20.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/tox-3.20.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}] )
 	test-tox? ( >=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	test? (
@@ -74,6 +51,28 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/autoapi-0.9.0[${PYTHON_USEDEP}]
+	>=dev-python/coverage-5.5[${PYTHON_USEDEP}]
+	>=dev-python/coverage-5.5[${PYTHON_USEDEP}]
+	dev-python/numba[${PYTHON_USEDEP}]
+	dev-python/numba[${PYTHON_USEDEP}]
+	dev-python/pandera[${PYTHON_USEDEP}]
+	dev-python/pandera[${PYTHON_USEDEP}]
+	<=dev-python/pydata-sphinx-theme-0.7.2[${PYTHON_USEDEP}]
+	dev-python/pygments[${PYTHON_USEDEP}]
+	dev-python/pygments[${PYTHON_USEDEP}]
+	>=dev-python/pyright-1.1.370[${PYTHON_USEDEP}]
+	>=dev-python/pyright-1.1.370[${PYTHON_USEDEP}]
+	>=dev-python/pytest-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-4.0.0[${PYTHON_USEDEP}]
+	<dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinxext-opengraph-0.7.5[${PYTHON_USEDEP}]
+	>=dev-python/tox-3.20.1[${PYTHON_USEDEP}]
+	>=dev-python/tox-3.20.1[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(
@@ -86,3 +85,4 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# RDEPEND could not be inserted in this ebuild

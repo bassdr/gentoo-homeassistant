@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="smtp"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	smtp? ( dev-python/aiosmtpd[${PYTHON_USEDEP}] )
 	>=dev-python/werkzeug-0.10[${PYTHON_USEDEP}]
 "

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/accelerate-0.34.0[${PYTHON_USEDEP}]
 	tests? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	<dev-python/diffusers-0.32.0[${PYTHON_USEDEP}]

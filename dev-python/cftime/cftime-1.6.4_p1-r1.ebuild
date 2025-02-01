@@ -20,14 +20,16 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0_beta1[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep '>dev-python/numpy-1.13.3[${PYTHON_USEDEP}]' python3_12)
 "
 DEPEND="
 	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="

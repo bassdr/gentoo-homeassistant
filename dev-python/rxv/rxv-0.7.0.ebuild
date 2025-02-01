@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/black[${PYTHON_USEDEP}] )
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	testing? ( dev-python/flake8[${PYTHON_USEDEP}] )

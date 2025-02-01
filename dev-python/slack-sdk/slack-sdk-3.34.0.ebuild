@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	optional? ( >dev-python/aiodns-1.0[${PYTHON_USEDEP}] )
 	optional? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	optional? ( <=dev-python/boto3-2[${PYTHON_USEDEP}] )

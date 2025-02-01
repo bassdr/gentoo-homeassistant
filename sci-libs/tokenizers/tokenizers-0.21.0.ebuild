@@ -228,9 +228,9 @@ LICENSE+=" Apache-2.0 BSD ISC MIT MPL-2.0 Unicode-DFS-2016"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev docs testing"
+GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( ~dev-python/black-22.3[${PYTHON_USEDEP}] )
 	testing? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	<dev-python/huggingface-hub-1.0[${PYTHON_USEDEP}]
@@ -242,7 +242,6 @@ GENERATED_DEPEND="
 	docs? ( dev-python/setuptools-rust[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	dev? ( sci-libs/tokenizers[testing,${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="
@@ -253,6 +252,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	sci-libs/tokenizers[testing,${PYTHON_USEDEP}]
+)"
 
 QA_FLAGS_IGNORED=".*/site-packages/tokenizers/.*so"
 

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( >=dev-python/black-22.8.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/hypothesis-6.24.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.4.2[${PYTHON_USEDEP}]
 	>=dev-python/psutil-5.9.1[${PYTHON_USEDEP}]
-	dev? ( <dev-python/pytest-8.0.0[testing,${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-black-multipy-1.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/scikit-learn-0.24.2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.7.1[${PYTHON_USEDEP}]
 	>=dev-python/seaborn-0.12.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-vcs/pre-commit-2.20.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/black-22.8.0[${PYTHON_USEDEP}]
+	>=dev-python/hypothesis-6.24.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-8.0.0[testing,${PYTHON_USEDEP}]
+	>=dev-python/pytest-black-multipy-1.0.1[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2.20.0[${PYTHON_USEDEP}]
+)"

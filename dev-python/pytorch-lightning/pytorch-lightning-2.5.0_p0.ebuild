@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev examples extra test"
+GENERATED_IUSE="all examples extra"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -20,91 +20,90 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	>=dev-python/bitsandbytes-0.42.0[${PYTHON_USEDEP}]
-	>=dev-python/bitsandbytes-0.42.0[${PYTHON_USEDEP}]
-	>=dev-python/bitsandbytes-0.42.0[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}]
 	>=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}]
 	>=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
-	dev? ( dev-python/fastapi[${PYTHON_USEDEP}] )
-	test? ( dev-python/fastapi[${PYTHON_USEDEP}] )
 	>=dev-python/fsspec-2022.5.0[http,${PYTHON_USEDEP}]
 	all? ( >=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/ipython-8.15.0[all,${PYTHON_USEDEP}] )
-	dev? ( <dev-python/ipython-8.15.0[all,${PYTHON_USEDEP}] )
 	examples? ( <dev-python/ipython-8.15.0[all,${PYTHON_USEDEP}] )
 	all? ( >=dev-python/jsonargparse-4.27.7[signatures,${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/jsonargparse-4.27.7[signatures,${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/jsonargparse-4.27.7[signatures,${PYTHON_USEDEP}] )
 	>=dev-python/lightning-utilities-0.10.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}] )
 	all? ( >dev-python/matplotlib-3.1[${PYTHON_USEDEP}] )
-	dev? ( >dev-python/matplotlib-3.1[${PYTHON_USEDEP}] )
 	extra? ( >dev-python/matplotlib-3.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/numpy-1.17.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/numpy-1.17.2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/omegaconf-2.2.3[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/omegaconf-2.2.3[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/omegaconf-2.2.3[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/onnx-1.12.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/onnx-1.12.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
-	dev? ( >dev-python/pandas-1.0[${PYTHON_USEDEP}] )
-	test? ( >dev-python/pandas-1.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/psutil-5.9.6[${PYTHON_USEDEP}] )
-	test? ( <dev-python/psutil-5.9.6[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
 	all? ( <dev-python/requests-2.32.0[${PYTHON_USEDEP}] )
-	dev? ( <dev-python/requests-2.32.0[${PYTHON_USEDEP}] )
 	examples? ( <dev-python/requests-2.32.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/rich-12.3.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/rich-12.3.0[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/rich-12.3.0[${PYTHON_USEDEP}] )
-	dev? ( >dev-python/scikit-learn-0.22.1[${PYTHON_USEDEP}] )
-	test? ( >dev-python/scikit-learn-0.22.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/tensorboardx-2.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tensorboardx-2.2[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/tensorboardx-2.2[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/torchmetrics-0.7.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/torchmetrics-0.10.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/torchmetrics-0.10.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/torchmetrics-0.10.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/torchvision-0.16.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/torchvision-0.16.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/torchvision-0.16.0[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.57.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
-	test? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
+	>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
+	~dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+	~dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+	dev-python/fastapi[${PYTHON_USEDEP}]
+	dev-python/fastapi[${PYTHON_USEDEP}]
+	>=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}]
+	<dev-python/ipython-8.15.0[all,${PYTHON_USEDEP}]
+	>=dev-python/jsonargparse-4.27.7[signatures,${PYTHON_USEDEP}]
+	>=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}]
+	>dev-python/matplotlib-3.1[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.17.2[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.17.2[${PYTHON_USEDEP}]
+	>=dev-python/omegaconf-2.2.3[${PYTHON_USEDEP}]
+	>=dev-python/onnx-1.12.0[${PYTHON_USEDEP}]
+	>=dev-python/onnx-1.12.0[${PYTHON_USEDEP}]
+	>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
+	>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
+	>dev-python/pandas-1.0[${PYTHON_USEDEP}]
+	>dev-python/pandas-1.0[${PYTHON_USEDEP}]
+	<dev-python/psutil-5.9.6[${PYTHON_USEDEP}]
+	<dev-python/psutil-5.9.6[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	<dev-python/requests-2.32.0[${PYTHON_USEDEP}]
+	>=dev-python/rich-12.3.0[${PYTHON_USEDEP}]
+	>dev-python/scikit-learn-0.22.1[${PYTHON_USEDEP}]
+	>dev-python/scikit-learn-0.22.1[${PYTHON_USEDEP}]
+	>=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}]
+	>=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}]
+	>=dev-python/tensorboardx-2.2[${PYTHON_USEDEP}]
+	>=dev-python/torchmetrics-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/torchvision-0.16.0[${PYTHON_USEDEP}]
+	dev-python/uvicorn[${PYTHON_USEDEP}]
+	dev-python/uvicorn[${PYTHON_USEDEP}]
+)"

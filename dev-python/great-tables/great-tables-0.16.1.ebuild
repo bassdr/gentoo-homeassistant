@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev dev-no-pandas extra"
+GENERATED_IUSE="all dev-no-pandas extra"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,21 +17,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/babel-2.13.1[${PYTHON_USEDEP}]
 	>=dev-python/commonmark-0.9.1[${PYTHON_USEDEP}]
 	>=dev-python/css-inline-0.14.1[${PYTHON_USEDEP}]
 	>=dev-python/faicons-0.2.2[${PYTHON_USEDEP}]
 	all? ( dev-python/great-tables[dev,${PYTHON_USEDEP}] )
 	all? ( dev-python/great-tables[extra,${PYTHON_USEDEP}] )
-	dev? ( dev-python/great-tables[dev-no-pandas,${PYTHON_USEDEP}] )
 	dev-no-pandas? ( ~dev-python/griffe-0.38.1[${PYTHON_USEDEP}] )
 	>=dev-python/htmltools-0.4.1[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-no-pandas? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.22.4[${PYTHON_USEDEP}]
-	dev? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/pillow-10.2.0[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/polars[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
@@ -48,3 +46,7 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/great-tables[dev-no-pandas,${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+)"

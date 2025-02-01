@@ -17,7 +17,9 @@ LICENSE="GPL-2-with-linking-exception"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/cffi-1.17.0[${PYTHON_USEDEP}]
 "
 DEPEND="
@@ -27,7 +29,7 @@ DEPEND="
 BDEPEND="
 	>=dev-python/cffi-1.17.0:=[${PYTHON_USEDEP}]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	${BDEPEND}
 "

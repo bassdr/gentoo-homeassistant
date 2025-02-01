@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="ci dev"
+GENERATED_IUSE="ci"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,16 +17,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	ci? ( >=dev-python/flask-sqlalchemy-2.5.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/mypy-1.7.0[${PYTHON_USEDEP}] )
 	ci? ( >=dev-python/psycopg2-2.9.3[${PYTHON_USEDEP}] )
 	>=dev-python/pygraphviz-1.9[${PYTHON_USEDEP}]
 	ci? ( >=dev-python/pytest-7.4.3[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/ruff-0.4.1[${PYTHON_USEDEP}] )
 	>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]
-	dev? ( >=dev-vcs/pre-commit-3.0.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/mypy-1.7.0[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.4.1[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-3.0.1[${PYTHON_USEDEP}]
+)"

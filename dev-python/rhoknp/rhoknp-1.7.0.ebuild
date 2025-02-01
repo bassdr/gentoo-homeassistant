@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cli? ( >=dev-python/fastapi-0.92.0[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/jinja2-3.1[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/pygments-2.16[${PYTHON_USEDEP}] )

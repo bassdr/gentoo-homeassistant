@@ -24,24 +24,17 @@ PATCHES=(
 	"${FILESDIR}/pipenv-2023.9.8-append-always-install-to-pip-extra-args.patch"
 )
 
-GENERATED_IUSE="dev tests"
+GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	dev? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-24.3.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/certifi[${PYTHON_USEDEP}]
-	dev? ( <dev-python/flake8-4[${PYTHON_USEDEP}] )
 	tests? ( dev-python/flaky[${PYTHON_USEDEP}] )
-	dev? ( dev-python/invoke[${PYTHON_USEDEP}] )
 	tests? ( dev-python/mock[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-22[${PYTHON_USEDEP}]
-	dev? ( dev-python/parver[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-5[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-67[${PYTHON_USEDEP}]
-	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/towncrier[${PYTHON_USEDEP}] )
 	>=dev-python/virtualenv-20.24.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -77,6 +70,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+	~dev-python/black-24.3.0[${PYTHON_USEDEP}]
+	<dev-python/flake8-4[${PYTHON_USEDEP}]
+	dev-python/invoke[${PYTHON_USEDEP}]
+	dev-python/parver[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+	dev-python/towncrier[${PYTHON_USEDEP}]
+)"
 
 # IMPORTANT: The following sed command patches the vendor direcotry
 # in the pipenv source. Attempts to simply bump the version of the

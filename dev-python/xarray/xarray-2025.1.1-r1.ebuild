@@ -15,10 +15,10 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="accel complete dev etc io parallel viz"
+GENERATED_IUSE="accel complete etc io parallel viz"
 IUSE="${GENERATED_IUSE} big-endian"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	accel? ( dev-python/bottleneck[${PYTHON_USEDEP}] )
 	viz? ( dev-python/cartopy[${PYTHON_USEDEP}] )
 	io? ( dev-python/cftime[${PYTHON_USEDEP}] )
@@ -26,10 +26,7 @@ GENERATED_DEPEND="
 	accel? ( dev-python/flox[${PYTHON_USEDEP}] )
 	io? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	io? ( dev-python/h5netcdf[${PYTHON_USEDEP}] )
-	dev? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
-	dev? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	viz? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	viz? ( dev-python/nc-time-axis[${PYTHON_USEDEP}] )
 	io? ( dev-python/netcdf4[${PYTHON_USEDEP}] )
 	accel? ( >=dev-python/numba-0.54[${PYTHON_USEDEP}] )
@@ -39,22 +36,12 @@ GENERATED_DEPEND="
 	>=dev-python/packaging-23.2[${PYTHON_USEDEP}]
 	>=dev-python/pandas-2.1[${PYTHON_USEDEP}]
 	io? ( dev-python/pooch[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-env[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
 	accel? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	io? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	viz? ( dev-python/seaborn[${PYTHON_USEDEP}] )
 	etc? ( dev-python/sparse[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-autosummary-accessors[${PYTHON_USEDEP}] )
 	complete? ( dev-python/xarray[accel,etc,io,parallel,viz,${PYTHON_USEDEP}] )
-	dev? ( dev-python/xarray[complete,${PYTHON_USEDEP}] )
 	io? ( dev-python/zarr[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/numpy-1.24[${PYTHON_USEDEP}]
@@ -79,6 +66,21 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-env[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.8.0[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+	dev-python/sphinx-autosummary-accessors[${PYTHON_USEDEP}]
+	dev-python/xarray[complete,${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

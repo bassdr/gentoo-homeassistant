@@ -13,7 +13,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
 HOMEPAGE="
-  https://pypi.org/project/pysocks/
+  https://pypi.org/project/PySocks/
 "
 
 LICENSE="BSD"

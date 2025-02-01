@@ -18,12 +18,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # brotli on cpython, brotlicffi on pypy3
-GENERATED_DEPEND="
-	dev-python/brotli[${PYTHON_USEDEP}]
-	dev-python/brotlicffi[${PYTHON_USEDEP}]
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/flask[${PYTHON_USEDEP}]
-	dev-python/zstandard[${PYTHON_USEDEP}]
-	dev-python/zstandard[cffi,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	app-arch/brotli[python,${PYTHON_USEDEP}]

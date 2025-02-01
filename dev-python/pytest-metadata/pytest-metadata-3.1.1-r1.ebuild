@@ -16,14 +16,10 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( >=dev-python/black-22.1.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/flake8-4.0.1[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/tox-3.24.5[${PYTHON_USEDEP}] )
-	test? ( >=dev-vcs/pre-commit-2.17.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
@@ -33,3 +29,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/black-22.1.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+	>=dev-python/tox-3.24.5[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2.17.0[${PYTHON_USEDEP}]
+)"

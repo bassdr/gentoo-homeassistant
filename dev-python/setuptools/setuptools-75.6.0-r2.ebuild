@@ -24,23 +24,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="check core cover doc enabler test type"
+GENERATED_IUSE="check core cover doc enabler type"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
-	test? ( >=dev-python/build-1.0.3[virtualenv,${PYTHON_USEDEP}] )
-	test? ( >=dev-python/filelock-3.4.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/ini2toml-0.14[lite,${PYTHON_USEDEP}] )
 	core? ( dev-python/jaraco-collections[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-develop-7.21[${PYTHON_USEDEP}]
-	>=dev-python/jaraco-develop-7.21[${PYTHON_USEDEP}]
-	test? ( >=dev-python/jaraco-envs-2.2[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/jaraco-functools-4[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/jaraco-path-3.2.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/jaraco-test-5.5[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/jaraco-text-3.7[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/more-itertools-8.8[${PYTHON_USEDEP}] )
@@ -48,25 +41,14 @@ GENERATED_DEPEND="
 	type? ( <dev-python/mypy-1.14[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/packaging-24.2[${PYTHON_USEDEP}] )
 	core? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/packaging-24.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pip-19.1[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/platformdirs-4.2.2[${PYTHON_USEDEP}] )
 	doc? ( ~dev-python/pygments-github-lexers-0.0.5[${PYTHON_USEDEP}] )
 	doc? ( !=dev-python/pyproject-hooks-1.1[${PYTHON_USEDEP}] )
-	test? ( !=dev-python/pyproject-hooks-1.1[${PYTHON_USEDEP}] )
-	test? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
 	check? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-home-0.5[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
-	dev-python/pytest-perf[${PYTHON_USEDEP}]
-	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest-subprocess[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-xdist-3[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
-	>=dev-python/ruff-0.7.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-favicon[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}] )
@@ -74,11 +56,8 @@ GENERATED_DEPEND="
 	doc? ( <dev-python/sphinx-notfound-page-2[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-reredirects[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinxcontrib-towncrier[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/tomli-w-1.0.0[${PYTHON_USEDEP}] )
 	doc? ( <dev-python/towncrier-24.7[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/virtualenv-13.0.0[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/wheel-0.43.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/wheel-0.44.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	!<dev-python/setuptools-rust-1.8.0
@@ -183,3 +162,4 @@ python_test() {
 	epytest -o tmp_path_retention_policy=all \
 		-m "not uses_network" setuptools
 }
+# BDEPEND could not be inserted in this ebuild

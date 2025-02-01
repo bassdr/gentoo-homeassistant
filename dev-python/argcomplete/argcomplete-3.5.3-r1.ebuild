@@ -26,12 +26,7 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 # pip is called as an external tool
-GENERATED_DEPEND="
-	test? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( dev-python/pexpect[${PYTHON_USEDEP}] )
-	test? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	test? ( dev-python/wheel[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 "
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
@@ -54,3 +49,5 @@ PATCHES=(
 python_test() {
 	"${EPYTHON}" test/test.py -v || die
 }
+# RDEPEND could not be inserted in this ebuild
+# BDEPEND could not be inserted in this ebuild

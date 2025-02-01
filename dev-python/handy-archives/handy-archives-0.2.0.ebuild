@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/coincidence-0.2.0[${PYTHON_USEDEP}] )
 	testing? ( >=dev-python/coincidence-0.2.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pytest-6.0.0[${PYTHON_USEDEP}] )

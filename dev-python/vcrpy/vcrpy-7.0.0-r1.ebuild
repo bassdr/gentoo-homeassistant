@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	tests? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	tests? ( dev-python/httplib2[${PYTHON_USEDEP}] )
@@ -35,8 +35,6 @@ GENERATED_DEPEND="
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	tests? ( >=dev-python/requests-2.22.0[${PYTHON_USEDEP}] )
 	tests? ( dev-python/tornado[${PYTHON_USEDEP}] )
-	<dev-python/urllib3-2[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
 	tests? ( dev-python/urllib3[${PYTHON_USEDEP}] )
 	tests? ( ~dev-python/werkzeug-2.0.3[${PYTHON_USEDEP}] )
 	dev-python/wrapt[${PYTHON_USEDEP}]

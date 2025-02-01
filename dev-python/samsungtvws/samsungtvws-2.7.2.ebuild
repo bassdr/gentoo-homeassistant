@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	async? ( >=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] )
 	encrypted? ( >=dev-python/cryptography-35.0.0[${PYTHON_USEDEP}] )
 	encrypted? ( >=dev-python/py3rijndael-0.3.3[${PYTHON_USEDEP}] )

@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="hiredis ocsp"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/async-timeout-4.0.3[${PYTHON_USEDEP}]
 	ocsp? ( >=dev-python/cryptography-36.0.1[${PYTHON_USEDEP}] )
 	hiredis? ( >=dev-python/hiredis-3.0.0[${PYTHON_USEDEP}] )

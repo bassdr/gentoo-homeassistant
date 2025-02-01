@@ -27,10 +27,9 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="cli http2 socks zstd"
 IUSE="${GENERATED_IUSE} brotli cli http2 +socks zstd"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/anyio[${PYTHON_USEDEP}]
 	dev-python/brotli[${PYTHON_USEDEP}]
-	dev-python/brotlicffi[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	cli? ( ~dev-python/click-8*[${PYTHON_USEDEP}] )
 	http2? ( <dev-python/h2-5[${PYTHON_USEDEP}] )

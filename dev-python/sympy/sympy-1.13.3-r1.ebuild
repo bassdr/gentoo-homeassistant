@@ -21,13 +21,11 @@ S=${WORKDIR}/${P/_/}
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE} imaging ipython latex mathml opengl pdf png pyglet symengine texmacs"
 
-GENERATED_DEPEND="
-	dev? ( >=dev-python/hypothesis-6.70.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/mpmath-1.4[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pytest-7.1.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/mpmath-1.1.0[${PYTHON_USEDEP}]
@@ -56,6 +54,10 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/hypothesis-6.70.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.1.0[${PYTHON_USEDEP}]
+)"
 
 src_test() {
 	virtx distutils-r1_src_test

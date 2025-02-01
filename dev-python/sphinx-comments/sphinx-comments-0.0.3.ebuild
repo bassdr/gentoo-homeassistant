@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	code_style? ( dev-python/black[${PYTHON_USEDEP}] )
 	code_style? ( <dev-python/flake8-3.8.0[${PYTHON_USEDEP}] )

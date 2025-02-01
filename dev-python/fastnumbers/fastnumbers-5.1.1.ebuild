@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	fast? ( >=dev-python/fastnumbers-2.0.0[${PYTHON_USEDEP}] )
 	icu? ( >=dev-python/pyicu-1.0.0[${PYTHON_USEDEP}] )
 "

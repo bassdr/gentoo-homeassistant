@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/azure-kusto-data[${PYTHON_USEDEP}]
 	~dev-python/azure-kusto-data-4.5.1[${PYTHON_USEDEP}]
 	<dev-python/azure-storage-blob-13[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( ~dev-python/cheroot-8.6.0[${PYTHON_USEDEP}] )
 	dev-python/dvc[${PYTHON_USEDEP}]
 	tests? ( dev-python/dvc[testing,${PYTHON_USEDEP}] )

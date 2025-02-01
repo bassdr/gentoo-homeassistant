@@ -22,16 +22,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="developer doc test"
+GENERATED_IUSE="developer doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )
-	test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/numpy-1.22[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/pydata-sphinx-theme-0.13.3[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-6[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	>=dev-python/tabulate-0.8.10[${PYTHON_USEDEP}]
@@ -51,6 +48,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

@@ -27,9 +27,10 @@ SRC_URI+="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test-rust"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/certifi-2021.10.8[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/trio[${PYTHON_USEDEP}]

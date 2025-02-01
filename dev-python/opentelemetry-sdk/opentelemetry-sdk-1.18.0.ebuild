@@ -23,7 +23,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/opentelemetry-api-1.18.0[${PYTHON_USEDEP}]
 	~dev-python/opentelemetry-semantic-conventions-0.39_beta0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-16.0[${PYTHON_USEDEP}]

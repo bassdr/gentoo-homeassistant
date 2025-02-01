@@ -16,18 +16,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev tests"
+GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pytest-3.5.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/pytest-httpbin[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-httpbin[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	dev? ( dev-python/requests[${PYTHON_USEDEP}] )
 	tests? ( dev-python/requests[${PYTHON_USEDEP}] )
 	>=dev-python/vcrpy-2.0.1[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/werkzeug-3.0.3[${PYTHON_USEDEP}] )
 	tests? ( ~dev-python/werkzeug-3.0.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -43,6 +39,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest-httpbin[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	~dev-python/werkzeug-3.0.3[${PYTHON_USEDEP}]
+)"
 
 python_test () {
 	local EPYTEST_DESELECT=(

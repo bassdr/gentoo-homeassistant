@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/authlib-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0.2[${PYTHON_USEDEP}]
 	>=dev-python/dparse-0.6.4[${PYTHON_USEDEP}]

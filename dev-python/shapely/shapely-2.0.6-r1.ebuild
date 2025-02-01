@@ -23,14 +23,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	<dev-python/numpy-3[${PYTHON_USEDEP}]
 	docs? ( ~dev-python/numpydoc-1.1*[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-remove-toctrees[${PYTHON_USEDEP}] )
@@ -39,7 +37,7 @@ DEPEND="
 	dev-python/numpy:=[${PYTHON_USEDEP}]
 	>=sci-libs/geos-3.11.4
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -53,6 +51,10 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	rm -rf shapely || die

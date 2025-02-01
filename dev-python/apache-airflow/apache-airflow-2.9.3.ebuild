@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	aiobotocore? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiofiles-23.2.0[${PYTHON_USEDEP}] )

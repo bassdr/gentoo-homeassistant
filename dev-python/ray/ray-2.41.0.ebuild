@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	air? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
 	all-cpp? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
@@ -38,10 +38,6 @@ GENERATED_DEPEND="
 	default? ( dev-python/colorful[${PYTHON_USEDEP}] )
 	serve-grpc? ( dev-python/colorful[${PYTHON_USEDEP}] )
 	serve? ( dev-python/colorful[${PYTHON_USEDEP}] )
-	dev-python/cupy-cuda12x[${PYTHON_USEDEP}]
-	dev-python/cupy-cuda12x[${PYTHON_USEDEP}]
-	dev-python/cupy-cuda12x[${PYTHON_USEDEP}]
-	dev-python/cupy-cuda12x[${PYTHON_USEDEP}]
 	all-cpp? ( dev-python/dm-tree[${PYTHON_USEDEP}] )
 	all? ( dev-python/dm-tree[${PYTHON_USEDEP}] )
 	rllib? ( dev-python/dm-tree[${PYTHON_USEDEP}] )
@@ -59,9 +55,6 @@ GENERATED_DEPEND="
 	rllib? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	train? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	tune? ( dev-python/fsspec[${PYTHON_USEDEP}] )
-	!=dev-python/grpcio-1.56.0[${PYTHON_USEDEP}]
-	!=dev-python/grpcio-1.56.0[${PYTHON_USEDEP}]
-	!=dev-python/grpcio-1.56.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
@@ -78,9 +71,6 @@ GENERATED_DEPEND="
 	all-cpp? ( dev-python/lz4[${PYTHON_USEDEP}] )
 	all? ( dev-python/lz4[${PYTHON_USEDEP}] )
 	rllib? ( dev-python/lz4[${PYTHON_USEDEP}] )
-	dev-python/memray[${PYTHON_USEDEP}]
-	dev-python/memray[${PYTHON_USEDEP}]
-	dev-python/memray[${PYTHON_USEDEP}]
 	<dev-python/msgpack-2.0.0[${PYTHON_USEDEP}]
 	air? ( >=dev-python/numpy-1.20[${PYTHON_USEDEP}] )
 	all-cpp? ( >=dev-python/numpy-1.20[${PYTHON_USEDEP}] )

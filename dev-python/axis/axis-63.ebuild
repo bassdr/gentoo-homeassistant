@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/httpx-0.26[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/httpx-0.27.2[${PYTHON_USEDEP}] )

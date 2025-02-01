@@ -17,14 +17,16 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/pbr[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	dev-python/pbr[${PYTHON_USEDEP}]
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${BDEPEND}
 	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
 "

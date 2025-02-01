@@ -24,31 +24,23 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev docs tests typing"
+GENERATED_IUSE="docs tests typing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/cogapp[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/freezegun-0.2.8[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/freezegun-0.2.8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/mypy-1.4[${PYTHON_USEDEP}] )
 	typing? ( >=dev-python/mypy-1.4[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pretend[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pretend[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}] )
 	tests? ( >=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}] )
-	dev? ( dev-python/rich[${PYTHON_USEDEP}] )
 	typing? ( dev-python/rich[${PYTHON_USEDEP}] )
-	dev? ( dev-python/simplejson[${PYTHON_USEDEP}] )
 	tests? ( dev-python/simplejson[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-mermaid[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxext-opengraph[${PYTHON_USEDEP}] )
-	dev? ( dev-python/twisted[${PYTHON_USEDEP}] )
 	docs? ( dev-python/twisted[${PYTHON_USEDEP}] )
 	typing? ( dev-python/twisted[${PYTHON_USEDEP}] )
 "
@@ -63,3 +55,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/freezegun-0.2.8[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.4[${PYTHON_USEDEP}]
+	dev-python/pretend[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}]
+	dev-python/rich[${PYTHON_USEDEP}]
+	dev-python/simplejson[${PYTHON_USEDEP}]
+	dev-python/twisted[${PYTHON_USEDEP}]
+)"
+# RDEPEND could not be inserted in this ebuild

@@ -26,13 +26,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="i18n min-versions"
 # IUSE="${GENERATED_IUSE} doc"
 #
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	i18n? ( >=dev-python/babel-2.9.0[${PYTHON_USEDEP}] )
 	min-versions? ( ~dev-python/babel-2.9.0[${PYTHON_USEDEP}] )
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	min-versions? ( ~dev-python/click-7.0[${PYTHON_USEDEP}] )
-	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4[${PYTHON_USEDEP}]
 	>=dev-python/ghp-import-1.0[${PYTHON_USEDEP}]
 	min-versions? ( ~dev-python/ghp-import-1.0[${PYTHON_USEDEP}] )
 	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]
@@ -64,7 +62,7 @@ GENERATED_DEPEND="
 # 		')
 # 	)
 # "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/babel-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]

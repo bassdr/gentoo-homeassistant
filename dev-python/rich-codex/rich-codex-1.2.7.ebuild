@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cairo dev"
+GENERATED_IUSE="cairo"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cairo? ( >=dev-python/cairosvg-2.5.2[${PYTHON_USEDEP}] )
 	dev-python/gitpython[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
@@ -26,8 +26,10 @@ GENERATED_DEPEND="
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/rich-12.4.3[${PYTHON_USEDEP}]
 	>=dev-python/rich-click-1.5[${PYTHON_USEDEP}]
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

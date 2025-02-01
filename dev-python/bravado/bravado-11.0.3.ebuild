@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	integration-tests? ( dev-python/bottle[${PYTHON_USEDEP}] )
 	>=dev-python/bravado-core-5.16.1[${PYTHON_USEDEP}]
 	integration-tests? ( dev-python/ephemeral-port-reserve[${PYTHON_USEDEP}] )

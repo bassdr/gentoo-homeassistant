@@ -12,13 +12,13 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/simple_parsing/"
+  https://pypi.org/project/simple-parsing/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/docstring-parser-1.0[${PYTHON_USEDEP}]
 	yaml? ( <dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}] )
 	toml? ( <dev-python/tomli-3.0.0[${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/graphviz[${PYTHON_USEDEP}]
 	widget? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	widget? ( <dev-python/ipywidgets-9.0[${PYTHON_USEDEP}] )

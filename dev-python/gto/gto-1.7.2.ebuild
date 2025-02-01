@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev tests"
+GENERATED_IUSE="tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,15 +17,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/entrypoints[${PYTHON_USEDEP}]
 	tests? ( dev-python/freezegun[${PYTHON_USEDEP}] )
 	dev-python/funcy[${PYTHON_USEDEP}]
-	dev? ( dev-python/gto[tests,${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )
 	!=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
 	tests? ( dev-python/pygit2[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pylint-3.3.2[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
@@ -36,14 +33,19 @@ GENERATED_DEPEND="
 	>=dev-python/semver-2.13.0[${PYTHON_USEDEP}]
 	>=dev-python/tabulate-0.8.10[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.4.1[${PYTHON_USEDEP}]
-	dev? ( dev-python/types-filelock[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-freezegun[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-requests[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-six[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-tabulate[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/gto[tests,${PYTHON_USEDEP}]
+	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+	~dev-python/pylint-3.3.2[${PYTHON_USEDEP}]
+	dev-python/types-filelock[${PYTHON_USEDEP}]
+	dev-python/types-freezegun[${PYTHON_USEDEP}]
+	dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+	dev-python/types-setuptools[${PYTHON_USEDEP}]
+	dev-python/types-six[${PYTHON_USEDEP}]
+	dev-python/types-tabulate[${PYTHON_USEDEP}]
+)"

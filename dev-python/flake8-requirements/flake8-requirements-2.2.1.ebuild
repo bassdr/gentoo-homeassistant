@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/flake8-4.0.0[${PYTHON_USEDEP}]
 	pyproject? ( dev-python/flake8-pyproject[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-10.0.0[${PYTHON_USEDEP}]

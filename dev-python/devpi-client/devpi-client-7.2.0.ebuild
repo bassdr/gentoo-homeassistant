@@ -4,7 +4,8 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -16,10 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/build-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/check-manifest-0.28[${PYTHON_USEDEP}]
-	dev-python/colorama[${PYTHON_USEDEP}]
 	<dev-python/devpi-common-5[${PYTHON_USEDEP}]
 	dev-python/iniconfig[${PYTHON_USEDEP}]
 	>=dev-python/pkginfo-1.10.0[${PYTHON_USEDEP}]

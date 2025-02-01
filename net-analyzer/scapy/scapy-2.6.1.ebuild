@@ -27,7 +27,7 @@ GENERATED_IUSE="all cli doc"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/cryptography-2.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	cli? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -99,3 +99,4 @@ src_install() {
 	dodoc -r doc/${PN}/*
 	DISABLE_AUTOFORMATTING=1 readme.gentoo_create_doc
 }
+# RDEPEND could not be inserted in this ebuild

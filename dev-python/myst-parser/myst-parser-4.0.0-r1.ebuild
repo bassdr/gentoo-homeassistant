@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code-style linkify rtd testing testing-docutils"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	testing? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
 	testing? ( dev-python/defusedxml[${PYTHON_USEDEP}] )

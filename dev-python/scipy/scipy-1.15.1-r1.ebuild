@@ -40,48 +40,24 @@ fi
 
 LICENSE="BSD LGPL-2"
 SLOT="0"
-GENERATED_IUSE="dev doc test"
+GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE} doc +fortran test-rust"
 
 # umfpack is technically optional but it's preferred to have it available.
-GENERATED_DEPEND="
-	test? ( <dev-python/array-api-strict-2.1.1[${PYTHON_USEDEP}] )
-	test? ( dev-python/asv[${PYTHON_USEDEP}] )
-	test? ( dev-python/cython[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/cython-lint-0.12.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/doit-0.36.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/gmpy2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/hypothesis-6.30[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
 	doc? ( dev-python/jupyterlite-pyodide-kernel[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jupyterlite-sphinx-0.16.5[${PYTHON_USEDEP}] )
 	doc? ( dev-python/jupytext[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )
-	test? ( dev-python/meson[${PYTHON_USEDEP}] )
-	test? ( dev-python/mpmath[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-1.10.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
-	dev-python/ninja[${PYTHON_USEDEP}]
 	<dev-python/numpy-2.5[${PYTHON_USEDEP}]
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	doc? ( dev-python/pooch[${PYTHON_USEDEP}] )
-	test? ( dev-python/pooch[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pycodestyle[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/pydata-sphinx-theme-0.15.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pydevtool[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev? ( dev-python/rich-click[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/ruff-0.0.292[${PYTHON_USEDEP}] )
-	test? ( dev-python/scikit-umfpack[${PYTHON_USEDEP}] )
 	doc? ( <dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-design-0.4.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/threadpoolctl[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-psutil[${PYTHON_USEDEP}] )
-	dev? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	>=dev-python/numpy-1.23.5:=[lapack,${PYTHON_USEDEP}]
@@ -90,7 +66,7 @@ DEPEND="
 	virtual/cblas
 	>=virtual/lapack-3.8
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
 "
@@ -116,6 +92,31 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/array-api-strict-2.1.1[${PYTHON_USEDEP}]
+	dev-python/asv[${PYTHON_USEDEP}]
+	dev-python/cython[${PYTHON_USEDEP}]
+	>=dev-python/cython-lint-0.12.2[${PYTHON_USEDEP}]
+	>=dev-python/doit-0.36.0[${PYTHON_USEDEP}]
+	dev-python/gmpy2[${PYTHON_USEDEP}]
+	>=dev-python/hypothesis-6.30[${PYTHON_USEDEP}]
+	dev-python/meson[${PYTHON_USEDEP}]
+	dev-python/mpmath[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
+	dev-python/pooch[${PYTHON_USEDEP}]
+	dev-python/pycodestyle[${PYTHON_USEDEP}]
+	dev-python/pydevtool[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/rich-click[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.0.292[${PYTHON_USEDEP}]
+	dev-python/scikit-umfpack[${PYTHON_USEDEP}]
+	dev-python/threadpoolctl[${PYTHON_USEDEP}]
+	dev-python/types-psutil[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
+)"
 
 src_unpack() {
 	default

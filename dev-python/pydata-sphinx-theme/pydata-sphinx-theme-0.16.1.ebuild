@@ -24,9 +24,9 @@ LICENSE="BSD-with-disclosure"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="a11y dev doc i18n test"
+GENERATED_IUSE="a11y doc i18n"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( >=dev-python/ablog-0.11.8[${PYTHON_USEDEP}] )
 	dev-python/accessible-pygments[${PYTHON_USEDEP}]
 	dev-python/babel[${PYTHON_USEDEP}]
@@ -48,31 +48,21 @@ GENERATED_DEPEND="
 	doc? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	doc? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandoc[${PYTHON_USEDEP}] )
 	doc? ( dev-python/plotly[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pydata-sphinx-theme[doc,test,${PYTHON_USEDEP}] )
 	>=dev-python/pygments-2.7[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	a11y? ( dev-python/pytest-playwright[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	doc? ( dev-python/rich[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-6.1[${PYTHON_USEDEP}]
-	test? ( dev-python/sphinx[test,${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autoapi-3.0.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-favicon-1.0.1[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-sitemap[${PYTHON_USEDEP}] )
-	dev? ( dev-python/sphinx-theme-builder[cli,${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-togglebutton[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinxcontrib-youtube-1.4.1[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinxext-rediraffe[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	doc? ( dev-python/xarray[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/accessible-pygments[${PYTHON_USEDEP}]
@@ -91,6 +81,18 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pandoc[${PYTHON_USEDEP}]
+	dev-python/pydata-sphinx-theme[doc,test,${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/sphinx[test,${PYTHON_USEDEP}]
+	dev-python/sphinx-theme-builder[cli,${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_DESELECT=(
 	# pygments version mismatch?

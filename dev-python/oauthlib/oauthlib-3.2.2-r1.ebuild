@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 # optional extras hard set as RDEPs. See setup.py
 GENERATED_IUSE="rsa signals signedtoken"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	signals? ( >=dev-python/blinker-1.4.0[${PYTHON_USEDEP}] )
 	rsa? ( >=dev-python/cryptography-3.0.0[${PYTHON_USEDEP}] )
 	signedtoken? ( >=dev-python/cryptography-3.0.0[${PYTHON_USEDEP}] )

@@ -19,7 +19,7 @@ GENERATED_IUSE="testing"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 "

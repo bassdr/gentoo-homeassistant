@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all argcomplete coverage dev doc fsspec jsonschema maintainer omegaconf reconplogger ruyaml shtab signatures test test-no-urls toml urls"
+GENERATED_IUSE="all argcomplete coverage doc fsspec jsonschema maintainer omegaconf reconplogger ruyaml shtab signatures test-no-urls toml urls"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,11 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	argcomplete? ( >=dev-python/argcomplete-3.5.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/attrs-22.2.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/autodocsumm-0.1.10[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/build-0.10.0[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/bump2version-0.5.11[${PYTHON_USEDEP}] )
 	signatures? ( >=dev-python/docstring-parser-0.15[${PYTHON_USEDEP}] )
 	fsspec? ( >=dev-python/fsspec-0.8.4[${PYTHON_USEDEP}] )
@@ -36,39 +34,43 @@ GENERATED_DEPEND="
 	all? ( dev-python/jsonargparse[typing-extensions,${PYTHON_USEDEP}] )
 	all? ( dev-python/jsonargparse[urls,${PYTHON_USEDEP}] )
 	coverage? ( dev-python/jsonargparse[test-no-urls,${PYTHON_USEDEP}] )
-	dev? ( dev-python/jsonargparse[coverage,${PYTHON_USEDEP}] )
-	dev? ( dev-python/jsonargparse[doc,${PYTHON_USEDEP}] )
-	dev? ( dev-python/jsonargparse[test,${PYTHON_USEDEP}] )
 	signatures? ( dev-python/jsonargparse[typing-extensions,${PYTHON_USEDEP}] )
-	test? ( dev-python/jsonargparse[argcomplete,${PYTHON_USEDEP}] )
-	test? ( dev-python/jsonargparse[shtab,${PYTHON_USEDEP}] )
-	test? ( dev-python/jsonargparse[test-no-urls,${PYTHON_USEDEP}] )
 	>=dev-python/jsonnet-0.13.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonnet-binary-0.17.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '~dev-python/jsonnet-sdist-2024.6.23[${PYTHON_USEDEP}]' python3_13{,t})
 	jsonschema? ( >=dev-python/jsonschema-3.2.0[${PYTHON_USEDEP}] )
 	omegaconf? ( >=dev-python/omegaconf-2.1.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pydantic-2.3.0[${PYTHON_USEDEP}] )
 	test-no-urls? ( >=dev-python/pytest-6.2.5[${PYTHON_USEDEP}] )
 	coverage? ( >=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}] )
 	test-no-urls? ( >=dev-python/pytest-subtests-0.8.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
 	reconplogger? ( >=dev-python/reconplogger-4.4.0[${PYTHON_USEDEP}] )
 	urls? ( >=dev-python/requests-2.18.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/responses-0.12.0[${PYTHON_USEDEP}] )
 	ruyaml? ( >=dev-python/ruyaml-0.20.0[${PYTHON_USEDEP}] )
 	shtab? ( >=dev-python/shtab-1.7.1[${PYTHON_USEDEP}] )
 	doc? ( <dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.19.5[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-rtd-theme-1.2.2[${PYTHON_USEDEP}] )
 	toml? ( >=dev-python/toml-0.10.2[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/tox-3.25.0[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/twine-4.0.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/types-pyyaml-6.0.11[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/types-requests-2.28.9[${PYTHON_USEDEP}] )
 	signatures? ( >=dev-python/typeshed-client-2.1.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
+	>=dev-python/build-0.10.0[${PYTHON_USEDEP}]
+	dev-python/jsonargparse[argcomplete,${PYTHON_USEDEP}]
+	dev-python/jsonargparse[coverage,${PYTHON_USEDEP}]
+	dev-python/jsonargparse[doc,${PYTHON_USEDEP}]
+	dev-python/jsonargparse[shtab,${PYTHON_USEDEP}]
+	dev-python/jsonargparse[test,${PYTHON_USEDEP}]
+	dev-python/jsonargparse[test-no-urls,${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2.3.0[${PYTHON_USEDEP}]
+	>=dev-python/responses-0.12.0[${PYTHON_USEDEP}]
+	>=dev-python/tox-3.25.0[${PYTHON_USEDEP}]
+	>=dev-python/types-pyyaml-6.0.11[${PYTHON_USEDEP}]
+	>=dev-python/types-requests-2.28.9[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
+)"

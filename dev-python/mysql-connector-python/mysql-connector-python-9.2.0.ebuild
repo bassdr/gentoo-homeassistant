@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dns-srv? ( ~dev-python/dnspython-2.6.1[${PYTHON_USEDEP}] )
 	fido2? ( ~dev-python/fido2-1.1.2[${PYTHON_USEDEP}] )
 	gssapi? ( ~dev-python/gssapi-1.8.3[${PYTHON_USEDEP}] )

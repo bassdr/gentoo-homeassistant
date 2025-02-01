@@ -16,7 +16,9 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/requests-2.19.1[${PYTHON_USEDEP}]
 	~dev-python/securesystemslib-1.0[${PYTHON_USEDEP}]
 "

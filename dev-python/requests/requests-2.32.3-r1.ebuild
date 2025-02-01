@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="socks use-chardet-on-py3"
 IUSE="${GENERATED_IUSE} socks5 test-rust"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	use-chardet-on-py3? ( <dev-python/chardet-6[${PYTHON_USEDEP}] )

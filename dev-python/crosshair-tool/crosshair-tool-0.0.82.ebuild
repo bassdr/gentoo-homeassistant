@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,30 +17,32 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( <dev-python/autodocsumm-1[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/deal-4.13.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/icontract-2.4.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/importlib-metadata-4.0.0[${PYTHON_USEDEP}]
-	dev? ( ~dev-python/isort-5.11.5[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/mypy-0.990[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '~dev-python/numpy-1.23.4[${PYTHON_USEDEP}]' python3_12)
 	~dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pygls-1.0.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	dev? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}] )
 	>=dev-python/typeshed-client-2.0.5[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-inspect-0.7.1[${PYTHON_USEDEP}]
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	>=dev-python/z3-solver-4.13.0.0[${PYTHON_USEDEP}]
-	dev? ( ~dev-vcs/pre-commit-2.20[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/autodocsumm-1[${PYTHON_USEDEP}]
+	~dev-python/black-22.3.0[${PYTHON_USEDEP}]
+	>=dev-python/deal-4.13.0[${PYTHON_USEDEP}]
+	>=dev-python/icontract-2.4.0[${PYTHON_USEDEP}]
+	~dev-python/isort-5.11.5[${PYTHON_USEDEP}]
+	~dev-python/mypy-0.990[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+	~dev-vcs/pre-commit-2.20[${PYTHON_USEDEP}]
+)"

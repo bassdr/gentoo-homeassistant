@@ -27,9 +27,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="abfs adl arrow dask dev doc dropbox full fuse gcs git github gs gui hdfs http libarchive oci s3 sftp smb ssh test test-downstream test-full tqdm"
+GENERATED_IUSE="abfs adl arrow dask doc dropbox full fuse gcs git github gs gui hdfs http libarchive oci s3 sftp smb ssh test-downstream test-full tqdm"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	abfs? ( dev-python/adlfs[${PYTHON_USEDEP}] )
 	adl? ( dev-python/adlfs[${PYTHON_USEDEP}] )
 	full? ( dev-python/adlfs[${PYTHON_USEDEP}] )
@@ -38,7 +38,6 @@ GENERATED_DEPEND="
 	full? ( !=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}] )
 	http? ( !=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}] )
 	test-full? ( !=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}] )
-	test? ( !=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )
 	dask? ( dev-python/dask[${PYTHON_USEDEP}] )
 	full? ( dev-python/dask[${PYTHON_USEDEP}] )
@@ -71,7 +70,6 @@ GENERATED_DEPEND="
 	test-downstream? ( <dev-python/moto-5[server,${PYTHON_USEDEP}] )
 	test-full? ( dev-python/notebook[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	test? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	full? ( dev-python/ocifs[${PYTHON_USEDEP}] )
 	oci? ( dev-python/ocifs[${PYTHON_USEDEP}] )
@@ -94,27 +92,18 @@ GENERATED_DEPEND="
 	git? ( dev-python/pygit2[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/pygit2[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-full? ( !=dev-python/pytest-asyncio-0.22.0[${PYTHON_USEDEP}] )
-	test? ( !=dev-python/pytest-asyncio-0.22.0[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/pytest-recording[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-recording[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
 	test-downstream? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/python-snappy[${PYTHON_USEDEP}] )
 	dropbox? ( dev-python/requests[${PYTHON_USEDEP}] )
 	full? ( dev-python/requests[${PYTHON_USEDEP}] )
 	github? ( dev-python/requests[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/requests[${PYTHON_USEDEP}] )
-	test? ( dev-python/requests[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	full? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	s3? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	full? ( dev-python/smbprotocol[${PYTHON_USEDEP}] )
@@ -131,7 +120,6 @@ GENERATED_DEPEND="
 	doc? ( dev-python/yarl[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/zarr[${PYTHON_USEDEP}] )
 	test-full? ( dev-python/zstandard[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
@@ -149,6 +137,20 @@ BDEPEND="
 
 # Note: this package is not xdist-friendly
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	!=dev-python/pytest-asyncio-0.22.0[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytest-recording[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 
@@ -167,3 +169,4 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -p asyncio -p pytest_mock -o tmp_path_retention_policy=all
 }
+# RDEPEND could not be inserted in this ebuild

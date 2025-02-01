@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	ipython? ( >=dev-python/bigquery-magics-0.1.0[${PYTHON_USEDEP}] )
 	pandas? ( <dev-python/db-dtypes-2.0.0dev[${PYTHON_USEDEP}] )
 	geopandas? ( <dev-python/geopandas-2.0dev[${PYTHON_USEDEP}] )

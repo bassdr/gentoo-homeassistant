@@ -11,14 +11,16 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/PyGithub/"
+  https://pypi.org/project/pygithub/"
 
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # cryptography via pyjwt[crypto]
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.4.0[crypto,${PYTHON_USEDEP}]
 	>=dev-python/pynacl-1.4.0[${PYTHON_USEDEP}]

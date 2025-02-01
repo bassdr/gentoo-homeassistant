@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="instruments test"
+GENERATED_IUSE="instruments"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -20,18 +20,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	instruments? ( ~dev-python/fastapi-0.58[${PYTHON_USEDEP}] )
-	test? ( ~dev-python/httpx-0.22[${PYTHON_USEDEP}] )
 	~dev-python/opentelemetry-api-1.12[${PYTHON_USEDEP}]
 	~dev-python/opentelemetry-instrumentation-0.40_beta0[${PYTHON_USEDEP}]
 	~dev-python/opentelemetry-instrumentation-asgi-0.40_beta0[${PYTHON_USEDEP}]
-	test? ( dev-python/opentelemetry-instrumentation-fastapi[instruments,${PYTHON_USEDEP}] )
 	~dev-python/opentelemetry-semantic-conventions-0.40_beta0[${PYTHON_USEDEP}]
-	test? ( ~dev-python/opentelemetry-test-utils-0.40_beta0[${PYTHON_USEDEP}] )
 	~dev-python/opentelemetry-util-http-0.40_beta0[${PYTHON_USEDEP}]
-	test? ( ~dev-python/requests-2.23[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/httpx-0.22[${PYTHON_USEDEP}]
+	dev-python/opentelemetry-instrumentation-fastapi[instruments,${PYTHON_USEDEP}]
+	~dev-python/opentelemetry-test-utils-0.40_beta0[${PYTHON_USEDEP}]
+	~dev-python/requests-2.23[${PYTHON_USEDEP}]
+)"

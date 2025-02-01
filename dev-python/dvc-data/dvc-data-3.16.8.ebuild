@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all cli dev tests"
+GENERATED_IUSE="all cli tests"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,18 +17,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/attrs-21.3.0[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/blake3-0.3.1[${PYTHON_USEDEP}] )
 	>=dev-python/dictdiffer-0.8.1[${PYTHON_USEDEP}]
 	>=dev-python/diskcache-5.2.1[${PYTHON_USEDEP}]
 	all? ( dev-python/dvc-data[cli,${PYTHON_USEDEP}] )
-	dev? ( dev-python/dvc-data[all,${PYTHON_USEDEP}] )
-	dev? ( dev-python/dvc-data[tests,${PYTHON_USEDEP}] )
 	<dev-python/dvc-objects-6[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2024.2.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/funcy-1.14[${PYTHON_USEDEP}]' python3_12)
-	dev? ( ~dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
 	<dev-python/orjson-4[${PYTHON_USEDEP}]
 	>=dev-python/pygtrie-2.3.2[${PYTHON_USEDEP}]
 	tests? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
@@ -40,8 +36,14 @@ GENERATED_DEPEND="
 	<dev-python/sqltrie-1[${PYTHON_USEDEP}]
 	<dev-python/tqdm-5[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/typer-slim-0.12[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-tqdm[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/blake3-0.3.1[${PYTHON_USEDEP}]
+	dev-python/dvc-data[all,${PYTHON_USEDEP}]
+	dev-python/dvc-data[tests,${PYTHON_USEDEP}]
+	~dev-python/mypy-1.14.1[${PYTHON_USEDEP}]
+	dev-python/types-tqdm[${PYTHON_USEDEP}]
+)"

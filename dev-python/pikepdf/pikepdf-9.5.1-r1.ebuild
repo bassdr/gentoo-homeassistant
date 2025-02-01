@@ -16,44 +16,32 @@ HOMEPAGE="
 LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev docs mypy test"
+GENERATED_IUSE="docs mypy"
 IUSE="${GENERATED_IUSE} big-endian"
 
 # Check QPDF_MIN_VERSION in pyproject.toml on bumps, as well as
 # https://qpdf.readthedocs.io/en/stable/release-notes.html.
-GENERATED_DEPEND="
-	test? ( >=dev-python/attrs-20.2.0[${PYTHON_USEDEP}] )
-	test? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/deprecated[${PYTHON_USEDEP}]
-	test? ( >=dev-python/hypothesis-6.36[${PYTHON_USEDEP}] )
 	>=dev-python/lxml-4.8[${PYTHON_USEDEP}]
 	mypy? ( dev-python/lxml-stubs[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pillow-10.0.1[${PYTHON_USEDEP}]
-	>=dev-python/psutil-5.9[${PYTHON_USEDEP}]
-	test? ( dev-python/pybind11[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-6.2.5[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}] )
 	>=dev-python/python-xmp-toolkit-2.0.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autoapi[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-issues[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	dev? ( dev-python/typer[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-pillow[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
-	dev? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	>=app-text/qpdf-11.5.0:0=
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.0[${PYTHON_USEDEP}]
@@ -82,6 +70,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/attrs-20.2.0[${PYTHON_USEDEP}]
+	dev-python/coverage[toml,${PYTHON_USEDEP}]
+	>=dev-python/hypothesis-6.36[${PYTHON_USEDEP}]
+	dev-python/pybind11[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
+	dev-python/typer[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare

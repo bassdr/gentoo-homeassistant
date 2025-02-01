@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	calendars? ( dev-python/convertdate[${PYTHON_USEDEP}] )
 	fasttext? ( dev-python/fasttext[${PYTHON_USEDEP}] )
 	calendars? ( dev-python/hijri-converter[${PYTHON_USEDEP}] )

@@ -19,7 +19,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}
 	dbus debug declarative designer examples gles2-only gui help location
 	multimedia network opengl positioning printsupport sensors serialport speech
 	sql +ssl svg testlib webchannel websockets widgets x11extras xmlpatterns
@@ -50,7 +51,7 @@ REQUIRED_USE="
 # Minimal supported version of Qt.
 QT_PV="5.15:5"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/pyqt5-qt5-5.16.0[${PYTHON_USEDEP}]
 	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
 "
@@ -84,7 +85,7 @@ DEPEND="
 	x11extras? ( >=dev-qt/qtx11extras-${QT_PV} )
 	xmlpatterns? ( >=dev-qt/qtxmlpatterns-${QT_PV} )
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	>=dev-python/pyqt5-sip-12.15:=[${PYTHON_USEDEP}]
 "

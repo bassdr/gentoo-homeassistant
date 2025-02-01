@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/jax-cuda12-pjrt-0.5.0[${PYTHON_USEDEP}]
 	with-cuda? ( >=dev-python/nvidia-cublas-cu12-12.1.3.1[${PYTHON_USEDEP}] )
 	with-cuda? ( >=dev-python/nvidia-cuda-cupti-cu12-12.1.105[${PYTHON_USEDEP}] )

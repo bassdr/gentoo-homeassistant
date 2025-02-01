@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	standard? ( >=dev-python/rich-10.11.0[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/shellingham-1.3.0[${PYTHON_USEDEP}] )

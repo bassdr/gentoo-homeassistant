@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="celery ci compress dev diskcache testing"
+GENERATED_IUSE="celery ci compress diskcache testing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,11 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( >=dev-python/beautifulsoup4-4.8.2[${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )
 	celery? ( >=dev-python/celery-5.1.2[redis,${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/coloredlogs-15.0.1[${PYTHON_USEDEP}] )
 	testing? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	~dev-python/dash-core-components-2.0.0[${PYTHON_USEDEP}]
 	ci? ( dev-python/dash-dangerously-set-inner-html[${PYTHON_USEDEP}] )
@@ -30,7 +29,6 @@ GENERATED_DEPEND="
 	~dev-python/dash-table-5.0.0[${PYTHON_USEDEP}]
 	testing? ( >=dev-python/dash-testing-stub-0.0.2[${PYTHON_USEDEP}] )
 	diskcache? ( >=dev-python/diskcache-5.2.1[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/fire-0.4.0[${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/flake8-7.0.0[${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/flaky-3.8.1[${PYTHON_USEDEP}] )
 	<dev-python/flask-3.1[${PYTHON_USEDEP}]
@@ -58,7 +56,6 @@ GENERATED_DEPEND="
 	ci? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	ci? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/pytest-sugar-0.9.6[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/pyzmq-25.1.2[${PYTHON_USEDEP}] )
 	celery? ( >=dev-python/redis-3.5.3[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
@@ -74,3 +71,8 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coloredlogs-15.0.1[${PYTHON_USEDEP}]
+	>=dev-python/fire-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
+)"

@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all array-types dev docs eapp ecolab edc enp epath epath-gcs epath-s3 epy etqdm etree etree-dm etree-jax etree-tf lazy-imports"
+GENERATED_IUSE="all array-types docs eapp ecolab edc enp epath epath-gcs epath-s3 epy etqdm etree etree-dm etree-jax etree-tf lazy-imports"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,10 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	eapp? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	etqdm? ( dev-python/absl-py[${PYTHON_USEDEP}] )
-	dev? ( dev-python/chex[${PYTHON_USEDEP}] )
 	etree-dm? ( dev-python/dm-tree[${PYTHON_USEDEP}] )
 	all? ( dev-python/etils[array-types,${PYTHON_USEDEP}] )
 	all? ( dev-python/etils[eapp,${PYTHON_USEDEP}] )
@@ -56,7 +55,6 @@ GENERATED_DEPEND="
 	etree? ( dev-python/etils[epy,${PYTHON_USEDEP}] )
 	etree? ( dev-python/etils[etqdm,${PYTHON_USEDEP}] )
 	lazy-imports? ( dev-python/etils[ecolab,${PYTHON_USEDEP}] )
-	dev? ( dev-python/fiddle[${PYTHON_USEDEP}] )
 	epath? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	epath-gcs? ( dev-python/gcsfs[${PYTHON_USEDEP}] )
 	epath? ( dev-python/importlib-resources[${PYTHON_USEDEP}] )
@@ -65,21 +63,12 @@ GENERATED_DEPEND="
 	ecolab? ( dev-python/mediapy[${PYTHON_USEDEP}] )
 	ecolab? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	enp? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	dev? ( dev-python/optree[${PYTHON_USEDEP}] )
 	ecolab? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	ecolab? ( dev-python/protobuf[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pydantic[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyink[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pylint-2.6.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	epath-s3? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	eapp? ( dev-python/simple-parsing[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-apitree[ext,${PYTHON_USEDEP}] )
 	etree-tf? ( dev-python/tensorflow[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tensorflow-datasets[${PYTHON_USEDEP}] )
-	dev? ( dev-python/torch[${PYTHON_USEDEP}] )
 	etqdm? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	epath? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 	epy? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
@@ -88,3 +77,16 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/chex[${PYTHON_USEDEP}]
+	dev-python/fiddle[${PYTHON_USEDEP}]
+	dev-python/optree[${PYTHON_USEDEP}]
+	dev-python/pydantic[${PYTHON_USEDEP}]
+	dev-python/pyink[${PYTHON_USEDEP}]
+	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-subtests[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/tensorflow-datasets[${PYTHON_USEDEP}]
+	dev-python/torch[${PYTHON_USEDEP}]
+)"

@@ -17,14 +17,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="benchmark labextension nbext retroextension serverextension test"
+GENERATED_IUSE="benchmark labextension nbext retroextension serverextension"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	benchmark? ( dev-python/asv[${PYTHON_USEDEP}] )
 	dev-python/decorator[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-6.9.1[${PYTHON_USEDEP}]
 	>=dev-python/ipython-5[${PYTHON_USEDEP}]
-	test? ( dev-python/ipython[test,${PYTHON_USEDEP}] )
 	>=dev-python/jupyter-client-7[${PYTHON_USEDEP}]
 	labextension? ( dev-python/jupyter-server[${PYTHON_USEDEP}] )
 	nbext? ( dev-python/jupyter-server[${PYTHON_USEDEP}] )
@@ -33,13 +32,9 @@ GENERATED_DEPEND="
 	labextension? ( >=dev-python/jupyterlab-3[${PYTHON_USEDEP}] )
 	nbext? ( dev-python/notebook[${PYTHON_USEDEP}] )
 	dev-python/psutil[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
 	>=dev-python/pyzmq-25[${PYTHON_USEDEP}]
 	retroextension? ( dev-python/retrolab[${PYTHON_USEDEP}] )
-	test? ( dev-python/testpath[${PYTHON_USEDEP}] )
 	>=dev-python/tornado-6.1[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5[${PYTHON_USEDEP}]
@@ -69,6 +64,13 @@ BDEPEND="
 # TODO: package myst_parser
 # distutils_enable_sphinx docs/source
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/ipython[test,${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/testpath[${PYTHON_USEDEP}]
+)"
 
 src_configure() {
 	export IPP_DISABLE_JS=1

@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/sudachidict-core[${PYTHON_USEDEP}] )
 	tests? ( sci-libs/tokenizers[${PYTHON_USEDEP}] )
 "

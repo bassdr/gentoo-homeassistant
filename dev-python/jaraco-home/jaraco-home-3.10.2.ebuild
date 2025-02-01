@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="doc test"
+GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="jaraco.home"
@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/autocommand[${PYTHON_USEDEP}]
 	dev-python/dnspython[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -30,14 +30,7 @@ GENERATED_DEPEND="
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	dev-python/keyring[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.2.6[${PYTHON_USEDEP}]
-	test? ( dev-python/mockproc[${PYTHON_USEDEP}] )
 	dev-python/pymongo[${PYTHON_USEDEP}]
-	test? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
@@ -45,10 +38,18 @@ GENERATED_DEPEND="
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 	dev-python/splinter[selenium,${PYTHON_USEDEP}]
 	>=dev-python/tempora-5.7[${PYTHON_USEDEP}]
-	test? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
-	test? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	dev-python/victor-smart-kill[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/mockproc[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+	dev-python/pytest-mypy[${PYTHON_USEDEP}]
+	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+)"

@@ -19,19 +19,16 @@ HOMEPAGE="
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs test testing"
+GENERATED_IUSE="docs testing"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="
-	test? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	testing? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-event[${PYTHON_USEDEP}] )
 	testing? ( dev-python/zope-event[${PYTHON_USEDEP}] )
-	test? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 	testing? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -42,6 +39,11 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/coverage[toml,${PYTHON_USEDEP}]
+	dev-python/zope-event[${PYTHON_USEDEP}]
+	dev-python/zope-testing[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare
@@ -70,3 +72,4 @@ python_test() {
 	distutils_write_namespace zope
 	eunittest
 }
+# RDEPEND could not be inserted in this ebuild

@@ -8,11 +8,12 @@ DISTUTILS_USE_PEP517=flit
 PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_PN="ordered_set"
 inherit distutils-r1 pypi
 
 DESCRIPTION="An OrderedSet is a custom MutableSet that remembers its order, so that every"
 HOMEPAGE="
-  https://pypi.org/project/ordered-set/
+  https://pypi.org/project/ordered_set/
   Home, https://github.com/rspeer/ordered-set
 "
 
@@ -21,6 +22,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

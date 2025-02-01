@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="build complete dev pandas qa"
+GENERATED_IUSE="build complete pandas qa"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,47 +17,49 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/autoflake[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	qa? ( dev-python/autoflake[${PYTHON_USEDEP}] )
 	<dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
 	<dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/black[${PYTHON_USEDEP}] )
 	qa? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/codecov-2.1.0[${PYTHON_USEDEP}] )
 	qa? ( >=dev-python/codecov-2.1.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	qa? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	dev? ( dev-python/feedparser[${PYTHON_USEDEP}] )
 	qa? ( dev-python/feedparser[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/invoke-1.6.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/invoke-1.6.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/isort[${PYTHON_USEDEP}] )
 	qa? ( dev-python/isort[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	qa? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	~dev-python/numpy-1.21.5[${PYTHON_USEDEP}]
 	complete? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	pandas? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	dev-python/pandas-stubs-fork[${PYTHON_USEDEP}]
 	dev-python/pandas-stubs-fork[${PYTHON_USEDEP}]
 	dev-python/pandas-stubs-fork[${PYTHON_USEDEP}]
 	build? ( >=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pylint[${PYTHON_USEDEP}] )
 	qa? ( dev-python/pylint[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyright[${PYTHON_USEDEP}] )
 	qa? ( dev-python/pyright[${PYTHON_USEDEP}] )
-	dev? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	qa? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	dev? ( dev-python/typeguard[${PYTHON_USEDEP}] )
 	qa? ( dev-python/typeguard[${PYTHON_USEDEP}] )
-	dev? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	qa? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/autoflake[${PYTHON_USEDEP}]
+	dev-python/black[${PYTHON_USEDEP}]
+	>=dev-python/codecov-2.1.0[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/feedparser[${PYTHON_USEDEP}]
+	>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
+	dev-python/isort[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	>=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}]
+	dev-python/pylint[${PYTHON_USEDEP}]
+	dev-python/pyright[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/typeguard[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"

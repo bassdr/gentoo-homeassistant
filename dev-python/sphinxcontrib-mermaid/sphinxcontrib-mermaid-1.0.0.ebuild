@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="sphinxcontrib_mermaid"
@@ -18,15 +18,17 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
-	test? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	test? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	dev-python/sphinx[${PYTHON_USEDEP}]
-	test? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/defusedxml[${PYTHON_USEDEP}]
+	dev-python/myst-parser[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
+)"

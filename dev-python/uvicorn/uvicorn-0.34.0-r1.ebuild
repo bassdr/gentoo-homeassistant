@@ -23,9 +23,8 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="standard"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
-	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
 	>=dev-python/h11-0.8[${PYTHON_USEDEP}]
 	standard? ( >=dev-python/httptools-0.6.3[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/python-dotenv-0.13[${PYTHON_USEDEP}] )

@@ -26,12 +26,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="dev docs tests"
+GENERATED_IUSE="docs tests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( ~dev-python/alabaster-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/autodocsumm-0.2.14[${PYTHON_USEDEP}] )
-	dev? ( dev-python/marshmallow[tests,${PYTHON_USEDEP}] )
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
@@ -39,8 +38,6 @@ GENERATED_DEPEND="
 	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-version-warning-1.1.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/tox[${PYTHON_USEDEP}] )
-	dev? ( <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
@@ -54,3 +51,8 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/marshmallow[tests,${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+)"

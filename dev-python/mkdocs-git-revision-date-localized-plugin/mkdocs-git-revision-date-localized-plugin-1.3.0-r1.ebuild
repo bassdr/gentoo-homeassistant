@@ -7,16 +7,14 @@ DISTUTILS_USE_PEP517="setuptools"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 DOCS_BUILDER="mkdocs"
-GENERATED_IUSE="all base dev"
+GENERATED_IUSE="all base"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/babel-2.7.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/babel-2.7.0[${PYTHON_USEDEP}] )
 	base? ( >=dev-python/babel-2.7.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/click[${PYTHON_USEDEP}] )
-	dev? ( dev-python/click[${PYTHON_USEDEP}] )
 	all? ( dev-python/codecov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	all? ( dev-python/gitpython[${PYTHON_USEDEP}] )
 	base? ( dev-python/gitpython[${PYTHON_USEDEP}] )
 	dev-python/gitpython[${PYTHON_USEDEP}]
@@ -24,17 +22,11 @@ GENERATED_DEPEND="
 	all? ( >=dev-python/mkdocs-1.0[${PYTHON_USEDEP}] )
 	base? ( >=dev-python/mkdocs-1.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/mkdocs-gen-files[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mkdocs-gen-files[${PYTHON_USEDEP}] )
 	all? ( dev-python/mkdocs-git-authors-plugin[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mkdocs-git-authors-plugin[${PYTHON_USEDEP}] )
 	all? ( dev-python/mkdocs-material[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mkdocs-material[${PYTHON_USEDEP}] )
 	all? ( dev-python/mkdocs-static-i18n[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mkdocs-static-i18n[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	base? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
@@ -61,7 +53,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/babel-2.7.0[${PYTHON_USEDEP}]
 	dev-python/gitpython[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.0[${PYTHON_USEDEP}]
@@ -79,6 +71,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/click[${PYTHON_USEDEP}]
+	dev-python/codecov[${PYTHON_USEDEP}]
+	dev-python/mkdocs-gen-files[${PYTHON_USEDEP}]
+	dev-python/mkdocs-git-authors-plugin[${PYTHON_USEDEP}]
+	dev-python/mkdocs-material[${PYTHON_USEDEP}]
+	dev-python/mkdocs-static-i18n[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	# mkdocs-git-revision-date-localized-plugin's tests need git repo

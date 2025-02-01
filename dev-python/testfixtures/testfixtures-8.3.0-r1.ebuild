@@ -16,23 +16,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="build docs test"
+GENERATED_IUSE="build docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/django[${PYTHON_USEDEP}] )
-	test? ( dev-python/django[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.1[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-django[${PYTHON_USEDEP}] )
 	build? ( dev-python/setuptools-git[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sybil-6[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/sybil-6[${PYTHON_USEDEP}] )
 	build? ( dev-python/twine[${PYTHON_USEDEP}] )
 	docs? ( dev-python/twisted[${PYTHON_USEDEP}] )
-	test? ( dev-python/twisted[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 BDEPEND="
@@ -49,6 +42,15 @@ BDEPEND="
 distutils_enable_sphinx docs \
 	dev-python/furo
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/django[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.1[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-django[${PYTHON_USEDEP}]
+	>=dev-python/sybil-6[${PYTHON_USEDEP}]
+	dev-python/twisted[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local -x PYTHONPATH="."
@@ -76,3 +78,4 @@ python_test() {
 
 	epytest
 }
+# RDEPEND could not be inserted in this ebuild

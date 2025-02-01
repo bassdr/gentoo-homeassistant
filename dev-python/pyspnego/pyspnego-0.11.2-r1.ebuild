@@ -18,12 +18,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/cryptography[${PYTHON_USEDEP}]
-	>=dev-python/gssapi-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/krb5-0.3.0[${PYTHON_USEDEP}]
 	yaml? ( dev-python/ruamel-yaml[${PYTHON_USEDEP}] )
-	>=dev-python/sspilib-0.1.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]

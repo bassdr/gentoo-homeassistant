@@ -23,7 +23,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/referencing-0.31.0[${PYTHON_USEDEP}]
 	dev-python/referencing[${PYTHON_USEDEP}]
 "

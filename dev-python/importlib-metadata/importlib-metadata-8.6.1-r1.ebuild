@@ -19,25 +19,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="check cover doc enabler perf test type"
+GENERATED_IUSE="check cover doc enabler perf type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/flufl-flake8[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-resources-1.3[${PYTHON_USEDEP}]
 	perf? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
-	test? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	test? ( dev-python/pyfakefs[${PYTHON_USEDEP}] )
-	test? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
 	check? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-perf-0.9.2[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
@@ -56,6 +49,14 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/flufl-flake8[${PYTHON_USEDEP}]
+	>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pyfakefs[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	>=dev-python/pytest-perf-0.9.2[${PYTHON_USEDEP}]
+)"
 
 src_configure() {
 	grep -q 'build-backend = "setuptools' pyproject.toml ||

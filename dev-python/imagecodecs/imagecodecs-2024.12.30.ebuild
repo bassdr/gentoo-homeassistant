@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all test"
+GENERATED_IUSE="all"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,26 +17,28 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	test? ( dev-python/bitshuffle[${PYTHON_USEDEP}] )
-	test? ( dev-python/blosc[${PYTHON_USEDEP}] )
-	test? ( dev-python/blosc2[${PYTHON_USEDEP}] )
-	test? ( dev-python/czifile[${PYTHON_USEDEP}] )
-	test? ( dev-python/lz4[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	all? ( dev-python/numcodecs[${PYTHON_USEDEP}] )
-	test? ( dev-python/numcodecs[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
-	test? ( dev-python/pyliblzfse[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	test? ( dev-python/python-lzf[${PYTHON_USEDEP}] )
-	test? ( dev-python/python-snappy[${PYTHON_USEDEP}] )
 	all? ( dev-python/tifffile[${PYTHON_USEDEP}] )
-	test? ( dev-python/tifffile[${PYTHON_USEDEP}] )
-	test? ( <dev-python/zarr-3[${PYTHON_USEDEP}] )
-	test? ( dev-python/zopflipy[${PYTHON_USEDEP}] )
-	test? ( dev-python/zstd[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/bitshuffle[${PYTHON_USEDEP}]
+	dev-python/blosc[${PYTHON_USEDEP}]
+	dev-python/blosc2[${PYTHON_USEDEP}]
+	dev-python/czifile[${PYTHON_USEDEP}]
+	dev-python/lz4[${PYTHON_USEDEP}]
+	dev-python/numcodecs[${PYTHON_USEDEP}]
+	dev-python/pyliblzfse[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/python-lzf[${PYTHON_USEDEP}]
+	dev-python/python-snappy[${PYTHON_USEDEP}]
+	dev-python/tifffile[${PYTHON_USEDEP}]
+	<dev-python/zarr-3[${PYTHON_USEDEP}]
+	dev-python/zopflipy[${PYTHON_USEDEP}]
+	dev-python/zstd[${PYTHON_USEDEP}]
+)"

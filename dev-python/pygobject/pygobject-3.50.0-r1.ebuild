@@ -11,16 +11,17 @@ inherit gnome.org meson virtualx xdg distutils-r1
 
 DESCRIPTION="Python bindings for GObject Introspection"
 HOMEPAGE="
-  https://pypi.org/project/PyGObject/
+  https://pypi.org/project/pygobject/
 "
 
 LICENSE="LGPL-2.1+"
 SLOT="3"
 KEYWORDS="amd64 arm64"
-IUSE="+cairo test"
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE} +cairo test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pycairo-1.16[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -75,4 +76,3 @@ python_install() {
 	meson_src_install
 	python_optimize
 }
-# PYPI_PN could not be inserted in this ebuild

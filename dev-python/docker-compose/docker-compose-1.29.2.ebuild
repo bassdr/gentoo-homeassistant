@@ -17,10 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/backports-ssl-match-hostname-4[${PYTHON_USEDEP}]
 	<dev-python/cached-property-2[${PYTHON_USEDEP}]
-	<dev-python/colorama-1[${PYTHON_USEDEP}]
 	tests? ( <dev-python/ddt-2[${PYTHON_USEDEP}] )
 	<dev-python/distro-2[${PYTHON_USEDEP}]
 	>=dev-python/docker-5[ssh,${PYTHON_USEDEP}]

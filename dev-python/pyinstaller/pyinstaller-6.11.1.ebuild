@@ -17,17 +17,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/altgraph[${PYTHON_USEDEP}]
 	completion? ( dev-python/argcomplete[${PYTHON_USEDEP}] )
 	hook-testing? ( >=dev-python/execnet-1.5.0[${PYTHON_USEDEP}] )
-	>=dev-python/macholib-1.8[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
-	!=dev-python/pefile-2024.8.26[${PYTHON_USEDEP}]
 	hook-testing? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	>=dev-python/pyinstaller-hooks-contrib-2024.9[${PYTHON_USEDEP}]
 	hook-testing? ( >=dev-python/pytest-2.7.3[${PYTHON_USEDEP}] )
-	>=dev-python/pywin32-ctypes-0.2.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

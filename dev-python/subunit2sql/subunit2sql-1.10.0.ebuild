@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="graph test"
+GENERATED_IUSE="graph"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,33 +17,35 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/alembic-0.8.10[${PYTHON_USEDEP}]
-	test? ( >=dev-python/coverage-3.6[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}] )
-	test? ( !=dev-python/hacking-0.13.0[${PYTHON_USEDEP}] )
 	graph? ( >=dev-python/matplotlib-2.0.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/mock-1.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/openstackdocstheme-1.11.0[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/oslo-concurrency-3.5.0[${PYTHON_USEDEP}] )
 	>=dev-python/oslo-config-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-db-4.24.0[${PYTHON_USEDEP}]
 	graph? ( >=dev-python/pandas-0.20.1[${PYTHON_USEDEP}] )
 	!=dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
-	test? ( dev-python/psycopg2[${PYTHON_USEDEP}] )
-	test? ( dev-python/pymysql[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.4.2[${PYTHON_USEDEP}]
 	>=dev-python/python-subunit-0.0.18[${PYTHON_USEDEP}]
-	test? ( >=dev-python/reno-0.1.1[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/sphinx-1.6.2[${PYTHON_USEDEP}] )
 	!=dev-python/sqlalchemy-1.1.5[${PYTHON_USEDEP}]
-	test? ( >=dev-python/stestr-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/stevedore-1.20.0[${PYTHON_USEDEP}]
-	test? ( >=dev-python/testresources-0.2.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testscenarios-0.4[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/testtools-0.9.34[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+	>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+	!=dev-python/hacking-0.13.0[${PYTHON_USEDEP}]
+	>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+	>=dev-python/openstackdocstheme-1.11.0[${PYTHON_USEDEP}]
+	>=dev-python/oslo-concurrency-3.5.0[${PYTHON_USEDEP}]
+	dev-python/psycopg2[${PYTHON_USEDEP}]
+	dev-python/pymysql[${PYTHON_USEDEP}]
+	>=dev-python/reno-0.1.1[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-1.6.2[${PYTHON_USEDEP}]
+	>=dev-python/stestr-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/testresources-0.2.4[${PYTHON_USEDEP}]
+	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+	>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
+)"

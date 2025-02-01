@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="doc test"
+GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,17 +17,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/importlib-metadata-4.8.3[${PYTHON_USEDEP}]
-	test? ( >=dev-python/pip-22.2.1[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-7.2.2[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-4.5.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-book-theme-0.0.39[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/sphinx-testing-1.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/zope-interface-5.5.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pip-22.2.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.2.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-testing-1.0.1[${PYTHON_USEDEP}]
+)"

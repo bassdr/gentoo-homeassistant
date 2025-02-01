@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cloudpickle? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )
 	full? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )
 	dill? ( dev-python/dill[${PYTHON_USEDEP}] )

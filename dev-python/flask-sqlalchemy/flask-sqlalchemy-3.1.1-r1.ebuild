@@ -11,13 +11,15 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Flask-SQLAlchemy/"
+  https://pypi.org/project/flask-sqlalchemy/"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_IUSE=""
+IUSE="${GENERATED_IUSE}"
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/flask-2.2.5[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-2.0.16[${PYTHON_USEDEP}]
 "

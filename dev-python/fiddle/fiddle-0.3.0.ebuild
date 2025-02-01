@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	flags? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	testing? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )

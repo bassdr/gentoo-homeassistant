@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	cosmosdb? ( dev-python/azure-cosmos[${PYTHON_USEDEP}] )
 	azurite? ( <dev-python/azure-storage-blob-13.0[${PYTHON_USEDEP}] )
 	registry? ( dev-python/bcrypt[${PYTHON_USEDEP}] )

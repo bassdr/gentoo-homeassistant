@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/arrow[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	viz? ( dev-python/dash[${PYTHON_USEDEP}] )

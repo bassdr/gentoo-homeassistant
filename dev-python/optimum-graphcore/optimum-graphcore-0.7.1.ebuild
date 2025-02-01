@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
 	~dev-python/cppimport-22.8.2[${PYTHON_USEDEP}]
 	dev-python/datasets[${PYTHON_USEDEP}]

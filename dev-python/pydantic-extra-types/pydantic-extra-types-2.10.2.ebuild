@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( <dev-python/pendulum-4.0.0[${PYTHON_USEDEP}] )
 	pendulum? ( <dev-python/pendulum-4.0.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/phonenumbers-9[${PYTHON_USEDEP}] )

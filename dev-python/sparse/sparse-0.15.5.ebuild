@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	tests? ( dev-python/dask[array,${PYTHON_USEDEP}] )
 	all? ( dev-python/matrepr[${PYTHON_USEDEP}] )
 	>=dev-python/numba-0.49[${PYTHON_USEDEP}]

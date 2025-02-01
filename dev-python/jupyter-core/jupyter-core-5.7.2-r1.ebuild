@@ -16,23 +16,17 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/platformdirs-2.5[${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	test? ( <dev-python/pytest-8[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	>=dev-python/pywin32-300[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-github-alt[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}] )
 	>=dev-python/traitlets-5.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/traitlets[${PYTHON_USEDEP}] )
-	test? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/platformdirs-2.5[${PYTHON_USEDEP}]
@@ -52,3 +46,10 @@ distutils_enable_sphinx docs \
 	dev-python/sphinxcontrib-spelling \
 	dev-python/traitlets
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/ipykernel[${PYTHON_USEDEP}]
+	<dev-python/pytest-8[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

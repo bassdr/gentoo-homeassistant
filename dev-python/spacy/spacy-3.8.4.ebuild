@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/catalogue-2.1.0[${PYTHON_USEDEP}]
 	cuda? ( <dev-python/cupy-13.0.0[${PYTHON_USEDEP}] )
 	cuda100? ( <dev-python/cupy-cuda100-13.0.0[${PYTHON_USEDEP}] )

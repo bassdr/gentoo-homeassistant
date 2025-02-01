@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="toml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${PYTHON_DEPS}
 	~dev-python/colorama-0.4.1[${PYTHON_USEDEP}]
 	<dev-python/mando-0.8[${PYTHON_USEDEP}]
 	toml? ( >=dev-python/tomli-2.0.1[${PYTHON_USEDEP}] )

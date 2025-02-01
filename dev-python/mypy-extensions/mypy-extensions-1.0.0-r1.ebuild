@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=mypy_extensions-${PV}
 DESCRIPTION="Type system extensions for programs checked with the mypy type checker."
 HOMEPAGE="
-  https://pypi.org/project/mypy-extensions/
+  https://pypi.org/project/mypy_extensions/
 "
 SRC_URI="
 	https://github.com/python/mypy_extensions/archive/${PV}.tar.gz
@@ -28,3 +28,4 @@ distutils_enable_tests pytest
 python_test() {
 	epytest tests/*.py
 }
+# PYPI_PN could not be inserted in this ebuild

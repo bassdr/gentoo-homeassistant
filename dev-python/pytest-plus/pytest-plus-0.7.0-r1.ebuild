@@ -17,12 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
+GENERATED_IUSE=""
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
-	test? ( >=dev-python/coverage-7.0.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pytest-7.4.2[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest-html[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytest-7.4.2[${PYTHON_USEDEP}]
@@ -32,3 +30,7 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-7.0.0[${PYTHON_USEDEP}]
+	dev-python/pytest-html[${PYTHON_USEDEP}]
+)"
