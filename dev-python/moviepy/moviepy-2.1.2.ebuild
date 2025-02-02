@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc lint"
 IUSE="${GENERATED_IUSE} test"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	lint? ( >=dev-python/black-23.7.0[${PYTHON_USEDEP}] )
 	<dev-python/decorator-6.0[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/flake8-6.0.0[${PYTHON_USEDEP}] )
@@ -36,7 +36,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	<=dev-python/proglog-1.0.0[${PYTHON_USEDEP}]
 	doc? ( ~dev-python/pydata-sphinx-theme-0.13[${PYTHON_USEDEP}] )
 	>=dev-python/python-dotenv-0.10[${PYTHON_USEDEP}]
-	doc? ( ~dev-python/sphinx-6*[${PYTHON_USEDEP}] )
+	doc? ( ~dev-python/sphinx-6[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	lint? ( >=dev-vcs/pre-commit-3.3[${PYTHON_USEDEP}] )
 "

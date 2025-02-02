@@ -5,38 +5,29 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="sqlite"
-DISTUTILS_SINGLE_IMPL="ON"
-DISTUTILS_USE_PEP517="setuptools"
+DISTUTILS_SINGLE_IMPL=1DISTUTILS_USE_PEP517="setuptools"
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="A framework for managing and maintaining multi-language pre-commit hooks."
 HOMEPAGE="
   https://pypi.org/project/pre-commit/
 "
 
-SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz
-		-> ${P}.gh.tar.gz"
 
 KEYWORDS="amd64 arm64"
 
 LICENSE="MIT"
 SLOT="0"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND} $(python_gen_cond_dep '
 	>=dev-python/cfgv-2.0.0[${PYTHON_USEDEP}]
-	dev-python/cfgv[${PYTHON_USEDEP}]
 	>=dev-python/identify-1.0.0[${PYTHON_USEDEP}]
-	dev-python/identify[${PYTHON_USEDEP}]
 	>=dev-python/nodeenv-0.11.1[${PYTHON_USEDEP}]
-	dev-python/nodeenv[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/virtualenv-20.10.0[${PYTHON_USEDEP}]
-	dev-python/virtualenv[${PYTHON_USEDEP}]
-"
+')"
 RDEPEND="${GENERATED_DEPEND}
-
 	dev-vcs/git
 	$(python_gen_cond_dep '
 		>=dev-python/cfgv-2.0.0[${PYTHON_USEDEP}]

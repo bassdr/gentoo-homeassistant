@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint release"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	release? ( dev-python/build[${PYTHON_USEDEP}] )
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )

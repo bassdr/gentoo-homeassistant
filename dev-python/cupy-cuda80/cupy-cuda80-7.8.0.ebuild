@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	appveyor? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	stylecheck? ( ~dev-python/autopep8-1.4.4[${PYTHON_USEDEP}] )

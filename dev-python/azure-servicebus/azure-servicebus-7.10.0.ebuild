@@ -4,10 +4,8 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "azure-servicebus" "7.10.0" ".zip")"
+SRC_URI="$(pypi_sdist_url --no-normalize ${PN} ${PV} .zip)"
 
 DESCRIPTION="Microsoft Azure Service Bus Client Library for Python"
 HOMEPAGE="
@@ -18,9 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/azure-core[${PYTHON_USEDEP}]
 	dev-python/isodate[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]

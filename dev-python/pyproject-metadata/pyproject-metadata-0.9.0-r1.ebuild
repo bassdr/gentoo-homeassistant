@@ -21,11 +21,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2023.9.10[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-7.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-1.10.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )

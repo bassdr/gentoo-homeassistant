@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="cuda cuda100 cuda101 cuda102 cuda110 cuda111 cuda112 cuda80 cuda90 cuda91 cuda92"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="spacy_transformers"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cuda? ( >=dev-python/cupy-5.0.0_beta4[${PYTHON_USEDEP}] )
 	cuda100? ( >=dev-python/cupy-cuda100-5.0.0_beta4[${PYTHON_USEDEP}] )
 	cuda101? ( >=dev-python/cupy-cuda101-5.0.0_beta4[${PYTHON_USEDEP}] )

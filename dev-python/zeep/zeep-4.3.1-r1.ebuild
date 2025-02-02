@@ -22,23 +22,16 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="async docs xmlsec"
 IUSE="${GENERATED_IUSE} +async"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-17.2.0[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 	async? ( >=dev-python/httpx-0.15.0[${PYTHON_USEDEP}] )
 	>=dev-python/isodate-0.5.4[${PYTHON_USEDEP}]
-	dev-python/isodate[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.6.0[${PYTHON_USEDEP}]
-	dev-python/lxml[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-1.4.0[${PYTHON_USEDEP}]
-	dev-python/platformdirs[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.7.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/requests-file-1.5.1[${PYTHON_USEDEP}]
-	dev-python/requests-file[${PYTHON_USEDEP}]
 	>=dev-python/requests-toolbelt-0.7.1[${PYTHON_USEDEP}]
-	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-1.4.0[${PYTHON_USEDEP}] )
 	xmlsec? ( >=dev-python/xmlsec-0.6.1[${PYTHON_USEDEP}] )
 "

@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all jax mlx numpy paddlepaddle pinned-tf quality tensorflow testing torch"
+GENERATED_IUSE="all jax mlx numpy paddlepaddle pinned-tf quality tensorflow torch"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	quality? ( ~dev-python/black-22.3[${PYTHON_USEDEP}] )
 	quality? ( ~dev-python/click-8.0.4[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/flax-0.6.3[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/h5py-3.7.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/huggingface-hub-0.12.1[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/hypothesis-6.70.2[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/isort-5.5.4[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jax-0.3.25[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jaxlib-0.3.25[${PYTHON_USEDEP}] )
 	mlx? ( >=dev-python/mlx-0.0.9[${PYTHON_USEDEP}] )
 	numpy? ( >=dev-python/numpy-1.21.6[${PYTHON_USEDEP}] )
 	paddlepaddle? ( >=dev-python/paddlepaddle-2.4.1[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-7.2.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/safetensors[jax,${PYTHON_USEDEP}] )
 	all? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	all? ( dev-python/safetensors[paddlepaddle,${PYTHON_USEDEP}] )
@@ -44,9 +38,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	paddlepaddle? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	pinned-tf? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	tensorflow? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
-	testing? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	torch? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/setuptools-rust-1.5.2[${PYTHON_USEDEP}] )
 	pinned-tf? ( ~dev-python/tensorflow-2.18.0[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-2.11.0[${PYTHON_USEDEP}] )
 	torch? ( >=dev-python/torch-1.10[${PYTHON_USEDEP}] )
@@ -55,5 +47,12 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	>=dev-python/h5py-3.7.0[${PYTHON_USEDEP}]
+	>=dev-python/huggingface-hub-0.12.1[${PYTHON_USEDEP}]
+	>=dev-python/hypothesis-6.70.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}]
 	dev-python/safetensors[all,${PYTHON_USEDEP}]
+	dev-python/safetensors[numpy,${PYTHON_USEDEP}]
+	>=dev-python/setuptools-rust-1.5.2[${PYTHON_USEDEP}]
 )"

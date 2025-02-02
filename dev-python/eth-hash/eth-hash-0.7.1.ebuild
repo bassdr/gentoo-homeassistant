@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="docs pycryptodome"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	pycryptodome? ( <dev-python/pycryptodome-4[${PYTHON_USEDEP}] )
 	<dev-python/pysha3-2.0.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
@@ -34,8 +33,6 @@ BDEPEND+=" test? (
 	dev-python/ipython[${PYTHON_USEDEP}]
 	~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}]

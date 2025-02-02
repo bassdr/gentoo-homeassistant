@@ -5,6 +5,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="AlarmDecoder extended"
 HOMEPAGE="
   https://pypi.org/project/adext/
@@ -13,14 +14,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/alarmdecoder[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/alarmdecoder-1.13.11[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

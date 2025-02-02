@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Python library for BlueZ Bluetooth Management API"
 HOMEPAGE="
   https://pypi.org/project/btsocket/
@@ -24,8 +25,6 @@ distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/bumpversion[${PYTHON_USEDEP}]
 	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/pycodestyle[${PYTHON_USEDEP}]
 	dev-python/pycodestyle[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]

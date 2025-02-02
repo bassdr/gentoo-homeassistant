@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/ipykernel-4.1[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-4.1[${PYTHON_USEDEP}]
 	dev-python/jupyter-core[${PYTHON_USEDEP}]

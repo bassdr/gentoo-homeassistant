@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs markdown table tests"
+GENERATED_IUSE="docs markdown table"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,9 +17,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	markdown? ( dev-python/dvc-render[table,${PYTHON_USEDEP}] )
-	tests? ( dev-python/dvc-render[markdown,table,${PYTHON_USEDEP}] )
 	table? ( <dev-python/flatten-dict-1[${PYTHON_USEDEP}] )
 	markdown? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocs-2[${PYTHON_USEDEP}] )
@@ -27,10 +26,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( <dev-python/mkdocs-material-10[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocs-section-index-1[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
 	table? ( >=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
@@ -38,5 +33,10 @@ RDEPEND="${GENERATED_DEPEND}"
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/dvc-render[docs,tests,${PYTHON_USEDEP}]
+	dev-python/dvc-render[markdown,table,${PYTHON_USEDEP}]
 	~dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytest-sugar[${PYTHON_USEDEP}]
 )"

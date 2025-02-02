@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="design docs tests"
+GENERATED_IUSE="design docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,17 +16,19 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	>=dev-python/numba-0.53[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	design? ( >=dev-python/optuna-2.10.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-8[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/scipy-1.1[${PYTHON_USEDEP}] )
 	docs? ( !=dev-python/sphinx-1.3.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/pytest-8[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
+)"

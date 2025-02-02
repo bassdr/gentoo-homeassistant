@@ -27,12 +27,11 @@ GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-4.0[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}] )
 "
@@ -51,4 +50,3 @@ python_test() {
 	build_sphinx tests/barebones
 	rm -r tests/barebones/_build || die
 }
-# SRC_URI could not be inserted in this ebuild

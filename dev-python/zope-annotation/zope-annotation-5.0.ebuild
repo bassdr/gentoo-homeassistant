@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="btrees docs testing zcml"
+GENERATED_IUSE="btrees docs zcml"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.annotation"
 inherit distutils-r1 pypi
 
@@ -18,33 +18,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	btrees? ( dev-python/btrees[${PYTHON_USEDEP}] )
-	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	testing? ( dev-python/nose[${PYTHON_USEDEP}] )
 	btrees? ( dev-python/persistent[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	dev-python/zope-component[${PYTHON_USEDEP}]
 	docs? ( dev-python/zope-component[zcml,${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-component[zcml,${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-component[zcml,${PYTHON_USEDEP}] )
 	docs? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	zcml? ( dev-python/zope-configuration[${PYTHON_USEDEP}] )
 	dev-python/zope-interface[${PYTHON_USEDEP}]
 	dev-python/zope-location[${PYTHON_USEDEP}]
 	dev-python/zope-proxy[${PYTHON_USEDEP}]
 	docs? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 	docs? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/nose[${PYTHON_USEDEP}]
 	dev-python/zope-component[zcml,${PYTHON_USEDEP}]
 	dev-python/zope-configuration[${PYTHON_USEDEP}]
 	dev-python/zope-testing[${PYTHON_USEDEP}]

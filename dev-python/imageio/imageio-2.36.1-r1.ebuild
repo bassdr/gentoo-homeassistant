@@ -29,7 +29,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all-plugins all-plugins-pypy build docs ffmpeg fits full gdal itk linting pillow-heif pyav rawpy tifffile"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all-plugins? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	fits? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	full? ( dev-python/astropy[${PYTHON_USEDEP}] )
@@ -51,13 +51,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	full? ( dev-python/itk[${PYTHON_USEDEP}] )
 	itk? ( dev-python/itk[${PYTHON_USEDEP}] )
 	all-plugins? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
-	dev-python/numpy[${PYTHON_USEDEP}]
 	full? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
 	rawpy? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	full? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	>=dev-python/pillow-8.3.2[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
 	all-plugins-pypy? ( dev-python/pillow-heif[${PYTHON_USEDEP}] )
 	all-plugins? ( dev-python/pillow-heif[${PYTHON_USEDEP}] )
 	full? ( dev-python/pillow-heif[${PYTHON_USEDEP}] )
@@ -104,10 +102,7 @@ BDEPEND+=" test? (
 	dev-python/black[${PYTHON_USEDEP}]
 	dev-python/flake8[${PYTHON_USEDEP}]
 	dev-python/fsspec[github,${PYTHON_USEDEP}]
-	dev-python/fsspec[github,${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 )"
 

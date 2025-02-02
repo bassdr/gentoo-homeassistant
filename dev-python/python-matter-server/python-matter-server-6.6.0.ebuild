@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	server? ( ~dev-python/aiohttp-3.10.8[${PYTHON_USEDEP}] )
 	dev-python/aiorun[${PYTHON_USEDEP}]
@@ -31,7 +31,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/coloredlogs[${PYTHON_USEDEP}]
 	server? ( ~dev-python/coloredlogs-15.0.1[${PYTHON_USEDEP}] )
 	server? ( ~dev-python/cryptography-43.0.1[${PYTHON_USEDEP}] )
-	dev-python/home-assistant-chip-clusters[${PYTHON_USEDEP}]
 	~dev-python/home-assistant-chip-clusters-2024.9.0[${PYTHON_USEDEP}]
 	server? ( ~dev-python/home-assistant-chip-core-2024.9.0[${PYTHON_USEDEP}] )
 	dev-python/orjson[${PYTHON_USEDEP}]

@@ -44,7 +44,7 @@ GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE} doc +fortran test-rust"
 
 # umfpack is technically optional but it's preferred to have it available.
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
 	doc? ( dev-python/jupyterlite-pyodide-kernel[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jupyterlite-sphinx-0.16.5[${PYTHON_USEDEP}] )

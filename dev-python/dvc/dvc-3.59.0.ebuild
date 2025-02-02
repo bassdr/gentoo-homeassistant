@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all azure gdrive gs hdfs lint oss s3 ssh ssh-gssapi testing tests webdav webhdfs webhdfs-kerberos"
+GENERATED_IUSE="all azure gdrive gs hdfs lint oss s3 ssh ssh-gssapi webdav webhdfs webhdfs-kerberos"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,9 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/beautifulsoup4-4.4[${PYTHON_USEDEP}] )
 	dev-python/celery[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.3.9[${PYTHON_USEDEP}]
 	>=dev-python/configobj-5.0.9[${PYTHON_USEDEP}]
@@ -27,7 +25,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/dpath-3[${PYTHON_USEDEP}]
 	dev-python/dulwich[${PYTHON_USEDEP}]
 	all? ( dev-python/dvc[azure,gdrive,gs,hdfs,oss,s3,ssh,webdav,webhdfs,${PYTHON_USEDEP}] )
-	tests? ( dev-python/dvc[testing,${PYTHON_USEDEP}] )
 	azure? ( <dev-python/dvc-azure-4[${PYTHON_USEDEP}] )
 	<dev-python/dvc-data-3.17[${PYTHON_USEDEP}]
 	gdrive? ( <dev-python/dvc-gdrive-4[${PYTHON_USEDEP}] )
@@ -40,13 +37,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	s3? ( <dev-python/dvc-s3-4[${PYTHON_USEDEP}] )
 	ssh-gssapi? ( <dev-python/dvc-ssh-5[gssapi,${PYTHON_USEDEP}] )
 	ssh? ( <dev-python/dvc-ssh-5[${PYTHON_USEDEP}] )
-	tests? ( dev-python/dvc-ssh[${PYTHON_USEDEP}] )
 	<dev-python/dvc-studio-client-1[${PYTHON_USEDEP}]
 	<dev-python/dvc-task-1[${PYTHON_USEDEP}]
 	webdav? ( <dev-python/dvc-webdav-4[${PYTHON_USEDEP}] )
 	webhdfs-kerberos? ( <dev-python/dvc-webhdfs-4[kerberos,${PYTHON_USEDEP}] )
 	webhdfs? ( <dev-python/dvc-webhdfs-4[${PYTHON_USEDEP}] )
-	tests? ( dev-python/filelock[${PYTHON_USEDEP}] )
 	<dev-python/flatten-dict-1[${PYTHON_USEDEP}]
 	<dev-python/flufl-lock-9[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2024.2.0[${PYTHON_USEDEP}]
@@ -60,7 +55,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]
 	dev-python/omegaconf[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/pandas-1[${PYTHON_USEDEP}] )
 	lint? ( dev-python/pandas-stubs[${PYTHON_USEDEP}] )
 	>=dev-python/pathspec-0.10.3[${PYTHON_USEDEP}]
 	<dev-python/platformdirs-5[${PYTHON_USEDEP}]
@@ -68,23 +62,12 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/pydot-1.2.4[${PYTHON_USEDEP}]
 	>=dev-python/pygtrie-2.3.2[${PYTHON_USEDEP}]
 	>=dev-python/pyparsing-2.4.7[${PYTHON_USEDEP}]
-	tests? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	testing? ( <dev-python/pytest-benchmark-6[histogram,${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-docker-4[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-test-utils[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-test-utils[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-timeout-2[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
 	>=dev-python/rich-12[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.17.11[${PYTHON_USEDEP}]
 	<dev-python/scmrepo-4[${PYTHON_USEDEP}]
 	>=dev-python/shortuuid-0.5[${PYTHON_USEDEP}]
 	<dev-python/shtab-2[${PYTHON_USEDEP}]
-	tests? ( <dev-python/sqlalchemy-3[${PYTHON_USEDEP}] )
 	>=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.11.1[${PYTHON_USEDEP}]
 	<dev-python/tqdm-5[${PYTHON_USEDEP}]
@@ -96,7 +79,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( dev-python/types-toml[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-tqdm[${PYTHON_USEDEP}] )
 	lint? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
-	testing? ( dev-python/uv[${PYTHON_USEDEP}] )
 	>=dev-python/voluptuous-0.11.7[${PYTHON_USEDEP}]
 	>=dev-python/zc-lockfile-1.2.1[${PYTHON_USEDEP}]
 "
@@ -104,5 +86,21 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	>=dev-python/beautifulsoup4-4.4[${PYTHON_USEDEP}]
 	dev-python/dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs,${PYTHON_USEDEP}]
+	dev-python/dvc[testing,${PYTHON_USEDEP}]
+	dev-python/dvc-ssh[${PYTHON_USEDEP}]
+	dev-python/filelock[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1[${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	<dev-python/pytest-benchmark-6[histogram,${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-docker-4[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	dev-python/pytest-test-utils[${PYTHON_USEDEP}]
+	>=dev-python/pytest-timeout-2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}]
+	<dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
+	dev-python/uv[${PYTHON_USEDEP}]
 )"

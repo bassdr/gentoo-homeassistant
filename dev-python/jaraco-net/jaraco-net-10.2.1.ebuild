@@ -6,7 +6,6 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 
-PYPI_PN="jaraco.net"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Networking tools by jaraco"
@@ -24,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	stats-server? ( dev-python/cherrypy[${PYTHON_USEDEP}] )
@@ -38,13 +37,10 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	dev-python/jaraco-text[${PYTHON_USEDEP}]
 	!=dev-python/jsonpickle-3.0.0[${PYTHON_USEDEP}]
-	dev-python/jsonpickle[${PYTHON_USEDEP}]
 	>=dev-python/keyring-0.6[${PYTHON_USEDEP}]
-	dev-python/keyring[${PYTHON_USEDEP}]
 	dev-python/mechanize[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	>=dev-python/path-16.6[${PYTHON_USEDEP}]
-	dev-python/path[${PYTHON_USEDEP}]
 	dev-python/pathvalidate[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
@@ -92,7 +88,7 @@ BDEPEND+=" test? (
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/jaraco-fabric[${PYTHON_USEDEP}]
 	dev-python/pyparsing[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]

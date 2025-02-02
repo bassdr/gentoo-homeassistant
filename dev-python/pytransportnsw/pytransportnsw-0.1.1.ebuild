@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PyTransportNSW"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Get transport information from TransportNSW"
 HOMEPAGE="
   https://pypi.org/project/PyTransportNSW/

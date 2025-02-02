@@ -16,15 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytest-3.5.0[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest-httpbin[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/requests[${PYTHON_USEDEP}] )
 	>=dev-python/vcrpy-2.0.1[${PYTHON_USEDEP}]
-	tests? ( ~dev-python/werkzeug-3.0.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytest-3.5.0[${PYTHON_USEDEP}]

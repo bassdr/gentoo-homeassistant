@@ -15,21 +15,16 @@ HOMEPAGE="
 LICENSE="LGPL-2+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.5.4[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
-	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/construct-2.9.45[${PYTHON_USEDEP}]
-	dev-python/construct[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodomex-3.7.2[${PYTHON_USEDEP}]
-	dev-python/pycryptodomex[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/construct-2.9.45[${PYTHON_USEDEP}]

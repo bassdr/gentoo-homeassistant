@@ -23,13 +23,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.10.0[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/typing-extensions-4.10.0[${PYTHON_USEDEP}]

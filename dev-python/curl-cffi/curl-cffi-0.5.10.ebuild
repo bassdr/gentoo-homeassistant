@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}]
 	build? ( dev-python/cibuildwheel[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
@@ -35,28 +35,18 @@ BDEPEND+=" test? (
 	~dev-python/black-22.8.0[${PYTHON_USEDEP}]
 	~dev-python/coverage-6.4.1[${PYTHON_USEDEP}]
 	~dev-python/cryptography-38.0.3[${PYTHON_USEDEP}]
-	~dev-python/cryptography-38.0.3[${PYTHON_USEDEP}]
 	~dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
 	~dev-python/flake8-bugbear-22.7.1[${PYTHON_USEDEP}]
 	~dev-python/flake8-pie-0.15.0[${PYTHON_USEDEP}]
 	~dev-python/httpx-0.23.1[${PYTHON_USEDEP}]
-	~dev-python/httpx-0.23.1[${PYTHON_USEDEP}]
 	~dev-python/isort-5.10.1[${PYTHON_USEDEP}]
 	~dev-python/mypy-0.971[${PYTHON_USEDEP}]
 	~dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
 	~dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
 	~dev-python/pytest-trio-0.7.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-trio-0.7.0[${PYTHON_USEDEP}]
-	~dev-python/trio-0.21.0[${PYTHON_USEDEP}]
 	~dev-python/trio-0.21.0[${PYTHON_USEDEP}]
 	~dev-python/trio-typing-0.7.0[${PYTHON_USEDEP}]
-	~dev-python/trio-typing-0.7.0[${PYTHON_USEDEP}]
-	~dev-python/trustme-0.9.0[${PYTHON_USEDEP}]
 	~dev-python/trustme-0.9.0[${PYTHON_USEDEP}]
 	~dev-python/types-certifi-2021.10.8.2[${PYTHON_USEDEP}]
-	~dev-python/types-certifi-2021.10.8.2[${PYTHON_USEDEP}]
-	~dev-python/uvicorn-0.18.3[${PYTHON_USEDEP}]
 	~dev-python/uvicorn-0.18.3[${PYTHON_USEDEP}]
 )"

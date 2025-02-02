@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all orjson playground postgres sqlite"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/aiosqlite-0.16.0[${PYTHON_USEDEP}] )
 	sqlite? ( >=dev-python/aiosqlite-0.16.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/asyncpg-0.30.0[${PYTHON_USEDEP}] )
@@ -30,7 +29,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/jinja2-2.11.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/orjson-3.5.1[${PYTHON_USEDEP}] )
 	orjson? ( >=dev-python/orjson-3.5.1[${PYTHON_USEDEP}] )
-	~dev-python/pydantic-2*[email,${PYTHON_USEDEP}]
+	~dev-python/pydantic-2[email,${PYTHON_USEDEP}]
 	>=dev-python/targ-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]
 "

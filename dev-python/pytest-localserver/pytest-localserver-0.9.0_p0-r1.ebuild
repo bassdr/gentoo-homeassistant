@@ -7,9 +7,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "pytest-localserver" "0.9.0.post0")"
-S="${WORKDIR}/pytest-localserver-0.9.0.post0"
+SRC_URI="$(pypi_sdist_url ${PN} 0.9.0.post0)"
+S="${WORKDIR}/${PN}-0.9.0.post0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -21,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="smtp"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	smtp? ( dev-python/aiosmtpd[${PYTHON_USEDEP}] )
 	>=dev-python/werkzeug-0.10[${PYTHON_USEDEP}]
 "

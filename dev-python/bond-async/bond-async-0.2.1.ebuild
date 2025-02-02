@@ -15,17 +15,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.8.7[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	!dev-python/bond-api[${PYTHON_USEDEP}]

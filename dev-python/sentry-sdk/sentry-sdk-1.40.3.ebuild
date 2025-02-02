@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="aiohttp arq asyncpg beam bottle celery chalice clickhouse-driver django falcon fastapi flask grpcio httpx huey loguru opentelemetry opentelemetry-experimental pure_eval pymongo pyspark quart rq sanic sqlalchemy starlette starlite tornado"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	aiohttp? ( >=dev-python/aiohttp-3.5[${PYTHON_USEDEP}] )
 	beam? ( >=dev-python/apache-beam-2.12[${PYTHON_USEDEP}] )
 	arq? ( >=dev-python/arq-0.23[${PYTHON_USEDEP}] )
@@ -70,7 +70,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	starlite? ( >=dev-python/starlite-1.48[${PYTHON_USEDEP}] )
 	tornado? ( >=dev-python/tornado-5[${PYTHON_USEDEP}] )
 	>=dev-python/urllib3-1.25.7[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/urllib3[${PYTHON_USEDEP}]

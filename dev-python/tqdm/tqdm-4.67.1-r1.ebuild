@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="discord notebook slack telegram"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	notebook? ( >=dev-python/ipywidgets-6[${PYTHON_USEDEP}] )
 	discord? ( dev-python/requests[${PYTHON_USEDEP}] )
 	telegram? ( dev-python/requests[${PYTHON_USEDEP}] )

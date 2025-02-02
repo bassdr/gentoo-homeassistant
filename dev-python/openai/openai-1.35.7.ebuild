@@ -23,24 +23,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/anyio-5[${PYTHON_USEDEP}]
-	dev-python/anyio[${PYTHON_USEDEP}]
 	dev-python/cached-property[${PYTHON_USEDEP}]
 	<dev-python/distro-2[${PYTHON_USEDEP}]
-	dev-python/distro[${PYTHON_USEDEP}]
 	<dev-python/httpx-1[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	datalib? ( >=dev-python/numpy-1[${PYTHON_USEDEP}] )
 	datalib? ( >=dev-python/pandas-1.2.3[${PYTHON_USEDEP}] )
 	datalib? ( >=dev-python/pandas-stubs-1.1.0.11[${PYTHON_USEDEP}] )
 	<dev-python/pydantic-3[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
 	>dev-python/tqdm-4[${PYTHON_USEDEP}]
-	dev-python/tqdm[${PYTHON_USEDEP}]
 	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]

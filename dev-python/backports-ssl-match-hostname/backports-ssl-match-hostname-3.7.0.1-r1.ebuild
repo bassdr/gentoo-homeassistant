@@ -5,7 +5,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_PN="backports.ssl-match-hostname"
+PYPI_NO_NORMALIZE=1
+PYPI_PN="backports.ssl_match_hostname"
 inherit pypi distutils-r1
 
 MY_PN=${PN/-/.}
@@ -13,9 +14,6 @@ MY_PN=${MY_PN//-/_}
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/backports.ssl-match-hostname/"
-SRC_URI="$(pypi_sdist_url --no-normalize "${MY_PN}" "${PV}")"
-S="${WORKDIR}/${MY_PN}-${PV}"
-
 LICENSE="PSF-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"

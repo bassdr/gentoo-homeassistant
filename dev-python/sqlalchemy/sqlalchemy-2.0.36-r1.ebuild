@@ -5,7 +5,6 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="SQLAlchemy"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="sqlite?"
 
@@ -13,7 +12,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Database Abstraction Library"
 HOMEPAGE="
-  https://pypi.org/project/SQLAlchemy/
+  https://pypi.org/project/sqlalchemy/
   Documentation, https://docs.sqlalchemy.org
   Issue Tracker, https://github.com/sqlalchemy/sqlalchemy/
 "
@@ -24,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="aiomysql aioodbc aiosqlite asyncio asyncmy mariadb-connector mssql mssql-pymssql mssql-pyodbc mypy mysql mysql-connector oracle oracle-oracledb postgresql postgresql-asyncpg postgresql-pg8000 postgresql-psycopg postgresql-psycopg2binary postgresql-psycopg2cffi postgresql-psycopgbinary pymysql sqlcipher"
 IUSE="${GENERATED_IUSE} examples +sqlite test"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	aiomysql? ( >=dev-python/aiomysql-0.2.0[${PYTHON_USEDEP}] )
 	aioodbc? ( dev-python/aioodbc[${PYTHON_USEDEP}] )
 	aiosqlite? ( dev-python/aiosqlite[${PYTHON_USEDEP}] )
@@ -37,7 +36,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	aiosqlite? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
 	asyncio? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
 	asyncmy? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
-	dev-python/greenlet[${PYTHON_USEDEP}]
 	postgresql-asyncpg? ( !=dev-python/greenlet-0.4.17[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	mariadb-connector? ( !=dev-python/mariadb-1.1.10[${PYTHON_USEDEP}] )
@@ -58,7 +56,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	sqlcipher? ( dev-python/sqlcipher3-binary[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	aiosqlite? ( !=dev-python/typing-extensions-3.10.0.1[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]

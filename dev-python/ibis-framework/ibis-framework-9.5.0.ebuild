@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="bigquery clickhouse dask datafusion decompiler deltalake druid duckdb examples exasol geospatial impala mssql mysql oracle polars postgres pyspark snowflake trino visualization"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/atpublic-6[${PYTHON_USEDEP}]
 	decompiler? ( <dev-python/black-25[${PYTHON_USEDEP}] )
 	clickhouse? ( <dev-python/clickhouse-connect-1[arrow,numpy,pandas,${PYTHON_USEDEP}] )

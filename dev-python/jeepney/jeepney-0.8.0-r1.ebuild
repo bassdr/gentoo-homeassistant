@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="trio"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	trio? ( dev-python/async-generator[${PYTHON_USEDEP}] )
 	trio? ( dev-python/trio[${PYTHON_USEDEP}] )
 "

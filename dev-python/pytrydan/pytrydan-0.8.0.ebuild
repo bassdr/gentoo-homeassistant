@@ -19,23 +19,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.2[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	>=dev-python/rich-10[${PYTHON_USEDEP}]
-	dev-python/rich[${PYTHON_USEDEP}]
 	<dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
-	dev-python/tenacity[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.7.0[${PYTHON_USEDEP}]
-	dev-python/typer[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/rich-10[${PYTHON_USEDEP}]

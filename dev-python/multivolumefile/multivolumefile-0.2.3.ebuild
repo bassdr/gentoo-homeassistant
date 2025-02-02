@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="check type"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	check? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 	check? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	check? ( dev-python/flake8-black[${PYTHON_USEDEP}] )

@@ -17,21 +17,16 @@ SRC_URI="https://github.com/jkeljo/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	<dev-python/netifaces-0.12.0[${PYTHON_USEDEP}]
-	dev-python/netifaces[${PYTHON_USEDEP}]
 	<dev-python/python-engineio-v3-4.0.0[${PYTHON_USEDEP}]
-	dev-python/python-engineio-v3[${PYTHON_USEDEP}]
 	<dev-python/python-socketio-v4-5.0.0[${PYTHON_USEDEP}]
-	dev-python/python-socketio-v4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

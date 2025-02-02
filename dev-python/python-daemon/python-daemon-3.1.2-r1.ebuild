@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build devel dist static-analysis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	build? ( dev-python/changelog-chug[${PYTHON_USEDEP}] )
 	build? ( dev-python/docutils[${PYTHON_USEDEP}] )

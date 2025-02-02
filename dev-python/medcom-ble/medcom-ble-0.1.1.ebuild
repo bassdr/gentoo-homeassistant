@@ -17,17 +17,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-1.8.0[${PYTHON_USEDEP}]
-	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]

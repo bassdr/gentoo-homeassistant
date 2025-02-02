@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docker-compose-v1 tests"
+GENERATED_IUSE="docker-compose-v1"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,18 +17,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 	docker-compose-v1? ( <dev-python/docker-compose-2.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/mypy-2.000[${PYTHON_USEDEP}] )
 	<dev-python/pytest-9.0[${PYTHON_USEDEP}]
-	tests? ( <dev-python/pytest-mypy-1.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-pycodestyle-3.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-pylint-1.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/types-requests-3.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/types-setuptools-70.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/mypy-2.000[${PYTHON_USEDEP}]
+	<dev-python/pytest-mypy-1.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-pycodestyle-3.0[${PYTHON_USEDEP}]
+	<dev-python/pytest-pylint-1.0[${PYTHON_USEDEP}]
+	<dev-python/requests-3.0[${PYTHON_USEDEP}]
+	<dev-python/types-requests-3.0[${PYTHON_USEDEP}]
+	<dev-python/types-setuptools-70.0[${PYTHON_USEDEP}]
+)"

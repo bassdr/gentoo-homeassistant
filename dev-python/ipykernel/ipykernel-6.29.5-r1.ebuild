@@ -19,14 +19,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cov docs pyqt5 pyside6"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/comm-0.1.1[${PYTHON_USEDEP}]
 	cov? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
 	cov? ( dev-python/curio[${PYTHON_USEDEP}] )
 	>=dev-python/debugpy-1.6.5[${PYTHON_USEDEP}]
 	>=dev-python/ipython-7.23.1[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-6.1.12[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-core-5.0[${PYTHON_USEDEP}]
 	cov? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	>=dev-python/matplotlib-inline-0.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

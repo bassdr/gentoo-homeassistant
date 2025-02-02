@@ -5,10 +5,10 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=sip
-PYPI_NO_NORMALIZE=1
-PYPI_PN=PyQtWebEngine
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="PyQtWebEngine"
 inherit distutils-r1 flag-o-matic multiprocessing pypi qmake-utils
 
 DESCRIPTION=""
@@ -18,10 +18,9 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} debug"
+IUSE="debug"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyqt5-5.15.4[${PYTHON_USEDEP}]
 	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
 	<dev-python/pyqtwebengine-qt5-5.16.0[${PYTHON_USEDEP}]

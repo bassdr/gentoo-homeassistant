@@ -5,6 +5,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="Tools for converting bluetooth data and packets"
 HOMEPAGE="
   https://pypi.org/project/bluetooth-data-tools/
@@ -23,9 +24,8 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/cryptography-41.0.3[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	docs? ( <dev-python/myst-parser-1.1[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )

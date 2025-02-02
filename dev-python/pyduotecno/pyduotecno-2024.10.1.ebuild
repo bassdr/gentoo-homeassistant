@@ -4,7 +4,6 @@
 EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="pyDuotecno"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Open-source home automation platform running on Python 3."

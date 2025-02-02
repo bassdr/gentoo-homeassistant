@@ -23,9 +23,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="test"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 "
 BDEPEND="
 	test? (
@@ -52,4 +51,3 @@ EPYTEST_DESELECT=(
 	tests/test_image.py::ImageTest::test_image
 )
 # RDEPEND could not be inserted in this ebuild
-# PYPI_PN could not be inserted in this ebuild

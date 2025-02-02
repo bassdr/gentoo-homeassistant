@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="WebOb"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -17,14 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/pylons-sphinx-themes[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-3.1.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.5[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -35,3 +30,9 @@ RDEPEND="${GENERATED_DEPEND}
 
 distutils_enable_sphinx docs 'dev-python/alabaster'
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	>=dev-python/pytest-3.1.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"

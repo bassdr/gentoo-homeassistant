@@ -12,19 +12,15 @@ HOMEPAGE="
   https://pypi.org/project/pyotgw/
 "
 MY_PV="${PV/_beta/b}"
-SRC_URI="$(pypi_sdist_url "${PN}" "${MY_PV}")"
-S="${WORKDIR}/${PN}-${MY_PV}"
-
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

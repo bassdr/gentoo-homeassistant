@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all datashade default io networkx numba pandas repr scipy suitesparse suitesparse-udf viz"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	io? ( >=dev-python/awkward-1.9[${PYTHON_USEDEP}] )
 	datashade? ( >=dev-python/datashader-0.12[${PYTHON_USEDEP}] )
 	>=dev-python/donfig-0.6[${PYTHON_USEDEP}]
@@ -33,7 +33,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	datashade? ( dev-python/python-graphblas[numba,pandas,scipy,${PYTHON_USEDEP}] )
 	default? ( dev-python/python-graphblas[pandas,scipy,suitesparse,${PYTHON_USEDEP}] )
 	dev-python/python-graphblas[datashade,${PYTHON_USEDEP}]
-	dev-python/python-graphblas[numba,${PYTHON_USEDEP}]
 	dev-python/python-graphblas[numba,${PYTHON_USEDEP}]
 	io? ( dev-python/python-graphblas[networkx,scipy,${PYTHON_USEDEP}] )
 	repr? ( dev-python/python-graphblas[pandas,${PYTHON_USEDEP}] )

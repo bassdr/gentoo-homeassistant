@@ -16,7 +16,7 @@ MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Python Imaging Library (Fork)"
 HOMEPAGE="
-  https://pypi.org/project/Pillow/
+  https://pypi.org/project/pillow/
   Changelog, https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst
   Documentation, https://pillow.readthedocs.io
   Funding, https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pypi-pillow&utm_medium=pypi
@@ -34,27 +34,17 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="HPND"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs fpx mic tests xmp"
+GENERATED_IUSE="docs fpx mic xmp"
 IUSE="${GENERATED_IUSE} examples imagequant +jpeg jpeg2k lcms test tiff tk truetype webp xcb zlib"
 REQUIRED_USE="test? ( jpeg jpeg2k lcms tiff truetype )"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
-	tests? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	tests? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	xmp? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	tests? ( dev-python/markdown2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/olefile[${PYTHON_USEDEP}] )
 	fpx? ( dev-python/olefile[${PYTHON_USEDEP}] )
 	mic? ( dev-python/olefile[${PYTHON_USEDEP}] )
-	tests? ( dev-python/olefile[${PYTHON_USEDEP}] )
-	tests? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pyroma[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-8.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}] )
@@ -71,7 +61,7 @@ DEPEND="
 	xcb? ( x11-libs/libxcb )
 	zlib? ( sys-libs/zlib:= )
 "
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	${DEPEND}
 	dev-python/olefile[${PYTHON_USEDEP}]
 "
@@ -92,6 +82,18 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/check-manifest[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/defusedxml[${PYTHON_USEDEP}]
+	dev-python/markdown2[${PYTHON_USEDEP}]
+	dev-python/olefile[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pyroma[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+)"
 
 PATCHES=(
 	# https://github.com/python-pillow/pillow/pull/7634
@@ -176,4 +178,3 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
-# PYPI_PN could not be inserted in this ebuild

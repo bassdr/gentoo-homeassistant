@@ -19,45 +19,28 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiofiles-24[${PYTHON_USEDEP}]
-	dev-python/aiofiles[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/aioshutil-1.3[${PYTHON_USEDEP}]
-	dev-python/aioshutil[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 	>=dev-python/convertertools-0.5.0[${PYTHON_USEDEP}]
-	dev-python/convertertools[${PYTHON_USEDEP}]
 	>=dev-python/dateparser-1.1.0[${PYTHON_USEDEP}]
-	dev-python/dateparser[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.15[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pillow-10[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-4[${PYTHON_USEDEP}]
-	dev-python/platformdirs[${PYTHON_USEDEP}]
 	>=dev-python/propcache-0.0.0[${PYTHON_USEDEP}]
-	dev-python/propcache[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.17[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.6[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
 	>=dev-python/rich-10[${PYTHON_USEDEP}]
-	dev-python/rich[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.12.3[${PYTHON_USEDEP}]
-	dev-python/typer[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]

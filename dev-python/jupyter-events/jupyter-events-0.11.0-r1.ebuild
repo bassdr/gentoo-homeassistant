@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 # jsonschema[format-nongpl] deps are always on in our ebuild
 GENERATED_IUSE="cli docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )
 	>=dev-python/jsonschema-4.18.0[format-nongpl,${PYTHON_USEDEP}]
 	docs? ( dev-python/jupyterlite-sphinx[${PYTHON_USEDEP}] )

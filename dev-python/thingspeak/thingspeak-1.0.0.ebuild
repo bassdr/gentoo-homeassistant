@@ -15,17 +15,14 @@ HOMEPAGE="
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}]
-	dev-python/docopt[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.21[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]"

@@ -16,14 +16,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="develop docs tests"
+GENERATED_IUSE="develop docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	develop? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	>=dev-python/gmpy2-2.1.0_alpha4[${PYTHON_USEDEP}]
 	develop? ( dev-python/pycodestyle[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/pytest-4.6[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-4.6[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	develop? ( dev-python/wheel[${PYTHON_USEDEP}] )
@@ -55,6 +54,9 @@ PATCHES=(
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

@@ -33,11 +33,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	>=dev-python/webencodings-0.4[${PYTHON_USEDEP}]
-	dev-python/webencodings[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/webencodings-0.4[${PYTHON_USEDEP}]

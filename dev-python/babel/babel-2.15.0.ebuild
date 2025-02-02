@@ -7,7 +7,6 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
-PYPI_PN="Babel"
 inherit distutils-r1 pypi
 
 # see scripts/download_import_cldr.py
@@ -26,9 +25,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # RDEPEND in BDEPEND for import_cldr.py usage, bug #852158
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytz-2015.7[${PYTHON_USEDEP}]
 "
 BDEPEND="

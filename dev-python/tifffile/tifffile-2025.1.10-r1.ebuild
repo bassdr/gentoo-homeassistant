@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all codecs plot xml zarr"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	xml? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	all? ( dev-python/fsspec[${PYTHON_USEDEP}] )

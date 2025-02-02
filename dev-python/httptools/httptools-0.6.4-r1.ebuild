@@ -23,9 +23,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # don't ask me why they use both
-GENERATED_IUSE="test"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 "
 DEPEND="
 	net-libs/http-parser:=

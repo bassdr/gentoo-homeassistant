@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="apache.hive cncf.kubernetes common.sql exasol ftp google imap mongo pandas salesforce ssh"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.3.0[${PYTHON_USEDEP}]
 	apache.hive? ( dev-python/apache-airflow-providers-apache-hive[${PYTHON_USEDEP}] )
 	cncf.kubernetes? ( dev-python/apache-airflow-providers-cncf-kubernetes[${PYTHON_USEDEP}] )

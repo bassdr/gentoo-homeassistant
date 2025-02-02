@@ -18,13 +18,12 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/apischema[${PYTHON_USEDEP}]
 	dev-python/gql[${PYTHON_USEDEP}]

@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="TwitterAPI"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Minimal wrapper for Twitter's REST and Streaming APIs"
 HOMEPAGE="
   https://pypi.org/project/TwitterAPI/
@@ -16,13 +17,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-oauthlib[${PYTHON_USEDEP}]
 "

@@ -11,15 +11,12 @@ inherit distutils-r1 pypi
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/questionary/"
-SRC_URI="https://github.com/tmbo/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/prompt-toolkit-4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND} dev-python/prompt-toolkit[${PYTHON_USEDEP}]"

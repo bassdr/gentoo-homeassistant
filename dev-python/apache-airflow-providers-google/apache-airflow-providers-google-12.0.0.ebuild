@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="amazon apache-beam apache-cassandra cncf-kubernetes facebook leveldb microsoft-azure microsoft-mssql mysql openlineage oracle postgres presto salesforce sftp ssh trino"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	amazon? ( >=dev-python/apache-airflow-providers-amazon-2.6.0[${PYTHON_USEDEP}] )
 	apache-beam? ( dev-python/apache-airflow-providers-apache-beam[${PYTHON_USEDEP}] )
@@ -54,7 +53,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/google-cloud-alloydb[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-automl-2.12.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-batch-0.13.0[${PYTHON_USEDEP}]
-	!=dev-python/google-cloud-bigquery-3.21*[${PYTHON_USEDEP}]
+	!=dev-python/google-cloud-bigquery-3.21[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigquery-datatransfer-3.13.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigtable-2.17.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-build-3.22.0[${PYTHON_USEDEP}]

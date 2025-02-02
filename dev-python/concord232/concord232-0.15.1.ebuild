@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="GE Concord 4 RS232 Serial Interface Library and Server"
 HOMEPAGE="
   https://pypi.org/project/concord232/
@@ -15,11 +16,10 @@ LICENSE="all-rights-reserved"
 
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test ) mirror"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]

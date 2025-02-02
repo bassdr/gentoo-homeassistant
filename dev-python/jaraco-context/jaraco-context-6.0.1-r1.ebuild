@@ -5,7 +5,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYPI_PN="jaraco.context"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -21,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep 'dev-python/backports-tarfile[${PYTHON_USEDEP}]' python3_12)
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
@@ -44,7 +43,7 @@ BDEPEND="
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/portend[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all coco comet-ml databricks gcs libcloud mlflow mlperf neptune nlp oci onnx pandas peft sentencepiece slack streaming system-metrics-monitor tensorboard wandb"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
 	libcloud? ( <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
 	all? ( <dev-python/boto3-2[${PYTHON_USEDEP}] )

@@ -23,10 +23,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs jinja2"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >dev-python/mercurial-5.7[${PYTHON_USEDEP}] )
 	>=dev-python/ruamel-yaml-clib-0.2.7[${PYTHON_USEDEP}]
-	dev-python/ruamel-yaml-clib[${PYTHON_USEDEP}]
 	jinja2? ( >=dev-python/ruamel-yaml-jinja2-0.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ryd[${PYTHON_USEDEP}] )
 "
@@ -59,4 +58,3 @@ python_test() {
 	distutils_write_namespace ruamel
 	epytest
 }
-# PYPI_PN could not be inserted in this ebuild

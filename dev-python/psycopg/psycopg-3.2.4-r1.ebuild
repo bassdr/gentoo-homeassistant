@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs pool"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/backports-zoneinfo-0.2.0[${PYTHON_USEDEP}]
 	docs? ( ~dev-python/furo-2022.6.21[${PYTHON_USEDEP}] )
 	pool? ( dev-python/psycopg-pool[${PYTHON_USEDEP}] )
@@ -66,7 +66,6 @@ BDEPEND+=" test? (
 	>=dev-python/codespell-2.2[${PYTHON_USEDEP}]
 	>=dev-python/dnspython-2.1[${PYTHON_USEDEP}]
 	>=dev-python/flake8-4.0[${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.14[${PYTHON_USEDEP}]
 	>=dev-python/mypy-1.14[${PYTHON_USEDEP}]
 	>=dev-python/pproxy-2.7[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]

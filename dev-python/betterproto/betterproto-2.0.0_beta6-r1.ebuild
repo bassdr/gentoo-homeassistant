@@ -36,7 +36,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="compiler"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	compiler? ( >=dev-python/black-19.3_beta0[${PYTHON_USEDEP}] )
 	>=dev-python/grpclib-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-1.6.0[${PYTHON_USEDEP}]
@@ -78,4 +78,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -p asyncio -p pytest_mock
 }
-# SRC_URI could not be inserted in this ebuild

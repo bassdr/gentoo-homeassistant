@@ -4,8 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	~dev-python/libkvikio-cu12-24.12*[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	~dev-python/libkvikio-cu12-24.12[${PYTHON_USEDEP}]
 	~dev-python/nvidia-nvcomp-cu12-4.1.0.6[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

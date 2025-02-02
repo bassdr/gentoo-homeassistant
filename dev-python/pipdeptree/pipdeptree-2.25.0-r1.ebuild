@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="graphviz"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	graphviz? ( >=dev-python/graphviz-0.20.3[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
 	>=dev-python/pip-24.2[${PYTHON_USEDEP}]

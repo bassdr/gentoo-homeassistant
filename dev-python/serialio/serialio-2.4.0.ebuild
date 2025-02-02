@@ -3,8 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Concurrency agnostic serialio API"
@@ -16,9 +14,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/sockio[${PYTHON_USEDEP}]
 "

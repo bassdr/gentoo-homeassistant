@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,15 +15,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/boto3-2[${PYTHON_USEDEP}]
-	tests? ( dev-python/build[${PYTHON_USEDEP}] )
-	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/flake8-5[${PYTHON_USEDEP}] )
-	tests? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pyyaml-6[${PYTHON_USEDEP}] )
-	tests? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	<dev-python/flake8-5[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	<dev-python/pyyaml-6[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"

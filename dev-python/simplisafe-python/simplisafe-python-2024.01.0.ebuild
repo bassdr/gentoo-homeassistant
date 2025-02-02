@@ -6,6 +6,8 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 2024.1.0)"
+S="${WORKDIR}/${PN}-2024.1.0"
 
 DESCRIPTION="A Python3, async interface to the SimpliSafe API"
 HOMEPAGE="
@@ -18,25 +20,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/backoff-1.11.1[${PYTHON_USEDEP}]
-	dev-python/backoff[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
-	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.11.7[${PYTHON_USEDEP}]
-	dev-python/voluptuous[${PYTHON_USEDEP}]
 	>=dev-python/websockets-8.1[${PYTHON_USEDEP}]
-	dev-python/websockets[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9.2[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]

@@ -7,9 +7,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "outcome" "1.3.0.post0")"
-S="${WORKDIR}/outcome-1.3.0.post0"
+SRC_URI="$(pypi_sdist_url ${PN} 1.3.0.post0)"
+S="${WORKDIR}/${PN}-1.3.0.post0"
 
 DESCRIPTION="Capture the outcome of Python function calls."
 HOMEPAGE="
@@ -23,11 +22,9 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]

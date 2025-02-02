@@ -16,9 +16,8 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/cryptography-3.1[${PYTHON_USEDEP}]
 	>=dev-python/idna-2.0[${PYTHON_USEDEP}]
 "

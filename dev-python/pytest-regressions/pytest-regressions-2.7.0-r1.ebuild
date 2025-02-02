@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dataframe image num"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dataframe? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	image? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	num? ( dev-python/numpy[${PYTHON_USEDEP}] )

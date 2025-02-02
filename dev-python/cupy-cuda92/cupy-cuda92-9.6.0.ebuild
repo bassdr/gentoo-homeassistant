@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	stylecheck? ( ~dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/coverage-5[${PYTHON_USEDEP}] )

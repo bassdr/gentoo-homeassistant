@@ -18,21 +18,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/httpx-0.18.0[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-1.7.1[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
 	>=dev-python/websockets-13.0[${PYTHON_USEDEP}]
-	dev-python/websockets[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6.3[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pyjwt-1.7.1[${PYTHON_USEDEP}]

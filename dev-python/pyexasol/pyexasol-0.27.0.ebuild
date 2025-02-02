@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="examples numpy orjson pandas rapidjson ujson"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	numpy? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
 	orjson? ( >=dev-python/orjson-3.6[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]

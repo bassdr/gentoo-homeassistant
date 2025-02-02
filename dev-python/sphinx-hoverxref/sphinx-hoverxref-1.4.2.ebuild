@@ -3,14 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "sphinx-hoverxref" "0.7b1")"
-S="${WORKDIR}/sphinx-hoverxref-0.7b1"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/sphinx-5.0[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-autoapi[${PYTHON_USEDEP}] )

@@ -21,10 +21,9 @@ S=${WORKDIR}/${PN}-${P}
 LICENSE="MIT PSF-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} examples sasl ssl"
+IUSE="examples sasl ssl"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyasn1-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-modules-0.1.5[${PYTHON_USEDEP}]
 "

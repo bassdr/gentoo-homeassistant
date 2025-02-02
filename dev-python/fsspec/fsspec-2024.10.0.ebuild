@@ -29,7 +29,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="abfs adl arrow dask doc dropbox full fuse gcs git github gs gui hdfs http libarchive oci s3 sftp smb ssh test-downstream test-full tqdm"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	abfs? ( dev-python/adlfs[${PYTHON_USEDEP}] )
 	adl? ( dev-python/adlfs[${PYTHON_USEDEP}] )
 	full? ( dev-python/adlfs[${PYTHON_USEDEP}] )

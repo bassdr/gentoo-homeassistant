@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="sphinx"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	sphinx? ( >=dev-python/docutils-0.11[${PYTHON_USEDEP}] )
 	>=dev-python/dulwich-0.15.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.4[${PYTHON_USEDEP}]

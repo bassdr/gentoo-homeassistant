@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,9 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

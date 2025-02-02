@@ -15,15 +15,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pyopenssl[${PYTHON_USEDEP}]"
@@ -37,3 +35,6 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

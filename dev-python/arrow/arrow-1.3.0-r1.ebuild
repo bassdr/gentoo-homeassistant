@@ -22,16 +22,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/doc8[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.7.0[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-7.0.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/types-python-dateutil-2.8.10[${PYTHON_USEDEP}]
-	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/python-dateutil-2.7.0[${PYTHON_USEDEP}]
@@ -47,12 +45,12 @@ BDEPEND="
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	~dev-python/dateparser-1*[${PYTHON_USEDEP}]
+	~dev-python/dateparser-1[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/pytest-mock[${PYTHON_USEDEP}]
 	~dev-python/pytz-2021.1[${PYTHON_USEDEP}]
-	~dev-python/simplejson-3*[${PYTHON_USEDEP}]
+	~dev-python/simplejson-3[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 )"
 

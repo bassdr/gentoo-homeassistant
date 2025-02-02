@@ -17,15 +17,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyserial-3.4[${PYTHON_USEDEP}]
-	dev-python/pyserial[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-asyncio-0.4[${PYTHON_USEDEP}]
-	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pyserial[${PYTHON_USEDEP}]

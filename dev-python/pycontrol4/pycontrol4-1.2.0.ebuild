@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="pyControl4"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Python 3 asyncio package for interacting with Control4 systems"
@@ -16,13 +15,12 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/python-socketio-v4[${PYTHON_USEDEP}]
 	dev-python/websocket-client[${PYTHON_USEDEP}]

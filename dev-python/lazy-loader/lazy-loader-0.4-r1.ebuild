@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	lint? ( ~dev-vcs/pre-commit-3.7.0[${PYTHON_USEDEP}] )

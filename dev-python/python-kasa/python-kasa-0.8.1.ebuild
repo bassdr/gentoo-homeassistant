@@ -25,17 +25,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/asyncclick-8.1.7[${PYTHON_USEDEP}]
-	dev-python/asyncclick[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-1.9[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/docutils-0.17[${PYTHON_USEDEP}] )
 	speedups? ( >=dev-python/kasa-crypt-0.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/mashumaro-3.14[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	speedups? ( >=dev-python/orjson-3.9.1[${PYTHON_USEDEP}] )
 	shell? ( dev-python/ptpython[${PYTHON_USEDEP}] )

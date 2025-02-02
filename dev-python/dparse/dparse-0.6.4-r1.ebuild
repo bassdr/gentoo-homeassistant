@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 # Break circular dependency
 GENERATED_IUSE="all conda pipenv poetry"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	all? ( dev-python/pipenv[${PYTHON_USEDEP}] )
 	pipenv? ( dev-python/pipenv[${PYTHON_USEDEP}] )

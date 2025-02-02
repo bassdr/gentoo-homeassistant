@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs evaluator quality template tensorflow tensorflow-gpu tests torch"
+GENERATED_IUSE="docs evaluator quality template tensorflow tensorflow-gpu torch"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,13 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/absl-py[${PYTHON_USEDEP}] )
-	tests? ( dev-python/accelerate[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/bert-score-0.3.6[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	quality? ( ~dev-python/black-22.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/cer-1.2.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/charcut-1.1.1[${PYTHON_USEDEP}] )
 	template? ( dev-python/cookiecutter[${PYTHON_USEDEP}] )
 	>=dev-python/datasets-2.0.0[${PYTHON_USEDEP}]
 	dev-python/dill[${PYTHON_USEDEP}]
@@ -33,43 +27,19 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/huggingface-hub-0.7.0[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	quality? ( >=dev-python/isort-5.0.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/jiwer[${PYTHON_USEDEP}] )
-	tests? ( dev-python/mauve-text[${PYTHON_USEDEP}] )
 	dev-python/multiprocess[${PYTHON_USEDEP}]
-	tests? ( <dev-python/nltk-3.9[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-datadir[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/requests-file-1.5.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/rouge-score-0.1.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/s3fs[${PYTHON_USEDEP}] )
-	tests? ( dev-python/sacrebleu[${PYTHON_USEDEP}] )
-	tests? ( dev-python/sacremoses[${PYTHON_USEDEP}] )
-	tests? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	evaluator? ( >=dev-python/scipy-1.7.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/scipy-1.10.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
-	tests? ( dev-python/seqeval[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/six-1.15.0[${PYTHON_USEDEP}] )
 	tensorflow? ( !=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
-	tests? ( !=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
 	tensorflow-gpu? ( !=dev-python/tensorflow-gpu-2.6.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/texttable-1.6.3[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/tldextract-3.1.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/toml-0.10.1[${PYTHON_USEDEP}] )
-	tests? ( dev-python/torch[${PYTHON_USEDEP}] )
 	torch? ( dev-python/torch[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.62.1[${PYTHON_USEDEP}]
 	evaluator? ( dev-python/transformers[${PYTHON_USEDEP}] )
-	tests? ( dev-python/transformers[${PYTHON_USEDEP}] )
-	tests? ( dev-python/trectools[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/unidecode-1.3.4[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/werkzeug-1.0.1[${PYTHON_USEDEP}] )
 	dev-python/xxhash[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

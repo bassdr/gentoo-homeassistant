@@ -5,7 +5,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYPI_PN="backports.tarfile"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -18,17 +17,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
-	testing? ( dev-python/jaraco-test[${PYTHON_USEDEP}] )
-	testing? ( !=dev-python/pytest-8.0*[${PYTHON_USEDEP}] )
-	testing? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
@@ -40,6 +33,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/jaraco-test[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.0[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+)"
 
 src_configure() {
 	grep -q 'build-backend = "setuptools' pyproject.toml ||

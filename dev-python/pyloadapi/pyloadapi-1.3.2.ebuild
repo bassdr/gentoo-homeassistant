@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
-PYPI_PN="PyLoadAPI"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Simple wrapper for pyLoad's API."
@@ -24,8 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )
 "

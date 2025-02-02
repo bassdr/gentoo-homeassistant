@@ -16,28 +16,19 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all full lite testing"
+GENERATED_IUSE="all full lite"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( <dev-python/configupdater-4[${PYTHON_USEDEP}] )
 	full? ( <dev-python/configupdater-4[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	testing? ( dev-python/isort[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20.7[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-59.6[${PYTHON_USEDEP}]
-	testing? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	testing? ( dev-python/tomli[${PYTHON_USEDEP}] )
 	all? ( <dev-python/tomli-w-2[${PYTHON_USEDEP}] )
 	lite? ( <dev-python/tomli-w-2[${PYTHON_USEDEP}] )
 	all? ( <dev-python/tomlkit-2[${PYTHON_USEDEP}] )
 	full? ( <dev-python/tomlkit-2[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	testing? ( <dev-python/validate-pyproject-2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/packaging-20.7[${PYTHON_USEDEP}]
@@ -54,6 +45,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/isort[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-randomly[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/tomli[${PYTHON_USEDEP}]
+	<dev-python/validate-pyproject-2[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	sed -i -e 's:--cov ini2toml --cov-report term-missing::' setup.cfg || die

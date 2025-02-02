@@ -21,9 +21,8 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	qr? ( >=dev-python/segno-1.4.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}

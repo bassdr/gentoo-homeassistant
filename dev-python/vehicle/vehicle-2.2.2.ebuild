@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="Asynchronous Python client providing RDW vehicle information."
 HOMEPAGE="
   https://pypi.org/project/vehicle/
@@ -18,21 +19,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.10[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.8[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]

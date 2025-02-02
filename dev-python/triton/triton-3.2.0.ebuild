@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="build tests tutorials"
+GENERATED_IUSE="build tutorials"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,20 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/autopep8[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	build? ( >=dev-python/cmake-3.20[${PYTHON_USEDEP}] )
-	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	tests? ( dev-python/isort[${PYTHON_USEDEP}] )
 	build? ( dev-python/lit[${PYTHON_USEDEP}] )
-	tests? ( dev-python/llnl-hatchet[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	tests? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/scipy-1.7.1[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/tabulate[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/autopep8[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/isort[${PYTHON_USEDEP}]
+	dev-python/llnl-hatchet[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.7.1[${PYTHON_USEDEP}]
+)"

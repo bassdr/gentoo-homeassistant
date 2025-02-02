@@ -20,7 +20,7 @@ IUSE="${GENERATED_IUSE} test-full"
 REQUIRED_USE="test-full? ( test )"
 
 # ansible-molecule is invoked as an executable so no need for PYTHON_USEDEP
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/argparse-manpage[${PYTHON_USEDEP}] )
 	docs? ( dev-python/cairosvg[${PYTHON_USEDEP}] )
 	docs? ( dev-python/markdown-include[${PYTHON_USEDEP}] )

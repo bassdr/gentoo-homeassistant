@@ -20,15 +20,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( >=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	tests? ( dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}] )
-	tests? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	tests? ( dev-python/littleutils[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -41,6 +34,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}]
+	dev-python/ipython[${PYTHON_USEDEP}]
+	dev-python/littleutils[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 

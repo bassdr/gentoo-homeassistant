@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="extra tests"
+GENERATED_IUSE="extra"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,25 +16,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	extra? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	tests? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	extra? ( dev-python/opencv-python-headless[${PYTHON_USEDEP}] )
 	dev-python/pandas[${PYTHON_USEDEP}]
 	extra? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	tests? ( dev-python/parameterized[${PYTHON_USEDEP}] )
 	dev-python/pillow[${PYTHON_USEDEP}]
 	extra? ( dev-python/pillow[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	dev-python/plotly[${PYTHON_USEDEP}]
 	extra? ( dev-python/plotly[${PYTHON_USEDEP}] )
-	tests? ( dev-python/plotly[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pycocotools[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/plotly[${PYTHON_USEDEP}]
+	dev-python/pycocotools[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"

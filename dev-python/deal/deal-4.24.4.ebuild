@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all docs integration lint"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/astroid-2.11.0[${PYTHON_USEDEP}] )
 	integration? ( >=dev-python/astroid-2.11.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/deal-solver-0.1.2[${PYTHON_USEDEP}] )
@@ -39,9 +38,9 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	integration? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	lint? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-7*[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	integration? ( >=dev-python/sphinx-4.5.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-rtd-theme-2*[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-rtd-theme-2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/typeguard-3.0.0[${PYTHON_USEDEP}] )
 	integration? ( <dev-python/typeguard-4.0.0[${PYTHON_USEDEP}] )
 	lint? ( <dev-python/typeguard-4.0.0[${PYTHON_USEDEP}] )

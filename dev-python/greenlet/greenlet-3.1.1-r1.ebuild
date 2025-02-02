@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "

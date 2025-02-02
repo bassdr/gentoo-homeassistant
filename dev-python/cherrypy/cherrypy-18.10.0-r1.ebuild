@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="CherryPy"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -16,10 +15,10 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs json memcached-session routes-dispatcher ssl testing xcgi"
+GENERATED_IUSE="docs json memcached-session routes-dispatcher ssl xcgi"
 IUSE="${GENERATED_IUSE} ssl test"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/alabaster[${PYTHON_USEDEP}] )
 	>=dev-python/cheroot-8.2.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
@@ -28,20 +27,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jaraco-packaging-3.2[${PYTHON_USEDEP}] )
 	dev-python/more-itertools[${PYTHON_USEDEP}]
-	testing? ( dev-python/objgraph[${PYTHON_USEDEP}] )
-	testing? ( dev-python/path-py[${PYTHON_USEDEP}] )
 	>=dev-python/portend-2.1.1[${PYTHON_USEDEP}]
 	ssl? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-5.3.5[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-forked[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-services-2[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
 	memcached-session? ( >=dev-python/python-memcached-1.58[${PYTHON_USEDEP}] )
-	testing? ( dev-python/requests-toolbelt[${PYTHON_USEDEP}] )
 	routes-dispatcher? ( >=dev-python/routes-2.3.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.11[${PYTHON_USEDEP}] )
-	testing? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	json? ( dev-python/simplejson[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-apidoc-0.3.0[${PYTHON_USEDEP}] )
@@ -74,6 +64,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/objgraph[${PYTHON_USEDEP}]
+	dev-python/path-py[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5.3.5[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-forked[${PYTHON_USEDEP}]
+	>=dev-python/pytest-services-2[${PYTHON_USEDEP}]
+	dev-python/pytest-sugar[${PYTHON_USEDEP}]
+	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	sed -i -e '/cov/d' pytest.ini || die

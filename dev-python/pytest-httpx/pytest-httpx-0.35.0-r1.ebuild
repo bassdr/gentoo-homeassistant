@@ -16,13 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	~dev-python/httpx-0.28*[${PYTHON_USEDEP}]
-	~dev-python/pytest-8*[${PYTHON_USEDEP}]
-	testing? ( ~dev-python/pytest-asyncio-0.24*[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/pytest-cov-6*[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
+	~dev-python/httpx-0.28[${PYTHON_USEDEP}]
+	~dev-python/pytest-8[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	=dev-python/httpx-0.28*[${PYTHON_USEDEP}]
@@ -36,3 +33,7 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/pytest-asyncio-0.24[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-6[${PYTHON_USEDEP}]
+)"

@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="pcsc"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/cryptography-35[${PYTHON_USEDEP}]
 	pcsc? ( <dev-python/pyscard-3[${PYTHON_USEDEP}] )
 "

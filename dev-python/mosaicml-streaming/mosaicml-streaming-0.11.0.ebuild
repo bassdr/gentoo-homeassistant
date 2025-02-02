@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="alipan all databricks docs hf simulator spark testing"
+GENERATED_IUSE="alipan all databricks docs hf simulator spark"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	alipan? ( <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/altair-6[${PYTHON_USEDEP}] )
@@ -47,7 +46,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( ~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
 	<dev-python/matplotlib-4[${PYTHON_USEDEP}]
 	all? ( <dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}] )
-	testing? ( <dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}] )
 	all? ( <dev-python/moto-6[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
@@ -120,6 +118,7 @@ BDEPEND+=" test? (
 	>=dev-python/docformatter-1.4[${PYTHON_USEDEP}]
 	~dev-python/fastapi-0.115.6[${PYTHON_USEDEP}]
 	~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
+	<dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}]
 	<dev-python/moto-6[${PYTHON_USEDEP}]
 	>dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}]
 	~dev-python/pydantic-2.10.5[${PYTHON_USEDEP}]

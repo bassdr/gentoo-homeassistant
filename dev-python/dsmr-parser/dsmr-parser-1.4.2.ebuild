@@ -16,21 +16,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/dlms-cosem[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/dlms-cosem-21.3.2[${PYTHON_USEDEP}]
 	<dev-python/pyserial-4[${PYTHON_USEDEP}]
-	dev-python/pyserial[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
-	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/tailer[${PYTHON_USEDEP}]
 	~dev-python/tailer-0.4.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

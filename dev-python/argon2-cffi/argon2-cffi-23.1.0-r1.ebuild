@@ -16,15 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs tests typing"
+GENERATED_IUSE="docs typing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/argon2-cffi-bindings[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	tests? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
@@ -44,5 +42,7 @@ BDEPEND="
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/argon2-cffi[tests,typing,${PYTHON_USEDEP}]
+	dev-python/hypothesis[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
 	>dev-python/tox-4[${PYTHON_USEDEP}]
 )"

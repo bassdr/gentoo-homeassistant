@@ -23,13 +23,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/trio-0.11[${PYTHON_USEDEP}]
-	dev-python/trio[${PYTHON_USEDEP}]
 	>=dev-python/wsproto-0.14[${PYTHON_USEDEP}]
-	dev-python/wsproto[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep '

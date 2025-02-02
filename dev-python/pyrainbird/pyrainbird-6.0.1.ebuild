@@ -15,27 +15,19 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-retry-2.8.3[${PYTHON_USEDEP}]
-	dev-python/aiohttp-retry[${PYTHON_USEDEP}]
 	>=dev-python/ical-4.2.9[${PYTHON_USEDEP}]
-	dev-python/ical[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.12[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodome-3.16.0[${PYTHON_USEDEP}]
-	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pycryptodome-3.16.0[${PYTHON_USEDEP}]

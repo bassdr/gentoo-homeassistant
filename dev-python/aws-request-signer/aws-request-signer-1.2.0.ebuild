@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A python library to sign AWS requests using AWS Signature V4."
 HOMEPAGE="
-  https://pypi.org/project/aws-request-signer/
+  https://pypi.org/project/aws_request_signer/
   Repository, https://www.github.com/iksteen/aws-request-signer.git
 "
 
@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	requests? ( >=dev-python/requests-2.21[${PYTHON_USEDEP}] )
 	demo? ( >=dev-python/requests-toolbelt-0.8.0[${PYTHON_USEDEP}] )
 "

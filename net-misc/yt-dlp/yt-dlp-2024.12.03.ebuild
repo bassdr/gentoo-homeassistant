@@ -29,14 +29,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build default pyinstaller secretstorage static-analysis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	static-analysis? ( ~dev-python/autopep8-2.0[${PYTHON_USEDEP}] )
 	dev-python/brotli[${PYTHON_USEDEP}]
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	default? ( dev-python/certifi[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/cffi[${PYTHON_USEDEP}] )
-	!=dev-python/curl-cffi-0.6*[${PYTHON_USEDEP}]
 	~dev-python/curl-cffi-0.5.10[${PYTHON_USEDEP}]
+	!=dev-python/curl-cffi-0.6[${PYTHON_USEDEP}]
 	build? ( dev-python/hatchling[${PYTHON_USEDEP}] )
 	build? ( dev-python/pip[${PYTHON_USEDEP}] )
 	default? ( dev-python/pycryptodomex[${PYTHON_USEDEP}] )
@@ -59,8 +59,6 @@ distutils_enable_tests pytest
 BDEPEND+=" test? (
 	~dev-python/autopep8-2.0[${PYTHON_USEDEP}]
 	~dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}]
 	~dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}]
 	~dev-python/ruff-0.8.0[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]

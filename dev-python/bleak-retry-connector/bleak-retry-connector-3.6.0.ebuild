@@ -18,19 +18,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-adapters-0.15.2[${PYTHON_USEDEP}]
-	dev-python/bluetooth-adapters[${PYTHON_USEDEP}]
 	>=dev-python/dbus-fast-1.14.0[${PYTHON_USEDEP}]
-	dev-python/dbus-fast[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]

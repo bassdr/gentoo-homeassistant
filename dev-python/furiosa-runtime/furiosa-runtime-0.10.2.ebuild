@@ -17,10 +17,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/cffi-1.14[${PYTHON_USEDEP}]
-	~dev-python/furiosa-common-0.10*[${PYTHON_USEDEP}]
-	~dev-python/furiosa-native-runtime-0.10*[${PYTHON_USEDEP}]
+	~dev-python/furiosa-common-0.10[${PYTHON_USEDEP}]
+	~dev-python/furiosa-native-runtime-0.10[${PYTHON_USEDEP}]
 	~dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	legacy? ( dev-python/package-extras[${PYTHON_USEDEP}] )
 	~dev-python/pandas-2.0.3[${PYTHON_USEDEP}]

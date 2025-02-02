@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="devenv"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	devenv? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 	devenv? ( >=dev-python/pytest-4.3[${PYTHON_USEDEP}] )

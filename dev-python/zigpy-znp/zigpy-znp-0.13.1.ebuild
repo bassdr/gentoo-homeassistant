@@ -16,24 +16,17 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/coloredlogs[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-7.3.1[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
-	dev-python/zigpy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/zigpy-0.69.0[${PYTHON_USEDEP}]
@@ -59,5 +52,12 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+)"
 
 # TODO: Make symlinks for zigpy_znp/tools and add TOOLS.md and docs/*.pdf , but only it is in github package

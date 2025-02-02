@@ -5,8 +5,8 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="DoorBirdPy"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Python wrapper for the DoorBird LAN API"
 HOMEPAGE="
   https://pypi.org/project/DoorBirdPy/
@@ -15,11 +15,10 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

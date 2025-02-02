@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYPI_NO_NORMALIZE=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code_style rtd"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	rtd? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]

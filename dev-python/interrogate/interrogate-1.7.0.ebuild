@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs png tests"
+GENERATED_IUSE="docs png"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,16 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	png? ( dev-python/cairosvg[${PYTHON_USEDEP}] )
 	>=dev-python/click-7.1[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
-	tests? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
 	dev-python/py[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	dev-python/tabulate[${PYTHON_USEDEP}]

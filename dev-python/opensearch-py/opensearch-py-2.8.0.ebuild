@@ -25,7 +25,7 @@ IUSE="${GENERATED_IUSE} test"
 # Uses 156 GB of RAM for the test suite, needs more work.
 RESTRICT="test"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	async? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/black-24.3.0[${PYTHON_USEDEP}] )

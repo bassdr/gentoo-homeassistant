@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PyXiaomiGateway"
 inherit distutils-r1 pypi
+
 DESCRIPTION="A library to communicate with the Xiaomi Gateway"
 HOMEPAGE="
   https://pypi.org/project/PyXiaomiGateway/
@@ -16,15 +17,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.1.1[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 >=dev-python/cryptography-2.1.1"

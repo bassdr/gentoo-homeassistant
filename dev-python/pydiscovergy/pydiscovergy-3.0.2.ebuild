@@ -18,21 +18,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/authlib-0.15[${PYTHON_USEDEP}]
-	dev-python/authlib[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.11[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.0[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/Authlib-0.15[${PYTHON_USEDEP}]

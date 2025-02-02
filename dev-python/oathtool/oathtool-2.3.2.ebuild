@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
@@ -41,5 +41,5 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 )"

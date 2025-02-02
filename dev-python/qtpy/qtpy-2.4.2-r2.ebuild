@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN=QtPy
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 virtualx pypi
@@ -23,8 +22,7 @@ _IUSE_QT_MODULES="
 	spatialaudio speech +sql svg testlib webchannel webengine websockets
 	+widgets +xml
 "
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} +pyqt6 pyside6 ${_IUSE_QT_MODULES}"
+IUSE="+pyqt6 pyside6 ${_IUSE_QT_MODULES}"
 unset _IUSE_QT_MODULES
 
 REQUIRED_USE="|| ( pyqt6 pyside6 )"
@@ -48,7 +46,7 @@ REQUIRED_USE="|| ( pyqt6 pyside6 )"
 #
 # Webengine is a special case, because PyQt6 provides this in a separate package
 # while PySide6 ships it in the same package.
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

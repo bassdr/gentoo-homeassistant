@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="complete"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	complete? ( dev-python/blosc[${PYTHON_USEDEP}] )
 	dev-python/locket[${PYTHON_USEDEP}]
 	complete? ( >=dev-python/numpy-1.20.0[${PYTHON_USEDEP}] )

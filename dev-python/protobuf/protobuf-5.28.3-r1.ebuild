@@ -9,8 +9,6 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_PN="protobuf"
-
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -19,9 +17,6 @@ HOMEPAGE="
 "
 
 # Rename sdist to avoid conflicts with dev-libs/protobuf
-SRC_URI="
-	$(pypi_sdist_url) -> ${P}.py.tar.gz
-"
 
 LICENSE="BSD"
 SLOT="0/$(ver_cut 1-3)"

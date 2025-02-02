@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/alembic-1.12.0[${PYTHON_USEDEP}]
 	dev-python/eval-type-backport[${PYTHON_USEDEP}]
 	nanoid? ( >=dev-python/fastnanoid-0.4.1[${PYTHON_USEDEP}] )

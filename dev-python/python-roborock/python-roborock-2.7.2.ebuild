@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="A package to control Roborock vacuums."
 HOMEPAGE="
   https://pypi.org/project/python-roborock/
@@ -16,26 +17,19 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	>=dev-python/click-8[${PYTHON_USEDEP}]
-	dev-python/click[${PYTHON_USEDEP}]
 	<dev-python/construct-3.0.0[${PYTHON_USEDEP}]
-	dev-python/construct[${PYTHON_USEDEP}]
 	<dev-python/dacite-2.0.0[${PYTHON_USEDEP}]
-	dev-python/dacite[${PYTHON_USEDEP}]
 	<dev-python/paho-mqtt-2.0.0[${PYTHON_USEDEP}]
-	dev-python/paho-mqtt[${PYTHON_USEDEP}]
 	<dev-python/pycryptodome-4.0[${PYTHON_USEDEP}]
-	dev-python/pycryptodome[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

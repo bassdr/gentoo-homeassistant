@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="sphinx testing"
+GENERATED_IUSE="sphinx"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,23 +16,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
-	testing? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	sphinx? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/myst-nb-1.0.0_rc0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-4[${PYTHON_USEDEP}]
 	sphinx? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
-	testing? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
-	testing? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	>=dev-python/myst-nb-1.0.0_rc0[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
+	dev-python/sphinx-design[${PYTHON_USEDEP}]
 	dev-python/sphinx-thebe[testing,${PYTHON_USEDEP}]
 )"

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs stats"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	>=dev-python/matplotlib-3.4[${PYTHON_USEDEP}]
 	docs? ( dev-python/nbconvert[${PYTHON_USEDEP}] )

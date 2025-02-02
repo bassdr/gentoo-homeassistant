@@ -17,9 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	openvino? ( ~dev-python/furiosa-server-0.10*[openvino,${PYTHON_USEDEP}] )
-	~dev-python/furiosa-server-0.10*[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	~dev-python/furiosa-server-0.10[${PYTHON_USEDEP}]
+	openvino? ( ~dev-python/furiosa-server-0.10[openvino,${PYTHON_USEDEP}] )
 	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/opentelemetry-api[${PYTHON_USEDEP}]
 	dev-python/opentelemetry-exporter-otlp[${PYTHON_USEDEP}]

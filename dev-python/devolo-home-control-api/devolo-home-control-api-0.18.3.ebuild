@@ -15,20 +15,16 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-0.58.0[${PYTHON_USEDEP}]
-	dev-python/websocket-client[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.38.0[${PYTHON_USEDEP}]
-	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]

@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="development pandas secure-local-storage"
 IUSE="${GENERATED_IUSE} +secure-local-storage pandas"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/asn1crypto-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	<dev-python/cffi-2.0.0[${PYTHON_USEDEP}]

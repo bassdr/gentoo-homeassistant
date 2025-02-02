@@ -6,6 +6,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
+
 DESCRIPTION="Protocol Buffers (Protobuf) support for Uplink."
 HOMEPAGE="
   https://pypi.org/project/uplink-protobuf/
@@ -14,19 +15,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/protobuf[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	>=dev-python/uplink-0.6.0[${PYTHON_USEDEP}]
-	dev-python/uplink[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/uplink-0.6.0[${PYTHON_USEDEP}]"
@@ -40,3 +36,8 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+)"

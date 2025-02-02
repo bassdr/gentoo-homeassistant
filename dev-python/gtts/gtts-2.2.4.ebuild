@@ -16,26 +16,20 @@ SRC_URI="https://github.com/pndurette/${PN}/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs tests"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
-	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	tests? ( dev-python/mock[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-4.6.11[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
-	tests? ( dev-python/six[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-click[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	tests? ( dev-python/testfixtures[${PYTHON_USEDEP}] )
 	docs? ( dev-python/towncrier[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -53,4 +47,11 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-# PYPI_PN could not be inserted in this ebuild
+BDEPEND+=" test? (
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/mock[${PYTHON_USEDEP}]
+	~dev-python/pytest-4.6.11[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
+	dev-python/testfixtures[${PYTHON_USEDEP}]
+)"

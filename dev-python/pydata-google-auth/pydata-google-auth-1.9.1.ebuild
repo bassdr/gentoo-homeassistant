@@ -3,10 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	<dev-python/google-auth-3.0dev[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	<dev-python/google-auth-3.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.4.0[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "

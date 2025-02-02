@@ -23,17 +23,13 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="socks use-chardet-on-py3"
 IUSE="${GENERATED_IUSE} socks5 test-rust"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
-	dev-python/certifi[${PYTHON_USEDEP}]
 	use-chardet-on-py3? ( <dev-python/chardet-6[${PYTHON_USEDEP}] )
 	<dev-python/charset-normalizer-4[${PYTHON_USEDEP}]
-	dev-python/charset-normalizer[${PYTHON_USEDEP}]
 	<dev-python/idna-4[${PYTHON_USEDEP}]
-	dev-python/idna[${PYTHON_USEDEP}]
 	socks? ( !=dev-python/pysocks-1.5.7[${PYTHON_USEDEP}] )
 	<dev-python/urllib3-3[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]

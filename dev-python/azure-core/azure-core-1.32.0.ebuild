@@ -22,14 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	aio? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/six-1.11.0[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]

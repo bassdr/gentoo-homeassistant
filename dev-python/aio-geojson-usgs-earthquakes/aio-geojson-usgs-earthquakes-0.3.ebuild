@@ -5,6 +5,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="An async GeoJSON client library for the U.S. Geological Survey Earthquake Hazards Program."
 HOMEPAGE="
   https://pypi.org/project/aio-geojson-usgs-earthquakes/
@@ -13,19 +14,15 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aio-geojson-client-0.20[${PYTHON_USEDEP}]
-	dev-python/aio-geojson-client[${PYTHON_USEDEP}]
 	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2019.01[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aio-geojson-client-0.20[${PYTHON_USEDEP}]

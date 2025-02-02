@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all dev doc save"
+GENERATED_IUSE="all doc save"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,43 +16,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/altair-tiles-0.3.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/anywidget-0.9.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/docutils[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/duckdb-1.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/geopandas[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/hatch-1.13.0[${PYTHON_USEDEP}] )
-	dev? ( dev-python/ipython[kernel,${PYTHON_USEDEP}] )
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	doc? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	>=dev-python/jsonschema-3.0[${PYTHON_USEDEP}]
-	dev? ( dev-python/mistune[${PYTHON_USEDEP}] )
-	dev? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/narwhals-1.14.2[${PYTHON_USEDEP}]
 	all? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pandas-1.1.3[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/pandas-1.1.3[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pandas-stubs[${PYTHON_USEDEP}] )
 	doc? ( <dev-python/pillow-10[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/polars-0.20.3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pyarrow-11[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pyarrow-stubs[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/pydata-sphinx-theme-0.14.1[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	dev? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev? ( ~dev-python/pytest-xdist-3.5[psutil,${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/ruff-0.6.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinxext-altair[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-jsonschema[${PYTHON_USEDEP}] )
-	dev? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.10.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/vega-datasets-0.9.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/vegafusion-1.6.6[embed,${PYTHON_USEDEP}] )
@@ -63,3 +46,21 @@ GENERATED_DEPEND="
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/duckdb-1.0[${PYTHON_USEDEP}]
+	dev-python/geopandas[${PYTHON_USEDEP}]
+	>=dev-python/hatch-1.13.0[${PYTHON_USEDEP}]
+	dev-python/ipython[kernel,${PYTHON_USEDEP}]
+	dev-python/mistune[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.1.3[${PYTHON_USEDEP}]
+	dev-python/pandas-stubs[${PYTHON_USEDEP}]
+	>=dev-python/polars-0.20.3[${PYTHON_USEDEP}]
+	dev-python/pyarrow-stubs[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	~dev-python/pytest-xdist-3.5[psutil,${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.6.0[${PYTHON_USEDEP}]
+	dev-python/types-jsonschema[${PYTHON_USEDEP}]
+	dev-python/types-setuptools[${PYTHON_USEDEP}]
+)"

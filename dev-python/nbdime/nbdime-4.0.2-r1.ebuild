@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/colorama[${PYTHON_USEDEP}]
 	!=dev-python/gitpython-2.1.4[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.9[${PYTHON_USEDEP}]

@@ -22,16 +22,12 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/azure-kusto-data[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/azure-kusto-data-4.5.1[${PYTHON_USEDEP}]
 	<dev-python/azure-storage-blob-13[${PYTHON_USEDEP}]
-	dev-python/azure-storage-blob[${PYTHON_USEDEP}]
 	<dev-python/azure-storage-queue-13[${PYTHON_USEDEP}]
-	dev-python/azure-storage-queue[${PYTHON_USEDEP}]
 	pandas? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	>=dev-python/tenacity-8.0.0[${PYTHON_USEDEP}]
-	dev-python/tenacity[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/azure-kusto-data-${PV}[${PYTHON_USEDEP}]

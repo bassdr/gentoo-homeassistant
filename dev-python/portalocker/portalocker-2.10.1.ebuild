@@ -24,18 +24,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs redis tests"
+GENERATED_IUSE="docs redis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( >=dev-python/pytest-5.4.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-mypy-0.8.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
-	tests? ( dev-python/redis[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/types-redis[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	test? (
@@ -46,6 +39,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-5.4.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mypy-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	dev-python/redis[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
+	dev-python/types-redis[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	default

@@ -21,12 +21,11 @@ RESTRICT="test"
 
 GENERATED_IUSE="aiohttp dev-docs dev-lint dev-test requests timezone"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	aiohttp? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-test? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	dev-lint? ( <dev-python/flake8-5.1[${PYTHON_USEDEP}] )
 	<dev-python/geographiclib-3[${PYTHON_USEDEP}]
-	dev-python/geographiclib[${PYTHON_USEDEP}]
 	dev-lint? ( <dev-python/isort-5.11.0[${PYTHON_USEDEP}] )
 	dev-test? ( >=dev-python/pytest-3.10[${PYTHON_USEDEP}] )
 	dev-test? ( >=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}] )

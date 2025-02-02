@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all preview"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	preview? ( dev-python/arviz-base[h5netcdf,${PYTHON_USEDEP}] )
 	preview? ( dev-python/arviz-plots[${PYTHON_USEDEP}] )
 	preview? ( dev-python/arviz-stats[xarray,${PYTHON_USEDEP}] )

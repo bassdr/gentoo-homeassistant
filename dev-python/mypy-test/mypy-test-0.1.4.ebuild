@@ -3,11 +3,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
-PYPI_PN="mypy_test"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/mypy[${PYTHON_USEDEP}]
 "

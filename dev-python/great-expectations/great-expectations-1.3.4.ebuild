@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="arrow athena aws-secrets azure azure-secrets bigquery clickhouse cloud databricks dremio excel gcp hive mssql mysql pagerduty postgresql redshift s3 snowflake spark spark-connect teradata trino vertica"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/altair-5.0.0[${PYTHON_USEDEP}]
 	azure-secrets? ( >=dev-python/azure-identity-1.10.0[${PYTHON_USEDEP}] )
 	azure? ( >=dev-python/azure-identity-1.10.0[${PYTHON_USEDEP}] )
@@ -41,7 +40,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	bigquery? ( >=dev-python/google-cloud-secret-manager-1.0.0[${PYTHON_USEDEP}] )
 	gcp? ( >=dev-python/google-cloud-secret-manager-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/google-cloud-storage-2.10.0[${PYTHON_USEDEP}]
-	>=dev-python/google-cloud-storage-2.10.0[${PYTHON_USEDEP}]
 	spark-connect? ( >=dev-python/googleapis-common-protos-1.56.4[${PYTHON_USEDEP}] )
 	spark-connect? ( >=dev-python/grpcio-1.48.1[${PYTHON_USEDEP}] )
 	spark-connect? ( >=dev-python/grpcio-status-1.48.1[${PYTHON_USEDEP}] )
@@ -49,13 +47,13 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/jsonschema-2.5.1[${PYTHON_USEDEP}]
 	<dev-python/marshmallow-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/mistune-0.8.4[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/numpy-1.22.4[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
 	excel? ( >=dev-python/openpyxl-3.0.7[${PYTHON_USEDEP}] )
 	cloud? ( >=dev-python/orjson-3.9.7[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '<dev-python/pandas-2.2[${PYTHON_USEDEP}]' python3_13{,t})
 	<dev-python/pandas-2.2[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '<dev-python/pandas-2.2[${PYTHON_USEDEP}]' python3_13{,t})
 	<dev-python/posthog-4[${PYTHON_USEDEP}]
 	postgresql? ( >=dev-python/psycopg2-binary-2.7.6[${PYTHON_USEDEP}] )
 	redshift? ( >=dev-python/psycopg2-binary-2.7.6[${PYTHON_USEDEP}] )

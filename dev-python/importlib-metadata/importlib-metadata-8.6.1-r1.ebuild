@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="check cover doc enabler perf type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-resources-1.3[${PYTHON_USEDEP}]
 	perf? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -54,7 +54,7 @@ BDEPEND+=" test? (
 	>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pyfakefs[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-perf-0.9.2[${PYTHON_USEDEP}]
 )"
 

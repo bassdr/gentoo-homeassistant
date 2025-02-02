@@ -6,6 +6,8 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 2.2)"
+S="${WORKDIR}/${PN}-2.2"
 
 DESCRIPTION="Provides an API for requesting information from an Openhome device"
 HOMEPAGE="
@@ -15,13 +17,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/async-upnp-client[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 "

@@ -15,19 +15,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="develop docs testing"
+GENERATED_IUSE="develop docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	develop? ( >=dev-python/build-0.5.1[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/coverage-4.4[${PYTHON_USEDEP}] )
 	dev-python/enum34[${PYTHON_USEDEP}]
 	>=dev-python/parse-1.18.0[${PYTHON_USEDEP}]
 	develop? ( dev-python/pylint[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
 	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}] )
 	develop? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	develop? ( dev-python/setuptools-scm[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.15[${PYTHON_USEDEP}]
@@ -47,6 +45,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}]
+)"
 
 DOCS=( CHANGES.txt README.rst )
 

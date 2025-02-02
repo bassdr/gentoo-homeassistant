@@ -4,9 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -20,9 +20,8 @@ KEYWORDS="amd64 arm64"
 # Please do not RDEPEND on pytest; this package won't do anything
 # without pytest installed, and there is no reason to force older
 # implementations on pytest.
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/py[${PYTHON_USEDEP}]
 	>=dev-python/pytest-3.10[${PYTHON_USEDEP}]
 "

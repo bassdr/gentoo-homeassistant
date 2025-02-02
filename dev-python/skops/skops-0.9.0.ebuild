@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs rich tests"
+GENERATED_IUSE="docs rich"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,25 +16,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( >=dev-python/catboost-1.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/fairlearn-0.7.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/fairlearn-0.7.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/flake8-3.8.2[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/flaky-3.7.0[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.17.0[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/lightgbm-3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/matplotlib-3.3[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/matplotlib-3.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/numpydoc-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pandas-1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pandas-1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-5.0.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/quantile-forest-1.0.0[${PYTHON_USEDEP}] )
 	rich? ( >=dev-python/rich-12[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/rich-12[${PYTHON_USEDEP}] )
 	>=dev-python/scikit-learn-0.24[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/scikit-learn-intelex-2021.7.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3.2.0[${PYTHON_USEDEP}] )
@@ -44,9 +32,22 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( >=dev-python/sphinx-prompt-1.3.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1[${PYTHON_USEDEP}] )
 	>=dev-python/tabulate-0.8.8[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/types-requests-2.28.5[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/xgboost-1.6[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/catboost-1.0[${PYTHON_USEDEP}]
+	>=dev-python/fairlearn-0.7.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-3.8.2[${PYTHON_USEDEP}]
+	>=dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
+	>=dev-python/lightgbm-3[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.3[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}]
+	>=dev-python/quantile-forest-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/rich-12[${PYTHON_USEDEP}]
+	>=dev-python/types-requests-2.28.5[${PYTHON_USEDEP}]
+	>=dev-python/xgboost-1.6[${PYTHON_USEDEP}]
+)"

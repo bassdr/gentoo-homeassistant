@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="extras funsor horovod lightning profile"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	funsor? ( ~dev-python/funsor-0.4.4[torch,${PYTHON_USEDEP}] )
 	extras? ( >=dev-python/graphviz-0.8[${PYTHON_USEDEP}] )
 	horovod? ( >=dev-python/horovod-0.19[pytorch,${PYTHON_USEDEP}] )
@@ -47,47 +46,30 @@ RDEPEND="${GENERATED_DEPEND}"
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	>=dev-python/black-21.4_beta0[${PYTHON_USEDEP}]
-	>=dev-python/black-21.4_beta0[${PYTHON_USEDEP}]
-	>=dev-python/graphviz-0.8[${PYTHON_USEDEP}]
 	>=dev-python/graphviz-0.8[${PYTHON_USEDEP}]
 	dev-python/ipywidgets[${PYTHON_USEDEP}]
-	dev-python/ipywidgets[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-1.3[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-1.3[${PYTHON_USEDEP}]
 	>=dev-python/mypy-0.812[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	>=dev-python/nbsphinx-0.3.2[${PYTHON_USEDEP}]
 	dev-python/nbstripout[${PYTHON_USEDEP}]
 	dev-python/nbval[${PYTHON_USEDEP}]
-	dev-python/nbval[${PYTHON_USEDEP}]
 	dev-python/ninja[${PYTHON_USEDEP}]
 	dev-python/notebook[${PYTHON_USEDEP}]
-	dev-python/notebook[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	>=dev-python/pillow-8.3.1[${PYTHON_USEDEP}]
 	>=dev-python/pillow-8.3.1[${PYTHON_USEDEP}]
 	dev-python/pypandoc[${PYTHON_USEDEP}]
 	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
 	dev-python/ruff[${PYTHON_USEDEP}]
 	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
-	>=dev-python/seaborn-0.11.0[${PYTHON_USEDEP}]
 	>=dev-python/seaborn-0.11.0[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 	>=dev-python/torchvision-0.15.0[${PYTHON_USEDEP}]
-	>=dev-python/torchvision-0.15.0[${PYTHON_USEDEP}]
 	<dev-python/visdom-0.2.2[${PYTHON_USEDEP}]
-	<dev-python/visdom-0.2.2[${PYTHON_USEDEP}]
-	dev-python/wget[${PYTHON_USEDEP}]
 	dev-python/wget[${PYTHON_USEDEP}]
 	dev-python/yapf[${PYTHON_USEDEP}]
 )"

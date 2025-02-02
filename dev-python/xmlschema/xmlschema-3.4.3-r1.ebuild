@@ -20,10 +20,9 @@ GENERATED_IUSE="codegen docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/elementpath-5.0.0[${PYTHON_USEDEP}]
 	codegen? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
-	dev-python/elementpath[${PYTHON_USEDEP}]
 	docs? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
 	codegen? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jinja2[${PYTHON_USEDEP}] )

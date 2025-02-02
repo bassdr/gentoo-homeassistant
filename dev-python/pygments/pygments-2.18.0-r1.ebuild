@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYPI_PN=${PN^}
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 bash-completion-r1 pypi
@@ -25,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="windows-terminal"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	windows-terminal? ( >=dev-python/colorama-0.4.6[${PYTHON_USEDEP}] )
 "
 BDEPEND="

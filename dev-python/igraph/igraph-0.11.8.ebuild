@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="cairo doc plotly plotting test-musl"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cairo? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
 	plotting? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
 	test-musl? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )

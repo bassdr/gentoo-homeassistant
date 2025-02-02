@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	dev-python/etils[epath,${PYTHON_USEDEP}]
 	dev-python/jax[${PYTHON_USEDEP}]
 	dev-python/jaxlib[${PYTHON_USEDEP}]
-	>=dev-python/mujoco-3.2.7_p0[${PYTHON_USEDEP}]
+	>=dev-python/mujoco-3.2.7_pre0[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/trimesh[${PYTHON_USEDEP}]
 "

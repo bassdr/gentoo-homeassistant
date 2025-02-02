@@ -20,21 +20,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
-	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/rich-10.11.0[${PYTHON_USEDEP}]
-	dev-python/rich[${PYTHON_USEDEP}]
 	>=dev-python/shellingham-1.3.0[${PYTHON_USEDEP}]
-	dev-python/shellingham[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

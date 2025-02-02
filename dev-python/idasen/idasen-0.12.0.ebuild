@@ -17,19 +17,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bleak-0.15[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.12[${PYTHON_USEDEP}]
-	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.15[${PYTHON_USEDEP}]

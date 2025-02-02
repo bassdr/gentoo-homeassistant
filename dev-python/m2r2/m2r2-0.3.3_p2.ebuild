@@ -3,14 +3,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "m2r2" "0.3.3.post2")"
-S="${WORKDIR}/m2r2-0.3.3.post2"
+SRC_URI="$(pypi_sdist_url ${PN} 0.3.3.post2)"
+S="${WORKDIR}/${PN}-0.3.3.post2"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/docutils-0.19[${PYTHON_USEDEP}]
 	~dev-python/mistune-0.8.4[${PYTHON_USEDEP}]
 "

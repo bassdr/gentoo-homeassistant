@@ -18,29 +18,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="release testing"
+GENERATED_IUSE="release"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	release? ( dev-python/build[${PYTHON_USEDEP}] )
 	>=dev-python/filelock-3.0.8[${PYTHON_USEDEP}]
-	dev-python/filelock[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
-	testing? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-gitignore[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.1.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/requests-file-1.4[${PYTHON_USEDEP}]
-	dev-python/requests-file[${PYTHON_USEDEP}]
-	testing? ( dev-python/responses[${PYTHON_USEDEP}] )
-	testing? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	testing? ( dev-python/syrupy[${PYTHON_USEDEP}] )
-	testing? ( dev-python/tox[${PYTHON_USEDEP}] )
-	testing? ( dev-python/tox-uv[${PYTHON_USEDEP}] )
 	release? ( dev-python/twine[${PYTHON_USEDEP}] )
-	testing? ( dev-python/types-filelock[${PYTHON_USEDEP}] )
-	testing? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/filelock-3.0.8[${PYTHON_USEDEP}]
@@ -57,6 +43,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-gitignore[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/responses[${PYTHON_USEDEP}]
+	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/syrupy[${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	dev-python/tox-uv[${PYTHON_USEDEP}]
+	dev-python/types-filelock[${PYTHON_USEDEP}]
+	dev-python/types-requests[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	EPYTEST_IGNORE=(

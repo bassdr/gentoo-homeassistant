@@ -4,10 +4,10 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_TESTED=( python3_{10..13} pypy3 )
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION="Thin-wrapper around the mock package for easier use with pytest"
@@ -24,11 +24,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]

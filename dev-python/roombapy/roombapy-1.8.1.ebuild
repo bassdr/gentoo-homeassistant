@@ -22,14 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cli? ( <dev-python/click-9.0[${PYTHON_USEDEP}] )
 	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.13[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	<dev-python/paho-mqtt-1.7.0[${PYTHON_USEDEP}]
-	dev-python/paho-mqtt[${PYTHON_USEDEP}]
 	cli? ( <dev-python/tabulate-0.10[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}

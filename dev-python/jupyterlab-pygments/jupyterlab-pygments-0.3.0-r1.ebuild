@@ -11,9 +11,6 @@ inherit distutils-r1 pypi
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/jupyterlab-pygments/"
-SRC_URI="$(pypi_wheel_url)"
-S=${WORKDIR}
-
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"

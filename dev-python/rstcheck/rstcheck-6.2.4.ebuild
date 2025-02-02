@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs sphinx testing type-check"
+GENERATED_IUSE="docs sphinx type-check"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,15 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( >=dev-python/coverage-6.0[toml,${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/coverage-conditional-plugin-0.5[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	type-check? ( >=dev-python/mypy-1.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-3[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-7.2[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-cov-3.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-randomly-3.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}] )
 	>=dev-python/rstcheck-core-1.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
 	sphinx? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
@@ -39,6 +32,12 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	>=dev-python/coverage-6.0[toml,${PYTHON_USEDEP}]
+	>=dev-python/coverage-conditional-plugin-0.5[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-3.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-randomly-3.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
 	dev-python/rstcheck[docs,sphinx,testing,toml,type-check,${PYTHON_USEDEP}]
 	>=dev-python/tox-3.15[${PYTHON_USEDEP}]
 )"

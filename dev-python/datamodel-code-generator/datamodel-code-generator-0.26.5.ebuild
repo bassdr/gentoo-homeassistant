@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="debug graphql http validation"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/argcomplete-4.0[${PYTHON_USEDEP}]
 	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
 	<dev-python/genson-2.0[${PYTHON_USEDEP}]
@@ -29,7 +28,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	validation? ( <dev-python/openapi-spec-validator-0.7.0[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	validation? ( >=dev-python/prance-0.18.2[${PYTHON_USEDEP}] )
-	!=dev-python/pydantic-2.4.0[email,${PYTHON_USEDEP}]
 	!=dev-python/pydantic-2.4.0[email,${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '!=dev-python/pydantic-2.0.0[email,${PYTHON_USEDEP}]' python3_13{,t})
 	debug? ( <dev-python/pysnooper-2.0.0[${PYTHON_USEDEP}] )

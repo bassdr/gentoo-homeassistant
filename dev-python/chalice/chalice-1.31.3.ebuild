@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="cdk cdkv2 event-file-poller"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cdk? ( <dev-python/aws-cdk-aws-iam-2.0[${PYTHON_USEDEP}] )
 	cdk? ( <dev-python/aws-cdk-aws-s3-assets-2.0[${PYTHON_USEDEP}] )
 	cdk? ( <dev-python/aws-cdk-cloudformation-include-2.0[${PYTHON_USEDEP}] )

@@ -17,12 +17,10 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} examples"
+IUSE="examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/ptyprocess-0.5[${PYTHON_USEDEP}]
-	dev-python/ptyprocess[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/ptyprocess-0.5[${PYTHON_USEDEP}]

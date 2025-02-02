@@ -28,7 +28,7 @@ IUSE="${GENERATED_IUSE} doc examples +threads test"
 RESTRICT="!test? ( test )"
 
 # Note: lib{xml2,xslt} are used as C libraries, not Python modules.
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	htmlsoup? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	cssselect? ( >=dev-python/cssselect-0.7[${PYTHON_USEDEP}] )
 	source? ( >=dev-python/cython-3.0.11[${PYTHON_USEDEP}] )

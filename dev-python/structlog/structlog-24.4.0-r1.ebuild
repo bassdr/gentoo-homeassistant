@@ -24,19 +24,14 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs tests typing"
+GENERATED_IUSE="docs typing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/cogapp[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/freezegun-0.2.8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	typing? ( >=dev-python/mypy-1.4[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pretend[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}] )
 	typing? ( dev-python/rich[${PYTHON_USEDEP}] )
-	tests? ( dev-python/simplejson[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-mermaid[${PYTHON_USEDEP}] )

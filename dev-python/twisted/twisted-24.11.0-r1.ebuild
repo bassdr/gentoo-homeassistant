@@ -32,7 +32,7 @@ GENERATED_IUSE="all-non-platform conch dev-release gtk-platform http2 macos-plat
 IUSE="${GENERATED_IUSE} conch http2 serial ssl test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all-non-platform? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
 	conch? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
@@ -41,9 +41,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	osx-platform? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/automat-24.8.0[${PYTHON_USEDEP}]
-	dev-python/automat[${PYTHON_USEDEP}]
 	all-non-platform? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
 	conch? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
@@ -52,7 +50,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	osx-platform? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
 	>=dev-python/constantly-15.1[${PYTHON_USEDEP}]
-	dev-python/constantly[${PYTHON_USEDEP}]
 	mypy? ( ~dev-python/coverage-7.5[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
 	conch? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
@@ -81,7 +78,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	osx-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	>=dev-python/hyperlink-17.1.1[${PYTHON_USEDEP}]
-	dev-python/hyperlink[${PYTHON_USEDEP}]
 	all-non-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
 	macos-platform? ( >=dev-python/hypothesis-6.56[${PYTHON_USEDEP}] )
@@ -96,7 +92,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	tls? ( >=dev-python/idna-2.4[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/idna-2.4[${PYTHON_USEDEP}] )
 	>=dev-python/incremental-24.7.0[${PYTHON_USEDEP}]
-	dev-python/incremental[${PYTHON_USEDEP}]
 	mypy? ( ~dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/mypy-zope-1.0.6[${PYTHON_USEDEP}] )
 	all-non-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
@@ -152,13 +147,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-release? ( ~dev-python/towncrier-23.6[${PYTHON_USEDEP}] )
 	mypy? ( ~dev-python/towncrier-23.6[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/twisted-iocpsupport-1.0.2[${PYTHON_USEDEP}] )
-	mypy? ( ~dev-python/twistedchecker-0.7[${PYTHON_USEDEP}] )
+	mypy? ( ~dev-python/twistedchecker-0.7.4[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-pyopenssl[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.2.0[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	>=dev-python/zope-interface-5[${PYTHON_USEDEP}]
-	dev-python/zope-interface[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]

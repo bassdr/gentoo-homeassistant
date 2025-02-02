@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="mainapp"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/brotlicffi[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/flasgger[${PYTHON_USEDEP}]

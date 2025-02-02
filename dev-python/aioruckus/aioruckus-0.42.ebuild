@@ -15,19 +15,15 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.4[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-41.0.0[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	>=dev-python/xmltodict-0.13.0[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.8.4[${PYTHON_USEDEP}]

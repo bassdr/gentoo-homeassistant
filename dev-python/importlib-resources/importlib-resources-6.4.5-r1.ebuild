@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
@@ -44,7 +44,7 @@ BDEPEND="
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	>=dev-python/zipp-3.17[${PYTHON_USEDEP}]
 )"
 # RDEPEND could not be inserted in this ebuild

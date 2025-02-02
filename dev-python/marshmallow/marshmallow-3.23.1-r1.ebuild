@@ -26,15 +26,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs tests"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( ~dev-python/alabaster-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/autodocsumm-0.2.14[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/simplejson[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-version-warning-1.1.2[${PYTHON_USEDEP}] )
@@ -53,6 +50,8 @@ BDEPEND="
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/marshmallow[tests,${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/simplejson[${PYTHON_USEDEP}]
 	dev-python/tox[${PYTHON_USEDEP}]
 	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
 )"

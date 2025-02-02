@@ -17,10 +17,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/polars-1.15[${PYTHON_USEDEP}]
-	~dev-python/pylibcudf-cu12-24.12*[${PYTHON_USEDEP}]
-	experimental? ( ~dev-python/rapids-dask-dependency-24.12*[${PYTHON_USEDEP}] )
+	~dev-python/pylibcudf-cu12-24.12[${PYTHON_USEDEP}]
+	experimental? ( ~dev-python/rapids-dask-dependency-24.12[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 

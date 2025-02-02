@@ -32,43 +32,28 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs lint"
 IUSE="${GENERATED_IUSE} doc latex"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/alabaster-0.7.14[${PYTHON_USEDEP}]
-	dev-python/alabaster[${PYTHON_USEDEP}]
 	>=dev-python/babel-2.13[${PYTHON_USEDEP}]
-	dev-python/babel[${PYTHON_USEDEP}]
 	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
-	dev-python/docutils[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/flake8-6.0[${PYTHON_USEDEP}] )
 	>=dev-python/imagesize-1.3[${PYTHON_USEDEP}]
-	dev-python/imagesize[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.1[${PYTHON_USEDEP}]
-	dev-python/jinja2[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.17[${PYTHON_USEDEP}]
-	dev-python/pygments[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/pyright-1.1.384[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.30.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/ruff-0.6.9[${PYTHON_USEDEP}] )
 	>=dev-python/snowballstemmer-2.2[${PYTHON_USEDEP}]
-	dev-python/snowballstemmer[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/sphinx-lint-0.9[${PYTHON_USEDEP}] )
 	>=dev-python/sphinxcontrib-applehelp-1.0.7[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-applehelp[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-devhelp-1.0.6[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-devhelp[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-htmlhelp-2.0.6[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-htmlhelp[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-jsmath-1.0.1[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-jsmath[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-qthelp-1.0.6[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-qthelp[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-serializinghtml-1.1.9[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-serializinghtml[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinxcontrib-websupport[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/tomli-2[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/types-colorama-0.4.15.20240311[${PYTHON_USEDEP}] )

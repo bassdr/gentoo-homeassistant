@@ -5,6 +5,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Api wrapper for Asuswrt https://www.asus.com/ASUSWRT/"
 HOMEPAGE="
   https://pypi.org/project/aioasuswrt/
@@ -13,13 +14,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/asyncssh[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

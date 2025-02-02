@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="docs test-cov test-external test-functional test-integration test-ui"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	test-external? ( dev-python/autopep8[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/black[${PYTHON_USEDEP}] )
 	test-ui? ( dev-python/calysto-bash[${PYTHON_USEDEP}] )
@@ -74,11 +73,8 @@ BDEPEND+=" test? (
 	!=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}]
 	dev-python/nbconvert[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
 	>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
 	dev-python/pytest-randomly[${PYTHON_USEDEP}]
-	dev-python/pytest-randomly[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	<dev-python/sphinx-8[${PYTHON_USEDEP}]
 	<dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]

@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	calendars? ( dev-python/convertdate[${PYTHON_USEDEP}] )
 	fasttext? ( dev-python/fasttext[${PYTHON_USEDEP}] )
 	calendars? ( dev-python/hijri-converter[${PYTHON_USEDEP}] )
@@ -29,7 +29,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	!=dev-python/regex-2019.02.19[${PYTHON_USEDEP}]
-	dev-python/regex[${PYTHON_USEDEP}]
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

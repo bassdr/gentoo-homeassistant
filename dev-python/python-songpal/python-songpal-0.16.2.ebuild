@@ -15,19 +15,16 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/async-upnp-client-0.32[${PYTHON_USEDEP}]
-	dev-python/async-upnp-client[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/click-8[${PYTHON_USEDEP}]
-	dev-python/click[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

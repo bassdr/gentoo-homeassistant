@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs tests"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/celery-6[${PYTHON_USEDEP}]
 	~dev-python/celery-types-0.15.0[${PYTHON_USEDEP}]
 	>=dev-python/funcy-1.17[${PYTHON_USEDEP}]
@@ -27,13 +26,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( <dev-python/mkdocs-material-10[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocs-section-index-1[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-celery-1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-test-utils-0.0.6[${PYTHON_USEDEP}] )
 	>=dev-python/shortuuid-1.0.8[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
@@ -42,4 +34,11 @@ distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/dvc-task[docs,tests,${PYTHON_USEDEP}]
 	~dev-python/mypy-1.11.2[${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	<dev-python/pytest-celery-1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	dev-python/pytest-sugar[${PYTHON_USEDEP}]
+	>=dev-python/pytest-test-utils-0.0.6[${PYTHON_USEDEP}]
 )"

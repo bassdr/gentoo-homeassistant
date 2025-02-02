@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all api api-apidataset biosequence biosequence-biosequencedataset dask dask-csvdataset dask-parquetdataset databricks databricks-externaltabledataset databricks-managedtabledataset delta-base docs experimental geopandas geopandas-genericdataset hdfs-base holoviews holoviews-holoviewswriter huggingface huggingface-hfdataset huggingface-hftransformerpipelinedataset ibis ibis-bigquery ibis-clickhouse ibis-dask ibis-datafusion ibis-druid ibis-duckdb ibis-exasol ibis-flink ibis-impala ibis-mssql ibis-mysql ibis-oracle ibis-pandas ibis-polars ibis-postgres ibis-pyspark ibis-risingwave ibis-snowflake ibis-sqlite ibis-trino json langchain langchain-chatanthropicdataset langchain-chatcoheredataset langchain-chatopenaidataset langchain-openaiembeddingsdataset lint matlab matlab-matlabdataset matplotlib matplotlib-matplotlibwriter netcdf netcdf-netcdfdataset networkx networkx-base networkx-gmldataset networkx-graphmldataset networkx-jsondataset pandas pandas-base pandas-csvdataset pandas-deltatabledataset pandas-exceldataset pandas-featherdataset pandas-gbqquerydataset pandas-gbqtabledataset pandas-genericdataset pandas-hdfdataset pandas-jsondataset pandas-parquetdataset pandas-sqlquerydataset pandas-sqltabledataset pandas-xmldataset pickle pickle-pickledataset pillow pillow-imagedataset plotly plotly-base plotly-htmldataset plotly-jsondataset plotly-plotlydataset polars polars-base polars-csvdataset polars-eagerpolarsdataset polars-lazypolarsdataset prophet prophet-dataset pytorch pytorch-dataset redis redis-pickledataset rioxarray rioxarray-geotiffdataset s3fs-base safetensors safetensors-safetensorsdataset snowflake snowflake-snowparktabledataset spark spark-base spark-deltatabledataset spark-sparkdataset spark-sparkhivedataset spark-sparkjdbcdataset spark-sparkstreamingdataset svmlight svmlight-svmlightdataset tensorflow text tracking video video-videodataset yaml yaml-yamldataset"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	ibis-flink? ( dev-python/apache-flink[${PYTHON_USEDEP}] )
 	lint? ( <dev-python/bandit-2.0[${PYTHON_USEDEP}] )
 	biosequence-biosequencedataset? ( ~dev-python/biopython-1.73[${PYTHON_USEDEP}] )
@@ -179,8 +178,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	pandas-sqltabledataset? ( <dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}] )
 	pandas-hdfdataset? ( >=dev-python/tables-3.6[${PYTHON_USEDEP}] )
 	~dev-python/tensorflow-2.0[${PYTHON_USEDEP}]
-	~dev-python/tensorflow-2.0[${PYTHON_USEDEP}]
-	~dev-python/tensorflow-macos-2.0[${PYTHON_USEDEP}]
 	~dev-python/tensorflow-macos-2.0[${PYTHON_USEDEP}]
 	experimental? ( dev-python/torch[${PYTHON_USEDEP}] )
 	pytorch-dataset? ( dev-python/torch[${PYTHON_USEDEP}] )

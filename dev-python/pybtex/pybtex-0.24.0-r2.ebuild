@@ -16,9 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/latexcodec-1.0.4[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.01[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]

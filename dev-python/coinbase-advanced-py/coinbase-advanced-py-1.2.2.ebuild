@@ -6,7 +6,6 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Coinbase Advanced API Python SDK"
@@ -23,19 +22,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/backoff-2.2.1[${PYTHON_USEDEP}]
-	dev-python/backoff[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/black-23.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-42.0.4[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/isort-5.12.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/websockets-12.0[${PYTHON_USEDEP}]
-	dev-python/websockets[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]

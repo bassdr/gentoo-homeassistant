@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="insights tutorials"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	insights? ( dev-python/flask[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/flask[${PYTHON_USEDEP}] )
 	insights? ( dev-python/flask-compress[${PYTHON_USEDEP}] )
@@ -49,10 +48,7 @@ BDEPEND+=" test? (
 	dev-python/jupyter[${PYTHON_USEDEP}]
 	>=dev-python/mypy-0.760[${PYTHON_USEDEP}]
 	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/scikit-learn[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]

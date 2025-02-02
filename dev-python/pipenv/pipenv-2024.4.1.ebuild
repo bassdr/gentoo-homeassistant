@@ -24,16 +24,10 @@ PATCHES=(
 	"${FILESDIR}/pipenv-2023.9.8-append-always-install-to-pip-extra-args.patch"
 )
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
-	tests? ( dev-python/flaky[${PYTHON_USEDEP}] )
-	tests? ( dev-python/mock[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-22[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/pytest-5[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-67[${PYTHON_USEDEP}]
 	>=dev-python/virtualenv-20.24.2[${PYTHON_USEDEP}]
 "
@@ -74,8 +68,13 @@ BDEPEND+=" test? (
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	~dev-python/black-24.3.0[${PYTHON_USEDEP}]
 	<dev-python/flake8-4[${PYTHON_USEDEP}]
+	dev-python/flaky[${PYTHON_USEDEP}]
 	dev-python/invoke[${PYTHON_USEDEP}]
+	dev-python/mock[${PYTHON_USEDEP}]
 	dev-python/parver[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/towncrier[${PYTHON_USEDEP}]
 )"

@@ -19,14 +19,11 @@ DOCS="README.rst"
 
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cli? ( <dev-python/asyncclick-9.0.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.0.2[${PYTHON_USEDEP}]
-	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
 	<dev-python/tzlocal-6.0.0[${PYTHON_USEDEP}]
-	dev-python/tzlocal[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]

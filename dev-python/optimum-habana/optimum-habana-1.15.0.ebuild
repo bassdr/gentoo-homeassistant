@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="quality tests"
+GENERATED_IUSE="quality"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,29 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/accelerate-0.34.0[${PYTHON_USEDEP}]
-	tests? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	<dev-python/diffusers-0.32.0[${PYTHON_USEDEP}]
-	tests? ( dev-python/gitpython[${PYTHON_USEDEP}] )
 	quality? ( dev-python/hf-doc-builder[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.24.7[${PYTHON_USEDEP}]
 	dev-python/optimum[${PYTHON_USEDEP}]
-	tests? ( dev-python/optuna[${PYTHON_USEDEP}] )
-	tests? ( dev-python/parameterized[${PYTHON_USEDEP}] )
-	tests? ( dev-python/peft[${PYTHON_USEDEP}] )
-	tests? ( dev-python/psutil[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
 	quality? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	tests? ( dev-python/safetensors[${PYTHON_USEDEP}] )
-	tests? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	~dev-python/sentence-transformers-3.2.1[${PYTHON_USEDEP}]
-	tests? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
-	tests? ( dev-python/timm[${PYTHON_USEDEP}] )
 	dev-python/torch[${PYTHON_USEDEP}]
-	tests? ( dev-python/torchsde[${PYTHON_USEDEP}] )
 	<dev-python/transformers-4.46.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/datasets[${PYTHON_USEDEP}]
+	dev-python/gitpython[${PYTHON_USEDEP}]
+	dev-python/optuna[${PYTHON_USEDEP}]
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/peft[${PYTHON_USEDEP}]
+	dev-python/psutil[${PYTHON_USEDEP}]
+	<dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+	dev-python/safetensors[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
+	dev-python/sentencepiece[${PYTHON_USEDEP}]
+	dev-python/timm[${PYTHON_USEDEP}]
+	dev-python/torchsde[${PYTHON_USEDEP}]
+)"

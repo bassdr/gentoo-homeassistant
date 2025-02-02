@@ -4,9 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -19,12 +19,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	docs? ( ~dev-python/matplotlib-3.6[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/mpl-sphinx-theme-3.6.0_p0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mpl-sphinx-theme-3.6.0_pre0[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]

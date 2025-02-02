@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build data developer docs optional"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	optional? ( >=dev-python/astropy-5.0[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/build-1.2.1[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/cloudpickle-0.2.1[${PYTHON_USEDEP}] )

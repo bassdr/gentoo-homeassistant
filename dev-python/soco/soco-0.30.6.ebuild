@@ -16,29 +16,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="events-asyncio testing"
+GENERATED_IUSE="events-asyncio"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	events-asyncio? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-python/appdirs[${PYTHON_USEDEP}]
-	testing? ( dev-python/coveralls[${PYTHON_USEDEP}] )
-	testing? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	testing? ( dev-python/graphviz[${PYTHON_USEDEP}] )
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
-	testing? ( dev-python/pylint[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-2.5[${PYTHON_USEDEP}] )
-	testing? ( <dev-python/pytest-cov-2.6.0[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
-	testing? ( dev-python/requests-mock[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/sphinx-4.5.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	testing? ( dev-python/twine[${PYTHON_USEDEP}] )
-	testing? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -54,3 +43,16 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coveralls[${PYTHON_USEDEP}]
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/graphviz[${PYTHON_USEDEP}]
+	dev-python/pylint[${PYTHON_USEDEP}]
+	>=dev-python/pytest-2.5[${PYTHON_USEDEP}]
+	<dev-python/pytest-cov-2.6.0[${PYTHON_USEDEP}]
+	dev-python/requests-mock[${PYTHON_USEDEP}]
+	~dev-python/sphinx-4.5.0[${PYTHON_USEDEP}]
+	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
+)"

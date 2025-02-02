@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs readme"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	readme? ( <dev-python/path-17[${PYTHON_USEDEP}] )
 	readme? ( >=dev-python/readmemaker-1.1.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-2.4[${PYTHON_USEDEP}] )

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="protobuf tracing"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,15 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	<dev-python/google-api-core-3.0.0dev[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0dev[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-core-3.0dev[${PYTHON_USEDEP}]
-	<dev-python/google-crc32c-2.0dev[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	<dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}]
+	<dev-python/google-auth-3.0_pre[${PYTHON_USEDEP}]
+	<dev-python/google-cloud-core-3.0_pre[${PYTHON_USEDEP}]
+	<dev-python/google-crc32c-2.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/google-resumable-media-2.7.2[${PYTHON_USEDEP}]
 	tracing? ( >=dev-python/opentelemetry-api-1.1.0[${PYTHON_USEDEP}] )
-	protobuf? ( <dev-python/protobuf-6.0.0dev[${PYTHON_USEDEP}] )
-	<dev-python/requests-3.0.0dev[${PYTHON_USEDEP}]
+	protobuf? ( <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}] )
+	<dev-python/requests-3.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

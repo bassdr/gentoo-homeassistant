@@ -11,8 +11,6 @@ inherit distutils-r1 pypi
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/decli/"
-SRC_URI="https://github.com/Woile/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"

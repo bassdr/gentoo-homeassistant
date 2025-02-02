@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev test"
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_DEPEND}"
 
@@ -25,17 +23,11 @@ distutils_enable_tests pytest
 BDEPEND+=" test? (
 	>=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
 	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
 	>=dev-python/pylint-2.11.0[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/testfixtures[${PYTHON_USEDEP}]
-	dev-python/testfixtures[${PYTHON_USEDEP}]
-	<dev-python/tox-5.0.0[${PYTHON_USEDEP}]
 	<dev-python/tox-5.0.0[${PYTHON_USEDEP}]
 )"

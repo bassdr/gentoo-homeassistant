@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="dnssec doh doq idna trio wmi"
 IUSE="${GENERATED_IUSE} dnssec examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doq? ( >=dev-python/aioquic-1.0.0[${PYTHON_USEDEP}] )
 	dnssec? ( >=dev-python/cryptography-43[${PYTHON_USEDEP}] )
 	doh? ( >=dev-python/h2-4.1.0[${PYTHON_USEDEP}] )

@@ -19,27 +19,19 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/awesomeversion-22.9.0[${PYTHON_USEDEP}]
-	dev-python/awesomeversion[${PYTHON_USEDEP}]
 	>=dev-python/envoy-utils-0.0.1[${PYTHON_USEDEP}]
-	dev-python/envoy-utils[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.9.2[${PYTHON_USEDEP}]
-	dev-python/lxml[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.2[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.7.0[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
 	<dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
-	dev-python/tenacity[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]

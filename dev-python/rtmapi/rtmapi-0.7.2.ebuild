@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="RtmAPI"
 inherit distutils-r1 pypi
+
 DESCRIPTION="API package for rememberthemilk.com"
 HOMEPAGE="
   https://pypi.org/project/RtmAPI/

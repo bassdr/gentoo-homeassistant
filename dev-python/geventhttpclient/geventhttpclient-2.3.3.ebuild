@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="benchmarks examples"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/brotli[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/gevent[${PYTHON_USEDEP}]
@@ -26,7 +25,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( dev-python/oauth2[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/requests[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/urllib3[${PYTHON_USEDEP}] )
-	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

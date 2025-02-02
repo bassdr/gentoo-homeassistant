@@ -7,6 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
+
 DESCRIPTION="A library that returns a list of devices currently connected to a BT Home Hub 5"
 HOMEPAGE="
   https://pypi.org/project/bthomehub5-devicelist/
@@ -15,14 +16,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/html-table-parser-python3[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/html-table-parser-python3-0.1.5[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "

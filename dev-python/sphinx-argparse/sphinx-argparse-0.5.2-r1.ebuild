@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs lint markdown"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/commonmark-0.5.6[${PYTHON_USEDEP}] )
 	markdown? ( >=dev-python/commonmark-0.5.6[${PYTHON_USEDEP}] )
 	>=dev-python/docutils-0.19[${PYTHON_USEDEP}]

@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PyFlick"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Python API For Flick Electric in New Zealand"
 HOMEPAGE="
   https://pypi.org/project/PyFlick/

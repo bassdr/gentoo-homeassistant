@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all async-etcd async-mongodb async-redis etcd memcached mongodb redis rediscluster"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,13 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/aetcd[${PYTHON_USEDEP}] )
 	async-etcd? ( dev-python/aetcd[${PYTHON_USEDEP}] )
 	all? ( <dev-python/coredis-5[${PYTHON_USEDEP}] )
 	async-redis? ( <dev-python/coredis-5[${PYTHON_USEDEP}] )
 	>=dev-python/deprecated-1.2[${PYTHON_USEDEP}]
-	>=dev-python/emcache-1[${PYTHON_USEDEP}]
 	>=dev-python/emcache-1[${PYTHON_USEDEP}]
 	all? ( dev-python/etcd3[${PYTHON_USEDEP}] )
 	etcd? ( dev-python/etcd3[${PYTHON_USEDEP}] )
@@ -34,7 +32,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	memcached? ( <dev-python/pymemcache-5.0.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/pymongo-5[${PYTHON_USEDEP}] )
 	mongodb? ( <dev-python/pymongo-5[${PYTHON_USEDEP}] )
-	all? ( !=dev-python/redis-4.5.2[${PYTHON_USEDEP}] )
 	all? ( !=dev-python/redis-4.5.2[${PYTHON_USEDEP}] )
 	redis? ( !=dev-python/redis-4.5.2[${PYTHON_USEDEP}] )
 	rediscluster? ( !=dev-python/redis-4.5.2[${PYTHON_USEDEP}] )

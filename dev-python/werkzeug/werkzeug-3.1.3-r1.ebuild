@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="Werkzeug"
 inherit distutils-r1 pypi
 
 DESCRIPTION="The comprehensive WSGI web application library."
@@ -26,9 +25,8 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="watchdog"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/markupsafe-2.1.1[${PYTHON_USEDEP}]
-	dev-python/markupsafe[${PYTHON_USEDEP}]
 	watchdog? ( >=dev-python/watchdog-2.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}

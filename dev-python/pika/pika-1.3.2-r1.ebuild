@@ -20,7 +20,7 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="test !test? ( test )"
 PROPERTIES="test_network"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	gevent? ( dev-python/gevent[${PYTHON_USEDEP}] )
 	tornado? ( dev-python/tornado[${PYTHON_USEDEP}] )
 	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )

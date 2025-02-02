@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="audio benchmarks docs jax quality s3 tensorflow tensorflow-gpu tests tests-numpy2 torch vision"
+GENERATED_IUSE="audio benchmarks docs jax quality s3 tensorflow tensorflow-gpu tests-numpy2 torch vision"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,92 +16,64 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	tests-numpy2? ( dev-python/absl-py[${PYTHON_USEDEP}] )
-	tests? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	tests-numpy2? ( dev-python/decorator[${PYTHON_USEDEP}] )
-	tests? ( dev-python/decorator[${PYTHON_USEDEP}] )
 	tests-numpy2? ( ~dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
 	<dev-python/dill-0.3.9[${PYTHON_USEDEP}]
 	tests-numpy2? ( <dev-python/elasticsearch-8.0.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/elasticsearch-8.0.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/faiss-cpu-1.8.0_p1[${PYTHON_USEDEP}] )
 	dev-python/filelock[${PYTHON_USEDEP}]
 	<=dev-python/fsspec-2024.9.0[http,${PYTHON_USEDEP}]
 	>=dev-python/huggingface-hub-0.23.0[${PYTHON_USEDEP}]
 	jax? ( >=dev-python/jax-0.3.14[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jaxlib-0.3.14[${PYTHON_USEDEP}] )
 	tests-numpy2? ( <dev-python/joblib-1.3.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/joblib-1.3.0[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/joblibspark[${PYTHON_USEDEP}] )
-	tests? ( dev-python/joblibspark[${PYTHON_USEDEP}] )
 	audio? ( dev-python/librosa[${PYTHON_USEDEP}] )
-	tests? ( dev-python/librosa[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/lz4[${PYTHON_USEDEP}] )
-	tests? ( dev-python/lz4[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/moto[server,${PYTHON_USEDEP}] )
-	tests? ( dev-python/moto[server,${PYTHON_USEDEP}] )
 	<dev-python/multiprocess-0.70.17[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 	tests-numpy2? ( >=dev-python/pillow-9.4.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pillow-9.4.0[${PYTHON_USEDEP}] )
 	vision? ( >=dev-python/pillow-9.4.0[${PYTHON_USEDEP}] )
 	tests-numpy2? ( >=dev-python/polars-0.20.0[timezone,${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/polars-0.20.0[timezone,${PYTHON_USEDEP}] )
 	tests-numpy2? ( <dev-python/protobuf-4.0.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/protobuf-4.0.0[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/py7zr[${PYTHON_USEDEP}] )
-	tests? ( dev-python/py7zr[${PYTHON_USEDEP}] )
 	>=dev-python/pyarrow-15.0.0[${PYTHON_USEDEP}]
 	tests-numpy2? ( >=dev-python/pyspark-3.4[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pyspark-3.4[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/pytest-datadir[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-datadir[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 	tests-numpy2? ( >=dev-python/rarfile-4.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/rarfile-4.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.32.2[${PYTHON_USEDEP}]
 	quality? ( >=dev-python/ruff-0.3.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	s3? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	tests-numpy2? ( >=dev-python/s3fs-2021.11.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/s3fs-2021.11.1[${PYTHON_USEDEP}] )
 	audio? ( >=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}] )
 	tests-numpy2? ( >=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
-	tests? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
-	>=dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}]
 	>=dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}]
 	benchmarks? ( ~dev-python/tensorflow-2.12.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
 	tensorflow-gpu? ( >=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/tiktoken[${PYTHON_USEDEP}] )
-	tests? ( dev-python/tiktoken[${PYTHON_USEDEP}] )
 	benchmarks? ( ~dev-python/torch-2.0.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/torch[${PYTHON_USEDEP}] )
 	tests-numpy2? ( >=dev-python/torch-2.0.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/torch-2.0.0[${PYTHON_USEDEP}] )
 	torch? ( dev-python/torch[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/torchdata[${PYTHON_USEDEP}] )
-	tests? ( dev-python/torchdata[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.66.3[${PYTHON_USEDEP}]
 	benchmarks? ( ~dev-python/transformers-4.30.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	tests-numpy2? ( >=dev-python/transformers-4.42.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/transformers-4.42.0[${PYTHON_USEDEP}] )
 	dev-python/xxhash[${PYTHON_USEDEP}]
 	tests-numpy2? ( dev-python/zstandard[${PYTHON_USEDEP}] )
-	tests? ( dev-python/zstandard[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
@@ -129,15 +100,12 @@ BDEPEND+=" test? (
 	>=dev-python/rarfile-4.0[${PYTHON_USEDEP}]
 	>=dev-python/ruff-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/s3fs-2021.11.1[${PYTHON_USEDEP}]
-	dev-python/s3fs[${PYTHON_USEDEP}]
 	>=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}]
 	dev-python/sqlalchemy[${PYTHON_USEDEP}]
 	>=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}]
 	dev-python/tiktoken[${PYTHON_USEDEP}]
 	>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
-	dev-python/torch[${PYTHON_USEDEP}]
 	dev-python/torchdata[${PYTHON_USEDEP}]
 	>=dev-python/transformers-4.42.0[${PYTHON_USEDEP}]
-	dev-python/transformers[${PYTHON_USEDEP}]
 	dev-python/zstandard[${PYTHON_USEDEP}]
 )"

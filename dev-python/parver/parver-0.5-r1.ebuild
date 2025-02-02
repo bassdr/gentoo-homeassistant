@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs docstest pep8test"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/arpeggio-1.7[${PYTHON_USEDEP}]
 	>=dev-python/attrs-19.2[${PYTHON_USEDEP}]
 	docstest? ( dev-python/doc8[${PYTHON_USEDEP}] )

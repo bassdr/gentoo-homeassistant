@@ -5,9 +5,8 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="Authlib"
 inherit distutils-r1 pypi
+
 DESCRIPTION="The ultimate Python library in building OAuth and OpenID Connect servers and clients."
 HOMEPAGE="
   https://pypi.org/project/Authlib/
@@ -22,13 +21,12 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

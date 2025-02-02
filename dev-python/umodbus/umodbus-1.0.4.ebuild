@@ -11,20 +11,18 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Implementation of the Modbus protocol in pure Python."
 HOMEPAGE="
-  https://pypi.org/project/uModbus/
+  https://pypi.org/project/umodbus/
 "
 
 LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/pyserial[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/pyserial-3.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

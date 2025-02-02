@@ -16,9 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/build-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/cachecontrol-0.15.0[filecache,${PYTHON_USEDEP}]
 	<dev-python/cleo-3.0.0[${PYTHON_USEDEP}]

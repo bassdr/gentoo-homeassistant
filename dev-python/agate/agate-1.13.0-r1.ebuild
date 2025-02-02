@@ -16,9 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/babel-2.0[${PYTHON_USEDEP}]
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.5.4[${PYTHON_USEDEP}]

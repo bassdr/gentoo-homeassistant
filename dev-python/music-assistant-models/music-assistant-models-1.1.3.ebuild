@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="music_assistant_models"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Music Assistant Base Models"
@@ -16,17 +15,14 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/mashumaro-3.14[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/orjson[${PYTHON_USEDEP}]

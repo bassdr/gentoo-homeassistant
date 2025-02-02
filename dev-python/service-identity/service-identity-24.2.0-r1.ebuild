@@ -24,12 +24,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs idna mypy tests"
+GENERATED_IUSE="docs idna mypy"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-19.1.0[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/coverage-5.0.2[toml,${PYTHON_USEDEP}] )
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	idna? ( dev-python/idna[${PYTHON_USEDEP}] )
@@ -39,7 +37,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 	docs? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-pyopenssl[${PYTHON_USEDEP}] )

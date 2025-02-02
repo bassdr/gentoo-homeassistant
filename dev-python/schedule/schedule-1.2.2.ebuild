@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	timezone? ( dev-python/pytz[${PYTHON_USEDEP}] )
 "
 BDEPEND="

@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="WSDiscovery"
 inherit distutils-r1 pypi
+
 DESCRIPTION="WS-Discovery implementation for python"
 HOMEPAGE="
   https://pypi.org/project/WSDiscovery/
@@ -16,13 +17,12 @@ HOMEPAGE="
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]
 "

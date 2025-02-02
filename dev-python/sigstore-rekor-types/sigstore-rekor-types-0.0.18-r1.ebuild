@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="codegen doc lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	codegen? ( >=dev-python/datamodel-code-generator-0.25.2[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/mypy-1.0[${PYTHON_USEDEP}] )
 	doc? ( <dev-python/pdoc-16.0[${PYTHON_USEDEP}] )

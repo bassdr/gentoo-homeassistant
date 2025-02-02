@@ -115,7 +115,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="rs"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	rs? ( ~dev-python/sqlglotrs-0.3.14[${PYTHON_USEDEP}] )
 "
 BDEPEND="

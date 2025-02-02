@@ -25,4 +25,3 @@ KEYWORDS="amd64 arm64"
 python_test() {
 	"${EPYTHON}" test_sarge.py -v || die "Tests failed with ${EPYTHON}"
 }
-# SRC_URI could not be inserted in this ebuild

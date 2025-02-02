@@ -3,27 +3,26 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="arrow babel color encrypted intervals password pendulum phone test-all timezone url"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="sqlalchemy_utils"
+PYPI_NO_NORMALIZE=1
+PYPI_PN="SQLAlchemy-Utils"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sqlalchemy_utils/"
+  https://pypi.org/project/sqlalchemy-utils/"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	arrow? ( >=dev-python/arrow-0.3.4[${PYTHON_USEDEP}] )
 	test-all? ( >=dev-python/arrow-0.3.4[${PYTHON_USEDEP}] )
 	babel? ( >=dev-python/babel-1.3[${PYTHON_USEDEP}] )
 	test-all? ( >=dev-python/babel-1.3[${PYTHON_USEDEP}] )
-	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	color? ( >=dev-python/colour-0.0.4[${PYTHON_USEDEP}] )
 	test-all? ( >=dev-python/colour-0.0.4[${PYTHON_USEDEP}] )

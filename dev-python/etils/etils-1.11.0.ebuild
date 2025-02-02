@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all array-types docs eapp ecolab edc enp epath epath-gcs epath-s3 epy etqdm etree etree-dm etree-jax etree-tf lazy-imports"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	eapp? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	etqdm? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	etree-dm? ( dev-python/dm-tree[${PYTHON_USEDEP}] )

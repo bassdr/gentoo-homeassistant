@@ -18,16 +18,13 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/crownstone-core[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/crownstone-core-3.0[${PYTHON_USEDEP}]
-	dev-python/pyserial[${PYTHON_USEDEP}]
 	~dev-python/pyserial-3.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

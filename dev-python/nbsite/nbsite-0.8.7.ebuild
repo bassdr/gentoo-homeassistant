@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="build gallery refman tests"
+GENERATED_IUSE="build gallery refman"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,9 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	refman? ( dev-python/graphviz[${PYTHON_USEDEP}] )
 	dev-python/ipykernel[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
@@ -35,7 +33,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/portalocker[${PYTHON_USEDEP}]
 	<dev-python/pydata-sphinx-theme-0.16[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/pytest-3.9.1[${PYTHON_USEDEP}] )
 	dev-python/pyviz-comms[${PYTHON_USEDEP}]
 	gallery? ( dev-python/selenium[${PYTHON_USEDEP}] )
 	build? ( dev-python/setuptools[${PYTHON_USEDEP}] )
@@ -43,8 +40,12 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
 	dev-python/sphinx-design[${PYTHON_USEDEP}]
 	dev-python/sphinxext-rediraffe[${PYTHON_USEDEP}]
-	tests? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flake8[${PYTHON_USEDEP}]
+	>=dev-python/pytest-3.9.1[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"

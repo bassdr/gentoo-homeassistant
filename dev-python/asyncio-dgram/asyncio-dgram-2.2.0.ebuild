@@ -6,24 +6,22 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Higher level Datagram support for Asyncio"
 HOMEPAGE="
-  https://pypi.org/project/asyncio-dgram/
+  https://pypi.org/project/asyncio_dgram/
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

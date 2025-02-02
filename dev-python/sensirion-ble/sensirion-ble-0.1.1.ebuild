@@ -19,21 +19,16 @@ SRC_URI="https://github.com/akx/sensirion-ble/archive/refs/tags/v${PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bluetooth-data-tools-0.1[${PYTHON_USEDEP}]
-	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6[${PYTHON_USEDEP}]
-	dev-python/bluetooth-sensor-state-data[${PYTHON_USEDEP}]
 	>=dev-python/home-assistant-bluetooth-1.6[${PYTHON_USEDEP}]
-	dev-python/home-assistant-bluetooth[${PYTHON_USEDEP}]
 	>=dev-python/sensor-state-data-2.9[${PYTHON_USEDEP}]
-	dev-python/sensor-state-data[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bluetooth-data-tools-0.1.2[${PYTHON_USEDEP}]

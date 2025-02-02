@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="doc docs test-benchmark test-cov testing"
+GENERATED_IUSE="doc docs test-benchmark test-cov"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/linkify-it-py[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-2.0[${PYTHON_USEDEP}] )
 	<dev-python/numpy-3[${PYTHON_USEDEP}]
@@ -26,7 +25,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/spglib[docs,${PYTHON_USEDEP}] )
 	test-benchmark? ( dev-python/spglib[test,${PYTHON_USEDEP}] )
 	test-cov? ( dev-python/spglib[test,${PYTHON_USEDEP}] )
-	testing? ( dev-python/spglib[test,${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-7.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )

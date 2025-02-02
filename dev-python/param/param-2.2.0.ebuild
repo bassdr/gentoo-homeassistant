@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all examples tests tests-deser tests-examples tests-full"
+GENERATED_IUSE="all examples tests-deser tests-examples tests-full"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	examples? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	tests-examples? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
@@ -57,11 +56,9 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests-examples? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	tests-full? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
 	tests-examples? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
 	tests-full? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	tests-examples? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	tests-full? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
@@ -75,3 +72,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+)"

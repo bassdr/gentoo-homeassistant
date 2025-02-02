@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pandas-1.5.2[${PYTHON_USEDEP}]
 	setup? ( ~dev-python/pip-20.3[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]

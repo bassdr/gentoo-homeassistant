@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PySyncThru"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Automated JSON API based communication with Samsung SyncThru Web Service"
 HOMEPAGE="
   https://pypi.org/project/PySyncThru/
@@ -16,13 +17,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/demjson3[${PYTHON_USEDEP}]
 "

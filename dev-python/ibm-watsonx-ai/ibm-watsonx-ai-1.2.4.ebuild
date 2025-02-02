@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="fl-crypto fl-crypto-rt24-1 fl-rt23-1-py3-10 fl-rt24-1-py3-11 rag"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	rag? ( ~dev-python/beautifulsoup4-4.12.3[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
 	fl-rt23-1-py3-10? ( ~dev-python/cryptography-42.0.5[${PYTHON_USEDEP}] )

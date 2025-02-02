@@ -26,13 +26,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2021.8.17_beta.43[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-0.15.1[${PYTHON_USEDEP}] )
 	>=dev-python/pfzy-0.3.1[${PYTHON_USEDEP}]
-	dev-python/pfzy[${PYTHON_USEDEP}]
 	>=dev-python/prompt-toolkit-3.0.1[${PYTHON_USEDEP}]
-	dev-python/prompt-toolkit[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-4.1.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-copybutton-0.4.0[${PYTHON_USEDEP}] )
@@ -49,4 +47,3 @@ python_test() {
 
 distutils_enable_tests pytest
 
-# PYPI_PN could not be inserted in this ebuild

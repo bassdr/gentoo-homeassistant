@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="code-style rtd testing testing-no-myst theme-furo theme-im theme-pydata theme-rtd theme-sbt"
+GENERATED_IUSE="code-style rtd testing-no-myst theme-furo theme-im theme-pydata theme-rtd theme-sbt"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	testing-no-myst? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
-	testing? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	theme-furo? ( ~dev-python/furo-2024.7.18[${PYTHON_USEDEP}] )
 	rtd? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
-	testing? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
 	theme-pydata? ( ~dev-python/pydata-sphinx-theme-0.15.2[${PYTHON_USEDEP}] )
 	testing-no-myst? ( ~dev-python/pytest-8.3[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/pytest-8.3[${PYTHON_USEDEP}] )
 	testing-no-myst? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	testing-no-myst? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	<dev-python/sphinx-9[${PYTHON_USEDEP}]
 	theme-sbt? ( ~dev-python/sphinx-book-theme-1.1[${PYTHON_USEDEP}] )
 	theme-im? ( ~dev-python/sphinx-immaterial-0.12.2[${PYTHON_USEDEP}] )
@@ -39,3 +33,10 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/defusedxml[${PYTHON_USEDEP}]
+	<dev-python/myst-parser-4[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.3[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+)"

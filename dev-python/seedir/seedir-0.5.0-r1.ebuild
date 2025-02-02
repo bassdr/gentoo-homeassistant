@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="emoji"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	emoji? ( dev-python/emoji[${PYTHON_USEDEP}] )
 	dev-python/natsort[${PYTHON_USEDEP}]
 "

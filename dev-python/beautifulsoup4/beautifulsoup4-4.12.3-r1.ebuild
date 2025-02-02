@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="BeautifulSoup4"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Screen-scraping library"
@@ -22,14 +21,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cchardet chardet charset-normalizer html5lib lxml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cchardet? ( dev-python/cchardet[${PYTHON_USEDEP}] )
 	chardet? ( dev-python/chardet[${PYTHON_USEDEP}] )
 	charset-normalizer? ( dev-python/charset-normalizer[${PYTHON_USEDEP}] )
 	html5lib? ( dev-python/html5lib[${PYTHON_USEDEP}] )
 	lxml? ( dev-python/lxml[${PYTHON_USEDEP}] )
 	>dev-python/soupsieve-1.2[${PYTHON_USEDEP}]
-	dev-python/soupsieve[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/soupsieve-1.3[${PYTHON_USEDEP}]

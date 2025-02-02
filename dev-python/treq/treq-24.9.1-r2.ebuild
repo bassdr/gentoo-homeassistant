@@ -19,7 +19,7 @@ GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/hyperlink-21.0.0[${PYTHON_USEDEP}]
 	dev-python/incremental[${PYTHON_USEDEP}]

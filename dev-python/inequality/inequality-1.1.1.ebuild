@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs pen tests"
+GENERATED_IUSE="docs pen"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,12 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/codecov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/folium[${PYTHON_USEDEP}] )
-	tests? ( dev-python/jupyterlab[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/libpysal-4.5[${PYTHON_USEDEP}]
-	tests? ( dev-python/mapclassify[${PYTHON_USEDEP}] )
 	>=dev-python/matplotlib-3.6[${PYTHON_USEDEP}]
 	pen? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( dev-python/nbsphinx[${PYTHON_USEDEP}] )
@@ -30,12 +25,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	pen? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 	pen? ( dev-python/seaborn[${PYTHON_USEDEP}] )
-	tests? ( dev-python/seaborn[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-gallery[${PYTHON_USEDEP}] )
@@ -45,6 +36,14 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/codecov[${PYTHON_USEDEP}]
+	dev-python/folium[${PYTHON_USEDEP}]
+	dev-python/jupyterlab[${PYTHON_USEDEP}]
+	dev-python/mapclassify[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/seaborn[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 )"

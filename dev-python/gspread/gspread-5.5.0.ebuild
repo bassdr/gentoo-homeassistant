@@ -15,17 +15,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="docs/index.txt"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/google-auth-1.12.0[${PYTHON_USEDEP}]
-	dev-python/google-auth[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.4.1[${PYTHON_USEDEP}]
-	dev-python/google-auth-oauthlib[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/google-auth-1.12.0[${PYTHON_USEDEP}]

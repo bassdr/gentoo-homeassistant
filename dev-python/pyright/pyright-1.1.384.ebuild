@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all nodejs"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/nodeenv-1.6.0[${PYTHON_USEDEP}]
 	all? ( dev-python/nodejs-wheel-binaries[${PYTHON_USEDEP}] )
 	nodejs? ( dev-python/nodejs-wheel-binaries[${PYTHON_USEDEP}] )

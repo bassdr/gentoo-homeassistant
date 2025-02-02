@@ -12,8 +12,6 @@ HOMEPAGE="
   https://pypi.org/project/prayer-times-calculator-offline/
   Homepage, https://github.com/cpfair/prayer-times-calculator-offline
 "
-#SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"

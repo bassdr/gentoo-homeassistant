@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	dev-python/wsproto[${PYTHON_USEDEP}]
 "

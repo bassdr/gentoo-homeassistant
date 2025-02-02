@@ -24,14 +24,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cli? ( >=dev-python/click-8.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
-	dev-python/defusedxml[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.23.1[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/httpx-0.23.1[${PYTHON_USEDEP}]

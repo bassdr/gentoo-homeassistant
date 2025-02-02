@@ -19,23 +19,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aioesphomeapi-22.0.0[${PYTHON_USEDEP}]
-	dev-python/aioesphomeapi[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.21.1[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-data-tools-1.18.0[${PYTHON_USEDEP}]
-	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
 	>=dev-python/habluetooth-1.0.0[${PYTHON_USEDEP}]
-	dev-python/habluetooth[${PYTHON_USEDEP}]
 	>=dev-python/lru-dict-1.2.0[${PYTHON_USEDEP}]
-	dev-python/lru-dict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aioesphomeapi-22.0.0[${PYTHON_USEDEP}]

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/anyio-3.1.0[${PYTHON_USEDEP}]
 	>=dev-python/argon2-cffi-21.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
@@ -26,7 +26,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	>=dev-python/jupyter-client-7.4.4[${PYTHON_USEDEP}]
 	docs? ( dev-python/jupyter-client[${PYTHON_USEDEP}] )
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-core-5.0[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-events-0.11.0[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-server-terminals-0.4.4[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

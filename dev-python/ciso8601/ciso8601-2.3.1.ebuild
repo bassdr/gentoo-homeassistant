@@ -5,6 +5,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Fast ISO8601 date time parser for Python written in C"
 HOMEPAGE="
   https://pypi.org/project/ciso8601/

@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Python CoAP library"
 HOMEPAGE="
   https://pypi.org/project/aiocoap/
@@ -24,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
 	prettyprint? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
 	all? ( dev-python/cbor2[${PYTHON_USEDEP}] )

@@ -26,16 +26,12 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} +native-extensions"
+IUSE="+native-extensions"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/idna-2.0[${PYTHON_USEDEP}]
-	dev-python/idna[${PYTHON_USEDEP}]
 	>=dev-python/multidict-4.0[${PYTHON_USEDEP}]
-	dev-python/multidict[${PYTHON_USEDEP}]
 	>=dev-python/propcache-0.2.0[${PYTHON_USEDEP}]
-	dev-python/propcache[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/idna-2.0[${PYTHON_USEDEP}]

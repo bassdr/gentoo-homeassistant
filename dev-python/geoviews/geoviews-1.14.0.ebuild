@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="recommended tests"
+GENERATED_IUSE="recommended"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bokeh-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/cartopy-0.18.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/datashader[${PYTHON_USEDEP}] )
@@ -31,11 +30,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/panel-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/param-3.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/pooch[${PYTHON_USEDEP}] )
-	tests? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	recommended? ( dev-python/pyct[${PYTHON_USEDEP}] )
 	dev-python/pyproj[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	recommended? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	dev-python/shapely[${PYTHON_USEDEP}]
 	recommended? ( dev-python/shapely[${PYTHON_USEDEP}] )
@@ -45,3 +41,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/psutil[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"

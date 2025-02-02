@@ -16,9 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/appdirs-1.4.3[${PYTHON_USEDEP}]
 	~dev-python/enum34-1.1.6[${PYTHON_USEDEP}]
 	~dev-python/scandir-1.5[${PYTHON_USEDEP}]

@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="PyJWT"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 optfeature pypi
@@ -19,12 +18,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="crypto docs tests"
+GENERATED_IUSE="crypto docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( ~dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	crypto? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/zope-interface[${PYTHON_USEDEP}] )

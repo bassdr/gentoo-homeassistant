@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="pyqt5 pyside2"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/greenlet[${PYTHON_USEDEP}]
 	>=dev-python/pytest-2.3[${PYTHON_USEDEP}]

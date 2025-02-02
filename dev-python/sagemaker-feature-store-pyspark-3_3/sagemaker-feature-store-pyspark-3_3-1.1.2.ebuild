@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 IUSE=""
 
-PYPI_PN="sagemaker-feature-store-pyspark-3-3"
+PYPI_NO_NORMALIZE=1
+PYPI_PN="sagemaker_feature_store_pyspark_3.3"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""

@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="jaraco.vcs"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -19,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/jaraco-classes[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )

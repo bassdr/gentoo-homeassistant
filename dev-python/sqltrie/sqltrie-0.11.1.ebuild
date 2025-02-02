@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,21 +15,21 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
-	tests? ( ~dev-python/mypy-0.971[${PYTHON_USEDEP}] )
 	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/pygtrie[${PYTHON_USEDEP}]
-	tests? ( dev-python/pyinstaller[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-7.2.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	~dev-python/mypy-0.971[${PYTHON_USEDEP}]
+	dev-python/pyinstaller[${PYTHON_USEDEP}]
+	~dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
+	~dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
 	dev-python/sqltrie[tests,${PYTHON_USEDEP}]
 )"

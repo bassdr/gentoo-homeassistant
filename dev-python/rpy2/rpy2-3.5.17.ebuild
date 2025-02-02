@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all doc test-minimal types"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	>=dev-python/cffi-1.15.1[${PYTHON_USEDEP}]
 	test-minimal? ( dev-python/coverage[${PYTHON_USEDEP}] )
@@ -32,12 +32,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	types? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/nbconvert[${PYTHON_USEDEP}] )
 	<dev-python/numpy-1.26[${PYTHON_USEDEP}]
-	<dev-python/numpy-1.26[${PYTHON_USEDEP}]
-	<dev-python/numpy-1.26[${PYTHON_USEDEP}]
-	<dev-python/numpy-1.26[${PYTHON_USEDEP}]
 	doc? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
-	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
 	doc? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	doc? ( dev-python/pygraphviz[${PYTHON_USEDEP}] )

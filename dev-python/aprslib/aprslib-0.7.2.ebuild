@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Module for accessing APRS-IS and parsing APRS packets"
 HOMEPAGE="
   https://pypi.org/project/aprslib/

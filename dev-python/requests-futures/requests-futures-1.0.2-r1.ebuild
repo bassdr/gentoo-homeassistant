@@ -18,13 +18,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '<=dev-python/greenlet-2.0.2[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/greenlet-3.0.0[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/requests-1.2.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/requests-1.2.0[${PYTHON_USEDEP}]

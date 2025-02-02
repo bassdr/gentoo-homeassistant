@@ -7,6 +7,8 @@ DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 5.0.0)"
+S="${WORKDIR}/${PN}-5.0.0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -16,9 +18,8 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/requests-2.19.1[${PYTHON_USEDEP}]
 	~dev-python/securesystemslib-1.0[${PYTHON_USEDEP}]
 "

@@ -25,22 +25,16 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs tests tests-numpy"
+GENERATED_IUSE="docs tests-numpy"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( ~dev-python/alabaster-0.7[${PYTHON_USEDEP}] )
-	tests? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
 	dev-python/dataclasses[${PYTHON_USEDEP}]
 	tests-numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	tests-numpy? ( dev-python/pyhamcrest[tests,${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-5.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-4.0[${PYTHON_USEDEP}] )
 	dev-python/types-dataclasses[${PYTHON_USEDEP}]
-	tests? ( dev-python/types-mock[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
@@ -51,14 +45,20 @@ distutils_enable_sphinx doc \
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/coverage[toml,${PYTHON_USEDEP}]
 	dev-python/doc2dash[${PYTHON_USEDEP}]
 	dev-python/flake8[${PYTHON_USEDEP}]
 	dev-python/pyhamcrest[docs,tests,${PYTHON_USEDEP}]
+	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
 	dev-python/pytest-mypy[${PYTHON_USEDEP}]
+	dev-python/pytest-sugar[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/towncrier[${PYTHON_USEDEP}]
 	dev-python/tox[${PYTHON_USEDEP}]
 	dev-python/tox-asdf[${PYTHON_USEDEP}]
 	dev-python/twine[${PYTHON_USEDEP}]
+	dev-python/types-mock[${PYTHON_USEDEP}]
 )"
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}

@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc typetest"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	typetest? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	typetest? ( dev-python/pyright[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )

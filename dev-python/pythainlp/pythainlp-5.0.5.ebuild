@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="abbreviation attacut benchmarks coreference-resolution dependency-parsing el esupar full generate icu ipa ml mt5 nlpo3 onnx oskut sefr-cut spacy-thai spell ssg textaugment thai-nner thai2fit thai2rom transformers-ud translate wangchanberta wangchanglm word-approximation wordnet wsd wtp wunsen"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	attacut? ( >=dev-python/attacut-1.0.6[${PYTHON_USEDEP}] )
 	full? ( >=dev-python/attacut-1.0.4[${PYTHON_USEDEP}] )
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]

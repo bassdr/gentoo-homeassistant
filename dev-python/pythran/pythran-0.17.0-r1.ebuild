@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/beniget-0.4.0[${PYTHON_USEDEP}]
 	~dev-python/gast-0.6.0[${PYTHON_USEDEP}]
 	doc? ( dev-python/guzzle-sphinx-theme[${PYTHON_USEDEP}] )

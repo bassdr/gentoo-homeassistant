@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="pyRFXtrx"
 inherit distutils-r1 pypi
 
 DESCRIPTION="a library to communicate with the RFXtrx family of devices"
@@ -16,15 +15,13 @@ HOMEPAGE="
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyserial-2.7[${PYTHON_USEDEP}]
-	dev-python/pyserial[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 >=dev-python/pyserial-2.7[${PYTHON_USEDEP}]"

@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,21 +15,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
-	testing? ( dev-python/chex[${PYTHON_USEDEP}] )
 	dev-python/etils[epath,epy,${PYTHON_USEDEP}]
-	testing? ( dev-python/flax[${PYTHON_USEDEP}] )
-	testing? ( dev-python/google-cloud-logging[${PYTHON_USEDEP}] )
 	dev-python/humanize[${PYTHON_USEDEP}]
 	>=dev-python/jax-0.4.34[${PYTHON_USEDEP}]
-	testing? ( dev-python/mock[${PYTHON_USEDEP}] )
 	dev-python/msgpack[${PYTHON_USEDEP}]
 	dev-python/nest-asyncio[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/simplejson-3.16.0[${PYTHON_USEDEP}]
 	>=dev-python/tensorstore-0.1.68[${PYTHON_USEDEP}]
@@ -40,3 +32,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/chex[${PYTHON_USEDEP}]
+	dev-python/flax[${PYTHON_USEDEP}]
+	dev-python/google-cloud-logging[${PYTHON_USEDEP}]
+	dev-python/mock[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"

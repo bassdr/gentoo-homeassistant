@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Kafka integration with asyncio"
 HOMEPAGE="
   https://pypi.org/project/aiokafka/
@@ -21,7 +22,7 @@ GENERATED_IUSE="all gssapi lz4 snappy zstd"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	all? ( dev-python/cramjam[${PYTHON_USEDEP}] )
 	snappy? ( dev-python/cramjam[${PYTHON_USEDEP}] )

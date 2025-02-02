@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="flags testing"
+GENERATED_IUSE="flags"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +16,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	flags? ( dev-python/absl-py[${PYTHON_USEDEP}] )
-	testing? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )
 	flags? ( dev-python/etils[epath,${PYTHON_USEDEP}] )
-	testing? ( dev-python/fiddle[flags,${PYTHON_USEDEP}] )
-	testing? ( dev-python/flax[${PYTHON_USEDEP}] )
 	dev-python/graphviz[${PYTHON_USEDEP}]
-	testing? ( dev-python/graphviz[${PYTHON_USEDEP}] )
 	dev-python/libcst[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytype[${PYTHON_USEDEP}] )
-	testing? ( dev-python/seqio[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/tfds-nightly-4.9.2_p202308090034[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	dev-python/fiddle[flags,${PYTHON_USEDEP}]
+	dev-python/flax[${PYTHON_USEDEP}]
+	dev-python/graphviz[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytype[${PYTHON_USEDEP}]
+	dev-python/seqio[${PYTHON_USEDEP}]
+	>=dev-python/tfds-nightly-4.9.2_pre202308090034[${PYTHON_USEDEP}]
+)"

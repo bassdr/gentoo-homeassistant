@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="One version package to rule them all, One version package to find them, One version package to bring them all, and in the darkness bind them."
 HOMEPAGE="
   https://pypi.org/project/awesomeversion/

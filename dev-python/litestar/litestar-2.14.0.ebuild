@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="annotated-types attrs brotli cli cryptography full jinja jwt mako minijinja opentelemetry piccolo prometheus pydantic redis sqlalchemy standard structlog valkey"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	full? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
 	sqlalchemy? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
 	annotated-types? ( dev-python/annotated-types[${PYTHON_USEDEP}] )
@@ -57,13 +56,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	full? ( dev-python/piccolo[${PYTHON_USEDEP}] )
 	piccolo? ( dev-python/piccolo[${PYTHON_USEDEP}] )
 	dev-python/picologging[${PYTHON_USEDEP}]
-	dev-python/picologging[${PYTHON_USEDEP}]
 	>=dev-python/polyfactory-2.6.3[${PYTHON_USEDEP}]
 	full? ( dev-python/prometheus-client[${PYTHON_USEDEP}] )
 	prometheus? ( dev-python/prometheus-client[${PYTHON_USEDEP}] )
 	full? ( dev-python/pydantic[${PYTHON_USEDEP}] )
 	pydantic? ( dev-python/pydantic[${PYTHON_USEDEP}] )
-	!=dev-python/pydantic-extra-types-2.9.0[${PYTHON_USEDEP}]
 	!=dev-python/pydantic-extra-types-2.9.0[${PYTHON_USEDEP}]
 	full? ( >=dev-python/pyjwt-2.9.0[${PYTHON_USEDEP}] )
 	jwt? ( >=dev-python/pyjwt-2.9.0[${PYTHON_USEDEP}] )

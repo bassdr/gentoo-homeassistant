@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="alembic all bqstorage geography tests"
+GENERATED_IUSE="alembic all bqstorage geography"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,31 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	alembic? ( dev-python/alembic[${PYTHON_USEDEP}] )
 	all? ( dev-python/alembic[${PYTHON_USEDEP}] )
 	all? ( dev-python/geoalchemy2[${PYTHON_USEDEP}] )
 	geography? ( dev-python/geoalchemy2[${PYTHON_USEDEP}] )
-	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0.0dev[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-bigquery-4.0.0dev[${PYTHON_USEDEP}]
-	all? ( <dev-python/google-cloud-bigquery-storage-3.0.0dev[${PYTHON_USEDEP}] )
-	bqstorage? ( <dev-python/google-cloud-bigquery-storage-3.0.0dev[${PYTHON_USEDEP}] )
-	<dev-python/grpcio-2.0dev[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2.0dev[${PYTHON_USEDEP}]
-	all? ( <dev-python/grpcio-2.0dev[${PYTHON_USEDEP}] )
-	bqstorage? ( <dev-python/grpcio-2.0dev[${PYTHON_USEDEP}] )
+	!=dev-python/google-api-core-2.0[${PYTHON_USEDEP}]
+	<dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
+	<dev-python/google-cloud-bigquery-4.0.0_pre[${PYTHON_USEDEP}]
+	all? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
+	<dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}]
+	all? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
 	all? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	dev-python/packaging[${PYTHON_USEDEP}]
-	tests? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pyarrow-3.0.0[${PYTHON_USEDEP}] )
 	bqstorage? ( >=dev-python/pyarrow-3.0.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytz[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	all? ( dev-python/shapely[${PYTHON_USEDEP}] )
 	geography? ( dev-python/shapely[${PYTHON_USEDEP}] )
-	<dev-python/sqlalchemy-3.0.0dev[${PYTHON_USEDEP}]
+	<dev-python/sqlalchemy-3.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
+)"

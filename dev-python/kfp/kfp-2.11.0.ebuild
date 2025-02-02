@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all kubernetes"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,11 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/click-9[${PYTHON_USEDEP}]
 	all? ( dev-python/docker[${PYTHON_USEDEP}] )
 	<dev-python/docstring-parser-1[${PYTHON_USEDEP}]
-	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
+	!=dev-python/google-api-core-2.0[${PYTHON_USEDEP}]
 	<dev-python/google-auth-3[${PYTHON_USEDEP}]
 	<dev-python/google-cloud-storage-3[${PYTHON_USEDEP}]
 	all? ( <dev-python/kfp-kubernetes-2[${PYTHON_USEDEP}] )

@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="diagrams"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	diagrams? ( dev-python/pygraphviz[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]
 "

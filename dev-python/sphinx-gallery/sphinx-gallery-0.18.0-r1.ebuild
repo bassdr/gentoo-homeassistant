@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="animations jupyterlite parallel recommender show-api-usage show-memory"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	show-api-usage? ( dev-python/graphviz[${PYTHON_USEDEP}] )
 	parallel? ( dev-python/joblib[${PYTHON_USEDEP}] )
 	jupyterlite? ( dev-python/jupyterlite-sphinx[${PYTHON_USEDEP}] )

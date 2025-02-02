@@ -23,10 +23,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	ci? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.6.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/ruff-0.0.291[${PYTHON_USEDEP}] )
 	lint? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
@@ -48,5 +47,5 @@ BDEPEND+=" test? (
 	dev-python/prawcore[lint,${PYTHON_USEDEP}]
 	dev-python/prawcore[test,${PYTHON_USEDEP}]
 	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
-	~dev-python/urllib3-1.26*[${PYTHON_USEDEP}]
+	~dev-python/urllib3-1.26[${PYTHON_USEDEP}]
 )"

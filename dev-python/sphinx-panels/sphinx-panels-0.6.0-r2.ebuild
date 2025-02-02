@@ -20,15 +20,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="code_style live-dev testing themes"
+GENERATED_IUSE="code_style live-dev themes"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	~dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}]
 	themes? ( ~dev-python/myst-parser-0.12.9[${PYTHON_USEDEP}] )
 	themes? ( ~dev-python/pydata-sphinx-theme-0.4.0[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/pytest-6.0.1[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/pytest-regressions-2.0.1[${PYTHON_USEDEP}] )
 	<dev-python/sphinx-5[${PYTHON_USEDEP}]
 	live-dev? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	themes? ( ~dev-python/sphinx-book-theme-0.0.36[${PYTHON_USEDEP}] )
@@ -52,6 +50,10 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+	~dev-python/pytest-regressions-2.0.1[${PYTHON_USEDEP}]
+)"
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 src_prepare() {

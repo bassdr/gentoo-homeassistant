@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs lxml moulinrouge png"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	png? ( dev-python/cairosvg[${PYTHON_USEDEP}] )
 	moulinrouge? ( dev-python/flask[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]

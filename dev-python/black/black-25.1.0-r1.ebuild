@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="colorama d jupyter uvloop"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	d? ( >=dev-python/aiohttp-3.10[${PYTHON_USEDEP}] )
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	colorama? ( >=dev-python/colorama-0.4.3[${PYTHON_USEDEP}] )

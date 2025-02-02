@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all cachelib memcached mongodb redis sqlalchemy"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,9 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cachelib? ( >=dev-python/cachelib-0.10.2[${PYTHON_USEDEP}] )
-	dev-python/cachelib[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.2[${PYTHON_USEDEP}]
 	all? ( dev-python/flask-session[cachelib,memcached,mongodb,redis,sqlalchemy,${PYTHON_USEDEP}] )
 	sqlalchemy? ( >=dev-python/flask-sqlalchemy-3.0.5[${PYTHON_USEDEP}] )

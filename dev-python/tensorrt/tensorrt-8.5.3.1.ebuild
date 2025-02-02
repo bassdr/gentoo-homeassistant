@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	dev-python/nvidia-cublas-cu11[${PYTHON_USEDEP}]
 	dev-python/nvidia-cuda-runtime-cu11[${PYTHON_USEDEP}]

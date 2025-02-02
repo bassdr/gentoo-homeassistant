@@ -18,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	beam? ( >=dev-python/apache-beam-2.50.0[gcp,${PYTHON_USEDEP}] )
 	dev-python/etils[epath,${PYTHON_USEDEP}]

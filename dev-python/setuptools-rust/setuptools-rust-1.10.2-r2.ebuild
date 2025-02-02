@@ -120,15 +120,12 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/semantic-version-3[${PYTHON_USEDEP}]
-	dev-python/semantic-version[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-62.4[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	${RUST_DEPEND}

@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PyRIC"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Python Wireless Library"
 HOMEPAGE="
   https://pypi.org/project/PyRIC/

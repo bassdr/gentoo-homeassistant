@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyairvisual-2023.8.1[${PYTHON_USEDEP}]
+	~dev-python/pyairvisual-2023.08.1[${PYTHON_USEDEP}]
 "

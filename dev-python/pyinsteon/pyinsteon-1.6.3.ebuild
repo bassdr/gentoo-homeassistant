@@ -20,15 +20,13 @@ KEYWORDS="amd64 arm64"
 
 DOCS="DESCRIPTION.rst"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/pypubsub[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-asyncio-0.5[${PYTHON_USEDEP}]
-	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

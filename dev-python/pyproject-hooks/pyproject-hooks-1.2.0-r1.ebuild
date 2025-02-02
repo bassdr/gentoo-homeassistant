@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="pyproject_hooks"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Wrappers to call pyproject.toml-based build backend hooks."

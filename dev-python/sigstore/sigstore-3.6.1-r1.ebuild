@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	lint? ( dev-python/bandit[${PYTHON_USEDEP}] )
 	<dev-python/cryptography-45[${PYTHON_USEDEP}]
 	>=dev-python/id-1.1.0[${PYTHON_USEDEP}]

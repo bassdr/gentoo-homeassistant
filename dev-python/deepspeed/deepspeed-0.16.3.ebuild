@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="1bit-mpi all autotuning autotuning-ml inf readthedocs sd sparse sparse-attn triton"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,13 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/autodoc-pydantic-2.0.0[${PYTHON_USEDEP}] )
 	readthedocs? ( >=dev-python/autodoc-pydantic-2.0.0[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/clang-format-18.1.3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/comet-ml-3.41.0[${PYTHON_USEDEP}] )
-	dev-python/deepspeed-kernels[${PYTHON_USEDEP}]
 	dev-python/deepspeed-kernels[${PYTHON_USEDEP}]
 	all? ( >=dev-python/diffusers-0.25.0[${PYTHON_USEDEP}] )
 	sd? ( >=dev-python/diffusers-0.25.0[${PYTHON_USEDEP}] )
@@ -35,7 +33,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	inf? ( dev-python/google[${PYTHON_USEDEP}] )
 	all? ( dev-python/hjson[${PYTHON_USEDEP}] )
 	autotuning-ml? ( dev-python/hjson[${PYTHON_USEDEP}] )
-	dev-python/hjson[${PYTHON_USEDEP}]
 	readthedocs? ( dev-python/hjson[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/importlib-metadata-4[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/lm-eval-0.3.0[${PYTHON_USEDEP}] )
@@ -54,10 +51,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/protobuf[${PYTHON_USEDEP}] )
 	inf? ( dev-python/protobuf[${PYTHON_USEDEP}] )
 	all? ( dev-python/psutil[${PYTHON_USEDEP}] )
-	dev-python/psutil[${PYTHON_USEDEP}]
 	readthedocs? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	all? ( dev-python/py-cpuinfo[${PYTHON_USEDEP}] )
-	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
 	readthedocs? ( dev-python/py-cpuinfo[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}] )
@@ -66,8 +61,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/pytest-forked[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	all? ( dev-python/qtorch[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/qtorch-0.3.0[${PYTHON_USEDEP}] )
+	all? ( dev-python/qtorch[${PYTHON_USEDEP}] )
 	inf? ( dev-python/qtorch[${PYTHON_USEDEP}] )
 	all? ( dev-python/recommonmark[${PYTHON_USEDEP}] )
 	readthedocs? ( dev-python/recommonmark[${PYTHON_USEDEP}] )
@@ -77,25 +72,22 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	inf? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
 	all? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	all? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	all? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	readthedocs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	all? ( dev-python/tabulate[${PYTHON_USEDEP}] )
 	autotuning-ml? ( dev-python/tabulate[${PYTHON_USEDEP}] )
 	autotuning? ( dev-python/tabulate[${PYTHON_USEDEP}] )
 	all? ( dev-python/tensorboard[${PYTHON_USEDEP}] )
 	all? ( dev-python/torch[${PYTHON_USEDEP}] )
-	dev-python/torch[${PYTHON_USEDEP}]
 	readthedocs? ( dev-python/torch[${PYTHON_USEDEP}] )
 	all? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	all? ( dev-python/tqdm[${PYTHON_USEDEP}] )
-	dev-python/tqdm[${PYTHON_USEDEP}]
 	readthedocs? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/transformers-4.32.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/transformers-4.39.0[${PYTHON_USEDEP}] )
 	inf? ( >=dev-python/transformers-4.32.1[${PYTHON_USEDEP}] )
-	all? ( >=dev-python/triton-2.1.0[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/triton-1.0.0[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/triton-2.1.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/triton-2.1.0[${PYTHON_USEDEP}] )
 	sd? ( >=dev-python/triton-2.1.0[${PYTHON_USEDEP}] )
 	sparse-attn? ( ~dev-python/triton-1.0.0[${PYTHON_USEDEP}] )
 	triton? ( ~dev-python/triton-2.1.0[${PYTHON_USEDEP}] )

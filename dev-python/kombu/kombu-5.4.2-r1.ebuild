@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="azureservicebus azurestoragequeues confluentkafka consul mongodb msgpack pyro qpid redis slmq sqlalchemy sqs yaml zookeeper"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/amqp-6.0.0[${PYTHON_USEDEP}]
 	azurestoragequeues? ( >=dev-python/azure-identity-1.12.0[${PYTHON_USEDEP}] )
 	azureservicebus? ( >=dev-python/azure-servicebus-7.10.0[${PYTHON_USEDEP}] )

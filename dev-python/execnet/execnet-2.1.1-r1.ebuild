@@ -16,13 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/hatch[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/tox[${PYTHON_USEDEP}] )
-	testing? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 "
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
@@ -30,6 +25,12 @@ BDEPEND="
 
 distutils_enable_sphinx doc
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/hatch[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+	dev-vcs/pre-commit[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=()

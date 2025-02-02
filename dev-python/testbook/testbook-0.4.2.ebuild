@@ -17,8 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/black[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/black[${PYTHON_USEDEP}]
 	sphinx? ( ~dev-python/myst-parser-0.9.1[${PYTHON_USEDEP}] )
 	>=dev-python/nbclient-0.4.0[${PYTHON_USEDEP}]
@@ -31,37 +30,20 @@ RDEPEND="${GENERATED_DEPEND}"
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/bumpversion[${PYTHON_USEDEP}]
-	dev-python/bumpversion[${PYTHON_USEDEP}]
-	dev-python/check-manifest[${PYTHON_USEDEP}]
 	dev-python/check-manifest[${PYTHON_USEDEP}]
 	dev-python/codecov[${PYTHON_USEDEP}]
-	dev-python/codecov[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
 	dev-python/coverage[${PYTHON_USEDEP}]
 	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/ipykernel[${PYTHON_USEDEP}]
 	dev-python/ipykernel[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/ipywidgets[${PYTHON_USEDEP}]
 	dev-python/ipywidgets[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	>=dev-python/pip-18.1[${PYTHON_USEDEP}]
 	>=dev-python/pip-18.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-38.6.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-38.6.0[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
 	dev-python/tox[${PYTHON_USEDEP}]
 	>=dev-python/twine-1.11.0[${PYTHON_USEDEP}]
-	>=dev-python/twine-1.11.0[${PYTHON_USEDEP}]
 	>=dev-python/wheel-0.31.0[${PYTHON_USEDEP}]
-	>=dev-python/wheel-0.31.0[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 )"

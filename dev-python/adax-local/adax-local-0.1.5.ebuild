@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="Adax-local"
 inherit distutils-r1 pypi
+
 DESCRIPTION="A python3 library to communicate with Adax"
 HOMEPAGE="
   https://pypi.org/project/Adax-local/
@@ -16,17 +17,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.6[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-1.4.0[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/bleak[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

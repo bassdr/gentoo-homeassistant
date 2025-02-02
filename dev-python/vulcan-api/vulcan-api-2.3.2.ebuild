@@ -17,20 +17,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aenum[${PYTHON_USEDEP}]
 	dev-python/aiodns[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/faust-cchardet[${PYTHON_USEDEP}]
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/python-dotenv[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/related-without-future[${PYTHON_USEDEP}]
 	dev-python/uonet-request-signer-hebe[${PYTHON_USEDEP}]
@@ -39,3 +36,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/python-dotenv[${PYTHON_USEDEP}]
+)"

@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="docs pytz untrustedpython zcml"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="zope.security"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	pytz? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
@@ -33,7 +31,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/zope-proxy-5.2[${PYTHON_USEDEP}]
 	>=dev-python/zope-schema-4.2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	untrustedpython? ( >=dev-python/zope-untrustedpython-5.0_p0[${PYTHON_USEDEP}] )
+	untrustedpython? ( >=dev-python/zope-untrustedpython-5.0_pre0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 

@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs typing uv virtualenv"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	typing? ( dev-python/build[uv,${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/furo-2023.08.17[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-4.6[${PYTHON_USEDEP}]
@@ -77,7 +77,6 @@ BDEPEND+=" test? (
 	>=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}]
 	>=dev-python/wheel-0.36.0[${PYTHON_USEDEP}]
 )"
@@ -118,4 +117,3 @@ python_test() {
 	local EPYTEST_XDIST=1
 	epytest -m "not network" -p pytest_mock -p rerunfailures
 }
-# SRC_URI could not be inserted in this ebuild

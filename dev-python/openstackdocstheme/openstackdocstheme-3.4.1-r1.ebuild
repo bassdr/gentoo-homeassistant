@@ -16,9 +16,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/dulwich-0.15.0[${PYTHON_USEDEP}]
 	!=dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]

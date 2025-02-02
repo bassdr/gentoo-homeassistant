@@ -20,16 +20,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/flaky[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-random-order[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]
@@ -42,3 +36,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flaky[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-random-order[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+)"

@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="API wrapper to communicate locally with SolarEdge Inverters"
 HOMEPAGE="
   https://pypi.org/project/solaredge-local/
@@ -14,11 +15,10 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/uplink[${PYTHON_USEDEP}]
 	dev-python/uplink-protobuf[${PYTHON_USEDEP}]
 "

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="client docs server"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	client? ( >=dev-python/ipykernel-6.14[${PYTHON_USEDEP}] )
 	server? ( >=dev-python/ipykernel-6.14[${PYTHON_USEDEP}] )
 	client? ( >=dev-python/jupyter-client-7.4.0[${PYTHON_USEDEP}] )

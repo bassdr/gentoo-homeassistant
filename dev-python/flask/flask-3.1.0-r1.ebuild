@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION="A simple framework for building complex web applications."
 HOMEPAGE="
-  https://pypi.org/project/flask/
+  https://pypi.org/project/Flask/
   Changes, https://flask.palletsprojects.com/changes/
   Chat, https://discord.gg/pallets
   Documentation, https://flask.palletsprojects.com/
@@ -22,6 +22,7 @@ if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
 else
 	inherit pypi
+
 KEYWORDS="amd64 arm64"
 fi
 
@@ -30,19 +31,14 @@ SLOT="0"
 GENERATED_IUSE="async dotenv"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	async? ( >=dev-python/asgiref-3.2[${PYTHON_USEDEP}] )
 	>=dev-python/blinker-1.9[${PYTHON_USEDEP}]
-	dev-python/blinker[${PYTHON_USEDEP}]
 	>=dev-python/click-8.1.3[${PYTHON_USEDEP}]
-	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/itsdangerous-2.2[${PYTHON_USEDEP}]
-	dev-python/itsdangerous[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
-	dev-python/jinja2[${PYTHON_USEDEP}]
 	dotenv? ( dev-python/python-dotenv[${PYTHON_USEDEP}] )
 	>=dev-python/werkzeug-3.1[${PYTHON_USEDEP}]
-	dev-python/werkzeug[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/blinker-1.9[${PYTHON_USEDEP}]

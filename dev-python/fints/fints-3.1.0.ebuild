@@ -15,17 +15,15 @@ HOMEPAGE="
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/bleach[${PYTHON_USEDEP}]
 	dev-python/mt_940[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/sepaxml[${PYTHON_USEDEP}]
 	~dev-python/sepaxml-2.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

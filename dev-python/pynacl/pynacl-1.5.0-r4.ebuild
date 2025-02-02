@@ -22,9 +22,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/cffi[${PYTHON_USEDEP}]
 "
 DEPEND="
@@ -52,4 +51,3 @@ src_compile() {
 	local -x SODIUM_INSTALL=system
 	distutils-r1_src_compile
 }
-# PYPI_PN could not be inserted in this ebuild

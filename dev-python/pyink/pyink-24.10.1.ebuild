@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="colorama jupyter uvloop"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/black-24.10.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	colorama? ( >=dev-python/colorama-0.4.3[${PYTHON_USEDEP}] )

@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	lint? ( dev-python/bandit[${PYTHON_USEDEP}] )
 	lint? ( dev-python/interrogate[${PYTHON_USEDEP}] )
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )

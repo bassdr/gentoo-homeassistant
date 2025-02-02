@@ -16,9 +16,8 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyenchant-3.1.1[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-3.0.0[${PYTHON_USEDEP}]

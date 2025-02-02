@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Asynchronous library to control Shelly devices."
 HOMEPAGE="
   https://pypi.org/project/aioshelly/
@@ -14,21 +15,16 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.11.1[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-data-tools-1.19.0[${PYTHON_USEDEP}]
-	dev-python/bluetooth-data-tools[${PYTHON_USEDEP}]
 	>=dev-python/habluetooth-2.1.0[${PYTHON_USEDEP}]
-	dev-python/habluetooth[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.8.1[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

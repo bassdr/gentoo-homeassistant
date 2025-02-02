@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="code-style rtd testing"
+GENERATED_IUSE="code-style rtd"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,40 +16,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	rtd? ( dev-python/alabaster[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/altair[${PYTHON_USEDEP}] )
-	testing? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	rtd? ( >=dev-python/coconut-1.4.3[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/coverage-6.4[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/ipykernel[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/ipykernel-5.5[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/ipykernel-5.5[${PYTHON_USEDEP}] )
 	dev-python/ipython[${PYTHON_USEDEP}]
-	testing? ( !=dev-python/ipython-8.1.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/ipywidgets-8[${PYTHON_USEDEP}] )
 	>=dev-python/jupyter-cache-0.5[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/jupytext-1.11.2[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/jupytext-1.11.2[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/matplotlib-3.7*[${PYTHON_USEDEP}] )
 	>=dev-python/myst-parser-1.0.0[${PYTHON_USEDEP}]
 	dev-python/nbclient[${PYTHON_USEDEP}]
-	testing? ( dev-python/nbdime[${PYTHON_USEDEP}] )
 	>=dev-python/nbformat-5.0[${PYTHON_USEDEP}]
 	rtd? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	testing? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/plotly[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-cov-3[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-param-files[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/sphinx-book-theme-0.3[${PYTHON_USEDEP}] )
@@ -58,10 +42,27 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	rtd? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinxcontrib-bibtex[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sympy[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/sympy-1.10.1[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	code-style? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+	>=dev-python/coverage-6.4[${PYTHON_USEDEP}]
+	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
+	!=dev-python/ipython-8.1.0[${PYTHON_USEDEP}]
+	>=dev-python/ipywidgets-8[${PYTHON_USEDEP}]
+	>=dev-python/jupytext-1.11.2[${PYTHON_USEDEP}]
+	~dev-python/matplotlib-3.7[${PYTHON_USEDEP}]
+	dev-python/nbdime[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/pyarrow[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-3[${PYTHON_USEDEP}]
+	dev-python/pytest-param-files[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	>=dev-python/sympy-1.10.1[${PYTHON_USEDEP}]
+)"

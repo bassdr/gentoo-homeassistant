@@ -5,10 +5,10 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="ruamel.yaml.clib"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="ruamel.yaml.clib"
 inherit distutils-r1 pypi
 
 DESCRIPTION="C version of reader, parser and emitter for ruamel.yaml derived from libyaml"
@@ -19,8 +19,6 @@ HOMEPAGE="
   Tracker, https://sourceforge.net/p/ruamel-yaml-clib/tickets/
 "
 # workaround https://bugs.gentoo.org/898716
-S=${WORKDIR}/ruamel_yaml_clib
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"

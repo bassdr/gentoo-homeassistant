@@ -22,9 +22,8 @@ KEYWORDS="amd64 arm64"
 
 # requests seem "optional" but they failed at properly making it
 # optional in poetry, sigh
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/pathable-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 	<dev-python/referencing-0.37.0[${PYTHON_USEDEP}]

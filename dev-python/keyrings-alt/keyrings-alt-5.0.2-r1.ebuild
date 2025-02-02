@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="keyrings.alt"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -21,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/jaraco-classes[${PYTHON_USEDEP}]
 	dev-python/jaraco-context[${PYTHON_USEDEP}]
@@ -48,7 +47,7 @@ BDEPEND+=" test? (
 	>=dev-python/keyring-20[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/pycryptodomex[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]

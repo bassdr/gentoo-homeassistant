@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="adlfs daft duckdb gcsfs glue hive pandas pyarrow s3fs snappy sql-postgres zstandard"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	adlfs? ( >=dev-python/adlfs-2023.1.0[${PYTHON_USEDEP}] )
 	glue? ( >=dev-python/boto3-1.24.59[${PYTHON_USEDEP}] )
 	<dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]

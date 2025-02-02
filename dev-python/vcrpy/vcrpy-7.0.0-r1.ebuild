@@ -20,23 +20,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
-	tests? ( dev-python/boto3[${PYTHON_USEDEP}] )
-	tests? ( dev-python/httplib2[${PYTHON_USEDEP}] )
-	tests? ( dev-python/httpx[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-aiohttp[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-httpbin[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/requests-2.22.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/tornado[${PYTHON_USEDEP}] )
-	tests? ( dev-python/urllib3[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/werkzeug-2.0.3[${PYTHON_USEDEP}] )
 	dev-python/wrapt[${PYTHON_USEDEP}]
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
@@ -57,6 +43,21 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/boto3[${PYTHON_USEDEP}]
+	dev-python/httplib2[${PYTHON_USEDEP}]
+	dev-python/httpx[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-httpbin[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
+	dev-python/tornado[${PYTHON_USEDEP}]
+	dev-python/urllib3[${PYTHON_USEDEP}]
+	~dev-python/werkzeug-2.0.3[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

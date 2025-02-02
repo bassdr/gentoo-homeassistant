@@ -3,14 +3,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "packaging-legacy" "23.0.post0")"
-S="${WORKDIR}/packaging-legacy-23.0.post0"
+SRC_URI="$(pypi_sdist_url ${PN} 23.0.post0)"
+S="${WORKDIR}/${PN}-23.0.post0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

@@ -4,13 +4,12 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "pytest-tornasync" "0.6.0.post2")"
-S="${WORKDIR}/pytest-tornasync-0.6.0.post2"
+SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 0.6.0.post2)"
+S="${WORKDIR}/${PN}-0.6.0.post2"
 
 MY_P=${PN}-${PV/_p/.post}
 DESCRIPTION=""
@@ -20,9 +19,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytest-3.0[${PYTHON_USEDEP}]
 	>=dev-python/tornado-5.0[${PYTHON_USEDEP}]
 "

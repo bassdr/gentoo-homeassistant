@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs tests"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,11 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
-	tests? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-design-0.6.1[${PYTHON_USEDEP}] )
@@ -34,6 +31,8 @@ RDEPEND="${GENERATED_DEPEND}"
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/marshmallow-sqlalchemy[tests,${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
 	dev-python/tox[${PYTHON_USEDEP}]
 	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
 )"

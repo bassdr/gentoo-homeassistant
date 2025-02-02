@@ -16,9 +16,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	<=dev-python/docutils-0.21.2[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 	>=dev-python/restructuredtext-lint-0.7[${PYTHON_USEDEP}]

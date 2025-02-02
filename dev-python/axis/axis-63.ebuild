@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="A Python library for communicating with devices from Axis Communications"
 HOMEPAGE="
   https://pypi.org/project/axis/
@@ -23,16 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/httpx-0.26[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/httpx-0.27.2[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/mypy-1.12.1[${PYTHON_USEDEP}] )
 	>dev-python/orjson-3.9[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/orjson-3.10.9[${PYTHON_USEDEP}] )
 	>dev-python/packaging-23[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/packaging-24.1[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}] )
@@ -43,7 +41,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	requirements-test? ( ~dev-python/types-orjson-3.6.2[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/types-xmltodict-0.14.0.20241009[${PYTHON_USEDEP}] )
 	>=dev-python/xmltodict-0.13.0[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/xmltodict-0.14.2[${PYTHON_USEDEP}] )
 	requirements-dev? ( ~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}] )
 "

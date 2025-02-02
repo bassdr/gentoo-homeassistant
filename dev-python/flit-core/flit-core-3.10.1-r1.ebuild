@@ -7,12 +7,11 @@ EAPI=8
 DISTUTILS_USE_PEP517=standalone
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="flit_core"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Distribution-building parts of Flit. See flit package for more information"
 HOMEPAGE="
-  https://pypi.org/project/flit_core/
+  https://pypi.org/project/flit-core/
   Documentation, https://flit.pypa.io
   Source, https://github.com/pypa/flit
 "

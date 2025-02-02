@@ -21,21 +21,16 @@ SRC_URI="https://github.com/tronikos/${MY_PN}/archive/refs/tags/${PV}.tar.gz -> 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/google-auth-3[${PYTHON_USEDEP}]
-	dev-python/google-auth[${PYTHON_USEDEP}]
 	<dev-python/grpcio-2[${PYTHON_USEDEP}]
-	dev-python/grpcio[${PYTHON_USEDEP}]
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
 	<dev-python/requests-3[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="

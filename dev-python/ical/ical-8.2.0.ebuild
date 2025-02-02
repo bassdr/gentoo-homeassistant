@@ -15,21 +15,16 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pydantic-1.9.1[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
 	>=dev-python/pyparsing-3.0.9[${PYTHON_USEDEP}]
-	dev-python/pyparsing[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	>=dev-python/tzdata-2023.3[${PYTHON_USEDEP}]
-	dev-python/tzdata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]

@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,19 +15,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiooss2-0.2.7[${PYTHON_USEDEP}]
-	tests? ( ~dev-python/aliyun-python-sdk-sts-3.1.1[${PYTHON_USEDEP}] )
 	>=dev-python/fsspec-2023.9.2[${PYTHON_USEDEP}]
-	tests? ( ~dev-python/mypy-0.971[${PYTHON_USEDEP}] )
 	~dev-python/oss2-2.18.1[${PYTHON_USEDEP}]
-	tests? ( ~dev-python/pylint-2.15.0[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pylint-pytest-1.1.2[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-7.2.0[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}] )
-	tests? ( ~dev-python/requests-2.31.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 

@@ -21,12 +21,10 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/icalendar-6.1.0[${PYTHON_USEDEP}]
-	dev-python/icalendar[${PYTHON_USEDEP}]
 	dev-python/tzdata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

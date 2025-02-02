@@ -24,37 +24,19 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="cov docs packaging testing"
+GENERATED_IUSE="cov docs packaging"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '~dev-python/atheris-2.3.0[${PYTHON_USEDEP}]' python3_12)
-	testing? ( dev-python/bson[${PYTHON_USEDEP}] )
 	packaging? ( dev-python/build[${PYTHON_USEDEP}] )
-	testing? ( dev-python/ecdsa[${PYTHON_USEDEP}] )
-	testing? ( dev-python/feedparser[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	testing? ( dev-python/gmpy2[${PYTHON_USEDEP}] )
-	testing? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pymongo[${PYTHON_USEDEP}] )
-	testing? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-benchmark[histogram,${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-checkdocs-1.2.3[${PYTHON_USEDEP}] )
 	cov? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-enabler-1.0.1[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
-	testing? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	>=dev-python/scipy-1.9.3[${PYTHON_USEDEP}]
 	packaging? ( >=dev-python/setuptools-61.2[${PYTHON_USEDEP}] )
 	packaging? ( >=dev-python/setuptools-scm-6.0[toml,${PYTHON_USEDEP}] )
-	testing? ( dev-python/simplejson[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
-	testing? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
 	packaging? ( dev-python/twine[${PYTHON_USEDEP}] )
-	testing? ( dev-python/ujson[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -72,7 +54,25 @@ BDEPEND="
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/bson[${PYTHON_USEDEP}]
+	dev-python/ecdsa[${PYTHON_USEDEP}]
+	dev-python/feedparser[${PYTHON_USEDEP}]
+	dev-python/gmpy2[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/pymongo[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[histogram,${PYTHON_USEDEP}]
+	>=dev-python/pytest-checkdocs-1.2.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-enabler-1.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	dev-python/pyupgrade[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/scikit-learn[${PYTHON_USEDEP}]
+	dev-python/simplejson[${PYTHON_USEDEP}]
+	dev-python/sqlalchemy[${PYTHON_USEDEP}]
+	dev-python/ujson[${PYTHON_USEDEP}]
 )"
 
 python_prepare_all() {

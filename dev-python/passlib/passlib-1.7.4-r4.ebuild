@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="argon2 bcrypt build_docs totp"
 IUSE="${GENERATED_IUSE} doc test-rust"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	argon2? ( >=dev-python/argon2-cffi-18.2.0[${PYTHON_USEDEP}] )
 	bcrypt? ( >=dev-python/bcrypt-3.1.0[${PYTHON_USEDEP}] )
 	build_docs? ( >=dev-python/cloud-sptheme-1.10.1[${PYTHON_USEDEP}] )

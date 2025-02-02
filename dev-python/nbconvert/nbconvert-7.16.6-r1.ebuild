@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all docs qtpdf qtpng serve webpdf"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	!=dev-python/bleach-5.0.0[css,${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]

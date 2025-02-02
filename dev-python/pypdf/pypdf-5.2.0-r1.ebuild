@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crypto cryptodome docs full image"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	crypto? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	full? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

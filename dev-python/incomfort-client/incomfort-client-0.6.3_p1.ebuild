@@ -6,31 +6,26 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 
-PYPI_PN="incomfort_client"
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "incomfort_client" "0.6.3-1")"
-S="${WORKDIR}/incomfort_client-0.6.3-1"
+SRC_URI="$(pypi_sdist_url ${PN} 0.6.3.post1)"
+S="${WORKDIR}/${PN}-0.6.3.post1"
 
 DESCRIPTION="An aiohttp-based client for Intergas InComfort/InTouch Lan2RF systems"
 HOMEPAGE="
-  https://pypi.org/project/incomfort_client/
+  https://pypi.org/project/incomfort-client/
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}]
-	dev-python/aioresponses[${PYTHON_USEDEP}]
 "
 
 RDEPEND="${GENERATED_DEPEND}

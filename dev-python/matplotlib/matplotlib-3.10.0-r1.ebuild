@@ -27,10 +27,9 @@ SRC_URI+="
 LICENSE="BitstreamVera BSD matplotlib MIT OFL-1.1"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} cairo excel gtk3 latex qt5 tk webagg wxwidgets"
+IUSE="cairo excel gtk3 latex qt5 tk webagg wxwidgets"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/cycler-0.10[${PYTHON_USEDEP}]
 	>=dev-python/fonttools-4.22.0[${PYTHON_USEDEP}]

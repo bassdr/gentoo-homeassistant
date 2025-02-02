@@ -24,4 +24,3 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
-# PYPI_PN could not be inserted in this ebuild

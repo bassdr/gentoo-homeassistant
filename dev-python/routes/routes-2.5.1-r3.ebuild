@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs middleware"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/repoze-lru-0.3[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

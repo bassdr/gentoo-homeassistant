@@ -17,23 +17,17 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/httpx-0.21.0[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/ifaddr-0.1.7[${PYTHON_USEDEP}]
-	dev-python/ifaddr[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.22.0[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
 	>=dev-python/segno-1.5.2[${PYTHON_USEDEP}]
-	dev-python/segno[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.70.0[${PYTHON_USEDEP}]
-	dev-python/zeroconf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]

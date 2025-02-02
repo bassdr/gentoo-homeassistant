@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=flit
-PYPI_PN="svg.py"
 inherit distutils-r1 pypi
 
 DESCRIPTION="SVG drawing library"
@@ -16,8 +15,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
 distutils_enable_tests pytest

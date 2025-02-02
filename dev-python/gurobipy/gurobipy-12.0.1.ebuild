@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	matrixapi? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	matrixapi? ( dev-python/scipy[${PYTHON_USEDEP}] )
 "

@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="docs speed voice"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="discord.py"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	speed? ( >=dev-python/aiodns-1.1[${PYTHON_USEDEP}] )
 	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	speed? ( dev-python/brotli[${PYTHON_USEDEP}] )

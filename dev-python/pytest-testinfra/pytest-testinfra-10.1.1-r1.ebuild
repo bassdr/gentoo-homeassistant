@@ -4,9 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="ansible paramiko salt winrm"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	ansible? ( dev-python/ansible[${PYTHON_USEDEP}] )
 	paramiko? ( dev-python/paramiko[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-6[${PYTHON_USEDEP}]

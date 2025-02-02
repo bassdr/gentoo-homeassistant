@@ -7,9 +7,8 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "linode-api" "4.1.9b1")"
-S="${WORKDIR}/linode-api-4.1.9b1"
+SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 4.1.9b1)"
+S="${WORKDIR}/${PN}-4.1.9b1"
 
 DESCRIPTION="The official python SDK for Linode API v4"
 HOMEPAGE="
@@ -19,13 +18,12 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "

@@ -6,9 +6,8 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "guppy3" "3.1.4.post1")"
-S="${WORKDIR}/guppy3-3.1.4.post1"
+SRC_URI="$(pypi_sdist_url ${PN} 3.1.4.post1)"
+S="${WORKDIR}/${PN}-3.1.4.post1"
 
 DESCRIPTION="Guppy 3 -- Guppy-PE ported to Python 3"
 HOMEPAGE="

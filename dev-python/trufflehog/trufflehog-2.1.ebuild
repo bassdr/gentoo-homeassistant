@@ -3,10 +3,13 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 IUSE=""
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="truffleHog"
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} 2.1.0)"
+S="${WORKDIR}/${PYPI_PN}-2.1.0"
 
 DESCRIPTION=""
 HOMEPAGE="

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="benchmark docs lint plot type"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	lint? ( ~dev-python/black-24.10.0[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/clang-format-19.1.7[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/isort-5.13.2[${PYTHON_USEDEP}] )

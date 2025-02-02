@@ -17,10 +17,9 @@ LICENSE="PSF-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="completion docs testing"
+GENERATED_IUSE="completion docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( <dev-python/flake8-5[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]' python3_12)
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
@@ -28,17 +27,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
 	>=dev-python/jeepney-0.4.2[${PYTHON_USEDEP}]
-	dev-python/jeepney[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}] )
 	dev-python/pytest-flake8[${PYTHON_USEDEP}]
 	>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	>=dev-python/secretstorage-3.2[${PYTHON_USEDEP}]
-	dev-python/secretstorage[${PYTHON_USEDEP}]
 	completion? ( dev-python/shtab[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 "
@@ -60,6 +53,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/flake8-5[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6[${PYTHON_USEDEP}]
+	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

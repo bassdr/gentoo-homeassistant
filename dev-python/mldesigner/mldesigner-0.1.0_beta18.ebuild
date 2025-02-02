@@ -20,7 +20,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	pipeline? ( dev-python/azure-ai-ml[${PYTHON_USEDEP}] )
 	pipeline? ( dev-python/azure-identity[${PYTHON_USEDEP}] )
 	pipeline? ( ~dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] )

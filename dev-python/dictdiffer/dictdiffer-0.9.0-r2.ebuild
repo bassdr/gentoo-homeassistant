@@ -16,45 +16,28 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all docs tests"
+GENERATED_IUSE="all docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/check-manifest-0.42[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/check-manifest-0.42[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/mock-1.3.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/mock-1.3.0[${PYTHON_USEDEP}] )
-	>=dev-python/numpy-1.13.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.13.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.15.0[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.15.0[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.18.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.18.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
 	~dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pytest-isort-1.2.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-isort-1.2.0[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-pycodestyle-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-pycodestyle-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-pycodestyle-2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-pycodestyle-2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-pydocstyle-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-pydocstyle-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-pydocstyle-2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-pydocstyle-2[${PYTHON_USEDEP}]
-	all? ( >=dev-python/sphinx-3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/sphinx-3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/sphinx-3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/sphinx-rtd-theme-0.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-0.2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/tox-3.7.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/tox-3.7.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -64,6 +47,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/check-manifest-0.42[${PYTHON_USEDEP}]
+	>=dev-python/mock-1.3.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-isort-1.2.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-3[${PYTHON_USEDEP}]
+	>=dev-python/tox-3.7.0[${PYTHON_USEDEP}]
+)"
 # Requires self to be already installed
 #distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 

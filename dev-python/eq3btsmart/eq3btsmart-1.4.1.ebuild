@@ -16,19 +16,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/construct-2.10.68[${PYTHON_USEDEP}]
-	dev-python/construct[${PYTHON_USEDEP}]
 	>=dev-python/construct-typing-0.6.2[${PYTHON_USEDEP}]
-	dev-python/construct-typing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]

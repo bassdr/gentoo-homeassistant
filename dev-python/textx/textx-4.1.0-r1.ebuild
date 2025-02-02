@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/arpeggio-2.0.0[${PYTHON_USEDEP}]
 	cli? ( <dev-python/click-9.0[${PYTHON_USEDEP}] )
 "
@@ -41,7 +41,6 @@ BDEPEND="
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	<dev-python/click-9.0[${PYTHON_USEDEP}]
-	<dev-python/click-9.0[${PYTHON_USEDEP}]
 	dev-python/coverage[${PYTHON_USEDEP}]
 	dev-python/coveralls[${PYTHON_USEDEP}]
 	dev-python/flit[${PYTHON_USEDEP}]
@@ -49,7 +48,6 @@ BDEPEND+=" test? (
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/mike[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
 	dev-python/ruff[${PYTHON_USEDEP}]
 	dev-python/textx-dev[${PYTHON_USEDEP}]
 )"
@@ -76,4 +74,3 @@ python_test() {
 
 	epytest tests/functional
 }
-# PYPI_PN could not be inserted in this ebuild

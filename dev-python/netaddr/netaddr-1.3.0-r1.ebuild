@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="nicer-shell"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	nicer-shell? ( dev-python/ipython[${PYTHON_USEDEP}] )
 "
 BDEPEND="

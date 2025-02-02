@@ -4,14 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_FULLY_TESTED=( python3_{10..13} pypy3 )
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "python-dateutil" "2.9.0.post0")"
-S="${WORKDIR}/python-dateutil-2.9.0.post0"
+SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 2.9.0.post0)"
+S="${WORKDIR}/${PN}-2.9.0.post0"
 
 DESCRIPTION="Extensions to the standard Python datetime module"
 HOMEPAGE="
@@ -24,11 +23,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]

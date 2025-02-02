@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="aws ci doc encryption gssapi ocsp queue snappy zstd"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	queue? ( >=dev-python/beanie-batteries-queue-0.2[${PYTHON_USEDEP}] )
 	>=dev-python/click-7[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
@@ -37,7 +36,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( >=dev-python/pygments-2.8.0[${PYTHON_USEDEP}] )
 	ci? ( dev-python/requests[${PYTHON_USEDEP}] )
 	ci? ( dev-python/toml[${PYTHON_USEDEP}] )
-	dev-python/toml[${PYTHON_USEDEP}]
 	ci? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.7[${PYTHON_USEDEP}]
 "

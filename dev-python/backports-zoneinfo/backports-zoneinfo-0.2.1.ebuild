@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="tzdata"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 PYPI_PN="backports.zoneinfo"
 inherit distutils-r1 pypi
 
@@ -18,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	tzdata? ( dev-python/tzdata[${PYTHON_USEDEP}] )
 "

@@ -16,15 +16,13 @@ SRC_URI="https://github.com/jkeljo/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/siobrultech-protocols[${PYTHON_USEDEP}]
 	~dev-python/siobrultech-protocols-0.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -40,4 +38,3 @@ python_test() {
 
 distutils_enable_tests pytest
 
-# PYPI_PN could not be inserted in this ebuild

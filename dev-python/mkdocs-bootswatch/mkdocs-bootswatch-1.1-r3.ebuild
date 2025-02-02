@@ -18,7 +18,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/mkdocs-1.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND} dev-python/mkdocs"

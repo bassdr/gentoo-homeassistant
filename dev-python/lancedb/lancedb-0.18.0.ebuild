@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="azure clip docs embeddings tests"
+GENERATED_IUSE="azure clip docs embeddings"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,16 +17,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	azure? ( >=dev-python/adlfs-2024.2.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/awscli-1.29.57[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/boto3-1.28.57[${PYTHON_USEDEP}] )
-	tests? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/botocore-1.31.57[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/cohere[${PYTHON_USEDEP}] )
 	dev-python/deprecation[${PYTHON_USEDEP}]
-	tests? ( dev-python/duckdb[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/google-generativeai[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/huggingface-hub[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/ibm-watsonx-ai-1.1.2[${PYTHON_USEDEP}] )
@@ -41,20 +38,12 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	embeddings? ( >=dev-python/openai-1.6.1[${PYTHON_USEDEP}] )
 	>=dev-python/overrides-0.7[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/pandas-1.4[${PYTHON_USEDEP}] )
 	clip? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/pillow[${PYTHON_USEDEP}] )
-	tests? ( <=dev-python/polars-1.3.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pyarrow-stubs[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-1.10[${PYTHON_USEDEP}]
 	~dev-python/pylance-0.22.0[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/requests-2.31.0[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/sentence-transformers[${PYTHON_USEDEP}] )
-	tests? ( dev-python/tantivy[${PYTHON_USEDEP}] )
 	clip? ( dev-python/torch[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/torch[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.27.0[${PYTHON_USEDEP}]
@@ -63,7 +52,18 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/boto3[${PYTHON_USEDEP}]
+	dev-python/duckdb[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.4[${PYTHON_USEDEP}]
+	<=dev-python/polars-1.3.0[${PYTHON_USEDEP}]
+	dev-python/pyarrow-stubs[${PYTHON_USEDEP}]
 	dev-python/pyright[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/ruff[${PYTHON_USEDEP}]
+	dev-python/tantivy[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 )"

@@ -6,6 +6,8 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 2024.3.0)"
+S="${WORKDIR}/${PN}-2024.3.0"
 
 DESCRIPTION="A simple API for RainMachine sprinkler controllers"
 HOMEPAGE="
@@ -18,23 +20,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
-	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/frozenlist-1.4.0[${PYTHON_USEDEP}]
-	dev-python/frozenlist[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9.2[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]

@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DOCS_BUILDER="mkdocs"
 GENERATED_IUSE="all base"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/babel-2.7.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/babel-2.7.0[${PYTHON_USEDEP}] )
 	base? ( >=dev-python/babel-2.7.0[${PYTHON_USEDEP}] )
@@ -17,7 +17,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	all? ( dev-python/gitpython[${PYTHON_USEDEP}] )
 	base? ( dev-python/gitpython[${PYTHON_USEDEP}] )
-	dev-python/gitpython[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/mkdocs-1.0[${PYTHON_USEDEP}] )
 	base? ( >=dev-python/mkdocs-1.0[${PYTHON_USEDEP}] )
@@ -29,7 +28,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	base? ( dev-python/pytz[${PYTHON_USEDEP}] )
-	dev-python/pytz[${PYTHON_USEDEP}]
 "
 DOCS_DEPEND="
 	dev-python/regex

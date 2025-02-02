@@ -54,7 +54,7 @@ GENERATED_IUSE="fastimport https paramiko pgp"
 IUSE="${GENERATED_IUSE} doc examples +native-extensions test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	fastimport? ( dev-python/fastimport[${PYTHON_USEDEP}] )
 	pgp? ( dev-python/gpg[${PYTHON_USEDEP}] )
 	paramiko? ( dev-python/paramiko[${PYTHON_USEDEP}] )

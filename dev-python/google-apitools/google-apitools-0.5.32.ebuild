@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="cli testing"
+GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,10 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/fasteners-0.14[${PYTHON_USEDEP}]
 	>=dev-python/httplib2-0.8[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/mock-1.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/oauth2client-1.4.12[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/python-gflags-3.0.6[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.12.0[${PYTHON_USEDEP}]
@@ -28,3 +27,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
+)"

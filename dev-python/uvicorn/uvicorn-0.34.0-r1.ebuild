@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="standard"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/h11-0.8[${PYTHON_USEDEP}]
 	standard? ( >=dev-python/httptools-0.6.3[${PYTHON_USEDEP}] )

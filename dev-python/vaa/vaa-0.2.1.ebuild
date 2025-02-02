@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="tests validators"
+GENERATED_IUSE="validators"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,15 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	validators? ( dev-python/cerberus[${PYTHON_USEDEP}] )
 	validators? ( dev-python/django[${PYTHON_USEDEP}] )
 	validators? ( dev-python/djangorestframework[${PYTHON_USEDEP}] )
 	validators? ( >=dev-python/marshmallow-3.0.1[${PYTHON_USEDEP}] )
 	validators? ( dev-python/pyschemes[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	validators? ( dev-python/wtforms[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

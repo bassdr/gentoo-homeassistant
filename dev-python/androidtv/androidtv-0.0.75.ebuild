@@ -5,6 +5,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi
+
 DESCRIPTION="Communicate with an Android TV or Fire TV device via ADB over a network."
 HOMEPAGE="
   https://pypi.org/project/androidtv/
@@ -19,14 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/adb-shell-0.4.0[${PYTHON_USEDEP}]
-	dev-python/adb-shell[${PYTHON_USEDEP}]
 	usb? ( >=dev-python/adb-shell-0.4.0[usb,${PYTHON_USEDEP}] )
 	async? ( >=dev-python/aiofiles-0.4.0[${PYTHON_USEDEP}] )
 	async? ( >=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}] )
-	>=dev-python/pure-python-adb-0.3.0_p0[${PYTHON_USEDEP}]
-	dev-python/pure-python-adb[${PYTHON_USEDEP}]
+	>=dev-python/pure-python-adb-0.3.0_pre0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	async? ( >=dev-python/aiofiles-0.4.0[${PYTHON_USEDEP}]

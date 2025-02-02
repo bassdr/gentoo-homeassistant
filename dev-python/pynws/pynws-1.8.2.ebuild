@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/metar[${PYTHON_USEDEP}]
 	retry? ( dev-python/tenacity[${PYTHON_USEDEP}] )

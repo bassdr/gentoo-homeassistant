@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="toml yaml"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="simple_parsing"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/docstring-parser-1.0[${PYTHON_USEDEP}]
 	yaml? ( <dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}] )
 	toml? ( <dev-python/tomli-3.0.0[${PYTHON_USEDEP}] )

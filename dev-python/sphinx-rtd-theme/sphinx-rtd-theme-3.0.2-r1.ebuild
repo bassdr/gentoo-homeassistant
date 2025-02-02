@@ -20,15 +20,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
-	dev-python/docutils[${PYTHON_USEDEP}]
 	<dev-python/sphinx-9[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
 	<dev-python/sphinxcontrib-jquery-5[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-jquery[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/docutils-0.18[${PYTHON_USEDEP}]

@@ -5,9 +5,8 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
-PYPI_NO_NORMALIZE=1
-PYPI_PN="PyViCare"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Library to communicate with the Viessmann ViCare API."
 HOMEPAGE="
   https://pypi.org/project/PyViCare/
@@ -16,22 +15,17 @@ HOMEPAGE="
   Documentation, https://github.com/openviess/PyViCare
   Repository, https://github.com/openviess/PyViCare
 "
-SRC_URI="$(pypi_sdist_url "${PN^}" "${PV}")"
-S="${WORKDIR}/${P,,}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>dev-python/authlib-1.2.0[${PYTHON_USEDEP}]
-	dev-python/authlib[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 >=dev-python/Authlib-1.2.0[${PYTHON_USEDEP}]

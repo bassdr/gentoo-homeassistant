@@ -20,9 +20,8 @@ KEYWORDS="amd64 arm64"
 # tests need root access
 RESTRICT="test"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
 BDEPEND="

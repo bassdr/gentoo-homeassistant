@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="GitPython"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
@@ -16,7 +15,7 @@ SMMAP_P=smmap-5.0.1
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/GitPython/"
+  https://pypi.org/project/gitpython/"
 SRC_URI+="
 	test? (
 		https://dev.gentoo.org/~mgorny/dist/${TEST_P}.gitbundle
@@ -31,7 +30,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/gitdb-5[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
 	doc? ( <dev-python/sphinx-7.2[${PYTHON_USEDEP}] )

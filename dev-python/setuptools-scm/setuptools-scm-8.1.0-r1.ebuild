@@ -7,7 +7,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=standalone
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="setuptools_scm"
 inherit distutils-r1 pypi
 
 DESCRIPTION="the blessed package to manage your versions by scm tags"
@@ -24,14 +23,13 @@ KEYWORDS="amd64 arm64"
 # there's an optional dep on rich for cute logs
 GENERATED_IUSE="docs rich"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( ~dev-python/entangled-cli-2.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs-entangled-plugin[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs-material[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocstrings[python,${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
 	docs? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	rich? ( dev-python/rich[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

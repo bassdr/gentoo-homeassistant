@@ -66,11 +66,10 @@ LICENSE+=" Apache-2.0-with-LLVM-exceptions BSD MIT Unicode-DFS-2016"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests typecheck"
+GENERATED_IUSE="typecheck"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	typecheck? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	tests? ( !=dev-python/pytest-3.3.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	>=dev-python/setuptools-rust-1.7.0[${PYTHON_USEDEP}]
@@ -80,6 +79,9 @@ BDEPEND="
 QA_FLAGS_IGNORED="usr/lib.*/py.*/site-packages/bcrypt/_bcrypt.*.so"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
+)"
 
 export UNSAFE_PYO3_SKIP_VERSION_CHECK=1
 

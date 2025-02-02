@@ -15,25 +15,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aioconsole-0.4.1[${PYTHON_USEDEP}]
-	dev-python/aioconsole[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-1.11.0[${PYTHON_USEDEP}]
-	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2.13[${PYTHON_USEDEP}]
-	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/tzdata-2022.1[${PYTHON_USEDEP}]
-	dev-python/tzdata[${PYTHON_USEDEP}]
 	>=dev-python/tzlocal-4.1[${PYTHON_USEDEP}]
-	dev-python/tzlocal[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]

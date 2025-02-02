@@ -3,11 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
-PYPI_PN="aws_cdk.aws-s3-assets"
+PYPI_NO_NORMALIZE=1
+PYPI_PN="aws-cdk.aws-s3-assets"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/aws-cdk-assets-1.204.0[${PYTHON_USEDEP}]
 	~dev-python/aws-cdk-aws-iam-1.204.0[${PYTHON_USEDEP}]
 	~dev-python/aws-cdk-aws-kms-1.204.0[${PYTHON_USEDEP}]

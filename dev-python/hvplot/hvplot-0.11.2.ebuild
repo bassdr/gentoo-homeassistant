@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="dev-extras doc examples examples-tests fugue-sql geo graphviz hvdev hvdev-geo tests tests-core tests-nb"
+GENERATED_IUSE="dev-extras doc examples examples-tests fugue-sql geo graphviz hvdev hvdev-geo tests-core tests-nb"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,23 +16,19 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bokeh-3.1[${PYTHON_USEDEP}]
-	dev-python/bokeh-sampledata[${PYTHON_USEDEP}]
 	dev-python/bokeh-sampledata[${PYTHON_USEDEP}]
 	geo? ( dev-python/cartopy[${PYTHON_USEDEP}] )
 	>=dev-python/colorcet-2[${PYTHON_USEDEP}]
 	hvdev? ( >=dev-python/colorcet-0.0.1_alpha1[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/dask-2021.3.0[dataframe,${PYTHON_USEDEP}] )
 	tests-core? ( dev-python/dask[dataframe,${PYTHON_USEDEP}] )
-	tests? ( dev-python/dask[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/datashader-0.6.5[${PYTHON_USEDEP}] )
 	hvdev? ( >=dev-python/datashader-0.0.1_alpha1[${PYTHON_USEDEP}] )
 	examples? ( dev-python/duckdb[${PYTHON_USEDEP}] )
-	tests? ( dev-python/duckdb[${PYTHON_USEDEP}] )
 	geo? ( dev-python/fiona[${PYTHON_USEDEP}] )
 	examples? ( dev-python/fugue[sql,${PYTHON_USEDEP}] )
-	tests? ( dev-python/fugue[sql,${PYTHON_USEDEP}] )
 	fugue-sql? ( >=dev-python/fugue-sql-antlr-0.2.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/geodatasets-2023.12.0[${PYTHON_USEDEP}] )
 	geo? ( dev-python/geopandas[${PYTHON_USEDEP}] )
@@ -45,10 +40,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	examples-tests? ( dev-python/hvplot[examples,${PYTHON_USEDEP}] )
 	examples-tests? ( dev-python/hvplot[tests-nb,${PYTHON_USEDEP}] )
 	examples? ( dev-python/hvplot[fugue-sql,${PYTHON_USEDEP}] )
-	tests? ( dev-python/hvplot[fugue-sql,${PYTHON_USEDEP}] )
-	tests? ( dev-python/hvplot[tests-core,${PYTHON_USEDEP}] )
 	examples? ( dev-python/ibis-framework[duckdb,${PYTHON_USEDEP}] )
-	tests? ( dev-python/ibis-framework[duckdb,${PYTHON_USEDEP}] )
 	examples? ( <dev-python/intake-2.0.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/intake-parquet-0.2.3[${PYTHON_USEDEP}] )
 	examples? ( <dev-python/intake-xarray-2[${PYTHON_USEDEP}] )
@@ -74,7 +66,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( dev-python/plotly[${PYTHON_USEDEP}] )
 	tests-core? ( dev-python/plotly[${PYTHON_USEDEP}] )
 	examples? ( dev-python/polars[${PYTHON_USEDEP}] )
-	tests? ( dev-python/polars[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/pooch-1.6.0[${PYTHON_USEDEP}] )
 	tests-core? ( dev-python/pooch[${PYTHON_USEDEP}] )
 	tests-core? ( dev-python/psutil[${PYTHON_USEDEP}] )
@@ -95,7 +86,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	examples? ( >=dev-python/selenium-3.141.0[${PYTHON_USEDEP}] )
 	dev-extras? ( >=dev-python/setuptools-scm-6[${PYTHON_USEDEP}] )
 	geo? ( >=dev-python/spatialpandas-0.4.3[${PYTHON_USEDEP}] )
-	tests? ( dev-python/spatialpandas[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinxext-rediraffe[${PYTHON_USEDEP}] )
 	fugue-sql? ( dev-python/sqlglot[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/streamz-0.3.0[${PYTHON_USEDEP}] )
@@ -107,3 +97,13 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/dask[${PYTHON_USEDEP}]
+	dev-python/duckdb[${PYTHON_USEDEP}]
+	dev-python/fugue[sql,${PYTHON_USEDEP}]
+	dev-python/hvplot[fugue-sql,${PYTHON_USEDEP}]
+	dev-python/hvplot[tests-core,${PYTHON_USEDEP}]
+	dev-python/ibis-framework[duckdb,${PYTHON_USEDEP}]
+	dev-python/polars[${PYTHON_USEDEP}]
+	dev-python/spatialpandas[${PYTHON_USEDEP}]
+)"

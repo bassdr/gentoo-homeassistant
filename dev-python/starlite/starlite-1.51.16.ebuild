@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="brotli cli cryptography jinja jwt memcached opentelemetry picologging redis structlog"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	memcached? ( dev-python/aiomcache[${PYTHON_USEDEP}] )
 	<dev-python/anyio-4[${PYTHON_USEDEP}]
 	brotli? ( dev-python/brotli[${PYTHON_USEDEP}] )

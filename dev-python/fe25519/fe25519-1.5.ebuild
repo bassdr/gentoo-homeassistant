@@ -3,11 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="coveralls docs lint publish"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 1.5.0)"
+S="${WORKDIR}/${PN}-1.5.0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -17,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	publish? ( ~dev-python/build-0.10[${PYTHON_USEDEP}] )
 	coveralls? ( ~dev-python/coveralls-3.3.1[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/pylint-2.17.0[${PYTHON_USEDEP}] )

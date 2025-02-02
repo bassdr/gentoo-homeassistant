@@ -17,15 +17,13 @@ HOMEPAGE="
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/astral-3.0[${PYTHON_USEDEP}]
-	dev-python/astral[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]

@@ -33,7 +33,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="protobuf"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	protobuf? ( >=dev-python/grpcio-tools-1.67.1[${PYTHON_USEDEP}] )
 "
 DEPEND="

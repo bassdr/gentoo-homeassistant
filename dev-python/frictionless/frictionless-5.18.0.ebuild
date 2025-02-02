@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="aws bigquery ckan datasette duckdb excel github gsheets html json mysql ods pandas parquet postgresql spss sql visidata wkt zenodo"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	aws? ( >=dev-python/boto3-1.9[${PYTHON_USEDEP}] )
 	>=dev-python/chardet-3.0[${PYTHON_USEDEP}]

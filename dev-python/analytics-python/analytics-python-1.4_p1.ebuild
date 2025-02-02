@@ -3,14 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+IUSE=""
+
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "analytics-python" "1.4.post1")"
-S="${WORKDIR}/analytics-python-1.4.post1"
+SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 1.4.post1)"
+S="${WORKDIR}/${PN}-1.4.post1"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/backoff-1.10.0[${PYTHON_USEDEP}]
 	>=dev-python/monotonic-1.5[${PYTHON_USEDEP}]
 	>dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]

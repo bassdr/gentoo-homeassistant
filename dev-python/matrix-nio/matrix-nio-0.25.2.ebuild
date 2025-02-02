@@ -28,24 +28,17 @@ RESTRICT="test !test? ( test )"
 
 GENERATED_IUSE="docs e2e"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/aiofiles[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/aiofiles-24.1[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	~dev-python/aiohttp-3.10[${PYTHON_USEDEP}]
-	dev-python/aiohttp-socks[${PYTHON_USEDEP}]
 	~dev-python/aiohttp-socks-0.8[${PYTHON_USEDEP}]
 	e2e? ( ~dev-python/atomicwrites-1.4[${PYTHON_USEDEP}] )
 	e2e? ( ~dev-python/cachetools-5.3[${PYTHON_USEDEP}] )
-	dev-python/h11[${PYTHON_USEDEP}]
 	~dev-python/h11-0.14[${PYTHON_USEDEP}]
-	dev-python/h2[${PYTHON_USEDEP}]
 	~dev-python/h2-4.0[${PYTHON_USEDEP}]
-	dev-python/jsonschema[${PYTHON_USEDEP}]
 	~dev-python/jsonschema-4.14[${PYTHON_USEDEP}]
 	docs? ( dev-python/matrix-nio[dev,${PYTHON_USEDEP}] )
 	e2e? ( ~dev-python/peewee-3.14[${PYTHON_USEDEP}] )
-	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	~dev-python/pycryptodome-3.10[${PYTHON_USEDEP}]
 	e2e? ( ~dev-python/python-olm-3.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/setuptools-61.0[${PYTHON_USEDEP}] )
@@ -53,7 +46,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( ~dev-python/sphinx-autodoc-typehints-2.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-mdinclude-0.5[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
-	dev-python/unpaddedbase64[${PYTHON_USEDEP}]
 	~dev-python/unpaddedbase64-2.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

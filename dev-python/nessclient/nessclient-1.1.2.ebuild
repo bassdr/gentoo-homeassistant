@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )
 	dev-python/dataclasses[${PYTHON_USEDEP}]
 	dev-python/justbackoff[${PYTHON_USEDEP}]

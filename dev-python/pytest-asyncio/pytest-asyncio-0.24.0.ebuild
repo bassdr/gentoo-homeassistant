@@ -16,11 +16,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( >=dev-python/coverage-6.2[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/hypothesis-5.7.1[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/pytest-9[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-5.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] )
@@ -37,6 +35,10 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-6.2[${PYTHON_USEDEP}]
+	>=dev-python/hypothesis-5.7.1[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

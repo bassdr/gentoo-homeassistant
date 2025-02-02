@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]
 	<dev-python/jupyterlab-4.4[${PYTHON_USEDEP}]
 	<dev-python/jupyterlab-server-3[${PYTHON_USEDEP}]

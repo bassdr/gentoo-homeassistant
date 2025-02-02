@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="baseline sarif yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	baseline? ( >=dev-python/gitpython-3.1.30[${PYTHON_USEDEP}] )
 	sarif? ( >=dev-python/jschema-to-python-1.2.3[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]

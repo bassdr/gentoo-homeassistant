@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="activity parallel"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/ipykernel-7[${PYTHON_USEDEP}]
 	parallel? ( dev-python/ipyparallel[${PYTHON_USEDEP}] )
 	>=dev-python/jedi-0.18[${PYTHON_USEDEP}]

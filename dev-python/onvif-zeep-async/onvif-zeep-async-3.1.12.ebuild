@@ -16,19 +16,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/ciso8601-2.1.3[${PYTHON_USEDEP}]
-	dev-python/ciso8601[${PYTHON_USEDEP}]
 	<dev-python/httpx-1.0.0[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
 	<dev-python/zeep-5.0.0[async,${PYTHON_USEDEP}]
-	dev-python/zeep[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/httpx-0.19.0[${PYTHON_USEDEP}]

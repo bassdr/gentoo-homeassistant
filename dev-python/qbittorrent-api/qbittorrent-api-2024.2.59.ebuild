@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE="yes"
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION="Python client for qBittorrent v4.1+ Web API."
@@ -21,18 +21,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	~dev-python/sphinx-7.2.6[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.24.2[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
-	<dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}]
 	~dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}]
+	<dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]

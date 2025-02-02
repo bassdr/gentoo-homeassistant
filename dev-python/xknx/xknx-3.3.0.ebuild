@@ -17,17 +17,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/cryptography-35.0.0[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	>=dev-python/ifaddr-0.1.7[${PYTHON_USEDEP}]
-	dev-python/ifaddr[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep '>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]' python3_{9..10})

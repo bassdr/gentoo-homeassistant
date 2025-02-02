@@ -22,9 +22,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
@@ -54,4 +53,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -o addopts= -m "not online"
 }
-# PYPI_PN could not be inserted in this ebuild

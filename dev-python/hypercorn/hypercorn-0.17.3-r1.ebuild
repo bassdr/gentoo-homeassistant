@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs h3 trio"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	h3? ( <dev-python/aioquic-1.0[${PYTHON_USEDEP}] )
 	dev-python/h11[${PYTHON_USEDEP}]
 	>=dev-python/h2-3.1.0[${PYTHON_USEDEP}]

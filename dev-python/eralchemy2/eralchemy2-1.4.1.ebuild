@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="ci"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	ci? ( >=dev-python/flask-sqlalchemy-2.5.1[${PYTHON_USEDEP}] )
 	ci? ( >=dev-python/psycopg2-2.9.3[${PYTHON_USEDEP}] )
 	>=dev-python/pygraphviz-1.9[${PYTHON_USEDEP}]

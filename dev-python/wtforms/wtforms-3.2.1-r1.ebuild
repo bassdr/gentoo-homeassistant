@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYPI_PN="WTForms"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -19,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="email"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	email? ( dev-python/email-validator[${PYTHON_USEDEP}] )
 	dev-python/markupsafe[${PYTHON_USEDEP}]
 "

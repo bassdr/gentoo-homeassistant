@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="bokeh doc matplotlib plotly"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/arviz-base-0.3.0[${PYTHON_USEDEP}]
 	~dev-python/arviz-stats-0.3.0[xarray,${PYTHON_USEDEP}]
 	bokeh? ( dev-python/bokeh[${PYTHON_USEDEP}] )

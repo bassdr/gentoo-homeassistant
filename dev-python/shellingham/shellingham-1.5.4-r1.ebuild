@@ -13,10 +13,6 @@ HOMEPAGE="
   https://pypi.org/project/shellingham/
 "
 # Missing tests in PYPI distribution so we use the GH package
-SRC_URI="
-	https://github.com/sarugaku/shellingham/archive/${PV}.tar.gz
-		-> ${P}.gh.tar.gz
-"
 
 LICENSE="ISC"
 SLOT="0"

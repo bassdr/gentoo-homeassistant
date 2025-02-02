@@ -25,9 +25,8 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/aiolifx-2.0.0[${PYTHON_USEDEP}]
-	dev-python/aiolifx[${PYTHON_USEDEP}]
 	docs? ( <dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-rtd-theme-3.0.0[${PYTHON_USEDEP}] )

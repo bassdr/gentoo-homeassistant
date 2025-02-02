@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="completion docs linters"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	completion? ( >=dev-python/argcomplete-2.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/readthedocs-sphinx-search-0.3.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-7.2[${PYTHON_USEDEP}] )

@@ -74,7 +74,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs docstest nox pep8test sdist ssh test-randomorder"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	ssh? ( >=dev-python/bcrypt-3.1.5[${PYTHON_USEDEP}] )
 	sdist? ( dev-python/build[${PYTHON_USEDEP}] )
 	dev-python/cffi[${PYTHON_USEDEP}]

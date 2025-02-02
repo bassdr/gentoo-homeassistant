@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Async UPnP Client"
 HOMEPAGE="
   https://pypi.org/project/async-upnp-client/
@@ -15,23 +16,17 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	<dev-python/async-timeout-5.0[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 	>=dev-python/defusedxml-0.6.0[${PYTHON_USEDEP}]
-	dev-python/defusedxml[${PYTHON_USEDEP}]
-	dev-python/python-didl-lite[${PYTHON_USEDEP}]
 	~dev-python/python-didl-lite-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.14.2[${PYTHON_USEDEP}]
-	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/voluptuous-0.14.2[${PYTHON_USEDEP}]

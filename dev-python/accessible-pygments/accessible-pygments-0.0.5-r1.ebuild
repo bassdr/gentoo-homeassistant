@@ -21,12 +21,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pygments-1.5[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pygments-1.5[${PYTHON_USEDEP}]
@@ -41,9 +38,11 @@ BDEPEND="
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/hypothesis[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
 	>=dev-python/pkginfo-1.10[${PYTHON_USEDEP}]
 	dev-python/playwright[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/twine-5.0[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]

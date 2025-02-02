@@ -15,19 +15,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/async-timeout-4.0[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 	>=dev-python/bitstring-3.1[${PYTHON_USEDEP}]
-	dev-python/bitstring[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-asyncio-0.6[${PYTHON_USEDEP}]
-	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/async-timeout-4.0[${PYTHON_USEDEP}]

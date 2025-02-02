@@ -31,4 +31,3 @@ BDEPEND="
 distutils_enable_tests pytest
 
 export SETUPTOOLS_SCM_PRETEND_VERSION="${PV/_p/.post}"
-# SRC_URI could not be inserted in this ebuild

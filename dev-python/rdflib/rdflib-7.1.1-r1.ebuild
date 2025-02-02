@@ -22,14 +22,13 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="berkeleydb html lxml networkx orjson"
 IUSE="${GENERATED_IUSE} examples sqlite"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	berkeleydb? ( <dev-python/berkeleydb-19.0.0[${PYTHON_USEDEP}] )
 	html? ( <dev-python/html5rdf-2[${PYTHON_USEDEP}] )
 	lxml? ( <dev-python/lxml-6.0[${PYTHON_USEDEP}] )
 	networkx? ( <dev-python/networkx-4[${PYTHON_USEDEP}] )
 	orjson? ( <dev-python/orjson-4[${PYTHON_USEDEP}] )
 	<dev-python/pyparsing-4[${PYTHON_USEDEP}]
-	dev-python/pyparsing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	<dev-python/isodate-1[${PYTHON_USEDEP}]

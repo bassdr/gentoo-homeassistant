@@ -22,69 +22,41 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all all-strict docs docs-strict jupyter jupyter-strict optional optional-strict"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all-strict? ( ~dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	jupyter-strict? ( ~dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	optional-strict? ( ~dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
-	>=dev-python/cmake-3.25.0[${PYTHON_USEDEP}]
 	~dev-python/cmake-3.25.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.3.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.3.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.3.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/debugpy-1.6.0[${PYTHON_USEDEP}]
-	~dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/cmake-3.25.0[${PYTHON_USEDEP}]
 	~dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
 	~dev-python/debugpy-1.3.0[${PYTHON_USEDEP}]
-	~dev-python/debugpy-1.3.0[${PYTHON_USEDEP}]
-	~dev-python/debugpy-1.3.0[${PYTHON_USEDEP}]
 	~dev-python/debugpy-1.6.0[${PYTHON_USEDEP}]
-	~dev-python/debugpy-1.6.0[${PYTHON_USEDEP}]
-	~dev-python/debugpy-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.11.0[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.11.0[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.11.0[${PYTHON_USEDEP}]
-	~dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
-	~dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/debugpy-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/debugpy-1.3.0[${PYTHON_USEDEP}]
+	>=dev-python/debugpy-1.6.0[${PYTHON_USEDEP}]
 	~dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
 	~dev-python/ipykernel-6.11.0[${PYTHON_USEDEP}]
-	~dev-python/ipykernel-6.11.0[${PYTHON_USEDEP}]
-	~dev-python/ipykernel-6.11.0[${PYTHON_USEDEP}]
+	>=dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/ipykernel-6.11.0[${PYTHON_USEDEP}]
 	all-strict? ( ~dev-python/ipython-7.23.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/ipython-7.23.1[${PYTHON_USEDEP}] )
 	jupyter-strict? ( ~dev-python/ipython-7.23.1[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/ipython-7.23.1[${PYTHON_USEDEP}] )
 	optional-strict? ( ~dev-python/ipython-7.23.1[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/ipython-7.23.1[${PYTHON_USEDEP}] )
-	>=dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
 	~dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
-	~dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
-	~dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
 	all-strict? ( ~dev-python/jedi-0.16[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/jedi-0.16[${PYTHON_USEDEP}] )
 	jupyter-strict? ( ~dev-python/jedi-0.16[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/jedi-0.16[${PYTHON_USEDEP}] )
 	optional-strict? ( ~dev-python/jedi-0.16[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/jedi-0.16[${PYTHON_USEDEP}] )
-	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
 	~dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
-	~dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
-	~dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
 	all-strict? ( ~dev-python/jupyter-client-7.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/jupyter-client-7.0.0[${PYTHON_USEDEP}] )
 	jupyter-strict? ( ~dev-python/jupyter-client-7.0.0[${PYTHON_USEDEP}] )
@@ -99,44 +71,28 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	optional? ( >=dev-python/jupyter-core-4.7.0[${PYTHON_USEDEP}] )
 	docs-strict? ( ~dev-python/myst-parser-0.18.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-0.18.0[${PYTHON_USEDEP}] )
-	>=dev-python/nbconvert-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/nbconvert-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/nbconvert-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/nbconvert-6.1.0[${PYTHON_USEDEP}]
-	>=dev-python/nbconvert-6.1.0[${PYTHON_USEDEP}]
-	>=dev-python/nbconvert-6.1.0[${PYTHON_USEDEP}]
-	~dev-python/nbconvert-6.0.0[${PYTHON_USEDEP}]
-	~dev-python/nbconvert-6.0.0[${PYTHON_USEDEP}]
 	~dev-python/nbconvert-6.0.0[${PYTHON_USEDEP}]
 	~dev-python/nbconvert-6.1.0[${PYTHON_USEDEP}]
-	~dev-python/nbconvert-6.1.0[${PYTHON_USEDEP}]
-	~dev-python/nbconvert-6.1.0[${PYTHON_USEDEP}]
-	>=dev-python/ninja-1.11.1[${PYTHON_USEDEP}]
+	>=dev-python/nbconvert-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/nbconvert-6.1.0[${PYTHON_USEDEP}]
 	~dev-python/ninja-1.11.1[${PYTHON_USEDEP}]
-	>=dev-python/pybind11-2.10.3[${PYTHON_USEDEP}]
+	>=dev-python/ninja-1.11.1[${PYTHON_USEDEP}]
 	~dev-python/pybind11-2.10.3[${PYTHON_USEDEP}]
+	>=dev-python/pybind11-2.10.3[${PYTHON_USEDEP}]
 	all-strict? ( ~dev-python/pyflakes-2.2.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pyflakes-2.2.0[${PYTHON_USEDEP}] )
 	optional-strict? ( ~dev-python/pyflakes-2.2.0[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/pyflakes-2.2.0[${PYTHON_USEDEP}] )
-	>=dev-python/pygments-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pygments-2.0.0[${PYTHON_USEDEP}]
+	~dev-python/pygments-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.0.0[${PYTHON_USEDEP}]
 	docs-strict? ( ~dev-python/pygments-2.9.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pygments-2.9.0[${PYTHON_USEDEP}] )
-	~dev-python/pygments-2.0.0[${PYTHON_USEDEP}]
-	~dev-python/pygments-2.0.0[${PYTHON_USEDEP}]
-	~dev-python/pygments-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	~dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
 	~dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
 	~dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	~dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	>=dev-python/scikit-build-0.16.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
 	~dev-python/scikit-build-0.16.1[${PYTHON_USEDEP}]
+	>=dev-python/scikit-build-0.16.1[${PYTHON_USEDEP}]
 	docs-strict? ( ~dev-python/sphinx-5.0.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-5.0.1[${PYTHON_USEDEP}] )
 	docs-strict? ( ~dev-python/sphinx-autoapi-1.8.4[${PYTHON_USEDEP}] )
@@ -149,10 +105,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
 	docs-strict? ( ~dev-python/sphinxcontrib-napoleon-0.7[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-napoleon-0.7[${PYTHON_USEDEP}] )
-	>=dev-python/tomli-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/tomli-0.2.0[${PYTHON_USEDEP}]
 	~dev-python/tomli-0.2.0[${PYTHON_USEDEP}]
-	~dev-python/tomli-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/tomli-0.2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]

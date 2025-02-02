@@ -23,15 +23,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 	>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	lint? ( ~dev-python/pylint-3.1.0[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/ruff-0.4.2[${PYTHON_USEDEP}] )
 "

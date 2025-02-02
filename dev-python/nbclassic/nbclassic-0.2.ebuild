@@ -7,6 +7,8 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=jupyter
 
 inherit distutils-r1 pypi xdg-utils
+SRC_URI="$(pypi_sdist_url ${PN} 0.2.0)"
+S="${WORKDIR}/${PN}-0.2.0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -16,9 +18,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/jupyter-server-1.0.1[${PYTHON_USEDEP}]
 	<dev-python/notebook-7[${PYTHON_USEDEP}]
 "

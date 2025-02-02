@@ -24,10 +24,9 @@ GENERATED_IUSE="scripts"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	scripts? ( >=dev-python/click-6.0[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-61.0[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/setuptools-61.0[${PYTHON_USEDEP}]

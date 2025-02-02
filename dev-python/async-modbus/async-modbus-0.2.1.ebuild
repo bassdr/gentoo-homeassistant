@@ -18,21 +18,16 @@ S=${WORKDIR}/${MY_PN}-${PV}
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="numpy tests"
+GENERATED_IUSE="numpy"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/connio-0.2.0[${PYTHON_USEDEP}]
-	dev-python/connio[${PYTHON_USEDEP}]
 	numpy? ( >=dev-python/numpy-1.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-6[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	>=dev-python/umodbus-1.0.4[${PYTHON_USEDEP}]
-	dev-python/umodbus[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/connio-0.2.0[${PYTHON_USEDEP}]
@@ -51,3 +46,8 @@ src_prepare() {
 	eapply_user
 }
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-6[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"

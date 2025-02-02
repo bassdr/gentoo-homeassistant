@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="python-MotionMount"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Control your MotionMount Signature TVM7675 Pro using Python"

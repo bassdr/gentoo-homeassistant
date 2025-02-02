@@ -3,13 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 IUSE=""
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "types-xmltodict" "v0.14.0.20241009")"
-S="${WORKDIR}/types-xmltodict-v0.14.0.20241009"
 
 DESCRIPTION=""
 HOMEPAGE="

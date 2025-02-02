@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,16 +15,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/entrypoints[${PYTHON_USEDEP}]
-	tests? ( dev-python/freezegun[${PYTHON_USEDEP}] )
 	dev-python/funcy[${PYTHON_USEDEP}]
 	!=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
-	tests? ( dev-python/pygit2[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-test-utils[${PYTHON_USEDEP}] )
 	dev-python/rich[${PYTHON_USEDEP}]
 	dev-python/ruamel-yaml[${PYTHON_USEDEP}]
 	<dev-python/scmrepo-4[${PYTHON_USEDEP}]
@@ -38,9 +30,15 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/freezegun[${PYTHON_USEDEP}]
 	dev-python/gto[tests,${PYTHON_USEDEP}]
 	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+	dev-python/pygit2[${PYTHON_USEDEP}]
 	~dev-python/pylint-3.3.2[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytest-test-utils[${PYTHON_USEDEP}]
 	dev-python/types-filelock[${PYTHON_USEDEP}]
 	dev-python/types-freezegun[${PYTHON_USEDEP}]
 	dev-python/types-pyyaml[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="adal"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	adal? ( >=dev-python/adal-1.0.2[${PYTHON_USEDEP}] )
 	>=dev-python/certifi-14.05.14[${PYTHON_USEDEP}]
 	>=dev-python/durationpy-0.7[${PYTHON_USEDEP}]

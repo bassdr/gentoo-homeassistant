@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	erdantic? ( <dev-python/erdantic-2.0[${PYTHON_USEDEP}] )
 	>dev-python/importlib-metadata-1[${PYTHON_USEDEP}]
 	type-checking? ( <dev-python/mypy-2.0[${PYTHON_USEDEP}] )

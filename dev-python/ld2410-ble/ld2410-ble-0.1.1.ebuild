@@ -25,13 +25,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-2.3.0[${PYTHON_USEDEP}]
-	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] )

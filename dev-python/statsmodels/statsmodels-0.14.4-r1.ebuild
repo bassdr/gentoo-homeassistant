@@ -21,7 +21,7 @@ IUSE="${GENERATED_IUSE} examples"
 
 # NB: upstream requires building with numpy-2 but supports 1.x
 # at runtime
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	develop? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
 	develop? ( <dev-python/cython-4[${PYTHON_USEDEP}] )

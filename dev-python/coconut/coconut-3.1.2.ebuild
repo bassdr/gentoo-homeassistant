@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all docs ipython jupyter jupyterlab jupytext mypy pyright tests watch"
+GENERATED_IUSE="all docs ipython jupyter jupyterlab jupytext mypy pyright watch"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,142 +16,44 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aenum-3.1.15[${PYTHON_USEDEP}]
 	<dev-python/cpyparsing-2.4.7.2.5[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
 	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
 	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
 	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
 	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
 	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
 	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
 	all? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	ipython? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupyterlab? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupytext? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupytext-1.8[${PYTHON_USEDEP}]
-	>=dev-python/jupytext-1.8[${PYTHON_USEDEP}]
 	>=dev-python/jupytext-1.8[${PYTHON_USEDEP}]
 	all? ( >=dev-python/mypy-1.11[python2,${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/mypy-1.11[python2,${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-4[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.18[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.18[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.18[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.18[${PYTHON_USEDEP}]
 	all? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
 	ipython? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
 	jupyterlab? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
 	jupytext? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pexpect-4[${PYTHON_USEDEP}] )
 	>=dev-python/prompt-toolkit-1[${PYTHON_USEDEP}]
 	>=dev-python/psutil-6[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}] )
 	>=dev-python/pygments-2.3[${PYTHON_USEDEP}]
-	>=dev-python/pygments-2.3[${PYTHON_USEDEP}]
-	>=dev-python/pygments-2.3[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pyright-1.1[${PYTHON_USEDEP}] )
 	pyright? ( >=dev-python/pyright-1.1[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-3[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7[${PYTHON_USEDEP}]
-	tests? ( >=dev-python/pytest-remotedata-0.3[${PYTHON_USEDEP}] )
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
 	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-44[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-8[${PYTHON_USEDEP}] )
@@ -162,20 +63,10 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	mypy? ( >=dev-python/types-backports-0.1[${PYTHON_USEDEP}] )
 	pyright? ( >=dev-python/types-backports-0.1[${PYTHON_USEDEP}] )
 	>=dev-python/typing-3.10[${PYTHON_USEDEP}]
-	>=dev-python/typing-3.10[${PYTHON_USEDEP}]
-	>=dev-python/typing-3.10[${PYTHON_USEDEP}]
-	>=dev-python/typing-3.10[${PYTHON_USEDEP}]
-	>=dev-python/typing-3.10[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10[${PYTHON_USEDEP}]
 	all? ( >=dev-python/watchdog-0.10[${PYTHON_USEDEP}] )
 	watch? ( >=dev-python/watchdog-0.10[${PYTHON_USEDEP}] )
 	>=dev-python/xonsh-0.11[${PYTHON_USEDEP}]
-	>=dev-python/xonsh-0.11[${PYTHON_USEDEP}]
-	>=dev-python/xonsh-0.11[${PYTHON_USEDEP}]
-	>=dev-python/xonsh-0.11[${PYTHON_USEDEP}]
-	>=dev-python/xonsh-0.9[${PYTHON_USEDEP}]
-	>=dev-python/xonsh-0.9[${PYTHON_USEDEP}]
-	>=dev-python/xonsh-0.9[${PYTHON_USEDEP}]
 	>=dev-python/xonsh-0.9[${PYTHON_USEDEP}]
 	>=dev-vcs/pre-commit-3[${PYTHON_USEDEP}]
 "

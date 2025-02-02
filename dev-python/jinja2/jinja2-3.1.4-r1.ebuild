@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYPI_PN="Jinja2"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
@@ -26,10 +25,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="i18n"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	i18n? ( >=dev-python/babel-2.7[${PYTHON_USEDEP}] )
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]
-	dev-python/markupsafe[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]

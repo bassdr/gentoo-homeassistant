@@ -24,15 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/aiohttp-3.8[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/click-7.1[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/prompt-toolkit-3.0[${PYTHON_USEDEP}] )
-	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	~dev-python/pycryptodome-3.19[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]

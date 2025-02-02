@@ -26,9 +26,8 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="format format-nongpl"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 	format-nongpl? ( dev-python/fqdn[${PYTHON_USEDEP}] )
 	format? ( dev-python/fqdn[${PYTHON_USEDEP}] )
 	format-nongpl? ( dev-python/idna[${PYTHON_USEDEP}] )
@@ -39,16 +38,13 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	format-nongpl? ( >dev-python/jsonpointer-1.13[${PYTHON_USEDEP}] )
 	format? ( >dev-python/jsonpointer-1.13[${PYTHON_USEDEP}] )
 	>=dev-python/jsonschema-specifications-2023.03.6[${PYTHON_USEDEP}]
-	dev-python/jsonschema-specifications[${PYTHON_USEDEP}]
 	>=dev-python/pkgutil-resolve-name-1.3.10[${PYTHON_USEDEP}]
 	>=dev-python/referencing-0.28.4[${PYTHON_USEDEP}]
-	dev-python/referencing[${PYTHON_USEDEP}]
 	format-nongpl? ( dev-python/rfc3339-validator[${PYTHON_USEDEP}] )
 	format? ( dev-python/rfc3339-validator[${PYTHON_USEDEP}] )
 	format-nongpl? ( >dev-python/rfc3986-validator-0.1.0[${PYTHON_USEDEP}] )
 	format? ( dev-python/rfc3987[${PYTHON_USEDEP}] )
 	>=dev-python/rpds-py-0.7.1[${PYTHON_USEDEP}]
-	dev-python/rpds-py[${PYTHON_USEDEP}]
 	format-nongpl? ( dev-python/uri-template[${PYTHON_USEDEP}] )
 	format? ( dev-python/uri-template[${PYTHON_USEDEP}] )
 	format-nongpl? ( >=dev-python/webcolors-24.6.0[${PYTHON_USEDEP}] )

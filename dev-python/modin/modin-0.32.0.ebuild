@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all consortium-standard dask mpi ray spreadsheet"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/dask-2.22.0[${PYTHON_USEDEP}] )
 	dask? ( >=dev-python/dask-2.22.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/dataframe-api-compat-0.2.7[${PYTHON_USEDEP}] )

@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="pytorch-nightly tensorflow tensorflow-gpu testing tf-nightly torch"
+GENERATED_IUSE="pytorch-nightly tensorflow tensorflow-gpu tf-nightly torch"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,10 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( >=dev-python/absl-py-0.1.6[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/mock-3.0.5[${PYTHON_USEDEP}] )
-	testing? ( dev-python/nose[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	pytorch-nightly? ( dev-python/pytorch-nightly[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-1.13.0[${PYTHON_USEDEP}] )
 	tensorflow-gpu? ( >=dev-python/tensorflow-gpu-1.13.0[${PYTHON_USEDEP}] )
@@ -30,3 +27,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/absl-py-0.1.6[${PYTHON_USEDEP}]
+	>=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
+	dev-python/nose[${PYTHON_USEDEP}]
+)"

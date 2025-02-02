@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs tests"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,17 +16,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/dulwich[${PYTHON_USEDEP}]
 	docs? ( <dev-python/mkdocs-2[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocs-gen-files-1[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocs-material-10[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocs-section-index-1[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
-	tests? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
@@ -37,5 +32,9 @@ distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/dvc-studio-client[docs,tests,${PYTHON_USEDEP}]
 	~dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
+	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+	dev-python/pytest-mock[${PYTHON_USEDEP}]
+	dev-python/pytest-sugar[${PYTHON_USEDEP}]
 	dev-python/types-requests[${PYTHON_USEDEP}]
 )"

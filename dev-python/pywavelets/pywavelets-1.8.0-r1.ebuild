@@ -5,7 +5,6 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=meson-python
-PYPI_PN="PyWavelets"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -20,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="optional"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/numpy-3[${PYTHON_USEDEP}]
 	optional? ( >=dev-python/scipy-1.9[${PYTHON_USEDEP}] )
 "

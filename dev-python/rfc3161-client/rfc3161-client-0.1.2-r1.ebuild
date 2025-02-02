@@ -88,7 +88,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/cryptography-45[${PYTHON_USEDEP}]
 	lint? ( <dev-python/ruff-0.9[${PYTHON_USEDEP}] )
 "

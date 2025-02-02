@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="anthropic mistral"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	anthropic? ( <dev-python/anthropic-1[vertexai,${PYTHON_USEDEP}] )
 	<dev-python/google-cloud-aiplatform-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/google-cloud-storage-3.0.0[${PYTHON_USEDEP}]

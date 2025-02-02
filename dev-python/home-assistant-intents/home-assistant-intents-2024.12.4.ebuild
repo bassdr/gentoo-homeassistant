@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION="Intents for Home Assistant"
@@ -13,9 +12,6 @@ HOMEPAGE="
   https://pypi.org/project/home-assistant-intents/
   Source Code, https://github.com/home-assistant/intents
 "
-SRC_URI="$(pypi_wheel_url home_assistant_intents)"
-S=${WORKDIR}
-
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"

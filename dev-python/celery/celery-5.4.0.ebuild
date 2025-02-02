@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="arangodb auth azureblockblob cassandra consul cosmosdbsql couchdb django dynamodb elasticsearch gcs gevent mongodb msgpack pymemcache pytest redis s3 slmq sqlalchemy sqs yaml zookeeper zstd"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	azureblockblob? ( >=dev-python/azure-storage-blob-12.15.0[${PYTHON_USEDEP}] )
 	>=dev-python/backports-zoneinfo-0.2.1[${PYTHON_USEDEP}]
 	<dev-python/billiard-5.0[${PYTHON_USEDEP}]

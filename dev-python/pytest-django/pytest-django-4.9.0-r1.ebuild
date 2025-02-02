@@ -20,11 +20,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/django[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/django-configurations-2.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
@@ -44,6 +42,10 @@ BDEPEND="
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/django[${PYTHON_USEDEP}]
+	>=dev-python/django-configurations-2.0[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local -x DJANGO_SETTINGS_MODULE

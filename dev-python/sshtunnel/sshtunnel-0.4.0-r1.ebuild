@@ -19,7 +19,7 @@ RESTRICT="test"
 
 GENERATED_IUSE="build_sphinx"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/paramiko-2.7.2[${PYTHON_USEDEP}]
 	build_sphinx? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	build_sphinx? ( dev-python/sphinxcontrib-napoleon[${PYTHON_USEDEP}] )

@@ -28,4 +28,3 @@ distutils_enable_tests pytest
 python_test() {
 	epytest tests/*.py
 }
-# PYPI_PN could not be inserted in this ebuild

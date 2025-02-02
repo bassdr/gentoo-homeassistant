@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="jaraco.abode"
 inherit distutils-r1 pypi
 
 DESCRIPTION="A library interfacing to the Abode home security system"
@@ -23,25 +22,20 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/bx-py-utils[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-3.0.1[${PYTHON_USEDEP}]
-	dev-python/colorlog[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-resources-5.10[${PYTHON_USEDEP}]
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/jaraco-classes[${PYTHON_USEDEP}]
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	dev-python/jaraco-context[${PYTHON_USEDEP}]
 	>=dev-python/jaraco-functools-3.6[${PYTHON_USEDEP}]
-	dev-python/jaraco-functools[${PYTHON_USEDEP}]
 	dev-python/jaraco-itertools[${PYTHON_USEDEP}]
 	>=dev-python/jaraco-net-9[${PYTHON_USEDEP}]
-	dev-python/jaraco-net[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	dev-python/keyring[${PYTHON_USEDEP}]
 	>=dev-python/lomond-0.3.3[${PYTHON_USEDEP}]
-	dev-python/lomond[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/platformdirs[${PYTHON_USEDEP}]
 	check? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
@@ -49,7 +43,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.12.4[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
@@ -75,6 +68,6 @@ RDEPEND="${GENERATED_DEPEND}
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	>=dev-python/jaraco-collections-4.1[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	dev-python/requests-mock[${PYTHON_USEDEP}]
 )"

@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="Async Python client to interact with internal OverKiz API (e.g. used by Somfy TaHoma)."
 HOMEPAGE="
   https://pypi.org/project/pyoverkiz/
@@ -15,25 +16,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	<dev-python/attrs-25.0[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 	<dev-python/backoff-3.0[${PYTHON_USEDEP}]
-	dev-python/backoff[${PYTHON_USEDEP}]
 	<dev-python/boto3-2.0.0[${PYTHON_USEDEP}]
-	dev-python/boto3[${PYTHON_USEDEP}]
 	<dev-python/pyhumps-4.0.0[${PYTHON_USEDEP}]
-	dev-python/pyhumps[${PYTHON_USEDEP}]
 	<dev-python/warrant-lite-2.0.0[${PYTHON_USEDEP}]
-	dev-python/warrant-lite[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]

@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/reno[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
@@ -47,3 +47,4 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# RDEPEND could not be inserted in this ebuild

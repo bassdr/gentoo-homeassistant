@@ -4,9 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION="pytest plugin to re-run tests to eliminate flaky failures"
@@ -19,13 +19,10 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
 	!=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]

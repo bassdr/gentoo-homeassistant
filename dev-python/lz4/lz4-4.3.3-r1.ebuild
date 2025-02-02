@@ -18,13 +18,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs flake8 tests"
+GENERATED_IUSE="docs flake8"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	flake8? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	tests? ( dev-python/psutil[${PYTHON_USEDEP}] )
-	tests? ( !=dev-python/pytest-3.3.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.6.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}] )
 "
@@ -44,6 +41,11 @@ BDEPEND="
 
 # note: test suite fails with xdist
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/psutil[${PYTHON_USEDEP}]
+	!=dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	local EPYTEST_IGNORE=(

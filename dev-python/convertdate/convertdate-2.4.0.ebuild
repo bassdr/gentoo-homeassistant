@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs tests"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,8 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	<=dev-python/pymeeus-1[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
@@ -30,6 +28,7 @@ distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/black[${PYTHON_USEDEP}]
 	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
 	dev-python/isort[${PYTHON_USEDEP}]
 	dev-python/pylint[${PYTHON_USEDEP}]
 )"

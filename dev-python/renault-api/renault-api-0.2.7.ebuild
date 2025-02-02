@@ -24,19 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/click-8.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-42.0.5[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/dateparser-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-dataclass-8.2.0[${PYTHON_USEDEP}]
-	dev-python/marshmallow-dataclass[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
 	<dev-python/six-2.0[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}

@@ -4,25 +4,22 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="markdown_include"
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/markdown_include/"
+  https://pypi.org/project/markdown-include/"
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/markdown-3.0[${PYTHON_USEDEP}]
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/markdown-3.0[${PYTHON_USEDEP}]
@@ -36,3 +33,6 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

@@ -4,8 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,14 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/cuda-python-13.0_alpha0[${PYTHON_USEDEP}]
-	~dev-python/libcudf-cu12-24.12*[${PYTHON_USEDEP}]
+	~dev-python/libcudf-cu12-24.12[${PYTHON_USEDEP}]
 	>=dev-python/nvtx-0.2.1[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	!=dev-python/pyarrow-17.0.0[${PYTHON_USEDEP}]
 	<dev-python/pyarrow-19.0.0_alpha0[${PYTHON_USEDEP}]
-	~dev-python/rmm-cu12-24.12*[${PYTHON_USEDEP}]
+	!=dev-python/pyarrow-17.0.0[${PYTHON_USEDEP}]
+	~dev-python/rmm-cu12-24.12[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

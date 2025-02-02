@@ -9,9 +9,8 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 # Requires self to be installed to build docs
 # TODO: Do this a bit better
 DOCS_BUILDER="mkdocs"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/mkdocs-1.0[${PYTHON_USEDEP}]
 "
 DOCS_DEPEND="

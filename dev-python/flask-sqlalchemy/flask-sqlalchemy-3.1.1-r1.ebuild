@@ -4,22 +4,20 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYPI_PN="Flask-SQLAlchemy"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/flask-sqlalchemy/"
+  https://pypi.org/project/Flask-SQLAlchemy/"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/flask-2.2.5[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-2.0.16[${PYTHON_USEDEP}]
 "

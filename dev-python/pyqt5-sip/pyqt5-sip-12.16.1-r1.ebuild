@@ -7,7 +7,6 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 # keep compat in sync with pyqt5 or else it confuses some revdeps
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_PN="PyQt5-sip"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""

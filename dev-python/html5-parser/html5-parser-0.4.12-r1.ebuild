@@ -5,9 +5,9 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi toolchain-funcs
 
 DESCRIPTION=""
@@ -21,7 +21,7 @@ GENERATED_IUSE="soup"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	soup? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	dev-python/chardet[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.8.0[${PYTHON_USEDEP}]

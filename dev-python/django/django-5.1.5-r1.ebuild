@@ -29,7 +29,7 @@ GENERATED_IUSE="argon2 bcrypt"
 IUSE="${GENERATED_IUSE} doc sqlite test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	argon2? ( >=dev-python/argon2-cffi-19.1.0[${PYTHON_USEDEP}] )
 	<dev-python/asgiref-4[${PYTHON_USEDEP}]
 	bcrypt? ( dev-python/bcrypt[${PYTHON_USEDEP}] )

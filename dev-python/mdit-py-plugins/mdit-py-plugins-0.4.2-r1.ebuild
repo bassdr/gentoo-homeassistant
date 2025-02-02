@@ -20,15 +20,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="code-style rtd testing"
+GENERATED_IUSE="code-style rtd"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/markdown-it-py-4.0.0[${PYTHON_USEDEP}]
 	rtd? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	code-style? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
@@ -42,3 +38,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+)"

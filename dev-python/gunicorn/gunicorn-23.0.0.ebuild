@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="eventlet gevent setproctitle testing tornado"
+GENERATED_IUSE="eventlet gevent setproctitle tornado"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,19 +16,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	eventlet? ( !=dev-python/eventlet-0.36.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/eventlet[${PYTHON_USEDEP}] )
 	gevent? ( >=dev-python/gevent-1.4.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/gevent[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	setproctitle? ( dev-python/setproctitle[${PYTHON_USEDEP}] )
 	tornado? ( >=dev-python/tornado-0.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/eventlet[${PYTHON_USEDEP}]
+	dev-python/gevent[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"

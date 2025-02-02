@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	developer? ( dev-python/black[${PYTHON_USEDEP}] )
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/cupy-cuda12x-12.0.0[${PYTHON_USEDEP}]

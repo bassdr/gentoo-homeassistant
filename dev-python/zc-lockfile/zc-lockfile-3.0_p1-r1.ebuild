@@ -4,14 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="zc.lockfile"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="zc.lockfile"
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "zc.lockfile" "3.0.post1")"
-S="${WORKDIR}/zc.lockfile-3.0.post1"
+SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} 3.0.post1)"
+S="${WORKDIR}/${PYPI_PN}-3.0.post1"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -21,9 +20,8 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 BDEPEND="

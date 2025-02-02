@@ -3,13 +3,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 IUSE=""
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "cloud-sptheme" "1.10.1.post20200504175005")"
-S="${WORKDIR}/cloud-sptheme-1.10.1.post20200504175005"
+SRC_URI="$(pypi_sdist_url ${PN} 1.10.1.post20200504175005)"
+S="${WORKDIR}/${PN}-1.10.1.post20200504175005"
 
 DESCRIPTION=""
 HOMEPAGE="

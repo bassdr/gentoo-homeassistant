@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs optional"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/myst-parser-2.0.0[${PYTHON_USEDEP}] )
 	optional? ( dev-python/python-socks[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
@@ -46,3 +46,4 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# RDEPEND could not be inserted in this ebuild

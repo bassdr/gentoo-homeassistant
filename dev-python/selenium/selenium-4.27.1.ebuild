@@ -27,21 +27,14 @@ SRC_URI+="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test-rust"
+IUSE="test-rust"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/certifi-2021.10.8[${PYTHON_USEDEP}]
-	dev-python/certifi[${PYTHON_USEDEP}]
-	dev-python/trio[${PYTHON_USEDEP}]
 	~dev-python/trio-0.17[${PYTHON_USEDEP}]
-	dev-python/trio-websocket[${PYTHON_USEDEP}]
 	~dev-python/trio-websocket-0.9[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	~dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
 	<dev-python/urllib3-3[socks,${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
-	dev-python/websocket-client[${PYTHON_USEDEP}]
 	~dev-python/websocket-client-1.8[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

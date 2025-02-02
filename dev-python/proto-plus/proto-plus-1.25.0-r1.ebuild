@@ -23,12 +23,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( >=dev-python/google-api-core-1.31.5[${PYTHON_USEDEP}] )
-	<dev-python/protobuf-6.0.0dev[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
+	<dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]
@@ -42,6 +39,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/google-api-core-1.31.5[${PYTHON_USEDEP}]
+)"
 distutils_enable_sphinx docs \
 	dev-python/sphinx-rtd-theme
 

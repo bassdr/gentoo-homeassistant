@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all argcomplete coverage doc fsspec jsonschema maintainer omegaconf reconplogger ruyaml shtab signatures test-no-urls toml urls"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	argcomplete? ( >=dev-python/argcomplete-3.5.1[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/autodocsumm-0.1.10[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/bump2version-0.5.11[${PYTHON_USEDEP}] )

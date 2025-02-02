@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
@@ -46,7 +46,7 @@ BDEPEND+=" test? (
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]

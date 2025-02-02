@@ -26,14 +26,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/aiohttp-3.10.10[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
 	>dev-python/orjson-3.9[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
 	requirements? ( ~dev-python/orjson-3.10.7[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
 	requirements-test? ( ~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}] )

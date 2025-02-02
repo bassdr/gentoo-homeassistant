@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all limiter"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/apeye-core-1.0.0_beta2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cachecontrol-0.12.6[filecache,${PYTHON_USEDEP}] )
 	limiter? ( >=dev-python/cachecontrol-0.12.6[filecache,${PYTHON_USEDEP}] )

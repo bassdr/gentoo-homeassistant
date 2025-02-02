@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all compression docs execnet jinja redis sqlalchemy zmq"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	compression? ( dev-python/brotli[${PYTHON_USEDEP}] )
 	execnet? ( >=dev-python/execnet-1.0.9[${PYTHON_USEDEP}] )
 	jinja? ( dev-python/jinja2[${PYTHON_USEDEP}] )

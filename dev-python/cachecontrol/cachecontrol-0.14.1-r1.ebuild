@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="CacheControl"
 inherit distutils-r1 pypi
 
 DESCRIPTION="httplib2 caching for requests"
@@ -23,13 +22,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="filecache redis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	filecache? ( >=dev-python/filelock-3.8.0[${PYTHON_USEDEP}] )
 	<dev-python/msgpack-2.0.0[${PYTHON_USEDEP}]
-	dev-python/msgpack[${PYTHON_USEDEP}]
 	redis? ( >=dev-python/redis-2.10.5[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	<dev-python/msgpack-2[${PYTHON_USEDEP}]

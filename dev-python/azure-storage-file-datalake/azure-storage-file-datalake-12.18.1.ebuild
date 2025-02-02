@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="aio"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/azure-core-1.30.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/azure-core-1.30.0[aio,${PYTHON_USEDEP}] )
 	>=dev-python/azure-storage-blob-12.24.1[${PYTHON_USEDEP}]

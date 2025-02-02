@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="Control Steamist steam systems"
 HOMEPAGE="
   https://pypi.org/project/aiosteamist/
@@ -24,14 +25,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/myst-parser-0.16.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/xmltodict-0.12.0[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]

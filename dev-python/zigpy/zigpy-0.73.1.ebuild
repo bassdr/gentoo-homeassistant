@@ -16,32 +16,21 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/aiosqlite-0.20.0[${PYTHON_USEDEP}]
-	dev-python/aiosqlite[${PYTHON_USEDEP}]
-	testing? ( dev-python/asynctest[${PYTHON_USEDEP}] )
 	dev-python/attrs[${PYTHON_USEDEP}]
-	testing? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
-	testing? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	dev-python/crccheck[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
-	testing? ( dev-python/freezegun[${PYTHON_USEDEP}] )
 	dev-python/frozendict[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 	dev-python/pysqlite3-binary[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	testing? ( dev-python/tomli[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
@@ -71,3 +60,14 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/asynctest[${PYTHON_USEDEP}]
+	dev-python/coverage[toml,${PYTHON_USEDEP}]
+	dev-python/coveralls[${PYTHON_USEDEP}]
+	dev-python/freezegun[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/tomli[${PYTHON_USEDEP}]
+)"

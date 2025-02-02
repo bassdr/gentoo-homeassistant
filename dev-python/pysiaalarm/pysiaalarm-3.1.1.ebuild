@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Python package for creating a client that talks with SIA-based alarm systems."
 HOMEPAGE="
   https://pypi.org/project/pysiaalarm/
@@ -16,24 +17,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="testing typing"
+GENERATED_IUSE="typing"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
-	testing? ( dev-python/pydocstyle[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pylint[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cases[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
-	testing? ( dev-python/tox[${PYTHON_USEDEP}] )
 	typing? ( dev-python/types-pytz[${PYTHON_USEDEP}] )
 	typing? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
 "
@@ -50,3 +44,12 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pydocstyle[${PYTHON_USEDEP}]
+	dev-python/pylint[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cases[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/tox[${PYTHON_USEDEP}]
+)"

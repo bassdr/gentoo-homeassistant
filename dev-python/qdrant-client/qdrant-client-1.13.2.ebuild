@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="fastembed fastembed-gpu"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="qdrant_client"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,14 +16,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	fastembed? ( ~dev-python/fastembed-0.5.1[${PYTHON_USEDEP}] )
 	fastembed-gpu? ( ~dev-python/fastembed-gpu-0.5.1[${PYTHON_USEDEP}] )
 	>=dev-python/grpcio-1.41.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-tools-1.41.0[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.20.0[http2,${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/numpy-1.26[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/numpy-1.26[${PYTHON_USEDEP}]' python3_13{,t})
 	<dev-python/portalocker-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.8[${PYTHON_USEDEP}]
 	<dev-python/urllib3-3[${PYTHON_USEDEP}]

@@ -6,26 +6,22 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="Library for interacting with UPB PIM."
 HOMEPAGE="
   https://pypi.org/project/upb-lib/
 "
-SRC_URI="$(pypi_sdist_url)"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
-	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2021[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]

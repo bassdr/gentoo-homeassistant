@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="pyOpenSSL"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
@@ -20,14 +19,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/cryptography-44[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
-	test? ( dev-python/pretend[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/pytest-3.0.1[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
 	docs? ( !=dev-python/sphinx-5.2.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
@@ -48,6 +43,11 @@ BDEPEND="
 distutils_enable_sphinx doc \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pretend[${PYTHON_USEDEP}]
+	>=dev-python/pytest-3.0.1[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+)"
 
 src_test() {
 	local -x TZ=UTC

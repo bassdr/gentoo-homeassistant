@@ -28,9 +28,8 @@ SLOT="0/${PV}"
 KEYWORDS="amd64 arm64"
 
 # Needs recent libffi for HPPA fixes
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/pycparser[${PYTHON_USEDEP}]
 "
 DEPEND="

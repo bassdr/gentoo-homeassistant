@@ -16,10 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -28,6 +26,7 @@ RDEPEND="${GENERATED_DEPEND}
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/sphinx-issues[tests,${PYTHON_USEDEP}]
 	dev-python/tox[${PYTHON_USEDEP}]
 	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]

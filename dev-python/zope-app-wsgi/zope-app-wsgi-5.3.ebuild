@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="testlayer"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.app.wsgi"
 inherit distutils-r1 pypi
 
@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/transaction[${PYTHON_USEDEP}]
 	testlayer? ( dev-python/webtest[${PYTHON_USEDEP}] )

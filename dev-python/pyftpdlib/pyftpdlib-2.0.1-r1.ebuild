@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="ssl"
 IUSE="${GENERATED_IUSE} examples ssl"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep 'dev-python/pyasynchat[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep 'dev-python/pyasyncore[${PYTHON_USEDEP}]' python3_13{,t})
 	ssl? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
@@ -48,7 +48,6 @@ BDEPEND+=" test? (
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/rstcheck[${PYTHON_USEDEP}]
 	dev-python/ruff[${PYTHON_USEDEP}]

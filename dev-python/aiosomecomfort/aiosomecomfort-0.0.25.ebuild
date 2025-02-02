@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="AIOSomecomfort"
 inherit distutils-r1 pypi
+
 DESCRIPTION="A client for Honeywell's US-based cloud devices"
 HOMEPAGE="
   https://pypi.org/project/AIOSomecomfort/
@@ -16,15 +17,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

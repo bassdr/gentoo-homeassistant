@@ -4,10 +4,10 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="SecretStorage"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="SecretStorage"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Python bindings to FreeDesktop.org Secret Service API"
@@ -19,13 +19,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.0[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
 	>=dev-python/jeepney-0.6[${PYTHON_USEDEP}]
-	dev-python/jeepney[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]

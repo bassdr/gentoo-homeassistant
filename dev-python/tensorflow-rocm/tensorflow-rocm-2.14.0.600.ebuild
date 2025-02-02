@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/astunparse-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/flatbuffers-23.5.26[${PYTHON_USEDEP}]

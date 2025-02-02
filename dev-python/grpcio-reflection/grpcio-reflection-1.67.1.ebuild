@@ -15,17 +15,14 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/grpcio-1.67.1[${PYTHON_USEDEP}]
-	dev-python/grpcio[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6.0dev[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
+	<dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/grpcio-${PV}[${PYTHON_USEDEP}]

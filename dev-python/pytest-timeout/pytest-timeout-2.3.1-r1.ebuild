@@ -4,9 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -19,24 +19,19 @@ KEYWORDS="amd64 arm64"
 
 # do not rdepend on pytest, it won't be used without it anyway
 # pytest-cov used to test compatibility
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-"
-BDEPEND="
-	test? (
-		dev-python/pexpect[${PYTHON_USEDEP}]
-		!hppa? (
-			$(python_gen_cond_dep '
-				dev-python/pytest-cov[${PYTHON_USEDEP}]
-			' python3_{10..11} pypy3)
-		)
-	)
 "
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		dev-python/pexpect[${PYTHON_USEDEP}]
+	)
+"
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

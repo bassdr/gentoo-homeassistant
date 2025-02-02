@@ -23,9 +23,8 @@ KEYWORDS="amd64 arm64"
 # https://bugs.gentoo.org/931325
 RESTRICT="test"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/csscompressor-0.9.5[${PYTHON_USEDEP}]
 	>=dev-python/htmlmin2-0.1.13[${PYTHON_USEDEP}]
 	>=dev-python/jsmin-3.0.1[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="jax torch"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	jax? ( >=dev-python/jax-0.2.21[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jaxlib-0.1.71[${PYTHON_USEDEP}] )
 	dev-python/makefun[${PYTHON_USEDEP}]
@@ -34,27 +33,18 @@ RDEPEND="${GENERATED_DEPEND}"
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/black[${PYTHON_USEDEP}]
 	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.0[${PYTHON_USEDEP}]
 	>=dev-python/isort-5.0[${PYTHON_USEDEP}]
 	dev-python/nbsphinx[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	~dev-python/pillow-8.2.0[${PYTHON_USEDEP}]
 	~dev-python/pillow-8.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pyro-api-0.1.2[${PYTHON_USEDEP}]
 	~dev-python/pytest-4.3.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-4.3.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-1.27.0[${PYTHON_USEDEP}]
 	~dev-python/pytest-xdist-1.27.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-2.0[${PYTHON_USEDEP}]
 	dev-python/sphinx-gallery[${PYTHON_USEDEP}]
 	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
-	>=dev-python/torchvision-0.12.0[${PYTHON_USEDEP}]
 	>=dev-python/torchvision-0.12.0[${PYTHON_USEDEP}]
 )"

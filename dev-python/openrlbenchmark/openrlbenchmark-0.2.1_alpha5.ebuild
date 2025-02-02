@@ -3,14 +3,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "openrlbenchmark" "0.2.1a5")"
-S="${WORKDIR}/openrlbenchmark-0.2.1a5"
+SRC_URI="$(pypi_sdist_url ${PN} 0.2.1a5)"
+S="${WORKDIR}/${PN}-0.2.1a5"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/dotmap-1.3.30[${PYTHON_USEDEP}]
 	>=dev-python/expt-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-5.1.0[${PYTHON_USEDEP}]

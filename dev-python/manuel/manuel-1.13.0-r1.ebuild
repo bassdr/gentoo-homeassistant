@@ -15,13 +15,11 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	tests? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	test? (
@@ -42,3 +40,4 @@ python_test() {
 	"${EPYTHON}" -m unittest -vv manuel.tests.test_suite || die
 }
 # RDEPEND could not be inserted in this ebuild
+# BDEPEND could not be inserted in this ebuild

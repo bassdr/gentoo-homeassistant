@@ -20,11 +20,10 @@ SRC_URI="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="benchmark build docs examples install maintenance tests"
+GENERATED_IUSE="benchmark build docs examples install maintenance"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( >=dev-python/black-24.3.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	maintenance? ( ~dev-python/conda-lock-2.5.6[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
 	>=dev-python/joblib-1.2.0[${PYTHON_USEDEP}]
@@ -32,37 +31,25 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	benchmark? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] )
 	benchmark? ( >=dev-python/memory-profiler-0.57.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/memory-profiler-0.57.0[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/meson-python-0.16.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/mypy-1.9[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.19.5[${PYTHON_USEDEP}]
 	build? ( >=dev-python/numpy-1.19.5[${PYTHON_USEDEP}] )
 	install? ( >=dev-python/numpy-1.19.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/numpydoc-1.2.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/numpydoc-1.2.0[${PYTHON_USEDEP}] )
 	benchmark? ( >=dev-python/pandas-1.1.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pandas-1.1.5[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/pandas-1.1.5[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pandas-1.1.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pillow-7.1.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/plotly-5.14.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/plotly-5.14.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/polars-0.20.30[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/polars-0.20.30[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pooch-1.6.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/pooch-1.6.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pooch-1.6.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pyamg-4.0.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pyarrow-12.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/pydata-sphinx-theme-0.15.3[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-7.1.2[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/ruff-0.5.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/scikit-image-0.17.2[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/scikit-image-0.17.2[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/scikit-image-0.17.2[${PYTHON_USEDEP}] )
 	>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]
 	build? ( >=dev-python/scipy-1.6.0[${PYTHON_USEDEP}] )
 	install? ( >=dev-python/scipy-1.6.0[${PYTHON_USEDEP}] )
@@ -99,6 +86,21 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/black-24.3.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}]
+	>=dev-python/mypy-1.9[${PYTHON_USEDEP}]
+	>=dev-python/numpydoc-1.2.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.1.5[${PYTHON_USEDEP}]
+	>=dev-python/polars-0.20.30[${PYTHON_USEDEP}]
+	>=dev-python/pooch-1.6.0[${PYTHON_USEDEP}]
+	>=dev-python/pyamg-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-12.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}]
+	>=dev-python/ruff-0.5.1[${PYTHON_USEDEP}]
+	>=dev-python/scikit-image-0.17.2[${PYTHON_USEDEP}]
+)"
 
 # For some reason this wants to use urllib to fetch things from the internet
 # distutils_enable_sphinx doc \

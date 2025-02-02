@@ -20,7 +20,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	develop? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/bump2version-1.0.0_p1[${PYTHON_USEDEP}] )
 	develop? ( dev-python/check-manifest[${PYTHON_USEDEP}] )

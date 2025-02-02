@@ -4,10 +4,10 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="zope.component"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="zope.component"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs mintests persistentregistry security zcml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	persistentregistry? ( dev-python/persistent[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

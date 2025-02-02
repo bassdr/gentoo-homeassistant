@@ -21,9 +21,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/markdown[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.4.0[${PYTHON_USEDEP}]

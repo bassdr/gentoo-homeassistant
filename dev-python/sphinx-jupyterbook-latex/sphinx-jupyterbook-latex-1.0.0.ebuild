@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="code_style myst rtd testing"
+GENERATED_IUSE="code_style myst rtd"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,24 +16,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( >=dev-python/coverage-6.0[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	myst? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-7.1[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-cov-3[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/sphinx-external-toc-1.0.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-jupyterbook-latex[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/sphinxcontrib-bibtex-2.6.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/texsoup[${PYTHON_USEDEP}] )
 	code_style? ( ~dev-vcs/pre-commit-2.12[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/coverage-6.0[${PYTHON_USEDEP}]
+	>=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-3[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-external-toc-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinxcontrib-bibtex-2.6.0[${PYTHON_USEDEP}]
+	dev-python/texsoup[${PYTHON_USEDEP}]
+)"

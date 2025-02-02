@@ -50,4 +50,3 @@ python_test() {
 	cmake_src_compile
 	cmake_src_test
 }
-# PYPI_PN could not be inserted in this ebuild

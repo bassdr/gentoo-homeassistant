@@ -23,18 +23,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="benchmarking code_style compare linkify plugins profiling rtd testing"
+GENERATED_IUSE="benchmarking code_style compare linkify plugins profiling rtd"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	compare? ( ~dev-python/commonmark-0.9[${PYTHON_USEDEP}] )
-	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	profiling? ( dev-python/gprof2dot[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/jupyter-sphinx[${PYTHON_USEDEP}] )
 	linkify? ( >=dev-python/linkify-it-py-1[${PYTHON_USEDEP}] )
 	compare? ( ~dev-python/markdown-3.4[${PYTHON_USEDEP}] )
 	plugins? ( dev-python/mdit-py-plugins[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/mdit-py-plugins[${PYTHON_USEDEP}] )
-	dev-python/mdurl[${PYTHON_USEDEP}]
 	~dev-python/mdurl-0.1[${PYTHON_USEDEP}]
 	compare? ( ~dev-python/mistletoe-1.0[${PYTHON_USEDEP}] )
 	compare? ( ~dev-python/mistune-2.0[${PYTHON_USEDEP}] )
@@ -42,10 +40,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	compare? ( ~dev-python/panflute-2.3[${PYTHON_USEDEP}] )
 	benchmarking? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	benchmarking? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	benchmarking? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
@@ -64,6 +59,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_IGNORE=(
 	# No need to benchmark

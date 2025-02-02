@@ -24,8 +24,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all graphite interpolatable lxml pathops plot repacker symfont ufo woff"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	>=dev-python/brotli-1.0.1[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/brotli-1.0.1[${PYTHON_USEDEP}]
 	all? ( <dev-python/fs-3[${PYTHON_USEDEP}] )
 	ufo? ( <dev-python/fs-3[${PYTHON_USEDEP}] )

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="doc hg plugs virtualenv"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	plugs? ( dev-python/asv-bench-memray[${PYTHON_USEDEP}] )
 	>=dev-python/asv-runner-0.2.1[${PYTHON_USEDEP}]
 	dev-python/build[${PYTHON_USEDEP}]
@@ -42,7 +41,6 @@ BDEPEND+=" test? (
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
 	>=dev-python/pytest-rerunfailures-10.0[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
 	dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/ruff[${PYTHON_USEDEP}]

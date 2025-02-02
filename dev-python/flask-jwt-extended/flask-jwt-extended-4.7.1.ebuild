@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="asymmetric-crypto"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="Flask-JWT-Extended"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	asymmetric-crypto? ( >=dev-python/cryptography-3.3.1[${PYTHON_USEDEP}] )
 	<dev-python/flask-4.0[${PYTHON_USEDEP}]
 	<dev-python/pyjwt-3.0[${PYTHON_USEDEP}]

@@ -5,10 +5,10 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=sip
-PYPI_NO_NORMALIZE=1
-PYPI_PN="PyQt5"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="PyQt5"
 inherit distutils-r1 flag-o-matic multiprocessing pypi qmake-utils
 
 DESCRIPTION=""
@@ -19,8 +19,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}
+IUSE="
 	dbus debug declarative designer examples gles2-only gui help location
 	multimedia network opengl positioning printsupport sensors serialport speech
 	sql +ssl svg testlib webchannel websockets widgets x11extras xmlpatterns
@@ -51,7 +50,7 @@ REQUIRED_USE="
 # Minimal supported version of Qt.
 QT_PV="5.15:5"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/pyqt5-qt5-5.16.0[${PYTHON_USEDEP}]
 	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
 "

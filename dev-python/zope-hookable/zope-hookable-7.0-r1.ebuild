@@ -5,7 +5,6 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="zope.hookable"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -18,15 +17,12 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	test? (
@@ -36,6 +32,7 @@ BDEPEND="
 
 distutils_enable_tests unittest
 BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
 	dev-python/zope-testing[${PYTHON_USEDEP}]
 	dev-python/zope-testrunner[${PYTHON_USEDEP}]
 )"

@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=standalone
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -13,20 +12,13 @@ MY_P=${P/_/}
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/pydata-sphinx-theme/"
-SRC_URI="
-	https://github.com/pydata/pydata-sphinx-theme/archive/v${PV/_/}.tar.gz
-		-> ${P}.gh.tar.gz
-	$(pypi_wheel_url)
-"
-S=${WORKDIR}/${MY_P}
-
 LICENSE="BSD-with-disclosure"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="a11y doc i18n"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( >=dev-python/ablog-0.11.8[${PYTHON_USEDEP}] )
 	dev-python/accessible-pygments[${PYTHON_USEDEP}]
 	dev-python/babel[${PYTHON_USEDEP}]

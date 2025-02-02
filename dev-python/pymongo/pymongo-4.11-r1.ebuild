@@ -25,8 +25,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="aws docs encryption ocsp snappy zstd"
 IUSE="${GENERATED_IUSE} doc kerberos +native-extensions +test-full"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	dev-python/certifi[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	ocsp? ( >=dev-python/cryptography-2.5[${PYTHON_USEDEP}] )
 	<dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]

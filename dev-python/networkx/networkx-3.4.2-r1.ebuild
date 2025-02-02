@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="default developer doc example extra"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	example? ( >=dev-python/cairocffi-1.7[${PYTHON_USEDEP}] )
 	developer? ( ~dev-python/changelist-0.5[${PYTHON_USEDEP}] )
 	example? ( >=dev-python/contextily-1.6[${PYTHON_USEDEP}] )

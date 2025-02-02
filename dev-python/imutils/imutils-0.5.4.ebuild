@@ -11,8 +11,6 @@ DESCRIPTION="A series of convenience functions to make basic image processing fu
 HOMEPAGE="
   https://pypi.org/project/imutils/
 "
-#SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"

@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="bigquery dbt dev-no-parser great-expectations redshift tests"
+GENERATED_IUSE="bigquery dbt dev-no-parser great-expectations redshift"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-19.3.0[${PYTHON_USEDEP}]
 	dev-no-parser? ( >=dev-python/boto3-1.15.0[${PYTHON_USEDEP}] )
 	redshift? ( >=dev-python/boto3-1.15.0[${PYTHON_USEDEP}] )
@@ -36,31 +35,21 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-no-parser? ( <dev-python/great-expectations-0.15.35[${PYTHON_USEDEP}] )
 	great-expectations? ( <dev-python/great-expectations-0.15.35[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/jinja2[${PYTHON_USEDEP}] )
-	tests? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/mock[${PYTHON_USEDEP}] )
 	dev-no-parser? ( >=dev-python/mypy-0.960[${PYTHON_USEDEP}] )
-	tests? ( >=dev-python/mypy-0.960[${PYTHON_USEDEP}] )
 	~dev-python/openlineage-python-1.27.0[${PYTHON_USEDEP}]
 	~dev-python/openlineage-sql-1.27.0[${PYTHON_USEDEP}]
 	dev-no-parser? ( dev-python/pandas[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/python-dateutil[${PYTHON_USEDEP}] )
-	tests? ( dev-python/python-dateutil[${PYTHON_USEDEP}] )
 	dbt? ( >=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}] )
 	dev-no-parser? ( >=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}] )
 	dev-no-parser? ( <dev-python/sqlalchemy-2.0.0[${PYTHON_USEDEP}] )
 	great-expectations? ( <dev-python/sqlalchemy-2.0.0[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
-	tests? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
-	tests? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 

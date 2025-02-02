@@ -21,9 +21,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/astroid-2.7[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/astroid-3.0.0_alpha1[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/jinja2[${PYTHON_USEDEP}]

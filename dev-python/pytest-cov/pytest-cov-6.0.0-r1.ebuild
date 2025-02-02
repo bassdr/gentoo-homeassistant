@@ -4,9 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 multiprocessing pypi
 
 DESCRIPTION="Pytest plugin for measuring coverage."
@@ -21,18 +21,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/coverage-7.5[toml,${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	testing? ( dev-python/fields[${PYTHON_USEDEP}] )
-	testing? ( dev-python/hunter[${PYTHON_USEDEP}] )
-	testing? ( dev-python/process-tests[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	testing? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	testing? ( dev-python/virtualenv[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/py-1.4.22[${PYTHON_USEDEP}]
@@ -55,6 +47,13 @@ PATCHES=(
 distutils_enable_sphinx docs \
 	dev-python/furo
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/fields[${PYTHON_USEDEP}]
+	dev-python/hunter[${PYTHON_USEDEP}]
+	dev-python/process-tests[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	dev-python/virtualenv[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	# NB: disabling all plugins speeds tests up a lot

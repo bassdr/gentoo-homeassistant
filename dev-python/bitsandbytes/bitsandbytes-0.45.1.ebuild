@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( ~dev-python/hf-doc-builder-0.5.0[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]

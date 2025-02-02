@@ -19,7 +19,7 @@ GENERATED_IUSE="sql"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/cliff-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/extras-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]

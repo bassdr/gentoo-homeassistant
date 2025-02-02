@@ -6,6 +6,9 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 2024.1.0)"
+S="${WORKDIR}/${PN}-2024.1.0"
+
 DESCRIPTION="A Python3, asyncio-based API for interacting with Ridwell waste recycling"
 HOMEPAGE="
   https://pypi.org/project/aioridwell/
@@ -17,23 +20,17 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
-	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.4.0[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
 	>=dev-python/titlecase-2.3[${PYTHON_USEDEP}]
-	dev-python/titlecase[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9.2[${PYTHON_USEDEP}]
-	dev-python/yarl[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pyjwt-2.4.0[${PYTHON_USEDEP}]

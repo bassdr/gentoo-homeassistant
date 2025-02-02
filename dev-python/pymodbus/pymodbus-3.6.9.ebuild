@@ -26,7 +26,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.6[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_12)
 	development? ( >=dev-python/build-1.1.1[${PYTHON_USEDEP}] )

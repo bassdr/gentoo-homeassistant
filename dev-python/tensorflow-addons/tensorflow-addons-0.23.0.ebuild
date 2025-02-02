@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	tensorflow? ( <dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}] )
 	tensorflow-cpu? ( <dev-python/tensorflow-cpu-2.16.0[${PYTHON_USEDEP}] )

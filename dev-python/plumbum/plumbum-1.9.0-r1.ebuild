@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs ssh"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	ssh? ( dev-python/paramiko[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}] )
@@ -42,18 +42,11 @@ BDEPEND="
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	dev-python/paramiko[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	dev-python/pytest-timeout[${PYTHON_USEDEP}]
 )"
 

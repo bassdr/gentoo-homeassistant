@@ -21,20 +21,19 @@ if [[ "${PV}" == "9999" ]]; then
 	inherit git-r3
 else
 	inherit pypi
+
 KEYWORDS="amd64 arm64"
 fi
 
 GENERATED_IUSE="safer-xml-parsing xep-0363 xep-0444-compliance xep-0454"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiodns-1.0[${PYTHON_USEDEP}]
-	dev-python/aiodns[${PYTHON_USEDEP}]
 	xep-0363? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	xep-0454? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	safer-xml-parsing? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	xep-0444-compliance? ( dev-python/emoji[${PYTHON_USEDEP}] )
 	dev-python/pyasn1[${PYTHON_USEDEP}]
-	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "

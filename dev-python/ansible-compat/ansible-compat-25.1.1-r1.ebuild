@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
@@ -21,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/ansible-core-2.16[${PYTHON_USEDEP}]
 	docs? ( dev-python/argparse-manpage[${PYTHON_USEDEP}] )
 	docs? ( dev-python/black[${PYTHON_USEDEP}] )

@@ -5,10 +5,9 @@
 EAPI=7
 
 DISTUTILS_USE_PEP517=flit
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="ordered_set"
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION="An OrderedSet is a custom MutableSet that remembers its order, so that every"

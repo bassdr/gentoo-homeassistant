@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYPI_PN=Pallets-Sphinx-Themes
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -17,9 +16,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-3[${PYTHON_USEDEP}]
 	dev-python/sphinx-notfound-page[${PYTHON_USEDEP}]

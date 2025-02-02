@@ -28,7 +28,7 @@ GENERATED_IUSE="check core cover doc enabler type"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	core? ( dev-python/jaraco-collections[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-develop-7.21[${PYTHON_USEDEP}]

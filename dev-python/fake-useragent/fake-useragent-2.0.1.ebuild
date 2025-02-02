@@ -16,11 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/importlib-resources-6.0[${PYTHON_USEDEP}]
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

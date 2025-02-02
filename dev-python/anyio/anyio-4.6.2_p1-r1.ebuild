@@ -7,9 +7,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "anyio" "4.6.2.post1")"
-S="${WORKDIR}/anyio-4.6.2.post1"
+SRC_URI="$(pypi_sdist_url ${PN} 4.6.2.post1)"
+S="${WORKDIR}/${PN}-4.6.2.post1"
 
 DESCRIPTION="High level compatibility layer for multiple asynchronous event loop implementations"
 HOMEPAGE="
@@ -26,12 +25,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc trio"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/idna-2.8[${PYTHON_USEDEP}]
-	dev-python/idna[${PYTHON_USEDEP}]
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	>=dev-python/sniffio-1.1[${PYTHON_USEDEP}]
-	dev-python/sniffio[${PYTHON_USEDEP}]
 	doc? ( ~dev-python/sphinx-7.4[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )

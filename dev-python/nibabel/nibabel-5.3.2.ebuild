@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all dicom dicomfs doc doctest minc2 spm style typing zstd"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	minc2? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/importlib-resources-5.12[${PYTHON_USEDEP}]' python3_12)

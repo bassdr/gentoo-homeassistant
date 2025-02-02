@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="A library which communicates with ZiGate radios for zigpy"
 HOMEPAGE="
   https://pypi.org/project/zigpy-zigate/
@@ -15,22 +16,14 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/gpiozero[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-7.1.2[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyusb-1.1.0[${PYTHON_USEDEP}]
-	dev-python/pyusb[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
-	dev-python/zigpy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/voluptuous[${PYTHON_USEDEP}]
@@ -45,6 +38,13 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	# remove dynamic-versioning

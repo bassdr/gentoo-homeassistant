@@ -15,33 +15,22 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	app-crypt/acme[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
 	~app-crypt/acme-3.0.1[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}]
 	~dev-python/atomicwrites-homeassistant-1.4.1[${PYTHON_USEDEP}]
 	>=dev-python/attrs-19.3[${PYTHON_USEDEP}]
-	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/ciso8601-2.3.0[${PYTHON_USEDEP}]
-	dev-python/ciso8601[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
-	dev-python/pycognito[${PYTHON_USEDEP}]
 	~dev-python/pycognito-2024.5.1[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
-	dev-python/snitun[${PYTHON_USEDEP}]
 	~dev-python/snitun-0.39.1[${PYTHON_USEDEP}]
 	<dev-python/webrtc-models-1.0.0[${PYTHON_USEDEP}]
-	dev-python/webrtc-models[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	app-crypt/acme[${PYTHON_USEDEP}]

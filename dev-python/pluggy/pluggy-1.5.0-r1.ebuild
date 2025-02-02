@@ -17,11 +17,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 "
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -29,6 +26,8 @@ BDEPEND="
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
 	dev-python/tox[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 )"

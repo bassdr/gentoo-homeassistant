@@ -28,9 +28,8 @@ KEYWORDS="amd64 arm64"
 # In order to be seamless and straightforward, this backend is always
 # installed and just requires users using matplotlib, to install
 # matplotlib before importing and using it.
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/traitlets[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

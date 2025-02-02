@@ -12,11 +12,6 @@ inherit distutils-r1 pypi
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/tomli/"
-SRC_URI="
-	https://github.com/hukkin/tomli/archive/${PV}.tar.gz
-		-> ${P}.gh.tar.gz
-	$(pypi_wheel_url --unpack)
-"
 
 LICENSE="MIT"
 SLOT="0"

@@ -16,11 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="psutil setproctitle testing"
+GENERATED_IUSE="psutil setproctitle"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/execnet-2.1[${PYTHON_USEDEP}]
-	testing? ( dev-python/filelock[${PYTHON_USEDEP}] )
 	psutil? ( >=dev-python/psutil-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 	setproctitle? ( dev-python/setproctitle[${PYTHON_USEDEP}] )
@@ -39,6 +38,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/filelock[${PYTHON_USEDEP}]
+)"
 
 python_test() {
 	# disable autoloading plugins in nested pytest calls

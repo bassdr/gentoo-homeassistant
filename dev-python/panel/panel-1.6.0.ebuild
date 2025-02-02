@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="fastapi mypy recommended tests"
+GENERATED_IUSE="fastapi mypy recommended"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/bleach[${PYTHON_USEDEP}]
 	<dev-python/bokeh-3.7.0[${PYTHON_USEDEP}]
 	fastapi? ( >=dev-python/bokeh-fastapi-0.1.1[${PYTHON_USEDEP}] )
@@ -36,11 +35,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/param-3.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	recommended? ( dev-python/plotly[${PYTHON_USEDEP}] )
-	tests? ( dev-python/psutil[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/pyviz-comms-2.0.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
@@ -57,5 +51,10 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/psutil[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/watchfiles[${PYTHON_USEDEP}]
 )"

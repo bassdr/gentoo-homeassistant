@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="jaraco.test"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -19,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	dev-python/jaraco-context[${PYTHON_USEDEP}]
@@ -42,7 +41,7 @@ RDEPEND="${GENERATED_DEPEND}
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 )"
 
 src_test() {

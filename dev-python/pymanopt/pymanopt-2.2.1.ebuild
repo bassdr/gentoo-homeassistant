@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all autograd backends ci docs jax tensorflow torch"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	autograd? ( >=dev-python/autograd-1.2[${PYTHON_USEDEP}] )
 	ci? ( ~dev-python/build-0.8.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/docutils-0.16[${PYTHON_USEDEP}] )
@@ -30,7 +29,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	ci? ( ~dev-python/pip-22.3.1[${PYTHON_USEDEP}] )
 	all? ( dev-python/pymanopt[backends,dev,${PYTHON_USEDEP}] )
 	backends? ( dev-python/pymanopt[autograd,jax,tensorflow,torch,${PYTHON_USEDEP}] )
-	!=dev-python/scipy-1.10*[${PYTHON_USEDEP}]
+	!=dev-python/scipy-1.10[${PYTHON_USEDEP}]
 	ci? ( ~dev-python/setuptools-66.1.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-4.2.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )

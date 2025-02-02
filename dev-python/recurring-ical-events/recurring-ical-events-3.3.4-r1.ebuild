@@ -23,16 +23,12 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/icalendar-7.0.0[${PYTHON_USEDEP}]
-	dev-python/icalendar[${PYTHON_USEDEP}]
 	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/tzdata[${PYTHON_USEDEP}]
-	dev-python/x-wr-timezone[${PYTHON_USEDEP}]
-	~dev-python/x-wr-timezone-0*[${PYTHON_USEDEP}]
+	~dev-python/x-wr-timezone-0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	<dev-python/icalendar-7[${PYTHON_USEDEP}]

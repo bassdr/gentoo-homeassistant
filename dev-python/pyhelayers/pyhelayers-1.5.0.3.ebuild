@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/numpy-1.14.5[${PYTHON_USEDEP}]
 	ext? ( >=dev-python/scikit-learn-0.20.0[${PYTHON_USEDEP}] )
 	ext? ( >=dev-python/sklearn-json-0.1.0[${PYTHON_USEDEP}] )

@@ -12,23 +12,22 @@ DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/termcolor/"
 # rename is for avoiding conflict with dev-cpp/termcolor
-SRC_URI="$(pypi_sdist_url) -> ${P}.py.tar.gz"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 "
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare

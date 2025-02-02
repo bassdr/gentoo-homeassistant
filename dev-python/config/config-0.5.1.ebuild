@@ -6,8 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "config" "0.5.1" ".zip")"
+SRC_URI="$(pypi_sdist_url ${PN} ${PV} .zip)"
 
 DESCRIPTION="A hierarchical, easy-to-use, powerful configuration module for Python"
 HOMEPAGE="

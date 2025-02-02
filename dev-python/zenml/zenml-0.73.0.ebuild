@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="adlfs azureml connectors-aws connectors-azure connectors-gcp connectors-kubernetes gcsfs s3fs sagemaker secrets-aws secrets-azure secrets-gcp secrets-hashicorp server templates vertex"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	adlfs? ( >=dev-python/adlfs-2021.10.0[${PYTHON_USEDEP}] )
 	<dev-python/alembic-1.9.0[${PYTHON_USEDEP}]
 	connectors-aws? ( >=dev-python/aws-profile-manager-0.5.0[${PYTHON_USEDEP}] )
@@ -57,7 +56,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/psutil-5.0.0[${PYTHON_USEDEP}]
 	<dev-python/pydantic-2.9[${PYTHON_USEDEP}]
 	dev-python/pydantic-settings[${PYTHON_USEDEP}]
-	server? ( ~dev-python/pyjwt-2.7*[crypto,${PYTHON_USEDEP}] )
+	server? ( ~dev-python/pyjwt-2.7[crypto,${PYTHON_USEDEP}] )
 	<dev-python/pymysql-1.2.0[${PYTHON_USEDEP}]
 	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
 	server? ( <dev-python/python-multipart-0.1.0[${PYTHON_USEDEP}] )

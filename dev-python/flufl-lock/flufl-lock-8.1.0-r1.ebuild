@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="flufl.lock"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,9 +16,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/atpublic[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
 "

@@ -25,14 +25,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/bluetooth-sensor-state-data-1.6.0[${PYTHON_USEDEP}]
-	dev-python/bluetooth-sensor-state-data[${PYTHON_USEDEP}]
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
-	dev-python/home-assistant-bluetooth[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] )
 	>=dev-python/sensor-state-data-2.6.0[${PYTHON_USEDEP}]
-	dev-python/sensor-state-data[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] )
 "

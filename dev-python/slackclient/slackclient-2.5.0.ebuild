@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="Slack API clients for Web API and RTM API"
 HOMEPAGE="
   https://pypi.org/project/slackclient/
@@ -20,10 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	optional? ( >dev-python/aiodns-1.0[${PYTHON_USEDEP}] )
 	>dev-python/aiohttp-3.5.2[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 BDEPEND="

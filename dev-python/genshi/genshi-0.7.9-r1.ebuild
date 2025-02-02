@@ -5,10 +5,10 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN=${PN^}
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="Genshi"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -22,7 +22,7 @@ GENERATED_IUSE="i18n plugin"
 IUSE="${GENERATED_IUSE} doc examples test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	i18n? ( >=dev-python/babel-0.8[${PYTHON_USEDEP}] )
 	plugin? ( >=dev-python/setuptools-0.6_alpha2[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="docs notebook"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/ipython-8.8.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	notebook? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -50,7 +49,6 @@ BDEPEND+=" test? (
 	dev-python/jupyter[${PYTHON_USEDEP}]
 	>=dev-python/pyink-24.3.0[${PYTHON_USEDEP}]
 	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
 	>=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
 	dev-python/pytype[${PYTHON_USEDEP}]
 	>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]

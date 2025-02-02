@@ -18,21 +18,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	<dev-python/cbor2-6.0.0[${PYTHON_USEDEP}]
-	dev-python/cbor2[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodomex-3.3[${PYTHON_USEDEP}]
-	dev-python/pycryptodomex[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	!dev-python/pubnub[${PYTHON_USEDEP}]

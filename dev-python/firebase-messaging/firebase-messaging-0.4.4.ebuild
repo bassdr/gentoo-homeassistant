@@ -25,16 +25,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
-	dev-python/http-ece[${PYTHON_USEDEP}]
 	~dev-python/http-ece-1.1.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
 	docs? ( ~dev-python/sphinx-7.1.2[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-autodoc-typehints-1.24[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] )

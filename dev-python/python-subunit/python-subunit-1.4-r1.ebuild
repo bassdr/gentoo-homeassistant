@@ -21,8 +21,7 @@ S=${WORKDIR}/${MY_P}
 LICENSE="Apache-2.0 BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs test"
-IUSE="${GENERATED_IUSE} static-libs test"
+IUSE="static-libs test"
 RESTRICT="!test? ( test )"
 
 GENERATED_DEPEND="

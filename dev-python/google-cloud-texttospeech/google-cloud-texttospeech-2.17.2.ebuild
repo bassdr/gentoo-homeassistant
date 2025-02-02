@@ -16,21 +16,16 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
-	dev-python/google-api-core[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	!=dev-python/google-api-core-2.0[grpc,${PYTHON_USEDEP}]
 	!=dev-python/google-auth-2.24.0[${PYTHON_USEDEP}]
-	dev-python/google-auth[${PYTHON_USEDEP}]
-	<dev-python/proto-plus-2.0.0dev[${PYTHON_USEDEP}]
-	dev-python/proto-plus[${PYTHON_USEDEP}]
+	<dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
 	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/google-api-core-1.34.1[${PYTHON_USEDEP}]

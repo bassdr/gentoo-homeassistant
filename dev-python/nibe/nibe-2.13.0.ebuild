@@ -22,20 +22,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/async-modbus-0.2.0[${PYTHON_USEDEP}]
-	dev-python/async-modbus[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/asyncclick-8.1.3.4[${PYTHON_USEDEP}] )
 	<dev-python/construct-3.0.0[${PYTHON_USEDEP}]
-	dev-python/construct[${PYTHON_USEDEP}]
 	>=dev-python/exceptiongroup-1.0.0[${PYTHON_USEDEP}]
-	dev-python/exceptiongroup[${PYTHON_USEDEP}]
 	convert? ( >=dev-python/pandas-1.0.5[${PYTHON_USEDEP}] )
 	convert? ( >=dev-python/python-slugify-4.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/tenacity-8.0.0[${PYTHON_USEDEP}]
-	dev-python/tenacity[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/async-modbus-0.2.0[${PYTHON_USEDEP}]

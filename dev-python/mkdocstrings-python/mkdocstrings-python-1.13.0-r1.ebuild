@@ -16,9 +16,8 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/griffe-0.49[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-autorefs-1.2[${PYTHON_USEDEP}]
 	>=dev-python/mkdocstrings-0.26[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="bqstorage geopandas tqdm"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,14 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/db-dtypes-2.0.0[${PYTHON_USEDEP}]
 	geopandas? ( >=dev-python/geopandas-0.9.0[${PYTHON_USEDEP}] )
-	<dev-python/google-api-core-3.0.0dev[${PYTHON_USEDEP}]
+	<dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-2.13.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.7.0[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-bigquery-4.0.0dev[${PYTHON_USEDEP}]
-	bqstorage? ( <dev-python/google-cloud-bigquery-storage-3.0.0dev[${PYTHON_USEDEP}] )
+	<dev-python/google-cloud-bigquery-4.0.0_pre[${PYTHON_USEDEP}]
+	bqstorage? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.18.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.1.4[${PYTHON_USEDEP}]

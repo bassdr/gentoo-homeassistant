@@ -17,23 +17,16 @@ HOMEPAGE="
   https://pypi.org/project/furo/
   Github, https://github.com/pradyunsg/furo
 "
-SRC_URI="$(pypi_wheel_url)"
-S=${WORKDIR}
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.7[${PYTHON_USEDEP}]
-	dev-python/pygments[${PYTHON_USEDEP}]
 	<dev-python/sphinx-9.0[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-basic-ng-1.0.0.bet_alpha2[${PYTHON_USEDEP}]
-	dev-python/sphinx-basic-ng[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]

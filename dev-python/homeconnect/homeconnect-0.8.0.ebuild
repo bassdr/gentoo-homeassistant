@@ -15,14 +15,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/nose[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-oauthlib[${PYTHON_USEDEP}]
 "
@@ -36,3 +34,6 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/nose[${PYTHON_USEDEP}]
+)"

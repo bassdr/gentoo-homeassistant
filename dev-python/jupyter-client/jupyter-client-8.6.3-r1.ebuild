@@ -19,9 +19,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-core-5.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]

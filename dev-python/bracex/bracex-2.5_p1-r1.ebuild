@@ -16,9 +16,8 @@ DOCS_DEPEND="
 "
 
 inherit distutils-r1 docs pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "bracex" "2.5.post1")"
-S="${WORKDIR}/bracex-2.5.post1"
+SRC_URI="$(pypi_sdist_url ${PN} 2.5.post1)"
+S="${WORKDIR}/${PN}-2.5.post1"
 
 DESCRIPTION=""
 HOMEPAGE="

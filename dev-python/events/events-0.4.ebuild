@@ -24,4 +24,3 @@ KEYWORDS="amd64 arm64"
 
 distutils_enable_tests unittest
 
-# PYPI_PN could not be inserted in this ebuild

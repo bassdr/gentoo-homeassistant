@@ -16,13 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( >=dev-python/covdefaults-2.3[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/coverage-7.6.1[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytest-7.4.2[${PYTHON_USEDEP}]
@@ -38,6 +34,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+	>=dev-python/coverage-7.6.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+)"
 
 src_prepare() {
 	distutils-r1_src_prepare

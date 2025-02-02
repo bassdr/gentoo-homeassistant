@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="Flask-Compress"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -18,9 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # brotli on cpython, brotlicffi on pypy3
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/flask[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

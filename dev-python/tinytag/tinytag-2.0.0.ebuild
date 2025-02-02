@@ -3,8 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-
 inherit distutils-r1 pypi
 
 DESCRIPTION="Read audio file metadata"
@@ -17,16 +15,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
-	tests? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pycodestyle[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pylint[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/mypy[${PYTHON_USEDEP}]
+	dev-python/pycodestyle[${PYTHON_USEDEP}]
+	dev-python/pylint[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

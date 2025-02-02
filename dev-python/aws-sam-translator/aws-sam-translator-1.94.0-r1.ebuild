@@ -22,10 +22,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	~dev-python/boto3-1*[${PYTHON_USEDEP}]
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
+	~dev-python/boto3-1[${PYTHON_USEDEP}]
 	<dev-python/jsonschema-5[${PYTHON_USEDEP}]
 	!=dev-python/pydantic-1.10.15[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4[${PYTHON_USEDEP}]
@@ -52,7 +51,7 @@ distutils_enable_tests pytest
 BDEPEND+=" test? (
 	~dev-python/black-24.3.0[${PYTHON_USEDEP}]
 	<dev-python/boto3-2[${PYTHON_USEDEP}]
-	~dev-python/boto3-stubs-1*[appconfig,serverlessrepo,${PYTHON_USEDEP}]
+	~dev-python/boto3-stubs-1[appconfig,serverlessrepo,${PYTHON_USEDEP}]
 	<dev-python/coverage-8[${PYTHON_USEDEP}]
 	~dev-python/dateparser-1.1[${PYTHON_USEDEP}]
 	~dev-python/mypy-1.3.0[${PYTHON_USEDEP}]

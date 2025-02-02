@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint standalone"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	lint? ( ~dev-python/ruff-0.5.5[${PYTHON_USEDEP}] )
 	standalone? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
@@ -45,3 +45,4 @@ BDEPEND+=" test? (
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
 )"
+# RDEPEND could not be inserted in this ebuild

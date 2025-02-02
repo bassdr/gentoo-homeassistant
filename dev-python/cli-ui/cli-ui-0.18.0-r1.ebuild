@@ -25,9 +25,8 @@ fi
 LICENSE="BSD"
 SLOT="0"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/colorama-0.5.0[${PYTHON_USEDEP}]
 	<dev-python/tabulate-0.10.0[${PYTHON_USEDEP}]
 	<dev-python/unidecode-2.0.0[${PYTHON_USEDEP}]

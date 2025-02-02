@@ -3,14 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="otlp"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "opentelemetry-distro" "0.50b0")"
-S="${WORKDIR}/opentelemetry-distro-0.50b0"
+SRC_URI="$(pypi_sdist_url ${PN} 0.50b0)"
+S="${WORKDIR}/${PN}-0.50b0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	~dev-python/opentelemetry-api-1.12[${PYTHON_USEDEP}]
 	otlp? ( ~dev-python/opentelemetry-exporter-otlp-1.29.0[${PYTHON_USEDEP}] )
 	~dev-python/opentelemetry-instrumentation-0.50_beta0[${PYTHON_USEDEP}]

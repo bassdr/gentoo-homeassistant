@@ -28,17 +28,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs qa testing"
+GENERATED_IUSE="docs qa"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( ~dev-python/alabaster-0.7.12[${PYTHON_USEDEP}] )
-	testing? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/babel-2.9.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/chardet-4.0.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/commonmark-0.8.1[${PYTHON_USEDEP}] )
-	testing? ( dev-python/django[${PYTHON_USEDEP}] )
-	testing? ( dev-python/docopt[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
 	qa? ( ~dev-python/flake8-5.0.4[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/future-0.18.2[${PYTHON_USEDEP}] )
@@ -52,7 +48,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	<dev-python/parso-0.9.0[${PYTHON_USEDEP}]
 	docs? ( ~dev-python/pygments-2.8.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/pyparsing-2.4.7[${PYTHON_USEDEP}] )
-	testing? ( <dev-python/pytest-9.0.0[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/pytz-2021.1[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/readthedocs-sphinx-ext-2.1.4[${PYTHON_USEDEP}] )
 	docs? ( ~dev-python/recommonmark-0.5.0[${PYTHON_USEDEP}] )
@@ -76,6 +71,13 @@ distutils_enable_sphinx docs \
 	dev-python/parso \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/attrs[${PYTHON_USEDEP}]
+	dev-python/colorama[${PYTHON_USEDEP}]
+	dev-python/django[${PYTHON_USEDEP}]
+	dev-python/docopt[${PYTHON_USEDEP}]
+	<dev-python/pytest-9.0.0[${PYTHON_USEDEP}]
+)"
 
 python_prepare_all() {
 	# upstream includes these as submodules ...

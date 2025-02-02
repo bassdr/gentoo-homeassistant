@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="aflw2k3d beir ble-wind-field c4 c4-wsrs cats-vs-dogs colorectal-histology common-voice duke-ultrasound eurosat groove gtzan huggingface imagenet2012-corrupted librispeech lsun matplotlib nsynth ogbg-molpcba pet-finder qm9 robonet smartwatch-gestures svhn tensorflow tensorflow-data-validation tests-all tf-nightly the300w-lp wake-vision wider-face wiki-dialog wikipedia wsc273 youtube-vis"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	beir? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	c4-wsrs? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
@@ -37,9 +36,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	huggingface? ( dev-python/dill[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/dill[${PYTHON_USEDEP}] )
 	dev-python/dm-tree[${PYTHON_USEDEP}]
-	dev-python/envlogger[${PYTHON_USEDEP}]
-	dev-python/envlogger[${PYTHON_USEDEP}]
-	dev-python/envlogger[${PYTHON_USEDEP}]
 	dev-python/envlogger[${PYTHON_USEDEP}]
 	>=dev-python/etils-1.9.1[edc,enp,epath,epy,etree,${PYTHON_USEDEP}]
 	c4? ( dev-python/gcld3[${PYTHON_USEDEP}] )
@@ -140,8 +136,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	dev-python/simple-parsing[${PYTHON_USEDEP}]
 	tensorflow? ( >=dev-python/tensorflow-2.1[${PYTHON_USEDEP}] )
 	tensorflow-data-validation? ( dev-python/tensorflow-data-validation[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep 'dev-python/tensorflow-io[tensorflow,${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep 'dev-python/tensorflow-io[tensorflow,${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep 'dev-python/tensorflow-io[tensorflow,${PYTHON_USEDEP}]' python3_12)
 	lsun? ( dev-python/tensorflow-io[tensorflow,${PYTHON_USEDEP}] )
 	dev-python/tensorflow-metadata[${PYTHON_USEDEP}]

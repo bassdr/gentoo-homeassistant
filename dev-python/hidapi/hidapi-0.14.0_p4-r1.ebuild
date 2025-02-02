@@ -8,9 +8,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "hidapi" "0.14.0.post4")"
-S="${WORKDIR}/hidapi-0.14.0.post4"
+SRC_URI="$(pypi_sdist_url ${PN} 0.14.0.post4)"
+S="${WORKDIR}/${PN}-0.14.0.post4"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,9 +19,8 @@ LICENSE="|| ( BSD GPL-3 )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/setuptools-19.0[${PYTHON_USEDEP}]
 "
 DEPEND="

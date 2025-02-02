@@ -3,14 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "aetcd" "1.0.0a4")"
-S="${WORKDIR}/aetcd-1.0.0a4"
+SRC_URI="$(pypi_sdist_url ${PN} 1.0.0a4)"
+S="${WORKDIR}/${PN}-1.0.0a4"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/grpcio-2[${PYTHON_USEDEP}]
 	<dev-python/protobuf-5[${PYTHON_USEDEP}]
 	doc? ( ~dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )

@@ -11,19 +11,18 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Bypassing reCaptcha V3 by sending HTTP requests & solving reCaptcha V2 using speech to text."
 HOMEPAGE="
-  https://pypi.org/project/PyPasser/
+  https://pypi.org/project/pypasser/
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/pydub[${PYTHON_USEDEP}]
 	dev-python/pysocks[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

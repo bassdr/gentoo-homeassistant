@@ -17,9 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/fastapi[${PYTHON_USEDEP}]
-	~dev-python/furiosa-runtime-0.10*[${PYTHON_USEDEP}]
+	~dev-python/furiosa-runtime-0.10[${PYTHON_USEDEP}]
 	dev-python/grpcio-tools[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
 	openvino? ( dev-python/openvino[${PYTHON_USEDEP}] )
@@ -38,7 +38,6 @@ BDEPEND+=" test? (
 	dev-python/mypy-extensions[${PYTHON_USEDEP}]
 	dev-python/mypy-protobuf[${PYTHON_USEDEP}]
 	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
 	~dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

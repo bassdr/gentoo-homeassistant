@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs openapi"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/autodoc-traits[${PYTHON_USEDEP}] )
 	>=dev-python/babel-2.10[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]

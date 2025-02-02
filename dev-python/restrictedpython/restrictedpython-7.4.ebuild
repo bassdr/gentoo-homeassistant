@@ -28,7 +28,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
@@ -45,4 +45,3 @@ BDEPEND+=" test? (
 	dev-python/pytest-mock[${PYTHON_USEDEP}]
 )"
 # RDEPEND could not be inserted in this ebuild
-# PYPI_PN could not be inserted in this ebuild

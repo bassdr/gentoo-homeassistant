@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="azure-key-vault toml yaml"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	azure-key-vault? ( >=dev-python/azure-identity-1.16.0[${PYTHON_USEDEP}] )
 	azure-key-vault? ( >=dev-python/azure-keyvault-secrets-4.8.0[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2.7.0[${PYTHON_USEDEP}]

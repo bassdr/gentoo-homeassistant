@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN=${PN^}
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -22,7 +21,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="visualize"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	visualize? ( >dev-python/graphviz-0.5.1[${PYTHON_USEDEP}] )
 	visualize? ( >=dev-python/twisted-16.1.1[${PYTHON_USEDEP}] )
 "

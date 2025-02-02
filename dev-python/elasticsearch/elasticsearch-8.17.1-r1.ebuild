@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="async docs orjson pyarrow requests vectorstore-mmr"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	async? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	<dev-python/elastic-transport-9[${PYTHON_USEDEP}]
 	vectorstore-mmr? ( >=dev-python/numpy-1[${PYTHON_USEDEP}] )

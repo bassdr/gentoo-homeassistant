@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build pytest"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	build? ( dev-python/furo[${PYTHON_USEDEP}] )
 	pytest? ( >=dev-python/pytest-8[${PYTHON_USEDEP}] )
 	build? ( dev-python/sphinx[${PYTHON_USEDEP}] )

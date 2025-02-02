@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all pendulum phonenumbers pycountry semver"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( <dev-python/pendulum-4.0.0[${PYTHON_USEDEP}] )
 	pendulum? ( <dev-python/pendulum-4.0.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/phonenumbers-9[${PYTHON_USEDEP}] )
@@ -26,10 +25,9 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	pycountry? ( >=dev-python/pycountry-23[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2.5.2[${PYTHON_USEDEP}]
 	<dev-python/python-ulid-2[${PYTHON_USEDEP}]
-	<dev-python/python-ulid-2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pytz-2024.1[${PYTHON_USEDEP}] )
-	all? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
 	semver? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	all? ( >=dev-python/tzdata-2024.1[${PYTHON_USEDEP}] )

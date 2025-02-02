@@ -4,9 +4,9 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION="Extension to include jQuery on newer Sphinx releases"
@@ -20,11 +20,9 @@ LICENSE="0BSD MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/sphinx[${PYTHON_USEDEP}]

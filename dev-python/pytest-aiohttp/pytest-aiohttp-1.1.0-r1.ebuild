@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
@@ -17,12 +16,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="testing"
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.11.0_beta0[${PYTHON_USEDEP}]
-	testing? ( ~dev-python/coverage-6.2[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/mypy-1.12.1[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-6.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}]
 "
@@ -36,6 +32,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	~dev-python/coverage-6.2[${PYTHON_USEDEP}]
+	~dev-python/mypy-1.12.1[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_DESELECT=(
 	# warning doesn't seem to be emitted for some reason

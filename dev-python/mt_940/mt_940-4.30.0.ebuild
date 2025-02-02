@@ -5,8 +5,8 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="mt-940"
 PYPI_NO_NORMALIZE=1
+PYPI_PN="mt-940"
 inherit distutils-r1 pypi
 
 DESCRIPTION="A library to parse MT940 files and returns smart Python collections for statistics and manipulation."
@@ -17,20 +17,14 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs tests"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/gitpython-2.1.9[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cache[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cover[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-flake8[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx2rst[${PYTHON_USEDEP}] )
 "
@@ -45,3 +39,11 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cache[${PYTHON_USEDEP}]
+	dev-python/pytest-cover[${PYTHON_USEDEP}]
+	dev-python/pytest-flake8[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+)"

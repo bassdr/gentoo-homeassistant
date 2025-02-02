@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="developer doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/numpy-1.22[${PYTHON_USEDEP}] )

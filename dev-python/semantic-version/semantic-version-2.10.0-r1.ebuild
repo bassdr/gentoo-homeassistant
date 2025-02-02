@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="semantic_version"
 inherit distutils-r1 pypi
 
 DESCRIPTION="A library implementing the 'SemVer' scheme."

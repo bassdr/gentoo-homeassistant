@@ -21,7 +21,7 @@ IUSE="${GENERATED_IUSE} big-endian"
 
 # Check QPDF_MIN_VERSION in pyproject.toml on bumps, as well as
 # https://qpdf.readthedocs.io/en/stable/release-notes.html.
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.8[${PYTHON_USEDEP}]
 	mypy? ( dev-python/lxml-stubs[${PYTHON_USEDEP}] )

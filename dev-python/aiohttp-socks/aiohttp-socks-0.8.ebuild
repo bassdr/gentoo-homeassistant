@@ -8,6 +8,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 0.8.0)"
+S="${WORKDIR}/${PN}-0.8.0"
 
 DESCRIPTION="Proxy connector for aiohttp"
 HOMEPAGE="
@@ -20,11 +21,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-2.3.2[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	<dev-python/python-socks-3.0.0[asyncio,${PYTHON_USEDEP}]
-	dev-python/python-socks[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]

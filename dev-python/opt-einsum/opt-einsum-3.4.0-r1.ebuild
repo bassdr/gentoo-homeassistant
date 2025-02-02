@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="opt_einsum"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""

@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
+
 DESCRIPTION="An generic async GeoJSON client library."
 HOMEPAGE="
   https://pypi.org/project/aio-geojson-generic-client/
@@ -17,28 +18,16 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="tests"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aio-geojson-client-0.21[${PYTHON_USEDEP}]
-	dev-python/aio-geojson-client[${PYTHON_USEDEP}]
 	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	tests? ( dev-python/aioresponses[${PYTHON_USEDEP}] )
-	tests? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	>=dev-python/geojson-3.1.0[${PYTHON_USEDEP}]
-	dev-python/geojson[${PYTHON_USEDEP}]
-	tests? ( dev-python/mock[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	>=dev-python/pytz-2019.01[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aio-geojson-client-0.20[${PYTHON_USEDEP}]
@@ -48,3 +37,12 @@ RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pytz-2019.01[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/aioresponses[${PYTHON_USEDEP}]
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/mock[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
+)"

@@ -18,14 +18,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/autodoc-traits[${PYTHON_USEDEP}] )
 	docs? ( dev-python/flaky[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/ipykernel-6.19.3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
 	>=dev-python/jupyter-client-6.1.12[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-core-5.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/mock[${PYTHON_USEDEP}] )
 	docs? ( dev-python/moto[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

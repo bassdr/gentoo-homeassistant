@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="onnx onnx-gpu openvino train"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	train? ( >=dev-python/accelerate-0.20.3[${PYTHON_USEDEP}] )
 	train? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.20.0[${PYTHON_USEDEP}]

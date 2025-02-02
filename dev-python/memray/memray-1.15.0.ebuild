@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="benchmark docs lint"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	benchmark? ( dev-python/asv[${PYTHON_USEDEP}] )
 	lint? ( dev-python/black[${PYTHON_USEDEP}] )
 	docs? ( dev-python/bump2version[${PYTHON_USEDEP}] )
@@ -25,13 +24,11 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	lint? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/greenlet[${PYTHON_USEDEP}]
-	dev-python/greenlet[${PYTHON_USEDEP}]
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	lint? ( dev-python/isort[${PYTHON_USEDEP}] )
 	>=dev-python/jinja2-2.9[${PYTHON_USEDEP}]
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	>=dev-python/rich-11.2.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-argparse[${PYTHON_USEDEP}] )
@@ -48,25 +45,17 @@ BDEPEND+=" test? (
 	dev-python/bump2version[${PYTHON_USEDEP}]
 	dev-python/check-manifest[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/flake8[${PYTHON_USEDEP}]
 	dev-python/furo[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
 	dev-python/isort[${PYTHON_USEDEP}]
 	dev-python/mypy[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-textual-snapshot[${PYTHON_USEDEP}]
 	dev-python/pytest-textual-snapshot[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/sphinx-argparse[${PYTHON_USEDEP}]
-	!=dev-python/textual-0.65.2[${PYTHON_USEDEP}]
 	!=dev-python/textual-0.65.2[${PYTHON_USEDEP}]
 	dev-python/towncrier[${PYTHON_USEDEP}]
 )"

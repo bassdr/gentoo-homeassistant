@@ -6,10 +6,10 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_IN_SOURCE_BUILD="1"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-PYPI_PN="wxPython"
 WX_GTK_VER="3.2-gtk3"
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="wxPython"
 inherit distutils-r1 multiprocessing virtualx wxwidgets pypi
 
 DESCRIPTION=""
@@ -19,14 +19,13 @@ HOMEPAGE="
 LICENSE="wxWinLL-3"
 SLOT="4.0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test webkit"
+IUSE="test webkit"
 RESTRICT="!test? ( test )"
 
 # wxPython doesn't seem to be able to optionally disable features. webkit is
 # optionally patched out because it's so huge, but other elements are not,
 # which makes us have to require all features from wxGTK
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "

@@ -26,6 +26,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests unittest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	dev-python/nose[${PYTHON_USEDEP}]
+)"
 
 python_compile() {
 	distutils-r1_python_compile
@@ -35,4 +39,3 @@ python_compile() {
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
 # extras could not be inserted in this ebuild
-# PYPI_PN could not be inserted in this ebuild

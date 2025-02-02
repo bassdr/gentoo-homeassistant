@@ -6,6 +6,9 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 2023.9.0)"
+S="${WORKDIR}/${PN}-2023.9.0"
+
 DESCRIPTION="A Python 3, asyncio-based library for the ReCollect Waste API"
 HOMEPAGE="
   https://pypi.org/project/aiorecollect/
@@ -17,17 +20,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
-	dev-python/certifi[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]

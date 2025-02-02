@@ -5,31 +5,28 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN="zope.interface"
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="zope.interface"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Interfaces for Python"
 HOMEPAGE="
-  https://pypi.org/project/zope.interface/
+  https://pypi.org/project/zope-interface/
 "
 
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-event[${PYTHON_USEDEP}] )
-	testing? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	test? (

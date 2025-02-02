@@ -37,4 +37,3 @@ src_prepare() {
 	distutils-r1_src_prepare
 }
 
-# PYPI_PN could not be inserted in this ebuild

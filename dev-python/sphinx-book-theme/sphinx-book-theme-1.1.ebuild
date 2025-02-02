@@ -3,11 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="code-style doc"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 1.1.0)"
+S="${WORKDIR}/${PN}-1.1.0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -17,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/ablog[${PYTHON_USEDEP}] )
 	doc? ( dev-python/folium[${PYTHON_USEDEP}] )
 	doc? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )

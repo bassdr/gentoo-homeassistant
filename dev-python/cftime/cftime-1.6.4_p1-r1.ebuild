@@ -8,9 +8,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "cftime" "1.6.4.post1")"
-S="${WORKDIR}/cftime-1.6.4.post1"
+SRC_URI="$(pypi_sdist_url ${PN} 1.6.4.post1)"
+S="${WORKDIR}/${PN}-1.6.4.post1"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -20,9 +19,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0_beta1[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep '>dev-python/numpy-1.13.3[${PYTHON_USEDEP}]' python3_12)
 "

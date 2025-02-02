@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,8 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	!=dev-python/coverage-6.0*[toml,${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	!=dev-python/coverage-6.0[toml,${PYTHON_USEDEP}]
 	<dev-python/docopt-0.7.0[${PYTHON_USEDEP}]
 	yaml? ( <dev-python/pyyaml-7.0[${PYTHON_USEDEP}] )
 	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]

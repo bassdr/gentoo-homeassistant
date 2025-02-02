@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 # big_o is only used in test_complexity, that we ignore
 GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
@@ -49,7 +49,7 @@ BDEPEND+=" test? (
 	dev-python/jaraco-itertools[${PYTHON_USEDEP}]
 	dev-python/jaraco-test[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	dev-python/pytest-ignore-flaky[${PYTHON_USEDEP}]
 )"
 

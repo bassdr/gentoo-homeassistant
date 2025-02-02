@@ -3,10 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,10 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-4.0.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '~dev-python/numpy-1.23.4[${PYTHON_USEDEP}]' python3_12)
 	~dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '~dev-python/numpy-1.23.4[${PYTHON_USEDEP}]' python3_12)
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pygls-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typeshed-client-2.0.5[${PYTHON_USEDEP}]

@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="all build tests"
+GENERATED_IUSE="all build"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="jupyter_bokeh"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,16 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	~dev-python/bokeh-3*[${PYTHON_USEDEP}]
-	tests? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	~dev-python/ipywidgets-8*[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	~dev-python/bokeh-3[${PYTHON_USEDEP}]
+	~dev-python/ipywidgets-8[${PYTHON_USEDEP}]
 	all? ( dev-python/jupyter-bokeh[build,${PYTHON_USEDEP}] )
 	all? ( dev-python/jupyter-bokeh[tests,${PYTHON_USEDEP}] )
 	build? ( ~dev-python/jupyterlab-4.0[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/setuptools-40.8.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/flake8[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

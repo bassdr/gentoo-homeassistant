@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="ProgettiHWSW"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Controls ProgettiHWSW relay boards."
 HOMEPAGE="
   https://pypi.org/project/ProgettiHWSW/
@@ -16,11 +17,10 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 "

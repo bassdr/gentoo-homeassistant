@@ -11,20 +11,19 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Controlling Energenie Power Strips with python."
 HOMEPAGE="
-  https://pypi.org/project/pyEGPS/
+  https://pypi.org/project/pyegps/
   Homepage, https://github.com/gnumpi/pyegps
 "
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyusb[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

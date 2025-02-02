@@ -3,11 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="code_style rtd testing"
+GENERATED_IUSE="code_style rtd"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="sphinx_external_toc"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -18,13 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/click-7.1[${PYTHON_USEDEP}]
-	testing? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	rtd? ( >=dev-python/myst-parser-1.0.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-7.1[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/sphinx-book-theme-1.0.0[${PYTHON_USEDEP}] )
@@ -33,3 +27,9 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/coverage[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.1[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+)"

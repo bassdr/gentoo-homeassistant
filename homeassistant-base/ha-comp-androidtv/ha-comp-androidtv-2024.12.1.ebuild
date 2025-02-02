@@ -13,5 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/adb-shell-0.4.4[async,${PYTHON_USEDEP}]
 	~dev-python/androidtv-0.0.75[async,${PYTHON_USEDEP}]
-	~dev-python/pure-python-adb-0.3.0_p0[async,${PYTHON_USEDEP}]
+	~dev-python/pure-python-adb-0.3.0_pre0[async,${PYTHON_USEDEP}]
 "

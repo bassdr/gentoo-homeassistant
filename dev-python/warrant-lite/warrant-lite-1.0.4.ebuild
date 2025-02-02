@@ -16,19 +16,14 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/boto3-1.9[${PYTHON_USEDEP}]
-	dev-python/boto3[${PYTHON_USEDEP}]
 	>=dev-python/envs-1.3[${PYTHON_USEDEP}]
-	dev-python/envs[${PYTHON_USEDEP}]
 	>=dev-python/python-jose-3.0[${PYTHON_USEDEP}]
-	dev-python/python-jose[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/boto3-1.9[${PYTHON_USEDEP}]

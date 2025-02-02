@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="css"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	css? ( <dev-python/tinycss2-1.5[${PYTHON_USEDEP}] )
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="cuda cuda-autodetect cuda100 cuda101 cuda102 cuda110 cuda111 cuda112 cuda113 cuda114 cuda115 cuda116 cuda117 cuda11x cuda12x cuda80 cuda90 cuda91 cuda92 datasets mxnet tensorflow torch"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/blis-1.1.0[${PYTHON_USEDEP}]
 	<dev-python/catalogue-2.1.0[${PYTHON_USEDEP}]
 	<dev-python/confection-1.0.0[${PYTHON_USEDEP}]

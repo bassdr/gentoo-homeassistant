@@ -27,7 +27,7 @@ GENERATED_IUSE="all aws clipboard compression computation consortium-standard ex
 IUSE="${GENERATED_IUSE} big-endian full-support minimal test X"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
 	postgresql? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
 	sql-other? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
@@ -59,7 +59,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/numexpr-2.8.4[${PYTHON_USEDEP}] )
 	performance? ( >=dev-python/numexpr-2.8.4[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
-	dev-python/numpy[${PYTHON_USEDEP}]
 	all? ( >=dev-python/odfpy-1.4.1[${PYTHON_USEDEP}] )
 	excel? ( >=dev-python/odfpy-1.4.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/openpyxl-3.1.0[${PYTHON_USEDEP}] )
@@ -83,9 +82,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/python-calamine-0.1.7[${PYTHON_USEDEP}] )
 	excel? ( >=dev-python/python-calamine-0.1.7[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2020.1[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pyxlsb-1.0.10[${PYTHON_USEDEP}] )
 	excel? ( >=dev-python/pyxlsb-1.0.10[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/qtpy-2.3.0[${PYTHON_USEDEP}] )
@@ -103,7 +100,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all? ( >=dev-python/tabulate-0.9.0[${PYTHON_USEDEP}] )
 	output-formatting? ( >=dev-python/tabulate-0.9.0[${PYTHON_USEDEP}] )
 	>=dev-python/tzdata-2022.7[${PYTHON_USEDEP}]
-	dev-python/tzdata[${PYTHON_USEDEP}]
 	all? ( >=dev-python/xarray-2022.12.0[${PYTHON_USEDEP}] )
 	computation? ( >=dev-python/xarray-2022.12.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/xlrd-2.0.1[${PYTHON_USEDEP}] )

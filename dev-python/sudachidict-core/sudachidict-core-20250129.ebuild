@@ -3,15 +3,15 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 IUSE=""
 
-PYPI_PN="sudachidict_core"
+PYPI_NO_NORMALIZE=1
+PYPI_PN="SudachiDict-core"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sudachidict-core/"
+  https://pypi.org/project/sudachidict_core/"
 
 LICENSE="Apache-2.0"
 SLOT="0"

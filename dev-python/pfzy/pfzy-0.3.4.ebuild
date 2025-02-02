@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2021.8.17_beta.43[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-0.15.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-4.1.2[${PYTHON_USEDEP}] )

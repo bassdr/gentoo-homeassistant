@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="parser"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	parser? ( <dev-python/pyhcl-0.5.0[${PYTHON_USEDEP}] )
 	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 "

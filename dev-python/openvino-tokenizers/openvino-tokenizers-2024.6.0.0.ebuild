@@ -17,9 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	fuzzing? ( dev-python/atheris[${PYTHON_USEDEP}] )
-	~dev-python/openvino-2024.6.0_p[${PYTHON_USEDEP}]
+	~dev-python/openvino-2024.6.0_pre[${PYTHON_USEDEP}]
 	all? ( dev-python/openvino-tokenizers[dev,transformers,${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/openvino-tokenizers[transformers,${PYTHON_USEDEP}] )
 	fuzzing? ( dev-python/openvino-tokenizers[transformers,${PYTHON_USEDEP}] )

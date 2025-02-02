@@ -21,9 +21,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/betamax-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-toolbelt-0.4.0[${PYTHON_USEDEP}]
 "

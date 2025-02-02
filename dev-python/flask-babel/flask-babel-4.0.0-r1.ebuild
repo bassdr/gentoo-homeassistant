@@ -20,9 +20,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/babel-2.12[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.1[${PYTHON_USEDEP}]
@@ -44,4 +43,3 @@ BDEPEND="
 distutils_enable_sphinx docs \
 	dev-python/pallets-sphinx-themes
 distutils_enable_tests pytest
-# PYPI_PN could not be inserted in this ebuild

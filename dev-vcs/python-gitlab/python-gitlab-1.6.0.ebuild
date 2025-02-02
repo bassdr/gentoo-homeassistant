@@ -4,7 +4,6 @@
 EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 inherit distutils-r1
 
 DESCRIPTION="Interact with GitLab API"
@@ -16,16 +15,17 @@ if [[ ${PV} = *9999* ]]; then
 	EGIT_REPO_URI="https://github.com/python-gitlab/python-gitlab"
 	inherit git-r3
 else
+PYPI_NO_NORMALIZE=1
 	inherit pypi
+
 KEYWORDS="amd64 arm64"
 fi
 
 LICENSE="LGPL-3"
 SLOT="0"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "

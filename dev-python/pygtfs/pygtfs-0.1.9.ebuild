@@ -15,19 +15,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/docopt[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2014.9[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-0.7.8[${PYTHON_USEDEP}]
-	dev-python/sqlalchemy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/sqlalchemy-0.7.8[${PYTHON_USEDEP}]

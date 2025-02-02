@@ -11,8 +11,6 @@ DESCRIPTION="A libudev binding"
 HOMEPAGE="
   https://pypi.org/project/pyudev/
 "
-SRC_URI="https://github.com/pyudev/pyudev/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
-
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 arm64"

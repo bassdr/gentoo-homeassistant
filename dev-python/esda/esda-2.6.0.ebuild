@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs notebooks plus tests"
+GENERATED_IUSE="docs notebooks plus"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,13 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	tests? ( dev-python/codecov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/folium[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/geopandas-0.12[${PYTHON_USEDEP}]
 	>=dev-python/libpysal-4.12[${PYTHON_USEDEP}]
-	tests? ( dev-python/mapclassify[${PYTHON_USEDEP}] )
-	tests? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	notebooks? ( dev-python/matplotlib-scalebar[${PYTHON_USEDEP}] )
 	docs? ( dev-python/nbsphinx[${PYTHON_USEDEP}] )
 	plus? ( >=dev-python/numba-0.57[${PYTHON_USEDEP}] )
@@ -31,9 +26,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	>dev-python/pandas-1.5[${PYTHON_USEDEP}]
 	docs? ( dev-python/pandoc[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	plus? ( >=dev-python/rtree-1.0[${PYTHON_USEDEP}] )
 	>=dev-python/scikit-learn-1.2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.9[${PYTHON_USEDEP}]
@@ -48,6 +40,13 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
+	dev-python/codecov[${PYTHON_USEDEP}]
+	dev-python/folium[${PYTHON_USEDEP}]
+	dev-python/mapclassify[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	dev-python/ruff[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 )"

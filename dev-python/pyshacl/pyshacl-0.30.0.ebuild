@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="dev-coverage dev-lint dev-type-checking http js"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-coverage? ( !=dev-python/coverage-6.1.1[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>dev-python/importlib-metadata-6[${PYTHON_USEDEP}]' python3_12)
 	dev-type-checking? ( >=dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )

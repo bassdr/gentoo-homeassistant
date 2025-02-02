@@ -3,9 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,13 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
-	<dev-python/google-cloud-pubsub-3.0.0dev[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2.0.0dev[${PYTHON_USEDEP}]
-	<dev-python/grpcio-status-2.0.0dev[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '<dev-python/overrides-8.0.0[${PYTHON_USEDEP}]' python3_13{,t})
+GENERATED_DEPEND="${RDEPEND}
+	!=dev-python/google-api-core-2.0[grpc,${PYTHON_USEDEP}]
+	<dev-python/google-cloud-pubsub-3.0.0_pre[${PYTHON_USEDEP}]
+	<dev-python/grpcio-2.0.0_pre[${PYTHON_USEDEP}]
+	<dev-python/grpcio-status-2.0.0_pre[${PYTHON_USEDEP}]
 	<dev-python/overrides-8.0.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '<dev-python/overrides-8.0.0[${PYTHON_USEDEP}]' python3_13{,t})
 "
 RDEPEND="${GENERATED_DEPEND}"
 

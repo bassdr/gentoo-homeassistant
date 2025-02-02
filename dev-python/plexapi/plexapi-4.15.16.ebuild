@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PlexAPI"
 inherit distutils-r1 pypi
+
 DESCRIPTION="Python bindings for the Plex API."
 HOMEPAGE="
   https://pypi.org/project/PlexAPI/
@@ -22,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	alert? ( >=dev-python/websocket-client-1.3.3[${PYTHON_USEDEP}] )
 "

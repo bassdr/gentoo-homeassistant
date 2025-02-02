@@ -22,13 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 	<dev-python/python-engineio-v3-4[${PYTHON_USEDEP}]
-	dev-python/python-engineio-v3[${PYTHON_USEDEP}]
 	client? ( >=dev-python/requests-2.21.0[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
 	client? ( >=dev-python/websocket-client-0.54.0[${PYTHON_USEDEP}] )
 	asyncio-client? ( >=dev-python/websockets-7.0[${PYTHON_USEDEP}] )
 "

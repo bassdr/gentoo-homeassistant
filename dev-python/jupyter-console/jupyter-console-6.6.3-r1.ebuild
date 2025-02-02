@@ -16,13 +16,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-7.0.0[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-core-5.0[${PYTHON_USEDEP}]
 	>=dev-python/prompt-toolkit-3.0.30[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 	>=dev-python/pyzmq-17[${PYTHON_USEDEP}]

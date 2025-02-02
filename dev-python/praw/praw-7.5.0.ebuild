@@ -25,18 +25,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	ci? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	<dev-python/prawcore-3[${PYTHON_USEDEP}]
-	dev-python/prawcore[${PYTHON_USEDEP}]
 	lint? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	readthedocs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	lint? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	readthedocs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	>=dev-python/update-checker-0.18[${PYTHON_USEDEP}]
-	dev-python/update-checker[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-0.54.0[${PYTHON_USEDEP}]
-	dev-python/websocket-client[${PYTHON_USEDEP}]
 	lint? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -54,11 +51,8 @@ python_test() {
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	<dev-python/betamax-0.9[${PYTHON_USEDEP}]
-	<dev-python/betamax-0.9[${PYTHON_USEDEP}]
-	<dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}]
 	<dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
 	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]

@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,14 +17,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/jaraco-packaging-3.2[${PYTHON_USEDEP}] )
-	testing? ( !=dev-python/pytest-3.7.3[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-checkdocs[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-flake8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
+	dev-python/pytest-checkdocs[${PYTHON_USEDEP}]
+	dev-python/pytest-flake8[${PYTHON_USEDEP}]
+)"

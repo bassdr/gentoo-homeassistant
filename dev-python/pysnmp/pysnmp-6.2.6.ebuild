@@ -19,15 +19,11 @@ KEYWORDS="amd64 arm64"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/pyasn1-0.5.0[${PYTHON_USEDEP}]
-	dev-python/pyasn1[${PYTHON_USEDEP}]
 	<dev-python/pysmi-2.0.0[${PYTHON_USEDEP}]
-	dev-python/pysmi[${PYTHON_USEDEP}]
 	<dev-python/pysnmpcrypto-0.0.5[${PYTHON_USEDEP}]
-	dev-python/pysnmpcrypto[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]

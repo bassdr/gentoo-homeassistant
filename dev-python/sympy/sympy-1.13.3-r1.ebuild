@@ -21,10 +21,9 @@ S=${WORKDIR}/${P/_/}
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} imaging ipython latex mathml opengl pdf png pyglet symengine texmacs"
+IUSE="imaging ipython latex mathml opengl pdf png pyglet symengine texmacs"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/mpmath-1.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

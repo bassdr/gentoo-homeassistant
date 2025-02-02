@@ -4,10 +4,10 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYSIDE2_COMPAT=( python3_{10..11} )
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 virtualx pypi
 
 DESCRIPTION=""
@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pluggy-1.1[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )

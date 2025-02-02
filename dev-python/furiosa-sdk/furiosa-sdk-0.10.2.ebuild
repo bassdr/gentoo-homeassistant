@@ -17,26 +17,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	cli? ( ~dev-python/furiosa-cli-0.10*[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/furiosa-cli-0.10*[${PYTHON_USEDEP}] )
-	~dev-python/furiosa-cli-0.10*[${PYTHON_USEDEP}]
-	device? ( ~dev-python/furiosa-device-0.10*[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/furiosa-device-0.10*[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/furiosa-litmus-0.10*[${PYTHON_USEDEP}] )
-	litmus? ( ~dev-python/furiosa-litmus-0.10*[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/furiosa-optimizer-0.10*[${PYTHON_USEDEP}] )
-	quantizer? ( ~dev-python/furiosa-optimizer-0.10*[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/furiosa-quantizer-0.10*[${PYTHON_USEDEP}] )
-	quantizer? ( ~dev-python/furiosa-quantizer-0.10*[${PYTHON_USEDEP}] )
-	~dev-python/furiosa-runtime-0.10*[${PYTHON_USEDEP}]
-	full? ( ~dev-python/furiosa-server-0.10*[${PYTHON_USEDEP}] )
-	server? ( ~dev-python/furiosa-server-0.10*[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/furiosa-serving-0.10*[${PYTHON_USEDEP}] )
-	serving? ( ~dev-python/furiosa-serving-0.10*[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/furiosa-tools-0.10*[${PYTHON_USEDEP}] )
-	tool? ( ~dev-python/furiosa-tools-0.10*[${PYTHON_USEDEP}] )
-	~dev-python/furiosa-tools-0.10*[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	~dev-python/furiosa-cli-0.10[${PYTHON_USEDEP}]
+	cli? ( ~dev-python/furiosa-cli-0.10[${PYTHON_USEDEP}] )
+	full? ( ~dev-python/furiosa-cli-0.10[${PYTHON_USEDEP}] )
+	device? ( ~dev-python/furiosa-device-0.10[${PYTHON_USEDEP}] )
+	full? ( ~dev-python/furiosa-device-0.10[${PYTHON_USEDEP}] )
+	full? ( ~dev-python/furiosa-litmus-0.10[${PYTHON_USEDEP}] )
+	litmus? ( ~dev-python/furiosa-litmus-0.10[${PYTHON_USEDEP}] )
+	full? ( ~dev-python/furiosa-optimizer-0.10[${PYTHON_USEDEP}] )
+	quantizer? ( ~dev-python/furiosa-optimizer-0.10[${PYTHON_USEDEP}] )
+	full? ( ~dev-python/furiosa-quantizer-0.10[${PYTHON_USEDEP}] )
+	quantizer? ( ~dev-python/furiosa-quantizer-0.10[${PYTHON_USEDEP}] )
+	~dev-python/furiosa-runtime-0.10[${PYTHON_USEDEP}]
+	full? ( ~dev-python/furiosa-server-0.10[${PYTHON_USEDEP}] )
+	server? ( ~dev-python/furiosa-server-0.10[${PYTHON_USEDEP}] )
+	full? ( ~dev-python/furiosa-serving-0.10[${PYTHON_USEDEP}] )
+	serving? ( ~dev-python/furiosa-serving-0.10[${PYTHON_USEDEP}] )
+	~dev-python/furiosa-tools-0.10[${PYTHON_USEDEP}]
+	full? ( ~dev-python/furiosa-tools-0.10[${PYTHON_USEDEP}] )
+	tool? ( ~dev-python/furiosa-tools-0.10[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 

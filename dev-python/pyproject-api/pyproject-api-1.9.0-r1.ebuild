@@ -16,16 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( >=dev-python/covdefaults-2.3[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-8.3.4[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-cov-6[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/setuptools-75.8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
@@ -44,6 +39,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-cov-6[${PYTHON_USEDEP}]
+	>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-75.8[${PYTHON_USEDEP}]
+)"
 
 EPYTEST_DESELECT=(
 	# hardcodes assumptions specific to setuptools-70.1.0

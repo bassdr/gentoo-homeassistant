@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="testing tox"
+GENERATED_IUSE="tox"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 PYPI_PN="keyrings.google-artifactregistry-auth"
 inherit distutils-r1 pypi
 
@@ -18,15 +18,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/google-auth[${PYTHON_USEDEP}]
 	dev-python/keyring[${PYTHON_USEDEP}]
 	dev-python/pluggy[${PYTHON_USEDEP}]
-	testing? ( !=dev-python/pytest-3.7.3[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
-	testing? ( >=dev-python/pytest-checkdocs-1.2.3[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-flake8[${PYTHON_USEDEP}] )
 	dev-python/pytest-mypy[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	tox? ( dev-python/tox[${PYTHON_USEDEP}] )
@@ -34,3 +30,9 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
+	>=dev-python/pytest-checkdocs-1.2.3[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-flake8[${PYTHON_USEDEP}]
+)"

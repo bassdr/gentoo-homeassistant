@@ -3,8 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -17,22 +16,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/docutils-0.15[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-packaging-9.5[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
-	testing? ( !=dev-python/pytest-8.1*[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
-	testing? ( dev-python/types-docutils[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
+	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+	dev-python/pytest-mypy[${PYTHON_USEDEP}]
+	>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
+	dev-python/types-docutils[${PYTHON_USEDEP}]
+)"

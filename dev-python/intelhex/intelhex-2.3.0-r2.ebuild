@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_PN="IntelHex"
 inherit distutils-r1 pypi
 
 DESCRIPTION="Python library for Intel HEX files manipulations"

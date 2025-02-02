@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="aiobotocore airbyte alibaba all all-core all-dbs amazon apache-atlas apache-cassandra apache-drill apache-druid apache-flink apache-hdfs apache-hive apache-impala apache-kafka apache-kylin apache-livy apache-pig apache-pinot apache-spark apache-webhdfs apprise arangodb asana async atlas atlassian-jira aws azure cassandra celery cgroups cloudant cncf-kubernetes cohere common-io common-sql databricks datadog dbt-cloud deprecated-api devel-ci dingding discord docker druid elasticsearch exasol fab facebook ftp gcp gcp-api github github-enterprise google google-auth graphviz grpc hashicorp hdfs hive http imap influxdb jdbc jenkins kerberos kubernetes ldap leveldb microsoft-azure microsoft-mssql microsoft-psrp microsoft-winrm mongo mssql mysql neo4j odbc openai openfaas openlineage opensearch opsgenie oracle otel pagerduty pandas password pgvector pinecone pinot postgres presto pydantic qdrant rabbitmq redis s3 s3fs salesforce samba saml segment sendgrid sentry sftp singularity slack smtp snowflake spark sqlite ssh statsd tableau tabular telegram teradata trino uv vertica virtualenv weaviate webhdfs winrm yandex zendesk"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	aiobotocore? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiofiles-23.2.0[${PYTHON_USEDEP}] )
@@ -225,9 +224,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	cncf-kubernetes? ( dev-python/apache-airflow-providers-cncf-kubernetes[${PYTHON_USEDEP}] )
 	cohere? ( dev-python/apache-airflow-providers-cohere[${PYTHON_USEDEP}] )
 	common-io? ( dev-python/apache-airflow-providers-common-io[${PYTHON_USEDEP}] )
-	dev-python/apache-airflow-providers-common-io[${PYTHON_USEDEP}]
 	common-sql? ( dev-python/apache-airflow-providers-common-sql[${PYTHON_USEDEP}] )
-	dev-python/apache-airflow-providers-common-sql[${PYTHON_USEDEP}]
 	databricks? ( dev-python/apache-airflow-providers-databricks[${PYTHON_USEDEP}] )
 	datadog? ( dev-python/apache-airflow-providers-datadog[${PYTHON_USEDEP}] )
 	dbt-cloud? ( dev-python/apache-airflow-providers-dbt-cloud[${PYTHON_USEDEP}] )
@@ -317,8 +314,8 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	cgroups? ( >=dev-python/cgroupspy-0.2.2[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/cgroupspy-0.2.2[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/checksumdir-1.2.0[${PYTHON_USEDEP}] )
-	devel-ci? ( !=dev-python/click-8.1.4[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/click-8.0[${PYTHON_USEDEP}] )
+	devel-ci? ( !=dev-python/click-8.1.4[${PYTHON_USEDEP}] )
 	<dev-python/colorlog-5.0[${PYTHON_USEDEP}]
 	>=dev-python/configupdater-3.1.1[${PYTHON_USEDEP}]
 	<dev-python/connexion-3.0[flask,${PYTHON_USEDEP}]

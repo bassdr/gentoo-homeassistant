@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	type? ( >=dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/proselint-0.14[${PYTHON_USEDEP}] )

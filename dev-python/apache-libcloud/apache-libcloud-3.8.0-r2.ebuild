@@ -4,10 +4,10 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="ssl(+)"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="build publish"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	build? ( ~dev-python/build-0.10.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
 	publish? ( ~dev-python/twine-4.0.2[${PYTHON_USEDEP}] )

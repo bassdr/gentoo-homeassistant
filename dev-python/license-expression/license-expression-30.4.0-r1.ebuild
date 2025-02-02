@@ -21,16 +21,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs testing"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	testing? ( dev-python/black[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/boolean-py-4.0[${PYTHON_USEDEP}]
-	dev-python/boolean-py[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/doc8-0.11.2[${PYTHON_USEDEP}] )
-	testing? ( dev-python/isort[${PYTHON_USEDEP}] )
-	testing? ( !=dev-python/pytest-7.0.0[${PYTHON_USEDEP}] )
-	testing? ( >=dev-python/pytest-xdist-2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
@@ -38,7 +33,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	docs? ( >=dev-python/sphinx-rtd-dark-mode-1.3.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-apidoc-0.4.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/twine[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/boolean-py-4.0[${PYTHON_USEDEP}]
@@ -48,5 +42,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/black[${PYTHON_USEDEP}]
+	dev-python/isort[${PYTHON_USEDEP}]
+	!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-xdist-2[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
+)"
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}

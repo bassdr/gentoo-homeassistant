@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
+
 DESCRIPTION="Models for storing and converting Bluetooth Sensor State Data"
 HOMEPAGE="
   https://pypi.org/project/bluetooth-sensor-state-data/
@@ -24,12 +25,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
-	dev-python/home-assistant-bluetooth[${PYTHON_USEDEP}]
 	docs? ( <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
 	>=dev-python/sensor-state-data-2.0[${PYTHON_USEDEP}]
-	dev-python/sensor-state-data[${PYTHON_USEDEP}]
 	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "

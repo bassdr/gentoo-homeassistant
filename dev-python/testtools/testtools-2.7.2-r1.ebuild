@@ -22,10 +22,9 @@ GENERATED_IUSE="twisted"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	twisted? ( dev-python/fixtures[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
-	dev-python/setuptools[${PYTHON_USEDEP}]
 	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
 "
 BDEPEND="

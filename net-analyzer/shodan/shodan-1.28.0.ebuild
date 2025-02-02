@@ -19,15 +19,15 @@ if [[ ${PV} = "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/achillean/shodan-python.git"
 else
 	inherit pypi
+
 KEYWORDS="amd64 arm64"
 fi
 
 LICENSE="MIT"
 SLOT="0"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/click-plugins[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]

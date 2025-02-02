@@ -18,19 +18,15 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/async-interrupt-1.1.1[${PYTHON_USEDEP}]
-	dev-python/async-interrupt[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]
-	dev-python/bleak[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-1.8.0[${PYTHON_USEDEP}]
-	dev-python/bleak-retry-connector[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10)

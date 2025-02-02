@@ -14,7 +14,7 @@ EIGEN_CommitId="7bf2968fed5f246c0589e1111004cb420fcd7c71"
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/ml_dtypes/"
+  https://pypi.org/project/ml-dtypes/"
 SRC_URI="
 	https://github.com/jax-ml/ml_dtypes/archive/v${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -26,13 +26,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
-	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
+IUSE=""
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/numpy-1.21.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.3[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
 "
 DEPEND="
 	>=dev-python/numpy-1.21:=[${PYTHON_USEDEP}]
@@ -69,4 +68,3 @@ src_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	distutils-r1_src_test
 }
-# PYPI_PN could not be inserted in this ebuild

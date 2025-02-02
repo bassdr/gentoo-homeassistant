@@ -25,10 +25,10 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="spelling testutils"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<=dev-python/astroid-3.4.0-de0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/dill-0.3.7[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/dill-0.3.7[${PYTHON_USEDEP}]' python3_13{,t})
 	testutils? ( >dev-python/gitpython-3[${PYTHON_USEDEP}] )
 	!=dev-python/isort-5.13.0[${PYTHON_USEDEP}]
 	<dev-python/mccabe-0.8[${PYTHON_USEDEP}]

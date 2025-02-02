@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/nvidia-cublas-cu12[${PYTHON_USEDEP}]
 	dev-python/nvidia-cusparse-cu12[${PYTHON_USEDEP}]
 	dev-python/nvidia-nvjitlink-cu12[${PYTHON_USEDEP}]

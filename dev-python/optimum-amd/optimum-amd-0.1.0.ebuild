@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="quality tests"
+GENERATED_IUSE="quality"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,17 +17,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
 	dev-python/onnx[${PYTHON_USEDEP}]
 	<dev-python/onnxruntime-1.16.0[${PYTHON_USEDEP}]
 	dev-python/onnxruntime-extensions[${PYTHON_USEDEP}]
 	dev-python/optimum[${PYTHON_USEDEP}]
-	tests? ( dev-python/parameterized[${PYTHON_USEDEP}] )
-	tests? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	quality? ( <=dev-python/ruff-0.0.259[${PYTHON_USEDEP}] )
 	dev-python/transformers[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/parameterized[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="bokeh docs mypy test-no-images"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	bokeh? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/contourpy[bokeh,docs,${PYTHON_USEDEP}] )
 	mypy? ( dev-python/docutils-stubs[${PYTHON_USEDEP}] )

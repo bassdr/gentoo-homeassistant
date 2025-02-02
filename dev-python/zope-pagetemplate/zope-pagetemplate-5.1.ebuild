@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="docs untrusted"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.pagetemplate"
 inherit distutils-r1 pypi
 
@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	>=dev-python/zope-tal-4.2.0[${PYTHON_USEDEP}]
 	dev-python/zope-tales[${PYTHON_USEDEP}]
 	dev-python/zope-traversing[${PYTHON_USEDEP}]
-	untrusted? ( >=dev-python/zope-untrustedpython-5.0_p0[${PYTHON_USEDEP}] )
+	untrusted? ( >=dev-python/zope-untrustedpython-5.0_pre0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
 
@@ -39,5 +39,5 @@ BDEPEND+=" test? (
 	dev-python/zope-security[${PYTHON_USEDEP}]
 	dev-python/zope-testing[${PYTHON_USEDEP}]
 	dev-python/zope-testrunner[${PYTHON_USEDEP}]
-	>=dev-python/zope-untrustedpython-5.0_p0[${PYTHON_USEDEP}]
+	>=dev-python/zope-untrustedpython-5.0_pre0[${PYTHON_USEDEP}]
 )"

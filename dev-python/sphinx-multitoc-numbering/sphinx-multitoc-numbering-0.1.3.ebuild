@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="code_style rtd testing"
+GENERATED_IUSE="code_style rtd"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,15 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	code_style? ( dev-python/black[${PYTHON_USEDEP}] )
-	testing? ( <dev-python/coverage-5.0[${PYTHON_USEDEP}] )
 	code_style? ( <dev-python/flake8-3.8.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/jupyter-book[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/pytest-5.4[${PYTHON_USEDEP}] )
-	testing? ( ~dev-python/pytest-cov-2.8[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-3[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/sphinx-3.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
@@ -34,3 +29,10 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	<dev-python/coverage-5.0[${PYTHON_USEDEP}]
+	dev-python/jupyter-book[${PYTHON_USEDEP}]
+	~dev-python/pytest-5.4[${PYTHON_USEDEP}]
+	~dev-python/pytest-cov-2.8[${PYTHON_USEDEP}]
+	dev-python/pytest-regressions[${PYTHON_USEDEP}]
+)"

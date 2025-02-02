@@ -18,15 +18,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	<dev-python/dbus-fast-3[${PYTHON_USEDEP}]
-	dev-python/dbus-fast[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]' python3_12)
 "
 RDEPEND="${GENERATED_DEPEND}

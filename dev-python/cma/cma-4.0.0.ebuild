@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="constrained-solution-tracking plotting"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	plotting? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	constrained-solution-tracking? ( dev-python/moarchiving[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]

@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="i18n min-versions"
 # IUSE="${GENERATED_IUSE} doc"
 #
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	i18n? ( >=dev-python/babel-2.9.0[${PYTHON_USEDEP}] )
 	min-versions? ( ~dev-python/babel-2.9.0[${PYTHON_USEDEP}] )
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]

@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="benchmarks doc"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	benchmarks? ( ~dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )

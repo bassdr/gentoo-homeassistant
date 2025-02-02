@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="benchmark labextension nbext retroextension serverextension"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	benchmark? ( dev-python/asv[${PYTHON_USEDEP}] )
 	dev-python/decorator[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-6.9.1[${PYTHON_USEDEP}]

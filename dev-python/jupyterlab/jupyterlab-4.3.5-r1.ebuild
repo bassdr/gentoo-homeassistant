@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs docs-screenshots upgrade-extension"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	docs-screenshots? ( ~dev-python/altair-5.4.1[${PYTHON_USEDEP}] )
 	>=dev-python/async-lru-1.0.0[${PYTHON_USEDEP}]
 	upgrade-extension? ( <dev-python/copier-10[${PYTHON_USEDEP}] )
@@ -114,12 +114,10 @@ BDEPEND+=" test? (
 	dev-python/build[${PYTHON_USEDEP}]
 	dev-python/bump2version[${PYTHON_USEDEP}]
 	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
 	dev-python/hatch[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-check-links-0.7[${PYTHON_USEDEP}]
 	dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	dev-python/pytest-cov[${PYTHON_USEDEP}]
 	>=dev-python/pytest-jupyter-0.5.3[${PYTHON_USEDEP}]
 	dev-python/pytest-timeout[${PYTHON_USEDEP}]
