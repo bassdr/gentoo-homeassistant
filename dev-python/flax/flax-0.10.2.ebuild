@@ -58,7 +58,7 @@ BDEPEND+=" test? (
 	dev-python/gymnasium[accept-rom-license,atari,${PYTHON_USEDEP}]
 	dev-python/jaxlib[${PYTHON_USEDEP}]
 	dev-python/jaxtyping[${PYTHON_USEDEP}]
-	>=dev-python/jraph-0.0.6de0[${PYTHON_USEDEP}]
+	>=dev-python/jraph-0.0.6_pre0[${PYTHON_USEDEP}]
 	dev-python/ml-collections[${PYTHON_USEDEP}]
 	dev-python/mypy[${PYTHON_USEDEP}]
 	dev-python/opencv-python[${PYTHON_USEDEP}]

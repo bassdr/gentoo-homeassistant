@@ -20,19 +20,19 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aenum-3.1.15[${PYTHON_USEDEP}]
 	<dev-python/cpyparsing-2.4.7.2.5[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
 	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
 	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
 	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
 	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
+	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
 	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
 	all? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	ipython? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupyterlab? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupytext? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
+	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
 	>=dev-python/jupytext-1.8[${PYTHON_USEDEP}]

@@ -26,8 +26,8 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	dev-python/pytest-mypy[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-7.2.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-7.2.5[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 	dev-python/tempora[${PYTHON_USEDEP}]
 "

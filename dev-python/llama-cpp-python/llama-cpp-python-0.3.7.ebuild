@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all server"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/diskcache-5.6.1[${PYTHON_USEDEP}]
 	server? ( >=dev-python/fastapi-0.100.0[${PYTHON_USEDEP}] )
 	>=dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]
@@ -37,13 +36,11 @@ BDEPEND+=" test? (
 	>=dev-python/black-23.3.0[${PYTHON_USEDEP}]
 	>=dev-python/fastapi-0.100.0[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
-	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
 	>=dev-python/huggingface-hub-0.23.0[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.4.3[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-material-9.1.18[${PYTHON_USEDEP}]
 	>=dev-python/mkdocstrings-0.22.0[python,${PYTHON_USEDEP}]
 	>=dev-python/pydantic-settings-2.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.10[${PYTHON_USEDEP}]
 	>=dev-python/sse-starlette-1.6.1[${PYTHON_USEDEP}]

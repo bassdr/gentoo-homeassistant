@@ -26,7 +26,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/aiodns-3.1.1[${PYTHON_USEDEP}] )
 	>=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}]
 	all? ( >=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}] )
-	all? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/cached-ipaddress-0.2.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cached-ipaddress-0.2.0[${PYTHON_USEDEP}] )
@@ -67,7 +67,7 @@ BDEPEND="
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
 	>=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/codecov-2.1.4[${PYTHON_USEDEP}]
 	>=dev-python/coverage-5.1[${PYTHON_USEDEP}]

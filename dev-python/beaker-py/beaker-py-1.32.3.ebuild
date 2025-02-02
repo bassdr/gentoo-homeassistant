@@ -44,7 +44,7 @@ BDEPEND+=" test? (
 	~dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}]
 	~dev-python/sphinx-autodoc-typehints-1.23.3[${PYTHON_USEDEP}]
 	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
-	~dev-python/sphinx-inline-tabs-2022.1.2_beta11[${PYTHON_USEDEP}]
+	~dev-python/sphinx-inline-tabs-2022.1_beta11[${PYTHON_USEDEP}]
 	>=dev-python/twine-1.11.0[${PYTHON_USEDEP}]
 	dev-python/types-cachetools[${PYTHON_USEDEP}]
 	dev-python/types-pyyaml[${PYTHON_USEDEP}]

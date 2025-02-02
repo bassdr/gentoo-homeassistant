@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Flask-SQLAlchemy/"
+  https://pypi.org/project/flask-sqlalchemy/"
 
 LICENSE="BSD"
 SLOT="0"

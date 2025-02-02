@@ -3,10 +3,9 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
+IUSE=""
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
-	>=dev-python/hydra-core-1.1.0_p7[${PYTHON_USEDEP}]
+GENERATED_DEPEND="${RDEPEND}
+	>=dev-python/hydra-core-1.1.0_pre7[${PYTHON_USEDEP}]
 	>=dev-python/joblib-0.14.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

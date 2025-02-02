@@ -46,3 +46,4 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 }
+# RDEPEND could not be inserted in this ebuild

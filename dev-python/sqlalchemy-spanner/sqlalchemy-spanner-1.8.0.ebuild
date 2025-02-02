@@ -20,7 +20,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/alembic[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-spanner-3.12.0[${PYTHON_USEDEP}]
 	tracing? ( >=dev-python/opentelemetry-api-1.1.0[${PYTHON_USEDEP}] )
-	tracing? ( >=dev-python/opentelemetry-instrumentation-0.20_beta0[${PYTHON_USEDEP}] )
+	tracing? ( >=dev-python/opentelemetry-instrumentation-0_beta0[${PYTHON_USEDEP}] )
 	tracing? ( >=dev-python/opentelemetry-sdk-1.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/sqlalchemy-1.1.13[${PYTHON_USEDEP}]
 "

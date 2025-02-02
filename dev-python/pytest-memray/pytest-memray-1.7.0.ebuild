@@ -26,7 +26,7 @@ GENERATED_DEPEND="${RDEPEND}
 	lint? ( ~dev-python/ruff-0.0.272[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-argparse-0.4[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-inline-tabs-2022.1.2_beta11[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-inline-tabs-2022.1_beta11[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/towncrier-22.12[${PYTHON_USEDEP}] )
 "

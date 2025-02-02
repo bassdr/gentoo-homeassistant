@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="httplib2 caching for requests"
 HOMEPAGE="
-  https://pypi.org/project/cachecontrol/
+  https://pypi.org/project/CacheControl/
   Homepage, https://pypi.org/project/CacheControl/
   Issues, https://github.com/psf/cachecontrol/issues
   Source, https://github.com/psf/cachecontrol

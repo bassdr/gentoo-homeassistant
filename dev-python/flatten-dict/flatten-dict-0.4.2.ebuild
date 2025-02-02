@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/flatten-dict/"
+  https://pypi.org/project/flatten_dict/"
 
 LICENSE="MIT"
 SLOT="0"

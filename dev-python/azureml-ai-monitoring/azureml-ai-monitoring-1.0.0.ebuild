@@ -3,11 +3,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="setup"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_wheel_url --unpack)"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -25,6 +25,8 @@ GENERATED_DEPEND="${RDEPEND}
 	setup? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}"
+
+BDEPEND+=" app-arch/unzip"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (

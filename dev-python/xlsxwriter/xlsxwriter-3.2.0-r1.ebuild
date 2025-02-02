@@ -12,7 +12,7 @@ TAG=RELEASE_${PV}
 MY_P=XlsxWriter-${TAG}
 DESCRIPTION="A Python module for creating Excel XLSX files."
 HOMEPAGE="
-  https://pypi.org/project/xlsxwriter/
+  https://pypi.org/project/XlsxWriter/
 "
 SRC_URI="
 	https://github.com/jmcnamara/XlsxWriter/archive/${TAG}.tar.gz

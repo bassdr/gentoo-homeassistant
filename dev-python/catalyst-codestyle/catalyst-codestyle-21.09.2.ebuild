@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
 	<dev-python/darglint-2.0[${PYTHON_USEDEP}]
 	<dev-python/flake8-4.0[${PYTHON_USEDEP}]
 	<dev-python/flake8-blind-except-0.2[${PYTHON_USEDEP}]

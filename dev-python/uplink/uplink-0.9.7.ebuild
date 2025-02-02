@@ -29,9 +29,9 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.18.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.13.0[${PYTHON_USEDEP}]
+	>=dev-python/twisted-17.1.0[${PYTHON_USEDEP}]
 	<=dev-python/twisted-17.9.0[${PYTHON_USEDEP}]
 	<=dev-python/twisted-19.2.1[${PYTHON_USEDEP}]
-	>=dev-python/twisted-17.1.0[${PYTHON_USEDEP}]
 	typing? ( >=dev-python/typing-3.6.4[${PYTHON_USEDEP}] )
 	>=dev-python/uritemplate-3.0.0[${PYTHON_USEDEP}]
 "

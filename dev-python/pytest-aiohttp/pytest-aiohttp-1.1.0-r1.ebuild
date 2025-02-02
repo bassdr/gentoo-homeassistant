@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 IUSE=""
 GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3.11.0_beta0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.11_beta0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}]
 "

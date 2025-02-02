@@ -24,8 +24,8 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/flasgger[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.2.4[${PYTHON_USEDEP}]
 	mainapp? ( dev-python/gevent[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '<dev-python/greenlet-3.0[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/greenlet-3.0.0_alpha1[${PYTHON_USEDEP}]' python3_13{,t})
+	$(python_gen_cond_dep '<dev-python/greenlet-3.0[${PYTHON_USEDEP}]' python3_12)
 	mainapp? ( dev-python/gunicorn[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]

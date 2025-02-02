@@ -30,7 +30,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/identify[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
 	dev-python/loguru[${PYTHON_USEDEP}]
-	>=dev-python/marshmallow-3.0.0_beta10[${PYTHON_USEDEP}]
+	>=dev-python/marshmallow-3.0_beta10[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-polyfield-5.10[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

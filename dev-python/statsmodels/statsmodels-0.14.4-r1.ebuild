@@ -24,8 +24,8 @@ IUSE="${GENERATED_IUSE} examples"
 GENERATED_DEPEND="${RDEPEND}
 	develop? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
-	develop? ( <dev-python/cython-4[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
+	develop? ( <dev-python/cython-4[${PYTHON_USEDEP}] )
 	develop? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	develop? ( dev-python/isort[${PYTHON_USEDEP}] )

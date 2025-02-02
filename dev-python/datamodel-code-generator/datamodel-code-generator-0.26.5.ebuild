@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
 	<dev-python/argcomplete-4.0[${PYTHON_USEDEP}]
-	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
 	<dev-python/genson-2.0[${PYTHON_USEDEP}]
 	graphql? ( <dev-python/graphql-core-4.0.0[${PYTHON_USEDEP}] )
 	http? ( dev-python/httpx[${PYTHON_USEDEP}] )

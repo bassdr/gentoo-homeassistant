@@ -49,7 +49,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/babel-2.10.3[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.2[${PYTHON_USEDEP}]

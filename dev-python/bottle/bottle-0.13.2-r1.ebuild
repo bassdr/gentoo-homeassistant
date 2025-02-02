@@ -15,14 +15,15 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
+IUSE="test"
 
-BDEPEND="
+distutils_enable_tests unittest
+
+BDEPEND+="
 	test? (
 		dev-python/mako[${PYTHON_USEDEP}]
 	)
 "
-
-distutils_enable_tests unittest
 
 pkg_postinst() {
 	optfeature "Templating support" dev-python/mako

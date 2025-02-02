@@ -29,9 +29,9 @@ IUSE="${GENERATED_IUSE} cli"
 
 GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
-	all? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )
-	cli? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )
-	ghostwriter? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
+	ghostwriter? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/click-7.0[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/click-7.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/crosshair-tool-0.0.82[${PYTHON_USEDEP}] )

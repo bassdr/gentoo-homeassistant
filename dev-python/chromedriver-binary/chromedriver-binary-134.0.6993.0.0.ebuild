@@ -5,7 +5,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 IUSE=""
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/danielkaiser/python-chromedriver-binary/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 DESCRIPTION=""
 HOMEPAGE="

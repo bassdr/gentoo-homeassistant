@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="click docs numpy optuna sklearn tabulate tests torch torch-geometric"
 IUSE="${GENERATED_IUSE}"
 

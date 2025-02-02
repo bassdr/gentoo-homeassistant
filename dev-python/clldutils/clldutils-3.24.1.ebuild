@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/attrs-18.1.0[${PYTHON_USEDEP}]
-	>=dev-python/bibtexparser-2.0.0_beta4[${PYTHON_USEDEP}]
+	>=dev-python/bibtexparser-2.0_beta4[${PYTHON_USEDEP}]
 	dev-python/colorlog[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/markdown[${PYTHON_USEDEP}]

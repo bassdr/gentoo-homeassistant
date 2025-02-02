@@ -7,6 +7,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
+SRC_URI="$(pypi_sdist_url ${PN} 1.0.0)"
+S="${WORKDIR}/${PN}-1.0.0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -16,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/python-dateutil-2.7[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

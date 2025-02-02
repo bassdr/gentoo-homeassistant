@@ -22,24 +22,13 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dev"
-IUSE="${GENERATED_IUSE} test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
-	dev? ( dev-python/argcomplete[${PYTHON_USEDEP}] )
-	dev? ( >=dev-python/attrs-19.2[${PYTHON_USEDEP}] )
-	dev-python/colorama[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/hypothesis-3.56[${PYTHON_USEDEP}] )
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/iniconfig[${PYTHON_USEDEP}]
-	dev? ( dev-python/mock[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	<dev-python/pluggy-2[${PYTHON_USEDEP}]
-	dev-python/pluggy[${PYTHON_USEDEP}]
-	dev? ( >=dev-python/pygments-2.7.2[${PYTHON_USEDEP}] )
-	dev? ( dev-python/requests[${PYTHON_USEDEP}] )
-	dev? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	dev? ( dev-python/xmlschema[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}
 	dev-python/iniconfig[${PYTHON_USEDEP}]
@@ -133,3 +122,4 @@ python_test() {
 	local EPYTEST_XDIST=1
 	epytest
 }
+# BDEPEND could not be inserted in this ebuild

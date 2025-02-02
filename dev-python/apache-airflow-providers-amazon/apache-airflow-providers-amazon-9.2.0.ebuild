@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="aiobotocore apache-hive cncf-kubernetes exasol ftp google imap microsoft-azure mongo openlineage pandas python3-saml s3fs salesforce ssh"
 IUSE="${GENERATED_IUSE}"
 

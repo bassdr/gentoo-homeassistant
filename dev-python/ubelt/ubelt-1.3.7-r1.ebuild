@@ -41,13 +41,13 @@ GENERATED_DEPEND="${RDEPEND}
 	~dev-python/numpy-1.23.2[${PYTHON_USEDEP}]
 	~dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 	~dev-python/numpy-2.1.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.19.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21.1[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2.1.0[${PYTHON_USEDEP}]
+	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 	all-strict? ( ~dev-python/packaging-21.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/packaging-21.0[${PYTHON_USEDEP}] )
 	optional-strict? ( ~dev-python/packaging-21.0[${PYTHON_USEDEP}] )

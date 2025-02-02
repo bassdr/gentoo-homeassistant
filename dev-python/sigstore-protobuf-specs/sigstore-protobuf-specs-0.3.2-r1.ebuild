@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 IUSE=""
 GENERATED_DEPEND="${RDEPEND}
-	~dev-python/betterproto-2.0.0_beta6[${PYTHON_USEDEP}]
+	~dev-python/betterproto-2.0_beta6[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	~dev-python/betterproto-2.0.0_beta7[${PYTHON_USEDEP}]

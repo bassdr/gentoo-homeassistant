@@ -27,8 +27,8 @@ GENERATED_DEPEND="${RDEPEND}
 	bulk-writer? ( >=dev-python/pyarrow-12.0.0[${PYTHON_USEDEP}] )
 	<dev-python/python-dotenv-2.0.0[${PYTHON_USEDEP}]
 	bulk-writer? ( dev-python/requests[${PYTHON_USEDEP}] )
-	<dev-python/setuptools-70.1[${PYTHON_USEDEP}]
 	>dev-python/setuptools-69[${PYTHON_USEDEP}]
+	<dev-python/setuptools-70.1[${PYTHON_USEDEP}]
 	>=dev-python/ujson-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

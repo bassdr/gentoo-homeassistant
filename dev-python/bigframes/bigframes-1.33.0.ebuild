@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all dev polars"
 IUSE="${GENERATED_IUSE}"
 
@@ -23,7 +22,7 @@ GENERATED_DEPEND="
 	>=dev-python/fsspec-2023.3.0[${PYTHON_USEDEP}]
 	>=dev-python/gcsfs-2023.3.0[${PYTHON_USEDEP}]
 	>=dev-python/geopandas-0.12.2[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0dev[${PYTHON_USEDEP}]
+	<dev-python/google-auth-3.0_p[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigquery-3.18.0[bqstorage,pandas,${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigquery-connection-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigtable-2.24.0[${PYTHON_USEDEP}]
@@ -57,7 +56,7 @@ GENERATED_DEPEND="
 	>=dev-python/requests-2.27.1[${PYTHON_USEDEP}]
 	<dev-python/rich-14[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-1.2.2[${PYTHON_USEDEP}]
-	<dev-python/sqlalchemy-3.0dev[${PYTHON_USEDEP}]
+	<dev-python/sqlalchemy-3.0_p[${PYTHON_USEDEP}]
 	>=dev-python/sqlglot-23.6.3[${PYTHON_USEDEP}]
 	>=dev-python/tabulate-0.9[${PYTHON_USEDEP}]
 	<dev-python/toolz-2[${PYTHON_USEDEP}]

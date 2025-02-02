@@ -53,7 +53,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dask? ( >=dev-python/regex-2021.7.6[${PYTHON_USEDEP}] )
 	bigquery? ( <dev-python/rich-14[${PYTHON_USEDEP}] )
 	geospatial? ( <dev-python/shapely-3[${PYTHON_USEDEP}] )
-	snowflake? ( !=dev-python/snowflake-connector-python-3.3.0_beta1[${PYTHON_USEDEP}] )
+	snowflake? ( !=dev-python/snowflake-connector-python-3.3_beta1[${PYTHON_USEDEP}] )
 	<dev-python/sqlglot-25.21[${PYTHON_USEDEP}]
 	<dev-python/toolz-1[${PYTHON_USEDEP}]
 	trino? ( <dev-python/trino-1[${PYTHON_USEDEP}] )

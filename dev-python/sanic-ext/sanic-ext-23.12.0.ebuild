@@ -23,7 +23,7 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	>=dev-python/black-21.4_beta2[${PYTHON_USEDEP}]
+	>=dev-python/black-21_beta2[${PYTHON_USEDEP}]
 	dev-python/coverage[${PYTHON_USEDEP}]
 	>=dev-python/flake8-3.7.7[${PYTHON_USEDEP}]
 	>=dev-python/isort-5.0.0[${PYTHON_USEDEP}]

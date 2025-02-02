@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
 	~dev-python/opentelemetry-api-1.29.0[${PYTHON_USEDEP}]
-	~dev-python/opentelemetry-semantic-conventions-0.50_beta0[${PYTHON_USEDEP}]
+	~dev-python/opentelemetry-semantic-conventions-0_beta0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

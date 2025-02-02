@@ -5,8 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="sqlite"
-DISTUTILS_SINGLE_IMPL=1DISTUTILS_USE_PEP517="setuptools"
-
+DISTUTILS_SINGLE_IMPL=1
 inherit distutils-r1 pypi
 
 DESCRIPTION="A framework for managing and maintaining multi-language pre-commit hooks."

@@ -3,13 +3,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 IUSE=""
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "honesty" "0.3.0a2")"
-S="${WORKDIR}/honesty-0.3.0a2"
+SRC_URI="$(pypi_sdist_url ${PN} 0.3.0a2)"
+S="${WORKDIR}/${PN}-0.3.0a2"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -19,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
+GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.6[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1.4[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/black-20.8_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-20_beta0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/libcst-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/moreorless-0.4.0[${PYTHON_USEDEP}]

@@ -36,7 +36,7 @@ python_test() {
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	>=dev-python/black-20.8_beta1[${PYTHON_USEDEP}]
+	>=dev-python/black-20_beta1[${PYTHON_USEDEP}]
 	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
 	>=dev-python/mypy-0.812[${PYTHON_USEDEP}]
 	>=dev-python/mypy-extensions-0.4.3[${PYTHON_USEDEP}]

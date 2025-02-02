@@ -4,26 +4,24 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="beam"
+GENERATED_IUSE="s3"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_PN="array_record"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/array-record/"
+  https://pypi.org/project/runai-model-streamer/"
 
-LICENSE="Apache-2.0"
+LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
-	dev-python/absl-py[${PYTHON_USEDEP}]
-	beam? ( >=dev-python/apache-beam-2.50.0[gcp,${PYTHON_USEDEP}] )
-	dev-python/etils[epath,${PYTHON_USEDEP}]
-	beam? ( >=dev-python/google-cloud-storage-2.11.0[${PYTHON_USEDEP}] )
-	beam? ( >=dev-python/tensorflow-2.14.0[${PYTHON_USEDEP}] )
+	dev-python/humanize[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	s3? ( ~dev-python/runai-model-streamer-s3-0.12.0[${PYTHON_USEDEP}] )
+	<dev-python/torch-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"
 

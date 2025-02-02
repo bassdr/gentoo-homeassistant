@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/bert_score/"
+  https://pypi.org/project/bert-score/"
 
 LICENSE="MIT"
 SLOT="0"

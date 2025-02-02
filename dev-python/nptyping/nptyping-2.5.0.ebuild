@@ -18,8 +18,8 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
 	qa? ( dev-python/autoflake[${PYTHON_USEDEP}] )
-	<dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
+	<dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
 	qa? ( dev-python/black[${PYTHON_USEDEP}] )
 	qa? ( >=dev-python/codecov-2.1.0[${PYTHON_USEDEP}] )
 	qa? ( dev-python/coverage[${PYTHON_USEDEP}] )

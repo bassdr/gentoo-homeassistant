@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9_beta0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9.2[${PYTHON_USEDEP}]
 "

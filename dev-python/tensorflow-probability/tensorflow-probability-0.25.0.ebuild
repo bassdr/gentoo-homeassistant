@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/tensorflow_probability/"
+  https://pypi.org/project/tensorflow-probability/"
 
 LICENSE=""
 SLOT="0"

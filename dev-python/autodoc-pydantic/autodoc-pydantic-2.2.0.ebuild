@@ -3,12 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="docs erdantic linting security type-checking"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_PN="autodoc_pydantic"
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/mansenfranzen/autodoc_pydantic/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 DESCRIPTION=""
 HOMEPAGE="

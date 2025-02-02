@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sqlalchemy-utils/"
+  https://pypi.org/project/sqlalchemy_utils/"
 
 LICENSE="BSD"
 SLOT="0"

@@ -4,9 +4,10 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_PN=APScheduler
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="APScheduler"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,17 +18,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc gevent mongodb redis rethinkdb sqlalchemy testing tornado twisted zookeeper"
+GENERATED_IUSE="doc gevent mongodb redis rethinkdb sqlalchemy tornado twisted zookeeper"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	gevent? ( dev-python/gevent[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-3.6.0[${PYTHON_USEDEP}]
 	zookeeper? ( dev-python/kazoo[${PYTHON_USEDEP}] )
 	mongodb? ( >=dev-python/pymongo-3.0[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest-tornado5[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
 	redis? ( >=dev-python/redis-3.0[${PYTHON_USEDEP}] )
 	rethinkdb? ( >=dev-python/rethinkdb-2.4.0[${PYTHON_USEDEP}] )
@@ -37,7 +34,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	sqlalchemy? ( >=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}] )
 	tornado? ( >=dev-python/tornado-4.3[${PYTHON_USEDEP}] )
 	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
-	!=dev-python/tzlocal-3*[${PYTHON_USEDEP}]
+	!=dev-python/tzlocal-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/tzlocal-4[${PYTHON_USEDEP}]
@@ -53,6 +50,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/pytest[${PYTHON_USEDEP}]
+	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	dev-python/pytest-cov[${PYTHON_USEDEP}]
+	dev-python/pytest-tornado5[${PYTHON_USEDEP}]
+)"
 
 PATCHES=(
 	# disable test fixtures using external servers (mongodb, redis...)

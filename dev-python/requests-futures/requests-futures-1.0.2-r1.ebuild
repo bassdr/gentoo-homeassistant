@@ -20,8 +20,8 @@ KEYWORDS="amd64 arm64"
 
 IUSE=""
 GENERATED_DEPEND="${RDEPEND}
-	$(python_gen_cond_dep '<=dev-python/greenlet-2.0.2[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/greenlet-3.0.0[${PYTHON_USEDEP}]' python3_13{,t})
+	$(python_gen_cond_dep '<=dev-python/greenlet-2.0.2[${PYTHON_USEDEP}]' python3_12)
 	>=dev-python/requests-1.2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}

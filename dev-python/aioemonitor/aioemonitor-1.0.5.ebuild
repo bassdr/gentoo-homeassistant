@@ -25,7 +25,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/aioresponses[${PYTHON_USEDEP}] )
-	all? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/codecov-2.1.4[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/coverage-5.1[${PYTHON_USEDEP}] )
@@ -62,7 +62,7 @@ python_test() {
 distutils_enable_tests pytest
 BDEPEND+=" test? (
 	dev-python/aioresponses[${PYTHON_USEDEP}]
-	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
 	>=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/codecov-2.1.4[${PYTHON_USEDEP}]
 	>=dev-python/coverage-5.1[${PYTHON_USEDEP}]

@@ -33,8 +33,8 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-7.2.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
+	docs? ( <dev-python/sphinx-7.2.5[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_DEPEND}

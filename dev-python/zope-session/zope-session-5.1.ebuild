@@ -22,7 +22,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	>=dev-python/zodb-4.2.0._beta1[${PYTHON_USEDEP}]
+	>=dev-python/zodb-4.2.0.b1[${PYTHON_USEDEP}]
 	dev-python/zope-component[${PYTHON_USEDEP}]
 	>=dev-python/zope-i18nmessageid-4.0.3[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]

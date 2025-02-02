@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/autogen-agentchat/"
+  https://pypi.org/project/runai-model-streamer-s3/"
 
 LICENSE=""
 SLOT="0"

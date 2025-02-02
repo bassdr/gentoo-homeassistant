@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	air? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
 	all-cpp? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
@@ -55,11 +55,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	rllib? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	train? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	tune? ( dev-python/fsspec[${PYTHON_USEDEP}] )
-	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
-	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
-	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
-	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
-	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.42.0[${PYTHON_USEDEP}]
 	all-cpp? ( dev-python/grpcio[${PYTHON_USEDEP}] )
 	all? ( dev-python/grpcio[${PYTHON_USEDEP}] )
@@ -113,23 +108,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	serve? ( >=dev-python/prometheus-client-0.7.1[${PYTHON_USEDEP}] )
 	!=dev-python/protobuf-3.19.5[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/py-spy-0.2.0[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.2.0[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.2.0[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.2.0[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.2.0[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.2.0[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/py-spy-0.4.0[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.4.0[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.4.0[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.4.0[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.4.0[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/py-spy-0.4.0[${PYTHON_USEDEP}]' python3_13{,t})
-	<dev-python/pyarrow-18[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-18[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-18[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-18[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-18[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-18[${PYTHON_USEDEP}]
 	<dev-python/pyarrow-18[${PYTHON_USEDEP}]
 	air? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
 	all-cpp? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
@@ -138,18 +117,17 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	rllib? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
 	train? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
 	tune? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
-	air? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
-	all-cpp? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
-	all? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
-	default? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
-	serve-grpc? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
-	serve? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
+	air? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
+	all-cpp? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
+	all? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
+	default? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
+	serve-grpc? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
+	serve? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
 	all-cpp? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	all? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	serve-grpc? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	all-cpp? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	all? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
-	dev-python/pyyaml[${PYTHON_USEDEP}]
 	rllib? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	all-cpp? ( ~dev-python/ray-cpp-2.41.0[${PYTHON_USEDEP}] )
 	cpp? ( ~dev-python/ray-cpp-2.41.0[${PYTHON_USEDEP}] )
@@ -157,7 +135,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	all-cpp? ( dev-python/requests[${PYTHON_USEDEP}] )
 	all? ( dev-python/requests[${PYTHON_USEDEP}] )
 	default? ( dev-python/requests[${PYTHON_USEDEP}] )
-	dev-python/requests[${PYTHON_USEDEP}]
 	rllib? ( dev-python/requests[${PYTHON_USEDEP}] )
 	serve-grpc? ( dev-python/requests[${PYTHON_USEDEP}] )
 	serve? ( dev-python/requests[${PYTHON_USEDEP}] )

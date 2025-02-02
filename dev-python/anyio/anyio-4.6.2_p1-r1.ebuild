@@ -34,7 +34,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.26.1[${PYTHON_USEDEP}] )
 	>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]
-	>=dev-python/uvloop-0.21.0_beta1[${PYTHON_USEDEP}]
+	>=dev-python/uvloop-0.21_beta1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/idna-2.8[${PYTHON_USEDEP}]

@@ -60,7 +60,7 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	~dev-python/black-21.8_beta0[${PYTHON_USEDEP}]
+	~dev-python/black-21_beta0[${PYTHON_USEDEP}]
 	~dev-python/catalyst-codestyle-21.09.2[${PYTHON_USEDEP}]
 	~dev-python/catalyst-sphinx-theme-1.2.0[${PYTHON_USEDEP}]
 	<=dev-python/click-8.0.4[${PYTHON_USEDEP}]

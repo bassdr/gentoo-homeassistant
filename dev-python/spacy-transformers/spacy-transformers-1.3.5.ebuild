@@ -17,17 +17,17 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_DEPEND="${RDEPEND}
-	cuda? ( >=dev-python/cupy-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda100? ( >=dev-python/cupy-cuda100-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda101? ( >=dev-python/cupy-cuda101-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda102? ( >=dev-python/cupy-cuda102-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda110? ( >=dev-python/cupy-cuda110-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda111? ( >=dev-python/cupy-cuda111-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda112? ( >=dev-python/cupy-cuda112-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda80? ( >=dev-python/cupy-cuda80-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda90? ( >=dev-python/cupy-cuda90-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda91? ( >=dev-python/cupy-cuda91-5.0.0_beta4[${PYTHON_USEDEP}] )
-	cuda92? ( >=dev-python/cupy-cuda92-5.0.0_beta4[${PYTHON_USEDEP}] )
+	cuda? ( >=dev-python/cupy-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda100? ( >=dev-python/cupy-cuda100-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda101? ( >=dev-python/cupy-cuda101-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda102? ( >=dev-python/cupy-cuda102-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda110? ( >=dev-python/cupy-cuda110-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda111? ( >=dev-python/cupy-cuda111-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda112? ( >=dev-python/cupy-cuda112-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda80? ( >=dev-python/cupy-cuda80-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda90? ( >=dev-python/cupy-cuda90-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda91? ( >=dev-python/cupy-cuda91-5.0_beta4[${PYTHON_USEDEP}] )
+	cuda92? ( >=dev-python/cupy-cuda92-5.0_beta4[${PYTHON_USEDEP}] )
 	<dev-python/dataclasses-1.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.15.0[${PYTHON_USEDEP}]
 	<dev-python/spacy-4.1.0[${PYTHON_USEDEP}]

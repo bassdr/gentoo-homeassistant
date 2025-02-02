@@ -11,7 +11,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/netCDF4/"
+  https://pypi.org/project/netcdf4/"
 
 LICENSE="MIT"
 SLOT="0"

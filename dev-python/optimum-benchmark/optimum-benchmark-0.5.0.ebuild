@@ -3,10 +3,10 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="auto-gptq autoawq bitsandbytes codecarbon deepspeed diffusers flash-attn ipex llama-cpp llm-swarm onnxruntime onnxruntime-gpu openvino peft py-txi quality sentence-transformers tensorrt-llm testing timm torch-ort torchao vllm"
+GENERATED_IUSE="auto-gptq autoawq bitsandbytes codecarbon deepspeed diffusers flash-attn ipex llama-cpp llm-swarm onnxruntime onnxruntime-gpu openvino peft py-txi quality sentence-transformers tensorrt-llm timm torch-ort torchao vllm"
 IUSE="${GENERATED_IUSE}"
 
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_DEPEND="${RDEPEND}
 	dev-python/accelerate[${PYTHON_USEDEP}]
 	auto-gptq? ( dev-python/auto-gptq[${PYTHON_USEDEP}] )
 	autoawq? ( dev-python/autoawq[${PYTHON_USEDEP}] )
@@ -30,7 +30,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	flash-attn? ( dev-python/flash-attn[${PYTHON_USEDEP}] )
 	dev-python/flatten-dict[${PYTHON_USEDEP}]
 	dev-python/hydra-core[${PYTHON_USEDEP}]
-	testing? ( dev-python/hydra-joblib-launcher[${PYTHON_USEDEP}] )
 	llama-cpp? ( dev-python/llama-cpp-python[${PYTHON_USEDEP}] )
 	llm-swarm? ( dev-python/llm-swarm[${PYTHON_USEDEP}] )
 	dev-python/nvidia-ml-py[${PYTHON_USEDEP}]
@@ -47,7 +46,6 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	peft? ( dev-python/peft[${PYTHON_USEDEP}] )
 	dev-python/psutil[${PYTHON_USEDEP}]
 	py-txi? ( dev-python/py-txi[${PYTHON_USEDEP}] )
-	testing? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/rich[${PYTHON_USEDEP}]
 	quality? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	sentence-transformers? ( dev-python/sentence-transformers[${PYTHON_USEDEP}] )
@@ -61,3 +59,7 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
+BDEPEND+=" test? (
+	dev-python/hydra-joblib-launcher[${PYTHON_USEDEP}]
+	dev-python/pytest[${PYTHON_USEDEP}]
+)"

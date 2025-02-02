@@ -31,7 +31,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/rdflib[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	audio? ( ~dev-python/soxr-0.4.0_beta1[${PYTHON_USEDEP}] )
+	audio? ( ~dev-python/soxr-0.4_beta1[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_DEPEND}"

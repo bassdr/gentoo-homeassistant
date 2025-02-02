@@ -28,9 +28,9 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/azure-storage-blob-12.1.0[${PYTHON_USEDEP}] )
 	azure? ( >=dev-python/azure-storage-blob-12.1.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/azure-storage-blob-12.1.0[${PYTHON_USEDEP}] )
-	all? ( >=dev-python/black-19.3_beta0[${PYTHON_USEDEP}] )
-	black? ( >=dev-python/black-19.3_beta0[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/black-19.3_beta0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
+	black? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
 	all? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	s3? ( dev-python/boto3[${PYTHON_USEDEP}] )
@@ -69,7 +69,7 @@ BDEPEND+=" test? (
 	>=dev-python/azure-datalake-store-0.0.30[${PYTHON_USEDEP}]
 	>=dev-python/azure-identity-1.3.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-storage-blob-12.1.0[${PYTHON_USEDEP}]
-	>=dev-python/black-19.3_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
 	dev-python/boto3[${PYTHON_USEDEP}]
 	dev-python/botocore[${PYTHON_USEDEP}]
 	dev-python/bumpversion[${PYTHON_USEDEP}]

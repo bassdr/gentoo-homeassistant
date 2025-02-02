@@ -45,7 +45,7 @@ RDEPEND="${GENERATED_DEPEND}"
 
 distutils_enable_tests pytest
 BDEPEND+=" test? (
-	>=dev-python/black-21.4_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-21_beta0[${PYTHON_USEDEP}]
 	>=dev-python/graphviz-0.8[${PYTHON_USEDEP}]
 	dev-python/ipywidgets[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-1.3[${PYTHON_USEDEP}]

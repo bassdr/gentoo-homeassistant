@@ -24,7 +24,7 @@ GENERATED_DEPEND="${RDEPEND}
 	libcst? ( >=dev-python/libcst-0.2.5[${PYTHON_USEDEP}] )
 	tracing? ( >=dev-python/opentelemetry-api-1.22.0[${PYTHON_USEDEP}] )
 	tracing? ( >=dev-python/opentelemetry-sdk-1.22.0[${PYTHON_USEDEP}] )
-	tracing? ( >=dev-python/opentelemetry-semantic-conventions-0.43_beta0[${PYTHON_USEDEP}] )
+	tracing? ( >=dev-python/opentelemetry-semantic-conventions-0_beta0[${PYTHON_USEDEP}] )
 	<dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
 	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
 	>=dev-python/sqlparse-0.4.4[${PYTHON_USEDEP}]
