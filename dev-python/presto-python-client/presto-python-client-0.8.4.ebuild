@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	all? ( dev-python/google-auth[${PYTHON_USEDEP}] )
 	google_auth? ( dev-python/google-auth[${PYTHON_USEDEP}] )
@@ -26,13 +26,16 @@ GENERATED_DEPEND="${RDEPEND}
 	kerberos? ( dev-python/requests-kerberos[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/google-auth[${PYTHON_USEDEP}]
-	dev-python/httpretty[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
-	dev-python/requests-kerberos[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/google-auth[${PYTHON_USEDEP}]
+		dev-python/httpretty[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
+		dev-python/requests-kerberos[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

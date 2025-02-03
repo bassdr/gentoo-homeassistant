@@ -21,12 +21,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-1.3[${PYTHON_USEDEP}]
 	dev-python/pyspnego[kerberos,${PYTHON_USEDEP}]
 	>=dev-python/requests-1.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	>=dev-python/requests-1.1.0[${PYTHON_USEDEP}]
 	dev-python/pyspnego[${PYTHON_USEDEP}]

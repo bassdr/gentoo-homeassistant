@@ -21,11 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/zigpy-0.68.0[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]"
 BDEPEND="
@@ -42,10 +42,13 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

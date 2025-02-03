@@ -20,10 +20,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	pipeline? ( dev-python/azure-ai-ml[${PYTHON_USEDEP}] )
 	pipeline? ( dev-python/azure-identity[${PYTHON_USEDEP}] )
-	pipeline? ( ~dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] )
+	pipeline? ( =dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] )
 	pipeline? ( <dev-python/omegaconf-2.2[${PYTHON_USEDEP}] )
 	promptflow? ( >=dev-python/promptflow-0.1.0_beta6[${PYTHON_USEDEP}] )
 	promptflow? ( dev-python/promptflow-tools[${PYTHON_USEDEP}] )
@@ -32,6 +32,10 @@ GENERATED_DEPEND="${RDEPEND}
 	pipeline? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	<dev-python/typing-extensions-5.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/tesla-fleet-api-0.8.5[${PYTHON_USEDEP}]
-	~dev-python/teslemetry-stream-0.4.2[${PYTHON_USEDEP}]
+	=dev-python/tesla-fleet-api-0.8.5[${PYTHON_USEDEP}]
+	=dev-python/teslemetry-stream-0.4.2[${PYTHON_USEDEP}]
 "

@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="benchmark doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
@@ -33,18 +33,21 @@ GENERATED_DEPEND="${PYTHON_DEPS}
 	doc? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	dev-python/uc-micro-py[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/uc-micro-py[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/isort[${PYTHON_USEDEP}]
-	dev-python/pyproject-flake8[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/isort[${PYTHON_USEDEP}]
+		dev-python/pyproject-flake8[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

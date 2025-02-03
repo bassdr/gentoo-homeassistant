@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/python-kasa-0.8.1[speedups,${PYTHON_USEDEP}]
+	=dev-python/python-kasa-0.8.1[speedups,${PYTHON_USEDEP}]
 "

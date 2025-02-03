@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/db-dtypes-2.0.0[${PYTHON_USEDEP}]
 	geopandas? ( >=dev-python/geopandas-0.9.0[${PYTHON_USEDEP}] )
 	<dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}]
@@ -33,6 +33,6 @@ GENERATED_DEPEND="${RDEPEND}
 	geopandas? ( >=dev-python/shapely-1.8.4[${PYTHON_USEDEP}] )
 	tqdm? ( >=dev-python/tqdm-4.23.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

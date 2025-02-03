@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
@@ -32,7 +32,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/towncrier[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 dev-python/six[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]"
@@ -47,11 +47,15 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/mock[${PYTHON_USEDEP}]
-	~dev-python/pytest-4.6.11[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
-	dev-python/testfixtures[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		=dev-python/pytest-4.6.11[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/six[${PYTHON_USEDEP}]
+		dev-python/testfixtures[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

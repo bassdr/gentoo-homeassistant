@@ -19,10 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/asyncssh[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	dev-python/setuptools-markdown[${PYTHON_USEDEP}]
 	test? (
@@ -38,6 +38,9 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/check-manifest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/check-manifest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

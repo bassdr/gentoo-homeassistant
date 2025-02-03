@@ -21,10 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	media-libs/mutagen[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=media-libs/mutagen-1.36.2[${PYTHON_USEDEP}]
 	>=dev-python/pygobject-3.42.2[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]"

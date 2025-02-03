@@ -15,32 +15,35 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	!=dev-python/fsspec-2024.3.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/adlfs[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/cheroot[${PYTHON_USEDEP}]
-	dev-python/gcsfs[${PYTHON_USEDEP}]
-	dev-python/moto[s3,server,${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/paramiko[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
-	dev-python/pydantic-settings[${PYTHON_USEDEP}]
-	>=dev-python/pylint-2.17.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.12.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mypy-plugins-3.1.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-sugar-0.9.7[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/s3fs[${PYTHON_USEDEP}]
-	dev-python/smbprotocol[${PYTHON_USEDEP}]
-	dev-python/webdav4[fsspec,${PYTHON_USEDEP}]
-	dev-python/wsgidav[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/adlfs[${PYTHON_USEDEP}]
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/cheroot[${PYTHON_USEDEP}]
+		dev-python/gcsfs[${PYTHON_USEDEP}]
+		dev-python/moto[s3,server,${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/paramiko[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+		dev-python/pydantic-settings[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.17.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.12.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mypy-plugins-3.1.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-sugar-0.9.7[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
+		dev-python/smbprotocol[${PYTHON_USEDEP}]
+		dev-python/webdav4[fsspec,${PYTHON_USEDEP}]
+		dev-python/wsgidav[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

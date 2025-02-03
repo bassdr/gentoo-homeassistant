@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="standard"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/h11-0.8[${PYTHON_USEDEP}]
 	standard? ( >=dev-python/httptools-0.6.3[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	standard? ( >=dev-python/watchfiles-0.13[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/websockets-10.4[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/asgiref-3.4.0[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/h11-0.8[${PYTHON_USEDEP}]

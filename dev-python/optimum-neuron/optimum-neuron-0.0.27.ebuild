@@ -16,56 +16,59 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/accelerate-0.29.2[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/accelerate-0.29.2[${PYTHON_USEDEP}]
 	quality? ( dev-python/black[${PYTHON_USEDEP}] )
 	diffusers? ( <=dev-python/diffusers-0.30.3[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.20.1[${PYTHON_USEDEP}]
 	quality? ( dev-python/isort[${PYTHON_USEDEP}] )
-	neuronx? ( ~dev-python/libneuronxla-2.0.5347.0[${PYTHON_USEDEP}] )
-	neuron? ( ~dev-python/neuron-cc-1.22.0.0[tensorflow,${PYTHON_USEDEP}] )
-	neuronx? ( ~dev-python/neuronx-cc-2.15.143.0[${PYTHON_USEDEP}] )
-	neuronx? ( ~dev-python/neuronx-distributed-0.9.0[${PYTHON_USEDEP}] )
+	neuronx? ( =dev-python/libneuronxla-2.0.5347.0[${PYTHON_USEDEP}] )
+	neuron? ( =dev-python/neuron-cc-1.22.0.0[tensorflow,${PYTHON_USEDEP}] )
+	neuronx? ( =dev-python/neuronx-cc-2.15.143.0[${PYTHON_USEDEP}] )
+	neuronx? ( =dev-python/neuronx-distributed-0.9.0[${PYTHON_USEDEP}] )
 	<=dev-python/numpy-1.25.2[${PYTHON_USEDEP}]
-	neuron? ( ~dev-python/numpy-1.22.3[${PYTHON_USEDEP}] )
-	~dev-python/optimum-1.22.0[${PYTHON_USEDEP}]
+	neuron? ( =dev-python/numpy-1.22.3[${PYTHON_USEDEP}] )
+	>=dev-python/optimum-1.22.0[${PYTHON_USEDEP}] =dev-python/optimum-1.22*[${PYTHON_USEDEP}]
 	diffusers? ( dev-python/peft[${PYTHON_USEDEP}] )
 	<dev-python/protobuf-4[${PYTHON_USEDEP}]
 	neuron? ( dev-python/protobuf[${PYTHON_USEDEP}] )
 	quality? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	sentence-transformers? ( >=dev-python/sentence-transformers-2.2.0[${PYTHON_USEDEP}] )
-	neuron? ( ~dev-python/torch-1.13.1[${PYTHON_USEDEP}] )
-	neuronx? ( ~dev-python/torch-2.1.2[${PYTHON_USEDEP}] )
-	neuron? ( ~dev-python/torch-neuron-1.13.1.2.9.74.0[${PYTHON_USEDEP}] )
-	neuronx? ( ~dev-python/torch-neuronx-2.1.2.2.3.2[${PYTHON_USEDEP}] )
+	neuron? ( =dev-python/torch-1.13.1*[${PYTHON_USEDEP}] )
+	neuronx? ( =dev-python/torch-2.1.2*[${PYTHON_USEDEP}] )
+	neuron? ( =dev-python/torch-neuron-1.13.1.2.9.74.0[${PYTHON_USEDEP}] )
+	neuronx? ( =dev-python/torch-neuronx-2.1.2.2.3.2[${PYTHON_USEDEP}] )
 	neuron? ( dev-python/torchvision[${PYTHON_USEDEP}] )
-	neuronx? ( ~dev-python/torchvision-0.16[${PYTHON_USEDEP}] )
-	~dev-python/transformers-4.43.2[${PYTHON_USEDEP}]
-	neuronx? ( ~dev-python/transformers-neuronx-0.12.313[${PYTHON_USEDEP}] )
+	neuronx? ( =dev-python/torchvision-0.16*[${PYTHON_USEDEP}] )
+	=dev-python/transformers-4.43.2[${PYTHON_USEDEP}]
+	neuronx? ( =dev-python/transformers-neuronx-0.12.313[${PYTHON_USEDEP}] )
 	neuron? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	neuronx? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/compel[${PYTHON_USEDEP}]
-	dev-python/controlnet-aux[${PYTHON_USEDEP}]
-	dev-python/datasets[${PYTHON_USEDEP}]
-	<=dev-python/diffusers-0.30.3[${PYTHON_USEDEP}]
-	dev-python/gitpython[${PYTHON_USEDEP}]
-	dev-python/librosa[${PYTHON_USEDEP}]
-	dev-python/mediapipe[${PYTHON_USEDEP}]
-	dev-python/opencv-python-headless[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/peft[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
-	dev-python/rjieba[${PYTHON_USEDEP}]
-	dev-python/sacremoses[${PYTHON_USEDEP}]
-	dev-python/safetensors[${PYTHON_USEDEP}]
-	>=dev-python/sentence-transformers-2.2.0[${PYTHON_USEDEP}]
-	dev-python/sentencepiece[${PYTHON_USEDEP}]
-	dev-python/soundfile[${PYTHON_USEDEP}]
-	~dev-python/trl-0.11.4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/compel[${PYTHON_USEDEP}]
+		dev-python/controlnet-aux[${PYTHON_USEDEP}]
+		dev-python/datasets[${PYTHON_USEDEP}]
+		<=dev-python/diffusers-0.30.3[${PYTHON_USEDEP}]
+		dev-python/gitpython[${PYTHON_USEDEP}]
+		dev-python/librosa[${PYTHON_USEDEP}]
+		dev-python/mediapipe[${PYTHON_USEDEP}]
+		dev-python/opencv-python-headless[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/peft[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+		dev-python/rjieba[${PYTHON_USEDEP}]
+		dev-python/sacremoses[${PYTHON_USEDEP}]
+		dev-python/safetensors[${PYTHON_USEDEP}]
+		>=dev-python/sentence-transformers-2.2.0[${PYTHON_USEDEP}]
+		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		dev-python/soundfile[${PYTHON_USEDEP}]
+		=dev-python/trl-0.11.4[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

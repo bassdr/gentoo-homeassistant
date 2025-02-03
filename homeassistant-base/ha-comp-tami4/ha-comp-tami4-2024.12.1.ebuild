@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/tami4edgeapi-3.0[${PYTHON_USEDEP}]
+	=dev-python/tami4edgeapi-3.0[${PYTHON_USEDEP}]
 "

@@ -16,9 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	test-dev? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
 	test-trackers? ( dev-python/comet-ml[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	deepspeed? ( dev-python/deepspeed[${PYTHON_USEDEP}] )
@@ -36,7 +36,7 @@ GENERATED_DEPEND="${RDEPEND}
 	test-prod? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	rich? ( dev-python/rich[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/ruff-0.6.4[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/ruff-0.6.4[${PYTHON_USEDEP}] =dev-python/ruff-0.6*[${PYTHON_USEDEP}] )
 	>=dev-python/safetensors-0.4.3[${PYTHON_USEDEP}]
 	sagemaker? ( dev-python/sagemaker[${PYTHON_USEDEP}] )
 	test-dev? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
@@ -50,27 +50,30 @@ GENERATED_DEPEND="${RDEPEND}
 	test-dev? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	test-trackers? ( dev-python/wandb[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/bitsandbytes[${PYTHON_USEDEP}]
-	~dev-python/black-23.1[${PYTHON_USEDEP}]
-	dev-python/datasets[${PYTHON_USEDEP}]
-	dev-python/diffusers[${PYTHON_USEDEP}]
-	dev-python/evaluate[${PYTHON_USEDEP}]
-	>=dev-python/hf-doc-builder-0.3.0[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
-	dev-python/pytest-subtests[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/rich[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.6.4[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
-	dev-python/timm[${PYTHON_USEDEP}]
-	>=dev-python/torchdata-0.8.0[${PYTHON_USEDEP}]
-	>=dev-python/torchpippy-0.2.0[${PYTHON_USEDEP}]
-	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev-python/transformers[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/bitsandbytes[${PYTHON_USEDEP}]
+		>=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}]
+		dev-python/datasets[${PYTHON_USEDEP}]
+		dev-python/diffusers[${PYTHON_USEDEP}]
+		dev-python/evaluate[${PYTHON_USEDEP}]
+		>=dev-python/hf-doc-builder-0.3.0[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest-subtests[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.6.4[${PYTHON_USEDEP}] =dev-python/ruff-0.6*[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+		dev-python/timm[${PYTHON_USEDEP}]
+		>=dev-python/torchdata-0.8.0[${PYTHON_USEDEP}]
+		>=dev-python/torchpippy-0.2.0[${PYTHON_USEDEP}]
+		dev-python/tqdm[${PYTHON_USEDEP}]
+		dev-python/transformers[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

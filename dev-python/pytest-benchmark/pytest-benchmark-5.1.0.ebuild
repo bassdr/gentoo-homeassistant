@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aspect? ( dev-python/aspectlib[${PYTHON_USEDEP}] )
 	elasticsearch? ( dev-python/elasticsearch[${PYTHON_USEDEP}] )
 	dev-python/pathlib2[${PYTHON_USEDEP}]
@@ -28,6 +28,6 @@ GENERATED_DEPEND="${RDEPEND}
 	histogram? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	dev-python/statistics[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

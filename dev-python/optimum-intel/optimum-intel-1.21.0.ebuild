@@ -17,9 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	neural-compressor? ( dev-python/accelerate[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
 	>=dev-python/datasets-1.4.0[${PYTHON_USEDEP}]
 	diffusers? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	ipex? ( >=dev-python/intel-extension-for-pytorch-2.4[${PYTHON_USEDEP}] )
@@ -29,8 +29,8 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/onnx[${PYTHON_USEDEP}]
 	openvino? ( >=dev-python/openvino-2024.5.0[${PYTHON_USEDEP}] )
 	openvino? ( >=dev-python/openvino-tokenizers-2024.5.0[${PYTHON_USEDEP}] )
-	~dev-python/optimum-1.23[${PYTHON_USEDEP}]
-	quality? ( ~dev-python/ruff-0.4.4[${PYTHON_USEDEP}] )
+	>=dev-python/optimum-1.23[${PYTHON_USEDEP}] =dev-python/optimum-1*[${PYTHON_USEDEP}]
+	quality? ( =dev-python/ruff-0.4.4[${PYTHON_USEDEP}] )
 	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/sentencepiece[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
@@ -39,26 +39,29 @@ GENERATED_DEPEND="${RDEPEND}
 	ipex? ( <dev-python/transformers-4.47[${PYTHON_USEDEP}] )
 	neural-compressor? ( <dev-python/transformers-4.46[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/accelerate[${PYTHON_USEDEP}]
-	dev-python/diffusers[${PYTHON_USEDEP}]
-	dev-python/einops[${PYTHON_USEDEP}]
-	dev-python/evaluate[${PYTHON_USEDEP}]
-	>=dev-python/invisible-watermark-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/open-clip-torch-2.26.1[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/peft[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
-	dev-python/rjieba[${PYTHON_USEDEP}]
-	dev-python/sacremoses[${PYTHON_USEDEP}]
-	dev-python/sentence-transformers[${PYTHON_USEDEP}]
-	dev-python/tiktoken[${PYTHON_USEDEP}]
-	dev-python/timm[${PYTHON_USEDEP}]
-	dev-python/torchaudio[${PYTHON_USEDEP}]
-	dev-python/transformers-stream-generator[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/accelerate[${PYTHON_USEDEP}]
+		dev-python/diffusers[${PYTHON_USEDEP}]
+		dev-python/einops[${PYTHON_USEDEP}]
+		dev-python/evaluate[${PYTHON_USEDEP}]
+		>=dev-python/invisible-watermark-0.2.0[${PYTHON_USEDEP}]
+		>=dev-python/open-clip-torch-2.26.1[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/peft[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		dev-python/py-cpuinfo[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+		dev-python/rjieba[${PYTHON_USEDEP}]
+		dev-python/sacremoses[${PYTHON_USEDEP}]
+		dev-python/sentence-transformers[${PYTHON_USEDEP}]
+		dev-python/tiktoken[${PYTHON_USEDEP}]
+		dev-python/timm[${PYTHON_USEDEP}]
+		dev-python/torchaudio[${PYTHON_USEDEP}]
+		dev-python/transformers-stream-generator[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

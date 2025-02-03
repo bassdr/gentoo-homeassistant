@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/openhomedevice-2.2.0[${PYTHON_USEDEP}]
+	=dev-python/openhomedevice-2.2.0[${PYTHON_USEDEP}]
 "

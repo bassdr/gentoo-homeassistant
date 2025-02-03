@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2019.11.17[${PYTHON_USEDEP}]
 	grpc? ( >=dev-python/googleapis-common-protos-1.53.0[${PYTHON_USEDEP}] )
 	>=dev-python/grpcio-1.44.0[${PYTHON_USEDEP}]
@@ -30,6 +30,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]' python3_13{,t})
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

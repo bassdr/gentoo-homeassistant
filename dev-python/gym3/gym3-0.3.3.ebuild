@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/cffi-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/glfw-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/imageio-3.0.0[${PYTHON_USEDEP}]
@@ -24,14 +24,18 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/moderngl-6.0.0[${PYTHON_USEDEP}]
 	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/gym-0.17.2[${PYTHON_USEDEP}]
-	~dev-python/gym-retro-0.8.0[${PYTHON_USEDEP}]
-	~dev-python/mpi4py-3.0.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-5.2.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-benchmark-3.2.2[${PYTHON_USEDEP}]
-	~dev-python/tensorflow-1.15.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		=dev-python/gym-0.17.2[${PYTHON_USEDEP}]
+		=dev-python/gym-retro-0.8.0[${PYTHON_USEDEP}]
+		=dev-python/mpi4py-3.0.3[${PYTHON_USEDEP}]
+		=dev-python/pytest-5.2.1[${PYTHON_USEDEP}]
+		=dev-python/pytest-benchmark-3.2.2[${PYTHON_USEDEP}]
+		=dev-python/tensorflow-1.15.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

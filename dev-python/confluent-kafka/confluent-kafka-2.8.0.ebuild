@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	avro? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/attrs[${PYTHON_USEDEP}] )
@@ -74,10 +74,10 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/googleapis-common-protos[${PYTHON_USEDEP}] )
 	examples? ( dev-python/googleapis-common-protos[${PYTHON_USEDEP}] )
 	protobuf? ( dev-python/googleapis-common-protos[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
-	examples? ( ~dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
-	rules? ( ~dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
+	all? ( =dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
+	examples? ( =dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
+	rules? ( =dev-python/hkdf-0.0.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	avro? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/httpx[${PYTHON_USEDEP}] )
@@ -141,42 +141,45 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 	examples? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/attrs[${PYTHON_USEDEP}]
-	<dev-python/avro-2[${PYTHON_USEDEP}]
-	dev-python/azure-identity[${PYTHON_USEDEP}]
-	dev-python/azure-keyvault-keys[${PYTHON_USEDEP}]
-	dev-python/boto3[${PYTHON_USEDEP}]
-	dev-python/cachetools[${PYTHON_USEDEP}]
-	>=dev-python/cel-python-0.1.5[${PYTHON_USEDEP}]
-	dev-python/confluent-kafka[${PYTHON_USEDEP}]
-	dev-python/fastapi[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/google-api-core[${PYTHON_USEDEP}]
-	dev-python/google-auth[${PYTHON_USEDEP}]
-	dev-python/google-cloud-kms[${PYTHON_USEDEP}]
-	dev-python/googleapis-common-protos[${PYTHON_USEDEP}]
-	~dev-python/hkdf-0.0.3[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
-	dev-python/hvac[${PYTHON_USEDEP}]
-	dev-python/jsonata-python[${PYTHON_USEDEP}]
-	dev-python/jsonschema[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
-	dev-python/pyrsistent[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-	dev-python/respx[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
-	dev-python/tink[${PYTHON_USEDEP}]
-	dev-python/uvicorn[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/attrs[${PYTHON_USEDEP}]
+		<dev-python/avro-2[${PYTHON_USEDEP}]
+		dev-python/azure-identity[${PYTHON_USEDEP}]
+		dev-python/azure-keyvault-keys[${PYTHON_USEDEP}]
+		dev-python/boto3[${PYTHON_USEDEP}]
+		dev-python/cachetools[${PYTHON_USEDEP}]
+		>=dev-python/cel-python-0.1.5[${PYTHON_USEDEP}]
+		dev-python/confluent-kafka[${PYTHON_USEDEP}]
+		dev-python/fastapi[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/google-api-core[${PYTHON_USEDEP}]
+		dev-python/google-auth[${PYTHON_USEDEP}]
+		dev-python/google-cloud-kms[${PYTHON_USEDEP}]
+		dev-python/googleapis-common-protos[${PYTHON_USEDEP}]
+		=dev-python/hkdf-0.0.3[${PYTHON_USEDEP}]
+		dev-python/httpx[${PYTHON_USEDEP}]
+		dev-python/hvac[${PYTHON_USEDEP}]
+		dev-python/jsonata-python[${PYTHON_USEDEP}]
+		dev-python/jsonschema[${PYTHON_USEDEP}]
+		dev-python/protobuf[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+		dev-python/pyrsistent[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/respx[${PYTHON_USEDEP}]
+		dev-python/six[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+		dev-python/tink[${PYTHON_USEDEP}]
+		dev-python/uvicorn[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

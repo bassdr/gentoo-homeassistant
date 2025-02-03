@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.3.0[${PYTHON_USEDEP}]
 	dev-no-parser? ( >=dev-python/boto3-1.15.0[${PYTHON_USEDEP}] )
 	redshift? ( >=dev-python/boto3-1.15.0[${PYTHON_USEDEP}] )
@@ -37,8 +37,8 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-no-parser? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/mock[${PYTHON_USEDEP}] )
 	dev-no-parser? ( >=dev-python/mypy-0.960[${PYTHON_USEDEP}] )
-	~dev-python/openlineage-python-1.27.0[${PYTHON_USEDEP}]
-	~dev-python/openlineage-sql-1.27.0[${PYTHON_USEDEP}]
+	=dev-python/openlineage-python-1.27.0[${PYTHON_USEDEP}]
+	=dev-python/openlineage-sql-1.27.0[${PYTHON_USEDEP}]
 	dev-no-parser? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
@@ -51,28 +51,31 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-no-parser? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
 	dev-no-parser? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/boto3-1.15.0[${PYTHON_USEDEP}]
-	>=dev-python/dbt-core-0.20.0[${PYTHON_USEDEP}]
-	>=dev-python/google-api-core-1.26.3[${PYTHON_USEDEP}]
-	>=dev-python/google-auth-1.30.0[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-bigquery-4.0.0[${PYTHON_USEDEP}]
-	>=dev-python/google-cloud-core-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/google-crc32c-1.1.2[${PYTHON_USEDEP}]
-	<dev-python/great-expectations-0.15.35[${PYTHON_USEDEP}]
-	dev-python/jinja2[${PYTHON_USEDEP}]
-	dev-python/mock[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.960[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
-	<dev-python/sqlalchemy-2.0.0[${PYTHON_USEDEP}]
-	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/boto3-1.15.0[${PYTHON_USEDEP}]
+		>=dev-python/dbt-core-0.20.0[${PYTHON_USEDEP}]
+		>=dev-python/google-api-core-1.26.3[${PYTHON_USEDEP}]
+		>=dev-python/google-auth-1.30.0[${PYTHON_USEDEP}]
+		<dev-python/google-cloud-bigquery-4.0.0[${PYTHON_USEDEP}]
+		>=dev-python/google-cloud-core-1.6.0[${PYTHON_USEDEP}]
+		>=dev-python/google-crc32c-1.1.2[${PYTHON_USEDEP}]
+		<dev-python/great-expectations-0.15.35[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		>=dev-python/mypy-0.960[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/python-dateutil[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
+		<dev-python/sqlalchemy-2.0.0[${PYTHON_USEDEP}]
+		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

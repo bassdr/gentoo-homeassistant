@@ -24,14 +24,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	<dev-python/rapidfuzz-4.0.0[${PYTHON_USEDEP}]
-"
 DEPEND="
 	<dev-cpp/rapidfuzz-cpp-4
 	>=dev-cpp/rapidfuzz-cpp-3.0.0
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	<dev-python/rapidfuzz-4.0.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/rapidfuzz-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/rapidfuzz-3.9.0[${PYTHON_USEDEP}]
 "

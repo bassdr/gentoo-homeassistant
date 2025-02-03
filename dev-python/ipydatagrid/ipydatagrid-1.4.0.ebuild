@@ -15,17 +15,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bqplot-0.11.6[${PYTHON_USEDEP}]
 	<dev-python/ipywidgets-9[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
 	>=dev-python/py2vega-0.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/nbval-0.10[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/nbval-0.10[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

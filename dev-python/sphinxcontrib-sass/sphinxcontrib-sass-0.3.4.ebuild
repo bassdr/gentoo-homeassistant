@@ -16,15 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/libsass[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-22.3.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.8.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-22.3.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

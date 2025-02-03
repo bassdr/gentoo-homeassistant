@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/hypercorn-0.12.0[trio,${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	>=dev-python/quart-0.19[${PYTHON_USEDEP}]
 	>=dev-python/trio-0.19.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep '
 		>=dev-python/exceptiongroup-1.1.0[${PYTHON_USEDEP}]
 	' 3.10)

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/xmltodict-0.13.0[${PYTHON_USEDEP}]
+	=dev-python/xmltodict-0.13.0[${PYTHON_USEDEP}]
 "

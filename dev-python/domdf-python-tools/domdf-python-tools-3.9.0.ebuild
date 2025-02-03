@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/natsort-7.0.1[${PYTHON_USEDEP}]
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dates? ( >=dev-python/pytz-2019.1[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.7.4.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

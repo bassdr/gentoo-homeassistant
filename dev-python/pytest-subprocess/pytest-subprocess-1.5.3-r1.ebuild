@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/changelogd[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-4.0.0[${PYTHON_USEDEP}]
@@ -30,7 +30,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-napoleon[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-4.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -44,17 +44,20 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/anyio[${PYTHON_USEDEP}]
-	dev-python/changelogd[${PYTHON_USEDEP}]
-	>=dev-python/docutils-0.12[${PYTHON_USEDEP}]
-	dev-python/nox[${PYTHON_USEDEP}]
-	>=dev-python/pygments-2.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.15.1[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/anyio[${PYTHON_USEDEP}]
+		dev-python/changelogd[${PYTHON_USEDEP}]
+		>=dev-python/docutils-0.12[${PYTHON_USEDEP}]
+		dev-python/nox[${PYTHON_USEDEP}]
+		>=dev-python/pygments-2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-4.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.15.1[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

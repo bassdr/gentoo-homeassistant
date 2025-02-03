@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/async-interrupt-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/chacha20poly1305-reuseable-0.13.2[${PYTHON_USEDEP}]
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/protobuf-4[${PYTHON_USEDEP}]
 	<dev-python/zeroconf-1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/async-interrupt-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.19.0[${PYTHON_USEDEP}]

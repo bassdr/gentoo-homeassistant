@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/httpx-1[${PYTHON_USEDEP}]
 	langsmith-pyo3? ( <dev-python/langsmith-pyo3-0.2.0[${PYTHON_USEDEP}] )
 	<dev-python/pydantic-3.0.0[${PYTHON_USEDEP}]
@@ -27,6 +27,6 @@ GENERATED_DEPEND="${RDEPEND}
 	pytest? ( <dev-python/rich-14.0.0[${PYTHON_USEDEP}] )
 	<dev-python/zstandard-0.24.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

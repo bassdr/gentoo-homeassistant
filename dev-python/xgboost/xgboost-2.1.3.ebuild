@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	pyspark? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )
 	dask? ( dev-python/dask[${PYTHON_USEDEP}] )
 	datatable? ( dev-python/datatable[${PYTHON_USEDEP}] )
@@ -31,6 +31,6 @@ GENERATED_DEPEND="${RDEPEND}
 	scikit-learn? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

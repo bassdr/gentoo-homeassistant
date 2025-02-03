@@ -15,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.1.3[${PYTHON_USEDEP}]
 	>=dev-python/maison-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/ruyaml-0.91.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

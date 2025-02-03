@@ -17,20 +17,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiofiles-24.0[${PYTHON_USEDEP}]
 	<dev-python/anyio-5.0[${PYTHON_USEDEP}]
 	oauth? ( dev-python/authlib[${PYTHON_USEDEP}] )
 	<dev-python/fastapi-1.0[${PYTHON_USEDEP}]
 	dev-python/ffmpy[${PYTHON_USEDEP}]
-	~dev-python/gradio-client-1.7.0[${PYTHON_USEDEP}]
+	=dev-python/gradio-client-1.7.0[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
 	>=dev-python/huggingface-hub-0.25.1[${PYTHON_USEDEP}]
 	oauth? ( dev-python/itsdangerous[${PYTHON_USEDEP}] )
 	<dev-python/jinja2-4.0[${PYTHON_USEDEP}]
-	~dev-python/markupsafe-2.0[${PYTHON_USEDEP}]
+	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}] =dev-python/markupsafe-2*[${PYTHON_USEDEP}]
 	<dev-python/numpy-3.0[${PYTHON_USEDEP}]
-	~dev-python/orjson-3.0[${PYTHON_USEDEP}]
+	>=dev-python/orjson-3.0[${PYTHON_USEDEP}] =dev-python/orjson-3*[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	<dev-python/pandas-3.0[${PYTHON_USEDEP}]
 	<dev-python/pillow-12.0[${PYTHON_USEDEP}]
@@ -39,10 +39,14 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/python-multipart-0.0.18[${PYTHON_USEDEP}]
 	<dev-python/pyyaml-7.0[${PYTHON_USEDEP}]
 	<dev-python/safehttpx-0.2.0[${PYTHON_USEDEP}]
-	~dev-python/semantic-version-2.0[${PYTHON_USEDEP}]
+	>=dev-python/semantic-version-2.0[${PYTHON_USEDEP}] =dev-python/semantic-version-2*[${PYTHON_USEDEP}]
 	<dev-python/tomlkit-0.14.0[${PYTHON_USEDEP}]
-	~dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}] =dev-python/typing-extensions-4*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

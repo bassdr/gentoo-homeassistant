@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/eval-type-backport-0.2.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/griffe-1[${PYTHON_USEDEP}] )
 	>=dev-python/htmltools-0.2.0[${PYTHON_USEDEP}]
@@ -28,11 +28,14 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/quartodoc-0.7[${PYTHON_USEDEP}] )
 	>=dev-python/ruamel-yaml-0.18.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pyright-1.1.251[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8[${PYTHON_USEDEP}]
-	>=dev-python/syrupy-4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pyright-1.1.251[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8[${PYTHON_USEDEP}]
+		>=dev-python/syrupy-4[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/gios-5.0.0[${PYTHON_USEDEP}]
+	=dev-python/gios-5.0.0[${PYTHON_USEDEP}]
 "

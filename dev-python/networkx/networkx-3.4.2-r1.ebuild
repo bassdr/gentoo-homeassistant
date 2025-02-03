@@ -19,35 +19,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="default developer doc example extra"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	example? ( >=dev-python/cairocffi-1.7[${PYTHON_USEDEP}] )
-	developer? ( ~dev-python/changelist-0.5[${PYTHON_USEDEP}] )
-	example? ( >=dev-python/contextily-1.6[${PYTHON_USEDEP}] )
-	example? ( >=dev-python/igraph-0.11[${PYTHON_USEDEP}] )
-	doc? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
-	extra? ( >=dev-python/lxml-4.6[${PYTHON_USEDEP}] )
-	default? ( >=dev-python/matplotlib-3.7[${PYTHON_USEDEP}] )
-	example? ( >=dev-python/momepy-0.7.2[${PYTHON_USEDEP}] )
-	developer? ( >=dev-python/mypy-1.1[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/myst-nb-1.1[${PYTHON_USEDEP}] )
-	default? ( >=dev-python/numpy-1.24[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/numpydoc-1.8.0[${PYTHON_USEDEP}] )
-	example? ( >=dev-python/osmnx-1.9[${PYTHON_USEDEP}] )
-	default? ( >=dev-python/pandas-2.0[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/pillow-9.4[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}] )
-	extra? ( >=dev-python/pydot-3.0.1[${PYTHON_USEDEP}] )
-	extra? ( >=dev-python/pygraphviz-1.14[${PYTHON_USEDEP}] )
-	developer? ( dev-python/rtoml[${PYTHON_USEDEP}] )
-	example? ( >=dev-python/scikit-learn-1.5[${PYTHON_USEDEP}] )
-	default? ( !=dev-python/scipy-1.11.0[${PYTHON_USEDEP}] )
-	example? ( >=dev-python/seaborn-0.13[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/sphinx-7.3[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/sphinx-gallery-0.16[${PYTHON_USEDEP}] )
-	extra? ( >=dev-python/sympy-1.10[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/texext-0.6.7[${PYTHON_USEDEP}] )
-	developer? ( >=dev-vcs/pre-commit-3.2[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		>=dev-python/lxml-4.6[${PYTHON_USEDEP}]
@@ -61,10 +32,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	virtx distutils-r1_src_test
@@ -96,4 +70,5 @@ pkg_postinst() {
 	optfeature "shapefile format reading and writing" "sci-libs/gdal[python]"
 	optfeature "GraphML XML format" "dev-python/lxml"
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

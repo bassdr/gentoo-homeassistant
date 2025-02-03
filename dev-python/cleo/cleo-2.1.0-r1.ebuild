@@ -21,11 +21,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/crashtest-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/rapidfuzz-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/crashtest[${PYTHON_USEDEP}]
 	dev-python/rapidfuzz[${PYTHON_USEDEP}]
 "

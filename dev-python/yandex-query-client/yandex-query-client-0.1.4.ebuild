@@ -15,20 +15,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-1.2.5[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/mypy[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
-	>=dev-python/responses-0.23.1[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.3.3[${PYTHON_USEDEP}]
-	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/mypy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
+		>=dev-python/responses-0.23.1[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.3.3[${PYTHON_USEDEP}]
+		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

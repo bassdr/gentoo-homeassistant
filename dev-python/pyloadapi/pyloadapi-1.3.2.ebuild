@@ -23,11 +23,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/aiohttp-3.9[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 >=dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]"
 BDEPEND="

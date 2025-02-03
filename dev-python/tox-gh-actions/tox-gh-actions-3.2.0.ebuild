@@ -16,19 +16,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/black[${PYTHON_USEDEP}]
 	<dev-python/flake8-7[${PYTHON_USEDEP}]
 	dev-python/mypy[${PYTHON_USEDEP}]
 	<dev-python/tox-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/devpi-process[${PYTHON_USEDEP}]
-	<dev-python/pytest-8[${PYTHON_USEDEP}]
-	<dev-python/pytest-cov-4[${PYTHON_USEDEP}]
-	<dev-python/pytest-mock-4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-randomly-3[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/devpi-process[${PYTHON_USEDEP}]
+		<dev-python/pytest-8[${PYTHON_USEDEP}]
+		<dev-python/pytest-cov-4[${PYTHON_USEDEP}]
+		<dev-python/pytest-mock-4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-randomly-3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

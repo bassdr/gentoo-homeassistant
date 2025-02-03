@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/python-fullykiosk-0.0.14[${PYTHON_USEDEP}]
+	=dev-python/python-fullykiosk-0.0.14[${PYTHON_USEDEP}]
 "

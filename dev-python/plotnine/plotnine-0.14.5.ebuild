@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	extra? ( >=dev-python/adjusttext-1.2.0[${PYTHON_USEDEP}] )
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	doc? ( dev-python/click[${PYTHON_USEDEP}] )
@@ -24,7 +24,7 @@ GENERATED_DEPEND="${RDEPEND}
 	typing? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	doc? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
-	~dev-python/mizani-0.13.0[${PYTHON_USEDEP}]
+	>=dev-python/mizani-0.13.0[${PYTHON_USEDEP}] =dev-python/mizani-0.13*[${PYTHON_USEDEP}]
 	doc? ( dev-python/nbsphinx[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/numpydoc-0.9.1[${PYTHON_USEDEP}] )
@@ -36,7 +36,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/plotnine[extra,${PYTHON_USEDEP}] )
 	all? ( dev-python/plotnine[lint,${PYTHON_USEDEP}] )
 	all? ( dev-python/plotnine[test,${PYTHON_USEDEP}] )
-	typing? ( ~dev-python/pyright-1.1.391[${PYTHON_USEDEP}] )
+	typing? ( =dev-python/pyright-1.1.391[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/quartodoc-0.7.2[${PYTHON_USEDEP}] )
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	extra? ( >dev-python/scikit-learn-1.2.0[${PYTHON_USEDEP}] )
@@ -45,12 +45,15 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/statsmodels-0.14.0[${PYTHON_USEDEP}]
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/plotnine[typing,${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
-	dev-python/twine[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/plotnine[typing,${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
+		dev-python/twine[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aiobotocore? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiofiles-23.2.0[${PYTHON_USEDEP}] )
@@ -224,7 +224,9 @@ GENERATED_DEPEND="${RDEPEND}
 	cncf-kubernetes? ( dev-python/apache-airflow-providers-cncf-kubernetes[${PYTHON_USEDEP}] )
 	cohere? ( dev-python/apache-airflow-providers-cohere[${PYTHON_USEDEP}] )
 	common-io? ( dev-python/apache-airflow-providers-common-io[${PYTHON_USEDEP}] )
+	dev-python/apache-airflow-providers-common-io[${PYTHON_USEDEP}]
 	common-sql? ( dev-python/apache-airflow-providers-common-sql[${PYTHON_USEDEP}] )
+	dev-python/apache-airflow-providers-common-sql[${PYTHON_USEDEP}]
 	databricks? ( dev-python/apache-airflow-providers-databricks[${PYTHON_USEDEP}] )
 	datadog? ( dev-python/apache-airflow-providers-datadog[${PYTHON_USEDEP}] )
 	dbt-cloud? ( dev-python/apache-airflow-providers-dbt-cloud[${PYTHON_USEDEP}] )
@@ -368,7 +370,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/marshmallow-oneofschema-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/mdit-py-plugins-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/methodtools-0.4.7[${PYTHON_USEDEP}]
-	devel-ci? ( ~dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
+	devel-ci? ( =dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
 	>=dev-python/opentelemetry-api-1.15.0[${PYTHON_USEDEP}]
 	dev-python/opentelemetry-exporter-otlp[${PYTHON_USEDEP}]
 	devel-ci? ( dev-python/opentelemetry-exporter-prometheus[${PYTHON_USEDEP}] )
@@ -419,7 +421,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/rich-12.4.4[${PYTHON_USEDEP}]
 	>=dev-python/rich-argparse-1.0.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/rich-click-1.7.0[${PYTHON_USEDEP}] )
-	devel-ci? ( ~dev-python/ruff-0.3.3[${PYTHON_USEDEP}] )
+	devel-ci? ( =dev-python/ruff-0.3.3[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/s3fs-2023.10.0[${PYTHON_USEDEP}] )
 	s3fs? ( >=dev-python/s3fs-2023.10.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
@@ -442,7 +444,7 @@ GENERATED_DEPEND="${RDEPEND}
 	devel-ci? ( >=dev-python/sphinxcontrib-jsmath-1.0.1[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinxcontrib-qthelp-1.0.3[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinxcontrib-redoc-1.6.0[${PYTHON_USEDEP}] )
-	devel-ci? ( ~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
+	devel-ci? ( =dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinxcontrib-spelling-8.0.0[${PYTHON_USEDEP}] )
 	<dev-python/sqlalchemy-2.0[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-jsonfield-1.0[${PYTHON_USEDEP}]
@@ -486,6 +488,6 @@ GENERATED_DEPEND="${RDEPEND}
 	devel-ci? ( >=dev-python/yamllint-1.33.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-vcs/pre-commit-3.5.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -21,14 +21,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
 	<dev-python/async-timeout-5.0[${PYTHON_USEDEP}]
 	>=dev-python/defusedxml-0.6.0[${PYTHON_USEDEP}]
-	~dev-python/python-didl-lite-1.4.0[${PYTHON_USEDEP}]
+	>=dev-python/python-didl-lite-1.4.0[${PYTHON_USEDEP}] =dev-python/python-didl-lite-1.4*[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.14.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/voluptuous-0.14.2[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3[${PYTHON_USEDEP}]

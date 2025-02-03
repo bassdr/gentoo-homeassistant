@@ -18,17 +18,17 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs marshmallow yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/apispec[marshmallow,${PYTHON_USEDEP}] )
 	marshmallow? ( >=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}] )
 	yaml? ( >=dev-python/pyyaml-3.10[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-rtd-theme-3.0.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-rtd-theme-3.0.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 "
@@ -40,14 +40,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/apispec[marshmallow,yaml,${PYTHON_USEDEP}]
-	dev-python/apispec[tests,${PYTHON_USEDEP}]
-	~dev-python/openapi-spec-validator-0.7.1[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/apispec[marshmallow,yaml,${PYTHON_USEDEP}]
+		dev-python/apispec[tests,${PYTHON_USEDEP}]
+		=dev-python/openapi-spec-validator-0.7.1[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs \
 	dev-python/sphinx-issues \
 	dev-python/sphinx-rtd-theme

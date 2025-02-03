@@ -16,22 +16,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dataclasses-0.7[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-23.12.1[${PYTHON_USEDEP}]
-	~dev-python/checkdeps-0.0.2[${PYTHON_USEDEP}]
-	>=dev-python/coverage-6[${PYTHON_USEDEP}]
-	~dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
-	~dev-python/tox-4.12.1[${PYTHON_USEDEP}]
-	~dev-python/twine-4.0.2[${PYTHON_USEDEP}]
-	~dev-python/ufmt-2.3.0[${PYTHON_USEDEP}]
-	~dev-python/usort-1.0.7[${PYTHON_USEDEP}]
-	~dev-python/wheel-0.42.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-23.12.1[${PYTHON_USEDEP}]
+		=dev-python/checkdeps-0.0.2[${PYTHON_USEDEP}]
+		>=dev-python/coverage-6[${PYTHON_USEDEP}]
+		=dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
+		=dev-python/tox-4.12.1[${PYTHON_USEDEP}]
+		=dev-python/twine-4.0.2[${PYTHON_USEDEP}]
+		=dev-python/ufmt-2.3.0[${PYTHON_USEDEP}]
+		=dev-python/usort-1.0.7[${PYTHON_USEDEP}]
+		=dev-python/wheel-0.42.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -23,13 +23,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/cbor2-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodomex-3.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	!dev-python/pubnub[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodomex-3.20.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4[${PYTHON_USEDEP}]

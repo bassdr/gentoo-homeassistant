@@ -20,11 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/monarchmoney-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-10.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]
 	dev-python/monarchmoney[${PYTHON_USEDEP}]"
 

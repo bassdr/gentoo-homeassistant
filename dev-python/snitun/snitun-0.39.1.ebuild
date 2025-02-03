@@ -23,22 +23,25 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
 	>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]
-	lint? ( ~dev-python/pylint-3.1.0[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/ruff-0.4.2[${PYTHON_USEDEP}] )
+	lint? ( =dev-python/pylint-3.1.0[${PYTHON_USEDEP}] )
+	lint? ( =dev-python/ruff-0.4.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
 	>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}]
-	~dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}]
+		=dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

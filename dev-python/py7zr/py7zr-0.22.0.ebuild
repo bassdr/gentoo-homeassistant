@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	check? ( >=dev-python/black-23.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/brotli-1.1.0[${PYTHON_USEDEP}]
 	check? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
@@ -48,16 +48,19 @@ GENERATED_DEPEND="${RDEPEND}
 	check? ( dev-python/twine[${PYTHON_USEDEP}] )
 	check? ( dev-python/types-psutil[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-5.2[toml,${PYTHON_USEDEP}]
-	>=dev-python/coveralls-2.1.1[${PYTHON_USEDEP}]
-	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-remotedata[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-5.2[toml,${PYTHON_USEDEP}]
+		>=dev-python/coveralls-2.1.1[${PYTHON_USEDEP}]
+		dev-python/py-cpuinfo[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

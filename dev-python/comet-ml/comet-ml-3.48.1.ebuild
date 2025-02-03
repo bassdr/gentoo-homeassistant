@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	!=dev-python/dulwich-0.20.33[${PYTHON_USEDEP}]
 	<dev-python/everett-3.2.0[ini,${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
@@ -32,6 +32,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/wrapt-1.11.2[${PYTHON_USEDEP}]
 	>=dev-python/wurlitzer-1.0.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	>=dev-python/asyncclick-8.1.7[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-1.9[${PYTHON_USEDEP}]
@@ -37,10 +37,10 @@ GENERATED_DEPEND="${RDEPEND}
 	shell? ( dev-python/ptpython[${PYTHON_USEDEP}] )
 	shell? ( dev-python/rich[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-7.4.7[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-programoutput-0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-2*[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinxcontrib-programoutput-0.0[${PYTHON_USEDEP}] =dev-python/sphinxcontrib-programoutput-0*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/asyncclick-8.1.7[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-1.9.0[${PYTHON_USEDEP}]

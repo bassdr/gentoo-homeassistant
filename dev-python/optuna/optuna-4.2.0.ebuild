@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-1.5.0[${PYTHON_USEDEP}]
 	document? ( dev-python/ase[${PYTHON_USEDEP}] )
 	benchmark? ( >=dev-python/asv-0.5.0[${PYTHON_USEDEP}] )
@@ -67,16 +67,19 @@ GENERATED_DEPEND="${RDEPEND}
 	checking? ( >=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/virtualenv[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/fakeredis[lua,${PYTHON_USEDEP}]
-	dev-python/grpcio[${PYTHON_USEDEP}]
-	<dev-python/kaleido-0.4[${PYTHON_USEDEP}]
-	dev-python/moto[${PYTHON_USEDEP}]
-	>=dev-python/protobuf-5.28.1[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/fakeredis[lua,${PYTHON_USEDEP}]
+		dev-python/grpcio[${PYTHON_USEDEP}]
+		<dev-python/kaleido-0.4[${PYTHON_USEDEP}]
+		dev-python/moto[${PYTHON_USEDEP}]
+		>=dev-python/protobuf-5.28.1[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

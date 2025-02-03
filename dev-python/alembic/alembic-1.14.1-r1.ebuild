@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="tz"
 IUSE="${GENERATED_IUSE} doc"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
@@ -27,7 +27,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4[${PYTHON_USEDEP}]
 	tz? ( dev-python/tzdata[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/sqlalchemy-1.1.0[${PYTHON_USEDEP}]
 	dev-python/mako[${PYTHON_USEDEP}]
 	>=dev-python/python-editor-0.3[${PYTHON_USEDEP}]

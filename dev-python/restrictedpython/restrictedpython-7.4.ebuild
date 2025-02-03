@@ -28,10 +28,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	test? (
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
@@ -40,8 +36,12 @@ DEPEND="
 PYTHON_MODULES="${PN}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

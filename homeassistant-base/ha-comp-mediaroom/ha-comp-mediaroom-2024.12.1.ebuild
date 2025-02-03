@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pymediaroom-0.6.5.4[${PYTHON_USEDEP}]
+	=dev-python/pymediaroom-0.6.5.4[${PYTHON_USEDEP}]
 "

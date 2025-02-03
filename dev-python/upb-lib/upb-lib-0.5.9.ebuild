@@ -19,11 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2021[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
 "

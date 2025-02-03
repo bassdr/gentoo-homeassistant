@@ -22,11 +22,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/astunparse-1.6[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/backports-strenum-1.3[${PYTHON_USEDEP}]

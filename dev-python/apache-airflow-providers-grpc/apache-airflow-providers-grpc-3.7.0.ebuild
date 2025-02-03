@@ -15,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	<dev-python/google-auth-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-httplib2-0.0.1[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.59.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

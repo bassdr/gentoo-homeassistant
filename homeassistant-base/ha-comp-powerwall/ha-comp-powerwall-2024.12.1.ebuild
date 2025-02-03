@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/tesla-powerwall-0.5.2[${PYTHON_USEDEP}]
+	=dev-python/tesla-powerwall-0.5.2[${PYTHON_USEDEP}]
 "

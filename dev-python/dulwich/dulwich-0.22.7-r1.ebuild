@@ -54,14 +54,14 @@ GENERATED_IUSE="fastimport https paramiko pgp"
 IUSE="${GENERATED_IUSE} doc examples +native-extensions test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	fastimport? ( dev-python/fastimport[${PYTHON_USEDEP}] )
 	pgp? ( dev-python/gpg[${PYTHON_USEDEP}] )
 	paramiko? ( dev-python/paramiko[${PYTHON_USEDEP}] )
 	>=dev-python/urllib3-1.25[${PYTHON_USEDEP}]
 	https? ( >=dev-python/urllib3-1.24.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/urllib3-1.25[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -119,4 +119,5 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

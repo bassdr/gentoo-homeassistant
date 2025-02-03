@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	memcached? ( dev-python/aiomcache[${PYTHON_USEDEP}] )
 	<dev-python/anyio-4[${PYTHON_USEDEP}]
 	brotli? ( dev-python/brotli[${PYTHON_USEDEP}] )
@@ -41,6 +41,6 @@ GENERATED_DEPEND="${RDEPEND}
 	structlog? ( dev-python/structlog[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

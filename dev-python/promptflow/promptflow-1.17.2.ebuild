@@ -17,18 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	all? ( ~dev-python/promptflow-azure-1.17.2[${PYTHON_USEDEP}] )
-	azure? ( ~dev-python/promptflow-azure-1.17.2[${PYTHON_USEDEP}] )
-	~dev-python/promptflow-core-1.17.2[${PYTHON_USEDEP}]
-	all? ( ~dev-python/promptflow-core-1.17.2[executor-service,${PYTHON_USEDEP}] )
-	azureml-serving? ( ~dev-python/promptflow-core-1.17.2[azureml-serving,${PYTHON_USEDEP}] )
-	executor-service? ( ~dev-python/promptflow-core-1.17.2[executor-service,${PYTHON_USEDEP}] )
-	~dev-python/promptflow-devkit-1.17.2[${PYTHON_USEDEP}]
-	all? ( ~dev-python/promptflow-devkit-1.17.2[all,${PYTHON_USEDEP}] )
-	executable? ( ~dev-python/promptflow-devkit-1.17.2[executable,${PYTHON_USEDEP}] )
-	~dev-python/promptflow-tracing-1.17.2[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	all? ( =dev-python/promptflow-azure-1.17.2[${PYTHON_USEDEP}] )
+	azure? ( =dev-python/promptflow-azure-1.17.2[${PYTHON_USEDEP}] )
+	=dev-python/promptflow-core-1.17.2[${PYTHON_USEDEP}]
+	all? ( =dev-python/promptflow-core-1.17.2[executor-service,${PYTHON_USEDEP}] )
+	azureml-serving? ( =dev-python/promptflow-core-1.17.2[azureml-serving,${PYTHON_USEDEP}] )
+	executor-service? ( =dev-python/promptflow-core-1.17.2[executor-service,${PYTHON_USEDEP}] )
+	=dev-python/promptflow-devkit-1.17.2[${PYTHON_USEDEP}]
+	all? ( =dev-python/promptflow-devkit-1.17.2[all,${PYTHON_USEDEP}] )
+	executable? ( =dev-python/promptflow-devkit-1.17.2[executable,${PYTHON_USEDEP}] )
+	=dev-python/promptflow-tracing-1.17.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

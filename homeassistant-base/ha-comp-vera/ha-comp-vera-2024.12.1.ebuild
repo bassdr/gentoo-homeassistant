@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyvera-0.3.15[${PYTHON_USEDEP}]
+	=dev-python/pyvera-0.3.15[${PYTHON_USEDEP}]
 "

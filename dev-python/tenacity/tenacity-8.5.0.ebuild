@@ -19,10 +19,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	doc? ( dev-python/reno[${PYTHON_USEDEP}] )
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
@@ -32,11 +28,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>=dev-python/tornado-4.5[${PYTHON_USEDEP}]
-	dev-python/typeguard[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/tornado-4.5[${PYTHON_USEDEP}]
+		dev-python/typeguard[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(
@@ -47,4 +46,5 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

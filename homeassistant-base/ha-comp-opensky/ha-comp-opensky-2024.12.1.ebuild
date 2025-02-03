@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/python-opensky-1.0.1[${PYTHON_USEDEP}]
+	=dev-python/python-opensky-1.0.1[${PYTHON_USEDEP}]
 "

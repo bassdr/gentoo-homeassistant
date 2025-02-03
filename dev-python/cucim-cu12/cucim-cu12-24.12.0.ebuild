@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	developer? ( dev-python/black[${PYTHON_USEDEP}] )
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/cupy-cuda12x-12.0.0[${PYTHON_USEDEP}]
@@ -37,19 +37,23 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( <dev-python/sphinx-6[${PYTHON_USEDEP}] )
 	developer? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/matplotlib[${PYTHON_USEDEP}]
-	>=dev-python/numpydoc-1.5[${PYTHON_USEDEP}]
-	>=dev-python/opencv-python-headless-4.6[${PYTHON_USEDEP}]
-	>=dev-python/pooch-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/psutil-5.8.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.0.0_alpha0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.12.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-lazy-fixtures-1.0.0[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	>=dev-python/pywavelets-1.0[${PYTHON_USEDEP}]
-	>=dev-python/tifffile-2022.7.28[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		>=dev-python/numpydoc-1.5[${PYTHON_USEDEP}]
+		>=dev-python/opencv-python-headless-4.6[${PYTHON_USEDEP}]
+		>=dev-python/pooch-1.6.0[${PYTHON_USEDEP}]
+		>=dev-python/psutil-5.8.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.0.0_alpha0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.12.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-lazy-fixtures-1.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		>=dev-python/pywavelets-1.0[${PYTHON_USEDEP}]
+		>=dev-python/tifffile-2022.7.28[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

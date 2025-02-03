@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/gspread-5.5.0[${PYTHON_USEDEP}]
+	=dev-python/gspread-5.5.0[${PYTHON_USEDEP}]
 "

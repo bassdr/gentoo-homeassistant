@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} ${PV} .zip)"
 
@@ -17,12 +16,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="app-arch/unzip"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -21,11 +21,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.12[${PYTHON_USEDEP}]
 	!=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	app-text/doxygen
 	dev-python/docutils[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}]

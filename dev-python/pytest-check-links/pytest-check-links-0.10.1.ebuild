@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.20.1[${PYTHON_USEDEP}]
 	>=dev-python/html5lib-1.1[${PYTHON_USEDEP}]
 	>=dev-python/nbconvert-7.1[${PYTHON_USEDEP}]
@@ -25,11 +25,14 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
 	cache? ( >=dev-python/requests-cache-0.9.7[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/flaky[${PYTHON_USEDEP}]
-	>=dev-python/requests-cache-0.9.7[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		>=dev-python/requests-cache-0.9.7[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

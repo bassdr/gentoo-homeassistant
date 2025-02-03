@@ -27,7 +27,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="async-rest grpc grpcgcp grpcio-gcp"
 IUSE="${GENERATED_IUSE} grpc"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/google-auth-3.0_pre0[${PYTHON_USEDEP}]
 	async-rest? ( <dev-python/google-auth-3.0_pre0[aiohttp,${PYTHON_USEDEP}] )
 	<dev-python/googleapis-common-protos-2.0_pre0[${PYTHON_USEDEP}]
@@ -41,7 +41,7 @@ GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/protobuf-3.20.0[${PYTHON_USEDEP}]
 	<dev-python/requests-3.0.0_pre0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/googleapis-common-protos-1.56.2[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-1.25.0[${PYTHON_USEDEP}]
 	>=dev-python/proto-plus-1.25.0[${PYTHON_USEDEP}]

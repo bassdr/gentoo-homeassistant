@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/importlib-resources-5.10[${PYTHON_USEDEP}]' python3_12)
 	dev-python/jaraco-context[${PYTHON_USEDEP}]
@@ -32,9 +32,12 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/toml[${PYTHON_USEDEP}]
 	type? ( dev-python/types-toml[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

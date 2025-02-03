@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="grpc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	grpc? ( <dev-python/grpcio-2.0.0_pre0[${PYTHON_USEDEP}] )
 	!=dev-python/protobuf-3.20.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.15.0[${PYTHON_USEDEP}]
 "

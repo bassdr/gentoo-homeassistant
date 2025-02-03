@@ -18,17 +18,17 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="
+	dev-libs/openssl:=
+"
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
 	<dev-python/pylsqpack-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-24[${PYTHON_USEDEP}]
 	>=dev-python/service-identity-24.1.0[${PYTHON_USEDEP}]
 "
-DEPEND="
-	dev-libs/openssl:=
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
@@ -39,6 +39,9 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-7.2.2[toml,${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-7.2.2[toml,${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -36,7 +36,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="compiler"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	compiler? ( >=dev-python/black-19.3_beta0[${PYTHON_USEDEP}] )
 	>=dev-python/grpclib-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-1.6.0[${PYTHON_USEDEP}]
@@ -44,7 +44,7 @@ GENERATED_DEPEND="${RDEPEND}
 	compiler? ( >=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
 	>=dev-python/grpclib-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/isort-5.11.5[${PYTHON_USEDEP}]

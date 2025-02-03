@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	eventlet? ( !=dev-python/eventlet-0.36.0[${PYTHON_USEDEP}] )
 	gevent? ( >=dev-python/gevent-1.4.0[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
@@ -24,13 +24,16 @@ GENERATED_DEPEND="${RDEPEND}
 	setproctitle? ( dev-python/setproctitle[${PYTHON_USEDEP}] )
 	tornado? ( >=dev-python/tornado-0.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/eventlet[${PYTHON_USEDEP}]
-	dev-python/gevent[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/eventlet[${PYTHON_USEDEP}]
+		dev-python/gevent[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

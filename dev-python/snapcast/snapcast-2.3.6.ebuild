@@ -20,11 +20,11 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/construct[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/construct-2.5.2[${PYTHON_USEDEP}]"
 BDEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]

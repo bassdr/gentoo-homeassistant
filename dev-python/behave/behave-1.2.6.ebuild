@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	dev-python/enum34[${PYTHON_USEDEP}]
 	develop? ( >=dev-python/invoke-0.21.0[${PYTHON_USEDEP}] )
@@ -34,6 +34,6 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-bootstrap-theme-0.6[${PYTHON_USEDEP}] )
 	develop? ( dev-python/tox[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

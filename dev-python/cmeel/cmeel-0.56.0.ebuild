@@ -16,13 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	build? ( >=dev-python/cmake-3.31.2[${PYTHON_USEDEP}] )
 	build? ( dev-python/git-archive-all[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/packaging-24.2[${PYTHON_USEDEP}] )
 	>=dev-python/tomli-2.1.0[${PYTHON_USEDEP}]
 	build? ( >=dev-python/wheel-0.45.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

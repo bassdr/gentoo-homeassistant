@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/mficlient-0.5.0[${PYTHON_USEDEP}]
+	=dev-python/mficlient-0.5.0[${PYTHON_USEDEP}]
 "

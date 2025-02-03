@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/rfk101py-0.0.1[${PYTHON_USEDEP}]
+	=dev-python/rfk101py-0.0.1[${PYTHON_USEDEP}]
 "

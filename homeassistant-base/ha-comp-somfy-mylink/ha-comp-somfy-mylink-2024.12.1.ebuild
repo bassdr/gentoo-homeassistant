@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/somfy-mylink-synergy-1.0.6[${PYTHON_USEDEP}]
+	=dev-python/somfy-mylink-synergy-1.0.6[${PYTHON_USEDEP}]
 "

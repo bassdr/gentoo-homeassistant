@@ -16,19 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/cffi-1.15[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/cffi-1.15*[${PYTHON_USEDEP}]
 	gurobi? ( >=dev-python/gurobipy-8[${PYTHON_USEDEP}] )
-	~dev-python/matplotlib-3.5.3[${PYTHON_USEDEP}]
-	~dev-python/matplotlib-3.6.2[${PYTHON_USEDEP}]
-	~dev-python/networkx-2.6.3[${PYTHON_USEDEP}]
-	~dev-python/networkx-2.8.8[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.21.6[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.24[${PYTHON_USEDEP}]
+	=dev-python/matplotlib-3.5.3[${PYTHON_USEDEP}]
+	=dev-python/matplotlib-3.6.2[${PYTHON_USEDEP}]
+	=dev-python/networkx-2.6.3[${PYTHON_USEDEP}]
+	=dev-python/networkx-2.8.8[${PYTHON_USEDEP}]
+	=dev-python/numpy-1.21.6[${PYTHON_USEDEP}]
+	=dev-python/numpy-1.24*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

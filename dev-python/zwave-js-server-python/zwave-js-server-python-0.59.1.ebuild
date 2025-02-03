@@ -21,11 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.0[${PYTHON_USEDEP}]"
 BDEPEND="

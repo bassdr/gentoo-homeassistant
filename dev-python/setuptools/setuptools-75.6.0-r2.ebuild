@@ -28,7 +28,7 @@ GENERATED_IUSE="check core cover doc enabler type"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	core? ( dev-python/jaraco-collections[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-develop-7.21[${PYTHON_USEDEP}]
@@ -42,7 +42,7 @@ GENERATED_DEPEND="${RDEPEND}
 	core? ( >=dev-python/packaging-24.2[${PYTHON_USEDEP}] )
 	core? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/platformdirs-4.2.2[${PYTHON_USEDEP}] )
-	doc? ( ~dev-python/pygments-github-lexers-0.0.5[${PYTHON_USEDEP}] )
+	doc? ( =dev-python/pygments-github-lexers-0.0.5[${PYTHON_USEDEP}] )
 	doc? ( !=dev-python/pyproject-hooks-1.1[${PYTHON_USEDEP}] )
 	check? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
@@ -59,7 +59,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( <dev-python/towncrier-24.7[${PYTHON_USEDEP}] )
 	core? ( >=dev-python/wheel-0.43.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	!<dev-python/setuptools-rust-1.8.0
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	>=dev-python/jaraco-functools-4[${PYTHON_USEDEP}]
@@ -162,4 +162,5 @@ python_test() {
 	epytest -o tmp_path_retention_policy=all \
 		-m "not uses_network" setuptools
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

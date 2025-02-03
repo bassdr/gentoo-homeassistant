@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs typing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	typing? ( ~dev-python/mypy-1.6[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	typing? ( >=dev-python/mypy-1.6[${PYTHON_USEDEP}] =dev-python/mypy-1*[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	>=dev-python/tornado-6.1.0[${PYTHON_USEDEP}]
 	typing? ( >=dev-python/traitlets-5.11.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/ptyprocess[${PYTHON_USEDEP}]
 	dev-python/tornado[${PYTHON_USEDEP}]
 "
@@ -38,11 +38,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	# workaround new readline defaults

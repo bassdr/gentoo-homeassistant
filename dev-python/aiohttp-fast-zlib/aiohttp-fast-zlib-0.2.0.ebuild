@@ -24,12 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	isal? ( >=dev-python/isal-1.6.1[${PYTHON_USEDEP}] )
 	zlib-ng? ( >=dev-python/zlib-ng-0.4.3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	isal? ( >=dev-python/isal-1.6.1[${PYTHON_USEDEP}] )
 	zlib_ng? ( >=dev-python/zlib-ng-0.4.3[${PYTHON_USEDEP}] )"

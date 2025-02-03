@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	amazon? ( >=dev-python/apache-airflow-providers-amazon-2.6.0[${PYTHON_USEDEP}] )
 	>=dev-python/apache-airflow-providers-common-sql-1.20.0[${PYTHON_USEDEP}]
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/asyncpg-0.30.0[${PYTHON_USEDEP}]
 	>=dev-python/psycopg2-binary-2.9.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=sphinxcontrib_github_alt-${PV}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sphinxcontrib-github-alt/"
+  https://pypi.org/project/sphinxcontrib_github_alt/"
 SRC_URI="
 	https://github.com/jupyter/sphinxcontrib_github_alt/archive/${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -23,11 +23,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	!dev-python/sphinxcontrib_github_alt
 "

@@ -18,12 +18,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.2.0[${PYTHON_USEDEP}]
 	>=dev-python/termcolor-2.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.2.0[${PYTHON_USEDEP}]
 	>=dev-python/termcolor-2.1.0[${PYTHON_USEDEP}]
@@ -36,8 +36,11 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

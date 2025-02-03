@@ -16,13 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/absl-py-1.2[${PYTHON_USEDEP}]
-	~dev-python/dm-tree-0.1.1[${PYTHON_USEDEP}]
-	~dev-python/enum34-1.1[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.23[${PYTHON_USEDEP}]
-	~dev-python/six-1.14[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/absl-py-1.2[${PYTHON_USEDEP}] =dev-python/absl-py-1*[${PYTHON_USEDEP}]
+	>=dev-python/dm-tree-0.1.1[${PYTHON_USEDEP}] =dev-python/dm-tree-0.1*[${PYTHON_USEDEP}]
+	>=dev-python/enum34-1.1[${PYTHON_USEDEP}] =dev-python/enum34-1*[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.23[${PYTHON_USEDEP}] =dev-python/numpy-1*[${PYTHON_USEDEP}]
+	>=dev-python/six-1.14[${PYTHON_USEDEP}] =dev-python/six-1*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

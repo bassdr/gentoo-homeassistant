@@ -23,12 +23,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="bokeh docs mypy test-no-images"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	bokeh? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/contourpy[bokeh,docs,${PYTHON_USEDEP}] )
 	mypy? ( dev-python/docutils-stubs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	mypy? ( ~dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
+	mypy? ( =dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 	test-no-images? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-no-images? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
@@ -40,7 +40,7 @@ GENERATED_DEPEND="${RDEPEND}
 	mypy? ( dev-python/types-pillow[${PYTHON_USEDEP}] )
 	test-no-images? ( dev-python/wurlitzer[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -59,11 +59,14 @@ DISTUTILS_ARGS=(
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/contourpy[test-no-images,${PYTHON_USEDEP}]
-	dev-python/matplotlib[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/contourpy[test-no-images,${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_IGNORE=(

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	all? ( dev-python/pylibjpeg-libjpeg[${PYTHON_USEDEP}] )
 	libjpeg? ( dev-python/pylibjpeg-libjpeg[${PYTHON_USEDEP}] )
@@ -25,12 +25,15 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/pylibjpeg-rle[${PYTHON_USEDEP}] )
 	rle? ( dev-python/pylibjpeg-rle[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-23.12[${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.8[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-23.12[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.8[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

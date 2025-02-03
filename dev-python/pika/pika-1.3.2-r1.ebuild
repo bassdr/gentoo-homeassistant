@@ -20,11 +20,6 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="test !test? ( test )"
 PROPERTIES="test_network"
 
-GENERATED_DEPEND="${RDEPEND}
-	gevent? ( dev-python/gevent[${PYTHON_USEDEP}] )
-	tornado? ( dev-python/tornado[${PYTHON_USEDEP}] )
-	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/nose2[${PYTHON_USEDEP}]
@@ -64,4 +59,5 @@ src_test() {
 	einfo "Stopping rabbitmq"
 	kill "$(<"${RABBITMQ_PID_FILE}")" || die
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

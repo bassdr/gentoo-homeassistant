@@ -29,7 +29,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="cairo excel gtk3 latex qt5 tk webagg wxwidgets"
 
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="
+	media-libs/freetype:2
+	>=media-libs/qhull-2013:=
+	>=dev-python/numpy-1.25:=[${PYTHON_USEDEP}]
+"
+# internal copy of pycxx highly patched
+#	dev-python/pycxx
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/cycler-0.10[${PYTHON_USEDEP}]
 	>=dev-python/fonttools-4.22.0[${PYTHON_USEDEP}]
@@ -40,14 +47,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyparsing-2.3.1[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.7[${PYTHON_USEDEP}]
 "
-DEPEND="
-	media-libs/freetype:2
-	>=media-libs/qhull-2013:=
-	>=dev-python/numpy-1.25:=[${PYTHON_USEDEP}]
-"
-# internal copy of pycxx highly patched
-#	dev-python/pycxx
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/cycler-0.10.0-r1[${PYTHON_USEDEP}]
@@ -122,12 +122,15 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/meson-python-0.17.0[${PYTHON_USEDEP}]
-	!=dev-python/pybind11-2.13.3[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-64[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/meson-python-0.17.0[${PYTHON_USEDEP}]
+		!=dev-python/pybind11-2.13.3[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-64[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_unpack() {
 	# do not unpack freetype

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2023.08.17[${PYTHON_USEDEP}] )
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/myst-parser-0.13[${PYTHON_USEDEP}] )
@@ -26,11 +26,14 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/validate-pyproject[all,${PYTHON_USEDEP}] )
 	validate-pyproject? ( dev-python/validate-pyproject[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3[${PYTHON_USEDEP}]
-	>=dev-python/validate-pyproject-0.16[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3[${PYTHON_USEDEP}]
+		>=dev-python/validate-pyproject-0.16[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

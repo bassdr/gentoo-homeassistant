@@ -15,20 +15,23 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/ahocorapy-1.6.1[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/ahocorapy-1.6.1[${PYTHON_USEDEP}]
 	<dev-python/construct-2.11[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/check-manifest[${PYTHON_USEDEP}]
-	~dev-python/coveralls-2.1[${PYTHON_USEDEP}]
-	dev-python/docutils[${PYTHON_USEDEP}]
-	~dev-python/mock-4.0[${PYTHON_USEDEP}]
-	dev-python/pylint[${PYTHON_USEDEP}]
-	~dev-python/pytest-6.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-2.10[${PYTHON_USEDEP}]
-	dev-python/readme-renderer[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/check-manifest[${PYTHON_USEDEP}]
+		>=dev-python/coveralls-2.1[${PYTHON_USEDEP}] =dev-python/coveralls-2*[${PYTHON_USEDEP}]
+		dev-python/docutils[${PYTHON_USEDEP}]
+		>=dev-python/mock-4.0[${PYTHON_USEDEP}] =dev-python/mock-4*[${PYTHON_USEDEP}]
+		dev-python/pylint[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0[${PYTHON_USEDEP}] =dev-python/pytest-6*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.10[${PYTHON_USEDEP}] =dev-python/pytest-cov-2*[${PYTHON_USEDEP}]
+		dev-python/readme-renderer[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/build-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/cachecontrol-0.15.0[filecache,${PYTHON_USEDEP}]
 	<dev-python/cleo-3.0.0[${PYTHON_USEDEP}]
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/packaging-24.0[${PYTHON_USEDEP}]
 	<dev-python/pkginfo-2.0[${PYTHON_USEDEP}]
 	<dev-python/platformdirs-5[${PYTHON_USEDEP}]
-	~dev-python/poetry-core-2.0.1[${PYTHON_USEDEP}]
+	=dev-python/poetry-core-2.0.1[${PYTHON_USEDEP}]
 	<dev-python/pyproject-hooks-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/requests-3.0[${PYTHON_USEDEP}]
 	<dev-python/requests-toolbelt-2.0.0[${PYTHON_USEDEP}]
@@ -37,7 +37,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/trove-classifiers-2022.5.19[${PYTHON_USEDEP}]
 	<dev-python/virtualenv-21.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/poetry-core-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/poetry-plugin-export-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/build-1.2.1[${PYTHON_USEDEP}]

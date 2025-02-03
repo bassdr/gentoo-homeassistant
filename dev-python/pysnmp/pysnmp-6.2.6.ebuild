@@ -20,12 +20,12 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	!=dev-python/pyasn1-0.5.0[${PYTHON_USEDEP}]
 	<dev-python/pysmi-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/pysnmpcrypto-0.0.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-0.4.8[${PYTHON_USEDEP}]
 	>=dev-python/pysmi-1.5.7[${PYTHON_USEDEP}]

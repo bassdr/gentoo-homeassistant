@@ -24,14 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-interrupt-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.4.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-38.0.0[${PYTHON_USEDEP}]
 	>=dev-python/lru-dict-1.1.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.4.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]' python3_10)

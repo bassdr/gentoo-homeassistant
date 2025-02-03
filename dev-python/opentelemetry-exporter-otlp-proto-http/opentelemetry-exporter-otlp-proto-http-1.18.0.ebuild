@@ -15,19 +15,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/backoff-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2.6[${PYTHON_USEDEP}]
-	~dev-python/googleapis-common-protos-1.52[${PYTHON_USEDEP}]
-	~dev-python/opentelemetry-api-1.15[${PYTHON_USEDEP}]
-	~dev-python/opentelemetry-exporter-otlp-proto-common-1.18.0[${PYTHON_USEDEP}]
-	~dev-python/opentelemetry-proto-1.18.0[${PYTHON_USEDEP}]
-	~dev-python/opentelemetry-sdk-1.18.0[${PYTHON_USEDEP}]
-	~dev-python/requests-2.7[${PYTHON_USEDEP}]
+	>=dev-python/googleapis-common-protos-1.52[${PYTHON_USEDEP}] =dev-python/googleapis-common-protos-1*[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-api-1.15[${PYTHON_USEDEP}] =dev-python/opentelemetry-api-1*[${PYTHON_USEDEP}]
+	=dev-python/opentelemetry-exporter-otlp-proto-common-1.18.0[${PYTHON_USEDEP}]
+	=dev-python/opentelemetry-proto-1.18.0[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-sdk-1.18.0[${PYTHON_USEDEP}] =dev-python/opentelemetry-sdk-1.18*[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.7[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/responses-0.22.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/responses-0.22.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

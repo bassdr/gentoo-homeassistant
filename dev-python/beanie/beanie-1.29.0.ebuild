@@ -16,11 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	queue? ( >=dev-python/beanie-batteries-queue-0.2[${PYTHON_USEDEP}] )
 	>=dev-python/click-7[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
-	~dev-python/lazy-model-0.2.0[${PYTHON_USEDEP}]
+	=dev-python/lazy-model-0.2.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/markdown-3.3[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/mkdocs-1.4[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/mkdocs-material-9.0[${PYTHON_USEDEP}] )
@@ -36,23 +36,27 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( >=dev-python/pygments-2.8.0[${PYTHON_USEDEP}] )
 	ci? ( dev-python/requests[${PYTHON_USEDEP}] )
 	ci? ( dev-python/toml[${PYTHON_USEDEP}] )
+	dev-python/toml[${PYTHON_USEDEP}]
 	ci? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/asgi-lifespan-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/dnspython-2.1.0[${PYTHON_USEDEP}]
-	>=dev-python/fastapi-0.100[${PYTHON_USEDEP}]
-	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]
-	dev-python/pydantic[email,${PYTHON_USEDEP}]
-	>=dev-python/pydantic-extra-types-2[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-settings-2[${PYTHON_USEDEP}]
-	>=dev-python/pyright-0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-3.5.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/asgi-lifespan-1.0.1[${PYTHON_USEDEP}]
+		>=dev-python/dnspython-2.1.0[${PYTHON_USEDEP}]
+		>=dev-python/fastapi-0.100[${PYTHON_USEDEP}]
+		>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]
+		dev-python/pydantic[email,${PYTHON_USEDEP}]
+		>=dev-python/pydantic-extra-types-2[${PYTHON_USEDEP}]
+		>=dev-python/pydantic-settings-2[${PYTHON_USEDEP}]
+		>=dev-python/pyright-0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.5.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

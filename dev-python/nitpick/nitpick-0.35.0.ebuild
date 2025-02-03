@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-20.1.0[${PYTHON_USEDEP}]
 	dev-python/autorepr[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
@@ -30,7 +30,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/identify[${PYTHON_USEDEP}]
 	dev-python/jmespath[${PYTHON_USEDEP}]
 	dev-python/loguru[${PYTHON_USEDEP}]
-	>=dev-python/marshmallow-3.0_beta10[${PYTHON_USEDEP}]
+	>=dev-python/marshmallow-3.0.0_beta10[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-polyfield-5.10[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -49,17 +49,20 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/toml[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.8.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/freezegun[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-datadir[${PYTHON_USEDEP}]
-	dev-python/pytest-socket[${PYTHON_USEDEP}]
-	dev-python/pytest-testmon[${PYTHON_USEDEP}]
-	dev-python/pytest-watch[${PYTHON_USEDEP}]
-	dev-python/responses[${PYTHON_USEDEP}]
-	dev-python/testfixtures[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/freezegun[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-datadir[${PYTHON_USEDEP}]
+		dev-python/pytest-socket[${PYTHON_USEDEP}]
+		dev-python/pytest-testmon[${PYTHON_USEDEP}]
+		dev-python/pytest-watch[${PYTHON_USEDEP}]
+		dev-python/responses[${PYTHON_USEDEP}]
+		dev-python/testfixtures[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

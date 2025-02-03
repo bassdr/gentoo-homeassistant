@@ -16,11 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
 	<dev-python/redis-6[hiredis,${PYTHON_USEDEP}]
 	watch? ( >=dev-python/watchfiles-0.16[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

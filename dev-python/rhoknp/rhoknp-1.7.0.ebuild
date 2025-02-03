@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/fastapi-0.92.0[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/jinja2-3.1[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/pygments-2.16[${PYTHON_USEDEP}] )
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.4[${PYTHON_USEDEP}]' python3_12)
 	cli? ( >=dev-python/uvicorn-0.21.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

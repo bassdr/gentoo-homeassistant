@@ -15,8 +15,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0[grpc,${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
 	!=dev-python/google-auth-2.24.0[${PYTHON_USEDEP}]
 	<dev-python/google-cloud-appengine-logging-2.0.0_pre[${PYTHON_USEDEP}]
 	<dev-python/google-cloud-audit-log-1.0.0_pre[${PYTHON_USEDEP}]
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
 	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

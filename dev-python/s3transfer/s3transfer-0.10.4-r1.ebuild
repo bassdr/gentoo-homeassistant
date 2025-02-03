@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/botocore-2.0a.0[${PYTHON_USEDEP}]
 	crt? ( <dev-python/botocore-2.0a.0[crt,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/botocore-2[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.33.2[${PYTHON_USEDEP}]
 "

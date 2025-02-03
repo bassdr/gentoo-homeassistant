@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/azure-servicebus-7.10.0[${PYTHON_USEDEP}]
+	=dev-python/azure-servicebus-7.10.0[${PYTHON_USEDEP}]
 "

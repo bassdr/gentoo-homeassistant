@@ -16,18 +16,21 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ci? ( >=dev-python/flask-sqlalchemy-2.5.1[${PYTHON_USEDEP}] )
 	ci? ( >=dev-python/psycopg2-2.9.3[${PYTHON_USEDEP}] )
 	>=dev-python/pygraphviz-1.9[${PYTHON_USEDEP}]
 	ci? ( >=dev-python/pytest-7.4.3[${PYTHON_USEDEP}] )
 	>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/mypy-1.7.0[${PYTHON_USEDEP}]
-	>=dev-python/ruff-0.4.1[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-3.0.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/mypy-1.7.0[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.4.1[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.0.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

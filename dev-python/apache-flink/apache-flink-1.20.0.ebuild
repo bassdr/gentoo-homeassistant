@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/apache-beam-2.49.0[${PYTHON_USEDEP}]
 	<dev-python/apache-flink-libraries-1.20.1[${PYTHON_USEDEP}]
 	!=dev-python/avro-python3-1.9.2[${PYTHON_USEDEP}]
@@ -26,13 +26,13 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/numpy-1.22.4[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.19.0[${PYTHON_USEDEP}]
-	~dev-python/py4j-0.10.9.7[${PYTHON_USEDEP}]
+	=dev-python/py4j-0.10.9.7[${PYTHON_USEDEP}]
 	>=dev-python/pyarrow-5.0.0[${PYTHON_USEDEP}]
 	<dev-python/python-dateutil-3[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2018.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.18.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

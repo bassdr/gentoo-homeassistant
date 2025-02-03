@@ -21,10 +21,6 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="visualize"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
-	visualize? ( >dev-python/graphviz-0.5.1[${PYTHON_USEDEP}] )
-	visualize? ( >=dev-python/twisted-16.1.1[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
@@ -52,4 +48,5 @@ pkg_postinst() {
 	einfo "    >=dev-python/twisted-16.1.1"
 	einfo "    media-gfx/graphviz[python]"
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

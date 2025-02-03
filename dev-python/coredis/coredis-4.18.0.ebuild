@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	recipes? ( >=dev-python/aiobotocore-2.15.2[${PYTHON_USEDEP}] )
 	<dev-python/async-timeout-6[${PYTHON_USEDEP}]
 	recipes? ( >=dev-python/asyncache-0.3.1[${PYTHON_USEDEP}] )
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4.3[${PYTHON_USEDEP}]
 	<dev-python/wrapt-2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

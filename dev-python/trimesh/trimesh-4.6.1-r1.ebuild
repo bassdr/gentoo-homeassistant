@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all deprecated easy recommend test-more"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	recommend? ( dev-python/cascadio[${PYTHON_USEDEP}] )
 	easy? ( dev-python/chardet[${PYTHON_USEDEP}] )
 	easy? ( dev-python/colorlog[${PYTHON_USEDEP}] )
@@ -30,7 +30,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/embreex[${PYTHON_USEDEP}]
 	test-more? ( dev-python/ezdxf[${PYTHON_USEDEP}] )
 	recommend? ( dev-python/fast-simplification[${PYTHON_USEDEP}] )
-	deprecated? ( ~dev-python/gmsh-4.12.2[${PYTHON_USEDEP}] )
+	deprecated? ( =dev-python/gmsh-4.12.2[${PYTHON_USEDEP}] )
 	easy? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	easy? ( dev-python/jsonschema[${PYTHON_USEDEP}] )
@@ -60,7 +60,7 @@ GENERATED_DEPEND="${RDEPEND}
 	easy? ( dev-python/xatlas[${PYTHON_USEDEP}] )
 	easy? ( dev-python/xxhash[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/chardet[${PYTHON_USEDEP}]
 	dev-python/colorlog[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
@@ -90,12 +90,15 @@ BDEPEND="
 EPYTEST_TIMEOUT=1800
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pyinstrument[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pyinstrument[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

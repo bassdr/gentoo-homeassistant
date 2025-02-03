@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/deebot-client-9.2.0[${PYTHON_USEDEP}]
-	~dev-python/py-sucks-0.9.10[${PYTHON_USEDEP}]
+	=dev-python/deebot-client-9.2.0[${PYTHON_USEDEP}]
+	=dev-python/py-sucks-0.9.10[${PYTHON_USEDEP}]
 "

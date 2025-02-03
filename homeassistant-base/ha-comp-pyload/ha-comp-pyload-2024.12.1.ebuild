@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyloadapi-1.3.2[${PYTHON_USEDEP}]
+	=dev-python/pyloadapi-1.3.2[${PYTHON_USEDEP}]
 "

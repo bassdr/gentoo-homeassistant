@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/praw-7.5.0[${PYTHON_USEDEP}]
+	=dev-python/praw-7.5.0[${PYTHON_USEDEP}]
 "

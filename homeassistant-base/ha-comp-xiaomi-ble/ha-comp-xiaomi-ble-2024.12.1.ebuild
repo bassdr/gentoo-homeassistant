@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/xiaomi-ble-0.33.0[${PYTHON_USEDEP}]
+	=dev-python/xiaomi-ble-0.33.0[${PYTHON_USEDEP}]
 "

@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -30,15 +30,18 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}]
-	dev-python/pytest-ruff[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}]
+		dev-python/pytest-ruff[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

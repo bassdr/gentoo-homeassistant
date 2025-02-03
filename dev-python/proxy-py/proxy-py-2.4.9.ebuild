@@ -16,39 +16,42 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/coverage-7.4.4[${PYTHON_USEDEP}]
-	~dev-python/cryptography-36.0.2[${PYTHON_USEDEP}]
-	~dev-python/httpx-0.27.0[${PYTHON_USEDEP}]
-	~dev-python/paramiko-3.4.0[${PYTHON_USEDEP}]
-	~dev-python/prometheus-client-0.17.1[${PYTHON_USEDEP}]
-	~dev-python/pylint-3.1.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.1.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.21.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-mock-3.14.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-3.5.0[${PYTHON_USEDEP}]
-	release? ( ~dev-python/setuptools-scm-6.3.2[${PYTHON_USEDEP}] )
-	~dev-python/tox-4.14.2[${PYTHON_USEDEP}]
-	release? ( ~dev-python/twine-3.8.0[${PYTHON_USEDEP}] )
-	~dev-python/types-paramiko-3.4.0.20240311[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/coverage-7.4.4[${PYTHON_USEDEP}]
+	=dev-python/cryptography-36.0.2[${PYTHON_USEDEP}]
+	=dev-python/httpx-0.27.0[${PYTHON_USEDEP}]
+	=dev-python/paramiko-3.4.0[${PYTHON_USEDEP}]
+	=dev-python/prometheus-client-0.17.1[${PYTHON_USEDEP}]
+	=dev-python/pylint-3.1.0[${PYTHON_USEDEP}]
+	=dev-python/pytest-8.1.1[${PYTHON_USEDEP}]
+	=dev-python/pytest-asyncio-0.21.1[${PYTHON_USEDEP}]
+	=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+	=dev-python/pytest-mock-3.14.0[${PYTHON_USEDEP}]
+	=dev-python/pytest-xdist-3.5.0[${PYTHON_USEDEP}]
+	release? ( =dev-python/setuptools-scm-6.3.2[${PYTHON_USEDEP}] )
+	=dev-python/tox-4.14.2[${PYTHON_USEDEP}]
+	release? ( =dev-python/twine-3.8.0[${PYTHON_USEDEP}] )
+	=dev-python/types-paramiko-3.4.0.20240311[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/autopep8-1.6.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
-	~dev-python/h2-4.1.0[${PYTHON_USEDEP}]
-	~dev-python/hpack-4.0.0[${PYTHON_USEDEP}]
-	~dev-python/hyperframe-6.0.1[${PYTHON_USEDEP}]
-	~dev-python/mccabe-0.6.1[${PYTHON_USEDEP}]
-	~dev-python/mypy-0.971[${PYTHON_USEDEP}]
-	~dev-python/py-spy-0.3.12[${PYTHON_USEDEP}]
-	~dev-python/python-coveralls-2.9.3[${PYTHON_USEDEP}]
-	~dev-python/rope-1.1.1[${PYTHON_USEDEP}]
-	~dev-python/types-requests-2.28.11.5[${PYTHON_USEDEP}]
-	~dev-python/types-setuptools-64.0.1[${PYTHON_USEDEP}]
-	~dev-python/wheel-0.37.1[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-2.16.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/autopep8-1.6.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+		=dev-python/h2-4.1.0[${PYTHON_USEDEP}]
+		=dev-python/hpack-4.0.0[${PYTHON_USEDEP}]
+		=dev-python/hyperframe-6.0.1[${PYTHON_USEDEP}]
+		=dev-python/mccabe-0.6.1[${PYTHON_USEDEP}]
+		=dev-python/mypy-0.971[${PYTHON_USEDEP}]
+		=dev-python/py-spy-0.3.12[${PYTHON_USEDEP}]
+		=dev-python/python-coveralls-2.9.3[${PYTHON_USEDEP}]
+		=dev-python/rope-1.1.1[${PYTHON_USEDEP}]
+		=dev-python/types-requests-2.28.11.5[${PYTHON_USEDEP}]
+		=dev-python/types-setuptools-64.0.1[${PYTHON_USEDEP}]
+		=dev-python/wheel-0.37.1[${PYTHON_USEDEP}]
+		=dev-vcs/pre-commit-2.16.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

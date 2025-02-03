@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azure-key-vault? ( >=dev-python/azure-identity-1.16.0[${PYTHON_USEDEP}] )
 	azure-key-vault? ( >=dev-python/azure-keyvault-secrets-4.8.0[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2.7.0[${PYTHON_USEDEP}]
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	yaml? ( >=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
 	toml? ( >=dev-python/tomli-2.0.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

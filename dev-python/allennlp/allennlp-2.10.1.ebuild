@@ -16,14 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/base58-2.1.1[${PYTHON_USEDEP}]
 	<dev-python/cached-path-1.2.0[${PYTHON_USEDEP}]
-	all? ( ~dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
-	checklist? ( ~dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
+	all? ( =dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
+	checklist? ( =dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
 	dev-python/dataclasses[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.3.4[${PYTHON_USEDEP}]
-	~dev-python/fairscale-0.4.6[${PYTHON_USEDEP}]
+	=dev-python/fairscale-0.4.6[${PYTHON_USEDEP}]
 	<dev-python/filelock-3.8[${PYTHON_USEDEP}]
 	>=dev-python/h5py-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/huggingface-hub-0.0.16[${PYTHON_USEDEP}]
@@ -40,7 +40,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/sentencepiece-0.1.96[${PYTHON_USEDEP}]
 	<dev-python/spacy-3.4[${PYTHON_USEDEP}]
 	>=dev-python/tensorboardx-1.2[${PYTHON_USEDEP}]
-	~dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]
+	=dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]
 	<dev-python/torch-1.13.0[${PYTHON_USEDEP}]
 	<dev-python/torchvision-0.14.0[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.62[${PYTHON_USEDEP}]
@@ -49,31 +49,34 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typer-0.4.1[${PYTHON_USEDEP}]
 	<dev-python/wandb-0.13.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-22.6.0[${PYTHON_USEDEP}]
-	>=dev-python/codecov-2.1.12[${PYTHON_USEDEP}]
-	>=dev-python/coverage-6.4[toml,${PYTHON_USEDEP}]
-	<=dev-python/databind-core-1.5.3[${PYTHON_USEDEP}]
-	<=dev-python/databind-json-1.5.3[${PYTHON_USEDEP}]
-	<dev-python/docspec-1.2.0[${PYTHON_USEDEP}]
-	<dev-python/docspec-python-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
-	>=dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
-	~dev-python/markdown-include-0.6.0[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-2.2.3[${PYTHON_USEDEP}]
-	~dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}]
-	<dev-python/mkdocs-material-8.4.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-0.961[${PYTHON_USEDEP}]
-	<dev-python/pydoc-markdown-4.4.0[${PYTHON_USEDEP}]
-	>=dev-python/pymdown-extensions-9.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-benchmark-3.4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/responses-0.21[${PYTHON_USEDEP}]
-	>=dev-python/ruamel-yaml-0.17.17[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	<dev-python/twine-5.0.0[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-22.6.0[${PYTHON_USEDEP}]
+		>=dev-python/codecov-2.1.12[${PYTHON_USEDEP}]
+		>=dev-python/coverage-6.4[toml,${PYTHON_USEDEP}]
+		<=dev-python/databind-core-1.5.3[${PYTHON_USEDEP}]
+		<=dev-python/databind-json-1.5.3[${PYTHON_USEDEP}]
+		<dev-python/docspec-1.2.0[${PYTHON_USEDEP}]
+		<dev-python/docspec-python-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+		>=dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
+		=dev-python/markdown-include-0.6.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-2.2.3[${PYTHON_USEDEP}]
+		=dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}]
+		<dev-python/mkdocs-material-8.4.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-0.961[${PYTHON_USEDEP}]
+		<dev-python/pydoc-markdown-4.4.0[${PYTHON_USEDEP}]
+		>=dev-python/pymdown-extensions-9.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-benchmark-3.4.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/responses-0.21[${PYTHON_USEDEP}]
+		>=dev-python/ruamel-yaml-0.17.17[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+		<dev-python/twine-5.0.0[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

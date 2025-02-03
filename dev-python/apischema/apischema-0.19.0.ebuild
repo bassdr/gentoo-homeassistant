@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	examples? ( dev-python/bson[${PYTHON_USEDEP}] )
 	examples? ( dev-python/docstring-parser[${PYTHON_USEDEP}] )
@@ -34,7 +34,7 @@ GENERATED_DEPEND="${RDEPEND}
 	examples? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	examples? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/graphql-core[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND} dev-python/graphql-core[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

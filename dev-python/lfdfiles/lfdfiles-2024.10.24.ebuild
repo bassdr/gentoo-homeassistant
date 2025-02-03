@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	all? ( dev-python/czifile[${PYTHON_USEDEP}] )
 	all? ( dev-python/imagecodecs[${PYTHON_USEDEP}] )
@@ -26,9 +26,12 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/oiffile[${PYTHON_USEDEP}] )
 	dev-python/tifffile[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

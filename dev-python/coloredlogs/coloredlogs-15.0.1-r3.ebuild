@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cron"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cron? ( >=dev-python/capturer-2.4[${PYTHON_USEDEP}] )
 	>=dev-python/humanfriendly-9.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/humanfriendly-9.1[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/accelerate[${PYTHON_USEDEP}]
 	eval? ( dev-python/bert-score[${PYTHON_USEDEP}] )
 	train? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )
@@ -49,6 +49,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/transformers[${PYTHON_USEDEP}]
 	train? ( dev-python/wandb[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

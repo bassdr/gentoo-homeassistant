@@ -18,15 +18,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="develop docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	develop? ( dev-python/codecov[${PYTHON_USEDEP}] )
-	>=dev-python/gmpy2-2.1.0_alpha4[${PYTHON_USEDEP}]
-	develop? ( dev-python/pycodestyle[${PYTHON_USEDEP}] )
-	develop? ( >=dev-python/pytest-4.6[${PYTHON_USEDEP}] )
-	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	develop? ( dev-python/wheel[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
@@ -54,9 +45,12 @@ PATCHES=(
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(
@@ -87,4 +81,5 @@ pkg_postinst() {
 	optfeature "gmp support" dev-python/gmpy2
 	optfeature "matplotlib support" dev-python/matplotlib
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

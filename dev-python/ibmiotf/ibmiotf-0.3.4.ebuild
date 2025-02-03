@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/dicttoxml[${PYTHON_USEDEP}]
 	dev-python/iso8601[${PYTHON_USEDEP}]
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/iso8601-0.1.12[${PYTHON_USEDEP}]
 	>=dev-python/paho-mqtt-1.3.1[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2017.3[${PYTHON_USEDEP}]

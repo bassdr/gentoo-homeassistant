@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code-style development graph-generation"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beartype[${PYTHON_USEDEP}]
 	code-style? ( dev-python/black[${PYTHON_USEDEP}] )
 	development? ( dev-python/black[${PYTHON_USEDEP}] )
@@ -40,7 +40,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/uritools[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/beartype[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/license-expression[${PYTHON_USEDEP}]
@@ -53,11 +53,14 @@ RDEPEND="${GENERATED_DEPEND}
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pyshacl[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/tzdata[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pyshacl[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/tzdata[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_IGNORE=(
 	# requires pyshacl

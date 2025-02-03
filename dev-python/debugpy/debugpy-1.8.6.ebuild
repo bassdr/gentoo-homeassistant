@@ -35,6 +35,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	# Unbundle dev-python/pydevd

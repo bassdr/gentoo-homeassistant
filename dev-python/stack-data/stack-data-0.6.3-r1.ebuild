@@ -17,12 +17,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/executing-1.2.0[${PYTHON_USEDEP}]
 	dev-python/pure-eval[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/executing-1.2.0[${PYTHON_USEDEP}]
 	dev-python/pure-eval[${PYTHON_USEDEP}]
@@ -37,13 +37,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/littleutils[${PYTHON_USEDEP}]
-	dev-python/pygments[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/typeguard[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cython[${PYTHON_USEDEP}]
+		dev-python/littleutils[${PYTHON_USEDEP}]
+		dev-python/pygments[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/typeguard[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# Cython looks for the module in the wrong directory, for some reason

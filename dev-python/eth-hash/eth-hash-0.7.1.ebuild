@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	pycryptodome? ( <dev-python/pycryptodome-4[${PYTHON_USEDEP}] )
 	<dev-python/pysha3-2.0.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
@@ -24,22 +24,25 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/towncrier-25[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/build-0.9.0[${PYTHON_USEDEP}]
-	>=dev-python/bump-my-version-0.19.0[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/towncrier-25[${PYTHON_USEDEP}]
-	>=dev-python/tox-4.0.0[${PYTHON_USEDEP}]
-	dev-python/twine[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-3.4.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/build-0.9.0[${PYTHON_USEDEP}]
+		>=dev-python/bump-my-version-0.19.0[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}]
+		<dev-python/towncrier-25[${PYTHON_USEDEP}]
+		>=dev-python/tox-4.0.0[${PYTHON_USEDEP}]
+		dev-python/twine[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.4.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -16,23 +16,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( =dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-design-0.6.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-design-0.6.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
 	<dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/marshmallow-sqlalchemy[tests,${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
-	dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/marshmallow-sqlalchemy[tests,${PYTHON_USEDEP}]
+		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

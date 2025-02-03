@@ -16,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	quality? ( ~dev-python/black-22.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	quality? ( >=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}] )
 	template? ( dev-python/cookiecutter[${PYTHON_USEDEP}] )
 	>=dev-python/datasets-2.0.0[${PYTHON_USEDEP}]
 	dev-python/dill[${PYTHON_USEDEP}]
@@ -42,41 +42,44 @@ GENERATED_DEPEND="${RDEPEND}
 	evaluator? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	dev-python/xxhash[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/absl-py[${PYTHON_USEDEP}]
-	dev-python/accelerate[${PYTHON_USEDEP}]
-	>=dev-python/bert-score-0.3.6[${PYTHON_USEDEP}]
-	~dev-python/black-22.0[${PYTHON_USEDEP}]
-	>=dev-python/cer-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/charcut-1.1.1[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.0.0[${PYTHON_USEDEP}]
-	dev-python/jiwer[${PYTHON_USEDEP}]
-	dev-python/mauve-text[${PYTHON_USEDEP}]
-	<dev-python/nltk-3.9[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-datadir[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
-	>=dev-python/requests-file-1.5.1[${PYTHON_USEDEP}]
-	>=dev-python/rouge-score-0.1.2[${PYTHON_USEDEP}]
-	dev-python/sacrebleu[${PYTHON_USEDEP}]
-	dev-python/sacremoses[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
-	dev-python/sentencepiece[${PYTHON_USEDEP}]
-	dev-python/seqeval[${PYTHON_USEDEP}]
-	~dev-python/six-1.15.0[${PYTHON_USEDEP}]
-	!=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}]
-	>=dev-python/texttable-1.6.3[${PYTHON_USEDEP}]
-	>=dev-python/tldextract-3.1.0[${PYTHON_USEDEP}]
-	>=dev-python/toml-0.10.1[${PYTHON_USEDEP}]
-	dev-python/torch[${PYTHON_USEDEP}]
-	dev-python/transformers[${PYTHON_USEDEP}]
-	dev-python/trectools[${PYTHON_USEDEP}]
-	>=dev-python/unidecode-1.3.4[${PYTHON_USEDEP}]
-	>=dev-python/werkzeug-1.0.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/absl-py[${PYTHON_USEDEP}]
+		dev-python/accelerate[${PYTHON_USEDEP}]
+		>=dev-python/bert-score-0.3.6[${PYTHON_USEDEP}]
+		>=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}]
+		>=dev-python/cer-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/charcut-1.1.1[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.0.0[${PYTHON_USEDEP}]
+		dev-python/jiwer[${PYTHON_USEDEP}]
+		dev-python/mauve-text[${PYTHON_USEDEP}]
+		<dev-python/nltk-3.9[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-datadir[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
+		>=dev-python/requests-file-1.5.1[${PYTHON_USEDEP}]
+		>=dev-python/rouge-score-0.1.2[${PYTHON_USEDEP}]
+		dev-python/sacrebleu[${PYTHON_USEDEP}]
+		dev-python/sacremoses[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
+		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		dev-python/seqeval[${PYTHON_USEDEP}]
+		>=dev-python/six-1.15.0[${PYTHON_USEDEP}] =dev-python/six-1.15*[${PYTHON_USEDEP}]
+		!=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}]
+		>=dev-python/texttable-1.6.3[${PYTHON_USEDEP}]
+		>=dev-python/tldextract-3.1.0[${PYTHON_USEDEP}]
+		>=dev-python/toml-0.10.1[${PYTHON_USEDEP}]
+		dev-python/torch[${PYTHON_USEDEP}]
+		dev-python/transformers[${PYTHON_USEDEP}]
+		dev-python/trectools[${PYTHON_USEDEP}]
+		>=dev-python/unidecode-1.3.4[${PYTHON_USEDEP}]
+		>=dev-python/werkzeug-1.0.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

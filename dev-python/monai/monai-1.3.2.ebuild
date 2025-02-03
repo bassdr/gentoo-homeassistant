@@ -17,10 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/clearml-1.10.0_rc0[${PYTHON_USEDEP}] )
 	clearml? ( dev-python/clearml[${PYTHON_USEDEP}] )
 	cucim? ( dev-python/cucim-cu12[${PYTHON_USEDEP}] )
+	dev-python/cucim-cu12[${PYTHON_USEDEP}]
 	all? ( dev-python/einops[${PYTHON_USEDEP}] )
 	einops? ( dev-python/einops[${PYTHON_USEDEP}] )
 	all? ( dev-python/fire[${PYTHON_USEDEP}] )
@@ -39,8 +40,8 @@ GENERATED_DEPEND="${RDEPEND}
 	jsonschema? ( dev-python/jsonschema[${PYTHON_USEDEP}] )
 	all? ( dev-python/lmdb[${PYTHON_USEDEP}] )
 	lmdb? ( dev-python/lmdb[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/lpips-0.1.4[${PYTHON_USEDEP}] )
-	lpips? ( ~dev-python/lpips-0.1.4[${PYTHON_USEDEP}] )
+	all? ( =dev-python/lpips-0.1.4[${PYTHON_USEDEP}] )
+	lpips? ( =dev-python/lpips-0.1.4[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/matplotlib-3.6.3[${PYTHON_USEDEP}] )
 	matplotlib? ( >=dev-python/matplotlib-3.6.3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/mlflow-2.12.2[${PYTHON_USEDEP}] )
@@ -70,8 +71,8 @@ GENERATED_DEPEND="${RDEPEND}
 	pydicom? ( dev-python/pydicom[${PYTHON_USEDEP}] )
 	all? ( dev-python/pynrrd[${PYTHON_USEDEP}] )
 	pynrrd? ( dev-python/pynrrd[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pytorch-ignite-0.4.11[${PYTHON_USEDEP}] )
-	ignite? ( ~dev-python/pytorch-ignite-0.4.11[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pytorch-ignite-0.4.11[${PYTHON_USEDEP}] )
+	ignite? ( =dev-python/pytorch-ignite-0.4.11[${PYTHON_USEDEP}] )
 	all? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	pyyaml? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/scikit-image-0.14.2[${PYTHON_USEDEP}] )
@@ -92,6 +93,10 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/zarr[${PYTHON_USEDEP}] )
 	zarr? ( dev-python/zarr[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

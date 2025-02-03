@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiokef-0.2.16[${PYTHON_USEDEP}]
-	~dev-python/getmac-0.9.4[${PYTHON_USEDEP}]
+	=dev-python/aiokef-0.2.16[${PYTHON_USEDEP}]
+	=dev-python/getmac-0.9.4[${PYTHON_USEDEP}]
 "

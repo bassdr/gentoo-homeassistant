@@ -46,10 +46,10 @@ REQUIRED_USE="|| ( pyqt6 pyside6 )"
 #
 # Webengine is a special case, because PyQt6 provides this in a separate package
 # while PySide6 ships it in the same package.
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	pyqt6? (
 		dev-python/pyqt6[${PYTHON_USEDEP}]
@@ -102,11 +102,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-	dev-python/pytest-qt[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest-qt[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

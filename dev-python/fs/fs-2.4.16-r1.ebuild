@@ -17,15 +17,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/appdirs-1.4.3[${PYTHON_USEDEP}]
-	~dev-python/enum34-1.1.6[${PYTHON_USEDEP}]
-	~dev-python/scandir-1.5[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] =dev-python/appdirs-1.4*[${PYTHON_USEDEP}]
+	>=dev-python/enum34-1.1.6[${PYTHON_USEDEP}] =dev-python/enum34-1.1*[${PYTHON_USEDEP}]
+	>=dev-python/scandir-1.5[${PYTHON_USEDEP}] =dev-python/scandir-1*[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	~dev-python/six-1.10[${PYTHON_USEDEP}]
-	~dev-python/typing-3.6[${PYTHON_USEDEP}]
+	>=dev-python/six-1.10[${PYTHON_USEDEP}] =dev-python/six-1*[${PYTHON_USEDEP}]
+	>=dev-python/typing-3.6[${PYTHON_USEDEP}] =dev-python/typing-3*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

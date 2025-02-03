@@ -21,13 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	cli? ( ~dev-python/click-8.1.3[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	cli? ( =dev-python/click-8.1.3[${PYTHON_USEDEP}] )
 	<dev-python/ordered-set-4.2.0[${PYTHON_USEDEP}]
 	optimize? ( dev-python/orjson[${PYTHON_USEDEP}] )
-	cli? ( ~dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
+	cli? ( =dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/ordered-set-4.0.2[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

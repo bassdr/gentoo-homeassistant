@@ -16,9 +16,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	fastembed? ( ~dev-python/fastembed-0.5.1[${PYTHON_USEDEP}] )
-	fastembed-gpu? ( ~dev-python/fastembed-gpu-0.5.1[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	fastembed? ( =dev-python/fastembed-0.5.1[${PYTHON_USEDEP}] )
+	fastembed-gpu? ( =dev-python/fastembed-gpu-0.5.1[${PYTHON_USEDEP}] )
 	>=dev-python/grpcio-1.41.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-tools-1.41.0[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.20.0[http2,${PYTHON_USEDEP}]
@@ -28,6 +28,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pydantic-1.10.8[${PYTHON_USEDEP}]
 	<dev-python/urllib3-3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.1.8[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/mkdocs-1.6.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/mkdocs-gen-files-0.5.0[${PYTHON_USEDEP}] )
@@ -25,12 +25,15 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/mkdocstrings-0.26.1[python,${PYTHON_USEDEP}] )
 	>=dev-python/rapidfuzz-3.9.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-24.8.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-5.0.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-24.8.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-5.0.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

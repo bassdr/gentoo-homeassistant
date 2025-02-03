@@ -15,12 +15,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/jsonschema-4[${PYTHON_USEDEP}]
 	<dev-python/numpy-1.23[${PYTHON_USEDEP}]
-	~dev-python/qmcpy-1.2[${PYTHON_USEDEP}]
+	=dev-python/qmcpy-1.2[${PYTHON_USEDEP}]
 	<dev-python/scipy-2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

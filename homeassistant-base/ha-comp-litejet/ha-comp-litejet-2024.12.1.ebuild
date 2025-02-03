@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pylitejet-0.6.3[${PYTHON_USEDEP}]
+	=dev-python/pylitejet-0.6.3[${PYTHON_USEDEP}]
 "

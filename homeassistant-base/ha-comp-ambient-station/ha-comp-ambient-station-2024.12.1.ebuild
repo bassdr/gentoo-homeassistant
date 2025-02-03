@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aioambient-2024.08.0[${PYTHON_USEDEP}]
+	=dev-python/aioambient-2024.08.0[${PYTHON_USEDEP}]
 "

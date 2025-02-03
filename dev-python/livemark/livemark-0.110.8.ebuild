@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.0[${PYTHON_USEDEP}]
 	>=dev-python/cached-property-1.5[${PYTHON_USEDEP}]
 	>=dev-python/deepmerge-0.3[${PYTHON_USEDEP}]
@@ -26,22 +26,25 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/jinja2-3.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-2.5[${PYTHON_USEDEP}]
 	>=dev-python/livereload-2.6[${PYTHON_USEDEP}]
-	~dev-python/marko-1[${PYTHON_USEDEP}]
-	~dev-python/pyquery-1[${PYTHON_USEDEP}]
+	=dev-python/marko-1*[${PYTHON_USEDEP}]
+	=dev-python/pyquery-1*[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.3[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.12[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	~dev-python/pyflakes-2.4.0[${PYTHON_USEDEP}]
-	dev-python/pylama[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-only[${PYTHON_USEDEP}]
-	dev-python/pytest-vcr[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		=dev-python/pyflakes-2.4.0[${PYTHON_USEDEP}]
+		dev-python/pylama[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-only[${PYTHON_USEDEP}]
+		dev-python/pytest-vcr[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

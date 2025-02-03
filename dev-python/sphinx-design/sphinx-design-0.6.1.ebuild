@@ -16,27 +16,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	testing-no-myst? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
-	theme-furo? ( ~dev-python/furo-2024.7.18[${PYTHON_USEDEP}] )
+	theme-furo? ( >=dev-python/furo-2024.7.18[${PYTHON_USEDEP}] =dev-python/furo-2024.7*[${PYTHON_USEDEP}] )
 	rtd? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
-	theme-pydata? ( ~dev-python/pydata-sphinx-theme-0.15.2[${PYTHON_USEDEP}] )
-	testing-no-myst? ( ~dev-python/pytest-8.3[${PYTHON_USEDEP}] )
+	theme-pydata? ( >=dev-python/pydata-sphinx-theme-0.15.2[${PYTHON_USEDEP}] =dev-python/pydata-sphinx-theme-0.15*[${PYTHON_USEDEP}] )
+	testing-no-myst? ( >=dev-python/pytest-8.3[${PYTHON_USEDEP}] =dev-python/pytest-8*[${PYTHON_USEDEP}] )
 	testing-no-myst? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	testing-no-myst? ( dev-python/pytest-regressions[${PYTHON_USEDEP}] )
 	<dev-python/sphinx-9[${PYTHON_USEDEP}]
-	theme-sbt? ( ~dev-python/sphinx-book-theme-1.1[${PYTHON_USEDEP}] )
-	theme-im? ( ~dev-python/sphinx-immaterial-0.12.2[${PYTHON_USEDEP}] )
-	theme-rtd? ( ~dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
+	theme-sbt? ( >=dev-python/sphinx-book-theme-1.1[${PYTHON_USEDEP}] =dev-python/sphinx-book-theme-1*[${PYTHON_USEDEP}] )
+	theme-im? ( >=dev-python/sphinx-immaterial-0.12.2[${PYTHON_USEDEP}] =dev-python/sphinx-immaterial-0.12*[${PYTHON_USEDEP}] )
+	theme-rtd? ( >=dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-2*[${PYTHON_USEDEP}] )
 	code-style? ( <dev-vcs/pre-commit-4[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/defusedxml[${PYTHON_USEDEP}]
-	<dev-python/myst-parser-4[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.3[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/defusedxml[${PYTHON_USEDEP}]
+		<dev-python/myst-parser-4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3[${PYTHON_USEDEP}] =dev-python/pytest-8*[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

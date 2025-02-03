@@ -18,12 +18,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/pytest-9[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-5.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-8.2[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -35,10 +35,13 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-6.2[${PYTHON_USEDEP}]
-	>=dev-python/hypothesis-5.7.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-6.2[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-5.7.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

@@ -15,7 +15,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/gpytorch-1.5.1[${PYTHON_USEDEP}]
 	<dev-python/matplotlib-3.8[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.18[${PYTHON_USEDEP}]
@@ -23,11 +23,11 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/scikit-learn-0.24[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.4[${PYTHON_USEDEP}]
 	>=dev-python/tensorboard-2.2[${PYTHON_USEDEP}]
-	~dev-python/tikzplotlib-0.9.8[${PYTHON_USEDEP}]
+	=dev-python/tikzplotlib-0.9.8[${PYTHON_USEDEP}]
 	>=dev-python/torch-1.9[${PYTHON_USEDEP}]
 	>=dev-python/torchvision-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.40[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/mill-local-0.3.0[${PYTHON_USEDEP}]
-	~dev-python/millheater-0.12.2[${PYTHON_USEDEP}]
+	=dev-python/mill-local-0.3.0[${PYTHON_USEDEP}]
+	=dev-python/millheater-0.12.2[${PYTHON_USEDEP}]
 "

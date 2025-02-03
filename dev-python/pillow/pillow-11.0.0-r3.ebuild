@@ -39,17 +39,6 @@ IUSE="${GENERATED_IUSE} examples imagequant +jpeg jpeg2k lcms test tiff tk truet
 REQUIRED_USE="test? ( jpeg jpeg2k lcms tiff truetype )"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
-	xmp? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
-	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	docs? ( dev-python/olefile[${PYTHON_USEDEP}] )
-	fpx? ( dev-python/olefile[${PYTHON_USEDEP}] )
-	mic? ( dev-python/olefile[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-8.1[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinxext-opengraph[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	imagequant? ( media-gfx/libimagequant:= )
 	jpeg? ( media-libs/libjpeg-turbo:= )
@@ -61,7 +50,18 @@ DEPEND="
 	xcb? ( x11-libs/libxcb )
 	zlib? ( sys-libs/zlib:= )
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	xmp? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	docs? ( dev-python/olefile[${PYTHON_USEDEP}] )
+	fpx? ( dev-python/olefile[${PYTHON_USEDEP}] )
+	mic? ( dev-python/olefile[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-8.1[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxext-opengraph[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/olefile[${PYTHON_USEDEP}]
 "
@@ -82,18 +82,21 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/check-manifest[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/defusedxml[${PYTHON_USEDEP}]
-	dev-python/markdown2[${PYTHON_USEDEP}]
-	dev-python/olefile[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/pyroma[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/check-manifest[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/defusedxml[${PYTHON_USEDEP}]
+		dev-python/markdown2[${PYTHON_USEDEP}]
+		dev-python/olefile[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pyroma[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 PATCHES=(
 	# https://github.com/python-pillow/pillow/pull/7634

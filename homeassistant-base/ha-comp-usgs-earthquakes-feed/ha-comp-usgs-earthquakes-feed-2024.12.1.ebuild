@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aio-geojson-usgs-earthquakes-0.3[${PYTHON_USEDEP}]
+	=dev-python/aio-geojson-usgs-earthquakes-0.3[${PYTHON_USEDEP}]
 "

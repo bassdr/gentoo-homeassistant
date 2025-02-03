@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/email-validator-2.0.0[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/email-validator-2.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/fastapi-cli-0.0.5[standard,${PYTHON_USEDEP}] )
@@ -39,6 +39,6 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/uvicorn-0.12.0[standard,${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/uvicorn-0.12.0[standard,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

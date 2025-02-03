@@ -23,13 +23,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs jinja2"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >dev-python/mercurial-5.7[${PYTHON_USEDEP}] )
 	>=dev-python/ruamel-yaml-clib-0.2.7[${PYTHON_USEDEP}]
 	jinja2? ( >=dev-python/ruamel-yaml-jinja2-0.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ryd[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/ruamel-yaml-clib[${PYTHON_USEDEP}]
 	!dev-python/namespace-ruamel
 "

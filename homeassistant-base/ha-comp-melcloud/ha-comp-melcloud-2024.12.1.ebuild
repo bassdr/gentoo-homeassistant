@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pymelcloud-2.5.9[${PYTHON_USEDEP}]
+	=dev-python/pymelcloud-2.5.9[${PYTHON_USEDEP}]
 "

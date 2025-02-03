@@ -16,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/apeye-core-1.0_beta2[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/apeye-core-1.0.0_beta2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cachecontrol-0.12.6[filecache,${PYTHON_USEDEP}] )
 	limiter? ( >=dev-python/cachecontrol-0.12.6[filecache,${PYTHON_USEDEP}] )
 	>=dev-python/domdf-python-tools-2.6.0[${PYTHON_USEDEP}]
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/platformdirs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.24.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

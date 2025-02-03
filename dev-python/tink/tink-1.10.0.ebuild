@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.3.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/boto3-1.26.89[${PYTHON_USEDEP}] )
 	awskms? ( >=dev-python/boto3-1.26.89[${PYTHON_USEDEP}] )
@@ -30,6 +30,6 @@ GENERATED_DEPEND="${RDEPEND}
 	hcvault? ( >=dev-python/hvac-1.1.1[${PYTHON_USEDEP}] )
 	!=dev-python/protobuf-4.21.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

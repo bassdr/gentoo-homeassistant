@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/eternalegypt-0.0.16[${PYTHON_USEDEP}]
+	=dev-python/eternalegypt-0.0.16[${PYTHON_USEDEP}]
 "

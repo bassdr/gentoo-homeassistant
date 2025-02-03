@@ -16,14 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azure? ( <dev-python/azure-core-2[${PYTHON_USEDEP}] )
 	azure? ( <dev-python/azure-identity-2[${PYTHON_USEDEP}] )
 	azure? ( <dev-python/azure-storage-blob-13[${PYTHON_USEDEP}] )
 	aws? ( <dev-python/boto3-2[${PYTHON_USEDEP}] )
 	gcp? ( <dev-python/cachetools-6[${PYTHON_USEDEP}] )
 	interactive-test? ( <dev-python/chromedriver-binary-118[${PYTHON_USEDEP}] )
-	~dev-python/cloudpickle-2.2.1[${PYTHON_USEDEP}]
+	>=dev-python/cloudpickle-2.2.1[${PYTHON_USEDEP}] =dev-python/cloudpickle-2.2*[${PYTHON_USEDEP}]
 	<dev-python/crcmod-2.0[${PYTHON_USEDEP}]
 	dask? ( >=dev-python/dask-2024.4.2[${PYTHON_USEDEP}] )
 	ml-test? ( dev-python/datatable[${PYTHON_USEDEP}] )
@@ -89,7 +89,7 @@ GENERATED_DEPEND="${RDEPEND}
 	ml-test? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	p312-ml-test? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	<dev-python/proto-plus-2[${PYTHON_USEDEP}]
-	!=dev-python/protobuf-4.0[${PYTHON_USEDEP}]
+	!=dev-python/protobuf-4.0*[${PYTHON_USEDEP}]
 	<dev-python/pyarrow-17.0.0[${PYTHON_USEDEP}]
 	<dev-python/pyarrow-hotfix-1[${PYTHON_USEDEP}]
 	<dev-python/pydot-2[${PYTHON_USEDEP}]
@@ -123,28 +123,31 @@ GENERATED_DEPEND="${RDEPEND}
 	yaml? ( <dev-python/virtualenv-clone-1.0[${PYTHON_USEDEP}] )
 	<dev-python/zstandard-1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/cryptography-41.0.2[${PYTHON_USEDEP}]
-	<dev-python/docstring-parser-1.0[${PYTHON_USEDEP}]
-	>=dev-python/freezegun-0.3.12[${PYTHON_USEDEP}]
-	<dev-python/hypothesis-7.0.0[${PYTHON_USEDEP}]
-	<dev-python/jinja2-3.2[${PYTHON_USEDEP}]
-	>=dev-python/joblib-1.0.1[${PYTHON_USEDEP}]
-	<dev-python/mock-6.0.0[${PYTHON_USEDEP}]
-	<dev-python/pandas-2.2.0[${PYTHON_USEDEP}]
-	<dev-python/parameterized-0.10.0[${PYTHON_USEDEP}]
-	!=dev-python/psycopg2-binary-2.9.10[${PYTHON_USEDEP}]
-	!=dev-python/pyhamcrest-1.10.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-timeout-3[${PYTHON_USEDEP}]
-	<dev-python/pytest-xdist-4[${PYTHON_USEDEP}]
-	<dev-python/requests-mock-2.0[${PYTHON_USEDEP}]
-	>=dev-python/scikit-learn-0.20.0[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	<dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}]
-	<dev-python/tenacity-9[${PYTHON_USEDEP}]
-	<dev-python/testcontainers-4.0.0[mysql,${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/cryptography-41.0.2[${PYTHON_USEDEP}]
+		<dev-python/docstring-parser-1.0[${PYTHON_USEDEP}]
+		>=dev-python/freezegun-0.3.12[${PYTHON_USEDEP}]
+		<dev-python/hypothesis-7.0.0[${PYTHON_USEDEP}]
+		<dev-python/jinja2-3.2[${PYTHON_USEDEP}]
+		>=dev-python/joblib-1.0.1[${PYTHON_USEDEP}]
+		<dev-python/mock-6.0.0[${PYTHON_USEDEP}]
+		<dev-python/pandas-2.2.0[${PYTHON_USEDEP}]
+		<dev-python/parameterized-0.10.0[${PYTHON_USEDEP}]
+		!=dev-python/psycopg2-binary-2.9.10[${PYTHON_USEDEP}]
+		!=dev-python/pyhamcrest-1.10.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-timeout-3[${PYTHON_USEDEP}]
+		<dev-python/pytest-xdist-4[${PYTHON_USEDEP}]
+		<dev-python/requests-mock-2.0[${PYTHON_USEDEP}]
+		>=dev-python/scikit-learn-0.20.0[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+		<dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}]
+		<dev-python/tenacity-9[${PYTHON_USEDEP}]
+		<dev-python/testcontainers-4.0.0[mysql,${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -19,11 +19,11 @@ GENERATED_IUSE="release"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyparsing-3.0.9[${PYTHON_USEDEP}]
 	release? ( dev-python/zest-releaser[recommended,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyparsing-3.0.9[${PYTHON_USEDEP}]
 	media-gfx/graphviz
 "
@@ -35,12 +35,15 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/chardet[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/chardet[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

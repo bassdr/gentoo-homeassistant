@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/betterproto-2.0_beta6[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/betterproto-2.0.0_beta6[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/betterproto-2.0.0_beta7[${PYTHON_USEDEP}]
 	=dev-python/pydantic-2*[${PYTHON_USEDEP}]
 "
-# BDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild

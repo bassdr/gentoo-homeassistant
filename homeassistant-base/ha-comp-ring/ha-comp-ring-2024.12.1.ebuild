@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/ring-doorbell-0.9.13[${PYTHON_USEDEP}]
+	=dev-python/ring-doorbell-0.9.13[${PYTHON_USEDEP}]
 "

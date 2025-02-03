@@ -16,12 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-1.4[${PYTHON_USEDEP}]
 	>=dev-python/ipython-6.0[${PYTHON_USEDEP}]
 	gpu? ( >=dev-python/py3nvml-0.2[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

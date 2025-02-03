@@ -21,7 +21,7 @@ RESTRICT="test"
 
 GENERATED_IUSE="aiohttp dev-docs dev-lint dev-test requests timezone"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-test? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	dev-lint? ( <dev-python/flake8-5.1[${PYTHON_USEDEP}] )
@@ -38,6 +38,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-docs? ( >=dev-python/sphinx-rtd-theme-0.5.0[${PYTHON_USEDEP}] )
 	requests? ( >=dev-python/urllib3-1.24.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 DEPEND="${RDEPEND}"
-# BDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild

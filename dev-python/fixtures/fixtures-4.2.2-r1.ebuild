@@ -18,17 +18,20 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs streams"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	>=dev-python/pbr-5.7.0[${PYTHON_USEDEP}]
 	streams? ( dev-python/testtools[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pbr-5.7.0[${PYTHON_USEDEP}]
 	>=dev-python/testtools-2.5.0[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/testtools[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/testtools[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

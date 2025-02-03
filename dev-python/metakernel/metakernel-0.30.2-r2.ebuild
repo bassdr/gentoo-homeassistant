@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="activity parallel"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/ipykernel-7[${PYTHON_USEDEP}]
 	parallel? ( dev-python/ipyparallel[${PYTHON_USEDEP}] )
 	>=dev-python/jedi-0.18[${PYTHON_USEDEP}]
@@ -26,7 +26,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pexpect-4.8[${PYTHON_USEDEP}]
 	activity? ( dev-python/portalocker[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/ipykernel-7[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-5.5.6[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-core-4.9.2[${PYTHON_USEDEP}]
@@ -44,13 +44,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/jupyter-kernel-test[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/jupyter-kernel-test[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# fragile

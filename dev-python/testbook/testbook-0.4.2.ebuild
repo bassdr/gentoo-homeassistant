@@ -17,33 +17,37 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/black[${PYTHON_USEDEP}]
-	sphinx? ( ~dev-python/myst-parser-0.9.1[${PYTHON_USEDEP}] )
+	sphinx? ( =dev-python/myst-parser-0.9.1[${PYTHON_USEDEP}] )
 	>=dev-python/nbclient-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/nbformat-5.0.4[${PYTHON_USEDEP}]
 	sphinx? ( <dev-python/sphinx-3.0[${PYTHON_USEDEP}] )
-	sphinx? ( ~dev-python/sphinx-book-theme-0.0.35[${PYTHON_USEDEP}] )
+	sphinx? ( =dev-python/sphinx-book-theme-0.0.35[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/bumpversion[${PYTHON_USEDEP}]
-	dev-python/check-manifest[${PYTHON_USEDEP}]
-	dev-python/codecov[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/ipykernel[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/ipywidgets[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	>=dev-python/pip-18.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-38.6.0[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	>=dev-python/twine-1.11.0[${PYTHON_USEDEP}]
-	>=dev-python/wheel-0.31.0[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/bumpversion[${PYTHON_USEDEP}]
+		dev-python/check-manifest[${PYTHON_USEDEP}]
+		dev-python/codecov[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		>=dev-python/pip-18.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-4.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-38.6.0[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		>=dev-python/twine-1.11.0[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.31.0[${PYTHON_USEDEP}]
+		dev-python/xmltodict[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

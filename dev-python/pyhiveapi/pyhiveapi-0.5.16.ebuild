@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/boto3-1.16.10[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.19.10[${PYTHON_USEDEP}]
@@ -32,7 +32,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/unasync[${PYTHON_USEDEP}]
 	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/pyquery[${PYTHON_USEDEP}]
@@ -43,6 +43,9 @@ RDEPEND="${GENERATED_DEPEND}
 	dev-python/loguru[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/tox[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/tox[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/autograd[${PYTHON_USEDEP}] )
 	dr? ( dev-python/autograd[${PYTHON_USEDEP}] )
 	all? ( dev-python/cvxopt[${PYTHON_USEDEP}] )
@@ -41,6 +41,6 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/torch-geometric[${PYTHON_USEDEP}] )
 	gnn? ( dev-python/torch-geometric[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

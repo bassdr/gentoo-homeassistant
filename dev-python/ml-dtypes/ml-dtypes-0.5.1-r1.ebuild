@@ -14,7 +14,7 @@ EIGEN_CommitId="7bf2968fed5f246c0589e1111004cb420fcd7c71"
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/ml-dtypes/"
+  https://pypi.org/project/ml_dtypes/"
 SRC_URI="
 	https://github.com/jax-ml/ml_dtypes/archive/v${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -27,16 +27,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="
+	>=dev-python/numpy-1.21:=[${PYTHON_USEDEP}]
+"
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.21.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.3[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
 "
-DEPEND="
-	>=dev-python/numpy-1.21:=[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -47,13 +47,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/absl-py[${PYTHON_USEDEP}]
-	dev-python/pyink[${PYTHON_USEDEP}]
-	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/absl-py[${PYTHON_USEDEP}]
+		dev-python/pyink[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	rmdir third_party/eigen || die

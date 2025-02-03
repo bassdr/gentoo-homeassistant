@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azureblockblob? ( >=dev-python/azure-storage-blob-12.15.0[${PYTHON_USEDEP}] )
 	>=dev-python/backports-zoneinfo-0.2.1[${PYTHON_USEDEP}]
 	<dev-python/billiard-5.0[${PYTHON_USEDEP}]
@@ -30,7 +30,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/click-plugins-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/click-repl-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/couchbase-3.0.0[${PYTHON_USEDEP}]
-	auth? ( ~dev-python/cryptography-42.0.5[${PYTHON_USEDEP}] )
+	auth? ( =dev-python/cryptography-42.0.5[${PYTHON_USEDEP}] )
 	django? ( >=dev-python/django-2.2.28[${PYTHON_USEDEP}] )
 	elasticsearch? ( <=dev-python/elastic-transport-8.13.0[${PYTHON_USEDEP}] )
 	elasticsearch? ( <=dev-python/elasticsearch-8.13.0[${PYTHON_USEDEP}] )
@@ -40,14 +40,14 @@ GENERATED_DEPEND="${RDEPEND}
 	zookeeper? ( >=dev-python/kazoo-1.3.1[${PYTHON_USEDEP}] )
 	<dev-python/kombu-6.0[${PYTHON_USEDEP}]
 	sqs? ( >=dev-python/kombu-5.3.4[sqs,${PYTHON_USEDEP}] )
-	msgpack? ( ~dev-python/msgpack-1.0.8[${PYTHON_USEDEP}] )
+	msgpack? ( =dev-python/msgpack-1.0.8[${PYTHON_USEDEP}] )
 	arangodb? ( >=dev-python/pyarango-2.0.2[${PYTHON_USEDEP}] )
-	couchdb? ( ~dev-python/pycouchdb-1.14.2[${PYTHON_USEDEP}] )
+	couchdb? ( =dev-python/pycouchdb-1.14.2[${PYTHON_USEDEP}] )
 	>=dev-python/pycurl-7.43.0.5[${PYTHON_USEDEP}]
-	cosmosdbsql? ( ~dev-python/pydocumentdb-2.3.5[${PYTHON_USEDEP}] )
+	cosmosdbsql? ( =dev-python/pydocumentdb-2.3.5[${PYTHON_USEDEP}] )
 	mongodb? ( >=dev-python/pymongo-4.0.2[srv,${PYTHON_USEDEP}] )
 	pytest? ( >=dev-python/pytest-celery-1.0.0[all,${PYTHON_USEDEP}] )
-	consul? ( ~dev-python/python-consul2-0.1.5[${PYTHON_USEDEP}] )
+	consul? ( =dev-python/python-consul2-0.1.5[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	pymemcache? ( >=dev-python/python-memcached-1.61[${PYTHON_USEDEP}] )
 	yaml? ( >=dev-python/pyyaml-3.10[${PYTHON_USEDEP}] )
@@ -58,8 +58,8 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tzdata-2022.7[${PYTHON_USEDEP}]
 	sqs? ( >=dev-python/urllib3-1.26.16[${PYTHON_USEDEP}] )
 	<dev-python/vine-6.0[${PYTHON_USEDEP}]
-	zstd? ( ~dev-python/zstandard-0.22.0[${PYTHON_USEDEP}] )
+	zstd? ( =dev-python/zstandard-0.22.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

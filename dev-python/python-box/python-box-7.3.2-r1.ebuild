@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all msgpack pyyaml ruamel-yaml toml tomli yaml"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	pyyaml? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
@@ -36,7 +36,7 @@ GENERATED_DEPEND="${RDEPEND}
 	toml? ( dev-python/toml[${PYTHON_USEDEP}] )
 	tomli? ( dev-python/tomli-w[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/msgpack[${PYTHON_USEDEP}]
 	dev-python/ruamel-yaml[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '

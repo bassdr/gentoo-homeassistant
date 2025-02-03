@@ -29,7 +29,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all gssapi invoke"
 IUSE="${GENERATED_IUSE} examples server"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bcrypt-3.2[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-3.3[${PYTHON_USEDEP}]
 	all? ( >=dev-python/invoke-2.0[${PYTHON_USEDEP}] )
@@ -38,7 +38,7 @@ GENERATED_DEPEND="${RDEPEND}
 	gssapi? ( >=dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}] )
 	>=dev-python/pynacl-1.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]
 	>=dev-python/pynacl-1.0.1[${PYTHON_USEDEP}]

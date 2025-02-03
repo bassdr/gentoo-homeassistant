@@ -24,7 +24,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="jupyter"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/colorama-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/commonmark-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/dataclasses-0.7[${PYTHON_USEDEP}]
@@ -32,7 +32,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pygments-2.6.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/colorama[${PYTHON_USEDEP}]
 	>=dev-python/markdown-it-py-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.13.0[${PYTHON_USEDEP}]

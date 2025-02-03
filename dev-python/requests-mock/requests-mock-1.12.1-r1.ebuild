@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="fixture"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	fixture? ( dev-python/fixtures[${PYTHON_USEDEP}] )
 	<dev-python/requests-3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
 "
 BDEPEND="

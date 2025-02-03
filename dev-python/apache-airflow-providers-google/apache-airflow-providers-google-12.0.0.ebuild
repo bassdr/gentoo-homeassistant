@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	amazon? ( >=dev-python/apache-airflow-providers-amazon-2.6.0[${PYTHON_USEDEP}] )
 	apache-beam? ( dev-python/apache-airflow-providers-apache-beam[${PYTHON_USEDEP}] )
@@ -53,7 +53,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/google-cloud-alloydb[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-automl-2.12.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-batch-0.13.0[${PYTHON_USEDEP}]
-	!=dev-python/google-cloud-bigquery-3.21[${PYTHON_USEDEP}]
+	!=dev-python/google-cloud-bigquery-3.21*[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigquery-datatransfer-3.13.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigtable-2.17.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-build-3.22.0[${PYTHON_USEDEP}]
@@ -103,6 +103,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/sqlalchemy-spanner-1.6.2[${PYTHON_USEDEP}]
 	>=dev-python/tenacity-8.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

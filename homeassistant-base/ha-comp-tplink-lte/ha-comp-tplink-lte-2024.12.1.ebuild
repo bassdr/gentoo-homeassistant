@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/tp-connected-0.0.4[${PYTHON_USEDEP}]
+	=dev-python/tp-connected-0.0.4[${PYTHON_USEDEP}]
 "

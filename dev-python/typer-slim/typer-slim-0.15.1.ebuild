@@ -16,12 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	standard? ( >=dev-python/rich-10.11.0[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/shellingham-1.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

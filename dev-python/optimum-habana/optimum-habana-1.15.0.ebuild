@@ -16,31 +16,34 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/accelerate-0.34.0[${PYTHON_USEDEP}]
 	<dev-python/diffusers-0.32.0[${PYTHON_USEDEP}]
 	quality? ( dev-python/hf-doc-builder[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.24.7[${PYTHON_USEDEP}]
 	dev-python/optimum[${PYTHON_USEDEP}]
 	quality? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	~dev-python/sentence-transformers-3.2.1[${PYTHON_USEDEP}]
+	=dev-python/sentence-transformers-3.2.1[${PYTHON_USEDEP}]
 	dev-python/torch[${PYTHON_USEDEP}]
 	<dev-python/transformers-4.46.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/datasets[${PYTHON_USEDEP}]
-	dev-python/gitpython[${PYTHON_USEDEP}]
-	dev-python/optuna[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/peft[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
-	dev-python/safetensors[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
-	dev-python/sentencepiece[${PYTHON_USEDEP}]
-	dev-python/timm[${PYTHON_USEDEP}]
-	dev-python/torchsde[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/datasets[${PYTHON_USEDEP}]
+		dev-python/gitpython[${PYTHON_USEDEP}]
+		dev-python/optuna[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/peft[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+		dev-python/safetensors[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		dev-python/timm[${PYTHON_USEDEP}]
+		dev-python/torchsde[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

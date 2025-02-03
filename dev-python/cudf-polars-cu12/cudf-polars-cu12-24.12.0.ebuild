@@ -17,17 +17,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/polars-1.15[${PYTHON_USEDEP}]
-	~dev-python/pylibcudf-cu12-24.12[${PYTHON_USEDEP}]
-	experimental? ( ~dev-python/rapids-dask-dependency-24.12[${PYTHON_USEDEP}] )
+	=dev-python/pylibcudf-cu12-24.12*[${PYTHON_USEDEP}]
+	experimental? ( =dev-python/rapids-dask-dependency-24.12*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/numpy-3.0_alpha0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		<dev-python/numpy-3.0_alpha0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

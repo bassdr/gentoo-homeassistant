@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/configobj[${PYTHON_USEDEP}] )
 	configobj? ( dev-python/configobj[${PYTHON_USEDEP}] )
 	ini? ( dev-python/configobj[${PYTHON_USEDEP}] )
@@ -28,20 +28,23 @@ GENERATED_DEPEND="${RDEPEND}
 	yaml? ( dev-python/ruamel-yaml[${PYTHON_USEDEP}] )
 	toml? ( dev-python/toml[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/configobj[${PYTHON_USEDEP}]
-	dev-python/django[${PYTHON_USEDEP}]
-	>=dev-python/flask-0.12[${PYTHON_USEDEP}]
-	>=dev-python/hvac-1.1.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/python-dotenv[${PYTHON_USEDEP}]
-	dev-python/radon[${PYTHON_USEDEP}]
-	dev-python/redis[${PYTHON_USEDEP}]
-	dev-python/toml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/configobj[${PYTHON_USEDEP}]
+		dev-python/django[${PYTHON_USEDEP}]
+		>=dev-python/flask-0.12[${PYTHON_USEDEP}]
+		>=dev-python/hvac-1.1.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/python-dotenv[${PYTHON_USEDEP}]
+		dev-python/radon[${PYTHON_USEDEP}]
+		dev-python/redis[${PYTHON_USEDEP}]
+		dev-python/toml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

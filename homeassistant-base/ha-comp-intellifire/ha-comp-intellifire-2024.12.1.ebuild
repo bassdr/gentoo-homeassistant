@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/intellifire4py-4.1.9[${PYTHON_USEDEP}]
+	=dev-python/intellifire4py-4.1.9[${PYTHON_USEDEP}]
 "

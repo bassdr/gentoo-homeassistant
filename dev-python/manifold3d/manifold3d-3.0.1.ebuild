@@ -15,10 +15,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	$(python_gen_cond_dep '>=dev-python/numpy-1.26_beta1[${PYTHON_USEDEP}]' python3_13{,t})
+GENERATED_RDEPEND="${RDEPEND}
+	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0_beta1[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep 'dev-python/numpy[${PYTHON_USEDEP}]' python3_12)
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

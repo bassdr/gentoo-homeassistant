@@ -20,10 +20,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/cryptography[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="
 	dev-python/cryptography[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

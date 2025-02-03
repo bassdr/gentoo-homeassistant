@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/freebox-api-1.1.0[${PYTHON_USEDEP}]
+	=dev-python/freebox-api-1.1.0[${PYTHON_USEDEP}]
 "

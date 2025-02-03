@@ -17,11 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/pylint[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-3.2.2[${PYTHON_USEDEP}]
 	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

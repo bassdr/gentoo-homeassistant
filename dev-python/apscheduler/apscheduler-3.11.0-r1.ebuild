@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc etcd gevent mongodb redis rethinkdb sqlalchemy tornado twisted zookeeper"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	etcd? ( dev-python/etcd3[${PYTHON_USEDEP}] )
 	dev-python/gevent[${PYTHON_USEDEP}]
@@ -38,7 +38,7 @@ GENERATED_DEPEND="${RDEPEND}
 	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
 	>=dev-python/tzlocal-3.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/tzlocal-4[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -52,12 +52,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/anyio-4.5.2[${PYTHON_USEDEP}]
-	dev-python/apscheduler[etcd,mongodb,redis,rethinkdb,sqlalchemy,tornado,zookeeper,${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/anyio-4.5.2[${PYTHON_USEDEP}]
+		dev-python/apscheduler[etcd,mongodb,redis,rethinkdb,sqlalchemy,tornado,zookeeper,${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 PATCHES=(
 	# disable test fixtures using external servers (mongodb, redis...)

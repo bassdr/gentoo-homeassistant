@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="baseline sarif yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	baseline? ( >=dev-python/gitpython-3.1.30[${PYTHON_USEDEP}] )
 	sarif? ( >=dev-python/jschema-to-python-1.2.3[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
@@ -27,7 +27,7 @@ GENERATED_DEPEND="${RDEPEND}
 	sarif? ( >=dev-python/sarif-om-1.0.4[${PYTHON_USEDEP}] )
 	>=dev-python/stevedore-1.20.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pbr-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/gitpython-3.1.30[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
@@ -51,13 +51,16 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	>=dev-python/beautifulsoup4-4.8.0[${PYTHON_USEDEP}]
-	>=dev-python/coverage-4.5.4[${PYTHON_USEDEP}]
-	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-4.0.0[${PYTHON_USEDEP}]
-	~dev-python/pylint-1.9.4[${PYTHON_USEDEP}]
-	>=dev-python/stestr-2.5.0[${PYTHON_USEDEP}]
-	>=dev-python/testscenarios-0.5.0[${PYTHON_USEDEP}]
-	>=dev-python/testtools-2.3.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/beautifulsoup4-4.8.0[${PYTHON_USEDEP}]
+		>=dev-python/coverage-4.5.4[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-4.0.0[${PYTHON_USEDEP}]
+		=dev-python/pylint-1.9.4[${PYTHON_USEDEP}]
+		>=dev-python/stestr-2.5.0[${PYTHON_USEDEP}]
+		>=dev-python/testscenarios-0.5.0[${PYTHON_USEDEP}]
+		>=dev-python/testtools-2.3.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

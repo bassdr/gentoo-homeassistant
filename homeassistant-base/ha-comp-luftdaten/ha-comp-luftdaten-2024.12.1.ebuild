@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/luftdaten-0.7.4[${PYTHON_USEDEP}]
+	=dev-python/luftdaten-0.7.4[${PYTHON_USEDEP}]
 "

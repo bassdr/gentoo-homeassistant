@@ -27,7 +27,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="+native-extensions test-rust"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/aiosignal-1.1.2[${PYTHON_USEDEP}]
@@ -38,8 +38,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/propcache-0.2.0[${PYTHON_USEDEP}]
 	<dev-python/yarl-2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/aiosignal-1.1.2[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aqualogic-2.6[${PYTHON_USEDEP}]
+	=dev-python/aqualogic-2.6[${PYTHON_USEDEP}]
 "

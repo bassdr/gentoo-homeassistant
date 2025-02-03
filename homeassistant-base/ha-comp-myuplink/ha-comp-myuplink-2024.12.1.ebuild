@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/myuplink-0.6.0[${PYTHON_USEDEP}]
+	=dev-python/myuplink-0.6.0[${PYTHON_USEDEP}]
 "

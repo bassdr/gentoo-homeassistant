@@ -21,14 +21,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	msgpack? ( >=dev-python/msgpack-0.5.6[${PYTHON_USEDEP}] )
 	orjson? ( dev-python/orjson[${PYTHON_USEDEP}] )
 	yaml? ( >=dev-python/pyyaml-3.13[${PYTHON_USEDEP}] )
 	toml? ( >=dev-python/tomli-w-1.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]"
 

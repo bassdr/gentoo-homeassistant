@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/backports-cached-property-1.0.2[${PYTHON_USEDEP}]
 	>=dev-python/docstring-parser-0.15[${PYTHON_USEDEP}]
 	>=dev-python/flax-0.6.9[${PYTHON_USEDEP}]
@@ -24,20 +24,23 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typeguard-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/attrs-21.4.0[${PYTHON_USEDEP}]
-	>=dev-python/coverage-6.5.0[toml,${PYTHON_USEDEP}]
-	>=dev-python/eval-type-backport-0.1.3[${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.4.1[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
-	>=dev-python/omegaconf-2.2.2[${PYTHON_USEDEP}]
-	!=dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
-	!=dev-python/pyright-1.1.379[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
-	>=dev-python/ruff-0.1.13[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/attrs-21.4.0[${PYTHON_USEDEP}]
+		>=dev-python/coverage-6.5.0[toml,${PYTHON_USEDEP}]
+		>=dev-python/eval-type-backport-0.1.3[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.4.1[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
+		>=dev-python/omegaconf-2.2.2[${PYTHON_USEDEP}]
+		!=dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
+		!=dev-python/pyright-1.1.379[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.1.13[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

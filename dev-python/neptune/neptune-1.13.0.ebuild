@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.28.0[${PYTHON_USEDEP}]
 	<dev-python/bravado-12.0.0[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
@@ -55,6 +55,6 @@ GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/websocket-client-1.0.0[${PYTHON_USEDEP}]
 	zenml? ( dev-python/zenml[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

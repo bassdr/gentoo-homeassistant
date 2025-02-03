@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	minc2? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/importlib-resources-5.12[${PYTHON_USEDEP}]' python3_12)
@@ -40,15 +40,18 @@ GENERATED_DEPEND="${RDEPEND}
 	typing? ( dev-python/tox[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-7.2[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-	dev-python/pytest-httpserver[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-7.2[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/pytest-httpserver[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

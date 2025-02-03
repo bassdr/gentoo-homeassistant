@@ -16,12 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-toolkit-0.11.1[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.12.3[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.15.0[standard,${PYTHON_USEDEP}]
 	standard? ( >=dev-python/uvicorn-0.15.0[standard,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

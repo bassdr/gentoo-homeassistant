@@ -16,13 +16,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiobotocore-3.0.0[${PYTHON_USEDEP}]
 	awscli? ( <dev-python/aiobotocore-3.0.0[awscli,${PYTHON_USEDEP}] )
 	boto3? ( <dev-python/aiobotocore-3.0.0[boto3,${PYTHON_USEDEP}] )
 	!=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}]
-	~dev-python/fsspec-2025.2.0[${PYTHON_USEDEP}]
+	=dev-python/fsspec-2025.2.0*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

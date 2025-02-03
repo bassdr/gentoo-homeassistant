@@ -21,11 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/defusedxml-0.6.0[${PYTHON_USEDEP}]
-	dev-python/defusedxml[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/defusedxml-0.6.0"
 BDEPEND="
 	test? (

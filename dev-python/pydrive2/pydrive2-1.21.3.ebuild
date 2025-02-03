@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	fsspec? ( >=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] )
 	<dev-python/cryptography-44[${PYTHON_USEDEP}]
 	fsspec? ( >=dev-python/fsspec-2021.07.0[${PYTHON_USEDEP}] )
@@ -27,16 +27,19 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyyaml-3.0[${PYTHON_USEDEP}]
 	fsspec? ( >=dev-python/tqdm-4.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-24.10.0[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/flake8-docstrings[${PYTHON_USEDEP}]
-	>=dev-python/funcy-1.14[${PYTHON_USEDEP}]
-	dev-python/pyinstaller[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/timeout-decorator[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-24.10.0[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/flake8-docstrings[${PYTHON_USEDEP}]
+		>=dev-python/funcy-1.14[${PYTHON_USEDEP}]
+		dev-python/pyinstaller[${PYTHON_USEDEP}]
+		>=dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/timeout-decorator[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

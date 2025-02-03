@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/py-madvr2-1.6.32[${PYTHON_USEDEP}]
+	=dev-python/py-madvr2-1.6.32[${PYTHON_USEDEP}]
 "

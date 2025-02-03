@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/autarco-3.1.0[${PYTHON_USEDEP}]
+	=dev-python/autarco-3.1.0[${PYTHON_USEDEP}]
 "

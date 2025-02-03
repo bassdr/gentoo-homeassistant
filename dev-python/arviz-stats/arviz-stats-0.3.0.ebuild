@@ -16,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	xarray? ( ~dev-python/arviz-base-0.3.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	xarray? ( =dev-python/arviz-base-0.3.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/jupyter-sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
 	doc? ( dev-python/myst-parser[linkify,${PYTHON_USEDEP}] )
@@ -35,11 +35,14 @@ GENERATED_DEPEND="${RDEPEND}
 	numba? ( dev-python/xarray-einstats[einops,${PYTHON_USEDEP}] )
 	xarray? ( dev-python/xarray-einstats[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/h5netcdf[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/h5netcdf[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

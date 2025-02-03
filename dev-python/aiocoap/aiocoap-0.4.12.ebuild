@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
 	prettyprint? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )
 	all? ( dev-python/cbor2[${PYTHON_USEDEP}] )
@@ -39,8 +39,8 @@ GENERATED_DEPEND="${RDEPEND}
 	oscore? ( dev-python/filelock[${PYTHON_USEDEP}] )
 	all? ( dev-python/ge25519[${PYTHON_USEDEP}] )
 	oscore? ( dev-python/ge25519[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/lakers-python-0.4.1[${PYTHON_USEDEP}] )
-	oscore? ( ~dev-python/lakers-python-0.4.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/lakers-python-0.4.1[${PYTHON_USEDEP}] )
+	oscore? ( =dev-python/lakers-python-0.4.1[${PYTHON_USEDEP}] )
 	all? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	prettyprint? ( >=dev-python/pygments-2.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
@@ -48,7 +48,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( <dev-python/websockets-14[${PYTHON_USEDEP}] )
 	ws? ( <dev-python/websockets-14[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	oscore? ( dev-python/cbor2[${PYTHON_USEDEP}] dev-python/cryptography[${PYTHON_USEDEP}] dev-python/filelock[${PYTHON_USEDEP}]  )
 	tinydtls? ( >=dev-python/DTLSSocket-0.1.11_alpha1[${PYTHON_USEDEP}] )
 	ws? ( dev-python/websockets[${PYTHON_USEDEP}] )

@@ -19,11 +19,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aenum[${PYTHON_USEDEP}]
 	dev-python/dacite[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/unicode-rbnf[${PYTHON_USEDEP}]
 	~dev-python/aenum-3.1.15[${PYTHON_USEDEP}]
 	dev-python/aiorun[${PYTHON_USEDEP}]
@@ -32,3 +32,4 @@ RDEPEND="${GENERATED_DEPEND}
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" "${DISTDIR}/${PN//-/_}-${PV}-py3-none-any.whl"
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild

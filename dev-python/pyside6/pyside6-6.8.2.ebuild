@@ -87,12 +87,12 @@ RESTRICT="test"
 # Minimal supported version of Qt.
 QT_PV="$(ver_cut 1-3)*:6"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/pyside6-addons-6.8.2[${PYTHON_USEDEP}]
-	~dev-python/pyside6-essentials-6.8.2[${PYTHON_USEDEP}]
-	~dev-python/shiboken6-6.8.2[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/pyside6-addons-6.8.2[${PYTHON_USEDEP}]
+	=dev-python/pyside6-essentials-6.8.2[${PYTHON_USEDEP}]
+	=dev-python/shiboken6-6.8.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} ${PYTHON_DEPS}
+RDEPEND="${GENERATED_RDEPEND} ${PYTHON_DEPS}
 	~dev-python/shiboken6-${PV}[${PYTHON_USEDEP},${LLVM_USEDEP}]
 	=dev-qt/qtbase-${QT_PV}[concurrent?,dbus?,gles2-only=,network?,opengl?,sql?,widgets?,xml?]
 	3d? ( =dev-qt/qt3d-${QT_PV}[qml?,gles2-only=] )
@@ -257,3 +257,4 @@ src_install() {
 	sed -i -e 's~pyside6-python[[:digit:]]\+\.[[:digit:]]\+~pyside6${PYTHON_CONFIG_SUFFIX}~g' \
 		"${ED}/usr/$(get_libdir)/cmake/PySide6/PySide6Targets-${CMAKE_BUILD_TYPE,,}.cmake" || die
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild

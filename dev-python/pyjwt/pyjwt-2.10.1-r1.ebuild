@@ -20,13 +20,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crypto docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	crypto? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/zope-interface[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	!dev-python/python-jwt
 "
 BDEPEND="
@@ -36,15 +36,18 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}]
-	>=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
-	dev-python/zope-interface[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}]
+		>=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+		dev-python/zope-interface[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# Internet

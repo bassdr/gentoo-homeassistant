@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library implementing the 'SemVer' scheme."
 HOMEPAGE="
-  https://pypi.org/project/semantic_version/
+  https://pypi.org/project/semantic-version/
 "
 
 LICENSE="BSD"
@@ -20,16 +20,19 @@ KEYWORDS="amd64 arm64"
 distutils_enable_sphinx docs \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/check-manifest[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	>=dev-python/django-1.11[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/nose2[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-	dev-python/zest-releaser[recommended,${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/check-manifest[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		>=dev-python/django-1.11[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/nose2[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+		dev-python/zest-releaser[recommended,${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

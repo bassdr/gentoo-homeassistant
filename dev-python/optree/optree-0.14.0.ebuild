@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/black[${PYTHON_USEDEP}] )
 	lint? ( dev-python/cpplint[${PYTHON_USEDEP}] )
 	benchmark? ( <dev-python/dm-tree-0.2.0_alpha0[${PYTHON_USEDEP}] )
@@ -56,11 +56,14 @@ GENERATED_DEPEND="${RDEPEND}
 	lint? ( dev-python/xdoctest[${PYTHON_USEDEP}] )
 	lint? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

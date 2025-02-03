@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dask-2024.4.1[dataframe,${PYTHON_USEDEP}]
 	>=dev-python/distributed-2024.4.1[${PYTHON_USEDEP}]
 	>=dev-python/fastapi-0.92.0[${PYTHON_USEDEP}]
@@ -30,18 +30,21 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tzlocal-2.1[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.14[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-22.10.0[${PYTHON_USEDEP}]
-	>=dev-python/intake-0.6.0[${PYTHON_USEDEP}]
-	~dev-python/isort-5.12.0[${PYTHON_USEDEP}]
-	>=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
-	>=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
-	>=dev-python/scikit-learn-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-3.2.1[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-22.10.0[${PYTHON_USEDEP}]
+		>=dev-python/intake-0.6.0[${PYTHON_USEDEP}]
+		=dev-python/isort-5.12.0[${PYTHON_USEDEP}]
+		>=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
+		>=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+		>=dev-python/scikit-learn-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-3.2.1[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/mutesync-0.0.1[${PYTHON_USEDEP}]
+	=dev-python/mutesync-0.0.1[${PYTHON_USEDEP}]
 "

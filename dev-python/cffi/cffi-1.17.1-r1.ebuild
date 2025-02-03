@@ -29,14 +29,14 @@ KEYWORDS="amd64 arm64"
 
 # Needs recent libffi for HPPA fixes
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/pycparser[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=dev-libs/libffi-3.4.4-r1:=
 "
 # setuptools as a modern distutils provider
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/pycparser[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/pycparser[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

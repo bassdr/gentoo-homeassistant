@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-common-1.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-core-1.23.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.3.0[${PYTHON_USEDEP}]
@@ -39,6 +39,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

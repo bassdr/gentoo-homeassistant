@@ -21,11 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	async? ( ~dev-python/aiocoap-0.4.5[${PYTHON_USEDEP}] )
-	async? ( ~dev-python/dtlssocket-0.1.12[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	async? ( >=dev-python/aiocoap-0.4.5[${PYTHON_USEDEP}] =dev-python/aiocoap-0.4*[${PYTHON_USEDEP}] )
+	async? ( >=dev-python/dtlssocket-0.1.12[${PYTHON_USEDEP}] =dev-python/dtlssocket-0.1*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND} async? ( dev-python/aiocoap[${PYTHON_USEDEP}] dev-python/dtlssocket[${PYTHON_USEDEP}] )"
+RDEPEND="${GENERATED_RDEPEND} async? ( dev-python/aiocoap[${PYTHON_USEDEP}] dev-python/dtlssocket[${PYTHON_USEDEP}] )"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

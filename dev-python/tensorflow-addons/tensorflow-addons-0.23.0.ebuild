@@ -17,13 +17,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	tensorflow? ( <dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}] )
 	tensorflow-cpu? ( <dev-python/tensorflow-cpu-2.16.0[${PYTHON_USEDEP}] )
 	tensorflow-gpu? ( <dev-python/tensorflow-gpu-2.16.0[${PYTHON_USEDEP}] )
 	<dev-python/typeguard-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

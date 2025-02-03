@@ -21,13 +21,6 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs optional"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( >=dev-python/myst-parser-2.0.0[${PYTHON_USEDEP}] )
-	optional? ( dev-python/python-socks[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-rtd-theme-1.1.0[${PYTHON_USEDEP}] )
-	optional? ( dev-python/wsaccel[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/python-socks[${PYTHON_USEDEP}]
@@ -35,9 +28,12 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/websockets[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/websockets[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_install_all() {
 	if use examples; then
@@ -46,4 +42,5 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

@@ -23,11 +23,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	alert? ( >=dev-python/websocket-client-1.3.3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-1.3.3[${PYTHON_USEDEP}]"
 

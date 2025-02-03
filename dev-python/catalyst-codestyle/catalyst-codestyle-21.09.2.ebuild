@@ -5,7 +5,6 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 IUSE=""
 
-PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 21.9.2)"
 S="${WORKDIR}/${PN}-21.9.2"
@@ -18,8 +17,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
 	<dev-python/darglint-2.0[${PYTHON_USEDEP}]
 	<dev-python/flake8-4.0[${PYTHON_USEDEP}]
 	<dev-python/flake8-blind-except-0.2[${PYTHON_USEDEP}]
@@ -35,6 +34,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/nitpick-0.28[${PYTHON_USEDEP}]
 	<dev-python/pep8-naming-0.13[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

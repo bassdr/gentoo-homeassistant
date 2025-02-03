@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2023.9.10[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
@@ -30,14 +30,17 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/exceptiongroup[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2[toml,${PYTHON_USEDEP}]
-	>=dev-python/tomli-1.0.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/exceptiongroup[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2[toml,${PYTHON_USEDEP}]
+		>=dev-python/tomli-1.0.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

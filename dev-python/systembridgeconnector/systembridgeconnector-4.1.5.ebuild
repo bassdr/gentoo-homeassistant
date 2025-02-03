@@ -18,14 +18,14 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9_beta0[${PYTHON_USEDEP}]' python3_13{,t})
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/incremental-24.7.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-24.0[${PYTHON_USEDEP}]
 	>=dev-python/systembridgemodels-4.2.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]
 	>=dev-python/incremental-24.7.2[${PYTHON_USEDEP}]"
 

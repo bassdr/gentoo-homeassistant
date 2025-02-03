@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/wolf-comm-0.0.15[${PYTHON_USEDEP}]
+	=dev-python/wolf-comm-0.0.15[${PYTHON_USEDEP}]
 "

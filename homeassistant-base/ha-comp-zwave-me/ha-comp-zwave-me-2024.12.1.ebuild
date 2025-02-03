@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/url-normalize-1.4.3[${PYTHON_USEDEP}]
-	~dev-python/zwave-me-ws-0.4.3[${PYTHON_USEDEP}]
+	=dev-python/url-normalize-1.4.3[${PYTHON_USEDEP}]
+	=dev-python/zwave-me-ws-0.4.3[${PYTHON_USEDEP}]
 "

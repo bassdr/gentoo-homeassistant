@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	gateway? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	genai? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	!=dev-python/alembic-1.10.0[${PYTHON_USEDEP}]
@@ -42,7 +42,7 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/matplotlib-4[${PYTHON_USEDEP}]
 	sqlserver? ( dev-python/mlflow-dbstore[${PYTHON_USEDEP}] )
 	jfrog? ( dev-python/mlflow-jfrog-plugin[${PYTHON_USEDEP}] )
-	~dev-python/mlflow-skinny-2.20.1[${PYTHON_USEDEP}]
+	=dev-python/mlflow-skinny-2.20.1[${PYTHON_USEDEP}]
 	xethub? ( dev-python/mlflow-xethub[${PYTHON_USEDEP}] )
 	mlserver? ( !=dev-python/mlserver-1.3.1[${PYTHON_USEDEP}] )
 	mlserver? ( !=dev-python/mlserver-mlflow-1.3.1[${PYTHON_USEDEP}] )
@@ -66,6 +66,6 @@ GENERATED_DEPEND="${RDEPEND}
 	gateway? ( <dev-python/watchfiles-2[${PYTHON_USEDEP}] )
 	genai? ( <dev-python/watchfiles-2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

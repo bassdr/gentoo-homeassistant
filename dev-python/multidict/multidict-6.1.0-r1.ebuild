@@ -32,9 +32,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="+native-extensions"
 
-GENERATED_DEPEND="
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="
 	$(python_gen_cond_dep '
 		>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]
 	' 3.10)

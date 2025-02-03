@@ -21,12 +21,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
 	<dev-python/sphinx-9[${PYTHON_USEDEP}]
 	<dev-python/sphinxcontrib-jquery-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/docutils-0.18[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-6[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-jquery-4[${PYTHON_USEDEP}]
@@ -38,12 +38,15 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/bump2version[${PYTHON_USEDEP}]
-	dev-python/transifex-client[${PYTHON_USEDEP}]
-	dev-python/twine[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/bump2version[${PYTHON_USEDEP}]
+		dev-python/transifex-client[${PYTHON_USEDEP}]
+		dev-python/twine[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# remove upper bounds

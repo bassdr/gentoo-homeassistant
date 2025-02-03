@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="spelling testutils"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<=dev-python/astroid-3.4.0-de0[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/dill-0.3.7[${PYTHON_USEDEP}]' python3_13{,t})
@@ -33,10 +33,10 @@ GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/isort-5.13.0[${PYTHON_USEDEP}]
 	<dev-python/mccabe-0.8[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-2.2.0[${PYTHON_USEDEP}]
-	spelling? ( ~dev-python/pyenchant-3.2[${PYTHON_USEDEP}] )
+	spelling? ( >=dev-python/pyenchant-3.2[${PYTHON_USEDEP}] =dev-python/pyenchant-3*[${PYTHON_USEDEP}] )
 	>=dev-python/tomlkit-0.10.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/astroid-3.4[${PYTHON_USEDEP}]
 	>=dev-python/astroid-3.3.8[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.3.7[${PYTHON_USEDEP}]

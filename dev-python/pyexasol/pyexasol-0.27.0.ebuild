@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	numpy? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
 	orjson? ( >=dev-python/orjson-3.6[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -28,6 +28,6 @@ GENERATED_DEPEND="${RDEPEND}
 	ujson? ( dev-python/ujson[${PYTHON_USEDEP}] )
 	>=dev-python/websocket-client-1.0.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

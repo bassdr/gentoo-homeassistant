@@ -19,14 +19,14 @@ DOCS="README.rst"
 
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cli? ( <dev-python/asyncclick-9.0.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.0.2[${PYTHON_USEDEP}]
 	<dev-python/tzlocal-6.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.0.2[${PYTHON_USEDEP}]
 	>=dev-python/tzlocal-5.0.1[${PYTHON_USEDEP}]"
-# BDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild

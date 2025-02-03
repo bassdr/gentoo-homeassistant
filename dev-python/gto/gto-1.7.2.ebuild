@@ -15,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/entrypoints[${PYTHON_USEDEP}]
 	dev-python/funcy[${PYTHON_USEDEP}]
 	!=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
@@ -26,24 +26,27 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tabulate-0.8.10[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.4.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/freezegun[${PYTHON_USEDEP}]
-	dev-python/gto[tests,${PYTHON_USEDEP}]
-	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-	dev-python/pygit2[${PYTHON_USEDEP}]
-	~dev-python/pylint-3.3.2[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-test-utils[${PYTHON_USEDEP}]
-	dev-python/types-filelock[${PYTHON_USEDEP}]
-	dev-python/types-freezegun[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-	dev-python/types-setuptools[${PYTHON_USEDEP}]
-	dev-python/types-six[${PYTHON_USEDEP}]
-	dev-python/types-tabulate[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/freezegun[${PYTHON_USEDEP}]
+		dev-python/gto[tests,${PYTHON_USEDEP}]
+		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		dev-python/pygit2[${PYTHON_USEDEP}]
+		=dev-python/pylint-3.3.2[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-test-utils[${PYTHON_USEDEP}]
+		dev-python/types-filelock[${PYTHON_USEDEP}]
+		dev-python/types-freezegun[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+		dev-python/types-setuptools[${PYTHON_USEDEP}]
+		dev-python/types-six[${PYTHON_USEDEP}]
+		dev-python/types-tabulate[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

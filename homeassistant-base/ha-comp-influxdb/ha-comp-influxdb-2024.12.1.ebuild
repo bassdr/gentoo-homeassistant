@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/influxdb-5.3.1[${PYTHON_USEDEP}]
-	~dev-python/influxdb-client-1.24.0[${PYTHON_USEDEP}]
+	=dev-python/influxdb-5.3.1[${PYTHON_USEDEP}]
+	=dev-python/influxdb-client-1.24.0[${PYTHON_USEDEP}]
 "

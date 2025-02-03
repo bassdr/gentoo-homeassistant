@@ -22,11 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( <dev-python/aiohttp-4.0.0[speedups,${PYTHON_USEDEP}] )
 	<dev-python/mashumaro-4.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

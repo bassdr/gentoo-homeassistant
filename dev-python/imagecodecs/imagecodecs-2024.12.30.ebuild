@@ -16,28 +16,31 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	all? ( dev-python/numcodecs[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
 	all? ( dev-python/tifffile[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/bitshuffle[${PYTHON_USEDEP}]
-	dev-python/blosc[${PYTHON_USEDEP}]
-	dev-python/blosc2[${PYTHON_USEDEP}]
-	dev-python/czifile[${PYTHON_USEDEP}]
-	dev-python/lz4[${PYTHON_USEDEP}]
-	dev-python/numcodecs[${PYTHON_USEDEP}]
-	dev-python/pyliblzfse[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/python-lzf[${PYTHON_USEDEP}]
-	dev-python/python-snappy[${PYTHON_USEDEP}]
-	dev-python/tifffile[${PYTHON_USEDEP}]
-	<dev-python/zarr-3[${PYTHON_USEDEP}]
-	dev-python/zopflipy[${PYTHON_USEDEP}]
-	dev-python/zstd[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/bitshuffle[${PYTHON_USEDEP}]
+		dev-python/blosc[${PYTHON_USEDEP}]
+		dev-python/blosc2[${PYTHON_USEDEP}]
+		dev-python/czifile[${PYTHON_USEDEP}]
+		dev-python/lz4[${PYTHON_USEDEP}]
+		dev-python/numcodecs[${PYTHON_USEDEP}]
+		dev-python/pyliblzfse[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/python-lzf[${PYTHON_USEDEP}]
+		dev-python/python-snappy[${PYTHON_USEDEP}]
+		dev-python/tifffile[${PYTHON_USEDEP}]
+		<dev-python/zarr-3[${PYTHON_USEDEP}]
+		dev-python/zopflipy[${PYTHON_USEDEP}]
+		dev-python/zstd[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

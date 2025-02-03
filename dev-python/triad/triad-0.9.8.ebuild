@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ciso8601? ( dev-python/ciso8601[${PYTHON_USEDEP}] )
 	dev-python/fs[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2022.5.0[${PYTHON_USEDEP}]
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyarrow-6.0.1[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

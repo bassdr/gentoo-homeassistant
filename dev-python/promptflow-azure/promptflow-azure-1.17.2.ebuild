@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/azure-ai-ml-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/azure-cosmos-5.0.0[${PYTHON_USEDEP}]
@@ -25,6 +25,10 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/promptflow-devkit-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

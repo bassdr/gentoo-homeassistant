@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.17.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/greenlet-3.1.1[${PYTHON_USEDEP}]
@@ -28,10 +28,13 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/zope-interface[${PYTHON_USEDEP}]
 	docs? ( dev-python/zope-schema[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/objgraph[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/objgraph[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

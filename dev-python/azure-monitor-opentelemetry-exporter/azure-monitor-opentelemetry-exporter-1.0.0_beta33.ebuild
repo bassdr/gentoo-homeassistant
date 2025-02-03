@@ -17,14 +17,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
-	~dev-python/fixedint-0.1.6[${PYTHON_USEDEP}]
+	=dev-python/fixedint-0.1.6[${PYTHON_USEDEP}]
 	>=dev-python/msrest-0.6.10[${PYTHON_USEDEP}]
-	~dev-python/opentelemetry-api-1.26[${PYTHON_USEDEP}]
-	~dev-python/opentelemetry-sdk-1.26[${PYTHON_USEDEP}]
-	~dev-python/psutil-5.9[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-api-1.26[${PYTHON_USEDEP}] =dev-python/opentelemetry-api-1*[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-sdk-1.26[${PYTHON_USEDEP}] =dev-python/opentelemetry-sdk-1*[${PYTHON_USEDEP}]
+	>=dev-python/psutil-5.9[${PYTHON_USEDEP}] =dev-python/psutil-5*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

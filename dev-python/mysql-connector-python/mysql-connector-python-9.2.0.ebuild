@@ -17,14 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	dns-srv? ( ~dev-python/dnspython-2.6.1[${PYTHON_USEDEP}] )
-	fido2? ( ~dev-python/fido2-1.1.2[${PYTHON_USEDEP}] )
-	gssapi? ( ~dev-python/gssapi-1.8.3[${PYTHON_USEDEP}] )
-	telemetry? ( ~dev-python/opentelemetry-api-1.18.0[${PYTHON_USEDEP}] )
-	telemetry? ( ~dev-python/opentelemetry-exporter-otlp-proto-http-1.18.0[${PYTHON_USEDEP}] )
-	telemetry? ( ~dev-python/opentelemetry-sdk-1.18.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	dns-srv? ( =dev-python/dnspython-2.6.1[${PYTHON_USEDEP}] )
+	fido2? ( =dev-python/fido2-1.1.2[${PYTHON_USEDEP}] )
+	gssapi? ( =dev-python/gssapi-1.8.3[${PYTHON_USEDEP}] )
+	telemetry? ( =dev-python/opentelemetry-api-1.18.0[${PYTHON_USEDEP}] )
+	telemetry? ( =dev-python/opentelemetry-exporter-otlp-proto-http-1.18.0[${PYTHON_USEDEP}] )
+	telemetry? ( =dev-python/opentelemetry-sdk-1.18.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

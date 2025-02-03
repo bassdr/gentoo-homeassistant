@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/android-backup-0[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
@@ -45,7 +45,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tqdm-4[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	>=dev-python/construct-2.10.56[${PYTHON_USEDEP}]

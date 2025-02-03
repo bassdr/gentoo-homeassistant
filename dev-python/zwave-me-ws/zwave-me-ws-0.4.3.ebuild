@@ -21,9 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-1.2.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/websocket-client-1.2.1[${PYTHON_USEDEP}]"

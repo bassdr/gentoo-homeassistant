@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/webio-api-0.1.8[${PYTHON_USEDEP}]
+	=dev-python/webio-api-0.1.8[${PYTHON_USEDEP}]
 "

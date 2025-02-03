@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/backoff-1.10.0[${PYTHON_USEDEP}]
 	sentry? ( dev-python/django[${PYTHON_USEDEP}] )
 	langchain? ( >=dev-python/langchain-0.2.0[${PYTHON_USEDEP}] )
@@ -26,28 +26,31 @@ GENERATED_DEPEND="${RDEPEND}
 	sentry? ( dev-python/sentry-sdk[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/anthropic[${PYTHON_USEDEP}]
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/django[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/flake8-print[${PYTHON_USEDEP}]
-	~dev-python/freezegun-0.3.15[${PYTHON_USEDEP}]
-	dev-python/isort[${PYTHON_USEDEP}]
-	>=dev-python/langchain-anthropic-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/langchain-community-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/langchain-openai-0.2.0[${PYTHON_USEDEP}]
-	dev-python/langgraph[${PYTHON_USEDEP}]
-	>=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
-	dev-python/openai[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
-	dev-python/pylint[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/anthropic[${PYTHON_USEDEP}]
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/django[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/flake8-print[${PYTHON_USEDEP}]
+		=dev-python/freezegun-0.3.15[${PYTHON_USEDEP}]
+		dev-python/isort[${PYTHON_USEDEP}]
+		>=dev-python/langchain-anthropic-0.2.0[${PYTHON_USEDEP}]
+		>=dev-python/langchain-community-0.2.0[${PYTHON_USEDEP}]
+		>=dev-python/langchain-openai-0.2.0[${PYTHON_USEDEP}]
+		dev-python/langgraph[${PYTHON_USEDEP}]
+		>=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
+		dev-python/openai[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+		dev-python/pylint[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

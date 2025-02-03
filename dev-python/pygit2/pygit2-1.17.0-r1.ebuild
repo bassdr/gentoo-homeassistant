@@ -18,9 +18,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/cffi-1.17.0[${PYTHON_USEDEP}]
-"
 DEPEND="
 	<dev-libs/libgit2-1.10:=
 	>=dev-libs/libgit2-1.9.0:=
@@ -28,7 +25,10 @@ DEPEND="
 BDEPEND="
 	>=dev-python/cffi-1.17.0:=[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/cffi-1.17.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	${BDEPEND}
 "

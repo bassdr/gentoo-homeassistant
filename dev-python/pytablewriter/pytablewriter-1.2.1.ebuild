@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/dataproperty-2[${PYTHON_USEDEP}]
 	all? ( <dev-python/dominate-3[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/dominate-3[${PYTHON_USEDEP}] )
@@ -66,27 +66,30 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/xlwt[${PYTHON_USEDEP}] )
 	excel? ( dev-python/xlwt[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/beautifulsoup4-4.10[${PYTHON_USEDEP}]
-	<dev-python/dominate-3[${PYTHON_USEDEP}]
-	<dev-python/elasticsearch-9[${PYTHON_USEDEP}]
-	<dev-python/loguru-1[${PYTHON_USEDEP}]
-	<dev-python/pandas-3[${PYTHON_USEDEP}]
-	>=dev-python/pytablereader-0.31.3[excel,sqlite,${PYTHON_USEDEP}]
-	<dev-python/pytablereader-2[${PYTHON_USEDEP}]
-	<dev-python/pytablewriter-altcol-theme-1[${PYTHON_USEDEP}]
-	<dev-python/pytablewriter-altrow-theme-1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	<dev-python/simplejson-4[${PYTHON_USEDEP}]
-	<dev-python/simplesqlite-2[${PYTHON_USEDEP}]
-	>=dev-python/sqliteschema-2[${PYTHON_USEDEP}]
-	>=dev-python/tablib-3.2.0[${PYTHON_USEDEP}]
-	<dev-python/toml-1[${PYTHON_USEDEP}]
-	<dev-python/xlsxwriter-4[${PYTHON_USEDEP}]
-	dev-python/xlwt[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/beautifulsoup4-4.10[${PYTHON_USEDEP}]
+		<dev-python/dominate-3[${PYTHON_USEDEP}]
+		<dev-python/elasticsearch-9[${PYTHON_USEDEP}]
+		<dev-python/loguru-1[${PYTHON_USEDEP}]
+		<dev-python/pandas-3[${PYTHON_USEDEP}]
+		>=dev-python/pytablereader-0.31.3[excel,sqlite,${PYTHON_USEDEP}]
+		<dev-python/pytablereader-2[${PYTHON_USEDEP}]
+		<dev-python/pytablewriter-altcol-theme-1[${PYTHON_USEDEP}]
+		<dev-python/pytablewriter-altrow-theme-1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
+		<dev-python/pyyaml-7[${PYTHON_USEDEP}]
+		<dev-python/simplejson-4[${PYTHON_USEDEP}]
+		<dev-python/simplesqlite-2[${PYTHON_USEDEP}]
+		>=dev-python/sqliteschema-2[${PYTHON_USEDEP}]
+		>=dev-python/tablib-3.2.0[${PYTHON_USEDEP}]
+		<dev-python/toml-1[${PYTHON_USEDEP}]
+		<dev-python/xlsxwriter-4[${PYTHON_USEDEP}]
+		dev-python/xlwt[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

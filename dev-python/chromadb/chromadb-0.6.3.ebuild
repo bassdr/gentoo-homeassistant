@@ -15,10 +15,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bcrypt-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/build-1.0.3[${PYTHON_USEDEP}]
-	~dev-python/chroma-hnswlib-0.7.6[${PYTHON_USEDEP}]
+	=dev-python/chroma-hnswlib-0.7.6[${PYTHON_USEDEP}]
 	>=dev-python/fastapi-0.95.2[${PYTHON_USEDEP}]
 	>=dev-python/graphlib-backport-1.0.3[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.58.0[${PYTHON_USEDEP}]
@@ -30,7 +30,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/onnxruntime-1.14.1[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-api-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-exporter-otlp-proto-grpc-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/opentelemetry-instrumentation-fastapi-0_beta0[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-instrumentation-fastapi-0.41_beta0[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-sdk-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.12[${PYTHON_USEDEP}]
 	>=dev-python/overrides-7.3.1[${PYTHON_USEDEP}]
@@ -46,6 +46,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/uvicorn-0.18.3[standard,${PYTHON_USEDEP}]
 	>=sci-libs/tokenizers-0.13.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

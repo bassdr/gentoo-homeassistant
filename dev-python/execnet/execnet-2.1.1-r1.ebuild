@@ -17,20 +17,21 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-"
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
 
 distutils_enable_sphinx doc
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/hatch[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/hatch[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=()
@@ -52,4 +53,5 @@ python_test() {
 	# written to cpython install dirs
 	epytest testing -k "not pypy3"
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

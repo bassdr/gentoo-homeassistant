@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="httplib2 caching for requests"
 HOMEPAGE="
-  https://pypi.org/project/CacheControl/
+  https://pypi.org/project/cachecontrol/
   Homepage, https://pypi.org/project/CacheControl/
   Issues, https://github.com/psf/cachecontrol/issues
   Source, https://github.com/psf/cachecontrol
@@ -22,13 +22,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="filecache redis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	filecache? ( >=dev-python/filelock-3.8.0[${PYTHON_USEDEP}] )
 	<dev-python/msgpack-2.0.0[${PYTHON_USEDEP}]
 	redis? ( >=dev-python/redis-2.10.5[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/msgpack-2[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-0.5.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
@@ -41,19 +41,22 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/build[${PYTHON_USEDEP}]
-	dev-python/cachecontrol[filecache,redis,${PYTHON_USEDEP}]
-	dev-python/cherrypy[${PYTHON_USEDEP}]
-	dev-python/codespell[tomli,${PYTHON_USEDEP}]
-	dev-python/furo[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	dev-python/types-redis[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[${PYTHON_USEDEP}]
+		dev-python/cachecontrol[filecache,redis,${PYTHON_USEDEP}]
+		dev-python/cherrypy[${PYTHON_USEDEP}]
+		dev-python/codespell[tomli,${PYTHON_USEDEP}]
+		dev-python/furo[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		dev-python/types-redis[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

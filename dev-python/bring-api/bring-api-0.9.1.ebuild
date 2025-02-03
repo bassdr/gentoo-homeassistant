@@ -22,10 +22,10 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

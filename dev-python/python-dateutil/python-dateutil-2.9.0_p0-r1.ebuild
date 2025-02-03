@@ -7,7 +7,6 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_FULLY_TESTED=( python3_{10..13} pypy3 )
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 2.9.0.post0)"
 S="${WORKDIR}/${PN}-2.9.0.post0"
@@ -24,10 +23,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
 	sys-libs/timezone-data
 "

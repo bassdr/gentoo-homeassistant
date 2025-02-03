@@ -19,12 +19,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dotenv email"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	email? ( >=dev-python/email-validator-1.0.3[${PYTHON_USEDEP}] )
 	dotenv? ( >=dev-python/python-dotenv-0.10.4[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/annotated-types-0.6.0[${PYTHON_USEDEP}]
 	~dev-python/pydantic-core-2.23.4[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}]

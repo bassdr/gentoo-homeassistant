@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	rtd? ( dev-python/alabaster[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/altair[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/bokeh[${PYTHON_USEDEP}] )
@@ -45,24 +45,27 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	code-style? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	>=dev-python/coverage-6.4[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	!=dev-python/ipython-8.1.0[${PYTHON_USEDEP}]
-	>=dev-python/ipywidgets-8[${PYTHON_USEDEP}]
-	>=dev-python/jupytext-1.11.2[${PYTHON_USEDEP}]
-	~dev-python/matplotlib-3.7[${PYTHON_USEDEP}]
-	dev-python/nbdime[${PYTHON_USEDEP}]
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pyarrow[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3[${PYTHON_USEDEP}]
-	dev-python/pytest-param-files[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	>=dev-python/sympy-1.10.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		>=dev-python/coverage-6.4[${PYTHON_USEDEP}]
+		>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
+		!=dev-python/ipython-8.1.0[${PYTHON_USEDEP}]
+		>=dev-python/ipywidgets-8[${PYTHON_USEDEP}]
+		>=dev-python/jupytext-1.11.2[${PYTHON_USEDEP}]
+		=dev-python/matplotlib-3.7*[${PYTHON_USEDEP}]
+		dev-python/nbdime[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pyarrow[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3[${PYTHON_USEDEP}]
+		dev-python/pytest-param-files[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+		>=dev-python/sympy-1.10.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

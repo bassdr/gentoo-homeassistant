@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyaussiebb-0.0.15[${PYTHON_USEDEP}]
+	=dev-python/pyaussiebb-0.0.15[${PYTHON_USEDEP}]
 "

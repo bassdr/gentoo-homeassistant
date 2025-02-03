@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	yaml? ( dev-python/ruamel-yaml[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 "
 BDEPEND="

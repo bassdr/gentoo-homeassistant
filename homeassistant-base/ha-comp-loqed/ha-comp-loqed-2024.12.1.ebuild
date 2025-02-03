@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/loqedapi-2.1.10[${PYTHON_USEDEP}]
+	=dev-python/loqedapi-2.1.10[${PYTHON_USEDEP}]
 "

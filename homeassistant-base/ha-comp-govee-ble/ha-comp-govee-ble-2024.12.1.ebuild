@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/govee-ble-0.40.0[${PYTHON_USEDEP}]
+	=dev-python/govee-ble-0.40.0[${PYTHON_USEDEP}]
 "

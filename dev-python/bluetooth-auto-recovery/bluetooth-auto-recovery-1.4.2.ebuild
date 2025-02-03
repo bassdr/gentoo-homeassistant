@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-adapters-0.16.0[${PYTHON_USEDEP}]
 	>=dev-python/btsocket-0.2.0[${PYTHON_USEDEP}]
 	docs? ( <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
@@ -34,7 +34,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 	>=dev-python/usb-devices-0.4.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyric-0.1.6.3[${PYTHON_USEDEP}]
 	>=dev-python/btsocket-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/usb-devices-0.4.1[${PYTHON_USEDEP}]

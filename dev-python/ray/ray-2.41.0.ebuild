@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	air? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
 	all-cpp? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/aiohttp-3.7[${PYTHON_USEDEP}] )
@@ -59,9 +59,9 @@ GENERATED_DEPEND="${RDEPEND}
 	all-cpp? ( dev-python/grpcio[${PYTHON_USEDEP}] )
 	all? ( dev-python/grpcio[${PYTHON_USEDEP}] )
 	client? ( dev-python/grpcio[${PYTHON_USEDEP}] )
-	all-cpp? ( ~dev-python/gymnasium-1.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/gymnasium-1.0.0[${PYTHON_USEDEP}] )
-	rllib? ( ~dev-python/gymnasium-1.0.0[${PYTHON_USEDEP}] )
+	all-cpp? ( =dev-python/gymnasium-1.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/gymnasium-1.0.0[${PYTHON_USEDEP}] )
+	rllib? ( =dev-python/gymnasium-1.0.0[${PYTHON_USEDEP}] )
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 	all-cpp? ( dev-python/lz4[${PYTHON_USEDEP}] )
 	all? ( dev-python/lz4[${PYTHON_USEDEP}] )
@@ -86,9 +86,9 @@ GENERATED_DEPEND="${RDEPEND}
 	all-cpp? ( dev-python/opentelemetry-sdk[${PYTHON_USEDEP}] )
 	all? ( dev-python/opentelemetry-sdk[${PYTHON_USEDEP}] )
 	observability? ( dev-python/opentelemetry-sdk[${PYTHON_USEDEP}] )
-	all-cpp? ( ~dev-python/ormsgpack-1.7.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/ormsgpack-1.7.0[${PYTHON_USEDEP}] )
-	rllib? ( ~dev-python/ormsgpack-1.7.0[${PYTHON_USEDEP}] )
+	all-cpp? ( =dev-python/ormsgpack-1.7.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/ormsgpack-1.7.0[${PYTHON_USEDEP}] )
+	rllib? ( =dev-python/ormsgpack-1.7.0[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	air? ( >=dev-python/pandas-1.3[${PYTHON_USEDEP}] )
 	air? ( dev-python/pandas[${PYTHON_USEDEP}] )
@@ -117,24 +117,26 @@ GENERATED_DEPEND="${RDEPEND}
 	rllib? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
 	train? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
 	tune? ( >=dev-python/pyarrow-9.0.0[${PYTHON_USEDEP}] )
-	air? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
-	all-cpp? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
-	all? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
-	default? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
-	serve-grpc? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
-	serve? ( !=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
+	air? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
+	all-cpp? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
+	all? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
+	default? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
+	serve-grpc? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
+	serve? ( !=dev-python/pydantic-2.0*[${PYTHON_USEDEP}] )
 	all-cpp? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	all? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	serve-grpc? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	all-cpp? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	all? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
+	dev-python/pyyaml[${PYTHON_USEDEP}]
 	rllib? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
-	all-cpp? ( ~dev-python/ray-cpp-2.41.0[${PYTHON_USEDEP}] )
-	cpp? ( ~dev-python/ray-cpp-2.41.0[${PYTHON_USEDEP}] )
+	all-cpp? ( =dev-python/ray-cpp-2.41.0[${PYTHON_USEDEP}] )
+	cpp? ( =dev-python/ray-cpp-2.41.0[${PYTHON_USEDEP}] )
 	air? ( dev-python/requests[${PYTHON_USEDEP}] )
 	all-cpp? ( dev-python/requests[${PYTHON_USEDEP}] )
 	all? ( dev-python/requests[${PYTHON_USEDEP}] )
 	default? ( dev-python/requests[${PYTHON_USEDEP}] )
+	dev-python/requests[${PYTHON_USEDEP}]
 	rllib? ( dev-python/requests[${PYTHON_USEDEP}] )
 	serve-grpc? ( dev-python/requests[${PYTHON_USEDEP}] )
 	serve? ( dev-python/requests[${PYTHON_USEDEP}] )
@@ -177,6 +179,10 @@ GENERATED_DEPEND="${RDEPEND}
 	serve-grpc? ( dev-python/watchfiles[${PYTHON_USEDEP}] )
 	serve? ( dev-python/watchfiles[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

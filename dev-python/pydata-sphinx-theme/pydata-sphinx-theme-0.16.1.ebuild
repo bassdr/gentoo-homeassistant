@@ -11,14 +11,14 @@ inherit distutils-r1 pypi
 MY_P=${P/_/}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/pydata-sphinx-theme/"
+  https://pypi.org/project/pydata_sphinx_theme/"
 LICENSE="BSD-with-disclosure"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="a11y doc i18n"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	doc? ( >=dev-python/ablog-0.11.8[${PYTHON_USEDEP}] )
 	dev-python/accessible-pygments[${PYTHON_USEDEP}]
 	dev-python/babel[${PYTHON_USEDEP}]
@@ -56,7 +56,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	doc? ( dev-python/xarray[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/accessible-pygments[${PYTHON_USEDEP}]
 	dev-python/babel[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
@@ -73,18 +73,21 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pandoc[${PYTHON_USEDEP}]
-	dev-python/pydata-sphinx-theme[doc,test,${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/sphinx[test,${PYTHON_USEDEP}]
-	dev-python/sphinx-theme-builder[cli,${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pandoc[${PYTHON_USEDEP}]
+		dev-python/pydata-sphinx-theme[doc,test,${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+		dev-python/sphinx[test,${PYTHON_USEDEP}]
+		dev-python/sphinx-theme-builder[cli,${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# pygments version mismatch?

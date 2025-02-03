@@ -22,14 +22,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE=""
-IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${PYTHON_DEPS}
+IUSE=""
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/deprecated-1.2.6[${PYTHON_USEDEP}]
-	~dev-python/importlib-metadata-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/importlib-metadata-6.0.0[${PYTHON_USEDEP}] =dev-python/importlib-metadata-6.0*[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-16.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/deprecated-1.2.6[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "

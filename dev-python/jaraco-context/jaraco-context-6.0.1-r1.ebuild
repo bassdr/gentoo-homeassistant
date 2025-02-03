@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep 'dev-python/backports-tarfile[${PYTHON_USEDEP}]' python3_12)
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep '
 		dev-python/backports-tarfile[${PYTHON_USEDEP}]
 	' 3.10 3.11)
@@ -41,14 +41,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/portend[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
-	dev-python/pytest-mypy[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/portend[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# Internet

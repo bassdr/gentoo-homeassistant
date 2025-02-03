@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="bf json lua"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	json? ( <dev-python/jsonpath-ng-2.0[${PYTHON_USEDEP}] )
 	lua? ( <dev-python/lupa-3.0[${PYTHON_USEDEP}] )
 	bf? ( <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] )
@@ -26,7 +26,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/redis-4[${PYTHON_USEDEP}]
 	<dev-python/sortedcontainers-3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/redis-4.3[${PYTHON_USEDEP}]
 	<dev-python/sortedcontainers-3[${PYTHON_USEDEP}]

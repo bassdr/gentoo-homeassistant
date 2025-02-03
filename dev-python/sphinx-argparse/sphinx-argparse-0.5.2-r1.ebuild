@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs lint markdown"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/commonmark-0.5.6[${PYTHON_USEDEP}] )
 	markdown? ( >=dev-python/commonmark-0.5.6[${PYTHON_USEDEP}] )
 	>=dev-python/docutils-0.19[${PYTHON_USEDEP}]
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/sphinx-5.1.0[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/types-docutils-0.21[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/docutils-0.19[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-5.1.0[${PYTHON_USEDEP}]
 	>=dev-python/commonmark-0.5.6[${PYTHON_USEDEP}]
@@ -41,10 +41,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-6.5[${PYTHON_USEDEP}]
-	>=dev-python/lxml-4.9[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-70.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-6.5[${PYTHON_USEDEP}]
+		>=dev-python/lxml-4.9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.0[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-70.0[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

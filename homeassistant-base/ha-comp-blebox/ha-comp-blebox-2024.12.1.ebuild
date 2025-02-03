@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/blebox-uniapi-2.5.0[${PYTHON_USEDEP}]
+	=dev-python/blebox-uniapi-2.5.0[${PYTHON_USEDEP}]
 "

@@ -18,12 +18,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-autodoc-typehints-3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
@@ -39,13 +39,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-75.8[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-75.8[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# hardcodes assumptions specific to setuptools-70.1.0

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 	>=dev-python/tempora-1.8[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/tempora-1.8[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -36,10 +36,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
-	dev-python/pytest-ruff[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+		dev-python/pytest-ruff[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

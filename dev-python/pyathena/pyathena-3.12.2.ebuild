@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.26.4[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.29.4[${PYTHON_USEDEP}]
 	fastparquet? ( >=dev-python/fastparquet-0.4.0[${PYTHON_USEDEP}] )
@@ -27,6 +27,6 @@ GENERATED_DEPEND="${RDEPEND}
 	sqlalchemy? ( >=dev-python/sqlalchemy-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/tenacity-4.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

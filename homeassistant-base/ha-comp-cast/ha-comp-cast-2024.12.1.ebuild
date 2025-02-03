@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pychromecast-14.0.5[${PYTHON_USEDEP}]
+	=dev-python/pychromecast-14.0.5[${PYTHON_USEDEP}]
 "

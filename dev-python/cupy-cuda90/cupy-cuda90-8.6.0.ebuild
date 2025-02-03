@@ -17,27 +17,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	jenkins? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/coverage-5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	setup? ( >=dev-python/cython-0.29.22[${PYTHON_USEDEP}] )
 	>=dev-python/fastrlock-0.3[${PYTHON_USEDEP}]
 	setup? ( >=dev-python/fastrlock-0.3[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.15[${PYTHON_USEDEP}]
-	stylecheck? ( ~dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-cov-2.10[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-4.2.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		<dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-4.2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

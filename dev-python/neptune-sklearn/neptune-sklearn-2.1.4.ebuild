@@ -15,19 +15,22 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-0.24.1[${PYTHON_USEDEP}]
 	>=dev-python/scikit-plot-0.3.7[${PYTHON_USEDEP}]
 	<dev-python/scipy-1.12[${PYTHON_USEDEP}]
 	>=dev-python/yellowbrick-1.3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/neptune-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/neptune-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

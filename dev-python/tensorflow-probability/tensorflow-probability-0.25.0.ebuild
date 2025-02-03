@@ -12,13 +12,13 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/tensorflow-probability/"
+  https://pypi.org/project/tensorflow_probability/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
@@ -32,6 +32,10 @@ GENERATED_DEPEND="${RDEPEND}
 	tfds? ( >=dev-python/tensorflow-datasets-2.2.0[${PYTHON_USEDEP}] )
 	tf? ( >=dev-python/tf-keras-2.16[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

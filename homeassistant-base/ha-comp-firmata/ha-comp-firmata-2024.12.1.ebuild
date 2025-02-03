@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pymata-express-1.19[${PYTHON_USEDEP}]
+	=dev-python/pymata-express-1.19[${PYTHON_USEDEP}]
 "

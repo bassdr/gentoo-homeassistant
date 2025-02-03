@@ -26,13 +26,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/google-auth-3[${PYTHON_USEDEP}]
 	<dev-python/grpcio-2[${PYTHON_USEDEP}]
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]
 	<dev-python/requests-3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	dev-python/google-auth[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]

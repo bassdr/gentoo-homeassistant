@@ -7,9 +7,8 @@ DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "opentelemetry-semantic-conventions" "0.39b0")"
-S="${WORKDIR}/opentelemetry-semantic-conventions-0.39b0"
+SRC_URI="$(pypi_sdist_url ${PN} 0.39b0)"
+S="${WORKDIR}/${PN}-0.39b0"
 
 MY_P="opentelemetry-python-${PV}"
 DESCRIPTION=""

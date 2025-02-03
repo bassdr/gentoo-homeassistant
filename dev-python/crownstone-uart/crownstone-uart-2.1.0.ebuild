@@ -23,11 +23,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/crownstone-core-3.0[${PYTHON_USEDEP}]
-	~dev-python/pyserial-3.4[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/crownstone-core-3.0[${PYTHON_USEDEP}] =dev-python/crownstone-core-3*[${PYTHON_USEDEP}]
+	>=dev-python/pyserial-3.4[${PYTHON_USEDEP}] =dev-python/pyserial-3*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/crownstone-core-3.0[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-3.4[${PYTHON_USEDEP}]"
 BDEPEND="

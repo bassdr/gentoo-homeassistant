@@ -23,10 +23,6 @@ IUSE="${GENERATED_IUSE} test"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/cffi-1.5.0[${PYTHON_USEDEP}]
-	idna? ( >=dev-python/idna-2.1[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	net-dns/c-ares:=
 "
@@ -35,7 +31,11 @@ BDEPEND="
 		dev-python/cffi[${PYTHON_USEDEP}]
 	' 'python*')
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/cffi-1.5.0[${PYTHON_USEDEP}]
+	idna? ( >=dev-python/idna-2.1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/idna[${PYTHON_USEDEP}]
 	${DEPEND}
 	${BDEPEND}

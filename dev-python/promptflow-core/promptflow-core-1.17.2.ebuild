@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azureml-serving? ( <dev-python/azure-ai-ml-2.0.0[${PYTHON_USEDEP}] )
 	azureml-serving? ( <dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}] )
 	azureml-serving? ( <dev-python/azureml-ai-monitoring-1.0.0[${PYTHON_USEDEP}] )
@@ -26,11 +26,15 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/filetype-1.2.0[${PYTHON_USEDEP}]
 	<dev-python/flask-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/jsonschema-5.0.0[${PYTHON_USEDEP}]
-	~dev-python/promptflow-tracing-1.17.2[${PYTHON_USEDEP}]
+	=dev-python/promptflow-tracing-1.17.2[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
 	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
 	<dev-python/ruamel-yaml-1.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

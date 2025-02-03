@@ -24,14 +24,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint release"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	release? ( dev-python/build[${PYTHON_USEDEP}] )
-	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	release? ( dev-python/towncrier[${PYTHON_USEDEP}] )
-	release? ( dev-python/twine[${PYTHON_USEDEP}] )
-	lint? ( dev-python/types-requests[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/packaging[${PYTHON_USEDEP}]
@@ -39,8 +31,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

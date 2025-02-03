@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	bcrypt? ( >=dev-python/bcrypt-3.1.3[${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-39.0[${PYTHON_USEDEP}]
 	fido2? ( >=dev-python/fido2-0.9.2[${PYTHON_USEDEP}] )
@@ -35,7 +35,7 @@ GENERATED_DEPEND="${RDEPEND}
 	pywin32? ( >=dev-python/pywin32-227[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/cryptography-2.8[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

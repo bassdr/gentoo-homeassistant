@@ -16,20 +16,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
-	pep257? ( ~dev-python/flake8-docstrings-1.7.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/flake8-7.1.1[${PYTHON_USEDEP}] =dev-python/flake8-7.1*[${PYTHON_USEDEP}]
+	pep257? ( =dev-python/flake8-docstrings-1.7.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	!=dev-python/coverage-4.4[${PYTHON_USEDEP}]
-	>=dev-python/ddt-1.2.1[${PYTHON_USEDEP}]
-	!=dev-python/eventlet-0.18.3[${PYTHON_USEDEP}]
-	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/python-subunit-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/stestr-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
-	>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		!=dev-python/coverage-4.4[${PYTHON_USEDEP}]
+		>=dev-python/ddt-1.2.1[${PYTHON_USEDEP}]
+		!=dev-python/eventlet-0.18.3[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/python-subunit-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/stestr-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+		>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.4[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/pytest-aio[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest-aiohttp[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.4[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]"
@@ -44,8 +44,11 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6.2.2[${PYTHON_USEDEP}]
-	dev-python/pytest-aio[${PYTHON_USEDEP}]
-	dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6.2.2[${PYTHON_USEDEP}]
+		dev-python/pytest-aio[${PYTHON_USEDEP}]
+		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

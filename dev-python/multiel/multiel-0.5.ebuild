@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/accelerate-0.9.0[${PYTHON_USEDEP}]
 	dev-python/fairscale[${PYTHON_USEDEP}]
 	dev-python/faiss-gpu[${PYTHON_USEDEP}]
@@ -25,7 +25,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/huggingface-hub[${PYTHON_USEDEP}]
 	dev-python/hydra-core[${PYTHON_USEDEP}]
 	dev-python/hydra-submitit-launcher[${PYTHON_USEDEP}]
-	~dev-python/protobuf-3.20[${PYTHON_USEDEP}]
+	=dev-python/protobuf-3.20[${PYTHON_USEDEP}]
 	dev-python/pytorch-lightning[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/sentencepiece[${PYTHON_USEDEP}]
@@ -33,6 +33,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/transformers[${PYTHON_USEDEP}]
 	dev-python/ujson[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -20,12 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-reflection-1.7.3[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.22.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-reflection-1.7.3[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.22.0[${PYTHON_USEDEP}]"
@@ -39,7 +39,10 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-grpc[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-grpc[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

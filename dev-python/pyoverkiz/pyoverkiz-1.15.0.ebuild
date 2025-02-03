@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/attrs-25.0[${PYTHON_USEDEP}]
 	<dev-python/backoff-3.0[${PYTHON_USEDEP}]
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/pyhumps-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/warrant-lite-2.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
 	>=dev-python/pyhumps-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/backoff-1.10.0[${PYTHON_USEDEP}]

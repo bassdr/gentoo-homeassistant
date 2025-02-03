@@ -16,13 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	carbon? ( <dev-python/aiocarbon-0.16[${PYTHON_USEDEP}] )
 	aiohttp? ( >dev-python/aiohttp-3[${PYTHON_USEDEP}] )
 	asgi? ( <dev-python/aiohttp-asgi-0.6.0[${PYTHON_USEDEP}] )
 	uvicorn? ( <dev-python/asgiref-4.0[${PYTHON_USEDEP}] )
 	<dev-python/colorlog-7.0[${PYTHON_USEDEP}]
-	cron? ( ~dev-python/croniter-2.0[${PYTHON_USEDEP}] )
+	cron? ( =dev-python/croniter-2.0[${PYTHON_USEDEP}] )
 	dns? ( <dev-python/dnslib-0.10[${PYTHON_USEDEP}] )
 	grpc? ( <dev-python/grpcio-2.0[${PYTHON_USEDEP}] )
 	grpc? ( <dev-python/grpcio-reflection-2.0[${PYTHON_USEDEP}] )
@@ -34,6 +34,6 @@ GENERATED_DEPEND="${RDEPEND}
 	uvicorn? ( <dev-python/uvicorn-0.28[${PYTHON_USEDEP}] )
 	uvloop? ( <dev-python/uvloop-1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

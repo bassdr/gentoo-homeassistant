@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/idasen-ha-2.6.2[${PYTHON_USEDEP}]
+	=dev-python/idasen-ha-2.6.2[${PYTHON_USEDEP}]
 "

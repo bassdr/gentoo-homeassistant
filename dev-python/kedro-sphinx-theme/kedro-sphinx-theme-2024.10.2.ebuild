@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 
@@ -17,25 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${PYTHON_DEPS}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/docutils-0.21[${PYTHON_USEDEP}]
 	doc? ( dev-python/kedro-sphinx-theme[${PYTHON_USEDEP}] )
 	<dev-python/myst-parser-2.1[${PYTHON_USEDEP}]
 	<dev-python/sphinx-7.3[${PYTHON_USEDEP}]
-	~dev-python/sphinx-autodoc-typehints-1.20.2[${PYTHON_USEDEP}]
-	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+	=dev-python/sphinx-autodoc-typehints-1.20.2[${PYTHON_USEDEP}]
+	=dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
 	dev-python/sphinx-favicon[${PYTHON_USEDEP}]
 	dev-python/sphinx-last-updated-by-git[${PYTHON_USEDEP}]
 	dev-python/sphinx-notfound-page[${PYTHON_USEDEP}]
-	~dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}]
+	=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}]
 	dev-python/sphinxcontrib-youtube[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

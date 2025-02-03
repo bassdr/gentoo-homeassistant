@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	django? ( dev-python/cssselect[${PYTHON_USEDEP}] )
 	flask? ( dev-python/cssselect[${PYTHON_USEDEP}] )
 	zope.testbrowser? ( dev-python/cssselect[${PYTHON_USEDEP}] )
@@ -29,6 +29,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/urllib3-3.0[${PYTHON_USEDEP}]
 	zope.testbrowser? ( >=dev-python/zope-testbrowser-6.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

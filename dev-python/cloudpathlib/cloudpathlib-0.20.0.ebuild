@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azure? ( >=dev-python/azure-storage-blob-12[${PYTHON_USEDEP}] )
 	azure? ( >=dev-python/azure-storage-file-datalake-12[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.34.0[${PYTHON_USEDEP}] )
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/cloudpathlib[s3,${PYTHON_USEDEP}] )
 	gs? ( dev-python/google-cloud-storage[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

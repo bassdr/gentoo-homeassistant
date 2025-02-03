@@ -21,10 +21,8 @@ KEYWORDS="amd64 arm64"
 RESTRICT="test"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

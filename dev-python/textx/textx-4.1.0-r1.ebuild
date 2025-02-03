@@ -24,11 +24,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/arpeggio-2.0.0[${PYTHON_USEDEP}]
 	cli? ( <dev-python/click-9.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/arpeggio-2.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -39,18 +39,21 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/click-9.0[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/coveralls[${PYTHON_USEDEP}]
-	dev-python/flit[${PYTHON_USEDEP}]
-	dev-python/html5lib[${PYTHON_USEDEP}]
-	dev-python/jinja2[${PYTHON_USEDEP}]
-	dev-python/mike[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/textx-dev[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/click-9.0[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/coveralls[${PYTHON_USEDEP}]
+		dev-python/flit[${PYTHON_USEDEP}]
+		dev-python/html5lib[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/mike[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/textx-dev[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	cp -a "${BUILD_DIR}"/{install,test} || die

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aioskybell-22.7.0[${PYTHON_USEDEP}]
+	=dev-python/aioskybell-22.7.0[${PYTHON_USEDEP}]
 "

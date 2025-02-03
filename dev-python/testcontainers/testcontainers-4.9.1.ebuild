@@ -16,12 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cosmosdb? ( dev-python/azure-cosmos[${PYTHON_USEDEP}] )
 	azurite? ( <dev-python/azure-storage-blob-13.0[${PYTHON_USEDEP}] )
 	registry? ( dev-python/bcrypt[${PYTHON_USEDEP}] )
 	aws? ( dev-python/boto3[${PYTHON_USEDEP}] )
-	scylla? ( ~dev-python/cassandra-driver-3.29.1[${PYTHON_USEDEP}] )
+	scylla? ( =dev-python/cassandra-driver-3.29.1[${PYTHON_USEDEP}] )
 	chroma? ( dev-python/chromadb-client[${PYTHON_USEDEP}] )
 	clickhouse? ( dev-python/clickhouse-driver[${PYTHON_USEDEP}] )
 	mailpit? ( dev-python/cryptography[${PYTHON_USEDEP}] )
@@ -56,6 +56,6 @@ GENERATED_DEPEND="${RDEPEND}
 	weaviate? ( <dev-python/weaviate-client-5.0.0[${PYTHON_USEDEP}] )
 	dev-python/wrapt[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

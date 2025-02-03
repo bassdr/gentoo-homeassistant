@@ -16,10 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	doc-build? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	onnxruntime-training? ( dev-python/accelerate[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
 	exporters-tf? ( <=dev-python/datasets-2.16[${PYTHON_USEDEP}] )
 	onnxruntime-gpu? ( >=dev-python/datasets-1.2.1[${PYTHON_USEDEP}] )
 	onnxruntime-training? ( >=dev-python/datasets-1.2.1[${PYTHON_USEDEP}] )
@@ -61,7 +61,7 @@ GENERATED_DEPEND="${RDEPEND}
 	onnxruntime-gpu? ( >=dev-python/protobuf-3.20.1[${PYTHON_USEDEP}] )
 	onnxruntime-training? ( >=dev-python/protobuf-3.20.1[${PYTHON_USEDEP}] )
 	onnxruntime? ( >=dev-python/protobuf-3.20.1[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/ruff-0.1.5[${PYTHON_USEDEP}] )
+	quality? ( =dev-python/ruff-0.1.5[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/seqeval[${PYTHON_USEDEP}] )
 	exporters-tf? ( <=dev-python/tensorflow-2.12.1[${PYTHON_USEDEP}] )
@@ -84,24 +84,27 @@ GENERATED_DEPEND="${RDEPEND}
 	onnxruntime-training? ( <dev-python/transformers-4.49.0[${PYTHON_USEDEP}] )
 	onnxruntime? ( <dev-python/transformers-4.49.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/accelerate[${PYTHON_USEDEP}]
-	~dev-python/black-23.1[${PYTHON_USEDEP}]
-	dev-python/einops[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/rjieba[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.1.5[${PYTHON_USEDEP}]
-	dev-python/sacremoses[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	dev-python/sentencepiece[${PYTHON_USEDEP}]
-	dev-python/timm[${PYTHON_USEDEP}]
-	dev-python/torchaudio[${PYTHON_USEDEP}]
-	dev-python/torchvision[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/accelerate[${PYTHON_USEDEP}]
+		>=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}]
+		dev-python/einops[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		<=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/rjieba[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.1.5[${PYTHON_USEDEP}]
+		dev-python/sacremoses[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		dev-python/timm[${PYTHON_USEDEP}]
+		dev-python/torchaudio[${PYTHON_USEDEP}]
+		dev-python/torchvision[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

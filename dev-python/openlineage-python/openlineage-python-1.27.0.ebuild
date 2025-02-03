@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-20.0[${PYTHON_USEDEP}]
 	msk-iam? ( >=dev-python/aws-msk-iam-sasl-signer-python-1.0.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/beautifulsoup4-4.12.0[${PYTHON_USEDEP}] )
@@ -30,13 +30,16 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-7.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-2.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.10[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.10[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

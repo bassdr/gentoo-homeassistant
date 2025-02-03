@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ipython? ( >=dev-python/bigquery-magics-0.1.0[${PYTHON_USEDEP}] )
 	pandas? ( <dev-python/db-dtypes-2.0.0_pre[${PYTHON_USEDEP}] )
 	geopandas? ( <dev-python/geopandas-2.0_pre[${PYTHON_USEDEP}] )
@@ -32,7 +32,7 @@ GENERATED_DEPEND="${RDEPEND}
 	ipywidgets? ( >=dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}] )
 	ipywidgets? ( >=dev-python/ipywidgets-7.7.0[${PYTHON_USEDEP}] )
 	opentelemetry? ( >=dev-python/opentelemetry-api-1.1.0[${PYTHON_USEDEP}] )
-	opentelemetry? ( >=dev-python/opentelemetry-instrumentation-0_beta0[${PYTHON_USEDEP}] )
+	opentelemetry? ( >=dev-python/opentelemetry-instrumentation-0.20_beta0[${PYTHON_USEDEP}] )
 	opentelemetry? ( >=dev-python/opentelemetry-sdk-1.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20.0.0[${PYTHON_USEDEP}]
 	pandas? ( >=dev-python/pandas-1.1.0[${PYTHON_USEDEP}] )
@@ -45,6 +45,6 @@ GENERATED_DEPEND="${RDEPEND}
 	geopandas? ( <dev-python/shapely-3.0.0_pre[${PYTHON_USEDEP}] )
 	tqdm? ( <dev-python/tqdm-5.0.0_pre[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

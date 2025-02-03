@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyrisco-0.6.4[${PYTHON_USEDEP}]
+	=dev-python/pyrisco-0.6.4[${PYTHON_USEDEP}]
 "

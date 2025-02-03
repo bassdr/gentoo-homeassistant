@@ -16,7 +16,7 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	comparators? ( dev-python/androguard[${PYTHON_USEDEP}] )
 	cmdline? ( dev-python/argcomplete[${PYTHON_USEDEP}] )
 	comparators? ( dev-python/binwalk[${PYTHON_USEDEP}] )
@@ -33,6 +33,6 @@ GENERATED_DEPEND="${RDEPEND}
 	comparators? ( dev-python/rpm-python[${PYTHON_USEDEP}] )
 	comparators? ( dev-python/tlsh[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
 	>=dev-python/chevron-0.14.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.1.7[${PYTHON_USEDEP}]
@@ -24,15 +24,18 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/shiny[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-22.3.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.9.2[${PYTHON_USEDEP}]
-	>=dev-python/flake8-bugbear-22.6.22[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.11.2[${PYTHON_USEDEP}]
-	>=dev-python/pyright-1.1.284[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-22.3.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.9.2[${PYTHON_USEDEP}]
+		>=dev-python/flake8-bugbear-22.6.22[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.11.2[${PYTHON_USEDEP}]
+		>=dev-python/pyright-1.1.284[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -22,11 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-upnp-client[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/async-upnp-client-0.27[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.8.0[${PYTHON_USEDEP}]"
 BDEPEND="

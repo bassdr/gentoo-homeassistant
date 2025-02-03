@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	all? ( dev-python/colorcet[doc,${PYTHON_USEDEP}] )
 	all? ( dev-python/colorcet[examples,${PYTHON_USEDEP}] )
@@ -33,12 +33,15 @@ GENERATED_DEPEND="${RDEPEND}
 	tests_extra? ( dev-python/pytest-mpl[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/packaging[${PYTHON_USEDEP}]
-	>=dev-python/pytest-2.8.5[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/packaging[${PYTHON_USEDEP}]
+		>=dev-python/pytest-2.8.5[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

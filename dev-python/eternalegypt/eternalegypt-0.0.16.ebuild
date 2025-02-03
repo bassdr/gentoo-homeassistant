@@ -17,11 +17,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.1[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.0.1[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]"
 BDEPEND="

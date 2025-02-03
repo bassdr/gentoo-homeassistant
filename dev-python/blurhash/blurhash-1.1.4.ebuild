@@ -20,10 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="blurhash"
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

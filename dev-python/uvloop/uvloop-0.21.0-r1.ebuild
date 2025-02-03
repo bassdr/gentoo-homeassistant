@@ -20,15 +20,15 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/sphinx-4.1.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-rtd-theme-0.5.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-asyncio-0.3.0[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	>=dev-libs/libuv-1.11.0:=
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/sphinx-4.1.2[${PYTHON_USEDEP}] =dev-python/sphinx-4.1*[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-0.5.2[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-0.5*[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinxcontrib-asyncio-0.3.0[${PYTHON_USEDEP}] =dev-python/sphinxcontrib-asyncio-0.3*[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -41,16 +41,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
-	~dev-python/cython-3.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-5.0[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.800[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	~dev-python/pycodestyle-2.9.0[${PYTHON_USEDEP}]
-	~dev-python/pyopenssl-23.0.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-60[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
+		>=dev-python/cython-3.0[${PYTHON_USEDEP}] =dev-python/cython-3*[${PYTHON_USEDEP}]
+		>=dev-python/flake8-5.0[${PYTHON_USEDEP}] =dev-python/flake8-5*[${PYTHON_USEDEP}]
+		>=dev-python/mypy-0.800[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		>=dev-python/pycodestyle-2.9.0[${PYTHON_USEDEP}] =dev-python/pycodestyle-2.9*[${PYTHON_USEDEP}]
+		>=dev-python/pyopenssl-23.0.0[${PYTHON_USEDEP}] =dev-python/pyopenssl-23.0*[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-60[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	rm -r vendor || die

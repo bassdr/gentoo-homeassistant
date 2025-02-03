@@ -19,12 +19,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/greenlet-3.0.0[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep '<=dev-python/greenlet-2.0.2[${PYTHON_USEDEP}]' python3_12)
 	>=dev-python/requests-1.2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-1.2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -34,16 +34,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/black-25.0.0[${PYTHON_USEDEP}]
-	>=dev-python/build-0.7.0[${PYTHON_USEDEP}]
-	<=dev-python/docutils-0.20.1[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.11.4[${PYTHON_USEDEP}]
-	>=dev-python/pyflakes-2.2.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-httpbin-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/readme-renderer-26.0[rst,${PYTHON_USEDEP}]
-	>=dev-python/twine-3.4.2[${PYTHON_USEDEP}]
-	>=dev-python/werkzeug-3.0.6[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/black-25.0.0[${PYTHON_USEDEP}]
+		>=dev-python/build-0.7.0[${PYTHON_USEDEP}]
+		<=dev-python/docutils-0.20.1[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.11.4[${PYTHON_USEDEP}]
+		>=dev-python/pyflakes-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-httpbin-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/readme-renderer-26.0[rst,${PYTHON_USEDEP}]
+		>=dev-python/twine-3.4.2[${PYTHON_USEDEP}]
+		>=dev-python/werkzeug-3.0.6[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	aws? ( >=dev-python/boto3-1.9[${PYTHON_USEDEP}] )
 	>=dev-python/chardet-3.0[${PYTHON_USEDEP}]
@@ -69,26 +69,29 @@ GENERATED_DEPEND="${RDEPEND}
 	excel? ( >=dev-python/xlrd-1.2[${PYTHON_USEDEP}] )
 	excel? ( >=dev-python/xlwt-1.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/hatch[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/livemark[${PYTHON_USEDEP}]
-	dev-python/moto[${PYTHON_USEDEP}]
-	dev-python/neovim[${PYTHON_USEDEP}]
-	dev-python/oauth2client[${PYTHON_USEDEP}]
-	~dev-python/pyright-1.1.317[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-dotenv[${PYTHON_USEDEP}]
-	dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/pytest-vcr[${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/yattag[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/hatch[${PYTHON_USEDEP}]
+		dev-python/httpx[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/livemark[${PYTHON_USEDEP}]
+		dev-python/moto[${PYTHON_USEDEP}]
+		dev-python/neovim[${PYTHON_USEDEP}]
+		dev-python/oauth2client[${PYTHON_USEDEP}]
+		=dev-python/pyright-1.1.317[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-dotenv[${PYTHON_USEDEP}]
+		dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-vcr[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/yattag[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

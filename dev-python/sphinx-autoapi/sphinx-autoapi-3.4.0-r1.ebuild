@@ -22,14 +22,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/astroid-2.7[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/astroid-3.0.0_alpha1[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-6.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/astroid-3.0.0[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]

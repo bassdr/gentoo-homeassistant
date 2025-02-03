@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	sphinx? ( dev-python/altair[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	<dev-python/click-9[${PYTHON_USEDEP}]
@@ -50,30 +50,33 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/sphinx-thebe-1[${PYTHON_USEDEP}]
 	dev-python/sphinx-togglebutton[${PYTHON_USEDEP}]
 	<dev-python/sphinxcontrib-bibtex-3[${PYTHON_USEDEP}]
-	sphinx? ( ~dev-python/sphinxext-rediraffe-0.2.3[${PYTHON_USEDEP}] )
+	sphinx? ( >=dev-python/sphinxext-rediraffe-0.2.3[${PYTHON_USEDEP}] =dev-python/sphinxext-rediraffe-0.2*[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/sympy[${PYTHON_USEDEP}] )
-	code-style? ( ~dev-vcs/pre-commit-3.1[${PYTHON_USEDEP}] )
+	code-style? ( >=dev-vcs/pre-commit-3.1[${PYTHON_USEDEP}] =dev-vcs/pre-commit-3*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/altair[${PYTHON_USEDEP}]
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	dev-python/cookiecutter[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/jupytext[${PYTHON_USEDEP}]
-	dev-python/matplotlib[${PYTHON_USEDEP}]
-	>=dev-python/numpy-2[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	>=dev-python/pydata-sphinx-theme-0.15.3[${PYTHON_USEDEP}]
-	dev-python/pyppeteer[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/sphinx-click[${PYTHON_USEDEP}]
-	dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
-	dev-python/texsoup[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/altair[${PYTHON_USEDEP}]
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/cookiecutter[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/jupytext[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		>=dev-python/numpy-2[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		>=dev-python/pydata-sphinx-theme-0.15.3[${PYTHON_USEDEP}]
+		dev-python/pyppeteer[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/sphinx-click[${PYTHON_USEDEP}]
+		dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
+		dev-python/texsoup[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

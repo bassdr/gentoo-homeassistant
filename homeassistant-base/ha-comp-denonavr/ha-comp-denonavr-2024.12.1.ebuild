@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/denonavr-1.0.1[${PYTHON_USEDEP}]
+	=dev-python/denonavr-1.0.1[${PYTHON_USEDEP}]
 "

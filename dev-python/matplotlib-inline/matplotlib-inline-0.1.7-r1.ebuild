@@ -29,9 +29,9 @@ KEYWORDS="amd64 arm64"
 # installed and just requires users using matplotlib, to install
 # matplotlib before importing and using it.
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/traitlets[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/traitlets[${PYTHON_USEDEP}]
 "

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs typing"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/argon2-cffi-bindings[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/argon2-cffi-bindings-21.2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -40,9 +40,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/argon2-cffi[tests,typing,${PYTHON_USEDEP}]
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>dev-python/tox-4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/argon2-cffi[tests,typing,${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>dev-python/tox-4[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

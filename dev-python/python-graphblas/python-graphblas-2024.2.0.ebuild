@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	io? ( >=dev-python/awkward-1.9[${PYTHON_USEDEP}] )
 	datashade? ( >=dev-python/datashader-0.12[${PYTHON_USEDEP}] )
 	>=dev-python/donfig-0.6[${PYTHON_USEDEP}]
@@ -44,12 +44,15 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/suitesparse-graphblas-9[${PYTHON_USEDEP}]
 	suitesparse? ( <dev-python/suitesparse-graphblas-9[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/packaging-21[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
-	dev-python/python-graphblas[pandas,scipy,suitesparse,${PYTHON_USEDEP}]
-	>=dev-python/tomli-1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/packaging-21[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
+		dev-python/python-graphblas[pandas,scipy,suitesparse,${PYTHON_USEDEP}]
+		>=dev-python/tomli-1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

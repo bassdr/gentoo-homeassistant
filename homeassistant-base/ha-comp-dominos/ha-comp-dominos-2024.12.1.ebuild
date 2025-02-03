@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pizzapi-0.0.6[${PYTHON_USEDEP}]
+	=dev-python/pizzapi-0.0.6[${PYTHON_USEDEP}]
 "

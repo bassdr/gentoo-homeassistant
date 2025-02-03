@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	stats-server? ( dev-python/cherrypy[${PYTHON_USEDEP}] )
@@ -49,7 +49,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 	stats-server? ( dev-python/svg-charts[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/mechanize[${PYTHON_USEDEP}]
@@ -82,18 +82,21 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/cherrypy[${PYTHON_USEDEP}]
-	dev-python/fabric[${PYTHON_USEDEP}]
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	dev-python/jaraco-fabric[${PYTHON_USEDEP}]
-	dev-python/pyparsing[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
-	dev-python/pytest-mypy[${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cherrypy[${PYTHON_USEDEP}]
+		dev-python/fabric[${PYTHON_USEDEP}]
+		dev-python/importlib-resources[${PYTHON_USEDEP}]
+		dev-python/jaraco-fabric[${PYTHON_USEDEP}]
+		dev-python/pyparsing[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

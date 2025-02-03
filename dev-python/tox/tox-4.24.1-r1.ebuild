@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachetools-5.5[${PYTHON_USEDEP}]
 	>=dev-python/chardet-5.2[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyproject-api-1.8[${PYTHON_USEDEP}]
 	>=dev-python/virtualenv-20.27.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/cachetools[${PYTHON_USEDEP}]
 	dev-python/chardet[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
@@ -60,11 +60,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/devpi-process-1.0.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/devpi-process-1.0.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# upstream lower bounds are meaningless

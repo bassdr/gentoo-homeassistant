@@ -23,11 +23,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="diagrams"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	diagrams? ( dev-python/pygraphviz[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	|| (
 		dev-python/pygraphviz[${PYTHON_USEDEP}]
 		dev-python/graphviz[${PYTHON_USEDEP}]
@@ -42,9 +42,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_IGNORE=(

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dotmap-1.3.30[${PYTHON_USEDEP}]
 	>=dev-python/expt-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-5.1.0[${PYTHON_USEDEP}]
@@ -33,6 +33,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tyro-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/wandb-0.13.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -22,14 +22,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}]
 	>=dev-python/aiozoneinfo-0.1[${PYTHON_USEDEP}]
 	>=dev-python/arrow-1.2[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-43.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pyotp-2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}]
 	>=dev-python/aiozoneinfo-0.1[${PYTHON_USEDEP}]
 	>=dev-python/arrow-1.2[${PYTHON_USEDEP}]
@@ -37,7 +37,10 @@ RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/pyotp-2.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/pytest-8[${PYTHON_USEDEP}]
-	<dev-python/python-dotenv-2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/pytest-8[${PYTHON_USEDEP}]
+		<dev-python/python-dotenv-2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

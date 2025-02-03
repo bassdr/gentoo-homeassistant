@@ -16,18 +16,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/sphinx-7.3.7[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-mdinclude-0.6.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-7.3.7[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-mdinclude-0.6.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/attribution-1.7.1[${PYTHON_USEDEP}]
-	~dev-python/black-24.4.0[${PYTHON_USEDEP}]
-	~dev-python/flit-3.9.0[${PYTHON_USEDEP}]
-	~dev-python/isort-5.8.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.1.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/attribution-1.7.1[${PYTHON_USEDEP}]
+		=dev-python/black-24.4.0[${PYTHON_USEDEP}]
+		=dev-python/flit-3.9.0[${PYTHON_USEDEP}]
+		=dev-python/isort-5.8.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.1.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

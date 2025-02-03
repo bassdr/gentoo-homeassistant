@@ -17,23 +17,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/cffi-1.14[${PYTHON_USEDEP}]
-	~dev-python/furiosa-common-0.10[${PYTHON_USEDEP}]
-	~dev-python/furiosa-native-runtime-0.10[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.24[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/cffi-1.14[${PYTHON_USEDEP}] =dev-python/cffi-1*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-common-0.10*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-native-runtime-0.10*[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.24[${PYTHON_USEDEP}] =dev-python/numpy-1*[${PYTHON_USEDEP}]
 	legacy? ( dev-python/package-extras[${PYTHON_USEDEP}] )
-	~dev-python/pandas-2.0.3[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.0.3[${PYTHON_USEDEP}] =dev-python/pandas-2.0*[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/mnist[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	~dev-python/onnxruntime-1.15.1[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/mnist[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		>=dev-python/onnxruntime-1.15.1[${PYTHON_USEDEP}] =dev-python/onnxruntime-1.15*[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

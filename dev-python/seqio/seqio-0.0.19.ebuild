@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	cache-tasks? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	dev-python/clu[${PYTHON_USEDEP}]
@@ -34,11 +34,14 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyglove[${PYTHON_USEDEP}]
 	dev-python/sentencepiece[${PYTHON_USEDEP}]
 	dev-python/tensorflow-text[${PYTHON_USEDEP}]
-	~dev-python/tfds-nightly-4.9.2_pre202308090034[${PYTHON_USEDEP}]
+	=dev-python/tfds-nightly-4.9.2_pre202308090034[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

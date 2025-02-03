@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs openapi"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/autodoc-traits[${PYTHON_USEDEP}] )
 	>=dev-python/babel-2.10[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]
 	docs? ( <dev-python/mistune-4[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	openapi? ( ~dev-python/openapi-core-0.18.0[${PYTHON_USEDEP}] )
+	openapi? ( >=dev-python/openapi-core-0.18.0[${PYTHON_USEDEP}] =dev-python/openapi-core-0.18*[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.31[${PYTHON_USEDEP}]
@@ -37,7 +37,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( >dev-python/sphinxcontrib-openapi-0.8[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/babel-2.10[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
 	>=dev-python/json5-0.9.0[${PYTHON_USEDEP}]
@@ -64,22 +64,25 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/hatch[${PYTHON_USEDEP}]
-	dev-python/ipykernel[${PYTHON_USEDEP}]
-	~dev-python/openapi-core-0.18.0[${PYTHON_USEDEP}]
-	<dev-python/openapi-spec-validator-0.8.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8[${PYTHON_USEDEP}]
-	dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-jupyter-0.6.2[server,${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-	dev-python/ruamel-yaml[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}]
-	dev-python/strict-rfc3339[${PYTHON_USEDEP}]
-	dev-python/werkzeug[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/hatch[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		>=dev-python/openapi-core-0.18.0[${PYTHON_USEDEP}] =dev-python/openapi-core-0.18*[${PYTHON_USEDEP}]
+		<dev-python/openapi-spec-validator-0.8.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8[${PYTHON_USEDEP}]
+		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-jupyter-0.6.2[server,${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/ruamel-yaml[${PYTHON_USEDEP}]
+		dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}]
+		dev-python/strict-rfc3339[${PYTHON_USEDEP}]
+		dev-python/werkzeug[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 # TODO: package autodoc_traits
 #distutils_enable_sphinx docs/source dev-python/pydata-sphinx-theme dev-python/myst-parser
 

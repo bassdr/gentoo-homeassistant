@@ -15,7 +15,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bs4-0.0.0.1[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-1.5[${PYTHON_USEDEP}]
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/scikit-learn-0.15[${PYTHON_USEDEP}]
 	>=dev-python/scipy-0.10.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

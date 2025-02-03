@@ -18,20 +18,23 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.20.0[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.16.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-13.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/covdefaults-2.3.0[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.6.7[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
-	~dev-python/syrupy-4.7.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/covdefaults-2.3.0[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.6.7[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+		=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
+		=dev-python/syrupy-4.7.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

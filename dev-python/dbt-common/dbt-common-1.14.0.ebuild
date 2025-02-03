@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/agate-1.10[${PYTHON_USEDEP}]
 	lint? ( <dev-python/black-24.0[${PYTHON_USEDEP}] )
 	build? ( dev-python/check-wheel-contents[${PYTHON_USEDEP}] )
@@ -45,13 +45,16 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/hypothesis-7.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-cov-5.0[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	<dev-python/pytest-xdist-4.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/hypothesis-7.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-cov-5.0[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		<dev-python/pytest-xdist-4.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

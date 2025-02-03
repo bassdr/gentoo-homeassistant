@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/jellyfin-apiclient-python-1.9.2[${PYTHON_USEDEP}]
+	=dev-python/jellyfin-apiclient-python-1.9.2[${PYTHON_USEDEP}]
 "

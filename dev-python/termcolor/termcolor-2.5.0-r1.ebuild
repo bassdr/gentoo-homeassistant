@@ -17,17 +17,18 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-"
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare
@@ -35,4 +36,5 @@ src_prepare() {
 	# avoid dep on coverage (to ignore warnings from coverage)
 	sed -i -e '/coverage/d' pyproject.toml || die
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

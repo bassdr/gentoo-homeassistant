@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/construct-2.10.68[${PYTHON_USEDEP}]
-	~dev-python/micloud-0.5[${PYTHON_USEDEP}]
-	~dev-python/python-miio-0.5.12[${PYTHON_USEDEP}]
+	=dev-python/construct-2.10.68[${PYTHON_USEDEP}]
+	=dev-python/micloud-0.5[${PYTHON_USEDEP}]
+	=dev-python/python-miio-0.5.12[${PYTHON_USEDEP}]
 "

@@ -9,26 +9,6 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DOCS_BUILDER="mkdocs"
 GENERATED_IUSE="git imaging recommended"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/babel-2.10[${PYTHON_USEDEP}]
-	imaging? ( ~dev-python/cairosvg-2.6[${PYTHON_USEDEP}] )
-	~dev-python/colorama-0.4[${PYTHON_USEDEP}]
-	~dev-python/jinja2-3.0[${PYTHON_USEDEP}]
-	~dev-python/markdown-3.2[${PYTHON_USEDEP}]
-	~dev-python/mkdocs-1.6[${PYTHON_USEDEP}]
-	git? ( <dev-python/mkdocs-git-committers-plugin_2-3[${PYTHON_USEDEP}] )
-	git? ( >=dev-python/mkdocs-git-revision-date-localized-plugin-1.2.4[${PYTHON_USEDEP}] )
-	~dev-python/mkdocs-material-extensions-1.3[${PYTHON_USEDEP}]
-	recommended? ( ~dev-python/mkdocs-minify-plugin-0.7[${PYTHON_USEDEP}] )
-	recommended? ( ~dev-python/mkdocs-redirects-1.2[${PYTHON_USEDEP}] )
-	recommended? ( ~dev-python/mkdocs-rss-plugin-1.6[${PYTHON_USEDEP}] )
-	~dev-python/paginate-0.5[${PYTHON_USEDEP}]
-	imaging? ( ~dev-python/pillow-10.2[${PYTHON_USEDEP}] )
-	~dev-python/pygments-2.16[${PYTHON_USEDEP}]
-	~dev-python/pymdown-extensions-10.2[${PYTHON_USEDEP}]
-	>=dev-python/regex-2022.4[${PYTHON_USEDEP}]
-	~dev-python/requests-2.26[${PYTHON_USEDEP}]
-"
 DOCS_DEPEND="
 	dev-python/mkdocs-material-extensions
 	dev-python/mkdocs-minify-plugin
@@ -49,7 +29,27 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/babel-2.10[${PYTHON_USEDEP}] =dev-python/babel-2*[${PYTHON_USEDEP}]
+	imaging? ( >=dev-python/cairosvg-2.6[${PYTHON_USEDEP}] =dev-python/cairosvg-2*[${PYTHON_USEDEP}] )
+	>=dev-python/colorama-0.4[${PYTHON_USEDEP}] =dev-python/colorama-0*[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.0[${PYTHON_USEDEP}] =dev-python/jinja2-3*[${PYTHON_USEDEP}]
+	>=dev-python/markdown-3.2[${PYTHON_USEDEP}] =dev-python/markdown-3*[${PYTHON_USEDEP}]
+	>=dev-python/mkdocs-1.6[${PYTHON_USEDEP}] =dev-python/mkdocs-1*[${PYTHON_USEDEP}]
+	git? ( <dev-python/mkdocs-git-committers-plugin_2-3[${PYTHON_USEDEP}] )
+	git? ( >=dev-python/mkdocs-git-revision-date-localized-plugin-1.2.4[${PYTHON_USEDEP}] )
+	>=dev-python/mkdocs-material-extensions-1.3[${PYTHON_USEDEP}] =dev-python/mkdocs-material-extensions-1*[${PYTHON_USEDEP}]
+	recommended? ( >=dev-python/mkdocs-minify-plugin-0.7[${PYTHON_USEDEP}] =dev-python/mkdocs-minify-plugin-0*[${PYTHON_USEDEP}] )
+	recommended? ( >=dev-python/mkdocs-redirects-1.2[${PYTHON_USEDEP}] =dev-python/mkdocs-redirects-1*[${PYTHON_USEDEP}] )
+	recommended? ( >=dev-python/mkdocs-rss-plugin-1.6[${PYTHON_USEDEP}] =dev-python/mkdocs-rss-plugin-1*[${PYTHON_USEDEP}] )
+	>=dev-python/paginate-0.5[${PYTHON_USEDEP}] =dev-python/paginate-0*[${PYTHON_USEDEP}]
+	imaging? ( >=dev-python/pillow-10.2[${PYTHON_USEDEP}] =dev-python/pillow-10*[${PYTHON_USEDEP}] )
+	>=dev-python/pygments-2.16[${PYTHON_USEDEP}] =dev-python/pygments-2*[${PYTHON_USEDEP}]
+	>=dev-python/pymdown-extensions-10.2[${PYTHON_USEDEP}] =dev-python/pymdown-extensions-10*[${PYTHON_USEDEP}]
+	>=dev-python/regex-2022.4[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.26[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/babel-2.10.3[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.2[${PYTHON_USEDEP}]

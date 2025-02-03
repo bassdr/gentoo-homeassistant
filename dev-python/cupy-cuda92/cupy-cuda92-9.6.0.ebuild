@@ -17,8 +17,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	stylecheck? ( ~dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	stylecheck? ( =dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/coverage-5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/coveralls[${PYTHON_USEDEP}] )
@@ -26,19 +26,23 @@ GENERATED_DEPEND="${RDEPEND}
 	setup? ( <dev-python/cython-3[${PYTHON_USEDEP}] )
 	>=dev-python/fastrlock-0.5[${PYTHON_USEDEP}]
 	setup? ( >=dev-python/fastrlock-0.5[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
 	<dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	all? ( >=dev-python/optuna-2.0[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
 	jenkins? ( >=dev-python/pytest-6.2[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	all? ( <dev-python/scipy-1.10[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

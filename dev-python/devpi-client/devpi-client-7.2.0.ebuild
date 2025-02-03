@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/check-manifest-0.28[${PYTHON_USEDEP}]
 	<dev-python/devpi-common-5[${PYTHON_USEDEP}]
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/platformdirs[${PYTHON_USEDEP}]
 	<dev-python/pluggy-2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

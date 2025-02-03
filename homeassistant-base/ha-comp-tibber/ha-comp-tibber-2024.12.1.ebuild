@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pytibber-0.30.8[${PYTHON_USEDEP}]
+	=dev-python/pytibber-0.30.8[${PYTHON_USEDEP}]
 "

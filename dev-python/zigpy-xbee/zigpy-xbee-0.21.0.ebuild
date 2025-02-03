@@ -21,10 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/zigpy-0.60.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
@@ -41,8 +41,11 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/asynctest-0.13.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/asynctest-0.13.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

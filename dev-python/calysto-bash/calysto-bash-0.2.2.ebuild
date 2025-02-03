@@ -15,11 +15,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipykernel[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-4.3.0[${PYTHON_USEDEP}]
 	>=dev-python/metakernel-0.20.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

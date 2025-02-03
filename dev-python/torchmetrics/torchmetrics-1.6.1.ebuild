@@ -16,8 +16,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/dython-0.7.6[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/dython-0.7.6[${PYTHON_USEDEP}]
 	all? ( >=dev-python/gammatone-1.0.0[${PYTHON_USEDEP}] )
 	audio? ( >=dev-python/gammatone-1.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/ipadic-1.0.0[${PYTHON_USEDEP}] )
@@ -31,9 +31,9 @@ GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/mecab-ko-dic-1.0.0[${PYTHON_USEDEP}]' python3_12)
 	all? ( >=dev-python/mecab-python3-1.0.6[${PYTHON_USEDEP}] )
 	text? ( >=dev-python/mecab-python3-1.0.6[${PYTHON_USEDEP}] )
-	~dev-python/monai-1.3.2[${PYTHON_USEDEP}]
-	all? ( ~dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
-	typing? ( ~dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
+	=dev-python/monai-1.3.2[${PYTHON_USEDEP}]
+	all? ( =dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
+	typing? ( =dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
 	all? ( >dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
 	text? ( >dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
 	>dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
@@ -50,7 +50,7 @@ GENERATED_DEPEND="${RDEPEND}
 	detection? ( >dev-python/pycocotools-2.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pystoi-0.4.0[${PYTHON_USEDEP}] )
 	audio? ( >=dev-python/pystoi-0.4.0[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '~dev-python/pytdc-0.4.1[${PYTHON_USEDEP}]' python3_12)
+	$(python_gen_cond_dep '=dev-python/pytdc-0.4.1[${PYTHON_USEDEP}]' python3_12)
 	all? ( >=dev-python/regex-2021.9.24[${PYTHON_USEDEP}] )
 	text? ( >=dev-python/regex-2021.9.24[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/requests-2.19.0[${PYTHON_USEDEP}] )
@@ -62,8 +62,8 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
 	text? ( >=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
-	all? ( ~dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
-	typing? ( ~dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
+	typing? ( =dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
 	all? ( <=dev-python/torch-fidelity-0.4.0[${PYTHON_USEDEP}] )
 	image? ( <=dev-python/torch-fidelity-0.4.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/torchaudio-2.0.1[${PYTHON_USEDEP}] )
@@ -93,60 +93,63 @@ GENERATED_DEPEND="${RDEPEND}
 	typing? ( dev-python/types-tabulate[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/bert-score-0.3.13[${PYTHON_USEDEP}]
-	dev-python/fairlearn[${PYTHON_USEDEP}]
-	>=dev-python/fast-bss-eval-0.1.0[${PYTHON_USEDEP}]
-	>=dev-python/faster-coco-eval-1.6.3[${PYTHON_USEDEP}]
-	>=dev-python/gammatone-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/huggingface-hub-0.28[${PYTHON_USEDEP}]
-	>=dev-python/ipadic-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/jiwer-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/kornia-0.6.7[${PYTHON_USEDEP}]
-	>=dev-python/librosa-0.10.0[${PYTHON_USEDEP}]
-	<=dev-python/lpips-0.1.4[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
-	>=dev-python/mecab-python3-1.0.6[${PYTHON_USEDEP}]
-	>=dev-python/mir-eval-0.6[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.14.0[${PYTHON_USEDEP}]
-	>dev-python/netcal-1.0.0[${PYTHON_USEDEP}]
-	>dev-python/nltk-3.8.1[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
-	>dev-python/pandas-1.4.0[${PYTHON_USEDEP}]
-	~dev-python/permetrics-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pesq-0.0.4[${PYTHON_USEDEP}]
-	<=dev-python/piq-0.8.0[${PYTHON_USEDEP}]
-	>dev-python/pycocotools-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pystoi-0.4.0[${PYTHON_USEDEP}]
-	~dev-python/pytorch-msssim-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/regex-2021.9.24[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
-	>dev-python/rouge-score-0.1.0[${PYTHON_USEDEP}]
-	>=dev-python/sacrebleu-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/scienceplots-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/scikit-image-0.19.0[${PYTHON_USEDEP}]
-	>dev-python/scipy-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/sewar-0.4.4[${PYTHON_USEDEP}]
-	>dev-python/statsmodels-0.13.5[${PYTHON_USEDEP}]
-	~dev-python/torch-2.5.1[${PYTHON_USEDEP}]
-	<dev-python/torch-complex-0.5.0[${PYTHON_USEDEP}]
-	<=dev-python/torch-fidelity-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/torchaudio-2.0.1[${PYTHON_USEDEP}]
-	>=dev-python/torchvision-0.15.1[${PYTHON_USEDEP}]
-	<dev-python/tqdm-4.68.0[${PYTHON_USEDEP}]
-	>=dev-python/transformers-4.42.3[${PYTHON_USEDEP}]
-	>dev-python/transformers-4.4.0[${PYTHON_USEDEP}]
-	dev-python/types-emoji[${PYTHON_USEDEP}]
-	dev-python/types-protobuf[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-	dev-python/types-setuptools[${PYTHON_USEDEP}]
-	dev-python/types-six[${PYTHON_USEDEP}]
-	dev-python/types-tabulate[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/bert-score-0.3.13[${PYTHON_USEDEP}]
+		dev-python/fairlearn[${PYTHON_USEDEP}]
+		>=dev-python/fast-bss-eval-0.1.0[${PYTHON_USEDEP}]
+		>=dev-python/faster-coco-eval-1.6.3[${PYTHON_USEDEP}]
+		>=dev-python/gammatone-1.0.0[${PYTHON_USEDEP}]
+		<dev-python/huggingface-hub-0.28[${PYTHON_USEDEP}]
+		>=dev-python/ipadic-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/jiwer-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/kornia-0.6.7[${PYTHON_USEDEP}]
+		>=dev-python/librosa-0.10.0[${PYTHON_USEDEP}]
+		<=dev-python/lpips-0.1.4[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
+		>=dev-python/mecab-python3-1.0.6[${PYTHON_USEDEP}]
+		>=dev-python/mir-eval-0.6[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.14.0[${PYTHON_USEDEP}]
+		>dev-python/netcal-1.0.0[${PYTHON_USEDEP}]
+		>dev-python/nltk-3.8.1[${PYTHON_USEDEP}]
+		<dev-python/numpy-2.0[${PYTHON_USEDEP}]
+		<dev-python/numpy-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
+		>dev-python/pandas-1.4.0[${PYTHON_USEDEP}]
+		=dev-python/permetrics-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pesq-0.0.4[${PYTHON_USEDEP}]
+		<=dev-python/piq-0.8.0[${PYTHON_USEDEP}]
+		>dev-python/pycocotools-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pystoi-0.4.0[${PYTHON_USEDEP}]
+		=dev-python/pytorch-msssim-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/regex-2021.9.24[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
+		>dev-python/rouge-score-0.1.0[${PYTHON_USEDEP}]
+		>=dev-python/sacrebleu-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/scienceplots-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/scikit-image-0.19.0[${PYTHON_USEDEP}]
+		>dev-python/scipy-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}]
+		>=dev-python/sewar-0.4.4[${PYTHON_USEDEP}]
+		>dev-python/statsmodels-0.13.5[${PYTHON_USEDEP}]
+		=dev-python/torch-2.5.1[${PYTHON_USEDEP}]
+		<dev-python/torch-complex-0.5.0[${PYTHON_USEDEP}]
+		<=dev-python/torch-fidelity-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/torchaudio-2.0.1[${PYTHON_USEDEP}]
+		>=dev-python/torchvision-0.15.1[${PYTHON_USEDEP}]
+		<dev-python/tqdm-4.68.0[${PYTHON_USEDEP}]
+		>=dev-python/transformers-4.42.3[${PYTHON_USEDEP}]
+		>dev-python/transformers-4.4.0[${PYTHON_USEDEP}]
+		dev-python/types-emoji[${PYTHON_USEDEP}]
+		dev-python/types-protobuf[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+		dev-python/types-setuptools[${PYTHON_USEDEP}]
+		dev-python/types-six[${PYTHON_USEDEP}]
+		dev-python/types-tabulate[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

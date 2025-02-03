@@ -21,13 +21,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/sphinx-2.1[${PYTHON_USEDEP}]
-"
 DEPEND="
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/alabaster
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

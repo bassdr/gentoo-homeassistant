@@ -15,11 +15,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/httpx-0.20[${PYTHON_USEDEP}]
-	~dev-python/marshmallow-3.8[${PYTHON_USEDEP}]
-	~dev-python/marshmallow-dataclass-8.1[enum,union,${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/httpx-0.20[${PYTHON_USEDEP}] =dev-python/httpx-0*[${PYTHON_USEDEP}]
+	>=dev-python/marshmallow-3.8[${PYTHON_USEDEP}] =dev-python/marshmallow-3*[${PYTHON_USEDEP}]
+	>=dev-python/marshmallow-dataclass-8.1[enum,union,${PYTHON_USEDEP}] =dev-python/marshmallow-dataclass-8*[enum,union,${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

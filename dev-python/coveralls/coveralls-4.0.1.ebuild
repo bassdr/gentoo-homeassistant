@@ -16,12 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	!=dev-python/coverage-6.0[toml,${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	!=dev-python/coverage-6.0*[toml,${PYTHON_USEDEP}]
 	<dev-python/docopt-0.7.0[${PYTHON_USEDEP}]
 	yaml? ( <dev-python/pyyaml-7.0[${PYTHON_USEDEP}] )
 	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

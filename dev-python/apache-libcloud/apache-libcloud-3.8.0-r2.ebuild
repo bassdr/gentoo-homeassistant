@@ -20,12 +20,12 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="build publish"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
-	build? ( ~dev-python/build-0.10.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	build? ( =dev-python/build-0.10.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
-	publish? ( ~dev-python/twine-4.0.2[${PYTHON_USEDEP}] )
+	publish? ( =dev-python/twine-4.0.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
 "
@@ -37,10 +37,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	local PATCHES=(

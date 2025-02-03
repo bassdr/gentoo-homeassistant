@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
 HOMEPAGE="
-  https://pypi.org/project/PrettyTable/
+  https://pypi.org/project/prettytable/
   Changelog, https://github.com/prettytable/prettytable/releases
   Funding, https://tidelift.com/subscription/pkg/pypi-prettytable?utm_source=pypi-prettytable&utm_medium=pypi
   Homepage, https://github.com/prettytable/prettytable
@@ -22,10 +22,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/wcwidth[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/wcwidth[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -37,11 +37,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

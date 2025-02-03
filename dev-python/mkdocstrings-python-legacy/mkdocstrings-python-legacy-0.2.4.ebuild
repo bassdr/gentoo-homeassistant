@@ -15,11 +15,11 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mkdocs-autorefs-1.1[${PYTHON_USEDEP}]
 	>=dev-python/mkdocstrings-0.19[${PYTHON_USEDEP}]
 	>=dev-python/pytkdocs-0.14[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

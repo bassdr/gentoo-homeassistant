@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pysmarty2-0.10.1[${PYTHON_USEDEP}]
+	=dev-python/pysmarty2-0.10.1[${PYTHON_USEDEP}]
 "

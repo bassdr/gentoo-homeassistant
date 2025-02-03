@@ -17,8 +17,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-"
 BDEPEND="
 	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
@@ -32,7 +30,11 @@ PATCHES=(
 )
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/jinja2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/jinja2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

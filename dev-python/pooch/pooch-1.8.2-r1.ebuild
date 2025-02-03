@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="progress sftp xxhash"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 	sftp? ( >=dev-python/paramiko-2.7.0[${PYTHON_USEDEP}] )
 	>=dev-python/platformdirs-2.5.0[${PYTHON_USEDEP}]
@@ -26,7 +26,7 @@ GENERATED_DEPEND="${RDEPEND}
 	progress? ( <dev-python/tqdm-5.0.0[${PYTHON_USEDEP}] )
 	xxhash? ( >=dev-python/xxhash-1.4.3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-2.5.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]

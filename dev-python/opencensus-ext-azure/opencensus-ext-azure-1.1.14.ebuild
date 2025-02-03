@@ -16,13 +16,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/opencensus-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/psutil-5.6.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

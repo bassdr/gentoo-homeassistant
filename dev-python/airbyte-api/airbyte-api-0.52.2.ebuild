@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2023.7.22[${PYTHON_USEDEP}]
 	>=dev-python/charset-normalizer-3.2.0[${PYTHON_USEDEP}]
 	>=dev-python/dataclasses-json-0.6.4[${PYTHON_USEDEP}]
@@ -32,9 +32,12 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-inspect-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.18[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/pylint-3.1.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/pylint-3.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

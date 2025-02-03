@@ -6,7 +6,6 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
 
-PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 0.2.0b2)"
 S="${WORKDIR}/${PN}-0.2.0b2"
@@ -19,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cli? ( dev-python/build[${PYTHON_USEDEP}] )
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )
 	dev-python/nodeenv[${PYTHON_USEDEP}]
@@ -30,6 +29,6 @@ GENERATED_DEPEND="${RDEPEND}
 	cli? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

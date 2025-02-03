@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	model_worker? ( >=dev-python/accelerate-0.21[${PYTHON_USEDEP}] )
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	llm_judge? ( >=dev-python/anthropic-0.3[${PYTHON_USEDEP}] )
@@ -44,10 +44,13 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/uvicorn[${PYTHON_USEDEP}]
 	train? ( dev-python/wandb[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-23.3.0[${PYTHON_USEDEP}]
-	~dev-python/pylint-2.8.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-23.3.0[${PYTHON_USEDEP}]
+		=dev-python/pylint-2.8.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

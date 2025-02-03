@@ -22,12 +22,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="codecov"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 	codecov? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	>=dev-python/ruamel-yaml-0.15[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.15[${PYTHON_USEDEP}]
 "

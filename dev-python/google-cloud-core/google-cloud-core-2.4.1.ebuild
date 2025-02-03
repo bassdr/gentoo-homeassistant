@@ -17,13 +17,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
 	<dev-python/google-auth-3.0_pre[${PYTHON_USEDEP}]
 	grpc? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
 	grpc? ( <dev-python/grpcio-status-2.0_pre0[${PYTHON_USEDEP}] )
 	>dev-python/importlib-metadata-1.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

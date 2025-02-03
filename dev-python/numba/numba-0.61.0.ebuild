@@ -17,13 +17,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="tbb? ( <dev-cpp/tbb-2021.5.0-r1 )
+	<dev-python/numpy-2.2.0[${PYTHON_USEDEP}]"
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/llvmlite-0.45[${PYTHON_USEDEP}]
 	<dev-python/numpy-2.2[${PYTHON_USEDEP}]
 "
-DEPEND="tbb? ( <dev-cpp/tbb-2021.5.0-r1 )
-	<dev-python/numpy-2.2.0[${PYTHON_USEDEP}]"
-RDEPEND="${GENERATED_DEPEND} dev-python/llvmlite[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_RDEPEND} dev-python/llvmlite[${PYTHON_USEDEP}]
 	dev-python/setuptools:0[${PYTHON_USEDEP}]"
 
 src_configure() {

@@ -16,25 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/distro-1.8.0[${PYTHON_USEDEP}]
-	~dev-python/furiosa-device-0.10[${PYTHON_USEDEP}]
-	~dev-python/furiosa-optimizer-0.10[${PYTHON_USEDEP}]
-	~dev-python/furiosa-quantizer-0.10[${PYTHON_USEDEP}]
-	~dev-python/furiosa-runtime-0.10[${PYTHON_USEDEP}]
-	~dev-python/furiosa-tools-0.10[${PYTHON_USEDEP}]
-	~dev-python/psutil-5.9.4[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/distro-1.8.0[${PYTHON_USEDEP}] =dev-python/distro-1.8*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-device-0.10*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-optimizer-0.10*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-quantizer-0.10*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-runtime-0.10*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-tools-0.10*[${PYTHON_USEDEP}]
+	>=dev-python/psutil-5.9.4[${PYTHON_USEDEP}] =dev-python/psutil-5.9*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/mnist[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/types-protobuf[${PYTHON_USEDEP}]
-	dev-python/types-psutil[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/mnist[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/types-protobuf[${PYTHON_USEDEP}]
+		dev-python/types-psutil[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -21,11 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	~dev-python/siobrultech-protocols-0.5[${PYTHON_USEDEP}]
+	=dev-python/siobrultech-protocols-0.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/siobrultech-protocols-0.5.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
@@ -37,4 +37,8 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"
 

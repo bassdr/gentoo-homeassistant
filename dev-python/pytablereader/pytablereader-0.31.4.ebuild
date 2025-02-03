@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/beautifulsoup4-5[${PYTHON_USEDEP}]
 	<dev-python/dataproperty-2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}] )
@@ -46,17 +46,20 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/tabledata-2[${PYTHON_USEDEP}]
 	<dev-python/typepy-2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}]
-	<dev-python/markdown-4[${PYTHON_USEDEP}]
-	dev-python/pypandoc[${PYTHON_USEDEP}]
-	>=dev-python/pytablewriter-0.50[excel,${PYTHON_USEDEP}]
-	>=dev-python/pytest-5[${PYTHON_USEDEP}]
-	dev-python/responses[${PYTHON_USEDEP}]
-	<dev-python/retryrequests-1[${PYTHON_USEDEP}]
-	<dev-python/simplesqlite-2[${PYTHON_USEDEP}]
-	dev-python/subprocrunner[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}]
+		<dev-python/markdown-4[${PYTHON_USEDEP}]
+		dev-python/pypandoc[${PYTHON_USEDEP}]
+		>=dev-python/pytablewriter-0.50[excel,${PYTHON_USEDEP}]
+		>=dev-python/pytest-5[${PYTHON_USEDEP}]
+		dev-python/responses[${PYTHON_USEDEP}]
+		<dev-python/retryrequests-1[${PYTHON_USEDEP}]
+		<dev-python/simplesqlite-2[${PYTHON_USEDEP}]
+		dev-python/subprocrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

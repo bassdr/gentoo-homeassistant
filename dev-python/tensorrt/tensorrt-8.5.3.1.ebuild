@@ -17,12 +17,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	dev-python/nvidia-cublas-cu11[${PYTHON_USEDEP}]
 	dev-python/nvidia-cuda-runtime-cu11[${PYTHON_USEDEP}]
 	dev-python/nvidia-cudnn-cu11[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

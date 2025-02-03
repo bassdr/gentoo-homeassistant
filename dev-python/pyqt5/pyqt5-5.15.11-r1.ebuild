@@ -50,10 +50,6 @@ REQUIRED_USE="
 # Minimal supported version of Qt.
 QT_PV="5.15:5"
 
-GENERATED_DEPEND="${RDEPEND}
-	<dev-python/pyqt5-qt5-5.16.0[${PYTHON_USEDEP}]
-	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=dev-qt/qtcore-${QT_PV}
 	>=dev-qt/qtxml-${QT_PV}
@@ -84,7 +80,11 @@ DEPEND="
 	x11extras? ( >=dev-qt/qtx11extras-${QT_PV} )
 	xmlpatterns? ( >=dev-qt/qtxmlpatterns-${QT_PV} )
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	<dev-python/pyqt5-qt5-5.16.0[${PYTHON_USEDEP}]
+	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	>=dev-python/pyqt5-sip-12.15:=[${PYTHON_USEDEP}]
 "

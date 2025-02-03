@@ -21,7 +21,10 @@ IUSE="${GENERATED_IUSE} big-endian"
 
 # Check QPDF_MIN_VERSION in pyproject.toml on bumps, as well as
 # https://qpdf.readthedocs.io/en/stable/release-notes.html.
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="
+	>=app-text/qpdf-11.5.0:0=
+"
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.8[${PYTHON_USEDEP}]
 	mypy? ( dev-python/lxml-stubs[${PYTHON_USEDEP}] )
@@ -38,10 +41,7 @@ GENERATED_DEPEND="${RDEPEND}
 	mypy? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
 "
-DEPEND="
-	>=app-text/qpdf-11.5.0:0=
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.0[${PYTHON_USEDEP}]
@@ -70,19 +70,22 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/attrs-20.2.0[${PYTHON_USEDEP}]
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	>=dev-python/hypothesis-6.36[${PYTHON_USEDEP}]
-	dev-python/pybind11[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
-	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
-	dev-python/typer[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/attrs-20.2.0[${PYTHON_USEDEP}]
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.36[${PYTHON_USEDEP}]
+		dev-python/pybind11[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
+		>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
+		dev-python/typer[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

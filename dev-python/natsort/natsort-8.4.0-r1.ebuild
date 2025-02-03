@@ -18,10 +18,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="fast icu"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	fast? ( >=dev-python/fastnumbers-2.0.0[${PYTHON_USEDEP}] )
-	icu? ( >=dev-python/pyicu-1.0.0[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/hypothesis[${PYTHON_USEDEP}]
@@ -34,4 +30,5 @@ distutils_enable_tests pytest
 pkg_postinst() {
 	optfeature "sorting results that match most file browsers" "dev-python/pyicu"
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

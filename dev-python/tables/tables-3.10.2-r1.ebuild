@@ -20,14 +20,6 @@ KEYWORDS="amd64 arm64"
 IUSE="+cpudetection examples test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/blosc2-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/numexpr-2.6.2[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
-"
 DEPEND="
 	app-arch/bzip2:0=
 	app-arch/lz4:0=
@@ -38,7 +30,15 @@ DEPEND="
 	>=dev-python/numpy-1.19.0:=[${PYTHON_USEDEP}]
 	>=sci-libs/hdf5-1.8.4:=
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/blosc2-2.3.0[${PYTHON_USEDEP}]
+	>=dev-python/numexpr-2.6.2[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	>=dev-python/numexpr-2.6.2[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

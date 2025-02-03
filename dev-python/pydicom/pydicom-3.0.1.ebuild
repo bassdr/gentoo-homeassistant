@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	basic? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/numpy[${PYTHON_USEDEP}] )
@@ -37,16 +37,19 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinxcontrib-napoleon[${PYTHON_USEDEP}] )
 	basic? ( dev-python/types-pydicom[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-24.8.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.11.2[${PYTHON_USEDEP}]
-	dev-python/pydicom-data[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.6.3[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-24.8.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.11.2[${PYTHON_USEDEP}]
+		dev-python/pydicom-data[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.6.3[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

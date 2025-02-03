@@ -15,14 +15,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/botocore-1.36.11[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/botocore-1.36.11[${PYTHON_USEDEP}]
 	<dev-python/colorama-0.4.7[${PYTHON_USEDEP}]
 	<dev-python/docutils-0.17[${PYTHON_USEDEP}]
 	<dev-python/pyyaml-6.1[${PYTHON_USEDEP}]
 	<dev-python/rsa-4.8[${PYTHON_USEDEP}]
 	<dev-python/s3transfer-0.12.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

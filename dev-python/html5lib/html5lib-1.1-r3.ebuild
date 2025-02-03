@@ -24,7 +24,7 @@ PATCHES=(
 
 GENERATED_IUSE="all chardet genshi"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/chardet-2.2[${PYTHON_USEDEP}] )
 	chardet? ( >=dev-python/chardet-2.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/genshi[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/six-1.9[${PYTHON_USEDEP}]
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/six-1.9[${PYTHON_USEDEP}]
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "

@@ -26,9 +26,6 @@ KEYWORDS="amd64 arm64"
 
 # RDEPEND in BDEPEND for import_cldr.py usage, bug #852158
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/pytz-2015.7[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	app-arch/unzip
 	${RDEPEND}
@@ -39,11 +36,14 @@ BDEPEND="
 
 distutils_enable_sphinx docs
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/freezegun-1.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/freezegun-1.0[${PYTHON_USEDEP}] =dev-python/freezegun-1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	rm babel/locale-data/*.dat || die
@@ -61,4 +61,5 @@ python_test() {
 	local -x TZ=UTC
 	epytest
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

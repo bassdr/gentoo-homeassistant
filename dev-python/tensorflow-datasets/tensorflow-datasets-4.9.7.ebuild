@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	beir? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	c4-wsrs? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
@@ -52,8 +52,8 @@ GENERATED_DEPEND="${RDEPEND}
 	tests-all? ( dev-python/imagecodecs[${PYTHON_USEDEP}] )
 	dev-python/immutabledict[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	huggingface? ( ~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
-	tests-all? ( ~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
+	huggingface? ( =dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
+	tests-all? ( =dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	c4? ( dev-python/langdetect[${PYTHON_USEDEP}] )
@@ -78,9 +78,9 @@ GENERATED_DEPEND="${RDEPEND}
 	huggingface? ( dev-python/networkx[${PYTHON_USEDEP}] )
 	ogbg-molpcba? ( dev-python/networkx[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/networkx[${PYTHON_USEDEP}] )
-	c4? ( ~dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
-	huggingface? ( ~dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
-	tests-all? ( ~dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
+	c4? ( =dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
+	huggingface? ( =dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
+	tests-all? ( =dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
 	huggingface? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
 	imagenet2012-corrupted? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
@@ -125,7 +125,7 @@ GENERATED_DEPEND="${RDEPEND}
 	huggingface? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
 	imagenet2012-corrupted? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
-	nsynth? ( ~dev-python/scikit-learn-0.20.3[${PYTHON_USEDEP}] )
+	nsynth? ( =dev-python/scikit-learn-0.20.3[${PYTHON_USEDEP}] )
 	aflw2k3d? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	duke-ultrasound? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/scipy[${PYTHON_USEDEP}] )
@@ -154,22 +154,25 @@ GENERATED_DEPEND="${RDEPEND}
 	huggingface? ( dev-python/zarr[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/zarr[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/apache-beam[${PYTHON_USEDEP}]
-	dev-python/conllu[${PYTHON_USEDEP}]
-	dev-python/dill[${PYTHON_USEDEP}]
-	~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}]
-	dev-python/jupyter[${PYTHON_USEDEP}]
-	>=dev-python/mlcroissant-1.0.9[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pydub[${PYTHON_USEDEP}]
-	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-shard[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/yapf[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/apache-beam[${PYTHON_USEDEP}]
+		dev-python/conllu[${PYTHON_USEDEP}]
+		dev-python/dill[${PYTHON_USEDEP}]
+		=dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}]
+		dev-python/jupyter[${PYTHON_USEDEP}]
+		>=dev-python/mlcroissant-1.0.9[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pydub[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-shard[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+		dev-python/yapf[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

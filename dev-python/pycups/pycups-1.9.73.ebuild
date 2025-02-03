@@ -28,3 +28,4 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild

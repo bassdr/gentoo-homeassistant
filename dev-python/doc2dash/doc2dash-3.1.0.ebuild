@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-23.2[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	>dev-python/click-8[${PYTHON_USEDEP}]
@@ -30,12 +30,15 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]
 	typing? ( dev-python/types-urllib3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	dev-python/doc2dash[tests,typing,${PYTHON_USEDEP}]
-	dev-python/nox[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		dev-python/doc2dash[tests,typing,${PYTHON_USEDEP}]
+		dev-python/nox[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyflume-0.6.5[${PYTHON_USEDEP}]
+	=dev-python/pyflume-0.6.5[${PYTHON_USEDEP}]
 "

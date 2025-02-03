@@ -15,13 +15,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	!=dev-python/chromadb-0.5.4[${PYTHON_USEDEP}]
 	<dev-python/fastapi-1[${PYTHON_USEDEP}]
 	<dev-python/langchain-core-0.3[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]' python3_13{,t})
 	$(python_gen_cond_dep '<dev-python/numpy-2[${PYTHON_USEDEP}]' python3_12)
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

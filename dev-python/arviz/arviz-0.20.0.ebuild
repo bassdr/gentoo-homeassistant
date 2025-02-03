@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	preview? ( dev-python/arviz-base[h5netcdf,${PYTHON_USEDEP}] )
 	preview? ( dev-python/arviz-plots[${PYTHON_USEDEP}] )
 	preview? ( dev-python/arviz-stats[xarray,${PYTHON_USEDEP}] )
@@ -40,6 +40,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/xarray-einstats-0.3[${PYTHON_USEDEP}]
 	all? ( <dev-python/zarr-3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

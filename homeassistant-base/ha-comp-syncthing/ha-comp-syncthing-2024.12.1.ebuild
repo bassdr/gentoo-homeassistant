@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiosyncthing-0.5.1[${PYTHON_USEDEP}]
+	=dev-python/aiosyncthing-0.5.1[${PYTHON_USEDEP}]
 "

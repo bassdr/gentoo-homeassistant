@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/adagio-0.2.4[${PYTHON_USEDEP}]
 	>=dev-python/dask-2024.4.0[dataframe,distributed,${PYTHON_USEDEP}]
 	all? ( >=dev-python/dask-2023.5.0[dataframe,distributed,${PYTHON_USEDEP}] )
@@ -66,6 +66,6 @@ GENERATED_DEPEND="${RDEPEND}
 	sql? ( dev-python/sqlglot[${PYTHON_USEDEP}] )
 	>=dev-python/triad-0.9.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

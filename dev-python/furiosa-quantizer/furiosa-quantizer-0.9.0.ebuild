@@ -16,12 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/furiosa-common-0.9[${PYTHON_USEDEP}]
-	~dev-python/furiosa-quantizer-impl-0.9[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.24[${PYTHON_USEDEP}]
-	~dev-python/onnx-1.12.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/furiosa-common-0.9*[${PYTHON_USEDEP}]
+	=dev-python/furiosa-quantizer-impl-0.9*[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.24[${PYTHON_USEDEP}] =dev-python/numpy-1*[${PYTHON_USEDEP}]
+	>=dev-python/onnx-1.12.0[${PYTHON_USEDEP}] =dev-python/onnx-1.12*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

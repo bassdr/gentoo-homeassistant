@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.3.0[${PYTHON_USEDEP}]
 	apache.hive? ( dev-python/apache-airflow-providers-apache-hive[${PYTHON_USEDEP}] )
 	cncf.kubernetes? ( dev-python/apache-airflow-providers-cncf-kubernetes[${PYTHON_USEDEP}] )
@@ -38,8 +38,8 @@ GENERATED_DEPEND="${RDEPEND}
 	pandas? ( >=dev-python/pandas-0.17.1[${PYTHON_USEDEP}] )
 	>=dev-python/redshift-connector-2.0.888[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-redshift-0.8.6[${PYTHON_USEDEP}]
-	~dev-python/watchtower-2.0.1[${PYTHON_USEDEP}]
+	>=dev-python/watchtower-2.0.1[${PYTHON_USEDEP}] =dev-python/watchtower-2.0*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

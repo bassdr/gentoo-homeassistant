@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/bluepy-1.3.0[${PYTHON_USEDEP}]
-	~dev-python/decora-0.6[${PYTHON_USEDEP}]
+	=dev-python/bluepy-1.3.0[${PYTHON_USEDEP}]
+	=dev-python/decora-0.6[${PYTHON_USEDEP}]
 "

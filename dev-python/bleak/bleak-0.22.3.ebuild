@@ -23,11 +23,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/dbus-fast-3[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]' python3_12)
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_{10..11})
 	$(python_gen_cond_dep 'dev-python/typing-extensions[${PYTHON_USEDEP}]' python3_11)
 	>=dev-python/dbus-fast-1.83.0[${PYTHON_USEDEP}]"

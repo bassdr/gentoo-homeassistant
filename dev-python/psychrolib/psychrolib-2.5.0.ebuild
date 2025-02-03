@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_NO_NORMALIZE=1
 PYPI_PN="PsychroLib"
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} ${PV} .zip)"
@@ -29,6 +28,10 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"
 test() {
 	py.test -v -v || die
 }

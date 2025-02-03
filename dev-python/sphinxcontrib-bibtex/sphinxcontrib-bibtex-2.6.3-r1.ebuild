@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	!=dev-python/docutils-0.18[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	!=dev-python/docutils-0.18*[${PYTHON_USEDEP}]
 	>=dev-python/pybtex-0.24[${PYTHON_USEDEP}]
 	>=dev-python/pybtex-docutils-1.0.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/sphinx-3.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/docutils-0.8[${PYTHON_USEDEP}]
 	>=dev-python/pybtex-0.24[${PYTHON_USEDEP}]
 	>=dev-python/pybtex-docutils-1.0.0[${PYTHON_USEDEP}]
@@ -44,10 +44,13 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx doc
 
 python_compile() {

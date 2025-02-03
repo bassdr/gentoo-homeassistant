@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	argcomplete? ( >=dev-python/argcomplete-3.5.1[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/autodocsumm-0.1.10[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/bump2version-0.5.11[${PYTHON_USEDEP}] )
@@ -36,7 +36,7 @@ GENERATED_DEPEND="${RDEPEND}
 	signatures? ( dev-python/jsonargparse[typing-extensions,${PYTHON_USEDEP}] )
 	>=dev-python/jsonnet-0.13.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonnet-binary-0.17.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '~dev-python/jsonnet-sdist-2024.6.23[${PYTHON_USEDEP}]' python3_13{,t})
+	$(python_gen_cond_dep '=dev-python/jsonnet-sdist-2024.6.23[${PYTHON_USEDEP}]' python3_13{,t})
 	jsonschema? ( >=dev-python/jsonschema-3.2.0[${PYTHON_USEDEP}] )
 	omegaconf? ( >=dev-python/omegaconf-2.1.1[${PYTHON_USEDEP}] )
 	test-no-urls? ( >=dev-python/pytest-6.2.5[${PYTHON_USEDEP}] )
@@ -54,22 +54,25 @@ GENERATED_DEPEND="${RDEPEND}
 	maintainer? ( >=dev-python/twine-4.0.2[${PYTHON_USEDEP}] )
 	signatures? ( >=dev-python/typeshed-client-2.1.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
-	>=dev-python/build-0.10.0[${PYTHON_USEDEP}]
-	dev-python/jsonargparse[argcomplete,${PYTHON_USEDEP}]
-	dev-python/jsonargparse[coverage,${PYTHON_USEDEP}]
-	dev-python/jsonargparse[doc,${PYTHON_USEDEP}]
-	dev-python/jsonargparse[shtab,${PYTHON_USEDEP}]
-	dev-python/jsonargparse[test,${PYTHON_USEDEP}]
-	dev-python/jsonargparse[test-no-urls,${PYTHON_USEDEP}]
-	>=dev-python/pydantic-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/responses-0.12.0[${PYTHON_USEDEP}]
-	>=dev-python/tox-3.25.0[${PYTHON_USEDEP}]
-	>=dev-python/types-pyyaml-6.0.11[${PYTHON_USEDEP}]
-	>=dev-python/types-requests-2.28.9[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
+		>=dev-python/build-0.10.0[${PYTHON_USEDEP}]
+		dev-python/jsonargparse[argcomplete,${PYTHON_USEDEP}]
+		dev-python/jsonargparse[coverage,${PYTHON_USEDEP}]
+		dev-python/jsonargparse[doc,${PYTHON_USEDEP}]
+		dev-python/jsonargparse[shtab,${PYTHON_USEDEP}]
+		dev-python/jsonargparse[test,${PYTHON_USEDEP}]
+		dev-python/jsonargparse[test-no-urls,${PYTHON_USEDEP}]
+		>=dev-python/pydantic-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/responses-0.12.0[${PYTHON_USEDEP}]
+		>=dev-python/tox-3.25.0[${PYTHON_USEDEP}]
+		>=dev-python/types-pyyaml-6.0.11[${PYTHON_USEDEP}]
+		>=dev-python/types-requests-2.28.9[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

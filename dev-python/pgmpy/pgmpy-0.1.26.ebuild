@@ -16,38 +16,54 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/black[${PYTHON_USEDEP}] )
 	all? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	all? ( dev-python/daft[${PYTHON_USEDEP}] )
 	all? ( dev-python/google-generativeai[${PYTHON_USEDEP}] )
+	dev-python/google-generativeai[${PYTHON_USEDEP}]
 	all? ( dev-python/joblib[${PYTHON_USEDEP}] )
+	dev-python/joblib[${PYTHON_USEDEP}]
 	all? ( dev-python/mock[${PYTHON_USEDEP}] )
 	all? ( dev-python/networkx[${PYTHON_USEDEP}] )
+	dev-python/networkx[${PYTHON_USEDEP}]
 	all? ( dev-python/numpy[${PYTHON_USEDEP}] )
+	dev-python/numpy[${PYTHON_USEDEP}]
 	all? ( dev-python/opt-einsum[${PYTHON_USEDEP}] )
+	dev-python/opt-einsum[${PYTHON_USEDEP}]
 	all? ( dev-python/pandas[${PYTHON_USEDEP}] )
+	dev-python/pandas[${PYTHON_USEDEP}]
 	all? ( dev-python/pyparsing[${PYTHON_USEDEP}] )
+	dev-python/pyparsing[${PYTHON_USEDEP}]
 	all? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	all? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	all? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
+	dev-python/scikit-learn[${PYTHON_USEDEP}]
 	all? ( dev-python/scipy[${PYTHON_USEDEP}] )
+	dev-python/scipy[${PYTHON_USEDEP}]
 	all? ( dev-python/statsmodels[${PYTHON_USEDEP}] )
+	dev-python/statsmodels[${PYTHON_USEDEP}]
 	all? ( dev-python/torch[${PYTHON_USEDEP}] )
+	dev-python/torch[${PYTHON_USEDEP}]
 	all? ( dev-python/tqdm[${PYTHON_USEDEP}] )
+	dev-python/tqdm[${PYTHON_USEDEP}]
 	all? ( dev-python/xdoctest[${PYTHON_USEDEP}] )
 	all? ( dev-python/xgboost[${PYTHON_USEDEP}] )
+	dev-python/xgboost[${PYTHON_USEDEP}]
 	all? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/xdoctest[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/xdoctest[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

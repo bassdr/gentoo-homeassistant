@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jupyter-server[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/mistune-4.0[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/terminado-0.8.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/tornado[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/terminado[${PYTHON_USEDEP}]
 "
 
@@ -52,12 +52,15 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/jupyter-server-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-jupyter-0.5.3[server,${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/jupyter-server-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-jupyter-0.5.3[server,${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_install_all() {
 	distutils-r1_python_install_all

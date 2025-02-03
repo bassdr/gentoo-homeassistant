@@ -15,11 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/duckdb-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-1.3.22[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

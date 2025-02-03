@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/astunparse-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/flatbuffers-23.5.26[${PYTHON_USEDEP}]
@@ -27,20 +27,20 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/h5py-3.10.0[${PYTHON_USEDEP}]
 	>=dev-python/keras-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/libclang-13.0.0[${PYTHON_USEDEP}]
-	~dev-python/ml-dtypes-0.3.1[${PYTHON_USEDEP}]
+	>=dev-python/ml-dtypes-0.3.1[${PYTHON_USEDEP}] =dev-python/ml-dtypes-0.3*[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]' python3_13{,t})
-	and-cuda? ( ~dev-python/nvidia-cublas-cu12-12.3.4.1[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-cupti-cu12-12.3.101[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-nvcc-cu12-12.3.107[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-nvrtc-cu12-12.3.107[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-runtime-cu12-12.3.101[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cudnn-cu12-8.9.7.29[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cufft-cu12-11.0.12.1[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-curand-cu12-10.3.4.107[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cusolver-cu12-11.5.4.101[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cusparse-cu12-12.2.0.103[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-nccl-cu12-2.19.3[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-nvjitlink-cu12-12.3.101[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cublas-cu12-12.3.4.1[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-cupti-cu12-12.3.101[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-nvcc-cu12-12.3.107[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-nvrtc-cu12-12.3.107[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-runtime-cu12-12.3.101[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cudnn-cu12-8.9.7.29[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cufft-cu12-11.0.12.1[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-curand-cu12-10.3.4.107[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cusolver-cu12-11.5.4.101[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cusparse-cu12-12.2.0.103[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-nccl-cu12-2.19.3[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-nvjitlink-cu12-12.3.101[${PYTHON_USEDEP}] )
 	>=dev-python/opt-einsum-2.3.2[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
@@ -53,6 +53,10 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-3.6.6[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.11.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

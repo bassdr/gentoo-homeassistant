@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/insteon-frontend-home-assistant-0.5.0[${PYTHON_USEDEP}]
-	~dev-python/pyinsteon-1.6.3[${PYTHON_USEDEP}]
+	=dev-python/insteon-frontend-home-assistant-0.5.0[${PYTHON_USEDEP}]
+	=dev-python/pyinsteon-1.6.3[${PYTHON_USEDEP}]
 "

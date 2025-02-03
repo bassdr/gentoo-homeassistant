@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/astroid-2.11.0[${PYTHON_USEDEP}] )
 	integration? ( >=dev-python/astroid-2.11.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/deal-solver-0.1.2[${PYTHON_USEDEP}] )
@@ -38,9 +38,9 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	integration? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	lint? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-7[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-7*[${PYTHON_USEDEP}] )
 	integration? ( >=dev-python/sphinx-4.5.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-rtd-theme-2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-rtd-theme-2*[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/typeguard-3.0.0[${PYTHON_USEDEP}] )
 	integration? ( <dev-python/typeguard-4.0.0[${PYTHON_USEDEP}] )
 	lint? ( <dev-python/typeguard-4.0.0[${PYTHON_USEDEP}] )
@@ -48,14 +48,17 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/vaa-0.2.1[${PYTHON_USEDEP}] )
 	integration? ( >=dev-python/vaa-0.2.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	dev-python/coverage-conditional-plugin[${PYTHON_USEDEP}]
-	dev-python/docstring-parser[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		dev-python/coverage-conditional-plugin[${PYTHON_USEDEP}]
+		dev-python/docstring-parser[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/urllib3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

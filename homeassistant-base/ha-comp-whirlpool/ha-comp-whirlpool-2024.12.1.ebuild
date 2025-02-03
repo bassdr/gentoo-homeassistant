@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/whirlpool-sixth-sense-0.18.8[${PYTHON_USEDEP}]
+	=dev-python/whirlpool-sixth-sense-0.18.8[${PYTHON_USEDEP}]
 "

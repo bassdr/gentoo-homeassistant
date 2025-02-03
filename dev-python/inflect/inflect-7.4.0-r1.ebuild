@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
@@ -35,7 +35,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typeguard-4.0.1[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typeguard-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/more-itertools-8.5.0[${PYTHON_USEDEP}]
 "
@@ -44,7 +44,10 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pygments[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pygments[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

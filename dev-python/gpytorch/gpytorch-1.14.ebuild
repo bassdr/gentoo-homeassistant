@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( <=dev-python/ipykernel-6.17.1[${PYTHON_USEDEP}] )
 	docs? ( <=dev-python/ipython-8.6.0[${PYTHON_USEDEP}] )
 	examples? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -43,16 +43,19 @@ GENERATED_DEPEND="${RDEPEND}
 	examples? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	examples? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
-	~dev-python/flake8-print-4.0.0[${PYTHON_USEDEP}]
-	dev-python/nbval[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	dev-python/twine[${PYTHON_USEDEP}]
-	dev-python/ufmt[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+		=dev-python/flake8-print-4.0.0[${PYTHON_USEDEP}]
+		dev-python/nbval[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/setuptools-scm[${PYTHON_USEDEP}]
+		dev-python/twine[${PYTHON_USEDEP}]
+		dev-python/ufmt[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

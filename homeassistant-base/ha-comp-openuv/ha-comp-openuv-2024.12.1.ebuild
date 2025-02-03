@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyopenuv-2023.02.0[${PYTHON_USEDEP}]
+	=dev-python/pyopenuv-2023.02.0[${PYTHON_USEDEP}]
 "

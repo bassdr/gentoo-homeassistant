@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/jaraco-abode-6.2.1[${PYTHON_USEDEP}]
+	=dev-python/jaraco-abode-6.2.1[${PYTHON_USEDEP}]
 "

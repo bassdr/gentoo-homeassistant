@@ -21,11 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyzipper-0.3.6[${PYTHON_USEDEP}]
 	>=dev-python/striprtf-0.0.26[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyzipper-0.3.6[${PYTHON_USEDEP}]
 	>=dev-python/striprtf-0.0.26[${PYTHON_USEDEP}]"
 

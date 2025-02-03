@@ -20,9 +20,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest

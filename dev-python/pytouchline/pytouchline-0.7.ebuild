@@ -19,10 +19,10 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httplib2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/httplib2[${PYTHON_USEDEP}]
 	|| ( dev-python/cchardet[${PYTHON_USEDEP}] dev-python/faust-cchardet[${PYTHON_USEDEP}] )"
 DEPEND="

@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	markdown? ( dev-python/dvc-render[table,${PYTHON_USEDEP}] )
 	table? ( <dev-python/flatten-dict-1[${PYTHON_USEDEP}] )
 	markdown? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
@@ -28,15 +28,18 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
 	table? ( >=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/dvc-render[docs,tests,${PYTHON_USEDEP}]
-	dev-python/dvc-render[markdown,table,${PYTHON_USEDEP}]
-	~dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-sugar[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dvc-render[docs,tests,${PYTHON_USEDEP}]
+		dev-python/dvc-render[markdown,table,${PYTHON_USEDEP}]
+		=dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-sugar[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -20,9 +20,6 @@ KEYWORDS="amd64 arm64"
 # all these are header-only libraries
 GENERATED_IUSE="all"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	all? ( dev-python/numpy[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	>=dev-cpp/taskflow-3.0.0
 	>=dev-cpp/rapidfuzz-cpp-3.2.0
@@ -59,4 +56,5 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

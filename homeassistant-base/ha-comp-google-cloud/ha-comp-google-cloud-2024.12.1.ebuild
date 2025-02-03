@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/google-cloud-speech-2.27.0[${PYTHON_USEDEP}]
-	~dev-python/google-cloud-texttospeech-2.17.2[${PYTHON_USEDEP}]
+	=dev-python/google-cloud-speech-2.27.0[${PYTHON_USEDEP}]
+	=dev-python/google-cloud-texttospeech-2.17.2[${PYTHON_USEDEP}]
 "

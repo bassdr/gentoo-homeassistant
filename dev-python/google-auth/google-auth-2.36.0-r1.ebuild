@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="aiohttp enterprise-cert pyopenssl reauth requests"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( <dev-python/aiohttp-4.0.0_pre0[${PYTHON_USEDEP}] )
 	<dev-python/cachetools-6.0[${PYTHON_USEDEP}]
 	enterprise-cert? ( dev-python/cryptography[${PYTHON_USEDEP}] )
@@ -32,7 +32,7 @@ GENERATED_DEPEND="${RDEPEND}
 	requests? ( <dev-python/requests-3.0.0_pre0[${PYTHON_USEDEP}] )
 	<dev-python/rsa-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-modules-0.2.1[${PYTHON_USEDEP}]

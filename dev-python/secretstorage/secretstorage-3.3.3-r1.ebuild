@@ -20,11 +20,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.0[${PYTHON_USEDEP}]
 	>=dev-python/jeepney-0.6[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	>=dev-python/jeepney-0.6[${PYTHON_USEDEP}]
 "

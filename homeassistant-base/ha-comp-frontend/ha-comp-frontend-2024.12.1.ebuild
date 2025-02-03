@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/home-assistant-frontend-20241127.6[${PYTHON_USEDEP}]
+	=dev-python/home-assistant-frontend-20241127.6[${PYTHON_USEDEP}]
 "

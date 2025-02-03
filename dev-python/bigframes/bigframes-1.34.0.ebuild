@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/atpublic-6[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/db-dtypes-1.4.0[${PYTHON_USEDEP}]
@@ -60,13 +60,16 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 	all? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/google-cloud-testutils[${PYTHON_USEDEP}]
-	dev-python/nox[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/google-cloud-testutils[${PYTHON_USEDEP}]
+		dev-python/nox[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

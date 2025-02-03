@@ -22,19 +22,19 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code_style live-dev themes"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
-	~dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}]
-	themes? ( ~dev-python/myst-parser-0.12.9[${PYTHON_USEDEP}] )
-	themes? ( ~dev-python/pydata-sphinx-theme-0.4.0[${PYTHON_USEDEP}] )
+	>=dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}] =dev-python/importlib-resources-3.0*[${PYTHON_USEDEP}]
+	themes? ( >=dev-python/myst-parser-0.12.9[${PYTHON_USEDEP}] =dev-python/myst-parser-0.12*[${PYTHON_USEDEP}] )
+	themes? ( >=dev-python/pydata-sphinx-theme-0.4.0[${PYTHON_USEDEP}] =dev-python/pydata-sphinx-theme-0.4*[${PYTHON_USEDEP}] )
 	<dev-python/sphinx-5[${PYTHON_USEDEP}]
 	live-dev? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
-	themes? ( ~dev-python/sphinx-book-theme-0.0.36[${PYTHON_USEDEP}] )
+	themes? ( >=dev-python/sphinx-book-theme-0.0.36[${PYTHON_USEDEP}] =dev-python/sphinx-book-theme-0.0*[${PYTHON_USEDEP}] )
 	themes? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	live-dev? ( ~dev-python/web-compile-0.2.0[${PYTHON_USEDEP}] )
-	code_style? ( ~dev-vcs/pre-commit-2.7.0[${PYTHON_USEDEP}] )
+	live-dev? ( >=dev-python/web-compile-0.2.0[${PYTHON_USEDEP}] =dev-python/web-compile-0.2*[${PYTHON_USEDEP}] )
+	code_style? ( >=dev-vcs/pre-commit-2.7.0[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2.7*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
@@ -50,10 +50,13 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-regressions-2.0.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] =dev-python/pytest-6.0*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-regressions-2.0.1[${PYTHON_USEDEP}] =dev-python/pytest-regressions-2.0*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 src_prepare() {

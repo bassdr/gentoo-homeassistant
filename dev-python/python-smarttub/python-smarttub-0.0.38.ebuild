@@ -19,13 +19,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
-	~dev-python/inflection-0.5[${PYTHON_USEDEP}]
-	~dev-python/pyjwt-2.4[${PYTHON_USEDEP}]
-	~dev-python/python-dateutil-2.8[${PYTHON_USEDEP}]
+	>=dev-python/inflection-0.5[${PYTHON_USEDEP}] =dev-python/inflection-0*[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-2.4[${PYTHON_USEDEP}] =dev-python/pyjwt-2*[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.8[${PYTHON_USEDEP}] =dev-python/python-dateutil-2*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]
 	~dev-python/inflection-0.5.1[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.4.0[${PYTHON_USEDEP}]

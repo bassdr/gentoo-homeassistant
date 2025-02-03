@@ -16,43 +16,46 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/fsspec-2021.7[${PYTHON_USEDEP}] )
 	fsspec? ( >=dev-python/fsspec-2021.7[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/furo-2024.5.6[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/furo-2024.5.6[${PYTHON_USEDEP}] )
 	<dev-python/httpx-1[${PYTHON_USEDEP}]
 	all? ( <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
 	http2? ( <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
-	qa? ( ~dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
+	qa? ( =dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
 	docs? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-colorama[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-pkg-resources[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
 	qa? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/cheroot[${PYTHON_USEDEP}]
-	dev-python/colorama[${PYTHON_USEDEP}]
-	>=dev-python/fsspec-2021.7[${PYTHON_USEDEP}]
-	~dev-python/furo-2024.5.6[${PYTHON_USEDEP}]
-	<dev-python/httpx-1[http2,${PYTHON_USEDEP}]
-	~dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
-	<dev-python/myst-parser-4[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	<dev-python/sphinx-8[${PYTHON_USEDEP}]
-	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
-	dev-python/types-colorama[${PYTHON_USEDEP}]
-	dev-python/types-pkg-resources[${PYTHON_USEDEP}]
-	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	dev-python/wsgidav[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cheroot[${PYTHON_USEDEP}]
+		dev-python/colorama[${PYTHON_USEDEP}]
+		>=dev-python/fsspec-2021.7[${PYTHON_USEDEP}]
+		=dev-python/furo-2024.5.6[${PYTHON_USEDEP}]
+		<dev-python/httpx-1[http2,${PYTHON_USEDEP}]
+		=dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
+		<dev-python/myst-parser-4[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		<dev-python/sphinx-8[${PYTHON_USEDEP}]
+		=dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+		dev-python/types-colorama[${PYTHON_USEDEP}]
+		dev-python/types-pkg-resources[${PYTHON_USEDEP}]
+		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+		dev-python/typing-extensions[${PYTHON_USEDEP}]
+		dev-python/wsgidav[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

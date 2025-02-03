@@ -16,12 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dataclasses-0.7[${PYTHON_USEDEP}]
 	jax? ( >=dev-python/jax-0.2.20[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jaxlib-0.1.71[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.19.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="ansi"
 IUSE="${GENERATED_IUSE} ansi"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ansi? ( dev-python/pygments-ansi-color[${PYTHON_USEDEP}] )
 	>=dev-python/pymdown-extensions-9[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pymdown-extensions-9[${PYTHON_USEDEP}]
 	ansi? (
 		dev-python/pygments-ansi-color[${PYTHON_USEDEP}]

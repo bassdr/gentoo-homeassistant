@@ -24,14 +24,6 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="benchmarks doc"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${RDEPEND}
-	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
-	benchmarks? ( ~dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep 'dev-python/typing-extensions[${PYTHON_USEDEP}]' python3_12)
-"
 BDEPEND="
 	>=dev-python/setuptools-61[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.4[${PYTHON_USEDEP}]
@@ -41,11 +33,14 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-7[${PYTHON_USEDEP}]
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-7[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	# remove pytest-cov dep
@@ -61,4 +56,5 @@ python_compile() {
 	fi
 	distutils-r1_python_compile
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

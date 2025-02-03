@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/transaction[${PYTHON_USEDEP}]
 	testlayer? ( dev-python/webtest[${PYTHON_USEDEP}] )
@@ -35,15 +35,18 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/zope-site-4.0.0_alpha1[${PYTHON_USEDEP}]
 	>=dev-python/zope-traversing-4.0.0_alpha1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/webtest[${PYTHON_USEDEP}]
-	dev-python/zope-authentication[${PYTHON_USEDEP}]
-	dev-python/zope-browserpage[${PYTHON_USEDEP}]
-	>=dev-python/zope-principalregistry-4.0.0_alpha1[${PYTHON_USEDEP}]
-	>=dev-python/zope-securitypolicy-4.0.0_alpha1[${PYTHON_USEDEP}]
-	dev-python/zope-testing[${PYTHON_USEDEP}]
-	dev-python/zope-testrunner[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/webtest[${PYTHON_USEDEP}]
+		dev-python/zope-authentication[${PYTHON_USEDEP}]
+		dev-python/zope-browserpage[${PYTHON_USEDEP}]
+		>=dev-python/zope-principalregistry-4.0.0_alpha1[${PYTHON_USEDEP}]
+		>=dev-python/zope-securitypolicy-4.0.0_alpha1[${PYTHON_USEDEP}]
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -26,3 +26,4 @@ python_compile() {
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
 # extras could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild

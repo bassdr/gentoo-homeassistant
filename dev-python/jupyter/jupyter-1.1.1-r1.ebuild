@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipykernel[${PYTHON_USEDEP}]
 	dev-python/ipywidgets[${PYTHON_USEDEP}]
 	dev-python/jupyter-console[${PYTHON_USEDEP}]
@@ -25,7 +25,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/nbconvert[${PYTHON_USEDEP}]
 	dev-python/notebook[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/notebook[${PYTHON_USEDEP}]
 	dev-python/jupyter-console[${PYTHON_USEDEP}]
 	dev-python/nbconvert[${PYTHON_USEDEP}]

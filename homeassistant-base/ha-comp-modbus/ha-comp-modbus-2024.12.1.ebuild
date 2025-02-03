@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pymodbus-3.6.9[${PYTHON_USEDEP}]
+	=dev-python/pymodbus-3.6.9[${PYTHON_USEDEP}]
 "

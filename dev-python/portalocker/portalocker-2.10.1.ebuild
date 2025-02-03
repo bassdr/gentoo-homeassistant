@@ -26,10 +26,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs redis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-1.7.1[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/redis[${PYTHON_USEDEP}]
@@ -39,15 +35,18 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-5.4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mypy-0.8.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-	dev-python/redis[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
-	dev-python/types-redis[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-5.4.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mypy-0.8.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+		dev-python/redis[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
+		dev-python/types-redis[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	default
@@ -59,4 +58,5 @@ src_prepare() {
 pkg_postinst() {
 	optfeature "redis support" dev-python/redis
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cli? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
@@ -25,13 +25,16 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/tabledata-2[${PYTHON_USEDEP}]
 	<dev-python/typepy-2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/pytablewriter-2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-discord-0.1.6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-md-report-0.5.0[${PYTHON_USEDEP}]
-	>=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/pytablewriter-2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-discord-0.1.6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-md-report-0.5.0[${PYTHON_USEDEP}]
+		>=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

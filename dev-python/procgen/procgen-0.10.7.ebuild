@@ -16,16 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/filelock-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/gym-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/gym3-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	~dev-python/pytest-benchmark-3.4.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
+		=dev-python/pytest-benchmark-3.4.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

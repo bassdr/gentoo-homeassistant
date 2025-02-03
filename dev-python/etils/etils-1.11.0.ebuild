@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	eapp? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	etqdm? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	etree-dm? ( dev-python/dm-tree[${PYTHON_USEDEP}] )
@@ -73,19 +73,22 @@ GENERATED_DEPEND="${RDEPEND}
 	epy? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 	epath? ( dev-python/zipp[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/chex[${PYTHON_USEDEP}]
-	dev-python/fiddle[${PYTHON_USEDEP}]
-	dev-python/optree[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
-	dev-python/pyink[${PYTHON_USEDEP}]
-	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-subtests[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/tensorflow-datasets[${PYTHON_USEDEP}]
-	dev-python/torch[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/chex[${PYTHON_USEDEP}]
+		dev-python/fiddle[${PYTHON_USEDEP}]
+		dev-python/optree[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+		dev-python/pyink[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-subtests[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/tensorflow-datasets[${PYTHON_USEDEP}]
+		dev-python/torch[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/subarulink-0.7.11[${PYTHON_USEDEP}]
+	=dev-python/subarulink-0.7.11[${PYTHON_USEDEP}]
 "

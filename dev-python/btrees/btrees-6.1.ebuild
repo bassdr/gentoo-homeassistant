@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/persistent-4.1.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
@@ -24,11 +24,14 @@ GENERATED_DEPEND="${RDEPEND}
 	zodb? ( dev-python/zodb[${PYTHON_USEDEP}] )
 	>=dev-python/zope-interface-5.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/persistent-4.4.3[${PYTHON_USEDEP}]
-	dev-python/transaction[${PYTHON_USEDEP}]
-	dev-python/zope-testrunner[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/persistent-4.4.3[${PYTHON_USEDEP}]
+		dev-python/transaction[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

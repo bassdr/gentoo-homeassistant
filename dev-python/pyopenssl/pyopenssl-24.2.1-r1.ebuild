@@ -21,12 +21,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/cryptography-44[${PYTHON_USEDEP}]
 	docs? ( !=dev-python/sphinx-5.2.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/cryptography-45[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-41.0.5[${PYTHON_USEDEP}]
 "
@@ -43,11 +43,14 @@ BDEPEND="
 distutils_enable_sphinx doc \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pretend[${PYTHON_USEDEP}]
-	>=dev-python/pytest-3.0.1[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pretend[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.0.1[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	local -x TZ=UTC

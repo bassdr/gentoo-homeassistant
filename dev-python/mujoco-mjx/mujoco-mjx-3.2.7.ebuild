@@ -15,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	dev-python/etils[epath,${PYTHON_USEDEP}]
 	dev-python/jax[${PYTHON_USEDEP}]
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/trimesh[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

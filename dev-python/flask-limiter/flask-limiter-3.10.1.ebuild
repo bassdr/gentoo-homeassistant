@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flask-2[${PYTHON_USEDEP}]
 	>=dev-python/limits-3.13[${PYTHON_USEDEP}]
 	memcached? ( dev-python/limits[memcached,${PYTHON_USEDEP}] )
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/rich-14[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

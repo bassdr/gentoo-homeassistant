@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pylgnetcast-0.3.9[${PYTHON_USEDEP}]
+	=dev-python/pylgnetcast-0.3.9[${PYTHON_USEDEP}]
 "

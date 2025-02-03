@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.6[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1.4[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/packaging-20.3[${PYTHON_USEDEP}]
 	>=dev-python/pkginfo-1.5.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

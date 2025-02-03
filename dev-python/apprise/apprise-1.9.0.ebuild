@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="+dbus mqtt"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/click-5.0[${PYTHON_USEDEP}]
 	dev-python/markdown[${PYTHON_USEDEP}]
@@ -26,8 +26,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-oauthlib[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/markdown[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

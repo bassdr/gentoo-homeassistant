@@ -22,18 +22,18 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="django lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	django? ( dev-python/dj-database-url[${PYTHON_USEDEP}] )
 	django? ( dev-python/dj-email-url[${PYTHON_USEDEP}] )
 	django? ( dev-python/django-cache-url[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/flake8-4.0.1[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}] )
+	lint? ( =dev-python/flake8-4.0.1[${PYTHON_USEDEP}] )
+	lint? ( =dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-3.0.0[${PYTHON_USEDEP}]
-	lint? ( ~dev-python/mypy-0.910[${PYTHON_USEDEP}] )
+	lint? ( =dev-python/mypy-0.910[${PYTHON_USEDEP}] )
 	dev-python/python-dotenv[${PYTHON_USEDEP}]
-	lint? ( ~dev-vcs/pre-commit-2.4[${PYTHON_USEDEP}] )
+	lint? ( >=dev-vcs/pre-commit-2.4[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/python-dotenv[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
@@ -54,14 +54,17 @@ BDEPEND="
 DOCS=( CHANGELOG.md CONTRIBUTING.md README.md  )
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/dj-database-url[${PYTHON_USEDEP}]
-	dev-python/dj-email-url[${PYTHON_USEDEP}]
-	dev-python/django-cache-url[${PYTHON_USEDEP}]
-	~dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
-	~dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}]
-	~dev-python/mypy-0.910[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-2.4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dj-database-url[${PYTHON_USEDEP}]
+		dev-python/dj-email-url[${PYTHON_USEDEP}]
+		dev-python/django-cache-url[${PYTHON_USEDEP}]
+		=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+		=dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}]
+		=dev-python/mypy-0.910[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.4[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

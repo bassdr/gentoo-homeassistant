@@ -18,14 +18,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/pbr[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	dev-python/pbr[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/pbr[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${BDEPEND}
 	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
 "

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asdf-standard-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-transform-schemas-0.3[${PYTHON_USEDEP}]
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
@@ -31,13 +31,16 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-asdf-0.2.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/fsspec-2022.8.2[http,${PYTHON_USEDEP}]
-	>=dev-python/lz4-0.10[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8[${PYTHON_USEDEP}]
-	dev-python/pytest-remotedata[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/fsspec-2022.8.2[http,${PYTHON_USEDEP}]
+		>=dev-python/lz4-0.10[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8[${PYTHON_USEDEP}]
+		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

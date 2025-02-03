@@ -19,10 +19,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/importlib-metadata-1.7.0[${PYTHON_USEDEP}]
-	yaml? ( >=dev-python/pyyaml-5.1.0[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/pbr[${PYTHON_USEDEP}]
 	test? (
@@ -31,15 +27,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/astroid-2.0[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	~dev-python/pylint-2.3.1[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/astroid-2.0[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.3.1[${PYTHON_USEDEP}] =dev-python/pylint-2.3*[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 PATCHES=(
 	# https://github.com/Infinidat/munch/pull/104
 	"${FILESDIR}/${P}-py313.patch"
 )
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

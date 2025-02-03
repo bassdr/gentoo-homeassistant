@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( <dev-python/ipywidgets-9[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jupyter-server-mathjax[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jupyterlab-language-pack-fr-fr[${PYTHON_USEDEP}] )
@@ -29,15 +29,18 @@ GENERATED_DEPEND="${RDEPEND}
 	lint? ( >=dev-python/ruff-0.3.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/build[${PYTHON_USEDEP}]
-	dev-python/hatch[${PYTHON_USEDEP}]
-	<dev-python/jupyterlab-4.4.0_alpha0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>=dev-python/pytest-console-scripts-1.4.0[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-html[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[${PYTHON_USEDEP}]
+		dev-python/hatch[${PYTHON_USEDEP}]
+		<dev-python/jupyterlab-4.4.0_alpha0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/pytest-console-scripts-1.4.0[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-html[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

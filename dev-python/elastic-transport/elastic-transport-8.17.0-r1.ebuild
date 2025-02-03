@@ -26,7 +26,7 @@ RESTRICT="test"
 
 GENERATED_IUSE="develop"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
 	develop? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -47,7 +47,7 @@ GENERATED_DEPEND="${RDEPEND}
 	develop? ( dev-python/trustme[${PYTHON_USEDEP}] )
 	<dev-python/urllib3-3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.2[${PYTHON_USEDEP}]
 "

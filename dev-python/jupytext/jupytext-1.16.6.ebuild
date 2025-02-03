@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	test-external? ( dev-python/autopep8[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/black[${PYTHON_USEDEP}] )
 	test-ui? ( dev-python/calysto-bash[${PYTHON_USEDEP}] )
@@ -59,24 +59,27 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	test-external? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/autopep8[${PYTHON_USEDEP}]
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/gitpython[${PYTHON_USEDEP}]
-	dev-python/ipykernel[${PYTHON_USEDEP}]
-	dev-python/isort[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-fs-1.0[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}]
-	dev-python/nbconvert[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
-	dev-python/pytest-randomly[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	<dev-python/sphinx-8[${PYTHON_USEDEP}]
-	<dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/autopep8[${PYTHON_USEDEP}]
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/gitpython[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/isort[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-fs-1.0[${PYTHON_USEDEP}]
+		!=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}]
+		dev-python/nbconvert[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]
+		dev-python/pytest-randomly[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		<dev-python/sphinx-8[${PYTHON_USEDEP}]
+		<dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

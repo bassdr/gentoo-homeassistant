@@ -175,3 +175,4 @@ src_install() {
 	#     FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/../shiboken_tool.py': '/usr/bin/../shiboken_tool.py'
 	rm "${ED}"/usr/bin/shiboken_tool.py || die
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild

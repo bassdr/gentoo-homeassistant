@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyatv-0.16.0[${PYTHON_USEDEP}]
+	=dev-python/pyatv-0.16.0[${PYTHON_USEDEP}]
 "

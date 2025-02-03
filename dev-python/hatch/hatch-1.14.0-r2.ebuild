@@ -17,25 +17,25 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0.6[${PYTHON_USEDEP}]
 	>=dev-python/hatchling-1.26.3[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.22.0[${PYTHON_USEDEP}]
 	>=dev-python/hyperlink-21.0.0[${PYTHON_USEDEP}]
 	>=dev-python/keyring-23.5.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.2[${PYTHON_USEDEP}]
-	~dev-python/pexpect-4.8[${PYTHON_USEDEP}]
+	>=dev-python/pexpect-4.8[${PYTHON_USEDEP}] =dev-python/pexpect-4*[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-2.5.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-11.2.0[${PYTHON_USEDEP}]
 	>=dev-python/shellingham-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/tomli-w-1.0[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.11.1[${PYTHON_USEDEP}]
-	~dev-python/userpath-1.7[${PYTHON_USEDEP}]
+	>=dev-python/userpath-1.7[${PYTHON_USEDEP}] =dev-python/userpath-1*[${PYTHON_USEDEP}]
 	>=dev-python/uv-0.1.35[${PYTHON_USEDEP}]
 	>=dev-python/virtualenv-20.26.6[${PYTHON_USEDEP}]
 	<dev-python/zstandard-1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/click-8.0.6[${PYTHON_USEDEP}]
 	>=dev-python/hatchling-1.24.2[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.22.0[${PYTHON_USEDEP}]

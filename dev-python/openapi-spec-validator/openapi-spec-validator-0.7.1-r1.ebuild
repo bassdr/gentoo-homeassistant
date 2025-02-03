@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-resources-5.8[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-4.18.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-path-0.3.1[${PYTHON_USEDEP}]
 	>=dev-python/lazy-object-proxy-1.7.1[${PYTHON_USEDEP}]
 	>=dev-python/openapi-schema-validator-0.6.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jsonschema-4.18.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-path-0.3.1[${PYTHON_USEDEP}]
 	>=dev-python/lazy-object-proxy-1.7.1[${PYTHON_USEDEP}]

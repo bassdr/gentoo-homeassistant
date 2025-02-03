@@ -15,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.24.4[${PYTHON_USEDEP}]
 	>=dev-python/opencv-python-headless-4.9.0.80[${PYTHON_USEDEP}]
 	>=dev-python/simsimd-5.9.2[${PYTHON_USEDEP}]
 	>=dev-python/stringzilla-3.10.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

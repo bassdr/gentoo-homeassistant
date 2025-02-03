@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} media-libs/libsamplerate
+RDEPEND="${GENERATED_RDEPEND} media-libs/libsamplerate
 	dev-python/cffi[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/pybind11[${PYTHON_USEDEP}]"

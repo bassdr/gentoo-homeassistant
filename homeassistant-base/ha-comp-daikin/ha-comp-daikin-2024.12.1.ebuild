@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pydaikin-2.13.7[${PYTHON_USEDEP}]
+	=dev-python/pydaikin-2.13.7[${PYTHON_USEDEP}]
 "

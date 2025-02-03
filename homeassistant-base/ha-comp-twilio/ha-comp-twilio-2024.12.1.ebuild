@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/twilio-6.32.0[${PYTHON_USEDEP}]
+	=dev-python/twilio-6.32.0[${PYTHON_USEDEP}]
 "

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiomealie-0.9.4[${PYTHON_USEDEP}]
+	=dev-python/aiomealie-0.9.4[${PYTHON_USEDEP}]
 "

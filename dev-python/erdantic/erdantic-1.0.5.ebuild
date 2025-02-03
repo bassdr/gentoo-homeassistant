@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	attrs? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2[${PYTHON_USEDEP}]
 	dev-python/pydantic-core[${PYTHON_USEDEP}]
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/typer[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>dev-python/typing-extensions-4[${PYTHON_USEDEP}]' python3_12)
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

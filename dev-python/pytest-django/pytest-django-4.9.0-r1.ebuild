@@ -22,12 +22,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -42,10 +42,13 @@ BDEPEND="
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/django[${PYTHON_USEDEP}]
-	>=dev-python/django-configurations-2.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/django[${PYTHON_USEDEP}]
+		>=dev-python/django-configurations-2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local -x DJANGO_SETTINGS_MODULE

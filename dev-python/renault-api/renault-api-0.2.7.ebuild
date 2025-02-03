@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/click-8.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-42.0.5[${PYTHON_USEDEP}]
@@ -34,7 +34,7 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/six-2.0[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.5[${PYTHON_USEDEP}]

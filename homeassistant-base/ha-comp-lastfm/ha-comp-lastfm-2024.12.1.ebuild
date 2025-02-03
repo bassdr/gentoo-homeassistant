@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pylast-5.1.0[${PYTHON_USEDEP}]
+	=dev-python/pylast-5.1.0[${PYTHON_USEDEP}]
 "

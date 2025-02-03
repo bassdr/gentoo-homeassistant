@@ -24,13 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	cli? ( ~dev-python/click-8.1.2[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	cli? ( >=dev-python/click-8.1.2[${PYTHON_USEDEP}] =dev-python/click-8.1*[${PYTHON_USEDEP}] )
 	dev-python/cryptography[${PYTHON_USEDEP}]
-	cli? ( ~dev-python/xdg-5.1.1[${PYTHON_USEDEP}] )
-	cli? ( ~dev-python/zeroconf-0.38.4[${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/xdg-5.1.1[${PYTHON_USEDEP}] =dev-python/xdg-5.1*[${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/zeroconf-0.38.4[${PYTHON_USEDEP}] =dev-python/zeroconf-0.38*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10)"
 BDEPEND="

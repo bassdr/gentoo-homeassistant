@@ -17,15 +17,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+BDEPEND="
+	>dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
+"
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dulwich-0.15.0[${PYTHON_USEDEP}]
 	!=dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	${BDEPEND}
 	>=dev-python/dulwich-0.15.0[${PYTHON_USEDEP}]
 "

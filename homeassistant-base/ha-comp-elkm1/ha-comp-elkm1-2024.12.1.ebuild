@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/elkm1-lib-2.2.10[${PYTHON_USEDEP}]
+	=dev-python/elkm1-lib-2.2.10[${PYTHON_USEDEP}]
 "

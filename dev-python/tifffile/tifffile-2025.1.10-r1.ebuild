@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all codecs plot xml zarr"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	xml? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	all? ( dev-python/fsspec[${PYTHON_USEDEP}] )
@@ -37,7 +37,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( <dev-python/zarr-3[${PYTHON_USEDEP}] )
 	zarr? ( <dev-python/zarr-3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/numpy-1.19.2[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -51,23 +51,26 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/cmapfile[${PYTHON_USEDEP}]
-	dev-python/czifile[${PYTHON_USEDEP}]
-	dev-python/dask[${PYTHON_USEDEP}]
-	dev-python/defusedxml[${PYTHON_USEDEP}]
-	dev-python/fsspec[${PYTHON_USEDEP}]
-	dev-python/imagecodecs[${PYTHON_USEDEP}]
-	dev-python/lfdfiles[${PYTHON_USEDEP}]
-	dev-python/lxml[${PYTHON_USEDEP}]
-	dev-python/ndtiff[${PYTHON_USEDEP}]
-	dev-python/oiffile[${PYTHON_USEDEP}]
-	dev-python/psdtags[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/roifile[${PYTHON_USEDEP}]
-	dev-python/xarray[${PYTHON_USEDEP}]
-	<dev-python/zarr-3[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cmapfile[${PYTHON_USEDEP}]
+		dev-python/czifile[${PYTHON_USEDEP}]
+		dev-python/dask[${PYTHON_USEDEP}]
+		dev-python/defusedxml[${PYTHON_USEDEP}]
+		dev-python/fsspec[${PYTHON_USEDEP}]
+		dev-python/imagecodecs[${PYTHON_USEDEP}]
+		dev-python/lfdfiles[${PYTHON_USEDEP}]
+		dev-python/lxml[${PYTHON_USEDEP}]
+		dev-python/ndtiff[${PYTHON_USEDEP}]
+		dev-python/oiffile[${PYTHON_USEDEP}]
+		dev-python/psdtags[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/roifile[${PYTHON_USEDEP}]
+		dev-python/xarray[${PYTHON_USEDEP}]
+		<dev-python/zarr-3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local -x SKIP_LARGE=1

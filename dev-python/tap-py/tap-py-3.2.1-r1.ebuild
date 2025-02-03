@@ -18,10 +18,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	yaml? ( dev-python/more-itertools[${PYTHON_USEDEP}] )
-	yaml? ( >=dev-python/pyyaml-5.1[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/babel[${PYTHON_USEDEP}]
 	test? (
@@ -37,4 +33,5 @@ pkg_postinst() {
 	optfeature "YAML blocks associated with test results" \
 		"dev-python/more-itertools dev-python/pyyaml"
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

@@ -18,9 +18,6 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	test? (
 		dev-python/zope-testing[${PYTHON_USEDEP}]
@@ -39,5 +36,7 @@ python_test() {
 	local -x PYTHONPATH=src
 	"${EPYTHON}" -m unittest -vv manuel.tests.test_suite || die
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

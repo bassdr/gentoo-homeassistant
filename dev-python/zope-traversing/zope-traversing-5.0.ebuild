@@ -18,7 +18,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
@@ -32,16 +32,19 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/zope-publisher[${PYTHON_USEDEP}]
 	dev-python/zope-security[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/zope-annotation[${PYTHON_USEDEP}]
-	>=dev-python/zope-browserresource-3.12[zcml,${PYTHON_USEDEP}]
-	dev-python/zope-component[zcml,${PYTHON_USEDEP}]
-	dev-python/zope-configuration[${PYTHON_USEDEP}]
-	>=dev-python/zope-security-3.8[zcml,${PYTHON_USEDEP}]
-	dev-python/zope-tales[${PYTHON_USEDEP}]
-	dev-python/zope-testing[${PYTHON_USEDEP}]
-	dev-python/zope-testrunner[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/zope-annotation[${PYTHON_USEDEP}]
+		>=dev-python/zope-browserresource-3.12[zcml,${PYTHON_USEDEP}]
+		dev-python/zope-component[zcml,${PYTHON_USEDEP}]
+		dev-python/zope-configuration[${PYTHON_USEDEP}]
+		>=dev-python/zope-security-3.8[zcml,${PYTHON_USEDEP}]
+		dev-python/zope-tales[${PYTHON_USEDEP}]
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

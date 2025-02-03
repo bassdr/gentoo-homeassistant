@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/dataclasses-json-0.7[${PYTHON_USEDEP}]
 	<dev-python/httpx-sse-0.5.0[${PYTHON_USEDEP}]
@@ -30,6 +30,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
 	!=dev-python/tenacity-8.4.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

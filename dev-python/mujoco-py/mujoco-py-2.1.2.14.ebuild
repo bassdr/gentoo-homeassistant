@@ -16,14 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.10[${PYTHON_USEDEP}]
 	>=dev-python/cython-0.27.2[${PYTHON_USEDEP}]
-	~dev-python/fasteners-0.15[${PYTHON_USEDEP}]
+	>=dev-python/fasteners-0.15[${PYTHON_USEDEP}] =dev-python/fasteners-0*[${PYTHON_USEDEP}]
 	>=dev-python/glfw-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/imageio-2.1.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.11[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

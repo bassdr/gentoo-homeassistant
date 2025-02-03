@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	adbc? ( dev-python/adbc-driver-manager[dbapi,${PYTHON_USEDEP}] )
 	adbc? ( dev-python/adbc-driver-sqlite[dbapi,${PYTHON_USEDEP}] )
 	plot? ( >=dev-python/altair-5.4.0[${PYTHON_USEDEP}] )
@@ -44,6 +44,6 @@ GENERATED_DEPEND="${RDEPEND}
 	xlsx2csv? ( >=dev-python/xlsx2csv-0.8.0[${PYTHON_USEDEP}] )
 	xlsxwriter? ( dev-python/xlsxwriter[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

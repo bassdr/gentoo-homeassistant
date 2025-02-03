@@ -21,10 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -35,13 +35,16 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-20_beta1[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.812[${PYTHON_USEDEP}]
-	>=dev-python/mypy-extensions-0.4.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.14.0[${PYTHON_USEDEP}]
-	>=dev-python/typed-ast-1.4.3[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-20.8_beta1[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
+		>=dev-python/mypy-0.812[${PYTHON_USEDEP}]
+		>=dev-python/mypy-extensions-0.4.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.14.0[${PYTHON_USEDEP}]
+		>=dev-python/typed-ast-1.4.3[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

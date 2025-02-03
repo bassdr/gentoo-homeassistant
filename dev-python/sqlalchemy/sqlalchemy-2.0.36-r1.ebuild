@@ -12,7 +12,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Database Abstraction Library"
 HOMEPAGE="
-  https://pypi.org/project/sqlalchemy/
+  https://pypi.org/project/SQLAlchemy/
   Documentation, https://docs.sqlalchemy.org
   Issue Tracker, https://github.com/sqlalchemy/sqlalchemy/
 "
@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="aiomysql aioodbc aiosqlite asyncio asyncmy mariadb-connector mssql mssql-pymssql mssql-pyodbc mypy mysql mysql-connector oracle oracle-oracledb postgresql postgresql-asyncpg postgresql-pg8000 postgresql-psycopg postgresql-psycopg2binary postgresql-psycopg2cffi postgresql-psycopgbinary pymysql sqlcipher"
 IUSE="${GENERATED_IUSE} examples +sqlite test"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aiomysql? ( >=dev-python/aiomysql-0.2.0[${PYTHON_USEDEP}] )
 	aioodbc? ( dev-python/aioodbc[${PYTHON_USEDEP}] )
 	aiosqlite? ( dev-python/aiosqlite[${PYTHON_USEDEP}] )
@@ -57,7 +57,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	aiosqlite? ( !=dev-python/typing-extensions-3.10.0.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 "
 BDEPEND="

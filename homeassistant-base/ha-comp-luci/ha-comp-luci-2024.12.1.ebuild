@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/openwrt-luci-rpc-1.1.17[${PYTHON_USEDEP}]
+	=dev-python/openwrt-luci-rpc-1.1.17[${PYTHON_USEDEP}]
 "

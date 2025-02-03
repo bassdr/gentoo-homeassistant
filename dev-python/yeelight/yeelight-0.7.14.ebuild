@@ -21,12 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
@@ -39,12 +39,15 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/flake8-docstrings[${PYTHON_USEDEP}]
-	dev-python/flake8-import-order[${PYTHON_USEDEP}]
-	dev-python/flake8-tidy-imports[${PYTHON_USEDEP}]
-	dev-python/pep8-naming[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/flake8-docstrings[${PYTHON_USEDEP}]
+		dev-python/flake8-import-order[${PYTHON_USEDEP}]
+		dev-python/flake8-tidy-imports[${PYTHON_USEDEP}]
+		dev-python/pep8-naming[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

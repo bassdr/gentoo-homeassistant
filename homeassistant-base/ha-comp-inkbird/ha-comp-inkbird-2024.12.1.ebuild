@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/inkbird-ble-0.5.8[${PYTHON_USEDEP}]
+	=dev-python/inkbird-ble-0.5.8[${PYTHON_USEDEP}]
 "

@@ -20,13 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.10.49[${PYTHON_USEDEP}]
 	>=dev-python/envs-1.3[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.8.0[crypto,${PYTHON_USEDEP}]
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/boto3-1.10.49[${PYTHON_USEDEP}]
 	>=dev-python/envs-1.3[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]

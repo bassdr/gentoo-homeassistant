@@ -16,8 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cachelib? ( >=dev-python/cachelib-0.10.2[${PYTHON_USEDEP}] )
+	dev-python/cachelib[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.2[${PYTHON_USEDEP}]
 	all? ( dev-python/flask-session[cachelib,memcached,mongodb,redis,sqlalchemy,${PYTHON_USEDEP}] )
 	sqlalchemy? ( >=dev-python/flask-sqlalchemy-3.0.5[${PYTHON_USEDEP}] )
@@ -26,6 +27,6 @@ GENERATED_DEPEND="${RDEPEND}
 	mongodb? ( >=dev-python/pymongo-4.6.2[${PYTHON_USEDEP}] )
 	redis? ( >=dev-python/redis-5.0.3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

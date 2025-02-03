@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/motionblinds-0.6.25[${PYTHON_USEDEP}]
+	=dev-python/motionblinds-0.6.25[${PYTHON_USEDEP}]
 "

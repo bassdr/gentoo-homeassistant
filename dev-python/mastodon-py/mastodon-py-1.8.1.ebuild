@@ -23,18 +23,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/blurhash-1.1.4[${PYTHON_USEDEP}]
 	blurhash? ( >=dev-python/blurhash-1.1.4[${PYTHON_USEDEP}] )
 	webpush? ( >=dev-python/cryptography-1.6.0[${PYTHON_USEDEP}] )
 	>=dev-python/decorator-4.0.0[${PYTHON_USEDEP}]
 	webpush? ( >=dev-python/http-ece-1.0.5[${PYTHON_USEDEP}] )
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	dev-python/python-magic[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4.2[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 >=dev-python/requests-2.4.2[${PYTHON_USEDEP}]
 		 dev-python/python-dateutil[${PYTHON_USEDEP}]
 		 dev-python/six[${PYTHON_USEDEP}]
@@ -43,16 +42,19 @@ RDEPEND="${GENERATED_DEPEND}
 		 dev-python/blurhash[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/blurhash-1.1.4[${PYTHON_USEDEP}]
-	>=dev-python/cryptography-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/http-ece-1.0.5[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
-	dev-python/pytest-vcr[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-	dev-python/vcrpy[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/blurhash-1.1.4[${PYTHON_USEDEP}]
+		>=dev-python/cryptography-1.6.0[${PYTHON_USEDEP}]
+		>=dev-python/http-ece-1.0.5[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
+		dev-python/pytest-vcr[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/vcrpy[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

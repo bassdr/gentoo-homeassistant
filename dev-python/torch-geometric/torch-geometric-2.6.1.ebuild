@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	full? ( dev-python/ase[${PYTHON_USEDEP}] )
 	full? ( <dev-python/captum-0.7.0[${PYTHON_USEDEP}] )
@@ -58,16 +58,19 @@ GENERATED_DEPEND="${RDEPEND}
 	benchmark? ( dev-python/wandb[${PYTHON_USEDEP}] )
 	graphgym? ( dev-python/yacs[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/matplotlib-inline[${PYTHON_USEDEP}]
-	dev-python/onnx[${PYTHON_USEDEP}]
-	dev-python/onnxruntime[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/torch-geometric[test,${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/matplotlib-inline[${PYTHON_USEDEP}]
+		dev-python/onnx[${PYTHON_USEDEP}]
+		dev-python/onnxruntime[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/torch-geometric[test,${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/accelerate-0.5.1[${PYTHON_USEDEP}]
 	comet? ( dev-python/comet-ml[${PYTHON_USEDEP}] )
 	deepspeed? ( >=dev-python/deepspeed-0.4.0[${PYTHON_USEDEP}] )
@@ -56,20 +56,23 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tqdm-4.33.0[${PYTHON_USEDEP}]
 	wandb? ( dev-python/wandb[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-21_beta0[${PYTHON_USEDEP}]
-	~dev-python/catalyst-codestyle-21.09.2[${PYTHON_USEDEP}]
-	~dev-python/catalyst-sphinx-theme-1.2.0[${PYTHON_USEDEP}]
-	<=dev-python/click-8.0.4[${PYTHON_USEDEP}]
-	~dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
-	<=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
-	~dev-python/mock-3.0.5[${PYTHON_USEDEP}]
-	dev-python/path[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	~dev-python/sphinx-2.2.1[${PYTHON_USEDEP}]
-	~dev-python/tomlkit-0.7.2[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-2.13.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-21.8_beta0[${PYTHON_USEDEP}]
+		=dev-python/catalyst-codestyle-21.09.2[${PYTHON_USEDEP}]
+		=dev-python/catalyst-sphinx-theme-1.2.0[${PYTHON_USEDEP}]
+		<=dev-python/click-8.0.4[${PYTHON_USEDEP}]
+		=dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
+		<=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
+		=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
+		dev-python/path[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		=dev-python/sphinx-2.2.1[${PYTHON_USEDEP}]
+		=dev-python/tomlkit-0.7.2[${PYTHON_USEDEP}]
+		=dev-vcs/pre-commit-2.13.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

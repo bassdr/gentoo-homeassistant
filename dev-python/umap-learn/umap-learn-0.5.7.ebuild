@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	plot? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	plot? ( dev-python/colorcet[${PYTHON_USEDEP}] )
 	plot? ( dev-python/datashader[${PYTHON_USEDEP}] )
@@ -35,6 +35,6 @@ GENERATED_DEPEND="${RDEPEND}
 	parametric-umap? ( >=dev-python/tensorflow-2.1[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

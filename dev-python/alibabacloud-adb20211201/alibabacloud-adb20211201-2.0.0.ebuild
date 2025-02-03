@@ -15,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/alibabacloud-endpoint-util-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/alibabacloud-openapi-util-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/alibabacloud-tea-openapi-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/alibabacloud-tea-util-1.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

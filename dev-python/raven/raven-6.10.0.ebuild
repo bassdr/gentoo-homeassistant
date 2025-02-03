@@ -16,41 +16,44 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	flask? ( >=dev-python/blinker-1.1[${PYTHON_USEDEP}] )
 	dev-python/contextlib2[${PYTHON_USEDEP}]
 	flask? ( >=dev-python/flask-0.8[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/anyjson[${PYTHON_USEDEP}]
-	>=dev-python/blinker-1.1[${PYTHON_USEDEP}]
-	dev-python/bottle[${PYTHON_USEDEP}]
-	>=dev-python/celery-2.5[${PYTHON_USEDEP}]
-	<dev-python/coverage-4[${PYTHON_USEDEP}]
-	>=dev-python/exam-0.5.2[${PYTHON_USEDEP}]
-	~dev-python/flake8-3.5.0[${PYTHON_USEDEP}]
-	>=dev-python/flask-0.8[${PYTHON_USEDEP}]
-	>=dev-python/flask-login-0.2.0[${PYTHON_USEDEP}]
-	dev-python/logbook[${PYTHON_USEDEP}]
-	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/nose[${PYTHON_USEDEP}]
-	<dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-2.5.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-flake8-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-pythonpath-0.7.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-timeout-1.2.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-1.18.2[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/sanic-0.7.0[${PYTHON_USEDEP}]
-	<dev-python/tornado-5.0[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	dev-python/webob[${PYTHON_USEDEP}]
-	dev-python/webtest[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-	dev-python/zconfig[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/anyjson[${PYTHON_USEDEP}]
+		>=dev-python/blinker-1.1[${PYTHON_USEDEP}]
+		dev-python/bottle[${PYTHON_USEDEP}]
+		>=dev-python/celery-2.5[${PYTHON_USEDEP}]
+		<dev-python/coverage-4[${PYTHON_USEDEP}]
+		>=dev-python/exam-0.5.2[${PYTHON_USEDEP}]
+		=dev-python/flake8-3.5.0[${PYTHON_USEDEP}]
+		>=dev-python/flask-0.8[${PYTHON_USEDEP}]
+		>=dev-python/flask-login-0.2.0[${PYTHON_USEDEP}]
+		dev-python/logbook[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/nose[${PYTHON_USEDEP}]
+		<dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-2.5.1[${PYTHON_USEDEP}]
+		=dev-python/pytest-flake8-1.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-pythonpath-0.7.2[${PYTHON_USEDEP}]
+		=dev-python/pytest-timeout-1.2.1[${PYTHON_USEDEP}]
+		=dev-python/pytest-xdist-1.18.2[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		>=dev-python/sanic-0.7.0[${PYTHON_USEDEP}]
+		<dev-python/tornado-5.0[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		dev-python/webob[${PYTHON_USEDEP}]
+		dev-python/webtest[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+		dev-python/zconfig[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -24,11 +24,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/trio-0.11[${PYTHON_USEDEP}]
 	>=dev-python/wsproto-0.14[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep '
 		dev-python/exceptiongroup[${PYTHON_USEDEP}]
 	' 3.10)

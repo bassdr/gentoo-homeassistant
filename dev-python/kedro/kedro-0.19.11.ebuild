@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	benchmark? ( dev-python/asv[${PYTHON_USEDEP}] )
 	>=dev-python/attrs-21.3[${PYTHON_USEDEP}]
 	>=dev-python/build-0.7.0[${PYTHON_USEDEP}]
@@ -32,7 +32,7 @@ GENERATED_DEPEND="${RDEPEND}
 	jupyter? ( >=dev-python/ipylab-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/jinja2-3.2.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/kedro[benchmark,docs,jupyter,test,${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/kedro-sphinx-theme-2024.10.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/kedro-sphinx-theme-2024.10.3[${PYTHON_USEDEP}] )
 	>=dev-python/kedro-telemetry-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/more-itertools-8.14.0[${PYTHON_USEDEP}]
 	jupyter? ( >=dev-python/notebook-7.0.0[${PYTHON_USEDEP}] )
@@ -47,33 +47,36 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/toml-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/behave-1.2.6[${PYTHON_USEDEP}]
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	~dev-python/detect-secrets-1.5.0[${PYTHON_USEDEP}]
-	~dev-python/import-linter-2.1[${PYTHON_USEDEP}]
-	>=dev-python/ipylab-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/ipython-8.10[${PYTHON_USEDEP}]
-	~dev-python/jupyter-1.0[${PYTHON_USEDEP}]
-	<dev-python/jupyterlab-5[${PYTHON_USEDEP}]
-	>=dev-python/jupyterlab-server-2.11.1[${PYTHON_USEDEP}]
-	dev-python/kedro-datasets[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.0[${PYTHON_USEDEP}]
-	~dev-python/pandas-2.0[${PYTHON_USEDEP}]
-	dev-python/pandas-stubs[${PYTHON_USEDEP}]
-	>=dev-python/pluggy-1.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-9.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-cov-7[${PYTHON_USEDEP}]
-	<dev-python/pytest-mock-4.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-2.2.1[psutil,${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-	<dev-python/s3fs-2025.1[${PYTHON_USEDEP}]
-	dev-python/types-cachetools[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-	dev-python/types-toml[${PYTHON_USEDEP}]
-	<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/behave-1.2.6[${PYTHON_USEDEP}]
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		>=dev-python/detect-secrets-1.5.0[${PYTHON_USEDEP}] =dev-python/detect-secrets-1.5*[${PYTHON_USEDEP}]
+		=dev-python/import-linter-2.1[${PYTHON_USEDEP}]
+		>=dev-python/ipylab-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/ipython-8.10[${PYTHON_USEDEP}] =dev-python/ipython-8*[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-1.0[${PYTHON_USEDEP}] =dev-python/jupyter-1*[${PYTHON_USEDEP}]
+		<dev-python/jupyterlab-5[${PYTHON_USEDEP}]
+		>=dev-python/jupyterlab-server-2.11.1[${PYTHON_USEDEP}]
+		dev-python/kedro-datasets[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.0[${PYTHON_USEDEP}] =dev-python/mypy-1*[${PYTHON_USEDEP}]
+		>=dev-python/pandas-2.0[${PYTHON_USEDEP}] =dev-python/pandas-2*[${PYTHON_USEDEP}]
+		dev-python/pandas-stubs[${PYTHON_USEDEP}]
+		>=dev-python/pluggy-1.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-9.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-cov-7[${PYTHON_USEDEP}]
+		<dev-python/pytest-mock-4.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.2.1[psutil,${PYTHON_USEDEP}] =dev-python/pytest-xdist-2.2*[psutil,${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		<dev-python/s3fs-2025.1[${PYTHON_USEDEP}]
+		dev-python/types-cachetools[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+		dev-python/types-toml[${PYTHON_USEDEP}]
+		<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

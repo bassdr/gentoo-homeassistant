@@ -22,13 +22,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/certifi[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=sci-libs/proj-9.0.0:=
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/certifi[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	${DEPEND}
 "

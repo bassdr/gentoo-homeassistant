@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/arviz[${PYTHON_USEDEP}] )
 	doc? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	>=dev-python/jax-0.4.25[${PYTHON_USEDEP}]
@@ -39,27 +39,30 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	examples? ( dev-python/wordcloud[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/dm-haiku[${PYTHON_USEDEP}]
-	dev-python/flax[${PYTHON_USEDEP}]
-	>=dev-python/funsor-0.4.1[${PYTHON_USEDEP}]
-	dev-python/graphviz[${PYTHON_USEDEP}]
-	<dev-python/importlib-metadata-5.0[${PYTHON_USEDEP}]
-	~dev-python/jaxns-2.6.3[${PYTHON_USEDEP}]
-	dev-python/matplotlib[${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.13[${PYTHON_USEDEP}]
-	>=dev-python/optax-0.0.6[${PYTHON_USEDEP}]
-	dev-python/pylab-sdk[${PYTHON_USEDEP}]
-	>=dev-python/pyro-api-0.1.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.1[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/ruff-0.1.8[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.9[${PYTHON_USEDEP}]
-	>=dev-python/tensorflow-probability-0.18.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dm-haiku[${PYTHON_USEDEP}]
+		dev-python/flax[${PYTHON_USEDEP}]
+		>=dev-python/funsor-0.4.1[${PYTHON_USEDEP}]
+		dev-python/graphviz[${PYTHON_USEDEP}]
+		<dev-python/importlib-metadata-5.0[${PYTHON_USEDEP}]
+		=dev-python/jaxns-2.6.3[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.13[${PYTHON_USEDEP}]
+		>=dev-python/optax-0.0.6[${PYTHON_USEDEP}]
+		dev-python/pylab-sdk[${PYTHON_USEDEP}]
+		>=dev-python/pyro-api-0.1.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-4.1[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.1.8[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.9[${PYTHON_USEDEP}]
+		>=dev-python/tensorflow-probability-0.18.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

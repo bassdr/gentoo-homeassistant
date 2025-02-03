@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/transaction-1.1.0[${PYTHON_USEDEP}]
 	dev-python/zope-authentication[${PYTHON_USEDEP}]
@@ -30,22 +30,25 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/zope-publisher-4.0.0_alpha2[${PYTHON_USEDEP}]
 	>=dev-python/zope-traversing-4.0.0_alpha2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/zodb-5.1[${PYTHON_USEDEP}]
-	dev-python/zope-annotation[${PYTHON_USEDEP}]
-	>=dev-python/zope-app-appsetup-3.14.0[${PYTHON_USEDEP}]
-	>=dev-python/zope-app-http-4.0[${PYTHON_USEDEP}]
-	>=dev-python/zope-app-wsgi-4.3[testlayer,${PYTHON_USEDEP}]
-	>=dev-python/zope-applicationcontrol-4.0.0_alpha1[${PYTHON_USEDEP}]
-	dev-python/zope-browserpage[${PYTHON_USEDEP}]
-	dev-python/zope-login[${PYTHON_USEDEP}]
-	dev-python/zope-password[${PYTHON_USEDEP}]
-	dev-python/zope-principalregistry[${PYTHON_USEDEP}]
-	dev-python/zope-securitypolicy[${PYTHON_USEDEP}]
-	>=dev-python/zope-site-4.0.0_alpha1[${PYTHON_USEDEP}]
-	dev-python/zope-testing[${PYTHON_USEDEP}]
-	dev-python/zope-testrunner[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/zodb-5.1[${PYTHON_USEDEP}]
+		dev-python/zope-annotation[${PYTHON_USEDEP}]
+		>=dev-python/zope-app-appsetup-3.14.0[${PYTHON_USEDEP}]
+		>=dev-python/zope-app-http-4.0[${PYTHON_USEDEP}]
+		>=dev-python/zope-app-wsgi-4.3[testlayer,${PYTHON_USEDEP}]
+		>=dev-python/zope-applicationcontrol-4.0.0_alpha1[${PYTHON_USEDEP}]
+		dev-python/zope-browserpage[${PYTHON_USEDEP}]
+		dev-python/zope-login[${PYTHON_USEDEP}]
+		dev-python/zope-password[${PYTHON_USEDEP}]
+		dev-python/zope-principalregistry[${PYTHON_USEDEP}]
+		dev-python/zope-securitypolicy[${PYTHON_USEDEP}]
+		>=dev-python/zope-site-4.0.0_alpha1[${PYTHON_USEDEP}]
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -16,25 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/altair[${PYTHON_USEDEP}]
 	doc? ( dev-python/jupyter-book[${PYTHON_USEDEP}] )
 	dev-python/mercantile[${PYTHON_USEDEP}]
 	doc? ( dev-python/vl-convert-python[${PYTHON_USEDEP}] )
 	dev-python/xyzservices[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/geopandas[${PYTHON_USEDEP}]
-	dev-python/ghp-import[${PYTHON_USEDEP}]
-	dev-python/hatch[${PYTHON_USEDEP}]
-	dev-python/ipykernel[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>=dev-python/ruff-0.1.4[${PYTHON_USEDEP}]
-	dev-python/vega-datasets[${PYTHON_USEDEP}]
-	dev-python/vl-convert-python[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/geopandas[${PYTHON_USEDEP}]
+		dev-python/ghp-import[${PYTHON_USEDEP}]
+		dev-python/hatch[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.1.4[${PYTHON_USEDEP}]
+		dev-python/vega-datasets[${PYTHON_USEDEP}]
+		dev-python/vl-convert-python[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

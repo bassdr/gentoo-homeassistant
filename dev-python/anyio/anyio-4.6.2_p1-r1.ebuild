@@ -25,18 +25,18 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc trio"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/idna-2.8[${PYTHON_USEDEP}]
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	>=dev-python/sniffio-1.1[${PYTHON_USEDEP}]
-	doc? ( ~dev-python/sphinx-7.4[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-7.4[${PYTHON_USEDEP}] =dev-python/sphinx-7*[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.26.1[${PYTHON_USEDEP}] )
 	>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]
-	>=dev-python/uvloop-0.21_beta1[${PYTHON_USEDEP}]
+	>=dev-python/uvloop-0.21.0_beta1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/idna-2.8[${PYTHON_USEDEP}]
 	>=dev-python/sniffio-1.1[${PYTHON_USEDEP}]
 	>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]
@@ -67,16 +67,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/anyio[trio,${PYTHON_USEDEP}]
-	>=dev-python/coverage-7[toml,${PYTHON_USEDEP}]
-	>=dev-python/exceptiongroup-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/hypothesis-4.0[${PYTHON_USEDEP}]
-	>=dev-python/psutil-5.9[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.6.1[${PYTHON_USEDEP}]
-	dev-python/trustme[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/anyio[trio,${PYTHON_USEDEP}]
+		>=dev-python/coverage-7[toml,${PYTHON_USEDEP}]
+		>=dev-python/exceptiongroup-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-4.0[${PYTHON_USEDEP}]
+		>=dev-python/psutil-5.9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.6.1[${PYTHON_USEDEP}]
+		dev-python/trustme[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs \
 	'>=dev-python/sphinx-rtd-theme-1.2.2' \
 	dev-python/sphinxcontrib-jquery \

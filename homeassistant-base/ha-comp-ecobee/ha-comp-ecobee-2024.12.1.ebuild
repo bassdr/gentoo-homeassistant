@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/python-ecobee-api-0.2.20[${PYTHON_USEDEP}]
+	=dev-python/python-ecobee-api-0.2.20[${PYTHON_USEDEP}]
 "

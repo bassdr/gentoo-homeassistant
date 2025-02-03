@@ -16,13 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	numpy? ( <dev-python/numpy-3.0.0[${PYTHON_USEDEP}] )
 	pandas? ( <dev-python/numpy-3.0.0[${PYTHON_USEDEP}] )
 	pandas? ( <dev-python/pandas-3.0.0[${PYTHON_USEDEP}] )
 	pyarrow? ( >=dev-python/pyarrow-1.0.0[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

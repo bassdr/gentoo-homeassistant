@@ -17,9 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	fuzzing? ( dev-python/atheris[${PYTHON_USEDEP}] )
-	~dev-python/openvino-2024.6.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/openvino-2024.6.0_pre[${PYTHON_USEDEP}] =dev-python/openvino-2024.6.0*[${PYTHON_USEDEP}]
 	all? ( dev-python/openvino-tokenizers[dev,transformers,${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/openvino-tokenizers[transformers,${PYTHON_USEDEP}] )
 	fuzzing? ( dev-python/openvino-tokenizers[transformers,${PYTHON_USEDEP}] )
@@ -30,14 +30,18 @@ GENERATED_DEPEND="${RDEPEND}
 	benchmark? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	transformers? ( >=dev-python/transformers-4.36.0[sentencepiece,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/bandit[${PYTHON_USEDEP}]
-	dev-python/openvino-tokenizers[torch,transformers,${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-harvest[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/bandit[${PYTHON_USEDEP}]
+		dev-python/openvino-tokenizers[torch,transformers,${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-harvest[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

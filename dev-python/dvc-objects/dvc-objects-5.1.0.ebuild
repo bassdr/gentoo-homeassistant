@@ -16,21 +16,24 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fsspec-2024.2.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/funcy-1.14[${PYTHON_USEDEP}]' python3_12)
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/dvc-objects[tests,${PYTHON_USEDEP}]
-	~dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8[${PYTHON_USEDEP}]
-	<dev-python/pytest-asyncio-1[${PYTHON_USEDEP}]
-	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-sugar[${PYTHON_USEDEP}]
-	dev-python/reflink[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dvc-objects[tests,${PYTHON_USEDEP}]
+		=dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8[${PYTHON_USEDEP}]
+		<dev-python/pytest-asyncio-1[${PYTHON_USEDEP}]
+		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-sugar[${PYTHON_USEDEP}]
+		dev-python/reflink[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

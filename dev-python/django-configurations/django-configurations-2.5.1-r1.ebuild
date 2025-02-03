@@ -20,14 +20,14 @@ GENERATED_IUSE="cache database email search"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	database? ( dev-python/dj-database-url[${PYTHON_USEDEP}] )
 	email? ( dev-python/dj-email-url[${PYTHON_USEDEP}] )
 	search? ( dev-python/dj-search-url[${PYTHON_USEDEP}] )
 	>=dev-python/django-3.2[${PYTHON_USEDEP}]
 	cache? ( dev-python/django-cache-url[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/django-3.2[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -53,4 +53,5 @@ python_test() {
 	local -x DJANGO_CONFIGURATION=Test
 	PYTHONPATH=. django-cadmin test -v2 || die "Tests failed with ${EPYTHON}"
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

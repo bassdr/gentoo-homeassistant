@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/solax-3.2.1[${PYTHON_USEDEP}]
+	=dev-python/solax-3.2.1[${PYTHON_USEDEP}]
 "

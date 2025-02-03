@@ -24,7 +24,7 @@ GENERATED_IUSE="dmypy faster-cache install-types mypyc reports"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
 # stubgen collides with this package: https://bugs.gentoo.org/585594
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	reports? ( dev-python/lxml[${PYTHON_USEDEP}] )
 	>=dev-python/mypy-extensions-1.0.0[${PYTHON_USEDEP}]
 	faster-cache? ( dev-python/orjson[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	mypyc? ( >=dev-python/setuptools-50[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	!dev-util/stubgen
 	>=dev-python/psutil-4[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]

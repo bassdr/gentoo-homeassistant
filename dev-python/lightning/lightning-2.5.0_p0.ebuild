@@ -18,16 +18,16 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}]
-	fabric-dev? ( ~dev-python/click-8.1.7[${PYTHON_USEDEP}] )
-	fabric-test? ( ~dev-python/click-8.1.7[${PYTHON_USEDEP}] )
+	fabric-dev? ( =dev-python/click-8.1.7[${PYTHON_USEDEP}] )
+	fabric-test? ( =dev-python/click-8.1.7[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/cloudpickle-3.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/cloudpickle-3.0[${PYTHON_USEDEP}] )
-	fabric-dev? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
-	fabric-test? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
-	pytorch-dev? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
-	pytorch-test? ( ~dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
+	fabric-dev? ( =dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
+	fabric-test? ( =dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
+	pytorch-dev? ( =dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
+	pytorch-test? ( =dev-python/coverage-7.3.1[${PYTHON_USEDEP}] )
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	pytorch-dev? ( dev-python/fastapi[${PYTHON_USEDEP}] )
 	pytorch-test? ( dev-python/fastapi[${PYTHON_USEDEP}] )
@@ -80,26 +80,26 @@ GENERATED_DEPEND="${RDEPEND}
 	pytorch-test? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( <dev-python/psutil-6.0[${PYTHON_USEDEP}] )
 	pytorch-test? ( <dev-python/psutil-6.0[${PYTHON_USEDEP}] )
-	fabric-dev? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	fabric-test? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	pytorch-dev? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	pytorch-test? ( ~dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
-	fabric-dev? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	fabric-test? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	pytorch-dev? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	pytorch-test? ( ~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
-	fabric-dev? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	fabric-test? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	pytorch-dev? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	pytorch-test? ( ~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
-	fabric-dev? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	fabric-test? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	pytorch-dev? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	pytorch-test? ( ~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
-	fabric-dev? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	fabric-test? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	pytorch-dev? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
-	pytorch-test? ( ~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
+	fabric-dev? ( =dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
+	fabric-test? ( =dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
+	pytorch-dev? ( =dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
+	pytorch-test? ( =dev-python/pytest-7.4.0[${PYTHON_USEDEP}] )
+	fabric-dev? ( =dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
+	fabric-test? ( =dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
+	pytorch-dev? ( =dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
+	pytorch-test? ( =dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
+	fabric-dev? ( =dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
+	fabric-test? ( =dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
+	pytorch-dev? ( =dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
+	pytorch-test? ( =dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}] )
+	fabric-dev? ( =dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
+	fabric-test? ( =dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
+	pytorch-dev? ( =dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
+	pytorch-test? ( =dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}] )
+	fabric-dev? ( =dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
+	fabric-test? ( =dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
+	pytorch-dev? ( =dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
+	pytorch-test? ( =dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}] )
 	dev-python/pytorch-lightning[${PYTHON_USEDEP}]
 	<dev-python/pyyaml-8.0[${PYTHON_USEDEP}]
 	all? ( <dev-python/requests-3.0[${PYTHON_USEDEP}] )
@@ -147,36 +147,39 @@ GENERATED_DEPEND="${RDEPEND}
 	pytorch-dev? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 	pytorch-test? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/click-8.1.7[${PYTHON_USEDEP}]
-	<dev-python/cloudpickle-3.0[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
-	dev-python/fastapi[${PYTHON_USEDEP}]
-	<dev-python/hydra-core-2.0[${PYTHON_USEDEP}]
-	<dev-python/ipython-9.0[all,${PYTHON_USEDEP}]
-	<dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}]
-	<dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}]
-	<dev-python/matplotlib-4.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0[${PYTHON_USEDEP}]
-	<dev-python/omegaconf-3.0[${PYTHON_USEDEP}]
-	<dev-python/onnx-2.0[${PYTHON_USEDEP}]
-	<dev-python/onnxruntime-2.0[${PYTHON_USEDEP}]
-	<dev-python/pandas-3.0[${PYTHON_USEDEP}]
-	<dev-python/psutil-6.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0[${PYTHON_USEDEP}]
-	<dev-python/rich-14.0[${PYTHON_USEDEP}]
-	<dev-python/scikit-learn-2.0[${PYTHON_USEDEP}]
-	<dev-python/tensorboard-3.0[${PYTHON_USEDEP}]
-	<dev-python/tensorboardx-3.0[${PYTHON_USEDEP}]
-	<dev-python/torchmetrics-2.0[${PYTHON_USEDEP}]
-	<dev-python/torchvision-1.0[${PYTHON_USEDEP}]
-	dev-python/uvicorn[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/click-8.1.7[${PYTHON_USEDEP}]
+		<dev-python/cloudpickle-3.0[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+		dev-python/fastapi[${PYTHON_USEDEP}]
+		<dev-python/hydra-core-2.0[${PYTHON_USEDEP}]
+		<dev-python/ipython-9.0[all,${PYTHON_USEDEP}]
+		<dev-python/jsonargparse-5.0[signatures,${PYTHON_USEDEP}]
+		<dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}]
+		<dev-python/matplotlib-4.0[${PYTHON_USEDEP}]
+		<dev-python/numpy-2.0[${PYTHON_USEDEP}]
+		<dev-python/omegaconf-3.0[${PYTHON_USEDEP}]
+		<dev-python/onnx-2.0[${PYTHON_USEDEP}]
+		<dev-python/onnxruntime-2.0[${PYTHON_USEDEP}]
+		<dev-python/pandas-3.0[${PYTHON_USEDEP}]
+		<dev-python/psutil-6.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+		<dev-python/requests-3.0[${PYTHON_USEDEP}]
+		<dev-python/rich-14.0[${PYTHON_USEDEP}]
+		<dev-python/scikit-learn-2.0[${PYTHON_USEDEP}]
+		<dev-python/tensorboard-3.0[${PYTHON_USEDEP}]
+		<dev-python/tensorboardx-3.0[${PYTHON_USEDEP}]
+		<dev-python/torchmetrics-2.0[${PYTHON_USEDEP}]
+		<dev-python/torchvision-1.0[${PYTHON_USEDEP}]
+		dev-python/uvicorn[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pylamarzocco-1.2.12[${PYTHON_USEDEP}]
+	=dev-python/pylamarzocco-1.2.12[${PYTHON_USEDEP}]
 "

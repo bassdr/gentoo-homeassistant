@@ -20,12 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
-	~dev-python/music-assistant-models-1.1.3[${PYTHON_USEDEP}]
+	=dev-python/music-assistant-models-1.1.3[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	~dev-python/music-assistant-models-1.0.0[${PYTHON_USEDEP}]"
 
@@ -35,12 +35,15 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
-	~dev-python/isort-5.13.2[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-	~dev-python/pre-commit-hooks-5.0.0[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.7.4[${PYTHON_USEDEP}]
-	~dev-python/tomli-2.1.0[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
+		=dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		=dev-python/pre-commit-hooks-5.0.0[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.7.4[${PYTHON_USEDEP}]
+		=dev-python/tomli-2.1.0[${PYTHON_USEDEP}]
+		=dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

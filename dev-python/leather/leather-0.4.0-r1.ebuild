@@ -21,8 +21,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-"
 BDEPEND="
 	test? (
 		>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
@@ -31,12 +29,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
-	>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
+		>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs \
 	dev-python/furo
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

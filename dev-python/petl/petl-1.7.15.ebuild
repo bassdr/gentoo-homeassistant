@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	http? ( >=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}] )
 	bcolz? ( >=dev-python/bcolz-1.2.1[${PYTHON_USEDEP}] )
 	hdf5? ( >=dev-python/cython-0.29.13[${PYTHON_USEDEP}] )
@@ -37,6 +37,6 @@ GENERATED_DEPEND="${RDEPEND}
 	xls? ( >=dev-python/xlrd-2.0.1[${PYTHON_USEDEP}] )
 	xls? ( >=dev-python/xlwt-1.3.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

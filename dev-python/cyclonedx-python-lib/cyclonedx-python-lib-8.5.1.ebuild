@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	validation? ( <dev-python/jsonschema-5.0[format,${PYTHON_USEDEP}] )
 	<dev-python/license-expression-31[${PYTHON_USEDEP}]
 	validation? ( <dev-python/lxml-6[${PYTHON_USEDEP}] )
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/py-serializable-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/sortedcontainers-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

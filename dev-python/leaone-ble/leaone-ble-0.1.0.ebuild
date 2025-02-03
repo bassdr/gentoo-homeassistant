@@ -24,13 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-data-tools-1.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6.2[${PYTHON_USEDEP}]
 	>=dev-python/home-assistant-bluetooth-1.10.4[${PYTHON_USEDEP}]
 	>=dev-python/sensor-state-data-2.18.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/home-assistant-bluetooth-1.10.4[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6.2[${PYTHON_USEDEP}]
 	>=dev-python/sensor-state-data-2.18.0[${PYTHON_USEDEP}]

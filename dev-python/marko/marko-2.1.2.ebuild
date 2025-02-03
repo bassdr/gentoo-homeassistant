@@ -16,11 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	repr? ( dev-python/objprint[${PYTHON_USEDEP}] )
 	codehilite? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	toc? ( dev-python/python-slugify[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

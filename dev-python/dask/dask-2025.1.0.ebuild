@@ -16,13 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	diagnostics? ( >=dev-python/bokeh-3.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/click-8.1[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
 	complete? ( dev-python/dask[array,dataframe,diagnostics,distributed,${PYTHON_USEDEP}] )
 	dataframe? ( dev-python/dask[array,${PYTHON_USEDEP}] )
-	distributed? ( ~dev-python/distributed-2025.1.0[${PYTHON_USEDEP}] )
+	distributed? ( =dev-python/distributed-2025.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/fsspec-2021.09.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/importlib-metadata-4.13.0[${PYTHON_USEDEP}]' python3_12)
 	diagnostics? ( >=dev-python/jinja2-2.10.3[${PYTHON_USEDEP}] )
@@ -36,16 +36,19 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
 	>=dev-python/toolz-0.10.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pandas[test,${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pandas[test,${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

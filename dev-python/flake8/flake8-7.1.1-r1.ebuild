@@ -21,12 +21,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/mccabe-0.8.0[${PYTHON_USEDEP}]
 	<dev-python/pycodestyle-2.13.0[${PYTHON_USEDEP}]
 	<dev-python/pyflakes-3.3.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	=dev-python/pyflakes-3.2*[${PYTHON_USEDEP}]
 	=dev-python/pycodestyle-2.12*[${PYTHON_USEDEP}]
 "

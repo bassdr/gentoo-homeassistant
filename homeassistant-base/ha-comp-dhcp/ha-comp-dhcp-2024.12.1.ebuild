@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiodhcpwatcher-1.0.2[${PYTHON_USEDEP}]
-	~dev-python/aiodiscover-2.1.0[${PYTHON_USEDEP}]
-	~dev-python/cached-ipaddress-0.8.0[${PYTHON_USEDEP}]
+	=dev-python/aiodhcpwatcher-1.0.2[${PYTHON_USEDEP}]
+	=dev-python/aiodiscover-2.1.0[${PYTHON_USEDEP}]
+	=dev-python/cached-ipaddress-0.8.0[${PYTHON_USEDEP}]
 "

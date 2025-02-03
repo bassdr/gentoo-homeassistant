@@ -29,7 +29,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all-plugins all-plugins-pypy build docs ffmpeg fits full gdal itk linting pillow-heif pyav rawpy tifffile"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all-plugins? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	fits? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	full? ( dev-python/astropy[${PYTHON_USEDEP}] )
@@ -51,6 +51,7 @@ GENERATED_DEPEND="${RDEPEND}
 	full? ( dev-python/itk[${PYTHON_USEDEP}] )
 	itk? ( dev-python/itk[${PYTHON_USEDEP}] )
 	all-plugins? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
+	dev-python/numpy[${PYTHON_USEDEP}]
 	full? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
 	rawpy? ( >dev-python/numpy-2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
@@ -80,7 +81,7 @@ GENERATED_DEPEND="${RDEPEND}
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	full? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-8.3.2[${PYTHON_USEDEP}]
 	media-libs/freeimage
@@ -98,13 +99,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/fsspec[github,${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/fsspec[github,${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	local PATCHES=(

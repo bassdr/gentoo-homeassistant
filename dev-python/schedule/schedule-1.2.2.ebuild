@@ -25,9 +25,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	timezone? ( dev-python/pytz[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -38,4 +35,5 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

@@ -23,15 +23,6 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs pool"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/backports-zoneinfo-0.2.0[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/furo-2022.6.21[${PYTHON_USEDEP}] )
-	pool? ( dev-python/psycopg-pool[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-autodoc-typehints-1.12[${PYTHON_USEDEP}] )
-	>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]
-"
 DEPEND="
 	native-extensions? (
 		>=dev-db/postgresql-8.1:=
@@ -40,7 +31,16 @@ DEPEND="
 		>=dev-db/postgresql-8.1:*
 	)
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/backports-zoneinfo-0.2.0[${PYTHON_USEDEP}]
+	docs? ( =dev-python/furo-2022.6.21[${PYTHON_USEDEP}] )
+	pool? ( dev-python/psycopg-pool[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-autodoc-typehints-1.12[${PYTHON_USEDEP}] )
+	>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	>=dev-python/typing-extensions-4.4[${PYTHON_USEDEP}]
 "
@@ -59,22 +59,25 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/anyio-4.0[${PYTHON_USEDEP}]
-	>=dev-python/ast-comments-1.1.2[${PYTHON_USEDEP}]
-	>=dev-python/black-24.1.0[${PYTHON_USEDEP}]
-	>=dev-python/codespell-2.2[${PYTHON_USEDEP}]
-	>=dev-python/dnspython-2.1[${PYTHON_USEDEP}]
-	>=dev-python/flake8-4.0[${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.14[${PYTHON_USEDEP}]
-	>=dev-python/pproxy-2.7[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-randomly-3.5[${PYTHON_USEDEP}]
-	>=dev-python/types-setuptools-57.4[${PYTHON_USEDEP}]
-	>=dev-python/wheel-0.37[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/anyio-4.0[${PYTHON_USEDEP}]
+		>=dev-python/ast-comments-1.1.2[${PYTHON_USEDEP}]
+		>=dev-python/black-24.1.0[${PYTHON_USEDEP}]
+		>=dev-python/codespell-2.2[${PYTHON_USEDEP}]
+		>=dev-python/dnspython-2.1[${PYTHON_USEDEP}]
+		>=dev-python/flake8-4.0[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.14[${PYTHON_USEDEP}]
+		>=dev-python/pproxy-2.7[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-randomly-3.5[${PYTHON_USEDEP}]
+		>=dev-python/types-setuptools-57.4[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.37[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_compile() {
 	# -Werror=strict-aliasing

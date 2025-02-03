@@ -15,13 +15,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/backports-zoneinfo-0.2.1[${PYTHON_USEDEP}]
 	>=dev-python/importlib-resources-5.9.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.6[${PYTHON_USEDEP}]
 	>=dev-python/time-machine-2.6.0[${PYTHON_USEDEP}]
 	>=dev-python/tzdata-2020.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

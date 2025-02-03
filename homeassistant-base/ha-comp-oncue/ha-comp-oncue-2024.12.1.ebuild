@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiooncue-0.3.7[${PYTHON_USEDEP}]
+	=dev-python/aiooncue-0.3.7[${PYTHON_USEDEP}]
 "

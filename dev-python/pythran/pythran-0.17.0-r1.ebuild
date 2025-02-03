@@ -24,9 +24,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/beniget-0.4.0[${PYTHON_USEDEP}]
-	~dev-python/gast-0.6.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/beniget-0.4.0[${PYTHON_USEDEP}] =dev-python/beniget-0.4*[${PYTHON_USEDEP}]
+	>=dev-python/gast-0.6.0[${PYTHON_USEDEP}] =dev-python/gast-0.6*[${PYTHON_USEDEP}]
 	doc? ( dev-python/guzzle-sphinx-theme[${PYTHON_USEDEP}] )
 	doc? ( dev-python/nbsphinx[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
@@ -35,7 +35,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-libs/boost
 	dev-cpp/xsimd
 	=dev-python/beniget-0.4*[${PYTHON_USEDEP}]
@@ -64,15 +64,18 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/meson[${PYTHON_USEDEP}]
-	dev-python/nbval[${PYTHON_USEDEP}]
-	dev-python/ninja[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cython[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/meson[${PYTHON_USEDEP}]
+		dev-python/nbval[${PYTHON_USEDEP}]
+		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	# vendored C++ headers -- use system copies

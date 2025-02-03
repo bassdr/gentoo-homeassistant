@@ -16,9 +16,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/prompt-toolkit-4.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/prompt-toolkit[${PYTHON_USEDEP}]"
-
+RDEPEND="${GENERATED_RDEPEND} dev-python/prompt-toolkit[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest

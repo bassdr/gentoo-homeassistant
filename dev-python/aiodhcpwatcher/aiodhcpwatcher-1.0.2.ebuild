@@ -24,10 +24,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=net-analyzer/scapy-2.5.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=net-analyzer/scapy-2.5.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (

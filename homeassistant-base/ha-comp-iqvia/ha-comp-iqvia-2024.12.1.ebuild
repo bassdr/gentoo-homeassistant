@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/numpy-2.1.3[${PYTHON_USEDEP}]
-	~dev-python/pyiqvia-2022.04.0[${PYTHON_USEDEP}]
+	=dev-python/numpy-2.1.3[${PYTHON_USEDEP}]
+	=dev-python/pyiqvia-2022.04.0[${PYTHON_USEDEP}]
 "

@@ -19,12 +19,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="gmpy gmpy2"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	gmpy? ( dev-python/gmpy[${PYTHON_USEDEP}] )
 	gmpy2? ( dev-python/gmpy2[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep '
 		dev-python/gmpy2[${PYTHON_USEDEP}]
 	' 'python*')

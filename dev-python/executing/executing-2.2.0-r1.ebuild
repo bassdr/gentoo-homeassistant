@@ -21,9 +21,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/rich[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
@@ -34,14 +31,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/littleutils[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/littleutils[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 
@@ -73,4 +73,5 @@ python_test() {
 pkg_postinst() {
 	optfeature "getting node's source code" dev-python/asttokens
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

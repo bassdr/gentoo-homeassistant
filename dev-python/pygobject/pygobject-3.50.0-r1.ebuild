@@ -20,10 +20,10 @@ KEYWORDS="amd64 arm64"
 IUSE="+cairo test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pycairo-1.16[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-libs/glib-2.64:2
 	>=dev-libs/gobject-introspection-1.64:=
 	dev-libs/libffi:=

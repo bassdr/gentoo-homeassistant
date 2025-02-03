@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ijson[${PYTHON_USEDEP}]
 	jdbc? ( dev-python/jaydebeapi[${PYTHON_USEDEP}] )
 	jdbc? ( dev-python/jpype1[${PYTHON_USEDEP}] )
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/sqlalchemy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -24,9 +24,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="nicer-shell"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	nicer-shell? ( dev-python/ipython[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/packaging[${PYTHON_USEDEP}]
@@ -37,4 +34,5 @@ distutils_enable_sphinx docs/source \
 	dev-python/furo \
 	dev-python/sphinx-issues
 distutils_enable_tests pytest
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

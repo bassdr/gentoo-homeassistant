@@ -24,12 +24,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs ssh"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	ssh? ( dev-python/paramiko[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
@@ -40,15 +34,18 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	dev-python/paramiko[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		dev-python/paramiko[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(
@@ -75,4 +72,5 @@ pkg_postinst() {
 	optfeature "colored output in jupyter" dev-python/ipython
 	optfeature "images on the command line" dev-python/pillow
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

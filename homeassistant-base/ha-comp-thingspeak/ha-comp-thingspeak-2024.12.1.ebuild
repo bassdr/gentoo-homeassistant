@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/thingspeak-1.0.0[${PYTHON_USEDEP}]
+	=dev-python/thingspeak-1.0.0[${PYTHON_USEDEP}]
 "

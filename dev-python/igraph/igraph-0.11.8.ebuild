@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cairo? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
 	plotting? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
 	test-musl? ( >=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}] )
@@ -30,13 +30,16 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/texttable-1.6.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]
-	>=dev-python/plotly-5.3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/cairocffi-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/networkx-2.5[${PYTHON_USEDEP}]
+		>=dev-python/plotly-5.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

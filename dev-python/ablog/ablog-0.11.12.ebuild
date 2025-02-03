@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/alabaster-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/docutils-0.18[${PYTHON_USEDEP}]
 	>=dev-python/feedgen-0.9.0[${PYTHON_USEDEP}]
@@ -33,15 +33,18 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-automodapi[${PYTHON_USEDEP}] )
 	>=dev-python/watchdog-2.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/alabaster-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/defusedxml-0.8.0_rc2[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.30.0[${PYTHON_USEDEP}]
-	>=dev-python/myst-parser-0.17.0[${PYTHON_USEDEP}]
-	>=dev-python/nbsphinx-0.8.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/sphinx-automodapi[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/alabaster-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/defusedxml-0.8.0_rc2[${PYTHON_USEDEP}]
+		>=dev-python/ipython-7.30.0[${PYTHON_USEDEP}]
+		>=dev-python/myst-parser-0.17.0[${PYTHON_USEDEP}]
+		>=dev-python/nbsphinx-0.8.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/sphinx-automodapi[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

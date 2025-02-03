@@ -22,12 +22,6 @@ KEYWORDS="amd64 arm64"
 # dev-python/regex doesn't support pypy
 GENERATED_IUSE="atomic-cache interegular nearley regex"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	atomic-cache? ( dev-python/atomicwrites[${PYTHON_USEDEP}] )
-	interegular? ( <dev-python/interegular-0.4.0[${PYTHON_USEDEP}] )
-	nearley? ( dev-python/js2py[${PYTHON_USEDEP}] )
-	regex? ( dev-python/regex[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/atomicwrites[${PYTHON_USEDEP}]
@@ -47,4 +41,5 @@ python_test() {
 
 	epytest
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

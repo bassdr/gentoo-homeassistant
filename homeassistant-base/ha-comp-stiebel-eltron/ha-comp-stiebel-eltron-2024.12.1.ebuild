@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pystiebeleltron-0.0.1_pre2[${PYTHON_USEDEP}]
+	=dev-python/pystiebeleltron-0.0.1_pre2[${PYTHON_USEDEP}]
 "

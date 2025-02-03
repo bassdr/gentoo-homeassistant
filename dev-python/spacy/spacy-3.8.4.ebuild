@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/catalogue-2.1.0[${PYTHON_USEDEP}]
 	cuda? ( <dev-python/cupy-13.0.0[${PYTHON_USEDEP}] )
 	cuda100? ( <dev-python/cupy-cuda100-13.0.0[${PYTHON_USEDEP}] )
@@ -64,6 +64,10 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/wasabi-1.2.0[${PYTHON_USEDEP}]
 	<dev-python/weasel-0.5.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

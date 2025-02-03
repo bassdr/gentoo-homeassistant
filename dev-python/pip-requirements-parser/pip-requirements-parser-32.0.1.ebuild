@@ -17,19 +17,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/doc8-0.8.1[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pyparsing[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-3.3.1[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-0.5.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/aboutcode-toolkit-6.0.0[${PYTHON_USEDEP}]
-	dev-python/black[${PYTHON_USEDEP}]
-	!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/aboutcode-toolkit-6.0.0[${PYTHON_USEDEP}]
+		dev-python/black[${PYTHON_USEDEP}]
+		!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

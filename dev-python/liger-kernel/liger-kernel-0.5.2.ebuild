@@ -16,29 +16,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	amd? ( >=dev-python/setuptools-scm-8[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.1.2[${PYTHON_USEDEP}]
 	amd? ( >=dev-python/torch-2.6.0_pre[${PYTHON_USEDEP}] )
 	amd? ( >=dev-python/torchvision-0.20.0_pre[${PYTHON_USEDEP}] )
-	transformers? ( ~dev-python/transformers-4.0[${PYTHON_USEDEP}] )
+	transformers? ( >=dev-python/transformers-4.0[${PYTHON_USEDEP}] =dev-python/transformers-4*[${PYTHON_USEDEP}] )
 	>=dev-python/triton-2.3.1[${PYTHON_USEDEP}]
 	amd? ( >=dev-python/triton-3.0.0[${PYTHON_USEDEP}] )
 	trl? ( >=dev-python/trl-0.11.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-24.4.2[${PYTHON_USEDEP}]
-	>=dev-python/datasets-2.19.2[${PYTHON_USEDEP}]
-	>=dev-python/flake8-4.0.1.1[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.13.2[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-3.7.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/seaborn[${PYTHON_USEDEP}]
-	>=dev-python/torchvision-0.16.2[${PYTHON_USEDEP}]
-	>=dev-python/transformers-4.44.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-24.4.2[${PYTHON_USEDEP}]
+		>=dev-python/datasets-2.19.2[${PYTHON_USEDEP}]
+		>=dev-python/flake8-4.0.1.1[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.7.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/seaborn[${PYTHON_USEDEP}]
+		>=dev-python/torchvision-0.16.2[${PYTHON_USEDEP}]
+		>=dev-python/transformers-4.44.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

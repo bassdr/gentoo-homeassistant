@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs json memcached-session routes-dispatcher ssl xcgi"
 IUSE="${GENERATED_IUSE} ssl test"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/alabaster[${PYTHON_USEDEP}] )
 	>=dev-python/cheroot-8.2.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
@@ -37,7 +37,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinxcontrib-apidoc-0.3.0[${PYTHON_USEDEP}] )
 	dev-python/zc-lockfile[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/cheroot-8.2.1[${PYTHON_USEDEP}]
 	>=dev-python/portend-2.1.1[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
@@ -64,17 +64,20 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/objgraph[${PYTHON_USEDEP}]
-	dev-python/path-py[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.3.5[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-forked[${PYTHON_USEDEP}]
-	>=dev-python/pytest-services-2[${PYTHON_USEDEP}]
-	dev-python/pytest-sugar[${PYTHON_USEDEP}]
-	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/objgraph[${PYTHON_USEDEP}]
+		dev-python/path-py[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.3.5[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-forked[${PYTHON_USEDEP}]
+		>=dev-python/pytest-services-2[${PYTHON_USEDEP}]
+		dev-python/pytest-sugar[${PYTHON_USEDEP}]
+		dev-python/requests-toolbelt[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	sed -i -e '/cov/d' pytest.ini || die

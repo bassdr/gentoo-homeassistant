@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/linode-api-4.1_beta1[${PYTHON_USEDEP}]
+	=dev-python/linode-api-4.1.9_beta1[${PYTHON_USEDEP}]
 "

@@ -24,14 +24,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="hiredis ocsp"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-timeout-4.0.3[${PYTHON_USEDEP}]
 	ocsp? ( >=dev-python/cryptography-36.0.1[${PYTHON_USEDEP}] )
 	hiredis? ( >=dev-python/hiredis-3.0.0[${PYTHON_USEDEP}] )
-	ocsp? ( ~dev-python/pyopenssl-23.2.1[${PYTHON_USEDEP}] )
+	ocsp? ( =dev-python/pyopenssl-23.2.1[${PYTHON_USEDEP}] )
 	ocsp? ( >=dev-python/requests-2.31.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep '
 		>=dev-python/async-timeout-4.0.2[${PYTHON_USEDEP}]
 	' 3.10)

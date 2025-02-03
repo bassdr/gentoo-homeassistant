@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
 	all? ( >=dev-python/dask-2.22.0[complete,${PYTHON_USEDEP}] )
 	dask? ( >=dev-python/dask-2.22.0[complete,${PYTHON_USEDEP}] )
@@ -34,6 +34,6 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/ray-1.13.0[default,${PYTHON_USEDEP}] )
 	ray? ( >=dev-python/ray-1.13.0[default,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

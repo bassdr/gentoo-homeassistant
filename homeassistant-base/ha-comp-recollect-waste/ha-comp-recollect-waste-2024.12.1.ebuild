@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiorecollect-2023.09.0[${PYTHON_USEDEP}]
+	=dev-python/aiorecollect-2023.09.0[${PYTHON_USEDEP}]
 "

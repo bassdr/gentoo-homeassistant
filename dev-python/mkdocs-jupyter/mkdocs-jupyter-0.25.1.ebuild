@@ -15,7 +15,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/ipykernel-7.0.0[${PYTHON_USEDEP}]
 	<dev-python/jupytext-2[${PYTHON_USEDEP}]
 	<dev-python/mkdocs-2[${PYTHON_USEDEP}]
@@ -23,6 +23,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/nbconvert-8[${PYTHON_USEDEP}]
 	>dev-python/pygments-2.12.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

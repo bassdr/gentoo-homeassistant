@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/netdata-1.3.0[${PYTHON_USEDEP}]
+	=dev-python/netdata-1.3.0[${PYTHON_USEDEP}]
 "

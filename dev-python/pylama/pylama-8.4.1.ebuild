@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/eradicate[${PYTHON_USEDEP}] )
 	eradicate? ( dev-python/eradicate[${PYTHON_USEDEP}] )
 	>=dev-python/mccabe-0.7.0[${PYTHON_USEDEP}]
@@ -33,19 +33,22 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/vulture[${PYTHON_USEDEP}] )
 	vulture? ( dev-python/vulture[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/eradicate-2.0.0[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pylama-quotes[${PYTHON_USEDEP}]
-	>=dev-python/pylint-2.11.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	dev-python/pytest-mypy[${PYTHON_USEDEP}]
-	>=dev-python/radon-5.1.0[${PYTHON_USEDEP}]
-	dev-python/toml[${PYTHON_USEDEP}]
-	dev-python/types-setuptools[${PYTHON_USEDEP}]
-	dev-python/types-toml[${PYTHON_USEDEP}]
-	dev-python/vulture[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/eradicate-2.0.0[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pylama-quotes[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.11.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+		>=dev-python/radon-5.1.0[${PYTHON_USEDEP}]
+		dev-python/toml[${PYTHON_USEDEP}]
+		dev-python/types-setuptools[${PYTHON_USEDEP}]
+		dev-python/types-toml[${PYTHON_USEDEP}]
+		dev-python/vulture[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

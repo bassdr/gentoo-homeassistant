@@ -33,15 +33,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="protobuf"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	protobuf? ( >=dev-python/grpcio-tools-1.67.1[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	dev-libs/openssl:=
 	net-dns/c-ares:=
 	sys-libs/zlib:=
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	protobuf? ( >=dev-python/grpcio-tools-1.67.1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 # TODO: try to remove coverage dep

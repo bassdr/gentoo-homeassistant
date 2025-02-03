@@ -16,15 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/itk-core-5.4.0[${PYTHON_USEDEP}]
-	~dev-python/itk-filtering-5.4.0[${PYTHON_USEDEP}]
-	~dev-python/itk-io-5.4.0[${PYTHON_USEDEP}]
-	~dev-python/itk-numerics-5.4.0[${PYTHON_USEDEP}]
-	~dev-python/itk-registration-5.4.0[${PYTHON_USEDEP}]
-	~dev-python/itk-segmentation-5.4.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/itk-core-5.4.0[${PYTHON_USEDEP}]
+	=dev-python/itk-filtering-5.4.0[${PYTHON_USEDEP}]
+	=dev-python/itk-io-5.4.0[${PYTHON_USEDEP}]
+	=dev-python/itk-numerics-5.4.0[${PYTHON_USEDEP}]
+	=dev-python/itk-registration-5.4.0[${PYTHON_USEDEP}]
+	=dev-python/itk-segmentation-5.4.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

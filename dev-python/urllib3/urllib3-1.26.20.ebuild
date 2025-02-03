@@ -27,8 +27,8 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="secure socks"
 IUSE="${GENERATED_IUSE} brotli +secure +socks"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/brotli-1.0.9[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/brotli-1.0.9[${PYTHON_USEDEP}]
 	>=dev-python/brotli-1.0.9[${PYTHON_USEDEP}]
 	>=dev-python/brotlicffi-0.8.0[${PYTHON_USEDEP}]
 	>=dev-python/brotlipy-0.6.0[${PYTHON_USEDEP}]
@@ -39,7 +39,7 @@ GENERATED_DEPEND="${RDEPEND}
 	socks? ( !=dev-python/pysocks-1.5.7[${PYTHON_USEDEP}] )
 	secure? ( dev-python/urllib3-secure-extra[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	secure? (
 		>=dev-python/cryptography-1.3.4[${PYTHON_USEDEP}]
 		>=dev-python/idna-2.0.0[${PYTHON_USEDEP}]

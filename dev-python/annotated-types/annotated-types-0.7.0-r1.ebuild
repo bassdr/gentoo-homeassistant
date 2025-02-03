@@ -21,9 +21,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	test? (
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
@@ -46,4 +43,5 @@ python_test() {
 
 	epytest
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

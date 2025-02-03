@@ -21,16 +21,16 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( >=dev-python/sphinx-4[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-rtd-theme-1[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	>=dev-libs/mpc-1.0.2:=
 	>=dev-libs/mpfr-3.1.2:=
 	dev-libs/gmp:0=
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/sphinx-4[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -41,13 +41,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/mpmath[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cython[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/mpmath[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	rm -rf gmpy2 || die

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/motioneye-client-0.3.14[${PYTHON_USEDEP}]
+	=dev-python/motioneye-client-0.3.14[${PYTHON_USEDEP}]
 "

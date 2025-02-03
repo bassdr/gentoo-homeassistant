@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azure? ( >=dev-python/adlfs-2024.2.0[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/awscli-1.29.57[${PYTHON_USEDEP}] )
 	embeddings? ( >=dev-python/boto3-1.28.57[${PYTHON_USEDEP}] )
@@ -41,29 +41,33 @@ GENERATED_DEPEND="${RDEPEND}
 	clip? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-1.10[${PYTHON_USEDEP}]
-	~dev-python/pylance-0.22.0[${PYTHON_USEDEP}]
+	=dev-python/pylance-0.22.0[${PYTHON_USEDEP}]
 	embeddings? ( >=dev-python/requests-2.31.0[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/sentence-transformers[${PYTHON_USEDEP}] )
 	clip? ( dev-python/torch[${PYTHON_USEDEP}] )
 	embeddings? ( dev-python/torch[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.27.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/boto3[${PYTHON_USEDEP}]
-	dev-python/duckdb[${PYTHON_USEDEP}]
-	>=dev-python/pandas-1.4[${PYTHON_USEDEP}]
-	<=dev-python/polars-1.3.0[${PYTHON_USEDEP}]
-	dev-python/pyarrow-stubs[${PYTHON_USEDEP}]
-	dev-python/pyright[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/tantivy[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/boto3[${PYTHON_USEDEP}]
+		dev-python/duckdb[${PYTHON_USEDEP}]
+		>=dev-python/pandas-1.4[${PYTHON_USEDEP}]
+		<=dev-python/polars-1.3.0[${PYTHON_USEDEP}]
+		dev-python/pyarrow-stubs[${PYTHON_USEDEP}]
+		dev-python/pyright[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/tantivy[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

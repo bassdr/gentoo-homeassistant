@@ -16,14 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flatbuffers-1.12[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.14.1[${PYTHON_USEDEP}]
 	>=dev-python/onnx-1.4.1[${PYTHON_USEDEP}]
-	~dev-python/protobuf-3.20[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.20[${PYTHON_USEDEP}] =dev-python/protobuf-3*[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

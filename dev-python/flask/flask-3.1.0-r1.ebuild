@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION="A simple framework for building complex web applications."
 HOMEPAGE="
-  https://pypi.org/project/Flask/
+  https://pypi.org/project/flask/
   Changes, https://flask.palletsprojects.com/changes/
   Chat, https://discord.gg/pallets
   Documentation, https://flask.palletsprojects.com/
@@ -31,7 +31,7 @@ SLOT="0"
 GENERATED_IUSE="async dotenv"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/asgiref-3.2[${PYTHON_USEDEP}] )
 	>=dev-python/blinker-1.9[${PYTHON_USEDEP}]
 	>=dev-python/click-8.1.3[${PYTHON_USEDEP}]
@@ -40,7 +40,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dotenv? ( dev-python/python-dotenv[${PYTHON_USEDEP}] )
 	>=dev-python/werkzeug-3.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/blinker-1.9[${PYTHON_USEDEP}]
 	>=dev-python/click-8.1.3[${PYTHON_USEDEP}]
 	>=dev-python/itsdangerous-2.2[${PYTHON_USEDEP}]

@@ -16,13 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	pyexecjs? ( dev-python/pyexecjs[${PYTHON_USEDEP}] )
 	pymongo? ( dev-python/pymongo[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/sentinels[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

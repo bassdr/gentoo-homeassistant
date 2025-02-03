@@ -36,7 +36,14 @@ SLOT="0"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+BDEPEND="
+	test? (
+		dev-python/typing-extensions[${PYTHON_USEDEP}]
+	)
+"
+# The requirement is really pyopenssl-17.5.0 but easier to require latest stable >= 23.1.1
+# to avoid broken 23.1.0.
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-3.2.1[${PYTHON_USEDEP}]
 	<dev-python/josepy-2[${PYTHON_USEDEP}]
 	!=dev-python/pyopenssl-23.1.0[${PYTHON_USEDEP}]
@@ -47,14 +54,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-1.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
-BDEPEND="
-	test? (
-		dev-python/typing-extensions[${PYTHON_USEDEP}]
-	)
-"
-# The requirement is really pyopenssl-17.5.0 but easier to require latest stable >= 23.1.1
-# to avoid broken 23.1.0.
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/chardet[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-3.2.1[${PYTHON_USEDEP}]
 	>=dev-python/josepy-1.13.0[${PYTHON_USEDEP}]
@@ -68,12 +68,15 @@ RDEPEND="${GENERATED_DEPEND}
 distutils_enable_sphinx docs \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/importlib-resources-1.3.1[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/importlib-resources-1.3.1[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/typing-extensions[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

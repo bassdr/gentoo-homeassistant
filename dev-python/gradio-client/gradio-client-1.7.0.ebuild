@@ -15,14 +15,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fsspec[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
 	>=dev-python/huggingface-hub-0.19.3[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	~dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}] =dev-python/typing-extensions-4*[${PYTHON_USEDEP}]
 	<dev-python/websockets-15.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

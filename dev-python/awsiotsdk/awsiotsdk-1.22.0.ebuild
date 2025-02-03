@@ -20,10 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

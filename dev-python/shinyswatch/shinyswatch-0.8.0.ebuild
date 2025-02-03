@@ -16,31 +16,34 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/griffe-0.47.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( =dev-python/griffe-0.47.0[${PYTHON_USEDEP}] )
 	>=dev-python/htmltools-0.2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
 	docs? ( dev-python/plum-dispatch[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/quartodoc-0.7.5[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/quartodoc-0.7.5[${PYTHON_USEDEP}] )
 	>=dev-python/shiny-1.2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/shinylive[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.11.2[${PYTHON_USEDEP}]
-	dev-python/jinja2[${PYTHON_USEDEP}]
-	dev-python/libsass[${PYTHON_USEDEP}]
-	dev-python/matplotlib[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	>=dev-python/pyright-1.1.301[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
-	dev-python/tinycss2[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.11.2[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/libsass[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		>=dev-python/pyright-1.1.301[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+		dev-python/tinycss2[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

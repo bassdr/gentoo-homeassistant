@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyaftership-21.11.0[${PYTHON_USEDEP}]
+	=dev-python/pyaftership-21.11.0[${PYTHON_USEDEP}]
 "

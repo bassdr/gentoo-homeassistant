@@ -21,12 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiodns-3.1.1[${PYTHON_USEDEP}]
 	all? ( >=dev-python/aiodns-3.1.1[${PYTHON_USEDEP}] )
 	>=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}]
 	all? ( >=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}] )
-	all? ( >=dev-python/black-19_beta0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/black-19.10_beta0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/cached-ipaddress-0.2.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cached-ipaddress-0.2.0[${PYTHON_USEDEP}] )
@@ -35,6 +35,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/flake8-debugger-3.2.1[${PYTHON_USEDEP}] )
 	all? ( dev-python/ifaddr[${PYTHON_USEDEP}] )
+	dev-python/ifaddr[${PYTHON_USEDEP}]
 	all? ( >=dev-python/ipython-7.15.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/m2r2-0.2.7[${PYTHON_USEDEP}] )
 	>=dev-python/netifaces-0.11.0[${PYTHON_USEDEP}]
@@ -51,7 +52,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/twine-3.1.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/wheel-0.34.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/netifaces-0.11.0[${PYTHON_USEDEP}]
 	>=dev-python/aiodns-3.1.1[${PYTHON_USEDEP}]
@@ -66,22 +67,25 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
-	>=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/codecov-2.1.4[${PYTHON_USEDEP}]
-	>=dev-python/coverage-5.1[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
-	>=dev-python/flake8-debugger-3.2.1[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.15.0[${PYTHON_USEDEP}]
-	>=dev-python/m2r2-0.2.7[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-raises-0.11[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/tox-3.15.2[${PYTHON_USEDEP}]
-	>=dev-python/twine-3.1.1[${PYTHON_USEDEP}]
-	>=dev-python/wheel-0.34.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
+		>=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
+		>=dev-python/codecov-2.1.4[${PYTHON_USEDEP}]
+		>=dev-python/coverage-5.1[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
+		>=dev-python/flake8-debugger-3.2.1[${PYTHON_USEDEP}]
+		>=dev-python/ipython-7.15.0[${PYTHON_USEDEP}]
+		>=dev-python/m2r2-0.2.7[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-raises-0.11[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}]
+		>=dev-python/tox-3.15.2[${PYTHON_USEDEP}]
+		>=dev-python/twine-3.1.1[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.34.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

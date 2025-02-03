@@ -24,13 +24,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/lxml-3.8[${PYTHON_USEDEP}]
-"
 DEPEND="
 	dev-libs/xmlsec:=[openssl]
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/lxml-3.8[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]
 "

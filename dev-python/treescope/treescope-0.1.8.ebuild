@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/ipython-8.8.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	notebook? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -26,30 +26,33 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-3.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.25.2[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/packaging-24.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/palettable-3.3.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/packaging-24.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/palettable-3.3.3[${PYTHON_USEDEP}] )
 	notebook? ( dev-python/palettable[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/pandas-2.2.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/penzai-0.2.4[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/plotly-5.22.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/pandas-2.2.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/penzai-0.2.4[${PYTHON_USEDEP}] =dev-python/penzai-0.2*[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/plotly-5.22.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-7.3.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-book-theme-1.0.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-contributors[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-hoverxref[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-katex[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/torch-2.3.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/torch-2.3.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/absl-py-1.4.0[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	>=dev-python/jax-0.4.23[${PYTHON_USEDEP}]
-	dev-python/jupyter[${PYTHON_USEDEP}]
-	>=dev-python/pyink-24.3.0[${PYTHON_USEDEP}]
-	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
-	dev-python/pytype[${PYTHON_USEDEP}]
-	>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/absl-py-1.4.0[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		>=dev-python/jax-0.4.23[${PYTHON_USEDEP}]
+		dev-python/jupyter[${PYTHON_USEDEP}]
+		>=dev-python/pyink-24.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
+		dev-python/pytype[${PYTHON_USEDEP}]
+		>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

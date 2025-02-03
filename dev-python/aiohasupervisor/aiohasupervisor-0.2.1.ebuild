@@ -26,13 +26,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
 	<dev-python/orjson-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/yarl-2.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.3.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.11[${PYTHON_USEDEP}]
@@ -46,20 +46,23 @@ BDEPEND="
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)"
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
-	~dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}]
-	~dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.6.0[${PYTHON_USEDEP}]
-	~dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
-	~dev-python/orjson-3.10.6[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.5.2[${PYTHON_USEDEP}]
-	~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
-	~dev-python/yarl-1.9.4[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-3.7.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
+		=dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}]
+		=dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.6.0[${PYTHON_USEDEP}]
+		=dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
+		=dev-python/orjson-3.10.6[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
+		=dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.5.2[${PYTHON_USEDEP}]
+		=dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
+		=dev-python/yarl-1.9.4[${PYTHON_USEDEP}]
+		=dev-vcs/pre-commit-3.7.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

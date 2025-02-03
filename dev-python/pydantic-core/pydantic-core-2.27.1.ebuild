@@ -129,11 +129,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	!=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
-
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typing-extensions-4.7.1[${PYTHON_USEDEP}]
 "
 BDEPEND="

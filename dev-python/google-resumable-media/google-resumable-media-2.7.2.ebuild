@@ -16,12 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( <dev-python/aiohttp-4.0.0_pre[${PYTHON_USEDEP}] )
 	aiohttp? ( <dev-python/google-auth-2.0_pre[${PYTHON_USEDEP}] )
 	<dev-python/google-crc32c-2.0_pre[${PYTHON_USEDEP}]
 	requests? ( <dev-python/requests-3.0.0_pre[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

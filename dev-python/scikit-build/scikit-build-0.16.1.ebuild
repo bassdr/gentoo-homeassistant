@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/distro[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	docs? ( dev-python/pygments[${PYTHON_USEDEP}] )
@@ -31,7 +31,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-3.7[${PYTHON_USEDEP}]
 	>=dev-python/wheel-0.32.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/distro[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}]
@@ -59,23 +59,26 @@ distutils_enable_sphinx docs \
 	dev-python/sphinx-issues
 # note: tests are unstable with xdist
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/build-0.7[${PYTHON_USEDEP}]
-	>=dev-python/codecov-2.0.5[${PYTHON_USEDEP}]
-	>=dev-python/coverage-4.2[${PYTHON_USEDEP}]
-	>=dev-python/cython-0.25.1[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.0.4[${PYTHON_USEDEP}]
-	>=dev-python/path-py-11.5.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.7.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-1.10.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-runner-5.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-virtualenv-1.2.5[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/ubelt-0.8.2[${PYTHON_USEDEP}]
-	dev-python/virtualenv[${PYTHON_USEDEP}]
-	>=dev-python/xdoctest-0.10.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/build-0.7[${PYTHON_USEDEP}]
+		>=dev-python/codecov-2.0.5[${PYTHON_USEDEP}]
+		>=dev-python/coverage-4.2[${PYTHON_USEDEP}]
+		>=dev-python/cython-0.25.1[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.0.4[${PYTHON_USEDEP}]
+		>=dev-python/path-py-11.5.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.7.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-1.10.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-runner-5.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-virtualenv-1.2.5[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		>=dev-python/ubelt-0.8.2[${PYTHON_USEDEP}]
+		dev-python/virtualenv[${PYTHON_USEDEP}]
+		>=dev-python/xdoctest-0.10.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# not packaged

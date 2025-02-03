@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-data-tools-0.1.2[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6.0[${PYTHON_USEDEP}]
 	docs? ( <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bluetooth-data-tools-0.1.2[${PYTHON_USEDEP}]
 	>=dev-python/sensor-state-data-2.3.2[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6.0[${PYTHON_USEDEP}]"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/deluge-client-1.10.2[${PYTHON_USEDEP}]
+	=dev-python/deluge-client-1.10.2[${PYTHON_USEDEP}]
 "

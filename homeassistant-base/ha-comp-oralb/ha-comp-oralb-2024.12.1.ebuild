@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/oralb-ble-0.17.6[${PYTHON_USEDEP}]
+	=dev-python/oralb-ble-0.17.6[${PYTHON_USEDEP}]
 "

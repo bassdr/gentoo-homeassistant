@@ -24,11 +24,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
 	<dev-python/python-socks-3.0.0[asyncio,${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
 	>=dev-python/python-socks-2.4.3[${PYTHON_USEDEP}]
 "

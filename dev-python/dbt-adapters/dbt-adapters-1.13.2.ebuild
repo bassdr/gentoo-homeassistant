@@ -15,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/agate-2.0[${PYTHON_USEDEP}]
 	<dev-python/dbt-common-2.0[${PYTHON_USEDEP}]
 	<dev-python/mashumaro-3.15[msgpack,${PYTHON_USEDEP}]
@@ -23,6 +23,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pytz-2015.7[${PYTHON_USEDEP}]
 	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

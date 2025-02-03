@@ -15,11 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/databind-core-4.2.6[${PYTHON_USEDEP}]
 	>=dev-python/databind-json-4.2.6[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2.12[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

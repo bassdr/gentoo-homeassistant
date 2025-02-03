@@ -15,7 +15,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiokafka[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
@@ -26,15 +26,15 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/importlib-resources-7.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	<dev-python/opentelemetry-exporter-otlp-proto-grpc-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/opentelemetry-instrumentation-fastapi-0_beta0[${PYTHON_USEDEP}]
-	>=dev-python/opentelemetry-instrumentation-grpc-0_beta0[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-instrumentation-fastapi-0.43_beta0[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-instrumentation-grpc-0.43_beta0[${PYTHON_USEDEP}]
 	<dev-python/opentelemetry-sdk-2.0.0[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/py-grpc-prometheus[${PYTHON_USEDEP}]
-	~dev-python/pydantic-2.7.1[${PYTHON_USEDEP}]
-	~dev-python/pydantic-settings-2.2.1[${PYTHON_USEDEP}]
+	=dev-python/pydantic-2.7.1[${PYTHON_USEDEP}]
+	=dev-python/pydantic-settings-2.2.1[${PYTHON_USEDEP}]
 	dev-python/python-dotenv[${PYTHON_USEDEP}]
 	dev-python/python-multipart[${PYTHON_USEDEP}]
 	dev-python/starlette-exporter[${PYTHON_USEDEP}]
@@ -42,6 +42,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/uvicorn[${PYTHON_USEDEP}]
 	dev-python/uvloop[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

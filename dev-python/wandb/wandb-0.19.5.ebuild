@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	launch? ( dev-python/awscli[${PYTHON_USEDEP}] )
 	launch? ( dev-python/azure-containerregistry[${PYTHON_USEDEP}] )
 	azure? ( dev-python/azure-identity[${PYTHON_USEDEP}] )
@@ -80,6 +80,6 @@ GENERATED_DEPEND="${RDEPEND}
 	launch? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 	workspaces? ( dev-python/wandb-workspaces[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

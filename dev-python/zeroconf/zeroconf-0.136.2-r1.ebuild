@@ -23,10 +23,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ifaddr-0.1.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/ifaddr-0.1.7[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]

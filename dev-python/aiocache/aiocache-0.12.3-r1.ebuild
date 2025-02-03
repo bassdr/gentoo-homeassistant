@@ -21,11 +21,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	memcached? ( >=dev-python/aiomcache-0.5.2[${PYTHON_USEDEP}] )
-	msgpack? ( >=dev-python/msgpack-0.5.5[${PYTHON_USEDEP}] )
-	redis? ( >=dev-python/redis-4.2.0[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -36,4 +31,5 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

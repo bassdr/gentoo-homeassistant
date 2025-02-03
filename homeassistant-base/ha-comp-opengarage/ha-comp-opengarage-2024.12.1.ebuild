@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/open-garage-0.2.0[${PYTHON_USEDEP}]
+	=dev-python/open-garage-0.2.0[${PYTHON_USEDEP}]
 "

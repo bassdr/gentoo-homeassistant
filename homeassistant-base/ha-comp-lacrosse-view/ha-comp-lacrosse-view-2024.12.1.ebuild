@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/lacrosse-view-1.0.3[${PYTHON_USEDEP}]
+	=dev-python/lacrosse-view-1.0.3[${PYTHON_USEDEP}]
 "

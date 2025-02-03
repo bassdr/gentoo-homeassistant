@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all code-syntax-highlighting wavedrom"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/pygments-2.7.3[${PYTHON_USEDEP}] )
 	code-syntax-highlighting? ( >=dev-python/pygments-2.7.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/wavedrom[${PYTHON_USEDEP}] )
 	wavedrom? ( dev-python/wavedrom[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pygments-2.7.3[${PYTHON_USEDEP}]
 "
 

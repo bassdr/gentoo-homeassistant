@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pybravia-0.3.4[${PYTHON_USEDEP}]
+	=dev-python/pybravia-0.3.4[${PYTHON_USEDEP}]
 "

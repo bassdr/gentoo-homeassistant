@@ -18,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}]
 	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2022.5.0[http,${PYTHON_USEDEP}]
@@ -52,35 +52,38 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tqdm-4.57.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
-	dev-python/fastapi[${PYTHON_USEDEP}]
-	>=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}]
-	<dev-python/ipython-8.15.0[all,${PYTHON_USEDEP}]
-	>=dev-python/jsonargparse-4.27.7[signatures,${PYTHON_USEDEP}]
-	>=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}]
-	>dev-python/matplotlib-3.1[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.17.2[${PYTHON_USEDEP}]
-	>=dev-python/omegaconf-2.2.3[${PYTHON_USEDEP}]
-	>=dev-python/onnx-1.12.0[${PYTHON_USEDEP}]
-	>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
-	>dev-python/pandas-1.0[${PYTHON_USEDEP}]
-	<dev-python/psutil-5.9.6[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-	<dev-python/requests-2.32.0[${PYTHON_USEDEP}]
-	>=dev-python/rich-12.3.0[${PYTHON_USEDEP}]
-	>dev-python/scikit-learn-0.22.1[${PYTHON_USEDEP}]
-	>=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}]
-	>=dev-python/tensorboardx-2.2[${PYTHON_USEDEP}]
-	>=dev-python/torchmetrics-0.10.0[${PYTHON_USEDEP}]
-	>=dev-python/torchvision-0.16.0[${PYTHON_USEDEP}]
-	dev-python/uvicorn[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+		dev-python/fastapi[${PYTHON_USEDEP}]
+		>=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}]
+		<dev-python/ipython-8.15.0[all,${PYTHON_USEDEP}]
+		>=dev-python/jsonargparse-4.27.7[signatures,${PYTHON_USEDEP}]
+		>=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}]
+		>dev-python/matplotlib-3.1[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.17.2[${PYTHON_USEDEP}]
+		>=dev-python/omegaconf-2.2.3[${PYTHON_USEDEP}]
+		>=dev-python/onnx-1.12.0[${PYTHON_USEDEP}]
+		>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
+		>dev-python/pandas-1.0[${PYTHON_USEDEP}]
+		<dev-python/psutil-5.9.6[${PYTHON_USEDEP}]
+		=dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+		<dev-python/requests-2.32.0[${PYTHON_USEDEP}]
+		>=dev-python/rich-12.3.0[${PYTHON_USEDEP}]
+		>dev-python/scikit-learn-0.22.1[${PYTHON_USEDEP}]
+		>=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}]
+		>=dev-python/tensorboardx-2.2[${PYTHON_USEDEP}]
+		>=dev-python/torchmetrics-0.10.0[${PYTHON_USEDEP}]
+		>=dev-python/torchvision-0.16.0[${PYTHON_USEDEP}]
+		dev-python/uvicorn[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apeye-core-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/attrs-20.3.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/click-7.1.2[${PYTHON_USEDEP}] )
@@ -37,6 +37,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/shippinglabel-1.0.0[${PYTHON_USEDEP}]
 	!=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

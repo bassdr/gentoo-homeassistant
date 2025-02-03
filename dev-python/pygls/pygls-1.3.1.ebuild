@@ -16,11 +16,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cattrs-23.1.2[${PYTHON_USEDEP}]
-	~dev-python/lsprotocol-2023.0.1[${PYTHON_USEDEP}]
+	=dev-python/lsprotocol-2023.0.1[${PYTHON_USEDEP}]
 	ws? ( >=dev-python/websockets-11.0.3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

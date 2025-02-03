@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/zeroconf-0.136.2[${PYTHON_USEDEP}]
+	=dev-python/zeroconf-0.136.2[${PYTHON_USEDEP}]
 "

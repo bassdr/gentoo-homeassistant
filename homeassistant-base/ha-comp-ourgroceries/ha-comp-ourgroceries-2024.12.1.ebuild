@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/ourgroceries-1.5.4[${PYTHON_USEDEP}]
+	=dev-python/ourgroceries-1.5.4[${PYTHON_USEDEP}]
 "

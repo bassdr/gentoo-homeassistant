@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jaxtyping[${PYTHON_USEDEP}]
 	<=dev-python/mpmath-1.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
@@ -28,16 +28,19 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/flake8-5.0.4[${PYTHON_USEDEP}]
-	~dev-python/flake8-print-5.0.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	dev-python/twine[${PYTHON_USEDEP}]
-	~dev-python/typeguard-2.13.3[${PYTHON_USEDEP}]
-	dev-python/ufmt[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/flake8-5.0.4[${PYTHON_USEDEP}]
+		=dev-python/flake8-print-5.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/setuptools-scm[${PYTHON_USEDEP}]
+		dev-python/twine[${PYTHON_USEDEP}]
+		>=dev-python/typeguard-2.13.3[${PYTHON_USEDEP}] =dev-python/typeguard-2.13*[${PYTHON_USEDEP}]
+		dev-python/ufmt[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

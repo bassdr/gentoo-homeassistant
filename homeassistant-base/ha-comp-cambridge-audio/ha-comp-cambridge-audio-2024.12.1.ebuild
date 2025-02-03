@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiostreammagic-2.10.0[${PYTHON_USEDEP}]
+	=dev-python/aiostreammagic-2.10.0[${PYTHON_USEDEP}]
 "

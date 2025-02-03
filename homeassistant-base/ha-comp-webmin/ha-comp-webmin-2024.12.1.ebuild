@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/webmin-xmlrpc-0.0.2[${PYTHON_USEDEP}]
+	=dev-python/webmin-xmlrpc-0.0.2[${PYTHON_USEDEP}]
 "

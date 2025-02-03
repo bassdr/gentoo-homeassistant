@@ -15,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/diffusers-0.11[${PYTHON_USEDEP}]
-	~dev-python/pyparsing-3.0[${PYTHON_USEDEP}]
+	>=dev-python/pyparsing-3.0[${PYTHON_USEDEP}] =dev-python/pyparsing-3*[${PYTHON_USEDEP}]
 	dev-python/torch[${PYTHON_USEDEP}]
-	~dev-python/transformers-4.25[${PYTHON_USEDEP}]
+	>=dev-python/transformers-4.25[${PYTHON_USEDEP}] =dev-python/transformers-4*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

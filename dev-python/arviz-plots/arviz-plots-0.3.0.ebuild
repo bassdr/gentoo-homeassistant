@@ -16,9 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/arviz-base-0.3.0[${PYTHON_USEDEP}]
-	~dev-python/arviz-stats-0.3.0[xarray,${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/arviz-base-0.3.0[${PYTHON_USEDEP}]
+	=dev-python/arviz-stats-0.3.0[xarray,${PYTHON_USEDEP}]
 	bokeh? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	doc? ( dev-python/h5netcdf[${PYTHON_USEDEP}] )
 	doc? ( dev-python/jupyter-sphinx[${PYTHON_USEDEP}] )
@@ -33,12 +33,15 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	plotly? ( dev-python/webcolors[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/h5netcdf[${PYTHON_USEDEP}]
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/h5netcdf[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

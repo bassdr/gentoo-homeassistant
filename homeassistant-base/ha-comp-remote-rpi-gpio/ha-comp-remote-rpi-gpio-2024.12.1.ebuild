@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/gpiozero-1.6.2[${PYTHON_USEDEP}]
-	~dev-python/pigpio-1.78[${PYTHON_USEDEP}]
+	=dev-python/gpiozero-1.6.2[${PYTHON_USEDEP}]
+	=dev-python/pigpio-1.78[${PYTHON_USEDEP}]
 "

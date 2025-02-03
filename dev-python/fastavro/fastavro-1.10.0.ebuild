@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	codecs? ( dev-python/cramjam[${PYTHON_USEDEP}] )
 	snappy? ( dev-python/cramjam[${PYTHON_USEDEP}] )
 	codecs? ( dev-python/lz4[${PYTHON_USEDEP}] )
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	codecs? ( dev-python/zstandard[${PYTHON_USEDEP}] )
 	zstandard? ( dev-python/zstandard[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

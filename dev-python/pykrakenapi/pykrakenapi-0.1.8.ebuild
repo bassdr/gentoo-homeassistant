@@ -20,11 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/krakenex[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/krakenex-2.0.0[${PYTHON_USEDEP}]"
 #	"dev-python/pandas[${PYTHON_USEDEP}]"
 BDEPEND="

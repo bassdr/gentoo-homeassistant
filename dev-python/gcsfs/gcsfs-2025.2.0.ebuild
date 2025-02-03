@@ -16,17 +16,17 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	!=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}]
 	crc? ( dev-python/crcmod[${PYTHON_USEDEP}] )
 	>dev-python/decorator-4.1.2[${PYTHON_USEDEP}]
-	~dev-python/fsspec-2025.2.0[${PYTHON_USEDEP}]
+	=dev-python/fsspec-2025.2.0[${PYTHON_USEDEP}]
 	gcsfuse? ( dev-python/fusepy[${PYTHON_USEDEP}] )
 	>=dev-python/google-auth-1.2[${PYTHON_USEDEP}]
 	dev-python/google-auth-oauthlib[${PYTHON_USEDEP}]
 	dev-python/google-cloud-storage[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

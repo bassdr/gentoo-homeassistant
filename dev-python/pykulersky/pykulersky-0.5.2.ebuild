@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bleak[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/pygatt-4.0.5[${PYTHON_USEDEP}]"
 

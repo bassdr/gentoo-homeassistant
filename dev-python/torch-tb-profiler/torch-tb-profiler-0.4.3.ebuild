@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	blob? ( dev-python/azure-storage-blob[${PYTHON_USEDEP}] )
 	s3? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	hdfs? ( dev-python/fsspec[${PYTHON_USEDEP}] )
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	hdfs? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
 	!=dev-python/tensorboard-2.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

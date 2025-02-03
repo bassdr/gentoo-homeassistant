@@ -18,7 +18,7 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/audioread-2.1.9[${PYTHON_USEDEP}]
 	>=dev-python/decorator-4.3.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/ipython-7.0[${PYTHON_USEDEP}] )
@@ -46,16 +46,19 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinxcontrib-svg2pdfconverter[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.1.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
-	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mpl[${PYTHON_USEDEP}]
-	>=dev-python/resampy-0.2.2[${PYTHON_USEDEP}]
-	dev-python/samplerate[${PYTHON_USEDEP}]
-	dev-python/types-decorator[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
+		>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mpl[${PYTHON_USEDEP}]
+		>=dev-python/resampy-0.2.2[${PYTHON_USEDEP}]
+		dev-python/samplerate[${PYTHON_USEDEP}]
+		dev-python/types-decorator[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

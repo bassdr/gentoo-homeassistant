@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/boto3-1.34.131[${PYTHON_USEDEP}]
+	=dev-python/boto3-1.34.131[${PYTHON_USEDEP}]
 "

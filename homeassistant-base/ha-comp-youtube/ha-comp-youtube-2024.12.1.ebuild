@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/youtubeaio-1.1.5[${PYTHON_USEDEP}]
+	=dev-python/youtubeaio-1.1.5[${PYTHON_USEDEP}]
 "

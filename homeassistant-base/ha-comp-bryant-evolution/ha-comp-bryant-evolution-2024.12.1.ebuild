@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/evolutionhttp-0.0.18[${PYTHON_USEDEP}]
+	=dev-python/evolutionhttp-0.0.18[${PYTHON_USEDEP}]
 "

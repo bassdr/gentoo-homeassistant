@@ -15,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/curlify-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pycountry-19.8.18[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.7.3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

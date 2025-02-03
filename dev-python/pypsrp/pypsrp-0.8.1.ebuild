@@ -16,13 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	<dev-python/pyspnego-1.0.0[${PYTHON_USEDEP}]
 	kerberos? ( dev-python/pyspnego[kerberos,${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.9.1[${PYTHON_USEDEP}]
 	credssp? ( >=dev-python/requests-credssp-2.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

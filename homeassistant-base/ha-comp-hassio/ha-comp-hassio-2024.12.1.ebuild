@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiohasupervisor-0.2.1[${PYTHON_USEDEP}]
+	=dev-python/aiohasupervisor-0.2.1[${PYTHON_USEDEP}]
 "

@@ -10,19 +10,19 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/simple-parsing/"
+  https://pypi.org/project/simple_parsing/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/docstring-parser-1.0[${PYTHON_USEDEP}]
 	yaml? ( <dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}] )
 	toml? ( <dev-python/tomli-3.0.0[${PYTHON_USEDEP}] )
 	toml? ( <dev-python/tomli-w-2.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.5.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

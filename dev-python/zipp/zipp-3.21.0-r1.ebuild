@@ -20,19 +20,6 @@ KEYWORDS="amd64 arm64"
 # big_o is only used in test_complexity, that we ignore
 GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
-	check? ( >=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}] )
-	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
-	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
-	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
-	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/jaraco-functools[${PYTHON_USEDEP}]
@@ -43,15 +30,18 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/big-o[${PYTHON_USEDEP}]
-	dev-python/jaraco-functools[${PYTHON_USEDEP}]
-	dev-python/jaraco-itertools[${PYTHON_USEDEP}]
-	dev-python/jaraco-test[${PYTHON_USEDEP}]
-	dev-python/more-itertools[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	dev-python/pytest-ignore-flaky[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/big-o[${PYTHON_USEDEP}]
+		dev-python/jaraco-functools[${PYTHON_USEDEP}]
+		dev-python/jaraco-itertools[${PYTHON_USEDEP}]
+		dev-python/jaraco-test[${PYTHON_USEDEP}]
+		dev-python/more-itertools[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		dev-python/pytest-ignore-flaky[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_IGNORE=(
 	# performance tests are flaky by design
@@ -73,4 +63,5 @@ src_configure() {
 		description = "Backport of pathlib-compatible object wrapper for zip files"
 	EOF
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

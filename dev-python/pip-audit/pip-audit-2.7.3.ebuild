@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachecontrol-0.13.0[filecache,${PYTHON_USEDEP}]
 	<dev-python/cyclonedx-python-lib-8[${PYTHON_USEDEP}]
 	>=dev-python/html5lib-1.1[${PYTHON_USEDEP}]
@@ -35,15 +35,18 @@ GENERATED_DEPEND="${RDEPEND}
 	lint? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-toml[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/build[${PYTHON_USEDEP}]
-	>=dev-python/bump-1.3.2[${PYTHON_USEDEP}]
-	!=dev-python/coverage-7.3.3[toml,${PYTHON_USEDEP}]
-	dev-python/pip-audit[doc,lint,test,${PYTHON_USEDEP}]
-	dev-python/pretend[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[${PYTHON_USEDEP}]
+		>=dev-python/bump-1.3.2[${PYTHON_USEDEP}]
+		!=dev-python/coverage-7.3.3[toml,${PYTHON_USEDEP}]
+		dev-python/pip-audit[doc,lint,test,${PYTHON_USEDEP}]
+		dev-python/pretend[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

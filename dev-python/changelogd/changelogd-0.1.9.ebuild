@@ -16,23 +16,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.1.7[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.1.3[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.18.6[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	>=dev-python/toml-0.10.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
-	~dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
-	~dev-python/nox-2024.3.2[${PYTHON_USEDEP}]
-	~dev-python/pyfakefs-5.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5[${PYTHON_USEDEP}]
-	dev-python/pytest-subprocess[${PYTHON_USEDEP}]
-	~dev-python/wheel-0.43.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
+		=dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
+		=dev-python/nox-2024.3.2[${PYTHON_USEDEP}]
+		=dev-python/pyfakefs-5.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5[${PYTHON_USEDEP}]
+		dev-python/pytest-subprocess[${PYTHON_USEDEP}]
+		=dev-python/wheel-0.43.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

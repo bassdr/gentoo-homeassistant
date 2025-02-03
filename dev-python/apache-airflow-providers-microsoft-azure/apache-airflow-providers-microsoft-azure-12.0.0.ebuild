@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/adal-1.2.7[${PYTHON_USEDEP}]
 	>=dev-python/adlfs-2023.10.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
@@ -45,10 +45,10 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/azure-synapse-spark-0.2.0[${PYTHON_USEDEP}]
 	<dev-python/microsoft-kiota-abstractions-1.4.0[${PYTHON_USEDEP}]
 	!=dev-python/microsoft-kiota-http-1.3.4[${PYTHON_USEDEP}]
-	~dev-python/microsoft-kiota-serialization-json-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/microsoft-kiota-serialization-text-1.0.0[${PYTHON_USEDEP}]
+	=dev-python/microsoft-kiota-serialization-json-1.0.0[${PYTHON_USEDEP}]
+	=dev-python/microsoft-kiota-serialization-text-1.0.0[${PYTHON_USEDEP}]
 	!=dev-python/msgraph-core-1.1.8[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

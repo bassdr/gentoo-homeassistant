@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/affine[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	all? ( >=dev-python/boto3-1.2.4[${PYTHON_USEDEP}] )
@@ -48,15 +48,18 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/boto3-1.2.4[${PYTHON_USEDEP}]
-	dev-python/fsspec[${PYTHON_USEDEP}]
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	>=dev-python/pytest-2.8.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.2.0[${PYTHON_USEDEP}]
-	dev-python/shapely[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/boto3-1.2.4[${PYTHON_USEDEP}]
+		dev-python/fsspec[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		>=dev-python/pytest-2.8.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.2.0[${PYTHON_USEDEP}]
+		dev-python/shapely[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

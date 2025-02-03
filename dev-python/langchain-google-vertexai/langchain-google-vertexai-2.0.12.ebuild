@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	anthropic? ( <dev-python/anthropic-1[vertexai,${PYTHON_USEDEP}] )
 	<dev-python/google-cloud-aiplatform-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/google-cloud-storage-3.0.0[${PYTHON_USEDEP}]
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	mistral? ( <dev-python/langchain-mistralai-1[${PYTHON_USEDEP}] )
 	<dev-python/pydantic-3.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

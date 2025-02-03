@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	all? ( dev-python/ale-py[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/ale-py[${PYTHON_USEDEP}] )
@@ -28,10 +28,10 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/cvxopt[${PYTHON_USEDEP}] )
 	algorithms? ( dev-python/cvxpy[${PYTHON_USEDEP}] )
 	all? ( dev-python/cvxpy[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
-	benchmarks? ( ~dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
-	jax? ( ~dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
+	all? ( =dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
+	benchmarks? ( =dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
+	all? ( =dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
+	jax? ( =dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
 	algorithms? ( dev-python/evojax[${PYTHON_USEDEP}] )
 	all? ( dev-python/evojax[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/flax-0.10.0[${PYTHON_USEDEP}] )
@@ -56,8 +56,8 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/numpy-1.21.5[${PYTHON_USEDEP}]
 	all? ( >=dev-python/optax-0.2.3[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/optax-0.2.3[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
-	benchmarks? ( ~dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
+	all? ( =dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
+	benchmarks? ( =dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	>=dev-python/portpicker-1.3.1[${PYTHON_USEDEP}]
@@ -77,11 +77,14 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/xgboost[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/xgboost[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<=dev-python/coverage-6.4.2[${PYTHON_USEDEP}]
-	<=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<=dev-python/coverage-6.4.2[${PYTHON_USEDEP}]
+		<=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

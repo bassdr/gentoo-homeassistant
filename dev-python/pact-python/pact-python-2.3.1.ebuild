@@ -16,59 +16,59 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	devel-test? ( ~dev-python/aiohttp-3.0[speedups,${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/aiohttp-3.0[speedups,${PYTHON_USEDEP}] )
-	~dev-python/cffi-1.0[${PYTHON_USEDEP}]
-	~dev-python/click-8.0[${PYTHON_USEDEP}]
-	devel-test? ( ~dev-python/coverage-7.0[toml,${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/coverage-7.0[toml,${PYTHON_USEDEP}] )
-	~dev-python/fastapi-0.0[${PYTHON_USEDEP}]
-	devel-test? ( ~dev-python/flask-3.0[async,${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/flask-3.0[async,${PYTHON_USEDEP}] )
-	devel-test? ( ~dev-python/httpx-0.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/httpx-0.0[${PYTHON_USEDEP}] )
-	devel-docs? ( ~dev-python/mkdocs-1.5[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mkdocs-1.5[${PYTHON_USEDEP}] )
-	devel-docs? ( ~dev-python/mkdocs-gen-files-0.5[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mkdocs-gen-files-0.5[${PYTHON_USEDEP}] )
-	devel-docs? ( ~dev-python/mkdocs-literate-nav-0.6[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mkdocs-literate-nav-0.6[${PYTHON_USEDEP}] )
-	devel-docs? ( ~dev-python/mkdocs-material-9.4[imaging,${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mkdocs-material-9.4[imaging,${PYTHON_USEDEP}] )
-	devel-docs? ( ~dev-python/mkdocs-section-index-0.3[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mkdocs-section-index-0.3[${PYTHON_USEDEP}] )
-	devel-docs? ( ~dev-python/mkdocstrings-0.23[python,${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mkdocstrings-0.23[python,${PYTHON_USEDEP}] )
-	devel-test? ( ~dev-python/mock-5.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mock-5.0[${PYTHON_USEDEP}] )
-	devel-types? ( ~dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
-	~dev-python/psutil-6.0[${PYTHON_USEDEP}]
-	devel-test? ( ~dev-python/pytest-8.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/pytest-8.0[${PYTHON_USEDEP}] )
-	devel-test? ( ~dev-python/pytest-asyncio-0.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/pytest-asyncio-0.0[${PYTHON_USEDEP}] )
-	devel-test? ( ~dev-python/pytest-bdd-8.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/pytest-bdd-8.0[${PYTHON_USEDEP}] )
-	devel-test? ( ~dev-python/pytest-cov-6.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/pytest-cov-6.0[${PYTHON_USEDEP}] )
-	devel-test? ( ~dev-python/pytest-rerunfailures-15.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/pytest-rerunfailures-15.0[${PYTHON_USEDEP}] )
-	devel-test? ( ~dev-python/pytest-xdist-3.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/pytest-xdist-3.0[${PYTHON_USEDEP}] )
-	~dev-python/requests-2.0[${PYTHON_USEDEP}]
-	devel? ( ~dev-python/ruff-0.9.2[${PYTHON_USEDEP}] )
-	~dev-python/six-1.0[${PYTHON_USEDEP}]
-	devel-test? ( ~dev-python/testcontainers-4.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/testcontainers-4.0[${PYTHON_USEDEP}] )
-	devel-types? ( ~dev-python/types-cffi-1.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/types-cffi-1.0[${PYTHON_USEDEP}] )
-	devel-types? ( ~dev-python/types-requests-2.0[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/types-requests-2.0[${PYTHON_USEDEP}] )
-	~dev-python/uvicorn-0.0[${PYTHON_USEDEP}]
-	~dev-python/yarl-1.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	devel-test? ( >=dev-python/aiohttp-3.0[speedups,${PYTHON_USEDEP}] =dev-python/aiohttp-3*[speedups,${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/aiohttp-3.0[speedups,${PYTHON_USEDEP}] =dev-python/aiohttp-3*[speedups,${PYTHON_USEDEP}] )
+	>=dev-python/cffi-1.0[${PYTHON_USEDEP}] =dev-python/cffi-1*[${PYTHON_USEDEP}]
+	>=dev-python/click-8.0[${PYTHON_USEDEP}] =dev-python/click-8*[${PYTHON_USEDEP}]
+	devel-test? ( >=dev-python/coverage-7.0[toml,${PYTHON_USEDEP}] =dev-python/coverage-7*[toml,${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/coverage-7.0[toml,${PYTHON_USEDEP}] =dev-python/coverage-7*[toml,${PYTHON_USEDEP}] )
+	>=dev-python/fastapi-0.0[${PYTHON_USEDEP}] =dev-python/fastapi-0*[${PYTHON_USEDEP}]
+	devel-test? ( >=dev-python/flask-3.0[async,${PYTHON_USEDEP}] =dev-python/flask-3*[async,${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/flask-3.0[async,${PYTHON_USEDEP}] =dev-python/flask-3*[async,${PYTHON_USEDEP}] )
+	devel-test? ( >=dev-python/httpx-0.0[${PYTHON_USEDEP}] =dev-python/httpx-0*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/httpx-0.0[${PYTHON_USEDEP}] =dev-python/httpx-0*[${PYTHON_USEDEP}] )
+	devel-docs? ( >=dev-python/mkdocs-1.5[${PYTHON_USEDEP}] =dev-python/mkdocs-1*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/mkdocs-1.5[${PYTHON_USEDEP}] =dev-python/mkdocs-1*[${PYTHON_USEDEP}] )
+	devel-docs? ( >=dev-python/mkdocs-gen-files-0.5[${PYTHON_USEDEP}] =dev-python/mkdocs-gen-files-0*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/mkdocs-gen-files-0.5[${PYTHON_USEDEP}] =dev-python/mkdocs-gen-files-0*[${PYTHON_USEDEP}] )
+	devel-docs? ( >=dev-python/mkdocs-literate-nav-0.6[${PYTHON_USEDEP}] =dev-python/mkdocs-literate-nav-0*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/mkdocs-literate-nav-0.6[${PYTHON_USEDEP}] =dev-python/mkdocs-literate-nav-0*[${PYTHON_USEDEP}] )
+	devel-docs? ( >=dev-python/mkdocs-material-9.4[imaging,${PYTHON_USEDEP}] =dev-python/mkdocs-material-9*[imaging,${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/mkdocs-material-9.4[imaging,${PYTHON_USEDEP}] =dev-python/mkdocs-material-9*[imaging,${PYTHON_USEDEP}] )
+	devel-docs? ( >=dev-python/mkdocs-section-index-0.3[${PYTHON_USEDEP}] =dev-python/mkdocs-section-index-0*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/mkdocs-section-index-0.3[${PYTHON_USEDEP}] =dev-python/mkdocs-section-index-0*[${PYTHON_USEDEP}] )
+	devel-docs? ( >=dev-python/mkdocstrings-0.23[python,${PYTHON_USEDEP}] =dev-python/mkdocstrings-0*[python,${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/mkdocstrings-0.23[python,${PYTHON_USEDEP}] =dev-python/mkdocstrings-0*[python,${PYTHON_USEDEP}] )
+	devel-test? ( >=dev-python/mock-5.0[${PYTHON_USEDEP}] =dev-python/mock-5*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/mock-5.0[${PYTHON_USEDEP}] =dev-python/mock-5*[${PYTHON_USEDEP}] )
+	devel-types? ( =dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
+	devel? ( =dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
+	>=dev-python/psutil-6.0[${PYTHON_USEDEP}] =dev-python/psutil-6*[${PYTHON_USEDEP}]
+	devel-test? ( >=dev-python/pytest-8.0[${PYTHON_USEDEP}] =dev-python/pytest-8*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/pytest-8.0[${PYTHON_USEDEP}] =dev-python/pytest-8*[${PYTHON_USEDEP}] )
+	devel-test? ( >=dev-python/pytest-asyncio-0.0[${PYTHON_USEDEP}] =dev-python/pytest-asyncio-0*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/pytest-asyncio-0.0[${PYTHON_USEDEP}] =dev-python/pytest-asyncio-0*[${PYTHON_USEDEP}] )
+	devel-test? ( >=dev-python/pytest-bdd-8.0[${PYTHON_USEDEP}] =dev-python/pytest-bdd-8*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/pytest-bdd-8.0[${PYTHON_USEDEP}] =dev-python/pytest-bdd-8*[${PYTHON_USEDEP}] )
+	devel-test? ( >=dev-python/pytest-cov-6.0[${PYTHON_USEDEP}] =dev-python/pytest-cov-6*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/pytest-cov-6.0[${PYTHON_USEDEP}] =dev-python/pytest-cov-6*[${PYTHON_USEDEP}] )
+	devel-test? ( >=dev-python/pytest-rerunfailures-15.0[${PYTHON_USEDEP}] =dev-python/pytest-rerunfailures-15*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/pytest-rerunfailures-15.0[${PYTHON_USEDEP}] =dev-python/pytest-rerunfailures-15*[${PYTHON_USEDEP}] )
+	devel-test? ( >=dev-python/pytest-xdist-3.0[${PYTHON_USEDEP}] =dev-python/pytest-xdist-3*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/pytest-xdist-3.0[${PYTHON_USEDEP}] =dev-python/pytest-xdist-3*[${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.0[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}]
+	devel? ( =dev-python/ruff-0.9.2[${PYTHON_USEDEP}] )
+	>=dev-python/six-1.0[${PYTHON_USEDEP}] =dev-python/six-1*[${PYTHON_USEDEP}]
+	devel-test? ( >=dev-python/testcontainers-4.0[${PYTHON_USEDEP}] =dev-python/testcontainers-4*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/testcontainers-4.0[${PYTHON_USEDEP}] =dev-python/testcontainers-4*[${PYTHON_USEDEP}] )
+	devel-types? ( >=dev-python/types-cffi-1.0[${PYTHON_USEDEP}] =dev-python/types-cffi-1*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/types-cffi-1.0[${PYTHON_USEDEP}] =dev-python/types-cffi-1*[${PYTHON_USEDEP}] )
+	devel-types? ( >=dev-python/types-requests-2.0[${PYTHON_USEDEP}] =dev-python/types-requests-2*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/types-requests-2.0[${PYTHON_USEDEP}] =dev-python/types-requests-2*[${PYTHON_USEDEP}] )
+	>=dev-python/uvicorn-0.0[${PYTHON_USEDEP}] =dev-python/uvicorn-0*[${PYTHON_USEDEP}]
+	>=dev-python/yarl-1.0[${PYTHON_USEDEP}] =dev-python/yarl-1*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -5,7 +5,6 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 IUSE=""
 
-PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 1.4.post1)"
 S="${WORKDIR}/${PN}-1.4.post1"
@@ -18,18 +17,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/backoff-1.10.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/backoff-1.10.0[${PYTHON_USEDEP}]
 	>=dev-python/monotonic-1.5[${PYTHON_USEDEP}]
 	>dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
 	<dev-python/requests-3.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/flake8-3.7.9[${PYTHON_USEDEP}]
-	~dev-python/mock-2.0.0[${PYTHON_USEDEP}]
-	~dev-python/pylint-1.9.3[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/flake8-3.7.9[${PYTHON_USEDEP}]
+		=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
+		=dev-python/pylint-1.9.3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

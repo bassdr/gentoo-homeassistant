@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyheos-0.7.2[${PYTHON_USEDEP}]
+	=dev-python/pyheos-0.7.2[${PYTHON_USEDEP}]
 "

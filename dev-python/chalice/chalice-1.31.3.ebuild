@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cdk? ( <dev-python/aws-cdk-aws-iam-2.0[${PYTHON_USEDEP}] )
 	cdk? ( <dev-python/aws-cdk-aws-s3-assets-2.0[${PYTHON_USEDEP}] )
 	cdk? ( <dev-python/aws-cdk-cloudformation-include-2.0[${PYTHON_USEDEP}] )
@@ -31,9 +31,9 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	<dev-python/six-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/typing-extensions-5.0.0[${PYTHON_USEDEP}]
-	event-file-poller? ( ~dev-python/watchdog-2.3.1[${PYTHON_USEDEP}] )
+	event-file-poller? ( =dev-python/watchdog-2.3.1[${PYTHON_USEDEP}] )
 	dev-python/wheel[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

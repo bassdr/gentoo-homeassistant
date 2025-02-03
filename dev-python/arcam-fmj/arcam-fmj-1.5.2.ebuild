@@ -20,10 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/attrs-18.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
@@ -34,13 +34,16 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/coveralls[${PYTHON_USEDEP}]
-	dev-python/defusedxml[${PYTHON_USEDEP}]
-	>dev-python/pytest-3.6.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-aiohttp-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.21.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/coveralls[${PYTHON_USEDEP}]
+		dev-python/defusedxml[${PYTHON_USEDEP}]
+		>dev-python/pytest-3.6.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-aiohttp-1.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-asyncio-0.21.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

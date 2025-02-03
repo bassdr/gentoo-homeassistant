@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/argcomplete-3.2.3[${PYTHON_USEDEP}]
 	<dev-python/azure-monitor-opentelemetry-exporter-2.0.0[${PYTHON_USEDEP}]
 	executable? ( dev-python/bs4[${PYTHON_USEDEP}] )
@@ -45,6 +45,10 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/tabulate-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/waitress-4.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

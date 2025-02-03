@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bx-py-utils[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-3.0.1[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -49,7 +49,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 	type? ( dev-python/types-requests[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.12.4[${PYTHON_USEDEP}]
 	>=dev-python/lomond-0.3.3[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-3.0.1[${PYTHON_USEDEP}]
@@ -66,8 +66,11 @@ RDEPEND="${GENERATED_DEPEND}
 	>=dev-python/jaraco-functools-3.6[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/jaraco-collections-4.1[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	dev-python/requests-mock[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/jaraco-collections-4.1[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -22,32 +22,35 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
-	~dev-python/sphinx-7.2.6[${PYTHON_USEDEP}]
+	=dev-python/sphinx-7.2.6[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.24.2[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}]
+	=dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}]
 	<dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.24.2[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-24.1.1[${PYTHON_USEDEP}]
-	~dev-python/build-1.0.3[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.4.1[toml,${PYTHON_USEDEP}]
-	~dev-python/furo-2024.1.29[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
-	~dev-python/sphinx-autodoc-typehints-1.25.3[${PYTHON_USEDEP}]
-	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-spelling-8.0.0[${PYTHON_USEDEP}]
-	~dev-python/tox-4.12.1[${PYTHON_USEDEP}]
-	~dev-python/twine-4.0.2[${PYTHON_USEDEP}]
-	~dev-python/types-requests-2.31.0.20240125[${PYTHON_USEDEP}]
-	~dev-python/types-six-1.16.21.20240106[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-24.1.1[${PYTHON_USEDEP}]
+		=dev-python/build-1.0.3[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.4.1[toml,${PYTHON_USEDEP}]
+		=dev-python/furo-2024.1.29[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+		=dev-python/sphinx-autodoc-typehints-1.25.3[${PYTHON_USEDEP}]
+		=dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-spelling-8.0.0[${PYTHON_USEDEP}]
+		=dev-python/tox-4.12.1[${PYTHON_USEDEP}]
+		=dev-python/twine-4.0.2[${PYTHON_USEDEP}]
+		=dev-python/types-requests-2.31.0.20240125[${PYTHON_USEDEP}]
+		=dev-python/types-six-1.16.21.20240106[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

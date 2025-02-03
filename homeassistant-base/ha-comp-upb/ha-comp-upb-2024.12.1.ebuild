@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/upb-lib-0.5.9[${PYTHON_USEDEP}]
+	=dev-python/upb-lib-0.5.9[${PYTHON_USEDEP}]
 "

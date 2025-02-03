@@ -18,14 +18,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/comm-0.1.3[${PYTHON_USEDEP}]
 	>=dev-python/ipython-6.1.0[${PYTHON_USEDEP}]
-	~dev-python/jupyterlab-widgets-3.0.12[${PYTHON_USEDEP}]
+	>=dev-python/jupyterlab-widgets-3.0.12[${PYTHON_USEDEP}] =dev-python/jupyterlab-widgets-3.0*[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-4.3.1[${PYTHON_USEDEP}]
-	~dev-python/widgetsnbextension-4.0.12[${PYTHON_USEDEP}]
+	>=dev-python/widgetsnbextension-4.0.12[${PYTHON_USEDEP}] =dev-python/widgetsnbextension-4.0*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/comm-0.1.3[${PYTHON_USEDEP}]
 	>=dev-python/ipython-genutils-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-4.3.1[${PYTHON_USEDEP}]
@@ -44,13 +44,16 @@ PDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/ipykernel[${PYTHON_USEDEP}]
-	dev-python/jsonschema[${PYTHON_USEDEP}]
-	>=dev-python/pytest-3.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/jsonschema[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.6.0[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=()

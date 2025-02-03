@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cmeel[${PYTHON_USEDEP}]
 	build? ( dev-python/cmeel-eigen[${PYTHON_USEDEP}] )
 	build? ( dev-python/cmeel-simde[${PYTHON_USEDEP}] )
@@ -25,6 +25,10 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/scipy[${PYTHON_USEDEP}]
 	build? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

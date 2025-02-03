@@ -18,9 +18,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/nose[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/nose[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	# Upstream uses dead & broken d2to1, just make a quick flit config

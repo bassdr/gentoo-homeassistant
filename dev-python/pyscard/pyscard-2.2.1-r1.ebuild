@@ -22,13 +22,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="gui"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	gui? ( dev-python/wxpython[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	sys-apps/pcsc-lite
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	gui? ( dev-python/wxpython[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 BDEPEND="

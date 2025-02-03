@@ -17,30 +17,34 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/filelock[${PYTHON_USEDEP}]
 	dev-python/fsspec[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/networkx[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cublas-cu12-12.4.5.8[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cuda-cupti-cu12-12.4.127[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cuda-nvrtc-cu12-12.4.127[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cuda-runtime-cu12-12.4.127[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cudnn-cu12-9.1.0.70[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cufft-cu12-11.2.1.3[${PYTHON_USEDEP}]
-	~dev-python/nvidia-curand-cu12-10.3.5.147[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cusolver-cu12-11.6.1.9[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cusparse-cu12-12.3.1.170[${PYTHON_USEDEP}]
-	~dev-python/nvidia-cusparselt-cu12-0.6.2[${PYTHON_USEDEP}]
-	~dev-python/nvidia-nccl-cu12-2.21.5[${PYTHON_USEDEP}]
-	~dev-python/nvidia-nvjitlink-cu12-12.4.127[${PYTHON_USEDEP}]
-	~dev-python/nvidia-nvtx-cu12-12.4.127[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cublas-cu12-12.4.5.8[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cuda-cupti-cu12-12.4.127[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cuda-nvrtc-cu12-12.4.127[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cuda-runtime-cu12-12.4.127[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cudnn-cu12-9.1.0.70[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cufft-cu12-11.2.1.3[${PYTHON_USEDEP}]
+	=dev-python/nvidia-curand-cu12-10.3.5.147[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cusolver-cu12-11.6.1.9[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cusparse-cu12-12.3.1.170[${PYTHON_USEDEP}]
+	=dev-python/nvidia-cusparselt-cu12-0.6.2[${PYTHON_USEDEP}]
+	=dev-python/nvidia-nccl-cu12-2.21.5[${PYTHON_USEDEP}]
+	=dev-python/nvidia-nvjitlink-cu12-12.4.127[${PYTHON_USEDEP}]
+	=dev-python/nvidia-nvtx-cu12-12.4.127[${PYTHON_USEDEP}]
 	opt-einsum? ( >=dev-python/opt-einsum-3.3[${PYTHON_USEDEP}] )
 	optree? ( >=dev-python/optree-0.13.0[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
-	~dev-python/triton-3.2.0[${PYTHON_USEDEP}]
+	=dev-python/triton-3.2.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.10.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

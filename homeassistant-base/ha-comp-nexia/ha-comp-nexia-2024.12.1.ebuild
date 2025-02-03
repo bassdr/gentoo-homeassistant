@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/nexia-2.0.8[${PYTHON_USEDEP}]
+	=dev-python/nexia-2.0.8[${PYTHON_USEDEP}]
 "

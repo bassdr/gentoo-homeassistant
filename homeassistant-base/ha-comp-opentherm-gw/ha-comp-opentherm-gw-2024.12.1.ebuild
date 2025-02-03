@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyotgw-2.2.2[${PYTHON_USEDEP}]
+	=dev-python/pyotgw-2.2.2[${PYTHON_USEDEP}]
 "

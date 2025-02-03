@@ -18,23 +18,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc-rtd test-tox test-tox-coverage"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	doc-rtd? ( >=dev-python/autoapi-0.9.0[${PYTHON_USEDEP}] )
-	test-tox-coverage? ( >=dev-python/coverage-5.5[${PYTHON_USEDEP}] )
-	dev-python/equinox[${PYTHON_USEDEP}]
-	dev-python/jax[cpu,${PYTHON_USEDEP}]
-	dev-python/jaxtyping[${PYTHON_USEDEP}]
-	test-tox? ( dev-python/numba[${PYTHON_USEDEP}] )
-	dev-python/numpy[${PYTHON_USEDEP}]
-	test-tox? ( dev-python/pandera[${PYTHON_USEDEP}] )
-	doc-rtd? ( <=dev-python/pydata-sphinx-theme-0.7.2[${PYTHON_USEDEP}] )
-	test-tox? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	test-tox? ( >=dev-python/pyright-1.1.370[${PYTHON_USEDEP}] )
-	test-tox? ( >=dev-python/pytest-4.0.0[${PYTHON_USEDEP}] )
-	doc-rtd? ( <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
-	doc-rtd? ( >=dev-python/sphinxext-opengraph-0.7.5[${PYTHON_USEDEP}] )
-	test-tox? ( >=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/mypy[${PYTHON_USEDEP}]
@@ -43,20 +26,23 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/autoapi-0.9.0[${PYTHON_USEDEP}]
-	>=dev-python/coverage-5.5[${PYTHON_USEDEP}]
-	dev-python/numba[${PYTHON_USEDEP}]
-	dev-python/pandera[${PYTHON_USEDEP}]
-	<=dev-python/pydata-sphinx-theme-0.7.2[${PYTHON_USEDEP}]
-	dev-python/pygments[${PYTHON_USEDEP}]
-	>=dev-python/pyright-1.1.370[${PYTHON_USEDEP}]
-	>=dev-python/pytest-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/sphinxext-opengraph-0.7.5[${PYTHON_USEDEP}]
-	>=dev-python/tox-3.20.1[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/autoapi-0.9.0[${PYTHON_USEDEP}]
+		>=dev-python/coverage-5.5[${PYTHON_USEDEP}]
+		dev-python/numba[${PYTHON_USEDEP}]
+		dev-python/pandera[${PYTHON_USEDEP}]
+		<=dev-python/pydata-sphinx-theme-0.7.2[${PYTHON_USEDEP}]
+		dev-python/pygments[${PYTHON_USEDEP}]
+		>=dev-python/pyright-1.1.370[${PYTHON_USEDEP}]
+		>=dev-python/pytest-4.0.0[${PYTHON_USEDEP}]
+		<dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinxext-opengraph-0.7.5[${PYTHON_USEDEP}]
+		>=dev-python/tox-3.20.1[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(
@@ -69,4 +55,5 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

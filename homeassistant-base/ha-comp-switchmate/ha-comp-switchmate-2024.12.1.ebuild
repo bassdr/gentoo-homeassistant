@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyswitchmate-0.5.1[${PYTHON_USEDEP}]
+	=dev-python/pyswitchmate-0.5.1[${PYTHON_USEDEP}]
 "

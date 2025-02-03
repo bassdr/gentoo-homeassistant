@@ -5,7 +5,6 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYPI_PN="anel_pwrctrl-homeassistant"
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} 0.0.1.dev2)"

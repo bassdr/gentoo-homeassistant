@@ -15,17 +15,20 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs lint"
+IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="
-	dev-python/marshmallow[${PYTHON_USEDEP}]
-	dev-python/typeguard[${PYTHON_USEDEP}]
-	dev-python/typing-inspect[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	<dev-python/typeguard-5[${PYTHON_USEDEP}]
+	>=dev-python/typing-inspect-0.9.0[${PYTHON_USEDEP}]
+	lint? ( >=dev-vcs/pre-commit-2.17[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/marshmallow-3.13.0[${PYTHON_USEDEP}]
 	<dev-python/marshmallow-4.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-inspect-0.7.1[${PYTHON_USEDEP}]"
@@ -39,3 +42,11 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-5.4[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.17[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

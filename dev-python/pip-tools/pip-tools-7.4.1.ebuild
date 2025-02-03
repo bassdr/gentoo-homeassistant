@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8[${PYTHON_USEDEP}]
 	coverage? ( dev-python/covdefaults[${PYTHON_USEDEP}] )
@@ -27,14 +27,17 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/wheel[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/flit-core-4[${PYTHON_USEDEP}]
-	>=dev-python/poetry-core-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/tomli-w[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/flit-core-4[${PYTHON_USEDEP}]
+		>=dev-python/poetry-core-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/tomli-w[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

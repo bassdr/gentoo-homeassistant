@@ -15,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/fastcore-1.8[${PYTHON_USEDEP}]
 	<dev-python/fastdownload-2[${PYTHON_USEDEP}]
 	>=dev-python/fastprogress-0.2.4[${PYTHON_USEDEP}]
@@ -32,30 +32,33 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/torch-2.6[${PYTHON_USEDEP}]
 	>=dev-python/torchvision-0.11[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/accelerate-0.21[${PYTHON_USEDEP}]
-	dev-python/albumentations[${PYTHON_USEDEP}]
-	>=dev-python/captum-0.4.1[${PYTHON_USEDEP}]
-	dev-python/catalyst[${PYTHON_USEDEP}]
-	dev-python/comet-ml[${PYTHON_USEDEP}]
-	dev-python/flask[${PYTHON_USEDEP}]
-	dev-python/flask-compress[${PYTHON_USEDEP}]
-	dev-python/ipykernel[${PYTHON_USEDEP}]
-	dev-python/ipywidgets[${PYTHON_USEDEP}]
-	dev-python/kornia[${PYTHON_USEDEP}]
-	dev-python/lightning[${PYTHON_USEDEP}]
-	dev-python/ninja[${PYTHON_USEDEP}]
-	dev-python/opencv-python[${PYTHON_USEDEP}]
-	dev-python/pyarrow[${PYTHON_USEDEP}]
-	dev-python/pydicom[${PYTHON_USEDEP}]
-	dev-python/pytorch-ignite[${PYTHON_USEDEP}]
-	dev-python/scikit-image[${PYTHON_USEDEP}]
-	dev-python/sentencepiece[${PYTHON_USEDEP}]
-	dev-python/tensorboard[${PYTHON_USEDEP}]
-	>=dev-python/timm-0.9[${PYTHON_USEDEP}]
-	dev-python/transformers[${PYTHON_USEDEP}]
-	dev-python/wandb[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/accelerate-0.21[${PYTHON_USEDEP}]
+		dev-python/albumentations[${PYTHON_USEDEP}]
+		>=dev-python/captum-0.4.1[${PYTHON_USEDEP}]
+		dev-python/catalyst[${PYTHON_USEDEP}]
+		dev-python/comet-ml[${PYTHON_USEDEP}]
+		dev-python/flask[${PYTHON_USEDEP}]
+		dev-python/flask-compress[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
+		dev-python/kornia[${PYTHON_USEDEP}]
+		dev-python/lightning[${PYTHON_USEDEP}]
+		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-python/opencv-python[${PYTHON_USEDEP}]
+		dev-python/pyarrow[${PYTHON_USEDEP}]
+		dev-python/pydicom[${PYTHON_USEDEP}]
+		dev-python/pytorch-ignite[${PYTHON_USEDEP}]
+		dev-python/scikit-image[${PYTHON_USEDEP}]
+		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		dev-python/tensorboard[${PYTHON_USEDEP}]
+		>=dev-python/timm-0.9[${PYTHON_USEDEP}]
+		dev-python/transformers[${PYTHON_USEDEP}]
+		dev-python/wandb[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

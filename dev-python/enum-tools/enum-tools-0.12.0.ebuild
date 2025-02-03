@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pygments-2.6.1[${PYTHON_USEDEP}]
 	all? ( >=dev-python/sphinx-3.4.0[${PYTHON_USEDEP}] )
 	sphinx? ( >=dev-python/sphinx-3.4.0[${PYTHON_USEDEP}] )
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	sphinx? ( >=dev-python/sphinx-toolbox-2.16.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

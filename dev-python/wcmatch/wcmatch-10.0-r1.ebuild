@@ -8,9 +8,6 @@ DISTUTILS_USE_PEP517=hatchling
 
 DOCS_BUILDER="mkdocs"
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/bracex-2.1.1[${PYTHON_USEDEP}]
-"
 DOCS_DEPEND="
 	>=dev-python/mkdocs-pymdownx-material-extras-2.0
 	dev-python/mkdocs-material
@@ -33,7 +30,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/bracex-2.1.1[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bracex-2.1.1[${PYTHON_USEDEP}]
 "
 

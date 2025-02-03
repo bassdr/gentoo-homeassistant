@@ -21,9 +21,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx doc
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

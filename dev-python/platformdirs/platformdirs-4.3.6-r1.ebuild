@@ -19,13 +19,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( >=dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
-	type? ( >=dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/proselint-0.14[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-8.0.2[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-autodoc-typehints-2.4[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/appdirs[${PYTHON_USEDEP}]
@@ -34,13 +27,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
-	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
+		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	grep -q 'build-backend = "hatchling' pyproject.toml ||
@@ -67,4 +63,5 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -p pytest_mock
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

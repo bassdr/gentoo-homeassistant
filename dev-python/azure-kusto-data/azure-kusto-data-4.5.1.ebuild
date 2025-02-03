@@ -21,18 +21,18 @@ IUSE="${GENERATED_IUSE} +aio pandas test"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="pandas? ( aio )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aio? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	aio? ( <dev-python/asgiref-4[${PYTHON_USEDEP}] )
 	<dev-python/azure-core-2[${PYTHON_USEDEP}]
 	<dev-python/azure-identity-2[${PYTHON_USEDEP}]
-	~dev-python/ijson-3.1[${PYTHON_USEDEP}]
+	>=dev-python/ijson-3.1[${PYTHON_USEDEP}] =dev-python/ijson-3*[${PYTHON_USEDEP}]
 	<dev-python/msal-2[${PYTHON_USEDEP}]
 	pandas? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.13.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/python-dateutil-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.13.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-identity-1.5.0[${PYTHON_USEDEP}]

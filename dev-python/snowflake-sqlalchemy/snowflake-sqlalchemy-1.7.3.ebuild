@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	development? ( dev-python/mock[${PYTHON_USEDEP}] )
 	development? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	development? ( dev-python/pytest[${PYTHON_USEDEP}] )
@@ -28,9 +28,9 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/snowflake-connector-python-4.0.0[${PYTHON_USEDEP}]
 	pandas? ( dev-python/snowflake-connector-python[pandas,${PYTHON_USEDEP}] )
 	>=dev-python/sqlalchemy-1.4.19[${PYTHON_USEDEP}]
-	development? ( ~dev-python/syrupy-4.6.1[${PYTHON_USEDEP}] )
+	development? ( =dev-python/syrupy-4.6.1[${PYTHON_USEDEP}] )
 	development? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

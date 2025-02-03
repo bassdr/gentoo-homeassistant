@@ -19,10 +19,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="scripts"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	scripts? ( >=dev-python/pillow-3.2.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
 	media-gfx/zbar
 "
@@ -34,3 +34,7 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

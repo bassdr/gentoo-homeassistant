@@ -15,15 +15,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/authlib-1.3.2[${PYTHON_USEDEP}]
 	<dev-python/grpcio-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/grpcio-health-checking-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/grpcio-tools-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/httpx-0.29.0[${PYTHON_USEDEP}]
 	<dev-python/pydantic-3.0.0[${PYTHON_USEDEP}]
-	~dev-python/validators-0.34.0[${PYTHON_USEDEP}]
+	=dev-python/validators-0.34.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

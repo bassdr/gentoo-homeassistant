@@ -15,14 +15,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-1.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-4.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-3.0.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.4.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-4.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.0.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.4.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

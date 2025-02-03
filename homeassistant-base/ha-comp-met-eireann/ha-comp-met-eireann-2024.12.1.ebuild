@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pymeteireann-2024.11.0[${PYTHON_USEDEP}]
+	=dev-python/pymeteireann-2024.11.0[${PYTHON_USEDEP}]
 "

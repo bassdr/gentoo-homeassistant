@@ -19,8 +19,6 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
-"
 BDEPEND="
 	test? (
 		>=dev-python/hypothesis-3.7.1[${PYTHON_USEDEP}]
@@ -43,5 +41,7 @@ pkg_postinst() {
 	ewarn "/usr/bin/cmark has been renamed to /usr/bin/cmark.py due file"
 	ewarn "collision with app-text/cmark (see bug #627034)"
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

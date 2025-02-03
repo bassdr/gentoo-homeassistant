@@ -15,12 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dill-0.3.9[${PYTHON_USEDEP}]
 	>=dev-python/multiprocess-0.70.17[${PYTHON_USEDEP}]
 	>=dev-python/pox-0.3.5[${PYTHON_USEDEP}]
 	>=dev-python/ppft-1.7.6.9[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

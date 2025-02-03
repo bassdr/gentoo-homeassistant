@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/sensorpush-ble-1.7.1[${PYTHON_USEDEP}]
+	=dev-python/sensorpush-ble-1.7.1[${PYTHON_USEDEP}]
 "

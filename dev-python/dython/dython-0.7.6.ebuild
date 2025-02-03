@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.4.2[${PYTHON_USEDEP}]
@@ -24,13 +24,16 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/scipy-1.7.1[${PYTHON_USEDEP}]
 	>=dev-python/seaborn-0.12.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-22.8.0[${PYTHON_USEDEP}]
-	>=dev-python/hypothesis-6.24.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.0.0[testing,${PYTHON_USEDEP}]
-	>=dev-python/pytest-black-multipy-1.0.1[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-2.20.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-22.8.0[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.24.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.0.0[testing,${PYTHON_USEDEP}]
+		>=dev-python/pytest-black-multipy-1.0.1[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.20.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

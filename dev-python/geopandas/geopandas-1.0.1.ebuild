@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/folium[${PYTHON_USEDEP}] )
 	all? ( dev-python/geoalchemy2[${PYTHON_USEDEP}] )
 	all? ( dev-python/mapclassify[${PYTHON_USEDEP}] )
@@ -33,14 +33,17 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( dev-python/xyzservices[${PYTHON_USEDEP}] )
 	all? ( sci-geosciences/geopy[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/codecov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-3.1.0[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/codecov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.1.0[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

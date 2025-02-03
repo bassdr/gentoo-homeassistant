@@ -22,11 +22,6 @@ GENERATED_IUSE="twisted"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
-	twisted? ( dev-python/fixtures[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
-	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
@@ -52,5 +47,7 @@ python_test() {
 	"${EPYTHON}" -m testtools.run test_suite.test_suite ||
 		die "tests failed under ${EPYTHON}"
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

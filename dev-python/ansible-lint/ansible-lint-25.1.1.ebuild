@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ansible-compat-25.1.0[${PYTHON_USEDEP}]
 	>=dev-python/ansible-core-2.16.0[${PYTHON_USEDEP}]
 	>=dev-python/black-24.3.0[${PYTHON_USEDEP}]
@@ -34,28 +34,31 @@ GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/wcmatch-8.5.0[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/yamllint-1.34.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	>=dev-python/coverage-6.4.4[toml,${PYTHON_USEDEP}]
-	dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}]
-	dev-python/jmespath[${PYTHON_USEDEP}]
-	>=dev-python/license-expression-30.3.0[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/netaddr[${PYTHON_USEDEP}]
-	dev-python/pip[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	dev-python/pylint[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.2.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-instafail-0.5.0[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	>=dev-python/pytest-plus-0.6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2.1.0[psutil,setproctitle,${PYTHON_USEDEP}]
-	>=dev-python/ruamel-yaml-0.17.31[${PYTHON_USEDEP}]
-	dev-python/ruamel-yaml-clib[${PYTHON_USEDEP}]
-	>=dev-python/tox-4.0.0[${PYTHON_USEDEP}]
-	dev-python/types-jsonschema[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		>=dev-python/coverage-6.4.4[toml,${PYTHON_USEDEP}]
+		dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}]
+		dev-python/jmespath[${PYTHON_USEDEP}]
+		>=dev-python/license-expression-30.3.0[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/netaddr[${PYTHON_USEDEP}]
+		dev-python/pip[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		dev-python/pylint[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.2.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-instafail-0.5.0[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		>=dev-python/pytest-plus-0.6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.1.0[psutil,setproctitle,${PYTHON_USEDEP}]
+		>=dev-python/ruamel-yaml-0.17.31[${PYTHON_USEDEP}]
+		dev-python/ruamel-yaml-clib[${PYTHON_USEDEP}]
+		>=dev-python/tox-4.0.0[${PYTHON_USEDEP}]
+		dev-python/types-jsonschema[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

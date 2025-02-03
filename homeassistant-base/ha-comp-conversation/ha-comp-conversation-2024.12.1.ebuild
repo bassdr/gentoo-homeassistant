@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/hassil-2.0.5[${PYTHON_USEDEP}]
-	~dev-python/home-assistant-intents-2024.12.4[${PYTHON_USEDEP}]
+	=dev-python/hassil-2.0.5[${PYTHON_USEDEP}]
+	=dev-python/home-assistant-intents-2024.12.4[${PYTHON_USEDEP}]
 "

@@ -16,10 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]' python3_13{,t})
-	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	<dev-python/pymongo-5.0[${PYTHON_USEDEP}]
 	aws? ( <dev-python/pymongo-5[aws,${PYTHON_USEDEP}] )
 	encryption? ( <dev-python/pymongo-5[encryption,${PYTHON_USEDEP}] )
@@ -27,19 +27,22 @@ GENERATED_DEPEND="${RDEPEND}
 	ocsp? ( <dev-python/pymongo-5[ocsp,${PYTHON_USEDEP}] )
 	snappy? ( <dev-python/pymongo-5[snappy,${PYTHON_USEDEP}] )
 	zstd? ( <dev-python/pymongo-5[zstd,${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/readthedocs-sphinx-search-0.3[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/readthedocs-sphinx-search-0.3[${PYTHON_USEDEP}] =dev-python/readthedocs-sphinx-search-0*[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-rtd-theme-3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/tornado[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/aiohttp-3.8.7[${PYTHON_USEDEP}]
-	dev-python/mockupdb[${PYTHON_USEDEP}]
-	<dev-python/pymongo-5[encryption,${PYTHON_USEDEP}]
-	>=dev-python/pytest-7[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	>=dev-python/tornado-5[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/aiohttp-3.8.7[${PYTHON_USEDEP}]
+		dev-python/mockupdb[${PYTHON_USEDEP}]
+		<dev-python/pymongo-5[encryption,${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		>=dev-python/tornado-5[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dotenv"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	>=dev-python/blinker-1.6[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
@@ -35,7 +35,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dotenv? ( dev-python/python-dotenv[${PYTHON_USEDEP}] )
 	>=dev-python/werkzeug-3.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	>=dev-python/blinker-1.6[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

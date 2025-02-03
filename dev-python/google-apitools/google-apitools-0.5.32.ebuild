@@ -17,16 +17,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fasteners-0.14[${PYTHON_USEDEP}]
 	>=dev-python/httplib2-0.8[${PYTHON_USEDEP}]
 	>=dev-python/oauth2client-1.4.12[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/python-gflags-3.0.6[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.12.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

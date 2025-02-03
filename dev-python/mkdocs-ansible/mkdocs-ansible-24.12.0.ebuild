@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cairosvg-2.6.0[${PYTHON_USEDEP}]
 	>=dev-python/linkchecker-10.3.0[${PYTHON_USEDEP}]
 	>=dev-python/markdown-exec-1.3.0[${PYTHON_USEDEP}]
@@ -33,10 +33,13 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pillow-9.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pymdown-extensions-9.9.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

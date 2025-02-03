@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/hyperion-py-0.7.5[${PYTHON_USEDEP}]
+	=dev-python/hyperion-py-0.7.5[${PYTHON_USEDEP}]
 "

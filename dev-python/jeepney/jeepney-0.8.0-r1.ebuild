@@ -20,10 +20,6 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="trio"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
-	trio? ( dev-python/async-generator[${PYTHON_USEDEP}] )
-	trio? ( dev-python/trio[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/async-timeout[${PYTHON_USEDEP}]
@@ -34,14 +30,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/async-timeout[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}]
-	dev-python/pytest-trio[${PYTHON_USEDEP}]
-	dev-python/testpath[${PYTHON_USEDEP}]
-	dev-python/trio[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/async-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}]
+		dev-python/pytest-trio[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+		dev-python/trio[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 distutils_enable_sphinx docs \
 	dev-python/sphinx-rtd-theme
@@ -72,4 +71,5 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

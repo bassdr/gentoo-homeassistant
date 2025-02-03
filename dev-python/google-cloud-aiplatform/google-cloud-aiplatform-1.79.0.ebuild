@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	langchain-testing? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	dev-python/bigframes[${PYTHON_USEDEP}]
 	langchain-testing? ( <dev-python/cloudpickle-4.0[${PYTHON_USEDEP}] )
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	lit? ( >=dev-python/explainable-ai-sdk-1.0.0[${PYTHON_USEDEP}] )
 	full? ( <=dev-python/fastapi-0.114.0[${PYTHON_USEDEP}] )
 	prediction? ( <=dev-python/fastapi-0.114.0[${PYTHON_USEDEP}] )
-	!=dev-python/google-api-core-2.0[grpc,${PYTHON_USEDEP}]
+	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
 	<dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
 	!=dev-python/google-cloud-bigquery-3.20.0[${PYTHON_USEDEP}]
 	full? ( dev-python/google-cloud-bigquery[${PYTHON_USEDEP}] )
@@ -56,8 +56,8 @@ GENERATED_DEPEND="${RDEPEND}
 	langchain? ( <dev-python/langchain-google-vertexai-3[${PYTHON_USEDEP}] )
 	langchain-testing? ( <dev-python/langgraph-0.3[${PYTHON_USEDEP}] )
 	langchain? ( <dev-python/langgraph-0.3[${PYTHON_USEDEP}] )
-	full? ( ~dev-python/lit-nlp-0.4.0[${PYTHON_USEDEP}] )
-	lit? ( ~dev-python/lit-nlp-0.4.0[${PYTHON_USEDEP}] )
+	full? ( =dev-python/lit-nlp-0.4.0[${PYTHON_USEDEP}] )
+	lit? ( =dev-python/lit-nlp-0.4.0[${PYTHON_USEDEP}] )
 	autologging? ( <=dev-python/mlflow-2.16.0[${PYTHON_USEDEP}] )
 	full? ( <=dev-python/mlflow-2.16.0[${PYTHON_USEDEP}] )
 	full? ( >=dev-python/numpy-1.15.0[${PYTHON_USEDEP}] )
@@ -104,7 +104,7 @@ GENERATED_DEPEND="${RDEPEND}
 	cloud-profiler? ( <dev-python/tensorboard-plugin-profile-2.18.0[${PYTHON_USEDEP}] )
 	full? ( <dev-python/tensorboard-plugin-profile-2.18.0[${PYTHON_USEDEP}] )
 	tensorboard? ( <dev-python/tensorboard-plugin-profile-2.18.0[${PYTHON_USEDEP}] )
-	~dev-python/tensorflow-2.16.1[${PYTHON_USEDEP}]
+	=dev-python/tensorflow-2.16.1[${PYTHON_USEDEP}]
 	cloud-profiler? ( <dev-python/tensorflow-3.0.0_pre[${PYTHON_USEDEP}] )
 	full? ( <dev-python/tensorflow-3.0.0_pre[${PYTHON_USEDEP}] )
 	lit? ( <dev-python/tensorflow-3.0.0_pre[${PYTHON_USEDEP}] )
@@ -128,42 +128,45 @@ GENERATED_DEPEND="${RDEPEND}
 	ray-testing? ( dev-python/xgboost[${PYTHON_USEDEP}] )
 	ray-testing? ( dev-python/xgboost-ray[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	>=dev-python/docker-5.0.3[${PYTHON_USEDEP}]
-	>=dev-python/explainable-ai-sdk-1.0.0[${PYTHON_USEDEP}]
-	<=dev-python/fastapi-0.114.0[${PYTHON_USEDEP}]
-	<dev-python/google-api-core-3.0.0[${PYTHON_USEDEP}]
-	dev-python/google-cloud-bigquery[${PYTHON_USEDEP}]
-	dev-python/google-cloud-bigquery-storage[${PYTHON_USEDEP}]
-	>=dev-python/google-vizier-0.1.6[${PYTHON_USEDEP}]
-	dev-python/grpcio-testing[${PYTHON_USEDEP}]
-	<dev-python/httpx-0.25.0[${PYTHON_USEDEP}]
-	dev-python/immutabledict[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	<dev-python/kfp-3.0.0[${PYTHON_USEDEP}]
-	~dev-python/lit-nlp-0.4.0[${PYTHON_USEDEP}]
-	<=dev-python/mlflow-2.16.0[${PYTHON_USEDEP}]
-	dev-python/nltk[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.15.0[${PYTHON_USEDEP}]
-	>=dev-python/pandas-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pyarrow-6.0.1[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]
-	<dev-python/requests-toolbelt-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}]
-	<dev-python/setuptools-70.0.0[${PYTHON_USEDEP}]
-	>=dev-python/starlette-0.17.1[${PYTHON_USEDEP}]
-	<dev-python/tensorboard-plugin-profile-2.18.0[${PYTHON_USEDEP}]
-	<dev-python/tensorflow-3.0.0_pre[${PYTHON_USEDEP}]
-	>=dev-python/tqdm-4.23.0[${PYTHON_USEDEP}]
-	<dev-python/urllib3-1.27[${PYTHON_USEDEP}]
-	>=dev-python/uvicorn-0.16.0[standard,${PYTHON_USEDEP}]
-	<dev-python/werkzeug-2.1.0_pre[${PYTHON_USEDEP}]
-	dev-python/xgboost[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		>=dev-python/docker-5.0.3[${PYTHON_USEDEP}]
+		>=dev-python/explainable-ai-sdk-1.0.0[${PYTHON_USEDEP}]
+		<=dev-python/fastapi-0.114.0[${PYTHON_USEDEP}]
+		<dev-python/google-api-core-3.0.0[${PYTHON_USEDEP}]
+		dev-python/google-cloud-bigquery[${PYTHON_USEDEP}]
+		dev-python/google-cloud-bigquery-storage[${PYTHON_USEDEP}]
+		>=dev-python/google-vizier-0.1.6[${PYTHON_USEDEP}]
+		dev-python/grpcio-testing[${PYTHON_USEDEP}]
+		<dev-python/httpx-0.25.0[${PYTHON_USEDEP}]
+		dev-python/immutabledict[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		<dev-python/kfp-3.0.0[${PYTHON_USEDEP}]
+		=dev-python/lit-nlp-0.4.0[${PYTHON_USEDEP}]
+		<=dev-python/mlflow-2.16.0[${PYTHON_USEDEP}]
+		dev-python/nltk[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.15.0[${PYTHON_USEDEP}]
+		>=dev-python/pandas-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pyarrow-6.0.1[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		<dev-python/pyyaml-7[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]
+		<dev-python/requests-toolbelt-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}]
+		<dev-python/setuptools-70.0.0[${PYTHON_USEDEP}]
+		>=dev-python/starlette-0.17.1[${PYTHON_USEDEP}]
+		<dev-python/tensorboard-plugin-profile-2.18.0[${PYTHON_USEDEP}]
+		<dev-python/tensorflow-3.0.0_pre[${PYTHON_USEDEP}]
+		>=dev-python/tqdm-4.23.0[${PYTHON_USEDEP}]
+		<dev-python/urllib3-1.27[${PYTHON_USEDEP}]
+		>=dev-python/uvicorn-0.16.0[standard,${PYTHON_USEDEP}]
+		<dev-python/werkzeug-2.1.0_pre[${PYTHON_USEDEP}]
+		dev-python/xgboost[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

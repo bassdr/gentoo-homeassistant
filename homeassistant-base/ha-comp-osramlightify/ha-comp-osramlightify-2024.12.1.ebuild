@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/lightify-1.0.7.3[${PYTHON_USEDEP}]
+	=dev-python/lightify-1.0.7.3[${PYTHON_USEDEP}]
 "

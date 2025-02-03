@@ -22,12 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-0.8[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-3[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.21[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiofiles-0.8[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-3[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.21[${PYTHON_USEDEP}]"

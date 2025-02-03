@@ -6,7 +6,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-PYPI_NO_NORMALIZE=1
 PYPI_PN="zc.lockfile"
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} 3.0.post1)"
@@ -21,9 +20,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	test? (
 		dev-python/zope-testing[${PYTHON_USEDEP}]
@@ -33,9 +29,12 @@ BDEPEND="
 DOCS=( CHANGES.rst README.rst )
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/zope-testing[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	# rdep is only needed for namespace
@@ -51,4 +50,5 @@ python_prepare_all() {
 python_test() {
 	"${EPYTHON}" -m unittest zc.lockfile.tests -v || die
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

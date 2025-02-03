@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
-	~dev-python/simplehound-0.3[${PYTHON_USEDEP}]
+	=dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
+	=dev-python/simplehound-0.3[${PYTHON_USEDEP}]
 "

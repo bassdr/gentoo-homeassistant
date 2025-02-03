@@ -24,15 +24,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs ssh websockets"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/myst-parser-0.18.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( =dev-python/myst-parser-0.18.0[${PYTHON_USEDEP}] )
 	ssh? ( >=dev-python/paramiko-2.4.3[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/sphinx-5.1.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-5.1.1[${PYTHON_USEDEP}] )
 	>=dev-python/urllib3-1.26.0[${PYTHON_USEDEP}]
 	websockets? ( >=dev-python/websocket-client-1.3.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.0[${PYTHON_USEDEP}]
 "
@@ -47,13 +47,16 @@ BDEPEND="
 distutils_enable_sphinx docs \
 	'dev-python/myst-parser'
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/coverage-7.2.7[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.4.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.1.8[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/coverage-7.2.7[${PYTHON_USEDEP}]
+		=dev-python/pytest-7.4.2[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.1.8[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# localhost has a better chance of being in /etc/hosts

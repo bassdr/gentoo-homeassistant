@@ -16,17 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-providers-common-compat-1.2.1[${PYTHON_USEDEP}]
 	common-compat? ( dev-python/apache-airflow-providers-common-compat[${PYTHON_USEDEP}] )
 	<dev-python/flask-2.3[${PYTHON_USEDEP}]
-	~dev-python/flask-appbuilder-4.5.2[${PYTHON_USEDEP}]
+	=dev-python/flask-appbuilder-4.5.2[${PYTHON_USEDEP}]
 	>=dev-python/flask-login-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/google-re2-1.0[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.0[${PYTHON_USEDEP}]
 	kerberos? ( >=dev-python/kerberos-1.3.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

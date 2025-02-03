@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="css"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	css? ( <dev-python/tinycss2-1.5[${PYTHON_USEDEP}] )
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/html5lib-1.0.1-r1[${PYTHON_USEDEP}]
 "

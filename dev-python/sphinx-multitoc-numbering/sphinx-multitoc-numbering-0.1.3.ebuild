@@ -17,22 +17,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	code_style? ( dev-python/black[${PYTHON_USEDEP}] )
 	code_style? ( <dev-python/flake8-3.8.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-3[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/sphinx-3.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
-	code_style? ( ~dev-vcs/pre-commit-1.17.0[${PYTHON_USEDEP}] )
+	code_style? ( =dev-vcs/pre-commit-1.17.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/coverage-5.0[${PYTHON_USEDEP}]
-	dev-python/jupyter-book[${PYTHON_USEDEP}]
-	~dev-python/pytest-5.4[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-2.8[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/coverage-5.0[${PYTHON_USEDEP}]
+		dev-python/jupyter-book[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.4[${PYTHON_USEDEP}] =dev-python/pytest-5*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.8[${PYTHON_USEDEP}] =dev-python/pytest-cov-2*[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

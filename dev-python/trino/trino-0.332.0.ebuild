@@ -16,9 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	external-authentication-token-cache? ( dev-python/keyring[${PYTHON_USEDEP}] )
-	gssapi? ( ~dev-python/krb5-0.5.1[${PYTHON_USEDEP}] )
+	gssapi? ( =dev-python/krb5-0.5.1[${PYTHON_USEDEP}] )
 	dev-python/lz4[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
@@ -31,21 +31,24 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 	dev-python/zstandard[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/boto3[${PYTHON_USEDEP}]
-	<dev-python/httpretty-1.1[${PYTHON_USEDEP}]
-	dev-python/isort[${PYTHON_USEDEP}]
-	dev-python/keyring[${PYTHON_USEDEP}]
-	~dev-python/krb5-0.5.1[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-runner[${PYTHON_USEDEP}]
-	dev-python/requests-gssapi[${PYTHON_USEDEP}]
-	dev-python/requests-kerberos[${PYTHON_USEDEP}]
-	>=dev-python/sqlalchemy-1.3[${PYTHON_USEDEP}]
-	dev-python/testcontainers[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/boto3[${PYTHON_USEDEP}]
+		<dev-python/httpretty-1.1[${PYTHON_USEDEP}]
+		dev-python/isort[${PYTHON_USEDEP}]
+		dev-python/keyring[${PYTHON_USEDEP}]
+		=dev-python/krb5-0.5.1[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
+		dev-python/requests-gssapi[${PYTHON_USEDEP}]
+		dev-python/requests-kerberos[${PYTHON_USEDEP}]
+		>=dev-python/sqlalchemy-1.3[${PYTHON_USEDEP}]
+		dev-python/testcontainers[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

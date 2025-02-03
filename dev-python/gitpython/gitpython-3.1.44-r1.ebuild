@@ -30,7 +30,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/gitdb-5[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
 	doc? ( <dev-python/sphinx-7.2[${PYTHON_USEDEP}] )
@@ -38,7 +38,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-vcs/git
 	>=dev-python/gitdb-4.0.1[${PYTHON_USEDEP}]
 "
@@ -53,17 +53,20 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	!=dev-python/ddt-1.4.3[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-instafail[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-sugar[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		!=dev-python/ddt-1.4.3[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-instafail[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-sugar[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	git config --global user.email "travis@ci.com" || die

@@ -24,7 +24,7 @@ DOCS="README.md"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.19.5[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-2.13.0[${PYTHON_USEDEP}]
@@ -39,7 +39,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/home-assistant-bluetooth-1.9.2[${PYTHON_USEDEP}]
 	>=dev-python/sensor-state-data-2.17.1[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6.0[${PYTHON_USEDEP}]

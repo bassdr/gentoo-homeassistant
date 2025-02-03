@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/simplepush-2.2.3[${PYTHON_USEDEP}]
+	=dev-python/simplepush-2.2.3[${PYTHON_USEDEP}]
 "

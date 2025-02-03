@@ -16,11 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/boto3-1.9[${PYTHON_USEDEP}]
-	~dev-python/fs-2.4[${PYTHON_USEDEP}]
-	~dev-python/six-1.10[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/boto3-1.9[${PYTHON_USEDEP}] =dev-python/boto3-1*[${PYTHON_USEDEP}]
+	>=dev-python/fs-2.4[${PYTHON_USEDEP}] =dev-python/fs-2*[${PYTHON_USEDEP}]
+	>=dev-python/six-1.10[${PYTHON_USEDEP}] =dev-python/six-1*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

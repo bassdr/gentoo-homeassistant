@@ -19,11 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/python-http-client-3.2.1[${PYTHON_USEDEP}]
 	>=dev-python/starkbank-ecdsa-1.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/python-http-client-3.2.1[${PYTHON_USEDEP}]
 	>=dev-python/starkbank-ecdsa-1.0.0[${PYTHON_USEDEP}]"
 BDEPEND="

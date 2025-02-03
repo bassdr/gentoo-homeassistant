@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/wled-0.20.2[${PYTHON_USEDEP}]
+	=dev-python/wled-0.20.2[${PYTHON_USEDEP}]
 "

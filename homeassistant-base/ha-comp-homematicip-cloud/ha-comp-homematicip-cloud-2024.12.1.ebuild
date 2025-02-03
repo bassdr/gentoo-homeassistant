@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/homematicip-1.1.3[${PYTHON_USEDEP}]
+	=dev-python/homematicip-1.1.3[${PYTHON_USEDEP}]
 "

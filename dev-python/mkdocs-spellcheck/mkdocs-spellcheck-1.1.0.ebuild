@@ -16,12 +16,12 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	codespell? ( >=dev-python/codespell-2.2.2[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-resources-6.4[${PYTHON_USEDEP}]
 	all? ( dev-python/mkdocs-spellcheck[codespell,symspellpy,${PYTHON_USEDEP}] )
 	symspellpy? ( >=dev-python/symspellpy-6.7.6[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

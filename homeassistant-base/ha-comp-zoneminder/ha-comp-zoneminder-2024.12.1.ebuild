@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/zm-py-0.5.4[${PYTHON_USEDEP}]
+	=dev-python/zm-py-0.5.4[${PYTHON_USEDEP}]
 "

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-0.4[${PYTHON_USEDEP}]
 	>=dev-python/asgi-csrf-0.9[${PYTHON_USEDEP}]
 	>=dev-python/asgiref-3.2.10[${PYTHON_USEDEP}]
@@ -26,7 +26,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/codespell[${PYTHON_USEDEP}] )
 	>=dev-python/flexcache-0.3[${PYTHON_USEDEP}]
 	>=dev-python/flexparser-0.3[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/httpx-0.20[${PYTHON_USEDEP}]
 	>=dev-python/hupper-1.9[${PYTHON_USEDEP}]
 	>=dev-python/itsdangerous-1.1[${PYTHON_USEDEP}]
@@ -44,17 +44,20 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.11[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/beautifulsoup4-4.8.1[${PYTHON_USEDEP}]
-	~dev-python/black-24.4.2[${PYTHON_USEDEP}]
-	~dev-python/blacken-docs-1.12.1[${PYTHON_USEDEP}]
-	>=dev-python/cogapp-3.3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.2.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-1.4.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2.2.1[${PYTHON_USEDEP}]
-	>=dev-python/trustme-0.7[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/beautifulsoup4-4.8.1[${PYTHON_USEDEP}]
+		=dev-python/black-24.4.2[${PYTHON_USEDEP}]
+		=dev-python/blacken-docs-1.12.1[${PYTHON_USEDEP}]
+		>=dev-python/cogapp-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.2.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-1.4.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.2.1[${PYTHON_USEDEP}]
+		>=dev-python/trustme-0.7[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

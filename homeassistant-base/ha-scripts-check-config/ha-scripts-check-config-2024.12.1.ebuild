@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/colorlog-6.8.2[${PYTHON_USEDEP}]
+	=dev-python/colorlog-6.8.2[${PYTHON_USEDEP}]
 "

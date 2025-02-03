@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/hass-splunk-0.1.1[${PYTHON_USEDEP}]
+	=dev-python/hass-splunk-0.1.1[${PYTHON_USEDEP}]
 "

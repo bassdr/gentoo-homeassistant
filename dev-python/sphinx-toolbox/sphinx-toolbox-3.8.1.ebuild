@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apeye-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/autodocsumm-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/beautifulsoup4-4.9.1[${PYTHON_USEDEP}]
@@ -38,10 +38,13 @@ GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/typing-extensions-3.10.0.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-inspect-0.6.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coincidence-0.4.3[${PYTHON_USEDEP}]
-	<=dev-python/pygments-2.13.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coincidence-0.4.3[${PYTHON_USEDEP}]
+		<=dev-python/pygments-2.13.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

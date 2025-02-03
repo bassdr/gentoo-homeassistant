@@ -15,12 +15,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/aiofiles-24.0.0[${PYTHON_USEDEP}]
 	<dev-python/gcloud-aio-auth-6.0.0[${PYTHON_USEDEP}]
 	<dev-python/pyasn1-modules-0.4.1[${PYTHON_USEDEP}]
 	<dev-python/rsa-5.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

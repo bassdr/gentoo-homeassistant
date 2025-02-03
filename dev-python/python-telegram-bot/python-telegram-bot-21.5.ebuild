@@ -30,20 +30,20 @@ REQUIRED_USE="all? ( ext http2 passport socks )
 	ext? ( callback-data job-queue rate-limiter webhooks )"
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	all? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
-	ext? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
-	rate-limiter? ( ~dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] )
-	ext? ( ~dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] )
-	job-queue? ( ~dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	all? ( >=dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] =dev-python/aiolimiter-1.1*[${PYTHON_USEDEP}] )
+	ext? ( >=dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] =dev-python/aiolimiter-1.1*[${PYTHON_USEDEP}] )
+	rate-limiter? ( >=dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] =dev-python/aiolimiter-1.1*[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] =dev-python/apscheduler-3.10*[${PYTHON_USEDEP}] )
+	ext? ( >=dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] =dev-python/apscheduler-3.10*[${PYTHON_USEDEP}] )
+	job-queue? ( >=dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] =dev-python/apscheduler-3.10*[${PYTHON_USEDEP}] )
 	all? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
 	callback-data? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
 	ext? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
 	>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]
 	all? ( !=dev-python/cryptography-3.4[${PYTHON_USEDEP}] )
 	passport? ( !=dev-python/cryptography-3.4[${PYTHON_USEDEP}] )
-	~dev-python/httpx-0.27[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.27[${PYTHON_USEDEP}] =dev-python/httpx-0*[${PYTHON_USEDEP}]
 	all? ( dev-python/httpx[http2,${PYTHON_USEDEP}] )
 	all? ( dev-python/httpx[socks,${PYTHON_USEDEP}] )
 	http2? ( dev-python/httpx[http2,${PYTHON_USEDEP}] )
@@ -51,11 +51,11 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/pytz-2018.6[${PYTHON_USEDEP}] )
 	ext? ( >=dev-python/pytz-2018.6[${PYTHON_USEDEP}] )
 	job-queue? ( >=dev-python/pytz-2018.6[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/tornado-6.4[${PYTHON_USEDEP}] )
-	ext? ( ~dev-python/tornado-6.4[${PYTHON_USEDEP}] )
-	webhooks? ( ~dev-python/tornado-6.4[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/tornado-6.4[${PYTHON_USEDEP}] =dev-python/tornado-6*[${PYTHON_USEDEP}] )
+	ext? ( >=dev-python/tornado-6.4[${PYTHON_USEDEP}] =dev-python/tornado-6*[${PYTHON_USEDEP}] )
+	webhooks? ( >=dev-python/tornado-6.4[${PYTHON_USEDEP}] =dev-python/tornado-6*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httpx-0.27.0[${PYTHON_USEDEP}] <dev-python/httpx-0.28.0[${PYTHON_USEDEP}]
 	callback-data? ( >=dev-python/cachetools-5.3.3[${PYTHON_USEDEP}] )
 	http2? ( dev-python/httpx[http2,${PYTHON_USEDEP}] )

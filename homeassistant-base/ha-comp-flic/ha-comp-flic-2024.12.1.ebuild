@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyflic-2.0.4[${PYTHON_USEDEP}]
+	=dev-python/pyflic-2.0.4[${PYTHON_USEDEP}]
 "

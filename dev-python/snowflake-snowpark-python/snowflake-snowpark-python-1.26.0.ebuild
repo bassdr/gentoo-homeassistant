@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	development? ( dev-python/cachetools[${PYTHON_USEDEP}] )
 	modin-development? ( dev-python/cachetools[${PYTHON_USEDEP}] )
 	!=dev-python/cloudpickle-2.1.0[${PYTHON_USEDEP}]
@@ -30,8 +30,8 @@ GENERATED_DEPEND="${RDEPEND}
 	modin-development? ( dev-python/lxml[${PYTHON_USEDEP}] )
 	development? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	modin-development? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	modin-development? ( ~dev-python/modin-0.30.1[${PYTHON_USEDEP}] )
-	modin? ( ~dev-python/modin-0.30.1[${PYTHON_USEDEP}] )
+	modin-development? ( =dev-python/modin-0.30.1[${PYTHON_USEDEP}] )
+	modin? ( =dev-python/modin-0.30.1[${PYTHON_USEDEP}] )
 	development? ( dev-python/mypy-protobuf[${PYTHON_USEDEP}] )
 	modin-development? ( dev-python/mypy-protobuf[${PYTHON_USEDEP}] )
 	development? ( dev-python/openpyxl[${PYTHON_USEDEP}] )
@@ -40,8 +40,8 @@ GENERATED_DEPEND="${RDEPEND}
 	opentelemetry? ( <dev-python/opentelemetry-sdk-2.0.0[${PYTHON_USEDEP}] )
 	localtest? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]
-	development? ( ~dev-python/protoc-wheel_0-21.1[${PYTHON_USEDEP}] )
-	modin-development? ( ~dev-python/protoc-wheel_0-21.1[${PYTHON_USEDEP}] )
+	development? ( =dev-python/protoc-wheel_0-21.1[${PYTHON_USEDEP}] )
+	modin-development? ( =dev-python/protoc-wheel_0-21.1[${PYTHON_USEDEP}] )
 	development? ( <dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
 	modin-development? ( <dev-python/pytest-8.0.0[${PYTHON_USEDEP}] )
 	development? ( dev-python/pytest-assume[${PYTHON_USEDEP}] )
@@ -55,7 +55,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	localtest? ( dev-python/requests[${PYTHON_USEDEP}] )
-	modin-development? ( ~dev-python/scikit-learn-1.5.2[${PYTHON_USEDEP}] )
+	modin-development? ( =dev-python/scikit-learn-1.5.2[${PYTHON_USEDEP}] )
 	modin-development? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-40.6.0[${PYTHON_USEDEP}]
 	<dev-python/snowflake-connector-python-4.0.0[${PYTHON_USEDEP}]
@@ -63,8 +63,8 @@ GENERATED_DEPEND="${RDEPEND}
 	modin? ( <dev-python/snowflake-connector-python-4.0.0[pandas,${PYTHON_USEDEP}] )
 	pandas? ( <dev-python/snowflake-connector-python-4.0.0[pandas,${PYTHON_USEDEP}] )
 	secure-local-storage? ( <dev-python/snowflake-connector-python-4.0.0[secure-local-storage,${PYTHON_USEDEP}] )
-	development? ( ~dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
-	modin-development? ( ~dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
+	development? ( =dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
+	modin-development? ( =dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
 	modin-development? ( dev-python/statsmodels[${PYTHON_USEDEP}] )
 	<dev-python/typing-extensions-5.0.0[${PYTHON_USEDEP}]
 	dev-python/tzlocal[${PYTHON_USEDEP}]
@@ -74,6 +74,6 @@ GENERATED_DEPEND="${RDEPEND}
 	development? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 	modin-development? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

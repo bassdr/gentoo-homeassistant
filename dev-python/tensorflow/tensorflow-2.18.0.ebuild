@@ -69,7 +69,7 @@ SRC_URI="https://github.com/${PN}/${PN}/archive/v${MY_PV}.tar.gz -> ${P}.gh.tar.
 		https://dev.gentoo.org/~perfinion/patches/tensorflow-patches-${PVR}.tar.bz2
 		${bazel_external_uris}"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/astunparse-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/flatbuffers-24.3.25[${PYTHON_USEDEP}]
@@ -81,18 +81,18 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/libclang-13.0.0[${PYTHON_USEDEP}]
 	<dev-python/ml-dtypes-0.5.0[${PYTHON_USEDEP}]
 	<dev-python/numpy-2.1.0[${PYTHON_USEDEP}]
-	and-cuda? ( ~dev-python/nvidia-cublas-cu12-12.5.3.2[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-cupti-cu12-12.5.82[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-nvcc-cu12-12.5.82[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-nvrtc-cu12-12.5.82[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cuda-runtime-cu12-12.5.82[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cudnn-cu12-9.3.0.75[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cufft-cu12-11.2.3.61[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-curand-cu12-10.3.6.82[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cusolver-cu12-11.6.3.83[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-cusparse-cu12-12.5.1.3[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-nccl-cu12-2.21.5[${PYTHON_USEDEP}] )
-	and-cuda? ( ~dev-python/nvidia-nvjitlink-cu12-12.5.82[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cublas-cu12-12.5.3.2[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-cupti-cu12-12.5.82[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-nvcc-cu12-12.5.82[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-nvrtc-cu12-12.5.82[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cuda-runtime-cu12-12.5.82[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cudnn-cu12-9.3.0.75[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cufft-cu12-11.2.3.61[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-curand-cu12-10.3.6.82[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cusolver-cu12-11.6.3.83[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-cusparse-cu12-12.5.1.3[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-nccl-cu12-2.21.5[${PYTHON_USEDEP}] )
+	and-cuda? ( =dev-python/nvidia-nvjitlink-cu12-12.5.82[${PYTHON_USEDEP}] )
 	>=dev-python/opt-einsum-2.3.2[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
@@ -105,7 +105,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-3.6.6[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.11.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	app-arch/snappy
 	dev-db/lmdb
 	dev-db/sqlite
@@ -445,3 +445,5 @@ src_install() {
 
 	einstalldocs
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild
+# BDEPEND could not be inserted in this ebuild

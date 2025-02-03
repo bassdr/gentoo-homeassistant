@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/agent-py-0.0.24[${PYTHON_USEDEP}]
+	=dev-python/agent-py-0.0.24[${PYTHON_USEDEP}]
 "

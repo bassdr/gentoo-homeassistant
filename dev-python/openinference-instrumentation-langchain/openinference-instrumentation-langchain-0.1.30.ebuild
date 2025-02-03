@@ -16,9 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	instruments? ( >=dev-python/langchain-core-0.2.43[${PYTHON_USEDEP}] )
-	type-check? ( ~dev-python/langchain-core-0.2.43[${PYTHON_USEDEP}] )
+	type-check? ( =dev-python/langchain-core-0.2.43[${PYTHON_USEDEP}] )
 	>=dev-python/openinference-instrumentation-0.1.17[${PYTHON_USEDEP}]
 	>=dev-python/openinference-semantic-conventions-0.1.9[${PYTHON_USEDEP}]
 	dev-python/opentelemetry-api[${PYTHON_USEDEP}]
@@ -26,20 +26,23 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/opentelemetry-semantic-conventions[${PYTHON_USEDEP}]
 	dev-python/wrapt[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/langchain-0.3.15[${PYTHON_USEDEP}]
-	~dev-python/langchain-community-0.3.15[${PYTHON_USEDEP}]
-	~dev-python/langchain-core-0.3.31[${PYTHON_USEDEP}]
-	~dev-python/langchain-google-vertexai-2.0.12[${PYTHON_USEDEP}]
-	~dev-python/langchain-openai-0.2.14[${PYTHON_USEDEP}]
-	dev-python/langsmith[${PYTHON_USEDEP}]
-	dev-python/opentelemetry-sdk[${PYTHON_USEDEP}]
-	dev-python/portpicker[${PYTHON_USEDEP}]
-	dev-python/pytest-recording[${PYTHON_USEDEP}]
-	dev-python/respx[${PYTHON_USEDEP}]
-	dev-python/starlette[${PYTHON_USEDEP}]
-	dev-python/uvicorn[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/langchain-0.3.15[${PYTHON_USEDEP}]
+		=dev-python/langchain-community-0.3.15[${PYTHON_USEDEP}]
+		=dev-python/langchain-core-0.3.31[${PYTHON_USEDEP}]
+		=dev-python/langchain-google-vertexai-2.0.12[${PYTHON_USEDEP}]
+		=dev-python/langchain-openai-0.2.14[${PYTHON_USEDEP}]
+		dev-python/langsmith[${PYTHON_USEDEP}]
+		dev-python/opentelemetry-sdk[${PYTHON_USEDEP}]
+		dev-python/portpicker[${PYTHON_USEDEP}]
+		dev-python/pytest-recording[${PYTHON_USEDEP}]
+		dev-python/respx[${PYTHON_USEDEP}]
+		dev-python/starlette[${PYTHON_USEDEP}]
+		dev-python/uvicorn[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

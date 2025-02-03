@@ -16,22 +16,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/furiosa-native-compiler-2024.2.0[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.24[${PYTHON_USEDEP}]
-	~dev-python/pandas-2.0.3[${PYTHON_USEDEP}]
-	~dev-python/pyarrow-12.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/furiosa-native-compiler-2024.2.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.24[${PYTHON_USEDEP}] =dev-python/numpy-1*[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.0.3[${PYTHON_USEDEP}] =dev-python/pandas-2.0*[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-12.0[${PYTHON_USEDEP}] =dev-python/pyarrow-12*[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	~dev-python/requests-2.29.0[${PYTHON_USEDEP}]
-	~dev-python/torch-2.4.1[${PYTHON_USEDEP}]
-	~dev-python/transformers-4.44.2[${PYTHON_USEDEP}]
+	=dev-python/requests-2.29.0[${PYTHON_USEDEP}]
+	=dev-python/torch-2.4.1[${PYTHON_USEDEP}]
+	=dev-python/transformers-4.44.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/mnist[${PYTHON_USEDEP}]
-	~dev-python/onnxruntime-1.15.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.21[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/mnist[${PYTHON_USEDEP}]
+		>=dev-python/onnxruntime-1.15.1[${PYTHON_USEDEP}] =dev-python/onnxruntime-1.15*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3[${PYTHON_USEDEP}] =dev-python/pytest-7*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.21[${PYTHON_USEDEP}] =dev-python/pytest-asyncio-0*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

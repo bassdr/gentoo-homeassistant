@@ -16,28 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	bin? ( dev-python/click[${PYTHON_USEDEP}] )
 	examples? ( dev-python/django[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/furo-2024.7.18[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/furo-2024.7.18[${PYTHON_USEDEP}] )
 	examples? ( dev-python/litestar[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/myst-parser-3.0.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/myst-parser-3.0.1[${PYTHON_USEDEP}] )
 	bin? ( dev-python/nox[${PYTHON_USEDEP}] )
 	examples? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-7.4.7[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-autobuild-2024.4.16[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-7.4.7[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-autobuild-2024.4.16[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
 	types? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/cffi-1.17.0[${PYTHON_USEDEP}]
-	dev-python/flaky[${PYTHON_USEDEP}]
-	>=dev-python/greenlet-3[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.23.8[${PYTHON_USEDEP}]
-	dev-python/trio[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/cffi-1.17.0[${PYTHON_USEDEP}]
+		dev-python/flaky[${PYTHON_USEDEP}]
+		>=dev-python/greenlet-3[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		=dev-python/pytest-asyncio-0.23.8[${PYTHON_USEDEP}]
+		dev-python/trio[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

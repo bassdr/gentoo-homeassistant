@@ -23,12 +23,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/sphinx-7.2.6[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-mdinclude-0.5.3[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( =dev-python/sphinx-7.2.6[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-mdinclude-0.5.3[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -39,14 +39,17 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/attribution-1.7.0[${PYTHON_USEDEP}]
-	~dev-python/black-24.2.0[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.4.1[toml,${PYTHON_USEDEP}]
-	~dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-bugbear-24.2.6[${PYTHON_USEDEP}]
-	~dev-python/flit-3.9.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
-	~dev-python/ufmt-2.3.0[${PYTHON_USEDEP}]
-	~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/attribution-1.7.0[${PYTHON_USEDEP}]
+		=dev-python/black-24.2.0[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.4.1[toml,${PYTHON_USEDEP}]
+		=dev-python/flake8-7.0.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-bugbear-24.2.6[${PYTHON_USEDEP}]
+		=dev-python/flit-3.9.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.8.0[${PYTHON_USEDEP}]
+		=dev-python/ufmt-2.3.0[${PYTHON_USEDEP}]
+		=dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="azureservicebus azurestoragequeues confluentkafka consul mongodb msgpack pyro qpid redis slmq sqlalchemy sqs yaml zookeeper"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/amqp-6.0.0[${PYTHON_USEDEP}]
 	azurestoragequeues? ( >=dev-python/azure-identity-1.12.0[${PYTHON_USEDEP}] )
 	azureservicebus? ( >=dev-python/azure-servicebus-7.10.0[${PYTHON_USEDEP}] )
@@ -27,11 +27,11 @@ GENERATED_DEPEND="${RDEPEND}
 	sqs? ( >=dev-python/boto3-1.26.143[${PYTHON_USEDEP}] )
 	confluentkafka? ( >=dev-python/confluent-kafka-2.2.0[${PYTHON_USEDEP}] )
 	zookeeper? ( >=dev-python/kazoo-2.8.0[${PYTHON_USEDEP}] )
-	msgpack? ( ~dev-python/msgpack-1.1.0[${PYTHON_USEDEP}] )
+	msgpack? ( =dev-python/msgpack-1.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/pycurl-7.43.0.5[${PYTHON_USEDEP}]
 	mongodb? ( >=dev-python/pymongo-4.1.1[${PYTHON_USEDEP}] )
-	pyro? ( ~dev-python/pyro4-4.82[${PYTHON_USEDEP}] )
-	consul? ( ~dev-python/python-consul2-0.1.5[${PYTHON_USEDEP}] )
+	pyro? ( =dev-python/pyro4-4.82[${PYTHON_USEDEP}] )
+	consul? ( =dev-python/python-consul2-0.1.5[${PYTHON_USEDEP}] )
 	yaml? ( >=dev-python/pyyaml-3.10[${PYTHON_USEDEP}] )
 	qpid? ( >=dev-python/qpid-python-0.26[${PYTHON_USEDEP}] )
 	qpid? ( >=dev-python/qpid-tools-0.26[${PYTHON_USEDEP}] )
@@ -39,9 +39,9 @@ GENERATED_DEPEND="${RDEPEND}
 	slmq? ( >=dev-python/softlayer-messaging-1.0.3[${PYTHON_USEDEP}] )
 	sqlalchemy? ( <dev-python/sqlalchemy-2.1[${PYTHON_USEDEP}] )
 	sqs? ( >=dev-python/urllib3-1.26.16[${PYTHON_USEDEP}] )
-	~dev-python/vine-5.1.0[${PYTHON_USEDEP}]
+	=dev-python/vine-5.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/amqp-5.1.1[${PYTHON_USEDEP}]
 	<dev-python/amqp-6.0.0[${PYTHON_USEDEP}]
 	dev-python/tzdata[${PYTHON_USEDEP}]

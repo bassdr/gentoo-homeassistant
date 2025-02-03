@@ -17,12 +17,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/griffe-0.49[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-autorefs-1.2[${PYTHON_USEDEP}]
 	>=dev-python/mkdocstrings-0.26[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/griffe-0.49[${PYTHON_USEDEP}]
 	>=dev-python/mkdocstrings-0.26.0[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-autorefs-1.2[${PYTHON_USEDEP}]

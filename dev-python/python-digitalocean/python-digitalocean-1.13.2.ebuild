@@ -21,11 +21,11 @@ RESTRICT="!test? ( test )"
 
 #DOCS="DESCRIPTION.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jsonpickle[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/jsonpickle[${PYTHON_USEDEP}]"
 BDEPEND="

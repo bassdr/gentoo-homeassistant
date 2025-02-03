@@ -16,16 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
 	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
 	<dev-python/typepy-2[datetime,${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
-	>=dev-python/tcolorpy-0.1.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
+		>=dev-python/tcolorpy-0.1.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

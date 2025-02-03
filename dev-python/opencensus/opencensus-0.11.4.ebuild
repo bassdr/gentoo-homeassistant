@@ -15,11 +15,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/google-api-core-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/opencensus-context-0.1.3[${PYTHON_USEDEP}]
-	~dev-python/six-1.16[${PYTHON_USEDEP}]
+	>=dev-python/six-1.16[${PYTHON_USEDEP}] =dev-python/six-1*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

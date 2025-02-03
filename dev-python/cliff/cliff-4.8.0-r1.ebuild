@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/autopage-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/cmd2-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/prettytable-0.7.2[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.12[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-2.0.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/autopage-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/cmd2-0.8.0[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]

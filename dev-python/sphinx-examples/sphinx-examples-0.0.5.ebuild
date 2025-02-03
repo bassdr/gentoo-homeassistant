@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	sphinx? ( dev-python/furo[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>dev-python/sphinx-4[${PYTHON_USEDEP}]
@@ -26,6 +26,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/sphinx-design[${PYTHON_USEDEP}]
 	sphinx? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

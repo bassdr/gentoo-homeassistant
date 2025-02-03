@@ -21,13 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0[grpc,${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
 	!=dev-python/google-auth-2.24.0[${PYTHON_USEDEP}]
 	<dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
 	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/google-api-core-1.34.1[${PYTHON_USEDEP}]
 	>=dev-python/proto-plus-1.22.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.19.5[${PYTHON_USEDEP}]"

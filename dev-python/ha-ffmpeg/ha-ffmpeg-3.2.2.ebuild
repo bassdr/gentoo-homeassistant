@@ -21,9 +21,9 @@ RESTRICT="test"
 DOCS="README.md"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	media-video/ffmpeg"

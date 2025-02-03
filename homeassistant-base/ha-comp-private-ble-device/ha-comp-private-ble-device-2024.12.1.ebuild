@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/bluetooth-data-tools-1.20.0[${PYTHON_USEDEP}]
+	=dev-python/bluetooth-data-tools-1.20.0[${PYTHON_USEDEP}]
 "

@@ -22,11 +22,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/coverage-7.5[toml,${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/py-1.4.22[${PYTHON_USEDEP}]
 	>=dev-python/pytest-3.6[${PYTHON_USEDEP}]
 	>=dev-python/coverage-6.4.4-r1[${PYTHON_USEDEP}]
@@ -47,13 +47,16 @@ PATCHES=(
 distutils_enable_sphinx docs \
 	dev-python/furo
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/fields[${PYTHON_USEDEP}]
-	dev-python/hunter[${PYTHON_USEDEP}]
-	dev-python/process-tests[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/virtualenv[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/fields[${PYTHON_USEDEP}]
+		dev-python/hunter[${PYTHON_USEDEP}]
+		dev-python/process-tests[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/virtualenv[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	# NB: disabling all plugins speeds tests up a lot

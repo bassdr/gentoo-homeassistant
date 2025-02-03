@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	adlfs? ( >=dev-python/adlfs-2023.1.0[${PYTHON_USEDEP}] )
 	glue? ( >=dev-python/boto3-1.24.59[${PYTHON_USEDEP}] )
 	<dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]
@@ -33,17 +33,17 @@ GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/pydantic-2.4.0[${PYTHON_USEDEP}]
 	<dev-python/pyparsing-4.0.0[${PYTHON_USEDEP}]
 	snappy? ( <dev-python/python-snappy-1.0.0[${PYTHON_USEDEP}] )
-	~dev-python/ray-2.10.0[${PYTHON_USEDEP}]
+	=dev-python/ray-2.10.0[${PYTHON_USEDEP}]
 	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 	<dev-python/rich-14.0.0[${PYTHON_USEDEP}]
 	s3fs? ( >=dev-python/s3fs-2023.1.0[${PYTHON_USEDEP}] )
-	~dev-python/sortedcontainers-2.4.0[${PYTHON_USEDEP}]
+	=dev-python/sortedcontainers-2.4.0[${PYTHON_USEDEP}]
 	sql-postgres? ( <dev-python/sqlalchemy-3.0.0[${PYTHON_USEDEP}] )
 	<dev-python/strictyaml-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/tenacity-10.0.0[${PYTHON_USEDEP}]
 	hive? ( <dev-python/thrift-1.0.0[${PYTHON_USEDEP}] )
 	zstandard? ( <dev-python/zstandard-1.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -24,12 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/connio-0.2.0[${PYTHON_USEDEP}]
 	numpy? ( >=dev-python/numpy-1.1[${PYTHON_USEDEP}] )
 	>=dev-python/umodbus-1.0.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/connio-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/uModbus-1.0.4[${PYTHON_USEDEP}]"
 BDEPEND="
@@ -46,8 +46,12 @@ src_prepare() {
 	eapply_user
 }
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

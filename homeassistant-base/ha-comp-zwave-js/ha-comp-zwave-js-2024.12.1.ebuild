@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyserial-3.5[${PYTHON_USEDEP}]
-	~dev-python/zwave-js-server-python-0.59.1[${PYTHON_USEDEP}]
+	=dev-python/pyserial-3.5[${PYTHON_USEDEP}]
+	=dev-python/zwave-js-server-python-0.59.1[${PYTHON_USEDEP}]
 "

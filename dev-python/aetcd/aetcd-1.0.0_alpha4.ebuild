@@ -18,26 +18,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/grpcio-2[${PYTHON_USEDEP}]
 	<dev-python/protobuf-5[${PYTHON_USEDEP}]
-	doc? ( ~dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
-	doc? ( ~dev-python/sphinx-rtd-theme-1.2.0[${PYTHON_USEDEP}] )
+	doc? ( =dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
+	doc? ( =dev-python/sphinx-rtd-theme-1.2.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-commas-2.1.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-docstrings-1.7.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-isort-6.0.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-quotes-3.3.2[${PYTHON_USEDEP}]
-	~dev-python/grpcio-tools-1.51.1[${PYTHON_USEDEP}]
-	~dev-python/pep8-naming-0.13.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.2.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.20.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
-	~dev-python/twine-4.0.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-commas-2.1.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-docstrings-1.7.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-isort-6.0.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-quotes-3.3.2[${PYTHON_USEDEP}]
+		=dev-python/grpcio-tools-1.51.1[${PYTHON_USEDEP}]
+		=dev-python/pep8-naming-0.13.3[${PYTHON_USEDEP}]
+		=dev-python/pytest-7.2.1[${PYTHON_USEDEP}]
+		=dev-python/pytest-asyncio-0.20.3[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+		=dev-python/twine-4.0.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

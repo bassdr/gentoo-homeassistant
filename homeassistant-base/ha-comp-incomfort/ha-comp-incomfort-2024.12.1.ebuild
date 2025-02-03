@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/incomfort-client-0.6.3_p1[${PYTHON_USEDEP}]
+	=dev-python/incomfort-client-0.6.3_p1[${PYTHON_USEDEP}]
 "

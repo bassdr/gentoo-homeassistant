@@ -15,14 +15,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0[grpc,${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
 	<dev-python/google-cloud-pubsub-3.0.0_pre[${PYTHON_USEDEP}]
 	<dev-python/grpcio-2.0.0_pre[${PYTHON_USEDEP}]
 	<dev-python/grpcio-status-2.0.0_pre[${PYTHON_USEDEP}]
 	<dev-python/overrides-8.0.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '<dev-python/overrides-8.0.0[${PYTHON_USEDEP}]' python3_13{,t})
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

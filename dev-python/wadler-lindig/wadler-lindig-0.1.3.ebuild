@@ -16,26 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocs-autorefs-1.0.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocs-include-exclude-files-0.0.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocs-material-7.3.6[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocs-material-extensions-1.3.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocstrings-0.17.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mknotebooks-0.7.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/nbconvert-6.5.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/nbformat-5.4.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/pygments-2.14.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/pymdown-extensions-9.4[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/pytkdocs-tweaks-0.0.8[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( =dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocs-autorefs-1.0.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocs-include-exclude-files-0.0.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocs-material-7.3.6[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocs-material-extensions-1.3.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocstrings-0.17.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mknotebooks-0.7.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/nbconvert-6.5.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/nbformat-5.4.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/pygments-2.14.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/pymdown-extensions-9.4[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/pytkdocs-tweaks-0.0.8[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="check cover doc enabler perf type"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-resources-1.3[${PYTHON_USEDEP}]
 	perf? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -37,7 +37,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-3.6.4[${PYTHON_USEDEP}]
 	>=dev-python/zipp-3.20[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/zipp-3.20[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -49,14 +49,17 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/flufl-flake8[${PYTHON_USEDEP}]
-	>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/pyfakefs[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-perf-0.9.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flufl-flake8[${PYTHON_USEDEP}]
+		>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pyfakefs[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-perf-0.9.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	grep -q 'build-backend = "setuptools' pyproject.toml ||

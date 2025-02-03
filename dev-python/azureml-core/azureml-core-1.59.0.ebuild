@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<=dev-python/adal-1.2.7[${PYTHON_USEDEP}]
 	<dev-python/argcomplete-4[${PYTHON_USEDEP}]
 	<dev-python/azure-common-2.0.0[${PYTHON_USEDEP}]
@@ -52,8 +52,12 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/secretstorage-4.0.0[${PYTHON_USEDEP}]
 	<dev-python/urllib3-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 BDEPEND+=" app-arch/unzip"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

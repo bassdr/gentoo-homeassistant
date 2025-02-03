@@ -25,7 +25,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-23[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]
@@ -35,11 +35,11 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/oauthlib-4[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2022.0[${PYTHON_USEDEP}]
 	docs? ( <dev-python/sphinx-7.2.6[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-1*[${PYTHON_USEDEP}] )
 	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-13.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/oauthlib-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2022.0[${PYTHON_USEDEP}]
 	>=dev-python/asyncclick-8.1.7.1[${PYTHON_USEDEP}]

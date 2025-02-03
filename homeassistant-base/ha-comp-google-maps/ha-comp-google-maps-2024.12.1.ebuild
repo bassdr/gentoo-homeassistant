@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/locationsharinglib-5.0.1[${PYTHON_USEDEP}]
+	=dev-python/locationsharinglib-5.0.1[${PYTHON_USEDEP}]
 "

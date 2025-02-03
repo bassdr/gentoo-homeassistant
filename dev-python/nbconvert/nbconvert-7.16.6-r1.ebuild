@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all docs qtpdf qtpng serve webpdf"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	!=dev-python/bleach-5.0.0[css,${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
@@ -50,15 +50,15 @@ GENERATED_DEPEND="${RDEPEND}
 	qtpdf? ( >=dev-python/pyqtwebengine-5.15[${PYTHON_USEDEP}] )
 	qtpng? ( >=dev-python/pyqtwebengine-5.15[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pytest-7[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/tornado-6.1[${PYTHON_USEDEP}] )
 	serve? ( >=dev-python/tornado-6.1[${PYTHON_USEDEP}] )
 	>=dev-python/traitlets-5.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/bleach[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
@@ -89,12 +89,15 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/flaky[${PYTHON_USEDEP}]
-	dev-python/ipykernel[${PYTHON_USEDEP}]
-	>=dev-python/ipywidgets-7.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		>=dev-python/ipywidgets-7.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	virtx distutils-r1_src_test

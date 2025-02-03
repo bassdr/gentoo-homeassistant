@@ -16,72 +16,75 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	torch? ( >=dev-python/accelerate-0.26.0[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/black-24.4.0[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/black-24.4.0[${PYTHON_USEDEP}] =dev-python/black-24.4*[${PYTHON_USEDEP}] )
 	quality? ( !=dev-python/datasets-2.5.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/docutils-0.16.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/docutils-0.16.0[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
 	quality? ( <dev-python/gitpython-3.1.19[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/isort-5.5.4[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/jinja2-2.11.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/jinja2-2.11.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	sentencepiece? ( dev-python/protobuf[${PYTHON_USEDEP}] )
 	sklearn? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	sentencepiece? ( !=dev-python/sentencepiece-0.1.92[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-intl-2.1.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-multiversion-0.2.4[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxext-opengraph-0.4.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-intl-2.1.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-multiversion-0.2.4[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxext-opengraph-0.4.1[${PYTHON_USEDEP}] )
 	torch? ( dev-python/torch[${PYTHON_USEDEP}] )
 	torchvision? ( dev-python/torchvision[${PYTHON_USEDEP}] )
-	~dev-python/transformers-4.47.1[${PYTHON_USEDEP}]
+	>=dev-python/transformers-4.47.1[${PYTHON_USEDEP}] =dev-python/transformers-4.47*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/accelerate-0.26.0[${PYTHON_USEDEP}]
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	~dev-python/black-24.4.0[${PYTHON_USEDEP}]
-	!=dev-python/datasets-2.5.0[${PYTHON_USEDEP}]
-	<dev-python/dill-0.3.5[${PYTHON_USEDEP}]
-	~dev-python/docutils-0.16.0[${PYTHON_USEDEP}]
-	>=dev-python/evaluate-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
-	<dev-python/gitpython-3.1.19[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.5.4[${PYTHON_USEDEP}]
-	~dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]
-	~dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}]
-	dev-python/myst-parser[${PYTHON_USEDEP}]
-	dev-python/nltk[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	dev-python/protobuf[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
-	dev-python/pytest-rich[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/rjieba[${PYTHON_USEDEP}]
-	!=dev-python/rouge-score-0.0.7[${PYTHON_USEDEP}]
-	<dev-python/sacrebleu-2.0.0[${PYTHON_USEDEP}]
-	dev-python/sacremoses[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	!=dev-python/sentencepiece-0.1.92[${PYTHON_USEDEP}]
-	~dev-python/sphinx-5.0.2[${PYTHON_USEDEP}]
-	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
-	~dev-python/sphinx-intl-2.1.0[${PYTHON_USEDEP}]
-	~dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}]
-	~dev-python/sphinx-multiversion-0.2.4[${PYTHON_USEDEP}]
-	~dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}]
-	~dev-python/sphinxext-opengraph-0.4.1[${PYTHON_USEDEP}]
-	dev-python/timeout-decorator[${PYTHON_USEDEP}]
-	dev-python/torch[${PYTHON_USEDEP}]
-	dev-python/torchvision[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/accelerate-0.26.0[${PYTHON_USEDEP}]
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		>=dev-python/black-24.4.0[${PYTHON_USEDEP}] =dev-python/black-24.4*[${PYTHON_USEDEP}]
+		!=dev-python/datasets-2.5.0[${PYTHON_USEDEP}]
+		<dev-python/dill-0.3.5[${PYTHON_USEDEP}]
+		=dev-python/docutils-0.16.0[${PYTHON_USEDEP}]
+		>=dev-python/evaluate-0.2.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
+		<dev-python/gitpython-3.1.19[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.5.4[${PYTHON_USEDEP}]
+		=dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]
+		=dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}]
+		dev-python/myst-parser[${PYTHON_USEDEP}]
+		dev-python/nltk[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		dev-python/protobuf[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest-rich[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/rjieba[${PYTHON_USEDEP}]
+		!=dev-python/rouge-score-0.0.7[${PYTHON_USEDEP}]
+		<dev-python/sacrebleu-2.0.0[${PYTHON_USEDEP}]
+		dev-python/sacremoses[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		!=dev-python/sentencepiece-0.1.92[${PYTHON_USEDEP}]
+		=dev-python/sphinx-5.0.2[${PYTHON_USEDEP}]
+		=dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+		=dev-python/sphinx-intl-2.1.0[${PYTHON_USEDEP}]
+		=dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}]
+		=dev-python/sphinx-multiversion-0.2.4[${PYTHON_USEDEP}]
+		=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}]
+		=dev-python/sphinxext-opengraph-0.4.1[${PYTHON_USEDEP}]
+		dev-python/timeout-decorator[${PYTHON_USEDEP}]
+		dev-python/torch[${PYTHON_USEDEP}]
+		dev-python/torchvision[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

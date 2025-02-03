@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/black-22.12.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/codecov-2.1.4[${PYTHON_USEDEP}] )
@@ -52,7 +52,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/wheel-0.34.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/dicttoxml2[${PYTHON_USEDEP}]
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodome-3.9.8[${PYTHON_USEDEP}]
@@ -69,25 +69,28 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/black-22.12.0[${PYTHON_USEDEP}]
-	>=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/codecov-2.1.4[${PYTHON_USEDEP}]
-	>=dev-python/coverage-5.1[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
-	>=dev-python/flake8-debugger-3.2.1[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.15.0[${PYTHON_USEDEP}]
-	>=dev-python/m2r2-0.2.7[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-raises-0.11[${PYTHON_USEDEP}]
-	>=dev-python/pytest-runner-5.2[${PYTHON_USEDEP}]
-	>=dev-python/respx-0.17.0[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/tox-3.15.2[${PYTHON_USEDEP}]
-	>=dev-python/twine-3.1.1[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
-	>=dev-python/wheel-0.34.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-22.12.0[${PYTHON_USEDEP}]
+		>=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}]
+		>=dev-python/codecov-2.1.4[${PYTHON_USEDEP}]
+		>=dev-python/coverage-5.1[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
+		>=dev-python/flake8-debugger-3.2.1[${PYTHON_USEDEP}]
+		>=dev-python/ipython-7.15.0[${PYTHON_USEDEP}]
+		>=dev-python/m2r2-0.2.7[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.4.3[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.9.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-raises-0.11[${PYTHON_USEDEP}]
+		>=dev-python/pytest-runner-5.2[${PYTHON_USEDEP}]
+		>=dev-python/respx-0.17.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}]
+		>=dev-python/tox-3.15.2[${PYTHON_USEDEP}]
+		>=dev-python/twine-3.1.1[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.34.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

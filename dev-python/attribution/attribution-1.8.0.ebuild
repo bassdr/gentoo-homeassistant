@@ -16,27 +16,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.7[${PYTHON_USEDEP}]
 	>=dev-python/packaging-16.2[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/sphinx-7.3.7[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-mdinclude-0.6.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-7.3.7[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-mdinclude-0.6.1[${PYTHON_USEDEP}] )
 	>=dev-python/tomlkit-0.7.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-24.4.2[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.5.3[${PYTHON_USEDEP}]
-	~dev-python/flake8-7.1.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-bugbear-24.4.26[${PYTHON_USEDEP}]
-	~dev-python/flit-3.9.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
-	~dev-python/pessimist-0.9.3[${PYTHON_USEDEP}]
-	~dev-python/rich-13.7.1[${PYTHON_USEDEP}]
-	~dev-python/ufmt-2.6.0[${PYTHON_USEDEP}]
-	~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
-	~dev-python/wheel-0.43.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-24.4.2[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.5.3[${PYTHON_USEDEP}]
+		=dev-python/flake8-7.1.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-bugbear-24.4.26[${PYTHON_USEDEP}]
+		=dev-python/flit-3.9.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
+		=dev-python/pessimist-0.9.3[${PYTHON_USEDEP}]
+		=dev-python/rich-13.7.1[${PYTHON_USEDEP}]
+		=dev-python/ufmt-2.6.0[${PYTHON_USEDEP}]
+		=dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
+		=dev-python/wheel-0.43.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

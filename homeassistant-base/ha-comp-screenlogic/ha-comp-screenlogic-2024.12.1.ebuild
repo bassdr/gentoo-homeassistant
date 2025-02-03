@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/screenlogicpy-0.10.0[${PYTHON_USEDEP}]
+	=dev-python/screenlogicpy-0.10.0[${PYTHON_USEDEP}]
 "

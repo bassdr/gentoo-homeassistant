@@ -16,13 +16,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/decorator-5[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2[${PYTHON_USEDEP}]
 	>=dev-python/invoke-2.0[${PYTHON_USEDEP}]
 	>=dev-python/paramiko-2.4[${PYTHON_USEDEP}]
 	pytest? ( >=dev-python/pytest-7[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

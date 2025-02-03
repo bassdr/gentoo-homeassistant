@@ -23,13 +23,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	crt? ( ~dev-python/awscrt-0.20.11[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	crt? ( =dev-python/awscrt-0.20.11[${PYTHON_USEDEP}] )
 	<dev-python/jmespath-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
 	!=dev-python/urllib3-2.2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/jmespath-2[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.25.4[${PYTHON_USEDEP}]

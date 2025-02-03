@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/anova-wifi-0.17.0[${PYTHON_USEDEP}]
+	=dev-python/anova-wifi-0.17.0[${PYTHON_USEDEP}]
 "

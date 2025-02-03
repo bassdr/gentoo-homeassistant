@@ -15,11 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/opentelemetry-api-1.27.0[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-sdk-1.27.0[${PYTHON_USEDEP}]
 	>=dev-python/std-uritemplate-2.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

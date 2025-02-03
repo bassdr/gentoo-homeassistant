@@ -23,13 +23,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ci? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.6.0[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/ruff-0.0.291[${PYTHON_USEDEP}] )
 	lint? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.6.0[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
@@ -41,11 +41,14 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/betamax-0.8[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/prawcore[lint,${PYTHON_USEDEP}]
-	dev-python/prawcore[test,${PYTHON_USEDEP}]
-	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
-	~dev-python/urllib3-1.26[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/betamax-0.8[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/prawcore[lint,${PYTHON_USEDEP}]
+		dev-python/prawcore[test,${PYTHON_USEDEP}]
+		>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
+		=dev-python/urllib3-1.26*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

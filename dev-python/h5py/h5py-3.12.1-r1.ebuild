@@ -18,14 +18,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="examples"
 
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=dev-python/numpy-1.17.3:=[${PYTHON_USEDEP}]
 	>=sci-libs/hdf5-1.10.4:=[hl(+)]
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 

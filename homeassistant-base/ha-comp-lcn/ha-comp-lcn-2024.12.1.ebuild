@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/lcn-frontend-0.2.2[${PYTHON_USEDEP}]
-	~dev-python/pypck-0.7.24[${PYTHON_USEDEP}]
+	=dev-python/lcn-frontend-0.2.2[${PYTHON_USEDEP}]
+	=dev-python/pypck-0.7.24[${PYTHON_USEDEP}]
 "

@@ -16,11 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beautifulsoup4-4.8.1[${PYTHON_USEDEP}]
 	ipython? ( !=dev-python/ipython-8.7.0[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-3.2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

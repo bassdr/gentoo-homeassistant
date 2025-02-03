@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="full"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/anyio-5[${PYTHON_USEDEP}]
 	full? ( <dev-python/httpx-0.29.0[${PYTHON_USEDEP}] )
 	full? ( dev-python/itsdangerous[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	full? ( >=dev-python/python-multipart-0.0.18[${PYTHON_USEDEP}] )
 	full? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/anyio-5[${PYTHON_USEDEP}]
 	>=dev-python/anyio-3.4.0[${PYTHON_USEDEP}]
 	<dev-python/httpx-0.29[${PYTHON_USEDEP}]

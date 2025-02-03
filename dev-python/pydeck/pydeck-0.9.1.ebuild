@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ipython-5.8.0[${PYTHON_USEDEP}]
 	jupyter? ( <dev-python/ipywidgets-8[${PYTHON_USEDEP}] )
 	>=dev-python/jinja2-2.10.1[${PYTHON_USEDEP}]
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	carto? ( dev-python/pydeck-carto[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/traitlets-4.3.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

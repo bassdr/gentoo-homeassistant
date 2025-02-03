@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/enocean-0.50[${PYTHON_USEDEP}]
+	=dev-python/enocean-0.50[${PYTHON_USEDEP}]
 "

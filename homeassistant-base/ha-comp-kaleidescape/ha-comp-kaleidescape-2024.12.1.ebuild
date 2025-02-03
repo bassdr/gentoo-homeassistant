@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pykaleidescape-1.0.1[${PYTHON_USEDEP}]
+	=dev-python/pykaleidescape-1.0.1[${PYTHON_USEDEP}]
 "

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiopyarr-23.4.0[${PYTHON_USEDEP}]
+	=dev-python/aiopyarr-23.4.0[${PYTHON_USEDEP}]
 "

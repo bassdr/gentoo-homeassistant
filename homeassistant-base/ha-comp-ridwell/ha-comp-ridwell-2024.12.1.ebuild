@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aioridwell-2024.01.0[${PYTHON_USEDEP}]
+	=dev-python/aioridwell-2024.01.0[${PYTHON_USEDEP}]
 "

@@ -15,14 +15,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]
 	dev-python/backports-cached-property[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	~dev-python/pydantic-2.0[${PYTHON_USEDEP}]
-	~dev-python/wheel-filename-1.1[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2.0[${PYTHON_USEDEP}] =dev-python/pydantic-2*[${PYTHON_USEDEP}]
+	>=dev-python/wheel-filename-1.1[${PYTHON_USEDEP}] =dev-python/wheel-filename-1*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

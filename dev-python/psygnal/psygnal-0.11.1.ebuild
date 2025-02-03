@@ -16,40 +16,43 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/griffe-0.25.5[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocs-1.4.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocs-material-8.5.10[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( =dev-python/griffe-0.25.5[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocs-1.4.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocs-material-8.5.10[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs-minify-plugin[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs-spellcheck[all,${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocstrings-0.20.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/mkdocstrings-python-0.8.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocstrings-0.20.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/mkdocstrings-python-0.8.3[${PYTHON_USEDEP}] )
 	pydantic? ( dev-python/pydantic[${PYTHON_USEDEP}] )
 	testqt? ( dev-python/pytest-qt[${PYTHON_USEDEP}] )
 	testqt? ( dev-python/qtpy[${PYTHON_USEDEP}] )
 	proxy? ( dev-python/wrapt[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/attrs[${PYTHON_USEDEP}]
-	dev-python/dask[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/msgspec[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/mypy-extensions[${PYTHON_USEDEP}]
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pydantic[${PYTHON_USEDEP}]
-	>=dev-python/pyinstaller-4.0[${PYTHON_USEDEP}]
-	dev-python/pyqt5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]
-	dev-python/rich[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/toolz[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	dev-python/wrapt[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/attrs[${PYTHON_USEDEP}]
+		dev-python/dask[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/msgspec[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/mypy-extensions[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+		>=dev-python/pyinstaller-4.0[${PYTHON_USEDEP}]
+		dev-python/pyqt5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/toolz[${PYTHON_USEDEP}]
+		dev-python/typing-extensions[${PYTHON_USEDEP}]
+		dev-python/wrapt[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

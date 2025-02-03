@@ -16,21 +16,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/etils[edc,enp,epath,epy,etree,${PYTHON_USEDEP}]
 	ext? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
 	ext? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	ext? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/etils[ecolab,${PYTHON_USEDEP}]
-	dev-python/pyink[${PYTHON_USEDEP}]
-	>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-3.4[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/sphinx-apitree[ext,${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/etils[ecolab,${PYTHON_USEDEP}]
+		dev-python/pyink[${PYTHON_USEDEP}]
+		>=dev-python/pylint-2.6.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.4[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/sphinx-apitree[ext,${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -16,12 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	reference? ( dev-python/google-re2[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]
 	reference? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	>=dev-python/protobuf-3.20.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

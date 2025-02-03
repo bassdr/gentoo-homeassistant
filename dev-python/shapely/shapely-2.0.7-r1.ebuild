@@ -12,7 +12,7 @@ inherit distutils-r1
 MY_P=${P/_p/.post}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Shapely/"
+  https://pypi.org/project/shapely/"
 SRC_URI="
 	https://github.com/shapely/shapely/archive/${PV/_p/.post}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -25,19 +25,19 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	<dev-python/numpy-3[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/numpydoc-1.1[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx-remove-toctrees[${PYTHON_USEDEP}] )
-"
 DEPEND="
 	dev-python/numpy:=[${PYTHON_USEDEP}]
 	>=sci-libs/geos-3.11.4
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
+	<dev-python/numpy-3[${PYTHON_USEDEP}]
+	docs? ( =dev-python/numpydoc-1.1*[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-remove-toctrees[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 BDEPEND="
@@ -51,10 +51,13 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	rm -rf shapely || die

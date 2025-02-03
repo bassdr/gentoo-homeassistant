@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/python-smarttub-0.0.38[${PYTHON_USEDEP}]
+	=dev-python/python-smarttub-0.0.38[${PYTHON_USEDEP}]
 "

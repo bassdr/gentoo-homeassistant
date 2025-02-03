@@ -23,25 +23,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	babel? ( <=dev-python/babel-2.8[${PYTHON_USEDEP}] )
-	dask? ( dev-python/dask[${PYTHON_USEDEP}] )
-	>=dev-python/flexcache-0.3[${PYTHON_USEDEP}]
-	>=dev-python/flexparser-0.4[${PYTHON_USEDEP}]
-	mip? ( >=dev-python/mip-1.13[${PYTHON_USEDEP}] )
-	numpy? ( >=dev-python/numpy-1.23[${PYTHON_USEDEP}] )
-	pandas? ( >=dev-python/pint-pandas-0.3[${PYTHON_USEDEP}] )
-	>=dev-python/platformdirs-2.1.0[${PYTHON_USEDEP}]
-	bench? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testbase? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	testbase? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-	bench? ( dev-python/pytest-codspeed[${PYTHON_USEDEP}] )
-	testbase? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	testbase? ( dev-python/pytest-subtests[${PYTHON_USEDEP}] )
-	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
-	uncertainties? ( >=dev-python/uncertainties-3.1.6[${PYTHON_USEDEP}] )
-	xarray? ( dev-python/xarray[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -52,11 +33,15 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mpl[${PYTHON_USEDEP}]
-	dev-python/pytest-subtests[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mpl[${PYTHON_USEDEP}]
+		dev-python/pytest-subtests[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

@@ -16,21 +16,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/authlib-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0.2[${PYTHON_USEDEP}]
 	>=dev-python/dparse-0.6.4[${PYTHON_USEDEP}]
-	~dev-python/filelock-3.16.1[${PYTHON_USEDEP}]
+	>=dev-python/filelock-3.16.1[${PYTHON_USEDEP}] =dev-python/filelock-3.16*[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.1.0[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-3.15.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.0[${PYTHON_USEDEP}]
-	~dev-python/psutil-6.1.0[${PYTHON_USEDEP}]
+	>=dev-python/psutil-6.1.0[${PYTHON_USEDEP}] =dev-python/psutil-6.1*[${PYTHON_USEDEP}]
 	<dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
 	github? ( >=dev-python/pygithub-1.43.3[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/rich[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.17.21[${PYTHON_USEDEP}]
-	~dev-python/safety-schemas-0.0.10[${PYTHON_USEDEP}]
+	=dev-python/safety-schemas-0.0.10[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-65.5.1[${PYTHON_USEDEP}]
 	spdx? ( >=dev-python/spdx-tools-0.8.2[${PYTHON_USEDEP}] )
 	>=dev-python/typer-0.12.1[${PYTHON_USEDEP}]
@@ -38,6 +38,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
 	gitlab? ( >=dev-vcs/python-gitlab-1.3.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

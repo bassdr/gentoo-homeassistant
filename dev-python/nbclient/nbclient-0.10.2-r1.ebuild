@@ -18,14 +18,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/autodoc-traits[${PYTHON_USEDEP}] )
 	docs? ( dev-python/flaky[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/ipykernel-6.19.3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
 	>=dev-python/jupyter-client-6.1.12[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-core-5.0[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
 	docs? ( dev-python/mock[${PYTHON_USEDEP}] )
 	docs? ( dev-python/moto[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
@@ -41,7 +41,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/traitlets-5.4[${PYTHON_USEDEP}]
 	docs? ( dev-python/xmltodict[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jupyter-client-6.1.12[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-core-5.1.0[${PYTHON_USEDEP}]
 	>=dev-python/nbformat-5.0[${PYTHON_USEDEP}]
@@ -63,19 +63,22 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/flaky[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.19.3[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/ipywidgets[${PYTHON_USEDEP}]
-	>=dev-python/nbconvert-7.1.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-8[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
-	dev-python/testpath[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		>=dev-python/ipykernel-6.19.3[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
+		>=dev-python/nbconvert-7.1.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-8[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+		dev-python/xmltodict[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

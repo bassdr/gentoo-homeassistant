@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/georss-qld-bushfire-alert-client-0.8[${PYTHON_USEDEP}]
+	=dev-python/georss-qld-bushfire-alert-client-0.8[${PYTHON_USEDEP}]
 "

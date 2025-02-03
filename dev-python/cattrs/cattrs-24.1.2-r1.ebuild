@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="bson cbor2 msgpack pyyaml tomlkit ujson"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-23.1.0[${PYTHON_USEDEP}]
 	cbor2? ( >=dev-python/cbor2-5.4.6[${PYTHON_USEDEP}] )
 	msgpack? ( >=dev-python/msgpack-1.0.5[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	tomlkit? ( >=dev-python/tomlkit-0.11.8[${PYTHON_USEDEP}] )
 	ujson? ( >=dev-python/ujson-5.7.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/attrs-23.1.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.8.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '

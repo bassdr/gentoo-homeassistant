@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/twentemilieu-2.1.0[${PYTHON_USEDEP}]
+	=dev-python/twentemilieu-2.1.0[${PYTHON_USEDEP}]
 "

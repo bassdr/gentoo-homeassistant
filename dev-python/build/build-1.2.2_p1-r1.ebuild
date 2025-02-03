@@ -25,15 +25,15 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs typing uv virtualenv"
 IUSE="${GENERATED_IUSE} test-rust"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	typing? ( dev-python/build[uv,${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/furo-2023.08.17[${PYTHON_USEDEP}] )
 	>=dev-python/importlib-metadata-4.6[${PYTHON_USEDEP}]
 	typing? ( >=dev-python/importlib-metadata-5.1[${PYTHON_USEDEP}] )
-	typing? ( ~dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
+	typing? ( >=dev-python/mypy-1.9.0[${PYTHON_USEDEP}] =dev-python/mypy-1.9*[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-19.1[${PYTHON_USEDEP}]
 	dev-python/pyproject-hooks[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/sphinx-7.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-7.0[${PYTHON_USEDEP}] =dev-python/sphinx-7*[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-argparse-cli-1.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-1.10[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-issues-3.0.0[${PYTHON_USEDEP}] )
@@ -42,7 +42,7 @@ GENERATED_DEPEND="${RDEPEND}
 	uv? ( >=dev-python/uv-0.1.18[${PYTHON_USEDEP}] )
 	virtualenv? ( >=dev-python/virtualenv-20.0.35[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-19.1[${PYTHON_USEDEP}]
 	dev-python/pyproject-hooks[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
@@ -67,19 +67,22 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/build[uv,virtualenv,${PYTHON_USEDEP}]
-	>=dev-python/filelock-3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.12[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-rerunfailures-9.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}]
-	>=dev-python/wheel-0.36.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[uv,virtualenv,${PYTHON_USEDEP}]
+		>=dev-python/filelock-3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.12[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-rerunfailures-9.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.36.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	if ! has "${EPYTHON/./_}" "${PYTHON_TESTED[@]}"; then

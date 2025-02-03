@@ -20,7 +20,7 @@ GENERATED_IUSE="codegen docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/elementpath-5.0.0[${PYTHON_USEDEP}]
 	codegen? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/elementpath-5[${PYTHON_USEDEP}]
 	>=dev-python/elementpath-4.4.0[${PYTHON_USEDEP}]
 "
@@ -44,4 +44,5 @@ BDEPEND="
 python_test() {
 	"${EPYTHON}" tests/test_all.py -v || die "Tests fail with ${EPYTHON}"
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/atpublic-6[${PYTHON_USEDEP}]
 	decompiler? ( <dev-python/black-25[${PYTHON_USEDEP}] )
 	clickhouse? ( <dev-python/clickhouse-connect-1[arrow,numpy,pandas,${PYTHON_USEDEP}] )
@@ -53,12 +53,12 @@ GENERATED_DEPEND="${RDEPEND}
 	dask? ( >=dev-python/regex-2021.7.6[${PYTHON_USEDEP}] )
 	bigquery? ( <dev-python/rich-14[${PYTHON_USEDEP}] )
 	geospatial? ( <dev-python/shapely-3[${PYTHON_USEDEP}] )
-	snowflake? ( !=dev-python/snowflake-connector-python-3.3_beta1[${PYTHON_USEDEP}] )
+	snowflake? ( !=dev-python/snowflake-connector-python-3.3.0_beta1[${PYTHON_USEDEP}] )
 	<dev-python/sqlglot-25.21[${PYTHON_USEDEP}]
 	<dev-python/toolz-1[${PYTHON_USEDEP}]
 	trino? ( <dev-python/trino-1[${PYTHON_USEDEP}] )
 	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

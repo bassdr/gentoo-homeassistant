@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 
 DOCS=( CHANGELOG.rst README.rst )
 IUSE="+GATTTOOL"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/enum-compat[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-lang/python[bluetooth]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/enum-compat[${PYTHON_USEDEP}]

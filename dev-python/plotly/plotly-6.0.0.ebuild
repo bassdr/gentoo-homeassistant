@@ -27,12 +27,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="express"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/narwhals-1.15.1[${PYTHON_USEDEP}]
 	express? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/tenacity-6.2.0[${PYTHON_USEDEP}]
 "

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-18.0[${PYTHON_USEDEP}]
 	azure? ( >=dev-python/azure-storage-blob-12.0.0[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.9[${PYTHON_USEDEP}] )
@@ -41,6 +41,10 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/urllib3-1.21.1[${PYTHON_USEDEP}]
 	router? ( >=dev-python/uvicorn-0.31.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

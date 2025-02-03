@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bokeh-3.1[${PYTHON_USEDEP}]
 	dev-python/bokeh-sampledata[${PYTHON_USEDEP}]
 	geo? ( dev-python/cartopy[${PYTHON_USEDEP}] )
@@ -94,16 +94,19 @@ GENERATED_DEPEND="${RDEPEND}
 	examples? ( >=dev-python/xyzservices-2022.9.0[${PYTHON_USEDEP}] )
 	tests-core? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/dask[${PYTHON_USEDEP}]
-	dev-python/duckdb[${PYTHON_USEDEP}]
-	dev-python/fugue[sql,${PYTHON_USEDEP}]
-	dev-python/hvplot[fugue-sql,${PYTHON_USEDEP}]
-	dev-python/hvplot[tests-core,${PYTHON_USEDEP}]
-	dev-python/ibis-framework[duckdb,${PYTHON_USEDEP}]
-	dev-python/polars[${PYTHON_USEDEP}]
-	dev-python/spatialpandas[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dask[${PYTHON_USEDEP}]
+		dev-python/duckdb[${PYTHON_USEDEP}]
+		dev-python/fugue[sql,${PYTHON_USEDEP}]
+		dev-python/hvplot[fugue-sql,${PYTHON_USEDEP}]
+		dev-python/hvplot[tests-core,${PYTHON_USEDEP}]
+		dev-python/ibis-framework[duckdb,${PYTHON_USEDEP}]
+		dev-python/polars[${PYTHON_USEDEP}]
+		dev-python/spatialpandas[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

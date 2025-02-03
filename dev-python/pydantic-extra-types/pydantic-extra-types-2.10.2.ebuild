@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( <dev-python/pendulum-4.0.0[${PYTHON_USEDEP}] )
 	pendulum? ( <dev-python/pendulum-4.0.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/phonenumbers-9[${PYTHON_USEDEP}] )
@@ -26,12 +26,12 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pydantic-2.5.2[${PYTHON_USEDEP}]
 	<dev-python/python-ulid-2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pytz-2024.1[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] =dev-python/semver-3.0*[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
 	semver? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	all? ( >=dev-python/tzdata-2024.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -24,14 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/aiohttp-3.10[${PYTHON_USEDEP}]
-	~dev-python/awesomeversion-24.6[${PYTHON_USEDEP}]
-	~dev-python/mashumaro-3.13[${PYTHON_USEDEP}]
-	~dev-python/orjson-3.10[${PYTHON_USEDEP}]
-	~dev-python/webrtc-models-0.1[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/aiohttp-3.10[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]
+	>=dev-python/awesomeversion-24.6[${PYTHON_USEDEP}] =dev-python/awesomeversion-24*[${PYTHON_USEDEP}]
+	>=dev-python/mashumaro-3.13[${PYTHON_USEDEP}] =dev-python/mashumaro-3*[${PYTHON_USEDEP}]
+	>=dev-python/orjson-3.10[${PYTHON_USEDEP}] =dev-python/orjson-3*[${PYTHON_USEDEP}]
+	>=dev-python/webrtc-models-0.1[${PYTHON_USEDEP}] =dev-python/webrtc-models-0*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
 	dev-python/mashumaro[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/noaa-coops-0.1.9[${PYTHON_USEDEP}]
+	=dev-python/noaa-coops-0.1.9[${PYTHON_USEDEP}]
 "

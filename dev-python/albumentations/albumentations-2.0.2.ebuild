@@ -16,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/albucore-0.0.23[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/albucore-0.0.23[${PYTHON_USEDEP}]
 	hub? ( dev-python/huggingface-hub[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.24.4[${PYTHON_USEDEP}]
 	>=dev-python/opencv-python-headless-4.9.0.80[${PYTHON_USEDEP}]
@@ -27,6 +27,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
 	pytorch? ( dev-python/torch[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

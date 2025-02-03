@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="email"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	email? ( dev-python/email-validator[${PYTHON_USEDEP}] )
 	dev-python/markupsafe[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/markupsafe[${PYTHON_USEDEP}]
 "
 BDEPEND="

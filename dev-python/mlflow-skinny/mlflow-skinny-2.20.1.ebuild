@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	gateway? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	genai? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	aliyun-oss? ( dev-python/aliyunstoreplugin[${PYTHON_USEDEP}] )
@@ -68,6 +68,6 @@ GENERATED_DEPEND="${RDEPEND}
 	gateway? ( <dev-python/watchfiles-2[${PYTHON_USEDEP}] )
 	genai? ( <dev-python/watchfiles-2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aws? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	sql? ( dev-python/connectorx[${PYTHON_USEDEP}] )
 	deltalake? ( dev-python/deltalake[${PYTHON_USEDEP}] )
@@ -35,6 +35,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	unity? ( dev-python/unitycatalog[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

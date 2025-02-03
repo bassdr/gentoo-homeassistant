@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	examples? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	tests-examples? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
@@ -69,10 +69,13 @@ GENERATED_DEPEND="${RDEPEND}
 	tests-deser? ( dev-python/xlrd[${PYTHON_USEDEP}] )
 	tests-full? ( dev-python/xlrd[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

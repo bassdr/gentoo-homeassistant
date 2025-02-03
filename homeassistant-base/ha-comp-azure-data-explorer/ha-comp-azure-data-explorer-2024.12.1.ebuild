@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/azure-kusto-data-4.5.1[aio,${PYTHON_USEDEP}]
-	~dev-python/azure-kusto-ingest-4.5.1[${PYTHON_USEDEP}]
+	=dev-python/azure-kusto-data-4.5.1[aio,${PYTHON_USEDEP}]
+	=dev-python/azure-kusto-ingest-4.5.1[${PYTHON_USEDEP}]
 "

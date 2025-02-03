@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pybbox-0.0.5_alpha[${PYTHON_USEDEP}]
+	=dev-python/pybbox-0.0.5_alpha[${PYTHON_USEDEP}]
 "

@@ -21,18 +21,18 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyjwt-1.4.2[${PYTHON_USEDEP}]
 "
 DEPEND="test? (
-		${GENERATED_DEPEND}
+
 		>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
 	)"
 

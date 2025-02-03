@@ -25,13 +25,13 @@ PATCHES=(
 )
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-67[${PYTHON_USEDEP}]
 	>=dev-python/virtualenv-20.24.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/click-didyoumean[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4.4[${PYTHON_USEDEP}]
@@ -64,20 +64,23 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	~dev-python/black-24.3.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-4[${PYTHON_USEDEP}]
-	dev-python/flaky[${PYTHON_USEDEP}]
-	dev-python/invoke[${PYTHON_USEDEP}]
-	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/parver[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/towncrier[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		=dev-python/black-24.3.0[${PYTHON_USEDEP}]
+		<dev-python/flake8-4[${PYTHON_USEDEP}]
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/invoke[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/parver[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/towncrier[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 # IMPORTANT: The following sed command patches the vendor direcotry
 # in the pipenv source. Attempts to simply bump the version of the

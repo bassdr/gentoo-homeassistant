@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	insights? ( dev-python/flask[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/flask[${PYTHON_USEDEP}] )
 	insights? ( dev-python/flask-compress[${PYTHON_USEDEP}] )
@@ -34,26 +34,29 @@ GENERATED_DEPEND="${RDEPEND}
 	tutorials? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/annoy[${PYTHON_USEDEP}]
-	~dev-python/black-22.3.0[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/flask[${PYTHON_USEDEP}]
-	dev-python/flask-compress[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/ipywidgets[${PYTHON_USEDEP}]
-	dev-python/jupyter[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.760[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}]
-	dev-python/sphinxcontrib-katex[${PYTHON_USEDEP}]
-	dev-python/ufmt[${PYTHON_USEDEP}]
-	~dev-python/usort-1.0.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/annoy[${PYTHON_USEDEP}]
+		=dev-python/black-22.3.0[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/flask[${PYTHON_USEDEP}]
+		dev-python/flask-compress[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
+		dev-python/jupyter[${PYTHON_USEDEP}]
+		>=dev-python/mypy-0.760[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}]
+		dev-python/sphinxcontrib-katex[${PYTHON_USEDEP}]
+		dev-python/ufmt[${PYTHON_USEDEP}]
+		=dev-python/usort-1.0.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

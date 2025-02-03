@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyduotecno-2024.10.1[${PYTHON_USEDEP}]
+	=dev-python/pyduotecno-2024.10.1[${PYTHON_USEDEP}]
 "

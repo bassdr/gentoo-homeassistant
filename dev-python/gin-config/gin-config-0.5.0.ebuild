@@ -17,18 +17,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	pytorch-nightly? ( dev-python/pytorch-nightly[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-1.13.0[${PYTHON_USEDEP}] )
 	tensorflow-gpu? ( >=dev-python/tensorflow-gpu-1.13.0[${PYTHON_USEDEP}] )
 	tf-nightly? ( dev-python/tf-nightly[${PYTHON_USEDEP}] )
 	torch? ( >=dev-python/torch-1.3.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/absl-py-0.1.6[${PYTHON_USEDEP}]
-	>=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
-	dev-python/nose[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/absl-py-0.1.6[${PYTHON_USEDEP}]
+		>=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
+		dev-python/nose[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

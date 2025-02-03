@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyfritzhome-0.6.12[${PYTHON_USEDEP}]
+	=dev-python/pyfritzhome-0.6.12[${PYTHON_USEDEP}]
 "

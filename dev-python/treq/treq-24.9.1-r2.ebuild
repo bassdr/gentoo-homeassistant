@@ -19,7 +19,7 @@ GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/hyperlink-21.0.0[${PYTHON_USEDEP}]
 	dev-python/incremental[${PYTHON_USEDEP}]
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/twisted-22.10.0[tls,${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/hyperlink-21.0.0[${PYTHON_USEDEP}]
 	dev-python/incremental[${PYTHON_USEDEP}]
@@ -61,4 +61,5 @@ src_prepare() {
 python_test() {
 	"${EPYTHON}" -m twisted.trial treq || die "Tests failed with ${EPYTHON}"
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

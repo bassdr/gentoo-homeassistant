@@ -28,11 +28,11 @@ src_prepare() {
 	eapply_user
 }
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]"
 

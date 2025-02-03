@@ -17,24 +17,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/zope-container-4.0.0_alpha2[${PYTHON_USEDEP}]
 	dev-python/zope-filerepresentation[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
 	>=dev-python/zope-publisher-4.0.0_alpha2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/zope-app-wsgi-4.0[testlayer,${PYTHON_USEDEP}]
-	dev-python/zope-browserpage[${PYTHON_USEDEP}]
-	dev-python/zope-component[${PYTHON_USEDEP}]
-	dev-python/zope-login[${PYTHON_USEDEP}]
-	dev-python/zope-password[${PYTHON_USEDEP}]
-	dev-python/zope-principalregistry[${PYTHON_USEDEP}]
-	>=dev-python/zope-securitypolicy-4.0.0_alpha1[${PYTHON_USEDEP}]
-	>=dev-python/zope-site-4.0.0_alpha1[${PYTHON_USEDEP}]
-	dev-python/zope-testrunner[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/zope-app-wsgi-4.0[testlayer,${PYTHON_USEDEP}]
+		dev-python/zope-browserpage[${PYTHON_USEDEP}]
+		dev-python/zope-component[${PYTHON_USEDEP}]
+		dev-python/zope-login[${PYTHON_USEDEP}]
+		dev-python/zope-password[${PYTHON_USEDEP}]
+		dev-python/zope-principalregistry[${PYTHON_USEDEP}]
+		>=dev-python/zope-securitypolicy-4.0.0_alpha1[${PYTHON_USEDEP}]
+		>=dev-python/zope-site-4.0.0_alpha1[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

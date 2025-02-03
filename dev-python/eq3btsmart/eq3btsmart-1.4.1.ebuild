@@ -21,12 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]
 	>=dev-python/construct-2.10.68[${PYTHON_USEDEP}]
 	>=dev-python/construct-typing-0.6.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]
 	>=dev-python/construct-2.10.68[${PYTHON_USEDEP}]
 	>=dev-python/construct-typing-0.6.2[${PYTHON_USEDEP}]"

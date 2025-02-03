@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ansible-compat-25.1.0[${PYTHON_USEDEP}]
 	>=dev-python/ansible-core-2.15.0[${PYTHON_USEDEP}]
 	<dev-python/click-9[${PYTHON_USEDEP}]
@@ -34,32 +34,35 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/rich-9.5.1[${PYTHON_USEDEP}]
 	>=dev-python/wcmatch-8.1.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/ansi2html-1.8.0[${PYTHON_USEDEP}]
-	>=dev-python/ansible-lint-6.12.1[${PYTHON_USEDEP}]
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	>=dev-python/docker-7.1.0[${PYTHON_USEDEP}]
-	>=dev-python/filelock-3.9.0[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	<dev-python/pexpect-5[${PYTHON_USEDEP}]
-	dev-python/pip-tools[${PYTHON_USEDEP}]
-	dev-python/pydoclint[${PYTHON_USEDEP}]
-	dev-python/pylint[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-instafail[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-plus-0.7.0[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	!=dev-python/requests-2.32.0[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/toml-sort[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	dev-python/types-jsonschema[${PYTHON_USEDEP}]
-	dev-python/types-pexpect[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/ansi2html-1.8.0[${PYTHON_USEDEP}]
+		>=dev-python/ansible-lint-6.12.1[${PYTHON_USEDEP}]
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		>=dev-python/docker-7.1.0[${PYTHON_USEDEP}]
+		>=dev-python/filelock-3.9.0[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		<dev-python/pexpect-5[${PYTHON_USEDEP}]
+		dev-python/pip-tools[${PYTHON_USEDEP}]
+		dev-python/pydoclint[${PYTHON_USEDEP}]
+		dev-python/pylint[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-instafail[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-plus-0.7.0[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		!=dev-python/requests-2.32.0[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/toml-sort[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		dev-python/types-jsonschema[${PYTHON_USEDEP}]
+		dev-python/types-pexpect[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

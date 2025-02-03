@@ -19,13 +19,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/jaraco-test[${PYTHON_USEDEP}]
@@ -33,14 +26,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/jaraco-test[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.0[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/jaraco-test[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.0*[${PYTHON_USEDEP}]
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	grep -q 'build-backend = "setuptools' pyproject.toml ||
@@ -57,4 +53,5 @@ src_configure() {
 		description = "Backport of CPython tarfile module"
 	EOF
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

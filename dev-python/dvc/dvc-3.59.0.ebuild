@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	dev-python/celery[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.3.9[${PYTHON_USEDEP}]
@@ -51,7 +51,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/hydra-core-1.1[${PYTHON_USEDEP}]
 	>=dev-python/iterative-telemetry-0.0.7[${PYTHON_USEDEP}]
 	dev-python/kombu[${PYTHON_USEDEP}]
-	lint? ( ~dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
+	lint? ( =dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
 	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]
 	dev-python/omegaconf[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
@@ -82,25 +82,28 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/voluptuous-0.11.7[${PYTHON_USEDEP}]
 	>=dev-python/zc-lockfile-1.2.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/beautifulsoup4-4.4[${PYTHON_USEDEP}]
-	dev-python/dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs,${PYTHON_USEDEP}]
-	dev-python/dvc[testing,${PYTHON_USEDEP}]
-	dev-python/dvc-ssh[${PYTHON_USEDEP}]
-	dev-python/filelock[${PYTHON_USEDEP}]
-	>=dev-python/pandas-1[${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
-	<dev-python/pytest-benchmark-6[histogram,${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-docker-4[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-	dev-python/pytest-test-utils[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}]
-	<dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
-	dev-python/uv[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/beautifulsoup4-4.4[${PYTHON_USEDEP}]
+		dev-python/dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs,${PYTHON_USEDEP}]
+		dev-python/dvc[testing,${PYTHON_USEDEP}]
+		dev-python/dvc-ssh[${PYTHON_USEDEP}]
+		dev-python/filelock[${PYTHON_USEDEP}]
+		>=dev-python/pandas-1[${PYTHON_USEDEP}]
+		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		<dev-python/pytest-benchmark-6[histogram,${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-docker-4[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/pytest-test-utils[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}]
+		<dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
+		dev-python/uv[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

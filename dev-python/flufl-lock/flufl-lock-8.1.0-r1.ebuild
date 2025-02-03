@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/atpublic[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/atpublic[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
 "

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pygtfs-0.1.9[${PYTHON_USEDEP}]
+	=dev-python/pygtfs-0.1.9[${PYTHON_USEDEP}]
 "

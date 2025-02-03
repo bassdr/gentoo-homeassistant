@@ -16,11 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	msgpack? ( >=dev-python/msgpack-python-0.5[${PYTHON_USEDEP}] )
 	memcached? ( >=dev-python/python-memcached-1.59[${PYTHON_USEDEP}] )
 	redis? ( >=dev-python/redis-3.3.6[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

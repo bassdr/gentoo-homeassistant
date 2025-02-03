@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aionut-4.3.3[${PYTHON_USEDEP}]
+	=dev-python/aionut-4.3.3[${PYTHON_USEDEP}]
 "

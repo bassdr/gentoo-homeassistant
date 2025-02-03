@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="rst-generator"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/debtcollector-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/netaddr-0.7.18[${PYTHON_USEDEP}]
 	>=dev-python/oslo-i18n-3.15.3[${PYTHON_USEDEP}]
@@ -31,7 +31,7 @@ GENERATED_DEPEND="${RDEPEND}
 	rst-generator? ( >=dev-python/sphinx-1.8.0[${PYTHON_USEDEP}] )
 	>=dev-python/stevedore-1.20.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
 	>=dev-python/debtcollector-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/netaddr-0.7.18[${PYTHON_USEDEP}]
@@ -54,17 +54,20 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	>=dev-python/coverage-4.0[${PYTHON_USEDEP}]
-	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.720[${PYTHON_USEDEP}]
-	>=dev-python/oslo-log-3.36.0[${PYTHON_USEDEP}]
-	>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-mock-1.5.0[${PYTHON_USEDEP}]
-	>=dev-python/stestr-2.1.0[${PYTHON_USEDEP}]
-	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
-	>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-4.0[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/mypy-0.720[${PYTHON_USEDEP}]
+		>=dev-python/oslo-log-3.36.0[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/requests-mock-1.5.0[${PYTHON_USEDEP}]
+		>=dev-python/stestr-2.1.0[${PYTHON_USEDEP}]
+		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+		>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# broken by some dep upgrade

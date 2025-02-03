@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	gpu? ( dev-python/cupy-cuda12x[${PYTHON_USEDEP}] )
 	>=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	remote? ( >=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}] )
@@ -29,8 +29,8 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/rich[${PYTHON_USEDEP}] )
 	optional? ( dev-python/rich[${PYTHON_USEDEP}] )
 	docs? ( dev-python/s3fs[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-autoapi-3.4.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-autoapi-3.4.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
@@ -40,22 +40,25 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
 	optional? ( dev-python/universal-pathlib[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/botocore[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	>=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}]
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/moto[s3,server,${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-accept[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/rich[${PYTHON_USEDEP}]
-	dev-python/s3fs[${PYTHON_USEDEP}]
-	dev-python/universal-pathlib[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/botocore[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		>=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/moto[s3,server,${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-accept[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
+		dev-python/universal-pathlib[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

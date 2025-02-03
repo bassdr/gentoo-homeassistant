@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pylutron-caseta-0.22.0[${PYTHON_USEDEP}]
+	=dev-python/pylutron-caseta-0.22.0[${PYTHON_USEDEP}]
 "

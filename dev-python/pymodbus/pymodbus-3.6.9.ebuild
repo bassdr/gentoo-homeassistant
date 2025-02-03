@@ -26,9 +26,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.6[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9_beta0[${PYTHON_USEDEP}]' python3_12)
+	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_12)
 	development? ( >=dev-python/build-1.1.1[${PYTHON_USEDEP}] )
 	development? ( >=dev-python/codespell-2.2.6[${PYTHON_USEDEP}] )
 	development? ( >=dev-python/coverage-7.4.3[${PYTHON_USEDEP}] )
@@ -51,7 +51,7 @@ GENERATED_DEPEND="${RDEPEND}
 	development? ( dev-python/types-pygments[${PYTHON_USEDEP}] )
 	development? ( dev-python/types-pyserial[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	serial? (
 		>=dev-python/pyserial-3.5[${PYTHON_USEDEP}]
 	)

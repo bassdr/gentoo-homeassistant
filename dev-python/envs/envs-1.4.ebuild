@@ -21,12 +21,12 @@ RESTRICT="!test? ( test )"
 
 # missing DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/click-8.0.3[cli,${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/jinja2-3.0.3[cli,${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/terminaltables-3.1.10[cli,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND} cli? (
+RDEPEND="${GENERATED_RDEPEND} cli? (
 			  >=dev-python/jinja-3.0.3[${PYTHON_USEDEP}]
 			  >=dev-python/click-8.0.3[${PYTHON_USEDEP}]
 			  >=dev-python/terminaltables-3.1.10[${PYTHON_USEDEP}]

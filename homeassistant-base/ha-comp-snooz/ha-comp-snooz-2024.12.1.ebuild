@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pysnooz-0.8.6[${PYTHON_USEDEP}]
+	=dev-python/pysnooz-0.8.6[${PYTHON_USEDEP}]
 "

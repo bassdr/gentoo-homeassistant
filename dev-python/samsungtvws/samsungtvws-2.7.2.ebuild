@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] )
 	encrypted? ( >=dev-python/cryptography-35.0.0[${PYTHON_USEDEP}] )
 	encrypted? ( >=dev-python/py3rijndael-0.3.3[${PYTHON_USEDEP}] )
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/websocket-client-0.57.0[${PYTHON_USEDEP}]
 	async? ( >=dev-python/websockets-13[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/websocket-client-0.57.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 	async? ( >=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]

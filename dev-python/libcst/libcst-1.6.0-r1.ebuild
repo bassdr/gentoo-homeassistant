@@ -137,10 +137,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyyaml-5.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyyaml-5.2[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -153,27 +153,30 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-24.8.0[${PYTHON_USEDEP}]
-	>=dev-python/build-0.10.0[${PYTHON_USEDEP}]
-	>=dev-python/coverage-4.5.4[toml,${PYTHON_USEDEP}]
-	~dev-python/fixit-2.1.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
-	>=dev-python/hypothesis-4.36.0[${PYTHON_USEDEP}]
-	>=dev-python/hypothesmith-0.0.4[${PYTHON_USEDEP}]
-	~dev-python/jinja2-3.1.5[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/maturin-1.8[${PYTHON_USEDEP}]
-	>=dev-python/nbsphinx-0.4.2[${PYTHON_USEDEP}]
-	>=dev-python/prompt-toolkit-2.0.9[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-rust-1.5.2[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-scm-6.0.1[${PYTHON_USEDEP}]
-	>=dev-python/slotscheck-0.7.1[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-5.1.1[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-rtd-theme-0.4.3[${PYTHON_USEDEP}]
-	~dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
-	~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-24.8.0[${PYTHON_USEDEP}]
+		>=dev-python/build-0.10.0[${PYTHON_USEDEP}]
+		>=dev-python/coverage-4.5.4[toml,${PYTHON_USEDEP}]
+		=dev-python/fixit-2.1.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-4.36.0[${PYTHON_USEDEP}]
+		>=dev-python/hypothesmith-0.0.4[${PYTHON_USEDEP}]
+		=dev-python/jinja2-3.1.5[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-1.0.0[${PYTHON_USEDEP}]
+		<dev-python/maturin-1.8[${PYTHON_USEDEP}]
+		>=dev-python/nbsphinx-0.4.2[${PYTHON_USEDEP}]
+		>=dev-python/prompt-toolkit-2.0.9[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-rust-1.5.2[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-scm-6.0.1[${PYTHON_USEDEP}]
+		>=dev-python/slotscheck-0.7.1[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-5.1.1[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-rtd-theme-0.4.3[${PYTHON_USEDEP}]
+		=dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
+		=dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 QA_FLAGS_IGNORED="usr/lib/py.*/site-packages/libcst/native.*"
 

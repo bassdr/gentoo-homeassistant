@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="develop docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	develop? ( >=dev-python/build-0.5.1[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/coverage-4.4[${PYTHON_USEDEP}] )
 	dev-python/enum34[${PYTHON_USEDEP}]
@@ -36,7 +36,7 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/virtualenv-20.22.0[${PYTHON_USEDEP}]
 	develop? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/parse[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
@@ -45,9 +45,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 DOCS=( CHANGES.txt README.rst )
 

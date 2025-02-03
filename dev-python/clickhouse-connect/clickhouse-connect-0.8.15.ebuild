@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/lz4[${PYTHON_USEDEP}]
 	numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )
@@ -29,6 +29,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/urllib3-1.26[${PYTHON_USEDEP}]
 	dev-python/zstandard[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

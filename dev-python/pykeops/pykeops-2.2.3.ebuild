@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	full? ( dev-python/breathe[${PYTHON_USEDEP}] )
 	full? ( dev-python/faiss[${PYTHON_USEDEP}] )
 	full? ( dev-python/gpytorch[${PYTHON_USEDEP}] )
@@ -24,7 +24,7 @@ GENERATED_DEPEND="${RDEPEND}
 	full? ( dev-python/imageio[${PYTHON_USEDEP}] )
 	full? ( dev-python/jax[${PYTHON_USEDEP}] )
 	full? ( dev-python/jaxlib[${PYTHON_USEDEP}] )
-	~dev-python/keopscore-2.2.3[${PYTHON_USEDEP}]
+	=dev-python/keopscore-2.2.3[${PYTHON_USEDEP}]
 	full? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	full? ( dev-python/multiprocess[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
@@ -38,11 +38,14 @@ GENERATED_DEPEND="${RDEPEND}
 	full? ( dev-python/sphinxcontrib-httpdomain[${PYTHON_USEDEP}] )
 	full? ( dev-python/torch[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/torch[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/torch[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

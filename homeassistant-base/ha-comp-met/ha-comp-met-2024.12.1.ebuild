@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pymetno-0.13.0[${PYTHON_USEDEP}]
+	=dev-python/pymetno-0.13.0[${PYTHON_USEDEP}]
 "

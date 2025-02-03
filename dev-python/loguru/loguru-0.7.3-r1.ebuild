@@ -25,9 +25,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/aiocontextvars-0.2.0[${PYTHON_USEDEP}]
-"
 BDEPEND="
 	test? (
 		>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
@@ -38,32 +35,35 @@ BDEPEND="
 # filesystem buffering tests may fail
 # on tmpfs with 64k PAGESZ, but pass fine on ext4
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/build-1.2.2[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4.5[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
-	~dev-python/exceptiongroup-1.1.3[${PYTHON_USEDEP}]
-	~dev-python/freezegun-1.1.0[${PYTHON_USEDEP}]
-	~dev-python/freezegun-1.5.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-0.910[${PYTHON_USEDEP}]
-	~dev-python/mypy-0.971[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.4.1[${PYTHON_USEDEP}]
-	~dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-6.1.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-2.12.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-mypy-plugins-1.9.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-mypy-plugins-3.1.0[${PYTHON_USEDEP}]
-	~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}]
-	~dev-python/sphinx-rtd-theme-3.0.2[${PYTHON_USEDEP}]
-	~dev-python/tox-3.27.1[${PYTHON_USEDEP}]
-	~dev-python/tox-4.23.2[${PYTHON_USEDEP}]
-	~dev-python/twine-6.0.1[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/build-1.2.2[${PYTHON_USEDEP}]
+		=dev-python/colorama-0.4.5[${PYTHON_USEDEP}]
+		=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
+		=dev-python/exceptiongroup-1.1.3[${PYTHON_USEDEP}]
+		=dev-python/freezegun-1.1.0[${PYTHON_USEDEP}]
+		=dev-python/freezegun-1.5.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-0.910[${PYTHON_USEDEP}]
+		=dev-python/mypy-0.971[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.4.1[${PYTHON_USEDEP}]
+		=dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-6.1.2[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-2.12.1[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-mypy-plugins-1.9.3[${PYTHON_USEDEP}]
+		=dev-python/pytest-mypy-plugins-3.1.0[${PYTHON_USEDEP}]
+		=dev-python/sphinx-8.1.3[${PYTHON_USEDEP}]
+		=dev-python/sphinx-rtd-theme-3.0.2[${PYTHON_USEDEP}]
+		=dev-python/tox-3.27.1[${PYTHON_USEDEP}]
+		=dev-python/tox-4.23.2[${PYTHON_USEDEP}]
+		=dev-python/twine-6.0.1[${PYTHON_USEDEP}]
+		=dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_IGNORE=(
 	# mypy
@@ -76,4 +76,5 @@ src_prepare() {
 	# neuter mypy integration
 	sed -i -e 's:sys.version_info >= (3, 6):False:' tests/conftest.py || die
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

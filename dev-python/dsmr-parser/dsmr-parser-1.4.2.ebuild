@@ -21,14 +21,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/dlms-cosem-21.3.2[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/dlms-cosem-21.3.2[${PYTHON_USEDEP}]
 	<dev-python/pyserial-4[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	~dev-python/tailer-0.4.1[${PYTHON_USEDEP}]
+	=dev-python/tailer-0.4.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]

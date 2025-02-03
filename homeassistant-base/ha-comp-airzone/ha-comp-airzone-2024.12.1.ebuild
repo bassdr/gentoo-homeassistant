@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aioairzone-0.9.7[${PYTHON_USEDEP}]
+	=dev-python/aioairzone-0.9.7[${PYTHON_USEDEP}]
 "

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/geopandas-1.0[${PYTHON_USEDEP}]
 	visualization? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )
 	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]
@@ -30,6 +30,6 @@ GENERATED_DEPEND="${RDEPEND}
 	neighbors? ( >=dev-python/scipy-1.5[${PYTHON_USEDEP}] )
 	>=dev-python/shapely-2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

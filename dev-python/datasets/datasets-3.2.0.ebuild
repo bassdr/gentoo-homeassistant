@@ -16,11 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	tests-numpy2? ( dev-python/absl-py[${PYTHON_USEDEP}] )
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	tests-numpy2? ( dev-python/decorator[${PYTHON_USEDEP}] )
-	tests-numpy2? ( ~dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
+	tests-numpy2? ( =dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
 	<dev-python/dill-0.3.9[${PYTHON_USEDEP}]
 	tests-numpy2? ( <dev-python/elasticsearch-8.0.0[${PYTHON_USEDEP}] )
 	dev-python/filelock[${PYTHON_USEDEP}]
@@ -58,54 +58,60 @@ GENERATED_DEPEND="${RDEPEND}
 	tests-numpy2? ( >=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
 	>=dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}]
-	benchmarks? ( ~dev-python/tensorflow-2.12.0[${PYTHON_USEDEP}] )
+	benchmarks? ( =dev-python/tensorflow-2.12.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
 	tensorflow-gpu? ( >=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/tiktoken[${PYTHON_USEDEP}] )
-	benchmarks? ( ~dev-python/torch-2.0.1[${PYTHON_USEDEP}] )
+	benchmarks? ( =dev-python/torch-2.0.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/torch[${PYTHON_USEDEP}] )
 	tests-numpy2? ( >=dev-python/torch-2.0.0[${PYTHON_USEDEP}] )
 	torch? ( dev-python/torch[${PYTHON_USEDEP}] )
 	tests-numpy2? ( dev-python/torchdata[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.66.3[${PYTHON_USEDEP}]
-	benchmarks? ( ~dev-python/transformers-4.30.1[${PYTHON_USEDEP}] )
+	benchmarks? ( =dev-python/transformers-4.30.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	tests-numpy2? ( >=dev-python/transformers-4.42.0[${PYTHON_USEDEP}] )
 	dev-python/xxhash[${PYTHON_USEDEP}]
 	tests-numpy2? ( dev-python/zstandard[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/absl-py[${PYTHON_USEDEP}]
-	dev-python/decorator[${PYTHON_USEDEP}]
-	~dev-python/decord-0.6.0[${PYTHON_USEDEP}]
-	<dev-python/elasticsearch-8.0.0[${PYTHON_USEDEP}]
-	>=dev-python/faiss-cpu-1.8.0_p1[${PYTHON_USEDEP}]
-	<dev-python/joblib-1.3.0[${PYTHON_USEDEP}]
-	dev-python/joblibspark[${PYTHON_USEDEP}]
-	dev-python/librosa[${PYTHON_USEDEP}]
-	dev-python/lz4[${PYTHON_USEDEP}]
-	dev-python/moto[server,${PYTHON_USEDEP}]
-	>=dev-python/pillow-9.4.0[${PYTHON_USEDEP}]
-	>=dev-python/polars-0.20.0[timezone,${PYTHON_USEDEP}]
-	<dev-python/protobuf-4.0.0[${PYTHON_USEDEP}]
-	dev-python/py7zr[${PYTHON_USEDEP}]
-	>=dev-python/pyspark-3.4[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-datadir[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	>=dev-python/rarfile-4.0[${PYTHON_USEDEP}]
-	>=dev-python/ruff-0.3.0[${PYTHON_USEDEP}]
-	>=dev-python/s3fs-2021.11.1[${PYTHON_USEDEP}]
-	>=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}]
-	dev-python/sqlalchemy[${PYTHON_USEDEP}]
-	>=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}]
-	dev-python/tiktoken[${PYTHON_USEDEP}]
-	>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
-	dev-python/torchdata[${PYTHON_USEDEP}]
-	>=dev-python/transformers-4.42.0[${PYTHON_USEDEP}]
-	dev-python/zstandard[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/absl-py[${PYTHON_USEDEP}]
+		dev-python/decorator[${PYTHON_USEDEP}]
+		=dev-python/decord-0.6.0[${PYTHON_USEDEP}]
+		<dev-python/elasticsearch-8.0.0[${PYTHON_USEDEP}]
+		>=dev-python/faiss-cpu-1.8.0_p1[${PYTHON_USEDEP}]
+		<dev-python/joblib-1.3.0[${PYTHON_USEDEP}]
+		dev-python/joblibspark[${PYTHON_USEDEP}]
+		dev-python/librosa[${PYTHON_USEDEP}]
+		dev-python/lz4[${PYTHON_USEDEP}]
+		dev-python/moto[server,${PYTHON_USEDEP}]
+		>=dev-python/pillow-9.4.0[${PYTHON_USEDEP}]
+		>=dev-python/polars-0.20.0[timezone,${PYTHON_USEDEP}]
+		<dev-python/protobuf-4.0.0[${PYTHON_USEDEP}]
+		dev-python/py7zr[${PYTHON_USEDEP}]
+		>=dev-python/pyspark-3.4[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-datadir[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		>=dev-python/rarfile-4.0[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.3.0[${PYTHON_USEDEP}]
+		>=dev-python/s3fs-2021.11.1[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
+		>=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}]
+		dev-python/sqlalchemy[${PYTHON_USEDEP}]
+		>=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}]
+		dev-python/tiktoken[${PYTHON_USEDEP}]
+		>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
+		dev-python/torch[${PYTHON_USEDEP}]
+		dev-python/torchdata[${PYTHON_USEDEP}]
+		>=dev-python/transformers-4.42.0[${PYTHON_USEDEP}]
+		dev-python/transformers[${PYTHON_USEDEP}]
+		dev-python/zstandard[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

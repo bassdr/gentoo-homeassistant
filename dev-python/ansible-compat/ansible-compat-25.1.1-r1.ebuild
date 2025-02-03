@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ansible-core-2.16[${PYTHON_USEDEP}]
 	docs? ( dev-python/argparse-manpage[${PYTHON_USEDEP}] )
 	docs? ( dev-python/black[${PYTHON_USEDEP}] )
@@ -30,7 +30,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/subprocess-tee-0.4.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=app-admin/ansible-core-2.14[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-4.6.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -64,12 +64,15 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/pip[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-	dev-python/pytest-instafail[${PYTHON_USEDEP}]
-	dev-python/pytest-mock[${PYTHON_USEDEP}]
-	>=dev-python/pytest-plus-0.6.1[${PYTHON_USEDEP}]
-	>=dev-python/uv-0.4.30[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/pip[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		dev-python/pytest-instafail[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		>=dev-python/pytest-plus-0.6.1[${PYTHON_USEDEP}]
+		>=dev-python/uv-0.4.30[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

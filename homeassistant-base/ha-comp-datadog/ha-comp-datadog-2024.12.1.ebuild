@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/datadog-0.15.0[${PYTHON_USEDEP}]
+	=dev-python/datadog-0.15.0[${PYTHON_USEDEP}]
 "

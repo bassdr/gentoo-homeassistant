@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/python-picnic-api-1.1.0[${PYTHON_USEDEP}]
+	=dev-python/python-picnic-api-1.1.0[${PYTHON_USEDEP}]
 "

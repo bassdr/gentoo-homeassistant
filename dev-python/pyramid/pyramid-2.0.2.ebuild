@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	>=dev-python/hupper-1.5[${PYTHON_USEDEP}]
 	dev-python/plaster[${PYTHON_USEDEP}]
@@ -34,13 +34,16 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/zope-deprecation-3.5.0[${PYTHON_USEDEP}]
 	>=dev-python/zope-interface-3.8.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.4.2[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/webtest-1.3.1[${PYTHON_USEDEP}]
-	>=dev-python/zope-component-4.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.4.2[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/webtest-1.3.1[${PYTHON_USEDEP}]
+		>=dev-python/zope-component-4.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

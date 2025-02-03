@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.7[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-1.6[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/m2r2-0.3.2[${PYTHON_USEDEP}] )
@@ -35,17 +35,20 @@ GENERATED_DEPEND="${RDEPEND}
 	type-check? ( >=dev-python/types-pyyaml-6.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-6.0[toml,${PYTHON_USEDEP}]
-	>=dev-python/coverage-conditional-plugin-0.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.7[${PYTHON_USEDEP}]
-	>=dev-python/pytest-randomly-3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
-	dev-python/rstcheck-core[docs,sphinx,testing,toml,type-check,yaml,${PYTHON_USEDEP}]
-	>=dev-python/tox-3.15[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-6.0[toml,${PYTHON_USEDEP}]
+		>=dev-python/coverage-conditional-plugin-0.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.7[${PYTHON_USEDEP}]
+		>=dev-python/pytest-randomly-3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
+		dev-python/rstcheck-core[docs,sphinx,testing,toml,type-check,yaml,${PYTHON_USEDEP}]
+		>=dev-python/tox-3.15[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

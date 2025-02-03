@@ -16,25 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 	s3? ( >=dev-python/boto3-1.3.1[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
-	~dev-python/click-8.0[${PYTHON_USEDEP}]
+	>=dev-python/click-8.0[${PYTHON_USEDEP}] =dev-python/click-8*[${PYTHON_USEDEP}]
 	>=dev-python/click-plugins-1.0[${PYTHON_USEDEP}]
 	>=dev-python/cligj-0.5[${PYTHON_USEDEP}]
 	all? ( dev-python/fiona[calc,s3,test,${PYTHON_USEDEP}] )
 	calc? ( dev-python/pyparsing[${PYTHON_USEDEP}] )
 	calc? ( dev-python/shapely[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/fiona[s3,${PYTHON_USEDEP}]
-	dev-python/fsspec[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/fiona[s3,${PYTHON_USEDEP}]
+		dev-python/fsspec[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

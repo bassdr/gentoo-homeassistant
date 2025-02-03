@@ -27,7 +27,73 @@ GENERATED_IUSE="all aws clipboard compression computation consortium-standard ex
 IUSE="${GENERATED_IUSE} big-endian full-support minimal test X"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+RECOMMENDED_DEPEND="
+	>=dev-python/bottleneck-1.3.4[${PYTHON_USEDEP}]
+	>=dev-python/numexpr-2.8.0[${PYTHON_USEDEP}]
+"
+
+# TODO: add pandas-gbq to the tree
+# TODO: Re-add dev-python/statsmodel[python3_11] dep once it supports python3_11
+# https://github.com/statsmodels/statsmodels/issues/8287
+OPTIONAL_DEPEND="
+	>=dev-python/beautifulsoup4-4.11.1[${PYTHON_USEDEP}]
+	dev-python/blosc[${PYTHON_USEDEP}]
+	>=dev-python/html5lib-1.1[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
+	>=dev-python/lxml-4.8.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.6.1[${PYTHON_USEDEP}]
+	>=dev-python/openpyxl-3.0.7[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-1.4.36[${PYTHON_USEDEP}]
+	>=dev-python/tabulate-0.8.10[${PYTHON_USEDEP}]
+	>=dev-python/xarray-2022.3.0[${PYTHON_USEDEP}]
+	>=dev-python/xlrd-2.0.1[${PYTHON_USEDEP}]
+	>=dev-python/xlsxwriter-3.0.3[${PYTHON_USEDEP}]
+	>=dev-python/xlwt-1.3.0[${PYTHON_USEDEP}]
+	!arm? ( !hppa? ( !ppc? ( !x86? (
+		>=dev-python/scipy-1.8.1[${PYTHON_USEDEP}]
+		dev-python/statsmodels[${PYTHON_USEDEP}]
+	) ) ) )
+	!big-endian? (
+		>=dev-python/tables-3.7.0[${PYTHON_USEDEP}]
+	)
+	X? (
+		|| (
+			>=dev-python/pyqt5-5.15.6[${PYTHON_USEDEP}]
+			>=dev-python/qtpy-2.2.0[${PYTHON_USEDEP}]
+			x11-misc/xclip
+			x11-misc/xsel
+		)
+	)
+"
+DEPEND="
+	>=dev-python/numpy-1.23.2:=[${PYTHON_USEDEP}]
+"
+COMMON_DEPEND="
+	${DEPEND}
+	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
+	>=dev-python/pytz-2020.1[${PYTHON_USEDEP}]
+"
+BDEPEND="
+	${COMMON_DEPEND}
+	>=dev-build/meson-1.2.1
+	>=dev-python/cython-3.0.5[${PYTHON_USEDEP}]
+	>=dev-python/versioneer-0.28[${PYTHON_USEDEP}]
+	test? (
+		${VIRTUALX_DEPEND}
+		${RECOMMENDED_DEPEND}
+		${OPTIONAL_DEPEND}
+		dev-libs/apache-arrow[brotli,parquet,snappy]
+		>=dev-python/beautifulsoup4-4.11.1[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
+		>=dev-python/openpyxl-3.0.10[${PYTHON_USEDEP}]
+		>=dev-python/pyarrow-10.0.1[parquet,${PYTHON_USEDEP}]
+		>=dev-python/pymysql-1.0.2[${PYTHON_USEDEP}]
+		>=dev-python/xlsxwriter-3.0.3[${PYTHON_USEDEP}]
+		x11-misc/xclip
+		x11-misc/xsel
+	)
+"
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
 	postgresql? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
 	sql-other? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
@@ -109,73 +175,7 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/zstandard-0.19.0[${PYTHON_USEDEP}] )
 	compression? ( >=dev-python/zstandard-0.19.0[${PYTHON_USEDEP}] )
 "
-RECOMMENDED_DEPEND="
-	>=dev-python/bottleneck-1.3.4[${PYTHON_USEDEP}]
-	>=dev-python/numexpr-2.8.0[${PYTHON_USEDEP}]
-"
-
-# TODO: add pandas-gbq to the tree
-# TODO: Re-add dev-python/statsmodel[python3_11] dep once it supports python3_11
-# https://github.com/statsmodels/statsmodels/issues/8287
-OPTIONAL_DEPEND="
-	>=dev-python/beautifulsoup4-4.11.1[${PYTHON_USEDEP}]
-	dev-python/blosc[${PYTHON_USEDEP}]
-	>=dev-python/html5lib-1.1[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
-	>=dev-python/lxml-4.8.0[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-3.6.1[${PYTHON_USEDEP}]
-	>=dev-python/openpyxl-3.0.7[${PYTHON_USEDEP}]
-	>=dev-python/sqlalchemy-1.4.36[${PYTHON_USEDEP}]
-	>=dev-python/tabulate-0.8.10[${PYTHON_USEDEP}]
-	>=dev-python/xarray-2022.3.0[${PYTHON_USEDEP}]
-	>=dev-python/xlrd-2.0.1[${PYTHON_USEDEP}]
-	>=dev-python/xlsxwriter-3.0.3[${PYTHON_USEDEP}]
-	>=dev-python/xlwt-1.3.0[${PYTHON_USEDEP}]
-	!arm? ( !hppa? ( !ppc? ( !x86? (
-		>=dev-python/scipy-1.8.1[${PYTHON_USEDEP}]
-		dev-python/statsmodels[${PYTHON_USEDEP}]
-	) ) ) )
-	!big-endian? (
-		>=dev-python/tables-3.7.0[${PYTHON_USEDEP}]
-	)
-	X? (
-		|| (
-			>=dev-python/pyqt5-5.15.6[${PYTHON_USEDEP}]
-			>=dev-python/qtpy-2.2.0[${PYTHON_USEDEP}]
-			x11-misc/xclip
-			x11-misc/xsel
-		)
-	)
-"
-DEPEND="
-	>=dev-python/numpy-1.23.2:=[${PYTHON_USEDEP}]
-"
-COMMON_DEPEND="
-	${DEPEND}
-	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
-	>=dev-python/pytz-2020.1[${PYTHON_USEDEP}]
-"
-BDEPEND="
-	${COMMON_DEPEND}
-	>=dev-build/meson-1.2.1
-	>=dev-python/cython-3.0.5[${PYTHON_USEDEP}]
-	>=dev-python/versioneer-0.28[${PYTHON_USEDEP}]
-	test? (
-		${VIRTUALX_DEPEND}
-		${RECOMMENDED_DEPEND}
-		${OPTIONAL_DEPEND}
-		dev-libs/apache-arrow[brotli,parquet,snappy]
-		>=dev-python/beautifulsoup4-4.11.1[${PYTHON_USEDEP}]
-		>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
-		>=dev-python/openpyxl-3.0.10[${PYTHON_USEDEP}]
-		>=dev-python/pyarrow-10.0.1[parquet,${PYTHON_USEDEP}]
-		>=dev-python/pymysql-1.0.2[${PYTHON_USEDEP}]
-		>=dev-python/xlsxwriter-3.0.3[${PYTHON_USEDEP}]
-		x11-misc/xclip
-		x11-misc/xsel
-	)
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	${COMMON_DEPEND}
 	dev-python/tzdata[${PYTHON_USEDEP}]
 	!minimal? ( ${RECOMMENDED_DEPEND} )
@@ -184,11 +184,14 @@ RDEPEND="${GENERATED_DEPEND}
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.3.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2.2.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	virtx distutils-r1_src_test

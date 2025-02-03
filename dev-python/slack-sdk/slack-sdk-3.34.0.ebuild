@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	optional? ( >dev-python/aiodns-1.0[${PYTHON_USEDEP}] )
 	optional? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	optional? ( <=dev-python/boto3-2[${PYTHON_USEDEP}] )
@@ -24,6 +24,6 @@ GENERATED_DEPEND="${RDEPEND}
 	optional? ( <dev-python/websocket-client-2[${PYTHON_USEDEP}] )
 	optional? ( <dev-python/websockets-15[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

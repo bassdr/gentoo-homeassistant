@@ -20,25 +20,20 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
-	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
-	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
-	>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}]
-	dev-python/pytest-ruff[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}]
+		dev-python/pytest-ruff[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

@@ -25,8 +25,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-"
 BDEPEND="
 	test? (
 		dev-python/pillow[${PYTHON_USEDEP}]

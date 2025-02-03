@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyobihai-1.4.2[${PYTHON_USEDEP}]
+	=dev-python/pyobihai-1.4.2[${PYTHON_USEDEP}]
 "

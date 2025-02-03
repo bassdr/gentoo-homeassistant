@@ -19,13 +19,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="proj"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/protobuf-6.0.0[${PYTHON_USEDEP}]
 	<dev-python/pyclipper-2.0.0[${PYTHON_USEDEP}]
 	proj? ( <dev-python/pyproj-4.0.0[${PYTHON_USEDEP}] )
 	<dev-python/shapely-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	>=dev-python/pyclipper-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/pyproj-3.4.1[${PYTHON_USEDEP}]

@@ -15,9 +15,6 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="
-	>=dev-python/manhole-1.5[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND=""
 
 distutils_enable_tests pytest

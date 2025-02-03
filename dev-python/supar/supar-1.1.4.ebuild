@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	elmo? ( dev-python/allennlp[${PYTHON_USEDEP}] )
 	dev-python/dill[${PYTHON_USEDEP}]
 	dev-python/nltk[${PYTHON_USEDEP}]
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/torch-1.7.1[${PYTHON_USEDEP}]
 	>=dev-python/transformers-4.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

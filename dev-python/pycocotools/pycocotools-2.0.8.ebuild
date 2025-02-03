@@ -19,11 +19,11 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/matplotlib-2.1.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/matplotlib[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_RDEPEND} dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

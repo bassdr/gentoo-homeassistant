@@ -22,15 +22,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/numpy[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.11.0[${PYTHON_USEDEP}]
-"
 DEPEND="
 	dev-python/pybind11[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/numpy[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.11.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/cppheaderparser[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]

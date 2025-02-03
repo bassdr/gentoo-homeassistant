@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/altair-5.0.0[${PYTHON_USEDEP}]
 	azure-secrets? ( >=dev-python/azure-identity-1.10.0[${PYTHON_USEDEP}] )
 	azure? ( >=dev-python/azure-identity-1.10.0[${PYTHON_USEDEP}] )
@@ -65,7 +65,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dremio? ( >=dev-python/pyodbc-4.0.30[${PYTHON_USEDEP}] )
 	mssql? ( >=dev-python/pyodbc-4.0.30[${PYTHON_USEDEP}] )
 	>=dev-python/pyparsing-2.4[${PYTHON_USEDEP}]
-	pagerduty? ( ~dev-python/pypd-1.1.0[${PYTHON_USEDEP}] )
+	pagerduty? ( =dev-python/pypd-1.1.0[${PYTHON_USEDEP}] )
 	spark? ( >=dev-python/pyspark-2.3.2[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.20[${PYTHON_USEDEP}]
@@ -90,10 +90,10 @@ GENERATED_DEPEND="${RDEPEND}
 	vertica? ( >=dev-python/sqlalchemy-1.4.0[${PYTHON_USEDEP}] )
 	bigquery? ( >=dev-python/sqlalchemy-bigquery-1.3.0[${PYTHON_USEDEP}] )
 	gcp? ( >=dev-python/sqlalchemy-bigquery-1.3.0[${PYTHON_USEDEP}] )
-	dremio? ( ~dev-python/sqlalchemy-dremio-1.2.1[${PYTHON_USEDEP}] )
+	dremio? ( =dev-python/sqlalchemy-dremio-1.2.1[${PYTHON_USEDEP}] )
 	redshift? ( >=dev-python/sqlalchemy-redshift-0.8.8[${PYTHON_USEDEP}] )
 	vertica? ( >=dev-python/sqlalchemy-vertica-python-0.5.10[${PYTHON_USEDEP}] )
-	teradata? ( ~dev-python/teradatasqlalchemy-17.0.0.5[${PYTHON_USEDEP}] )
+	teradata? ( =dev-python/teradatasqlalchemy-17.0.0.5[${PYTHON_USEDEP}] )
 	hive? ( >=dev-python/thrift-0.16.0[${PYTHON_USEDEP}] )
 	hive? ( >=dev-python/thrift-sasl-0.4.3[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.59.0[${PYTHON_USEDEP}]
@@ -102,38 +102,41 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tzlocal-1.2[${PYTHON_USEDEP}]
 	excel? ( <dev-python/xlrd-2.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/adr-tools-python-1.0.3[${PYTHON_USEDEP}]
-	>=dev-python/boto3-1.17.106[${PYTHON_USEDEP}]
-	>=dev-python/coverage-7.5.1[toml,${PYTHON_USEDEP}]
-	~dev-python/docstring-parser-0.16[${PYTHON_USEDEP}]
-	>=dev-python/feather-format-0.4.1[${PYTHON_USEDEP}]
-	>=dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
-	>=dev-python/flask-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/freezegun-0.3.15[${PYTHON_USEDEP}]
-	>=dev-python/invoke-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/moto-5.0[s3,sns,${PYTHON_USEDEP}]
-	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-	>=dev-python/pact-python-2.0.1[${PYTHON_USEDEP}]
-	dev-python/pyarrow[${PYTHON_USEDEP}]
-	>=dev-python/pyfakefs-4.5.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.2.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-benchmark-3.4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-icdiff-0.9.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.14.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-order-1.2.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-random-order-1.1.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-3.6.1[${PYTHON_USEDEP}]
-	>=dev-python/requirements-parser-0.9.0[${PYTHON_USEDEP}]
-	!=dev-python/responses-0.25.5[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.7.2[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-70.0.0[${PYTHON_USEDEP}]
-	>=dev-python/sqlalchemy-1.4.0[${PYTHON_USEDEP}]
-	>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-2.21.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/adr-tools-python-1.0.3[${PYTHON_USEDEP}]
+		>=dev-python/boto3-1.17.106[${PYTHON_USEDEP}]
+		>=dev-python/coverage-7.5.1[toml,${PYTHON_USEDEP}]
+		=dev-python/docstring-parser-0.16[${PYTHON_USEDEP}]
+		>=dev-python/feather-format-0.4.1[${PYTHON_USEDEP}]
+		>=dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
+		>=dev-python/flask-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/freezegun-0.3.15[${PYTHON_USEDEP}]
+		>=dev-python/invoke-2.0.0[${PYTHON_USEDEP}]
+		<dev-python/moto-5.0[s3,sns,${PYTHON_USEDEP}]
+		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		>=dev-python/pact-python-2.0.1[${PYTHON_USEDEP}]
+		dev-python/pyarrow[${PYTHON_USEDEP}]
+		>=dev-python/pyfakefs-4.5.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.2.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-benchmark-3.4.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-icdiff-0.9.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.14.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-order-1.2.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-random-order-1.1.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-3.6.1[${PYTHON_USEDEP}]
+		>=dev-python/requirements-parser-0.9.0[${PYTHON_USEDEP}]
+		!=dev-python/responses-0.25.5[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.7.2[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-70.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sqlalchemy-1.4.0[${PYTHON_USEDEP}]
+		>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.21.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

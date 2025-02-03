@@ -23,10 +23,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="imaging ipython latex mathml opengl pdf png pyglet symengine texmacs"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/mpmath-1.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/mpmath-1.1.0[${PYTHON_USEDEP}]
 	dev-python/pexpect[${PYTHON_USEDEP}]
 	imaging? ( dev-python/pillow[${PYTHON_USEDEP}] )
@@ -53,10 +53,13 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/hypothesis-6.70.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.1.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/hypothesis-6.70.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	virtx distutils-r1_src_test

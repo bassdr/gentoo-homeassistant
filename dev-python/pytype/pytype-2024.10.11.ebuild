@@ -15,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-21.4.0[${PYTHON_USEDEP}]
 	>=dev-python/immutabledict-4.1.0[${PYTHON_USEDEP}]
 	>=dev-python/importlab-0.8[${PYTHON_USEDEP}]
@@ -30,6 +30,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/toml-0.10.2[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

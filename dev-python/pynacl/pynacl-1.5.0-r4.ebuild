@@ -23,13 +23,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/cffi[${PYTHON_USEDEP}]
-"
 DEPEND="
 	dev-libs/libsodium:=
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/cffi[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.4.1[${PYTHON_USEDEP}]

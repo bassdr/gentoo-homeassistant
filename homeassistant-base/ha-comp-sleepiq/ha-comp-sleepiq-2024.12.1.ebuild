@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/asyncsleepiq-1.5.2[${PYTHON_USEDEP}]
+	=dev-python/asyncsleepiq-1.5.2[${PYTHON_USEDEP}]
 "

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aranet4-2.4.0[${PYTHON_USEDEP}]
+	=dev-python/aranet4-2.4.0[${PYTHON_USEDEP}]
 "

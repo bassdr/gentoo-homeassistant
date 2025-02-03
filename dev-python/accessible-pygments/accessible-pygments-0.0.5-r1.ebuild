@@ -22,10 +22,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pygments-1.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pygments-1.5[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -37,15 +37,18 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/hypothesis[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	>=dev-python/pkginfo-1.10[${PYTHON_USEDEP}]
-	dev-python/playwright[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/twine-5.0[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		>=dev-python/pkginfo-1.10[${PYTHON_USEDEP}]
+		dev-python/playwright[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+		>=dev-python/twine-5.0[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}

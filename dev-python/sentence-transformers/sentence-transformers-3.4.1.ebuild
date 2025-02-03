@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	train? ( >=dev-python/accelerate-0.20.3[${PYTHON_USEDEP}] )
 	train? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.20.0[${PYTHON_USEDEP}]
@@ -30,14 +30,17 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	<dev-python/transformers-5.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/accelerate-0.20.3[${PYTHON_USEDEP}]
-	dev-python/datasets[${PYTHON_USEDEP}]
-	dev-python/peft[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/accelerate-0.20.3[${PYTHON_USEDEP}]
+		dev-python/datasets[${PYTHON_USEDEP}]
+		dev-python/peft[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

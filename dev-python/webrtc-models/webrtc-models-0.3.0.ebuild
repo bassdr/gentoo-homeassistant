@@ -23,11 +23,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/mashumaro-3.13[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/mashumaro-3.13[${PYTHON_USEDEP}] =dev-python/mashumaro-3*[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.10.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/mashumaro-3.13[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.10.7[${PYTHON_USEDEP}]"
 

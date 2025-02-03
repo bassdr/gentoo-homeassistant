@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	beam? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
 	>=dev-python/etils-1.7.0[epath,${PYTHON_USEDEP}]
@@ -31,24 +31,27 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/rdflib[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	audio? ( ~dev-python/soxr-0.4_beta1[${PYTHON_USEDEP}] )
+	audio? ( =dev-python/soxr-0.4.0_beta1[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-23.11.0[${PYTHON_USEDEP}]
-	dev-python/flake8-docstrings[${PYTHON_USEDEP}]
-	dev-python/mlcroissant[audio,${PYTHON_USEDEP}]
-	dev-python/mlcroissant[beam,${PYTHON_USEDEP}]
-	dev-python/mlcroissant[git,${PYTHON_USEDEP}]
-	dev-python/mlcroissant[image,${PYTHON_USEDEP}]
-	dev-python/mlcroissant[parquet,${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pyflakes[${PYTHON_USEDEP}]
-	dev-python/pygraphviz[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytype[${PYTHON_USEDEP}]
-	dev-python/torchdata[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/black-23.11.0[${PYTHON_USEDEP}]
+		dev-python/flake8-docstrings[${PYTHON_USEDEP}]
+		dev-python/mlcroissant[audio,${PYTHON_USEDEP}]
+		dev-python/mlcroissant[beam,${PYTHON_USEDEP}]
+		dev-python/mlcroissant[git,${PYTHON_USEDEP}]
+		dev-python/mlcroissant[image,${PYTHON_USEDEP}]
+		dev-python/mlcroissant[parquet,${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pyflakes[${PYTHON_USEDEP}]
+		dev-python/pygraphviz[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytype[${PYTHON_USEDEP}]
+		dev-python/torchdata[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

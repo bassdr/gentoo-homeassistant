@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/govee-local-api-1.5.3[${PYTHON_USEDEP}]
+	=dev-python/govee-local-api-1.5.3[${PYTHON_USEDEP}]
 "

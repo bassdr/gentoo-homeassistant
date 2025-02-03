@@ -27,7 +27,10 @@ fi
 
 GENERATED_IUSE="safer-xml-parsing xep-0363 xep-0444-compliance xep-0454"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="
+	net-dns/libidn:=
+"
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiodns-1.0[${PYTHON_USEDEP}]
 	xep-0363? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	xep-0454? ( dev-python/cryptography[${PYTHON_USEDEP}] )
@@ -37,10 +40,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-DEPEND="
-	net-dns/libidn:=
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiodns[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]

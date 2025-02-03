@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	qa? ( dev-python/autoflake[${PYTHON_USEDEP}] )
 	>=dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
 	<dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
@@ -27,7 +27,7 @@ GENERATED_DEPEND="${RDEPEND}
 	build? ( >=dev-python/invoke-1.6.0[${PYTHON_USEDEP}] )
 	qa? ( dev-python/isort[${PYTHON_USEDEP}] )
 	qa? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	~dev-python/numpy-1.21.5[${PYTHON_USEDEP}]
+	=dev-python/numpy-1.21.5[${PYTHON_USEDEP}]
 	complete? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	pandas? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	dev-python/pandas-stubs-fork[${PYTHON_USEDEP}]
@@ -38,23 +38,26 @@ GENERATED_DEPEND="${RDEPEND}
 	qa? ( dev-python/typeguard[${PYTHON_USEDEP}] )
 	qa? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/autoflake[${PYTHON_USEDEP}]
-	dev-python/black[${PYTHON_USEDEP}]
-	>=dev-python/codecov-2.1.0[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/feedparser[${PYTHON_USEDEP}]
-	>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
-	dev-python/isort[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	>=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}]
-	dev-python/pylint[${PYTHON_USEDEP}]
-	dev-python/pyright[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	dev-python/typeguard[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/autoflake[${PYTHON_USEDEP}]
+		dev-python/black[${PYTHON_USEDEP}]
+		>=dev-python/codecov-2.1.0[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/feedparser[${PYTHON_USEDEP}]
+		>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
+		dev-python/isort[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		>=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}]
+		dev-python/pylint[${PYTHON_USEDEP}]
+		dev-python/pyright[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+		dev-python/typeguard[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

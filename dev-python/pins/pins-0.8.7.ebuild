@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azure? ( dev-python/adlfs[${PYTHON_USEDEP}] )
 	<dev-python/appdirs-2[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2022.2[${PYTHON_USEDEP}]
@@ -31,7 +31,7 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( dev-python/nbclient[${PYTHON_USEDEP}] )
 	doc? ( dev-python/nbformat[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-0.23[${PYTHON_USEDEP}]
-	check? ( ~dev-python/pyright-1.1.372[${PYTHON_USEDEP}] )
+	check? ( =dev-python/pyright-1.1.372[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
 	doc? ( dev-python/quartodoc[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
@@ -40,19 +40,22 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/xxhash-1[${PYTHON_USEDEP}]
 	check? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/adlfs-2024.4.1[${PYTHON_USEDEP}]
-	dev-python/fastparquet[${PYTHON_USEDEP}]
-	dev-python/gcsfs[${PYTHON_USEDEP}]
-	dev-python/pip-tools[${PYTHON_USEDEP}]
-	dev-python/pyarrow[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.1.3[${PYTHON_USEDEP}]
-	dev-python/pytest-cases[${PYTHON_USEDEP}]
-	dev-python/pytest-dotenv[${PYTHON_USEDEP}]
-	dev-python/pytest-parallel[${PYTHON_USEDEP}]
-	dev-python/rdata[${PYTHON_USEDEP}]
-	dev-python/s3fs[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/adlfs-2024.4.1[${PYTHON_USEDEP}]
+		dev-python/fastparquet[${PYTHON_USEDEP}]
+		dev-python/gcsfs[${PYTHON_USEDEP}]
+		dev-python/pip-tools[${PYTHON_USEDEP}]
+		dev-python/pyarrow[${PYTHON_USEDEP}]
+		=dev-python/pytest-7.1.3[${PYTHON_USEDEP}]
+		dev-python/pytest-cases[${PYTHON_USEDEP}]
+		dev-python/pytest-dotenv[${PYTHON_USEDEP}]
+		dev-python/pytest-parallel[${PYTHON_USEDEP}]
+		dev-python/rdata[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

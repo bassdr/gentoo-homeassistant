@@ -16,15 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/dm-haiku[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/docutils-0.16[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/docutils-0.16[${PYTHON_USEDEP}] )
 	docs? ( dev-python/einops[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython-genutils[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/ipywidgets-8.1.5[${PYTHON_USEDEP}] )
 	>=dev-python/jax-0.4.27[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/jupytext-1.13.8[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/jupytext-1.13.8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/kagglehub-0.3.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
@@ -48,28 +48,31 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/treescope-0.1.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
-	dev-python/clu[${PYTHON_USEDEP}]
-	dev-python/einops[${PYTHON_USEDEP}]
-	dev-python/gymnasium[accept-rom-license,atari,${PYTHON_USEDEP}]
-	dev-python/jaxlib[${PYTHON_USEDEP}]
-	dev-python/jaxtyping[${PYTHON_USEDEP}]
-	>=dev-python/jraph-0.0.6_pre0[${PYTHON_USEDEP}]
-	dev-python/ml-collections[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/opencv-python[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-custom-exit-code[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/pytype[${PYTHON_USEDEP}]
-	dev-python/sentencepiece[${PYTHON_USEDEP}]
-	>=dev-python/tensorflow-2.12.0[${PYTHON_USEDEP}]
-	dev-python/tensorflow-datasets[${PYTHON_USEDEP}]
-	dev-python/torch[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
+		dev-python/clu[${PYTHON_USEDEP}]
+		dev-python/einops[${PYTHON_USEDEP}]
+		dev-python/gymnasium[accept-rom-license,atari,${PYTHON_USEDEP}]
+		dev-python/jaxlib[${PYTHON_USEDEP}]
+		dev-python/jaxtyping[${PYTHON_USEDEP}]
+		>=dev-python/jraph-0.0.6_pre0[${PYTHON_USEDEP}]
+		dev-python/ml-collections[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/opencv-python[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-custom-exit-code[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/pytype[${PYTHON_USEDEP}]
+		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		>=dev-python/tensorflow-2.12.0[${PYTHON_USEDEP}]
+		dev-python/tensorflow-datasets[${PYTHON_USEDEP}]
+		dev-python/torch[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

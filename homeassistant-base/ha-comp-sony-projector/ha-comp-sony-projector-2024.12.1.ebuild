@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pysdcp-1[${PYTHON_USEDEP}]
+	=dev-python/pysdcp-1[${PYTHON_USEDEP}]
 "

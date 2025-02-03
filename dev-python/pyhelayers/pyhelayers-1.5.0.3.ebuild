@@ -17,12 +17,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.14.5[${PYTHON_USEDEP}]
 	ext? ( >=dev-python/scikit-learn-0.20.0[${PYTHON_USEDEP}] )
 	ext? ( >=dev-python/sklearn-json-0.1.0[${PYTHON_USEDEP}] )
 	ext? ( >=dev-python/tensorflow-2.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -22,11 +22,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="colors plugins"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	colors? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	plugins? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep '
 		dev-python/tomli[${PYTHON_USEDEP}]
 	' 3.10)

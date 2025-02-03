@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/astor[${PYTHON_USEDEP}]
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
@@ -28,8 +28,8 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/filelock-3.12[${PYTHON_USEDEP}]
 	all? ( dev-python/gym[${PYTHON_USEDEP}] )
 	ppotuner? ( dev-python/gym[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
-	anneal? ( ~dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
+	all? ( =dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
+	anneal? ( =dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
 	>=dev-python/json-tricks-3.15.5[${PYTHON_USEDEP}]
 	<dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	dev-python/nvidia-ml-py[${PYTHON_USEDEP}]
@@ -55,6 +55,10 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-10.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

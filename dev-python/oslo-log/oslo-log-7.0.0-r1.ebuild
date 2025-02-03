@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="fixtures systemd"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	fixtures? ( >=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/oslo-config-5.2.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-context-2.21.0[${PYTHON_USEDEP}]
@@ -31,7 +31,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/python-dateutil-2.7.0[${PYTHON_USEDEP}]
 	systemd? ( >=dev-python/systemd-python-234[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pbr-3.1.1[${PYTHON_USEDEP}]
 	>=dev-python/oslo-config-5.2.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-context-2.20.0[${PYTHON_USEDEP}]
@@ -50,14 +50,17 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	>=dev-python/coverage-4.5.1[${PYTHON_USEDEP}]
-	>=dev-python/eventlet-0.30.1[${PYTHON_USEDEP}]
-	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/oslotest-3.3.0[${PYTHON_USEDEP}]
-	>=dev-python/stestr-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/testtools-2.3.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-4.5.1[${PYTHON_USEDEP}]
+		>=dev-python/eventlet-0.30.1[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/stestr-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/testtools-2.3.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx doc/source \
 	dev-python/openstackdocstheme \
 	dev-python/oslo-config

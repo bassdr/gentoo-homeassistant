@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/total-connect-client-2024.5[${PYTHON_USEDEP}]
+	=dev-python/total-connect-client-2024.5[${PYTHON_USEDEP}]
 "

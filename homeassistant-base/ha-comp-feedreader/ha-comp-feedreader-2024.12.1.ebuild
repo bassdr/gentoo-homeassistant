@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/feedparser-6.0.11[${PYTHON_USEDEP}]
+	=dev-python/feedparser-6.0.11[${PYTHON_USEDEP}]
 "

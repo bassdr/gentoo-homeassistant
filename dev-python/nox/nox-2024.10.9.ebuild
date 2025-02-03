@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="tox-to-nox uv"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/argcomplete-4[${PYTHON_USEDEP}]
 	<dev-python/colorlog-7[${PYTHON_USEDEP}]
 	tox-to-nox? ( dev-python/jinja2[${PYTHON_USEDEP}] )
@@ -31,7 +31,7 @@ GENERATED_DEPEND="${RDEPEND}
 	uv? ( >=dev-python/uv-0.1.6[${PYTHON_USEDEP}] )
 	>=dev-python/virtualenv-20.14.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/argcomplete-1.9.4[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-2.6.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]

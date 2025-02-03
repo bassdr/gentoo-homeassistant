@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 DOCS=""
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-23.1.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
@@ -28,7 +28,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/async-upnp-client-0.36.2[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2.14[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
 	>=dev-python/async-upnp-client-0.36.2[${PYTHON_USEDEP}]
@@ -40,14 +40,17 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/mypy-1.3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.23.3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
-	>=dev-python/ruff-0.5.4[${PYTHON_USEDEP}]
-	>=dev-python/tox-4.6.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.6.3[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/mypy-1.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.23.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.5.4[${PYTHON_USEDEP}]
+		>=dev-python/tox-4.6.0[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-4.6.3[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

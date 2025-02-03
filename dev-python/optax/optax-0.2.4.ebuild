@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-0.7.1[${PYTHON_USEDEP}]
 	dp-accounting? ( >=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}] )
 	dp-accounting? ( >=dev-python/attrs-21.4.0[${PYTHON_USEDEP}] )
@@ -47,12 +47,15 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/tensorflow-datasets-4.2.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/tensorflow-datasets-4.2.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/dm-tree-0.1.7[${PYTHON_USEDEP}]
-	>=dev-python/flax-0.5.3[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.7.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/dm-tree-0.1.7[${PYTHON_USEDEP}]
+		>=dev-python/flax-0.5.3[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.7.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

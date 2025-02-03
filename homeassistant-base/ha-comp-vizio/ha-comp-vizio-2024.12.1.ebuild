@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyvizio-0.1.61[${PYTHON_USEDEP}]
+	=dev-python/pyvizio-0.1.61[${PYTHON_USEDEP}]
 "

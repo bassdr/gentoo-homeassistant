@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/bellows-0.42.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
@@ -32,7 +32,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 	dev-python/crc[${PYTHON_USEDEP}]
@@ -55,11 +55,14 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	dev-python/pytest-github-actions-annotate-failures[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		dev-python/pytest-github-actions-annotate-failures[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

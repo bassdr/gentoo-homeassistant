@@ -15,15 +15,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-7.1.2[${PYTHON_USEDEP}]
 	>=dev-python/highlighter-0.1.1[${PYTHON_USEDEP}]
-	~dev-python/honesty-0.3.0_alpha2[${PYTHON_USEDEP}]
+	=dev-python/honesty-0.3.0_alpha2[${PYTHON_USEDEP}]
 	>=dev-python/pep517-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-48.0.0[${PYTHON_USEDEP}]
 	>=dev-python/toml-0.10.2[${PYTHON_USEDEP}]
 	>=dev-python/volatile-1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

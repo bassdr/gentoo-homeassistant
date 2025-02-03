@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/dropmqttapi-1.0.3[${PYTHON_USEDEP}]
+	=dev-python/dropmqttapi-1.0.3[${PYTHON_USEDEP}]
 "

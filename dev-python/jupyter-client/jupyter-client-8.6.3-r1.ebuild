@@ -19,9 +19,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
-	!=dev-python/jupyter-core-5.0[${PYTHON_USEDEP}]
+	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tornado-6.2[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5.3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jupyter-core-5.1[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/pyzmq-23.0[${PYTHON_USEDEP}]
@@ -54,16 +54,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	<dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	>=dev-python/pytest-jupyter-0.4.1[client,${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		<dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-jupyter-0.4.1[client,${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

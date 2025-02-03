@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="codegen doc lint"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	codegen? ( >=dev-python/datamodel-code-generator-0.25.2[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/mypy-1.0[${PYTHON_USEDEP}] )
 	doc? ( <dev-python/pdoc-16.0[${PYTHON_USEDEP}] )
@@ -27,8 +27,8 @@ GENERATED_DEPEND="${RDEPEND}
 	codegen? ( dev-python/sigstore-rekor-types[lint,${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/email-validator-2[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2[${PYTHON_USEDEP}]
 "
-# BDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild

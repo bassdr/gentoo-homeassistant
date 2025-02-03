@@ -22,10 +22,13 @@ KEYWORDS="amd64 arm64"
 
 distutils_enable_sphinx docs
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/docopt[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/docopt[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# py3.10 changed exception messages

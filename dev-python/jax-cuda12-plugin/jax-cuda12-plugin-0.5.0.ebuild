@@ -17,8 +17,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/jax-cuda12-pjrt-0.5.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/jax-cuda12-pjrt-0.5.0[${PYTHON_USEDEP}]
 	with-cuda? ( >=dev-python/nvidia-cublas-cu12-12.1.3.1[${PYTHON_USEDEP}] )
 	with-cuda? ( >=dev-python/nvidia-cuda-cupti-cu12-12.1.105[${PYTHON_USEDEP}] )
 	with-cuda? ( >=dev-python/nvidia-cuda-nvcc-cu12-12.6.85[${PYTHON_USEDEP}] )
@@ -30,6 +30,10 @@ GENERATED_DEPEND="${RDEPEND}
 	with-cuda? ( >=dev-python/nvidia-nccl-cu12-2.18.1[${PYTHON_USEDEP}] )
 	with-cuda? ( >=dev-python/nvidia-nvjitlink-cu12-12.1.105[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

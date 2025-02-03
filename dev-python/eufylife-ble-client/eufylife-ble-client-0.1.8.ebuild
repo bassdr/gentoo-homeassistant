@@ -18,12 +18,12 @@ KEYWORDS="amd64 arm64"
 DOCS="README.md"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-39.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-39.0[${PYTHON_USEDEP}]"

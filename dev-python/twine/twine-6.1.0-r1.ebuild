@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="keyring"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/id[${PYTHON_USEDEP}]
 	>=dev-python/keyring-15.1[${PYTHON_USEDEP}]
 	keyring? ( >=dev-python/keyring-15.1[${PYTHON_USEDEP}] )
@@ -34,7 +34,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/rich-12.0.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/colorama-0.4.3[${PYTHON_USEDEP}]
 	>=dev-python/keyring-15.1[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

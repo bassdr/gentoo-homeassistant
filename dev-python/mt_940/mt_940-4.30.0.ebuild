@@ -23,12 +23,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/gitpython-2.1.9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx2rst[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND} !dev-python/mt_940[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND} !dev-python/mt_940[${PYTHON_USEDEP}]"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -39,11 +39,14 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cache[${PYTHON_USEDEP}]
-	dev-python/pytest-cover[${PYTHON_USEDEP}]
-	dev-python/pytest-flake8[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cache[${PYTHON_USEDEP}]
+		dev-python/pytest-cover[${PYTHON_USEDEP}]
+		dev-python/pytest-flake8[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

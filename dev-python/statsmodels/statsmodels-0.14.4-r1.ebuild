@@ -21,7 +21,11 @@ IUSE="${GENERATED_IUSE} examples"
 
 # NB: upstream requires building with numpy-2 but supports 1.x
 # at runtime
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="
+	>=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
+"
+GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
@@ -46,14 +50,10 @@ GENERATED_DEPEND="${RDEPEND}
 	develop? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
 	!=dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
-	develop? ( ~dev-python/setuptools-scm-8.0[toml,${PYTHON_USEDEP}] )
+	develop? ( >=dev-python/setuptools-scm-8.0[toml,${PYTHON_USEDEP}] =dev-python/setuptools-scm-8*[toml,${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
-DEPEND="
-	>=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/numpy-1.22.3[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.4[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pytradfri-9.0.1[async,${PYTHON_USEDEP}]
+	=dev-python/pytradfri-9.0.1[async,${PYTHON_USEDEP}]
 "

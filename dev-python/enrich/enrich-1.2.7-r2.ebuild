@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-9.5.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -31,14 +31,17 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.4.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.7.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.3.1[${PYTHON_USEDEP}]
-	dev-python/pytest-plus[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-1.29.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.4.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.7.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.3.1[${PYTHON_USEDEP}]
+		dev-python/pytest-plus[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-1.29.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# known breakage in dev-python/rich

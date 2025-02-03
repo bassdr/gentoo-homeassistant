@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-0.8.10[${PYTHON_USEDEP}]
 	graph? ( >=dev-python/matplotlib-2.0.2[${PYTHON_USEDEP}] )
 	>=dev-python/oslo-config-4.0.0[${PYTHON_USEDEP}]
@@ -29,22 +29,25 @@ GENERATED_DEPEND="${RDEPEND}
 	!=dev-python/sqlalchemy-1.1.5[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-1.20.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
-	>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
-	!=dev-python/hacking-0.13.0[${PYTHON_USEDEP}]
-	>=dev-python/mock-1.0[${PYTHON_USEDEP}]
-	>=dev-python/openstackdocstheme-1.11.0[${PYTHON_USEDEP}]
-	>=dev-python/oslo-concurrency-3.5.0[${PYTHON_USEDEP}]
-	dev-python/psycopg2[${PYTHON_USEDEP}]
-	dev-python/pymysql[${PYTHON_USEDEP}]
-	>=dev-python/reno-0.1.1[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-1.6.2[${PYTHON_USEDEP}]
-	>=dev-python/stestr-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/testresources-0.2.4[${PYTHON_USEDEP}]
-	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
-	>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+		!=dev-python/hacking-0.13.0[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+		>=dev-python/openstackdocstheme-1.11.0[${PYTHON_USEDEP}]
+		>=dev-python/oslo-concurrency-3.5.0[${PYTHON_USEDEP}]
+		dev-python/psycopg2[${PYTHON_USEDEP}]
+		dev-python/pymysql[${PYTHON_USEDEP}]
+		>=dev-python/reno-0.1.1[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-1.6.2[${PYTHON_USEDEP}]
+		>=dev-python/stestr-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/testresources-0.2.4[${PYTHON_USEDEP}]
+		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+		>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

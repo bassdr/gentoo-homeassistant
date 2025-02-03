@@ -15,23 +15,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/asttokens-3[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/astor-0.8.1[${PYTHON_USEDEP}]
-	<dev-python/coverage-7[${PYTHON_USEDEP}]
-	<dev-python/docutils-1[${PYTHON_USEDEP}]
-	~dev-python/dpcontracts-0.6.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2[${PYTHON_USEDEP}]
-	<dev-python/py-cpuinfo-6[${PYTHON_USEDEP}]
-	<dev-python/pydocstyle-7[${PYTHON_USEDEP}]
-	<dev-python/pygments-3[${PYTHON_USEDEP}]
-	<dev-python/tabulate-1[${PYTHON_USEDEP}]
-	>=dev-python/tox-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/typeguard-5[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/astor-0.8.1[${PYTHON_USEDEP}]
+		<dev-python/coverage-7[${PYTHON_USEDEP}]
+		<dev-python/docutils-1[${PYTHON_USEDEP}]
+		=dev-python/dpcontracts-0.6.0[${PYTHON_USEDEP}]
+		<dev-python/numpy-2[${PYTHON_USEDEP}]
+		<dev-python/py-cpuinfo-6[${PYTHON_USEDEP}]
+		<dev-python/pydocstyle-7[${PYTHON_USEDEP}]
+		<dev-python/pygments-3[${PYTHON_USEDEP}]
+		<dev-python/tabulate-1[${PYTHON_USEDEP}]
+		>=dev-python/tox-3.0.0[${PYTHON_USEDEP}]
+		<dev-python/typeguard-5[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="client docs server"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	client? ( >=dev-python/ipykernel-6.14[${PYTHON_USEDEP}] )
 	server? ( >=dev-python/ipykernel-6.14[${PYTHON_USEDEP}] )
 	client? ( >=dev-python/jupyter-client-7.4.0[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-7.4.0[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-core-5.7[${PYTHON_USEDEP}]
@@ -48,6 +48,9 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

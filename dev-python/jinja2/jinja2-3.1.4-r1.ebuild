@@ -25,11 +25,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="i18n"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	i18n? ( >=dev-python/babel-2.7[${PYTHON_USEDEP}] )
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]
 "
 

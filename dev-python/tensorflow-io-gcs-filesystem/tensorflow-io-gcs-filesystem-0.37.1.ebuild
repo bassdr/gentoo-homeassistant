@@ -17,13 +17,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	tensorflow? ( <dev-python/tensorflow-2.17.0[${PYTHON_USEDEP}] )
 	tensorflow-aarch64? ( <dev-python/tensorflow-aarch64-2.17.0[${PYTHON_USEDEP}] )
 	tensorflow-cpu? ( <dev-python/tensorflow-cpu-2.17.0[${PYTHON_USEDEP}] )
 	tensorflow-gpu? ( <dev-python/tensorflow-gpu-2.17.0[${PYTHON_USEDEP}] )
 	tensorflow-rocm? ( <dev-python/tensorflow-rocm-2.17.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -24,13 +24,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=dev-python/numpy-2.0.0_rc:=[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "

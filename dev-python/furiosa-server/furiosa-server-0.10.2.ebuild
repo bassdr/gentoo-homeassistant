@@ -17,9 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fastapi[${PYTHON_USEDEP}]
-	~dev-python/furiosa-runtime-0.10[${PYTHON_USEDEP}]
+	=dev-python/furiosa-runtime-0.10*[${PYTHON_USEDEP}]
 	dev-python/grpcio-tools[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
 	openvino? ( dev-python/openvino[${PYTHON_USEDEP}] )
@@ -29,19 +29,24 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/typer[${PYTHON_USEDEP}]
 	dev-python/uvicorn[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/datamodel-code-generator[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/mypy-extensions[${PYTHON_USEDEP}]
-	dev-python/mypy-protobuf[${PYTHON_USEDEP}]
-	>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/types-protobuf[${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/datamodel-code-generator[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/mypy-extensions[${PYTHON_USEDEP}]
+		dev-python/mypy-protobuf[${PYTHON_USEDEP}]
+		>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}] =dev-python/pytest-asyncio-0.17*[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/types-protobuf[${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

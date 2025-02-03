@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	full? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
 	sqlalchemy? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
 	annotated-types? ( dev-python/annotated-types[${PYTHON_USEDEP}] )
@@ -78,6 +78,6 @@ GENERATED_DEPEND="${RDEPEND}
 	full? ( >=dev-python/valkey-6.0.2[libvalkey,${PYTHON_USEDEP}] )
 	valkey? ( >=dev-python/valkey-6.0.2[libvalkey,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

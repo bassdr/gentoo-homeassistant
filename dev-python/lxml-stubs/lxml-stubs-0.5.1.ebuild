@@ -16,14 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-7.2.5[toml,${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.2.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mypy-plugins-1.10.1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-7.2.5[toml,${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mypy-plugins-1.10.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

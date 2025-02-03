@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/amberelectric-2.0.12[${PYTHON_USEDEP}]
+	=dev-python/amberelectric-2.0.12[${PYTHON_USEDEP}]
 "

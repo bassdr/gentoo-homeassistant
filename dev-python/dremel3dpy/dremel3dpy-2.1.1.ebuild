@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/decorator-5.0[${PYTHON_USEDEP}]
 	>=dev-python/imageio-2.0[${PYTHON_USEDEP}]
 	>=dev-python/imutils-0.0[${PYTHON_USEDEP}]
@@ -27,7 +27,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/validators-0.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/decorator-5.0[${PYTHON_USEDEP}]
 	>=dev-python/imageio-2.0[${PYTHON_USEDEP}]
 	>=dev-python/imutils-0.5[${PYTHON_USEDEP}]

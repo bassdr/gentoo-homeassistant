@@ -21,12 +21,12 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="babel lingua"
 IUSE="${GENERATED_IUSE} doc"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	babel? ( dev-python/babel[${PYTHON_USEDEP}] )
 	lingua? ( dev-python/lingua[${PYTHON_USEDEP}] )
 	>=dev-python/markupsafe-0.9.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/markupsafe-0.9.2[${PYTHON_USEDEP}]
 "
 BDEPEND="
@@ -36,9 +36,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=()

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/python-homewizard-energy-7.0.0[${PYTHON_USEDEP}]
+	=dev-python/python-homewizard-energy-7.0.0[${PYTHON_USEDEP}]
 "

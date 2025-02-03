@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-coverage? ( !=dev-python/coverage-6.1.1[${PYTHON_USEDEP}] )
 	$(python_gen_cond_dep '>dev-python/importlib-metadata-6[${PYTHON_USEDEP}]' python3_12)
 	dev-type-checking? ( >=dev-python/mypy-1.13.0[${PYTHON_USEDEP}] )
@@ -32,10 +32,10 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/rdflib-8.0[html,${PYTHON_USEDEP}]
 	dev-lint? ( <dev-python/ruff-0.10[${PYTHON_USEDEP}] )
 	http? ( <dev-python/sanic-23[${PYTHON_USEDEP}] )
-	http? ( ~dev-python/sanic-cors-2.2.0[${PYTHON_USEDEP}] )
+	http? ( =dev-python/sanic-cors-2.2.0[${PYTHON_USEDEP}] )
 	http? ( <dev-python/sanic-ext-23.6[${PYTHON_USEDEP}] )
 	dev-type-checking? ( dev-python/types-setuptools[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

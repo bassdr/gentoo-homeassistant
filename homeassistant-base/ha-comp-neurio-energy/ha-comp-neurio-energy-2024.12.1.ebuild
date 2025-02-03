@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/neurio-0.3.1[${PYTHON_USEDEP}]
+	=dev-python/neurio-0.3.1[${PYTHON_USEDEP}]
 "

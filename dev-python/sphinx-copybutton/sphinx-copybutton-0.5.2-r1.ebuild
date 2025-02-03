@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code_style rtd"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	rtd? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 	rtd? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-examples[${PYTHON_USEDEP}] )
-	code_style? ( ~dev-vcs/pre-commit-2.12.1[${PYTHON_USEDEP}] )
+	code_style? ( =dev-vcs/pre-commit-2.12.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/sphinx-6.0[${PYTHON_USEDEP}]
 "

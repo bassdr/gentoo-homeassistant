@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
 	libcloud? ( <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
 	all? ( <dev-python/boto3-2[${PYTHON_USEDEP}] )
@@ -24,36 +24,36 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( <dev-python/comet-ml-4.0.0[${PYTHON_USEDEP}] )
 	comet-ml? ( <dev-python/comet-ml-4.0.0[${PYTHON_USEDEP}] )
 	<dev-python/coolname-3[${PYTHON_USEDEP}]
-	all? ( ~dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}] )
-	all? ( ~dev-python/cryptography-44.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
-	databricks? ( ~dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
-	mlflow? ( ~dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}] )
+	all? ( =dev-python/cryptography-44.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
+	databricks? ( =dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
+	mlflow? ( =dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/datasets-4[${PYTHON_USEDEP}] )
 	nlp? ( <dev-python/datasets-4[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/fasteners-0.18[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/gitpython-3.1.43[${PYTHON_USEDEP}] )
+	all? ( =dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/fasteners-0.18[${PYTHON_USEDEP}] )
+	all? ( =dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
+	all? ( =dev-python/gitpython-3.1.43[${PYTHON_USEDEP}] )
 	all? ( <dev-python/google-cloud-storage-3.0[${PYTHON_USEDEP}] )
 	gcs? ( <dev-python/google-cloud-storage-3.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/huggingface-hub-0.27[${PYTHON_USEDEP}] )
 	nlp? ( <dev-python/huggingface-hub-0.27[${PYTHON_USEDEP}] )
 	<dev-python/importlib-metadata-9[${PYTHON_USEDEP}]
-	all? ( ~dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/ipython-8.11.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/junitparser-3.1.2[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}] )
+	all? ( =dev-python/ipython-8.11.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/junitparser-3.1.2[${PYTHON_USEDEP}] )
+	all? ( =dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/mlflow-3.0[${PYTHON_USEDEP}] )
 	mlflow? ( <dev-python/mlflow-3.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}] )
 	<dev-python/mosaicml-cli-0.7[${PYTHON_USEDEP}]
 	all? ( <dev-python/mosaicml-streaming-1.0[${PYTHON_USEDEP}] )
 	streaming? ( <dev-python/mosaicml-streaming-1.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/moto-6[s3,${PYTHON_USEDEP}] )
-	all? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/neptune-2.0.0[${PYTHON_USEDEP}] )
 	neptune? ( <dev-python/neptune-2.0.0[${PYTHON_USEDEP}] )
 	<dev-python/numpy-2.2.0[${PYTHON_USEDEP}]
@@ -66,7 +66,7 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/packaging-24.3[${PYTHON_USEDEP}]
 	all? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
 	pandas? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pandoc-2.4[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pandoc-2.4[${PYTHON_USEDEP}] )
 	all? ( <dev-python/paramiko-4[${PYTHON_USEDEP}] )
 	streaming? ( <dev-python/paramiko-4[${PYTHON_USEDEP}] )
 	all? ( <dev-python/peft-0.14[${PYTHON_USEDEP}] )
@@ -83,91 +83,94 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( <dev-python/pynvml-12[${PYTHON_USEDEP}] )
 	mlflow? ( <dev-python/pynvml-12[${PYTHON_USEDEP}] )
 	system-metrics-monitor? ( <dev-python/pynvml-12[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pypandoc-1.14[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pytest-7.4.4[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pypandoc-1.14[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pytest-7.4.4[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/pytest-httpserver-1.1[${PYTHON_USEDEP}] )
 	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	all? ( ~dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}] )
 	<dev-python/requests-3[${PYTHON_USEDEP}]
-	all? ( ~dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
-	sentencepiece? ( ~dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
+	sentencepiece? ( =dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
 	all? ( <=dev-python/setuptools-59.5.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/slack-sdk-4[${PYTHON_USEDEP}] )
 	slack? ( <dev-python/slack-sdk-4[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
-	~dev-python/tabulate-0.9.0[${PYTHON_USEDEP}]
+	all? ( =dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
+	=dev-python/tabulate-0.9.0[${PYTHON_USEDEP}]
 	all? ( <dev-python/tensorboard-3.0.0[${PYTHON_USEDEP}] )
 	tensorboard? ( <dev-python/tensorboard-3.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/testbook-0.4.2[${PYTHON_USEDEP}] )
+	all? ( =dev-python/testbook-0.4.2[${PYTHON_USEDEP}] )
 	<dev-python/torch-2.5.2[${PYTHON_USEDEP}]
 	<dev-python/torch-optimizer-0.4[${PYTHON_USEDEP}]
 	<dev-python/torchmetrics-1.6.1[${PYTHON_USEDEP}]
 	<dev-python/torchvision-0.20.2[${PYTHON_USEDEP}]
 	<dev-python/tqdm-5[${PYTHON_USEDEP}]
-	all? ( ~dev-python/traitlets-5.14.3[${PYTHON_USEDEP}] )
+	all? ( =dev-python/traitlets-5.14.3[${PYTHON_USEDEP}] )
 	all? ( !=dev-python/transformers-4.34.0[${PYTHON_USEDEP}] )
 	nlp? ( !=dev-python/transformers-4.34.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/wandb-0.19[${PYTHON_USEDEP}] )
 	wandb? ( <dev-python/wandb-0.19[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
 	all? ( <dev-vcs/pre-commit-5[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}]
-	~dev-python/cryptography-44.0.0[${PYTHON_USEDEP}]
-	~dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}]
-	~dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
-	~dev-python/fasteners-0.18[${PYTHON_USEDEP}]
-	~dev-python/furo-2022.9.29[${PYTHON_USEDEP}]
-	~dev-python/gitpython-3.1.43[${PYTHON_USEDEP}]
-	~dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}]
-	~dev-python/ipython-8.11.0[${PYTHON_USEDEP}]
-	~dev-python/junitparser-3.1.2[${PYTHON_USEDEP}]
-	~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
-	~dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}]
-	<dev-python/moto-6[s3,${PYTHON_USEDEP}]
-	~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}]
-	~dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}]
-	~dev-python/pandoc-2.4[${PYTHON_USEDEP}]
-	~dev-python/pypandoc-1.14[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
-	~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-httpserver-1.1[${PYTHON_USEDEP}]
-	~dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}]
-	<=dev-python/setuptools-59.5.0[${PYTHON_USEDEP}]
-	~dev-python/sphinx-4.4.0[${PYTHON_USEDEP}]
-	~dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}]
-	~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
-	~dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}]
-	~dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}]
-	~dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}]
-	~dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}]
-	~dev-python/testbook-0.4.2[${PYTHON_USEDEP}]
-	~dev-python/traitlets-5.14.3[${PYTHON_USEDEP}]
-	~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
-	<dev-vcs/pre-commit-5[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}]
+		=dev-python/cryptography-44.0.0[${PYTHON_USEDEP}]
+		=dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}]
+		=dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
+		=dev-python/fasteners-0.18[${PYTHON_USEDEP}]
+		=dev-python/furo-2022.9.29[${PYTHON_USEDEP}]
+		=dev-python/gitpython-3.1.43[${PYTHON_USEDEP}]
+		=dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}]
+		=dev-python/ipython-8.11.0[${PYTHON_USEDEP}]
+		=dev-python/junitparser-3.1.2[${PYTHON_USEDEP}]
+		=dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
+		=dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}]
+		<dev-python/moto-6[s3,${PYTHON_USEDEP}]
+		=dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}]
+		=dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}]
+		=dev-python/pandoc-2.4[${PYTHON_USEDEP}]
+		=dev-python/pypandoc-1.14[${PYTHON_USEDEP}]
+		=dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
+		=dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-httpserver-1.1[${PYTHON_USEDEP}]
+		=dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}]
+		<=dev-python/setuptools-59.5.0[${PYTHON_USEDEP}]
+		=dev-python/sphinx-4.4.0[${PYTHON_USEDEP}]
+		=dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}]
+		=dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+		=dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}]
+		=dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}]
+		=dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}]
+		=dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}]
+		=dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}]
+		=dev-python/testbook-0.4.2[${PYTHON_USEDEP}]
+		=dev-python/traitlets-5.14.3[${PYTHON_USEDEP}]
+		=dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
+		<dev-vcs/pre-commit-5[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

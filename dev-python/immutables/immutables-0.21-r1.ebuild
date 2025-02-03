@@ -23,12 +23,15 @@ KEYWORDS="amd64 arm64"
 IUSE="+native-extensions"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/flake8-5.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.4[${PYTHON_USEDEP}]
-	~dev-python/pycodestyle-2.9[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/flake8-5.0[${PYTHON_USEDEP}] =dev-python/flake8-5*[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.4[${PYTHON_USEDEP}] =dev-python/mypy-1*[${PYTHON_USEDEP}]
+		>=dev-python/pycodestyle-2.9[${PYTHON_USEDEP}] =dev-python/pycodestyle-2*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.4[${PYTHON_USEDEP}] =dev-python/pytest-7*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	sed -i -e '/mypy/d' tests/conftest.py || die

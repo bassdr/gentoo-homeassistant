@@ -21,12 +21,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/casttube-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.25.1[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.25.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/casttube-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.25.1[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.135[${PYTHON_USEDEP}]

@@ -17,12 +17,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/jsonschema-5.0.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-specifications-2023.5.2[${PYTHON_USEDEP}]
 	dev-python/rfc3339-validator[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/jsonschema-5[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-4.19.1[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-specifications-2023.5.2[${PYTHON_USEDEP}]

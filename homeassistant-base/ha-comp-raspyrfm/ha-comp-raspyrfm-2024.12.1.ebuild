@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/raspyrfm-client-1.2.8[${PYTHON_USEDEP}]
+	=dev-python/raspyrfm-client-1.2.8[${PYTHON_USEDEP}]
 "

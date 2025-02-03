@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/laundrify-aio-1.2.2[${PYTHON_USEDEP}]
+	=dev-python/laundrify-aio-1.2.2[${PYTHON_USEDEP}]
 "

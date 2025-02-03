@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	x? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/ivy-1.0.0.0[${PYTHON_USEDEP}] )
@@ -39,24 +39,27 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinxcontrib-youtube[${PYTHON_USEDEP}] )
 	>=dev-python/torch-1.9.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/accelerate[${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/diffusers[${PYTHON_USEDEP}]
-	>=dev-python/ivy-1.0.0.0[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	<dev-python/numpy-3[${PYTHON_USEDEP}]
-	dev-python/onnx[${PYTHON_USEDEP}]
-	dev-python/onnxruntime[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-61.2[${PYTHON_USEDEP}]
-	dev-python/transformers[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/accelerate[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/diffusers[${PYTHON_USEDEP}]
+		>=dev-python/ivy-1.0.0.0[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		<dev-python/numpy-3[${PYTHON_USEDEP}]
+		dev-python/onnx[${PYTHON_USEDEP}]
+		dev-python/onnxruntime[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-61.2[${PYTHON_USEDEP}]
+		dev-python/transformers[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

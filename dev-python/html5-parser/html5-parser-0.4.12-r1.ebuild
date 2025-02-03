@@ -21,15 +21,15 @@ GENERATED_IUSE="soup"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+DEPEND="
+	dev-libs/libxml2:=
+"
+GENERATED_RDEPEND="${RDEPEND}
 	soup? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	dev-python/chardet[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.8.0[${PYTHON_USEDEP}]
 "
-DEPEND="
-	dev-libs/libxml2:=
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/chardet[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.8.0[${PYTHON_USEDEP}]

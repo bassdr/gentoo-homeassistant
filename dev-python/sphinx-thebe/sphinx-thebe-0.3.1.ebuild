@@ -10,29 +10,32 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sphinx-thebe/"
+  https://pypi.org/project/sphinx_thebe/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	sphinx? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-4[${PYTHON_USEDEP}]
 	sphinx? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	dev-python/matplotlib[${PYTHON_USEDEP}]
-	>=dev-python/myst-nb-1.0.0_rc0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
-	dev-python/sphinx-design[${PYTHON_USEDEP}]
-	dev-python/sphinx-thebe[testing,${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		>=dev-python/myst-nb-1.0.0_rc0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+		dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
+		dev-python/sphinx-design[${PYTHON_USEDEP}]
+		dev-python/sphinx-thebe[testing,${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

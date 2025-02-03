@@ -25,7 +25,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build data developer docs optional"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	optional? ( >=dev-python/astropy-5.0[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/build-1.2.1[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/cloudpickle-0.2.1[${PYTHON_USEDEP}] )
@@ -37,7 +37,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	developer? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/kaleido-0.2.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/kaleido-0.2.1[${PYTHON_USEDEP}] )
 	>=dev-python/lazy-loader-0.4[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/matplotlib-3.7[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/matplotlib-3.7[${PYTHON_USEDEP}] )
@@ -71,12 +71,12 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-design-0.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-gallery-0.18[parallel,${PYTHON_USEDEP}] )
-	build? ( ~dev-python/spin-0.13[${PYTHON_USEDEP}] )
+	build? ( =dev-python/spin-0.13[${PYTHON_USEDEP}] )
 	>=dev-python/tifffile-2022.8.12[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/tifffile-2022.8.12[${PYTHON_USEDEP}] )
 	developer? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/imageio-2.36[${PYTHON_USEDEP}]
 	>=dev-python/lazy-loader-0.4[${PYTHON_USEDEP}]
 	>=dev-python/networkx-3.0[${PYTHON_USEDEP}]
@@ -96,16 +96,19 @@ BDEPEND="
 
 # xdist does not work with this test suite
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/asv[${PYTHON_USEDEP}]
-	>=dev-python/numpydoc-1.7[${PYTHON_USEDEP}]
-	>=dev-python/pooch-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-2.11.0[${PYTHON_USEDEP}]
-	dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-	dev-python/pytest-faulthandler[${PYTHON_USEDEP}]
-	dev-python/pytest-localserver[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/asv[${PYTHON_USEDEP}]
+		>=dev-python/numpydoc-1.7[${PYTHON_USEDEP}]
+		>=dev-python/pooch-1.6.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.11.0[${PYTHON_USEDEP}]
+		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/pytest-faulthandler[${PYTHON_USEDEP}]
+		dev-python/pytest-localserver[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 # There is a programmable error in your configuration file:
 #distutils_enable_sphinx doc/source dev-python/numpydoc dev-python/myst-parser
 

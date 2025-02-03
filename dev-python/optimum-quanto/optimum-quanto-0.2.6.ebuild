@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	examples? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	examples? ( dev-python/diffusers[${PYTHON_USEDEP}] )
@@ -30,10 +30,13 @@ GENERATED_DEPEND="${RDEPEND}
 	examples? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	examples? ( dev-python/transformers[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

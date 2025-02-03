@@ -24,13 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-41.0.3[${PYTHON_USEDEP}]
 	docs? ( <dev-python/myst-parser-1.1[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	>=dev-python/cryptography-41.0.3[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0.2[${PYTHON_USEDEP}]

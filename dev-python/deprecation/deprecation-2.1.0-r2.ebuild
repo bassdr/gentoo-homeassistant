@@ -16,11 +16,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/packaging[${PYTHON_USEDEP}]"
-
+RDEPEND="${GENERATED_RDEPEND} dev-python/packaging[${PYTHON_USEDEP}]"
 distutils_enable_sphinx docs
 distutils_enable_tests unittest
 

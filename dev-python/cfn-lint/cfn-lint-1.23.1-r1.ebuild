@@ -18,24 +18,24 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="full graph junit sarif"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aws-sam-translator-1.94.0[${PYTHON_USEDEP}]
-	full? ( ~dev-python/jschema-to-python-1.2.3[${PYTHON_USEDEP}] )
-	sarif? ( ~dev-python/jschema-to-python-1.2.3[${PYTHON_USEDEP}] )
+	full? ( >=dev-python/jschema-to-python-1.2.3[${PYTHON_USEDEP}] =dev-python/jschema-to-python-1.2*[${PYTHON_USEDEP}] )
+	sarif? ( >=dev-python/jschema-to-python-1.2.3[${PYTHON_USEDEP}] =dev-python/jschema-to-python-1.2*[${PYTHON_USEDEP}] )
 	dev-python/jsonpatch[${PYTHON_USEDEP}]
-	full? ( ~dev-python/junit-xml-1.9[${PYTHON_USEDEP}] )
-	junit? ( ~dev-python/junit-xml-1.9[${PYTHON_USEDEP}] )
+	full? ( >=dev-python/junit-xml-1.9[${PYTHON_USEDEP}] =dev-python/junit-xml-1*[${PYTHON_USEDEP}] )
+	junit? ( >=dev-python/junit-xml-1.9[${PYTHON_USEDEP}] =dev-python/junit-xml-1*[${PYTHON_USEDEP}] )
 	<dev-python/networkx-4[${PYTHON_USEDEP}]
 	full? ( dev-python/pydot[${PYTHON_USEDEP}] )
 	graph? ( dev-python/pydot[${PYTHON_USEDEP}] )
 	>dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
 	dev-python/regex[${PYTHON_USEDEP}]
-	full? ( ~dev-python/sarif-om-1.0.4[${PYTHON_USEDEP}] )
-	sarif? ( ~dev-python/sarif-om-1.0.4[${PYTHON_USEDEP}] )
+	full? ( >=dev-python/sarif-om-1.0.4[${PYTHON_USEDEP}] =dev-python/sarif-om-1.0*[${PYTHON_USEDEP}] )
+	sarif? ( >=dev-python/sarif-om-1.0.4[${PYTHON_USEDEP}] =dev-python/sarif-om-1.0*[${PYTHON_USEDEP}] )
 	>=dev-python/sympy-1.0.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aws-sam-translator-1.94.0[${PYTHON_USEDEP}]
 	dev-python/jsonpatch[${PYTHON_USEDEP}]
 	>=dev-python/jschema-to-python-1.2.3[${PYTHON_USEDEP}]

@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/babel-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/lark-parser-0.10.1[${PYTHON_USEDEP}]
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/requests-2.25.1[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

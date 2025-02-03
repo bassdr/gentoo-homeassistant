@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	all? ( dev-python/botocore[${PYTHON_USEDEP}] )
 	dev-python/celery[${PYTHON_USEDEP}]
@@ -31,6 +31,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
 	all? ( dev-python/urllib3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

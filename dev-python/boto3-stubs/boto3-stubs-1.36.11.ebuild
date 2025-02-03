@@ -16,8 +16,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	boto3? ( ~dev-python/boto3-1.36.11[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	boto3? ( =dev-python/boto3-1.36.11[${PYTHON_USEDEP}] )
 	full? ( <dev-python/boto3-stubs-full-1.37.0[${PYTHON_USEDEP}] )
 	dev-python/botocore-stubs[${PYTHON_USEDEP}]
 	accessanalyzer? ( <dev-python/mypy-boto3-accessanalyzer-1.37.0[${PYTHON_USEDEP}] )
@@ -836,6 +836,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/types-s3transfer[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]' python3_12)
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

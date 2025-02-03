@@ -20,12 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/jsonrpc-async-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonrpc-websocket-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/jsonrpc-async-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonrpc-websocket-3.1.1[${PYTHON_USEDEP}]"

@@ -17,9 +17,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	all? ( ~dev-python/black-22.0[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/black-22.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	all? ( >=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}] )
+	dev-python/black[${PYTHON_USEDEP}]
+	quality? ( >=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
 	dev-python/gitpython[${PYTHON_USEDEP}]
@@ -41,19 +42,22 @@ GENERATED_DEPEND="${RDEPEND}
 	release? ( dev-python/twine[${PYTHON_USEDEP}] )
 	all? ( sci-libs/tokenizers[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/black-22.0[${PYTHON_USEDEP}]
-	>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
-	dev-python/google-api-python-client[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.5.4[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/timm[${PYTHON_USEDEP}]
-	dev-python/torch[${PYTHON_USEDEP}]
-	dev-python/transformers[${PYTHON_USEDEP}]
-	sci-libs/tokenizers[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.3[${PYTHON_USEDEP}]
+		dev-python/google-api-python-client[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.5.4[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/timm[${PYTHON_USEDEP}]
+		dev-python/torch[${PYTHON_USEDEP}]
+		dev-python/transformers[${PYTHON_USEDEP}]
+		sci-libs/tokenizers[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

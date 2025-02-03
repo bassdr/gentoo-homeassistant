@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-0.7.0[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -24,10 +24,13 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/setuptools-42[${PYTHON_USEDEP}]
 	>=dev-python/trove-classifiers-2022.6.26[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/setuptools-60[${PYTHON_USEDEP}]
-	dev-python/zest-releaser[recommended,${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/setuptools-60[${PYTHON_USEDEP}]
+		dev-python/zest-releaser[recommended,${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/panacotta-0.2[${PYTHON_USEDEP}]
+	=dev-python/panacotta-0.2[${PYTHON_USEDEP}]
 "

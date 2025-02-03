@@ -15,21 +15,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiobotocore-2.5.0[boto3,${PYTHON_USEDEP}]
 	dev-python/dvc[${PYTHON_USEDEP}]
 	<dev-python/flatten-dict-1[${PYTHON_USEDEP}]
 	>=dev-python/s3fs-2023.6.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/dvc[testing,${PYTHON_USEDEP}]
-	dev-python/dvc-s3[tests,${PYTHON_USEDEP}]
-	~dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-servers-0.4.0[s3,${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dvc[testing,${PYTHON_USEDEP}]
+		dev-python/dvc-s3[tests,${PYTHON_USEDEP}]
+		=dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-servers-0.4.0[s3,${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

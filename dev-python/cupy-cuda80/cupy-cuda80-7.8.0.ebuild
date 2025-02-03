@@ -17,40 +17,44 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	appveyor? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/autopep8-1.4.4[${PYTHON_USEDEP}] )
-	travis? ( ~dev-python/autopep8-1.4.4[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/autopep8-1.4.4[${PYTHON_USEDEP}] )
+	travis? ( =dev-python/autopep8-1.4.4[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	>=dev-python/fastrlock-0.3[${PYTHON_USEDEP}]
 	setup? ( >=dev-python/fastrlock-0.3[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/flake8-3.7.9[${PYTHON_USEDEP}] )
-	travis? ( ~dev-python/flake8-3.7.9[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/flake8-3.7.9[${PYTHON_USEDEP}] )
+	travis? ( =dev-python/flake8-3.7.9[${PYTHON_USEDEP}] )
 	doctest? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	appveyor? ( dev-python/mock[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/mock[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.9.0[${PYTHON_USEDEP}]
-	stylecheck? ( ~dev-python/pbr-4.0.4[${PYTHON_USEDEP}] )
-	travis? ( ~dev-python/pbr-4.0.4[${PYTHON_USEDEP}] )
-	stylecheck? ( ~dev-python/pycodestyle-2.5.0[${PYTHON_USEDEP}] )
-	travis? ( ~dev-python/pycodestyle-2.5.0[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/pbr-4.0.4[${PYTHON_USEDEP}] )
+	travis? ( =dev-python/pbr-4.0.4[${PYTHON_USEDEP}] )
+	stylecheck? ( =dev-python/pycodestyle-2.5.0[${PYTHON_USEDEP}] )
+	travis? ( =dev-python/pycodestyle-2.5.0[${PYTHON_USEDEP}] )
 	appveyor? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/sphinx-3.0.4[${PYTHON_USEDEP}] )
-	travis? ( ~dev-python/sphinx-3.0.4[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-3.0.4[${PYTHON_USEDEP}] )
+	travis? ( =dev-python/sphinx-3.0.4[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	travis? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
-	dev-python/mock[${PYTHON_USEDEP}]
-	<dev-python/pytest-4.2.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		<dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		<dev-python/pytest-4.2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

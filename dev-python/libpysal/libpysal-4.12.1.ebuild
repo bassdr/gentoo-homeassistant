@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beautifulsoup4-4.10[${PYTHON_USEDEP}]
 	>=dev-python/geopandas-0.10.0[${PYTHON_USEDEP}]
 	plus? ( >=dev-python/joblib-1.2[${PYTHON_USEDEP}] )
@@ -42,18 +42,21 @@ GENERATED_DEPEND="${RDEPEND}
 	plus? ( >=dev-python/xarray-2022.3[${PYTHON_USEDEP}] )
 	plus? ( dev-python/zstd[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/codecov[${PYTHON_USEDEP}]
-	>=dev-python/geodatasets-2023.3.0[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-3.6[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-mpl[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/watermark[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/codecov[${PYTHON_USEDEP}]
+		>=dev-python/geodatasets-2023.3.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.6[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mpl[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/watermark[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

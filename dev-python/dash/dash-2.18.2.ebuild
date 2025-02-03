@@ -16,38 +16,38 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	ci? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	ci? ( =dev-python/black-22.3.0[${PYTHON_USEDEP}] )
 	celery? ( >=dev-python/celery-5.1.2[redis,${PYTHON_USEDEP}] )
-	~dev-python/dash-core-components-2.0.0[${PYTHON_USEDEP}]
+	=dev-python/dash-core-components-2.0.0[${PYTHON_USEDEP}]
 	ci? ( dev-python/dash-dangerously-set-inner-html[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/dash-flow-example-0.0.5[${PYTHON_USEDEP}] )
-	~dev-python/dash-html-components-2.0.0[${PYTHON_USEDEP}]
-	~dev-python/dash-table-5.0.0[${PYTHON_USEDEP}]
+	ci? ( =dev-python/dash-flow-example-0.0.5[${PYTHON_USEDEP}] )
+	=dev-python/dash-html-components-2.0.0[${PYTHON_USEDEP}]
+	=dev-python/dash-table-5.0.0[${PYTHON_USEDEP}]
 	diskcache? ( >=dev-python/diskcache-5.2.1[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/flake8-7.0.0[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/flaky-3.8.1[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/flake8-7.0.0[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/flaky-3.8.1[${PYTHON_USEDEP}] )
 	<dev-python/flask-3.1[${PYTHON_USEDEP}]
 	compress? ( dev-python/flask-compress[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/flask-talisman-1.0.0[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/flask-talisman-1.0.0[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	ci? ( <dev-python/jupyterlab-4.0.0[${PYTHON_USEDEP}] )
 	ci? ( <=dev-python/mimesis-11.1.0[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
 	diskcache? ( >=dev-python/multiprocess-0.70.12[${PYTHON_USEDEP}] )
 	dev-python/nest-asyncio[${PYTHON_USEDEP}]
 	ci? ( <=dev-python/numpy-1.26.3[${PYTHON_USEDEP}] )
 	ci? ( dev-python/openpyxl[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/orjson-3.10.3[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/orjson-3.10.3[${PYTHON_USEDEP}] )
 	ci? ( >=dev-python/pandas-1.4.0[${PYTHON_USEDEP}] )
 	>=dev-python/plotly-5.0.0[${PYTHON_USEDEP}]
 	diskcache? ( >=dev-python/psutil-5.8.0[${PYTHON_USEDEP}] )
 	ci? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/pylint-3.0.3[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/pylint-3.0.3[${PYTHON_USEDEP}] )
 	ci? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	ci? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/pytest-sugar-0.9.6[${PYTHON_USEDEP}] )
-	ci? ( ~dev-python/pyzmq-25.1.2[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/pytest-sugar-0.9.6[${PYTHON_USEDEP}] )
+	ci? ( =dev-python/pyzmq-25.1.2[${PYTHON_USEDEP}] )
 	celery? ( >=dev-python/redis-3.5.3[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/retrying[${PYTHON_USEDEP}]
@@ -56,22 +56,25 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/werkzeug-3.1[${PYTHON_USEDEP}]
 	ci? ( >=dev-python/xlrd-2.0.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/beautifulsoup4-4.8.2[${PYTHON_USEDEP}]
-	>=dev-python/coloredlogs-15.0.1[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
-	>=dev-python/dash-testing-stub-0.0.2[${PYTHON_USEDEP}]
-	>=dev-python/fire-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/lxml-4.6.2[${PYTHON_USEDEP}]
-	>=dev-python/multiprocess-0.70.12[${PYTHON_USEDEP}]
-	>=dev-python/percy-2.0.2[${PYTHON_USEDEP}]
-	>=dev-python/psutil-5.8.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.0.2[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.21.0[security,${PYTHON_USEDEP}]
-	<=dev-python/selenium-4.2.0[${PYTHON_USEDEP}]
-	>=dev-python/waitress-1.4.4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/beautifulsoup4-4.8.2[${PYTHON_USEDEP}]
+		>=dev-python/coloredlogs-15.0.1[${PYTHON_USEDEP}]
+		dev-python/cryptography[${PYTHON_USEDEP}]
+		>=dev-python/dash-testing-stub-0.0.2[${PYTHON_USEDEP}]
+		>=dev-python/fire-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/lxml-4.6.2[${PYTHON_USEDEP}]
+		>=dev-python/multiprocess-0.70.12[${PYTHON_USEDEP}]
+		>=dev-python/percy-2.0.2[${PYTHON_USEDEP}]
+		>=dev-python/psutil-5.8.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0.2[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.21.0[security,${PYTHON_USEDEP}]
+		<=dev-python/selenium-4.2.0[${PYTHON_USEDEP}]
+		>=dev-python/waitress-1.4.4[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

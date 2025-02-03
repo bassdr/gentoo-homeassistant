@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyfireservicerota-0.0.43[${PYTHON_USEDEP}]
+	=dev-python/pyfireservicerota-0.0.43[${PYTHON_USEDEP}]
 "

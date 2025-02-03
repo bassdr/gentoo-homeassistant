@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pygatt-4.0.5[GATTTOOL,${PYTHON_USEDEP}]
+	=dev-python/pygatt-4.0.5[GATTTOOL,${PYTHON_USEDEP}]
 "

@@ -21,19 +21,16 @@ S=${WORKDIR}/${MY_P}
 LICENSE="Apache-2.0 BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs test"
+GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} static-libs test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
-	test? ( dev-python/fixtures[${PYTHON_USEDEP}] )
-	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
 	dev-python/iso8601[${PYTHON_USEDEP}]
-	test? ( dev-python/testscenarios[${PYTHON_USEDEP}] )
 	>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
 	dev-python/iso8601[${PYTHON_USEDEP}]
 "
@@ -98,3 +95,4 @@ multilib_src_install_all() {
 	einstalldocs
 	find "${D}" -name '*.la' -delete || die
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild

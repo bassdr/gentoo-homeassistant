@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="benchmark labextension nbext retroextension serverextension"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	benchmark? ( dev-python/asv[${PYTHON_USEDEP}] )
 	dev-python/decorator[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-6.9.1[${PYTHON_USEDEP}]
@@ -39,7 +39,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/decorator[${PYTHON_USEDEP}]
 	>=dev-python/pyzmq-25[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5[${PYTHON_USEDEP}]
@@ -64,13 +64,16 @@ BDEPEND="
 # TODO: package myst_parser
 # distutils_enable_sphinx docs/source
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/ipython[test,${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/testpath[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/ipython[test,${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	export IPP_DISABLE_JS=1

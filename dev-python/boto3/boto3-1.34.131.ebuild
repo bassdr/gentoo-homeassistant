@@ -25,13 +25,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/botocore-1.35.0[${PYTHON_USEDEP}]
 	crt? ( <dev-python/botocore-2.0_alpha0[crt,${PYTHON_USEDEP}] )
 	<dev-python/jmespath-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/s3transfer-0.11.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/botocore-${PV}[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/s3transfer-0.10.0[${PYTHON_USEDEP}]

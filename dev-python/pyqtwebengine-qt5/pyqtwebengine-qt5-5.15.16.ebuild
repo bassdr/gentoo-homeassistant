@@ -20,3 +20,7 @@ KEYWORDS="amd64 arm64"
 RDEPEND=""
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

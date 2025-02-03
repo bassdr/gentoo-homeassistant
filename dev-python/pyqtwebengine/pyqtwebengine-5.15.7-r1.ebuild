@@ -20,11 +20,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="debug"
 
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/pyqt5-5.15.4[${PYTHON_USEDEP}]
-	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
-	<dev-python/pyqtwebengine-qt5-5.16.0[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=dev-python/pyqt5-5.15.5[gui,network,printsupport,ssl,webchannel,widgets,${PYTHON_USEDEP}]
 	dev-qt/qtcore:5
@@ -33,7 +28,12 @@ DEPEND="
 	dev-qt/qtwidgets:5
 	dev-qt/qtwebengine:5[widgets]
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/pyqt5-5.15.4[${PYTHON_USEDEP}]
+	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
+	<dev-python/pyqtwebengine-qt5-5.16.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	>=dev-python/pyqt5-sip-12.15:=[${PYTHON_USEDEP}]
 "

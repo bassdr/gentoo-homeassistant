@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="development pandas secure-local-storage"
 IUSE="${GENERATED_IUSE} +secure-local-storage pandas"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/asn1crypto-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	<dev-python/cffi-2.0.0[${PYTHON_USEDEP}]
@@ -53,7 +53,7 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/tomlkit[${PYTHON_USEDEP}]
 	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/asn1crypto[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_RDEPEND} dev-python/asn1crypto[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/cffi[${PYTHON_USEDEP}]
 	dev-python/charset-normalizer[${PYTHON_USEDEP}]

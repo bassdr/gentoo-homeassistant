@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/universal-silabs-flasher-0.0.25[${PYTHON_USEDEP}]
-	~dev-python/zha-0.0.41[${PYTHON_USEDEP}]
+	=dev-python/universal-silabs-flasher-0.0.25[${PYTHON_USEDEP}]
+	=dev-python/zha-0.0.41[${PYTHON_USEDEP}]
 "

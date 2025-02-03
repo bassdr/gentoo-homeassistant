@@ -21,9 +21,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # Version specified in pyproject.toml
-GENERATED_DEPEND="
-"
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="
 	$(python_gen_cond_dep '
 		>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 	' 3.10)

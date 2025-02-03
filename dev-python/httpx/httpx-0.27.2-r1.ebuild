@@ -27,21 +27,21 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="cli http2 socks zstd"
 IUSE="${GENERATED_IUSE} brotli cli http2 +socks zstd"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/anyio[${PYTHON_USEDEP}]
 	dev-python/brotli[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
-	cli? ( ~dev-python/click-8[${PYTHON_USEDEP}] )
+	cli? ( =dev-python/click-8*[${PYTHON_USEDEP}] )
 	http2? ( <dev-python/h2-5[${PYTHON_USEDEP}] )
-	~dev-python/httpcore-1[${PYTHON_USEDEP}]
+	=dev-python/httpcore-1*[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
-	cli? ( ~dev-python/pygments-2[${PYTHON_USEDEP}] )
+	cli? ( =dev-python/pygments-2*[${PYTHON_USEDEP}] )
 	cli? ( <dev-python/rich-14[${PYTHON_USEDEP}] )
 	dev-python/sniffio[${PYTHON_USEDEP}]
-	socks? ( ~dev-python/socksio-1[${PYTHON_USEDEP}] )
+	socks? ( =dev-python/socksio-1*[${PYTHON_USEDEP}] )
 	zstd? ( >=dev-python/zstandard-0.18.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/anyio[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	=dev-python/httpcore-1*[${PYTHON_USEDEP}]

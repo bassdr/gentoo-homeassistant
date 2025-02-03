@@ -16,9 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/argcomplete-4.0[${PYTHON_USEDEP}]
-	>=dev-python/black-19_beta0[${PYTHON_USEDEP}]
+	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
 	<dev-python/genson-2.0[${PYTHON_USEDEP}]
 	graphql? ( <dev-python/graphql-core-4.0.0[${PYTHON_USEDEP}] )
 	http? ( dev-python/httpx[${PYTHON_USEDEP}] )
@@ -33,6 +33,6 @@ GENERATED_DEPEND="${RDEPEND}
 	debug? ( <dev-python/pysnooper-2.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

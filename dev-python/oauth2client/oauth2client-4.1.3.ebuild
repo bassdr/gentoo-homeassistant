@@ -20,14 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httplib2-0.9.1[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-modules-0.0.5[${PYTHON_USEDEP}]
 	>=dev-python/rsa-3.1.4[${PYTHON_USEDEP}]
 	>=dev-python/six-1.6.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httplib2-0.9.1[${PYTHON_USEDEP}]
 	|| ( >=dev-python/pysnmp-pyasn1-0.1.7[${PYTHON_USEDEP}] dev-python/pyasn1[${PYTHON_USEDEP}] )
 	|| ( >=dev-python/pysnmp-pyasn1-modules-0.0.5[${PYTHON_USEDEP}] dev-python/pyasn1-modules[${PYTHON_USEDEP}] )

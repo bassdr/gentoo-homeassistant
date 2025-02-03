@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	grib2? ( dev-python/cfgrib[${PYTHON_USEDEP}] )
 	cftime? ( dev-python/cftime[${PYTHON_USEDEP}] )
 	dev-python/fsspec[${PYTHON_USEDEP}]
@@ -29,24 +29,27 @@ GENERATED_DEPEND="${RDEPEND}
 	hdf? ( dev-python/xarray[${PYTHON_USEDEP}] )
 	>=dev-python/zarr-3.0.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/cfgrib[${PYTHON_USEDEP}]
-	dev-python/cftime[${PYTHON_USEDEP}]
-	dev-python/dask[${PYTHON_USEDEP}]
-	>=dev-python/fastparquet-2024.11.0[${PYTHON_USEDEP}]
-	dev-python/gcsfs[${PYTHON_USEDEP}]
-	dev-python/h5netcdf[${PYTHON_USEDEP}]
-	dev-python/h5py[${PYTHON_USEDEP}]
-	dev-python/jinja2[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/netcdf4[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-subtests[${PYTHON_USEDEP}]
-	dev-python/s3fs[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
-	dev-python/types-ujson[${PYTHON_USEDEP}]
-	>=dev-python/xarray-2024.10.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cfgrib[${PYTHON_USEDEP}]
+		dev-python/cftime[${PYTHON_USEDEP}]
+		dev-python/dask[${PYTHON_USEDEP}]
+		>=dev-python/fastparquet-2024.11.0[${PYTHON_USEDEP}]
+		dev-python/gcsfs[${PYTHON_USEDEP}]
+		dev-python/h5netcdf[${PYTHON_USEDEP}]
+		dev-python/h5py[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/netcdf4[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-subtests[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+		dev-python/types-ujson[${PYTHON_USEDEP}]
+		>=dev-python/xarray-2024.10.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

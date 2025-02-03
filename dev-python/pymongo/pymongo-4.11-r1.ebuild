@@ -25,17 +25,17 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="aws docs encryption ocsp snappy zstd"
 IUSE="${GENERATED_IUSE} doc kerberos +native-extensions +test-full"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	ocsp? ( >=dev-python/cryptography-2.5[${PYTHON_USEDEP}] )
 	<dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	aws? ( <dev-python/pymongo-auth-aws-2.0.0[${PYTHON_USEDEP}] )
 	encryption? ( <dev-python/pymongo-auth-aws-2.0.0[${PYTHON_USEDEP}] )
 	encryption? ( <dev-python/pymongocrypt-2.0.0[${PYTHON_USEDEP}] )
 	ocsp? ( >=dev-python/pyopenssl-17.2.0[${PYTHON_USEDEP}] )
 	snappy? ( dev-python/python-snappy[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/readthedocs-sphinx-search-0.3[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/readthedocs-sphinx-search-0.3[${PYTHON_USEDEP}] =dev-python/readthedocs-sphinx-search-0*[${PYTHON_USEDEP}] )
 	ocsp? ( <dev-python/requests-3.0.0[${PYTHON_USEDEP}] )
 	ocsp? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-9[${PYTHON_USEDEP}] )
@@ -44,7 +44,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( <dev-python/sphinxcontrib-shellcheck-2[${PYTHON_USEDEP}] )
 	zstd? ( dev-python/zstandard[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]
 	kerberos? ( dev-python/kerberos[${PYTHON_USEDEP}] )
 "
@@ -60,10 +60,13 @@ BDEPEND="
 
 distutils_enable_sphinx doc
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/pytest-8.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-8.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 reqcheck() {
 	if use test && use test-full; then

@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	test-all? ( dev-python/array-api-strict[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/asdf-2.8.3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/asdf-astropy-0.3[${PYTHON_USEDEP}] )
@@ -70,20 +70,23 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinxcontrib-globalsubs-0.1.1[${PYTHON_USEDEP}] )
 	dev-all? ( dev-python/tox[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/astropy[docs,${PYTHON_USEDEP}]
-	dev-python/astropy[recommended,${PYTHON_USEDEP}]
-	dev-python/astropy[test,${PYTHON_USEDEP}]
-	dev-python/astropy[typing,${PYTHON_USEDEP}]
-	>=dev-python/coverage-6.4.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.3.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-astropy-0.10.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-astropy-header-0.2.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-doctestplus-0.12[${PYTHON_USEDEP}]
-	>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
-	>=dev-python/threadpoolctl-3.0.0[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-2.9.3[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/astropy[docs,${PYTHON_USEDEP}]
+		dev-python/astropy[recommended,${PYTHON_USEDEP}]
+		dev-python/astropy[test,${PYTHON_USEDEP}]
+		dev-python/astropy[typing,${PYTHON_USEDEP}]
+		>=dev-python/coverage-6.4.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-astropy-0.10.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-astropy-header-0.2.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-doctestplus-0.12[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
+		>=dev-python/threadpoolctl-3.0.0[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.9.3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

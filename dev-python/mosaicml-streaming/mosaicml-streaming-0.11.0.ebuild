@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	alipan? ( <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( <dev-python/altair-6[${PYTHON_USEDEP}] )
@@ -27,107 +27,110 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/boto3-2[${PYTHON_USEDEP}]
 	>=dev-python/brotli-1.0.9[${PYTHON_USEDEP}]
 	<dev-python/catalogue-3[${PYTHON_USEDEP}]
-	all? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
-	databricks? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
+	databricks? ( =dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/datasets-4[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/docformatter-1.4[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/fastapi-0.115.6[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/gitpython-3.1.42[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/gitpython-3.1.42[${PYTHON_USEDEP}] )
+	all? ( =dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/fastapi-0.115.6[${PYTHON_USEDEP}] )
+	all? ( =dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
+	all? ( =dev-python/gitpython-3.1.42[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/gitpython-3.1.42[${PYTHON_USEDEP}] )
 	<dev-python/google-cloud-storage-2.11.0[${PYTHON_USEDEP}]
 	all? ( <dev-python/huggingface-hub-0.28[${PYTHON_USEDEP}] )
 	hf? ( <dev-python/huggingface-hub-0.28[${PYTHON_USEDEP}] )
 	all? ( <dev-python/humanize-5[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/humanize-5[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
 	<dev-python/matplotlib-4[${PYTHON_USEDEP}]
 	all? ( <dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}] )
 	all? ( <dev-python/moto-6[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
 	<dev-python/numpy-2.2.0[${PYTHON_USEDEP}]
 	<dev-python/oci-3[${PYTHON_USEDEP}]
 	all? ( <dev-python/omegaconf-3[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/omegaconf-3[${PYTHON_USEDEP}] )
 	all? ( <dev-python/pandas-3[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/pandas-3[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pandoc-2.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/pandoc-2.3[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pandoc-2.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/pandoc-2.3[${PYTHON_USEDEP}] )
 	<dev-python/paramiko-4[${PYTHON_USEDEP}]
 	all? ( >dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pydantic-2.10.5[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pypandoc-1.13[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/pypandoc-1.13[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pydantic-2.10.5[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pypandoc-1.13[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/pypandoc-1.13[${PYTHON_USEDEP}] )
 	all? ( <dev-python/pyspark-4[${PYTHON_USEDEP}] )
 	spark? ( <dev-python/pyspark-4[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pytest-8.3.4[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pytest-8.3.4[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/pytest-cov-7[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/pytest-split-0.10.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/pytest-split-0.10.0[${PYTHON_USEDEP}] )
 	<dev-python/python-snappy-1[${PYTHON_USEDEP}]
 	all? ( <dev-python/pyyaml-7[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/pyyaml-7[${PYTHON_USEDEP}] )
 	all? ( <dev-python/sortedcollections-3[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/sortedcollections-3[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinx-tabs-3.4.5[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-tabs-3.4.5[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-katex-0.9.6[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-katex-0.9.6[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinx-tabs-3.4.5[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-tabs-3.4.5[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-katex-0.9.6[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-katex-0.9.6[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
 	all? ( <dev-python/streamlit-2[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/streamlit-2[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/toml-0.10.2[${PYTHON_USEDEP}] )
+	all? ( =dev-python/toml-0.10.2[${PYTHON_USEDEP}] )
 	<dev-python/torch-3[${PYTHON_USEDEP}]
 	>=dev-python/torchvision-0.10[${PYTHON_USEDEP}]
 	<dev-python/tqdm-5[${PYTHON_USEDEP}]
 	<dev-python/transformers-5[${PYTHON_USEDEP}]
-	all? ( ~dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}] )
 	all? ( <dev-python/wandb-1[${PYTHON_USEDEP}] )
 	simulator? ( <dev-python/wandb-1[${PYTHON_USEDEP}] )
 	<dev-python/xxhash-4[${PYTHON_USEDEP}]
-	all? ( ~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
+	all? ( =dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
 	<dev-python/zstd-2[${PYTHON_USEDEP}]
 	all? ( <dev-vcs/pre-commit-4[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/datasets-4[${PYTHON_USEDEP}]
-	>=dev-python/docformatter-1.4[${PYTHON_USEDEP}]
-	~dev-python/fastapi-0.115.6[${PYTHON_USEDEP}]
-	~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
-	<dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}]
-	<dev-python/moto-6[${PYTHON_USEDEP}]
-	>dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}]
-	~dev-python/pydantic-2.10.5[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
-	~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-cov-7[${PYTHON_USEDEP}]
-	~dev-python/pytest-split-0.10.0[${PYTHON_USEDEP}]
-	~dev-python/toml-0.10.2[${PYTHON_USEDEP}]
-	~dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}]
-	~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
-	<dev-vcs/pre-commit-4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/datasets-4[${PYTHON_USEDEP}]
+		>=dev-python/docformatter-1.4[${PYTHON_USEDEP}]
+		=dev-python/fastapi-0.115.6[${PYTHON_USEDEP}]
+		=dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
+		<dev-python/mosaicml-cli-0.8[${PYTHON_USEDEP}]
+		<dev-python/moto-6[${PYTHON_USEDEP}]
+		>dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}]
+		=dev-python/pydantic-2.10.5[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+		=dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-cov-7[${PYTHON_USEDEP}]
+		=dev-python/pytest-split-0.10.0[${PYTHON_USEDEP}]
+		=dev-python/toml-0.10.2[${PYTHON_USEDEP}]
+		=dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}]
+		=dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
+		<dev-vcs/pre-commit-4[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

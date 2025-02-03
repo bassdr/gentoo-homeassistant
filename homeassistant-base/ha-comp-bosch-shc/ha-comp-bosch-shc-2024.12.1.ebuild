@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/boschshcpy-0.2.91[${PYTHON_USEDEP}]
+	=dev-python/boschshcpy-0.2.91[${PYTHON_USEDEP}]
 "

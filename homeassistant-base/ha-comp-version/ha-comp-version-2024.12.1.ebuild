@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyhaversion-22.8.0[${PYTHON_USEDEP}]
+	=dev-python/pyhaversion-22.8.0[${PYTHON_USEDEP}]
 "

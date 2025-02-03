@@ -16,28 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	build? ( dev-python/changelog-chug[devel,${PYTHON_USEDEP}] )
 	devel? ( dev-python/changelog-chug[test,${PYTHON_USEDEP}] )
 	publish? ( dev-python/changelog-chug[build,${PYTHON_USEDEP}] )
 	>=dev-python/docutils-0.21.0[${PYTHON_USEDEP}]
-	devel? ( ~dev-python/isort-5.13[${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/mccabe-0.7[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/isort-5.13[${PYTHON_USEDEP}] =dev-python/isort-5*[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/mccabe-0.7[${PYTHON_USEDEP}] =dev-python/mccabe-0*[${PYTHON_USEDEP}] )
 	static-analysis? ( dev-python/pip-check[${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/pycodestyle-2.12[${PYTHON_USEDEP}] )
-	devel? ( ~dev-python/pyupgrade-3.17[${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/ruff-0.6[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/pycodestyle-2.12[${PYTHON_USEDEP}] =dev-python/pycodestyle-2*[${PYTHON_USEDEP}] )
+	devel? ( >=dev-python/pyupgrade-3.17[${PYTHON_USEDEP}] =dev-python/pyupgrade-3*[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/ruff-0.6[${PYTHON_USEDEP}] =dev-python/ruff-0*[${PYTHON_USEDEP}] )
 	>=dev-python/semver-3.0.0[${PYTHON_USEDEP}]
 	publish? ( dev-python/twine[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/changelog-chug[static-analysis,${PYTHON_USEDEP}]
-	dev-python/coverage[${PYTHON_USEDEP}]
-	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
-	dev-python/testtools[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/changelog-chug[static-analysis,${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+		dev-python/testtools[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

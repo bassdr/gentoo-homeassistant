@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aioslimproto-3.0.0[${PYTHON_USEDEP}]
+	=dev-python/aioslimproto-3.0.0[${PYTHON_USEDEP}]
 "

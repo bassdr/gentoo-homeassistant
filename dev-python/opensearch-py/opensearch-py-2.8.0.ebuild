@@ -25,7 +25,7 @@ IUSE="${GENERATED_IUSE} test"
 # Uses 156 GB of RAM for the test suite, needs more work.
 RESTRICT="test"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	async? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/black-24.3.0[${PYTHON_USEDEP}] )
@@ -53,7 +53,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	!=dev-python/urllib3-2.2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/urllib3-1.26.19[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.32.0[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	sphinx? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
@@ -29,6 +29,6 @@ GENERATED_DEPEND="${RDEPEND}
 	sphinx? ( dev-python/sphinx-examples[${PYTHON_USEDEP}] )
 	dev-python/wheel[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

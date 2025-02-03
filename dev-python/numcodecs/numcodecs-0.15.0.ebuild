@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	crc32c? ( >=dev-python/crc32c-2.7[${PYTHON_USEDEP}] )
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	test-extras? ( dev-python/importlib-metadata[${PYTHON_USEDEP}] )
@@ -29,11 +29,14 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-issues[${PYTHON_USEDEP}] )
 	zfpy? ( >=dev-python/zfpy-1.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

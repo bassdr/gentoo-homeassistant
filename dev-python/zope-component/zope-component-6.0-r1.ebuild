@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs mintests persistentregistry security zcml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	persistentregistry? ( dev-python/persistent[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]
@@ -39,7 +39,7 @@ GENERATED_DEPEND="${RDEPEND}
 	mintests? ( dev-python/zope-testing[${PYTHON_USEDEP}] )
 	mintests? ( dev-python/zope-testrunner[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/zope-event[${PYTHON_USEDEP}]
 	>=dev-python/zope-hookable-4.2.0[${PYTHON_USEDEP}]
 	>=dev-python/zope-interface-5.3.0[${PYTHON_USEDEP}]
@@ -54,16 +54,19 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/persistent[${PYTHON_USEDEP}]
-	dev-python/zope-configuration[${PYTHON_USEDEP}]
-	dev-python/zope-i18nmessageid[${PYTHON_USEDEP}]
-	dev-python/zope-location[${PYTHON_USEDEP}]
-	dev-python/zope-proxy[${PYTHON_USEDEP}]
-	dev-python/zope-security[${PYTHON_USEDEP}]
-	dev-python/zope-testing[${PYTHON_USEDEP}]
-	dev-python/zope-testrunner[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/persistent[${PYTHON_USEDEP}]
+		dev-python/zope-configuration[${PYTHON_USEDEP}]
+		dev-python/zope-i18nmessageid[${PYTHON_USEDEP}]
+		dev-python/zope-location[${PYTHON_USEDEP}]
+		dev-python/zope-proxy[${PYTHON_USEDEP}]
+		dev-python/zope-security[${PYTHON_USEDEP}]
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# strip rdep specific to namespaces

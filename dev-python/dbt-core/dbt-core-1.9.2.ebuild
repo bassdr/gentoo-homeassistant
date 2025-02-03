@@ -15,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/agate-1.10[${PYTHON_USEDEP}]
 	<dev-python/click-9.0[${PYTHON_USEDEP}]
 	>=dev-python/daff-1.3.46[${PYTHON_USEDEP}]
@@ -36,6 +36,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/sqlparse-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

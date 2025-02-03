@@ -16,10 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/libkvikio-cu12-24.12[${PYTHON_USEDEP}]
-	~dev-python/nvidia-nvcomp-cu12-4.1.0.6[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/libkvikio-cu12-24.12*[${PYTHON_USEDEP}]
+	=dev-python/nvidia-nvcomp-cu12-4.1.0.6[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

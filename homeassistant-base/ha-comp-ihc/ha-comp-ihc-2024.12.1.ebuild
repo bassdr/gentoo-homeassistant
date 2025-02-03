@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
-	~dev-python/ihcsdk-2.8.5[${PYTHON_USEDEP}]
+	=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
+	=dev-python/ihcsdk-2.8.5[${PYTHON_USEDEP}]
 "

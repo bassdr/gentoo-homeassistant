@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	azure? ( >=dev-python/adlfs-2022.02.22[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/botocore-1.31.17[${PYTHON_USEDEP}] )
 	docker? ( >dev-python/docker-6[${PYTHON_USEDEP}] )
@@ -32,16 +32,19 @@ GENERATED_DEPEND="${RDEPEND}
 	s3? ( >=dev-python/s3fs-2022.02.0[boto3,${PYTHON_USEDEP}] )
 	>=dev-python/universal-pathlib-0.2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>dev-python/coverage-6[toml,${PYTHON_USEDEP}]
-	dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-	dev-python/pytest-servers[all,${PYTHON_USEDEP}]
-	dev-python/pytest-servers[tests,${PYTHON_USEDEP}]
-	~dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-3.6.1[${PYTHON_USEDEP}]
-	dev-python/types-requests[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>dev-python/coverage-6[toml,${PYTHON_USEDEP}]
+		dev-python/coverage-enable-subprocess[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		dev-python/pytest-servers[all,${PYTHON_USEDEP}]
+		dev-python/pytest-servers[tests,${PYTHON_USEDEP}]
+		=dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}]
+		=dev-python/pytest-xdist-3.6.1[${PYTHON_USEDEP}]
+		dev-python/types-requests[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

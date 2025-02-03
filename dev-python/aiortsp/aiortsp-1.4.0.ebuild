@@ -20,9 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/dpkt-1.9[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/dpkt-1.9[${PYTHON_USEDEP}] =dev-python/dpkt-1*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/dpkt[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest

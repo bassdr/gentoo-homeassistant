@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pybotvac-0.0.25[${PYTHON_USEDEP}]
+	=dev-python/pybotvac-0.0.25[${PYTHON_USEDEP}]
 "

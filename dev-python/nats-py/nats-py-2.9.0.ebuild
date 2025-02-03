@@ -16,11 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	fast-parse? ( dev-python/fast-mail-parser[${PYTHON_USEDEP}] )
 	nkeys? ( dev-python/nkeys[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

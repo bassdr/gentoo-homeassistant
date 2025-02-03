@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/asyncssh-3[${PYTHON_USEDEP}]
 	bcrypt? ( dev-python/asyncssh[bcrypt,${PYTHON_USEDEP}] )
 	fido2? ( dev-python/asyncssh[fido2,${PYTHON_USEDEP}] )
@@ -27,6 +27,6 @@ GENERATED_DEPEND="${RDEPEND}
 	pywin32? ( dev-python/asyncssh[pywin32,${PYTHON_USEDEP}] )
 	>=dev-python/fsspec-2021.8.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

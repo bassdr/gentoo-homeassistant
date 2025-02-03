@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/evohome-async-0.4.20[${PYTHON_USEDEP}]
+	=dev-python/evohome-async-0.4.20[${PYTHON_USEDEP}]
 "

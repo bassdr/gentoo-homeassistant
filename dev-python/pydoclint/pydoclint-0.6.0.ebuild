@@ -16,11 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.1.0[${PYTHON_USEDEP}]
 	>=dev-python/docstring-parser-fork-0.0.12[${PYTHON_USEDEP}]
 	flake8? ( >=dev-python/flake8-4[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

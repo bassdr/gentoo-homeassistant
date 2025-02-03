@@ -16,20 +16,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/kfp-3[${PYTHON_USEDEP}]
 	<dev-python/protobuf-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/docformatter-1.4[${PYTHON_USEDEP}]
-	~dev-python/isort-5.10.1[${PYTHON_USEDEP}]
-	~dev-python/mypy-0.941[${PYTHON_USEDEP}]
-	~dev-python/pycln-2.1.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
-	~dev-python/yapf-0.32.0[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/docformatter-1.4[${PYTHON_USEDEP}]
+		=dev-python/isort-5.10.1[${PYTHON_USEDEP}]
+		=dev-python/mypy-0.941[${PYTHON_USEDEP}]
+		=dev-python/pycln-2.1.1[${PYTHON_USEDEP}]
+		=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+		=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
+		=dev-python/yapf-0.32.0[${PYTHON_USEDEP}]
+		=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

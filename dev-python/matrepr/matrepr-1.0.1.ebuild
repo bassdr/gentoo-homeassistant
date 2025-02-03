@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	supported? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	supported? ( dev-python/python-graphblas[${PYTHON_USEDEP}] )
 	supported? ( dev-python/scipy[${PYTHON_USEDEP}] )
@@ -25,11 +25,14 @@ GENERATED_DEPEND="${RDEPEND}
 	supported? ( dev-python/tensorflow[${PYTHON_USEDEP}] )
 	supported? ( >=dev-python/torch-2.0.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/html5lib[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/html5lib[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

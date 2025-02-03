@@ -16,13 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ibis-flink? ( dev-python/apache-flink[${PYTHON_USEDEP}] )
 	lint? ( <dev-python/bandit-2.0[${PYTHON_USEDEP}] )
-	biosequence-biosequencedataset? ( ~dev-python/biopython-1.73[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/black-22.0[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/blacken-docs-1.9.2[${PYTHON_USEDEP}] )
-	pickle-pickledataset? ( ~dev-python/compress-pickle-2.1.0[lz4,${PYTHON_USEDEP}] )
+	biosequence-biosequencedataset? ( >=dev-python/biopython-1.73[${PYTHON_USEDEP}] =dev-python/biopython-1*[${PYTHON_USEDEP}] )
+	lint? ( >=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}] )
+	lint? ( =dev-python/blacken-docs-1.9.2[${PYTHON_USEDEP}] )
+	pickle-pickledataset? ( >=dev-python/compress-pickle-2.1.0[lz4,${PYTHON_USEDEP}] =dev-python/compress-pickle-2.1*[lz4,${PYTHON_USEDEP}] )
 	dask-csvdataset? ( >=dev-python/dask-2021.10[dataframe,${PYTHON_USEDEP}] )
 	dask-parquetdataset? ( >=dev-python/dask-2021.10[complete,${PYTHON_USEDEP}] )
 	huggingface-hfdataset? ( dev-python/datasets[${PYTHON_USEDEP}] )
@@ -58,7 +58,7 @@ GENERATED_DEPEND="${RDEPEND}
 	ibis-sqlite? ( dev-python/ibis-framework[sqlite,${PYTHON_USEDEP}] )
 	ibis-trino? ( dev-python/ibis-framework[trino,${PYTHON_USEDEP}] )
 	ibis? ( dev-python/ibis-framework[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/import-linter-1.2.6[toml,${PYTHON_USEDEP}] )
+	lint? ( =dev-python/import-linter-1.2.6[toml,${PYTHON_USEDEP}] )
 	docs? ( <dev-python/ipykernel-7.0[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/jinja2-3.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/kedro-0.19.7[${PYTHON_USEDEP}]
@@ -124,27 +124,27 @@ GENERATED_DEPEND="${RDEPEND}
 	video? ( dev-python/kedro-datasets[video-videodataset,${PYTHON_USEDEP}] )
 	yaml-yamldataset? ( dev-python/kedro-datasets[pandas-base,${PYTHON_USEDEP}] )
 	yaml? ( dev-python/kedro-datasets[yaml-yamldataset,${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/kedro-sphinx-theme-2024.10.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/kedro-sphinx-theme-2024.10.2[${PYTHON_USEDEP}] )
 	experimental? ( dev-python/langchain-anthropic[${PYTHON_USEDEP}] )
-	langchain-chatanthropicdataset? ( ~dev-python/langchain-anthropic-0.1.13[${PYTHON_USEDEP}] )
+	langchain-chatanthropicdataset? ( >=dev-python/langchain-anthropic-0.1.13[${PYTHON_USEDEP}] =dev-python/langchain-anthropic-0.1*[${PYTHON_USEDEP}] )
 	experimental? ( dev-python/langchain-cohere[${PYTHON_USEDEP}] )
-	langchain-chatcoheredataset? ( ~dev-python/langchain-cohere-0.1.5[${PYTHON_USEDEP}] )
+	langchain-chatcoheredataset? ( >=dev-python/langchain-cohere-0.1.5[${PYTHON_USEDEP}] =dev-python/langchain-cohere-0.1*[${PYTHON_USEDEP}] )
 	experimental? ( dev-python/langchain-community[${PYTHON_USEDEP}] )
-	langchain-chatanthropicdataset? ( ~dev-python/langchain-community-0.2.0[${PYTHON_USEDEP}] )
-	langchain-chatcoheredataset? ( ~dev-python/langchain-community-0.2.0[${PYTHON_USEDEP}] )
+	langchain-chatanthropicdataset? ( >=dev-python/langchain-community-0.2.0[${PYTHON_USEDEP}] =dev-python/langchain-community-0.2*[${PYTHON_USEDEP}] )
+	langchain-chatcoheredataset? ( >=dev-python/langchain-community-0.2.0[${PYTHON_USEDEP}] =dev-python/langchain-community-0.2*[${PYTHON_USEDEP}] )
 	experimental? ( dev-python/langchain-openai[${PYTHON_USEDEP}] )
-	langchain-chatopenaidataset? ( ~dev-python/langchain-openai-0.1.7[${PYTHON_USEDEP}] )
-	langchain-openaiembeddingsdataset? ( ~dev-python/langchain-openai-0.1.7[${PYTHON_USEDEP}] )
+	langchain-chatopenaidataset? ( >=dev-python/langchain-openai-0.1.7[${PYTHON_USEDEP}] =dev-python/langchain-openai-0.1*[${PYTHON_USEDEP}] )
+	langchain-openaiembeddingsdataset? ( >=dev-python/langchain-openai-0.1.7[${PYTHON_USEDEP}] =dev-python/langchain-openai-0.1*[${PYTHON_USEDEP}] )
 	dev-python/lazy-loader[${PYTHON_USEDEP}]
-	pandas-xmldataset? ( ~dev-python/lxml-4.6[${PYTHON_USEDEP}] )
+	pandas-xmldataset? ( >=dev-python/lxml-4.6[${PYTHON_USEDEP}] =dev-python/lxml-4*[${PYTHON_USEDEP}] )
 	matplotlib-matplotlibwriter? ( <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/mypy-1.0[${PYTHON_USEDEP}] )
+	lint? ( >=dev-python/mypy-1.0[${PYTHON_USEDEP}] =dev-python/mypy-1*[${PYTHON_USEDEP}] )
 	experimental? ( >=dev-python/netcdf4-1.6.4[${PYTHON_USEDEP}] )
 	netcdf-netcdfdataset? ( >=dev-python/netcdf4-1.6.4[${PYTHON_USEDEP}] )
-	networkx-base? ( ~dev-python/networkx-3.4[${PYTHON_USEDEP}] )
+	networkx-base? ( >=dev-python/networkx-3.4[${PYTHON_USEDEP}] =dev-python/networkx-3*[${PYTHON_USEDEP}] )
 	safetensors-safetensorsdataset? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	experimental? ( ~dev-python/opencv-python-4.5.5.64[${PYTHON_USEDEP}] )
-	video-videodataset? ( ~dev-python/opencv-python-4.5.5.64[${PYTHON_USEDEP}] )
+	experimental? ( >=dev-python/opencv-python-4.5.5.64[${PYTHON_USEDEP}] =dev-python/opencv-python-4.5.5*[${PYTHON_USEDEP}] )
+	video-videodataset? ( >=dev-python/opencv-python-4.5.5.64[${PYTHON_USEDEP}] =dev-python/opencv-python-4.5.5*[${PYTHON_USEDEP}] )
 	pandas-exceldataset? ( <dev-python/openpyxl-4.0[${PYTHON_USEDEP}] )
 	pandas-base? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
 	pandas-gbqquerydataset? ( >=dev-python/pandas-gbq-0.12.0[${PYTHON_USEDEP}] )
@@ -162,11 +162,11 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/pyspark-3.4[${PYTHON_USEDEP}]
 	spark-base? ( <dev-python/pyspark-4.0[${PYTHON_USEDEP}] )
 	yaml-yamldataset? ( <dev-python/pyyaml-7.0[${PYTHON_USEDEP}] )
-	redis-pickledataset? ( ~dev-python/redis-4.1[${PYTHON_USEDEP}] )
-	api-apidataset? ( ~dev-python/requests-2.20[${PYTHON_USEDEP}] )
+	redis-pickledataset? ( >=dev-python/redis-4.1[${PYTHON_USEDEP}] =dev-python/redis-4*[${PYTHON_USEDEP}] )
+	api-apidataset? ( >=dev-python/requests-2.20[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}] )
 	experimental? ( dev-python/rioxarray[${PYTHON_USEDEP}] )
 	rioxarray-geotiffdataset? ( >=dev-python/rioxarray-0.15.0[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/ruff-0.0.290[${PYTHON_USEDEP}] )
+	lint? ( >=dev-python/ruff-0.0.290[${PYTHON_USEDEP}] =dev-python/ruff-0.0*[${PYTHON_USEDEP}] )
 	s3fs-base? ( >=dev-python/s3fs-2021.4[${PYTHON_USEDEP}] )
 	safetensors-safetensorsdataset? ( dev-python/safetensors[${PYTHON_USEDEP}] )
 	svmlight-svmlightdataset? ( >=dev-python/scikit-learn-1.0.2[${PYTHON_USEDEP}] )
@@ -177,13 +177,13 @@ GENERATED_DEPEND="${RDEPEND}
 	pandas-sqlquerydataset? ( <dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}] )
 	pandas-sqltabledataset? ( <dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}] )
 	pandas-hdfdataset? ( >=dev-python/tables-3.6[${PYTHON_USEDEP}] )
-	~dev-python/tensorflow-2.0[${PYTHON_USEDEP}]
-	~dev-python/tensorflow-macos-2.0[${PYTHON_USEDEP}]
+	>=dev-python/tensorflow-2.0[${PYTHON_USEDEP}] =dev-python/tensorflow-2*[${PYTHON_USEDEP}]
+	>=dev-python/tensorflow-macos-2.0[${PYTHON_USEDEP}] =dev-python/tensorflow-macos-2*[${PYTHON_USEDEP}]
 	experimental? ( dev-python/torch[${PYTHON_USEDEP}] )
 	pytorch-dataset? ( dev-python/torch[${PYTHON_USEDEP}] )
 	huggingface-hftransformerpipelinedataset? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	dask-parquetdataset? ( <dev-python/triad-1.0[${PYTHON_USEDEP}] )
-	lint? ( ~dev-python/trufflehog-2.1[${PYTHON_USEDEP}] )
+	lint? ( >=dev-python/trufflehog-2.1[${PYTHON_USEDEP}] =dev-python/trufflehog-2*[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-cachetools[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-decorator[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
@@ -196,63 +196,66 @@ GENERATED_DEPEND="${RDEPEND}
 	polars-eagerpolarsdataset? ( >=dev-python/xlsx2csv-0.8.0[${PYTHON_USEDEP}] )
 	lint? ( >=dev-vcs/pre-commit-2.9.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/accelerate-0.32[${PYTHON_USEDEP}]
-	~dev-python/adlfs-2023.1[${PYTHON_USEDEP}]
-	~dev-python/behave-1.2.6[${PYTHON_USEDEP}]
-	~dev-python/biopython-1.73[${PYTHON_USEDEP}]
-	~dev-python/cloudpickle-2.2.1[${PYTHON_USEDEP}]
-	~dev-python/compress-pickle-2.1.0[lz4,${PYTHON_USEDEP}]
-	>=dev-python/coverage-7.2.0[${PYTHON_USEDEP}]
-	>=dev-python/dask-2021.10[complete,${PYTHON_USEDEP}]
-	dev-python/datasets[${PYTHON_USEDEP}]
-	<dev-python/delta-spark-3.0[${PYTHON_USEDEP}]
-	>=dev-python/deltalake-0.10.0[${PYTHON_USEDEP}]
-	~dev-python/dill-0.3.1[${PYTHON_USEDEP}]
-	<dev-python/filelock-4.0[${PYTHON_USEDEP}]
-	<dev-python/fiona-2.0[${PYTHON_USEDEP}]
-	<dev-python/gcsfs-2023.3[${PYTHON_USEDEP}]
-	<dev-python/geopandas-2.0[${PYTHON_USEDEP}]
-	<dev-python/hdfs-3.0[${PYTHON_USEDEP}]
-	>=dev-python/holoviews-1.13.0[${PYTHON_USEDEP}]
-	dev-python/huggingface-hub[${PYTHON_USEDEP}]
-	dev-python/ibis-framework[duckdb,examples,${PYTHON_USEDEP}]
-	<dev-python/ipython-8.0[${PYTHON_USEDEP}]
-	<dev-python/jinja2-3.2.0[${PYTHON_USEDEP}]
-	>=dev-python/joblib-0.14[${PYTHON_USEDEP}]
-	~dev-python/jupyter-1.0[${PYTHON_USEDEP}]
-	>=dev-python/jupyterlab-3.0[${PYTHON_USEDEP}]
-	~dev-python/lxml-4.6[${PYTHON_USEDEP}]
-	<dev-python/matplotlib-4.0[${PYTHON_USEDEP}]
-	<dev-python/memory-profiler-1.0[${PYTHON_USEDEP}]
-	~dev-python/moto-5.0.0[${PYTHON_USEDEP}]
-	~dev-python/networkx-3.4[${PYTHON_USEDEP}]
-	<dev-python/openpyxl-4.0[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	>=dev-python/pandas-2.0[${PYTHON_USEDEP}]
-	>=dev-python/pandas-gbq-0.12.0[${PYTHON_USEDEP}]
-	~dev-python/pillow-10.0[${PYTHON_USEDEP}]
-	<dev-python/plotly-6.0[${PYTHON_USEDEP}]
-	>=dev-python/polars-1.0[deltalake,xlsx2csv,${PYTHON_USEDEP}]
-	~dev-python/pyodbc-5.0[${PYTHON_USEDEP}]
-	>=dev-python/pyopenssl-22.1.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-7.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-3.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-mock-2.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-2.2.1[psutil,${PYTHON_USEDEP}]
-	~dev-python/redis-4.1[${PYTHON_USEDEP}]
-	~dev-python/requests-2.20[${PYTHON_USEDEP}]
-	~dev-python/requests-mock-1.6[${PYTHON_USEDEP}]
-	>=dev-python/s3fs-2021.04[${PYTHON_USEDEP}]
-	<dev-python/scikit-learn-2[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.7.3[${PYTHON_USEDEP}]
-	>=dev-python/sqlalchemy-1.2[${PYTHON_USEDEP}]
-	>=dev-python/tables-3.6[${PYTHON_USEDEP}]
-	dev-python/transformers[torch,${PYTHON_USEDEP}]
-	<dev-python/triad-1.0[${PYTHON_USEDEP}]
-	>=dev-python/xarray-2023.1.0[${PYTHON_USEDEP}]
-	~dev-python/xlsxwriter-1.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/accelerate-0.32[${PYTHON_USEDEP}]
+		>=dev-python/adlfs-2023.1[${PYTHON_USEDEP}] =dev-python/adlfs-2023*[${PYTHON_USEDEP}]
+		=dev-python/behave-1.2.6[${PYTHON_USEDEP}]
+		>=dev-python/biopython-1.73[${PYTHON_USEDEP}] =dev-python/biopython-1*[${PYTHON_USEDEP}]
+		>=dev-python/cloudpickle-2.2.1[${PYTHON_USEDEP}] =dev-python/cloudpickle-2.2*[${PYTHON_USEDEP}]
+		>=dev-python/compress-pickle-2.1.0[lz4,${PYTHON_USEDEP}] =dev-python/compress-pickle-2.1*[lz4,${PYTHON_USEDEP}]
+		>=dev-python/coverage-7.2.0[${PYTHON_USEDEP}]
+		>=dev-python/dask-2021.10[complete,${PYTHON_USEDEP}]
+		dev-python/datasets[${PYTHON_USEDEP}]
+		<dev-python/delta-spark-3.0[${PYTHON_USEDEP}]
+		>=dev-python/deltalake-0.10.0[${PYTHON_USEDEP}]
+		>=dev-python/dill-0.3.1[${PYTHON_USEDEP}] =dev-python/dill-0.3*[${PYTHON_USEDEP}]
+		<dev-python/filelock-4.0[${PYTHON_USEDEP}]
+		<dev-python/fiona-2.0[${PYTHON_USEDEP}]
+		<dev-python/gcsfs-2023.3[${PYTHON_USEDEP}]
+		<dev-python/geopandas-2.0[${PYTHON_USEDEP}]
+		<dev-python/hdfs-3.0[${PYTHON_USEDEP}]
+		>=dev-python/holoviews-1.13.0[${PYTHON_USEDEP}]
+		dev-python/huggingface-hub[${PYTHON_USEDEP}]
+		dev-python/ibis-framework[duckdb,examples,${PYTHON_USEDEP}]
+		<dev-python/ipython-8.0[${PYTHON_USEDEP}]
+		<dev-python/jinja2-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/joblib-0.14[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-1.0[${PYTHON_USEDEP}] =dev-python/jupyter-1*[${PYTHON_USEDEP}]
+		>=dev-python/jupyterlab-3.0[${PYTHON_USEDEP}]
+		>=dev-python/lxml-4.6[${PYTHON_USEDEP}] =dev-python/lxml-4*[${PYTHON_USEDEP}]
+		<dev-python/matplotlib-4.0[${PYTHON_USEDEP}]
+		<dev-python/memory-profiler-1.0[${PYTHON_USEDEP}]
+		=dev-python/moto-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/networkx-3.4[${PYTHON_USEDEP}] =dev-python/networkx-3*[${PYTHON_USEDEP}]
+		<dev-python/openpyxl-4.0[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		>=dev-python/pandas-2.0[${PYTHON_USEDEP}]
+		>=dev-python/pandas-gbq-0.12.0[${PYTHON_USEDEP}]
+		>=dev-python/pillow-10.0[${PYTHON_USEDEP}] =dev-python/pillow-10*[${PYTHON_USEDEP}]
+		<dev-python/plotly-6.0[${PYTHON_USEDEP}]
+		>=dev-python/polars-1.0[deltalake,xlsx2csv,${PYTHON_USEDEP}]
+		>=dev-python/pyodbc-5.0[${PYTHON_USEDEP}] =dev-python/pyodbc-5*[${PYTHON_USEDEP}]
+		>=dev-python/pyopenssl-22.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.2[${PYTHON_USEDEP}] =dev-python/pytest-7*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0[${PYTHON_USEDEP}] =dev-python/pytest-cov-3*[${PYTHON_USEDEP}]
+		<dev-python/pytest-mock-2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.2.1[psutil,${PYTHON_USEDEP}] =dev-python/pytest-xdist-2.2*[psutil,${PYTHON_USEDEP}]
+		>=dev-python/redis-4.1[${PYTHON_USEDEP}] =dev-python/redis-4*[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.20[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}]
+		>=dev-python/requests-mock-1.6[${PYTHON_USEDEP}] =dev-python/requests-mock-1*[${PYTHON_USEDEP}]
+		>=dev-python/s3fs-2021.04[${PYTHON_USEDEP}]
+		<dev-python/scikit-learn-2[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.7.3[${PYTHON_USEDEP}]
+		>=dev-python/sqlalchemy-1.2[${PYTHON_USEDEP}]
+		>=dev-python/tables-3.6[${PYTHON_USEDEP}]
+		dev-python/transformers[torch,${PYTHON_USEDEP}]
+		<dev-python/triad-1.0[${PYTHON_USEDEP}]
+		>=dev-python/xarray-2023.1.0[${PYTHON_USEDEP}]
+		>=dev-python/xlsxwriter-1.0[${PYTHON_USEDEP}] =dev-python/xlsxwriter-1*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

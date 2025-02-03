@@ -34,3 +34,4 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
 RDEPEND="~dev-python/user-agents-2.0[${PYTHON_USEDEP}]"
+# GENERATED_BDEPEND could not be inserted in this ebuild

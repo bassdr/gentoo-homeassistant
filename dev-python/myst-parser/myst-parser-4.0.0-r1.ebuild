@@ -24,31 +24,31 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code-style linkify rtd testing-docutils"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
 	rtd? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	dev-python/jinja2[${PYTHON_USEDEP}]
-	linkify? ( ~dev-python/linkify-it-py-2.0[${PYTHON_USEDEP}] )
-	~dev-python/markdown-it-py-3.0[${PYTHON_USEDEP}]
+	linkify? ( >=dev-python/linkify-it-py-2.0[${PYTHON_USEDEP}] =dev-python/linkify-it-py-2*[${PYTHON_USEDEP}] )
+	>=dev-python/markdown-it-py-3.0[${PYTHON_USEDEP}] =dev-python/markdown-it-py-3*[${PYTHON_USEDEP}]
 	>=dev-python/mdit-py-plugins-0.4.1[${PYTHON_USEDEP}]
 	testing-docutils? ( dev-python/pygments[${PYTHON_USEDEP}] )
 	testing-docutils? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
-	testing-docutils? ( ~dev-python/pytest-param-files-0.6.0[${PYTHON_USEDEP}] )
+	testing-docutils? ( >=dev-python/pytest-param-files-0.6.0[${PYTHON_USEDEP}] =dev-python/pytest-param-files-0.6*[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	<dev-python/sphinx-9[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
-	rtd? ( ~dev-python/sphinx-autodoc2-0.5.0[${PYTHON_USEDEP}] )
-	rtd? ( ~dev-python/sphinx-book-theme-1.1[${PYTHON_USEDEP}] )
+	rtd? ( >=dev-python/sphinx-autodoc2-0.5.0[${PYTHON_USEDEP}] =dev-python/sphinx-autodoc2-0.5*[${PYTHON_USEDEP}] )
+	rtd? ( >=dev-python/sphinx-book-theme-1.1[${PYTHON_USEDEP}] =dev-python/sphinx-book-theme-1*[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-pyscript[${PYTHON_USEDEP}] )
 	rtd? ( >=dev-python/sphinx-tippy-0.4.3[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-togglebutton[${PYTHON_USEDEP}] )
-	rtd? ( ~dev-python/sphinxext-opengraph-0.9.0[${PYTHON_USEDEP}] )
-	rtd? ( ~dev-python/sphinxext-rediraffe-0.2.7[${PYTHON_USEDEP}] )
-	code-style? ( ~dev-vcs/pre-commit-3.0[${PYTHON_USEDEP}] )
+	rtd? ( >=dev-python/sphinxext-opengraph-0.9.0[${PYTHON_USEDEP}] =dev-python/sphinxext-opengraph-0.9*[${PYTHON_USEDEP}] )
+	rtd? ( >=dev-python/sphinxext-rediraffe-0.2.7[${PYTHON_USEDEP}] =dev-python/sphinxext-rediraffe-0.2*[${PYTHON_USEDEP}] )
+	code-style? ( >=dev-vcs/pre-commit-3.0[${PYTHON_USEDEP}] =dev-vcs/pre-commit-3*[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/docutils-0.18[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	<dev-python/markdown-it-py-4[${PYTHON_USEDEP}]
@@ -73,16 +73,19 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	dev-python/coverage[toml,${PYTHON_USEDEP}]
-	dev-python/defusedxml[${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	~dev-python/pytest-param-files-0.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	dev-python/sphinx-pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		dev-python/defusedxml[${PYTHON_USEDEP}]
+		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-param-files-0.6.0[${PYTHON_USEDEP}] =dev-python/pytest-param-files-0.6*[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+		dev-python/sphinx-pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	default

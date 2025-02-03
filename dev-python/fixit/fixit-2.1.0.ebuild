@@ -16,26 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
 	>=dev-python/libcst-0.3.18[${PYTHON_USEDEP}]
 	>=dev-python/moreorless-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21[${PYTHON_USEDEP}]
 	pretty? ( >=dev-python/rich-12.6.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-7.0.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-mdinclude-0.5.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-7.0.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-mdinclude-0.5.3[${PYTHON_USEDEP}] )
 	>=dev-python/trailrunner-1.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/attribution-1.6.2[${PYTHON_USEDEP}]
-	~dev-python/black-23.9.1[${PYTHON_USEDEP}]
-	~dev-python/flake8-6.1.0[${PYTHON_USEDEP}]
-	~dev-python/flake8-bugbear-23.9.16[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.5.1[${PYTHON_USEDEP}]
-	~dev-python/ufmt-2.2.0[${PYTHON_USEDEP}]
-	~dev-python/usort-1.0.7[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/attribution-1.6.2[${PYTHON_USEDEP}]
+		=dev-python/black-23.9.1[${PYTHON_USEDEP}]
+		=dev-python/flake8-6.1.0[${PYTHON_USEDEP}]
+		=dev-python/flake8-bugbear-23.9.16[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.5.1[${PYTHON_USEDEP}]
+		=dev-python/ufmt-2.2.0[${PYTHON_USEDEP}]
+		=dev-python/usort-1.0.7[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

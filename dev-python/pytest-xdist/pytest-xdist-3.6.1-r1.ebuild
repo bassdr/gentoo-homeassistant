@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="psutil setproctitle"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/execnet-2.1[${PYTHON_USEDEP}]
 	psutil? ( >=dev-python/psutil-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 	setproctitle? ( dev-python/setproctitle[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/execnet-2.1[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
@@ -38,9 +38,12 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/filelock[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/filelock[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	# disable autoloading plugins in nested pytest calls

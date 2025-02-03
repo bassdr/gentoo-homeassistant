@@ -115,9 +115,6 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="rs"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-GENERATED_DEPEND="${RDEPEND}
-	rs? ( ~dev-python/sqlglotrs-0.3.14[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	native-extensions? (
 		${RUST_DEPEND}
@@ -129,21 +126,24 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/duckdb-0.6[${PYTHON_USEDEP}]
-	<dev-python/maturin-2.0[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pandas-stubs[${PYTHON_USEDEP}]
-	dev-python/pdoc[${PYTHON_USEDEP}]
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.7.2[${PYTHON_USEDEP}]
-	dev-python/types-python-dateutil[${PYTHON_USEDEP}]
-	dev-python/types-pytz[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/duckdb-0.6[${PYTHON_USEDEP}]
+		<dev-python/maturin-2.0[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pandas-stubs[${PYTHON_USEDEP}]
+		dev-python/pdoc[${PYTHON_USEDEP}]
+		dev-python/python-dateutil[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.7.2[${PYTHON_USEDEP}]
+		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
+		dev-python/types-pytz[${PYTHON_USEDEP}]
+		dev-python/typing-extensions[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 QA_FLAGS_IGNORED="usr/lib.*/py.*/site-packages/sqlglotrs/sqlglotrs.*.so"
 
@@ -191,4 +191,5 @@ python_test() {
 pkg_postinst() {
 	optfeature "simplifying timedelta expressions" dev-python/python-dateutil
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

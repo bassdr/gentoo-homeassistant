@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	doc? ( >=dev-python/autodocsumm-0.1.10[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/bump2version-0.5.11[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/flask-1.1.1[${PYTHON_USEDEP}] )
@@ -28,15 +28,18 @@ GENERATED_DEPEND="${RDEPEND}
 	doc? ( >=dev-python/sphinx-rtd-theme-0.4.3[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/twine-3.1.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-4.5.1[${PYTHON_USEDEP}]
-	>=dev-python/flask-1.1.1[${PYTHON_USEDEP}]
-	>=dev-python/pylint-1.8.3[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.24.0[${PYTHON_USEDEP}]
-	~dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}]
-	>=dev-python/tox-3.25.0[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-4.5.1[${PYTHON_USEDEP}]
+		>=dev-python/flask-1.1.1[${PYTHON_USEDEP}]
+		>=dev-python/pylint-1.8.3[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.24.0[${PYTHON_USEDEP}]
+		=dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}]
+		>=dev-python/tox-3.25.0[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

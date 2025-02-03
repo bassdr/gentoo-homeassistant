@@ -18,7 +18,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/apispec-7[yaml,${PYTHON_USEDEP}]
 	oauth? ( <dev-python/authlib-2.0.0[${PYTHON_USEDEP}] )
 	<dev-python/click-9[${PYTHON_USEDEP}]
@@ -45,6 +45,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/werkzeug-4[${PYTHON_USEDEP}]
 	<dev-python/wtforms-4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cchardet chardet charset-normalizer html5lib lxml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	cchardet? ( dev-python/cchardet[${PYTHON_USEDEP}] )
 	chardet? ( dev-python/chardet[${PYTHON_USEDEP}] )
 	charset-normalizer? ( dev-python/charset-normalizer[${PYTHON_USEDEP}] )
@@ -29,7 +29,7 @@ GENERATED_DEPEND="${RDEPEND}
 	lxml? ( dev-python/lxml[${PYTHON_USEDEP}] )
 	>dev-python/soupsieve-1.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/soupsieve-1.3[${PYTHON_USEDEP}]
 	dev-python/html5lib[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]

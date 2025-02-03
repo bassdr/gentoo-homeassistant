@@ -19,14 +19,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="ansible paramiko salt winrm"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ansible? ( dev-python/ansible[${PYTHON_USEDEP}] )
 	paramiko? ( dev-python/paramiko[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-6[${PYTHON_USEDEP}]
 	winrm? ( dev-python/pywinrm[${PYTHON_USEDEP}] )
 	salt? ( dev-python/salt[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 "
 # Ansible is called via its CLI

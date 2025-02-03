@@ -16,23 +16,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-mdinclude-0.6.2[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-mdinclude-0.6.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/attribution-1.8.0[${PYTHON_USEDEP}]
-	~dev-python/black-24.10.0[${PYTHON_USEDEP}]
-	>=dev-python/build-1[${PYTHON_USEDEP}]
-	~dev-python/coverage-7.6.8[${PYTHON_USEDEP}]
-	~dev-python/fissix-24.4.24[${PYTHON_USEDEP}]
-	~dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
-	~dev-python/flit-3.10.1[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-	~dev-python/packaging-24.2[${PYTHON_USEDEP}]
-	~dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
-	~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/attribution-1.8.0[${PYTHON_USEDEP}]
+		=dev-python/black-24.10.0[${PYTHON_USEDEP}]
+		>=dev-python/build-1[${PYTHON_USEDEP}]
+		=dev-python/coverage-7.6.8[${PYTHON_USEDEP}]
+		=dev-python/fissix-24.4.24[${PYTHON_USEDEP}]
+		=dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
+		=dev-python/flit-3.10.1[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		=dev-python/packaging-24.2[${PYTHON_USEDEP}]
+		=dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
+		=dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiohomekit-3.2.7[${PYTHON_USEDEP}]
+	=dev-python/aiohomekit-3.2.7[${PYTHON_USEDEP}]
 "

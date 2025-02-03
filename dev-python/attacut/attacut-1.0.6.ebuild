@@ -15,7 +15,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/fire-0.1.3[${PYTHON_USEDEP}]
 	>=dev-python/nptyping-0.2.0[${PYTHON_USEDEP}]
@@ -25,6 +25,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/ssg-0.0.4[${PYTHON_USEDEP}]
 	>=dev-python/torch-1.2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

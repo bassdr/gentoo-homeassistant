@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/airtouch4pyapi-1.0.5[${PYTHON_USEDEP}]
+	=dev-python/airtouch4pyapi-1.0.5[${PYTHON_USEDEP}]
 "

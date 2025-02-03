@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyuserinput-0.1.11[${PYTHON_USEDEP}]
+	=dev-python/pyuserinput-0.1.11[${PYTHON_USEDEP}]
 "

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/wiffi-1.1.2[${PYTHON_USEDEP}]
+	=dev-python/wiffi-1.1.2[${PYTHON_USEDEP}]
 "

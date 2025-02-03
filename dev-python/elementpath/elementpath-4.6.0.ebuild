@@ -18,8 +18,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-"
 BDEPEND="
 	test? (
 		dev-python/lxml[${PYTHON_USEDEP}]
@@ -28,21 +26,25 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/lxml[${PYTHON_USEDEP}]
-	dev-python/lxml-stubs[${PYTHON_USEDEP}]
-	dev-python/memory-profiler[${PYTHON_USEDEP}]
-	dev-python/memray[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/tox[${PYTHON_USEDEP}]
-	>=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/lxml[${PYTHON_USEDEP}]
+		dev-python/lxml-stubs[${PYTHON_USEDEP}]
+		dev-python/memory-profiler[${PYTHON_USEDEP}]
+		dev-python/memray[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+		>=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_IGNORE=(
 	# fails for some reason, more fit for upstream testing anyway
 	tests/test_typing.py
 )
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

@@ -24,9 +24,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	yaml? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/pyyaml[${PYTHON_USEDEP}]
@@ -34,11 +31,14 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 PATCHES=(
 	# https://github.com/bw2/ConfigArgParse/pull/295
@@ -49,4 +49,5 @@ src_test() {
 	local -x COLUMNS=80
 	distutils-r1_src_test
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

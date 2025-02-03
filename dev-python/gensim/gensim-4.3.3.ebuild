@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/annoy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( dev-python/memory-profiler[${PYTHON_USEDEP}] )
@@ -35,22 +35,25 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
 	<dev-python/scipy-1.14.0[${PYTHON_USEDEP}]
 	>=dev-python/smart-open-1.8.1[${PYTHON_USEDEP}]
-	docs? ( ~dev-python/sphinx-5.1.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinx-gallery-0.11.1[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-napoleon-0.7[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-5.1.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinx-gallery-0.11.1[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-napoleon-0.7[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
 	docs? ( dev-python/statsmodels[${PYTHON_USEDEP}] )
 	docs? ( dev-python/testfixtures[${PYTHON_USEDEP}] )
 	test-win? ( dev-python/testfixtures[${PYTHON_USEDEP}] )
 	docs? ( !=dev-python/visdom-0.1.8.7[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/pot[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/testfixtures[${PYTHON_USEDEP}]
-	!=dev-python/visdom-0.1.8.7[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pot[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/testfixtures[${PYTHON_USEDEP}]
+		!=dev-python/visdom-0.1.8.7[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

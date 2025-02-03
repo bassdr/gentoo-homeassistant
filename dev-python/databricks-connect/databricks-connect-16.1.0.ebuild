@@ -17,7 +17,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}]
 	>=dev-python/googleapis-common-protos-1.56.4[${PYTHON_USEDEP}]
 	connect? ( >=dev-python/googleapis-common-protos-1.56.4[${PYTHON_USEDEP}] )
@@ -36,7 +36,7 @@ GENERATED_DEPEND="${RDEPEND}
 	connect? ( >=dev-python/pandas-1.0.5[${PYTHON_USEDEP}] )
 	pandas-on-spark? ( >=dev-python/pandas-1.0.5[${PYTHON_USEDEP}] )
 	sql? ( >=dev-python/pandas-1.0.5[${PYTHON_USEDEP}] )
-	~dev-python/py4j-0.10.9.7[${PYTHON_USEDEP}]
+	=dev-python/py4j-0.10.9.7[${PYTHON_USEDEP}]
 	>=dev-python/pyarrow-4.0.0[${PYTHON_USEDEP}]
 	connect? ( >=dev-python/pyarrow-4.0.0[${PYTHON_USEDEP}] )
 	pandas-on-spark? ( >=dev-python/pyarrow-4.0.0[${PYTHON_USEDEP}] )
@@ -44,6 +44,10 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/setuptools-68.0.0[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

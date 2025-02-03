@@ -21,11 +21,11 @@ KEYWORDS="amd64 arm64"
 # without pytest installed, and there is no reason to force older
 # implementations on pytest.
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/py[${PYTHON_USEDEP}]
 	>=dev-python/pytest-3.10[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/py[${PYTHON_USEDEP}]
 "
 BDEPEND="

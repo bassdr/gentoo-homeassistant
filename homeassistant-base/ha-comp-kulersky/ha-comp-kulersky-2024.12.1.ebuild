@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pykulersky-0.5.2[${PYTHON_USEDEP}]
+	=dev-python/pykulersky-0.5.2[${PYTHON_USEDEP}]
 "

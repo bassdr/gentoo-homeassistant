@@ -20,12 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/asyncio-throttle[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/asyncio-throttle[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]"
@@ -36,17 +36,20 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
-	~dev-python/pre-commit-hooks-4.6.0[${PYTHON_USEDEP}]
-	~dev-python/pylint-3.2.6[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.23.8[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.6.1[${PYTHON_USEDEP}]
-	~dev-python/safety-3.2.5[${PYTHON_USEDEP}]
-	~dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
+		=dev-python/pre-commit-hooks-4.6.0[${PYTHON_USEDEP}]
+		=dev-python/pylint-3.2.6[${PYTHON_USEDEP}]
+		=dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
+		=dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}]
+		=dev-python/pytest-asyncio-0.23.8[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.6.1[${PYTHON_USEDEP}]
+		=dev-python/safety-3.2.5[${PYTHON_USEDEP}]
+		=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
+		=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -25,10 +25,6 @@ LICENSE="LGPL-3"
 SLOT="0"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
-"
 BDEPEND="test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
 		>=dev-python/pytest-console-scripts-1.3.1[${PYTHON_USEDEP}]
@@ -37,7 +33,11 @@ BDEPEND="test? (
 		dev-python/responses[${PYTHON_USEDEP}]
 		)"
 
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 >=dev-python/requests-2.28.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-toolbelt-0.10.1[${PYTHON_USEDEP}]"
 

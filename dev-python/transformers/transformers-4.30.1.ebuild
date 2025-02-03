@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	accelerate? ( >=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}] )
 	agents? ( >=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}] )
@@ -25,33 +25,33 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-torch? ( >=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}] )
 	torch? ( >=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/av-9.2.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/av-9.2.0[${PYTHON_USEDEP}] )
-	video? ( ~dev-python/av-9.2.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/av-9.2.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/av-9.2.0[${PYTHON_USEDEP}] )
+	video? ( =dev-python/av-9.2.0[${PYTHON_USEDEP}] )
 	deepspeed-testing? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	dev-tensorflow? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	dev-torch? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
-	deepspeed-testing? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
-	dev-tensorflow? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
-	dev-torch? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/black-23.1[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
-	codecarbon? ( ~dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
-	dev-torch? ( ~dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
-	deepspeed-testing? ( ~dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
-	dev-tensorflow? ( ~dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
-	dev-torch? ( ~dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
-	modelcreation? ( ~dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
+	deepspeed-testing? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
+	dev-tensorflow? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
+	dev-torch? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
+	all? ( =dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
+	codecarbon? ( =dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
+	dev-torch? ( =dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}] )
+	deepspeed-testing? ( =dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
+	dev-tensorflow? ( =dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
+	dev-torch? ( =dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
+	modelcreation? ( =dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}] )
 	agents? ( !=dev-python/datasets-2.5.0[${PYTHON_USEDEP}] )
 	deepspeed-testing? ( !=dev-python/datasets-2.5.0[${PYTHON_USEDEP}] )
 	dev-tensorflow? ( !=dev-python/datasets-2.5.0[${PYTHON_USEDEP}] )
 	dev-torch? ( !=dev-python/datasets-2.5.0[${PYTHON_USEDEP}] )
 	quality? ( !=dev-python/datasets-2.5.0[${PYTHON_USEDEP}] )
 	retrieval? ( !=dev-python/datasets-2.5.0[${PYTHON_USEDEP}] )
-	all? ( ~dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
-	docs? ( ~dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
-	video? ( ~dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
+	all? ( =dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
+	docs? ( =dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
+	video? ( =dev-python/decord-0.6.0[${PYTHON_USEDEP}] )
 	deepspeed-testing? ( >=dev-python/deepspeed-0.8.3[${PYTHON_USEDEP}] )
 	deepspeed? ( >=dev-python/deepspeed-0.8.3[${PYTHON_USEDEP}] )
 	agents? ( dev-python/diffusers[${PYTHON_USEDEP}] )
@@ -311,67 +311,71 @@ GENERATED_DEPEND="${RDEPEND}
 	tokenizers? ( !=sci-libs/tokenizers-0.11.3[${PYTHON_USEDEP}] )
 	torchhub? ( !=sci-libs/tokenizers-0.11.3[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}]
-	~dev-python/av-9.2.0[${PYTHON_USEDEP}]
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	~dev-python/black-23.1[${PYTHON_USEDEP}]
-	~dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}]
-	~dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}]
-	!=dev-python/datasets-2.5.0[${PYTHON_USEDEP}]
-	~dev-python/decord-0.6.0[${PYTHON_USEDEP}]
-	<dev-python/dill-0.3.5[${PYTHON_USEDEP}]
-	>=dev-python/evaluate-0.2.0[${PYTHON_USEDEP}]
-	dev-python/faiss-cpu[${PYTHON_USEDEP}]
-	<=dev-python/flax-0.6.9[${PYTHON_USEDEP}]
-	>=dev-python/fugashi-1.0[${PYTHON_USEDEP}]
-	<dev-python/gitpython-3.1.19[${PYTHON_USEDEP}]
-	>=dev-python/hf-doc-builder-0.3.0[${PYTHON_USEDEP}]
-	<dev-python/ipadic-2.0[${PYTHON_USEDEP}]
-	>=dev-python/isort-5.5.4[${PYTHON_USEDEP}]
-	!=dev-python/jax-0.3.2[${PYTHON_USEDEP}]
-	<=dev-python/jaxlib-0.3.6[${PYTHON_USEDEP}]
-	dev-python/kenlm[${PYTHON_USEDEP}]
-	>=dev-python/keras-nlp-0.3.1[${PYTHON_USEDEP}]
-	dev-python/librosa[${PYTHON_USEDEP}]
-	dev-python/nltk[${PYTHON_USEDEP}]
-	dev-python/onnxconverter-common[${PYTHON_USEDEP}]
-	<=dev-python/optax-0.1.4[${PYTHON_USEDEP}]
-	dev-python/optuna[${PYTHON_USEDEP}]
-	dev-python/parameterized[${PYTHON_USEDEP}]
-	dev-python/phonemizer[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	<=dev-python/protobuf-3.20.3[${PYTHON_USEDEP}]
-	dev-python/psutil[${PYTHON_USEDEP}]
-	>=dev-python/pyctcdecode-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-	dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/ray[tune,${PYTHON_USEDEP}]
-	<dev-python/rhoknp-1.3.1[${PYTHON_USEDEP}]
-	dev-python/rjieba[${PYTHON_USEDEP}]
-	!=dev-python/rouge-score-0.0.7[${PYTHON_USEDEP}]
-	<=dev-python/ruff-0.0.259[${PYTHON_USEDEP}]
-	<dev-python/sacrebleu-2.0.0[${PYTHON_USEDEP}]
-	dev-python/sacremoses[${PYTHON_USEDEP}]
-	dev-python/scikit-learn[${PYTHON_USEDEP}]
-	!=dev-python/sentencepiece-0.1.92[${PYTHON_USEDEP}]
-	dev-python/sigopt[${PYTHON_USEDEP}]
-	>=dev-python/sudachidict-core-20220729[${PYTHON_USEDEP}]
-	>=dev-python/sudachipy-0.6.6[${PYTHON_USEDEP}]
-	<dev-python/tensorflow-2.13[${PYTHON_USEDEP}]
-	<dev-python/tensorflow-text-2.13[${PYTHON_USEDEP}]
-	dev-python/tf2onnx[${PYTHON_USEDEP}]
-	dev-python/timeout-decorator[${PYTHON_USEDEP}]
-	dev-python/timm[${PYTHON_USEDEP}]
-	!=dev-python/torch-1.12.0[${PYTHON_USEDEP}]
-	dev-python/torchaudio[${PYTHON_USEDEP}]
-	dev-python/torchvision[${PYTHON_USEDEP}]
-	>=dev-python/unidic-1.0.2[${PYTHON_USEDEP}]
-	>=dev-python/unidic-lite-1.0.7[${PYTHON_USEDEP}]
-	<dev-python/urllib3-2.0.0[${PYTHON_USEDEP}]
-	!=sci-libs/tokenizers-0.11.3[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/accelerate-0.20.2[${PYTHON_USEDEP}]
+		=dev-python/av-9.2.0[${PYTHON_USEDEP}]
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		>=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}]
+		=dev-python/codecarbon-1.2.0[${PYTHON_USEDEP}]
+		=dev-python/cookiecutter-1.7.3[${PYTHON_USEDEP}]
+		!=dev-python/datasets-2.5.0[${PYTHON_USEDEP}]
+		=dev-python/decord-0.6.0[${PYTHON_USEDEP}]
+		<dev-python/dill-0.3.5[${PYTHON_USEDEP}]
+		>=dev-python/evaluate-0.2.0[${PYTHON_USEDEP}]
+		dev-python/faiss-cpu[${PYTHON_USEDEP}]
+		<=dev-python/flax-0.6.9[${PYTHON_USEDEP}]
+		>=dev-python/fugashi-1.0[${PYTHON_USEDEP}]
+		<dev-python/gitpython-3.1.19[${PYTHON_USEDEP}]
+		>=dev-python/hf-doc-builder-0.3.0[${PYTHON_USEDEP}]
+		dev-python/hf-doc-builder[${PYTHON_USEDEP}]
+		<dev-python/ipadic-2.0[${PYTHON_USEDEP}]
+		>=dev-python/isort-5.5.4[${PYTHON_USEDEP}]
+		!=dev-python/jax-0.3.2[${PYTHON_USEDEP}]
+		<=dev-python/jaxlib-0.3.6[${PYTHON_USEDEP}]
+		dev-python/kenlm[${PYTHON_USEDEP}]
+		>=dev-python/keras-nlp-0.3.1[${PYTHON_USEDEP}]
+		dev-python/librosa[${PYTHON_USEDEP}]
+		dev-python/nltk[${PYTHON_USEDEP}]
+		dev-python/onnxconverter-common[${PYTHON_USEDEP}]
+		<=dev-python/optax-0.1.4[${PYTHON_USEDEP}]
+		dev-python/optuna[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/phonemizer[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		<=dev-python/protobuf-3.20.3[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		>=dev-python/pyctcdecode-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/ray[tune,${PYTHON_USEDEP}]
+		<dev-python/rhoknp-1.3.1[${PYTHON_USEDEP}]
+		dev-python/rjieba[${PYTHON_USEDEP}]
+		!=dev-python/rouge-score-0.0.7[${PYTHON_USEDEP}]
+		<=dev-python/ruff-0.0.259[${PYTHON_USEDEP}]
+		<dev-python/sacrebleu-2.0.0[${PYTHON_USEDEP}]
+		dev-python/sacremoses[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		!=dev-python/sentencepiece-0.1.92[${PYTHON_USEDEP}]
+		dev-python/sigopt[${PYTHON_USEDEP}]
+		>=dev-python/sudachidict-core-20220729[${PYTHON_USEDEP}]
+		>=dev-python/sudachipy-0.6.6[${PYTHON_USEDEP}]
+		<dev-python/tensorflow-2.13[${PYTHON_USEDEP}]
+		<dev-python/tensorflow-text-2.13[${PYTHON_USEDEP}]
+		dev-python/tf2onnx[${PYTHON_USEDEP}]
+		dev-python/timeout-decorator[${PYTHON_USEDEP}]
+		dev-python/timm[${PYTHON_USEDEP}]
+		!=dev-python/torch-1.12.0[${PYTHON_USEDEP}]
+		dev-python/torchaudio[${PYTHON_USEDEP}]
+		dev-python/torchvision[${PYTHON_USEDEP}]
+		>=dev-python/unidic-1.0.2[${PYTHON_USEDEP}]
+		>=dev-python/unidic-lite-1.0.7[${PYTHON_USEDEP}]
+		<dev-python/urllib3-2.0.0[${PYTHON_USEDEP}]
+		!=sci-libs/tokenizers-0.11.3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

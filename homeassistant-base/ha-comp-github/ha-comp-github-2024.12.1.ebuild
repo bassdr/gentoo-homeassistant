@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiogithubapi-24.6.0[${PYTHON_USEDEP}]
+	=dev-python/aiogithubapi-24.6.0[${PYTHON_USEDEP}]
 "

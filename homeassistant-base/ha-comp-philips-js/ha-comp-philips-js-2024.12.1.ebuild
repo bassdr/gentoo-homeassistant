@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/ha-philipsjs-3.2.2[${PYTHON_USEDEP}]
+	=dev-python/ha-philipsjs-3.2.2[${PYTHON_USEDEP}]
 "

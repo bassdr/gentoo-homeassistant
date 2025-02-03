@@ -18,10 +18,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="coverage-plugin"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	coverage-plugin? ( dev-python/coverage[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/coverage-4.4.1[${PYTHON_USEDEP}]
 "
 
@@ -32,4 +32,4 @@ distutils_enable_sphinx docs \
 python_test() {
 	"${EPYTHON}" -m nose2.__main__ -vv || die "tests failed under ${EPYTHON}"
 }
-# BDEPEND could not be inserted in this ebuild
+# GENERATED_BDEPEND could not be inserted in this ebuild

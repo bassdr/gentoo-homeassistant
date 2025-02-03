@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pynws-1.8.2[retry,${PYTHON_USEDEP}]
+	=dev-python/pynws-1.8.2[retry,${PYTHON_USEDEP}]
 "

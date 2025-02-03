@@ -22,14 +22,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="pyqt5 pyside2"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/greenlet[${PYTHON_USEDEP}]
 	>=dev-python/pytest-2.3[${PYTHON_USEDEP}]
 	pyqt5? ( >=dev-python/qt5reactor-0.6.2[pyqt5,${PYTHON_USEDEP}] )
 	pyside2? ( >=dev-python/qt5reactor-0.6.3[pyside2,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/greenlet[${PYTHON_USEDEP}]
 	>=dev-python/pytest-2.3[${PYTHON_USEDEP}]
@@ -42,10 +42,13 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/black[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# If we let pytest-twisted autoload everywhere, it breaks tests in

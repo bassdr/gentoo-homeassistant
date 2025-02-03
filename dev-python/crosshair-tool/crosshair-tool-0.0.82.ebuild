@@ -16,10 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-4.0.0[${PYTHON_USEDEP}]
-	~dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '~dev-python/numpy-1.23.4[${PYTHON_USEDEP}]' python3_12)
+	=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '=dev-python/numpy-1.23.4[${PYTHON_USEDEP}]' python3_12)
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pygls-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typeshed-client-2.0.5[${PYTHON_USEDEP}]
@@ -27,21 +27,24 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/typing-inspect-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/z3-solver-4.13.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/autodocsumm-1[${PYTHON_USEDEP}]
-	~dev-python/black-22.3.0[${PYTHON_USEDEP}]
-	>=dev-python/deal-4.13.0[${PYTHON_USEDEP}]
-	>=dev-python/icontract-2.4.0[${PYTHON_USEDEP}]
-	~dev-python/isort-5.11.5[${PYTHON_USEDEP}]
-	~dev-python/mypy-0.990[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-	~dev-vcs/pre-commit-2.20[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/autodocsumm-1[${PYTHON_USEDEP}]
+		=dev-python/black-22.3.0[${PYTHON_USEDEP}]
+		>=dev-python/deal-4.13.0[${PYTHON_USEDEP}]
+		>=dev-python/icontract-2.4.0[${PYTHON_USEDEP}]
+		=dev-python/isort-5.11.5[${PYTHON_USEDEP}]
+		=dev-python/mypy-0.990[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-3.4.3[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-rtd-theme-0.5.1[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.20[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

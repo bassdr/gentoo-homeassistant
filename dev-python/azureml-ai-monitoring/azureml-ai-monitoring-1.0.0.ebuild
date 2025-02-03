@@ -17,22 +17,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-1.5.2[${PYTHON_USEDEP}]
-	setup? ( ~dev-python/pip-20.3[${PYTHON_USEDEP}] )
+	setup? ( >=dev-python/pip-20.3[${PYTHON_USEDEP}] =dev-python/pip-20*[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]
 	setup? ( >=dev-python/setuptools-40.4.3[${PYTHON_USEDEP}] )
 	setup? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 BDEPEND+=" app-arch/unzip"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-subtests[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-subtests[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

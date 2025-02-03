@@ -20,7 +20,7 @@ GENERATED_IUSE="all black doc kernel matplotlib nbconvert nbformat notebook para
 IUSE="${GENERATED_IUSE} examples notebook nbconvert qt5 +smp test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	black? ( dev-python/black[${PYTHON_USEDEP}] )
 	test-extra? ( dev-python/curio[${PYTHON_USEDEP}] )
 	dev-python/decorator[${PYTHON_USEDEP}]
@@ -59,7 +59,7 @@ GENERATED_DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]' python3_12)
 	doc? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/decorator[${PYTHON_USEDEP}]
 	>=dev-python/jedi-0.16[${PYTHON_USEDEP}]
 	dev-python/matplotlib-inline[${PYTHON_USEDEP}]
@@ -95,13 +95,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/pickleshare[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	<dev-python/pytest-asyncio-0.22[${PYTHON_USEDEP}]
-	dev-python/testpath[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pickleshare[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		<dev-python/pytest-asyncio-0.22[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 RDEPEND+="
 	nbconvert? (

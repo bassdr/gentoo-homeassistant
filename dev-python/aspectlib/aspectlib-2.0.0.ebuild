@@ -17,10 +17,10 @@ KEYWORDS="amd64 arm64"
 RESTRICT="!test? ( test )"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fields[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/fields[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND} dev-python/fields[${PYTHON_USEDEP}]"
 DEPEND="
 	test? (
 		${RDEPEND}

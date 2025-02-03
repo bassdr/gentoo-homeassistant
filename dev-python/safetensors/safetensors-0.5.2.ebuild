@@ -16,9 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	quality? ( ~dev-python/black-22.3[${PYTHON_USEDEP}] )
-	quality? ( ~dev-python/click-8.0.4[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	quality? ( =dev-python/black-22.3[${PYTHON_USEDEP}] )
+	quality? ( =dev-python/click-8.0.4[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/flax-0.6.3[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/isort-5.5.4[${PYTHON_USEDEP}] )
@@ -39,20 +39,23 @@ GENERATED_DEPEND="${RDEPEND}
 	pinned-tf? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	tensorflow? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	torch? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
-	pinned-tf? ( ~dev-python/tensorflow-2.18.0[${PYTHON_USEDEP}] )
+	pinned-tf? ( =dev-python/tensorflow-2.18.0[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-2.11.0[${PYTHON_USEDEP}] )
 	torch? ( >=dev-python/torch-1.10[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/h5py-3.7.0[${PYTHON_USEDEP}]
-	>=dev-python/huggingface-hub-0.12.1[${PYTHON_USEDEP}]
-	>=dev-python/hypothesis-6.70.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-	>=dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}]
-	dev-python/safetensors[all,${PYTHON_USEDEP}]
-	dev-python/safetensors[numpy,${PYTHON_USEDEP}]
-	>=dev-python/setuptools-rust-1.5.2[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/h5py-3.7.0[${PYTHON_USEDEP}]
+		>=dev-python/huggingface-hub-0.12.1[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.70.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}]
+		dev-python/safetensors[all,${PYTHON_USEDEP}]
+		dev-python/safetensors[numpy,${PYTHON_USEDEP}]
+		>=dev-python/setuptools-rust-1.5.2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

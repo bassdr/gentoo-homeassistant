@@ -24,12 +24,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/googleapis-common-protos-1.5.5[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.67.1[${PYTHON_USEDEP}]
 	<dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/grpcio-${PV}[${PYTHON_USEDEP}]
 	>=dev-python/googleapis-common-protos-1.5.5[${PYTHON_USEDEP}]
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]

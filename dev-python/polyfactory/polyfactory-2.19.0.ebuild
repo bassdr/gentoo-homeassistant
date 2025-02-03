@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	attrs? ( >=dev-python/attrs-22.2.0[${PYTHON_USEDEP}] )
 	full? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	beanie? ( dev-python/beanie[${PYTHON_USEDEP}] )
@@ -34,6 +34,6 @@ GENERATED_DEPEND="${RDEPEND}
 	sqlalchemy? ( >=dev-python/sqlalchemy-1.4.29[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

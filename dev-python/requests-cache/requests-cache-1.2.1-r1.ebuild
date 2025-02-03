@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="bson docs dynamodb json mongodb redis security yaml"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-21.2[${PYTHON_USEDEP}]
 	dynamodb? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] )
 	dynamodb? ( >=dev-python/botocore-1.18[${PYTHON_USEDEP}] )
@@ -50,7 +50,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/url-normalize-1.4[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.25.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/cattrs-22.2[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-2.5[${PYTHON_USEDEP}]

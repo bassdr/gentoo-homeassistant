@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/baidu-aip-1.6.6[${PYTHON_USEDEP}]
+	=dev-python/baidu-aip-1.6.6[${PYTHON_USEDEP}]
 "

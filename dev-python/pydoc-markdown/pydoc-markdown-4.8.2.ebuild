@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-7.1[${PYTHON_USEDEP}]
 	>=dev-python/databind-core-4.4.0[${PYTHON_USEDEP}]
 	>=dev-python/databind-json-4.4.0[${PYTHON_USEDEP}]
@@ -31,6 +31,6 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/watchdog[${PYTHON_USEDEP}]
 	>=dev-python/yapf-0.30.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

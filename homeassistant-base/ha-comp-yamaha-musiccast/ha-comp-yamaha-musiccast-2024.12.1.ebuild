@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiomusiccast-0.14.8[${PYTHON_USEDEP}]
+	=dev-python/aiomusiccast-0.14.8[${PYTHON_USEDEP}]
 "

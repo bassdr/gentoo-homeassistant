@@ -15,23 +15,26 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/graphql-core-3.3[${PYTHON_USEDEP}]
 	<dev-python/graphql-relay-3.3[${PYTHON_USEDEP}]
 	<dev-python/python-dateutil-3[${PYTHON_USEDEP}]
 	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	<dev-python/coveralls-5[${PYTHON_USEDEP}]
-	<dev-python/mypy-2[${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
-	<dev-python/pytest-asyncio-2[${PYTHON_USEDEP}]
-	<dev-python/pytest-benchmark-5[${PYTHON_USEDEP}]
-	<dev-python/pytest-cov-6[${PYTHON_USEDEP}]
-	<dev-python/pytest-mock-4[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.5.0[${PYTHON_USEDEP}]
-	<dev-python/types-python-dateutil-3[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		<dev-python/coveralls-5[${PYTHON_USEDEP}]
+		<dev-python/mypy-2[${PYTHON_USEDEP}]
+		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		<dev-python/pytest-asyncio-2[${PYTHON_USEDEP}]
+		<dev-python/pytest-benchmark-5[${PYTHON_USEDEP}]
+		<dev-python/pytest-cov-6[${PYTHON_USEDEP}]
+		<dev-python/pytest-mock-4[${PYTHON_USEDEP}]
+		=dev-python/ruff-0.5.0[${PYTHON_USEDEP}]
+		<dev-python/types-python-dateutil-3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

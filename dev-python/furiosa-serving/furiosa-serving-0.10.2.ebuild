@@ -17,9 +17,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/furiosa-server-0.10[${PYTHON_USEDEP}]
-	openvino? ( ~dev-python/furiosa-server-0.10[openvino,${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/furiosa-server-0.10*[${PYTHON_USEDEP}]
+	openvino? ( =dev-python/furiosa-server-0.10*[openvino,${PYTHON_USEDEP}] )
 	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/opentelemetry-api[${PYTHON_USEDEP}]
 	dev-python/opentelemetry-exporter-otlp[${PYTHON_USEDEP}]
@@ -31,14 +31,18 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-python/python-multipart[${PYTHON_USEDEP}]
 	openvino? ( dev-python/transformers[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/mypy[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	~dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/ruff[${PYTHON_USEDEP}]
-	dev-python/types-pillow[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+	test? (
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}] =dev-python/pytest-asyncio-0.17*[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/types-pillow[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -25,17 +25,17 @@ RESTRICT="!test? ( test )"
 # wxPython doesn't seem to be able to optionally disable features. webkit is
 # optionally patched out because it's so huge, but other elements are not,
 # which makes us have to require all features from wxGTK
-GENERATED_DEPEND="${RDEPEND}
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=x11-libs/wxGTK-3.0.4-r301:${WX_GTK_VER}=[gstreamer,libnotify,opengl,sdl,tiff,webkit?,X]
 	media-libs/libpng:=
 	media-libs/tiff:=
 	media-libs/libjpeg-turbo:=
 "
-RDEPEND="${GENERATED_DEPEND}
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
 BDEPEND="

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.18.1[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	!=dev-python/nbconvert-5.4[${PYTHON_USEDEP}]
@@ -25,7 +25,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/docutils-0.18.1[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	>=dev-python/nbconvert-5.5[${PYTHON_USEDEP}]

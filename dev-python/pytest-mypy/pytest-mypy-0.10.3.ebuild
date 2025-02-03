@@ -16,13 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.0[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.0[${PYTHON_USEDEP}]
 	>=dev-python/mypy-0.500[${PYTHON_USEDEP}]
 	>=dev-python/mypy-0.900[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

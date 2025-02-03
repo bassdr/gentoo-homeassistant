@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/aiolyric-2.0.1[${PYTHON_USEDEP}]
+	=dev-python/aiolyric-2.0.1[${PYTHON_USEDEP}]
 "

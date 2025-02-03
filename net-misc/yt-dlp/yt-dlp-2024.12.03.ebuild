@@ -29,20 +29,20 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build default pyinstaller secretstorage static-analysis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	static-analysis? ( ~dev-python/autopep8-2.0[${PYTHON_USEDEP}] )
+GENERATED_RDEPEND="${RDEPEND}
+	static-analysis? ( >=dev-python/autopep8-2.0[${PYTHON_USEDEP}] =dev-python/autopep8-2*[${PYTHON_USEDEP}] )
 	dev-python/brotli[${PYTHON_USEDEP}]
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	default? ( dev-python/certifi[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/cffi[${PYTHON_USEDEP}] )
-	~dev-python/curl-cffi-0.5.10[${PYTHON_USEDEP}]
-	!=dev-python/curl-cffi-0.6[${PYTHON_USEDEP}]
+	=dev-python/curl-cffi-0.5.10[${PYTHON_USEDEP}]
+	!=dev-python/curl-cffi-0.6*[${PYTHON_USEDEP}]
 	build? ( dev-python/hatchling[${PYTHON_USEDEP}] )
 	build? ( dev-python/pip[${PYTHON_USEDEP}] )
 	default? ( dev-python/pycryptodomex[${PYTHON_USEDEP}] )
 	pyinstaller? ( >=dev-python/pyinstaller-6.11.1[${PYTHON_USEDEP}] )
 	default? ( <dev-python/requests-3[${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/ruff-0.8.0[${PYTHON_USEDEP}] =dev-python/ruff-0.8*[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/secretstorage[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/setuptools-71.0.2[${PYTHON_USEDEP}] )
 	default? ( <dev-python/urllib3-3[${PYTHON_USEDEP}] )
@@ -50,19 +50,22 @@ GENERATED_DEPEND="${RDEPEND}
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	default? ( media-libs/mutagen[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	!net-misc/youtube-dl[-yt-dlp(-)]
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/autopep8-2.0[${PYTHON_USEDEP}]
-	~dev-python/pytest-8.1[${PYTHON_USEDEP}]
-	~dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}]
-	~dev-python/ruff-0.8.0[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/autopep8-2.0[${PYTHON_USEDEP}] =dev-python/autopep8-2*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.1[${PYTHON_USEDEP}] =dev-python/pytest-8*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-rerunfailures-14.0[${PYTHON_USEDEP}] =dev-python/pytest-rerunfailures-14*[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.8.0[${PYTHON_USEDEP}] =dev-python/ruff-0.8*[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

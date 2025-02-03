@@ -18,14 +18,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
 	<dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-httplib2-0.1.0[${PYTHON_USEDEP}]
 	<dev-python/httplib2-1_pre[${PYTHON_USEDEP}]
 	<dev-python/uritemplate-5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httplib2-0.15[${PYTHON_USEDEP}]
 	<dev-python/httplib2-1[${PYTHON_USEDEP}]
 	>=dev-python/google-api-core-2.3.1[${PYTHON_USEDEP}]

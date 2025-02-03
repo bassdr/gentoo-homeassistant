@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/uplink[${PYTHON_USEDEP}]
 	dev-python/uplink-protobuf[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/uplink-0.9.7[${PYTHON_USEDEP}]
 	>=dev-python/uplink-protobuf-0.1.0[${PYTHON_USEDEP}]"
 BDEPEND="

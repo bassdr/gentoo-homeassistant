@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/onvif-zeep-async-3.1.12[${PYTHON_USEDEP}]
-	~dev-python/wsdiscovery-2.0.0[${PYTHON_USEDEP}]
+	=dev-python/onvif-zeep-async-3.1.12[${PYTHON_USEDEP}]
+	=dev-python/wsdiscovery-2.0.0[${PYTHON_USEDEP}]
 "

@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="optional"
 IUSE="${GENERATED_IUSE} examples"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/numpy-3[${PYTHON_USEDEP}]
 	optional? ( >=dev-python/scipy-1.9[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	<dev-python/numpy-3[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.22.4[${PYTHON_USEDEP}]

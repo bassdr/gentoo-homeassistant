@@ -17,23 +17,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	code_style? ( dev-python/black[${PYTHON_USEDEP}] )
 	code_style? ( <dev-python/flake8-3.8.0[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 	sphinx? ( >=dev-python/sphinx-2[${PYTHON_USEDEP}] )
 	sphinx? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
-	code_style? ( ~dev-vcs/pre-commit-1.17.0[${PYTHON_USEDEP}] )
+	code_style? ( =dev-vcs/pre-commit-1.17.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	dev-python/myst-parser[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-2[${PYTHON_USEDEP}]
-	dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/myst-parser[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-2[${PYTHON_USEDEP}]
+		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

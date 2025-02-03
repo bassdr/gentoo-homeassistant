@@ -20,14 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/adb-shell-0.4.0[${PYTHON_USEDEP}]
 	usb? ( >=dev-python/adb-shell-0.4.0[usb,${PYTHON_USEDEP}] )
 	async? ( >=dev-python/aiofiles-0.4.0[${PYTHON_USEDEP}] )
 	async? ( >=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/pure-python-adb-0.3.0_pre0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	async? ( >=dev-python/aiofiles-0.4.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10) )
 	>=dev-python/pure-python-adb-0.3.0[${PYTHON_USEDEP}]

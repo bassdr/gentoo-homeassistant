@@ -15,13 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/branca-0.5.0[${PYTHON_USEDEP}]
 	<dev-python/ipywidgets-9[${PYTHON_USEDEP}]
 	<dev-python/jupyter-leaflet-0.20[${PYTHON_USEDEP}]
 	<dev-python/traittypes-3[${PYTHON_USEDEP}]
 	>=dev-python/xyzservices-2021.8.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

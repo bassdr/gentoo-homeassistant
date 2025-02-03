@@ -20,10 +20,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/bitarray-3[${PYTHON_USEDEP}]
 	>=dev-python/bitarray-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/gfloat-0.1[${PYTHON_USEDEP}]

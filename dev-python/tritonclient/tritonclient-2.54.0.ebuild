@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}] )
 	http? ( <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/cuda-python[${PYTHON_USEDEP}] )
@@ -40,6 +40,10 @@ GENERATED_DEPEND="${RDEPEND}
 	http? ( >=dev-python/python-rapidjson-0.9.1[${PYTHON_USEDEP}] )
 	>=dev-python/urllib3-2.0.7[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

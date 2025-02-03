@@ -16,18 +16,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
-	~dev-python/bokeh-3[${PYTHON_USEDEP}]
-	~dev-python/ipywidgets-8[${PYTHON_USEDEP}]
+GENERATED_RDEPEND="${RDEPEND}
+	=dev-python/bokeh-3*[${PYTHON_USEDEP}]
+	=dev-python/ipywidgets-8*[${PYTHON_USEDEP}]
 	all? ( dev-python/jupyter-bokeh[build,${PYTHON_USEDEP}] )
 	all? ( dev-python/jupyter-bokeh[tests,${PYTHON_USEDEP}] )
-	build? ( ~dev-python/jupyterlab-4.0[${PYTHON_USEDEP}] )
+	build? ( >=dev-python/jupyterlab-4.0[${PYTHON_USEDEP}] =dev-python/jupyterlab-4*[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/setuptools-40.8.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/flake8[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

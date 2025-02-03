@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/distlib-1[${PYTHON_USEDEP}]
 	<dev-python/filelock-4[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/furo-2023.7.26[${PYTHON_USEDEP}] )
@@ -37,7 +37,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/time-machine-2.10[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/towncrier-23.6[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/distlib-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.12.2[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-3.9.1[${PYTHON_USEDEP}]
@@ -70,19 +70,22 @@ BDEPEND="
 
 EPYTEST_TIMEOUT=180
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
-	>=dev-python/coverage-7.2.7[${PYTHON_USEDEP}]
-	>=dev-python/coverage-enable-subprocess-1[${PYTHON_USEDEP}]
-	>=dev-python/flaky-3.7[${PYTHON_USEDEP}]
-	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
-	>=dev-python/pytest-env-0.8.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.11.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-randomly-3.12[${PYTHON_USEDEP}]
-	>=dev-python/pytest-timeout-2.1[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-68[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+		>=dev-python/coverage-7.2.7[${PYTHON_USEDEP}]
+		>=dev-python/coverage-enable-subprocess-1[${PYTHON_USEDEP}]
+		>=dev-python/flaky-3.7[${PYTHON_USEDEP}]
+		>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-env-0.8.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.11.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-randomly-3.12[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-68[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	local PATCHES=(

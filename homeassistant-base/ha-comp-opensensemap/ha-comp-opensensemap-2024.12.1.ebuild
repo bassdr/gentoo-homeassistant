@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/opensensemap-api-0.2.0[${PYTHON_USEDEP}]
+	=dev-python/opensensemap-api-0.2.0[${PYTHON_USEDEP}]
 "

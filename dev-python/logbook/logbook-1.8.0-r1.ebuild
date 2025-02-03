@@ -22,16 +22,6 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all compression docs execnet jinja redis sqlalchemy zmq"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
-	compression? ( dev-python/brotli[${PYTHON_USEDEP}] )
-	execnet? ( >=dev-python/execnet-1.0.9[${PYTHON_USEDEP}] )
-	jinja? ( dev-python/jinja2[${PYTHON_USEDEP}] )
-	all? ( dev-python/logbook[compression,execnet,jinja,nteventlog,redis,sqlalchemy,zmq,${PYTHON_USEDEP}] )
-	zmq? ( dev-python/pyzmq[${PYTHON_USEDEP}] )
-	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
-	sqlalchemy? ( >=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		app-arch/brotli[${PYTHON_USEDEP},python]
@@ -44,12 +34,15 @@ BDEPEND="
 	)
 "
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/logbook[test,${PYTHON_USEDEP}]
-	>=dev-python/pytest-6[${PYTHON_USEDEP}]
-	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-	>=dev-python/tox-4[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/logbook[test,${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		>=dev-python/tox-4[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs
 
 python_configure_all() {
@@ -65,4 +58,5 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -p rerunfailures
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

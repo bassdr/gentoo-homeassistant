@@ -19,23 +19,23 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build devel dist static-analysis"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	build? ( dev-python/changelog-chug[${PYTHON_USEDEP}] )
 	build? ( dev-python/docutils[${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/isort-5.13[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/isort-5.13[${PYTHON_USEDEP}] =dev-python/isort-5*[${PYTHON_USEDEP}] )
 	>=dev-python/lockfile-0.10[${PYTHON_USEDEP}]
 	static-analysis? ( dev-python/pip-check[${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/pycodestyle-2.12[${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/pydocstyle-6.3[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/pycodestyle-2.12[${PYTHON_USEDEP}] =dev-python/pycodestyle-2*[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/pydocstyle-6.3[${PYTHON_USEDEP}] =dev-python/pydocstyle-6*[${PYTHON_USEDEP}] )
 	build? ( dev-python/python-daemon[doc,${PYTHON_USEDEP}] )
 	devel? ( dev-python/python-daemon[dist,test,${PYTHON_USEDEP}] )
 	dist? ( dev-python/python-daemon[build,${PYTHON_USEDEP}] )
-	static-analysis? ( ~dev-python/pyupgrade-3.17[${PYTHON_USEDEP}] )
+	static-analysis? ( >=dev-python/pyupgrade-3.17[${PYTHON_USEDEP}] =dev-python/pyupgrade-3*[${PYTHON_USEDEP}] )
 	dist? ( dev-python/twine[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/lockfile-0.10[${PYTHON_USEDEP}]
 "
 
@@ -48,12 +48,15 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-BDEPEND+=" test? (
-	dev-python/coverage[${PYTHON_USEDEP}]
-	dev-python/python-daemon[build,static-analysis,${PYTHON_USEDEP}]
-	>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
-	dev-python/testtools[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/python-daemon[build,static-analysis,${PYTHON_USEDEP}]
+		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+		dev-python/testtools[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

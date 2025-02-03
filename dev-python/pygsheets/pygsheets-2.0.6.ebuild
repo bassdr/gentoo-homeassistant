@@ -16,12 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/enum34-1.1.6[${PYTHON_USEDEP}]
 	>=dev-python/google-api-python-client-2.50.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.7.1[${PYTHON_USEDEP}]
 	pandas? ( >=dev-python/pandas-0.14.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

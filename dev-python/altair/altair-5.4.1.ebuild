@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/altair-tiles-0.3.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/anywidget-0.9.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/docutils[${PYTHON_USEDEP}] )
@@ -42,23 +42,26 @@ GENERATED_DEPEND="${RDEPEND}
 	all? ( >=dev-python/vegafusion-1.6.6[embed,${PYTHON_USEDEP}] )
 	all? ( >=dev-python/vl-convert-python-1.6.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/geopandas[${PYTHON_USEDEP}]
-	dev-python/hatch[${PYTHON_USEDEP}]
-	dev-python/ibis-framework[polars,${PYTHON_USEDEP}]
-	dev-python/ipython[kernel,${PYTHON_USEDEP}]
-	dev-python/mistune[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
-	>=dev-python/pandas-0.25.3[${PYTHON_USEDEP}]
-	dev-python/pandas-stubs[${PYTHON_USEDEP}]
-	>=dev-python/polars-0.20.3[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	~dev-python/pytest-xdist-3.5[psutil,${PYTHON_USEDEP}]
-	>=dev-python/ruff-0.6.0[${PYTHON_USEDEP}]
-	dev-python/types-jsonschema[${PYTHON_USEDEP}]
-	dev-python/types-setuptools[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/geopandas[${PYTHON_USEDEP}]
+		dev-python/hatch[${PYTHON_USEDEP}]
+		dev-python/ibis-framework[polars,${PYTHON_USEDEP}]
+		dev-python/ipython[kernel,${PYTHON_USEDEP}]
+		dev-python/mistune[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		>=dev-python/pandas-0.25.3[${PYTHON_USEDEP}]
+		dev-python/pandas-stubs[${PYTHON_USEDEP}]
+		>=dev-python/polars-0.20.3[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-3.5[psutil,${PYTHON_USEDEP}] =dev-python/pytest-xdist-3*[psutil,${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.6.0[${PYTHON_USEDEP}]
+		dev-python/types-jsonschema[${PYTHON_USEDEP}]
+		dev-python/types-setuptools[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

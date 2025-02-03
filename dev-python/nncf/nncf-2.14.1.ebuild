@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jsonschema-3.2.0[${PYTHON_USEDEP}]
 	>=dev-python/jstyleson-0.0.2[${PYTHON_USEDEP}]
 	plots? ( >=dev-python/kaleido-0.2.1[${PYTHON_USEDEP}] )
@@ -40,6 +40,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/tabulate-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.54.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

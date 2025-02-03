@@ -23,11 +23,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
-	develop? ( dev-python/aiomisc-pytest[${PYTHON_USEDEP}] )
-	develop? ( dev-python/pytest[${PYTHON_USEDEP}] )
-	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -41,4 +36,5 @@ python_test() {
 }
 
 distutils_enable_tests pytest
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

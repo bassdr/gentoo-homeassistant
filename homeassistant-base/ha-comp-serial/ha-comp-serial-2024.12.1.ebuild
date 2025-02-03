@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyserial-asyncio-fast-0.13[${PYTHON_USEDEP}]
+	=dev-python/pyserial-asyncio-fast-0.13[${PYTHON_USEDEP}]
 "

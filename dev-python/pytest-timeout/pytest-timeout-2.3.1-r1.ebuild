@@ -20,9 +20,6 @@ KEYWORDS="amd64 arm64"
 # do not rdepend on pytest, it won't be used without it anyway
 # pytest-cov used to test compatibility
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
-	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
-"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
@@ -47,4 +44,5 @@ python_test() {
 
 	epytest
 }
+# Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild

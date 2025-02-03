@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	plus? ( dev-python/esda[${PYTHON_USEDEP}] )
 	>=dev-python/geopandas-0.12.0[${PYTHON_USEDEP}]
 	plus? ( dev-python/inequality[${PYTHON_USEDEP}] )
@@ -29,6 +29,6 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/shapely-2[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.63.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

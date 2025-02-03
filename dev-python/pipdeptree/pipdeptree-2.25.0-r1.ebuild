@@ -18,12 +18,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="graphviz"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	graphviz? ( >=dev-python/graphviz-0.20.3[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
 	>=dev-python/pip-24.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
 	>=dev-python/pip-23.1.2[${PYTHON_USEDEP}]
 "
@@ -38,15 +38,18 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
-	>=dev-python/diff-cover-9.1.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-console-scripts-1.4.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-cov-5[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
-	<dev-python/virtualenv-21[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+		>=dev-python/diff-cover-9.1.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-console-scripts-1.4.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+		<dev-python/virtualenv-21[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

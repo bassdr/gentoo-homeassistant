@@ -18,9 +18,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="numpy"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.0[${PYTHON_USEDEP}]
 	numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND} dev-python/cffi[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_RDEPEND} dev-python/cffi[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]"

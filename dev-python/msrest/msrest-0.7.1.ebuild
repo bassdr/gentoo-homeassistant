@@ -16,15 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiodns[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-core-1.24.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]
-	~dev-python/requests-2.16[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.16[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}]
 	>=dev-python/requests-oauthlib-0.5.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"

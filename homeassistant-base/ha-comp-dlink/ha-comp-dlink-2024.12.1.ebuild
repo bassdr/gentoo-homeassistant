@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/pyw215-0.7.0[${PYTHON_USEDEP}]
+	=dev-python/pyw215-0.7.0[${PYTHON_USEDEP}]
 "

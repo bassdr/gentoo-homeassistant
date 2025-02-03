@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-14.05.14[${PYTHON_USEDEP}]
 	ciso? ( >=dev-python/ciso8601-2.1.1[${PYTHON_USEDEP}] )
 	extra? ( dev-python/numpy[${PYTHON_USEDEP}] )
@@ -33,7 +33,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/six-1.10[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.15.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/Rx-3.0.1
 	>=dev-python/certifi-14.05.14
 	>=dev-python/six-1.10
@@ -57,13 +57,16 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-4.0.3[${PYTHON_USEDEP}]
-	~dev-python/httpretty-1.0.5[${PYTHON_USEDEP}]
-	>=dev-python/nose-1.3.7[${PYTHON_USEDEP}]
-	>=dev-python/pluggy-0.3.1[${PYTHON_USEDEP}]
-	>=dev-python/psutil-5.6.3[${PYTHON_USEDEP}]
-	>=dev-python/py-1.4.31[${PYTHON_USEDEP}]
-	>=dev-python/pytest-5.0.0[${PYTHON_USEDEP}]
-	>=dev-python/randomize-0.13[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-4.0.3[${PYTHON_USEDEP}]
+		=dev-python/httpretty-1.0.5[${PYTHON_USEDEP}]
+		>=dev-python/nose-1.3.7[${PYTHON_USEDEP}]
+		>=dev-python/pluggy-0.3.1[${PYTHON_USEDEP}]
+		>=dev-python/psutil-5.6.3[${PYTHON_USEDEP}]
+		>=dev-python/py-1.4.31[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/randomize-0.13[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -24,9 +24,6 @@ KEYWORDS="amd64 arm64"
 IUSE="drafts"
 
 # There are additional test failures if zeromq has the draft api enabled, but pyzmq has it disabled.
-GENERATED_DEPEND="
-	dev-python/cffi[${PYTHON_USEDEP}]
-"
 DEPEND="
 	>=net-libs/zeromq-4.2.2-r2:=[drafts=]
 "

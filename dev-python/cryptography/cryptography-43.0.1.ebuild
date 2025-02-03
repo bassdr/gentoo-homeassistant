@@ -74,10 +74,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs docstest nox pep8test sdist ssh test-randomorder"
 IUSE="${GENERATED_IUSE}"
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	ssh? ( >=dev-python/bcrypt-3.1.5[${PYTHON_USEDEP}] )
 	sdist? ( dev-python/build[${PYTHON_USEDEP}] )
-	dev-python/cffi[${PYTHON_USEDEP}]
 	pep8test? ( dev-python/check-sdist[${PYTHON_USEDEP}] )
 	pep8test? ( dev-python/click[${PYTHON_USEDEP}] )
 	pep8test? ( dev-python/mypy[${PYTHON_USEDEP}] )
@@ -90,7 +89,7 @@ GENERATED_DEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-rtd-theme-1.1.1[${PYTHON_USEDEP}] )
 	docstest? ( >=dev-python/sphinxcontrib-spelling-4.0.1[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-libs/openssl-1.0.2o-r6:0=
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.8:=[${PYTHON_USEDEP}]
@@ -119,15 +118,18 @@ BDEPEND="
 QA_FLAGS_IGNORED="usr/lib.*/py.*/site-packages/cryptography/hazmat/bindings/_rust.*.so"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/certifi[${PYTHON_USEDEP}]
-	~dev-python/cryptography-vectors-43.0.1[${PYTHON_USEDEP}]
-	dev-python/pretend[${PYTHON_USEDEP}]
-	>=dev-python/pytest-6.2.0[${PYTHON_USEDEP}]
-	dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-xdist[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/certifi[${PYTHON_USEDEP}]
+		=dev-python/cryptography-vectors-43.0.1[${PYTHON_USEDEP}]
+		dev-python/pretend[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.0[${PYTHON_USEDEP}]
+		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 src_unpack() {
 	cargo_src_unpack

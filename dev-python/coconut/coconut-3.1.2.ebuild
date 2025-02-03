@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aenum-3.1.15[${PYTHON_USEDEP}]
 	<dev-python/cpyparsing-2.4.7.2.5[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
@@ -70,25 +70,28 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/xonsh-0.9[${PYTHON_USEDEP}]
 	>=dev-vcs/pre-commit-3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/jupyter-1.1[${PYTHON_USEDEP}]
-	>=dev-python/mypy-1.11[python2,${PYTHON_USEDEP}]
-	>=dev-python/myst-parser-4[${PYTHON_USEDEP}]
-	>=dev-python/papermill-1.2[${PYTHON_USEDEP}]
-	>=dev-python/pexpect-4[${PYTHON_USEDEP}]
-	>=dev-python/py-spy-0.3[${PYTHON_USEDEP}]
-	>=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}]
-	<dev-python/pyparsing-2.4.8[${PYTHON_USEDEP}]
-	>=dev-python/pyright-1.1[${PYTHON_USEDEP}]
-	>=dev-python/pytest-remotedata-0.3[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.32[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-8[${PYTHON_USEDEP}]
-	>=dev-python/sphinxcontrib-applehelp-2[${PYTHON_USEDEP}]
-	>=dev-python/sphinxcontrib-htmlhelp-2[${PYTHON_USEDEP}]
-	>=dev-python/types-backports-0.1[${PYTHON_USEDEP}]
-	>=dev-python/vprof-0.36[${PYTHON_USEDEP}]
-	>=dev-python/watchdog-0.10[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/jupyter-1.1[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.11[python2,${PYTHON_USEDEP}]
+		>=dev-python/myst-parser-4[${PYTHON_USEDEP}]
+		>=dev-python/papermill-1.2[${PYTHON_USEDEP}]
+		>=dev-python/pexpect-4[${PYTHON_USEDEP}]
+		>=dev-python/py-spy-0.3[${PYTHON_USEDEP}]
+		>=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}]
+		<dev-python/pyparsing-2.4.8[${PYTHON_USEDEP}]
+		>=dev-python/pyright-1.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-remotedata-0.3[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.32[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-8[${PYTHON_USEDEP}]
+		>=dev-python/sphinxcontrib-applehelp-2[${PYTHON_USEDEP}]
+		>=dev-python/sphinxcontrib-htmlhelp-2[${PYTHON_USEDEP}]
+		>=dev-python/types-backports-0.1[${PYTHON_USEDEP}]
+		>=dev-python/vprof-0.36[${PYTHON_USEDEP}]
+		>=dev-python/watchdog-0.10[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

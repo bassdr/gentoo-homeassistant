@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/argcomplete-3.6[${PYTHON_USEDEP}]
 	<dev-python/charset-normalizer-4[${PYTHON_USEDEP}]
 	<dev-python/colorama-0.5.0[${PYTHON_USEDEP}]
@@ -27,6 +27,6 @@ GENERATED_DEPEND="${RDEPEND}
 	<dev-python/termcolor-3[${PYTHON_USEDEP}]
 	<dev-python/tomlkit-1.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

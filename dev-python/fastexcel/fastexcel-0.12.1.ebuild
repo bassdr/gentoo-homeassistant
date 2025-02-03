@@ -16,11 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	pandas? ( >=dev-python/pandas-1.4.4[${PYTHON_USEDEP}] )
 	polars? ( >=dev-python/polars-0.16.14[${PYTHON_USEDEP}] )
 	>=dev-python/pyarrow-8.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

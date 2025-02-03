@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 IUSE=""
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/babel-2.0[${PYTHON_USEDEP}]
 	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.5.4[${PYTHON_USEDEP}]
@@ -27,7 +27,7 @@ GENERATED_DEPEND="${RDEPEND}
 	>=dev-python/python-slugify-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/pytimeparse-1.1.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_DEPEND}
+RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytimeparse-1.1.5[${PYTHON_USEDEP}]
 	>=dev-python/parsedatetime-2.1[${PYTHON_USEDEP}]
 	>=dev-python/babel-2.0[${PYTHON_USEDEP}]
@@ -44,13 +44,16 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	>=dev-python/coverage-3.7.1[${PYTHON_USEDEP}]
-	>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
-	>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-3.7.1[${PYTHON_USEDEP}]
+		>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
+		>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs \
 	dev-python/furo
 

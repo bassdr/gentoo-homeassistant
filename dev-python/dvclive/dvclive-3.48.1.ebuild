@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	huggingface? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	>=dev-python/dvc-3.48.4[${PYTHON_USEDEP}]
 	<dev-python/dvc-render-2[${PYTHON_USEDEP}]
@@ -46,21 +46,24 @@ GENERATED_DEPEND="${RDEPEND}
 	huggingface? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	xgb? ( dev-python/xgboost[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/dpath[${PYTHON_USEDEP}]
-	dev-python/dvclive[all,tests,${PYTHON_USEDEP}]
-	dev-python/dvclive[image,markdown,plots,${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
-	~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-9.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-cov-6.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-mock-4.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-sugar-2.0[${PYTHON_USEDEP}]
-	dev-python/pytest-voluptuous[${PYTHON_USEDEP}]
-	dev-python/tf-keras[${PYTHON_USEDEP}]
-	dev-python/transformers[torch,${PYTHON_USEDEP}]
-	dev-python/types-pyyaml[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dpath[${PYTHON_USEDEP}]
+		dev-python/dvclive[all,tests,${PYTHON_USEDEP}]
+		dev-python/dvclive[image,markdown,plots,${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-9.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-cov-6.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-mock-4.0[${PYTHON_USEDEP}]
+		<dev-python/pytest-sugar-2.0[${PYTHON_USEDEP}]
+		dev-python/pytest-voluptuous[${PYTHON_USEDEP}]
+		dev-python/tf-keras[${PYTHON_USEDEP}]
+		dev-python/transformers[torch,${PYTHON_USEDEP}]
+		dev-python/types-pyyaml[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

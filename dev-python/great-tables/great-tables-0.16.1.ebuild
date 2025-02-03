@@ -16,14 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_DEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/babel-2.13.1[${PYTHON_USEDEP}]
 	>=dev-python/commonmark-0.9.1[${PYTHON_USEDEP}]
 	>=dev-python/css-inline-0.14.1[${PYTHON_USEDEP}]
 	>=dev-python/faicons-0.2.2[${PYTHON_USEDEP}]
 	all? ( dev-python/great-tables[dev,${PYTHON_USEDEP}] )
 	all? ( dev-python/great-tables[extra,${PYTHON_USEDEP}] )
-	dev-no-pandas? ( ~dev-python/griffe-0.38.1[${PYTHON_USEDEP}] )
+	dev-no-pandas? ( =dev-python/griffe-0.38.1[${PYTHON_USEDEP}] )
 	>=dev-python/htmltools-0.4.1[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
@@ -35,17 +35,20 @@ GENERATED_DEPEND="${RDEPEND}
 	dev-no-pandas? ( >=dev-python/pyright-1.1.244[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( >=dev-python/pytest-3[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev-no-pandas? ( ~dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
+	dev-no-pandas? ( =dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/selenium-4.18.1[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/shiny[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/syrupy[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
-	dev-no-pandas? ( ~dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}] )
+	dev-no-pandas? ( =dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_DEPEND}"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/great-tables[dev-no-pandas,${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/great-tables[dev-no-pandas,${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
