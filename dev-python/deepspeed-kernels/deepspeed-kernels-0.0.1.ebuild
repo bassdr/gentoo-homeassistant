@@ -3,13 +3,14 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 IUSE=""
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
-SRC_URI="$(pypi_sdist_url --no-normalize "deepspeed-kernels" "0.0.1.dev1698255861")"
-S="${WORKDIR}/deepspeed-kernels-0.0.1.dev1698255861"
+MY_PN="DeepSpeed-Kernels"
+MY_P="${MY_PN}-${PV}"
+SRC_URI="https://github.com/microsoft/${MY_PN}/archive/refs/tags/v${PV}.tar.gz -> ${MY_P}.gh.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION=""
 HOMEPAGE="

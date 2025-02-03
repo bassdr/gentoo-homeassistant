@@ -17,13 +17,12 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+IUSE=""
 
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="test? ( )"
 
 src_prepare() {
 	echo '[build-system]' >> pyproject.toml

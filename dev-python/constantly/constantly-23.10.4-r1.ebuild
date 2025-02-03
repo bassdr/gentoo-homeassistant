@@ -5,6 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+IUSE="test"
 
 inherit distutils-r1
 
@@ -22,9 +23,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
+distutils_enable_tests unittest
+BDEPEND="${BDEPEND}
 	dev-python/versioneer[${PYTHON_USEDEP}]
 	test? ( dev-python/twisted[${PYTHON_USEDEP}] )
 "
-
-distutils_enable_tests unittest

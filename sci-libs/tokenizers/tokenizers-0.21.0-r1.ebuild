@@ -9,6 +9,7 @@ DISTUTILS_USE_PEP517=maturin
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_EXT=1
 DISTUTILS_SINGLE_IMPL=1
+CRATES="
 	adler2@2.0.0
 	aho-corasick@1.1.3
 	anes@0.1.6
@@ -235,15 +236,9 @@ GENERATED_RDEPEND="${RDEPEND} $(python_gen_cond_dep '
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 ')"
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="
-	test? ( sci-libs/datasets[${PYTHON_SINGLE_USEDEP}] )
-	$(python_gen_cond_dep '
-		dev-python/setuptools-rust[${PYTHON_USEDEP}]
-	')
-"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
+GENERATED_BDEPEND="${BDEPEND} $(python_gen_cond_dep '
 	test? (
 		=dev-python/black-22.3[${PYTHON_USEDEP}]
 		dev-python/datasets[${PYTHON_USEDEP}]
@@ -253,8 +248,12 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/ruff[${PYTHON_USEDEP}]
 		sci-libs/tokenizers[testing,${PYTHON_USEDEP}]
 	)
+')"
+BDEPEND="${GENERATED_BDEPEND}
+	$(python_gen_cond_dep '
+		dev-python/setuptools-rust[${PYTHON_USEDEP}]
+	')
 "
-BDEPEND="${GENERATED_BDEPEND}"
 
 QA_FLAGS_IGNORED=".*/site-packages/tokenizers/.*so"
 
