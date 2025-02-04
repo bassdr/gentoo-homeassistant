@@ -7,7 +7,12 @@ PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="developer docs"
 IUSE="${GENERATED_IUSE}"
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+MY_PN=cucim
+MY_PV=$(printf '%02d.%02d.%02d' ${PV//./ })
+MY_P=${MY_PN}-${MY_PV}
+SRC_URI="https://github.com/rapidsai/cucim/archive/refs/tags/v${MY_PV}.tar.gz -> ${MY_P}.gh.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION=""
 HOMEPAGE="

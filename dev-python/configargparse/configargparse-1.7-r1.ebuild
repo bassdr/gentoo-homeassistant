@@ -24,11 +24,8 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	test? (
-		dev-python/pyyaml[${PYTHON_USEDEP}]
-	)
-"
+
+RDEPEND=""
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
@@ -49,5 +46,3 @@ src_test() {
 	local -x COLUMNS=80
 	distutils-r1_src_test
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
