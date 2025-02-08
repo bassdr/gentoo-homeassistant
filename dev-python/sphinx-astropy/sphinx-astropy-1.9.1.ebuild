@@ -17,6 +17,21 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	astropy ; extra == 'all'
+	astropy-sphinx-theme
+	numpydoc
+	packaging
+	pillow
+	pydata-sphinx-theme ; extra == 'confv2'
+	pytest ; extra == 'tests'
+	pytest-doctestplus (>=0.11)
+	sphinx (>=3.0.0)
+	sphinx-automodapi
+	sphinx-copybutton ; extra == 'confv2'
+	sphinx-gallery
+	sphinxcontrib-jquery
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/astropy[${PYTHON_USEDEP}] )
 	dev-python/astropy-sphinx-theme[${PYTHON_USEDEP}]

@@ -23,8 +23,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	fnvhash<0.2.0,>=0.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/fnvhash-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/fnvhash-0.1.0[${PYTHON_USEDEP}] <dev-python/fnvhash-0.2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/fnvhash[${PYTHON_USEDEP}]"

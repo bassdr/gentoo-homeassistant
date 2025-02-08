@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs >=19.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 "

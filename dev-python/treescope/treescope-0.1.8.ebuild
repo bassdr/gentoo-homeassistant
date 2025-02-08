@@ -16,6 +16,39 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py>=1.4.0; extra == "test"
+	ipython; extra == "dev"
+	ipython; extra == "docs"
+	ipython; extra == "notebook"
+	ipython>=8.8.0; extra == "docs"
+	jax>=0.4.23; extra == "notebook"
+	jax>=0.4.23; extra == "test"
+	jax[cpu]>=0.4.23; extra == "docs"
+	jupyter; extra == "dev"
+	matplotlib>=3.5.0; extra == "docs"
+	myst-nb>=1.0.0; extra == "docs"
+	myst-parser>=3.0.1; extra == "docs"
+	numpy>=1.25.2
+	packaging==24.1; extra == "docs"
+	palettable; extra == "notebook"
+	palettable==3.3.3; extra == "docs"
+	pandas==2.2.2; extra == "docs"
+	penzai~=0.2.4; extra == "docs"
+	plotly==5.22.0; extra == "docs"
+	pyink>=24.3.0; extra == "dev"
+	pylint>=2.6.0; extra == "dev"
+	pytest>=8.2.2; extra == "dev"
+	pytest>=8.2.2; extra == "test"
+	pytype; extra == "dev"
+	sphinx-book-theme>=1.0.1; extra == "docs"
+	sphinx-hoverxref; extra == "docs"
+	sphinx<7.3.0,>=6.0.0; extra == "docs"
+	sphinx_contributors; extra == "docs"
+	sphinxcontrib-katex; extra == "docs"
+	torch==2.3.1; extra == "docs"
+	torch>=2.0.0; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/ipython-8.8.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -26,18 +59,18 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-3.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.25.2[${PYTHON_USEDEP}]
-	docs? ( =dev-python/packaging-24.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/palettable-3.3.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/packaging-24.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/palettable-3.3.3[${PYTHON_USEDEP}] )
 	notebook? ( dev-python/palettable[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/pandas-2.2.2[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/pandas-2.2.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/penzai-0.2.4[${PYTHON_USEDEP}] =dev-python/penzai-0.2*[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/plotly-5.22.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-7.3.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/plotly-5.22.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-7.3.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-book-theme-1.0.1[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-contributors[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-hoverxref[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-katex[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/torch-2.3.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/torch-2.3.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

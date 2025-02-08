@@ -16,16 +16,53 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	CacheControl[filecache]>=0.12.14
+	Sphinx; extra == "docs"
+	Sphinx; extra == "test"
+	Twisted
+	astor; python_version < "3.9"
+	attrs
+	bs4; extra == "test"
+	configargparse
+	coverage; extra == "test"
+	cython-test-exception-raiser; extra == "test"
+	docutils; extra == "rst"
+	docutils>=0.17
+	docutils>=0.18.1; extra == "test"
+	hypothesis; extra == "mypy"
+	hypothesis; extra == "test"
+	importlib_resources; python_version < "3.9"
+	lunr<0.8.0,>=0.6.2
+	mypy-zope; extra == "mypy"
+	mypy>=0.902; extra == "mypy"
+	platformdirs
+	pytest-subtests; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest; extra == "test"
+	pytest>=6.0.0; extra == "mypy"
+	requests
+	setuptools; extra == "test"
+	sphinx-argparse; extra == "docs"
+	sphinx>=3.4.0; extra == "mypy"
+	sphinx_rtd_theme; extra == "docs"
+	sphinxcontrib-spelling; extra == "docs"
+	toml; python_version < "3.11"
+	twisted; extra == "mypy"
+	types-docutils; extra == "mypy"
+	types-requests; extra == "mypy"
+	types-toml; extra == "mypy"
+	typing-extensions; extra == "mypy"
+	urllib3>=2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/astor[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/cachecontrol-0.12.14[filecache,${PYTHON_USEDEP}]
 	dev-python/configargparse[${PYTHON_USEDEP}]
 	>=dev-python/docutils-0.17[${PYTHON_USEDEP}]
 	rst? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	<dev-python/lunr-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/lunr-0.6.2[${PYTHON_USEDEP}] <dev-python/lunr-0.8.0[${PYTHON_USEDEP}]
 	mypy? ( >=dev-python/mypy-0.902[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/mypy-zope[${PYTHON_USEDEP}] )
 	dev-python/platformdirs[${PYTHON_USEDEP}]

@@ -16,6 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	matplotlib; extra == "all"
+	numpy
+	tifffile
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]

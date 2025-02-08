@@ -23,9 +23,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	dev-libs/xmlsec:=[openssl]
+"
+REQUIRES_DIST="
+	lxml>=3.8
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/lxml-3.8[${PYTHON_USEDEP}]

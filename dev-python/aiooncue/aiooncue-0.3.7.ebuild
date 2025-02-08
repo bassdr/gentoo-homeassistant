@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "

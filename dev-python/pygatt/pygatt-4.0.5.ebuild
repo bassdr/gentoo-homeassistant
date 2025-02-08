@@ -19,6 +19,10 @@ KEYWORDS="amd64 arm64"
 
 DOCS=( CHANGELOG.rst README.rst )
 IUSE="+GATTTOOL"
+REQUIRES_DIST="
+	enum-compat
+	pyserial
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/enum-compat[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]

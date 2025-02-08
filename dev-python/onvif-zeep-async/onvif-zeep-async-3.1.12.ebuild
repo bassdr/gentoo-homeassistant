@@ -21,10 +21,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	ciso8601 (>=2.1.3)
+	httpx (<1.0.0,>=0.19.0)
+	zeep[async] (<5.0.0,>=4.2.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ciso8601-2.1.3[${PYTHON_USEDEP}]
-	<dev-python/httpx-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/zeep-5.0.0[async,${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.19.0[${PYTHON_USEDEP}] <dev-python/httpx-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/zeep-4.2.1[async,${PYTHON_USEDEP}] <dev-python/zeep-5.0.0[async,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httpx-0.19.0[${PYTHON_USEDEP}]

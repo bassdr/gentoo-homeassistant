@@ -16,6 +16,36 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	h5py; extra == "dev"
+	hdf5plugin; extra == "dev"
+	httpx
+	jupyterlab; extra == "dev"
+	matplotlib; extra == "dev"
+	msgpack
+	myst-parser; extra == "doc"
+	nbsphinx; extra == "doc"
+	ndindex
+	numexpr
+	numpy>=1.25.0
+	numpydoc; extra == "doc"
+	pandas; extra == "dev"
+	plotly; extra == "dev"
+	pre-commit; extra == "dev"
+	psutil; extra == "test"
+	py-cpuinfo
+	pyarrow; extra == "dev"
+	pydata-sphinx-theme; extra == "doc"
+	pytest; extra == "test"
+	ruff; extra == "dev"
+	s3fs; extra == "dev"
+	sphinx-panels; extra == "doc"
+	sphinx-paramlinks; extra == "doc"
+	sphinx; extra == "doc"
+	torch; extra == "test"
+	xarray; extra == "dev"
+	zarr; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/msgpack[${PYTHON_USEDEP}]

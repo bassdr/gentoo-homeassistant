@@ -20,7 +20,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	attrs>=19.2
+	certifi
+	jsonschema>=3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]

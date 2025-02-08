@@ -12,7 +12,7 @@ inherit distutils-r1
 MY_P=${P/-/-v}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/PyICU/"
+  https://pypi.org/project/pyicu/"
 SRC_URI="
 	https://gitlab.pyicu.org/main/pyicu/-/archive/v${PV}/${MY_P}.tar.bz2
 "

@@ -12,7 +12,7 @@ SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} ${PV} .zip)"
 
 DESCRIPTION="Library of psychrometric functions to calculate thermodynamic properties of air"
 HOMEPAGE="
-  https://pypi.org/project/PsychroLib/
+  https://pypi.org/project/psychrolib/
 "
 
 LICENSE="MIT"

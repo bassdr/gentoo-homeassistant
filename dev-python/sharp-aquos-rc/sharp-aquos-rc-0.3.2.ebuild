@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Control Sharp Aquos SmartTVs through the IP interface."
 HOMEPAGE="
-  https://pypi.org/project/sharp_aquos_rc/
+  https://pypi.org/project/sharp-aquos-rc/
 "
 
 LICENSE="MIT"

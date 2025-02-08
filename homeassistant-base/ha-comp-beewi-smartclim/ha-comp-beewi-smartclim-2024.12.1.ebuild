@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/beewi-smartclim-0.0.10[${PYTHON_USEDEP}]
+	~dev-python/beewi-smartclim-0.0.10[${PYTHON_USEDEP}]
 "

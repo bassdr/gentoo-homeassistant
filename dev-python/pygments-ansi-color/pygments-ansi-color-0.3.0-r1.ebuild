@@ -21,9 +21,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pygments (!=2.7.3)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/pygments-2.7.3[${PYTHON_USEDEP}]
+	!~dev-python/pygments-2.7.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pygments[${PYTHON_USEDEP}]

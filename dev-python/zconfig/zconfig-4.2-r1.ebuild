@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/ZConfig/"
+  https://pypi.org/project/zconfig/"
 
 LICENSE="ZPL"
 SLOT="0"

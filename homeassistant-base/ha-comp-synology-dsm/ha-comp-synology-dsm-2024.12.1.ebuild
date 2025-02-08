@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/py-synologydsm-api-2.5.3[${PYTHON_USEDEP}]
+	~dev-python/py-synologydsm-api-2.5.3[${PYTHON_USEDEP}]
 "

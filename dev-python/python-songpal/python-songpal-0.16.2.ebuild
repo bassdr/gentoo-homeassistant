@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp
+	async_upnp_client>=0.32
+	attrs
+	click>=8
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/async-upnp-client-0.32[${PYTHON_USEDEP}]

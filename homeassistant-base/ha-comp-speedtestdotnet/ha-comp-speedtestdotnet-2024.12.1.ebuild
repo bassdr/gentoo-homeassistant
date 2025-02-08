@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=net-analyzer/speedtest-cli-2.1.3[${PYTHON_USEDEP}]
+	~net-analyzer/speedtest-cli-2.1.3[${PYTHON_USEDEP}]
 "

@@ -23,6 +23,14 @@ IUSE="${GENERATED_IUSE}"
 DEPEND="
 	app-arch/lz4:=
 "
+REQUIRES_DIST="
+	flake8 ; extra == 'flake8'
+	psutil ; extra == 'tests'
+	pytest !=3.3.0 ; extra == 'tests'
+	pytest-cov ; extra == 'tests'
+	sphinx >=1.6.0 ; extra == 'docs'
+	sphinx-bootstrap-theme ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	flake8? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.6.0[${PYTHON_USEDEP}] )
@@ -44,7 +52,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/psutil[${PYTHON_USEDEP}]
-		!=dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
+		!~dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "

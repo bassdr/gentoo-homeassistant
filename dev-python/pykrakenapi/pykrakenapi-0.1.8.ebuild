@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	krakenex
+	pandas
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/krakenex[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]

@@ -20,6 +20,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crypto docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	coverage[toml]==5.0.4; extra == "dev"
+	coverage[toml]==5.0.4; extra == "tests"
+	cryptography>=3.4.0; extra == "crypto"
+	cryptography>=3.4.0; extra == "dev"
+	pre-commit; extra == "dev"
+	pytest<7.0.0,>=6.0.0; extra == "dev"
+	pytest<7.0.0,>=6.0.0; extra == "tests"
+	sphinx-rtd-theme; extra == "dev"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "dev"
+	sphinx; extra == "docs"
+	zope.interface; extra == "dev"
+	zope.interface; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	crypto? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
@@ -38,9 +53,9 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}]
+		~dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}]
 		>=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.0.0[${PYTHON_USEDEP}] <dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/zope-interface[${PYTHON_USEDEP}]

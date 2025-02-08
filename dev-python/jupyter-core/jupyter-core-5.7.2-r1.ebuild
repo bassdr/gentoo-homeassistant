@@ -18,6 +18,22 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	ipykernel; extra == 'test'
+	myst-parser; extra == 'docs'
+	platformdirs>=2.5
+	pre-commit; extra == 'test'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-cov; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest<8; extra == 'test'
+	pywin32>=300; sys_platform == 'win32' and platform_python_implementation != 'PyPy'
+	sphinx-autodoc-typehints; extra == 'docs'
+	sphinxcontrib-github-alt; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
+	traitlets; extra == 'docs'
+	traitlets>=5.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/platformdirs-2.5[${PYTHON_USEDEP}]

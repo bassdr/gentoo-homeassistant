@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pytraccar-2.1.1[${PYTHON_USEDEP}]
-	=dev-python/stringcase-1.2.0[${PYTHON_USEDEP}]
+	~dev-python/pytraccar-2.1.1[${PYTHON_USEDEP}]
+	~dev-python/stringcase-1.2.0[${PYTHON_USEDEP}]
 "

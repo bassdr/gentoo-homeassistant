@@ -16,17 +16,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp<4,>=3.9.2
+	apache-airflow-providers-common-sql>=1.20.0
+	apache-airflow>=2.9.0
+	azure-identity>=1.3.1; extra == "azure-identity"
+	databricks-sdk==0.10.0; extra == "sdk"
+	databricks-sql-connector>=3.0.0
+	mergedeep>=1.3.4
+	pandas<2.2,>=1.5.3; python_version < "3.9"
+	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	pyarrow>=14.0.1
+	requests<3,>=2.27.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-providers-common-sql-1.20.0[${PYTHON_USEDEP}]
 	azure-identity? ( >=dev-python/azure-identity-1.3.1[${PYTHON_USEDEP}] )
-	sdk? ( =dev-python/databricks-sdk-0.10.0[${PYTHON_USEDEP}] )
+	sdk? ( ~dev-python/databricks-sdk-0.10.0[${PYTHON_USEDEP}] )
 	>=dev-python/databricks-sql-connector-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/mergedeep-1.3.4[${PYTHON_USEDEP}]
-	<dev-python/pandas-2.2[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.1.2[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}]
 	>=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.27.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

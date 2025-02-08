@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,21 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2 <4.0.0,>=2.7
+	arrow
+	binaryornot >=0.4.4
+	click <9.0.0,>=7.0
+	python-slugify >=4.0.0
+	pyyaml >=5.3.1
+	requests >=2.23.0
+	rich
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/arrow[${PYTHON_USEDEP}]
 	>=dev-python/binaryornot-0.4.4[${PYTHON_USEDEP}]
-	<dev-python/click-9.0.0[${PYTHON_USEDEP}]
-	<dev-python/jinja2-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/click-7.0[${PYTHON_USEDEP}] <dev-python/click-9.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.7[${PYTHON_USEDEP}] <dev-python/jinja2-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-slugify-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}]

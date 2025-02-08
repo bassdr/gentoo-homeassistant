@@ -24,6 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	pkginfo ; extra == 'doc'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	setuptools
+	sphinx ; extra == 'doc'
+	sphinx-rtd-theme ; extra == 'doc'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/pkginfo[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

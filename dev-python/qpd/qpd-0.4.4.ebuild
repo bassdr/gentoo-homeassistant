@@ -16,9 +16,19 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adagio
+	antlr4-python3-runtime (<4.12,>=4.11.1)
+	cloudpickle (>=1.4.0) ; extra == 'all'
+	cloudpickle (>=1.4.0) ; extra == 'dask'
+	dask[dataframe,distributed] ; extra == 'all'
+	dask[dataframe,distributed] ; extra == 'dask'
+	pandas (>=1.2.0)
+	triad (>=0.9.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/adagio[${PYTHON_USEDEP}]
-	<dev-python/antlr4-python3-runtime-4.12[${PYTHON_USEDEP}]
+	>=dev-python/antlr4-python3-runtime-4.11.1[${PYTHON_USEDEP}] <dev-python/antlr4-python3-runtime-4.12[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cloudpickle-1.4.0[${PYTHON_USEDEP}] )
 	dask? ( >=dev-python/cloudpickle-1.4.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/dask[dataframe,distributed,${PYTHON_USEDEP}] )

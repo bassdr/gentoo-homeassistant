@@ -22,6 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiofile
+	backoff>=1.10.0
+	pyserial-asyncio_fast>=0.11
+	pyserial>=3.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofile[${PYTHON_USEDEP}]
 	>=dev-python/backoff-1.10.0[${PYTHON_USEDEP}]

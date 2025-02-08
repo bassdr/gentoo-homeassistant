@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/bimmer-connected-0.17.2[china,${PYTHON_USEDEP}]
+	~dev-python/bimmer-connected-0.17.2[china,${PYTHON_USEDEP}]
 "

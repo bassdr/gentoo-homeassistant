@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Get your energy consumption from Atome Linky device"
 HOMEPAGE="
-  https://pypi.org/project/pyAtome/
+  https://pypi.org/project/pyatome/
 "
 
 LICENSE="Apache-2.0"
@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	fake-useragent
+	requests
+	simplejson
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fake-useragent[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

@@ -21,6 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp >=3.8.5
+	httpx >=0.24.1
+	xmltodict >=0.13.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]

@@ -19,6 +19,13 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	flask
+	prettytable
+	pyserial
+	requests
+	stevedore
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]

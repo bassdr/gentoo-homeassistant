@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/music-assistant-client-1.0.8[${PYTHON_USEDEP}]
+	~dev-python/music-assistant-client-1.0.8[${PYTHON_USEDEP}]
 "

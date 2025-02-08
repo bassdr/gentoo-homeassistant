@@ -16,14 +16,27 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Babel>=2.0
+	PyICU>=2.4.2; sys_platform == "linux" and extra == "test"
+	backports.zoneinfo; python_version < "3.9" and extra == "test"
+	coverage>=3.7.1; extra == "test"
+	cssselect>=0.9.1; extra == "test"
+	isodate>=0.5.4
+	leather>=0.3.2
+	lxml>=3.6.0; extra == "test"
+	parsedatetime!=2.5,>=2.1
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	python-slugify>=1.2.1
+	pytimeparse>=1.1.5
+	tzdata>=2023.3; platform_system == "Windows"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/babel-2.0[${PYTHON_USEDEP}]
-	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.5.4[${PYTHON_USEDEP}]
 	>=dev-python/leather-0.3.2[${PYTHON_USEDEP}]
-	!=dev-python/parsedatetime-2.5[${PYTHON_USEDEP}]
-	>=dev-python/pyicu-2.4.2[${PYTHON_USEDEP}]
+	>=dev-python/parsedatetime-2.1[${PYTHON_USEDEP}] !~dev-python/parsedatetime-2.5[${PYTHON_USEDEP}]
 	>=dev-python/python-slugify-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/pytimeparse-1.1.5[${PYTHON_USEDEP}]
 "
@@ -49,6 +62,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/coverage-3.7.1[${PYTHON_USEDEP}]
 		>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
 		>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
+		>=dev-python/pyicu-2.4.2[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)

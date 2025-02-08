@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow>=7.0.0; extra == "test"
+	blinker; extra == "test"
+	coverage; extra == "test"
+	pymongo<5.0,>=3.4
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/pymongo-5.0[${PYTHON_USEDEP}]
+	>=dev-python/pymongo-3.4[${PYTHON_USEDEP}] <dev-python/pymongo-5.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

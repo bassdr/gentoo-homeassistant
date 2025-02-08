@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML
+	asttokens
+	astunparse
+	black; extra == "dev"
+	execnb>=0.1.4
+	fastcore>=1.5.27
+	ghapi>=1.0.3
+	ipywidgets; extra == "dev"
+	llms-txt; extra == "dev"
+	matplotlib; extra == "dev"
+	nbclassic; extra == "dev"
+	nbdev-numpy; extra == "dev"
+	nbdev-stdlib; extra == "dev"
+	packaging
+	pandas; extra == "dev"
+	pysymbol-llm; extra == "dev"
+	setuptools
+	sphinx; extra == "dev"
+	svg.py; extra == "dev"
+	watchdog
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/asttokens[${PYTHON_USEDEP}]
 	dev-python/astunparse[${PYTHON_USEDEP}]

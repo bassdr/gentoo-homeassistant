@@ -22,6 +22,19 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs docstest pep8test"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	arpeggio >=1.7
+	attrs >=19.2
+	doc8 ; extra == 'docstest'
+	flake8 ; extra == 'pep8test'
+	furo ; extra == 'docs'
+	hypothesis ; extra == 'test'
+	pep8-naming ; extra == 'pep8test'
+	pretend ; extra == 'test'
+	pytest ; extra == 'test'
+	sphinx ; extra == 'docs'
+	typing-extensions ; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/arpeggio-1.7[${PYTHON_USEDEP}]
 	>=dev-python/attrs-19.2[${PYTHON_USEDEP}]

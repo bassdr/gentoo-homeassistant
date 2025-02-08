@@ -23,6 +23,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="examples sasl ssl"
 
+REQUIRES_DIST="
+	pyasn1>=0.3.7
+	pyasn1_modules>=0.1.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyasn1-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-modules-0.1.5[${PYTHON_USEDEP}]

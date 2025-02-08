@@ -17,11 +17,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jaraco.packaging >=9 ; extra == 'docs'
+	jaraco.tidelift >=1.4 ; extra == 'docs'
+	pytest >=6 ; extra == 'testing'
+	pytest-black >=0.3.7 ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-checkdocs >=2.4 ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-enabler >=1.0.1 ; extra == 'testing'
+	pytest-flake8 ; extra == 'testing'
+	pytest-mypy >=0.9.1 ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-virtualenv ; extra == 'testing'
+	rst.linker >=1.9 ; extra == 'docs'
+	sphinx ; extra == 'docs'
+	types-setuptools ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
@@ -31,10 +44,12 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-1.0.1[${PYTHON_USEDEP}]
 		dev-python/pytest-flake8[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 		dev-python/pytest-virtualenv[${PYTHON_USEDEP}]
 		dev-python/types-setuptools[${PYTHON_USEDEP}]
 	)

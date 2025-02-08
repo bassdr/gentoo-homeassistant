@@ -20,9 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	docopt (>=0.6.2,<0.7.0)
+	requests (>=2.21,<3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.21[${PYTHON_USEDEP}]
+	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}] <dev-python/docopt-0.7.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.21[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]"

@@ -18,6 +18,17 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	covdefaults>=2.3; extra == "testing"
+	furo>=2024.8.6; extra == "docs"
+	packaging>=24.2
+	pytest-cov>=6; extra == "testing"
+	pytest-mock>=3.14; extra == "testing"
+	pytest>=8.3.4; extra == "testing"
+	setuptools>=75.8; extra == "testing"
+	sphinx-autodoc-typehints>=3; extra == "docs"
+	tomli>=2.2.1; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]

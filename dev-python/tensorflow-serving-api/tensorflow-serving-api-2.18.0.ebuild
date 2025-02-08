@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,15 +15,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	grpcio<2.0,>=1.24.3
+	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.3
+	tensorflow<3,>=2.18.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/grpcio-2.0[${PYTHON_USEDEP}]
-	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
-	<dev-python/tensorflow-3[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.24.3[${PYTHON_USEDEP}] <dev-python/grpcio-2.0[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.20.3[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.0[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.2[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.3[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.4[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.5[${PYTHON_USEDEP}]
+	>=dev-python/tensorflow-2.18.0[${PYTHON_USEDEP}] <dev-python/tensorflow-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

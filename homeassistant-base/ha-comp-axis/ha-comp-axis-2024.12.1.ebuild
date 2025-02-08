@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/axis-63[${PYTHON_USEDEP}]
+	~dev-python/axis-63[${PYTHON_USEDEP}]
 "

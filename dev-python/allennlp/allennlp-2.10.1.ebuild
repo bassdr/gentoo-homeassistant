@@ -16,58 +16,115 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	base58 (>=2.1.1)
+	black (==22.6.0) ; extra == 'dev'
+	cached-path (<1.2.0,>=1.1.3)
+	checklist (==0.0.11) ; extra == 'all'
+	checklist (==0.0.11) ; extra == 'checklist'
+	codecov (>=2.1.12) ; extra == 'dev'
+	coverage[toml] (>=6.4) ; extra == 'dev'
+	databind-json (<=1.5.3) ; extra == 'dev'
+	databind.core (<=1.5.3) ; extra == 'dev'
+	dataclasses ; python_version < "3.7"
+	dill (>=0.3.4)
+	docspec (<1.2.0,>1.0.1) ; extra == 'dev'
+	docspec-python (<1.2.0,>1.0.1) ; extra == 'dev'
+	fairscale (==0.4.6)
+	filelock (<3.8,>=3.3)
+	flake8 (>=4.0.1) ; extra == 'dev'
+	flaky (>=3.7.0) ; extra == 'dev'
+	h5py (>=3.6.0)
+	huggingface-hub (>=0.0.16)
+	jsonnet (>=0.10.0) ; sys_platform != "win32"
+	lmdb (>=1.2.1)
+	markdown-include (==0.6.0) ; extra == 'dev'
+	matplotlib (>=2.2.3) ; extra == 'dev'
+	mkdocs (==1.3.0) ; extra == 'dev'
+	mkdocs-material (<8.4.0,>=5.5.0) ; extra == 'dev'
+	more-itertools (>=8.12.0)
+	mypy (==0.961) ; extra == 'dev'
+	nltk (>=3.6.5)
+	numpy (>=1.21.4)
+	protobuf (<4.0.0,>=3.12.0)
+	pydoc-markdown (<4.4.0) ; extra == 'dev'
+	pymdown-extensions (>=9.5) ; extra == 'dev'
+	pytest (>=6.2.5)
+	pytest-benchmark (>=3.4.1) ; extra == 'dev'
+	pytest-cov (>=3.0.0) ; extra == 'dev'
+	requests (>=2.28)
+	responses (>=0.21) ; extra == 'dev'
+	ruamel.yaml (>=0.17.17) ; extra == 'dev'
+	sacremoses
+	scikit-learn (>=1.0.1)
+	scipy (>=1.7.3)
+	sentencepiece (>=0.1.96)
+	setuptools ; extra == 'dev'
+	spacy (<3.4,>=2.1.0)
+	tensorboardX (>=1.2)
+	termcolor (==1.1.0)
+	torch (<1.13.0,>=1.10.0)
+	torchvision (<0.14.0,>=0.8.1)
+	tqdm (>=4.62)
+	traitlets (>5.1.1)
+	transformers (<4.21,>=4.1)
+	twine (<5.0.0,>=1.11.0) ; extra == 'dev'
+	typer (>=0.4.1)
+	wandb (<0.13.0,>=0.10.0)
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/base58-2.1.1[${PYTHON_USEDEP}]
-	<dev-python/cached-path-1.2.0[${PYTHON_USEDEP}]
-	all? ( =dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
-	checklist? ( =dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
-	dev-python/dataclasses[${PYTHON_USEDEP}]
+	>=dev-python/cached-path-1.1.3[${PYTHON_USEDEP}] <dev-python/cached-path-1.2.0[${PYTHON_USEDEP}]
+	all? ( ~dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
+	checklist? ( ~dev-python/checklist-0.0.11[${PYTHON_USEDEP}] )
 	>=dev-python/dill-0.3.4[${PYTHON_USEDEP}]
-	=dev-python/fairscale-0.4.6[${PYTHON_USEDEP}]
-	<dev-python/filelock-3.8[${PYTHON_USEDEP}]
+	~dev-python/fairscale-0.4.6[${PYTHON_USEDEP}]
+	>=dev-python/filelock-3.3[${PYTHON_USEDEP}] <dev-python/filelock-3.8[${PYTHON_USEDEP}]
 	>=dev-python/h5py-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/huggingface-hub-0.0.16[${PYTHON_USEDEP}]
+	>=dev-python/jsonnet-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/lmdb-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/more-itertools-8.12.0[${PYTHON_USEDEP}]
 	>=dev-python/nltk-3.6.5[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21.4[${PYTHON_USEDEP}]
-	<dev-python/protobuf-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.12.0[${PYTHON_USEDEP}] <dev-python/protobuf-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.28[${PYTHON_USEDEP}]
 	dev-python/sacremoses[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.7.3[${PYTHON_USEDEP}]
 	>=dev-python/sentencepiece-0.1.96[${PYTHON_USEDEP}]
-	<dev-python/spacy-3.4[${PYTHON_USEDEP}]
+	>=dev-python/spacy-2.1.0[${PYTHON_USEDEP}] <dev-python/spacy-3.4[${PYTHON_USEDEP}]
 	>=dev-python/tensorboardx-1.2[${PYTHON_USEDEP}]
-	=dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]
-	<dev-python/torch-1.13.0[${PYTHON_USEDEP}]
-	<dev-python/torchvision-0.14.0[${PYTHON_USEDEP}]
+	~dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/torch-1.10.0[${PYTHON_USEDEP}] <dev-python/torch-1.13.0[${PYTHON_USEDEP}]
+	>=dev-python/torchvision-0.8.1[${PYTHON_USEDEP}] <dev-python/torchvision-0.14.0[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.62[${PYTHON_USEDEP}]
 	>dev-python/traitlets-5.1.1[${PYTHON_USEDEP}]
-	<dev-python/transformers-4.21[${PYTHON_USEDEP}]
+	>=dev-python/transformers-4.1[${PYTHON_USEDEP}] <dev-python/transformers-4.21[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.4.1[${PYTHON_USEDEP}]
-	<dev-python/wandb-0.13.0[${PYTHON_USEDEP}]
+	>=dev-python/wandb-0.10.0[${PYTHON_USEDEP}] <dev-python/wandb-0.13.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-22.6.0[${PYTHON_USEDEP}]
+		~dev-python/black-22.6.0[${PYTHON_USEDEP}]
 		>=dev-python/codecov-2.1.12[${PYTHON_USEDEP}]
 		>=dev-python/coverage-6.4[toml,${PYTHON_USEDEP}]
 		<=dev-python/databind-core-1.5.3[${PYTHON_USEDEP}]
 		<=dev-python/databind-json-1.5.3[${PYTHON_USEDEP}]
-		<dev-python/docspec-1.2.0[${PYTHON_USEDEP}]
-		<dev-python/docspec-python-1.2.0[${PYTHON_USEDEP}]
+		>dev-python/docspec-1.0.1[${PYTHON_USEDEP}] <dev-python/docspec-1.2.0[${PYTHON_USEDEP}]
+		>dev-python/docspec-python-1.0.1[${PYTHON_USEDEP}] <dev-python/docspec-python-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
 		>=dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
-		=dev-python/markdown-include-0.6.0[${PYTHON_USEDEP}]
+		~dev-python/markdown-include-0.6.0[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-2.2.3[${PYTHON_USEDEP}]
-		=dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}]
-		<dev-python/mkdocs-material-8.4.0[${PYTHON_USEDEP}]
-		=dev-python/mypy-0.961[${PYTHON_USEDEP}]
+		~dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}]
+		>=dev-python/mkdocs-material-5.5.0[${PYTHON_USEDEP}] <dev-python/mkdocs-material-8.4.0[${PYTHON_USEDEP}]
+		~dev-python/mypy-0.961[${PYTHON_USEDEP}]
 		<dev-python/pydoc-markdown-4.4.0[${PYTHON_USEDEP}]
 		>=dev-python/pymdown-extensions-9.5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-benchmark-3.4.1[${PYTHON_USEDEP}]
@@ -75,7 +132,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/responses-0.21[${PYTHON_USEDEP}]
 		>=dev-python/ruamel-yaml-0.17.17[${PYTHON_USEDEP}]
 		dev-python/setuptools[${PYTHON_USEDEP}]
-		<dev-python/twine-5.0.0[${PYTHON_USEDEP}]
+		>=dev-python/twine-1.11.0[${PYTHON_USEDEP}] <dev-python/twine-5.0.0[${PYTHON_USEDEP}]
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 "

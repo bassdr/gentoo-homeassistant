@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,<3.0.0dev,>=1.33.2
+	google-cloud-pubsub<3.0.0dev,>=2.10.0
+	grpcio-status<2.0.0dev,>=1.38.1
+	grpcio<2.0.0dev,>=1.38.1
+	overrides<8.0.0,>=6.0.1
+	overrides<8.0.0,>=7.0.1; python_version >= "3.12"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
-	<dev-python/google-cloud-pubsub-3.0.0_pre[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2.0.0_pre[${PYTHON_USEDEP}]
-	<dev-python/grpcio-status-2.0.0_pre[${PYTHON_USEDEP}]
-	<dev-python/overrides-8.0.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '<dev-python/overrides-8.0.0[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/google-api-core-1.33.2[grpc,${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.1*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.2*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.3*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.4*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.5*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.6*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.7*[grpc,${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-pubsub-2.10.0[${PYTHON_USEDEP}] <dev-python/google-cloud-pubsub-3.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.38.1[${PYTHON_USEDEP}] <dev-python/grpcio-2.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-status-1.38.1[${PYTHON_USEDEP}] <dev-python/grpcio-status-2.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/overrides-6.0.1[${PYTHON_USEDEP}] <dev-python/overrides-8.0.0[${PYTHON_USEDEP}]
+	>=dev-python/overrides-7.0.1[${PYTHON_USEDEP}] <dev-python/overrides-8.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -17,13 +17,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.rst"
 
-GENERATED_IUSE="cli"
-IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	asyncclick<9.0.0.0,>=8.1.3.4; extra == "cli" or extra == "test"
+	black<24.0.0,>=23.3.0; extra == "test"
+	bleak-retry-connector>=3.0.2
+	bleak>=0.20.2
+	pytest-asyncio<0.22.0,>=0.21.0; extra == "test"
+	ruff<0.0.273,>=0.0.272; extra == "test"
+	tzlocal<6.0.0,>=5.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	cli? ( <dev-python/asyncclick-9.0.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.0.2[${PYTHON_USEDEP}]
-	<dev-python/tzlocal-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tzlocal-5.0.1[${PYTHON_USEDEP}] <dev-python/tzlocal-6.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]

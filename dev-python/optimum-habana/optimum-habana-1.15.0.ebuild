@@ -16,16 +16,39 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython; extra == "tests"
+	accelerate<0.34.0,>=0.33.0
+	datasets; extra == "tests"
+	diffusers<0.32.0,>=0.31.0
+	hf_doc_builder; extra == "quality"
+	huggingface_hub>=0.24.7
+	optimum
+	optuna; extra == "tests"
+	parameterized; extra == "tests"
+	peft; extra == "tests"
+	psutil; extra == "tests"
+	pytest<8.0.0; extra == "tests"
+	ruff; extra == "quality"
+	safetensors; extra == "tests"
+	scipy; extra == "tests"
+	sentence-transformers==3.2.1
+	sentencepiece; extra == "tests"
+	timm; extra == "tests"
+	torch
+	torchsde; extra == "tests"
+	transformers<4.46.0,>=4.45.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/accelerate-0.34.0[${PYTHON_USEDEP}]
-	<dev-python/diffusers-0.32.0[${PYTHON_USEDEP}]
+	>=dev-python/accelerate-0.33.0[${PYTHON_USEDEP}] <dev-python/accelerate-0.34.0[${PYTHON_USEDEP}]
+	>=dev-python/diffusers-0.31.0[${PYTHON_USEDEP}] <dev-python/diffusers-0.32.0[${PYTHON_USEDEP}]
 	quality? ( dev-python/hf-doc-builder[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.24.7[${PYTHON_USEDEP}]
 	dev-python/optimum[${PYTHON_USEDEP}]
 	quality? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	=dev-python/sentence-transformers-3.2.1[${PYTHON_USEDEP}]
+	~dev-python/sentence-transformers-3.2.1[${PYTHON_USEDEP}]
 	dev-python/torch[${PYTHON_USEDEP}]
-	<dev-python/transformers-4.46.0[${PYTHON_USEDEP}]
+	>=dev-python/transformers-4.45.2[${PYTHON_USEDEP}] <dev-python/transformers-4.46.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

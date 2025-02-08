@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	gitpython
+	mkdocs>=1.0.3
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/gitpython[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.0.3[${PYTHON_USEDEP}]

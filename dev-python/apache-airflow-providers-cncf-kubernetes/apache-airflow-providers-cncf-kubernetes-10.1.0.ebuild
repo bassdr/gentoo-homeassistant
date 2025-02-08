@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,14 +14,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiofiles>=23.2.0
+	apache-airflow>=2.9.0
+	asgiref>=3.5.2
+	cryptography>=41.0.0
+	google-re2>=1.0
+	kubernetes<=31.0.0,>=29.0.0
+	kubernetes_asyncio<=31.0.0,>=29.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-23.2.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/asgiref-3.5.2[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-41.0.0[${PYTHON_USEDEP}]
 	>=dev-python/google-re2-1.0[${PYTHON_USEDEP}]
-	<=dev-python/kubernetes-31.0.0[${PYTHON_USEDEP}]
-	<=dev-python/kubernetes-asyncio-31.0.0[${PYTHON_USEDEP}]
+	>=dev-python/kubernetes-29.0.0[${PYTHON_USEDEP}] <=dev-python/kubernetes-31.0.0[${PYTHON_USEDEP}]
+	>=dev-python/kubernetes-asyncio-29.0.0[${PYTHON_USEDEP}] <=dev-python/kubernetes-asyncio-31.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

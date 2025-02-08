@@ -20,8 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aioserial (==1.3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/aioserial-1.3.0[${PYTHON_USEDEP}]
+	~dev-python/aioserial-1.3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/aioserial-1.3.0[${PYTHON_USEDEP}]"

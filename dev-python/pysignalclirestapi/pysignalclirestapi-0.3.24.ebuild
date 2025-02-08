@@ -21,6 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	requests
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
@@ -30,7 +34,3 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/six[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

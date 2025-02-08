@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	psutil
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/psutil[${PYTHON_USEDEP}]
 "

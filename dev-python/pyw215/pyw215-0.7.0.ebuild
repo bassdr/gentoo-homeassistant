@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Interface for d-link W215 Smart Plugs."
 HOMEPAGE="
-  https://pypi.org/project/pyW215/
+  https://pypi.org/project/pyw215/
 "
 
 LICENSE="MIT"

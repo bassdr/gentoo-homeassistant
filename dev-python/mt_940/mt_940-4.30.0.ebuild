@@ -23,6 +23,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	GitPython (>=2.1.9) ; extra == 'docs'
+	flake8 ; extra == 'tests'
+	pytest ; extra == 'tests'
+	pytest-cache ; extra == 'tests'
+	pytest-cover ; extra == 'tests'
+	pytest-flake8 ; extra == 'tests'
+	pyyaml ; extra == 'tests'
+	sphinx (>=1.7.2) ; extra == 'docs'
+	sphinx2rst ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/gitpython-2.1.9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.2[${PYTHON_USEDEP}] )

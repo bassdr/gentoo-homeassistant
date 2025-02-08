@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cohere<6.0,>=5.12.0
+	langchain-community<0.4.0,>=0.3.0
+	langchain-core<0.4.0,>=0.3.27
+	pydantic<3,>=2
+	types-pyyaml<7.0.0.0,>=6.0.12.20240917
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/cohere-6.0[${PYTHON_USEDEP}]
-	<dev-python/langchain-community-0.4.0[${PYTHON_USEDEP}]
-	<dev-python/langchain-core-0.4.0[${PYTHON_USEDEP}]
-	<dev-python/pydantic-3[${PYTHON_USEDEP}]
-	<dev-python/types-pyyaml-7.0.0.0[${PYTHON_USEDEP}]
+	>=dev-python/cohere-5.12.0[${PYTHON_USEDEP}] <dev-python/cohere-6.0[${PYTHON_USEDEP}]
+	>=dev-python/langchain-community-0.3.0[${PYTHON_USEDEP}] <dev-python/langchain-community-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/langchain-core-0.3.27[${PYTHON_USEDEP}] <dev-python/langchain-core-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
+	>=dev-python/types-pyyaml-6.0.12.20240917[${PYTHON_USEDEP}] <dev-python/types-pyyaml-7.0.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

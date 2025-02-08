@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/vallox-websocket-api-5.3.0[${PYTHON_USEDEP}]
+	~dev-python/vallox-websocket-api-5.3.0[${PYTHON_USEDEP}]
 "

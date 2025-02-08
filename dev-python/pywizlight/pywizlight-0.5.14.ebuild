@@ -19,6 +19,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	click
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 "

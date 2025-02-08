@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jinja2>=2.10
+	markupsafe>=1
+	standard-imghdr==3.10.14; python_version >= "3.13"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-2.10[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-1[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '~dev-python/standard-imghdr-3.10.14[${PYTHON_USEDEP}]' python3_13{,t})
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

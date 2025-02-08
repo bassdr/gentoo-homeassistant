@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,15 +15,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	graphviz (<0.9.0,>=0.8.1)
+	numpy (<2.0.0,>1.16.0)
+	requests (<3,>=2.20.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/graphviz-0.9.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/graphviz-0.8.1[${PYTHON_USEDEP}] <dev-python/graphviz-0.9.0[${PYTHON_USEDEP}]
+	>dev-python/numpy-1.16.0[${PYTHON_USEDEP}] <dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

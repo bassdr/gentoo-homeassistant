@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pytomorrowio-0.3.6[${PYTHON_USEDEP}]
+	~dev-python/pytomorrowio-0.3.6[${PYTHON_USEDEP}]
 "

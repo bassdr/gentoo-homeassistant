@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,33 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adlfs; extra == "dev"
+	aiohttp; extra == "dev"
+	cheroot; extra == "dev"
+	fsspec!=2024.3.1,>=2022.1.0
+	gcsfs; extra == "dev"
+	moto[s3,server]; extra == "dev"
+	mypy>=1.10.0; extra == "tests"
+	packaging; extra == "tests"
+	paramiko; extra == "dev"
+	pydantic-settings; extra == "dev"
+	pydantic; extra == "dev"
+	pylint>=2.17.4; extra == "tests"
+	pytest-cov>=4.1.0; extra == "tests"
+	pytest-mock>=3.12.0; extra == "tests"
+	pytest-mypy-plugins>=3.1.2; extra == "tests"
+	pytest-sugar>=0.9.7; extra == "tests"
+	pytest>=8; extra == "tests"
+	requests; extra == "dev"
+	s3fs; extra == "dev"
+	smbprotocol; extra == "dev"
+	typing_extensions; python_version < "3.11" and extra == "dev"
+	webdav4[fsspec]; extra == "dev"
+	wsgidav; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/fsspec-2024.3.1[${PYTHON_USEDEP}]
+	>=dev-python/fsspec-2022.1.0[${PYTHON_USEDEP}] !~dev-python/fsspec-2024.3.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

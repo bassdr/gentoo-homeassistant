@@ -3,23 +3,28 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/alibabacloud_adb20211201/"
+  https://pypi.org/project/alibabacloud-adb20211201/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	alibabacloud-endpoint-util<1.0.0,>=0.0.3
+	alibabacloud-openapi-util<1.0.0,>=0.2.1
+	alibabacloud-tea-openapi<1.0.0,>=0.3.10
+	alibabacloud-tea-util<1.0.0,>=0.3.12
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/alibabacloud-endpoint-util-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/alibabacloud-openapi-util-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/alibabacloud-tea-openapi-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/alibabacloud-tea-util-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/alibabacloud-endpoint-util-0.0.3[${PYTHON_USEDEP}] <dev-python/alibabacloud-endpoint-util-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/alibabacloud-openapi-util-0.2.1[${PYTHON_USEDEP}] <dev-python/alibabacloud-openapi-util-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/alibabacloud-tea-openapi-0.3.10[${PYTHON_USEDEP}] <dev-python/alibabacloud-tea-openapi-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/alibabacloud-tea-util-0.3.12[${PYTHON_USEDEP}] <dev-python/alibabacloud-tea-util-1.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -24,6 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	click>=8.0.1; extra == "cli"
+	defusedxml>=0.7.1
+	httpx>=0.23.1
+	mashumaro>=3.13.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/click-8.0.1[${PYTHON_USEDEP}] )
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]

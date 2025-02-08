@@ -29,12 +29,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="test-rust"
 
+REQUIRES_DIST="
+	certifi>=2021.10.8
+	trio-websocket~=0.9
+	trio~=0.17
+	typing_extensions~=4.9
+	urllib3[socks]<3,>=1.26
+	websocket-client~=1.8
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2021.10.8[${PYTHON_USEDEP}]
 	>=dev-python/trio-0.17[${PYTHON_USEDEP}] =dev-python/trio-0*[${PYTHON_USEDEP}]
 	>=dev-python/trio-websocket-0.9[${PYTHON_USEDEP}] =dev-python/trio-websocket-0*[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}] =dev-python/typing-extensions-4*[${PYTHON_USEDEP}]
-	<dev-python/urllib3-3[socks,${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.26[socks,${PYTHON_USEDEP}] <dev-python/urllib3-3[socks,${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-1.8[${PYTHON_USEDEP}] =dev-python/websocket-client-1*[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/zhong-hong-hvac-1.0.13[${PYTHON_USEDEP}]
+	~dev-python/zhong-hong-hvac-1.0.13[${PYTHON_USEDEP}]
 "

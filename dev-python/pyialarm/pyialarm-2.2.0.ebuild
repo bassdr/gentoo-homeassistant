@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	dicttoxml2
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/dicttoxml2[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]

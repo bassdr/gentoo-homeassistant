@@ -16,6 +16,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == "build"
+	mizani[build]; extra == "all"
+	mizani[dev]; extra == "all"
+	mizani[doc]; extra == "all"
+	mizani[lint]; extra == "all"
+	mizani[test]; extra == "all"
+	mizani[typing]; extra == "dev"
+	mock; extra == "rtd"
+	notebook; extra == "dev"
+	numpy>=1.23.5
+	numpydoc>=1.7.0; extra == "doc"
+	pandas-stubs; extra == "typing"
+	pandas>=2.2.0
+	pre-commit; extra == "dev"
+	pyright==1.1.390; extra == "typing"
+	pytest-cov>=4.0.0; extra == "test"
+	ruff; extra == "lint"
+	scipy>=1.8.0
+	sphinx>=7.2.0; extra == "doc"
+	twine; extra == "dev"
+	tzdata; platform_system == "Windows" or platform_system == "Emscripten"
+	wheel; extra == "build"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	all? ( dev-python/mizani[build,${PYTHON_USEDEP}] )
@@ -28,7 +52,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	doc? ( >=dev-python/numpydoc-1.7.0[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-2.2.0[${PYTHON_USEDEP}]
 	typing? ( dev-python/pandas-stubs[${PYTHON_USEDEP}] )
-	typing? ( =dev-python/pyright-1.1.390[${PYTHON_USEDEP}] )
+	typing? ( ~dev-python/pyright-1.1.390[${PYTHON_USEDEP}] )
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	>=dev-python/scipy-1.8.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-7.2.0[${PYTHON_USEDEP}] )

@@ -16,6 +16,46 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML>=5.1; extra == "docs"
+	accelerate; extra == "dev"
+	accelerate; extra == "x"
+	coverage; extra == "dev"
+	diffusers; extra == "dev"
+	furo; extra == "docs"
+	ivy>=1.0.0.0; extra == "dev"
+	ivy>=1.0.0.0; extra == "docs"
+	kornia_moons; extra == "docs"
+	kornia_rs>=0.1.0
+	matplotlib; extra == "docs"
+	mypy; extra == "dev"
+	numpy<3; extra == "dev"
+	onnx; extra == "dev"
+	onnx; extra == "docs"
+	onnxruntime-gpu>=1.16; sys_platform != "darwin" and extra == "x"
+	onnxruntime; extra == "dev"
+	onnxruntime; extra == "docs"
+	opencv-python; extra == "docs"
+	packaging
+	pillow; extra == "dev"
+	pre-commit>=2; extra == "dev"
+	pytest-timeout; extra == "dev"
+	pytest==8.3.4; extra == "dev"
+	requests; extra == "dev"
+	setuptools>=61.2; extra == "dev"
+	sphinx-autodoc-defaultargs; extra == "docs"
+	sphinx-autodoc-typehints; extra == "docs"
+	sphinx-copybutton>=0.3; extra == "docs"
+	sphinx-design; extra == "docs"
+	sphinx-notfound-page; extra == "docs"
+	sphinx; extra == "docs"
+	sphinxcontrib-bibtex; extra == "docs"
+	sphinxcontrib-gtagjs; extra == "docs"
+	sphinxcontrib-youtube; extra == "docs"
+	torch>=1.9.1
+	transformers; extra == "dev"
+	types-requests; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	x? ( dev-python/accelerate[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -25,6 +65,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( dev-python/onnx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/onnxruntime[${PYTHON_USEDEP}] )
+	x? ( >=dev-python/onnxruntime-gpu-1.16[${PYTHON_USEDEP}] )
 	docs? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pyyaml-5.1[${PYTHON_USEDEP}] )
@@ -53,7 +94,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/onnx[${PYTHON_USEDEP}]
 		dev-python/onnxruntime[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
-		=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+		~dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
 		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-61.2[${PYTHON_USEDEP}]

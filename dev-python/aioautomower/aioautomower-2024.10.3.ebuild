@@ -23,13 +23,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyJWT<3.0.0,>=2.8.0
+	aiohttp<4.0.0,>=3.9.3
+	ical>=8.0.1
+	mashumaro<4.0,>=3.12
+	python-dateutil<3.0.0,>=2.9.0-post.0
+	tzlocal<6.0,>=5.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/ical-8.0.1[${PYTHON_USEDEP}]
-	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
-	<dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/tzlocal-6.0[${PYTHON_USEDEP}]
+	>=dev-python/mashumaro-3.12[${PYTHON_USEDEP}] <dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}] <dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.9.0_p.0[${PYTHON_USEDEP}] <dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tzlocal-5.2[${PYTHON_USEDEP}] <dev-python/tzlocal-6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]

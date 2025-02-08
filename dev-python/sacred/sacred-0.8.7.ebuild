@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,15 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython
+	colorama>=0.4
+	docopt-ng<1.0,>=0.9
+	jsonpickle>=2.2.0
+	munch<5.0,>=2.5
+	packaging>=18.0
+	py-cpuinfo>=4.0
+	wrapt<2.0,>=1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
-	<dev-python/docopt-ng-1.0[${PYTHON_USEDEP}]
+	>=dev-python/docopt-ng-0.9[${PYTHON_USEDEP}] <dev-python/docopt-ng-1.0[${PYTHON_USEDEP}]
 	dev-python/gitpython[${PYTHON_USEDEP}]
 	>=dev-python/jsonpickle-2.2.0[${PYTHON_USEDEP}]
-	<dev-python/munch-5.0[${PYTHON_USEDEP}]
+	>=dev-python/munch-2.5[${PYTHON_USEDEP}] <dev-python/munch-5.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-18.0[${PYTHON_USEDEP}]
 	>=dev-python/py-cpuinfo-4.0[${PYTHON_USEDEP}]
-	<dev-python/wrapt-2.0[${PYTHON_USEDEP}]
+	>=dev-python/wrapt-1.0[${PYTHON_USEDEP}] <dev-python/wrapt-2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

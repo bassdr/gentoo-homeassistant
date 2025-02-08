@@ -15,7 +15,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	packaging
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "

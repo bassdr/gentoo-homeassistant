@@ -37,7 +37,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/jaraco-itertools[${PYTHON_USEDEP}]
 		dev-python/jaraco-test[${PYTHON_USEDEP}]
 		dev-python/more-itertools[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		dev-python/pytest-ignore-flaky[${PYTHON_USEDEP}]
 	)
 "

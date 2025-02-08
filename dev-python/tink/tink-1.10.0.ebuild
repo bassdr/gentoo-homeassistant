@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py>=1.3.0
+	boto3>=1.26.89; extra == "all"
+	boto3>=1.26.89; extra == "awskms"
+	google-api-core>=2.11.0; extra == "all"
+	google-api-core>=2.11.0; extra == "gcpkms"
+	google-auth>=2.16.2; extra == "all"
+	google-auth>=2.16.2; extra == "gcpkms"
+	google-cloud-kms>=2.16.1; extra == "all"
+	google-cloud-kms>=2.16.1; extra == "gcpkms"
+	hvac>=1.1.1; extra == "all"
+	hvac>=1.1.1; extra == "hcvault"
+	protobuf!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0.dev0,>=3.20.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.3.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/boto3-1.26.89[${PYTHON_USEDEP}] )
@@ -28,7 +42,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	gcpkms? ( >=dev-python/google-cloud-kms-2.16.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/hvac-1.1.1[${PYTHON_USEDEP}] )
 	hcvault? ( >=dev-python/hvac-1.1.1[${PYTHON_USEDEP}] )
-	!=dev-python/protobuf-4.21.1[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.20.2[${PYTHON_USEDEP}] <dev-python/protobuf-5.0.0_pre0[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.2[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.3[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.4[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A package to talk to growatt server"
 HOMEPAGE="
-  https://pypi.org/project/growattServer/
+  https://pypi.org/project/growattserver/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 "

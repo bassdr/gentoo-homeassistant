@@ -24,12 +24,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.8.1
+	async-timeout<5.0.0,>=4.0.3
+	backoff<3.0.0,>=2.2.1
+	mashumaro<4.0.0,>=3.13.1
+	orjson<4.0.0,>=3.9.10
+	packaging>=21.3
+	yarl>=1.7.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
-	<dev-python/async-timeout-5.0.0[${PYTHON_USEDEP}]
-	<dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/mashumaro-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/orjson-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-4.0.3[${PYTHON_USEDEP}] <dev-python/async-timeout-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/backoff-2.2.1[${PYTHON_USEDEP}] <dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}] <dev-python/mashumaro-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/orjson-3.9.10[${PYTHON_USEDEP}] <dev-python/orjson-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.7.2[${PYTHON_USEDEP}]
 "

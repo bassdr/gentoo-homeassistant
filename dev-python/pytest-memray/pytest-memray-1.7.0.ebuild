@@ -16,14 +16,34 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	anyio>=4.4.0; extra == "test"
+	black==22.12; extra == "lint"
+	covdefaults>=2.2.2; extra == "test"
+	coverage>=7.0.5; extra == "test"
+	flaky>=3.7; extra == "test"
+	furo>=2022.12.7; extra == "docs"
+	isort==5.11.4; extra == "lint"
+	memray>=1.12
+	mypy==0.991; extra == "lint"
+	pytest-xdist>=3.1; extra == "test"
+	pytest>=7.2
+	pytest>=7.2; extra == "test"
+	ruff==0.0.272; extra == "lint"
+	sphinx-argparse>=0.4; extra == "docs"
+	sphinx-inline-tabs>=2022.1.2b11; extra == "docs"
+	sphinx>=6.1.3; extra == "docs"
+	sphinxcontrib-programoutput>=0.17; extra == "docs"
+	towncrier>=22.12; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	lint? ( =dev-python/black-22.12[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/black-22.12[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/furo-2022.12.7[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/isort-5.11.4[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/isort-5.11.4[${PYTHON_USEDEP}] )
 	>=dev-python/memray-1.12[${PYTHON_USEDEP}]
-	lint? ( =dev-python/mypy-0.991[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/mypy-0.991[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-7.2[${PYTHON_USEDEP}]
-	lint? ( =dev-python/ruff-0.0.272[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/ruff-0.0.272[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-argparse-0.4[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-inline-tabs-2022.1.2_beta11[${PYTHON_USEDEP}] )

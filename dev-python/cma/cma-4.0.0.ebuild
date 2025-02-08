@@ -16,6 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	matplotlib; extra == "plotting"
+	moarchiving; extra == "constrained-solution-tracking"
+	numpy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	plotting? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	constrained-solution-tracking? ( dev-python/moarchiving[${PYTHON_USEDEP}] )

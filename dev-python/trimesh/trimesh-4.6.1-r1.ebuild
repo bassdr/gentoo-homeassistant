@@ -22,32 +22,77 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="all deprecated easy recommend test-more"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	cascadio; extra == "recommend"
+	chardet; extra == "easy"
+	colorlog; extra == "easy"
+	coveralls; extra == "test-more"
+	embreex; platform_machine == "x86_64" and extra == "easy"
+	ezdxf; extra == "test-more"
+	fast-simplification; extra == "recommend"
+	gmsh==4.12.2; extra == "deprecated"
+	httpx; extra == "easy"
+	ipython; extra == "test-more"
+	jsonschema; extra == "easy"
+	lxml; extra == "easy"
+	manifold3d>=2.3.0; extra == "easy"
+	mapbox_earcut>=1.0.2; python_version >= "3.9" and extra == "easy"
+	matplotlib; extra == "test-more"
+	meshio; extra == "recommend"
+	networkx; extra == "easy"
+	numpy>=1.20
+	openctm; platform_machine == "x86_64" and extra == "recommend"
+	pillow; extra == "easy"
+	psutil; extra == "recommend"
+	pycollada; extra == "easy"
+	pyglet<2; extra == "recommend"
+	pyinstrument; extra == "test"
+	pymeshlab; extra == "test-more"
+	pyright; extra == "test-more"
+	pytest-beartype; python_version >= "3.10" and extra == "test-more"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	rtree; extra == "easy"
+	ruff; extra == "test"
+	scikit-image; extra == "recommend"
+	scipy; extra == "easy"
+	setuptools; extra == "easy"
+	shapely; extra == "easy"
+	svg.path; extra == "easy"
+	sympy; extra == "recommend"
+	triangle; extra == "test-more"
+	trimesh[deprecated,easy,recommend,test,test_more]; extra == "all"
+	vhacdx; python_version >= "3.9" and extra == "easy"
+	xatlas; extra == "easy"
+	xxhash; extra == "easy"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	recommend? ( dev-python/cascadio[${PYTHON_USEDEP}] )
 	easy? ( dev-python/chardet[${PYTHON_USEDEP}] )
 	easy? ( dev-python/colorlog[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/coveralls[${PYTHON_USEDEP}] )
-	dev-python/embreex[${PYTHON_USEDEP}]
+	easy? ( dev-python/embreex[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/ezdxf[${PYTHON_USEDEP}] )
 	recommend? ( dev-python/fast-simplification[${PYTHON_USEDEP}] )
-	deprecated? ( =dev-python/gmsh-4.12.2[${PYTHON_USEDEP}] )
+	deprecated? ( ~dev-python/gmsh-4.12.2[${PYTHON_USEDEP}] )
 	easy? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	easy? ( dev-python/jsonschema[${PYTHON_USEDEP}] )
 	easy? ( dev-python/lxml[${PYTHON_USEDEP}] )
 	easy? ( >=dev-python/manifold3d-2.3.0[${PYTHON_USEDEP}] )
+	easy? ( >=dev-python/mapbox-earcut-1.0.2[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	recommend? ( dev-python/meshio[${PYTHON_USEDEP}] )
 	easy? ( dev-python/networkx[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]
-	dev-python/openctm[${PYTHON_USEDEP}]
+	recommend? ( dev-python/openctm[${PYTHON_USEDEP}] )
 	easy? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	recommend? ( dev-python/psutil[${PYTHON_USEDEP}] )
 	easy? ( dev-python/pycollada[${PYTHON_USEDEP}] )
 	recommend? ( <dev-python/pyglet-2[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/pymeshlab[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/pyright[${PYTHON_USEDEP}] )
-	dev-python/pytest-beartype[${PYTHON_USEDEP}]
+	test-more? ( dev-python/pytest-beartype[${PYTHON_USEDEP}] )
 	easy? ( dev-python/rtree[${PYTHON_USEDEP}] )
 	recommend? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
 	easy? ( dev-python/scipy[${PYTHON_USEDEP}] )
@@ -57,6 +102,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	recommend? ( dev-python/sympy[${PYTHON_USEDEP}] )
 	test-more? ( dev-python/triangle[${PYTHON_USEDEP}] )
 	all? ( dev-python/trimesh[deprecated,easy,recommend,test,test_more,${PYTHON_USEDEP}] )
+	easy? ( dev-python/vhacdx[${PYTHON_USEDEP}] )
 	easy? ( dev-python/xatlas[${PYTHON_USEDEP}] )
 	easy? ( dev-python/xxhash[${PYTHON_USEDEP}] )
 "

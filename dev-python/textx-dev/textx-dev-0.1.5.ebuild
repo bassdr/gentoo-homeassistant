@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="textX-dev"
@@ -11,12 +10,26 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/textX-dev/"
+  https://pypi.org/project/textx-dev/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	appdirs
+	click
+	coverage ; extra == 'test'
+	coveralls ; extra == 'test'
+	flake8 ; extra == 'test'
+	jinja2
+	pytest ; extra == 'test'
+	textX
+	textX-jinja
+	textx-lang-questionnaire
+	tox ; extra == 'test'
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/appdirs[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

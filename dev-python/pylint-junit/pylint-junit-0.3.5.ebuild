@@ -3,18 +3,21 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/pylint_junit/"
+  https://pypi.org/project/pylint-junit/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	junit-xml-2
+	pylint
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/junit-xml_2[${PYTHON_USEDEP}]
 	dev-python/pylint[${PYTHON_USEDEP}]

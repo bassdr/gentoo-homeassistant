@@ -16,6 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	boto3; extra == "aws"
+	connectorx; extra == "sql"
+	deltalake; extra == "deltalake"
+	fsspec
+	getdaft[aws,azure,deltalake,gcp,iceberg,numpy,pandas,ray,sql,unity]; extra == "all"
+	lancedb; extra == "lance"
+	numpy; extra == "numpy"
+	packaging; extra == "iceberg"
+	packaging; extra == "ray"
+	pandas; extra == "pandas"
+	pyarrow>=8.0.0
+	pyarrow>=8.0.0; extra == "hudi"
+	pyiceberg>=0.4.0; extra == "iceberg"
+	ray[client,data]>=2.0.0; platform_system != "Windows" and extra == "ray"
+	ray[client,data]>=2.10.0; platform_system == "Windows" and extra == "ray"
+	sqlalchemy; extra == "sql"
+	sqlglot; extra == "sql"
+	tqdm
+	typing-extensions>=4.0.0; python_version < "3.10"
+	unitycatalog; extra == "unity"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	aws? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	sql? ( dev-python/connectorx[${PYTHON_USEDEP}] )
@@ -30,6 +52,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyarrow-8.0.0[${PYTHON_USEDEP}]
 	hudi? ( >=dev-python/pyarrow-8.0.0[${PYTHON_USEDEP}] )
 	iceberg? ( >=dev-python/pyiceberg-0.4.0[${PYTHON_USEDEP}] )
+	ray? ( >=dev-python/ray-2.0.0[client,data,${PYTHON_USEDEP}] )
 	sql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
 	sql? ( dev-python/sqlglot[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/concord232-0.15.1[${PYTHON_USEDEP}]
+	~dev-python/concord232-0.15.1[${PYTHON_USEDEP}]
 "

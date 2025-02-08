@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/solarlog-cli-0.4.0[${PYTHON_USEDEP}]
+	~dev-python/solarlog-cli-0.4.0[${PYTHON_USEDEP}]
 "

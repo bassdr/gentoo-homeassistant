@@ -17,9 +17,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.3.0
+	packaging>=22.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.3.0[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

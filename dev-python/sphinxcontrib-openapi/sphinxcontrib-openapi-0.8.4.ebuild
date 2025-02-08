@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,9 +15,18 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML >=3.12
+	deepmerge >=0.1
+	importlib-metadata ; python_version < "3.8"
+	jsonschema >=2.5.1
+	picobox >=2.2
+	sphinx >=2.0
+	sphinx-mdinclude >=0.5.2
+	sphinxcontrib-httpdomain >=1.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/deepmerge-0.1[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-2.5.1[${PYTHON_USEDEP}]
 	>=dev-python/picobox-2.2[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.12[${PYTHON_USEDEP}]

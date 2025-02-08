@@ -3,22 +3,28 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/safety_schemas/"
+  https://pypi.org/project/safety-schemas/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	dparse>=0.6.4
+	packaging>=21.0
+	pydantic<2.10.0,>=2.6.0
+	ruamel-yaml>=0.17.21
+	typing-extensions>=4.7.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dparse-0.6.4[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.0[${PYTHON_USEDEP}]
-	<dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2.6.0[${PYTHON_USEDEP}] <dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.17.21[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.7.1[${PYTHON_USEDEP}]
 "

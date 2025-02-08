@@ -24,6 +24,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	authlib
+	httpx
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/authlib[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]

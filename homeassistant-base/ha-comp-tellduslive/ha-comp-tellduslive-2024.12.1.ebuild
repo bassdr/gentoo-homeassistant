@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/tellduslive-0.10.12[${PYTHON_USEDEP}]
+	~dev-python/tellduslive-0.10.12[${PYTHON_USEDEP}]
 "

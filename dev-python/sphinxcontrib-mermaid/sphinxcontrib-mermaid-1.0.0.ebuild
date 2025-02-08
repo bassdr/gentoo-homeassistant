@@ -3,18 +3,26 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sphinxcontrib_mermaid/"
+  https://pypi.org/project/sphinxcontrib-mermaid/"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	defusedxml; extra == "test"
+	myst-parser; extra == "test"
+	pytest; extra == "test"
+	pyyaml
+	ruff; extra == "test"
+	sphinx
+	sphinx; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]

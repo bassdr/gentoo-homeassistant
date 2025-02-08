@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Simple wrapper for pyLoad's API."
 HOMEPAGE="
-  https://pypi.org/project/PyLoadAPI/
+  https://pypi.org/project/pyloadapi/
   Documentation, https://tr4nt0r.github.io/pyloadapi
   Source, https://github.com/tr4nt0r/pyloadapi
 "
@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp~=3.9
+	click; extra == "cli"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )

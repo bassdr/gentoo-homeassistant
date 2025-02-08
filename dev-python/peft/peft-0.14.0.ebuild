@@ -16,6 +16,38 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	accelerate>=0.21.0
+	black; extra == "dev"
+	black; extra == "docs-specific"
+	black; extra == "quality"
+	black; extra == "test"
+	datasets; extra == "test"
+	diffusers; extra == "test"
+	hf-doc-builder; extra == "dev"
+	hf-doc-builder; extra == "docs-specific"
+	hf-doc-builder; extra == "quality"
+	hf-doc-builder; extra == "test"
+	huggingface-hub>=0.25.0
+	numpy>=1.17
+	packaging>=20.0
+	parameterized; extra == "test"
+	protobuf; extra == "test"
+	psutil
+	pytest-cov; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest; extra == "test"
+	pyyaml
+	ruff~=0.6.1; extra == "dev"
+	ruff~=0.6.1; extra == "quality"
+	ruff~=0.6.1; extra == "test"
+	safetensors
+	scipy; extra == "test"
+	sentencepiece; extra == "test"
+	torch>=1.13.0
+	tqdm
+	transformers
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/accelerate-0.21.0[${PYTHON_USEDEP}]
 	docs-specific? ( dev-python/black[${PYTHON_USEDEP}] )

@@ -16,9 +16,15 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Pygments
+	docutils<=0.21.2,>=0.19
+	restructuredtext-lint>=0.7
+	stevedore
+	tomli; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<=dev-python/docutils-0.21.2[${PYTHON_USEDEP}]
+	>=dev-python/docutils-0.19[${PYTHON_USEDEP}] <=dev-python/docutils-0.21.2[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 	>=dev-python/restructuredtext-lint-0.7[${PYTHON_USEDEP}]
 	dev-python/stevedore[${PYTHON_USEDEP}]

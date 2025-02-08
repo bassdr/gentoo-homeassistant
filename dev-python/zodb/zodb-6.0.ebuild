@@ -12,12 +12,29 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/ZODB/"
+  https://pypi.org/project/zodb/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	BTrees>=4.2.0
+	Sphinx<7; extra == "docs"
+	ZConfig
+	ZODB; extra == "docs"
+	j1m.sphinxautozconfig; extra == "docs"
+	manuel; extra == "test"
+	persistent>=4.4.0
+	sphinx-rtd-theme; extra == "docs"
+	sphinxcontrib-zopeext; extra == "docs"
+	transaction>=2.4
+	zc.lockfile
+	zodbpickle>=1.0.1
+	zope.interface
+	zope.testing; extra == "test"
+	zope.testrunner>=4.4.6; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/btrees-4.2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/j1m-sphinxautozconfig[${PYTHON_USEDEP}] )

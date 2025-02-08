@@ -12,12 +12,23 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/StrEnum/"
+  https://pypi.org/project/strenum/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	myst-parser[linkify] ; extra == 'docs'
+	pylint ; extra == 'test'
+	pytest ; extra == 'test'
+	pytest-black ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-pylint ; extra == 'test'
+	sphinx ; extra == 'docs'
+	sphinx-rtd-theme ; extra == 'docs'
+	twine ; extra == 'release'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/myst-parser[linkify,${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

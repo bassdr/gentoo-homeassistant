@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-digitalocean-1.13.2[${PYTHON_USEDEP}]
+	~dev-python/python-digitalocean-1.13.2[${PYTHON_USEDEP}]
 "

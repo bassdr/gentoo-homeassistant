@@ -24,7 +24,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pyasn1 (>=0.1.3)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyasn1-0.1.3[${PYTHON_USEDEP}]
 "

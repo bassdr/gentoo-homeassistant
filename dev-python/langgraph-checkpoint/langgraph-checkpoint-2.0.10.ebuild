@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	langchain-core<0.4,>=0.2.38
+	msgpack<2.0.0,>=1.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/langchain-core-0.4[${PYTHON_USEDEP}]
-	<dev-python/msgpack-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/langchain-core-0.2.38[${PYTHON_USEDEP}] <dev-python/langchain-core-0.4[${PYTHON_USEDEP}]
+	>=dev-python/msgpack-1.1.0[${PYTHON_USEDEP}] <dev-python/msgpack-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

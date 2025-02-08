@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="develop docs"
+GENERATED_IUSE="develop docs gmpy"
 IUSE="${GENERATED_IUSE}"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]

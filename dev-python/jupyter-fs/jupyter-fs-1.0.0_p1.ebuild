@@ -20,6 +20,36 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	boto3; extra == "develop"
+	boto3; extra == "test"
+	bump2version>=1.0.0.post1; extra == "develop"
+	check-manifest; extra == "develop"
+	docker; extra == "test"
+	fs-miniofs; extra == "develop"
+	fs-miniofs; extra == "test"
+	fs-s3fs>=1.1.1
+	fs-smbfs>=0.6.3
+	fs>=2.4.11
+	jupyter-server<3,>=2
+	jupyterlab<5,>=4
+	mock; extra == "test"
+	pysmb; extra == "develop"
+	pysmb; extra == "test"
+	pytest-asyncio; extra == "develop"
+	pytest-asyncio; extra == "test"
+	pytest-cov; extra == "develop"
+	pytest-cov; extra == "test"
+	pytest-jupyter[server]; extra == "develop"
+	pytest-jupyter[server]; extra == "test"
+	pytest-sugar; extra == "develop"
+	pytest-sugar; extra == "test"
+	pytest-xdist; extra == "develop"
+	pytest-xdist; extra == "test"
+	pytest; extra == "develop"
+	pytest; extra == "test"
+	ruff<0.4,>=0.3.5; extra == "develop"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/bump2version-1.0.0_p1[${PYTHON_USEDEP}] )
@@ -28,8 +58,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/fs-miniofs[${PYTHON_USEDEP}] )
 	>=dev-python/fs-s3fs-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/fs-smbfs-0.6.3[${PYTHON_USEDEP}]
-	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]
-	<dev-python/jupyterlab-5[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-server-2[${PYTHON_USEDEP}] <dev-python/jupyter-server-3[${PYTHON_USEDEP}]
+	>=dev-python/jupyterlab-4[${PYTHON_USEDEP}] <dev-python/jupyterlab-5[${PYTHON_USEDEP}]
 	develop? ( dev-python/pysmb[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
@@ -37,13 +67,12 @@ GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/pytest-jupyter[server,${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-sugar[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	develop? ( <dev-python/ruff-0.4[${PYTHON_USEDEP}] )
+	develop? ( >=dev-python/ruff-0.3.5[${PYTHON_USEDEP}] <dev-python/ruff-0.4[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/boto3[${PYTHON_USEDEP}]
 		dev-python/docker[${PYTHON_USEDEP}]

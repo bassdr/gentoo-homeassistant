@@ -21,6 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	requests>=2.22.0
+	segno>=1.4.1; extra == "qr"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
 	qr? ( >=dev-python/segno-1.4.1[${PYTHON_USEDEP}] )

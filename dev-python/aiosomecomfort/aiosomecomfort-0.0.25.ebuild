@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A client for Honeywell's US-based cloud devices"
 HOMEPAGE="
-  https://pypi.org/project/AIOSomecomfort/
+  https://pypi.org/project/aiosomecomfort/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp >=3.8.0
+	prettytable
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy (>=1.11)
+	pandas (>=0.20.0)
+	patsy (>=0.5)
+	plotly (>=4.1.0)
+	scipy (>=0.18)
+	statsmodels (>=0.9.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.11[${PYTHON_USEDEP}]
 	>=dev-python/pandas-0.20.0[${PYTHON_USEDEP}]

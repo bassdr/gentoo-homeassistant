@@ -16,6 +16,41 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8-print==4.0.0; extra == "test"
+	flake8==4.0.1; extra == "test"
+	ipykernel<=6.17.1; extra == "docs"
+	ipython; extra == "examples"
+	ipython<=8.6.0; extra == "docs"
+	jaxtyping
+	jupyter; extra == "examples"
+	linear-operator>=0.6
+	lxml-html-clean; extra == "docs"
+	m2r2<=0.3.3.post2; extra == "docs"
+	matplotlib; extra == "examples"
+	mpmath<=1.3,>=0.19
+	nbclient<=0.7.3; extra == "docs"
+	nbformat<=5.8.0; extra == "docs"
+	nbsphinx<=0.9.1; extra == "docs"
+	nbval; extra == "test"
+	platformdirs<=3.2.0; extra == "docs"
+	pre-commit; extra == "dev"
+	pykeops>=1.1.1; extra == "keops"
+	pyro-ppl>=1.8; extra == "pyro"
+	pytest; extra == "test"
+	scikit-learn
+	scipy; extra == "examples"
+	scipy>=1.6.0
+	setuptools-scm; extra == "dev"
+	setuptools-scm<=7.1.0; extra == "docs"
+	sphinx-autodoc-typehints<=1.23.0; extra == "docs"
+	sphinx-rtd-theme<0.5; extra == "docs"
+	sphinx<=6.2.1; extra == "docs"
+	torchvision; extra == "examples"
+	tqdm; extra == "examples"
+	twine; extra == "dev"
+	ufmt; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( <=dev-python/ipykernel-6.17.1[${PYTHON_USEDEP}] )
 	docs? ( <=dev-python/ipython-8.6.0[${PYTHON_USEDEP}] )
@@ -26,7 +61,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/lxml-html-clean[${PYTHON_USEDEP}] )
 	docs? ( <=dev-python/m2r2-0.3.3_p2[${PYTHON_USEDEP}] )
 	examples? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	<=dev-python/mpmath-1.3[${PYTHON_USEDEP}]
+	>=dev-python/mpmath-0.19[${PYTHON_USEDEP}] <=dev-python/mpmath-1.3[${PYTHON_USEDEP}]
 	docs? ( <=dev-python/nbclient-0.7.3[${PYTHON_USEDEP}] )
 	docs? ( <=dev-python/nbformat-5.8.0[${PYTHON_USEDEP}] )
 	docs? ( <=dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
@@ -48,8 +83,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
-		=dev-python/flake8-print-4.0.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+		~dev-python/flake8-print-4.0.0[${PYTHON_USEDEP}]
 		dev-python/nbval[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/setuptools-scm[${PYTHON_USEDEP}]

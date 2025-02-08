@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jsonschema (<4,>=3.0.1)
+	numpy (<1.23,>=1.22.4)
+	qmcpy (==1.2)
+	scipy (<2,>=1.10.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/jsonschema-4[${PYTHON_USEDEP}]
-	<dev-python/numpy-1.23[${PYTHON_USEDEP}]
-	=dev-python/qmcpy-1.2[${PYTHON_USEDEP}]
-	<dev-python/scipy-2[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-3.0.1[${PYTHON_USEDEP}] <dev-python/jsonschema-4[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.22.4[${PYTHON_USEDEP}] <dev-python/numpy-1.23[${PYTHON_USEDEP}]
+	~dev-python/qmcpy-1.2[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.10.1[${PYTHON_USEDEP}] <dev-python/scipy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

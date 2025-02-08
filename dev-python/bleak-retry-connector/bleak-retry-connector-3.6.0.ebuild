@@ -23,6 +23,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-timeout>=3.0.0; python_version < "3.11"
+	bleak>=0.21.0
+	bluetooth-adapters>=0.15.2; platform_system == "Linux"
+	dbus-fast>=1.14.0; platform_system == "Linux"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.21.0[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-adapters-0.15.2[${PYTHON_USEDEP}]

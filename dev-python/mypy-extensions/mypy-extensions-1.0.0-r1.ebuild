@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=mypy_extensions-${PV}
 DESCRIPTION="Type system extensions for programs checked with the mypy type checker."
 HOMEPAGE="
-  https://pypi.org/project/mypy_extensions/
+  https://pypi.org/project/mypy-extensions/
 "
 SRC_URI="
 	https://github.com/python/mypy_extensions/archive/${PV}.tar.gz

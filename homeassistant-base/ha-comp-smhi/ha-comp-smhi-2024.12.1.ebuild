@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/smhi-pkg-1.0.18[${PYTHON_USEDEP}]
+	~dev-python/smhi-pkg-1.0.18[${PYTHON_USEDEP}]
 "

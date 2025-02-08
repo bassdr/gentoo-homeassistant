@@ -20,6 +20,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	pluggy >=1.1
+	pre-commit ; extra == 'dev'
+	pytest
+	sphinx ; extra == 'doc'
+	sphinx-rtd-theme ; extra == 'doc'
+	tox ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pluggy-1.1[${PYTHON_USEDEP}]
 	dev-python/pytest[${PYTHON_USEDEP}]

@@ -25,18 +25,31 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="+native-extensions test-rust"
-
+GENERATED_IUSE="speedups"
+IUSE="${GENERATED_IUSE} +native-extensions test-rust"
+REQUIRES_DIST="
+	Brotli; platform_python_implementation == "CPython" and extra == "speedups"
+	aiodns>=3.2.0; (sys_platform == "linux" or sys_platform == "darwin") and extra == "speedups"
+	aiohappyeyeballs>=2.3.0
+	aiosignal>=1.1.2
+	async-timeout<6.0,>=4.0; python_version < "3.11"
+	attrs>=17.3.0
+	brotlicffi; platform_python_implementation != "CPython" and extra == "speedups"
+	frozenlist>=1.1.1
+	multidict<7.0,>=4.5
+	propcache>=0.2.0
+	yarl<2.0,>=1.17.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
+	speedups? ( >=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/aiosignal-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/attrs-17.3.0[${PYTHON_USEDEP}]
-	dev-python/brotli[${PYTHON_USEDEP}]
+	speedups? ( dev-python/brotli[${PYTHON_USEDEP}] )
 	>=dev-python/frozenlist-1.1.1[${PYTHON_USEDEP}]
-	<dev-python/multidict-7.0[${PYTHON_USEDEP}]
+	>=dev-python/multidict-4.5[${PYTHON_USEDEP}] <dev-python/multidict-7.0[${PYTHON_USEDEP}]
 	>=dev-python/propcache-0.2.0[${PYTHON_USEDEP}]
-	<dev-python/yarl-2.0[${PYTHON_USEDEP}]
+	>=dev-python/yarl-1.17.0[${PYTHON_USEDEP}] <dev-python/yarl-2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]

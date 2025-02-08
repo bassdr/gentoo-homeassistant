@@ -22,10 +22,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.1,<4.0.0)
+	dnspython (>=2.3.0,<3.0.0)
+	tenacity (>=8.2.3,<9.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
-	>=dev-python/dnspython-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/tenacity-8.2.3[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/dnspython-2.3.0[${PYTHON_USEDEP}] <dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tenacity-8.2.3[${PYTHON_USEDEP}] <dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/dnspython-2.3.0[${PYTHON_USEDEP}]

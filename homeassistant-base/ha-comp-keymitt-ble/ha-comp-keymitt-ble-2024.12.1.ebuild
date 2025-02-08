@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pymicrobot-0.0.17[${PYTHON_USEDEP}]
+	~dev-python/pymicrobot-0.0.17[${PYTHON_USEDEP}]
 "

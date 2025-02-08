@@ -16,6 +16,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	fraction ; extra == 'arbitrary-precision'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	arbitrary-precision? ( dev-python/fraction[${PYTHON_USEDEP}] )
 "

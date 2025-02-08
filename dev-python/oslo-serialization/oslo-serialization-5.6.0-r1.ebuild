@@ -12,13 +12,18 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/oslo.serialization/"
+  https://pypi.org/project/oslo-serialization/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	msgpack>=0.5.2
+	oslo.utils>=3.33.0
+	pbr>=2.0.0
+	tzdata>=2022.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/msgpack-0.5.2[${PYTHON_USEDEP}]
 	>=dev-python/oslo-utils-3.33.0[${PYTHON_USEDEP}]

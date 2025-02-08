@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,10 +15,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	antlr4-python3-runtime (==4.9.*)
+	importlib-resources ; python_version < "3.9"
+	omegaconf (<2.4,>=2.2)
+	packaging
+"
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/antlr4-python3-runtime-4.9*[${PYTHON_USEDEP}]
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	<dev-python/omegaconf-2.4[${PYTHON_USEDEP}]
+	>=dev-python/omegaconf-2.2[${PYTHON_USEDEP}] <dev-python/omegaconf-2.4[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

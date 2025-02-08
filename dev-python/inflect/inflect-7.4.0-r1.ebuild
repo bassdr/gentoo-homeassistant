@@ -20,6 +20,24 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	furo; extra == "doc"
+	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.tidelift>=1.4; extra == "doc"
+	more-itertools>=8.5.0
+	pygments; extra == "test"
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "check"
+	pytest-cov; extra == "cover"
+	pytest-enabler>=2.2; extra == "enabler"
+	pytest-mypy; extra == "type"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	typeguard>=4.0.1
+	typing-extensions; python_version < "3.9"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
@@ -29,11 +47,11 @@ GENERATED_RDEPEND="${RDEPEND}
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	check? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 	>=dev-python/typeguard-4.0.1[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typeguard-4.0.1[${PYTHON_USEDEP}]
@@ -47,7 +65,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pygments[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

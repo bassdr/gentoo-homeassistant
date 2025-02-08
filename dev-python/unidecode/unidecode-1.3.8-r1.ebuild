@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Unidecode/"
+  https://pypi.org/project/unidecode/"
 
 LICENSE="GPL-2+"
 SLOT="0"

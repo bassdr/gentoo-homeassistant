@@ -16,7 +16,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	mock ; extra == 'test'
+	msgpack
+	nose ; extra == 'test'
+	nose-cov ; extra == 'test'
+	python-dateutil (>=2.6.0)
+	pytz
+	requests (>=2.17.0)
+	requests-mock ; extra == 'test'
+	six (>=1.10.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/msgpack[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.6.0[${PYTHON_USEDEP}]

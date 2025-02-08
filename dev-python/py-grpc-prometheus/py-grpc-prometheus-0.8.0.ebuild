@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	grpcio >=1.10.0
+	prometheus-client >=0.3.0
+	setuptools >=39.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/grpcio-1.10.0[${PYTHON_USEDEP}]
 	>=dev-python/prometheus-client-0.3.0[${PYTHON_USEDEP}]

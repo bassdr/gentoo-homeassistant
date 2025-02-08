@@ -22,6 +22,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="setuptools"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	setuptools; extra == "setuptools"
+	tomli; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	setuptools? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 "

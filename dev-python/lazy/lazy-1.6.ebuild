@@ -16,10 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	mypy ; extra == 'mypy'
+	sphinx (==5.3.0) ; extra == 'docs'
+	sphinx-rtd-theme (==1.0.0) ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	mypy? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-5.3.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-5.3.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

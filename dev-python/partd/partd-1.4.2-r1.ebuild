@@ -18,6 +18,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="complete"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	blosc; extra == "complete"
+	locket
+	numpy>=1.20.0; extra == "complete"
+	pandas>=1.3; extra == "complete"
+	pyzmq; extra == "complete"
+	toolz
+"
 GENERATED_RDEPEND="${RDEPEND}
 	complete? ( dev-python/blosc[${PYTHON_USEDEP}] )
 	dev-python/locket[${PYTHON_USEDEP}]

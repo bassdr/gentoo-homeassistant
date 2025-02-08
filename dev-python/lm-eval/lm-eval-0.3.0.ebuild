@@ -16,6 +16,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	datasets (>=2.0.0)
+	flake8 ; extra == 'dev'
+	jieba (>=0.42.1) ; extra == 'multilingual'
+	jsonlines
+	nagisa (>=0.2.7) ; extra == 'multilingual'
+	numexpr
+	openai (>=0.6.4)
+	pre-commit ; extra == 'dev'
+	pybind11 (>=2.6.2)
+	pycountry
+	pytablewriter
+	pytest ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+	rouge-score (>=0.0.4)
+	sacrebleu (==1.5.0)
+	scikit-learn (>=0.24.1)
+	sqlitedict
+	torch (>=1.7)
+	tqdm-multiprocess
+	transformers (>=4.1)
+	zstandard
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/datasets-2.0.0[${PYTHON_USEDEP}]
 	multilingual? ( >=dev-python/jieba-0.42.1[${PYTHON_USEDEP}] )
@@ -27,7 +51,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pycountry[${PYTHON_USEDEP}]
 	dev-python/pytablewriter[${PYTHON_USEDEP}]
 	>=dev-python/rouge-score-0.0.4[${PYTHON_USEDEP}]
-	=dev-python/sacrebleu-1.5.0[${PYTHON_USEDEP}]
+	~dev-python/sacrebleu-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-0.24.1[${PYTHON_USEDEP}]
 	dev-python/sqlitedict[${PYTHON_USEDEP}]
 	>=dev-python/torch-1.7[${PYTHON_USEDEP}]

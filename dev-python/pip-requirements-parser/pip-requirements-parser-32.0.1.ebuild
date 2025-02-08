@@ -17,6 +17,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx (>=3.3.1) ; extra == 'docs'
+	aboutcode-toolkit (>=6.0.0) ; extra == 'testing'
+	black ; extra == 'testing'
+	doc8 (>=0.8.1) ; extra == 'docs'
+	packaging
+	pyparsing
+	pytest (!=7.0.0,>=6) ; extra == 'testing'
+	pytest-xdist (>=2) ; extra == 'testing'
+	sphinx-rtd-theme (>=0.5.0) ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/doc8-0.8.1[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -31,7 +42,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/aboutcode-toolkit-6.0.0[${PYTHON_USEDEP}]
 		dev-python/black[${PYTHON_USEDEP}]
-		!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-2[${PYTHON_USEDEP}]
 	)
 "

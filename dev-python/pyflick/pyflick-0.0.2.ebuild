@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python API For Flick Electric in New Zealand"
 HOMEPAGE="
-  https://pypi.org/project/PyFlick/
+  https://pypi.org/project/pyflick/
 "
 
 LICENSE="MIT"

@@ -16,7 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Werkzeug>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/werkzeug-2.0.0[${PYTHON_USEDEP}]
 "

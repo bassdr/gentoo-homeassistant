@@ -16,9 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	limits (>=2.3)
+	redis (>=3.4.1,<4.0.0) ; extra == "redis"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/limits-2.3[${PYTHON_USEDEP}]
-	redis? ( >=dev-python/redis-3.4.1[${PYTHON_USEDEP}] )
+	redis? ( >=dev-python/redis-3.4.1[${PYTHON_USEDEP}] <dev-python/redis-4.0.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

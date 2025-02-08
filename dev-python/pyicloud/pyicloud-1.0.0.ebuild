@@ -20,6 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	certifi (>=2020.6.20)
+	click (>=7.1.2)
+	keyring (>=21.4.0)
+	keyrings.alt (>=3.5.2)
+	requests (>=2.24.0)
+	tzlocal (>=4.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2020.6.20[${PYTHON_USEDEP}]
 	>=dev-python/click-7.1.2[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} ${PV} .zip)"
@@ -16,10 +15,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-common (~=1.1)
+	azure-mgmt-datalake-nspkg (>=2.0.0)
+	msrestazure (<2.0.0,>=0.4.27)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-common-1.1[${PYTHON_USEDEP}] =dev-python/azure-common-1*[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-datalake-nspkg-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/msrestazure-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/msrestazure-0.4.27[${PYTHON_USEDEP}] <dev-python/msrestazure-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

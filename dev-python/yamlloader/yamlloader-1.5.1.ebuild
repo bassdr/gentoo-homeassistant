@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage; extra == "dev"
+	coverage; extra == "test"
+	hypothesis; extra == "dev"
+	hypothesis; extra == "test"
+	sphinx-autodoc-typehints; extra == "dev"
+	sphinx-autodoc-typehints; extra == "doc"
+	sphinx-rtd-theme; extra == "dev"
+	sphinx-rtd-theme; extra == "doc"
+	sphinx; extra == "dev"
+	sphinx; extra == "doc"
+	sphinxcontrib-apidoc; extra == "dev"
+	sphinxcontrib-apidoc; extra == "doc"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )

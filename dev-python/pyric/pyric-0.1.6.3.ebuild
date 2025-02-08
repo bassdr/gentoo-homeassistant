@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python Wireless Library"
 HOMEPAGE="
-  https://pypi.org/project/PyRIC/
+  https://pypi.org/project/pyric/
 "
 
 LICENSE="GPL-3"

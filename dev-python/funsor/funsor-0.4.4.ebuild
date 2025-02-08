@@ -16,6 +16,42 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	black ; extra == 'test'
+	flake8 ; extra == 'dev'
+	flake8 ; extra == 'test'
+	isort (>=5.0) ; extra == 'dev'
+	isort (>=5.0) ; extra == 'test'
+	jax (>=0.2.21) ; extra == 'jax'
+	jaxlib (>=0.1.71) ; extra == 'jax'
+	makefun
+	multipledispatch
+	nbsphinx ; extra == 'dev'
+	numpy (>=1.7)
+	numpyro (>=0.7.0) ; extra == 'jax'
+	opt-einsum (>=2.3.2)
+	pandas ; extra == 'dev'
+	pandas ; extra == 'test'
+	pillow (==8.2.0) ; extra == 'dev'
+	pillow (==8.2.0) ; extra == 'test'
+	pyro-api (>=0.1.2) ; extra == 'test'
+	pyro-ppl (>=1.8.0) ; extra == 'torch'
+	pytest (==4.3.1) ; extra == 'dev'
+	pytest (==4.3.1) ; extra == 'test'
+	pytest-xdist (==1.27.0) ; extra == 'dev'
+	pytest-xdist (==1.27.0) ; extra == 'test'
+	requests ; extra == 'test'
+	scipy ; extra == 'dev'
+	scipy ; extra == 'test'
+	sphinx (>=2.0) ; extra == 'dev'
+	sphinx-gallery ; extra == 'dev'
+	sphinx-rtd-theme ; extra == 'dev'
+	torch (>=1.11.0) ; extra == 'torch'
+	torchvision (>=0.12.0) ; extra == 'dev'
+	torchvision (>=0.12.0) ; extra == 'test'
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	jax? ( >=dev-python/jax-0.2.21[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/jaxlib-0.1.71[${PYTHON_USEDEP}] )
@@ -38,10 +74,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/isort-5.0[${PYTHON_USEDEP}]
 		dev-python/nbsphinx[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
-		=dev-python/pillow-8.2.0[${PYTHON_USEDEP}]
+		~dev-python/pillow-8.2.0[${PYTHON_USEDEP}]
 		>=dev-python/pyro-api-0.1.2[${PYTHON_USEDEP}]
-		=dev-python/pytest-4.3.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-xdist-1.27.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-4.3.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-xdist-1.27.0[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-2.0[${PYTHON_USEDEP}]

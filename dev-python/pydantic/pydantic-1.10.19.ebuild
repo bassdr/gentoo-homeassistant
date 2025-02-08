@@ -19,6 +19,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dotenv email"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	email-validator>=1.0.3; extra == "email"
+	python-dotenv>=0.10.4; extra == "dotenv"
+	typing-extensions>=4.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	email? ( >=dev-python/email-validator-1.0.3[${PYTHON_USEDEP}] )
 	dotenv? ( >=dev-python/python-dotenv-0.10.4[${PYTHON_USEDEP}] )

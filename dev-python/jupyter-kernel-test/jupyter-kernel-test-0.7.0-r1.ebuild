@@ -16,7 +16,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	ipykernel; extra == 'test'
+	jsonschema
+	jupyter-client>=6.1.13
+	pre-commit; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]

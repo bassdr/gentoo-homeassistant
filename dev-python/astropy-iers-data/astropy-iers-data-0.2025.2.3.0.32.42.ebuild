@@ -16,6 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	hypothesis; extra == "test"
+	pytest-remotedata; extra == "test"
+	pytest; extra == "docs"
+	pytest; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/pytest[${PYTHON_USEDEP}] )
 "

@@ -17,19 +17,38 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Cython (>=0.29.22) ; extra == 'setup'
+	attrs (<19.2.0) ; extra == 'jenkins'
+	attrs (<19.2.0) ; extra == 'test'
+	autopep8 (==1.5.5) ; extra == 'stylecheck'
+	codecov ; extra == 'jenkins'
+	coverage (<5) ; extra == 'jenkins'
+	coveralls ; extra == 'jenkins'
+	fastrlock (>=0.3)
+	fastrlock (>=0.3) ; extra == 'setup'
+	flake8 (==3.8.4) ; extra == 'stylecheck'
+	numpy (>=1.15)
+	pbr (==5.5.1) ; extra == 'stylecheck'
+	pycodestyle (==2.6.0) ; extra == 'stylecheck'
+	pytest (<4.2.0) ; extra == 'jenkins'
+	pytest (<4.2.0) ; extra == 'test'
+	pytest-cov (<2.10) ; extra == 'jenkins'
+	pytest-timeout ; extra == 'jenkins'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	jenkins? ( <dev-python/attrs-19.2.0[${PYTHON_USEDEP}] )
-	stylecheck? ( =dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
+	stylecheck? ( ~dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/coverage-5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/coveralls[${PYTHON_USEDEP}] )
 	setup? ( >=dev-python/cython-0.29.22[${PYTHON_USEDEP}] )
 	>=dev-python/fastrlock-0.3[${PYTHON_USEDEP}]
 	setup? ( >=dev-python/fastrlock-0.3[${PYTHON_USEDEP}] )
-	stylecheck? ( =dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
+	stylecheck? ( ~dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.15[${PYTHON_USEDEP}]
-	stylecheck? ( =dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
-	stylecheck? ( =dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
+	stylecheck? ( ~dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
+	stylecheck? ( ~dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-4.2.0[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/pytest-cov-2.10[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
@@ -38,7 +57,6 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		<dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 		<dev-python/pytest-4.2.0[${PYTHON_USEDEP}]

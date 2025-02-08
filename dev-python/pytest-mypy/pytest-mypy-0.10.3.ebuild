@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,10 +15,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs (>=19.0)
+	filelock (>=3.0)
+	mypy (>=0.500) ; python_version < "3.8"
+	mypy (>=0.700) ; python_version >= "3.8" and python_version < "3.9"
+	mypy (>=0.780) ; python_version >= "3.9" and python_version < "3.11"
+	mypy (>=0.900) ; python_version >= "3.11"
+	pytest (>=4.6) ; python_version >= "3.6" and python_version < "3.10"
+	pytest (>=6.2) ; python_version >= "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.0[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.0[${PYTHON_USEDEP}]
-	>=dev-python/mypy-0.500[${PYTHON_USEDEP}]
 	>=dev-python/mypy-0.900[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
 "

@@ -21,7 +21,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	coverage[toml]>=7.5
+	fields; extra == "testing"
+	hunter; extra == "testing"
+	process-tests; extra == "testing"
+	pytest-xdist; extra == "testing"
+	pytest>=4.6
+	virtualenv; extra == "testing"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/coverage-7.5[toml,${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]

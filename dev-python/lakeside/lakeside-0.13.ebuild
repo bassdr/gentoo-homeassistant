@@ -18,6 +18,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	protobuf
+	pycryptodome
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]

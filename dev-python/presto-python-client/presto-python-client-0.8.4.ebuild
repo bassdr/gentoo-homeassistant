@@ -17,6 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click
+	google-auth ; extra == 'all'
+	google-auth ; extra == 'google_auth'
+	google-auth ; extra == 'tests'
+	httpretty ; extra == 'tests'
+	ipaddress ; python_version=="2.7"
+	pytest ; extra == 'tests'
+	pytest-runner ; extra == 'tests'
+	requests
+	requests-kerberos ; extra == 'all'
+	requests-kerberos ; extra == 'kerberos'
+	requests-kerberos ; extra == 'tests'
+	six
+	typing ; python_version=="2.7"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	all? ( dev-python/google-auth[${PYTHON_USEDEP}] )

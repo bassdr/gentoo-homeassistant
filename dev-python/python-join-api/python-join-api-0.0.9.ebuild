@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	flask (>=1.1.2)
+	requests (>=2.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flask-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.0[${PYTHON_USEDEP}]

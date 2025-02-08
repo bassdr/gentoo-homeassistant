@@ -21,6 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	certifi
+	requests
+	urllib3
+	websocket-client
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

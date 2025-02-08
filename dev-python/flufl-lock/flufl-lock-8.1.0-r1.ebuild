@@ -10,13 +10,16 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/flufl.lock/"
+  https://pypi.org/project/flufl-lock/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	atpublic
+	psutil
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/atpublic[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]

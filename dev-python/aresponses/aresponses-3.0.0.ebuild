@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp !=3.8.*,>=3.7.0 ; python_version >= "3.12"
+	aiohttp <3.9.0,>=3.1.0 ; python_version >= "3.7" and python_version < "3.8"
+	aiohttp >=3.6.0 ; python_version >= "3.8" and python_version < "3.10"
+	aiohttp >=3.7.0 ; python_version >= "3.10" and python_version < "3.12"
+	pytest-asyncio ==0.16.0 ; python_version < "3.7"
+	pytest-asyncio >=0.17.0 ; python_version >= "3.7"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '!=dev-python/aiohttp-3.8*[${PYTHON_USEDEP}]' python3_13{,t})
-	=dev-python/pytest-asyncio-0.16.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}] !=dev-python/aiohttp-3.8*[${PYTHON_USEDEP}]
+	>=dev-python/pytest-asyncio-0.17.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

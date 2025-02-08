@@ -24,9 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	rich>=10
+	typer[all]<0.13.0,>=0.12.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-10[${PYTHON_USEDEP}]
-	<dev-python/typer-0.13.0[all,${PYTHON_USEDEP}]
+	>=dev-python/typer-0.12.0[all,${PYTHON_USEDEP}] <dev-python/typer-0.13.0[all,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/typer[${PYTHON_USEDEP}]"

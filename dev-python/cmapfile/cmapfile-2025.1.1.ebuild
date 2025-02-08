@@ -16,6 +16,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	h5py
+	imagecodecs; extra == "all"
+	numpy
+	oiffile
+	scipy
+	tifffile
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/h5py[${PYTHON_USEDEP}]
 	all? ( dev-python/imagecodecs[${PYTHON_USEDEP}] )

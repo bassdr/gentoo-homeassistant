@@ -10,13 +10,22 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/stack_data/"
+  https://pypi.org/project/stack-data/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	asttokens >=2.1.0
+	cython ; extra == 'tests'
+	executing >=1.2.0
+	littleutils ; extra == 'tests'
+	pure-eval
+	pygments ; extra == 'tests'
+	pytest ; extra == 'tests'
+	typeguard ; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/executing-1.2.0[${PYTHON_USEDEP}]

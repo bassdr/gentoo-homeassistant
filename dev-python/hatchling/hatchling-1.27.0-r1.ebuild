@@ -32,7 +32,13 @@ KEYWORDS="amd64 arm64"
 
 # deps are listed in backend/src/hatchling/ouroboros.py
 # editables are optional but required for editable installs
-IUSE=""
+REQUIRES_DIST="
+	packaging>=24.2
+	pathspec>=0.10.1
+	pluggy>=1.0.0
+	tomli>=1.2.2; python_version < "3.11"
+	trove-classifiers
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
 	>=dev-python/pathspec-0.10.1[${PYTHON_USEDEP}]

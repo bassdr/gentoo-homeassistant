@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-common>=1.1
+	azure-mgmt-core>=1.3.2
+	isodate>=0.6.1
+	typing-extensions>=4.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-common-1.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-core-1.3.2[${PYTHON_USEDEP}]

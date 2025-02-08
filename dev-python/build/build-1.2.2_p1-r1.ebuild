@@ -25,10 +25,40 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs typing uv virtualenv"
 IUSE="${GENERATED_IUSE} test-rust"
 
+REQUIRES_DIST="
+	build[uv,virtualenv]; extra == "test"
+	build[uv]; extra == "typing"
+	colorama; os_name == "nt"
+	filelock>=3; extra == "test"
+	furo>=2023.08.17; extra == "docs"
+	importlib-metadata>=4.6; python_full_version < "3.10.2"
+	importlib-metadata>=5.1; extra == "typing"
+	mypy~=1.9.0; extra == "typing"
+	packaging>=19.1
+	pyproject_hooks
+	pytest-cov>=2.12; extra == "test"
+	pytest-mock>=2; extra == "test"
+	pytest-rerunfailures>=9.1; extra == "test"
+	pytest-xdist>=1.34; extra == "test"
+	pytest>=6.2.4; extra == "test"
+	setuptools>=42.0.0; extra == "test" and python_version < "3.10"
+	setuptools>=56.0.0; extra == "test" and python_version == "3.10"
+	setuptools>=56.0.0; extra == "test" and python_version == "3.11"
+	setuptools>=67.8.0; extra == "test" and python_version >= "3.12"
+	sphinx-argparse-cli>=1.5; extra == "docs"
+	sphinx-autodoc-typehints>=1.10; extra == "docs"
+	sphinx-issues>=3.0.0; extra == "docs"
+	sphinx~=7.0; extra == "docs"
+	tomli; extra == "typing"
+	tomli>=1.1.0; python_version < "3.11"
+	typing-extensions>=3.7.4.3; extra == "typing"
+	uv>=0.1.18; extra == "uv"
+	virtualenv>=20.0.35; extra == "virtualenv"
+	wheel>=0.36.0; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	typing? ( dev-python/build[uv,${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/furo-2023.08.17[${PYTHON_USEDEP}] )
-	>=dev-python/importlib-metadata-4.6[${PYTHON_USEDEP}]
 	typing? ( >=dev-python/importlib-metadata-5.1[${PYTHON_USEDEP}] )
 	typing? ( >=dev-python/mypy-1.9.0[${PYTHON_USEDEP}] =dev-python/mypy-1.9*[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-19.1[${PYTHON_USEDEP}]
@@ -76,8 +106,6 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-mock-2[${PYTHON_USEDEP}]
 		>=dev-python/pytest-rerunfailures-9.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-42.0.0[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-56.0.0[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}]
 		>=dev-python/wheel-0.36.0[${PYTHON_USEDEP}]
 	)

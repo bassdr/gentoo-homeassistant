@@ -36,7 +36,11 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
+		>=dev-python/coverage-7.3.0[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '>=dev-python/pytest-8.1.1[${PYTHON_USEDEP}]' python3_12)
+		$(python_gen_cond_dep '>=dev-python/pytest-8.1.1[${PYTHON_USEDEP}]' python3_13{,t})
 		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.3.1[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.25.1[${PYTHON_USEDEP}]
 		>=dev-python/xdoctest-1.1.5[${PYTHON_USEDEP}]
 	)

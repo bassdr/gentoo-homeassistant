@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=OWSLib-${PV}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/OWSLib/"
+  https://pypi.org/project/owslib/"
 SRC_URI="
 	https://github.com/geopython/${PN}/archive/${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -22,7 +22,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	lxml
+	python-dateutil
+	pyyaml
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]

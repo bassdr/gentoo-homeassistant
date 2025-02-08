@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,18 +14,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	argh<0.31,>=0.30
+	brei<0.3.0,>=0.2.3
+	copier<10,>=9
+	filelock<4.0.0,>=3.12.0
+	mawk<0.2.0,>=0.1.4
+	pexpect<5.0.0,>=4.9.0
+	pyyaml<7.0.0,>=6.0.1
+	rich-argparse<2.0.0,>=1.4.0
+	rich<14.0.0,>=13.3.5
+	tomlkit<0.13.0,>=0.12.1
+	watchdog<4.0.0,>=3.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/argh-0.31[${PYTHON_USEDEP}]
-	<dev-python/brei-0.3.0[${PYTHON_USEDEP}]
-	<dev-python/copier-10[${PYTHON_USEDEP}]
-	<dev-python/filelock-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/mawk-0.2.0[${PYTHON_USEDEP}]
-	<dev-python/pexpect-5.0.0[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}]
-	<dev-python/rich-14.0.0[${PYTHON_USEDEP}]
-	<dev-python/rich-argparse-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/tomlkit-0.13.0[${PYTHON_USEDEP}]
-	<dev-python/watchdog-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/argh-0.30[${PYTHON_USEDEP}] <dev-python/argh-0.31[${PYTHON_USEDEP}]
+	>=dev-python/brei-0.2.3[${PYTHON_USEDEP}] <dev-python/brei-0.3.0[${PYTHON_USEDEP}]
+	>=dev-python/copier-9[${PYTHON_USEDEP}] <dev-python/copier-10[${PYTHON_USEDEP}]
+	>=dev-python/filelock-3.12.0[${PYTHON_USEDEP}] <dev-python/filelock-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/mawk-0.1.4[${PYTHON_USEDEP}] <dev-python/mawk-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/pexpect-4.9.0[${PYTHON_USEDEP}] <dev-python/pexpect-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] <dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/rich-13.3.5[${PYTHON_USEDEP}] <dev-python/rich-14.0.0[${PYTHON_USEDEP}]
+	>=dev-python/rich-argparse-1.4.0[${PYTHON_USEDEP}] <dev-python/rich-argparse-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tomlkit-0.12.1[${PYTHON_USEDEP}] <dev-python/tomlkit-0.13.0[${PYTHON_USEDEP}]
+	>=dev-python/watchdog-3.0.0[${PYTHON_USEDEP}] <dev-python/watchdog-4.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -20,8 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4,>=3.7.4
+	haversine>=2.8.1
+	python-dateutil>=2.9.0
+	xmltodict>=0.13.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>=dev-python/haversine-2.8.1[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/xmltodict-0.13.0[${PYTHON_USEDEP}]

@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	protobuf (>=3.20)
+	zeroconf (>=0.38)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/protobuf-3.20[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.38[${PYTHON_USEDEP}]

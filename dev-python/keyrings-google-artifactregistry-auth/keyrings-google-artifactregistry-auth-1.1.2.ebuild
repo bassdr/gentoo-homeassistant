@@ -12,18 +12,29 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/keyrings.google-artifactregistry-auth/"
+  https://pypi.org/project/keyrings-google-artifactregistry-auth/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	google-auth
+	keyring
+	pluggy
+	pytest (!=3.7.3,>=3.5) ; extra == 'testing'
+	pytest-black (>=0.3.7) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-checkdocs (>=1.2.3) ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-flake8 ; extra == 'testing'
+	pytest-mypy ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	requests
+	tox ; extra == 'tox'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/google-auth[${PYTHON_USEDEP}]
 	dev-python/keyring[${PYTHON_USEDEP}]
 	dev-python/pluggy[${PYTHON_USEDEP}]
-	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
-	dev-python/pytest-mypy[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	tox? ( dev-python/tox[${PYTHON_USEDEP}] )
 "
@@ -32,10 +43,12 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.5[${PYTHON_USEDEP}] !~dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-1.2.3[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-flake8[${PYTHON_USEDEP}]
+		dev-python/pytest-mypy[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

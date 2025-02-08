@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	furiosa-common == 0.9.*
+	furiosa-quantizer-impl == 0.9.*
+	numpy ~= 1.24
+	onnx ~= 1.12.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/furiosa-common-0.9*[${PYTHON_USEDEP}]
 	=dev-python/furiosa-quantizer-impl-0.9*[${PYTHON_USEDEP}]

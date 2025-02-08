@@ -16,6 +16,17 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click
+	czifile; extra == "all"
+	imagecodecs; extra == "all"
+	matplotlib; extra == "all"
+	netpbmfile; extra == "all"
+	numpy
+	oiffile; extra == "all"
+	pytest; extra == "test"
+	tifffile
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	all? ( dev-python/czifile[${PYTHON_USEDEP}] )

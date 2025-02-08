@@ -16,7 +16,13 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	black>=22.1.0; extra == 'test'
+	flake8>=4.0.1; extra == 'test'
+	pre-commit>=2.17.0; extra == 'test'
+	pytest>=7.0.0
+	tox>=3.24.5; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 "

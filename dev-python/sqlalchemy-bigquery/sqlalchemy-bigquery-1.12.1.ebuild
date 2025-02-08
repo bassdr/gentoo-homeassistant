@@ -16,19 +16,45 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GeoAlchemy2; extra == "all"
+	GeoAlchemy2; extra == "geography"
+	alembic; extra == "alembic"
+	alembic; extra == "all"
+	google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5
+	google-auth<3.0.0dev,>=1.25.0
+	google-cloud-bigquery-storage<3.0.0dev,>=2.0.0; extra == "all"
+	google-cloud-bigquery-storage<3.0.0dev,>=2.0.0; extra == "bqstorage"
+	google-cloud-bigquery<4.0.0dev,>=3.3.6
+	grpcio<2.0dev,>=1.47.0; extra == "all"
+	grpcio<2.0dev,>=1.47.0; extra == "bqstorage"
+	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "all"
+	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "bqstorage"
+	packaging
+	packaging; extra == "all"
+	packaging; extra == "tests"
+	pyarrow>=3.0.0; extra == "all"
+	pyarrow>=3.0.0; extra == "bqstorage"
+	pytz; extra == "all"
+	pytz; extra == "tests"
+	shapely; extra == "all"
+	shapely; extra == "geography"
+	sqlalchemy<3.0.0dev,>=1.4.16
+"
 GENERATED_RDEPEND="${RDEPEND}
 	alembic? ( dev-python/alembic[${PYTHON_USEDEP}] )
 	all? ( dev-python/alembic[${PYTHON_USEDEP}] )
 	all? ( dev-python/geoalchemy2[${PYTHON_USEDEP}] )
 	geography? ( dev-python/geoalchemy2[${PYTHON_USEDEP}] )
-	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-bigquery-4.0.0_pre[${PYTHON_USEDEP}]
-	all? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
-	bqstorage? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
-	<dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}]
-	all? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
-	bqstorage? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	>=dev-python/google-api-core-1.31.5[${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.1*[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.2*[${PYTHON_USEDEP}] !~dev-python/google-api-core-2.3.0[${PYTHON_USEDEP}]
+	>=dev-python/google-auth-1.25.0[${PYTHON_USEDEP}] <dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-bigquery-3.3.6[${PYTHON_USEDEP}] <dev-python/google-cloud-bigquery-4.0.0_pre[${PYTHON_USEDEP}]
+	all? ( >=dev-python/google-cloud-bigquery-storage-2.0.0[${PYTHON_USEDEP}] <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( >=dev-python/google-cloud-bigquery-storage-2.0.0[${PYTHON_USEDEP}] <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/grpcio-1.47.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( >=dev-python/grpcio-1.47.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( >=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
 	all? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pyarrow-3.0.0[${PYTHON_USEDEP}] )
@@ -36,7 +62,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	all? ( dev-python/shapely[${PYTHON_USEDEP}] )
 	geography? ( dev-python/shapely[${PYTHON_USEDEP}] )
-	<dev-python/sqlalchemy-3.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-1.4.16[${PYTHON_USEDEP}] <dev-python/sqlalchemy-3.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

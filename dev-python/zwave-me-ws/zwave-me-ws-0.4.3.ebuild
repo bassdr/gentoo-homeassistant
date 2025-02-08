@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	requests (>=2.28.1,<3.0.0)
+	websocket-client (>=1.2.1,<2.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]
-	>=dev-python/websocket-client-1.2.1[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/websocket-client-1.2.1[${PYTHON_USEDEP}] <dev-python/websocket-client-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/websocket-client-1.2.1[${PYTHON_USEDEP}]"

@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Minimal wrapper for Twitter's REST and Streaming APIs"
 HOMEPAGE="
-  https://pypi.org/project/TwitterAPI/
+  https://pypi.org/project/twitterapi/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	requests
+	requests-oauthlib
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-oauthlib[${PYTHON_USEDEP}]

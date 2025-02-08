@@ -16,9 +16,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click>=8.0
+	redis[hiredis]<6,>=4.2.0
+	watchfiles>=0.16; extra == "watch"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
-	<dev-python/redis-6[hiredis,${PYTHON_USEDEP}]
+	>=dev-python/redis-4.2.0[hiredis,${PYTHON_USEDEP}] <dev-python/redis-6[hiredis,${PYTHON_USEDEP}]
 	watch? ( >=dev-python/watchfiles-0.16[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"

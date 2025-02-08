@@ -22,9 +22,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp[speedups]<4.0.0,>=3.9.5; extra == "aiohttp"
+	mashumaro<4.0.0,>=3.13.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	aiohttp? ( <dev-python/aiohttp-4.0.0[speedups,${PYTHON_USEDEP}] )
-	<dev-python/mashumaro-4.0.0[${PYTHON_USEDEP}]
+	aiohttp? ( >=dev-python/aiohttp-3.9.5[speedups,${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[speedups,${PYTHON_USEDEP}] )
+	>=dev-python/mashumaro-3.13.1[${PYTHON_USEDEP}] <dev-python/mashumaro-4.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"

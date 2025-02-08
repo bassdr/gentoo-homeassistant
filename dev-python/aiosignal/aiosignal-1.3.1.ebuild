@@ -27,7 +27,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	frozenlist (>=1.1.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/frozenlist-1.1.0[${PYTHON_USEDEP}]
 "

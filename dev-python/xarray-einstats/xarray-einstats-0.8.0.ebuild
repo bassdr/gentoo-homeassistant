@@ -16,6 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	einops; extra == "einops"
+	furo; extra == "doc"
+	hypothesis; extra == "test"
+	jupyter-sphinx; extra == "doc"
+	matplotlib; extra == "doc"
+	myst-nb; extra == "doc"
+	myst-parser[linkify]; extra == "doc"
+	numba>=0.55; extra == "numba"
+	numpy>=1.23
+	numpydoc; extra == "doc"
+	packaging; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	scipy>=1.9
+	sphinx-copybutton; extra == "doc"
+	sphinx-design; extra == "doc"
+	sphinx-togglebutton; extra == "doc"
+	sphinx>=5; extra == "doc"
+	watermark; extra == "doc"
+	xarray>=2022.09.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	einops? ( dev-python/einops[${PYTHON_USEDEP}] )
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )

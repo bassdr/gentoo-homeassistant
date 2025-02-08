@@ -16,6 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata>=1.4
+	ipython>=6.0
+	py3nvml>=0.2; extra == "gpu"
+	setuptools
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-1.4[${PYTHON_USEDEP}]
 	>=dev-python/ipython-6.0[${PYTHON_USEDEP}]

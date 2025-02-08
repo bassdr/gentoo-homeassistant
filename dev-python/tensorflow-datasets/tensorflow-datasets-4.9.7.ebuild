@@ -16,6 +16,164 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow; extra == "colorectal-histology"
+	Pillow; extra == "huggingface"
+	Pillow; extra == "tests-all"
+	Pillow; extra == "wider-face"
+	absl-py
+	apache-beam; extra == "beir"
+	apache-beam; extra == "c4"
+	apache-beam; extra == "c4-wsrs"
+	apache-beam; extra == "dev"
+	apache-beam; extra == "tests-all"
+	apache-beam; extra == "wiki-dialog"
+	apache-beam; extra == "wikipedia"
+	array-record>=0.5.0; platform_system == "Linux"
+	bs4; extra == "huggingface"
+	bs4; extra == "tests-all"
+	bs4; extra == "wsc273"
+	click
+	conllu; extra == "dev"
+	conllu; extra == "huggingface"
+	conllu; extra == "tests-all"
+	crepe>=0.0.11; extra == "nsynth"
+	datasets; extra == "huggingface"
+	dill; extra == "dev"
+	dill; extra == "huggingface"
+	dill; extra == "tests-all"
+	dm-tree
+	envlogger; (python_version < "3.11" and sys_platform == "linux") and extra == "huggingface"
+	envlogger; (python_version < "3.11" and sys_platform == "linux") and extra == "locomotion"
+	envlogger; (python_version < "3.11" and sys_platform == "linux") and extra == "robosuite_panda_pick_place_can"
+	envlogger; (python_version < "3.11" and sys_platform == "linux") and extra == "tests-all"
+	etils[edc,enp,epath,epy,etree]>=1.6.0; python_version < "3.11"
+	etils[edc,enp,epath,epy,etree]>=1.9.1; python_version >= "3.11"
+	gcld3; extra == "c4"
+	gcld3; extra == "huggingface"
+	gcld3; extra == "tests-all"
+	gcsfs; extra == "ble-wind-field"
+	gcsfs; extra == "huggingface"
+	gcsfs; extra == "tests-all"
+	h5py; extra == "huggingface"
+	h5py; extra == "robonet"
+	h5py; extra == "tests-all"
+	imagecodecs; extra == "eurosat"
+	imagecodecs; extra == "huggingface"
+	imagecodecs; extra == "tests-all"
+	immutabledict
+	importlib-resources; python_version < "3.9"
+	jax[cpu]==0.4.28; extra == "dev"
+	jax[cpu]==0.4.28; extra == "huggingface"
+	jax[cpu]==0.4.28; extra == "tests-all"
+	jupyter; extra == "dev"
+	jupyter; extra == "huggingface"
+	jupyter; extra == "tests-all"
+	langdetect; extra == "c4"
+	langdetect; extra == "huggingface"
+	langdetect; extra == "tests-all"
+	librosa; extra == "nsynth"
+	lxml; extra == "huggingface"
+	lxml; extra == "tests-all"
+	lxml; extra == "wsc273"
+	matplotlib; extra == "cats-vs-dogs"
+	matplotlib; extra == "huggingface"
+	matplotlib; extra == "matplotlib"
+	matplotlib; extra == "tests-all"
+	mlcroissant>=1.0.9; extra == "dev"
+	mlcroissant>=1.0.9; extra == "huggingface"
+	mlcroissant>=1.0.9; extra == "tests-all"
+	mwparserfromhell; extra == "huggingface"
+	mwparserfromhell; extra == "tests-all"
+	mwparserfromhell; extra == "wikipedia"
+	mwxml; extra == "huggingface"
+	mwxml; extra == "tests-all"
+	mwxml; extra == "wikipedia"
+	networkx; extra == "huggingface"
+	networkx; extra == "ogbg-molpcba"
+	networkx; extra == "tests-all"
+	nltk==3.8.1; extra == "c4"
+	nltk==3.8.1; extra == "huggingface"
+	nltk==3.8.1; extra == "tests-all"
+	numpy
+	opencv-python; extra == "huggingface"
+	opencv-python; extra == "imagenet2012-corrupted"
+	opencv-python; extra == "tests-all"
+	pandas; extra == "dev"
+	pandas; extra == "huggingface"
+	pandas; extra == "ogbg-molpcba"
+	pandas; extra == "pet-finder"
+	pandas; extra == "qm9"
+	pandas; extra == "smartwatch-gestures"
+	pandas; extra == "tests-all"
+	pandas; extra == "wake-vision"
+	pretty-midi; extra == "groove"
+	pretty-midi; extra == "huggingface"
+	pretty-midi; extra == "tests-all"
+	promise
+	protobuf>=3.20
+	psutil
+	pyarrow
+	pycocotools; extra == "huggingface"
+	pycocotools; extra == "tests-all"
+	pycocotools; extra == "youtube-vis"
+	pydub; extra == "common-voice"
+	pydub; extra == "dev"
+	pydub; extra == "groove"
+	pydub; extra == "gtzan"
+	pydub; extra == "huggingface"
+	pydub; extra == "librispeech"
+	pydub; extra == "tests-all"
+	pylint>=2.6.0; extra == "dev"
+	pytest-shard; extra == "dev"
+	pytest-shard; extra == "huggingface"
+	pytest-shard; extra == "tests-all"
+	pytest-xdist; extra == "dev"
+	pytest-xdist; extra == "huggingface"
+	pytest-xdist; extra == "tests-all"
+	pytest; extra == "dev"
+	pytest; extra == "huggingface"
+	pytest; extra == "tests-all"
+	pyyaml; extra == "dev"
+	pyyaml; extra == "huggingface"
+	pyyaml; extra == "tests-all"
+	requests>=2.19.0
+	scikit-image; extra == "eurosat"
+	scikit-image; extra == "huggingface"
+	scikit-image; extra == "imagenet2012-corrupted"
+	scikit-image; extra == "tests-all"
+	scikit-learn==0.20.3; extra == "nsynth"
+	scipy; extra == "aflw2k3d"
+	scipy; extra == "duke-ultrasound"
+	scipy; extra == "huggingface"
+	scipy; extra == "imagenet2012-corrupted"
+	scipy; extra == "svhn"
+	scipy; extra == "tests-all"
+	scipy; extra == "the300w-lp"
+	simple-parsing
+	tensorflow-data-validation; extra == "tensorflow-data-validation"
+	tensorflow-io[tensorflow]; extra == "lsun"
+	tensorflow-io[tensorflow]; python_version < "3.12" and extra == "dev"
+	tensorflow-io[tensorflow]; python_version < "3.12" and extra == "huggingface"
+	tensorflow-io[tensorflow]; python_version < "3.12" and extra == "tests-all"
+	tensorflow-metadata
+	tensorflow>=2.1; extra == "tensorflow"
+	termcolor
+	tf-nightly; extra == "tf-nightly"
+	tifffile; extra == "eurosat"
+	tifffile; extra == "huggingface"
+	tifffile; extra == "tests-all"
+	tldextract; extra == "c4"
+	tldextract; extra == "huggingface"
+	tldextract; extra == "tests-all"
+	toml
+	tqdm
+	wrapt
+	yapf; extra == "dev"
+	zarr; extra == "ble-wind-field"
+	zarr; extra == "huggingface"
+	zarr; extra == "tests-all"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	beir? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
@@ -36,7 +194,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	huggingface? ( dev-python/dill[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/dill[${PYTHON_USEDEP}] )
 	dev-python/dm-tree[${PYTHON_USEDEP}]
-	dev-python/envlogger[${PYTHON_USEDEP}]
 	>=dev-python/etils-1.9.1[edc,enp,epath,epy,etree,${PYTHON_USEDEP}]
 	c4? ( dev-python/gcld3[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/gcld3[${PYTHON_USEDEP}] )
@@ -51,9 +208,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	huggingface? ( dev-python/imagecodecs[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/imagecodecs[${PYTHON_USEDEP}] )
 	dev-python/immutabledict[${PYTHON_USEDEP}]
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	huggingface? ( =dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
-	tests-all? ( =dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
+	huggingface? ( ~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
+	tests-all? ( ~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	c4? ( dev-python/langdetect[${PYTHON_USEDEP}] )
@@ -78,9 +234,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	huggingface? ( dev-python/networkx[${PYTHON_USEDEP}] )
 	ogbg-molpcba? ( dev-python/networkx[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/networkx[${PYTHON_USEDEP}] )
-	c4? ( =dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
-	huggingface? ( =dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
-	tests-all? ( =dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
+	c4? ( ~dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
+	huggingface? ( ~dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
+	tests-all? ( ~dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
 	huggingface? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
 	imagenet2012-corrupted? ( dev-python/opencv-python[${PYTHON_USEDEP}] )
@@ -125,7 +281,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	huggingface? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
 	imagenet2012-corrupted? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
 	tests-all? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
-	nsynth? ( =dev-python/scikit-learn-0.20.3[${PYTHON_USEDEP}] )
+	nsynth? ( ~dev-python/scikit-learn-0.20.3[${PYTHON_USEDEP}] )
 	aflw2k3d? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	duke-ultrasound? ( dev-python/scipy[${PYTHON_USEDEP}] )
 	huggingface? ( dev-python/scipy[${PYTHON_USEDEP}] )
@@ -136,7 +292,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/simple-parsing[${PYTHON_USEDEP}]
 	tensorflow? ( >=dev-python/tensorflow-2.1[${PYTHON_USEDEP}] )
 	tensorflow-data-validation? ( dev-python/tensorflow-data-validation[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep 'dev-python/tensorflow-io[tensorflow,${PYTHON_USEDEP}]' python3_12)
 	lsun? ( dev-python/tensorflow-io[tensorflow,${PYTHON_USEDEP}] )
 	dev-python/tensorflow-metadata[${PYTHON_USEDEP}]
 	dev-python/termcolor[${PYTHON_USEDEP}]
@@ -162,7 +317,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/apache-beam[${PYTHON_USEDEP}]
 		dev-python/conllu[${PYTHON_USEDEP}]
 		dev-python/dill[${PYTHON_USEDEP}]
-		=dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}]
+		~dev-python/jax-0.4.28[cpu,${PYTHON_USEDEP}]
 		dev-python/jupyter[${PYTHON_USEDEP}]
 		>=dev-python/mlcroissant-1.0.9[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]

@@ -23,10 +23,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aenum>=3.1.11
+	aioconsole>=0.4.1
+	aiohttp<4,>=3.8.3
+	inflection>=0.5.1
+	pydantic>=1.10
+	python-dateutil>=2.8.2
+	typing-extensions>=4.7.1
+	urllib3>=1.25.3
+	zeroconf>=0.25.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aenum-3.1.11[${PYTHON_USEDEP}]
 	>=dev-python/aioconsole-0.4.1[${PYTHON_USEDEP}]
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.8.3[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>=dev-python/inflection-0.5.1[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]

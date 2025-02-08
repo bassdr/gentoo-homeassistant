@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pymailgunner-1.4[${PYTHON_USEDEP}]
+	~dev-python/pymailgunner-1.4[${PYTHON_USEDEP}]
 "

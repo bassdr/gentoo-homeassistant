@@ -16,15 +16,69 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML>=5.4.1
+	Pygments>=2.6.1; extra == "docs"
+	cloudpickle>=3.0.0; extra == "testing"
+	clu; extra == "testing"
+	clu<=0.0.9; python_version < "3.10" and extra == "testing"
+	dm-haiku; extra == "docs"
+	docutils==0.16; extra == "docs"
+	einops; extra == "docs"
+	einops; extra == "testing"
+	gymnasium[accept-rom-license,atari]; extra == "testing"
+	ipykernel; extra == "docs"
+	ipython-genutils; extra == "docs"
+	ipywidgets>=8.1.5; extra == "docs"
+	jax>=0.4.27
+	jaxlib; extra == "testing"
+	jaxtyping; extra == "testing"
+	jraph>=0.0.6dev0; extra == "testing"
+	jupytext==1.13.8; extra == "docs"
+	kagglehub>=0.3.3; extra == "docs"
+	matplotlib; extra == "all"
+	matplotlib; extra == "docs"
+	ml-collections; extra == "docs"
+	ml-collections; extra == "testing"
+	msgpack
+	mypy; extra == "testing"
+	myst-nb; extra == "docs"
+	nbstripout; extra == "docs"
+	numpy>=1.23.2; python_version >= "3.11"
+	numpy>=1.26.0; python_version >= "3.12"
+	opencv-python; extra == "testing"
+	optax
+	orbax-checkpoint
+	pre-commit>=3.8.0; extra == "dev"
+	pytest-cov; extra == "testing"
+	pytest-custom-exit-code; extra == "testing"
+	pytest-xdist; extra == "testing"
+	pytest; extra == "testing"
+	pytype; extra == "testing"
+	recommonmark; extra == "docs"
+	rich>=11.1
+	scikit-learn; extra == "docs"
+	sentencepiece; extra == "testing"
+	sphinx-book-theme; extra == "docs"
+	sphinx-design; extra == "docs"
+	sphinx>=3.3.1; extra == "docs"
+	tensorflow-datasets; extra == "testing"
+	tensorflow-text>=2.11.0; platform_system != "Darwin" and extra == "testing"
+	tensorflow>=2.12.0; extra == "testing"
+	tensorstore
+	torch; extra == "testing"
+	treescope>=0.1.1; python_version >= "3.10" and extra == "testing"
+	typing-extensions>=4.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/dm-haiku[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/docutils-0.16[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/docutils-0.16[${PYTHON_USEDEP}] )
 	docs? ( dev-python/einops[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython-genutils[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/ipywidgets-8.1.5[${PYTHON_USEDEP}] )
 	>=dev-python/jax-0.4.27[${PYTHON_USEDEP}]
-	docs? ( =dev-python/jupytext-1.13.8[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/jupytext-1.13.8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/kagglehub-0.3.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
@@ -33,7 +87,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
 	docs? ( dev-python/nbstripout[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23.2[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 	dev-python/optax[${PYTHON_USEDEP}]
 	dev-python/orbax-checkpoint[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pygments-2.6.1[${PYTHON_USEDEP}] )
@@ -45,7 +99,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-design[${PYTHON_USEDEP}] )
 	dev-python/tensorstore[${PYTHON_USEDEP}]
-	>=dev-python/treescope-0.1.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -71,7 +124,9 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/sentencepiece[${PYTHON_USEDEP}]
 		>=dev-python/tensorflow-2.12.0[${PYTHON_USEDEP}]
 		dev-python/tensorflow-datasets[${PYTHON_USEDEP}]
+		>=dev-python/tensorflow-text-2.11.0[${PYTHON_USEDEP}]
 		dev-python/torch[${PYTHON_USEDEP}]
+		>=dev-python/treescope-0.1.1[${PYTHON_USEDEP}]
 		>=dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
 	)
 "

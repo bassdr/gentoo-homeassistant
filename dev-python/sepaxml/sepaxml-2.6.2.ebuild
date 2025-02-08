@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	text-unidecode
+	xmlschema
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/text-unidecode[${PYTHON_USEDEP}]
 	dev-python/xmlschema[${PYTHON_USEDEP}]

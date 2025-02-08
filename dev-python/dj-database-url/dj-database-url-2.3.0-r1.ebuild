@@ -16,7 +16,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Django>=4.2
+	typing_extensions>=3.10.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/django-4.2[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]

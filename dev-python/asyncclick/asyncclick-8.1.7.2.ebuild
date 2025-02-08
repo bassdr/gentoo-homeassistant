@@ -22,9 +22,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	anyio
+	colorama ; platform_system == "Windows"
+	importlib-metadata ; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/anyio[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/anyio[${PYTHON_USEDEP}]"

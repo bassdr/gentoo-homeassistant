@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black
+	click
+	griffe>=0.33
+	importlib-metadata>=5.1.0
+	importlib-resources>=5.10.2
+	jupyterlab; extra == "dev"
+	jupytext; extra == "dev"
+	plum-dispatch<2.0.0; python_version < "3.10"
+	plum-dispatch>2.0.0; python_version >= "3.10"
+	pre-commit; extra == "dev"
+	pydantic
+	pytest-cov; extra == "dev"
+	pytest<8.0.0; extra == "dev"
+	pyyaml
+	requests
+	sphobjinv>=2.3.1
+	syrupy; extra == "dev"
+	tabulate>=0.9.0
+	typing-extensions>=4.4.0
+	watchdog>=3.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/black[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

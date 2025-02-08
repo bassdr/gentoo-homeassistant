@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy>=1.24.4
+	pandas>=2.0.3
+	scikit-learn>=1.2.1
+	scipy>=1.9.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.24.4[${PYTHON_USEDEP}]
 	>=dev-python/pandas-2.0.3[${PYTHON_USEDEP}]

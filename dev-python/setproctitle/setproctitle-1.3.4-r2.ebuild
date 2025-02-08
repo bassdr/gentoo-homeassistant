@@ -40,5 +40,3 @@ src_configure() {
 
 	distutils-r1_src_configure
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

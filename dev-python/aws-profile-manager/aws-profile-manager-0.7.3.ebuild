@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	argparse
+	boto3
+	click
+	configparser
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/argparse[${PYTHON_USEDEP}]
 	dev-python/boto3[${PYTHON_USEDEP}]

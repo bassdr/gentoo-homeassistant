@@ -16,6 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black>=23.12; extra == "dev"
+	mypy>=1.8; extra == "dev"
+	numpy
+	pylibjpeg-libjpeg; extra == "all"
+	pylibjpeg-libjpeg; extra == "libjpeg"
+	pylibjpeg-openjpeg; extra == "all"
+	pylibjpeg-openjpeg; extra == "openjpeg"
+	pylibjpeg-rle; extra == "all"
+	pylibjpeg-rle; extra == "rle"
+	pytest-cov; extra == "dev"
+	pytest; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	all? ( dev-python/pylibjpeg-libjpeg[${PYTHON_USEDEP}] )

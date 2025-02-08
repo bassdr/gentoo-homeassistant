@@ -14,7 +14,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	enum-compat
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/enum-compat[${PYTHON_USEDEP}]
 "

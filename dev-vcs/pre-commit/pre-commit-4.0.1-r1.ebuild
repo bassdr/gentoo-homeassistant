@@ -19,6 +19,13 @@ KEYWORDS="amd64 arm64"
 LICENSE="MIT"
 SLOT="0"
 
+REQUIRES_DIST="
+	cfgv>=2.0.0
+	identify>=1.0.0
+	nodeenv>=0.11.1
+	pyyaml>=5.1
+	virtualenv>=20.10.0
+"
 GENERATED_RDEPEND="${RDEPEND} $(python_gen_cond_dep '
 	>=dev-python/cfgv-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/identify-1.0.0[${PYTHON_USEDEP}]

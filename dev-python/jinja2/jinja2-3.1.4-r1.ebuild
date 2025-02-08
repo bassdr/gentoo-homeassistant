@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A very fast and expressive template engine."
 HOMEPAGE="
-  https://pypi.org/project/Jinja2/
+  https://pypi.org/project/jinja2/
   Changes, https://jinja.palletsprojects.com/changes/
   Chat, https://discord.gg/pallets
   Documentation, https://jinja.palletsprojects.com/
@@ -25,6 +25,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="i18n"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Babel>=2.7; extra == "i18n"
+	MarkupSafe>=2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	i18n? ( >=dev-python/babel-2.7[${PYTHON_USEDEP}] )
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]

@@ -24,6 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aioesphomeapi>=22.0.0
+	bleak>=0.21.1
+	bluetooth-data-tools>=1.18.0
+	habluetooth>=1.0.0
+	lru-dict>=1.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aioesphomeapi-22.0.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.21.1[${PYTHON_USEDEP}]

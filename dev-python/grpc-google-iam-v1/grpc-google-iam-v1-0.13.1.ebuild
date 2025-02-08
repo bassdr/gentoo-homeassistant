@@ -19,10 +19,15 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	googleapis-common-protos[grpc]<2.0.0dev,>=1.56.0
+	grpcio<2.0.0dev,>=1.44.0
+	protobuf!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/googleapis-common-protos-2.0.0_pre[grpc,${PYTHON_USEDEP}]
-	<dev-python/grpcio-2.0.0_pre[${PYTHON_USEDEP}]
-	!=dev-python/protobuf-4.21.1[${PYTHON_USEDEP}]
+	>=dev-python/googleapis-common-protos-1.56.0[grpc,${PYTHON_USEDEP}] <dev-python/googleapis-common-protos-2.0.0_pre[grpc,${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.44.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.20.2[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.2[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.3[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.4[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

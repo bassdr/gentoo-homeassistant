@@ -20,8 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	requests<3,>=2.18.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.18.2[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.18.2[${PYTHON_USEDEP}]"

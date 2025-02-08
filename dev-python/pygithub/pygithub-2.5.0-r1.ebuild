@@ -17,7 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # cryptography via pyjwt[crypto]
-IUSE=""
+REQUIRES_DIST="
+	Deprecated
+	pyjwt[crypto]>=2.4.0
+	pynacl>=1.4.0
+	requests>=2.14.0
+	typing-extensions>=4.0.0
+	urllib3>=1.26.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.4.0[crypto,${PYTHON_USEDEP}]

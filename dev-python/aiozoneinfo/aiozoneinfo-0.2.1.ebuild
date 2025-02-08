@@ -24,8 +24,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	backports.zoneinfo>=0.2.0; python_version < "3.9"
+	tzdata>=2024.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/backports-zoneinfo-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/tzdata-2024.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

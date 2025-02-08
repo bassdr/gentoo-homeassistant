@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pywebpush-1.14.1[${PYTHON_USEDEP}]
+	~dev-python/pywebpush-1.14.1[${PYTHON_USEDEP}]
 "

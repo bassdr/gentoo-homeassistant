@@ -10,12 +10,22 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jupyter_bokeh/"
+  https://pypi.org/project/jupyter-bokeh/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bokeh==3.*
+	flake8; extra == "tests"
+	ipywidgets==8.*
+	jupyter-bokeh[build]; extra == "all"
+	jupyter-bokeh[tests]; extra == "all"
+	jupyterlab~=4.0; extra == "build"
+	pytest; extra == "tests"
+	setuptools>=40.8.0; extra == "build"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/bokeh-3*[${PYTHON_USEDEP}]
 	=dev-python/ipywidgets-8*[${PYTHON_USEDEP}]

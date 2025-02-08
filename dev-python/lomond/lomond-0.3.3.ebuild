@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	six (>=1.10.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
 "

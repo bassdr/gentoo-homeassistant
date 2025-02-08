@@ -11,7 +11,7 @@ inherit distutils-r1
 
 DESCRIPTION="Python binding to the Networking and Cryptography (NaCl) library"
 HOMEPAGE="
-  https://pypi.org/project/PyNaCl/
+  https://pypi.org/project/pynacl/
 "
 SRC_URI="
 	https://github.com/pyca/pynacl/archive/${PV}.tar.gz
@@ -22,9 +22,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	dev-libs/libsodium:=
+"
+REQUIRES_DIST="
+	cffi
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cffi[${PYTHON_USEDEP}]

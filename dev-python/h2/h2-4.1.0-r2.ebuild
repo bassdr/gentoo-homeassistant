@@ -17,10 +17,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	hpack (<5,>=4.0)
+	hyperframe (<7,>=6.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/hpack-5[${PYTHON_USEDEP}]
-	<dev-python/hyperframe-7[${PYTHON_USEDEP}]
+	>=dev-python/hpack-4.0[${PYTHON_USEDEP}] <dev-python/hpack-5[${PYTHON_USEDEP}]
+	>=dev-python/hyperframe-6.0[${PYTHON_USEDEP}] <dev-python/hyperframe-7[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/hyperframe-6.0[${PYTHON_USEDEP}]

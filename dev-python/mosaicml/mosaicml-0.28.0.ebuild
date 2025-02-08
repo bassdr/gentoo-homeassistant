@@ -16,161 +16,311 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython==3.1.43; extra == "all"
+	GitPython==3.1.43; extra == "dev"
+	apache-libcloud<4,>=3.3.1; extra == "all"
+	apache-libcloud<4,>=3.3.1; extra == "libcloud"
+	boto3<2,>=1.21.45; extra == "all"
+	boto3<2,>=1.21.45; extra == "streaming"
+	comet-ml<4.0.0,>=3.31.12; extra == "all"
+	comet-ml<4.0.0,>=3.31.12; extra == "comet-ml"
+	coolname<3,>=1.1.0
+	coverage[toml]==7.6.8; extra == "all"
+	coverage[toml]==7.6.8; extra == "dev"
+	cryptography==44.0.0; extra == "all"
+	cryptography==44.0.0; extra == "dev"
+	custom-inherit==2.4.1; extra == "all"
+	custom-inherit==2.4.1; extra == "dev"
+	databricks-sdk==0.38.0; extra == "all"
+	databricks-sdk==0.38.0; extra == "databricks"
+	databricks-sdk==0.38.0; extra == "mlflow"
+	datasets<4,>=2.4; extra == "all"
+	datasets<4,>=2.4; extra == "nlp"
+	docutils==0.17.1; extra == "all"
+	docutils==0.17.1; extra == "dev"
+	fasteners==0.18; extra == "all"
+	fasteners==0.18; extra == "dev"
+	furo==2022.9.29; extra == "all"
+	furo==2022.9.29; extra == "dev"
+	google-cloud-storage<3.0,>=2.0.0; extra == "all"
+	google-cloud-storage<3.0,>=2.0.0; extra == "gcs"
+	huggingface-hub<0.27,>=0.21.2; extra == "all"
+	huggingface-hub<0.27,>=0.21.2; extra == "nlp"
+	importlib-metadata<9,>=5.0.0
+	ipykernel==6.29.5; extra == "all"
+	ipykernel==6.29.5; extra == "dev"
+	ipython==8.11.0; extra == "all"
+	ipython==8.11.0; extra == "dev"
+	junitparser==3.1.2; extra == "all"
+	junitparser==3.1.2; extra == "dev"
+	jupyter==1.1.1; extra == "all"
+	jupyter==1.1.1; extra == "dev"
+	mlflow<3.0,>=2.14.1; extra == "all"
+	mlflow<3.0,>=2.14.1; extra == "mlflow"
+	mock-ssh-server==0.9.1; extra == "all"
+	mock-ssh-server==0.9.1; extra == "dev"
+	mosaicml-cli<0.7,>=0.5.25
+	mosaicml-streaming<1.0; extra == "all"
+	mosaicml-streaming<1.0; extra == "streaming"
+	moto[s3]<6,>=5.0.1; extra == "all"
+	moto[s3]<6,>=5.0.1; extra == "dev"
+	myst-parser==0.16.1; extra == "all"
+	myst-parser==0.16.1; extra == "dev"
+	nbsphinx==0.9.1; extra == "all"
+	nbsphinx==0.9.1; extra == "dev"
+	neptune<2.0.0,>=1.6.2; extra == "all"
+	neptune<2.0.0,>=1.6.2; extra == "neptune"
+	numpy<2.2.0,>=1.21.5
+	oci<3.0.0,>=2.88.2; extra == "all"
+	oci<3.0.0,>=2.88.2; extra == "oci"
+	onnx<2,>=1.12.0; extra == "all"
+	onnx<2,>=1.12.0; extra == "onnx"
+	onnxruntime<2,>=1.12.1; extra == "all"
+	onnxruntime<2,>=1.12.1; extra == "onnx"
+	packaging<24.3,>=21.3.0
+	pandas<3.0,>=2.0.0; extra == "all"
+	pandas<3.0,>=2.0.0; extra == "pandas"
+	pandoc==2.4; extra == "all"
+	pandoc==2.4; extra == "dev"
+	paramiko<4,>=3.4.0; extra == "all"
+	paramiko<4,>=3.4.0; extra == "streaming"
+	peft<0.14,>=0.10.0; extra == "all"
+	peft<0.14,>=0.10.0; extra == "peft"
+	pillow<12,>=10.3.0
+	pre-commit<5,>=3.4.0; extra == "all"
+	pre-commit<5,>=3.4.0; extra == "dev"
+	protobuf<5.30; extra == "all"
+	protobuf<5.30; extra == "sentencepiece"
+	psutil<7,>=5.8.0
+	py-cpuinfo<10,>=8.0.0
+	py-cpuinfo<10,>=8.0.0; extra == "all"
+	py-cpuinfo<10,>=8.0.0; extra == "mlperf"
+	pycocotools<3,>=2.0.4; extra == "all"
+	pycocotools<3,>=2.0.4; extra == "coco"
+	pynvml<12,>=11.5.0; extra == "all"
+	pynvml<12,>=11.5.0; extra == "mlflow"
+	pynvml<12,>=11.5.0; extra == "system-metrics-monitor"
+	pypandoc==1.14; extra == "all"
+	pypandoc==1.14; extra == "dev"
+	pytest-codeblocks==0.17.0; extra == "all"
+	pytest-codeblocks==0.17.0; extra == "dev"
+	pytest-httpserver<1.1,>=1.0.4; extra == "all"
+	pytest-httpserver<1.1,>=1.0.4; extra == "dev"
+	pytest==7.4.4; extra == "all"
+	pytest==7.4.4; extra == "dev"
+	pyyaml<7,>=6.0
+	recommonmark==0.7.1; extra == "all"
+	recommonmark==0.7.1; extra == "dev"
+	requests<3,>=2.26.0
+	sentencepiece==0.2.0; extra == "all"
+	sentencepiece==0.2.0; extra == "sentencepiece"
+	setuptools<=59.5.0; extra == "all"
+	setuptools<=59.5.0; extra == "dev"
+	slack-sdk<4,>=3.19.5; extra == "all"
+	slack-sdk<4,>=3.19.5; extra == "slack"
+	sphinx-argparse==0.4.0; extra == "all"
+	sphinx-argparse==0.4.0; extra == "dev"
+	sphinx-copybutton==0.5.2; extra == "all"
+	sphinx-copybutton==0.5.2; extra == "dev"
+	sphinx-markdown-tables==0.0.17; extra == "all"
+	sphinx-markdown-tables==0.0.17; extra == "dev"
+	sphinx-panels==0.6.0; extra == "all"
+	sphinx-panels==0.6.0; extra == "dev"
+	sphinx==4.4.0; extra == "all"
+	sphinx==4.4.0; extra == "dev"
+	sphinxcontrib-applehelp==1.0.0; extra == "all"
+	sphinxcontrib-applehelp==1.0.0; extra == "dev"
+	sphinxcontrib-devhelp==1.0.0; extra == "all"
+	sphinxcontrib-devhelp==1.0.0; extra == "dev"
+	sphinxcontrib-htmlhelp==2.0.0; extra == "all"
+	sphinxcontrib-htmlhelp==2.0.0; extra == "dev"
+	sphinxcontrib-images==0.9.4; extra == "all"
+	sphinxcontrib-images==0.9.4; extra == "dev"
+	sphinxcontrib-qthelp==1.0.0; extra == "all"
+	sphinxcontrib-qthelp==1.0.0; extra == "dev"
+	sphinxcontrib-serializinghtml==1.1.5; extra == "all"
+	sphinxcontrib-serializinghtml==1.1.5; extra == "dev"
+	sphinxcontrib.katex==0.9.10; extra == "all"
+	sphinxcontrib.katex==0.9.10; extra == "dev"
+	sphinxemoji==0.2.0; extra == "all"
+	sphinxemoji==0.2.0; extra == "dev"
+	sphinxext.opengraph==0.9.1; extra == "all"
+	sphinxext.opengraph==0.9.1; extra == "dev"
+	tabulate==0.9.0
+	tensorboard<3.0.0,>=2.9.1; extra == "all"
+	tensorboard<3.0.0,>=2.9.1; extra == "tensorboard"
+	testbook==0.4.2; extra == "all"
+	testbook==0.4.2; extra == "dev"
+	torch-optimizer<0.4,>=0.3.0
+	torch<2.5.2,>=2.3.0
+	torchmetrics<1.6.1,>=1.0
+	torchvision<0.20.2,>=0.18.0
+	tqdm<5,>=4.62.3
+	traitlets==5.14.3; extra == "all"
+	traitlets==5.14.3; extra == "dev"
+	transformers!=4.34.0,<4.46,>=4.11; extra == "all"
+	transformers!=4.34.0,<4.46,>=4.11; extra == "nlp"
+	wandb<0.19,>=0.13.2; extra == "all"
+	wandb<0.19,>=0.13.2; extra == "wandb"
+	yamllint==1.35.1; extra == "all"
+	yamllint==1.35.1; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	all? ( <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
-	libcloud? ( <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
-	all? ( <dev-python/boto3-2[${PYTHON_USEDEP}] )
-	streaming? ( <dev-python/boto3-2[${PYTHON_USEDEP}] )
-	all? ( <dev-python/comet-ml-4.0.0[${PYTHON_USEDEP}] )
-	comet-ml? ( <dev-python/comet-ml-4.0.0[${PYTHON_USEDEP}] )
-	<dev-python/coolname-3[${PYTHON_USEDEP}]
-	all? ( =dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}] )
-	all? ( =dev-python/cryptography-44.0.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}] )
-	all? ( =dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
-	databricks? ( =dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
-	mlflow? ( =dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/datasets-4[${PYTHON_USEDEP}] )
-	nlp? ( <dev-python/datasets-4[${PYTHON_USEDEP}] )
-	all? ( =dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
-	all? ( =dev-python/fasteners-0.18[${PYTHON_USEDEP}] )
-	all? ( =dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
-	all? ( =dev-python/gitpython-3.1.43[${PYTHON_USEDEP}] )
-	all? ( <dev-python/google-cloud-storage-3.0[${PYTHON_USEDEP}] )
-	gcs? ( <dev-python/google-cloud-storage-3.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/huggingface-hub-0.27[${PYTHON_USEDEP}] )
-	nlp? ( <dev-python/huggingface-hub-0.27[${PYTHON_USEDEP}] )
-	<dev-python/importlib-metadata-9[${PYTHON_USEDEP}]
-	all? ( =dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}] )
-	all? ( =dev-python/ipython-8.11.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/junitparser-3.1.2[${PYTHON_USEDEP}] )
-	all? ( =dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
-	all? ( <dev-python/mlflow-3.0[${PYTHON_USEDEP}] )
-	mlflow? ( <dev-python/mlflow-3.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}] )
-	<dev-python/mosaicml-cli-0.7[${PYTHON_USEDEP}]
+	all? ( >=dev-python/apache-libcloud-3.3.1[${PYTHON_USEDEP}] <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
+	libcloud? ( >=dev-python/apache-libcloud-3.3.1[${PYTHON_USEDEP}] <dev-python/apache-libcloud-4[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/boto3-1.21.45[${PYTHON_USEDEP}] <dev-python/boto3-2[${PYTHON_USEDEP}] )
+	streaming? ( >=dev-python/boto3-1.21.45[${PYTHON_USEDEP}] <dev-python/boto3-2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/comet-ml-3.31.12[${PYTHON_USEDEP}] <dev-python/comet-ml-4.0.0[${PYTHON_USEDEP}] )
+	comet-ml? ( >=dev-python/comet-ml-3.31.12[${PYTHON_USEDEP}] <dev-python/comet-ml-4.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/coolname-1.1.0[${PYTHON_USEDEP}] <dev-python/coolname-3[${PYTHON_USEDEP}]
+	all? ( ~dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}] )
+	all? ( ~dev-python/cryptography-44.0.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
+	databricks? ( ~dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
+	mlflow? ( ~dev-python/databricks-sdk-0.38.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/datasets-2.4[${PYTHON_USEDEP}] <dev-python/datasets-4[${PYTHON_USEDEP}] )
+	nlp? ( >=dev-python/datasets-2.4[${PYTHON_USEDEP}] <dev-python/datasets-4[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/fasteners-0.18[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/furo-2022.9.29[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/gitpython-3.1.43[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/google-cloud-storage-2.0.0[${PYTHON_USEDEP}] <dev-python/google-cloud-storage-3.0[${PYTHON_USEDEP}] )
+	gcs? ( >=dev-python/google-cloud-storage-2.0.0[${PYTHON_USEDEP}] <dev-python/google-cloud-storage-3.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/huggingface-hub-0.21.2[${PYTHON_USEDEP}] <dev-python/huggingface-hub-0.27[${PYTHON_USEDEP}] )
+	nlp? ( >=dev-python/huggingface-hub-0.21.2[${PYTHON_USEDEP}] <dev-python/huggingface-hub-0.27[${PYTHON_USEDEP}] )
+	>=dev-python/importlib-metadata-5.0.0[${PYTHON_USEDEP}] <dev-python/importlib-metadata-9[${PYTHON_USEDEP}]
+	all? ( ~dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/ipython-8.11.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/junitparser-3.1.2[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/mlflow-2.14.1[${PYTHON_USEDEP}] <dev-python/mlflow-3.0[${PYTHON_USEDEP}] )
+	mlflow? ( >=dev-python/mlflow-2.14.1[${PYTHON_USEDEP}] <dev-python/mlflow-3.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}] )
+	>=dev-python/mosaicml-cli-0.5.25[${PYTHON_USEDEP}] <dev-python/mosaicml-cli-0.7[${PYTHON_USEDEP}]
 	all? ( <dev-python/mosaicml-streaming-1.0[${PYTHON_USEDEP}] )
 	streaming? ( <dev-python/mosaicml-streaming-1.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/moto-6[s3,${PYTHON_USEDEP}] )
-	all? ( =dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
-	all? ( =dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
-	all? ( <dev-python/neptune-2.0.0[${PYTHON_USEDEP}] )
-	neptune? ( <dev-python/neptune-2.0.0[${PYTHON_USEDEP}] )
-	<dev-python/numpy-2.2.0[${PYTHON_USEDEP}]
-	all? ( <dev-python/oci-3.0.0[${PYTHON_USEDEP}] )
-	oci? ( <dev-python/oci-3.0.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/onnx-2[${PYTHON_USEDEP}] )
-	onnx? ( <dev-python/onnx-2[${PYTHON_USEDEP}] )
-	all? ( <dev-python/onnxruntime-2[${PYTHON_USEDEP}] )
-	onnx? ( <dev-python/onnxruntime-2[${PYTHON_USEDEP}] )
-	<dev-python/packaging-24.3[${PYTHON_USEDEP}]
-	all? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
-	pandas? ( <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/pandoc-2.4[${PYTHON_USEDEP}] )
-	all? ( <dev-python/paramiko-4[${PYTHON_USEDEP}] )
-	streaming? ( <dev-python/paramiko-4[${PYTHON_USEDEP}] )
-	all? ( <dev-python/peft-0.14[${PYTHON_USEDEP}] )
-	peft? ( <dev-python/peft-0.14[${PYTHON_USEDEP}] )
-	<dev-python/pillow-12[${PYTHON_USEDEP}]
+	all? ( >=dev-python/moto-5.0.1[s3,${PYTHON_USEDEP}] <dev-python/moto-6[s3,${PYTHON_USEDEP}] )
+	all? ( ~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/neptune-1.6.2[${PYTHON_USEDEP}] <dev-python/neptune-2.0.0[${PYTHON_USEDEP}] )
+	neptune? ( >=dev-python/neptune-1.6.2[${PYTHON_USEDEP}] <dev-python/neptune-2.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/numpy-1.21.5[${PYTHON_USEDEP}] <dev-python/numpy-2.2.0[${PYTHON_USEDEP}]
+	all? ( >=dev-python/oci-2.88.2[${PYTHON_USEDEP}] <dev-python/oci-3.0.0[${PYTHON_USEDEP}] )
+	oci? ( >=dev-python/oci-2.88.2[${PYTHON_USEDEP}] <dev-python/oci-3.0.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/onnx-1.12.0[${PYTHON_USEDEP}] <dev-python/onnx-2[${PYTHON_USEDEP}] )
+	onnx? ( >=dev-python/onnx-1.12.0[${PYTHON_USEDEP}] <dev-python/onnx-2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/onnxruntime-1.12.1[${PYTHON_USEDEP}] <dev-python/onnxruntime-2[${PYTHON_USEDEP}] )
+	onnx? ( >=dev-python/onnxruntime-1.12.1[${PYTHON_USEDEP}] <dev-python/onnxruntime-2[${PYTHON_USEDEP}] )
+	>=dev-python/packaging-21.3.0[${PYTHON_USEDEP}] <dev-python/packaging-24.3[${PYTHON_USEDEP}]
+	all? ( >=dev-python/pandas-2.0.0[${PYTHON_USEDEP}] <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
+	pandas? ( >=dev-python/pandas-2.0.0[${PYTHON_USEDEP}] <dev-python/pandas-3.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/pandoc-2.4[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/paramiko-3.4.0[${PYTHON_USEDEP}] <dev-python/paramiko-4[${PYTHON_USEDEP}] )
+	streaming? ( >=dev-python/paramiko-3.4.0[${PYTHON_USEDEP}] <dev-python/paramiko-4[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/peft-0.10.0[${PYTHON_USEDEP}] <dev-python/peft-0.14[${PYTHON_USEDEP}] )
+	peft? ( >=dev-python/peft-0.10.0[${PYTHON_USEDEP}] <dev-python/peft-0.14[${PYTHON_USEDEP}] )
+	>=dev-python/pillow-10.3.0[${PYTHON_USEDEP}] <dev-python/pillow-12[${PYTHON_USEDEP}]
 	all? ( <dev-python/protobuf-5.30[${PYTHON_USEDEP}] )
 	sentencepiece? ( <dev-python/protobuf-5.30[${PYTHON_USEDEP}] )
-	<dev-python/psutil-7[${PYTHON_USEDEP}]
-	<dev-python/py-cpuinfo-10[${PYTHON_USEDEP}]
-	all? ( <dev-python/py-cpuinfo-10[${PYTHON_USEDEP}] )
-	mlperf? ( <dev-python/py-cpuinfo-10[${PYTHON_USEDEP}] )
-	all? ( <dev-python/pycocotools-3[${PYTHON_USEDEP}] )
-	coco? ( <dev-python/pycocotools-3[${PYTHON_USEDEP}] )
-	all? ( <dev-python/pynvml-12[${PYTHON_USEDEP}] )
-	mlflow? ( <dev-python/pynvml-12[${PYTHON_USEDEP}] )
-	system-metrics-monitor? ( <dev-python/pynvml-12[${PYTHON_USEDEP}] )
-	all? ( =dev-python/pypandoc-1.14[${PYTHON_USEDEP}] )
-	all? ( =dev-python/pytest-7.4.4[${PYTHON_USEDEP}] )
-	all? ( =dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/pytest-httpserver-1.1[${PYTHON_USEDEP}] )
-	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	all? ( =dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}] )
-	<dev-python/requests-3[${PYTHON_USEDEP}]
-	all? ( =dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
-	sentencepiece? ( =dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
+	>=dev-python/psutil-5.8.0[${PYTHON_USEDEP}] <dev-python/psutil-7[${PYTHON_USEDEP}]
+	>=dev-python/py-cpuinfo-8.0.0[${PYTHON_USEDEP}] <dev-python/py-cpuinfo-10[${PYTHON_USEDEP}]
+	all? ( >=dev-python/py-cpuinfo-8.0.0[${PYTHON_USEDEP}] <dev-python/py-cpuinfo-10[${PYTHON_USEDEP}] )
+	mlperf? ( >=dev-python/py-cpuinfo-8.0.0[${PYTHON_USEDEP}] <dev-python/py-cpuinfo-10[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pycocotools-2.0.4[${PYTHON_USEDEP}] <dev-python/pycocotools-3[${PYTHON_USEDEP}] )
+	coco? ( >=dev-python/pycocotools-2.0.4[${PYTHON_USEDEP}] <dev-python/pycocotools-3[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pynvml-11.5.0[${PYTHON_USEDEP}] <dev-python/pynvml-12[${PYTHON_USEDEP}] )
+	mlflow? ( >=dev-python/pynvml-11.5.0[${PYTHON_USEDEP}] <dev-python/pynvml-12[${PYTHON_USEDEP}] )
+	system-metrics-monitor? ( >=dev-python/pynvml-11.5.0[${PYTHON_USEDEP}] <dev-python/pynvml-12[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/pypandoc-1.14[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/pytest-7.4.4[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pytest-httpserver-1.0.4[${PYTHON_USEDEP}] <dev-python/pytest-httpserver-1.1[${PYTHON_USEDEP}] )
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}] <dev-python/pyyaml-7[${PYTHON_USEDEP}]
+	all? ( ~dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
+	all? ( ~dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
+	sentencepiece? ( ~dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
 	all? ( <=dev-python/setuptools-59.5.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/slack-sdk-4[${PYTHON_USEDEP}] )
-	slack? ( <dev-python/slack-sdk-4[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
-	=dev-python/tabulate-0.9.0[${PYTHON_USEDEP}]
-	all? ( <dev-python/tensorboard-3.0.0[${PYTHON_USEDEP}] )
-	tensorboard? ( <dev-python/tensorboard-3.0.0[${PYTHON_USEDEP}] )
-	all? ( =dev-python/testbook-0.4.2[${PYTHON_USEDEP}] )
-	<dev-python/torch-2.5.2[${PYTHON_USEDEP}]
-	<dev-python/torch-optimizer-0.4[${PYTHON_USEDEP}]
-	<dev-python/torchmetrics-1.6.1[${PYTHON_USEDEP}]
-	<dev-python/torchvision-0.20.2[${PYTHON_USEDEP}]
-	<dev-python/tqdm-5[${PYTHON_USEDEP}]
-	all? ( =dev-python/traitlets-5.14.3[${PYTHON_USEDEP}] )
-	all? ( !=dev-python/transformers-4.34.0[${PYTHON_USEDEP}] )
-	nlp? ( !=dev-python/transformers-4.34.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/wandb-0.19[${PYTHON_USEDEP}] )
-	wandb? ( <dev-python/wandb-0.19[${PYTHON_USEDEP}] )
-	all? ( =dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
-	all? ( <dev-vcs/pre-commit-5[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/slack-sdk-3.19.5[${PYTHON_USEDEP}] <dev-python/slack-sdk-4[${PYTHON_USEDEP}] )
+	slack? ( >=dev-python/slack-sdk-3.19.5[${PYTHON_USEDEP}] <dev-python/slack-sdk-4[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinx-4.4.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
+	~dev-python/tabulate-0.9.0[${PYTHON_USEDEP}]
+	all? ( >=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}] <dev-python/tensorboard-3.0.0[${PYTHON_USEDEP}] )
+	tensorboard? ( >=dev-python/tensorboard-2.9.1[${PYTHON_USEDEP}] <dev-python/tensorboard-3.0.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/testbook-0.4.2[${PYTHON_USEDEP}] )
+	>=dev-python/torch-2.3.0[${PYTHON_USEDEP}] <dev-python/torch-2.5.2[${PYTHON_USEDEP}]
+	>=dev-python/torch-optimizer-0.3.0[${PYTHON_USEDEP}] <dev-python/torch-optimizer-0.4[${PYTHON_USEDEP}]
+	>=dev-python/torchmetrics-1.0[${PYTHON_USEDEP}] <dev-python/torchmetrics-1.6.1[${PYTHON_USEDEP}]
+	>=dev-python/torchvision-0.18.0[${PYTHON_USEDEP}] <dev-python/torchvision-0.20.2[${PYTHON_USEDEP}]
+	>=dev-python/tqdm-4.62.3[${PYTHON_USEDEP}] <dev-python/tqdm-5[${PYTHON_USEDEP}]
+	all? ( ~dev-python/traitlets-5.14.3[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/transformers-4.11[${PYTHON_USEDEP}] <dev-python/transformers-4.46[${PYTHON_USEDEP}] !~dev-python/transformers-4.34.0[${PYTHON_USEDEP}] )
+	nlp? ( >=dev-python/transformers-4.11[${PYTHON_USEDEP}] <dev-python/transformers-4.46[${PYTHON_USEDEP}] !~dev-python/transformers-4.34.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/wandb-0.13.2[${PYTHON_USEDEP}] <dev-python/wandb-0.19[${PYTHON_USEDEP}] )
+	wandb? ( >=dev-python/wandb-0.13.2[${PYTHON_USEDEP}] <dev-python/wandb-0.19[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}] )
+	all? ( >=dev-vcs/pre-commit-3.4.0[${PYTHON_USEDEP}] <dev-vcs/pre-commit-5[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}]
-		=dev-python/cryptography-44.0.0[${PYTHON_USEDEP}]
-		=dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}]
-		=dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
-		=dev-python/fasteners-0.18[${PYTHON_USEDEP}]
-		=dev-python/furo-2022.9.29[${PYTHON_USEDEP}]
-		=dev-python/gitpython-3.1.43[${PYTHON_USEDEP}]
-		=dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}]
-		=dev-python/ipython-8.11.0[${PYTHON_USEDEP}]
-		=dev-python/junitparser-3.1.2[${PYTHON_USEDEP}]
-		=dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
-		=dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}]
-		<dev-python/moto-6[s3,${PYTHON_USEDEP}]
-		=dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}]
-		=dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}]
-		=dev-python/pandoc-2.4[${PYTHON_USEDEP}]
-		=dev-python/pypandoc-1.14[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
-		=dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-httpserver-1.1[${PYTHON_USEDEP}]
-		=dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}]
+		~dev-python/coverage-7.6.8[toml,${PYTHON_USEDEP}]
+		~dev-python/cryptography-44.0.0[${PYTHON_USEDEP}]
+		~dev-python/custom-inherit-2.4.1[${PYTHON_USEDEP}]
+		~dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
+		~dev-python/fasteners-0.18[${PYTHON_USEDEP}]
+		~dev-python/furo-2022.9.29[${PYTHON_USEDEP}]
+		~dev-python/gitpython-3.1.43[${PYTHON_USEDEP}]
+		~dev-python/ipykernel-6.29.5[${PYTHON_USEDEP}]
+		~dev-python/ipython-8.11.0[${PYTHON_USEDEP}]
+		~dev-python/junitparser-3.1.2[${PYTHON_USEDEP}]
+		~dev-python/jupyter-1.1.1[${PYTHON_USEDEP}]
+		~dev-python/mock-ssh-server-0.9.1[${PYTHON_USEDEP}]
+		>=dev-python/moto-5.0.1[s3,${PYTHON_USEDEP}] <dev-python/moto-6[s3,${PYTHON_USEDEP}]
+		~dev-python/myst-parser-0.16.1[${PYTHON_USEDEP}]
+		~dev-python/nbsphinx-0.9.1[${PYTHON_USEDEP}]
+		~dev-python/pandoc-2.4[${PYTHON_USEDEP}]
+		~dev-python/pypandoc-1.14[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
+		~dev-python/pytest-codeblocks-0.17.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-httpserver-1.0.4[${PYTHON_USEDEP}] <dev-python/pytest-httpserver-1.1[${PYTHON_USEDEP}]
+		~dev-python/recommonmark-0.7.1[${PYTHON_USEDEP}]
 		<=dev-python/setuptools-59.5.0[${PYTHON_USEDEP}]
-		=dev-python/sphinx-4.4.0[${PYTHON_USEDEP}]
-		=dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}]
-		=dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
-		=dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}]
-		=dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}]
-		=dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}]
-		=dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}]
-		=dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}]
-		=dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}]
-		=dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}]
-		=dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}]
-		=dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}]
-		=dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}]
-		=dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}]
-		=dev-python/testbook-0.4.2[${PYTHON_USEDEP}]
-		=dev-python/traitlets-5.14.3[${PYTHON_USEDEP}]
-		=dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
-		<dev-vcs/pre-commit-5[${PYTHON_USEDEP}]
+		~dev-python/sphinx-4.4.0[${PYTHON_USEDEP}]
+		~dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}]
+		~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+		~dev-python/sphinx-markdown-tables-0.0.17[${PYTHON_USEDEP}]
+		~dev-python/sphinx-panels-0.6.0[${PYTHON_USEDEP}]
+		~dev-python/sphinxcontrib-applehelp-1.0.0[${PYTHON_USEDEP}]
+		~dev-python/sphinxcontrib-devhelp-1.0.0[${PYTHON_USEDEP}]
+		~dev-python/sphinxcontrib-htmlhelp-2.0.0[${PYTHON_USEDEP}]
+		~dev-python/sphinxcontrib-images-0.9.4[${PYTHON_USEDEP}]
+		~dev-python/sphinxcontrib-katex-0.9.10[${PYTHON_USEDEP}]
+		~dev-python/sphinxcontrib-qthelp-1.0.0[${PYTHON_USEDEP}]
+		~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}]
+		~dev-python/sphinxemoji-0.2.0[${PYTHON_USEDEP}]
+		~dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}]
+		~dev-python/testbook-0.4.2[${PYTHON_USEDEP}]
+		~dev-python/traitlets-5.14.3[${PYTHON_USEDEP}]
+		~dev-python/yamllint-1.35.1[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.4.0[${PYTHON_USEDEP}] <dev-vcs/pre-commit-5[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

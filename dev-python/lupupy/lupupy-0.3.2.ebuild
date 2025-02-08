@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	colorlog
+	pyyaml
+	requests >=2.12.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/colorlog[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]

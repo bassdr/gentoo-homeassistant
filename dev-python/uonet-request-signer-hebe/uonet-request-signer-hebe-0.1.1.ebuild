@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pyopenssl
+	pytest ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
 "

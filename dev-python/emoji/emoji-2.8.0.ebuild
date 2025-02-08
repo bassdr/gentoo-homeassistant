@@ -30,5 +30,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

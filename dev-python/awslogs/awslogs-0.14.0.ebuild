@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	boto3 (>=1.5.0)
+	jmespath (<1.0.0,>=0.7.1)
+	python-dateutil (>=2.4.0)
+	termcolor (>=1.1.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.5.0[${PYTHON_USEDEP}]
-	<dev-python/jmespath-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}] <dev-python/jmespath-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]
 "

@@ -16,6 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-amazon; extra == "amazon"
+	apache-airflow-providers-common-sql>=1.20.0
+	apache-airflow-providers-microsoft-azure; extra == "microsoft-azure"
+	apache-airflow>=2.9.0
+	teradatasql>=17.20.0.28
+	teradatasqlalchemy>=17.20.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	amazon? ( dev-python/apache-airflow-providers-amazon[${PYTHON_USEDEP}] )

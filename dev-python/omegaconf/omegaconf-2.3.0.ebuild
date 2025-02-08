@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML (>=5.1.0)
+	antlr4-python3-runtime (==4.9.*)
+	dataclasses ; python_version == "3.6"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/antlr4-python3-runtime-4.9*[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.1.0[${PYTHON_USEDEP}]

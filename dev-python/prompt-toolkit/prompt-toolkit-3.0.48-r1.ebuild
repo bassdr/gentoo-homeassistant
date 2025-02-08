@@ -17,7 +17,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	wcwidth
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/wcwidth[${PYTHON_USEDEP}]
 "

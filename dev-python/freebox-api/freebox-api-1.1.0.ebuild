@@ -23,10 +23,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp (>=3,<4)
+	importlib-metadata (>=3.3,<5.0) ; python_version < "3.8"
+	urllib3 (>=1.26.6,<2.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
-	>=dev-python/importlib-metadata-3.3[${PYTHON_USEDEP}]
-	>=dev-python/urllib3-1.26.6[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.26.6[${PYTHON_USEDEP}] <dev-python/urllib3-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

@@ -25,6 +25,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.9.0b0)
+	backoff (>=1.11.1)
+	certifi (>=2023.07.22)
+	voluptuous (>=0.11.7)
+	websockets (>=8.1)
+	yarl (>=1.9.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]
 	>=dev-python/backoff-1.11.1[${PYTHON_USEDEP}]

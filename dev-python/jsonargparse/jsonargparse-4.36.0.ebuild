@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all argcomplete coverage doc fsspec jsonschema maintainer omegaconf reconplogger ruyaml shtab signatures test-no-urls toml urls"
+GENERATED_IUSE="all argcomplete coverage doc fsspec jsonnet jsonschema maintainer omegaconf reconplogger ruyaml shtab signatures test-no-urls toml urls"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,6 +16,59 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML>=3.13
+	Sphinx<8.0.0,>=1.7.9; extra == "doc"
+	argcomplete>=3.5.1; extra == "argcomplete"
+	attrs>=22.2.0; extra == "test"
+	autodocsumm>=0.1.10; extra == "doc"
+	build>=0.10.0; extra == "dev"
+	bump2version>=0.5.11; extra == "maintainer"
+	docstring-parser>=0.15; extra == "signatures"
+	fsspec>=0.8.4; extra == "fsspec"
+	jsonargparse[argcomplete]; extra == "test"
+	jsonargparse[coverage]; extra == "dev"
+	jsonargparse[doc]; extra == "dev"
+	jsonargparse[fsspec]; extra == "all"
+	jsonargparse[jsonnet]; extra == "all"
+	jsonargparse[jsonschema]; extra == "all"
+	jsonargparse[omegaconf]; extra == "all"
+	jsonargparse[reconplogger]; extra == "all"
+	jsonargparse[ruyaml]; extra == "all"
+	jsonargparse[shtab]; extra == "test"
+	jsonargparse[signatures]; extra == "all"
+	jsonargparse[test-no-urls]; extra == "coverage"
+	jsonargparse[test-no-urls]; extra == "test"
+	jsonargparse[test]; extra == "dev"
+	jsonargparse[toml]; extra == "all"
+	jsonargparse[typing-extensions]; extra == "all"
+	jsonargparse[typing-extensions]; extra == "signatures"
+	jsonargparse[urls]; extra == "all"
+	jsonnet-binary>=0.17.0; (os_name != "posix" and python_version < "3.13") and extra == "jsonnet"
+	jsonnet-sdist==2024.6.23; python_version == "3.13" and extra == "jsonnet"
+	jsonnet>=0.13.0; (os_name == "posix" and python_version < "3.13") and extra == "jsonnet"
+	jsonschema>=3.2.0; extra == "jsonschema"
+	omegaconf>=2.1.1; extra == "omegaconf"
+	pre-commit>=2.19.0; extra == "dev"
+	pydantic>=2.3.0; extra == "test"
+	pytest-cov>=4.0.0; extra == "coverage"
+	pytest-subtests>=0.8.0; extra == "test-no-urls"
+	pytest>=6.2.5; extra == "test-no-urls"
+	reconplogger>=4.4.0; extra == "reconplogger"
+	requests>=2.18.4; extra == "urls"
+	responses>=0.12.0; extra == "test"
+	ruyaml>=0.20.0; extra == "ruyaml"
+	shtab>=1.7.1; extra == "shtab"
+	sphinx-autodoc-typehints>=1.19.5; extra == "doc"
+	sphinx-rtd-theme>=1.2.2; extra == "doc"
+	toml>=0.10.2; extra == "toml"
+	tox>=3.25.0; extra == "dev"
+	twine>=4.0.2; extra == "maintainer"
+	types-PyYAML>=6.0.11; extra == "test"
+	types-requests>=2.28.9; extra == "test"
+	typeshed-client>=2.1.0; extra == "signatures"
+	typing-extensions>=3.10.0.0; python_version < "3.10" and extra == "typing-extensions"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	argcomplete? ( >=dev-python/argcomplete-3.5.1[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/autodocsumm-0.1.10[${PYTHON_USEDEP}] )
@@ -34,9 +87,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/jsonargparse[urls,${PYTHON_USEDEP}] )
 	coverage? ( dev-python/jsonargparse[test-no-urls,${PYTHON_USEDEP}] )
 	signatures? ( dev-python/jsonargparse[typing-extensions,${PYTHON_USEDEP}] )
-	>=dev-python/jsonnet-0.13.0[${PYTHON_USEDEP}]
-	>=dev-python/jsonnet-binary-0.17.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '=dev-python/jsonnet-sdist-2024.6.23[${PYTHON_USEDEP}]' python3_13{,t})
+	jsonnet? ( $(python_gen_cond_dep '>=dev-python/jsonnet-0.13.0[${PYTHON_USEDEP}]' python3_12) )
+	jsonnet? ( $(python_gen_cond_dep '~dev-python/jsonnet-sdist-2024.6.23[${PYTHON_USEDEP}]' python3_13{,t}) )
 	jsonschema? ( >=dev-python/jsonschema-3.2.0[${PYTHON_USEDEP}] )
 	omegaconf? ( >=dev-python/omegaconf-2.1.1[${PYTHON_USEDEP}] )
 	test-no-urls? ( >=dev-python/pytest-6.2.5[${PYTHON_USEDEP}] )
@@ -47,7 +99,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	urls? ( >=dev-python/requests-2.18.4[${PYTHON_USEDEP}] )
 	ruyaml? ( >=dev-python/ruyaml-0.20.0[${PYTHON_USEDEP}] )
 	shtab? ( >=dev-python/shtab-1.7.1[${PYTHON_USEDEP}] )
-	doc? ( <dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-1.7.9[${PYTHON_USEDEP}] <dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.19.5[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-rtd-theme-1.2.2[${PYTHON_USEDEP}] )
 	toml? ( >=dev-python/toml-0.10.2[${PYTHON_USEDEP}] )

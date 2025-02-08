@@ -16,7 +16,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	lxml
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]
 "

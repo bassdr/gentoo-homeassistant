@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-common-sql>=1.20.0
+	apache-airflow>=2.9.0
+	elasticsearch<9,>=8.10
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-providers-common-sql-1.20.0[${PYTHON_USEDEP}]
-	<dev-python/elasticsearch-9[${PYTHON_USEDEP}]
+	>=dev-python/elasticsearch-8.10[${PYTHON_USEDEP}] <dev-python/elasticsearch-9[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

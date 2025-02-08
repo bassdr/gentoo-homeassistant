@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	brotli
+	certifi
+	dpkt; extra == "dev"
+	gevent
+	httplib2; extra == "benchmarks"
+	httpx; extra == "benchmarks"
+	oauth2; extra == "examples"
+	pytest; extra == "dev"
+	requests; extra == "benchmarks"
+	requests; extra == "dev"
+	urllib3
+	urllib3; extra == "benchmarks"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/brotli[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]

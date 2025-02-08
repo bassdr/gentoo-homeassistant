@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	python-http-client (>=3.2.1)
+	starkbank-ecdsa (>=1.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/python-http-client-3.2.1[${PYTHON_USEDEP}]
 	>=dev-python/starkbank-ecdsa-1.0.0[${PYTHON_USEDEP}]

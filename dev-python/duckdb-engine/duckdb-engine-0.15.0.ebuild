@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	duckdb>=0.5.0
+	packaging>=21
+	sqlalchemy>=1.3.22
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/duckdb-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21[${PYTHON_USEDEP}]

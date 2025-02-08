@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.app.publication"
@@ -11,12 +10,39 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.app.publication/"
+  https://pypi.org/project/zope-app-publication/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ZODB (>=5.1) ; extra == 'test'
+	setuptools
+	transaction (>=1.1.0)
+	zope.annotation ; extra == 'test'
+	zope.app.appsetup (>=3.14.0) ; extra == 'test'
+	zope.app.http (>=4.0) ; extra == 'test'
+	zope.app.wsgi[testlayer] (>=4.3) ; extra == 'test'
+	zope.applicationcontrol (>=4.0.0a1) ; extra == 'test'
+	zope.authentication
+	zope.browser (>=1.2)
+	zope.browserpage ; extra == 'test'
+	zope.component
+	zope.error
+	zope.i18n (>=4.0.0a3)
+	zope.interface
+	zope.location
+	zope.login ; extra == 'test'
+	zope.password ; extra == 'test'
+	zope.principalregistry ; extra == 'test'
+	zope.publisher (>=4.0.0a2)
+	zope.securitypolicy ; extra == 'test'
+	zope.site (>=4.0.0a1) ; extra == 'test'
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+	zope.traversing (>=4.0.0a2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/transaction-1.1.0[${PYTHON_USEDEP}]

@@ -19,6 +19,42 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cov docs pyqt5 pyside6"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	appnope; platform_system == "Darwin"
+	comm>=0.1.1
+	coverage[toml]; extra == "cov"
+	curio; extra == "cov"
+	debugpy>=1.6.5
+	flaky; extra == "test"
+	ipyparallel; extra == "test"
+	ipython>=7.23.1
+	jupyter-client>=6.1.12
+	jupyter-core!=5.0.*,>=4.12
+	matplotlib-inline>=0.1
+	matplotlib; extra == "cov"
+	myst-parser; extra == "docs"
+	nest-asyncio
+	packaging
+	pre-commit; extra == "test"
+	psutil
+	pydata-sphinx-theme; extra == "docs"
+	pyqt5; extra == "pyqt5"
+	pyside6; extra == "pyside6"
+	pytest-asyncio>=0.23.5; extra == "test"
+	pytest-cov; extra == "cov"
+	pytest-cov; extra == "test"
+	pytest-timeout; extra == "test"
+	pytest>=7.0; extra == "test"
+	pyzmq>=24
+	sphinx-autodoc-typehints; extra == "docs"
+	sphinx; extra == "docs"
+	sphinxcontrib-github-alt; extra == "docs"
+	sphinxcontrib-spelling; extra == "docs"
+	tornado>=6.1
+	traitlets>=5.4.0
+	trio; extra == "cov"
+	trio; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/comm-0.1.1[${PYTHON_USEDEP}]
 	cov? ( dev-python/coverage[toml,${PYTHON_USEDEP}] )
@@ -26,7 +62,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/debugpy-1.6.5[${PYTHON_USEDEP}]
 	>=dev-python/ipython-7.23.1[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-6.1.12[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-core-4.12[${PYTHON_USEDEP}] !=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
 	cov? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	>=dev-python/matplotlib-inline-0.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

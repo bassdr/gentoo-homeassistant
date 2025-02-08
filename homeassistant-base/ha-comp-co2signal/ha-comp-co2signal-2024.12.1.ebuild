@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioelectricitymaps-0.4.0[${PYTHON_USEDEP}]
+	~dev-python/aioelectricitymaps-0.4.0[${PYTHON_USEDEP}]
 "

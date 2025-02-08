@@ -12,12 +12,40 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/oslo.db/"
+  https://pypi.org/project/oslo-db/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyMySQL>=0.7.6; extra == "mysql"
+	PyMySQL>=0.7.6; extra == "test"
+	SQLAlchemy>=1.4.0
+	aiosqlite>=0.20.0; extra == "test"
+	alembic>=0.9.6
+	bandit<1.8.0,>=1.7.0; extra == "test"
+	coverage>=4.0; extra == "test"
+	debtcollector>=1.2.0
+	eventlet>=0.18.2; extra == "test"
+	fixtures>=3.0.0; extra == "test"
+	hacking<6.2.0,>=6.1.0; extra == "test"
+	oslo.config>=5.2.0
+	oslo.context>=2.19.2; extra == "test"
+	oslo.i18n>=3.15.3
+	oslo.utils>=3.33.0
+	oslotest>=3.2.0; extra == "test"
+	pifpaf>=0.10.0; extra == "test"
+	pre-commit>=2.6.0; extra == "test"
+	psycopg2>=2.8.0; extra == "postgresql"
+	psycopg2>=2.8.0; extra == "test"
+	python-subunit>=1.0.0; extra == "test"
+	stestr>=2.0.0; extra == "test"
+	stevedore>=1.20.0
+	testresources>=2.0.0
+	testscenarios>=0.4
+	testtools>=2.2.0; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-0.9.6[${PYTHON_USEDEP}]
 	>=dev-python/debtcollector-1.2.0[${PYTHON_USEDEP}]
@@ -37,11 +65,11 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/aiosqlite-0.20.0[${PYTHON_USEDEP}]
-		<dev-python/bandit-1.8.0[${PYTHON_USEDEP}]
+		>=dev-python/bandit-1.7.0[${PYTHON_USEDEP}] <dev-python/bandit-1.8.0[${PYTHON_USEDEP}]
 		>=dev-python/coverage-4.0[${PYTHON_USEDEP}]
 		>=dev-python/eventlet-0.18.2[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-		<dev-python/hacking-6.2.0[${PYTHON_USEDEP}]
+		>=dev-python/hacking-6.1.0[${PYTHON_USEDEP}] <dev-python/hacking-6.2.0[${PYTHON_USEDEP}]
 		>=dev-python/oslo-context-2.19.2[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
 		>=dev-python/pifpaf-0.10.0[${PYTHON_USEDEP}]

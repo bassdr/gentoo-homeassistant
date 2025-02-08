@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="API package for rememberthemilk.com"
 HOMEPAGE="
-  https://pypi.org/project/RtmAPI/
+  https://pypi.org/project/rtmapi/
 "
 
 LICENSE="MIT"

@@ -20,11 +20,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+GENERATED_IUSE="kerberos"
+IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	cryptography
+	pyspnego (>=0.5.0)
+	pyspnego[kerberos] ; (sys_platform!="win32") and extra == 'kerberos'
+	requests (>=2.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	>=dev-python/pyspnego-0.5.0[${PYTHON_USEDEP}]
-	dev-python/pyspnego[kerberos,${PYTHON_USEDEP}]
+	kerberos? ( dev-python/pyspnego[kerberos,${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

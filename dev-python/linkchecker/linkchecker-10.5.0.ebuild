@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="LinkChecker"
@@ -17,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4>=4.8.1
+	dnspython>=2.0
+	requests>=2.20
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beautifulsoup4-4.8.1[${PYTHON_USEDEP}]
 	>=dev-python/dnspython-2.0[${PYTHON_USEDEP}]

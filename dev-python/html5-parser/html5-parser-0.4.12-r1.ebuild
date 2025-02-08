@@ -24,6 +24,11 @@ RESTRICT="!test? ( test )"
 DEPEND="
 	dev-libs/libxml2:=
 "
+REQUIRES_DIST="
+	beautifulsoup4; extra == "soup"
+	chardet
+	lxml>=3.8.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	soup? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	dev-python/chardet[${PYTHON_USEDEP}]

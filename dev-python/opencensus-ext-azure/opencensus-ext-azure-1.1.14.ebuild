@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,10 +15,17 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-core<2.0.0,>=1.12.0
+	azure-identity<2.0.0,>=1.5.0
+	opencensus<1.0.0,>=0.11.4
+	psutil>=5.6.3
+	requests>=2.19.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/opencensus-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.12.0[${PYTHON_USEDEP}] <dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-identity-1.5.0[${PYTHON_USEDEP}] <dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/opencensus-0.11.4[${PYTHON_USEDEP}] <dev-python/opencensus-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/psutil-5.6.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
 "

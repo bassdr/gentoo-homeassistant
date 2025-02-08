@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Provides a python interface to interact with a Emby media server."
 HOMEPAGE="
-  https://pypi.org/project/pyEmby/
+  https://pypi.org/project/pyemby/
 "
 
 LICENSE="MIT"

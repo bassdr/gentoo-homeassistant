@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	graphviz<0.21.0,>=0.13.2
+	jinja2<4.0,>=2.10
+	typed-ast<2.0.0,>=1.5.5; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/graphviz-0.21.0[${PYTHON_USEDEP}]
-	<dev-python/jinja2-4.0[${PYTHON_USEDEP}]
-	<dev-python/typed-ast-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/graphviz-0.13.2[${PYTHON_USEDEP}] <dev-python/graphviz-0.21.0[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.10[${PYTHON_USEDEP}] <dev-python/jinja2-4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

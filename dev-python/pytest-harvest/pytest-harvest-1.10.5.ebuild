@@ -3,25 +3,30 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/pytest_harvest/"
+  https://pypi.org/project/pytest-harvest/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	decopatch
+	funcsigs ; python_version < "3.3"
+	makefun >=1.5
+	packaging
+	pathlib2 ; python_version < "3.2"
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/decopatch[${PYTHON_USEDEP}]
-	dev-python/funcsigs[${PYTHON_USEDEP}]
 	>=dev-python/makefun-1.5[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/pathlib2[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

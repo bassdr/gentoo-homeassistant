@@ -12,12 +12,32 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.i18n/"
+  https://pypi.org/project/zope-i18n/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx; extra == "docs"
+	python-gettext
+	pytz
+	repoze.sphinx.autointerface; extra == "docs"
+	setuptools
+	zope.component
+	zope.component[zcml]; extra == "test"
+	zope.component[zcml]; extra == "zcml"
+	zope.configuration; extra == "test"
+	zope.configuration; extra == "zcml"
+	zope.deprecation
+	zope.i18nmessageid>=4.3
+	zope.publisher; extra == "test"
+	zope.schema
+	zope.security; extra == "test"
+	zope.security; extra == "zcml"
+	zope.testing; extra == "test"
+	zope.testrunner; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/python-gettext[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

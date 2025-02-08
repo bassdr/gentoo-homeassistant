@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click>=8.1.3
+	maison>=2.0.0
+	pydantic>=2.8.2
+	ruyaml>=0.91.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.1.3[${PYTHON_USEDEP}]
 	>=dev-python/maison-2.0.0[${PYTHON_USEDEP}]

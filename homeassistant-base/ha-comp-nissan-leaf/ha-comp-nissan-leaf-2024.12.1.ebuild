@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pycarwings2-2.14[${PYTHON_USEDEP}]
+	~dev-python/pycarwings2-2.14[${PYTHON_USEDEP}]
 "

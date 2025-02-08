@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-RDEPEND="
+REQUIRES_DIST="
+	aiohttp ; python_version >= "3.7"
+"
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest

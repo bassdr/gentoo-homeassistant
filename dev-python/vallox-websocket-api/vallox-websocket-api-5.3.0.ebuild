@@ -21,9 +21,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.7.0
+	construct<3.0.0,>=2.9.0
+	websockets>=9.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/construct-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/construct-2.9.0[${PYTHON_USEDEP}] <dev-python/construct-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-9.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

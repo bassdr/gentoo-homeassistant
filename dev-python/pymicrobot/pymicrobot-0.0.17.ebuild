@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library to communicate with MicroBot"
 HOMEPAGE="
-  https://pypi.org/project/PyMicroBot/
+  https://pypi.org/project/pymicrobot/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bleak (>=0.19.0)
+	bleak-retry-connector (>=1.4.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-1.4.0[${PYTHON_USEDEP}]

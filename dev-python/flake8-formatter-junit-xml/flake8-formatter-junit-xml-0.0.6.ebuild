@@ -3,18 +3,21 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/flake8-formatter_junit_xml/"
+  https://pypi.org/project/flake8-formatter-junit-xml/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8 (>3.0.0)
+	junit-xml (>=1.8)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/flake8-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/junit-xml-1.8[${PYTHON_USEDEP}]

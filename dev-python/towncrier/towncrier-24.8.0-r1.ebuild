@@ -24,6 +24,18 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	click
+	furo>=2024.05.06; extra == "dev"
+	importlib-metadata>=4.6; python_version < "3.10"
+	importlib-resources>=5; python_version < "3.10"
+	jinja2
+	nox; extra == "dev"
+	packaging; extra == "dev"
+	sphinx>=5; extra == "dev"
+	tomli; python_version < "3.11"
+	twisted; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]

@@ -22,6 +22,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	markdown >=3.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/markdown-3.0.0[${PYTHON_USEDEP}]
 "

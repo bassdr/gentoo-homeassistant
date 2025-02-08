@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiodns>=3.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
 "

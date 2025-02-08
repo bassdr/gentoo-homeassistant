@@ -16,17 +16,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	changelist==0.5; extra == "dev"
+	click
+	colorama; platform_system == "Windows"
+	importlib-metadata>=7
+	pre-commit==4.0.1; extra == "lint"
+	tomli; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-7[${PYTHON_USEDEP}]
-	lint? ( =dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}] )
+	lint? ( ~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/changelist-0.5[${PYTHON_USEDEP}]
+		~dev-python/changelist-0.5[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

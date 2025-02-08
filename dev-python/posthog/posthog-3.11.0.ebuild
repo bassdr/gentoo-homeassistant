@@ -16,13 +16,44 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	anthropic; extra == "test"
+	backoff>=1.10.0
+	black; extra == "dev"
+	coverage; extra == "test"
+	django; extra == "sentry"
+	django; extra == "test"
+	flake8-print; extra == "dev"
+	flake8; extra == "dev"
+	flake8; extra == "test"
+	freezegun==0.3.15; extra == "test"
+	isort; extra == "dev"
+	langchain-anthropic>=0.2.0; extra == "test"
+	langchain-community>=0.2.0; extra == "test"
+	langchain-openai>=0.2.0; extra == "test"
+	langchain>=0.2.0; extra == "langchain"
+	langgraph; extra == "test"
+	mock>=2.0.0; extra == "test"
+	monotonic>=1.5
+	openai; extra == "test"
+	pre-commit; extra == "dev"
+	pydantic; extra == "test"
+	pylint; extra == "test"
+	pytest-asyncio; extra == "test"
+	pytest-timeout; extra == "test"
+	pytest; extra == "test"
+	python-dateutil>2.1
+	requests<3.0,>=2.7
+	sentry-sdk; extra == "sentry"
+	six>=1.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/backoff-1.10.0[${PYTHON_USEDEP}]
 	sentry? ( dev-python/django[${PYTHON_USEDEP}] )
 	langchain? ( >=dev-python/langchain-0.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/monotonic-1.5[${PYTHON_USEDEP}]
 	>dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.7[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}]
 	sentry? ( dev-python/sentry-sdk[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
 "
@@ -37,7 +68,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/django[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/flake8-print[${PYTHON_USEDEP}]
-		=dev-python/freezegun-0.3.15[${PYTHON_USEDEP}]
+		~dev-python/freezegun-0.3.15[${PYTHON_USEDEP}]
 		dev-python/isort[${PYTHON_USEDEP}]
 		>=dev-python/langchain-anthropic-0.2.0[${PYTHON_USEDEP}]
 		>=dev-python/langchain-community-0.2.0[${PYTHON_USEDEP}]

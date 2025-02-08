@@ -10,7 +10,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/tap.py/"
+  https://pypi.org/project/tap-py/"
 
 LICENSE="BSD"
 SLOT="0"

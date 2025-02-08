@@ -25,9 +25,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.0)
+	asynctest (>=0.13.0,<0.14.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
-	>=dev-python/asynctest-0.13.0[${PYTHON_USEDEP}]
+	>=dev-python/asynctest-0.13.0[${PYTHON_USEDEP}] <dev-python/asynctest-0.14.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]

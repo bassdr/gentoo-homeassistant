@@ -16,7 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pre-commit<5.0,>=3.6; extra == "dev"
+	pytest; extra == "tests"
+	sphinx
+	sphinx-issues[tests]; extra == "dev"
+	tox; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
@@ -30,7 +36,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/sphinx-issues[tests,${PYTHON_USEDEP}]
 		dev-python/tox[${PYTHON_USEDEP}]
-		<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.6[${PYTHON_USEDEP}] <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

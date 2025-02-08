@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/ruuvitag-ble-0.1.2[${PYTHON_USEDEP}]
+	~dev-python/ruuvitag-ble-0.1.2[${PYTHON_USEDEP}]
 "

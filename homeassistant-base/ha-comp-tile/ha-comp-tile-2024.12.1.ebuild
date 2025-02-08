@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pytile-2023.12.0[${PYTHON_USEDEP}]
+	~dev-python/pytile-2023.12.0[${PYTHON_USEDEP}]
 "

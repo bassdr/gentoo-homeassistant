@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyturbojpeg-1.7.5[${PYTHON_USEDEP}]
+	~dev-python/pyturbojpeg-1.7.5[${PYTHON_USEDEP}]
 "

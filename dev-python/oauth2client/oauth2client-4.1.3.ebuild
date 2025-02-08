@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httplib2 (>=0.9.1)
+	pyasn1 (>=0.1.7)
+	pyasn1-modules (>=0.0.5)
+	rsa (>=3.1.4)
+	six (>=1.6.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httplib2-0.9.1[${PYTHON_USEDEP}]
 	>=dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}]

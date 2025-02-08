@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1
 SRC_URI="https://github.com/trimesh/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
@@ -18,11 +17,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/chardet[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

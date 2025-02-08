@@ -20,10 +20,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httpx>=0.21.2
+	pydantic-core<3.0.0,>=2.18.2
+	pydantic>=1.9.2
+	requests>=2.20
+	typing_extensions>=4.0.0
+	websockets>=11.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.21.2[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.9.2[${PYTHON_USEDEP}]
-	<dev-python/pydantic-core-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-core-2.18.2[${PYTHON_USEDEP}] <dev-python/pydantic-core-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.20[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-11.0[${PYTHON_USEDEP}]

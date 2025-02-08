@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	docopt
+	pytz (>=2014.9)
+	six
+	sqlalchemy (>=0.7.8)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docopt[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2014.9[${PYTHON_USEDEP}]

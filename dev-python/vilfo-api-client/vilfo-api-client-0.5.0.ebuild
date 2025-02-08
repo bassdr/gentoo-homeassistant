@@ -19,6 +19,13 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	getmac
+	requests
+	responses; extra == "dev"
+	responses; extra == "test"
+	semver
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/getmac[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

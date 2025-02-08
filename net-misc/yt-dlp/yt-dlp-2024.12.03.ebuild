@@ -27,25 +27,53 @@ SLOT="0"
 # was major/breaking changes) given website changes breaks it on a whim
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="build default pyinstaller secretstorage static-analysis"
+GENERATED_IUSE="build curl-cffi default pyinstaller secretstorage static-analysis"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	autopep8~=2.0; extra == "dev"
+	autopep8~=2.0; extra == "static-analysis"
+	brotli; implementation_name == "cpython" and extra == "default"
+	brotlicffi; implementation_name != "cpython" and extra == "default"
+	build; extra == "build"
+	certifi; extra == "default"
+	cffi; extra == "secretstorage"
+	curl-cffi!=0.6.*,<0.7.2,>=0.5.10; (os_name != "nt" and implementation_name == "cpython") and extra == "curl-cffi"
+	curl-cffi==0.5.10; (os_name == "nt" and implementation_name == "cpython") and extra == "curl-cffi"
+	hatchling; extra == "build"
+	mutagen; extra == "default"
+	pip; extra == "build"
+	pre-commit; extra == "dev"
+	pycryptodomex; extra == "default"
+	pyinstaller>=6.11.1; extra == "pyinstaller"
+	pytest-rerunfailures~=14.0; extra == "dev"
+	pytest-rerunfailures~=14.0; extra == "test"
+	pytest~=8.1; extra == "dev"
+	pytest~=8.1; extra == "test"
+	requests<3,>=2.32.2; extra == "default"
+	ruff~=0.8.0; extra == "dev"
+	ruff~=0.8.0; extra == "static-analysis"
+	secretstorage; extra == "secretstorage"
+	setuptools>=71.0.2; extra == "build"
+	urllib3<3,>=1.26.17; extra == "default"
+	websockets>=13.0; extra == "default"
+	wheel; extra == "build"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	static-analysis? ( >=dev-python/autopep8-2.0[${PYTHON_USEDEP}] =dev-python/autopep8-2*[${PYTHON_USEDEP}] )
-	dev-python/brotli[${PYTHON_USEDEP}]
+	default? ( dev-python/brotli[${PYTHON_USEDEP}] )
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	default? ( dev-python/certifi[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/cffi[${PYTHON_USEDEP}] )
-	=dev-python/curl-cffi-0.5.10[${PYTHON_USEDEP}]
-	!=dev-python/curl-cffi-0.6*[${PYTHON_USEDEP}]
+	curl-cffi? ( >=dev-python/curl-cffi-0.5.10[${PYTHON_USEDEP}] <dev-python/curl-cffi-0.7.2[${PYTHON_USEDEP}] !=dev-python/curl-cffi-0.6*[${PYTHON_USEDEP}] )
 	build? ( dev-python/hatchling[${PYTHON_USEDEP}] )
 	build? ( dev-python/pip[${PYTHON_USEDEP}] )
 	default? ( dev-python/pycryptodomex[${PYTHON_USEDEP}] )
 	pyinstaller? ( >=dev-python/pyinstaller-6.11.1[${PYTHON_USEDEP}] )
-	default? ( <dev-python/requests-3[${PYTHON_USEDEP}] )
+	default? ( >=dev-python/requests-2.32.2[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}] )
 	static-analysis? ( >=dev-python/ruff-0.8.0[${PYTHON_USEDEP}] =dev-python/ruff-0.8*[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/secretstorage[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/setuptools-71.0.2[${PYTHON_USEDEP}] )
-	default? ( <dev-python/urllib3-3[${PYTHON_USEDEP}] )
+	default? ( >=dev-python/urllib3-1.26.17[${PYTHON_USEDEP}] <dev-python/urllib3-3[${PYTHON_USEDEP}] )
 	default? ( >=dev-python/websockets-13.0[${PYTHON_USEDEP}] )
 	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	default? ( media-libs/mutagen[${PYTHON_USEDEP}] )

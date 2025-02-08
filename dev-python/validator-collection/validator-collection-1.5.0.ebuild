@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	check-manifest ; extra == 'dev'
+	codecov ; extra == 'test'
+	coverage ; extra == 'test'
+	jsonschema
+	pyfakefs ; extra == 'test'
+	pytest ; extra == 'test'
+	pytest-benchmark ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	regex ; python_version < "3"
+	sphinx ; extra == 'dev'
+	sphinx-rtd-theme ; extra == 'dev'
+	sphinx-tabs ; extra == 'dev'
+	tox ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 "

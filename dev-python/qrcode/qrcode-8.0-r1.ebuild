@@ -18,11 +18,16 @@ KEYWORDS="amd64 arm64"
 
 # optional deps:
 # - pillow and lxml for svg backend, set as hard deps
-GENERATED_IUSE="pil png"
+GENERATED_IUSE="all pil png"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	colorama; sys_platform == "win32"
+	pillow>=9.1.0; extra == "pil" or extra == "all"
+	pypng; extra == "png" or extra == "all"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	pil? ( >=dev-python/pillow-9.1.0[${PYTHON_USEDEP}] )
-	png? ( dev-python/pypng[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pillow-9.1.0[${PYTHON_USEDEP}] ) pil? ( >=dev-python/pillow-9.1.0[${PYTHON_USEDEP}] )
+	all? ( dev-python/pypng[${PYTHON_USEDEP}] ) png? ( dev-python/pypng[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]

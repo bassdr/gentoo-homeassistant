@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	defusedxml>=0.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/defusedxml-0.6.0[${PYTHON_USEDEP}]
 "

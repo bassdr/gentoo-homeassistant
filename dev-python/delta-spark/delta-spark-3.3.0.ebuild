@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,9 +15,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata>=1.0.0
+	pyspark<3.6.0,>=3.5.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/pyspark-3.6.0[${PYTHON_USEDEP}]
+	>=dev-python/pyspark-3.5.3[${PYTHON_USEDEP}] <dev-python/pyspark-3.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

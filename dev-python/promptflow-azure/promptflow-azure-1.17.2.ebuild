@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,19 +15,24 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-ai-ml<2.0.0,>=1.14.0
+	azure-core<2.0.0,>=1.26.4
+	azure-cosmos<5.0.0,>=4.5.1
+	azure-identity<2.0.0,>=1.12.0
+	azure-storage-blob[aio]<13.0.0,>=12.17.0
+	promptflow-devkit<2.0.0,>=1.17.2
+	pyjwt<3.0.0,>=2.4.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/azure-ai-ml-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/azure-cosmos-5.0.0[${PYTHON_USEDEP}]
-	<dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/azure-storage-blob-13.0.0[aio,${PYTHON_USEDEP}]
-	<dev-python/promptflow-devkit-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-ai-ml-1.14.0[${PYTHON_USEDEP}] <dev-python/azure-ai-ml-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.26.4[${PYTHON_USEDEP}] <dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-cosmos-4.5.1[${PYTHON_USEDEP}] <dev-python/azure-cosmos-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-identity-1.12.0[${PYTHON_USEDEP}] <dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-storage-blob-12.17.0[aio,${PYTHON_USEDEP}] <dev-python/azure-storage-blob-13.0.0[aio,${PYTHON_USEDEP}]
+	>=dev-python/promptflow-devkit-1.17.2[${PYTHON_USEDEP}] <dev-python/promptflow-devkit-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-2.4.0[${PYTHON_USEDEP}] <dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

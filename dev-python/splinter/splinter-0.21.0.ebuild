@@ -16,6 +16,19 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Django >=2.0.6 ; extra == 'django'
+	Flask >=2.3.2 ; extra == 'flask'
+	cssselect ; extra == 'django'
+	cssselect ; extra == 'flask'
+	cssselect ; extra == 'zope.testbrowser'
+	lxml >=4.2.4 ; extra == 'django'
+	lxml >=4.2.4 ; extra == 'flask'
+	lxml >=4.2.4 ; extra == 'zope.testbrowser'
+	selenium <4.17.0,>=4.1.0 ; extra == 'selenium'
+	urllib3 <3.0,>=1.26.14
+	zope.testbrowser >=6.0 ; extra == 'zope.testbrowser'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	django? ( dev-python/cssselect[${PYTHON_USEDEP}] )
 	flask? ( dev-python/cssselect[${PYTHON_USEDEP}] )
@@ -25,8 +38,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	django? ( >=dev-python/lxml-4.2.4[${PYTHON_USEDEP}] )
 	flask? ( >=dev-python/lxml-4.2.4[${PYTHON_USEDEP}] )
 	zope.testbrowser? ( >=dev-python/lxml-4.2.4[${PYTHON_USEDEP}] )
-	selenium? ( <dev-python/selenium-4.17.0[${PYTHON_USEDEP}] )
-	<dev-python/urllib3-3.0[${PYTHON_USEDEP}]
+	selenium? ( >=dev-python/selenium-4.1.0[${PYTHON_USEDEP}] <dev-python/selenium-4.17.0[${PYTHON_USEDEP}] )
+	>=dev-python/urllib3-1.26.14[${PYTHON_USEDEP}] <dev-python/urllib3-3.0[${PYTHON_USEDEP}]
 	zope.testbrowser? ( >=dev-python/zope-testbrowser-6.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"

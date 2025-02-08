@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML
+	caliper-reader
+	matplotlib
+	multiprocess
+	numpy<2.0.0
+	pandas
+	pydot
+	textX<3.0.0; python_version < "3.6"
+	textX>=3.0.0; python_version >= "3.6"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/caliper-reader[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -23,7 +33,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pandas[${PYTHON_USEDEP}]
 	dev-python/pydot[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	<dev-python/textx-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/textx-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -17,17 +17,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	packaging
+	tensorflow (<2.16.0,>=2.13.0) ; extra == 'tensorflow'
+	tensorflow-cpu (<2.16.0,>=2.13.0) ; extra == 'tensorflow-cpu'
+	tensorflow-gpu (<2.16.0,>=2.13.0) ; extra == 'tensorflow-gpu'
+	typeguard (<3.0.0,>=2.7)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
-	tensorflow? ( <dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}] )
-	tensorflow-cpu? ( <dev-python/tensorflow-cpu-2.16.0[${PYTHON_USEDEP}] )
-	tensorflow-gpu? ( <dev-python/tensorflow-gpu-2.16.0[${PYTHON_USEDEP}] )
-	<dev-python/typeguard-3.0.0[${PYTHON_USEDEP}]
+	tensorflow? ( >=dev-python/tensorflow-2.13.0[${PYTHON_USEDEP}] <dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}] )
+	tensorflow-cpu? ( >=dev-python/tensorflow-cpu-2.13.0[${PYTHON_USEDEP}] <dev-python/tensorflow-cpu-2.16.0[${PYTHON_USEDEP}] )
+	tensorflow-gpu? ( >=dev-python/tensorflow-gpu-2.13.0[${PYTHON_USEDEP}] <dev-python/tensorflow-gpu-2.16.0[${PYTHON_USEDEP}] )
+	>=dev-python/typeguard-2.7[${PYTHON_USEDEP}] <dev-python/typeguard-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

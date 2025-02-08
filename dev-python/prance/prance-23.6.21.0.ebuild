@@ -16,6 +16,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyICU (~=2.4) ; extra == 'icu'
+	bumpversion (>=0.6) ; extra == 'dev'
+	chardet (>=3.0)
+	click (>=7.0) ; extra == 'cli'
+	flex (~=6.13) ; extra == 'flex'
+	openapi-spec-validator (~=0.5.1) ; extra == 'osv'
+	packaging (>=21.3)
+	pytest (>=6.1) ; extra == 'dev'
+	pytest-cov (>=2.11) ; extra == 'dev'
+	requests (>=2.25)
+	ruamel.yaml (>=0.17.10)
+	six (~=1.15)
+	sphinx (>=3.4) ; extra == 'dev'
+	swagger-spec-validator (~=2.4) ; extra == 'ssv'
+	towncrier (>=19.2) ; extra == 'dev'
+	tox (>=3.4) ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/chardet-3.0[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/click-7.0[${PYTHON_USEDEP}] )

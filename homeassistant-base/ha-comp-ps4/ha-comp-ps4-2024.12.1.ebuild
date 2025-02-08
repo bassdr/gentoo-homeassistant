@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyps4-2ndscreen-1.3.1[${PYTHON_USEDEP}]
+	~dev-python/pyps4-2ndscreen-1.3.1[${PYTHON_USEDEP}]
 "

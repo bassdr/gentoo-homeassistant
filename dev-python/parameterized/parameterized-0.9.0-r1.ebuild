@@ -16,7 +16,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
@@ -36,5 +35,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

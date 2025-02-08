@@ -24,6 +24,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	awesomeversion>=22.9.0
+	envoy-utils>=0.0.1
+	httpx>=0.24.0
+	lxml>=4.9.2
+	orjson>=3.9.2
+	pyjwt>=2.7.0
+	tenacity<9.0.0,>=8.2.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/awesomeversion-22.9.0[${PYTHON_USEDEP}]
 	>=dev-python/envoy-utils-0.0.1[${PYTHON_USEDEP}]
@@ -31,7 +40,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/lxml-4.9.2[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.7.0[${PYTHON_USEDEP}]
-	<dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tenacity-8.2.2[${PYTHON_USEDEP}] <dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]

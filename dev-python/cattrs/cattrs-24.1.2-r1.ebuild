@@ -19,15 +19,28 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="bson cbor2 msgpack pyyaml tomlkit ujson"
+GENERATED_IUSE="bson cbor2 msgpack msgspec orjson pyyaml tomlkit ujson"
 IUSE="${GENERATED_IUSE} test-rust"
 
+REQUIRES_DIST="
+	attrs>=23.1.0
+	cbor2>=5.4.6; extra == "cbor2"
+	exceptiongroup>=1.1.1; python_version < "3.11"
+	msgpack>=1.0.5; extra == "msgpack"
+	msgspec>=0.18.5; implementation_name == "cpython" and extra == "msgspec"
+	orjson>=3.9.2; implementation_name == "cpython" and extra == "orjson"
+	pymongo>=4.4.0; extra == "bson"
+	pyyaml>=6.0; extra == "pyyaml"
+	tomlkit>=0.11.8; extra == "tomlkit"
+	typing-extensions!=4.6.3,>=4.1.0; python_version < "3.11"
+	ujson>=5.7.0; extra == "ujson"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-23.1.0[${PYTHON_USEDEP}]
 	cbor2? ( >=dev-python/cbor2-5.4.6[${PYTHON_USEDEP}] )
 	msgpack? ( >=dev-python/msgpack-1.0.5[${PYTHON_USEDEP}] )
-	>=dev-python/msgspec-0.18.5[${PYTHON_USEDEP}]
-	>=dev-python/orjson-3.9.2[${PYTHON_USEDEP}]
+	msgspec? ( >=dev-python/msgspec-0.18.5[${PYTHON_USEDEP}] )
+	orjson? ( >=dev-python/orjson-3.9.2[${PYTHON_USEDEP}] )
 	bson? ( >=dev-python/pymongo-4.4.0[${PYTHON_USEDEP}] )
 	pyyaml? ( >=dev-python/pyyaml-6.0[${PYTHON_USEDEP}] )
 	tomlkit? ( >=dev-python/tomlkit-0.11.8[${PYTHON_USEDEP}] )

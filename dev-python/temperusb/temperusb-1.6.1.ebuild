@@ -18,6 +18,9 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
+REQUIRES_DIST="
+	pyusb
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyusb[${PYTHON_USEDEP}]
 "

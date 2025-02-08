@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	onnx>=1.2.1
+	onnxconverter-common>=1.7.0
+	scikit-learn>=1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/onnx-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/onnxconverter-common-1.7.0[${PYTHON_USEDEP}]

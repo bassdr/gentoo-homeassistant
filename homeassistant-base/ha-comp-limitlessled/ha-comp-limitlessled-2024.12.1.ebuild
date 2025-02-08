@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/limitlessled-1.1.3[${PYTHON_USEDEP}]
+	~dev-python/limitlessled-1.1.3[${PYTHON_USEDEP}]
 "

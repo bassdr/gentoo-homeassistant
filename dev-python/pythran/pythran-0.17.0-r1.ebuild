@@ -24,6 +24,24 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	beniget~=0.4.0
+	cython; extra == "test"
+	gast~=0.6.0
+	guzzle-sphinx-theme; extra == "doc"
+	ipython; extra == "test"
+	meson; extra == "test"
+	nbsphinx; extra == "doc"
+	nbval; extra == "test"
+	ninja; extra == "test"
+	numpy
+	numpy; extra == "doc"
+	packaging; extra == "test"
+	ply>=3.4
+	scipy; extra == "doc"
+	setuptools
+	wheel; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beniget-0.4.0[${PYTHON_USEDEP}] =dev-python/beniget-0.4*[${PYTHON_USEDEP}]
 	>=dev-python/gast-0.6.0[${PYTHON_USEDEP}] =dev-python/gast-0.6*[${PYTHON_USEDEP}]

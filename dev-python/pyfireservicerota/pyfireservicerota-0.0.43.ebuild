@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	oauthlib
+	pytz
+	requests
+	websocket-client
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/oauthlib[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

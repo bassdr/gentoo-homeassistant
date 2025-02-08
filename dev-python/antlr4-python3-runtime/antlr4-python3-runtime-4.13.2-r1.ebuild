@@ -32,5 +32,3 @@ src_prepare() {
 python_test() {
 	"${EPYTHON}" tests/run.py -v || die "Tests failed with ${EPYTHON}"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

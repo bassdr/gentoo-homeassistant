@@ -23,8 +23,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="imaging ipython latex mathml opengl pdf png pyglet symengine texmacs"
 
+REQUIRES_DIST="
+	hypothesis>=6.70.0; extra == "dev"
+	mpmath<1.4,>=1.1.0
+	pytest>=7.1.0; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/mpmath-1.4[${PYTHON_USEDEP}]
+	>=dev-python/mpmath-1.1.0[${PYTHON_USEDEP}] <dev-python/mpmath-1.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/mpmath-1.1.0[${PYTHON_USEDEP}]

@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,6 +15,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cerberus
+	flatbuffers
+	h5py
+	numpy>=1.16.6
+	onnx
+	packaging
+	protobuf
+	setuptools>=61.0.0
+	sympy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cerberus[${PYTHON_USEDEP}]
 	dev-python/flatbuffers[${PYTHON_USEDEP}]
@@ -30,7 +40,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

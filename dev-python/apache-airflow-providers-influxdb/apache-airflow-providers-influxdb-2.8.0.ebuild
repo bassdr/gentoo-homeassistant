@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow>=2.9.0
+	influxdb-client>=1.19.0
+	requests<3,>=2.27.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/influxdb-client-1.19.0[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.27.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

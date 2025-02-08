@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library to communicate with Switchbot"
 HOMEPAGE="
-  https://pypi.org/project/PySwitchbot/
+  https://pypi.org/project/pyswitchbot/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.5
+	bleak-retry-connector>=3.4.0
+	bleak>=0.19.0
+	cryptography>=39.0.0
+	pyOpenSSL>=23.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]

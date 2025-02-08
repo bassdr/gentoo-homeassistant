@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	certifi>=2023.7.22
+	charset-normalizer>=3.2.0
+	dataclasses-json>=0.6.4
+	idna>=3.4
+	jsonpath-python>=1.0.6
+	marshmallow>=3.19.0
+	mypy-extensions>=1.0.0
+	packaging>=23.1
+	pylint==3.1.0; extra == "dev"
+	python-dateutil>=2.8.2
+	requests>=2.31.0
+	six>=1.16.0
+	typing-extensions>=4.7.1
+	typing-inspect>=0.9.0
+	urllib3>=1.26.18
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2023.7.22[${PYTHON_USEDEP}]
 	>=dev-python/charset-normalizer-3.2.0[${PYTHON_USEDEP}]
@@ -37,7 +53,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/pylint-3.1.0[${PYTHON_USEDEP}]
+		~dev-python/pylint-3.1.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

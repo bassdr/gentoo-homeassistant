@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/nyt-games-0.4.4[${PYTHON_USEDEP}]
+	~dev-python/nyt-games-0.4.4[${PYTHON_USEDEP}]
 "

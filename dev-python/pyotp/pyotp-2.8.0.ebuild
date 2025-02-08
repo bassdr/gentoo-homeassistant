@@ -17,7 +17,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
-RDEPEND=""
 
 distutils_enable_tests unittest

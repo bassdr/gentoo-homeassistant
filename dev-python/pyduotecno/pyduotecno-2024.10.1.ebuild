@@ -8,7 +8,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Open-source home automation platform running on Python 3."
 HOMEPAGE="
-  https://pypi.org/project/pyDuotecno/
+  https://pypi.org/project/pyduotecno/
   Source Code, https://github.com/Cereal2nd/pyDuotecno
   Bug Reports, https://github.com/Cereal2nd/pyDuotecno/issues
 "

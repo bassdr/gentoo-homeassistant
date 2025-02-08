@@ -16,6 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cramjam>=2.3
+	fsspec
+	numpy
+	packaging
+	pandas>=1.5.0
+	python-lzo; extra == "lzo"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cramjam-2.3[${PYTHON_USEDEP}]
 	dev-python/fsspec[${PYTHON_USEDEP}]

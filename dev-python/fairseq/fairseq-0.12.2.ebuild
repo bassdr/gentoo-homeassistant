@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bitarray
+	cffi
+	cython
+	dataclasses ; python_version < "3.7"
+	hydra-core (<1.1,>=1.0.7)
+	numpy (<1.20.0) ; python_version < "3.7"
+	numpy ; python_version >= "3.7"
+	omegaconf (<2.1)
+	regex
+	sacrebleu (>=1.4.12)
+	torch
+	torchaudio (>=0.8.0)
+	tqdm
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bitarray[${PYTHON_USEDEP}]
 	dev-python/cffi[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/dataclasses[${PYTHON_USEDEP}]
-	<dev-python/hydra-core-1.1[${PYTHON_USEDEP}]
-	<dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
+	>=dev-python/hydra-core-1.0.7[${PYTHON_USEDEP}] <dev-python/hydra-core-1.1[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
 	<dev-python/omegaconf-2.1[${PYTHON_USEDEP}]
 	dev-python/regex[${PYTHON_USEDEP}]
 	>=dev-python/sacrebleu-1.4.12[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/energyflip-client-0.2.2[${PYTHON_USEDEP}]
+	~dev-python/energyflip-client-0.2.2[${PYTHON_USEDEP}]
 "

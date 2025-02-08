@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,15 +15,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py<3.0.0,>=0.9
+	googleapis-common-protos<2,>=1.52.0; python_version >= "3.11"
+	googleapis-common-protos<2,>=1.56.4; python_version >= "3.11"
+	protobuf<4.21,>=3.20.3; python_version < "3.11"
+	protobuf<6.0.0dev,>=4.25.2; python_version >= "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/absl-py-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/googleapis-common-protos-2[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/absl-py-0.9[${PYTHON_USEDEP}] <dev-python/absl-py-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/googleapis-common-protos-1.52.0[${PYTHON_USEDEP}] <dev-python/googleapis-common-protos-2[${PYTHON_USEDEP}]
+	>=dev-python/googleapis-common-protos-1.56.4[${PYTHON_USEDEP}] <dev-python/googleapis-common-protos-2[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-4.25.2[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

@@ -17,6 +17,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aioquic (>=0.9.7) ; extra == 'quic'
+	asyncssh (>=2.5.0) ; extra == 'sshtunnel'
+	pycryptodome (>=3.7.2) ; extra == 'accelerated'
+	python-daemon (>=2.2.3) ; extra == 'daemon'
+	uvloop (>=0.13.0) ; extra == 'accelerated'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	quic? ( >=dev-python/aioquic-0.9.7[${PYTHON_USEDEP}] )
 	sshtunnel? ( >=dev-python/asyncssh-2.5.0[${PYTHON_USEDEP}] )
@@ -27,7 +34,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

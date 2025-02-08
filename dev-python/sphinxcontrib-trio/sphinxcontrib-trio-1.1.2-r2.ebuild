@@ -17,7 +17,9 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	sphinx (>=1.7)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinx-1.7[${PYTHON_USEDEP}]
 "

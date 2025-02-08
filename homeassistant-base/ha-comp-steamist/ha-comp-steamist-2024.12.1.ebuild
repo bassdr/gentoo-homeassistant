@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aiosteamist-1.0.0[${PYTHON_USEDEP}]
-	=dev-python/discovery30303-0.3.2[${PYTHON_USEDEP}]
+	~dev-python/aiosteamist-1.0.0[${PYTHON_USEDEP}]
+	~dev-python/discovery30303-0.3.2[${PYTHON_USEDEP}]
 "

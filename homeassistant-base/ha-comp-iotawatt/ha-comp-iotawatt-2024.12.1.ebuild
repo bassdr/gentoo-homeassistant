@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/ha-iotawattpy-0.1.2[${PYTHON_USEDEP}]
+	~dev-python/ha-iotawattpy-0.1.2[${PYTHON_USEDEP}]
 "

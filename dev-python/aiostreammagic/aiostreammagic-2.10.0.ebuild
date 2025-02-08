@@ -22,9 +22,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.11.7
+	mashumaro<4.0,>=3.11
+	orjson>=3.9.0
+	yarl>=1.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.11.7[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/mashumaro-3.11[${PYTHON_USEDEP}] <dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]
 "

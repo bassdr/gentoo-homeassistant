@@ -20,8 +20,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	importlib-metadata ; python_version < "3.8"
+	pre-commit ; extra == 'dev'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-mock ; extra == 'test'
+	requests (>=2.4.0)
+	websocket-client (>=0.58.0)
+	zeroconf (>=0.38.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-0.58.0[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.38.0[${PYTHON_USEDEP}]

@@ -19,9 +19,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	bitarray<3.0.0,>=2.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/bitarray-2.9.0[${PYTHON_USEDEP}] <dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/bitarray-3[${PYTHON_USEDEP}]

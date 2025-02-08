@@ -27,7 +27,10 @@ distutils_enable_sphinx docs/source \
 
 distutils_enable_tests pytest
 
-IUSE=""
+REQUIRES_DIST="
+	setuptools
+	tokenize-rt
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/tokenize-rt[${PYTHON_USEDEP}]

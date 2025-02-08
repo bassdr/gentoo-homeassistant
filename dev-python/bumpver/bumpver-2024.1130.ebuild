@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,14 +14,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click; python_version >= "3.6"
+	click<8.0; python_version < "3.6"
+	colorama>=0.4
+	enum34; python_version < "3.4"
+	lexid
+	pathlib2; python_version < "3.4"
+	toml
+	typing; python_version < "3.5"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/click-8.0[${PYTHON_USEDEP}]
+	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
-	dev-python/enum34[${PYTHON_USEDEP}]
 	dev-python/lexid[${PYTHON_USEDEP}]
-	dev-python/pathlib2[${PYTHON_USEDEP}]
 	dev-python/toml[${PYTHON_USEDEP}]
-	dev-python/typing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -19,8 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	alarmdecoder==1.13.11
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/alarmdecoder-1.13.11[${PYTHON_USEDEP}]
+	~dev-python/alarmdecoder-1.13.11[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/alarmdecoder-1.13.11[${PYTHON_USEDEP}]"

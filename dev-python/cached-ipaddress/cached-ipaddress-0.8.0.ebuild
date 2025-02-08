@@ -23,6 +23,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	propcache>=0.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/propcache-0.0.0[${PYTHON_USEDEP}]
 "

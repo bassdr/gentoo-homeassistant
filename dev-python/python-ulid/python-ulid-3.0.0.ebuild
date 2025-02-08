@@ -16,6 +16,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pydantic>=2.0; extra == "pydantic"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	pydantic? ( >=dev-python/pydantic-2.0[${PYTHON_USEDEP}] )
 "

@@ -26,11 +26,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	google-auth <3,>=0.3.0
+	grpcio <2,>=1.48.0
+	protobuf <6,>=3.20.0
+	requests <3,>=2.20.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/google-auth-3[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/google-auth-0.3.0[${PYTHON_USEDEP}] <dev-python/google-auth-3[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.48.0[${PYTHON_USEDEP}] <dev-python/grpcio-2[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.20.0[${PYTHON_USEDEP}] <dev-python/protobuf-6[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="

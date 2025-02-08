@@ -21,6 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	DTLSSocket (~=0.1.12) ; extra == 'async'
+	aiocoap (~=0.4.5) ; extra == 'async'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/aiocoap-0.4.5[${PYTHON_USEDEP}] =dev-python/aiocoap-0.4*[${PYTHON_USEDEP}] )
 	async? ( >=dev-python/dtlssocket-0.1.12[${PYTHON_USEDEP}] =dev-python/dtlssocket-0.1*[${PYTHON_USEDEP}] )

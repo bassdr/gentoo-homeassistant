@@ -21,8 +21,27 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	backports.zoneinfo; python_version < "3.9" and extra == "test"
+	furo; extra == "doc"
+	jaraco.functools>=1.20
+	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.tidelift>=1.4; extra == "doc"
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-enabler>=2.2; extra == "test"
+	pytest-freezer; extra == "test"
+	pytest-mypy; extra == "test"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
+	python-dateutil
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	types-python-dateutil; extra == "test"
+	tzdata; platform_system == "Windows" and extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-functools-1.20[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
@@ -48,12 +67,13 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
 		dev-python/pytest-freezer[${PYTHON_USEDEP}]
 		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
 	)
 "

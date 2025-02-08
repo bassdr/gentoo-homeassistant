@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,23 +15,35 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docformatter==1.4; extra == "dev"
+	isort==5.10.1; extra == "dev"
+	kfp<3,>=2.6.0
+	mypy==0.941; extra == "dev"
+	pre-commit==2.19.0; extra == "dev"
+	protobuf<5,>=4.21.1
+	pycln==2.1.1; extra == "dev"
+	pytest-xdist==2.5.0; extra == "dev"
+	pytest==7.1.2; extra == "dev"
+	yapf==0.32.0; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/kfp-3[${PYTHON_USEDEP}]
-	<dev-python/protobuf-5[${PYTHON_USEDEP}]
+	>=dev-python/kfp-2.6.0[${PYTHON_USEDEP}] <dev-python/kfp-3[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] <dev-python/protobuf-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/docformatter-1.4[${PYTHON_USEDEP}]
-		=dev-python/isort-5.10.1[${PYTHON_USEDEP}]
-		=dev-python/mypy-0.941[${PYTHON_USEDEP}]
-		=dev-python/pycln-2.1.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
-		=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
-		=dev-python/yapf-0.32.0[${PYTHON_USEDEP}]
-		=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
+		~dev-python/docformatter-1.4[${PYTHON_USEDEP}]
+		~dev-python/isort-5.10.1[${PYTHON_USEDEP}]
+		~dev-python/mypy-0.941[${PYTHON_USEDEP}]
+		~dev-python/pycln-2.1.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
+		~dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
+		~dev-python/yapf-0.32.0[${PYTHON_USEDEP}]
+		~dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

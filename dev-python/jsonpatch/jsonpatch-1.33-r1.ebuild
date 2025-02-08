@@ -24,6 +24,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	jsonpointer (>=1.9)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jsonpointer-1.9[${PYTHON_USEDEP}]
 "

@@ -33,7 +33,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/zipp-3.17[${PYTHON_USEDEP}]
 	)
 "

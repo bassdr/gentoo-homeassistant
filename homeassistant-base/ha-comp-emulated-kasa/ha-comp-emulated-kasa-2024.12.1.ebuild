@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/sense-energy-0.13.4[${PYTHON_USEDEP}]
+	~dev-python/sense-energy-0.13.4[${PYTHON_USEDEP}]
 "

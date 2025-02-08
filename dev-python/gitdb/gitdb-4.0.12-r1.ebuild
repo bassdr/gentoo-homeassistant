@@ -16,9 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	smmap<6,>=3.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/smmap-6[${PYTHON_USEDEP}]
+	>=dev-python/smmap-3.0.1[${PYTHON_USEDEP}] <dev-python/smmap-6[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/smmap-3.0.1[${PYTHON_USEDEP}]

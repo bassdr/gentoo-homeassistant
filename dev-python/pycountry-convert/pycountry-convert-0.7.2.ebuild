@@ -21,6 +21,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	pprintpp
+	pycountry
+	pytest
+	pytest-cov
+	pytest-mock
+	repoze.lru
+	wheel
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pprintpp[${PYTHON_USEDEP}]
 	dev-python/pycountry[${PYTHON_USEDEP}]

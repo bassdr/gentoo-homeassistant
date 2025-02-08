@@ -16,12 +16,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-common-sql>=1.20.0
+	apache-airflow-providers-google; extra == "google"
+	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow>=2.9.0
+	pandas<2.2,>=1.5.3; python_version < "3.9"
+	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	trino>=0.318.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-providers-common-sql-1.20.0[${PYTHON_USEDEP}]
 	google? ( dev-python/apache-airflow-providers-google[${PYTHON_USEDEP}] )
 	openlineage? ( dev-python/apache-airflow-providers-openlineage[${PYTHON_USEDEP}] )
-	<dev-python/pandas-2.2[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.1.2[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}]
 	>=dev-python/trino-0.318.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

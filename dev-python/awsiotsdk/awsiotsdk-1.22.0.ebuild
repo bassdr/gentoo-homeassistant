@@ -20,8 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	awscrt==0.21.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]
+	~dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/awscrt-0.21.1[${PYTHON_USEDEP}]"

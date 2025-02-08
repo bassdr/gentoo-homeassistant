@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 0.3.0.post1)"
@@ -17,6 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cssutils>=2.2.0
+	domdf-python-tools>=2.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cssutils-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/domdf-python-tools-2.2.0[${PYTHON_USEDEP}]

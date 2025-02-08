@@ -22,6 +22,9 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
+REQUIRES_DIST="
+	cryptography>=43.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-43.0.0[${PYTHON_USEDEP}]
 "

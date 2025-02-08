@@ -18,6 +18,18 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="graphviz"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	covdefaults>=2.3; extra == "test"
+	diff-cover>=9.1.1; extra == "test"
+	graphviz>=0.20.3; extra == "graphviz"
+	packaging>=24.1
+	pip>=24.2
+	pytest-console-scripts>=1.4.1; extra == "test"
+	pytest-cov>=5; extra == "test"
+	pytest-mock>=3.14; extra == "test"
+	pytest>=8.3.2; extra == "test"
+	virtualenv<21,>=20.26.4; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	graphviz? ( >=dev-python/graphviz-0.20.3[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
@@ -46,7 +58,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-console-scripts-1.4.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
-		<dev-python/virtualenv-21[${PYTHON_USEDEP}]
+		>=dev-python/virtualenv-20.26.4[${PYTHON_USEDEP}] <dev-python/virtualenv-21[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

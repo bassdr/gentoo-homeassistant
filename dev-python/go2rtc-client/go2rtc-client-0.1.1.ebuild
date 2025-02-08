@@ -24,6 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp~=3.10
+	awesomeversion~=24.6
+	mashumaro~=3.13
+	orjson~=3.10
+	webrtc-models~=0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.10[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]
 	>=dev-python/awesomeversion-24.6[${PYTHON_USEDEP}] =dev-python/awesomeversion-24*[${PYTHON_USEDEP}]

@@ -130,7 +130,6 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	app-arch/bzip2:=
 	app-arch/libdeflate:=
@@ -142,7 +141,7 @@ DEPEND="
 "
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}
+RDEPEND="
 	${DEPEND}
 "
 BDEPEND="
@@ -155,7 +154,7 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-22.3.0[${PYTHON_USEDEP}]
+		~dev-python/black-22.3.0[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		>=dev-python/pytest-5.30[${PYTHON_USEDEP}]

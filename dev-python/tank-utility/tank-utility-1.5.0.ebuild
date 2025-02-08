@@ -23,6 +23,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	bumpversion ; extra == 'dev'
+	coverage ; extra == 'test'
+	mock ; extra == 'test'
+	pre-commit ; extra == 'dev'
+	pylint ; extra == 'dev'
+	requests >=2.0
+	responses ; extra == 'test'
+	tox ; extra == 'test'
+	urllib3
+	yapf ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.0[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
@@ -41,7 +53,6 @@ python_test() {
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/bumpversion[${PYTHON_USEDEP}]
 		dev-python/coverage[${PYTHON_USEDEP}]

@@ -21,10 +21,22 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx ; extra == "dev"
+	async-timeout; python_version<'3.11'
+	flake8 ; extra == "dev"
+	flake8-docstrings ; extra == "dev"
+	flake8-import-order ; extra == "dev"
+	flake8-tidy-imports ; extra == "dev"
+	future
+	ifaddr
+	importlib_metadata; python_version<'3.8'
+	pep8-naming ; extra == "dev"
+	sphinx-rtd-theme ; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]"

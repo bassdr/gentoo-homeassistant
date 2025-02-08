@@ -18,6 +18,9 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="idna2008"
 IUSE="${GENERATED_IUSE} idna"
 
+REQUIRES_DIST="
+	idna ; extra == 'idna2008'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	idna2008? ( dev-python/idna[${PYTHON_USEDEP}] )
 "

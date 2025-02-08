@@ -20,8 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (<4,>3.3)
+	attrs (>18)
+	jmespath (<2)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>dev-python/aiohttp-3.3[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>dev-python/attrs-18[${PYTHON_USEDEP}]
 	<dev-python/jmespath-2[${PYTHON_USEDEP}]
 "

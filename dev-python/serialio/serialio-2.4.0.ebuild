@@ -14,7 +14,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pyserial
+	sockio
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/sockio[${PYTHON_USEDEP}]

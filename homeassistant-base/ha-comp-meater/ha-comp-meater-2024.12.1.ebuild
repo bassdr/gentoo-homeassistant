@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/meater-python-0.0.8[${PYTHON_USEDEP}]
+	~dev-python/meater-python-0.0.8[${PYTHON_USEDEP}]
 "

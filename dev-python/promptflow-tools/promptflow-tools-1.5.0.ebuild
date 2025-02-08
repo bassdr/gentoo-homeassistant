@@ -17,16 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-mgmt-cognitiveservices==13.5.0; extra == "azure"
+	google-search-results==2.4.1
+	openai>=1.0.0
+	promptflow>=1.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	azure? ( =dev-python/azure-mgmt-cognitiveservices-13.5.0[${PYTHON_USEDEP}] )
-	=dev-python/google-search-results-2.4.1[${PYTHON_USEDEP}]
+	azure? ( ~dev-python/azure-mgmt-cognitiveservices-13.5.0[${PYTHON_USEDEP}] )
+	~dev-python/google-search-results-2.4.1[${PYTHON_USEDEP}]
 	>=dev-python/openai-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/promptflow-1.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

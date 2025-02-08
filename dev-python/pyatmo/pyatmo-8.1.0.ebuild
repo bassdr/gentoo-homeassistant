@@ -20,11 +20,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.7.4
+	oauthlib~=3.1
+	requests-oauthlib<3.0,>=1.3
+	requests~=2.24
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/oauthlib-3.1[${PYTHON_USEDEP}] =dev-python/oauthlib-3*[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.24[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}]
-	<dev-python/requests-oauthlib-3.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-oauthlib-1.3[${PYTHON_USEDEP}] <dev-python/requests-oauthlib-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]

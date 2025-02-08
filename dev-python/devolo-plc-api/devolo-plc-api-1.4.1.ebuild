@@ -22,6 +22,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httpx >=0.21.0
+	ifaddr >=0.1.7
+	mypy >=0.981 ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	protobuf >=4.22.0
+	pytest ; extra == 'test'
+	pytest-asyncio ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-httpx >=0.18.0 ; extra == 'test'
+	segno >=1.5.2
+	syrupy ; extra == 'test'
+	typing-extensions ; extra == 'test'
+	zeroconf >=0.70.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.21.0[${PYTHON_USEDEP}]
 	>=dev-python/ifaddr-0.1.7[${PYTHON_USEDEP}]

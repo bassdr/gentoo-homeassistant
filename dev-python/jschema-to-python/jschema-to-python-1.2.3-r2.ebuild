@@ -16,7 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	attrs
+	jsonpickle
+	pbr
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/jsonpickle[${PYTHON_USEDEP}]

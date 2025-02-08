@@ -16,6 +16,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	decorator >=5
+	deprecated >=1.2
+	invoke >=2.0
+	paramiko >=2.4
+	pytest >=7 ; extra == 'pytest'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/decorator-5[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2[${PYTHON_USEDEP}]

@@ -19,6 +19,19 @@ GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	Twisted[tls]>=22.10.0
+	attrs
+	httpbin==0.7.0; extra == "dev"
+	hyperlink>=21.0.0
+	incremental
+	pep8; extra == "dev"
+	pyflakes; extra == "dev"
+	requests>=2.1.0
+	sphinx<7.0.0; extra == "docs"
+	typing-extensions>=3.10.0
+	werkzeug==2.0.3; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/hyperlink-21.0.0[${PYTHON_USEDEP}]

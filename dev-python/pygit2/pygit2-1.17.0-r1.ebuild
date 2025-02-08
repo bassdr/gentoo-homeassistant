@@ -17,13 +17,15 @@ LICENSE="GPL-2-with-linking-exception"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	<dev-libs/libgit2-1.10:=
 	>=dev-libs/libgit2-1.9.0:=
 "
 BDEPEND="
 	>=dev-python/cffi-1.17.0:=[${PYTHON_USEDEP}]
+"
+REQUIRES_DIST="
+	cffi>=1.17.0
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.17.0[${PYTHON_USEDEP}]

@@ -20,6 +20,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyYAML>=5.4
+	aiohttp-retry>=2.8.3
+	ical>=4.2.9
+	mashumaro>=3.12
+	pycryptodome>=3.16.0
+	python-dateutil>=2.8.2
+	requests>=2.22.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-retry-2.8.3[${PYTHON_USEDEP}]
 	>=dev-python/ical-4.2.9[${PYTHON_USEDEP}]

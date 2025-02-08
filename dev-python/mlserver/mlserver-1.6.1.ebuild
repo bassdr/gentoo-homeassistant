@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,26 +14,53 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiofiles
+	aiokafka
+	click
+	fastapi!=0.89.0,<=0.110.0,>=0.88.0
+	gevent
+	geventhttpclient
+	grpcio
+	importlib-resources<7.0,>=5.12
+	numpy
+	opentelemetry-exporter-otlp-proto-grpc<2.0.0,>=1.22.0
+	opentelemetry-instrumentation-fastapi>=0.43b0
+	opentelemetry-instrumentation-grpc>=0.43b0
+	opentelemetry-sdk<2.0.0,>=1.22.0
+	orjson
+	pandas
+	protobuf
+	py-grpc-prometheus
+	pydantic-settings==2.2.1
+	pydantic==2.7.1
+	python-dotenv
+	python-multipart
+	starlette-exporter
+	tritonclient[http]>=2.42
+	uvicorn
+	uvloop; (sys_platform != "win32" and sys_platform != "cygwin") and platform_python_implementation != "PyPy"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiokafka[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
-	!=dev-python/fastapi-0.89.0[${PYTHON_USEDEP}]
+	>=dev-python/fastapi-0.88.0[${PYTHON_USEDEP}] <=dev-python/fastapi-0.110.0[${PYTHON_USEDEP}] !~dev-python/fastapi-0.89.0[${PYTHON_USEDEP}]
 	dev-python/gevent[${PYTHON_USEDEP}]
 	dev-python/geventhttpclient[${PYTHON_USEDEP}]
 	dev-python/grpcio[${PYTHON_USEDEP}]
-	<dev-python/importlib-resources-7.0[${PYTHON_USEDEP}]
+	>=dev-python/importlib-resources-5.12[${PYTHON_USEDEP}] <dev-python/importlib-resources-7.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	<dev-python/opentelemetry-exporter-otlp-proto-grpc-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-exporter-otlp-proto-grpc-1.22.0[${PYTHON_USEDEP}] <dev-python/opentelemetry-exporter-otlp-proto-grpc-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-instrumentation-fastapi-0.43_beta0[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-instrumentation-grpc-0.43_beta0[${PYTHON_USEDEP}]
-	<dev-python/opentelemetry-sdk-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-sdk-1.22.0[${PYTHON_USEDEP}] <dev-python/opentelemetry-sdk-2.0.0[${PYTHON_USEDEP}]
 	dev-python/orjson[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/py-grpc-prometheus[${PYTHON_USEDEP}]
-	=dev-python/pydantic-2.7.1[${PYTHON_USEDEP}]
-	=dev-python/pydantic-settings-2.2.1[${PYTHON_USEDEP}]
+	~dev-python/pydantic-2.7.1[${PYTHON_USEDEP}]
+	~dev-python/pydantic-settings-2.2.1[${PYTHON_USEDEP}]
 	dev-python/python-dotenv[${PYTHON_USEDEP}]
 	dev-python/python-multipart[${PYTHON_USEDEP}]
 	dev-python/starlette-exporter[${PYTHON_USEDEP}]

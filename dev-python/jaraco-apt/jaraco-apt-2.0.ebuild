@@ -12,12 +12,21 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jaraco.apt/"
+  https://pypi.org/project/jaraco-apt/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jaraco.packaging (>=3.2) ; extra == 'docs'
+	pytest (!=3.7.3,>=3.5) ; extra == 'testing'
+	pytest-checkdocs ; extra == 'testing'
+	pytest-flake8 ; extra == 'testing'
+	rst.linker (>=1.9) ; extra == 'docs'
+	six
+	sphinx ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/jaraco-packaging-3.2[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
@@ -29,7 +38,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.5[${PYTHON_USEDEP}] !~dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
 		dev-python/pytest-checkdocs[${PYTHON_USEDEP}]
 		dev-python/pytest-flake8[${PYTHON_USEDEP}]
 	)

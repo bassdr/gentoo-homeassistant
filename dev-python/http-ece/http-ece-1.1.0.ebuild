@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	cryptography
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 "

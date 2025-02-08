@@ -12,12 +12,23 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.lifecycleevent/"
+  https://pypi.org/project/zope-lifecycleevent/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	sphinx-rtd-theme ; extra == 'docs'
+	zope.component ; extra == 'test'
+	zope.configuration ; extra == 'test'
+	zope.event
+	zope.interface
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

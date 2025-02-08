@@ -20,6 +20,16 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	async-timeout>=3.0.1
+	ciso8601
+	kasa-crypt>=0.2.0
+	orjson
+	requests
+	websocket-client
+	websockets
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]

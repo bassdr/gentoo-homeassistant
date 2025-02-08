@@ -17,7 +17,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 "

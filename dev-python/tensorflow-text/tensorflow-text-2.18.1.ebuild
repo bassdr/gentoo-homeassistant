@@ -17,15 +17,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py; extra == "tests"
+	pytest; extra == "tests"
+	tensorflow-cpu<2.19,>=2.18.0; extra == "tensorflow-cpu"
+	tensorflow-datasets>=3.2.0; extra == "tests"
+	tensorflow<2.19,>=2.18.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/tensorflow-2.19[${PYTHON_USEDEP}]
-	tensorflow-cpu? ( <dev-python/tensorflow-cpu-2.19[${PYTHON_USEDEP}] )
+	>=dev-python/tensorflow-2.18.0[${PYTHON_USEDEP}] <dev-python/tensorflow-2.19[${PYTHON_USEDEP}]
+	tensorflow-cpu? ( >=dev-python/tensorflow-cpu-2.18.0[${PYTHON_USEDEP}] <dev-python/tensorflow-cpu-2.19[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/absl-py[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

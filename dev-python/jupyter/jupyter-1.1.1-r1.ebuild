@@ -16,7 +16,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	ipykernel
+	ipywidgets
+	jupyter-console
+	jupyterlab
+	nbconvert
+	notebook
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipykernel[${PYTHON_USEDEP}]
 	dev-python/ipywidgets[${PYTHON_USEDEP}]

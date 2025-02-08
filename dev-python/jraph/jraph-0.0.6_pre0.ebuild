@@ -18,6 +18,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py (>=0.9) ; extra == 'examples'
+	absl-py (>=0.9) ; extra == 'ogb_examples'
+	dm-haiku (>=0.0.2) ; extra == 'examples'
+	dm-haiku (>=0.0.2) ; extra == 'ogb_examples'
+	dm-tree (>=0.1.5) ; extra == 'ogb_examples'
+	frozendict (>=2.0.2) ; extra == 'examples'
+	jax (>=0.1.55)
+	jaxlib (>=0.1.37)
+	numpy (>=1.18.0)
+	optax (>=0.0.1) ; extra == 'examples'
+	optax (>=0.0.1) ; extra == 'ogb_examples'
+	pandas (>=1.0.5) ; extra == 'ogb_examples'
+	scipy (>=1.2.1) ; extra == 'examples'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	examples? ( >=dev-python/absl-py-0.9[${PYTHON_USEDEP}] )
 	ogb_examples? ( >=dev-python/absl-py-0.9[${PYTHON_USEDEP}] )

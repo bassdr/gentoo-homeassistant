@@ -25,7 +25,16 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
 
-RDEPEND=""
+REQUIRES_DIST="
+	PyYAML ; extra == 'test'
+	PyYAML ; extra == 'yaml'
+	mock ; extra == 'test'
+	pytest ; extra == 'test'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	yaml? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}

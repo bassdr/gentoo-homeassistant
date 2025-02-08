@@ -21,7 +21,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Sphinx (>=1.6)
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/six[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-1.6[${PYTHON_USEDEP}]

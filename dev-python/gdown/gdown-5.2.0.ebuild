@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4
+	build; extra == "test"
+	filelock
+	mypy; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest; extra == "test"
+	requests[socks]
+	ruff; extra == "test"
+	tqdm
+	twine; extra == "test"
+	types-requests; extra == "test"
+	types-setuptools; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/filelock[${PYTHON_USEDEP}]

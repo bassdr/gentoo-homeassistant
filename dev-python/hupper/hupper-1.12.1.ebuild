@@ -16,6 +16,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	mock ; extra == 'testing'
+	pylons-sphinx-themes ; extra == 'docs'
+	pytest ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	setuptools ; extra == 'docs'
+	watchdog ; extra == 'docs'
+	watchdog ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/pylons-sphinx-themes[${PYTHON_USEDEP}] )
 	docs? ( dev-python/setuptools[${PYTHON_USEDEP}] )

@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httpx
+	lxml
+	pkce
+	shortuuid
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]

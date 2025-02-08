@@ -16,6 +16,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cffi>=1.15.1; extra == "arrow"
+	dask[array,dataframe,distributed]>=2.0.0; extra == "dask"
+	numpy>=1.17.0
+	pandas>=0.24.0; extra == "dask"
+	pandas>=0.24.0; extra == "pandas"
+	pyarrow>=6.0.1; extra == "arrow"
+	scikit-learn!=0.22.0; extra == "scikit-learn"
+	scipy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	arrow? ( >=dev-python/cffi-1.15.1[${PYTHON_USEDEP}] )
 	dask? ( >=dev-python/dask-2.0.0[array,dataframe,distributed,${PYTHON_USEDEP}] )
@@ -23,7 +33,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dask? ( >=dev-python/pandas-0.24.0[${PYTHON_USEDEP}] )
 	pandas? ( >=dev-python/pandas-0.24.0[${PYTHON_USEDEP}] )
 	arrow? ( >=dev-python/pyarrow-6.0.1[${PYTHON_USEDEP}] )
-	scikit-learn? ( !=dev-python/scikit-learn-0.22.0[${PYTHON_USEDEP}] )
+	scikit-learn? ( !~dev-python/scikit-learn-0.22.0[${PYTHON_USEDEP}] )
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

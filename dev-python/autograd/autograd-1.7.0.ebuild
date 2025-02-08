@@ -16,6 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy
+	scipy; extra == "scipy"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	scipy? ( dev-python/scipy[${PYTHON_USEDEP}] )

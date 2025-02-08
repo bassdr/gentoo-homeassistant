@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,23 +14,42 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp<4,>=3.9.1
+	mypy==0.971; extra == "dev"
+	mypy==0.971; extra == "tests"
+	nox==2024.3.2; extra == "dev"
+	oss2==2.18.4
+	pylint-pytest==1.1.7; extra == "dev"
+	pylint-pytest==1.1.7; extra == "tests"
+	pylint==2.15.0; extra == "dev"
+	pylint==2.15.0; extra == "tests"
+	pytest-cov==3.0.0; extra == "dev"
+	pytest-cov==3.0.0; extra == "tests"
+	pytest-mock==3.8.2; extra == "dev"
+	pytest-mock==3.8.2; extra == "tests"
+	pytest-sugar==0.9.5; extra == "dev"
+	pytest-sugar==0.9.5; extra == "tests"
+	pytest==7.2.0; extra == "dev"
+	pytest==7.2.0; extra == "tests"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
-	=dev-python/oss2-2.18.4[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	~dev-python/oss2-2.18.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/mypy-0.971[${PYTHON_USEDEP}]
-		=dev-python/nox-2024.3.2[${PYTHON_USEDEP}]
-		=dev-python/pylint-2.15.0[${PYTHON_USEDEP}]
-		=dev-python/pylint-pytest-1.1.7[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
-		=dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
+		~dev-python/mypy-0.971[${PYTHON_USEDEP}]
+		~dev-python/nox-2024.3.2[${PYTHON_USEDEP}]
+		~dev-python/pylint-2.15.0[${PYTHON_USEDEP}]
+		~dev-python/pylint-pytest-1.1.7[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
+		~dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

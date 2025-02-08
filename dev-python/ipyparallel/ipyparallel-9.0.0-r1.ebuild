@@ -19,6 +19,32 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="benchmark labextension nbext retroextension serverextension"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	asv; extra == "benchmark"
+	decorator
+	importlib-metadata>=3.6; python_version < "3.10"
+	ipykernel>=6.9.1
+	ipython>=5
+	ipython[test]; extra == "test"
+	jupyter-client>=7
+	jupyter-server; extra == "labextension"
+	jupyter-server; extra == "nbext"
+	jupyter-server; extra == "retroextension"
+	jupyter-server; extra == "serverextension"
+	jupyterlab>=3; extra == "labextension"
+	notebook; extra == "nbext"
+	psutil
+	pytest-asyncio; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	python-dateutil>=2.1
+	pyzmq>=25
+	retrolab; extra == "retroextension"
+	testpath; extra == "test"
+	tornado>=6.1
+	tqdm
+	traitlets>=5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	benchmark? ( dev-python/asv[${PYTHON_USEDEP}] )
 	dev-python/decorator[${PYTHON_USEDEP}]

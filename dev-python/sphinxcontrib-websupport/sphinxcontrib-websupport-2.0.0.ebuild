@@ -19,10 +19,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint whoosh"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx>=5
+	jinja2
+	mypy; extra == "lint"
+	pytest; extra == "test"
+	ruff==0.5.5; extra == "lint"
+	sphinxcontrib-serializinghtml
+	sqlalchemy; extra == "whoosh"
+	types-docutils; extra == "lint"
+	whoosh; extra == "whoosh"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/ruff-0.5.5[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/ruff-0.5.5[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]
 	dev-python/sphinxcontrib-serializinghtml[${PYTHON_USEDEP}]
 	whoosh? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )

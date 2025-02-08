@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Client BACnet library for Flexit Nordic series of air handling units."
 HOMEPAGE="
-  https://pypi.org/project/flexit_bacnet/
+  https://pypi.org/project/flexit-bacnet/
   Homepage, https://github.com/piotrbulinski/flexit_bacnet
   Bug Tracker, https://github.com/piotrbulinski/flexit_bacnet/issues
 "

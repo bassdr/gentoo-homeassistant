@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="The ultimate Python library in building OAuth and OpenID Connect servers and clients."
 HOMEPAGE="
-  https://pypi.org/project/Authlib/
+  https://pypi.org/project/authlib/
   Documentation, https://docs.authlib.org/
   Purchase, https://authlib.org/plans
   Issues, https://github.com/lepture/authlib/issues
@@ -26,6 +26,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	cryptography
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 "

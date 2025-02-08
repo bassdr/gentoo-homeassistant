@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy; extra == 'test'
+	pandas; extra == 'test'
+	pytest; extra == 'test'
+	traitlets (>=4.2.2)
+	xarray; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/traitlets-4.2.2[${PYTHON_USEDEP}]
 "

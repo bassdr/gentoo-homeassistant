@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,18 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	codecov; extra == "test"
+	coveralls; extra == "test"
+	nbval; extra == "test"
+	pandas>=2.2
+	pint>=0.24
+	pyarrow; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-mpl; extra == "test"
+	pytest-subtests; extra == "test"
+	pytest; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-2.2[${PYTHON_USEDEP}]
 	>=dev-python/pint-0.24[${PYTHON_USEDEP}]

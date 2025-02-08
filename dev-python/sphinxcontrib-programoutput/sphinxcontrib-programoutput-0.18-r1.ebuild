@@ -18,6 +18,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx>=5.0.0
+	furo; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]

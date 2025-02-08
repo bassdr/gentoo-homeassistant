@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jax >=0.2.18
+	jaxlib >=0.1.69
+	numpy >=1.18.4
+	scipy >=1.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jax-0.2.18[${PYTHON_USEDEP}]
 	>=dev-python/jaxlib-0.1.69[${PYTHON_USEDEP}]

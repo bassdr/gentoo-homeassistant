@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py>=0.6.1
+	attrs>=18.2.0
+	numpy>=1.21
+	numpy>=1.21.2; python_version >= "3.10"
+	numpy>=1.23.3; python_version >= "3.11"
+	numpy>=1.26.0; python_version >= "3.12"
+	numpy>=2.1.0; python_version >= "3.13"
+	wrapt>=1.11.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-0.6.1[${PYTHON_USEDEP}]
 	>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.3[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/numpy-2.1.0[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/wrapt-1.11.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

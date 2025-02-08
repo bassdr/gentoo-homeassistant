@@ -21,6 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiodns (>1.0) ; extra == 'optional'
+	aiohttp (>3.5.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	optional? ( >dev-python/aiodns-1.0[${PYTHON_USEDEP}] )
 	>dev-python/aiohttp-3.5.2[${PYTHON_USEDEP}]

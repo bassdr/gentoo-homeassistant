@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.11.1
+	bluetooth-data-tools>=1.19.0
+	habluetooth>=2.1.0
+	orjson>=3.8.1
+	yarl
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.11.1[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-data-tools-1.19.0[${PYTHON_USEDEP}]

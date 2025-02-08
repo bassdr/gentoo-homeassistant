@@ -16,6 +16,41 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adlfs; extra == "azure"
+	adlfs>=2024.4.1; extra == "test"
+	appdirs<2
+	fastparquet; extra == "test"
+	fsspec>=2022.2
+	gcsfs; extra == "gcs"
+	gcsfs; extra == "test"
+	humanize>=1
+	importlib-metadata>=4.4
+	importlib-resources>=1.3
+	ipykernel; extra == "doc"
+	ipython<=8.12; extra == "doc"
+	jinja2>=2.10
+	joblib>=0.12
+	nbclient; extra == "doc"
+	nbformat; extra == "doc"
+	pandas>=0.23
+	pip-tools; extra == "test"
+	pre-commit; extra == "check"
+	pyarrow; extra == "test"
+	pyright==1.1.372; extra == "check"
+	pytest-cases; extra == "test"
+	pytest-dotenv; extra == "test"
+	pytest-parallel; extra == "test"
+	pytest==7.1.3; extra == "test"
+	pyyaml>=3.13
+	quartodoc; extra == "doc"
+	rdata; extra == "test"
+	requests
+	s3fs; extra == "aws"
+	s3fs; extra == "test"
+	types-appdirs; extra == "check"
+	xxhash>=1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	azure? ( dev-python/adlfs[${PYTHON_USEDEP}] )
 	<dev-python/appdirs-2[${PYTHON_USEDEP}]
@@ -31,7 +66,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/nbclient[${PYTHON_USEDEP}] )
 	doc? ( dev-python/nbformat[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-0.23[${PYTHON_USEDEP}]
-	check? ( =dev-python/pyright-1.1.372[${PYTHON_USEDEP}] )
+	check? ( ~dev-python/pyright-1.1.372[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
 	doc? ( dev-python/quartodoc[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
@@ -50,7 +85,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/gcsfs[${PYTHON_USEDEP}]
 		dev-python/pip-tools[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.1.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.1.3[${PYTHON_USEDEP}]
 		dev-python/pytest-cases[${PYTHON_USEDEP}]
 		dev-python/pytest-dotenv[${PYTHON_USEDEP}]
 		dev-python/pytest-parallel[${PYTHON_USEDEP}]

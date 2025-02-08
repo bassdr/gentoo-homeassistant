@@ -11,8 +11,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/base36-0.1.1[${PYTHON_USEDEP}]
-	=dev-python/fnv-hash-fast-1.0.2[${PYTHON_USEDEP}]
-	=dev-python/hap-python-4.9.2[${PYTHON_USEDEP}]
-	=dev-python/pyqrcode-1.2.1[${PYTHON_USEDEP}]
+	~dev-python/base36-0.1.1[${PYTHON_USEDEP}]
+	~dev-python/fnv-hash-fast-1.0.2[${PYTHON_USEDEP}]
+	~dev-python/hap-python-4.9.2[${PYTHON_USEDEP}]
+	~dev-python/pyqrcode-1.2.1[${PYTHON_USEDEP}]
 "

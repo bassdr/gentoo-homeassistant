@@ -21,6 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	numpy
+	pandas (>=1.1.3)
+	requests
+	zeep
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.1.3[${PYTHON_USEDEP}]

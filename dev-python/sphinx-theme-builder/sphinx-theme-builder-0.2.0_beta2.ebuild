@@ -18,6 +18,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build ; extra == "cli"
+	click ; extra == "cli"
+	nodeenv
+	packaging
+	pyproject-metadata
+	rich
+	setuptools
+	sphinx-autobuild ; extra == "cli"
+	tomli ; python_version < '3.11'
+	typing_extensions ; python_version <= '3.7'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( dev-python/build[${PYTHON_USEDEP}] )
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )
@@ -27,7 +39,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	cli? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -21,6 +21,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	msgpack>=0.5.6; extra == "msgpack"
+	orjson; extra == "orjson"
+	pyyaml>=3.13; extra == "yaml"
+	tomli-w>=1.0; extra == "toml"
+	tomli>=1.1.0; python_version < "3.11" and extra == "toml"
+	typing-extensions>=4.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	msgpack? ( >=dev-python/msgpack-0.5.6[${PYTHON_USEDEP}] )
 	orjson? ( dev-python/orjson[${PYTHON_USEDEP}] )

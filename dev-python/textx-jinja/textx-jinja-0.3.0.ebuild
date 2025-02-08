@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="textX-jinja"
@@ -11,12 +10,24 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/textX-jinja/"
+  https://pypi.org/project/textx-jinja/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2
+	click
+	coverage ; extra == 'test'
+	coveralls ; extra == 'test'
+	flake8 ; extra == 'test'
+	pytest ; extra == 'test'
+	textX
+	tox ; extra == 'test'
+	twine ; extra == 'dev'
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]

@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bluetooth-data-tools>=0.3.1
+	httpx>=0.23.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-data-tools-0.3.1[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]

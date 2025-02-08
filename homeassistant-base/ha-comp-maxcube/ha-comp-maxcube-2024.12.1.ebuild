@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/maxcube-api-0.4.3[${PYTHON_USEDEP}]
+	~dev-python/maxcube-api-0.4.3[${PYTHON_USEDEP}]
 "

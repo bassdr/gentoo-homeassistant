@@ -16,6 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	mkdocs>=1.1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mkdocs-1.1.1[${PYTHON_USEDEP}]
 "

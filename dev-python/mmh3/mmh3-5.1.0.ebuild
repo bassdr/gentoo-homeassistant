@@ -16,29 +16,47 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black==24.10.0; extra == "lint"
+	clang-format==19.1.7; extra == "lint"
+	isort==5.13.2; extra == "lint"
+	matplotlib==3.10.0; extra == "plot"
+	mypy==1.14.1; extra == "type"
+	myst-parser==4.0.0; extra == "docs"
+	pandas==2.2.3; extra == "plot"
+	pylint==3.3.3; extra == "lint"
+	pymmh3==0.0.5; extra == "benchmark"
+	pyperf==2.8.1; extra == "benchmark"
+	pytest-sugar==1.0.0; extra == "test"
+	pytest==8.3.4; extra == "test"
+	shibuya==2024.12.21; extra == "docs"
+	sphinx-copybutton==0.5.2; extra == "docs"
+	sphinx==8.1.3; extra == "docs"
+	xxhash==3.5.0; extra == "benchmark"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	lint? ( =dev-python/black-24.10.0[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/clang-format-19.1.7[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/isort-5.13.2[${PYTHON_USEDEP}] )
-	plot? ( =dev-python/matplotlib-3.10.0[${PYTHON_USEDEP}] )
-	type? ( =dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}] )
-	plot? ( =dev-python/pandas-2.2.3[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/pylint-3.3.3[${PYTHON_USEDEP}] )
-	benchmark? ( =dev-python/pymmh3-0.0.5[${PYTHON_USEDEP}] )
-	benchmark? ( =dev-python/pyperf-2.8.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/shibuya-2024.12.21[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	benchmark? ( =dev-python/xxhash-3.5.0[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/black-24.10.0[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/clang-format-19.1.7[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/isort-5.13.2[${PYTHON_USEDEP}] )
+	plot? ( ~dev-python/matplotlib-3.10.0[${PYTHON_USEDEP}] )
+	type? ( ~dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}] )
+	plot? ( ~dev-python/pandas-2.2.3[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/pylint-3.3.3[${PYTHON_USEDEP}] )
+	benchmark? ( ~dev-python/pymmh3-0.0.5[${PYTHON_USEDEP}] )
+	benchmark? ( ~dev-python/pyperf-2.8.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/shibuya-2024.12.21[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	benchmark? ( ~dev-python/xxhash-3.5.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
-		=dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-8.3.4[${PYTHON_USEDEP}]
+		~dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

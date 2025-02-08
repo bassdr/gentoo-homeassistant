@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pymodbus (>=2.1.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pymodbus-2.1.0[${PYTHON_USEDEP}]
 "

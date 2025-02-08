@@ -16,6 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click>=8.0.0
+	rich>=10.11.0; extra == "standard"
+	shellingham>=1.3.0; extra == "standard"
+	typing-extensions>=3.7.4.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	standard? ( >=dev-python/rich-10.11.0[${PYTHON_USEDEP}] )

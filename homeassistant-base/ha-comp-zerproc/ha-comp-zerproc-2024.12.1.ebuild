@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyzerproc-0.4.8[${PYTHON_USEDEP}]
+	~dev-python/pyzerproc-0.4.8[${PYTHON_USEDEP}]
 "

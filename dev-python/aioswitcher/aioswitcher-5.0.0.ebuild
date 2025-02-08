@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.10.3
+	pycryptodome>=3.18.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.10.3[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodome-3.18.0[${PYTHON_USEDEP}]

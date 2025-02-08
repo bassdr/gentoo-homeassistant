@@ -21,6 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aioconsole>=0.3.1
+	aiohttp>=3.9.1
+	async-timeout>=4.0.3
+	websockets>=8.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aioconsole-0.3.1[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]

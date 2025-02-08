@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Click >=7.0
+	boto3 >=1.26.125
+	botocore >=1.29.125
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.26.125[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.29.125[${PYTHON_USEDEP}]

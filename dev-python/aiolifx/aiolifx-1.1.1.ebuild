@@ -20,12 +20,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	InquirerPy<0.4.0,>=0.3.0
+	async-timeout>=3.0.1
+	bitstring
+	click<8.2.0,>=8.1.0
+	ifaddr
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
 	dev-python/bitstring[${PYTHON_USEDEP}]
-	<dev-python/click-8.2.0[${PYTHON_USEDEP}]
+	>=dev-python/click-8.1.0[${PYTHON_USEDEP}] <dev-python/click-8.2.0[${PYTHON_USEDEP}]
 	dev-python/ifaddr[${PYTHON_USEDEP}]
-	<dev-python/inquirerpy-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/inquirerpy-0.3.0[${PYTHON_USEDEP}] <dev-python/inquirerpy-0.4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10)

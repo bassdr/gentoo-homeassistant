@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/dio-chacon-wifi-api-1.2.1[${PYTHON_USEDEP}]
+	~dev-python/dio-chacon-wifi-api-1.2.1[${PYTHON_USEDEP}]
 "

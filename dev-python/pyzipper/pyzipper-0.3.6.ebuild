@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	pycryptodomex
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pycryptodomex[${PYTHON_USEDEP}]
 "

@@ -16,6 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage; extra == "dev"
+	defusedxml; extra == "dev"
+	defusedxml; extra == "tests"
+	defusedxml; extra == "tests-min"
+	numpy; extra == "dev"
+	numpy; extra == "tests"
+	opencv-python==4.10.0.84; extra == "dev"
+	packaging; extra == "dev"
+	packaging; extra == "tests"
+	packaging; extra == "tests-min"
+	pillow>=10.1.0
+	pre-commit; extra == "dev"
+	pylint; extra == "dev"
+	pympler; extra == "dev"
+	pympler; extra == "tests"
+	pytest; extra == "dev"
+	pytest; extra == "tests"
+	pytest; extra == "tests-min"
+	sphinx-issues>=3.0.1; extra == "docs"
+	sphinx-rtd-theme>=1.0; extra == "docs"
+	sphinx>=4.4; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	tests-min? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	tests-min? ( dev-python/packaging[${PYTHON_USEDEP}] )
@@ -33,7 +56,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/coverage[${PYTHON_USEDEP}]
 		dev-python/defusedxml[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
-		=dev-python/opencv-python-4.10.0.84[${PYTHON_USEDEP}]
+		~dev-python/opencv-python-4.10.0.84[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]
 		dev-python/pylint[${PYTHON_USEDEP}]
 		dev-python/pympler[${PYTHON_USEDEP}]

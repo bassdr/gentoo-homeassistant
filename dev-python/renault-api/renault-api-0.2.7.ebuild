@@ -24,6 +24,16 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	PyJWT>=2.8.0
+	aiohttp>=3.9.5
+	click>=8.0.1; extra == "cli"
+	cryptography>=42.0.5
+	dateparser>=1.0.0; extra == "cli"
+	marshmallow-dataclass>=8.2.0
+	six<2.0,>=1.16
+	tabulate>=0.8.7; extra == "cli"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/click-8.0.1[${PYTHON_USEDEP}] )
@@ -31,7 +41,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/dateparser-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-dataclass-8.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
-	<dev-python/six-2.0[${PYTHON_USEDEP}]
+	>=dev-python/six-1.16[${PYTHON_USEDEP}] <dev-python/six-2.0[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}

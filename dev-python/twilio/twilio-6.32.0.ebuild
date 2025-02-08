@@ -22,6 +22,12 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 
+REQUIRES_DIST="
+	PyJWT
+	pytz
+	requests
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

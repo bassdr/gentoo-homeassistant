@@ -16,10 +16,27 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp>=3.7.0
+	arrow; extra == "tests"
+	azure-core<2.0.0,>=1.28.0
+	azure-datalake-store<0.1,>=0.0.53
+	azure-identity
+	azure-storage-blob>=12.17.0
+	dask[dataframe]; extra == "tests"
+	docker; extra == "tests"
+	fsspec>=2023.12.0
+	furo; extra == "docs"
+	myst-parser; extra == "docs"
+	numpydoc; extra == "docs"
+	pytest-mock; extra == "tests"
+	pytest; extra == "tests"
+	sphinx; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}]
-	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/azure-datalake-store-0.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.28.0[${PYTHON_USEDEP}] <dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-datalake-store-0.0.53[${PYTHON_USEDEP}] <dev-python/azure-datalake-store-0.1[${PYTHON_USEDEP}]
 	dev-python/azure-identity[${PYTHON_USEDEP}]
 	>=dev-python/azure-storage-blob-12.17.0[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2023.12.0[${PYTHON_USEDEP}]

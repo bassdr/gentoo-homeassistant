@@ -16,11 +16,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	docutils>=0.18.1
+	jinja2
+	nbconvert!=5.4,>=5.3
+	nbformat
+	sphinx>=1.8
+	traitlets>=5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.18.1[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
-	!=dev-python/nbconvert-5.4[${PYTHON_USEDEP}]
+	>=dev-python/nbconvert-5.3[${PYTHON_USEDEP}] !~dev-python/nbconvert-5.4[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5[${PYTHON_USEDEP}]

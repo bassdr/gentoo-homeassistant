@@ -21,6 +21,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.4)
+	async-timeout
+	netifaces
+	pytest (>=6.2.2) ; extra == 'all'
+	pytest (>=6.2.2) ; extra == 'test'
+	pytest-aio ; extra == 'all'
+	pytest-aio ; extra == 'test'
+	pytest-aiohttp ; extra == 'all'
+	pytest-aiohttp ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.4[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]

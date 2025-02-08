@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	dpkt~=1.9
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dpkt-1.9[${PYTHON_USEDEP}] =dev-python/dpkt-1*[${PYTHON_USEDEP}]
 "

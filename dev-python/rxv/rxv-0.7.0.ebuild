@@ -22,6 +22,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	black ; extra == 'testing'
+	defusedxml
+	flake8 ; extra == 'testing'
+	mock ; extra == 'testing'
+	pytest ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-timeout ; extra == 'testing'
+	pytest-vcr ; extra == 'testing'
+	requests
+	requests-mock ; extra == 'testing'
+	tox ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

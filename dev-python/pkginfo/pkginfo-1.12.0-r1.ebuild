@@ -16,7 +16,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/wheel[${PYTHON_USEDEP}]
@@ -33,5 +32,3 @@ GENERATED_BDEPEND="${BDEPEND}
 "
 BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

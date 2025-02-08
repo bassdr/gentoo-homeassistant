@@ -10,12 +10,17 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/GeoAlchemy2/"
+  https://pypi.org/project/geoalchemy2/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	SQLAlchemy>=1.4
+	Shapely>=1.7; extra == "shapely"
+	packaging
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	shapely? ( >=dev-python/shapely-1.7[${PYTHON_USEDEP}] )

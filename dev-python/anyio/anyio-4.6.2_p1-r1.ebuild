@@ -25,6 +25,27 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc trio"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx~=7.4; extra == "doc"
+	anyio[trio]; extra == "test"
+	coverage[toml]>=7; extra == "test"
+	exceptiongroup>=1.0.2; python_version < "3.11"
+	exceptiongroup>=1.2.0; extra == "test"
+	hypothesis>=4.0; extra == "test"
+	idna>=2.8
+	packaging; extra == "doc"
+	psutil>=5.9; extra == "test"
+	pytest-mock>=3.6.1; extra == "test"
+	pytest>=7.0; extra == "test"
+	sniffio>=1.1
+	sphinx-autodoc-typehints>=1.2.0; extra == "doc"
+	sphinx-rtd-theme; extra == "doc"
+	trio>=0.26.1; extra == "trio"
+	trustme; extra == "test"
+	truststore>=0.9.1; python_version >= "3.10" and extra == "test"
+	typing-extensions>=4.1; python_version < "3.11"
+	uvloop>=0.21.0b1; (platform_python_implementation == "CPython" and platform_system != "Windows") and extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/idna-2.8[${PYTHON_USEDEP}]
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
@@ -33,8 +54,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.26.1[${PYTHON_USEDEP}] )
-	>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]
-	>=dev-python/uvloop-0.21.0_beta1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/idna-2.8[${PYTHON_USEDEP}]
@@ -77,6 +96,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-mock-3.6.1[${PYTHON_USEDEP}]
 		dev-python/trustme[${PYTHON_USEDEP}]
+		>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]
+		>=dev-python/uvloop-0.21.0_beta1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

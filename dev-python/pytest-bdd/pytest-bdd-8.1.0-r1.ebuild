@@ -19,8 +19,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Mako
+	gherkin-official<30.0.0,>=29.0.0
+	packaging
+	parse
+	parse-type
+	pytest>=7.0.0
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/gherkin-official-30.0.0[${PYTHON_USEDEP}]
+	>=dev-python/gherkin-official-29.0.0[${PYTHON_USEDEP}] <dev-python/gherkin-official-30.0.0[${PYTHON_USEDEP}]
 	dev-python/mako[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/parse[${PYTHON_USEDEP}]

@@ -20,10 +20,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	crashtest (>=0.4.1,<0.5.0)
+	rapidfuzz (>=3.0.0,<4.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/crashtest-0.4.1[${PYTHON_USEDEP}]
-	>=dev-python/rapidfuzz-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/crashtest-0.4.1[${PYTHON_USEDEP}] <dev-python/crashtest-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/rapidfuzz-3.0.0[${PYTHON_USEDEP}] <dev-python/rapidfuzz-4.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/crashtest[${PYTHON_USEDEP}]

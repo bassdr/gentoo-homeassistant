@@ -16,15 +16,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	google-api-core<3.0.0dev,>=2.15.0
+	google-auth<3.0dev,>=2.26.1
+	google-cloud-core<3.0dev,>=2.3.0
+	google-crc32c<2.0dev,>=1.0
+	google-resumable-media>=2.7.2
+	opentelemetry-api>=1.1.0; extra == "tracing"
+	protobuf<6.0.0dev; extra == "protobuf"
+	requests<3.0.0dev,>=2.18.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0_pre[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-core-3.0_pre[${PYTHON_USEDEP}]
-	<dev-python/google-crc32c-2.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-api-core-2.15.0[${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-auth-2.26.1[${PYTHON_USEDEP}] <dev-python/google-auth-3.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-core-2.3.0[${PYTHON_USEDEP}] <dev-python/google-cloud-core-3.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-crc32c-1.0[${PYTHON_USEDEP}] <dev-python/google-crc32c-2.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/google-resumable-media-2.7.2[${PYTHON_USEDEP}]
 	tracing? ( >=dev-python/opentelemetry-api-1.1.0[${PYTHON_USEDEP}] )
 	protobuf? ( <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}] )
-	<dev-python/requests-3.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.18.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

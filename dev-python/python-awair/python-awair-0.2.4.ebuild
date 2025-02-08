@@ -22,8 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.6.1,<4.0.0)
+	voluptuous (>=0.11.7)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.11.7[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-vcs/python-gitlab-1.6.0[${PYTHON_USEDEP}]
+	~dev-vcs/python-gitlab-1.6.0[${PYTHON_USEDEP}]
 "

@@ -26,7 +26,13 @@ fi
 LICENSE="MIT"
 SLOT="0"
 
-IUSE=""
+REQUIRES_DIST="
+	XlsxWriter
+	click
+	click-plugins
+	colorama
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/click-plugins[${PYTHON_USEDEP}]

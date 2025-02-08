@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,13 +15,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cuda-python<13.0a0,<=12.6.0,>=12.0
+	fastavro>=0.22.9; extra == "test"
+	hypothesis; extra == "test"
+	libcudf-cu12==24.12.*
+	numpy<3.0a0,>=1.23; extra == "test"
+	nvtx>=0.2.1
+	packaging
+	pandas; extra == "test"
+	pyarrow!=17.0.0,<19.0.0a0,>=14.0.0; platform_machine == "aarch64"
+	pyarrow<19.0.0a0,>=14.0.0; platform_machine == "x86_64"
+	pytest-cov; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest<8; extra == "test"
+	rmm-cu12==24.12.*
+	typing_extensions>=4.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/cuda-python-13.0_alpha0[${PYTHON_USEDEP}]
+	>=dev-python/cuda-python-12.0[${PYTHON_USEDEP}] <dev-python/cuda-python-13.0_alpha0[${PYTHON_USEDEP}] <=dev-python/cuda-python-12.6.0[${PYTHON_USEDEP}]
 	=dev-python/libcudf-cu12-24.12*[${PYTHON_USEDEP}]
 	>=dev-python/nvtx-0.2.1[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-19.0.0_alpha0[${PYTHON_USEDEP}]
-	!=dev-python/pyarrow-17.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0_alpha0[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0_alpha0[${PYTHON_USEDEP}] !~dev-python/pyarrow-17.0.0[${PYTHON_USEDEP}]
 	=dev-python/rmm-cu12-24.12*[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 "
@@ -30,11 +46,10 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		>=dev-python/fastavro-0.22.9[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
-		<dev-python/numpy-3.0_alpha0[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.23[${PYTHON_USEDEP}] <dev-python/numpy-3.0_alpha0[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		<dev-python/pytest-8[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

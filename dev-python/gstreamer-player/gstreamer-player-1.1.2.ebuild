@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	mutagen
+"
 GENERATED_RDEPEND="${RDEPEND}
 	media-libs/mutagen[${PYTHON_USEDEP}]
 "

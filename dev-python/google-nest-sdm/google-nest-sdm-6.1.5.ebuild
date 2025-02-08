@@ -20,6 +20,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyYAML>=6.0
+	aiohttp>=3.7.3
+	google-auth-oauthlib>=0.4.1
+	google-auth>=1.22.0
+	google-cloud-pubsub>=2.1.0
+	mashumaro>=3.12
+	requests-oauthlib>=1.3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.7.3[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-1.22.0[${PYTHON_USEDEP}]

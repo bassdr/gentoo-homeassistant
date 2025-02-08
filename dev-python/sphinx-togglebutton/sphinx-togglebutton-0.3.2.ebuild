@@ -17,6 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docutils
+	matplotlib ; extra == 'sphinx'
+	myst-nb ; extra == 'sphinx'
+	numpy ; extra == 'sphinx'
+	setuptools
+	sphinx
+	sphinx-book-theme ; extra == 'sphinx'
+	sphinx-design ; extra == 'sphinx'
+	sphinx-examples ; extra == 'sphinx'
+	wheel
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	sphinx? ( dev-python/matplotlib[${PYTHON_USEDEP}] )

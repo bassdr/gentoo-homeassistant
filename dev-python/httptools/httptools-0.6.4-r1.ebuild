@@ -23,14 +23,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # don't ask me why they use both
-IUSE=""
 DEPEND="
 	net-libs/http-parser:=
 	net-libs/llhttp:=
 "
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}
+RDEPEND="
 	${DEPEND}
 "
 BDEPEND="

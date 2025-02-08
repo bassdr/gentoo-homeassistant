@@ -20,7 +20,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
@@ -44,5 +43,3 @@ src_prepare() {
 	distutils-r1_src_prepare
 	sed -i -e '/--cov/d' setup.cfg || die
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

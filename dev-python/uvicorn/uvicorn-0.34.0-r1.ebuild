@@ -23,13 +23,25 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="standard"
 IUSE="${GENERATED_IUSE} test-rust"
 
+REQUIRES_DIST="
+	click>=7.0
+	colorama>=0.4; sys_platform == "win32" and extra == "standard"
+	h11>=0.8
+	httptools>=0.6.3; extra == "standard"
+	python-dotenv>=0.13; extra == "standard"
+	pyyaml>=5.1; extra == "standard"
+	typing-extensions>=4.0; python_version < "3.11"
+	uvloop!=0.15.0,!=0.15.1,>=0.14.0; (sys_platform != "win32" and (sys_platform != "cygwin" and platform_python_implementation != "PyPy")) and extra == "standard"
+	watchfiles>=0.13; extra == "standard"
+	websockets>=10.4; extra == "standard"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/h11-0.8[${PYTHON_USEDEP}]
 	standard? ( >=dev-python/httptools-0.6.3[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/python-dotenv-0.13[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/pyyaml-5.1[${PYTHON_USEDEP}] )
-	!=dev-python/uvloop-0.15.0[${PYTHON_USEDEP}]
+	standard? ( >=dev-python/uvloop-0.14.0[${PYTHON_USEDEP}] !~dev-python/uvloop-0.15.0[${PYTHON_USEDEP}] !~dev-python/uvloop-0.15.1[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/watchfiles-0.13[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/websockets-10.4[${PYTHON_USEDEP}] )
 "

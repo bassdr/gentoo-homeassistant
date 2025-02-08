@@ -16,6 +16,16 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adbc-driver-manager
+	importlib-resources>=1.3
+	pandas; extra == "dbapi"
+	pandas; extra == "test"
+	polars; extra == "test"
+	pyarrow>=8.0.0; extra == "dbapi"
+	pyarrow>=8.0.0; extra == "test"
+	pytest; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/adbc-driver-manager[${PYTHON_USEDEP}]
 	>=dev-python/importlib-resources-1.3[${PYTHON_USEDEP}]

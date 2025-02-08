@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow
+	absl-py; extra == "dev"
+	ipython
+	matplotlib
+	numpy
+	pyink; extra == "dev"
+	pylint>=2.6.0; extra == "dev"
+	pytest-xdist; extra == "dev"
+	pytest; extra == "dev"
+	pytype; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipython[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]

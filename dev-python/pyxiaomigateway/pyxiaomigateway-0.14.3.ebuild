@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library to communicate with the Xiaomi Gateway"
 HOMEPAGE="
-  https://pypi.org/project/PyXiaomiGateway/
+  https://pypi.org/project/pyxiaomigateway/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	cryptography (>=2.1.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.1.1[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all docs ipython jupyter jupyterlab jupytext mypy pyright watch"
+GENERATED_IUSE="all docs ipython jupyter jupyterlab jupytext kernel mypy numpy pyright watch xonsh"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,31 +16,318 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aenum>=3.1.15; python_version < "3.4"
+	anyio>=3; python_version >= "3.6"
+	argparse>=1.4; python_version < "2.7"
+	async-generator>=1.10; python_version >= "3.5"
+	backports.functools-lru-cache>=1.6; python_version < "3"
+	cPyparsing<2.4.7.2.5,>=2.4.7.2.4.0; platform_python_implementation == "CPython"
+	dataclasses>=0.8; python_version >= "3.6" and python_version < "3.7"
+	exceptiongroup>=1; python_version >= "3.7" and python_version < "3.11"
+	futures>=3.4; python_version < "3"
+	ipykernel>=4.10; python_version < "3" and extra == "all"
+	ipykernel>=4.10; python_version < "3" and extra == "dev"
+	ipykernel>=4.10; python_version < "3" and extra == "ipython"
+	ipykernel>=4.10; python_version < "3" and extra == "jupyter"
+	ipykernel>=4.10; python_version < "3" and extra == "jupyterlab"
+	ipykernel>=4.10; python_version < "3" and extra == "jupytext"
+	ipykernel>=4.10; python_version < "3" and extra == "kernel"
+	ipykernel>=4.10; python_version < "3" and extra == "tests"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "all"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "dev"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "ipython"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "jupyter"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "jupyterlab"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "jupytext"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "kernel"
+	ipykernel>=5.5; (python_version >= "3" and python_version < "3.8") and extra == "tests"
+	ipykernel>=6; python_version >= "3.8" and extra == "all"
+	ipykernel>=6; python_version >= "3.8" and extra == "dev"
+	ipykernel>=6; python_version >= "3.8" and extra == "ipython"
+	ipykernel>=6; python_version >= "3.8" and extra == "jupyter"
+	ipykernel>=6; python_version >= "3.8" and extra == "jupyterlab"
+	ipykernel>=6; python_version >= "3.8" and extra == "jupytext"
+	ipykernel>=6; python_version >= "3.8" and extra == "kernel"
+	ipykernel>=6; python_version >= "3.8" and extra == "tests"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "all"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "dev"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "ipython"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "jupyter"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "jupyterlab"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "jupytext"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "kernel"
+	ipython<7.10,>=7.9; (python_version >= "3" and python_version < "3.7") and extra == "tests"
+	ipython>=5.4; python_version < "3" and extra == "all"
+	ipython>=5.4; python_version < "3" and extra == "dev"
+	ipython>=5.4; python_version < "3" and extra == "ipython"
+	ipython>=5.4; python_version < "3" and extra == "jupyter"
+	ipython>=5.4; python_version < "3" and extra == "jupyterlab"
+	ipython>=5.4; python_version < "3" and extra == "jupytext"
+	ipython>=5.4; python_version < "3" and extra == "kernel"
+	ipython>=5.4; python_version < "3" and extra == "tests"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "all"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "dev"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "ipython"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "jupyter"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "jupyterlab"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "jupytext"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "kernel"
+	ipython>=7.34; (python_version >= "3.7" and python_version < "3.8") and extra == "tests"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "all"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "dev"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "ipython"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "jupyter"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "jupyterlab"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "jupytext"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "kernel"
+	ipython>=8.12; (python_version >= "3.8" and python_version < "3.9") and extra == "tests"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "all"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "dev"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "ipython"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "jupyter"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "jupyterlab"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "jupytext"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "kernel"
+	ipython>=8.18; (python_version >= "3.9" and python_version < "3.10") and extra == "tests"
+	ipython>=8.27; python_version >= "3.10" and extra == "all"
+	ipython>=8.27; python_version >= "3.10" and extra == "dev"
+	ipython>=8.27; python_version >= "3.10" and extra == "ipython"
+	ipython>=8.27; python_version >= "3.10" and extra == "jupyter"
+	ipython>=8.27; python_version >= "3.10" and extra == "jupyterlab"
+	ipython>=8.27; python_version >= "3.10" and extra == "jupytext"
+	ipython>=8.27; python_version >= "3.10" and extra == "kernel"
+	ipython>=8.27; python_version >= "3.10" and extra == "tests"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "all"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "dev"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "ipython"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "jupyter"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "jupyterlab"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "jupytext"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "kernel"
+	jedi<0.18,>=0.17; python_version < "3.9" and extra == "tests"
+	jedi>=0.19; python_version >= "3.9" and extra == "all"
+	jedi>=0.19; python_version >= "3.9" and extra == "dev"
+	jedi>=0.19; python_version >= "3.9" and extra == "ipython"
+	jedi>=0.19; python_version >= "3.9" and extra == "jupyter"
+	jedi>=0.19; python_version >= "3.9" and extra == "jupyterlab"
+	jedi>=0.19; python_version >= "3.9" and extra == "jupytext"
+	jedi>=0.19; python_version >= "3.9" and extra == "kernel"
+	jedi>=0.19; python_version >= "3.9" and extra == "tests"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "all"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "dev"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "ipython"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "jupyter"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "jupyterlab"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "jupytext"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "kernel"
+	jupyter-client<6.1.13,>=6.1.12; (python_version >= "3.5" and python_version < "3.6") and extra == "tests"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "all"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "dev"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "ipython"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "jupyter"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "jupyterlab"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "jupytext"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "kernel"
+	jupyter-client>=5.3; python_version < "3.5" and extra == "tests"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "all"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "dev"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "ipython"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "jupyter"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "jupyterlab"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "jupytext"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "kernel"
+	jupyter-client>=7.1.2; python_version >= "3.6" and extra == "tests"
+	jupyter-console>=5.2; python_version < "3.5" and extra == "all"
+	jupyter-console>=5.2; python_version < "3.5" and extra == "dev"
+	jupyter-console>=5.2; python_version < "3.5" and extra == "ipython"
+	jupyter-console>=5.2; python_version < "3.5" and extra == "jupyter"
+	jupyter-console>=5.2; python_version < "3.5" and extra == "jupyterlab"
+	jupyter-console>=5.2; python_version < "3.5" and extra == "jupytext"
+	jupyter-console>=5.2; python_version < "3.5" and extra == "tests"
+	jupyter-console>=6.1; (python_version >= "3.5" and python_version < "3.7") and extra == "all"
+	jupyter-console>=6.1; (python_version >= "3.5" and python_version < "3.7") and extra == "dev"
+	jupyter-console>=6.1; (python_version >= "3.5" and python_version < "3.7") and extra == "ipython"
+	jupyter-console>=6.1; (python_version >= "3.5" and python_version < "3.7") and extra == "jupyter"
+	jupyter-console>=6.1; (python_version >= "3.5" and python_version < "3.7") and extra == "jupyterlab"
+	jupyter-console>=6.1; (python_version >= "3.5" and python_version < "3.7") and extra == "jupytext"
+	jupyter-console>=6.1; (python_version >= "3.5" and python_version < "3.7") and extra == "tests"
+	jupyter-console>=6.6; python_version >= "3.7" and extra == "all"
+	jupyter-console>=6.6; python_version >= "3.7" and extra == "dev"
+	jupyter-console>=6.6; python_version >= "3.7" and extra == "ipython"
+	jupyter-console>=6.6; python_version >= "3.7" and extra == "jupyter"
+	jupyter-console>=6.6; python_version >= "3.7" and extra == "jupyterlab"
+	jupyter-console>=6.6; python_version >= "3.7" and extra == "jupytext"
+	jupyter-console>=6.6; python_version >= "3.7" and extra == "tests"
+	jupyter>=1.1; extra == "all"
+	jupyter>=1.1; extra == "dev"
+	jupyter>=1.1; extra == "ipython"
+	jupyter>=1.1; extra == "jupyter"
+	jupyter>=1.1; extra == "jupyterlab"
+	jupyter>=1.1; extra == "jupytext"
+	jupyter>=1.1; extra == "tests"
+	jupyterlab>=2.2; python_version >= "3.5" and extra == "all"
+	jupyterlab>=2.2; python_version >= "3.5" and extra == "dev"
+	jupyterlab>=2.2; python_version >= "3.5" and extra == "jupyterlab"
+	jupytext>=1.8; python_version >= "3" and extra == "all"
+	jupytext>=1.8; python_version >= "3" and extra == "dev"
+	jupytext>=1.8; python_version >= "3" and extra == "jupytext"
+	mypy[python2]>=1.11; extra == "all"
+	mypy[python2]>=1.11; extra == "dev"
+	mypy[python2]>=1.11; extra == "mypy"
+	myst-parser>=4; extra == "dev"
+	myst-parser>=4; extra == "docs"
+	numpy>=1.16; (python_version < "3" and platform_python_implementation == "CPython") and extra == "all"
+	numpy>=1.16; (python_version < "3" and platform_python_implementation == "CPython") and extra == "dev"
+	numpy>=1.16; (python_version < "3" and platform_python_implementation == "CPython") and extra == "numpy"
+	numpy>=1.16; (python_version < "3" and platform_python_implementation == "CPython") and extra == "tests"
+	numpy>=1.18; (python_version >= "3.4" and python_version < "3.9") and extra == "all"
+	numpy>=1.18; (python_version >= "3.4" and python_version < "3.9") and extra == "dev"
+	numpy>=1.18; (python_version >= "3.4" and python_version < "3.9") and extra == "numpy"
+	numpy>=1.18; (python_version >= "3.4" and python_version < "3.9") and extra == "tests"
+	numpy>=1.26; python_version >= "3.9" and extra == "all"
+	numpy>=1.26; python_version >= "3.9" and extra == "dev"
+	numpy>=1.26; python_version >= "3.9" and extra == "numpy"
+	numpy>=1.26; python_version >= "3.9" and extra == "tests"
+	pandas>=1.1; python_version >= "3.6" and extra == "all"
+	pandas>=1.1; python_version >= "3.6" and extra == "dev"
+	pandas>=1.1; python_version >= "3.6" and extra == "numpy"
+	pandas>=1.1; python_version >= "3.6" and extra == "tests"
+	papermill>=1.2; extra == "all"
+	papermill>=1.2; extra == "dev"
+	papermill>=1.2; extra == "ipython"
+	papermill>=1.2; extra == "jupyter"
+	papermill>=1.2; extra == "jupyterlab"
+	papermill>=1.2; extra == "jupytext"
+	papermill>=1.2; extra == "tests"
+	pexpect>=4; extra == "dev"
+	pexpect>=4; extra == "tests"
+	pre-commit>=3; python_version >= "3" and extra == "dev"
+	prompt-toolkit<2,>=1; python_version < "3"
+	prompt-toolkit>=1; python_version >= "3"
+	psutil>=6; python_version >= "2.7"
+	py-spy>=0.3; extra == "dev"
+	pydata-sphinx-theme>=0.15; extra == "dev"
+	pydata-sphinx-theme>=0.15; extra == "docs"
+	pygments>=2.18; python_version >= "3.9"
+	pygments>=2.18; python_version >= "3.9" and extra == "dev"
+	pygments>=2.18; python_version >= "3.9" and extra == "docs"
+	pygments>=2.3; python_version < "3.9"
+	pygments>=2.3; python_version < "3.9" and extra == "dev"
+	pygments>=2.3; python_version < "3.9" and extra == "docs"
+	pyparsing<2.4.8,>=2.4.7; extra == "dev"
+	pyparsing<2.4.8,>=2.4.7; platform_python_implementation != "CPython"
+	pyright>=1.1; extra == "all"
+	pyright>=1.1; extra == "dev"
+	pyright>=1.1; extra == "pyright"
+	pytest-remotedata>=0.3; extra == "dev"
+	pytest-remotedata>=0.3; extra == "tests"
+	pytest<8.1,>=8.0; python_version >= "3.8" and extra == "dev"
+	pytest<8.1,>=8.0; python_version >= "3.8" and extra == "tests"
+	pytest>=3; python_version < "3.6" and extra == "dev"
+	pytest>=3; python_version < "3.6" and extra == "tests"
+	pytest>=7; (python_version >= "3.6" and python_version < "3.8") and extra == "dev"
+	pytest>=7; (python_version >= "3.6" and python_version < "3.8") and extra == "tests"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "all"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "dev"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "ipython"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "jupyter"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "jupyterlab"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "jupytext"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "kernel"
+	pywinpty<0.6,>=0.5; (python_version < "3" and os_name == "nt") and extra == "tests"
+	requests>=2.32; extra == "dev"
+	setuptools>=44
+	sphinx>=8; extra == "dev"
+	sphinx>=8; extra == "docs"
+	sphinxcontrib-applehelp>=2; extra == "dev"
+	sphinxcontrib-applehelp>=2; extra == "docs"
+	sphinxcontrib-htmlhelp>=2; extra == "dev"
+	sphinxcontrib-htmlhelp>=2; extra == "docs"
+	trollius>=2.2; python_version < "3" and platform_python_implementation == "CPython"
+	types-backports>=0.1; extra == "all"
+	types-backports>=0.1; extra == "dev"
+	types-backports>=0.1; extra == "mypy"
+	types-backports>=0.1; extra == "pyright"
+	typing-extensions>=3.10; python_version < "3.6"
+	typing-extensions>=4.12; python_version >= "3.8"
+	typing-extensions>=4.1; python_version >= "3.6" and python_version < "3.7"
+	typing-extensions>=4.7; python_version >= "3.7" and python_version < "3.8"
+	typing>=3.10; python_version < "3.5"
+	typing>=3.10; python_version < "3.5" and extra == "all"
+	typing>=3.10; python_version < "3.5" and extra == "dev"
+	typing>=3.10; python_version < "3.5" and extra == "mypy"
+	typing>=3.10; python_version < "3.5" and extra == "pyright"
+	vprof>=0.36; extra == "dev"
+	watchdog>=0.10; extra == "all"
+	watchdog>=0.10; extra == "dev"
+	watchdog>=0.10; extra == "watch"
+	xarray>=2024; python_version >= "3.9" and extra == "all"
+	xarray>=2024; python_version >= "3.9" and extra == "dev"
+	xarray>=2024; python_version >= "3.9" and extra == "numpy"
+	xarray>=2024; python_version >= "3.9" and extra == "tests"
+	xonsh>=0.11; (python_version >= "3.6" and python_version < "3.9") and extra == "all"
+	xonsh>=0.11; (python_version >= "3.6" and python_version < "3.9") and extra == "dev"
+	xonsh>=0.11; (python_version >= "3.6" and python_version < "3.9") and extra == "tests"
+	xonsh>=0.11; (python_version >= "3.6" and python_version < "3.9") and extra == "xonsh"
+	xonsh>=0.18; python_version >= "3.9" and extra == "all"
+	xonsh>=0.18; python_version >= "3.9" and extra == "dev"
+	xonsh>=0.18; python_version >= "3.9" and extra == "tests"
+	xonsh>=0.18; python_version >= "3.9" and extra == "xonsh"
+	xonsh>=0.9; python_version < "3.6" and extra == "all"
+	xonsh>=0.9; python_version < "3.6" and extra == "dev"
+	xonsh>=0.9; python_version < "3.6" and extra == "tests"
+	xonsh>=0.9; python_version < "3.6" and extra == "xonsh"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aenum-3.1.15[${PYTHON_USEDEP}]
-	<dev-python/cpyparsing-2.4.7.2.5[${PYTHON_USEDEP}]
-	>=dev-python/ipykernel-5.5[${PYTHON_USEDEP}]
-	>=dev-python/ipython-7.34[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.12[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.18[${PYTHON_USEDEP}]
-	>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
-	<dev-python/ipython-7.10[${PYTHON_USEDEP}]
-	<dev-python/jedi-0.18[${PYTHON_USEDEP}]
+	>=dev-python/anyio-3[${PYTHON_USEDEP}]
+	>=dev-python/async-generator-1.10[${PYTHON_USEDEP}]
+	>=dev-python/cpyparsing-2.4.7.2.4.0[${PYTHON_USEDEP}] <dev-python/cpyparsing-2.4.7.2.5[${PYTHON_USEDEP}]
+	all? ( >=dev-python/ipykernel-6[${PYTHON_USEDEP}] )
+	ipython? ( >=dev-python/ipykernel-6[${PYTHON_USEDEP}] )
+	jupyter? ( >=dev-python/ipykernel-6[${PYTHON_USEDEP}] )
+	jupyterlab? ( >=dev-python/ipykernel-6[${PYTHON_USEDEP}] )
+	jupytext? ( >=dev-python/ipykernel-6[${PYTHON_USEDEP}] )
+	kernel? ( >=dev-python/ipykernel-6[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/ipython-8.27[${PYTHON_USEDEP}] )
+	ipython? ( >=dev-python/ipython-8.27[${PYTHON_USEDEP}] )
+	jupyter? ( >=dev-python/ipython-8.27[${PYTHON_USEDEP}] )
+	jupyterlab? ( >=dev-python/ipython-8.27[${PYTHON_USEDEP}] )
+	jupytext? ( >=dev-python/ipython-8.27[${PYTHON_USEDEP}] )
+	kernel? ( >=dev-python/ipython-8.27[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/jedi-0.19[${PYTHON_USEDEP}] )
+	ipython? ( >=dev-python/jedi-0.19[${PYTHON_USEDEP}] )
+	jupyter? ( >=dev-python/jedi-0.19[${PYTHON_USEDEP}] )
+	jupyterlab? ( >=dev-python/jedi-0.19[${PYTHON_USEDEP}] )
+	jupytext? ( >=dev-python/jedi-0.19[${PYTHON_USEDEP}] )
+	kernel? ( >=dev-python/jedi-0.19[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	ipython? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupyterlab? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
 	jupytext? ( >=dev-python/jupyter-1.1[${PYTHON_USEDEP}] )
-	>=dev-python/jupyter-client-5.3[${PYTHON_USEDEP}]
-	<dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-5.2[${PYTHON_USEDEP}]
-	>=dev-python/jupyter-console-6.1[${PYTHON_USEDEP}]
-	>=dev-python/jupytext-1.8[${PYTHON_USEDEP}]
+	all? ( >=dev-python/jupyter-client-7.1.2[${PYTHON_USEDEP}] )
+	ipython? ( >=dev-python/jupyter-client-7.1.2[${PYTHON_USEDEP}] )
+	jupyter? ( >=dev-python/jupyter-client-7.1.2[${PYTHON_USEDEP}] )
+	jupyterlab? ( >=dev-python/jupyter-client-7.1.2[${PYTHON_USEDEP}] )
+	jupytext? ( >=dev-python/jupyter-client-7.1.2[${PYTHON_USEDEP}] )
+	kernel? ( >=dev-python/jupyter-client-7.1.2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/jupyter-console-6.6[${PYTHON_USEDEP}] )
+	ipython? ( >=dev-python/jupyter-console-6.6[${PYTHON_USEDEP}] )
+	jupyter? ( >=dev-python/jupyter-console-6.6[${PYTHON_USEDEP}] )
+	jupyterlab? ( >=dev-python/jupyter-console-6.6[${PYTHON_USEDEP}] )
+	jupytext? ( >=dev-python/jupyter-console-6.6[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/jupyterlab-2.2[${PYTHON_USEDEP}] )
+	jupyterlab? ( >=dev-python/jupyterlab-2.2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/jupytext-1.8[${PYTHON_USEDEP}] )
+	jupytext? ( >=dev-python/jupytext-1.8[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/mypy-1.11[python2,${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/mypy-1.11[python2,${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-4[${PYTHON_USEDEP}] )
-	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.18[${PYTHON_USEDEP}]
+	all? ( >=dev-python/numpy-1.26[${PYTHON_USEDEP}] )
+	numpy? ( >=dev-python/numpy-1.26[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pandas-1.1[${PYTHON_USEDEP}] )
+	numpy? ( >=dev-python/pandas-1.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
 	ipython? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
 	jupyter? ( >=dev-python/papermill-1.2[${PYTHON_USEDEP}] )
@@ -49,12 +336,10 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/prompt-toolkit-1[${PYTHON_USEDEP}]
 	>=dev-python/psutil-6[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}] )
-	>=dev-python/pygments-2.3[${PYTHON_USEDEP}]
+	>=dev-python/pygments-2.18[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/pygments-2.18[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pyright-1.1[${PYTHON_USEDEP}] )
 	pyright? ( >=dev-python/pyright-1.1[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-3[${PYTHON_USEDEP}]
-	>=dev-python/pytest-7[${PYTHON_USEDEP}]
-	<dev-python/pywinpty-0.6[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-44[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-applehelp-2[${PYTHON_USEDEP}] )
@@ -62,28 +347,39 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/types-backports-0.1[${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/types-backports-0.1[${PYTHON_USEDEP}] )
 	pyright? ( >=dev-python/types-backports-0.1[${PYTHON_USEDEP}] )
-	>=dev-python/typing-3.10[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-3.10[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.12[${PYTHON_USEDEP}]
 	all? ( >=dev-python/watchdog-0.10[${PYTHON_USEDEP}] )
 	watch? ( >=dev-python/watchdog-0.10[${PYTHON_USEDEP}] )
-	>=dev-python/xonsh-0.11[${PYTHON_USEDEP}]
-	>=dev-python/xonsh-0.9[${PYTHON_USEDEP}]
-	>=dev-vcs/pre-commit-3[${PYTHON_USEDEP}]
+	all? ( >=dev-python/xarray-2024[${PYTHON_USEDEP}] )
+	numpy? ( >=dev-python/xarray-2024[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/xonsh-0.18[${PYTHON_USEDEP}] )
+	xonsh? ( >=dev-python/xonsh-0.18[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
+		>=dev-python/ipykernel-6[${PYTHON_USEDEP}]
+		>=dev-python/ipython-8.27[${PYTHON_USEDEP}]
+		>=dev-python/jedi-0.19[${PYTHON_USEDEP}]
 		>=dev-python/jupyter-1.1[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-client-7.1.2[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-console-6.6[${PYTHON_USEDEP}]
+		>=dev-python/jupyterlab-2.2[${PYTHON_USEDEP}]
+		>=dev-python/jupytext-1.8[${PYTHON_USEDEP}]
 		>=dev-python/mypy-1.11[python2,${PYTHON_USEDEP}]
 		>=dev-python/myst-parser-4[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
+		>=dev-python/pandas-1.1[${PYTHON_USEDEP}]
 		>=dev-python/papermill-1.2[${PYTHON_USEDEP}]
 		>=dev-python/pexpect-4[${PYTHON_USEDEP}]
 		>=dev-python/py-spy-0.3[${PYTHON_USEDEP}]
 		>=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}]
-		<dev-python/pyparsing-2.4.8[${PYTHON_USEDEP}]
+		>=dev-python/pygments-2.18[${PYTHON_USEDEP}]
+		>=dev-python/pyparsing-2.4.7[${PYTHON_USEDEP}] <dev-python/pyparsing-2.4.8[${PYTHON_USEDEP}]
 		>=dev-python/pyright-1.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.0[${PYTHON_USEDEP}] <dev-python/pytest-8.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-remotedata-0.3[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.32[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-8[${PYTHON_USEDEP}]
@@ -92,6 +388,9 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/types-backports-0.1[${PYTHON_USEDEP}]
 		>=dev-python/vprof-0.36[${PYTHON_USEDEP}]
 		>=dev-python/watchdog-0.10[${PYTHON_USEDEP}]
+		>=dev-python/xarray-2024[${PYTHON_USEDEP}]
+		>=dev-python/xonsh-0.18[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

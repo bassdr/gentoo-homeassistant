@@ -21,10 +21,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp (>=1.1)
+	typing; python_version < "3.5"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-1.1[${PYTHON_USEDEP}]
-	dev-python/typing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-1.1.1[${PYTHON_USEDEP}]

@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	async-timeout
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]

@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/bleak-esphome-1.1.0[${PYTHON_USEDEP}]
-	=dev-python/eq3btsmart-1.4.1[${PYTHON_USEDEP}]
+	~dev-python/bleak-esphome-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/eq3btsmart-1.4.1[${PYTHON_USEDEP}]
 "

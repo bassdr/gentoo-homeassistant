@@ -10,22 +10,38 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/SimpleSQLite/"
+  https://pypi.org/project/simplesqlite/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	DataProperty<2,>=1.0.1
+	Sphinx>=2.4; extra == "docs"
+	beautifulsoup4>=4.10; extra == "test"
+	loguru<1,>=0.4.1; extra == "logging"
+	mbstrdecoder<2,>=1.0.0
+	pathvalidate<4,>=2.5.2
+	pytablereader>=0.31.3; extra == "test"
+	pytablewriter>=0.50; extra == "test"
+	pytest-md-report>=0.6.2; extra == "test"
+	pytest>=6.0.1; extra == "test"
+	sphinx_rtd_theme>=1.2.2; extra == "docs"
+	sqliteschema<3,>=1.4.0
+	tabledata<2,>=1.1.3
+	typepy<2,>=1.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/dataproperty-2[${PYTHON_USEDEP}]
-	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
-	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
-	<dev-python/pathvalidate-4[${PYTHON_USEDEP}]
+	>=dev-python/dataproperty-1.0.1[${PYTHON_USEDEP}] <dev-python/dataproperty-2[${PYTHON_USEDEP}]
+	logging? ( >=dev-python/loguru-0.4.1[${PYTHON_USEDEP}] <dev-python/loguru-1[${PYTHON_USEDEP}] )
+	>=dev-python/mbstrdecoder-1.0.0[${PYTHON_USEDEP}] <dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
+	>=dev-python/pathvalidate-2.5.2[${PYTHON_USEDEP}] <dev-python/pathvalidate-4[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-2.4[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.2.2[${PYTHON_USEDEP}] )
-	<dev-python/sqliteschema-3[${PYTHON_USEDEP}]
-	<dev-python/tabledata-2[${PYTHON_USEDEP}]
-	<dev-python/typepy-2[${PYTHON_USEDEP}]
+	>=dev-python/sqliteschema-1.4.0[${PYTHON_USEDEP}] <dev-python/sqliteschema-3[${PYTHON_USEDEP}]
+	>=dev-python/tabledata-1.1.3[${PYTHON_USEDEP}] <dev-python/tabledata-2[${PYTHON_USEDEP}]
+	>=dev-python/typepy-1.2.0[${PYTHON_USEDEP}] <dev-python/typepy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

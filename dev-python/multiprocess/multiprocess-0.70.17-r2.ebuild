@@ -18,6 +18,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	dill>=0.3.9
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dill-0.3.9[${PYTHON_USEDEP}]
 "

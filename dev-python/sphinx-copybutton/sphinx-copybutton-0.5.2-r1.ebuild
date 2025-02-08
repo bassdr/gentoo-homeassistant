@@ -18,6 +18,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code_style rtd"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	ipython ; extra == 'rtd'
+	myst-nb ; extra == 'rtd'
+	pre-commit (==2.12.1) ; extra == 'code_style'
+	sphinx (>=1.8)
+	sphinx ; extra == 'rtd'
+	sphinx-book-theme ; extra == 'rtd'
+	sphinx-examples ; extra == 'rtd'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	rtd? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
@@ -25,7 +34,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	rtd? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-examples[${PYTHON_USEDEP}] )
-	code_style? ( =dev-vcs/pre-commit-2.12.1[${PYTHON_USEDEP}] )
+	code_style? ( ~dev-vcs/pre-commit-2.12.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/sphinx-6.0[${PYTHON_USEDEP}]

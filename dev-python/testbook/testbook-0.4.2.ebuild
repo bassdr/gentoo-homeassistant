@@ -17,20 +17,62 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx (<3.0,>=1.7) ; extra == 'sphinx'
+	black ; (python_version >= "3.6") and extra == 'dev'
+	black ; (python_version >= "3.6") and extra == 'test'
+	bumpversion ; extra == 'dev'
+	bumpversion ; extra == 'test'
+	check-manifest ; extra == 'dev'
+	check-manifest ; extra == 'test'
+	codecov ; extra == 'dev'
+	codecov ; extra == 'test'
+	coverage ; extra == 'dev'
+	coverage ; extra == 'test'
+	flake8 ; extra == 'dev'
+	flake8 ; extra == 'test'
+	ipykernel ; extra == 'dev'
+	ipykernel ; extra == 'test'
+	ipython ; extra == 'dev'
+	ipython ; extra == 'test'
+	ipywidgets ; extra == 'dev'
+	ipywidgets ; extra == 'test'
+	myst-parser (==0.9.1) ; extra == 'sphinx'
+	nbclient (>=0.4.0)
+	nbformat (>=5.0.4)
+	pandas ; extra == 'dev'
+	pandas ; extra == 'test'
+	pip (>=18.1) ; extra == 'dev'
+	pip (>=18.1) ; extra == 'test'
+	pytest (>=4.1) ; extra == 'dev'
+	pytest (>=4.1) ; extra == 'test'
+	pytest-cov (>=2.6.1) ; extra == 'dev'
+	pytest-cov (>=2.6.1) ; extra == 'test'
+	setuptools (>=38.6.0) ; extra == 'dev'
+	setuptools (>=38.6.0) ; extra == 'test'
+	sphinx-book-theme (==0.0.35) ; extra == 'sphinx'
+	tox ; extra == 'dev'
+	tox ; extra == 'test'
+	twine (>=1.11.0) ; extra == 'dev'
+	twine (>=1.11.0) ; extra == 'test'
+	wheel (>=0.31.0) ; extra == 'dev'
+	wheel (>=0.31.0) ; extra == 'test'
+	xmltodict ; extra == 'dev'
+	xmltodict ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/black[${PYTHON_USEDEP}]
-	sphinx? ( =dev-python/myst-parser-0.9.1[${PYTHON_USEDEP}] )
+	sphinx? ( ~dev-python/myst-parser-0.9.1[${PYTHON_USEDEP}] )
 	>=dev-python/nbclient-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/nbformat-5.0.4[${PYTHON_USEDEP}]
-	sphinx? ( <dev-python/sphinx-3.0[${PYTHON_USEDEP}] )
-	sphinx? ( =dev-python/sphinx-book-theme-0.0.35[${PYTHON_USEDEP}] )
+	sphinx? ( >=dev-python/sphinx-1.7[${PYTHON_USEDEP}] <dev-python/sphinx-3.0[${PYTHON_USEDEP}] )
+	sphinx? ( ~dev-python/sphinx-book-theme-0.0.35[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
+		dev-python/black[${PYTHON_USEDEP}]
 		dev-python/bumpversion[${PYTHON_USEDEP}]
 		dev-python/check-manifest[${PYTHON_USEDEP}]
 		dev-python/codecov[${PYTHON_USEDEP}]

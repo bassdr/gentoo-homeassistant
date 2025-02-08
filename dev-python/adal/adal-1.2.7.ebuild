@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyJWT (<3,>=1.0.0)
+	cryptography (>=1.1.0)
+	python-dateutil (<3,>=2.1.0)
+	requests (<3,>=2.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-1.1.0[${PYTHON_USEDEP}]
-	<dev-python/pyjwt-3[${PYTHON_USEDEP}]
-	<dev-python/python-dateutil-3[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-1.0.0[${PYTHON_USEDEP}] <dev-python/pyjwt-3[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.1.0[${PYTHON_USEDEP}] <dev-python/python-dateutil-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

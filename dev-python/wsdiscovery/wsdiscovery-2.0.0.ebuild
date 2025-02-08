@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="WS-Discovery implementation for python"
 HOMEPAGE="
-  https://pypi.org/project/WSDiscovery/
+  https://pypi.org/project/wsdiscovery/
 "
 
 LICENSE="LGPL-3"
@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	click
+	netifaces
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/netifaces[${PYTHON_USEDEP}]

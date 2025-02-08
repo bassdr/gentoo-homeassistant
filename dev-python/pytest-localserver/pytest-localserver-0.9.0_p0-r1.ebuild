@@ -20,6 +20,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="smtp"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aiosmtpd; extra == "smtp"
+	werkzeug>=0.10
+"
 GENERATED_RDEPEND="${RDEPEND}
 	smtp? ( dev-python/aiosmtpd[${PYTHON_USEDEP}] )
 	>=dev-python/werkzeug-0.10[${PYTHON_USEDEP}]

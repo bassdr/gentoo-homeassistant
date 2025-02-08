@@ -27,6 +27,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	flake8; extra == "dev"
+	pytest-cov; extra == "dev"
+	pytest; extra == "dev"
+	sphinx; extra == "docs"
+	tox; extra == "dev"
+	wsproto
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	dev-python/wsproto[${PYTHON_USEDEP}]

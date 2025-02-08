@@ -19,11 +19,17 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	boto3 (>=1.9,<2.0)
+	envs (>=1.3,<2.0)
+	python-jose (>=3.0,<4.0)
+	requests (>=2.22,<3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/boto3-1.9[${PYTHON_USEDEP}]
-	>=dev-python/envs-1.3[${PYTHON_USEDEP}]
-	>=dev-python/python-jose-3.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
+	>=dev-python/boto3-1.9[${PYTHON_USEDEP}] <dev-python/boto3-2.0[${PYTHON_USEDEP}]
+	>=dev-python/envs-1.3[${PYTHON_USEDEP}] <dev-python/envs-2.0[${PYTHON_USEDEP}]
+	>=dev-python/python-jose-3.0[${PYTHON_USEDEP}] <dev-python/python-jose-4.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.22[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/boto3-1.9[${PYTHON_USEDEP}]

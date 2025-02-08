@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == "dev"
+	numpy>=1.21
+	pre-commit; extra == "dev"
+	pytest; extra == "dev"
+	typing_extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]

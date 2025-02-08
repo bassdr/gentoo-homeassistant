@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,27 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click (>=7.1.1)
+	doc8 ; extra == 'dev'
+	flake8 ; extra == 'dev'
+	flake8-docstrings ; extra == 'dev'
+	flake8-tidy-imports ; extra == 'dev'
+	ipython ; extra == 'dev'
+	isort ; extra == 'dev'
+	jupyter ; extra == 'dev'
+	jupyterlab ; extra == 'dev'
+	pandas (<1.4,>=1.3.5)
+	pandoc ; extra == 'dev'
+	pytest ; extra == 'dev'
+	pyyaml
+	sphinx ; extra == 'dev'
+	twine ; extra == 'dev'
+	yapf ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-7.1.1[${PYTHON_USEDEP}]
-	<dev-python/pandas-1.4[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}] <dev-python/pandas-1.4[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

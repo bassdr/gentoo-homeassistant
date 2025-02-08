@@ -9,7 +9,6 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 # Requires self to be installed to build docs
 # TODO: Do this a bit better
 DOCS_BUILDER="mkdocs"
-IUSE=""
 DOCS_DEPEND="
 	dev-python/regex
 	dev-python/mkdocs-material
@@ -31,6 +30,9 @@ KEYWORDS="amd64 arm64"
 # Tests are broken outside of upstream git repo
 RESTRICT="test"
 
+REQUIRES_DIST="
+	mkdocs>=1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mkdocs-1.0[${PYTHON_USEDEP}]
 "

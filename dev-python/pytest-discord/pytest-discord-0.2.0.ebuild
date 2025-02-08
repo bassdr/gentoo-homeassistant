@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp<4,>=3.6
+	discord.py<3,>=2
+	mock; extra == "test"
+	pathvalidate<4,>=2.5.2
+	pytest!=6.0.0,<9,>=3.3.2
+	pytest-md-report<1,>=0.6.1
+	typepy<2,>=1.1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
-	<dev-python/discord-py-3[${PYTHON_USEDEP}]
-	<dev-python/pathvalidate-4[${PYTHON_USEDEP}]
-	!=dev-python/pytest-6.0.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-md-report-1[${PYTHON_USEDEP}]
-	<dev-python/typepy-2[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.6[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/discord-py-2[${PYTHON_USEDEP}] <dev-python/discord-py-3[${PYTHON_USEDEP}]
+	>=dev-python/pathvalidate-2.5.2[${PYTHON_USEDEP}] <dev-python/pathvalidate-4[${PYTHON_USEDEP}]
+	>=dev-python/pytest-3.3.2[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}] !~dev-python/pytest-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-md-report-0.6.1[${PYTHON_USEDEP}] <dev-python/pytest-md-report-1[${PYTHON_USEDEP}]
+	>=dev-python/typepy-1.1.4[${PYTHON_USEDEP}] <dev-python/typepy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

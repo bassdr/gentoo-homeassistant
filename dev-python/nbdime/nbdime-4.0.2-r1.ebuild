@@ -18,9 +18,33 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	colorama
+	gitpython!=2.1.4,!=2.1.5,!=2.1.6
+	jinja2>=2.9
+	jsonschema; extra == "test"
+	jupyter-server
+	jupyter-server-mathjax>=0.2.2
+	jupyter-server[test]; extra == "test"
+	mock; extra == "test"
+	nbformat
+	notebook; extra == "test"
+	pygments
+	pytest-cov; extra == "test"
+	pytest-timeout; extra == "test"
+	pytest-tornado; extra == "test"
+	pytest>=6.0; extra == "test"
+	recommonmark; extra == "docs"
+	requests
+	requests; extra == "test"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "docs"
+	tabulate; extra == "test"
+	tornado
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/colorama[${PYTHON_USEDEP}]
-	!=dev-python/gitpython-2.1.4[${PYTHON_USEDEP}]
+	!~dev-python/gitpython-2.1.4[${PYTHON_USEDEP}] !~dev-python/gitpython-2.1.5[${PYTHON_USEDEP}] !~dev-python/gitpython-2.1.6[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.9[${PYTHON_USEDEP}]
 	dev-python/jupyter-server[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-server-mathjax-0.2.2[${PYTHON_USEDEP}]

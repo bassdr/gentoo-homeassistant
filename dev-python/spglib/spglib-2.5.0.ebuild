@@ -16,10 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx>=7.0; extra == "docs"
+	importlib-resources; python_version < "3.10"
+	linkify-it-py; extra == "docs"
+	myst-parser>=2.0; extra == "docs"
+	numpy<3,>=1.20
+	pre-commit; extra == "dev"
+	pytest-benchmark; extra == "test-benchmark"
+	pytest-cov; extra == "test-cov"
+	pytest; extra == "test"
+	pyyaml; extra == "test"
+	spglib[docs]; extra == "doc"
+	spglib[test]; extra == "dev"
+	spglib[test]; extra == "test-benchmark"
+	spglib[test]; extra == "test-cov"
+	spglib[test]; extra == "testing"
+	sphinx-autodoc2; extra == "docs"
+	sphinx-book-theme; extra == "docs"
+	sphinxcontrib-bibtex>=2.5; extra == "docs"
+	typing-extensions; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/linkify-it-py[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-2.0[${PYTHON_USEDEP}] )
-	<dev-python/numpy-3[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.20[${PYTHON_USEDEP}] <dev-python/numpy-3[${PYTHON_USEDEP}]
 	test-benchmark? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
 	test-cov? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	doc? ( dev-python/spglib[docs,${PYTHON_USEDEP}] )

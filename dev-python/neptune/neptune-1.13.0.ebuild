@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="airflow aws fastai lightgbm mlflow mosaicml optuna prophet pytorch pytorch-lightning sacred sklearn tensorboard tensorflow-keras transformers xgboost zenml"
+GENERATED_IUSE="airflow aws detectron2 fastai lightgbm mlflow mosaicml optuna prophet pytorch pytorch-lightning sacred sklearn tensorboard tensorflow-keras transformers xgboost zenml"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,16 +16,56 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython>=2.0.8
+	Pillow>=1.1.6
+	PyJWT
+	boto3>=1.28.0
+	bravado<12.0.0,>=11.0.0
+	click>=7.0
+	future>=0.17.1
+	kedro-neptune; (python_version >= "3.9" and python_version < "3.12") and extra == "kedro"
+	mosaicml; extra == "mosaicml"
+	neptune-airflow; extra == "airflow"
+	neptune-aws; extra == "aws"
+	neptune-detectron2; python_version >= "3.8" and extra == "detectron2"
+	neptune-fastai; extra == "fastai"
+	neptune-lightgbm; extra == "lightgbm"
+	neptune-mlflow; extra == "mlflow"
+	neptune-optuna; extra == "optuna"
+	neptune-prophet; extra == "prophet"
+	neptune-pytorch; extra == "pytorch"
+	neptune-sacred; extra == "sacred"
+	neptune-sklearn; extra == "sklearn"
+	neptune-tensorboard; extra == "tensorboard"
+	neptune-tensorflow-keras; extra == "tensorflow-keras"
+	neptune-xgboost; extra == "xgboost"
+	oauthlib>=2.1.0
+	packaging
+	pandas
+	psutil
+	pytorch-lightning; extra == "pytorch-lightning"
+	requests-oauthlib>=1.0.0
+	requests>=2.20.0
+	setuptools; python_version >= "3.12"
+	six>=1.12.0
+	swagger-spec-validator>=2.7.4
+	transformers; extra == "transformers"
+	typing-extensions>=3.10.0
+	urllib3
+	websocket-client!=1.0.0,>=0.35.0
+	zenml; extra == "zenml"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.28.0[${PYTHON_USEDEP}]
-	<dev-python/bravado-12.0.0[${PYTHON_USEDEP}]
+	>=dev-python/bravado-11.0.0[${PYTHON_USEDEP}] <dev-python/bravado-12.0.0[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/future-0.17.1[${PYTHON_USEDEP}]
 	>=dev-python/gitpython-2.0.8[${PYTHON_USEDEP}]
-	dev-python/kedro-neptune[${PYTHON_USEDEP}]
 	mosaicml? ( dev-python/mosaicml[${PYTHON_USEDEP}] )
 	airflow? ( dev-python/neptune-airflow[${PYTHON_USEDEP}] )
 	aws? ( dev-python/neptune-aws[${PYTHON_USEDEP}] )
+	detectron2? ( dev-python/neptune-detectron2[${PYTHON_USEDEP}] )
 	fastai? ( dev-python/neptune-fastai[${PYTHON_USEDEP}] )
 	lightgbm? ( dev-python/neptune-lightgbm[${PYTHON_USEDEP}] )
 	mlflow? ( dev-python/neptune-mlflow[${PYTHON_USEDEP}] )
@@ -46,13 +86,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	pytorch-lightning? ( dev-python/pytorch-lightning[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-oauthlib-1.0.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/six-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/swagger-spec-validator-2.7.4[${PYTHON_USEDEP}]
 	transformers? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.10.0[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
-	!=dev-python/websocket-client-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/websocket-client-0.35.0[${PYTHON_USEDEP}] !~dev-python/websocket-client-1.0.0[${PYTHON_USEDEP}]
 	zenml? ( dev-python/zenml[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"

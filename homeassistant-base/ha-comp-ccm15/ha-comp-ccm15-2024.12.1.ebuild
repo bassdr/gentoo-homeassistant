@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/py-ccm15-0.0.9[${PYTHON_USEDEP}]
+	~dev-python/py-ccm15-0.0.9[${PYTHON_USEDEP}]
 "

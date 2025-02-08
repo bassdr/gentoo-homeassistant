@@ -10,12 +10,33 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jaraco.fabric/"
+  https://pypi.org/project/jaraco-fabric/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	fabric; extra == "testing"
+	furo; extra == "docs"
+	importlib-resources
+	jaraco.apt
+	jaraco.home
+	jaraco.itertools
+	jaraco.packaging>=9.3; extra == "docs"
+	pytest!=8.1.*,>=6; extra == "testing"
+	pytest-checkdocs>=2.4; extra == "testing"
+	pytest-cov; extra == "testing"
+	pytest-enabler>=2.2; extra == "testing"
+	pytest-mypy; extra == "testing"
+	pytest-ruff>=0.2.1; extra == "testing"
+	pyyaml
+	rst.linker>=1.9; extra == "docs"
+	sphinx-lint; extra == "docs"
+	sphinx>=3.5; extra == "docs"
+	types-pyyaml; extra == "testing"
+	types-setuptools; extra == "testing"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
@@ -34,7 +55,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/fabric[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]

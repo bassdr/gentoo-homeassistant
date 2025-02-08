@@ -19,6 +19,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
+REQUIRES_DIST="
+	cryptography
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 "

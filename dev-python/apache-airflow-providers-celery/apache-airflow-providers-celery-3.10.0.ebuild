@@ -16,10 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-cncf-kubernetes>=7.4.0; extra == "cncf-kubernetes"
+	apache-airflow>=2.9.0
+	celery[redis]!=5.3.2,!=5.3.3,<6,>=5.3.0
+	flower>=1.0.0
+	google-re2>=1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	cncf-kubernetes? ( >=dev-python/apache-airflow-providers-cncf-kubernetes-7.4.0[${PYTHON_USEDEP}] )
-	!=dev-python/celery-5.3.2[redis,${PYTHON_USEDEP}]
+	>=dev-python/celery-5.3.0[redis,${PYTHON_USEDEP}] <dev-python/celery-6[redis,${PYTHON_USEDEP}] !~dev-python/celery-5.3.2[redis,${PYTHON_USEDEP}] !~dev-python/celery-5.3.3[redis,${PYTHON_USEDEP}]
 	>=dev-python/flower-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/google-re2-1.0[${PYTHON_USEDEP}]
 "

@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="microBees Python Library"
 HOMEPAGE="
-  https://pypi.org/project/microBeesPy/
+  https://pypi.org/project/microbeespy/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	paho-mqtt
+	setuptools
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]

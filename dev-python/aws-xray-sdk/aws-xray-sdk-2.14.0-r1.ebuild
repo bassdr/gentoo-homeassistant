@@ -22,7 +22,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	botocore>=1.11.3
+	wrapt
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/botocore-1.11.3[${PYTHON_USEDEP}]
 	dev-python/wrapt[${PYTHON_USEDEP}]

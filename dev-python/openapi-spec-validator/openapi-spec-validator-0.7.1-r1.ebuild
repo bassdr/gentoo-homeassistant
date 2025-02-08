@@ -16,13 +16,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	importlib-resources (>=5.8,<7.0) ; python_version < "3.9"
+	jsonschema (>=4.18.0,<5.0.0)
+	jsonschema-path (>=0.3.1,<0.4.0)
+	lazy-object-proxy (>=1.7.1,<2.0.0)
+	openapi-schema-validator (>=0.6.0,<0.7.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/importlib-resources-5.8[${PYTHON_USEDEP}]
-	>=dev-python/jsonschema-4.18.0[${PYTHON_USEDEP}]
-	>=dev-python/jsonschema-path-0.3.1[${PYTHON_USEDEP}]
-	>=dev-python/lazy-object-proxy-1.7.1[${PYTHON_USEDEP}]
-	>=dev-python/openapi-schema-validator-0.6.0[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-4.18.0[${PYTHON_USEDEP}] <dev-python/jsonschema-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-path-0.3.1[${PYTHON_USEDEP}] <dev-python/jsonschema-path-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/lazy-object-proxy-1.7.1[${PYTHON_USEDEP}] <dev-python/lazy-object-proxy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/openapi-schema-validator-0.6.0[${PYTHON_USEDEP}] <dev-python/openapi-schema-validator-0.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jsonschema-4.18.0[${PYTHON_USEDEP}]

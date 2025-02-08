@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	airium>=0.2.6
+	click>=8.0.0
+	gql>=3.0.0
+	keyring
+	pre-commit-uv; extra == "dev"
+	pre-commit; extra == "dev"
+	pyproject-parser
+	pytest; extra == "dev"
+	requests_cache>=0.7
+	ruamel.yaml>=0.15.78
+	setuptools>=61
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/airium-0.2.6[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

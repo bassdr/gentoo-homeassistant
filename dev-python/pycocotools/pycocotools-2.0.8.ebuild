@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	matplotlib>=2.1.0
+	numpy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/matplotlib-2.1.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]

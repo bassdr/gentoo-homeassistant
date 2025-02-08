@@ -10,13 +10,16 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Faker/"
+  https://pypi.org/project/faker/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	python-dateutil>=2.4
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/python-dateutil-2.4[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]

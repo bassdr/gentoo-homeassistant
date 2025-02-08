@@ -21,6 +21,30 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	aiosqlite>=0.20.0
+	async-timeout; python_version < "3.11"
+	asynctest; extra == "testing"
+	attrs
+	coverage[toml]; extra == "testing"
+	coveralls; extra == "testing"
+	crccheck
+	cryptography
+	freezegun; extra == "testing"
+	frozendict
+	jsonschema
+	pyserial-asyncio!=0.5; platform_system == "Windows"
+	pyserial-asyncio; platform_system != "Windows"
+	pysqlite3-binary; (platform_system == "Linux" and python_version < "3.12") and extra == "testing"
+	pytest-asyncio; extra == "testing"
+	pytest-cov; extra == "testing"
+	pytest-timeout; extra == "testing"
+	pytest; extra == "testing"
+	tomli; extra == "testing"
+	typing_extensions
+	voluptuous
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/aiosqlite-0.20.0[${PYTHON_USEDEP}]
@@ -29,7 +53,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/frozendict[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
-	dev-python/pysqlite3-binary[${PYTHON_USEDEP}]
+	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "

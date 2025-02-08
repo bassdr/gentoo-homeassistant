@@ -20,9 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	grpcio>=1.67.1
+	protobuf<6.0dev,>=5.26.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/grpcio-1.67.1[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-5.26.1[${PYTHON_USEDEP}] <dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/grpcio-${PV}[${PYTHON_USEDEP}]

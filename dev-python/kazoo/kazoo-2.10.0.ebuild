@@ -16,12 +16,33 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx >=1.2.2 ; extra == 'alldeps'
+	Sphinx >=1.2.2 ; extra == 'docs'
+	eventlet >=0.17.1 ; (implementation_name != "pypy") and extra == 'test'
+	eventlet >=0.17.1 ; extra == 'alldeps'
+	eventlet >=0.17.1 ; extra == 'eventlet'
+	flake8 ; extra == 'alldeps'
+	flake8 ; extra == 'dev'
+	gevent >=1.2 ; (implementation_name != "pypy") and extra == 'test'
+	gevent >=1.2 ; extra == 'alldeps'
+	gevent >=1.2 ; extra == 'gevent'
+	mypy >=0.991 ; extra == 'alldeps'
+	mypy >=0.991 ; extra == 'typing'
+	objgraph ; extra == 'test'
+	pure-sasl >=0.5.1 ; extra == 'alldeps'
+	pure-sasl >=0.5.1 ; extra == 'sasl'
+	pyjks ; extra == 'test'
+	pyopenssl ; extra == 'test'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	sphinx-autodoc-typehints >=1 ; extra == 'alldeps'
+	sphinx-autodoc-typehints >=1 ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/eventlet-0.17.1[${PYTHON_USEDEP}]
 	alldeps? ( >=dev-python/eventlet-0.17.1[${PYTHON_USEDEP}] )
 	eventlet? ( >=dev-python/eventlet-0.17.1[${PYTHON_USEDEP}] )
 	alldeps? ( dev-python/flake8[${PYTHON_USEDEP}] )
-	>=dev-python/gevent-1.2[${PYTHON_USEDEP}]
 	alldeps? ( >=dev-python/gevent-1.2[${PYTHON_USEDEP}] )
 	gevent? ( >=dev-python/gevent-1.2[${PYTHON_USEDEP}] )
 	alldeps? ( >=dev-python/mypy-0.991[${PYTHON_USEDEP}] )
@@ -38,7 +59,9 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
+		>=dev-python/eventlet-0.17.1[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
+		>=dev-python/gevent-1.2[${PYTHON_USEDEP}]
 		dev-python/objgraph[${PYTHON_USEDEP}]
 		dev-python/pyjks[${PYTHON_USEDEP}]
 		dev-python/pyopenssl[${PYTHON_USEDEP}]

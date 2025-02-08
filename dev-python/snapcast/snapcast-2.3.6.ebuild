@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	construct
+	packaging
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/construct[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

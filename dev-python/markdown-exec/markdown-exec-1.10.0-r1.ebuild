@@ -18,6 +18,10 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="ansi"
 IUSE="${GENERATED_IUSE} ansi"
 
+REQUIRES_DIST="
+	pygments-ansi-color; extra == "ansi"
+	pymdown-extensions>=9
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ansi? ( dev-python/pygments-ansi-color[${PYTHON_USEDEP}] )
 	>=dev-python/pymdown-extensions-9[${PYTHON_USEDEP}]

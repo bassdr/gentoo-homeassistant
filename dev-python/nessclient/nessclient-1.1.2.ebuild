@@ -21,9 +21,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	click; extra == "cli"
+	dataclasses; python_version < "3.7"
+	justbackoff
+	pyserial-asyncio
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( dev-python/click[${PYTHON_USEDEP}] )
-	dev-python/dataclasses[${PYTHON_USEDEP}]
 	dev-python/justbackoff[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 "

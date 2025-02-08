@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	requests >=2.31.0
+	tabulate >=0.7.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
 	>=dev-python/tabulate-0.7.5[${PYTHON_USEDEP}]

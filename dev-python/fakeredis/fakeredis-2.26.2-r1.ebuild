@@ -16,15 +16,23 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="bf json lua"
+GENERATED_IUSE="bf cf json lua probabilistic"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	jsonpath-ng<2.0,>=1.6; extra == "json"
+	lupa<3.0,>=2.1; extra == "lua"
+	pyprobables<0.7,>=0.6; extra == "bf" or extra == "cf" or extra == "probabilistic"
+	redis>=4.3; python_full_version > "3.8.0"
+	redis>=4; python_version < "3.8"
+	sortedcontainers<3,>=2
+	typing-extensions<5.0,>=4.7; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	json? ( <dev-python/jsonpath-ng-2.0[${PYTHON_USEDEP}] )
-	lua? ( <dev-python/lupa-3.0[${PYTHON_USEDEP}] )
-	bf? ( <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] )
+	json? ( >=dev-python/jsonpath-ng-1.6[${PYTHON_USEDEP}] <dev-python/jsonpath-ng-2.0[${PYTHON_USEDEP}] )
+	lua? ( >=dev-python/lupa-2.1[${PYTHON_USEDEP}] <dev-python/lupa-3.0[${PYTHON_USEDEP}] )
+	cf? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] ) probabilistic? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] ) bf? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] )
 	>=dev-python/redis-4.3[${PYTHON_USEDEP}]
-	>=dev-python/redis-4[${PYTHON_USEDEP}]
-	<dev-python/sortedcontainers-3[${PYTHON_USEDEP}]
+	>=dev-python/sortedcontainers-2[${PYTHON_USEDEP}] <dev-python/sortedcontainers-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]

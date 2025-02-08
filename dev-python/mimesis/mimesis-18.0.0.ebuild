@@ -16,9 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	factory-boy<4.0.0,>=3.3.0; extra == "factory"
+	pytest<8.0,>=7.2; extra == "pytest"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	factory? ( <dev-python/factory-boy-4.0.0[${PYTHON_USEDEP}] )
-	pytest? ( <dev-python/pytest-8.0[${PYTHON_USEDEP}] )
+	factory? ( >=dev-python/factory-boy-3.3.0[${PYTHON_USEDEP}] <dev-python/factory-boy-4.0.0[${PYTHON_USEDEP}] )
+	pytest? ( >=dev-python/pytest-7.2[${PYTHON_USEDEP}] <dev-python/pytest-8.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -17,11 +17,15 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Jinja2<4.0.0,>=3.1.3
+	ply<4.0,>=3.11
+	requests<3.0.0,>=2.26.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/jinja2-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/ply-4.0[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.1.3[${PYTHON_USEDEP}] <dev-python/jinja2-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/ply-3.11[${PYTHON_USEDEP}] <dev-python/ply-4.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jinja2-3.1.3[${PYTHON_USEDEP}]

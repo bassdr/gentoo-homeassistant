@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library interfacing to the Abode home security system"
 HOMEPAGE="
-  https://pypi.org/project/jaraco.abode/
+  https://pypi.org/project/jaraco-abode/
   Source, https://github.com/jaraco/jaraco.abode
 "
 
@@ -22,6 +22,37 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	bx-py-utils
+	colorlog>=3.0.1
+	furo; extra == "doc"
+	importlib-resources>=5.10
+	jaraco.classes
+	jaraco.collections
+	jaraco.collections>=4.1; extra == "test"
+	jaraco.context
+	jaraco.functools>=3.6
+	jaraco.itertools
+	jaraco.net>=9
+	jaraco.packaging>=9.3; extra == "doc"
+	keyring
+	lomond>=0.3.3
+	more-itertools
+	platformdirs
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "check"
+	pytest-cov; extra == "cover"
+	pytest-enabler>=2.2; extra == "enabler"
+	pytest-mypy; extra == "type"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
+	requests-mock; extra == "test"
+	requests-toolbelt
+	requests>=2.12.4
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	types-requests; extra == "type"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bx-py-utils[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-3.0.1[${PYTHON_USEDEP}]
@@ -42,6 +73,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	check? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.12.4[${PYTHON_USEDEP}]
 	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
@@ -69,7 +101,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/jaraco-collections-4.1[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		dev-python/requests-mock[${PYTHON_USEDEP}]
 	)
 "

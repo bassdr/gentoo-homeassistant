@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	zeroconf
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "

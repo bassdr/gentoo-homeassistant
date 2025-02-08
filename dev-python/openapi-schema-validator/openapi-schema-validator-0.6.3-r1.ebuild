@@ -16,9 +16,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	jsonschema-specifications>=2023.5.2
+	jsonschema<5.0.0,>=4.19.1
+	rfc3339-validator
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/jsonschema-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-4.19.1[${PYTHON_USEDEP}] <dev-python/jsonschema-5.0.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-specifications-2023.5.2[${PYTHON_USEDEP}]
 	dev-python/rfc3339-validator[${PYTHON_USEDEP}]
 "

@@ -24,9 +24,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aenum (>=3.1.11)
+	aiohttp (>=3.9.1,<4.0.0)
+	pydantic (>=1.10.8)
+	rich (>=10.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aenum-3.1.11[${PYTHON_USEDEP}]
-	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.8[${PYTHON_USEDEP}]
 	>=dev-python/rich-10.0.0[${PYTHON_USEDEP}]
 "

@@ -17,12 +17,36 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython ; extra == 'testing'
+	Pillow ; extra == 'testing'
+	black (~=23.1) ; extra == 'quality'
+	datasets (>=1.4.0)
+	filelock ; extra == 'testing'
+	furiosa-optimizer
+	furiosa-quantizer (==0.9.0)
+	furiosa-quantizer-impl (==0.9.1)
+	furiosa-sdk
+	librosa ; extra == 'testing'
+	onnx (>=1.12.0)
+	optimum (>=1.8.0)
+	parameterized ; extra == 'testing'
+	psutil ; extra == 'testing'
+	pytest ; extra == 'testing'
+	pytest-pythonpath ; extra == 'testing'
+	pytest-xdist ; extra == 'testing'
+	ruff (>=0.0.241) ; extra == 'quality'
+	scipy
+	sentencepiece
+	soundfile ; extra == 'testing'
+	transformers (>=4.20.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	quality? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
 	>=dev-python/datasets-1.4.0[${PYTHON_USEDEP}]
 	dev-python/furiosa-optimizer[${PYTHON_USEDEP}]
-	=dev-python/furiosa-quantizer-0.9.0[${PYTHON_USEDEP}]
-	=dev-python/furiosa-quantizer-impl-0.9.1[${PYTHON_USEDEP}]
+	~dev-python/furiosa-quantizer-0.9.0[${PYTHON_USEDEP}]
+	~dev-python/furiosa-quantizer-impl-0.9.1[${PYTHON_USEDEP}]
 	dev-python/furiosa-sdk[${PYTHON_USEDEP}]
 	>=dev-python/onnx-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/optimum-1.8.0[${PYTHON_USEDEP}]

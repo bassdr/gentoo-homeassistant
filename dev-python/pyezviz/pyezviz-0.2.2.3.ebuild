@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	paho-mqtt
+	pandas
+	pycryptodome
+	requests
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]

@@ -16,7 +16,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	fixtures (>=3.0.0)
+	python-subunit (>=1.0.0)
+	testtools (>=2.2.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-subunit-1.0.0[${PYTHON_USEDEP}]

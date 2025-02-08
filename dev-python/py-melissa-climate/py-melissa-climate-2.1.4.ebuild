@@ -19,6 +19,14 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	aiohttp
+	check-manifest ; extra == 'dev'
+	coverage ; extra == 'test'
+	mock ; extra == 'test'
+	requests
+	requests-futures
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

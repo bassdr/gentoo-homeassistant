@@ -25,9 +25,38 @@ IUSE="${GENERATED_IUSE} test"
 # Uses 156 GB of RAM for the test suite, needs more work.
 RESTRICT="test"
 
+REQUIRES_DIST="
+	Events
+	aiohttp<4,>=3.9.4; extra == "async"
+	aiohttp<4,>=3.9.4; extra == "docs"
+	black>=24.3.0; extra == "develop"
+	botocore; extra == "develop"
+	certifi>=2024.07.04
+	coverage<8.0.0; extra == "develop"
+	jinja2; extra == "develop"
+	myst_parser; extra == "develop"
+	myst_parser; extra == "docs"
+	pytest-cov; extra == "develop"
+	pytest-mock<4.0.0; extra == "develop"
+	pytest>=3.0.0; extra == "develop"
+	python-dateutil
+	pytz; extra == "develop"
+	pyyaml; extra == "develop"
+	requests<3.0.0,>=2.0.0; extra == "develop"
+	requests<3.0.0,>=2.32.0
+	requests_kerberos; extra == "kerberos"
+	sphinx; extra == "develop"
+	sphinx; extra == "docs"
+	sphinx_copybutton; extra == "develop"
+	sphinx_copybutton; extra == "docs"
+	sphinx_rtd_theme; extra == "develop"
+	sphinx_rtd_theme; extra == "docs"
+	urllib3!=2.2.0,!=2.2.1,<3,>=1.26.19; python_version >= "3.10"
+	urllib3<1.27,>=1.26.19; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	async? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
+	async? ( >=dev-python/aiohttp-3.9.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/aiohttp-3.9.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/black-24.3.0[${PYTHON_USEDEP}] )
 	develop? ( dev-python/botocore[${PYTHON_USEDEP}] )
 	>=dev-python/certifi-2024.07.04[${PYTHON_USEDEP}]
@@ -42,8 +71,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	develop? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
-	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
-	develop? ( <dev-python/requests-3.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.32.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	develop? ( >=dev-python/requests-2.0.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}] )
 	kerberos? ( dev-python/requests-kerberos[${PYTHON_USEDEP}] )
 	develop? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
@@ -51,7 +80,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	develop? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	!=dev-python/urllib3-2.2.0[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.26.19[${PYTHON_USEDEP}] <dev-python/urllib3-3[${PYTHON_USEDEP}] !~dev-python/urllib3-2.2.0[${PYTHON_USEDEP}] !~dev-python/urllib3-2.2.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/urllib3-1.26.19[${PYTHON_USEDEP}]

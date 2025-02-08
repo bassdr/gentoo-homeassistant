@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.componentvocabulary"
@@ -11,12 +10,24 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.componentvocabulary/"
+  https://pypi.org/project/zope-componentvocabulary/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	setuptools
+	six
+	zope.component
+	zope.configuration ; extra == 'test'
+	zope.i18nmessageid
+	zope.interface
+	zope.schema
+	zope.security
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]

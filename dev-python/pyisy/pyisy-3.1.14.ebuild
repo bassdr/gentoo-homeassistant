@@ -22,6 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.1)
+	colorlog (>=6.6.0)
+	python-dateutil (>=2.8.1)
+	requests (>=2.28.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-6.6.0[${PYTHON_USEDEP}]

@@ -15,9 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	azure-core (<2.0.0,>=1.14.0)
+	typing-extensions (>=4.0.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.14.0[${PYTHON_USEDEP}] <dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

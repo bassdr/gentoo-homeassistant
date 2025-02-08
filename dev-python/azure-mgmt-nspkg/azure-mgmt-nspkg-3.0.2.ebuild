@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} ${PV} .zip)"
@@ -16,6 +15,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-nspkg (>=3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-nspkg-3.0.0[${PYTHON_USEDEP}]
 "

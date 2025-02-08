@@ -16,10 +16,9 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}
+RDEPEND="
 	>=dev-python/python-dateutil-2.7.3[${PYTHON_USEDEP}]
 "
 

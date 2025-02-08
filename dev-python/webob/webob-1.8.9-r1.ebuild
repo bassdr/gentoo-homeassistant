@@ -18,7 +18,17 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx>=1.7.5; extra == "docs"
+	coverage; extra == "testing"
+	legacy-cgi>=2.6; python_version >= "3.13"
+	pylons-sphinx-themes; extra == "docs"
+	pytest-cov; extra == "testing"
+	pytest-xdist; extra == "testing"
+	pytest>=3.1.0; extra == "testing"
+"
 GENERATED_RDEPEND="${RDEPEND}
+	$(python_gen_cond_dep '>=dev-python/legacy-cgi-2.6[${PYTHON_USEDEP}]' python3_13{,t})
 	docs? ( dev-python/pylons-sphinx-themes[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.5[${PYTHON_USEDEP}] )
 "

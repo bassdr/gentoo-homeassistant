@@ -23,6 +23,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	authlib>=0.15
+	httpx>=0.24
+	mashumaro>=3.11
+	orjson>=3.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/authlib-0.15[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24[${PYTHON_USEDEP}]

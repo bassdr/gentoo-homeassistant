@@ -27,6 +27,52 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="aiohttp arq asyncpg beam bottle celery chalice clickhouse-driver django falcon fastapi flask grpcio httpx huey loguru opentelemetry opentelemetry-experimental pure_eval pymongo pyspark quart rq sanic sqlalchemy starlette starlite tornado"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aiohttp >=3.5 ; extra == 'aiohttp'
+	apache-beam >=2.12 ; extra == 'beam'
+	arq >=0.23 ; extra == 'arq'
+	asttokens ; extra == 'pure_eval'
+	asyncpg >=0.23 ; extra == 'asyncpg'
+	blinker >=1.1 ; extra == 'flask'
+	blinker >=1.1 ; extra == 'quart'
+	bottle >=0.12.13 ; extra == 'bottle'
+	celery >=3 ; extra == 'celery'
+	certifi
+	chalice >=1.16.0 ; extra == 'chalice'
+	clickhouse-driver >=0.2.0 ; extra == 'clickhouse-driver'
+	django >=1.8 ; extra == 'django'
+	executing ; extra == 'pure_eval'
+	falcon >=1.4 ; extra == 'falcon'
+	fastapi >=0.79.0 ; extra == 'fastapi'
+	flask >=0.11 ; extra == 'flask'
+	grpcio >=1.21.1 ; extra == 'grpcio'
+	httpx >=0.16.0 ; extra == 'httpx'
+	huey >=2 ; extra == 'huey'
+	loguru >=0.5 ; extra == 'loguru'
+	markupsafe ; extra == 'flask'
+	opentelemetry-distro >=0.35b0 ; extra == 'opentelemetry'
+	opentelemetry-distro ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	opentelemetry-instrumentation-aiohttp-client ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	opentelemetry-instrumentation-django ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	opentelemetry-instrumentation-fastapi ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	opentelemetry-instrumentation-flask ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	opentelemetry-instrumentation-requests ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	opentelemetry-instrumentation-sqlite3 ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	opentelemetry-instrumentation-urllib ~=0.40b0 ; extra == 'opentelemetry-experimental'
+	pure-eval ; extra == 'pure_eval'
+	pymongo >=3.1 ; extra == 'pymongo'
+	pyspark >=2.4.4 ; extra == 'pyspark'
+	quart >=0.16.1 ; extra == 'quart'
+	rq >=0.6 ; extra == 'rq'
+	sanic >=0.8 ; extra == 'sanic'
+	sqlalchemy >=1.2 ; extra == 'sqlalchemy'
+	starlette >=0.19.1 ; extra == 'starlette'
+	starlite >=1.48 ; extra == 'starlite'
+	tornado >=5 ; extra == 'tornado'
+	urllib3 >=1.25.7 ; python_version <= "3.4"
+	urllib3 >=1.26.11 ; python_version >= "3.6"
+	urllib3 >=1.26.9 ; python_version == "3.5"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( >=dev-python/aiohttp-3.5[${PYTHON_USEDEP}] )
 	beam? ( >=dev-python/apache-beam-2.12[${PYTHON_USEDEP}] )
@@ -69,7 +115,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	starlette? ( >=dev-python/starlette-0.19.1[${PYTHON_USEDEP}] )
 	starlite? ( >=dev-python/starlite-1.48[${PYTHON_USEDEP}] )
 	tornado? ( >=dev-python/tornado-5[${PYTHON_USEDEP}] )
-	>=dev-python/urllib3-1.25.7[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.26.11[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/urllib3[${PYTHON_USEDEP}]

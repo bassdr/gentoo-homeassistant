@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Python package for interacting with *all* aspects of the Pushover API"
 HOMEPAGE="
-  https://pypi.org/project/pushover_complete/
+  https://pypi.org/project/pushover-complete/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	requests
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]

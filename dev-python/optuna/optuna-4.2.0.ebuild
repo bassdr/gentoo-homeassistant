@@ -16,6 +16,67 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML
+	alembic>=1.5.0
+	ase; extra == "document"
+	asv>=0.5.0; extra == "benchmark"
+	black; extra == "checking"
+	blackdoc; extra == "checking"
+	boto3; extra == "optional"
+	cma; extra == "benchmark"
+	cmaes>=0.10.0; extra == "document"
+	cmaes>=0.10.0; extra == "optional"
+	colorlog
+	coverage; extra == "test"
+	fakeredis[lua]; extra == "test"
+	flake8; extra == "checking"
+	fvcore; extra == "document"
+	google-cloud-storage; extra == "optional"
+	grpcio; extra == "optional"
+	grpcio; extra == "test"
+	isort; extra == "checking"
+	kaleido<0.4; extra == "document"
+	kaleido<0.4; extra == "test"
+	lightgbm; extra == "document"
+	matplotlib!=3.6.0; extra == "document"
+	matplotlib!=3.6.0; extra == "optional"
+	moto; extra == "test"
+	mypy; extra == "checking"
+	mypy_boto3_s3; extra == "checking"
+	numpy
+	packaging>=20.0
+	pandas; extra == "document"
+	pandas; extra == "optional"
+	pillow; extra == "document"
+	plotly>=4.9.0; extra == "document"
+	plotly>=4.9.0; extra == "optional"
+	protobuf>=5.28.1; extra == "optional"
+	protobuf>=5.28.1; extra == "test"
+	pytest; extra == "test"
+	redis; extra == "optional"
+	scikit-learn; extra == "document"
+	scikit-learn>=0.24.2; extra == "optional"
+	scipy; extra == "optional"
+	scipy>=1.9.2; extra == "test"
+	sphinx-copybutton; extra == "document"
+	sphinx-gallery; extra == "document"
+	sphinx-notfound-page; extra == "document"
+	sphinx; extra == "document"
+	sphinx_rtd_theme>=1.2.0; extra == "document"
+	sqlalchemy>=1.4.2
+	torch; extra == "document"
+	torch; python_version <= "3.12" and extra == "optional"
+	torch; python_version <= "3.12" and extra == "test"
+	torchvision; extra == "document"
+	tqdm
+	types-PyYAML; extra == "checking"
+	types-redis; extra == "checking"
+	types-setuptools; extra == "checking"
+	types-tqdm; extra == "checking"
+	typing_extensions>=3.10.0.0; extra == "checking"
+	virtualenv; extra == "benchmark"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-1.5.0[${PYTHON_USEDEP}]
 	document? ( dev-python/ase[${PYTHON_USEDEP}] )
@@ -34,8 +95,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	checking? ( dev-python/isort[${PYTHON_USEDEP}] )
 	document? ( <dev-python/kaleido-0.4[${PYTHON_USEDEP}] )
 	document? ( dev-python/lightgbm[${PYTHON_USEDEP}] )
-	document? ( !=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}] )
-	optional? ( !=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}] )
+	document? ( !~dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}] )
+	optional? ( !~dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}] )
 	checking? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	checking? ( dev-python/mypy-boto3-s3[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
@@ -58,6 +119,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	document? ( >=dev-python/sphinx-rtd-theme-1.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/sqlalchemy-1.4.2[${PYTHON_USEDEP}]
 	document? ( dev-python/torch[${PYTHON_USEDEP}] )
+	optional? ( $(python_gen_cond_dep 'dev-python/torch[${PYTHON_USEDEP}]' python3_12) )
 	document? ( dev-python/torchvision[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	checking? ( dev-python/types-pyyaml[${PYTHON_USEDEP}] )
@@ -80,6 +142,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/protobuf-5.28.1[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep 'dev-python/torch[${PYTHON_USEDEP}]' python3_12)
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

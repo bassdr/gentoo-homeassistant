@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2 (>=3.0.0,<4.0.0)
+	importlib_resources (>=5.7.1,<6.0.0) ; python_version < "3.9"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/importlib-resources-5.7.1[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] <dev-python/jinja2-4.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

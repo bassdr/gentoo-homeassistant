@@ -24,8 +24,20 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+BDEPEND=""
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/pexpect[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+
 # pip is called as an external tool
-BDEPEND="
+BDEPEND+="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
 		app-shells/fish
@@ -46,7 +58,3 @@ PATCHES=(
 python_test() {
 	"${EPYTHON}" test/test.py -v || die
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

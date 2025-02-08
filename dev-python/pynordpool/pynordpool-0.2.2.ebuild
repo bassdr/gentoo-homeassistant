@@ -18,7 +18,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp>=3.9.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 "

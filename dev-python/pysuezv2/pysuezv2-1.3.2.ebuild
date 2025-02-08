@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Get your water consumption data from your Suez account (www.toutsurmoneau.fr or www.eau-olivet.fr)"
 HOMEPAGE="
-  https://pypi.org/project/pysuezV2/
+  https://pypi.org/project/pysuezv2/
   Homepage, https://github.com/jb101010-2/pySuez
   Issues, https://github.com/jb101010-2/pySuez/issues
 "
@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "

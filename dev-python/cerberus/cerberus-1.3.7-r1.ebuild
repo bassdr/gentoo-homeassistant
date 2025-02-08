@@ -27,5 +27,3 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

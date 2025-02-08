@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Package to integrate with Flume Sensor"
 HOMEPAGE="
-  https://pypi.org/project/PyFlume/
+  https://pypi.org/project/pyflume/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pyjwt
+	pytz
+	ratelimit
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

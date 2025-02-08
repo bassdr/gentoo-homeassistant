@@ -22,13 +22,22 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="berkeleydb html lxml networkx orjson"
 IUSE="${GENERATED_IUSE} examples sqlite"
 
+REQUIRES_DIST="
+	berkeleydb<19.0.0,>=18.1.0; extra == "berkeleydb"
+	html5rdf<2,>=1.2; extra == "html"
+	isodate<1.0.0,>=0.7.2; python_version < "3.11"
+	lxml<6.0,>=4.3; extra == "lxml"
+	networkx<4,>=2; extra == "networkx"
+	orjson<4,>=3.9.14; extra == "orjson"
+	pyparsing<4,>=2.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	berkeleydb? ( <dev-python/berkeleydb-19.0.0[${PYTHON_USEDEP}] )
-	html? ( <dev-python/html5rdf-2[${PYTHON_USEDEP}] )
-	lxml? ( <dev-python/lxml-6.0[${PYTHON_USEDEP}] )
-	networkx? ( <dev-python/networkx-4[${PYTHON_USEDEP}] )
-	orjson? ( <dev-python/orjson-4[${PYTHON_USEDEP}] )
-	<dev-python/pyparsing-4[${PYTHON_USEDEP}]
+	berkeleydb? ( >=dev-python/berkeleydb-18.1.0[${PYTHON_USEDEP}] <dev-python/berkeleydb-19.0.0[${PYTHON_USEDEP}] )
+	html? ( >=dev-python/html5rdf-1.2[${PYTHON_USEDEP}] <dev-python/html5rdf-2[${PYTHON_USEDEP}] )
+	lxml? ( >=dev-python/lxml-4.3[${PYTHON_USEDEP}] <dev-python/lxml-6.0[${PYTHON_USEDEP}] )
+	networkx? ( >=dev-python/networkx-2[${PYTHON_USEDEP}] <dev-python/networkx-4[${PYTHON_USEDEP}] )
+	orjson? ( >=dev-python/orjson-3.9.14[${PYTHON_USEDEP}] <dev-python/orjson-4[${PYTHON_USEDEP}] )
+	>=dev-python/pyparsing-2.1.0[${PYTHON_USEDEP}] <dev-python/pyparsing-4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/isodate-1[${PYTHON_USEDEP}]

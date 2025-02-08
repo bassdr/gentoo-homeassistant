@@ -17,6 +17,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	fasteners (>=0.14)
+	httplib2 (>=0.8)
+	mock (>=1.0.1) ; extra == 'testing'
+	oauth2client (>=1.4.12)
+	python-gflags (>=3.0.6) ; extra == 'cli'
+	six (>=1.12.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fasteners-0.14[${PYTHON_USEDEP}]
 	>=dev-python/httplib2-0.8[${PYTHON_USEDEP}]

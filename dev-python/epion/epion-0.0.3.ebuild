@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	docopt
+	pytz
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docopt[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pywizlight-0.5.14[${PYTHON_USEDEP}]
+	~dev-python/pywizlight-0.5.14[${PYTHON_USEDEP}]
 "

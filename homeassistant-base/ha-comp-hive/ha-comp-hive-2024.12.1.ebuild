@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyhiveapi-0.5.16[${PYTHON_USEDEP}]
+	~dev-python/pyhiveapi-0.5.16[${PYTHON_USEDEP}]
 "

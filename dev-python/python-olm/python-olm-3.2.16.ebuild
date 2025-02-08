@@ -27,6 +27,9 @@ DEPEND="
 	)
 	dev-python/cffi[${PYTHON_USEDEP}]
 "
+REQUIRES_DIST="
+	cffi >=1.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.0.0[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aenum (<3.0.0,>=1.4.5)
+	isodate (<1.0.0,>=0.6.0)
+	six (<2.0.0,>=1.10.0)
+	tornado (<6.0,>=4.4.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aenum-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/isodate-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/six-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/tornado-6.0[${PYTHON_USEDEP}]
+	>=dev-python/aenum-1.4.5[${PYTHON_USEDEP}] <dev-python/aenum-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}] <dev-python/isodate-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/six-1.10.0[${PYTHON_USEDEP}] <dev-python/six-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tornado-4.4.1[${PYTHON_USEDEP}] <dev-python/tornado-6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

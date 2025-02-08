@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/venstarcolortouch-0.19[${PYTHON_USEDEP}]
+	~dev-python/venstarcolortouch-0.19[${PYTHON_USEDEP}]
 "

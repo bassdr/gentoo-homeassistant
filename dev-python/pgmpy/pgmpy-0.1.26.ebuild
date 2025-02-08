@@ -16,6 +16,49 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black; extra == "all"
+	black; extra == "tests"
+	coverage; extra == "all"
+	coverage; extra == "tests"
+	daft; extra == "all"
+	google-generativeai
+	google-generativeai; extra == "all"
+	joblib
+	joblib; extra == "all"
+	mock; extra == "all"
+	mock; extra == "tests"
+	networkx
+	networkx; extra == "all"
+	numpy
+	numpy; extra == "all"
+	opt-einsum
+	opt-einsum; extra == "all"
+	pandas
+	pandas; extra == "all"
+	pre-commit; extra == "all"
+	pre-commit; extra == "tests"
+	pyparsing
+	pyparsing; extra == "all"
+	pytest-cov; extra == "all"
+	pytest-cov; extra == "tests"
+	pytest; extra == "all"
+	pytest; extra == "tests"
+	scikit-learn
+	scikit-learn; extra == "all"
+	scipy
+	scipy; extra == "all"
+	statsmodels
+	statsmodels; extra == "all"
+	torch
+	torch; extra == "all"
+	tqdm
+	tqdm; extra == "all"
+	xdoctest; extra == "all"
+	xdoctest; extra == "tests"
+	xgboost
+	xgboost; extra == "all"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/black[${PYTHON_USEDEP}] )
 	all? ( dev-python/coverage[${PYTHON_USEDEP}] )

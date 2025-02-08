@@ -20,7 +20,11 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	cryptography>=1.3
+	pyspnego>=0.4.0
+	requests>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-1.3[${PYTHON_USEDEP}]
 	>=dev-python/pyspnego-0.4.0[${PYTHON_USEDEP}]

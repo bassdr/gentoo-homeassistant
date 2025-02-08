@@ -16,9 +16,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Flask
+	cachelib<0.10.0,>=0.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/cachelib-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/cachelib-0.9.0[${PYTHON_USEDEP}] <dev-python/cachelib-0.10.0[${PYTHON_USEDEP}]
 	dev-python/flask[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

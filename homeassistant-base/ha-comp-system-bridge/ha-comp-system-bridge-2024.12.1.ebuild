@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/systembridgeconnector-4.1.5[${PYTHON_USEDEP}]
-	=dev-python/systembridgemodels-4.2.4[${PYTHON_USEDEP}]
+	~dev-python/systembridgeconnector-4.1.5[${PYTHON_USEDEP}]
+	~dev-python/systembridgemodels-4.2.4[${PYTHON_USEDEP}]
 "

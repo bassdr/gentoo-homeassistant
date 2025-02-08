@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	astor>=0.1
+	flake8>=3.7
+	importlib-metadata>=0.9; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/astor-0.1[${PYTHON_USEDEP}]
 	>=dev-python/flake8-3.7[${PYTHON_USEDEP}]
-	>=dev-python/importlib-metadata-0.9[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

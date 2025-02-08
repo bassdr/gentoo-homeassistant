@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adapters>=1.0.1
+	cached_property
+	huggingface-hub
+	mosestokenizer
+	numpy>=1.0
+	onnxruntime>=1.13.1
+	pandas>=1
+	scikit-learn>=1
+	skops
+	tqdm
+	transformers>=4.22.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/adapters-1.0.1[${PYTHON_USEDEP}]
 	dev-python/cached-property[${PYTHON_USEDEP}]

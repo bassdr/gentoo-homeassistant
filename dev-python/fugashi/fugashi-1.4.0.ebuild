@@ -16,6 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	unidic-lite; extra == "unidic-lite"
+	unidic; extra == "unidic"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	unidic? ( dev-python/unidic[${PYTHON_USEDEP}] )
 	unidic-lite? ( dev-python/unidic-lite[${PYTHON_USEDEP}] )

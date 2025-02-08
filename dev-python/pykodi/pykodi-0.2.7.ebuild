@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	jsonrpc-async (>=2.0.0)
+	jsonrpc-websocket (>=3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/jsonrpc-async-2.0.0[${PYTHON_USEDEP}]

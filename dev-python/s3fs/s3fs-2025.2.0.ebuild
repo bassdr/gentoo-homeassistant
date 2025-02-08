@@ -16,11 +16,18 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiobotocore<3.0.0,>=2.5.4
+	aiobotocore[awscli]<3.0.0,>=2.5.4; extra == "awscli"
+	aiobotocore[boto3]<3.0.0,>=2.5.4; extra == "boto3"
+	aiohttp!=4.0.0a0,!=4.0.0a1
+	fsspec==2025.2.0.*
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiobotocore-3.0.0[${PYTHON_USEDEP}]
-	awscli? ( <dev-python/aiobotocore-3.0.0[awscli,${PYTHON_USEDEP}] )
-	boto3? ( <dev-python/aiobotocore-3.0.0[boto3,${PYTHON_USEDEP}] )
-	!=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}]
+	>=dev-python/aiobotocore-2.5.4[${PYTHON_USEDEP}] <dev-python/aiobotocore-3.0.0[${PYTHON_USEDEP}]
+	awscli? ( >=dev-python/aiobotocore-2.5.4[awscli,${PYTHON_USEDEP}] <dev-python/aiobotocore-3.0.0[awscli,${PYTHON_USEDEP}] )
+	boto3? ( >=dev-python/aiobotocore-2.5.4[boto3,${PYTHON_USEDEP}] <dev-python/aiobotocore-3.0.0[boto3,${PYTHON_USEDEP}] )
+	!~dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}] !~dev-python/aiohttp-4.0.0_alpha1[${PYTHON_USEDEP}]
 	=dev-python/fsspec-2025.2.0*[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

@@ -36,13 +36,20 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="compiler"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	black (>=19.3b0) ; extra == "compiler"
+	grpclib (>=0.4.1,<0.5.0)
+	importlib-metadata (>=1.6.0) ; python_version < "3.8"
+	isort (>=5.11.5,<6.0.0) ; extra == "compiler"
+	jinja2 (>=3.0.3) ; extra == "compiler"
+	python-dateutil (>=2.8,<3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	compiler? ( >=dev-python/black-19.3_beta0[${PYTHON_USEDEP}] )
-	>=dev-python/grpclib-0.4.1[${PYTHON_USEDEP}]
-	>=dev-python/importlib-metadata-1.6.0[${PYTHON_USEDEP}]
-	compiler? ( >=dev-python/isort-5.11.5[${PYTHON_USEDEP}] )
+	>=dev-python/grpclib-0.4.1[${PYTHON_USEDEP}] <dev-python/grpclib-0.5.0[${PYTHON_USEDEP}]
+	compiler? ( >=dev-python/isort-5.11.5[${PYTHON_USEDEP}] <dev-python/isort-6.0.0[${PYTHON_USEDEP}] )
 	compiler? ( >=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
-	>=dev-python/python-dateutil-2.8[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.8[${PYTHON_USEDEP}] <dev-python/python-dateutil-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/black-23.1.0[${PYTHON_USEDEP}]

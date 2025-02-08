@@ -18,6 +18,20 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs typing"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	argon2-cffi-bindings
+	argon2-cffi[tests,typing]; extra == 'dev'
+	furo; extra == 'docs'
+	hypothesis; extra == 'tests'
+	mypy; extra == 'typing'
+	myst-parser; extra == 'docs'
+	pytest; extra == 'tests'
+	sphinx-copybutton; extra == 'docs'
+	sphinx-notfound-page; extra == 'docs'
+	sphinx; extra == 'docs'
+	tox>4; extra == 'dev'
+	typing-extensions; python_version < '3.8'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/argon2-cffi-bindings[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -26,7 +40,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/argon2-cffi-bindings-21.2.0[${PYTHON_USEDEP}]

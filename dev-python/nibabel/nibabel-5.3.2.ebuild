@@ -16,10 +16,41 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage>=7.2; extra == "test"
+	h5py; extra == "all"
+	h5py; extra == "minc2"
+	importlib-resources>=5.12; python_version < "3.12"
+	matplotlib>=3.5; extra == "doc"
+	numpy>=1.22
+	numpydoc; extra == "doc"
+	packaging>=20
+	pillow; extra == "all"
+	pillow; extra == "dicomfs"
+	pydicom>=2.3; extra == "all"
+	pydicom>=2.3; extra == "dicom"
+	pydicom>=2.3; extra == "dicomfs"
+	pytest-cov; extra == "test"
+	pytest-doctestplus; extra == "test"
+	pytest-httpserver; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest; extra == "test"
+	pyzstd>=0.14.3; extra == "all"
+	pyzstd>=0.14.3; extra == "zstd"
+	scipy; extra == "all"
+	scipy; extra == "spm"
+	sphinx; extra == "doc"
+	texext; extra == "doc"
+	tomli; python_version < "3.11" and extra == "doc"
+	tox; extra == "dev"
+	tox; extra == "doctest"
+	tox; extra == "style"
+	tox; extra == "typing"
+	typing-extensions>=4.6; python_version < "3.13"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	minc2? ( dev-python/h5py[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '>=dev-python/importlib-resources-5.12[${PYTHON_USEDEP}]' python3_12)
 	doc? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
@@ -38,7 +69,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	doctest? ( dev-python/tox[${PYTHON_USEDEP}] )
 	style? ( dev-python/tox[${PYTHON_USEDEP}] )
 	typing? ( dev-python/tox[${PYTHON_USEDEP}] )
-	>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]' python3_12)
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -16,7 +16,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	cachetools>=5.5
+	chardet>=5.2
+	colorama>=0.4.6
+	devpi-process>=1.0.2; extra == "test"
+	filelock>=3.16.1
+	packaging>=24.2
+	platformdirs>=4.3.6
+	pluggy>=1.5
+	pyproject-api>=1.8
+	pytest-mock>=3.14; extra == "test"
+	pytest>=8.3.3; extra == "test"
+	tomli>=2.1; python_version < "3.11"
+	typing-extensions>=4.12.2; python_version < "3.11"
+	virtualenv>=20.27.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachetools-5.5[${PYTHON_USEDEP}]
 	>=dev-python/chardet-5.2[${PYTHON_USEDEP}]

@@ -16,6 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	odfpy; extra == "all"
+	odfpy; extra == "ods"
+	openpyxl>=2.6.0; extra == "all"
+	openpyxl>=2.6.0; extra == "xlsx"
+	pandas; extra == "all"
+	pandas; extra == "pandas"
+	pyyaml; extra == "all"
+	pyyaml; extra == "yaml"
+	tabulate; extra == "all"
+	tabulate; extra == "cli"
+	xlrd; extra == "all"
+	xlrd; extra == "xls"
+	xlwt; extra == "all"
+	xlwt; extra == "xls"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/odfpy[${PYTHON_USEDEP}] )
 	ods? ( dev-python/odfpy[${PYTHON_USEDEP}] )

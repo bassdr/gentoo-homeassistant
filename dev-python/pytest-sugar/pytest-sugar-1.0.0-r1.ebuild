@@ -17,7 +17,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	flake8 ; extra == 'dev'
+	packaging >=21.3
+	pre-commit ; extra == 'dev'
+	pytest >=6.2.0
+	termcolor >=2.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.2.0[${PYTHON_USEDEP}]

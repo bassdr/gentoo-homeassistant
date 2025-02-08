@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	crownstone-core (~=3.0)
+	pyserial (~=3.4)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/crownstone-core-3.0[${PYTHON_USEDEP}] =dev-python/crownstone-core-3*[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-3.4[${PYTHON_USEDEP}] =dev-python/pyserial-3*[${PYTHON_USEDEP}]

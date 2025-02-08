@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/peco-0.0.30[${PYTHON_USEDEP}]
+	~dev-python/peco-0.0.30[${PYTHON_USEDEP}]
 "

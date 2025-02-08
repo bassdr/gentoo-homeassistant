@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,21 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata; python_version < "3.8"
+	matplotlib
+	neptune>=1.0.0; extra == "dev"
+	numpy<2.0.0
+	pandas<2.0.0
+	plotly>=5.18.0; extra == "dev"
+	pre-commit; extra == "dev"
+	prophet>=1.0
+	pytest-cov==2.10.1; extra == "dev"
+	pytest>=5.0; extra == "dev"
+	scipy
+	statsmodels>=0.13.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 	<dev-python/pandas-2.0.0[${PYTHON_USEDEP}]
@@ -32,7 +44,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/neptune-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/plotly-5.18.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "

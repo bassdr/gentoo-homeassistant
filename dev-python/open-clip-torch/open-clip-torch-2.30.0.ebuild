@@ -16,6 +16,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	fsspec; extra == "training"
+	ftfy
+	huggingface-hub
+	open_clip_torch[training]; extra == "test"
+	pandas; extra == "training"
+	pytest-split; extra == "test"
+	pytest; extra == "test"
+	regex
+	safetensors
+	timm
+	timm>=1.0.10; extra == "training"
+	torch>=1.9.0
+	torch>=2.0; extra == "training"
+	torchvision
+	tqdm
+	transformers[sentencepiece]; extra == "training"
+	webdataset<=0.2.86,>=0.2.5; extra == "training"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	training? ( dev-python/fsspec[${PYTHON_USEDEP}] )
 	dev-python/ftfy[${PYTHON_USEDEP}]
@@ -30,7 +49,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/torchvision[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	training? ( dev-python/transformers[sentencepiece,${PYTHON_USEDEP}] )
-	training? ( <=dev-python/webdataset-0.2.86[${PYTHON_USEDEP}] )
+	training? ( >=dev-python/webdataset-0.2.5[${PYTHON_USEDEP}] <=dev-python/webdataset-0.2.86[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

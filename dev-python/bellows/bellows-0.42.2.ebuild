@@ -18,10 +18,23 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	async-timeout; python_version < "3.11"
+	click
+	click-log>=0.2.1
+	pure_pcapy3==1.0.1
+	pytest-asyncio>=0.19.0; extra == "testing"
+	pytest-cov>=3.0.0; extra == "testing"
+	pytest-mock>=3.8.2; extra == "testing"
+	pytest-timeout>=2.1.0; extra == "testing"
+	pytest>=7.1.2; extra == "testing"
+	voluptuous
+	zigpy>=0.70.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/click-log-0.2.1[${PYTHON_USEDEP}]
-	=dev-python/pure-pcapy3-1.0.1[${PYTHON_USEDEP}]
+	~dev-python/pure-pcapy3-1.0.1[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 "

@@ -21,9 +21,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	defusedxml (>=0.7.1,<0.8.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
+	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}] <dev-python/defusedxml-0.8.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]

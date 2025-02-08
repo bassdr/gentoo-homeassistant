@@ -11,7 +11,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/netCDF4/"
+  https://pypi.org/project/netcdf4/"
 
 LICENSE="MIT"
 SLOT="0"
@@ -23,6 +23,14 @@ DEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
 	sci-libs/hdf5:=
 	sci-libs/netcdf:=[blosc(-)=,bzip2(-)=,hdf5,mpi=,szip=,zstd(-)=]
+"
+REQUIRES_DIST="
+	Cython; extra == "tests"
+	certifi
+	cftime
+	numpy
+	packaging; extra == "tests"
+	pytest; extra == "tests"
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]

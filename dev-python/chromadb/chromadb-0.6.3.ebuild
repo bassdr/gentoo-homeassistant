@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,42 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML>=6.0.0
+	bcrypt>=4.0.1
+	build>=1.0.3
+	chroma-hnswlib==0.7.6
+	fastapi>=0.95.2
+	graphlib_backport>=1.0.3; python_version < "3.9"
+	grpcio>=1.58.0
+	httpx>=0.27.0
+	importlib-resources
+	kubernetes>=28.1.0
+	mmh3>=4.0.1
+	numpy>=1.22.5
+	onnxruntime>=1.14.1
+	opentelemetry-api>=1.2.0
+	opentelemetry-exporter-otlp-proto-grpc>=1.2.0
+	opentelemetry-instrumentation-fastapi>=0.41b0
+	opentelemetry-sdk>=1.2.0
+	orjson>=3.9.12
+	overrides>=7.3.1
+	posthog>=2.4.0
+	pydantic>=1.9
+	pypika>=0.48.9
+	rich>=10.11.0
+	tenacity>=8.2.3
+	tokenizers>=0.13.2
+	tqdm>=4.65.0
+	typer>=0.9.0
+	typing_extensions>=4.5.0
+	uvicorn[standard]>=0.18.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bcrypt-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/build-1.0.3[${PYTHON_USEDEP}]
-	=dev-python/chroma-hnswlib-0.7.6[${PYTHON_USEDEP}]
+	~dev-python/chroma-hnswlib-0.7.6[${PYTHON_USEDEP}]
 	>=dev-python/fastapi-0.95.2[${PYTHON_USEDEP}]
-	>=dev-python/graphlib-backport-1.0.3[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.58.0[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.27.0[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]

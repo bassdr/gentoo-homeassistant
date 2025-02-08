@@ -17,6 +17,24 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bokeh; extra == "plot"
+	colorcet; extra == "plot"
+	datashader; extra == "plot"
+	holoviews; extra == "plot"
+	matplotlib; extra == "plot"
+	numba>=0.51.2
+	numpy>=1.17
+	pandas; extra == "plot"
+	pynndescent>=0.5
+	scikit-image; extra == "plot"
+	scikit-learn>=0.22
+	scipy>=1.3.1
+	seaborn; extra == "plot"
+	tbb>=2019.0; extra == "tbb"
+	tensorflow>=2.1; extra == "parametric-umap"
+	tqdm
+"
 GENERATED_RDEPEND="${RDEPEND}
 	plot? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	plot? ( dev-python/colorcet[${PYTHON_USEDEP}] )

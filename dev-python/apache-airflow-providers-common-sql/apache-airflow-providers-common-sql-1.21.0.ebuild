@@ -16,11 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow>=2.9.0
+	more-itertools>=9.0.0
+	pandas<2.2,>=1.5.3; extra == "pandas" and python_version < "3.9"
+	pandas<2.2,>=2.1.2; extra == "pandas" and python_version >= "3.9"
+	sqlparse>=0.5.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	openlineage? ( dev-python/apache-airflow-providers-openlineage[${PYTHON_USEDEP}] )
 	>=dev-python/more-itertools-9.0.0[${PYTHON_USEDEP}]
-	pandas? ( <dev-python/pandas-2.2[${PYTHON_USEDEP}] )
+	pandas? ( >=dev-python/pandas-2.1.2[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}] )
 	>=dev-python/sqlparse-0.5.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

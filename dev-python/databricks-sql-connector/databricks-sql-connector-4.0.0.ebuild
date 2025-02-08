@@ -10,20 +10,33 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/databricks_sql_connector/"
+  https://pypi.org/project/databricks-sql-connector/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	lz4<5.0.0,>=4.0.2
+	numpy<2.0.0,>=1.16.6; python_version >= "3.8" and python_version < "3.11"
+	numpy<2.0.0,>=1.23.4; python_version >= "3.11"
+	oauthlib<4.0.0,>=3.1.0
+	openpyxl<4.0.0,>=3.0.10
+	pandas<2.3.0,>=1.2.5; python_version >= "3.8"
+	pyarrow>=14.0.1; extra == "pyarrow"
+	requests<3.0.0,>=2.18.1
+	thrift<0.21.0,>=0.16.0
+	urllib3>=1.26
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/lz4-5.0.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/oauthlib-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/openpyxl-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/lz4-4.0.2[${PYTHON_USEDEP}] <dev-python/lz4-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.23.4[${PYTHON_USEDEP}] <dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/oauthlib-3.1.0[${PYTHON_USEDEP}] <dev-python/oauthlib-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/openpyxl-3.0.10[${PYTHON_USEDEP}] <dev-python/openpyxl-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.2.5[${PYTHON_USEDEP}] <dev-python/pandas-2.3.0[${PYTHON_USEDEP}]
 	pyarrow? ( >=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}] )
-	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/thrift-0.21.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.18.1[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/thrift-0.16.0[${PYTHON_USEDEP}] <dev-python/thrift-0.21.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

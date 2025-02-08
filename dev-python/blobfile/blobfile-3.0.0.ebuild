@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	filelock>=3.0
+	lxml>=4.9
+	pycryptodomex>=3.8
+	urllib3<3,>=1.25.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/filelock-3.0[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.9[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodomex-3.8[${PYTHON_USEDEP}]
-	<dev-python/urllib3-3[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.25.3[${PYTHON_USEDEP}] <dev-python/urllib3-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

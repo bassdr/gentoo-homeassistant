@@ -22,6 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	ifaddr (>=0.1.0)
+	requests (>=2.0)
+	six (>=1.10.0)
+	websocket_client (>=1.4.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ifaddr-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.0[${PYTHON_USEDEP}]

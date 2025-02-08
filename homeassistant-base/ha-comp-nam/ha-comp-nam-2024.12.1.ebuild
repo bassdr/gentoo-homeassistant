@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/nettigo-air-monitor-3.3.0[${PYTHON_USEDEP}]
+	~dev-python/nettigo-air-monitor-3.3.0[${PYTHON_USEDEP}]
 "

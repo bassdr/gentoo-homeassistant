@@ -22,6 +22,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Django; extra == "testing"
+	django-configurations>=2.0; extra == "testing"
+	pytest>=7.0.0
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

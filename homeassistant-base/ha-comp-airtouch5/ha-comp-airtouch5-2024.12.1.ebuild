@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/airtouch5py-0.2.11[${PYTHON_USEDEP}]
+	~dev-python/airtouch5py-0.2.11[${PYTHON_USEDEP}]
 "

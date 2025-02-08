@@ -25,6 +25,10 @@ IUSE="${GENERATED_IUSE}"
 DEPEND="
 	sys-apps/pcsc-lite
 "
+REQUIRES_DIST="
+	typing_extensions; python_version == "3.9"
+	wxPython; extra == "gui"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	gui? ( dev-python/wxpython[${PYTHON_USEDEP}] )
 "

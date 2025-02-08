@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="Receive data packets from GreenEye Monitor (http://www.brultech.com/greeneye/)"
 HOMEPAGE="
-  https://pypi.org/project/greeneye_monitor/
+  https://pypi.org/project/greeneye-monitor/
 "
 SRC_URI="https://github.com/jkeljo/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp
+	siobrultech-protocols (==0.5)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	=dev-python/siobrultech-protocols-0.5[${PYTHON_USEDEP}]
+	~dev-python/siobrultech-protocols-0.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/siobrultech-protocols-0.5.0[${PYTHON_USEDEP}]"
@@ -37,8 +41,4 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"
 

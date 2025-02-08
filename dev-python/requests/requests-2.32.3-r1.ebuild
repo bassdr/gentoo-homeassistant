@@ -23,13 +23,21 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="socks use-chardet-on-py3"
 IUSE="${GENERATED_IUSE} socks5 test-rust"
 
+REQUIRES_DIST="
+	PySocks!=1.5.7,>=1.5.6; extra == "socks"
+	certifi>=2017.4.17
+	chardet<6,>=3.0.2; extra == "use-chardet-on-py3"
+	charset-normalizer<4,>=2
+	idna<4,>=2.5
+	urllib3<3,>=1.21.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
-	use-chardet-on-py3? ( <dev-python/chardet-6[${PYTHON_USEDEP}] )
-	<dev-python/charset-normalizer-4[${PYTHON_USEDEP}]
-	<dev-python/idna-4[${PYTHON_USEDEP}]
-	socks? ( !=dev-python/pysocks-1.5.7[${PYTHON_USEDEP}] )
-	<dev-python/urllib3-3[${PYTHON_USEDEP}]
+	use-chardet-on-py3? ( >=dev-python/chardet-3.0.2[${PYTHON_USEDEP}] <dev-python/chardet-6[${PYTHON_USEDEP}] )
+	>=dev-python/charset-normalizer-2[${PYTHON_USEDEP}] <dev-python/charset-normalizer-4[${PYTHON_USEDEP}]
+	>=dev-python/idna-2.5[${PYTHON_USEDEP}] <dev-python/idna-4[${PYTHON_USEDEP}]
+	socks? ( >=dev-python/pysocks-1.5.6[${PYTHON_USEDEP}] !~dev-python/pysocks-1.5.7[${PYTHON_USEDEP}] )
+	>=dev-python/urllib3-1.21.1[${PYTHON_USEDEP}] <dev-python/urllib3-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]

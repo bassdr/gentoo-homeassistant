@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioopenexchangerates-0.6.8[${PYTHON_USEDEP}]
+	~dev-python/aioopenexchangerates-0.6.8[${PYTHON_USEDEP}]
 "

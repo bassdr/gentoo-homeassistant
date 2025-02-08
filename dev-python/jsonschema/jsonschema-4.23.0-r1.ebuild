@@ -26,19 +26,41 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="format format-nongpl"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	attrs>=22.2.0
+	fqdn; extra == "format"
+	fqdn; extra == "format-nongpl"
+	idna; extra == "format"
+	idna; extra == "format-nongpl"
+	importlib-resources>=1.4.0; python_version < "3.9"
+	isoduration; extra == "format"
+	isoduration; extra == "format-nongpl"
+	jsonpointer>1.13; extra == "format"
+	jsonpointer>1.13; extra == "format-nongpl"
+	jsonschema-specifications>=2023.03.6
+	pkgutil-resolve-name>=1.3.10; python_version < "3.9"
+	referencing>=0.28.4
+	rfc3339-validator; extra == "format"
+	rfc3339-validator; extra == "format-nongpl"
+	rfc3986-validator>0.1.0; extra == "format-nongpl"
+	rfc3987; extra == "format"
+	rpds-py>=0.7.1
+	uri-template; extra == "format"
+	uri-template; extra == "format-nongpl"
+	webcolors>=1.11; extra == "format"
+	webcolors>=24.6.0; extra == "format-nongpl"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	format-nongpl? ( dev-python/fqdn[${PYTHON_USEDEP}] )
 	format? ( dev-python/fqdn[${PYTHON_USEDEP}] )
 	format-nongpl? ( dev-python/idna[${PYTHON_USEDEP}] )
 	format? ( dev-python/idna[${PYTHON_USEDEP}] )
-	>=dev-python/importlib-resources-1.4.0[${PYTHON_USEDEP}]
 	format-nongpl? ( dev-python/isoduration[${PYTHON_USEDEP}] )
 	format? ( dev-python/isoduration[${PYTHON_USEDEP}] )
 	format-nongpl? ( >dev-python/jsonpointer-1.13[${PYTHON_USEDEP}] )
 	format? ( >dev-python/jsonpointer-1.13[${PYTHON_USEDEP}] )
 	>=dev-python/jsonschema-specifications-2023.03.6[${PYTHON_USEDEP}]
-	>=dev-python/pkgutil-resolve-name-1.3.10[${PYTHON_USEDEP}]
 	>=dev-python/referencing-0.28.4[${PYTHON_USEDEP}]
 	format-nongpl? ( dev-python/rfc3339-validator[${PYTHON_USEDEP}] )
 	format? ( dev-python/rfc3339-validator[${PYTHON_USEDEP}] )

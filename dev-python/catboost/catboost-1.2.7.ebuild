@@ -16,12 +16,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	graphviz
+	ipython; extra == "widget"
+	ipywidgets<9.0,>=7.0; extra == "widget"
+	matplotlib
+	numpy<2.0,>=1.16.0
+	pandas>=0.24
+	plotly
+	scipy
+	six
+	traitlets; extra == "widget"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/graphviz[${PYTHON_USEDEP}]
 	widget? ( dev-python/ipython[${PYTHON_USEDEP}] )
-	widget? ( <dev-python/ipywidgets-9.0[${PYTHON_USEDEP}] )
+	widget? ( >=dev-python/ipywidgets-7.0[${PYTHON_USEDEP}] <dev-python/ipywidgets-9.0[${PYTHON_USEDEP}] )
 	dev-python/matplotlib[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.16.0[${PYTHON_USEDEP}] <dev-python/numpy-2.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-0.24[${PYTHON_USEDEP}]
 	dev-python/plotly[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]

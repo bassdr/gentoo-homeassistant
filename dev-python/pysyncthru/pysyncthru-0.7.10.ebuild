@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Automated JSON API based communication with Samsung SyncThru Web Service"
 HOMEPAGE="
-  https://pypi.org/project/PySyncThru/
+  https://pypi.org/project/pysyncthru/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	demjson3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/demjson3[${PYTHON_USEDEP}]

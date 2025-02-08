@@ -22,8 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4,>=3.9.3
+	awesomeversion>=22.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>=dev-python/awesomeversion-22.9.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

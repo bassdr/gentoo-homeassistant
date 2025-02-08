@@ -20,6 +20,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.3
+	aresponses; extra == "dev"
+	mashumaro>=3.12
+	orjson>=2.0.1
+	pytest; extra == "dev"
+	twine; extra == "dev"
+	yarl>=1.9.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.12[${PYTHON_USEDEP}]

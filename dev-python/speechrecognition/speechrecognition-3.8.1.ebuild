@@ -13,18 +13,13 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 
 DESCRIPTION="Library for performing speech recognition, with support for several engines and APIs, online and offline."
 HOMEPAGE="
-  https://pypi.org/project/SpeechRecognition/
+  https://pypi.org/project/speechrecognition/
 "
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

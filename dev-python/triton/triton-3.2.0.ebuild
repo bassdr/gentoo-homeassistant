@@ -17,6 +17,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	autopep8; extra == "tests"
+	cmake>=3.20; extra == "build"
+	flake8; extra == "tests"
+	isort; extra == "tests"
+	lit; extra == "build"
+	llnl-hatchet; extra == "tests"
+	matplotlib; extra == "tutorials"
+	numpy; extra == "tests"
+	pandas; extra == "tutorials"
+	pytest; extra == "tests"
+	scipy>=1.7.1; extra == "tests"
+	tabulate; extra == "tutorials"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( >=dev-python/cmake-3.20[${PYTHON_USEDEP}] )
 	build? ( dev-python/lit[${PYTHON_USEDEP}] )
@@ -28,7 +42,6 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/autopep8[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]

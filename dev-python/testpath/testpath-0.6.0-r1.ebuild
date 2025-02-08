@@ -28,5 +28,3 @@ GENERATED_BDEPEND="${BDEPEND}
 "
 BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx doc
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

@@ -18,6 +18,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
+"
 RDEPEND="
 	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
 "

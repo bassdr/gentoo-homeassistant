@@ -16,7 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apkInspector>=1.1.7
+	asn1crypto>=0.24.0
+	click>=7.0
+	colorama>=0.4.1
+	dataset
+	frida
+	ipython>=5.0.0
+	loguru
+	lxml>=4.3.0
+	matplotlib
+	mutf8
+	networkx
+	oscrypto>=1.3.0
+	pydot>=1.4.1
+	pygments>=2.3.1
+	pyyaml
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apkinspector-1.1.7[${PYTHON_USEDEP}]
 	>=dev-python/asn1crypto-0.24.0[${PYTHON_USEDEP}]

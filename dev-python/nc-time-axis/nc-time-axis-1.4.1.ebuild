@@ -17,6 +17,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cftime (>=1.5)
+	codecov ; extra == 'all'
+	codecov ; extra == 'test'
+	ipython ; extra == 'all'
+	ipython ; extra == 'docs'
+	matplotlib
+	numpy
+	numpydoc ; extra == 'all'
+	numpydoc ; extra == 'docs'
+	pre-commit ; extra == 'all'
+	pytest (>=6.0) ; extra == 'all'
+	pytest (>=6.0) ; extra == 'test'
+	pytest-cov ; extra == 'all'
+	pytest-cov ; extra == 'test'
+	sphinx ; extra == 'all'
+	sphinx ; extra == 'docs'
+	sphinx-rtd-theme ; extra == 'all'
+	sphinx-rtd-theme ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cftime-1.5[${PYTHON_USEDEP}]
 	all? ( dev-python/codecov[${PYTHON_USEDEP}] )

@@ -28,6 +28,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="+native-extensions"
 
+REQUIRES_DIST="
+	idna>=2.0
+	multidict>=4.0
+	propcache>=0.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/idna-2.0[${PYTHON_USEDEP}]
 	>=dev-python/multidict-4.0[${PYTHON_USEDEP}]

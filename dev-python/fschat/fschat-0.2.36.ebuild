@@ -16,6 +16,36 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	accelerate >=0.21 ; extra == 'model_worker'
+	aiohttp
+	anthropic >=0.3 ; extra == 'llm_judge'
+	black ==23.3.0 ; extra == 'dev'
+	einops ; extra == 'train'
+	fastapi
+	flash-attn >=2.0 ; extra == 'train'
+	gradio >=4.10 ; extra == 'webui'
+	httpx
+	markdown2[all]
+	nh3
+	numpy
+	openai <1 ; extra == 'llm_judge'
+	peft ; extra == 'model_worker'
+	prompt-toolkit >=3.0.0
+	protobuf ; extra == 'model_worker'
+	pydantic
+	pylint ==2.8.2 ; extra == 'dev'
+	ray ; extra == 'llm_judge'
+	requests
+	rich >=10.0.0
+	sentencepiece ; extra == 'model_worker'
+	shortuuid
+	tiktoken
+	torch ; extra == 'model_worker'
+	transformers >=4.31.0 ; extra == 'model_worker'
+	uvicorn
+	wandb ; extra == 'train'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	model_worker? ( >=dev-python/accelerate-0.21[${PYTHON_USEDEP}] )
 	dev-python/aiohttp[${PYTHON_USEDEP}]
@@ -49,8 +79,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-23.3.0[${PYTHON_USEDEP}]
-		=dev-python/pylint-2.8.2[${PYTHON_USEDEP}]
+		~dev-python/black-23.3.0[${PYTHON_USEDEP}]
+		~dev-python/pylint-2.8.2[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

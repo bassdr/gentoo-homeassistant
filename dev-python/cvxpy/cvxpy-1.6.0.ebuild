@@ -16,6 +16,39 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Mosek; extra == "mosek"
+	PySCIPOpt; extra == "scip"
+	clarabel>=0.5.0
+	cvxopt; extra == "cvxopt"
+	cvxopt; extra == "glpk"
+	cvxopt; extra == "glpk-mi"
+	cylp>=0.91.5; extra == "cbc"
+	daqp; extra == "daqp"
+	diffcp; extra == "diffcp"
+	ecos; extra == "ecos"
+	ecos; extra == "ecos-bb"
+	gurobipy; extra == "gurobi"
+	highspy; extra == "highs"
+	hypothesis; extra == "testing"
+	numpy>=1.20
+	ortools<9.10,>=9.7; extra == "glop"
+	ortools<9.10,>=9.7; extra == "pdlp"
+	osqp>=0.6.2
+	piqp; extra == "piqp"
+	proxsuite; extra == "proxqp"
+	pytest; extra == "testing"
+	scipy; extra == "scipy"
+	scipy>=1.1.0
+	scs>=3.2.4.post1
+	setuptools>65.5.1; extra == "scs"
+	sphinx-design; extra == "doc"
+	sphinx-immaterial>=0.11.7; extra == "doc"
+	sphinx-inline-tabs; extra == "doc"
+	sphinx; extra == "doc"
+	sphinxcontrib.jquery; extra == "doc"
+	xpress; extra == "xpress"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/clarabel-0.5.0[${PYTHON_USEDEP}]
 	cvxopt? ( dev-python/cvxopt[${PYTHON_USEDEP}] )
@@ -30,8 +63,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	highs? ( dev-python/highspy[${PYTHON_USEDEP}] )
 	mosek? ( dev-python/mosek[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]
-	glop? ( <dev-python/ortools-9.10[${PYTHON_USEDEP}] )
-	pdlp? ( <dev-python/ortools-9.10[${PYTHON_USEDEP}] )
+	glop? ( >=dev-python/ortools-9.7[${PYTHON_USEDEP}] <dev-python/ortools-9.10[${PYTHON_USEDEP}] )
+	pdlp? ( >=dev-python/ortools-9.7[${PYTHON_USEDEP}] <dev-python/ortools-9.10[${PYTHON_USEDEP}] )
 	>=dev-python/osqp-0.6.2[${PYTHON_USEDEP}]
 	piqp? ( dev-python/piqp[${PYTHON_USEDEP}] )
 	proxqp? ( dev-python/proxsuite[${PYTHON_USEDEP}] )

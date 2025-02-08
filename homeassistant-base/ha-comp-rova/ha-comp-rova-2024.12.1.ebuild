@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/rova-0.4.1[${PYTHON_USEDEP}]
+	~dev-python/rova-0.4.1[${PYTHON_USEDEP}]
 "

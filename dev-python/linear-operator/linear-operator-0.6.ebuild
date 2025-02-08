@@ -16,9 +16,29 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8-print==5.0.0; extra == "test"
+	flake8==5.0.4; extra == "test"
+	jaxtyping
+	mpmath<=1.3,>=0.19
+	myst-parser; extra == "docs"
+	pre-commit; extra == "dev"
+	pytest; extra == "test"
+	scipy
+	setuptools-scm; extra == "dev"
+	setuptools-scm; extra == "docs"
+	six; extra == "docs"
+	sphinx-autodoc-typehints; extra == "docs"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "docs"
+	torch>=2.0
+	twine; extra == "dev"
+	typeguard~=2.13.3; extra == "test"
+	ufmt; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jaxtyping[${PYTHON_USEDEP}]
-	<=dev-python/mpmath-1.3[${PYTHON_USEDEP}]
+	>=dev-python/mpmath-0.19[${PYTHON_USEDEP}] <=dev-python/mpmath-1.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	dev-python/scipy[${PYTHON_USEDEP}]
 	docs? ( dev-python/setuptools-scm[${PYTHON_USEDEP}] )
@@ -33,8 +53,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/flake8-5.0.4[${PYTHON_USEDEP}]
-		=dev-python/flake8-print-5.0.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-5.0.4[${PYTHON_USEDEP}]
+		~dev-python/flake8-print-5.0.0[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/twine[${PYTHON_USEDEP}]

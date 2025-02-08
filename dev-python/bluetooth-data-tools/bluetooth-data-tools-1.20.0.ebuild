@@ -24,11 +24,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx<6.0,>=5.0; extra == "docs"
+	cryptography>=41.0.3
+	myst-parser<1.1,>=0.18; extra == "docs"
+	sphinx-rtd-theme<2.0,>=1.0; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-41.0.3[${PYTHON_USEDEP}]
-	docs? ( <dev-python/myst-parser-1.1[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] <dev-python/myst-parser-1.1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="

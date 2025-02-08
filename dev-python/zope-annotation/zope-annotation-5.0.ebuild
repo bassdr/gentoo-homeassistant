@@ -12,12 +12,39 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.annotation/"
+  https://pypi.org/project/zope-annotation/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	BTrees ; extra == 'btrees'
+	Sphinx ; extra == 'docs'
+	coverage ; extra == 'testing'
+	nose ; extra == 'testing'
+	persistent ; extra == 'btrees'
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	zope.component
+	zope.component[zcml] ; extra == 'docs'
+	zope.component[zcml] ; extra == 'test'
+	zope.component[zcml] ; extra == 'testing'
+	zope.component[zcml] ; extra == 'zcml'
+	zope.configuration ; extra == 'docs'
+	zope.configuration ; extra == 'test'
+	zope.configuration ; extra == 'testing'
+	zope.configuration ; extra == 'zcml'
+	zope.interface
+	zope.location
+	zope.proxy
+	zope.testing ; extra == 'docs'
+	zope.testing ; extra == 'test'
+	zope.testing ; extra == 'testing'
+	zope.testrunner ; extra == 'docs'
+	zope.testrunner ; extra == 'test'
+	zope.testrunner ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	btrees? ( dev-python/btrees[${PYTHON_USEDEP}] )
 	btrees? ( dev-python/persistent[${PYTHON_USEDEP}] )

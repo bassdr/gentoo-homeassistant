@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pynzbgetapi-0.2.0[${PYTHON_USEDEP}]
+	~dev-python/pynzbgetapi-0.2.0[${PYTHON_USEDEP}]
 "

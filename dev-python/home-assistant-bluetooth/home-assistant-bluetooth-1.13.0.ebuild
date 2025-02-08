@@ -23,6 +23,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	habluetooth>=3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/habluetooth-3.0[${PYTHON_USEDEP}]
 "

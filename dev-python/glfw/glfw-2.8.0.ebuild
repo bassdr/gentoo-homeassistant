@@ -16,6 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	glfw-preview; extra == "preview"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	preview? ( dev-python/glfw-preview[${PYTHON_USEDEP}] )
 "

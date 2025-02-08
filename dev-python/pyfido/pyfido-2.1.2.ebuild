@@ -16,7 +16,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.rst"
-IUSE=""
+REQUIRES_DIST="
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "

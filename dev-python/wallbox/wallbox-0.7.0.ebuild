@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aenum>=3.1.8
+	requests>=2.22.0
+	simplejson>=3.16.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aenum-3.1.8[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/face-recognition-1.2.3[${PYTHON_USEDEP}]
+	~dev-python/face-recognition-1.2.3[${PYTHON_USEDEP}]
 "

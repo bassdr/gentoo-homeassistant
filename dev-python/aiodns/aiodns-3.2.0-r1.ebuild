@@ -21,7 +21,9 @@ KEYWORDS="amd64 arm64"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-IUSE=""
+REQUIRES_DIST="
+	pycares>=4.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pycares-4.0.0[${PYTHON_USEDEP}]
 "

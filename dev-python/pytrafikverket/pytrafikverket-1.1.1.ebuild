@@ -24,6 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.2
+	aiozoneinfo>=0.2.1
+	lxml>=5.1.0
+	yarl>=1.9.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/aiozoneinfo-0.2.1[${PYTHON_USEDEP}]

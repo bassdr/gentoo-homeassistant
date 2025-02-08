@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/faadelays-2023.9.1[${PYTHON_USEDEP}]
+	~dev-python/faadelays-2023.9.1[${PYTHON_USEDEP}]
 "

@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bleak (>=0.15.1)
+	bleak-retry-connector (>=1.8.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-1.8.0[${PYTHON_USEDEP}]

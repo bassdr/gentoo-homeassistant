@@ -22,6 +22,10 @@ RESTRICT="!test? ( test ) mirror"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	awesomeversion
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]

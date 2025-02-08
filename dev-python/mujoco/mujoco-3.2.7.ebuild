@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py
+	etils[epath]
+	glfw
+	numpy
+	pillow; extra == "usd"
+	pyopengl
+	usd-core; extra == "usd"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	dev-python/etils[epath,${PYTHON_USEDEP}]

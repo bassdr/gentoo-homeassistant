@@ -22,11 +22,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.8.4
+	netifaces<0.12.0,>=0.11.0
+	python-engineio-v3<4.0.0,>=3.14.2
+	python-socketio-v4<5.0.0,>=4.6.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/netifaces-0.12.0[${PYTHON_USEDEP}]
-	<dev-python/python-engineio-v3-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/python-socketio-v4-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.8.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/netifaces-0.11.0[${PYTHON_USEDEP}] <dev-python/netifaces-0.12.0[${PYTHON_USEDEP}]
+	>=dev-python/python-engineio-v3-3.14.2[${PYTHON_USEDEP}] <dev-python/python-engineio-v3-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-socketio-v4-4.6.1[${PYTHON_USEDEP}] <dev-python/python-socketio-v4-5.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

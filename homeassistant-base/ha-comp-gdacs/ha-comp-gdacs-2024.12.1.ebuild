@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aio-georss-gdacs-0.10[${PYTHON_USEDEP}]
+	~dev-python/aio-georss-gdacs-0.10[${PYTHON_USEDEP}]
 "

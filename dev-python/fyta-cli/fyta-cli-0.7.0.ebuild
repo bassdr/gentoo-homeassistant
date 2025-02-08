@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python library to access the FYTA API"
 HOMEPAGE="
-  https://pypi.org/project/fyta_cli/
+  https://pypi.org/project/fyta-cli/
   Repository, https://github.com/dontinelli/fyta_cli.git
   Issues, https://github.com/dontinelli/fyta_cli/issues
   Changelog, https://github.com/dontinelli/fyta_cli/blob/master/CHANGELOG.md
@@ -25,6 +25,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	mashumaro>=3.13
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.13[${PYTHON_USEDEP}]

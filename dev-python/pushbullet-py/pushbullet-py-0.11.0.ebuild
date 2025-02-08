@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A simple python client for pushbullet.com"
 HOMEPAGE="
-  https://pypi.org/project/pushbullet.py/
+  https://pypi.org/project/pushbullet-py/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="readme.rst"
 
+REQUIRES_DIST="
+	python-magic
+	requests (>=1.0.0)
+	websocket-client
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/python-magic[${PYTHON_USEDEP}]
 	>=dev-python/requests-1.0.0[${PYTHON_USEDEP}]

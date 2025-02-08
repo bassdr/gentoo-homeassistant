@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Controls ProgettiHWSW relay boards."
 HOMEPAGE="
-  https://pypi.org/project/ProgettiHWSW/
+  https://pypi.org/project/progettihwsw/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,10 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	aiohttp
+	lxml
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]

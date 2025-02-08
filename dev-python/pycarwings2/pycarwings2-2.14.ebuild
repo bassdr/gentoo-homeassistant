@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyYAML
+	iso8601
+	pycryptodome
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/iso8601[${PYTHON_USEDEP}]
 	dev-python/pycryptodome[${PYTHON_USEDEP}]

@@ -20,7 +20,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	PyYAML
+	six (>=1.5)
+	urllib3 (<2) ; python_version < "3.10"
+	wrapt
+	yarl
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
@@ -44,21 +50,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/boto3[${PYTHON_USEDEP}]
-	dev-python/httplib2[${PYTHON_USEDEP}]
-	dev-python/httpx[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
-	dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	dev-python/pytest-cov[${PYTHON_USEDEP}]
-	dev-python/pytest-httpbin[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]
-	dev-python/tornado[${PYTHON_USEDEP}]
-	dev-python/urllib3[${PYTHON_USEDEP}]
-	~dev-python/werkzeug-2.0.3[${PYTHON_USEDEP}]
-)"
 
 python_test() {
 	local EPYTEST_DESELECT=(

@@ -19,6 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	Click (>=6.0)
+	requests (>=2.18)
+	websocket-client (>=0.47)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-6.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.18[${PYTHON_USEDEP}]

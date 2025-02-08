@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,25 +14,48 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiooss2 >=0.2.7
+	aliyun-python-sdk-sts ==3.1.1 ; extra == 'dev'
+	aliyun-python-sdk-sts ==3.1.1 ; extra == 'tests'
+	fsspec >=2023.9.2
+	mypy ==0.971 ; extra == 'dev'
+	mypy ==0.971 ; extra == 'tests'
+	oss2 ==2.18.1
+	pylint ==2.15.0 ; extra == 'dev'
+	pylint ==2.15.0 ; extra == 'tests'
+	pylint-pytest ==1.1.2 ; extra == 'dev'
+	pylint-pytest ==1.1.2 ; extra == 'tests'
+	pytest ==7.2.0 ; extra == 'dev'
+	pytest ==7.2.0 ; extra == 'tests'
+	pytest-cov ==3.0.0 ; extra == 'dev'
+	pytest-cov ==3.0.0 ; extra == 'tests'
+	pytest-mock ==3.8.2 ; extra == 'dev'
+	pytest-mock ==3.8.2 ; extra == 'tests'
+	pytest-sugar ==0.9.5 ; extra == 'dev'
+	pytest-sugar ==0.9.5 ; extra == 'tests'
+	requests ==2.31.0 ; extra == 'dev'
+	requests ==2.31.0 ; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiooss2-0.2.7[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2023.9.2[${PYTHON_USEDEP}]
-	=dev-python/oss2-2.18.1[${PYTHON_USEDEP}]
+	~dev-python/oss2-2.18.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/aliyun-python-sdk-sts-3.1.1[${PYTHON_USEDEP}]
-		=dev-python/mypy-0.971[${PYTHON_USEDEP}]
-		=dev-python/pylint-2.15.0[${PYTHON_USEDEP}]
-		=dev-python/pylint-pytest-1.1.2[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
-		=dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
-		=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
+		~dev-python/aliyun-python-sdk-sts-3.1.1[${PYTHON_USEDEP}]
+		~dev-python/mypy-0.971[${PYTHON_USEDEP}]
+		~dev-python/pylint-2.15.0[${PYTHON_USEDEP}]
+		~dev-python/pylint-pytest-1.1.2[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
+		~dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
+		~dev-python/requests-2.31.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

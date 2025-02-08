@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	colorama>=0.4.6
+	dunamai>=1.7.0
+	eval-type-backport<0.3.0,>=0.1.3; python_version < "3.10"
+	funcy>=1.17
+	jinja2-ansible-filters>=1.3.1
+	jinja2>=3.1.4
+	packaging>=23.0
+	pathspec>=0.9.0
+	plumbum>=1.6.9
+	pydantic>=2.4.2
+	pygments>=2.7.1
+	pyyaml>=5.3.1
+	questionary>=1.8.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
 	>=dev-python/dunamai-1.7.0[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/opower-0.8.6[${PYTHON_USEDEP}]
+	~dev-python/opower-0.8.6[${PYTHON_USEDEP}]
 "

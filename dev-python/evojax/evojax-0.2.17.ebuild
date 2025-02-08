@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow
+	brax; extra == "extra"
+	cma
+	evosax; extra == "extra"
+	flax
+	jax>=0.2.17
+	jaxlib>=0.1.65
+	matplotlib
+	pandas; extra == "extra"
+	procgen; extra == "extra"
+	pyyaml
+	torchvision; extra == "extra"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	extra? ( dev-python/brax[${PYTHON_USEDEP}] )
 	dev-python/cma[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-gc100-1.0.3_alpha0[${PYTHON_USEDEP}]
+	~dev-python/python-gc100-1.0.3_alpha0[${PYTHON_USEDEP}]
 "

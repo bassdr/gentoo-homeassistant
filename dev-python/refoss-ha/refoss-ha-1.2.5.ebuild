@@ -23,4 +23,3 @@ RESTRICT="!test? ( test )"
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" "${DISTDIR}/${P/-/_}-py3-none-any.whl"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild

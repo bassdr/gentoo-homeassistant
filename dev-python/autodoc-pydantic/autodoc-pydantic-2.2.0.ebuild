@@ -12,39 +12,57 @@ SRC_URI="https://github.com/mansenfranzen/autodoc_pydantic/archive/refs/tags/v${
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/autodoc_pydantic/"
+  https://pypi.org/project/autodoc-pydantic/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx>=4.0
+	coverage<8,>=7; extra == "test"
+	defusedxml>=0.7.1; extra == "test"
+	erdantic<2.0; extra == "erdantic"
+	importlib-metadata>1; python_version <= "3.8"
+	mypy<2.0,>=1.9; extra == "type-checking"
+	myst-parser<4.0.0,>=3.0.0; extra == "docs"
+	pip-audit<3.0.0,>=2.7.2; extra == "security"
+	pydantic-settings<3.0.0,>=2.0
+	pydantic<3.0.0,>=2.0
+	pytest-sugar<2.0.0,>=1.0.0; extra == "test"
+	pytest<9.0.0,>=8.0.0; extra == "test"
+	ruff<0.5.0,>=0.4.0; extra == "linting"
+	sphinx-copybutton<0.6.0,>=0.5.0; extra == "docs"
+	sphinx-rtd-theme<3.0.0,>=2.0.0; extra == "docs"
+	sphinx-tabs<4,>=3; extra == "docs"
+	sphinxcontrib-mermaid<0.10.0,>=0.9.0; extra == "docs"
+	types-docutils<0.21,>=0.20; extra == "type-checking"
+	typing-extensions<5.0,>=4.11; python_version <= "3.9" and extra == "type-checking"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	erdantic? ( <dev-python/erdantic-2.0[${PYTHON_USEDEP}] )
-	>dev-python/importlib-metadata-1[${PYTHON_USEDEP}]
-	type-checking? ( <dev-python/mypy-2.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}] )
-	security? ( <dev-python/pip-audit-3.0.0[${PYTHON_USEDEP}] )
-	<dev-python/pydantic-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/pydantic-settings-3.0.0[${PYTHON_USEDEP}]
-	linting? ( <dev-python/ruff-0.5.0[${PYTHON_USEDEP}] )
+	type-checking? ( >=dev-python/mypy-1.9[${PYTHON_USEDEP}] <dev-python/mypy-2.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-3.0.0[${PYTHON_USEDEP}] <dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}] )
+	security? ( >=dev-python/pip-audit-2.7.2[${PYTHON_USEDEP}] <dev-python/pip-audit-3.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/pydantic-2.0[${PYTHON_USEDEP}] <dev-python/pydantic-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-settings-2.0[${PYTHON_USEDEP}] <dev-python/pydantic-settings-3.0.0[${PYTHON_USEDEP}]
+	linting? ( >=dev-python/ruff-0.4.0[${PYTHON_USEDEP}] <dev-python/ruff-0.5.0[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-4.0[${PYTHON_USEDEP}]
-	docs? ( <dev-python/sphinx-copybutton-0.6.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-rtd-theme-3.0.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-tabs-4[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinxcontrib-mermaid-0.10.0[${PYTHON_USEDEP}] )
-	type-checking? ( <dev-python/types-docutils-0.21[${PYTHON_USEDEP}] )
-	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/sphinx-copybutton-0.5.0[${PYTHON_USEDEP}] <dev-python/sphinx-copybutton-0.6.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-3.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-tabs-3[${PYTHON_USEDEP}] <dev-python/sphinx-tabs-4[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinxcontrib-mermaid-0.9.0[${PYTHON_USEDEP}] <dev-python/sphinxcontrib-mermaid-0.10.0[${PYTHON_USEDEP}] )
+	type-checking? ( >=dev-python/types-docutils-0.20[${PYTHON_USEDEP}] <dev-python/types-docutils-0.21[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
-		<dev-python/coverage-8[${PYTHON_USEDEP}]
+		>=dev-python/coverage-7[${PYTHON_USEDEP}] <dev-python/coverage-8[${PYTHON_USEDEP}]
 		>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
-		<dev-python/pytest-9.0.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-sugar-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.0.0[${PYTHON_USEDEP}] <dev-python/pytest-9.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-sugar-1.0.0[${PYTHON_USEDEP}] <dev-python/pytest-sugar-2.0.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

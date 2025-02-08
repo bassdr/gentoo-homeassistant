@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/requests_kerberos/"
+  https://pypi.org/project/requests-kerberos/"
 SRC_URI="
 	https://github.com/requests/${PN}/archive/v${PV}.tar.gz
 		-> ${P}.gh.tar.gz
@@ -20,7 +20,11 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	cryptography>=1.3
+	pyspnego[kerberos]
+	requests>=1.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-1.3[${PYTHON_USEDEP}]
 	dev-python/pyspnego[kerberos,${PYTHON_USEDEP}]

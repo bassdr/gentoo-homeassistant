@@ -24,7 +24,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pre-commit; extra == "dev"
+	pytest-asyncio; extra == "dev"
+	pytest>=6.2.5
+	tox; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
 "

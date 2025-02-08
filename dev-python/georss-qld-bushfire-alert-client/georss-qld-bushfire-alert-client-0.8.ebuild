@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	georss-client>=0.17
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/georss-client-0.17[${PYTHON_USEDEP}]
 "

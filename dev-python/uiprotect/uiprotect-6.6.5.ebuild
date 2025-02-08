@@ -24,6 +24,24 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiofiles>=24
+	aiohttp>=3.10.0
+	aioshutil>=1.3
+	async-timeout>=3.0.1
+	convertertools>=0.5.0
+	dateparser>=1.1.0
+	orjson>=3.9.15
+	packaging>=23
+	pillow>=10
+	platformdirs>=4
+	propcache>=0.0.0
+	pydantic>=1.10.17
+	pyjwt>=2.6
+	rich>=10
+	typer>=0.12.3
+	yarl>=1.9
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-24[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]

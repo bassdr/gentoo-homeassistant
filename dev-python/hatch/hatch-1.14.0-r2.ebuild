@@ -16,7 +16,24 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	click>=8.0.6
+	hatchling>=1.26.3
+	httpx>=0.22.0
+	hyperlink>=21.0.0
+	keyring>=23.5.0
+	packaging>=23.2
+	pexpect~=4.8
+	platformdirs>=2.5.0
+	rich>=11.2.0
+	shellingham>=1.4.0
+	tomli-w>=1.0
+	tomlkit>=0.11.1
+	userpath~=1.7
+	uv>=0.1.35
+	virtualenv>=20.26.6
+	zstandard<1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0.6[${PYTHON_USEDEP}]
 	>=dev-python/hatchling-1.26.3[${PYTHON_USEDEP}]

@@ -26,7 +26,9 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 
-IUSE=""
+REQUIRES_DIST="
+	Flask>=0.9
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flask-0.9[${PYTHON_USEDEP}]
 "

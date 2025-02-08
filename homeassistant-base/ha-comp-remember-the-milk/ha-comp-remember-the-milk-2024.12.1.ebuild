@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/httplib2-0.20.4[${PYTHON_USEDEP}]
-	=dev-python/rtmapi-0.7.2[${PYTHON_USEDEP}]
+	~dev-python/httplib2-0.20.4[${PYTHON_USEDEP}]
+	~dev-python/rtmapi-0.7.2[${PYTHON_USEDEP}]
 "

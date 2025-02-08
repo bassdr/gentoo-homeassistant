@@ -16,6 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bokeh>=3.6.0
+	cartopy>=0.18.0
+	datashader; extra == "recommended"
+	geopandas; extra == "recommended"
+	holoviews>=1.16.0
+	matplotlib>2.2; extra == "recommended"
+	netcdf4; extra == "recommended"
+	numpy
+	packaging
+	pandas; extra == "recommended"
+	panel>=1.0.0
+	param<3.0,>=1.9.3
+	pooch; extra == "recommended"
+	psutil; extra == "tests"
+	pyct; extra == "recommended"
+	pyproj
+	pytest-xdist; extra == "tests"
+	pytest; extra == "tests"
+	scipy; extra == "recommended"
+	shapely
+	shapely; extra == "recommended"
+	xarray; extra == "recommended"
+	xyzservices
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bokeh-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/cartopy-0.18.0[${PYTHON_USEDEP}]
@@ -28,7 +53,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	recommended? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	>=dev-python/panel-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/param-3.0[${PYTHON_USEDEP}]
+	>=dev-python/param-1.9.3[${PYTHON_USEDEP}] <dev-python/param-3.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/pooch[${PYTHON_USEDEP}] )
 	recommended? ( dev-python/pyct[${PYTHON_USEDEP}] )
 	dev-python/pyproj[${PYTHON_USEDEP}]

@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Python API wrapper to retrieve warnings from the german NINA app."
 HOMEPAGE="
-  https://pypi.org/project/PyNINA/
+  https://pypi.org/project/pynina/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.11.6
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.11.6[${PYTHON_USEDEP}]
 "

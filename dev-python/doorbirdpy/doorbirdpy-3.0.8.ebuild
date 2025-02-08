@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python wrapper for the DoorBird LAN API"
 HOMEPAGE="
-  https://pypi.org/project/DoorBirdPy/
+  https://pypi.org/project/doorbirdpy/
 "
 
 LICENSE="MIT"
@@ -18,6 +18,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "

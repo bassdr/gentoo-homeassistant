@@ -20,6 +20,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	coverage (==6.5.0) ; extra == 'dev'
+	coveralls (==3.3.1) ; extra == 'dev'
+	mock (==4.0.3) ; extra == 'dev'
+	pytest (==7.2.0) ; extra == 'dev'
+	pytest-cov (==4.0.0) ; extra == 'dev'
+	requests (>=2.28.1)
+	responses (==0.22.0) ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]
 "
@@ -39,12 +48,12 @@ python_test() {
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/coverage-6.5.0[${PYTHON_USEDEP}]
-		=dev-python/coveralls-3.3.1[${PYTHON_USEDEP}]
-		=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
-		=dev-python/responses-0.22.0[${PYTHON_USEDEP}]
+		~dev-python/coverage-6.5.0[${PYTHON_USEDEP}]
+		~dev-python/coveralls-3.3.1[${PYTHON_USEDEP}]
+		~dev-python/mock-4.0.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
+		~dev-python/responses-0.22.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

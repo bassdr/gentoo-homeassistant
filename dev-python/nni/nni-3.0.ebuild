@@ -17,6 +17,46 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ConfigSpace >=0.4.17 ; extra == 'all'
+	ConfigSpace >=0.4.17 ; extra == 'bohb'
+	ConfigSpaceNNI >=0.4.7.3 ; extra == 'all'
+	ConfigSpaceNNI >=0.4.7.3 ; extra == 'smac'
+	PythonWebHDFS
+	astor
+	cloudpickle
+	colorama
+	filelock <3.12
+	gym ; extra == 'all'
+	gym ; extra == 'ppotuner'
+	hyperopt ==0.1.2 ; extra == 'all'
+	hyperopt ==0.1.2 ; extra == 'anneal'
+	json-tricks >=3.15.5
+	numpy ; python_version >= "3.8"
+	numpy <1.22 ; python_version < "3.8"
+	nvidia-ml-py
+	packaging
+	pandas
+	prettytable
+	psutil
+	pybnn ; extra == 'all'
+	pybnn ; extra == 'dngo'
+	pyyaml >=5.4
+	requests
+	responses
+	schema
+	scikit-learn >=0.24.1
+	scipy ; python_version >= "3.8"
+	scipy <1.8 ; python_version < "3.8"
+	smac4nni ; extra == 'all'
+	smac4nni ; extra == 'smac'
+	statsmodels >=0.12.0 ; extra == 'all'
+	statsmodels >=0.12.0 ; extra == 'bohb'
+	tqdm
+	typeguard <4.1.3,>=3.0.0
+	typing-extensions >=4.7.0
+	websockets >=10.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/astor[${PYTHON_USEDEP}]
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
@@ -28,10 +68,10 @@ GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/filelock-3.12[${PYTHON_USEDEP}]
 	all? ( dev-python/gym[${PYTHON_USEDEP}] )
 	ppotuner? ( dev-python/gym[${PYTHON_USEDEP}] )
-	all? ( =dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
-	anneal? ( =dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
+	anneal? ( ~dev-python/hyperopt-0.1.2[${PYTHON_USEDEP}] )
 	>=dev-python/json-tricks-3.15.5[${PYTHON_USEDEP}]
-	<dev-python/numpy-1.22[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/nvidia-ml-py[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
@@ -45,20 +85,16 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/responses[${PYTHON_USEDEP}]
 	dev-python/schema[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-0.24.1[${PYTHON_USEDEP}]
-	<dev-python/scipy-1.8[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
 	all? ( dev-python/smac4nni[${PYTHON_USEDEP}] )
 	smac? ( dev-python/smac4nni[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/statsmodels-0.12.0[${PYTHON_USEDEP}] )
 	bohb? ( >=dev-python/statsmodels-0.12.0[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
-	<dev-python/typeguard-4.1.3[${PYTHON_USEDEP}]
+	>=dev-python/typeguard-3.0.0[${PYTHON_USEDEP}] <dev-python/typeguard-4.1.3[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-10.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

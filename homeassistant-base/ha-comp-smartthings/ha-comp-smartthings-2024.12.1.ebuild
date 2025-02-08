@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pysmartapp-0.3.5[${PYTHON_USEDEP}]
-	=dev-python/pysmartthings-0.7.8[${PYTHON_USEDEP}]
+	~dev-python/pysmartapp-0.3.5[${PYTHON_USEDEP}]
+	~dev-python/pysmartthings-0.7.8[${PYTHON_USEDEP}]
 "

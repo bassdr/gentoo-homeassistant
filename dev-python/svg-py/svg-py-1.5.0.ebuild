@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="SVG drawing library"
 HOMEPAGE="
-  https://pypi.org/project/svg.py/
+  https://pypi.org/project/svg-py/
 "
 
 LICENSE="MIT"
@@ -27,5 +27,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

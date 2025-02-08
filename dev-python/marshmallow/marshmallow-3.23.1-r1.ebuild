@@ -28,13 +28,26 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	alabaster==1.0.0; extra == "docs"
+	autodocsumm==0.2.14; extra == "docs"
+	marshmallow[tests]; extra == "dev"
+	packaging>=17.0
+	pre-commit<5.0,>=3.5; extra == "dev"
+	pytest; extra == "tests"
+	simplejson; extra == "tests"
+	sphinx-issues==5.0.0; extra == "docs"
+	sphinx-version-warning==1.1.2; extra == "docs"
+	sphinx==8.1.3; extra == "docs"
+	tox; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( =dev-python/alabaster-1.0.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/autodocsumm-0.2.14[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/alabaster-1.0.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/autodocsumm-0.2.14[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
-	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-version-warning-1.1.2[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-version-warning-1.1.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
@@ -54,7 +67,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/simplejson[${PYTHON_USEDEP}]
 		dev-python/tox[${PYTHON_USEDEP}]
-		<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.5[${PYTHON_USEDEP}] <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

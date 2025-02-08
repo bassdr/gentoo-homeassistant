@@ -16,6 +16,47 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bumpversion ; extra == 'dev'
+	bumpversion ; extra == 'test'
+	codecov ; extra == 'dev'
+	codecov ; extra == 'test'
+	coverage ; extra == 'dev'
+	coverage ; extra == 'test'
+	flake8 ; extra == 'dev'
+	flake8 ; extra == 'test'
+	ipython
+	ipython ; extra == 'dev'
+	ipython ; extra == 'test'
+	jsonschema
+	mock ; extra == 'dev'
+	mock ; extra == 'test'
+	pandas
+	papermill
+	papermill[all] ; extra == 'all'
+	papermill[azure] ; extra == 'azure'
+	papermill[dev] ; extra == 'dev'
+	papermill[dev] ; extra == 'test'
+	papermill[gcs] ; extra == 'gcs'
+	papermill[s3] ; extra == 's3'
+	pyarrow
+	pytest (>=4.1) ; extra == 'dev'
+	pytest (>=4.1) ; extra == 'test'
+	pytest-cov (>=2.6.1) ; extra == 'dev'
+	pytest-cov (>=2.6.1) ; extra == 'test'
+	pytest-env (>=0.6.2) ; extra == 'dev'
+	pytest-env (>=0.6.2) ; extra == 'test'
+	pytest-mock (>=1.10) ; extra == 'dev'
+	pytest-mock (>=1.10) ; extra == 'test'
+	setuptools (>=38.6.0) ; extra == 'dev'
+	setuptools (>=38.6.0) ; extra == 'test'
+	tox ; extra == 'dev'
+	tox ; extra == 'test'
+	twine (>=1.11.0) ; extra == 'dev'
+	twine (>=1.11.0) ; extra == 'test'
+	wheel (>=0.31.0) ; extra == 'dev'
+	wheel (>=0.31.0) ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipython[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]

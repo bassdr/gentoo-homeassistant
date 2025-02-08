@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioautomower-2024.10.3[${PYTHON_USEDEP}]
+	~dev-python/aioautomower-2024.10.3[${PYTHON_USEDEP}]
 "

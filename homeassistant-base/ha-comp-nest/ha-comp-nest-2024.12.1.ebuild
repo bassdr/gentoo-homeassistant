@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/google-nest-sdm-6.1.5[${PYTHON_USEDEP}]
+	~dev-python/google-nest-sdm-6.1.5[${PYTHON_USEDEP}]
 "

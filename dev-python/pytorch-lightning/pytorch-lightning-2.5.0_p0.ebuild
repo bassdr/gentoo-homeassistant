@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all examples extra"
+GENERATED_IUSE="all deepspeed examples extra strategies"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -18,9 +18,97 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML>=5.4
+	bitsandbytes>=0.42.0; sys_platform == "darwin" and extra == "all"
+	bitsandbytes>=0.42.0; sys_platform == "darwin" and extra == "dev"
+	bitsandbytes>=0.42.0; sys_platform == "darwin" and extra == "extra"
+	bitsandbytes>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "all"
+	bitsandbytes>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "dev"
+	bitsandbytes>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "extra"
+	cloudpickle>=1.3; extra == "dev"
+	cloudpickle>=1.3; extra == "test"
+	coverage==7.3.1; extra == "dev"
+	coverage==7.3.1; extra == "test"
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "all"
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "deepspeed"
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "dev"
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "strategies"
+	fastapi; extra == "dev"
+	fastapi; extra == "test"
+	fsspec[http]>=2022.5.0
+	hydra-core>=1.2.0; extra == "all"
+	hydra-core>=1.2.0; extra == "dev"
+	hydra-core>=1.2.0; extra == "extra"
+	ipython[all]<8.15.0; extra == "all"
+	ipython[all]<8.15.0; extra == "dev"
+	ipython[all]<8.15.0; extra == "examples"
+	jsonargparse[signatures]>=4.27.7; extra == "all"
+	jsonargparse[signatures]>=4.27.7; extra == "dev"
+	jsonargparse[signatures]>=4.27.7; extra == "extra"
+	lightning-utilities>=0.10.0
+	lightning-utilities>=0.8.0; extra == "all"
+	lightning-utilities>=0.8.0; extra == "dev"
+	lightning-utilities>=0.8.0; extra == "examples"
+	matplotlib>3.1; extra == "all"
+	matplotlib>3.1; extra == "dev"
+	matplotlib>3.1; extra == "extra"
+	numpy>=1.17.2; extra == "dev"
+	numpy>=1.17.2; extra == "test"
+	omegaconf>=2.2.3; extra == "all"
+	omegaconf>=2.2.3; extra == "dev"
+	omegaconf>=2.2.3; extra == "extra"
+	onnx>=1.12.0; extra == "dev"
+	onnx>=1.12.0; extra == "test"
+	onnxruntime>=1.12.0; extra == "dev"
+	onnxruntime>=1.12.0; extra == "test"
+	packaging>=20.0
+	pandas>1.0; extra == "dev"
+	pandas>1.0; extra == "test"
+	psutil<5.9.6; extra == "dev"
+	psutil<5.9.6; extra == "test"
+	pytest-cov==4.1.0; extra == "dev"
+	pytest-cov==4.1.0; extra == "test"
+	pytest-random-order==1.1.0; extra == "dev"
+	pytest-random-order==1.1.0; extra == "test"
+	pytest-rerunfailures==12.0; extra == "dev"
+	pytest-rerunfailures==12.0; extra == "test"
+	pytest-timeout==2.1.0; extra == "dev"
+	pytest-timeout==2.1.0; extra == "test"
+	pytest==7.4.0; extra == "dev"
+	pytest==7.4.0; extra == "test"
+	requests<2.32.0; extra == "all"
+	requests<2.32.0; extra == "dev"
+	requests<2.32.0; extra == "examples"
+	rich>=12.3.0; extra == "all"
+	rich>=12.3.0; extra == "dev"
+	rich>=12.3.0; extra == "extra"
+	scikit-learn>0.22.1; extra == "dev"
+	scikit-learn>0.22.1; extra == "test"
+	tensorboard>=2.9.1; extra == "dev"
+	tensorboard>=2.9.1; extra == "test"
+	tensorboardX>=2.2; extra == "all"
+	tensorboardX>=2.2; extra == "dev"
+	tensorboardX>=2.2; extra == "extra"
+	torch>=2.1.0
+	torchmetrics>=0.10.0; extra == "all"
+	torchmetrics>=0.10.0; extra == "dev"
+	torchmetrics>=0.10.0; extra == "examples"
+	torchmetrics>=0.7.0
+	torchvision>=0.16.0; extra == "all"
+	torchvision>=0.16.0; extra == "dev"
+	torchvision>=0.16.0; extra == "examples"
+	tqdm>=4.57.0
+	typing-extensions>=4.4.0
+	uvicorn; extra == "dev"
+	uvicorn; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}]
-	<=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
+	all? ( >=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}] )
+	extra? ( >=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/deepspeed-0.8.2[${PYTHON_USEDEP}] <=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}] )
+	deepspeed? ( >=dev-python/deepspeed-0.8.2[${PYTHON_USEDEP}] <=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}] )
+	strategies? ( >=dev-python/deepspeed-0.8.2[${PYTHON_USEDEP}] <=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}] )
 	>=dev-python/fsspec-2022.5.0[http,${PYTHON_USEDEP}]
 	all? ( >=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}] )
@@ -57,8 +145,10 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
+		>=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}]
 		>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
-		=dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+		~dev-python/coverage-7.3.1[${PYTHON_USEDEP}]
+		>=dev-python/deepspeed-0.8.2[${PYTHON_USEDEP}] <=dev-python/deepspeed-0.9.3[${PYTHON_USEDEP}]
 		dev-python/fastapi[${PYTHON_USEDEP}]
 		>=dev-python/hydra-core-1.2.0[${PYTHON_USEDEP}]
 		<dev-python/ipython-8.15.0[all,${PYTHON_USEDEP}]
@@ -71,11 +161,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
 		>dev-python/pandas-1.0[${PYTHON_USEDEP}]
 		<dev-python/psutil-5.9.6[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.4.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-random-order-1.1.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-rerunfailures-12.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
 		<dev-python/requests-2.32.0[${PYTHON_USEDEP}]
 		>=dev-python/rich-12.3.0[${PYTHON_USEDEP}]
 		>dev-python/scikit-learn-0.22.1[${PYTHON_USEDEP}]

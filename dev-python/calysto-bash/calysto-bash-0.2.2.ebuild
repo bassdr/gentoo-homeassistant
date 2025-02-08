@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ipykernel
+	jupyter-client (>=4.3.0)
+	metakernel (>=0.20.7)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipykernel[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-4.3.0[${PYTHON_USEDEP}]

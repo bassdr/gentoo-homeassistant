@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/prometheus-client-0.21.0[${PYTHON_USEDEP}]
+	~dev-python/prometheus-client-0.21.0[${PYTHON_USEDEP}]
 "

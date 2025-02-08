@@ -18,29 +18,47 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8 (==6.0.0) ; extra == 'dev'
+	flake8-commas (==2.1.0) ; extra == 'dev'
+	flake8-docstrings (==1.7.0) ; extra == 'dev'
+	flake8-isort (==6.0.0) ; extra == 'dev'
+	flake8-quotes (==3.3.2) ; extra == 'dev'
+	grpcio (<2,>1.51)
+	grpcio-tools (==1.51.1) ; extra == 'dev'
+	pep8-naming (==0.13.3) ; extra == 'dev'
+	protobuf (<5,>4)
+	pytest (==7.2.1) ; extra == 'test'
+	pytest-asyncio (==0.20.3) ; extra == 'test'
+	pytest-cov (==4.0.0) ; extra == 'test'
+	pytest-mock (==3.10.0) ; extra == 'test'
+	sphinx (==6.1.3) ; extra == 'doc'
+	sphinx-rtd-theme (==1.2.0) ; extra == 'doc'
+	twine (==4.0.2) ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/grpcio-2[${PYTHON_USEDEP}]
-	<dev-python/protobuf-5[${PYTHON_USEDEP}]
-	doc? ( =dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
-	doc? ( =dev-python/sphinx-rtd-theme-1.2.0[${PYTHON_USEDEP}] )
+	>dev-python/grpcio-1.51[${PYTHON_USEDEP}] <dev-python/grpcio-2[${PYTHON_USEDEP}]
+	>dev-python/protobuf-4[${PYTHON_USEDEP}] <dev-python/protobuf-5[${PYTHON_USEDEP}]
+	doc? ( ~dev-python/sphinx-6.1.3[${PYTHON_USEDEP}] )
+	doc? ( ~dev-python/sphinx-rtd-theme-1.2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
-		=dev-python/flake8-commas-2.1.0[${PYTHON_USEDEP}]
-		=dev-python/flake8-docstrings-1.7.0[${PYTHON_USEDEP}]
-		=dev-python/flake8-isort-6.0.0[${PYTHON_USEDEP}]
-		=dev-python/flake8-quotes-3.3.2[${PYTHON_USEDEP}]
-		=dev-python/grpcio-tools-1.51.1[${PYTHON_USEDEP}]
-		=dev-python/pep8-naming-0.13.3[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.2.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-asyncio-0.20.3[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
-		=dev-python/twine-4.0.2[${PYTHON_USEDEP}]
+		~dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-commas-2.1.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-docstrings-1.7.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-isort-6.0.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-quotes-3.3.2[${PYTHON_USEDEP}]
+		~dev-python/grpcio-tools-1.51.1[${PYTHON_USEDEP}]
+		~dev-python/pep8-naming-0.13.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.2.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-asyncio-0.20.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+		~dev-python/twine-4.0.2[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

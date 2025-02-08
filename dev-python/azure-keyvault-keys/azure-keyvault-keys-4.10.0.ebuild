@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-core>=1.31.0
+	cryptography>=2.1.4
+	isodate>=0.6.1
+	typing-extensions>=4.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-core-1.31.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.1.4[${PYTHON_USEDEP}]

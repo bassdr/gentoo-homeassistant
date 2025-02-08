@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.hookable/"
+  https://pypi.org/project/zope-hookable/"
 
 LICENSE="ZPL"
 SLOT="0"

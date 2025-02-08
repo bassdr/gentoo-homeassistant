@@ -4,23 +4,17 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 PYPI_PN="PyQt5-Qt5"
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/PyQt5-Qt5/"
+  https://pypi.org/project/pyqt5-qt5/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

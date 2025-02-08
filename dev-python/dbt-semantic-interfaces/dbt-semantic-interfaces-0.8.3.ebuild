@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,16 +14,27 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click<9.0,>=7.0
+	importlib-metadata<7,>=6.0
+	jinja2<4,>=3.1.3
+	jsonschema<5,>=4.0
+	more-itertools<11.0,>=8.0
+	pydantic<3,>=1.10
+	python-dateutil<3,>=2.0
+	pyyaml<7,>=6.0
+	typing-extensions<5,>=4.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/click-9.0[${PYTHON_USEDEP}]
-	<dev-python/importlib-metadata-7[${PYTHON_USEDEP}]
-	<dev-python/jinja2-4[${PYTHON_USEDEP}]
-	<dev-python/jsonschema-5[${PYTHON_USEDEP}]
-	<dev-python/more-itertools-11.0[${PYTHON_USEDEP}]
-	<dev-python/pydantic-3[${PYTHON_USEDEP}]
-	<dev-python/python-dateutil-3[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
+	>=dev-python/click-7.0[${PYTHON_USEDEP}] <dev-python/click-9.0[${PYTHON_USEDEP}]
+	>=dev-python/importlib-metadata-6.0[${PYTHON_USEDEP}] <dev-python/importlib-metadata-7[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.1.3[${PYTHON_USEDEP}] <dev-python/jinja2-4[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-4.0[${PYTHON_USEDEP}] <dev-python/jsonschema-5[${PYTHON_USEDEP}]
+	>=dev-python/more-itertools-8.0[${PYTHON_USEDEP}] <dev-python/more-itertools-11.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.10[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.0[${PYTHON_USEDEP}] <dev-python/python-dateutil-3[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}] <dev-python/pyyaml-7[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.4[${PYTHON_USEDEP}] <dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

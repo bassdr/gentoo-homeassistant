@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="docs/index.txt"
 
+REQUIRES_DIST="
+	google-auth (>=1.12.0)
+	google-auth-oauthlib (>=0.4.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/google-auth-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.4.1[${PYTHON_USEDEP}]

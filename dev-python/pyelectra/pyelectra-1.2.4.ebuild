@@ -8,7 +8,7 @@ PYPI_PN="pyElectra"
 DISTUTILS_USE_PEP517=setuptools
 DESCRIPTION="Electra Smart Python Integration."
 HOMEPAGE="
-  https://pypi.org/project/pyElectra/
+  https://pypi.org/project/pyelectra/
   homepage, https://pypi.org/project/pyelectra/
   repository, https://github.com/jafar-atili/pyelectra/
 "
@@ -22,13 +22,12 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
+REQUIRES_DIST="
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 dev-python/aiohttp[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

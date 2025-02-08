@@ -21,6 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	asynctest>=0.13.0; extra == "testing"
+	pytest-asyncio>=0.19.0; extra == "testing"
+	pytest>=7.1.2; extra == "testing"
+	zigpy>=0.70.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/zigpy-0.70.0[${PYTHON_USEDEP}]
 "

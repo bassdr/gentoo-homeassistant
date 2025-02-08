@@ -25,6 +25,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx>=5.0.0; extra == "docs"
+	aiohttp>=3.9.1
+	myst-parser>=0.16.0; extra == "docs"
+	sphinx-rtd-theme>=1.0.0; extra == "docs"
+	xmltodict>=0.12.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/myst-parser-0.16.0[${PYTHON_USEDEP}] )

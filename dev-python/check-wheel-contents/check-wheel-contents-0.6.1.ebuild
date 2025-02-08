@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=18.1
+	backports-cached-property; python_version < "3.8"
+	click>=7.0
+	packaging
+	pydantic~=2.0
+	tomli<3.0,>=1.2; python_version < "3.11"
+	wheel-filename~=1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]
-	dev-python/backports-cached-property[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.0[${PYTHON_USEDEP}] =dev-python/pydantic-2*[${PYTHON_USEDEP}]

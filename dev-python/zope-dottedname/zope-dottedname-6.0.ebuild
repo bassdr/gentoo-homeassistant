@@ -12,12 +12,16 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.dottedname/"
+  https://pypi.org/project/zope-dottedname/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	setuptools
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

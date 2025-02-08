@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	etils[epath]>=1.0.0
+	gviz_api>=1.9.0
+	protobuf<5.0.0dev,>=3.19.6
+	setuptools>=41.0.0
+	six>=1.10.0
+	werkzeug>=0.11.15
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/etils-1.0.0[epath,${PYTHON_USEDEP}]
 	>=dev-python/gviz-api-1.9.0[${PYTHON_USEDEP}]
-	<dev-python/protobuf-5.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.19.6[${PYTHON_USEDEP}] <dev-python/protobuf-5.0.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-41.0.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
 	>=dev-python/werkzeug-0.11.15[${PYTHON_USEDEP}]

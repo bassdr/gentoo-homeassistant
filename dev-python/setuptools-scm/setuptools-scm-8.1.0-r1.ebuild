@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="the blessed package to manage your versions by scm tags"
 HOMEPAGE="
-  https://pypi.org/project/setuptools_scm/
+  https://pypi.org/project/setuptools-scm/
   documentation, https://setuptools-scm.readthedocs.io/
   repository, https://github.com/pypa/setuptools_scm/
 "
@@ -23,6 +23,24 @@ KEYWORDS="amd64 arm64"
 # there's an optional dep on rich for cute logs
 GENERATED_IUSE="docs rich"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	build; extra == "test"
+	entangled-cli~=2.0; extra == "docs"
+	mkdocs-entangled-plugin; extra == "docs"
+	mkdocs-material; extra == "docs"
+	mkdocs; extra == "docs"
+	mkdocstrings[python]; extra == "docs"
+	packaging>=20
+	pygments; extra == "docs"
+	pytest; extra == "test"
+	rich; extra == "rich"
+	rich; extra == "test"
+	setuptools
+	tomli>=1; python_version < "3.11"
+	typing-extensions; python_version < "3.10"
+	typing-extensions; python_version < "3.11" and extra == "test"
+	wheel; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/entangled-cli-2.0[${PYTHON_USEDEP}] =dev-python/entangled-cli-2*[${PYTHON_USEDEP}] )
 	docs? ( dev-python/mkdocs[${PYTHON_USEDEP}] )

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.error"
@@ -11,12 +10,21 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.error/"
+  https://pypi.org/project/zope-error/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	persistent
+	setuptools
+	zope.exceptions
+	zope.interface
+	zope.location
+	zope.testing (>=3.8) ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/persistent[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

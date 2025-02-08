@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,34 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Faker; extra == "test"
+	PyYAML>=5.1; extra == "test"
+	brotli; extra == "test"
+	dnslib; extra == "test"
+	dpkt; extra == "test"
+	fecfile; extra == "test"
+	h5py; extra == "test"
+	importlib-metadata>=3.6
+	importlib-resources; python_version < "3.9"
+	lxml; extra == "test"
+	msgpack; extra == "test"
+	odfpy; extra == "test"
+	openpyxl; extra == "test"
+	pandas>=1.5.3; extra == "test"
+	pyarrow; extra == "test"
+	pyconll; extra == "test"
+	pypng; extra == "test"
+	pytest; extra == "test"
+	python-dateutil
+	tabulate; extra == "test"
+	tomli; extra == "test"
+	wcwidth; extra == "test"
+	windows-curses!=2.3.1; platform_system == "Windows"
+	xport>=3.0; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

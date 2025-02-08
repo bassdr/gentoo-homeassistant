@@ -22,12 +22,25 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code_style live-dev themes"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	docutils
+	importlib-resources (~=3.0.0) ; python_version < "3.7"
+	myst-parser (~=0.12.9) ; extra == 'themes'
+	pre-commit (~=2.7.0) ; extra == 'code_style'
+	pydata-sphinx-theme (~=0.4.0) ; extra == 'themes'
+	pytest (~=6.0.1) ; extra == 'testing'
+	pytest-regressions (~=2.0.1) ; extra == 'testing'
+	sphinx (<5,>=2)
+	sphinx-autobuild ; extra == 'live-dev'
+	sphinx-book-theme (~=0.0.36) ; extra == 'themes'
+	sphinx-rtd-theme ; extra == 'themes'
+	web-compile (~=0.2.0) ; extra == 'live-dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
-	>=dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}] =dev-python/importlib-resources-3.0*[${PYTHON_USEDEP}]
 	themes? ( >=dev-python/myst-parser-0.12.9[${PYTHON_USEDEP}] =dev-python/myst-parser-0.12*[${PYTHON_USEDEP}] )
 	themes? ( >=dev-python/pydata-sphinx-theme-0.4.0[${PYTHON_USEDEP}] =dev-python/pydata-sphinx-theme-0.4*[${PYTHON_USEDEP}] )
-	<dev-python/sphinx-5[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-2[${PYTHON_USEDEP}] <dev-python/sphinx-5[${PYTHON_USEDEP}]
 	live-dev? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	themes? ( >=dev-python/sphinx-book-theme-0.0.36[${PYTHON_USEDEP}] =dev-python/sphinx-book-theme-0.0*[${PYTHON_USEDEP}] )
 	themes? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )

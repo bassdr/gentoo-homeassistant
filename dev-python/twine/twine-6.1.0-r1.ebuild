@@ -22,6 +22,19 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="keyring"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	id
+	importlib-metadata>=3.6; python_version < "3.10"
+	keyring>=15.1; extra == "keyring"
+	keyring>=15.1; platform_machine != "ppc64le" and platform_machine != "s390x"
+	packaging>=24.0
+	readme-renderer>=35.0
+	requests-toolbelt!=0.9.0,>=0.8.0
+	requests>=2.20
+	rfc3986>=1.4.0
+	rich>=12.0.0
+	urllib3>=1.26.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/id[${PYTHON_USEDEP}]
 	>=dev-python/keyring-15.1[${PYTHON_USEDEP}]
@@ -29,7 +42,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-24.0[${PYTHON_USEDEP}]
 	>=dev-python/readme-renderer-35.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.20[${PYTHON_USEDEP}]
-	!=dev-python/requests-toolbelt-0.9.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-toolbelt-0.8.0[${PYTHON_USEDEP}] !~dev-python/requests-toolbelt-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/rfc3986-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-12.0.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.0[${PYTHON_USEDEP}]

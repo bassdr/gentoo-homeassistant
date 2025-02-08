@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioasuswrt-1.4.0[${PYTHON_USEDEP}]
-	=dev-python/pyasuswrt-0.1.21[${PYTHON_USEDEP}]
+	~dev-python/aioasuswrt-1.4.0[${PYTHON_USEDEP}]
+	~dev-python/pyasuswrt-0.1.21[${PYTHON_USEDEP}]
 "

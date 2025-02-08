@@ -23,7 +23,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	exceptiongroup ; python_version < "3.11"
+	trio >=0.11
+	wsproto >=0.14
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/trio-0.11[${PYTHON_USEDEP}]
 	>=dev-python/wsproto-0.14[${PYTHON_USEDEP}]

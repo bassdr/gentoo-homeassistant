@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Python module for the Rachio API."
 HOMEPAGE="
-  https://pypi.org/project/RachioPy/
+  https://pypi.org/project/rachiopy/
   Bug Reports, https://github.com/rfverbruggen/rachiopy/issues
 "
 
@@ -21,6 +21,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
+REQUIRES_DIST="
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 "

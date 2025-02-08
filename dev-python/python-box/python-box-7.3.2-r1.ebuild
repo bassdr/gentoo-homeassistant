@@ -25,6 +25,18 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all msgpack pyyaml ruamel-yaml toml tomli yaml"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
+REQUIRES_DIST="
+	PyYAML; extra == "pyyaml"
+	msgpack; extra == "all"
+	msgpack; extra == "msgpack"
+	ruamel.yaml>=0.17; extra == "all"
+	ruamel.yaml>=0.17; extra == "ruamel-yaml"
+	ruamel.yaml>=0.17; extra == "yaml"
+	toml; extra == "all"
+	toml; extra == "toml"
+	tomli-w; extra == "tomli"
+	tomli; python_version < "3.11" and extra == "tomli"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )

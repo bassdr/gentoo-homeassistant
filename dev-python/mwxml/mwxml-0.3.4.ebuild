@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jsonschema>=2.5.1
+	mwcli>=0.0.2
+	mwtypes>=0.4.0
+	para>=0.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jsonschema-2.5.1[${PYTHON_USEDEP}]
 	>=dev-python/mwcli-0.0.2[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py>=0.9.0
+	jax>=0.4.27
+	jaxlib>=0.4.27
+	numpy>=1.24.1
+	setuptools; python_version >= "3.12"
+	toolz>=0.9.0
+	typing_extensions>=4.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/jax-0.4.27[${PYTHON_USEDEP}]
 	>=dev-python/jaxlib-0.4.27[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.24.1[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/toolz-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.2.0[${PYTHON_USEDEP}]
 "

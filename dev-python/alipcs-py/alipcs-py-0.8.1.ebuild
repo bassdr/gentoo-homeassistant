@@ -3,18 +3,38 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/AliPCS-Py/"
+  https://pypi.org/project/alipcs-py/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aget>=0.2
+	chardet>=5.2
+	click>=8.1
+	cryptography>=41.0
+	cython>=3.0
+	ecdsa>=0.18
+	fastapi>=0.104
+	jinja2>=3.1
+	passlib>=1.7
+	peewee>=3.17
+	pillow>=10.1
+	python-dateutil>=2.8
+	qrcode>=7.4
+	requests-toolbelt>=1.0
+	requests>=2.31
+	rich>=13.7
+	toml>=0.10
+	typing-extensions>=4.8
+	uvicorn>=0.24
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aget-0.2[${PYTHON_USEDEP}]
 	>=dev-python/chardet-5.2[${PYTHON_USEDEP}]

@@ -23,13 +23,22 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp~=3.10
+	aiomqtt<3.0,>=2.0.0
+	cachetools<6.0,>=5.0.0
+	defusedxml>=0.7.1
+	numpy<3.0,>=1.23.2
+	pillow<12,>=10
+	svg-py>=1.4.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.10[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]
-	<dev-python/aiomqtt-3.0[${PYTHON_USEDEP}]
-	<dev-python/cachetools-6.0[${PYTHON_USEDEP}]
+	>=dev-python/aiomqtt-2.0.0[${PYTHON_USEDEP}] <dev-python/aiomqtt-3.0[${PYTHON_USEDEP}]
+	>=dev-python/cachetools-5.0.0[${PYTHON_USEDEP}] <dev-python/cachetools-6.0[${PYTHON_USEDEP}]
 	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
-	<dev-python/numpy-3.0[${PYTHON_USEDEP}]
-	<dev-python/pillow-12[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.23.2[${PYTHON_USEDEP}] <dev-python/numpy-3.0[${PYTHON_USEDEP}]
+	>=dev-python/pillow-10[${PYTHON_USEDEP}] <dev-python/pillow-12[${PYTHON_USEDEP}]
 	>=dev-python/svg-py-1.4.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

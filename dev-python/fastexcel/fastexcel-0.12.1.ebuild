@@ -16,6 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pandas>=1.4.4; extra == "pandas"
+	polars>=0.16.14; extra == "polars"
+	pyarrow>=8.0.0
+	typing-extensions>=4.0.0; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	pandas? ( >=dev-python/pandas-1.4.4[${PYTHON_USEDEP}] )
 	polars? ( >=dev-python/polars-0.16.14[${PYTHON_USEDEP}] )

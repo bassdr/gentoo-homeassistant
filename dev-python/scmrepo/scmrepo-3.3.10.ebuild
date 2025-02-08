@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,37 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp-retry>=2.5.0
+	aioresponses<0.8,>=0.7; extra == "tests"
+	asyncssh<3,>=2.13.1
+	dulwich>=0.22.1
+	fsspec[tqdm]>=2024.2.0
+	funcy>=1.14
+	gitpython>3
+	mypy==1.14.1; extra == "dev"
+	paramiko<4,>=3.4.0; extra == "tests"
+	pathspec>=0.9.0
+	proxy.py; extra == "tests"
+	pygit2>=1.14.0
+	pygtrie>=2.3.2
+	pytest-asyncio<1,>=0.23.2; extra == "tests"
+	pytest-cov>=4.1.0; extra == "tests"
+	pytest-docker<4,>=1; extra == "tests"
+	pytest-mock; extra == "tests"
+	pytest-sugar; extra == "tests"
+	pytest-test-utils<0.2,>=0.1.0; extra == "tests"
+	pytest<9,>=7; extra == "tests"
+	scmrepo[tests]; extra == "dev"
+	tqdm
+	types-certifi; extra == "dev"
+	types-mock; extra == "dev"
+	types-paramiko; extra == "dev"
+	types-tqdm; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-retry-2.5.0[${PYTHON_USEDEP}]
-	<dev-python/asyncssh-3[${PYTHON_USEDEP}]
+	>=dev-python/asyncssh-2.13.1[${PYTHON_USEDEP}] <dev-python/asyncssh-3[${PYTHON_USEDEP}]
 	>=dev-python/dulwich-0.22.1[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2024.2.0[tqdm,${PYTHON_USEDEP}]
 	>=dev-python/funcy-1.14[${PYTHON_USEDEP}]
@@ -32,17 +59,17 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/aioresponses-0.8[${PYTHON_USEDEP}]
-		=dev-python/mypy-1.14.1[${PYTHON_USEDEP}]
-		<dev-python/paramiko-4[${PYTHON_USEDEP}]
+		>=dev-python/aioresponses-0.7[${PYTHON_USEDEP}] <dev-python/aioresponses-0.8[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.14.1[${PYTHON_USEDEP}]
+		>=dev-python/paramiko-3.4.0[${PYTHON_USEDEP}] <dev-python/paramiko-4[${PYTHON_USEDEP}]
 		dev-python/proxy-py[${PYTHON_USEDEP}]
-		<dev-python/pytest-9[${PYTHON_USEDEP}]
-		<dev-python/pytest-asyncio-1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.23.2[${PYTHON_USEDEP}] <dev-python/pytest-asyncio-1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-docker-4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-docker-1[${PYTHON_USEDEP}] <dev-python/pytest-docker-4[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/pytest-sugar[${PYTHON_USEDEP}]
-		<dev-python/pytest-test-utils-0.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-test-utils-0.1.0[${PYTHON_USEDEP}] <dev-python/pytest-test-utils-0.2[${PYTHON_USEDEP}]
 		dev-python/scmrepo[tests,${PYTHON_USEDEP}]
 		dev-python/types-certifi[${PYTHON_USEDEP}]
 		dev-python/types-mock[${PYTHON_USEDEP}]

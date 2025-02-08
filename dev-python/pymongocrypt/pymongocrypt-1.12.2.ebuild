@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cffi<2,>=1.12.0
+	cffi<2,>=1.12.0; extra == "test"
+	cryptography>=2; extra == "test"
+	cryptography>=40
+	httpx>=0.25.0
+	packaging>=21.0
+	pymongo[aws]>=4; extra == "test"
+	pytest>=7.0; extra == "test"
+	respx; extra == "test"
+	setuptools; extra == "test"
+	unasync; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/cffi-2[${PYTHON_USEDEP}]
+	>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}] <dev-python/cffi-2[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-40[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.25.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.0[${PYTHON_USEDEP}]
@@ -26,7 +38,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/cffi-2[${PYTHON_USEDEP}]
+		>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}] <dev-python/cffi-2[${PYTHON_USEDEP}]
 		>=dev-python/cryptography-2[${PYTHON_USEDEP}]
 		>=dev-python/pymongo-4[aws,${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]

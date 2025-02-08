@@ -20,7 +20,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest (>=3.6)
+	setuptools
+	tornado (>=4.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-3.6[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

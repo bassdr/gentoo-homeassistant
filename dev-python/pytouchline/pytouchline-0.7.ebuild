@@ -19,6 +19,9 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	httplib2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httplib2[${PYTHON_USEDEP}]
 "

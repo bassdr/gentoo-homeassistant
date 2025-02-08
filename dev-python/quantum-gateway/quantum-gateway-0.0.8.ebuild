@@ -19,6 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	esprima (>4.0)
+	requests (>2.20)
+	urllib3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/esprima-4.0[${PYTHON_USEDEP}]
 	>dev-python/requests-2.20[${PYTHON_USEDEP}]

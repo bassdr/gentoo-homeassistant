@@ -17,30 +17,49 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Cython (<3,>=0.29.22) ; extra == 'all'
+	Cython (<3,>=0.29.22) ; extra == 'setup'
+	autopep8 (==1.5.5) ; extra == 'stylecheck'
+	codecov ; extra == 'jenkins'
+	coverage (<5) ; extra == 'jenkins'
+	coveralls ; extra == 'jenkins'
+	fastrlock (>=0.5)
+	fastrlock (>=0.5) ; extra == 'setup'
+	flake8 (==3.8.4) ; extra == 'stylecheck'
+	numpy (<1.24,>=1.17)
+	optuna (>=2.0) ; extra == 'all'
+	pbr (==5.5.1) ; extra == 'stylecheck'
+	pycodestyle (==2.6.0) ; extra == 'stylecheck'
+	pytest (>=6.2) ; extra == 'jenkins'
+	pytest (>=6.2) ; extra == 'test'
+	pytest-cov ; extra == 'jenkins'
+	pytest-timeout ; extra == 'jenkins'
+	scipy (<1.10,>=1.4) ; extra == 'all'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	stylecheck? ( =dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
+	stylecheck? ( ~dev-python/autopep8-1.5.5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/codecov[${PYTHON_USEDEP}] )
 	jenkins? ( <dev-python/coverage-5[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/coveralls[${PYTHON_USEDEP}] )
-	all? ( <dev-python/cython-3[${PYTHON_USEDEP}] )
-	setup? ( <dev-python/cython-3[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/cython-0.29.22[${PYTHON_USEDEP}] <dev-python/cython-3[${PYTHON_USEDEP}] )
+	setup? ( >=dev-python/cython-0.29.22[${PYTHON_USEDEP}] <dev-python/cython-3[${PYTHON_USEDEP}] )
 	>=dev-python/fastrlock-0.5[${PYTHON_USEDEP}]
 	setup? ( >=dev-python/fastrlock-0.5[${PYTHON_USEDEP}] )
-	stylecheck? ( =dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
-	<dev-python/numpy-1.24[${PYTHON_USEDEP}]
+	stylecheck? ( ~dev-python/flake8-3.8.4[${PYTHON_USEDEP}] )
+	>=dev-python/numpy-1.17[${PYTHON_USEDEP}] <dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	all? ( >=dev-python/optuna-2.0[${PYTHON_USEDEP}] )
-	stylecheck? ( =dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
-	stylecheck? ( =dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
+	stylecheck? ( ~dev-python/pbr-5.5.1[${PYTHON_USEDEP}] )
+	stylecheck? ( ~dev-python/pycodestyle-2.6.0[${PYTHON_USEDEP}] )
 	jenkins? ( >=dev-python/pytest-6.2[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	jenkins? ( dev-python/pytest-timeout[${PYTHON_USEDEP}] )
-	all? ( <dev-python/scipy-1.10[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/scipy-1.4[${PYTHON_USEDEP}] <dev-python/scipy-1.10[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		>=dev-python/pytest-6.2[${PYTHON_USEDEP}]
 	)

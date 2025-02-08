@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioshelly-12.1.0[${PYTHON_USEDEP}]
+	~dev-python/aioshelly-12.1.0[${PYTHON_USEDEP}]
 "

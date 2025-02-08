@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/stookwijzer-1.5.1[${PYTHON_USEDEP}]
+	~dev-python/stookwijzer-1.5.1[${PYTHON_USEDEP}]
 "

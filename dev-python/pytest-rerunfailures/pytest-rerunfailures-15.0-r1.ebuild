@@ -19,10 +19,13 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	packaging>=17.1
+	pytest!=8.2.2,>=7.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
-	!=dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.4[${PYTHON_USEDEP}] !~dev-python/pytest-8.2.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]

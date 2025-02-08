@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	decopatch
+	funcsigs; python_version < "3.3"
+	functools32; python_version < "3.2"
+	makefun>=1.15.1
+	packaging
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/decopatch[${PYTHON_USEDEP}]
-	dev-python/funcsigs[${PYTHON_USEDEP}]
-	dev-python/functools32[${PYTHON_USEDEP}]
 	>=dev-python/makefun-1.15.1[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "

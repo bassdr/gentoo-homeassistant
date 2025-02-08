@@ -26,19 +26,33 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp==3.10.10; extra == "requirements"
+	aiohttp>3.9
+	aioresponses==0.7.6; extra == "requirements-test"
+	mypy==1.11.2; extra == "requirements-test"
+	orjson==3.10.7; extra == "requirements"
+	orjson>3.9
+	pre-commit==4.0.1; extra == "requirements-dev"
+	pytest-aiohttp==1.0.5; extra == "requirements-test"
+	pytest-cov==5.0.0; extra == "requirements-test"
+	pytest==8.3.3; extra == "requirements-test"
+	ruff==0.6.9; extra == "requirements-test"
+	types-orjson==3.6.2; extra == "requirements-test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/aiohttp-3.9[${PYTHON_USEDEP}]
-	requirements? ( =dev-python/aiohttp-3.10.10[${PYTHON_USEDEP}] )
-	requirements-test? ( =dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}] )
-	requirements-test? ( =dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
+	requirements? ( ~dev-python/aiohttp-3.10.10[${PYTHON_USEDEP}] )
+	requirements-test? ( ~dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}] )
+	requirements-test? ( ~dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
 	>dev-python/orjson-3.9[${PYTHON_USEDEP}]
-	requirements? ( =dev-python/orjson-3.10.7[${PYTHON_USEDEP}] )
-	requirements-test? ( =dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
-	requirements-test? ( =dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}] )
-	requirements-test? ( =dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}] )
-	requirements-test? ( =dev-python/ruff-0.6.9[${PYTHON_USEDEP}] )
-	requirements-test? ( =dev-python/types-orjson-3.6.2[${PYTHON_USEDEP}] )
-	requirements-dev? ( =dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}] )
+	requirements? ( ~dev-python/orjson-3.10.7[${PYTHON_USEDEP}] )
+	requirements-test? ( ~dev-python/pytest-8.3.3[${PYTHON_USEDEP}] )
+	requirements-test? ( ~dev-python/pytest-aiohttp-1.0.5[${PYTHON_USEDEP}] )
+	requirements-test? ( ~dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}] )
+	requirements-test? ( ~dev-python/ruff-0.6.9[${PYTHON_USEDEP}] )
+	requirements-test? ( ~dev-python/types-orjson-3.6.2[${PYTHON_USEDEP}] )
+	requirements-dev? ( ~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]

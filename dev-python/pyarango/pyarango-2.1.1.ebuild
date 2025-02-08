@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="pyArango"
@@ -11,12 +10,17 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/pyArango/"
+  https://pypi.org/project/pyarango/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	datetime
+	future
+	requests>=2.7.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/datetime[${PYTHON_USEDEP}]
 	dev-python/future[${PYTHON_USEDEP}]

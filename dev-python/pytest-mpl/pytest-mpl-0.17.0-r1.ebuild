@@ -19,11 +19,23 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Jinja2
+	Pillow
+	importlib-resources ; python_version < "3.8"
+	matplotlib
+	matplotlib ==3.6 ; extra == 'docs'
+	mpl-sphinx-theme >=3.6.0.dev0 ; extra == 'docs'
+	packaging
+	pytest
+	pytest-cov ; extra == 'test'
+	sphinx ; extra == 'docs'
+	sphinx-design ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
-	docs? ( =dev-python/matplotlib-3.6[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/matplotlib-3.6[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/mpl-sphinx-theme-3.6.0_pre0[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]

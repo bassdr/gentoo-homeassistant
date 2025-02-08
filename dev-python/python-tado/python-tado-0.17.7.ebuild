@@ -20,6 +20,9 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
 
+REQUIRES_DIST="
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 "

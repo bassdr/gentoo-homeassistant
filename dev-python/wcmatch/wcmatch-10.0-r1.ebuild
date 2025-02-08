@@ -7,7 +7,6 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=hatchling
 
 DOCS_BUILDER="mkdocs"
-IUSE=""
 DOCS_DEPEND="
 	>=dev-python/mkdocs-pymdownx-material-extras-2.0
 	dev-python/mkdocs-material
@@ -30,6 +29,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bracex>=2.1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bracex-2.1.1[${PYTHON_USEDEP}]
 "

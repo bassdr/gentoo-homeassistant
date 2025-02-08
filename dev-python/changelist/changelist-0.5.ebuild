@@ -16,12 +16,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyGithub
+	pre-commit ==3.6.0 ; extra == 'lint'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	requests
+	requests-cache
+	tqdm
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pygithub[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-cache[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
-	lint? ( =dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}] )
+	lint? ( ~dev-vcs/pre-commit-3.6.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

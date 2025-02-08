@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	asyncio-dgram (>=2.1.2,<3.0.0)
+	dnspython (>=2.4.2,<3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/asyncio-dgram-2.1.2[${PYTHON_USEDEP}]
-	>=dev-python/dnspython-2.4.2[${PYTHON_USEDEP}]
+	>=dev-python/asyncio-dgram-2.1.2[${PYTHON_USEDEP}] <dev-python/asyncio-dgram-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/dnspython-2.4.2[${PYTHON_USEDEP}] <dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/asyncio-dgram-2.1.2[${PYTHON_USEDEP}]

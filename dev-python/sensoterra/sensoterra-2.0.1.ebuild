@@ -24,6 +24,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	requests>=2.27.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.27.1[${PYTHON_USEDEP}]
 "

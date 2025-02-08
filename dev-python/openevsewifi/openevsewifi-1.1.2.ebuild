@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Deprecated (>=1.2.10,<2.0.0)
+	requests (>=2.23.0,<3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/deprecated-1.2.10[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}]
+	>=dev-python/deprecated-1.2.10[${PYTHON_USEDEP}] <dev-python/deprecated-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}]

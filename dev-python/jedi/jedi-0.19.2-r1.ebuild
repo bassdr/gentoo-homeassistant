@@ -30,36 +30,72 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs qa"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Django; extra == "testing"
+	Jinja2==2.11.3; extra == "docs"
+	MarkupSafe==1.1.1; extra == "docs"
+	Pygments==2.8.1; extra == "docs"
+	alabaster==0.7.12; extra == "docs"
+	attrs; extra == "testing"
+	babel==2.9.1; extra == "docs"
+	chardet==4.0.0; extra == "docs"
+	colorama; extra == "testing"
+	commonmark==0.8.1; extra == "docs"
+	docopt; extra == "testing"
+	docutils==0.17.1; extra == "docs"
+	flake8==5.0.4; extra == "qa"
+	future==0.18.2; extra == "docs"
+	idna==2.10; extra == "docs"
+	imagesize==1.2.0; extra == "docs"
+	mock==1.0.1; extra == "docs"
+	mypy==0.971; extra == "qa"
+	packaging==20.9; extra == "docs"
+	parso<0.9.0,>=0.8.4
+	pyparsing==2.4.7; extra == "docs"
+	pytest<9.0.0; extra == "testing"
+	pytz==2021.1; extra == "docs"
+	readthedocs-sphinx-ext==2.1.4; extra == "docs"
+	recommonmark==0.5.0; extra == "docs"
+	requests==2.25.1; extra == "docs"
+	six==1.15.0; extra == "docs"
+	snowballstemmer==2.1.0; extra == "docs"
+	sphinx-rtd-theme==0.4.3; extra == "docs"
+	sphinx==1.8.5; extra == "docs"
+	sphinxcontrib-serializinghtml==1.1.4; extra == "docs"
+	sphinxcontrib-websupport==1.2.4; extra == "docs"
+	types-setuptools==67.2.0.1; extra == "qa"
+	urllib3==1.26.4; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( =dev-python/alabaster-0.7.12[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/babel-2.9.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/chardet-4.0.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/commonmark-0.8.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
-	qa? ( =dev-python/flake8-5.0.4[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/future-0.18.2[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/idna-2.10[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/imagesize-1.2.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/jinja2-2.11.3[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/markupsafe-1.1.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mock-1.0.1[${PYTHON_USEDEP}] )
-	qa? ( =dev-python/mypy-0.971[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/packaging-20.9[${PYTHON_USEDEP}] )
-	<dev-python/parso-0.9.0[${PYTHON_USEDEP}]
-	docs? ( =dev-python/pygments-2.8.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/pyparsing-2.4.7[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/pytz-2021.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/readthedocs-sphinx-ext-2.1.4[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/recommonmark-0.5.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/requests-2.25.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/six-1.15.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/snowballstemmer-2.1.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-1.8.5[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-rtd-theme-0.4.3[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinxcontrib-serializinghtml-1.1.4[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinxcontrib-websupport-1.2.4[${PYTHON_USEDEP}] )
-	qa? ( =dev-python/types-setuptools-67.2.0.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/urllib3-1.26.4[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/alabaster-0.7.12[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/babel-2.9.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/chardet-4.0.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/commonmark-0.8.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/docutils-0.17.1[${PYTHON_USEDEP}] )
+	qa? ( ~dev-python/flake8-5.0.4[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/future-0.18.2[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/idna-2.10[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/imagesize-1.2.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/jinja2-2.11.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/markupsafe-1.1.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mock-1.0.1[${PYTHON_USEDEP}] )
+	qa? ( ~dev-python/mypy-0.971[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/packaging-20.9[${PYTHON_USEDEP}] )
+	>=dev-python/parso-0.8.4[${PYTHON_USEDEP}] <dev-python/parso-0.9.0[${PYTHON_USEDEP}]
+	docs? ( ~dev-python/pygments-2.8.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/pyparsing-2.4.7[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/pytz-2021.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/readthedocs-sphinx-ext-2.1.4[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/recommonmark-0.5.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/requests-2.25.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/six-1.15.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/snowballstemmer-2.1.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-1.8.5[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-rtd-theme-0.4.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinxcontrib-serializinghtml-1.1.4[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinxcontrib-websupport-1.2.4[${PYTHON_USEDEP}] )
+	qa? ( ~dev-python/types-setuptools-67.2.0.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/urllib3-1.26.4[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/parso-0.9[${PYTHON_USEDEP}]

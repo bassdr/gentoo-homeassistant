@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyJWT<3.0.0,>=2.0.1
+	ibm_cloud_sdk_core==3.20.3
+	python_dateutil<3.0.0,>=2.5.3
+	requests<3.0.0,>=2.32.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/ibm-cloud-sdk-core-3.20.3[${PYTHON_USEDEP}]
-	<dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	~dev-python/ibm-cloud-sdk-core-3.20.3[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-2.0.1[${PYTHON_USEDEP}] <dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.5.3[${PYTHON_USEDEP}] <dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.32.2[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

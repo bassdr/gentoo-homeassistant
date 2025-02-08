@@ -21,11 +21,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	beautifulsoup4
+	pygments>=2.7
+	sphinx-basic-ng>=1.0.0.beta2
+	sphinx<9.0,>=6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.7[${PYTHON_USEDEP}]
-	<dev-python/sphinx-9.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-6.0[${PYTHON_USEDEP}] <dev-python/sphinx-9.0[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-basic-ng-1.0.0_beta2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

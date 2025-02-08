@@ -17,6 +17,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	furo ; extra == "doc"
+	myst-parser ; extra == "doc"
+	pytest ; extra == "test"
+	pytest-cov ; extra == "test"
+	pytest-xdist ; extra == "test"
+	sphinx >= 3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	doc? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

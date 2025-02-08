@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click
+	daiquiri
+	fixtures
+	jinja2
+	mock; extra == "test"
+	packaging
+	psutil
+	requests; extra == "test"
+	stestr; extra == "test"
+	testtools; extra == "test"
+	uwsgi; extra == "gnocchi"
+	xattr; sys_platform != "win32"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/daiquiri[${PYTHON_USEDEP}]
@@ -24,6 +38,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
 	gnocchi? ( dev-python/uwsgi[${PYTHON_USEDEP}] )
+	dev-python/xattr[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

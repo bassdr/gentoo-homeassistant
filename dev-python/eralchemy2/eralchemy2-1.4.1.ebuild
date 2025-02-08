@@ -16,6 +16,16 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flask-sqlalchemy>=2.5.1; extra == "ci"
+	mypy>=1.7.0; extra == "dev"
+	pre-commit>=3.0.1; extra == "dev"
+	psycopg2>=2.9.3; extra == "ci"
+	pygraphviz>=1.9
+	pytest>=7.4.3; extra == "ci"
+	ruff>=0.4.1; extra == "dev"
+	sqlalchemy>=1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ci? ( >=dev-python/flask-sqlalchemy-2.5.1[${PYTHON_USEDEP}] )
 	ci? ( >=dev-python/psycopg2-2.9.3[${PYTHON_USEDEP}] )

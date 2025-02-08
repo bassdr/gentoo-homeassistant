@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all docs"
+GENERATED_IUSE="all docs numpy"
 IUSE="${GENERATED_IUSE}"
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -30,8 +30,11 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/check-manifest-0.42[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-isort-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-pycodestyle-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-pydocstyle-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-3[${PYTHON_USEDEP}]
 		>=dev-python/tox-3.7.0[${PYTHON_USEDEP}]
 	)

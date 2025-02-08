@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,15 +14,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cryptography>=43.0.1
+	googleapis-common-protos<2,>=1.63.0
+	grpcio-tools>=1.59.3
+	grpcio<2,>=1.64.0
+	protobuf<6,>=5.0.0
+	pyjwt<3,>=2.8.0
+	requests<3,>=2.32.3
+	six<2,>=1.16.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]
-	<dev-python/googleapis-common-protos-2[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2[${PYTHON_USEDEP}]
+	>=dev-python/googleapis-common-protos-1.63.0[${PYTHON_USEDEP}] <dev-python/googleapis-common-protos-2[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.64.0[${PYTHON_USEDEP}] <dev-python/grpcio-2[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-tools-1.59.3[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6[${PYTHON_USEDEP}]
-	<dev-python/pyjwt-3[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
-	<dev-python/six-2[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-5.0.0[${PYTHON_USEDEP}] <dev-python/protobuf-6[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}] <dev-python/pyjwt-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/six-1.16.0[${PYTHON_USEDEP}] <dev-python/six-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

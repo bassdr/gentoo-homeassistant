@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cli-ui (>=0.10.3)
+	docopt (>=0.6.2,<0.7.0)
+	schema (>=0.7.1,<0.8.0)
+	tomlkit (>=0.11,<0.12)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cli-ui-0.10.3[${PYTHON_USEDEP}]
-	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}]
-	>=dev-python/schema-0.7.1[${PYTHON_USEDEP}]
-	>=dev-python/tomlkit-0.11[${PYTHON_USEDEP}]
+	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}] <dev-python/docopt-0.7.0[${PYTHON_USEDEP}]
+	>=dev-python/schema-0.7.1[${PYTHON_USEDEP}] <dev-python/schema-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/tomlkit-0.11[${PYTHON_USEDEP}] <dev-python/tomlkit-0.12[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

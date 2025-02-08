@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="AEMET OpenData Rest API library"
 HOMEPAGE="
-  https://pypi.org/project/AEMET-OpenData/
+  https://pypi.org/project/aemet-opendata/
   Homepage, https://github.com/Noltari/AEMET-OpenData
   Bug Tracker, https://github.com/Noltari/AEMET-OpenData/issues
 "
@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	geopy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	sci-geosciences/geopy[${PYTHON_USEDEP}]

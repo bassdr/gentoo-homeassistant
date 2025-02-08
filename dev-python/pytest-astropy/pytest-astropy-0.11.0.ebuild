@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,18 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs >=19.2.0
+	hypothesis >=5.1
+	pytest >=4.6
+	pytest-arraydiff >=0.5
+	pytest-astropy-header >=0.2.2
+	pytest-cov >=2.3.1
+	pytest-doctestplus >=1.0.0
+	pytest-filter-subpackage >=0.1.2
+	pytest-mock >=2.0
+	pytest-remotedata >=0.4.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 	>=dev-python/hypothesis-5.1[${PYTHON_USEDEP}]

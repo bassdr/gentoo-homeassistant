@@ -40,5 +40,3 @@ python_install_all() {
 	use examples && dodoc -r examples
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

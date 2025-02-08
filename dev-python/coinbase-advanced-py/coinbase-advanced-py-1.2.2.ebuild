@@ -22,11 +22,22 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyJWT>=2.8.0
+	asynctest==0.13.0; extra == "test"
+	backoff>=2.2.1
+	black==23.3.0; extra == "lint"
+	cryptography>=42.0.4
+	isort==5.12.0; extra == "lint"
+	requests-mock==1.11.0; extra == "test"
+	requests>=2.31.0
+	websockets>=12.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/backoff-2.2.1[${PYTHON_USEDEP}]
-	lint? ( =dev-python/black-23.3.0[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/black-23.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/cryptography-42.0.4[${PYTHON_USEDEP}]
-	lint? ( =dev-python/isort-5.12.0[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/isort-5.12.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-12.0[${PYTHON_USEDEP}]
@@ -52,8 +63,8 @@ src_prepare() {
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/asynctest-0.13.0[${PYTHON_USEDEP}]
-		=dev-python/requests-mock-1.11.0[${PYTHON_USEDEP}]
+		~dev-python/asynctest-0.13.0[${PYTHON_USEDEP}]
+		~dev-python/requests-mock-1.11.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

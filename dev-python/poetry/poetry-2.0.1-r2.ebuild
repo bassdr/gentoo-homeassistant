@@ -16,26 +16,48 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	build<2.0.0,>=1.2.1
+	cachecontrol[filecache]<0.15.0,>=0.14.0
+	cleo<3.0.0,>=2.1.0
+	dulwich<0.23.0,>=0.22.6
+	fastjsonschema<3.0.0,>=2.18.0
+	importlib-metadata>=4.4; python_version < "3.10"
+	installer<0.8.0,>=0.7.0
+	keyring<26.0.0,>=25.1.0
+	packaging>=24.0
+	pkginfo<2.0,>=1.12
+	platformdirs<5,>=3.0.0
+	poetry-core==2.0.1
+	pyproject-hooks<2.0.0,>=1.0.0
+	requests-toolbelt<2.0.0,>=1.0.0
+	requests<3.0,>=2.26
+	shellingham<2.0,>=1.5
+	tomli<3.0.0,>=2.0.1; python_version < "3.11"
+	tomlkit<1.0.0,>=0.11.4
+	trove-classifiers>=2022.5.19
+	virtualenv<21.0.0,>=20.26.6
+	xattr<2.0.0,>=1.0.0; sys_platform == "darwin"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/build-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/cachecontrol-0.15.0[filecache,${PYTHON_USEDEP}]
-	<dev-python/cleo-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/dulwich-0.23.0[${PYTHON_USEDEP}]
-	<dev-python/fastjsonschema-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/installer-0.8.0[${PYTHON_USEDEP}]
-	<dev-python/keyring-26.0.0[${PYTHON_USEDEP}]
+	>=dev-python/build-1.2.1[${PYTHON_USEDEP}] <dev-python/build-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/cachecontrol-0.14.0[filecache,${PYTHON_USEDEP}] <dev-python/cachecontrol-0.15.0[filecache,${PYTHON_USEDEP}]
+	>=dev-python/cleo-2.1.0[${PYTHON_USEDEP}] <dev-python/cleo-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/dulwich-0.22.6[${PYTHON_USEDEP}] <dev-python/dulwich-0.23.0[${PYTHON_USEDEP}]
+	>=dev-python/fastjsonschema-2.18.0[${PYTHON_USEDEP}] <dev-python/fastjsonschema-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/installer-0.7.0[${PYTHON_USEDEP}] <dev-python/installer-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/keyring-25.1.0[${PYTHON_USEDEP}] <dev-python/keyring-26.0.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-24.0[${PYTHON_USEDEP}]
-	<dev-python/pkginfo-2.0[${PYTHON_USEDEP}]
-	<dev-python/platformdirs-5[${PYTHON_USEDEP}]
-	=dev-python/poetry-core-2.0.1[${PYTHON_USEDEP}]
-	<dev-python/pyproject-hooks-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0[${PYTHON_USEDEP}]
-	<dev-python/requests-toolbelt-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/shellingham-2.0[${PYTHON_USEDEP}]
-	<dev-python/tomlkit-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pkginfo-1.12[${PYTHON_USEDEP}] <dev-python/pkginfo-2.0[${PYTHON_USEDEP}]
+	>=dev-python/platformdirs-3.0.0[${PYTHON_USEDEP}] <dev-python/platformdirs-5[${PYTHON_USEDEP}]
+	~dev-python/poetry-core-2.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pyproject-hooks-1.0.0[${PYTHON_USEDEP}] <dev-python/pyproject-hooks-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.26[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-toolbelt-1.0.0[${PYTHON_USEDEP}] <dev-python/requests-toolbelt-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/shellingham-1.5[${PYTHON_USEDEP}] <dev-python/shellingham-2.0[${PYTHON_USEDEP}]
+	>=dev-python/tomlkit-0.11.4[${PYTHON_USEDEP}] <dev-python/tomlkit-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/trove-classifiers-2022.5.19[${PYTHON_USEDEP}]
-	<dev-python/virtualenv-21.0.0[${PYTHON_USEDEP}]
+	>=dev-python/virtualenv-20.26.6[${PYTHON_USEDEP}] <dev-python/virtualenv-21.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/poetry-core-2.0.1[${PYTHON_USEDEP}]

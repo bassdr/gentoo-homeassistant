@@ -24,11 +24,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httpx>=0.24.0
+	orjson>=3.9.2
+	rich>=10
+	tenacity<9.0.0,>=8.2.2
+	typer>=0.7.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/rich-10[${PYTHON_USEDEP}]
-	<dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tenacity-8.2.2[${PYTHON_USEDEP}] <dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

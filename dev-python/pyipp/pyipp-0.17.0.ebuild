@@ -24,6 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.0.0
+	async-timeout==4.0.3; python_version < "3.11"
+	awesomeversion>=21.10.1
+	backoff>=2.2.0
+	deepmerge>=1.1.0
+	yarl>=1.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/awesomeversion-21.10.1[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Cython>=0.19
+	h5py>=2.4.0
+	numpy>=1.24
+	setuptools>=0.7
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cython-0.19[${PYTHON_USEDEP}]
 	>=dev-python/h5py-2.4.0[${PYTHON_USEDEP}]

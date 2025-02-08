@@ -23,12 +23,32 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="bokeh docs mypy test-no-images"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Pillow; extra == "test"
+	bokeh; extra == "bokeh"
+	contourpy[bokeh,docs]; extra == "mypy"
+	contourpy[test-no-images]; extra == "test"
+	docutils-stubs; extra == "mypy"
+	furo; extra == "docs"
+	matplotlib; extra == "test"
+	mypy==1.11.1; extra == "mypy"
+	numpy>=1.23
+	pytest-cov; extra == "test-no-images"
+	pytest-rerunfailures; extra == "test-no-images"
+	pytest-xdist; extra == "test-no-images"
+	pytest; extra == "test-no-images"
+	selenium; extra == "bokeh"
+	sphinx-copybutton; extra == "docs"
+	sphinx>=7.2; extra == "docs"
+	types-Pillow; extra == "mypy"
+	wurlitzer; extra == "test-no-images"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	bokeh? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	mypy? ( dev-python/contourpy[bokeh,docs,${PYTHON_USEDEP}] )
 	mypy? ( dev-python/docutils-stubs[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	mypy? ( =dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
+	mypy? ( ~dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 	test-no-images? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	test-no-images? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )

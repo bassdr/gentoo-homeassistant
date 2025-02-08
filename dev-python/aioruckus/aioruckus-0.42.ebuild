@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.8.4
+	cryptography>=41.0.0
+	xmltodict>=0.13.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.4[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-41.0.0[${PYTHON_USEDEP}]

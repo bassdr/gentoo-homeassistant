@@ -16,9 +16,37 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow
+	absl-py
+	dataclasses; python_version < "3.7"
+	dm_env
+	etils
+	flask
+	flask_cors
+	flax
+	grpcio
+	gym
+	jax>=0.4.6
+	jaxlib>=0.4.6
+	jaxopt
+	jinja2
+	ml_collections
+	mujoco
+	mujoco-mjx
+	numpy
+	optax
+	orbax-checkpoint
+	pytest; extra == "develop"
+	pytinyrenderer
+	scipy
+	tensorboardX
+	transforms3d; extra == "develop"
+	trimesh
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
-	dev-python/dataclasses[${PYTHON_USEDEP}]
 	dev-python/dm-env[${PYTHON_USEDEP}]
 	dev-python/etils[${PYTHON_USEDEP}]
 	dev-python/flask[${PYTHON_USEDEP}]

@@ -16,6 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-common-sql>=1.20.0
+	apache-airflow>=2.9.0
+	numpy; extra == "numpy"
+	oracledb>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-providers-common-sql-1.20.0[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 0.6.4.post1)"
@@ -17,9 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adal<2.0.0,>=0.6.0
+	msrest<2.0.0,>=0.6.0
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/adal-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/msrest-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/adal-0.6.0[${PYTHON_USEDEP}] <dev-python/adal-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/msrest-0.6.0[${PYTHON_USEDEP}] <dev-python/msrest-2.0.0[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

@@ -17,8 +17,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4 ; extra == 'test'
+	mypy ; extra == 'dev'
+	nox ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pydata-sphinx-theme (==0.13.0rc3) ; extra == 'doc'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-regressions ; extra == 'test'
+	pyyaml
+	sphinx
+	sphinx-copybutton ; extra == 'doc'
+	sphinx-design ; extra == 'doc'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	doc? ( =dev-python/pydata-sphinx-theme-0.13.0_rc3[${PYTHON_USEDEP}] )
+	doc? ( ~dev-python/pydata-sphinx-theme-0.13.0_rc3[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )

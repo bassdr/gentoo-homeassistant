@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pytautulli-23.1.1[${PYTHON_USEDEP}]
+	~dev-python/pytautulli-23.1.1[${PYTHON_USEDEP}]
 "

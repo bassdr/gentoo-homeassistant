@@ -19,10 +19,25 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	fastjsonschema>=2.15
+	jsonschema>=2.6
+	jupyter-core!=5.0.*,>=4.12
+	myst-parser; extra == "docs"
+	pep440; extra == "test"
+	pre-commit; extra == "test"
+	pydata-sphinx-theme; extra == "docs"
+	pytest; extra == "test"
+	sphinx; extra == "docs"
+	sphinxcontrib-github-alt; extra == "docs"
+	sphinxcontrib-spelling; extra == "docs"
+	testpath; extra == "test"
+	traitlets>=5.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fastjsonschema-2.15[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-2.6[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-core-4.12[${PYTHON_USEDEP}] !=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

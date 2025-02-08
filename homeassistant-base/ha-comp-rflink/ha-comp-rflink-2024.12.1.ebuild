@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/rflink-0.0.66[${PYTHON_USEDEP}]
+	~dev-python/rflink-0.0.66[${PYTHON_USEDEP}]
 "

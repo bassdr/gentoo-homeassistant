@@ -3,18 +3,21 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/ibm_db_sa/"
+  https://pypi.org/project/ibm-db-sa/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ibm-db>=2.0.0
+	sqlalchemy>=0.7.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ibm-db-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-0.7.3[${PYTHON_USEDEP}]

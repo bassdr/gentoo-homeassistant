@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage<8,>=6
+	pytest<9,>=5
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/coverage-8[${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	>=dev-python/coverage-6[${PYTHON_USEDEP}] <dev-python/coverage-8[${PYTHON_USEDEP}]
+	>=dev-python/pytest-5[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

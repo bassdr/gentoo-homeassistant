@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aiocomelit-0.9.1[${PYTHON_USEDEP}]
+	~dev-python/aiocomelit-0.9.1[${PYTHON_USEDEP}]
 "

@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black; extra == "lint"
+	flake8; extra == "lint"
+	isort>=5; extra == "lint"
+	mypy; extra == "lint"
+	pytest>=8.1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/black[${PYTHON_USEDEP}] )
 	lint? ( dev-python/flake8[${PYTHON_USEDEP}] )

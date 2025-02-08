@@ -22,7 +22,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	deprecated>=1.2.6
+	importlib-metadata~=6.0.0
+	setuptools>=16.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/deprecated-1.2.6[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-6.0.0[${PYTHON_USEDEP}] =dev-python/importlib-metadata-6.0*[${PYTHON_USEDEP}]

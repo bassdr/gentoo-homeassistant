@@ -18,6 +18,15 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
+REQUIRES_DIST="
+	black; extra == "dev"
+	bumpver; extra == "dev"
+	crc>=4
+	isort; extra == "dev"
+	pip-tools; extra == "dev"
+	pytest-asyncio; extra == "dev"
+	pytest-cov; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/crc-4[${PYTHON_USEDEP}]
 "

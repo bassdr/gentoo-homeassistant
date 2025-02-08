@@ -20,7 +20,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
@@ -43,5 +42,3 @@ python_test() {
 
 	epytest
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

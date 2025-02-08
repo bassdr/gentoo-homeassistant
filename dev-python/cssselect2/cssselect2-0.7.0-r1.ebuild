@@ -18,6 +18,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	flake8 ; extra == "test"
+	isort ; extra == "test"
+	pytest ; extra == "test"
+	sphinx ; extra == "doc"
+	sphinx_rtd_theme ; extra == "doc"
+	tinycss2
+	webencodings
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )

@@ -16,9 +16,14 @@ SLOT="0"
 LICENSE="MIT"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	backports.functools-lru-cache (>=1.2.1) ; python_version < "3.2"
+	jinxed (>=1.1.0) ; platform_system == "Windows"
+	ordereddict (==1.1) ; python_version < "2.7"
+	six (>=1.9.0)
+	wcwidth (>=0.1.4)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/backports-functools-lru-cache-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/wcwidth-0.1.4[${PYTHON_USEDEP}]
 "

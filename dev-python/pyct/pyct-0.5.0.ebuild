@@ -16,6 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8 ; extra == 'tests'
+	nbsite ; extra == 'doc'
+	param (>=1.7.0)
+	param (>=1.7.0) ; extra == 'build'
+	pytest ; extra == 'tests'
+	pyyaml ; extra == 'cmd'
+	requests ; extra == 'cmd'
+	setuptools ; extra == 'build'
+	sphinx-ioam-theme ; extra == 'doc'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/nbsite[${PYTHON_USEDEP}] )
 	>=dev-python/param-1.7.0[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/async-upnp-client-0.41.0[${PYTHON_USEDEP}]
+	~dev-python/async-upnp-client-0.41.0[${PYTHON_USEDEP}]
 "

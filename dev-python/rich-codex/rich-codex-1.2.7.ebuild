@@ -17,10 +17,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	CairoSVG >=2.5.2 ; extra == 'cairo'
+	GitPython
+	importlib-metadata ; python_version < "3.8"
+	jsonschema
+	levenshtein >=0.18.1
+	pre-commit ; extra == 'dev'
+	pyyaml
+	rich >=12.4.3
+	rich-click >=1.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cairo? ( >=dev-python/cairosvg-2.5.2[${PYTHON_USEDEP}] )
 	dev-python/gitpython[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 	>=dev-python/levenshtein-0.18.1[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]

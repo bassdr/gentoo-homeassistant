@@ -18,9 +18,19 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test-rust"
 
+REQUIRES_DIST="
+	furo; extra == "docs"
+	importlib-metadata; python_version < "3.8"
+	jaraco.functools
+	jaraco.packaging>=3.2; extra == "docs"
+	more-itertools>=2.6
+	python-dateutil; extra == "docs"
+	sphinx-tabs>=1.1.0; extra == "docs"
+	sphinx>=1.8.2; extra == "docs"
+	sphinxcontrib-apidoc>=0.3.0; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/jaraco-functools[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jaraco-packaging-3.2[${PYTHON_USEDEP}] )
 	>=dev-python/more-itertools-2.6[${PYTHON_USEDEP}]

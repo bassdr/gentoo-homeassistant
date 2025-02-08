@@ -21,7 +21,11 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	click
+	icalendar>=6.1.0
+	tzdata
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/icalendar-6.1.0[${PYTHON_USEDEP}]

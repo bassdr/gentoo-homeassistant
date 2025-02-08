@@ -22,14 +22,38 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="django lint"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	dj-database-url ; extra == 'dev'
+	dj-database-url ; extra == 'django'
+	dj-database-url ; extra == 'tests'
+	dj-email-url ; extra == 'dev'
+	dj-email-url ; extra == 'django'
+	dj-email-url ; extra == 'tests'
+	django-cache-url ; extra == 'dev'
+	django-cache-url ; extra == 'django'
+	django-cache-url ; extra == 'tests'
+	flake8 (==4.0.1) ; extra == 'dev'
+	flake8 (==4.0.1) ; extra == 'lint'
+	flake8-bugbear (==21.9.2) ; extra == 'dev'
+	flake8-bugbear (==21.9.2) ; extra == 'lint'
+	marshmallow (>=3.0.0)
+	mypy (==0.910) ; extra == 'dev'
+	mypy (==0.910) ; extra == 'lint'
+	pre-commit (~=2.4) ; extra == 'dev'
+	pre-commit (~=2.4) ; extra == 'lint'
+	pytest ; extra == 'dev'
+	pytest ; extra == 'tests'
+	python-dotenv
+	tox ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	django? ( dev-python/dj-database-url[${PYTHON_USEDEP}] )
 	django? ( dev-python/dj-email-url[${PYTHON_USEDEP}] )
 	django? ( dev-python/django-cache-url[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/flake8-4.0.1[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/flake8-4.0.1[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-3.0.0[${PYTHON_USEDEP}]
-	lint? ( =dev-python/mypy-0.910[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/mypy-0.910[${PYTHON_USEDEP}] )
 	dev-python/python-dotenv[${PYTHON_USEDEP}]
 	lint? ( >=dev-vcs/pre-commit-2.4[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}] )
 "
@@ -59,9 +83,9 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/dj-database-url[${PYTHON_USEDEP}]
 		dev-python/dj-email-url[${PYTHON_USEDEP}]
 		dev-python/django-cache-url[${PYTHON_USEDEP}]
-		=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
-		=dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}]
-		=dev-python/mypy-0.910[${PYTHON_USEDEP}]
+		~dev-python/flake8-4.0.1[${PYTHON_USEDEP}]
+		~dev-python/flake8-bugbear-21.9.2[${PYTHON_USEDEP}]
+		~dev-python/mypy-0.910[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/tox[${PYTHON_USEDEP}]
 		>=dev-vcs/pre-commit-2.4[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}]

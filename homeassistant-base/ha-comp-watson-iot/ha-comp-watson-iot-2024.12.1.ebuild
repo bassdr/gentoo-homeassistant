@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/ibmiotf-0.3.4[${PYTHON_USEDEP}]
+	~dev-python/ibmiotf-0.3.4[${PYTHON_USEDEP}]
 "

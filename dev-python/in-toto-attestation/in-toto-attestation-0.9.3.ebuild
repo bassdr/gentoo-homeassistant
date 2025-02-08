@@ -16,6 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == 'dev'
+	coverage[toml]; extra == 'test'
+	in-toto-attestation[lint,test]; extra == 'dev'
+	mypy; extra == 'lint'
+	protobuf
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'lint'
+	types-protobuf; extra == 'lint'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	dev-python/protobuf[${PYTHON_USEDEP}]

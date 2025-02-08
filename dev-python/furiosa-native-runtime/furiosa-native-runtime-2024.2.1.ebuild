@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,21 +15,34 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML
+	furiosa-native-compiler==2024.2.0
+	mnist; extra == "test"
+	numpy~=1.24
+	onnxruntime~=1.15.1; extra == "test"
+	pandas~=2.0.3
+	pyarrow~=12.0
+	pytest-asyncio~=0.21; extra == "test"
+	pytest~=7.3; extra == "test"
+	requests==2.29.0
+	torch==2.4.1
+	transformers==4.44.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/furiosa-native-compiler-2024.2.0[${PYTHON_USEDEP}]
+	~dev-python/furiosa-native-compiler-2024.2.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.24[${PYTHON_USEDEP}] =dev-python/numpy-1*[${PYTHON_USEDEP}]
 	>=dev-python/pandas-2.0.3[${PYTHON_USEDEP}] =dev-python/pandas-2.0*[${PYTHON_USEDEP}]
 	>=dev-python/pyarrow-12.0[${PYTHON_USEDEP}] =dev-python/pyarrow-12*[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	=dev-python/requests-2.29.0[${PYTHON_USEDEP}]
-	=dev-python/torch-2.4.1[${PYTHON_USEDEP}]
-	=dev-python/transformers-4.44.2[${PYTHON_USEDEP}]
+	~dev-python/requests-2.29.0[${PYTHON_USEDEP}]
+	~dev-python/torch-2.4.1[${PYTHON_USEDEP}]
+	~dev-python/transformers-4.44.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/mnist[${PYTHON_USEDEP}]
 		>=dev-python/onnxruntime-1.15.1[${PYTHON_USEDEP}] =dev-python/onnxruntime-1.15*[${PYTHON_USEDEP}]

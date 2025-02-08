@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/steamodd-4.21[${PYTHON_USEDEP}]
+	~dev-python/steamodd-4.21[${PYTHON_USEDEP}]
 "

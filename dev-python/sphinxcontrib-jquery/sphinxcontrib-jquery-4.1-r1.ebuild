@@ -20,7 +20,9 @@ LICENSE="0BSD MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Sphinx>=1.8
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 "

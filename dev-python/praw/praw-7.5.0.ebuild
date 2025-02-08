@@ -25,9 +25,30 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	betamax (<0.9,>=0.8) ; extra == 'dev'
+	betamax (<0.9,>=0.8) ; extra == 'test'
+	betamax-matchers (<0.5,>=0.3.0) ; extra == 'dev'
+	betamax-matchers (<0.5,>=0.3.0) ; extra == 'test'
+	coveralls ; extra == 'ci'
+	packaging ; extra == 'dev'
+	prawcore (<3,>=2.1)
+	pre-commit ; extra == 'dev'
+	pre-commit ; extra == 'lint'
+	pytest (>=2.7.3) ; extra == 'dev'
+	pytest (>=2.7.3) ; extra == 'test'
+	sphinx ; extra == 'dev'
+	sphinx ; extra == 'lint'
+	sphinx ; extra == 'readthedocs'
+	sphinx-rtd-theme ; extra == 'dev'
+	sphinx-rtd-theme ; extra == 'lint'
+	sphinx-rtd-theme ; extra == 'readthedocs'
+	update-checker (>=0.18)
+	websocket-client (>=0.54.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ci? ( dev-python/coveralls[${PYTHON_USEDEP}] )
-	<dev-python/prawcore-3[${PYTHON_USEDEP}]
+	>=dev-python/prawcore-2.1[${PYTHON_USEDEP}] <dev-python/prawcore-3[${PYTHON_USEDEP}]
 	lint? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	readthedocs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	lint? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
@@ -51,8 +72,8 @@ python_test() {
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/betamax-0.9[${PYTHON_USEDEP}]
-		<dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}]
+		>=dev-python/betamax-0.8[${PYTHON_USEDEP}] <dev-python/betamax-0.9[${PYTHON_USEDEP}]
+		>=dev-python/betamax-matchers-0.3.0[${PYTHON_USEDEP}] <dev-python/betamax-matchers-0.5[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]
 		>=dev-python/pytest-2.7.3[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]

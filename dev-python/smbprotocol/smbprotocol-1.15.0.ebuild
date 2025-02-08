@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cryptography>=2.0
+	pyspnego
+	pyspnego[kerberos]; extra == "kerberos"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.0[${PYTHON_USEDEP}]
 	dev-python/pyspnego[${PYTHON_USEDEP}]

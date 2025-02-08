@@ -22,8 +22,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="global"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	pybind11-global==2.13.6; extra == "global"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	global? ( =dev-python/pybind11-global-2.13.6[${PYTHON_USEDEP}] )
+	global? ( ~dev-python/pybind11-global-2.13.6[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-cpp/eigen:3

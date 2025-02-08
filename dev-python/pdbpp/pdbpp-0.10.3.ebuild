@@ -16,6 +16,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	fancycompleter (>=0.8)
+	funcsigs ; extra == 'funcsigs'
+	funcsigs ; extra == 'testing'
+	pygments
+	pytest ; extra == 'testing'
+	wmctrl
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fancycompleter-0.8[${PYTHON_USEDEP}]
 	funcsigs? ( dev-python/funcsigs[${PYTHON_USEDEP}] )

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow
+	einops
+	filelock
+	huggingface-hub
+	importlib-metadata
+	numpy
+	opencv-python-headless
+	scikit-image
+	scipy
+	timm<=0.6.7
+	torch
+	torchvision
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/einops[${PYTHON_USEDEP}]
 	dev-python/filelock[${PYTHON_USEDEP}]

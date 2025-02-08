@@ -24,9 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	marshmallow<4.0.0,>=3.18.0
+	typing-inspect<1,>=0.4.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/marshmallow-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/typing-inspect-1[${PYTHON_USEDEP}]
+	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}] <dev-python/marshmallow-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-inspect-0.4.0[${PYTHON_USEDEP}] <dev-python/typing-inspect-1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/typing-inspect[${PYTHON_USEDEP}]

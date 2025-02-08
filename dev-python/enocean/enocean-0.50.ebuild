@@ -20,6 +20,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	beautifulsoup4
+	enum-compat
+	pyserial
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/enum-compat[${PYTHON_USEDEP}]

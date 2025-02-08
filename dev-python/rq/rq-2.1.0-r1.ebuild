@@ -16,7 +16,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	click>=5
+	redis>=3.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-5[${PYTHON_USEDEP}]
 	>=dev-python/redis-3.5[${PYTHON_USEDEP}]

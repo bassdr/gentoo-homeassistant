@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pynx584-0.8.2[${PYTHON_USEDEP}]
+	~dev-python/pynx584-0.8.2[${PYTHON_USEDEP}]
 "

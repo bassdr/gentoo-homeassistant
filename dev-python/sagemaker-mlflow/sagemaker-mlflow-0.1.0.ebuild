@@ -16,6 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	boto3; extra == "test"
+	boto3>=1.34
+	coverage<6.2,>=5.2; extra == "test"
+	mlflow; extra == "test"
+	mlflow; extra == "test-prerelease"
+	mlflow>=2.8
+	packaging; extra == "test-prerelease"
+	pytest-cov; extra == "test"
+	pytest-rerunfailures; extra == "test"
+	pytest-timeout; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest; extra == "test"
+	pytest; extra == "test-prerelease"
+	scikit-learn; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.34[${PYTHON_USEDEP}]
 	>=dev-python/mlflow-2.8[${PYTHON_USEDEP}]
@@ -29,7 +45,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/boto3[${PYTHON_USEDEP}]
-		<dev-python/coverage-6.2[${PYTHON_USEDEP}]
+		>=dev-python/coverage-5.2[${PYTHON_USEDEP}] <dev-python/coverage-6.2[${PYTHON_USEDEP}]
 		dev-python/mlflow[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

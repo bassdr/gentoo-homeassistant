@@ -20,7 +20,10 @@ KEYWORDS="amd64 arm64"
 # Please do not RDEPEND on pytest; this package won't do anything
 # without pytest installed, and there is no reason to force older
 # implementations on pytest.
-IUSE=""
+REQUIRES_DIST="
+	py
+	pytest (>=3.10)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/py[${PYTHON_USEDEP}]
 	>=dev-python/pytest-3.10[${PYTHON_USEDEP}]

@@ -25,6 +25,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	click>=8.0.0
+	rich>=10.11.0
+	shellingham>=1.3.0
+	typing-extensions>=3.7.4.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-10.11.0[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/surepy-0.9.0[${PYTHON_USEDEP}]
+	~dev-python/surepy-0.9.0[${PYTHON_USEDEP}]
 "

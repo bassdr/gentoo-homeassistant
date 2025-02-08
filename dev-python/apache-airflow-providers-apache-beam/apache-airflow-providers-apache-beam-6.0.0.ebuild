@@ -16,6 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-common-compat; extra == "common-compat"
+	apache-airflow-providers-google; extra == "google"
+	apache-airflow>=2.9.0
+	apache-beam>=2.53.0
+	apache-beam[gcp]; extra == "google"
+	pyarrow>=14.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	common-compat? ( dev-python/apache-airflow-providers-common-compat[${PYTHON_USEDEP}] )

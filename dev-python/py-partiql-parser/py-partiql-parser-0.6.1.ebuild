@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -17,12 +16,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-22.6.0[${PYTHON_USEDEP}]
+		~dev-python/black-22.6.0[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

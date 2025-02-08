@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bottleneck; extra == "dev"
+	hypothesis; extra == "dev"
+	jq; platform_system != "Windows" and extra == "dev"
+	mypy; extra == "dev"
+	numba
+	numpy
+	pandas; extra == "dev"
+	pre-commit; extra == "dev"
+	pytest-benchmark; extra == "dev"
+	pytest; extra == "dev"
+	ruff; extra == "dev"
+	setuptools-scm; extra == "dev"
+	tabulate; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numba[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
@@ -26,6 +40,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/bottleneck[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/jq[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

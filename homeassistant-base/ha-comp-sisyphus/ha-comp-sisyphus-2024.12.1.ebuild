@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/sisyphus-control-3.1.4[${PYTHON_USEDEP}]
+	~dev-python/sisyphus-control-3.1.4[${PYTHON_USEDEP}]
 "

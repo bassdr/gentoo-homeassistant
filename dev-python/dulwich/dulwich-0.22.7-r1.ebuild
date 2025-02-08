@@ -54,6 +54,15 @@ GENERATED_IUSE="fastimport https paramiko pgp"
 IUSE="${GENERATED_IUSE} doc examples +native-extensions test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	fastimport; extra == "fastimport"
+	gpg; extra == "pgp"
+	mypy==1.13.0; extra == "dev"
+	paramiko; extra == "paramiko"
+	ruff==0.8.3; extra == "dev"
+	urllib3>=1.24.1; extra == "https"
+	urllib3>=1.25
+"
 GENERATED_RDEPEND="${RDEPEND}
 	fastimport? ( dev-python/fastimport[${PYTHON_USEDEP}] )
 	pgp? ( dev-python/gpg[${PYTHON_USEDEP}] )

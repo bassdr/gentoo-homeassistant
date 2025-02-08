@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cachecontrol[filecache]>=0.12.9
+	cachy>=0.3.0
+	click-default-group
+	click>=8.0
+	clikit>=0.6.2
+	crashtest>=0.3.0
+	ensureconda>=1.4.4
+	gitpython>=3.1.30
+	html5lib>=1.0
+	jinja2
+	keyring>=21.2.0
+	packaging>=20.4
+	pkginfo>=1.4
+	pydantic>=1.10
+	pyyaml>=5.1
+	requests>=2.18
+	ruamel-yaml
+	setuptools
+	tomli; python_version < '3.11'
+	tomlkit>=0.7.0
+	toolz<1.0.0,>=0.12.0
+	typing-extensions
+	urllib3<2.0,>=1.26.5
+	virtualenv>=20.0.26
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachecontrol-0.12.9[filecache,${PYTHON_USEDEP}]
 	>=dev-python/cachy-0.3.0[${PYTHON_USEDEP}]
@@ -35,9 +60,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ruamel-yaml[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.7.0[${PYTHON_USEDEP}]
-	<dev-python/toolz-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/toolz-0.12.0[${PYTHON_USEDEP}] <dev-python/toolz-1.0.0[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	<dev-python/urllib3-2.0[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}] <dev-python/urllib3-2.0[${PYTHON_USEDEP}]
 	>=dev-python/virtualenv-20.0.26[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

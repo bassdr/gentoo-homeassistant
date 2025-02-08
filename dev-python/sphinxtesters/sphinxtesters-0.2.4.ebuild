@@ -16,6 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ghp-import; extra == "doc"
+	numpydoc; extra == "doc"
+	pytest; extra == "test"
+	sphinx>=1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/ghp-import[${PYTHON_USEDEP}] )
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )

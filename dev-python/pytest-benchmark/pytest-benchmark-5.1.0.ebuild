@@ -17,16 +17,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aspectlib; extra == "aspect"
+	elasticsearch; extra == "elasticsearch"
+	pathlib2; python_version < "3.4"
+	py-cpuinfo
+	pygal; extra == "histogram"
+	pygaljs; extra == "histogram"
+	pytest>=8.1
+	setuptools; extra == "histogram"
+	statistics; python_version < "3.4"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	aspect? ( dev-python/aspectlib[${PYTHON_USEDEP}] )
 	elasticsearch? ( dev-python/elasticsearch[${PYTHON_USEDEP}] )
-	dev-python/pathlib2[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
 	histogram? ( dev-python/pygal[${PYTHON_USEDEP}] )
 	histogram? ( dev-python/pygaljs[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	histogram? ( dev-python/setuptools[${PYTHON_USEDEP}] )
-	dev-python/statistics[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

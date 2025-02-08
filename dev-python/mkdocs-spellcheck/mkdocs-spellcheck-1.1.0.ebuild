@@ -16,9 +16,14 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	codespell>=2.2.2; extra == "codespell"
+	importlib-resources>=6.4; python_version < "3.9" and extra == "symspellpy"
+	mkdocs-spellcheck[codespell,symspellpy]; extra == "all"
+	symspellpy>=6.7.6; extra == "symspellpy"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	codespell? ( >=dev-python/codespell-2.2.2[${PYTHON_USEDEP}] )
-	>=dev-python/importlib-resources-6.4[${PYTHON_USEDEP}]
 	all? ( dev-python/mkdocs-spellcheck[codespell,symspellpy,${PYTHON_USEDEP}] )
 	symspellpy? ( >=dev-python/symspellpy-6.7.6[${PYTHON_USEDEP}] )
 "

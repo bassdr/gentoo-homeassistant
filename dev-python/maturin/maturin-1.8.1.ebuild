@@ -21,9 +21,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	patchelf; extra == "patchelf"
+	tomli>=1.1.0; python_version < "3.11"
+	ziglang<0.13.0,>=0.10.0; extra == "zig"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	patchelf? ( dev-python/patchelf[${PYTHON_USEDEP}] )
-	zig? ( <dev-python/ziglang-0.13.0[${PYTHON_USEDEP}] )
+	zig? ( >=dev-python/ziglang-0.10.0[${PYTHON_USEDEP}] <dev-python/ziglang-0.13.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

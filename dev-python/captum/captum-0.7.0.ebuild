@@ -16,6 +16,45 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	annoy ; extra == 'dev'
+	black (==22.3.0) ; extra == 'dev'
+	flake8 ; extra == 'dev'
+	flask ; extra == 'dev'
+	flask ; extra == 'insights'
+	flask ; extra == 'tutorials'
+	flask-compress ; extra == 'dev'
+	flask-compress ; extra == 'insights'
+	flask-compress ; extra == 'tutorials'
+	ipython ; extra == 'dev'
+	ipython ; extra == 'insights'
+	ipython ; extra == 'tutorials'
+	ipywidgets ; extra == 'dev'
+	ipywidgets ; extra == 'insights'
+	ipywidgets ; extra == 'tutorials'
+	jupyter ; extra == 'dev'
+	jupyter ; extra == 'insights'
+	jupyter ; extra == 'tutorials'
+	matplotlib
+	mypy (>=0.760) ; extra == 'dev'
+	numpy
+	parameterized ; extra == 'dev'
+	parameterized ; extra == 'test'
+	pytest ; extra == 'dev'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'dev'
+	pytest-cov ; extra == 'test'
+	scikit-learn ; extra == 'dev'
+	sphinx ; extra == 'dev'
+	sphinx-autodoc-typehints ; extra == 'dev'
+	sphinxcontrib-katex ; extra == 'dev'
+	torch (>=1.6)
+	torchtext ; extra == 'tutorials'
+	torchvision ; extra == 'tutorials'
+	tqdm
+	ufmt ; extra == 'dev'
+	usort (==1.0.2) ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	insights? ( dev-python/flask[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/flask[${PYTHON_USEDEP}] )
@@ -40,7 +79,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/annoy[${PYTHON_USEDEP}]
-		=dev-python/black-22.3.0[${PYTHON_USEDEP}]
+		~dev-python/black-22.3.0[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/flask[${PYTHON_USEDEP}]
 		dev-python/flask-compress[${PYTHON_USEDEP}]
@@ -56,7 +95,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}]
 		dev-python/sphinxcontrib-katex[${PYTHON_USEDEP}]
 		dev-python/ufmt[${PYTHON_USEDEP}]
-		=dev-python/usort-1.0.2[${PYTHON_USEDEP}]
+		~dev-python/usort-1.0.2[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

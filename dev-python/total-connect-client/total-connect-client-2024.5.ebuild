@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	zeep>=4.2.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/zeep-4.2.1[${PYTHON_USEDEP}]
 "

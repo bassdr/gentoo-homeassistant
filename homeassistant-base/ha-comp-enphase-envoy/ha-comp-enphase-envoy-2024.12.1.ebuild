@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyenphase-1.23.0[${PYTHON_USEDEP}]
+	~dev-python/pyenphase-1.23.0[${PYTHON_USEDEP}]
 "

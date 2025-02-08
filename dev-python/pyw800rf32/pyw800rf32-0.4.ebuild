@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library to communicate with the W800rf32 family of devices"
 HOMEPAGE="
-  https://pypi.org/project/pyW800rf32/
+  https://pypi.org/project/pyw800rf32/
   Homepage, https://github.com/horga83/pyW800rf32
   Bug Tracker, https://github.com/horga83/pyW800rf32/issues
 "
@@ -24,6 +24,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pyserial >=3.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyserial-3.1[${PYTHON_USEDEP}]
 "

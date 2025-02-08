@@ -16,9 +16,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cattrs>=23.1.2
+	lsprotocol==2023.0.1
+	websockets>=11.0.3; extra == "ws"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cattrs-23.1.2[${PYTHON_USEDEP}]
-	=dev-python/lsprotocol-2023.0.1[${PYTHON_USEDEP}]
+	~dev-python/lsprotocol-2023.0.1[${PYTHON_USEDEP}]
 	ws? ( >=dev-python/websockets-11.0.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"

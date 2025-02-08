@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="Brotli"
@@ -11,13 +10,12 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python bindings for the Brotli compression library"
 HOMEPAGE="
-  https://pypi.org/project/Brotli/
+  https://pypi.org/project/brotli/
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
 
 distutils_enable_tests pytest

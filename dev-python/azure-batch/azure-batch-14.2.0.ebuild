@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,9 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-common~=1.1
+	msrestazure<2.0.0,>=0.4.32
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-common-1.1[${PYTHON_USEDEP}] =dev-python/azure-common-1*[${PYTHON_USEDEP}]
-	<dev-python/msrestazure-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/msrestazure-0.4.32[${PYTHON_USEDEP}] <dev-python/msrestazure-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

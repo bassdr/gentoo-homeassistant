@@ -16,9 +16,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	betterproto==2.0.0b6
+	build; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/betterproto-2.0.0_beta6[${PYTHON_USEDEP}]
+	~dev-python/betterproto-2.0.0_beta6[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/betterproto-2.0.0_beta7[${PYTHON_USEDEP}]

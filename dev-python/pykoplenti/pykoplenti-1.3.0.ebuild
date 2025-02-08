@@ -24,6 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp~=3.8
+	click>=7.1; extra == "cli"
+	prompt-toolkit>=3.0; extra == "cli"
+	pycryptodome~=3.19
+	pydantic>=1.10
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/click-7.1[${PYTHON_USEDEP}] )

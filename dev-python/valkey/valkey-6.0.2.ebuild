@@ -16,10 +16,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	async-timeout>=4.0.3; python_version < "3.11.3"
+	cryptography>=36.0.1; extra == "ocsp"
+	libvalkey>=4.0.0; extra == "libvalkey"
+	pyopenssl==23.2.1; extra == "ocsp"
+	requests>=2.31.0; extra == "ocsp"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ocsp? ( >=dev-python/cryptography-36.0.1[${PYTHON_USEDEP}] )
 	libvalkey? ( >=dev-python/libvalkey-4.0.0[${PYTHON_USEDEP}] )
-	ocsp? ( =dev-python/pyopenssl-23.2.1[${PYTHON_USEDEP}] )
+	ocsp? ( ~dev-python/pyopenssl-23.2.1[${PYTHON_USEDEP}] )
 	ocsp? ( >=dev-python/requests-2.31.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"

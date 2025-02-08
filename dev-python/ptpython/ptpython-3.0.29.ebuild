@@ -16,13 +16,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	appdirs
+	black; extra == "all"
+	importlib-metadata; python_version < "3.8"
+	ipython; extra == "ptipython"
+	jedi>=0.16.0
+	prompt-toolkit<3.1.0,>=3.0.43
+	pygments
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/appdirs[${PYTHON_USEDEP}]
 	all? ( dev-python/black[${PYTHON_USEDEP}] )
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	ptipython? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	>=dev-python/jedi-0.16.0[${PYTHON_USEDEP}]
-	<dev-python/prompt-toolkit-3.1.0[${PYTHON_USEDEP}]
+	>=dev-python/prompt-toolkit-3.0.43[${PYTHON_USEDEP}] <dev-python/prompt-toolkit-3.1.0[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

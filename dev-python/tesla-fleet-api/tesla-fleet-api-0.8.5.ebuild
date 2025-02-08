@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiofiles
+	aiohttp
+	aiolimiter
+	cryptography
+	protobuf
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]

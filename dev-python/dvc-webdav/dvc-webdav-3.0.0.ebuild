@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cheroot ==8.6.0 ; extra == 'tests'
+	dvc
+	dvc[testing] ; extra == 'tests'
+	flaky ==3.7.0 ; extra == 'tests'
+	mypy ==0.991 ; extra == 'tests'
+	pylint ==2.15.9 ; extra == 'tests'
+	pytest ==6.2.5 ; extra == 'tests'
+	pytest-cov ==3.0.0 ; extra == 'tests'
+	pytest-lazy-fixture ==0.6.3 ; extra == 'tests'
+	pytest-mock ==3.6.1 ; extra == 'tests'
+	pytest-xdist ==2.4.0 ; extra == 'tests'
+	webdav4 >=0.9.3
+	wsgidav ==3.1.1 ; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/dvc[${PYTHON_USEDEP}]
 	>=dev-python/webdav4-0.9.3[${PYTHON_USEDEP}]
@@ -25,17 +39,17 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/cheroot-8.6.0[${PYTHON_USEDEP}]
+		~dev-python/cheroot-8.6.0[${PYTHON_USEDEP}]
 		dev-python/dvc[testing,${PYTHON_USEDEP}]
-		=dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
-		=dev-python/mypy-0.991[${PYTHON_USEDEP}]
-		=dev-python/pylint-2.15.9[${PYTHON_USEDEP}]
-		=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-lazy-fixture-0.6.3[${PYTHON_USEDEP}]
-		=dev-python/pytest-mock-3.6.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
-		=dev-python/wsgidav-3.1.1[${PYTHON_USEDEP}]
+		~dev-python/flaky-3.7.0[${PYTHON_USEDEP}]
+		~dev-python/mypy-0.991[${PYTHON_USEDEP}]
+		~dev-python/pylint-2.15.9[${PYTHON_USEDEP}]
+		~dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-lazy-fixture-0.6.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-mock-3.6.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
+		~dev-python/wsgidav-3.1.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

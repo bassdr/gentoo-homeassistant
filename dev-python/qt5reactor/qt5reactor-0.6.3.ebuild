@@ -16,9 +16,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage ; extra == 'test'
+	pyqt5 ; extra == 'pyqt5'
+	pyside2 (!=5.15.0) ; extra == 'pyside2'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-twisted ; extra == 'test'
+	tox (>=3.1) ; extra == 'test'
+	twisted
+"
 GENERATED_RDEPEND="${RDEPEND}
 	pyqt5? ( dev-python/pyqt5[${PYTHON_USEDEP}] )
-	pyside2? ( !=dev-python/pyside2-5.15.0[${PYTHON_USEDEP}] )
+	pyside2? ( !~dev-python/pyside2-5.15.0[${PYTHON_USEDEP}] )
 	dev-python/twisted[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

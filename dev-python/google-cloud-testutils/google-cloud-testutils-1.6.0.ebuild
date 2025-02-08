@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click>=7.0.0
+	google-auth>=0.4.0
+	importlib_metadata>=1.0.0; python_version < "3.8"
+	packaging>=19.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-7.0.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/importlib-metadata-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

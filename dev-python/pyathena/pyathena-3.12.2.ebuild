@@ -16,6 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	boto3>=1.26.4
+	botocore>=1.29.4
+	fastparquet>=0.4.0; extra == "fastparquet"
+	fsspec
+	pandas>=1.3.0; extra == "pandas"
+	pyarrow>=7.0.0; extra == "arrow"
+	python-dateutil
+	sqlalchemy>=1.0.0; extra == "sqlalchemy"
+	tenacity>=4.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.26.4[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.29.4[${PYTHON_USEDEP}]

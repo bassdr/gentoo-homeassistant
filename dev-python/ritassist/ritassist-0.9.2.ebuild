@@ -17,6 +17,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	ciso8601
+	geopy
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ciso8601[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

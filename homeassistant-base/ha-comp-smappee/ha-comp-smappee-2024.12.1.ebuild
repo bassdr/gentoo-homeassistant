@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pysmappee-0.2.29[${PYTHON_USEDEP}]
+	~dev-python/pysmappee-0.2.29[${PYTHON_USEDEP}]
 "

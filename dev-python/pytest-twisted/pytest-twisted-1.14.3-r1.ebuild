@@ -22,6 +22,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="pyqt5 pyside2"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	black; extra == "dev"
+	decorator
+	greenlet
+	pre-commit; extra == "dev"
+	pytest>=2.3
+	qt5reactor[pyqt5]>=0.6.2; extra == "pyqt5"
+	qt5reactor[pyside2]>=0.6.3; extra == "pyside2"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/greenlet[${PYTHON_USEDEP}]

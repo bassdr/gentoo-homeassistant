@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pythonegardia-1.0.52[${PYTHON_USEDEP}]
+	~dev-python/pythonegardia-1.0.52[${PYTHON_USEDEP}]
 "

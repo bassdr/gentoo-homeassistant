@@ -16,6 +16,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4
+	deprecated
+	jmespath
+	oauthlib
+	requests
+	requests-kerberos; extra == "kerberos"
+	requests_oauthlib
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/deprecated[${PYTHON_USEDEP}]

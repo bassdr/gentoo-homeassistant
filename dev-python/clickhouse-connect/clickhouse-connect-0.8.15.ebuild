@@ -16,6 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	certifi
+	lz4
+	numpy; extra == "numpy"
+	orjson; extra == "orjson"
+	pandas; extra == "pandas"
+	pyarrow; extra == "arrow"
+	pytz
+	sqlalchemy<2.0,>1.3.21; extra == "sqlalchemy"
+	tzlocal>=4.0; extra == "tzlocal"
+	urllib3>=1.26
+	zstandard
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/lz4[${PYTHON_USEDEP}]
@@ -24,7 +37,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	pandas? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	arrow? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]
-	sqlalchemy? ( <dev-python/sqlalchemy-2.0[${PYTHON_USEDEP}] )
+	sqlalchemy? ( >dev-python/sqlalchemy-1.3.21[${PYTHON_USEDEP}] <dev-python/sqlalchemy-2.0[${PYTHON_USEDEP}] )
 	tzlocal? ( >=dev-python/tzlocal-4.0[${PYTHON_USEDEP}] )
 	>=dev-python/urllib3-1.26[${PYTHON_USEDEP}]
 	dev-python/zstandard[${PYTHON_USEDEP}]

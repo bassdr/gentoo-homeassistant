@@ -25,9 +25,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == 'tests'
+	hatch-fancy-pypi-readme[tests]; extra == 'dev'
+	hatchling
+	mypy; extra == 'dev'
+	pytest; extra == 'tests'
+	tomli; python_version < '3.11'
+	typing-extensions; python_version < '3.8'
+	wheel; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/hatchling[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/hatchling[${PYTHON_USEDEP}]

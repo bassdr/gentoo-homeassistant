@@ -43,10 +43,25 @@ BDEPEND="
 "
 # The requirement is really pyopenssl-17.5.0 but easier to require latest stable >= 23.1.1
 # to avoid broken 23.1.0.
+REQUIRES_DIST="
+	PyOpenSSL!=23.1.0,>=17.5.0
+	Sphinx>=1.0; extra == "docs"
+	cryptography>=3.2.1
+	importlib-resources>=1.3.1; extra == "test"
+	josepy<2,>=1.13.0
+	pyrfc3339
+	pytest-xdist; extra == "test"
+	pytest; extra == "test"
+	pytz>=2019.3
+	requests>=2.20.0
+	setuptools>=41.6.0
+	sphinx-rtd-theme; extra == "docs"
+	typing-extensions; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-3.2.1[${PYTHON_USEDEP}]
-	<dev-python/josepy-2[${PYTHON_USEDEP}]
-	!=dev-python/pyopenssl-23.1.0[${PYTHON_USEDEP}]
+	>=dev-python/josepy-1.13.0[${PYTHON_USEDEP}] <dev-python/josepy-2[${PYTHON_USEDEP}]
+	>=dev-python/pyopenssl-17.5.0[${PYTHON_USEDEP}] !~dev-python/pyopenssl-23.1.0[${PYTHON_USEDEP}]
 	dev-python/pyrfc3339[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2019.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]

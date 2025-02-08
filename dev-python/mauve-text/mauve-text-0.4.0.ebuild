@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	faiss-cpu>=1.7.0
+	numpy>=1.18.1
+	requests
+	scikit-learn>=0.22.1
+	tqdm>=4.40.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/faiss-cpu-1.7.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.18.1[${PYTHON_USEDEP}]

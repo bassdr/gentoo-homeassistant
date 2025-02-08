@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pylitterbot-2023.5.0[${PYTHON_USEDEP}]
+	~dev-python/pylitterbot-2023.5.0[${PYTHON_USEDEP}]
 "

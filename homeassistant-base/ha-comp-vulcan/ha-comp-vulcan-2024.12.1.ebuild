@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/vulcan-api-2.3.2[${PYTHON_USEDEP}]
+	~dev-python/vulcan-api-2.3.2[${PYTHON_USEDEP}]
 "

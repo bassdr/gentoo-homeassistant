@@ -16,20 +16,38 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jinja2==3.0.3; extra == "docs"
+	mkdocs-autorefs==1.0.1; extra == "docs"
+	mkdocs-include-exclude-files==0.0.1; extra == "docs"
+	mkdocs-material-extensions==1.3.1; extra == "docs"
+	mkdocs-material==7.3.6; extra == "docs"
+	mkdocs==1.3.0; extra == "docs"
+	mkdocstrings==0.17.0; extra == "docs"
+	mknotebooks==0.7.1; extra == "docs"
+	nbconvert==6.5.0; extra == "docs"
+	nbformat==5.4.0; extra == "docs"
+	numpy; extra == "dev"
+	pre-commit; extra == "dev"
+	pygments==2.14.0; extra == "docs"
+	pymdown-extensions==9.4; extra == "docs"
+	pytest; extra == "dev"
+	pytkdocs-tweaks==0.0.8; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( =dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mkdocs-autorefs-1.0.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mkdocs-include-exclude-files-0.0.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mkdocs-material-7.3.6[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mkdocs-material-extensions-1.3.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mkdocstrings-0.17.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/mknotebooks-0.7.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/nbconvert-6.5.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/nbformat-5.4.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/pygments-2.14.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/pymdown-extensions-9.4[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/pytkdocs-tweaks-0.0.8[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/jinja2-3.0.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mkdocs-1.3.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mkdocs-autorefs-1.0.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mkdocs-include-exclude-files-0.0.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mkdocs-material-7.3.6[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mkdocs-material-extensions-1.3.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mkdocstrings-0.17.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/mknotebooks-0.7.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/nbconvert-6.5.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/nbformat-5.4.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/pygments-2.14.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/pymdown-extensions-9.4[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/pytkdocs-tweaks-0.0.8[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

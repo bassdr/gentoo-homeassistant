@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx
+	black >=22.3.0,<23 ; extra == "test"
+	flake8 >=3.8.4,<4 ; extra == "test"
+	libsass
+	pytest >=6.2.2,<7 ; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/libsass[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
@@ -25,9 +31,9 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		>=dev-python/black-22.3.0[${PYTHON_USEDEP}]
-		>=dev-python/flake8-3.8.4[${PYTHON_USEDEP}]
-		>=dev-python/pytest-6.2.2[${PYTHON_USEDEP}]
+		>=dev-python/black-22.3.0[${PYTHON_USEDEP}] <dev-python/black-23[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.4[${PYTHON_USEDEP}] <dev-python/flake8-4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.2[${PYTHON_USEDEP}] <dev-python/pytest-7[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

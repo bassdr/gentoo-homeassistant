@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	tensorflow<2.19,>=2.18
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/tensorflow-2.19[${PYTHON_USEDEP}]
+	>=dev-python/tensorflow-2.18[${PYTHON_USEDEP}] <dev-python/tensorflow-2.19[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -16,6 +16,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs; extra == "attrs"
+	pydantic-core
+	pydantic>=2
+	pygraphviz
+	sortedcontainers-pydantic
+	typenames>=1.3
+	typer
+	typing-extensions>4; python_version < "3.12"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	attrs? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2[${PYTHON_USEDEP}]
@@ -24,7 +34,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/sortedcontainers-pydantic[${PYTHON_USEDEP}]
 	>=dev-python/typenames-1.3[${PYTHON_USEDEP}]
 	dev-python/typer[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>dev-python/typing-extensions-4[${PYTHON_USEDEP}]' python3_12)
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

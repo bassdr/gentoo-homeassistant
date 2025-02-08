@@ -24,7 +24,6 @@ fi
 LICENSE="LGPL-3"
 SLOT="0"
 
-IUSE=""
 BDEPEND="test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
 		>=dev-python/pytest-console-scripts-1.3.1[${PYTHON_USEDEP}]
@@ -33,6 +32,10 @@ BDEPEND="test? (
 		dev-python/responses[${PYTHON_USEDEP}]
 		)"
 
+REQUIRES_DIST="
+	requests
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]

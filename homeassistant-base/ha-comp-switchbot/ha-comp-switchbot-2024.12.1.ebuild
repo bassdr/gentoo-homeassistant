@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyswitchbot-0.54.0[${PYTHON_USEDEP}]
+	~dev-python/pyswitchbot-0.54.0[${PYTHON_USEDEP}]
 "

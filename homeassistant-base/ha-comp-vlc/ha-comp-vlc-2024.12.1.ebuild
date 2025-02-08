@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-vlc-3.0.18122[${PYTHON_USEDEP}]
+	~dev-python/python-vlc-3.0.18122[${PYTHON_USEDEP}]
 "

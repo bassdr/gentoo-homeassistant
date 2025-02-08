@@ -16,9 +16,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	furo; extra == "docs"
+	importlib-resources; python_version < "3.12" and extra == "testing"
+	jaraco.packaging>=9.3; extra == "docs"
+	pytest!=8.1.*,>=6; extra == "testing"
+	pytest-checkdocs>=2.4; extra == "testing"
+	pytest-cov; extra == "testing"
+	pytest-enabler>=2.2; extra == "testing"
+	pytest-mypy; extra == "testing"
+	pytest-ruff>=0.2.1; extra == "testing"
+	pytest>=6.0
+	rst.linker>=1.9; extra == "docs"
+	sphinx-lint; extra == "docs"
+	sphinx>=3.5; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep 'dev-python/importlib-resources[${PYTHON_USEDEP}]' python3_12)
 	docs? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
@@ -30,7 +44,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
@@ -39,3 +53,13 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+GENERATED_BDEPEND+=" ${BDEPEND}
+	test? (
+		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
+		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
+	)
+"

@@ -16,6 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2
+	PyYAML
+	defusedxml
+	json5
+	python-pam; extra == "pam"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]

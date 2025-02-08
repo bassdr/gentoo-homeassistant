@@ -16,12 +16,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == "dev"
+	hatch; extra == "dev"
+	ipywidgets<9,>=8.1.3; extra == "docs"
+	jupyter-server-mathjax; extra == "docs"
+	jupyterlab-language-pack-fr-fr; extra == "docs"
+	jupyterlab-language-pack-zh-cn; extra == "docs"
+	jupyterlab<4.4.0a0,>=4.3.3; extra == "dev"
+	jupyterlite-core<0.6.0,>=0.5.0
+	libarchive-c; extra == "docs"
+	myst-parser; extra == "docs"
+	pkginfo
+	pydata-sphinx-theme; extra == "docs"
+	pytest-console-scripts>=1.4.0; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-html; extra == "test"
+	pytest; extra == "test"
+	ruff>=0.3.0; extra == "lint"
+	sphinx-copybutton; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( <dev-python/ipywidgets-9[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/ipywidgets-8.1.3[${PYTHON_USEDEP}] <dev-python/ipywidgets-9[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jupyter-server-mathjax[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jupyterlab-language-pack-fr-fr[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jupyterlab-language-pack-zh-cn[${PYTHON_USEDEP}] )
-	<dev-python/jupyterlite-core-0.6.0[${PYTHON_USEDEP}]
+	>=dev-python/jupyterlite-core-0.5.0[${PYTHON_USEDEP}] <dev-python/jupyterlite-core-0.6.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/libarchive-c[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	dev-python/pkginfo[${PYTHON_USEDEP}]
@@ -36,7 +56,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
 		dev-python/hatch[${PYTHON_USEDEP}]
-		<dev-python/jupyterlab-4.4.0_alpha0[${PYTHON_USEDEP}]
+		>=dev-python/jupyterlab-4.3.3[${PYTHON_USEDEP}] <dev-python/jupyterlab-4.4.0_alpha0[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		>=dev-python/pytest-console-scripts-1.4.0[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

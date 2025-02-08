@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py
+	etils[epath]
+	flax
+	jax
+	jaxlib
+	ml-collections
+	numpy
+	packaging
+	pytest; extra == "test"
+	tensorflow-datasets; extra == "test"
+	tensorflow; extra == "test"
+	torch>=2.0.0; extra == "test"
+	typing-extensions
+	wrapt
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	dev-python/etils[epath,${PYTHON_USEDEP}]

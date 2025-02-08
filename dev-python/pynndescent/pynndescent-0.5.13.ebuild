@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata>=4.8.1; python_version < "3.8"
+	joblib>=0.11
+	llvmlite>=0.30
+	numba>=0.51.2
+	scikit-learn>=0.18
+	scipy>=1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/importlib-metadata-4.8.1[${PYTHON_USEDEP}]
 	>=dev-python/joblib-0.11[${PYTHON_USEDEP}]
 	>=dev-python/llvmlite-0.30[${PYTHON_USEDEP}]
 	>=dev-python/numba-0.51.2[${PYTHON_USEDEP}]

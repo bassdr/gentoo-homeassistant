@@ -26,8 +26,14 @@ KEYWORDS="amd64 arm64"
 # TODO: revisit
 GENERATED_IUSE="anyio curio trio"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	anyio<5.0.0,>=3.3.4; extra == "anyio"
+	async-timeout>=3.0.1; python_version < "3.11" and extra == "asyncio"
+	curio>=1.4; extra == "curio"
+	trio>=0.16.0; extra == "trio"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	anyio? ( <dev-python/anyio-5.0.0[${PYTHON_USEDEP}] )
+	anyio? ( >=dev-python/anyio-3.3.4[${PYTHON_USEDEP}] <dev-python/anyio-5.0.0[${PYTHON_USEDEP}] )
 	curio? ( >=dev-python/curio-1.4[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.16.0[${PYTHON_USEDEP}] )
 "

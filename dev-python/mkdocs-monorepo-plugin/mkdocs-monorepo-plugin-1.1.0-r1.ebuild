@@ -17,7 +17,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	mkdocs >=1.0.4
+	python-slugify >=4.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mkdocs-1.0.4[${PYTHON_USEDEP}]
 	>=dev-python/python-slugify-4.0.1[${PYTHON_USEDEP}]

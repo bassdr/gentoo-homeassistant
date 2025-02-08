@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/greeclimate-2.1.0[${PYTHON_USEDEP}]
+	~dev-python/greeclimate-2.1.0[${PYTHON_USEDEP}]
 "

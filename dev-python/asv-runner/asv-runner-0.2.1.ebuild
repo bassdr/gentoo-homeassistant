@@ -16,6 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	furo; extra == "docs"
+	importlib-metadata
+	myst-parser>=2; extra == "docs"
+	sphinx-autobuild; extra == "docs"
+	sphinx-autodoc2>=0.4.2; extra == "docs"
+	sphinx-contributors; extra == "docs"
+	sphinx-copybutton; extra == "docs"
+	sphinx-design; extra == "docs"
+	sphinx; extra == "docs"
+	sphinxcontrib-spelling; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]

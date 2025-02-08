@@ -26,6 +26,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="widechars"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	wcwidth ; extra == 'widechars'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	widechars? ( dev-python/wcwidth[${PYTHON_USEDEP}] )
 "

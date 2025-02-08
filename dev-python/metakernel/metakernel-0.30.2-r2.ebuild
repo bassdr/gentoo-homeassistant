@@ -18,8 +18,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="activity parallel"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	ipykernel<7,>=5.5.6
+	ipyparallel; extra == "parallel"
+	jedi>=0.18
+	jupyter-core>=4.9.2
+	jupyter-kernel-test; extra == "test"
+	pexpect>=4.8
+	portalocker; extra == "activity"
+	pytest-cov; extra == "test"
+	pytest-timeout; extra == "test"
+	pytest; extra == "test"
+	requests; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/ipykernel-7[${PYTHON_USEDEP}]
+	>=dev-python/ipykernel-5.5.6[${PYTHON_USEDEP}] <dev-python/ipykernel-7[${PYTHON_USEDEP}]
 	parallel? ( dev-python/ipyparallel[${PYTHON_USEDEP}] )
 	>=dev-python/jedi-0.18[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-core-4.9.2[${PYTHON_USEDEP}]

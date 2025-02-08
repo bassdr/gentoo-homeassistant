@@ -17,6 +17,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	datamodel-code-generator; extra == "test"
+	fastapi
+	furiosa-runtime==0.10.*
+	grpcio-tools
+	httpx
+	mypy-extensions; extra == "test"
+	mypy-protobuf; extra == "test"
+	mypy; extra == "test"
+	openvino; extra == "openvino"
+	protobuf
+	pydantic-settings
+	pytest-asyncio~=0.17.2; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	pytest>=2.7.3; extra == "test"
+	requests; extra == "test"
+	ruff; extra == "test"
+	toml
+	typer
+	types-PyYAML; extra == "test"
+	types-protobuf; extra == "test"
+	uvicorn
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fastapi[${PYTHON_USEDEP}]
 	=dev-python/furiosa-runtime-0.10*[${PYTHON_USEDEP}]
@@ -33,7 +57,6 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/datamodel-code-generator[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]

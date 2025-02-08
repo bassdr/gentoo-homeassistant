@@ -18,6 +18,15 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	decorator (>=5.0)
+	imageio (>=2.0)
+	imutils (>=0.0)
+	requests (>=2.0)
+	tqdm (>=4.0)
+	validators (>=0.0)
+	yarl (>=1.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/decorator-5.0[${PYTHON_USEDEP}]
 	>=dev-python/imageio-2.0[${PYTHON_USEDEP}]

@@ -20,9 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bitarray<3.0.0,>=2.8.0
+	crc<5.0.0,>=4.3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/crc-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/bitarray-2.8.0[${PYTHON_USEDEP}] <dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/crc-4.3.0[${PYTHON_USEDEP}] <dev-python/crc-5.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/bitarray[${PYTHON_USEDEP}]

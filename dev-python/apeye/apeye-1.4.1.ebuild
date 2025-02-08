@@ -16,6 +16,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apeye-core>=1.0.0b2
+	cachecontrol[filecache]>=0.12.6 ; extra == "all"
+	cachecontrol[filecache]>=0.12.6 ; extra == "limiter"
+	domdf-python-tools>=2.6.0
+	lockfile>=0.12.2 ; extra == "all"
+	lockfile>=0.12.2 ; extra == "limiter"
+	platformdirs>=2.3.0
+	requests>=2.24.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apeye-core-1.0.0_beta2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cachecontrol-0.12.6[filecache,${PYTHON_USEDEP}] )

@@ -16,10 +16,52 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2>=2.11.3
+	PyYAML>=5.1
+	ansi2html>=1.8.0; extra == "test"
+	ansible-compat>=25.1.0
+	ansible-core>=2.15.0
+	ansible-lint>=6.12.1; extra == "test"
+	black; extra == "test"
+	click-help-colors
+	click<9,>=8.0
+	coverage[toml]; extra == "test"
+	docker>=7.1.0; extra == "test"
+	enrich>=1.2.7
+	filelock>=3.9.0; extra == "test"
+	jsonschema>=4.9.1
+	linkchecker>=10.4.0; extra == "docs"
+	mkdocs-ansible>=24.3.0; extra == "docs"
+	mypy; extra == "test"
+	packaging
+	pexpect<5,>=4.9.0; extra == "test"
+	pip-tools; extra == "test"
+	pipdeptree>=2.4.0; extra == "docs"
+	pluggy<2.0,>=0.7.1
+	pre-commit; extra == "test"
+	pydoclint; extra == "test"
+	pylint; extra == "test"
+	pytest-instafail; extra == "test"
+	pytest-mock>=3.10.0; extra == "test"
+	pytest-plus>=0.7.0; extra == "test"
+	pytest-testinfra>=8.1.0; extra == "testinfra"
+	pytest-xdist; extra == "test"
+	pytest; extra == "test"
+	requests!=2.32.0; extra == "test"
+	rich>=9.5.1
+	ruff; extra == "test"
+	toml-sort; extra == "test"
+	tox; extra == "test"
+	types-jsonschema; extra == "test"
+	types-pexpect; extra == "test"
+	types-pyyaml; extra == "test"
+	wcmatch>=8.1.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ansible-compat-25.1.0[${PYTHON_USEDEP}]
 	>=dev-python/ansible-core-2.15.0[${PYTHON_USEDEP}]
-	<dev-python/click-9[${PYTHON_USEDEP}]
+	>=dev-python/click-8.0[${PYTHON_USEDEP}] <dev-python/click-9[${PYTHON_USEDEP}]
 	dev-python/click-help-colors[${PYTHON_USEDEP}]
 	>=dev-python/enrich-1.2.7[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]
@@ -28,7 +70,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/mkdocs-ansible-24.3.0[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pipdeptree-2.4.0[${PYTHON_USEDEP}] )
-	<dev-python/pluggy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/pluggy-0.7.1[${PYTHON_USEDEP}] <dev-python/pluggy-2.0[${PYTHON_USEDEP}]
 	testinfra? ( >=dev-python/pytest-testinfra-8.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 	>=dev-python/rich-9.5.1[${PYTHON_USEDEP}]
@@ -46,7 +88,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/docker-7.1.0[${PYTHON_USEDEP}]
 		>=dev-python/filelock-3.9.0[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]
-		<dev-python/pexpect-5[${PYTHON_USEDEP}]
+		>=dev-python/pexpect-4.9.0[${PYTHON_USEDEP}] <dev-python/pexpect-5[${PYTHON_USEDEP}]
 		dev-python/pip-tools[${PYTHON_USEDEP}]
 		dev-python/pydoclint[${PYTHON_USEDEP}]
 		dev-python/pylint[${PYTHON_USEDEP}]
@@ -55,7 +97,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-plus-0.7.0[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
-		!=dev-python/requests-2.32.0[${PYTHON_USEDEP}]
+		!~dev-python/requests-2.32.0[${PYTHON_USEDEP}]
 		dev-python/ruff[${PYTHON_USEDEP}]
 		dev-python/toml-sort[${PYTHON_USEDEP}]
 		dev-python/tox[${PYTHON_USEDEP}]

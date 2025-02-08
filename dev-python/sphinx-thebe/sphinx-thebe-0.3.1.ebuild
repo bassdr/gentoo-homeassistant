@@ -10,12 +10,27 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/sphinx_thebe/"
+  https://pypi.org/project/sphinx-thebe/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4; extra == 'testing'
+	matplotlib; extra == 'testing'
+	myst-nb; extra == 'sphinx'
+	myst-nb>=1.0.0rc0; extra == 'testing'
+	pytest-regressions; extra == 'testing'
+	pytest; extra == 'testing'
+	sphinx-book-theme; extra == 'sphinx'
+	sphinx-copybutton; extra == 'sphinx'
+	sphinx-copybutton; extra == 'testing'
+	sphinx-design; extra == 'sphinx'
+	sphinx-design; extra == 'testing'
+	sphinx-thebe[testing]; extra == 'dev'
+	sphinx>=4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	sphinx? ( dev-python/myst-nb[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-4[${PYTHON_USEDEP}]

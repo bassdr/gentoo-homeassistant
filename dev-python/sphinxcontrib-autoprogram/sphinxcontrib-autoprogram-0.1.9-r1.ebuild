@@ -17,7 +17,9 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Sphinx >=1.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinx-1.2[${PYTHON_USEDEP}]
 "

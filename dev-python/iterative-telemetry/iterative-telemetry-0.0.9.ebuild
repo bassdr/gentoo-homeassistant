@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,26 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	appdirs
+	distro
+	filelock
+	mypy==1.11.2; extra == "dev"
+	mypy==1.11.2; extra == "tests"
+	pylint==2.15.0; extra == "dev"
+	pylint==2.15.0; extra == "tests"
+	pytest-cov==3.0.0; extra == "dev"
+	pytest-cov==3.0.0; extra == "tests"
+	pytest-mock==3.8.2; extra == "dev"
+	pytest-mock==3.8.2; extra == "tests"
+	pytest-sugar==0.9.5; extra == "dev"
+	pytest-sugar==0.9.5; extra == "tests"
+	pytest==7.2.0; extra == "dev"
+	pytest==7.2.0; extra == "tests"
+	requests
+	types-requests; extra == "dev"
+	types-requests; extra == "tests"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/appdirs[${PYTHON_USEDEP}]
 	dev-python/distro[${PYTHON_USEDEP}]
@@ -26,12 +45,12 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/mypy-1.11.2[${PYTHON_USEDEP}]
-		=dev-python/pylint-2.15.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
-		=dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.11.2[${PYTHON_USEDEP}]
+		~dev-python/pylint-2.15.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-mock-3.8.2[${PYTHON_USEDEP}]
+		~dev-python/pytest-sugar-0.9.5[${PYTHON_USEDEP}]
 		dev-python/types-requests[${PYTHON_USEDEP}]
 	)
 "

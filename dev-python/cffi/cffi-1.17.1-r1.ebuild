@@ -28,11 +28,13 @@ SLOT="0/${PV}"
 KEYWORDS="amd64 arm64"
 
 # Needs recent libffi for HPPA fixes
-IUSE=""
 DEPEND="
 	>=dev-libs/libffi-3.4.4-r1:=
 "
 # setuptools as a modern distutils provider
+REQUIRES_DIST="
+	pycparser
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pycparser[${PYTHON_USEDEP}]
 "

@@ -18,7 +18,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	aenum
+	dacite
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aenum[${PYTHON_USEDEP}]
 	dev-python/dacite[${PYTHON_USEDEP}]
@@ -32,4 +35,3 @@ RDEPEND="${GENERATED_RDEPEND}
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" "${DISTDIR}/${PN//-/_}-${PV}-py3-none-any.whl"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild

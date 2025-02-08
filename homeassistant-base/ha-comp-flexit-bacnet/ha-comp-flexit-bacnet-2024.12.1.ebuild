@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/flexit-bacnet-2.2.1[${PYTHON_USEDEP}]
+	~dev-python/flexit-bacnet-2.2.1[${PYTHON_USEDEP}]
 "

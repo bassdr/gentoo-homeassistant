@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyeconet-0.1.23[${PYTHON_USEDEP}]
+	~dev-python/pyeconet-0.1.23[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Deprecated<2.0.0,>=1.2.12
+	nr-date<3.0.0,>=2.0.0
+	nr-stream<2.0.0,>=1.0.0
+	setuptools>=40.8.0; python_version < "3.10"
+	typeapi<3,>=2.0.1
+	typing-extensions<5,>=3.10.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/deprecated-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/nr-date-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/nr-stream-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/typeapi-3[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
+	>=dev-python/deprecated-1.2.12[${PYTHON_USEDEP}] <dev-python/deprecated-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/nr-date-2.0.0[${PYTHON_USEDEP}] <dev-python/nr-date-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/nr-stream-1.0.0[${PYTHON_USEDEP}] <dev-python/nr-stream-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/typeapi-2.0.1[${PYTHON_USEDEP}] <dev-python/typeapi-3[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.10.0[${PYTHON_USEDEP}] <dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

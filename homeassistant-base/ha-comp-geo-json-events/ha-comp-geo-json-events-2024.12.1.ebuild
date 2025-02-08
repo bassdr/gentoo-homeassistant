@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aio-geojson-generic-client-0.5[${PYTHON_USEDEP}]
+	~dev-python/aio-geojson-generic-client-0.5[${PYTHON_USEDEP}]
 "

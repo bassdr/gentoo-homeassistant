@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyelectra-1.2.4[${PYTHON_USEDEP}]
+	~dev-python/pyelectra-1.2.4[${PYTHON_USEDEP}]
 "

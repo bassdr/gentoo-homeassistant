@@ -16,6 +16,15 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ciso8601; extra == "ciso8601"
+	fs
+	fsspec>=2022.5.0
+	numpy
+	pandas>=1.3.5
+	pyarrow>=6.0.1
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ciso8601? ( dev-python/ciso8601[${PYTHON_USEDEP}] )
 	dev-python/fs[${PYTHON_USEDEP}]

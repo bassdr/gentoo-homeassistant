@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyjvcprojector-1.1.2[${PYTHON_USEDEP}]
+	~dev-python/pyjvcprojector-1.1.2[${PYTHON_USEDEP}]
 "

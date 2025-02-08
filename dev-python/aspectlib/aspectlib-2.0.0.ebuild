@@ -16,7 +16,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 RESTRICT="!test? ( test )"
 
-IUSE=""
+REQUIRES_DIST="
+	fields
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fields[${PYTHON_USEDEP}]
 "

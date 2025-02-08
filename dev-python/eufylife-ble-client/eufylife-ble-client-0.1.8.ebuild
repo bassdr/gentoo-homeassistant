@@ -17,7 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.md"
 
-IUSE=""
+REQUIRES_DIST="
+	bleak (>=0.19.0)
+	bleak-retry-connector (>=2.3.0)
+	cryptography (>=39.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-2.3.0[${PYTHON_USEDEP}]

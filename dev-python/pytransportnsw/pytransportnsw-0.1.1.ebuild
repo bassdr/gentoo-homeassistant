@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Get transport information from TransportNSW"
 HOMEPAGE="
-  https://pypi.org/project/PyTransportNSW/
+  https://pypi.org/project/pytransportnsw/
 "
 
 LICENSE="GPL-3"

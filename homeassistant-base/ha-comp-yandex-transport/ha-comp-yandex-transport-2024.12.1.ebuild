@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioymaps-1.2.5[${PYTHON_USEDEP}]
+	~dev-python/aioymaps-1.2.5[${PYTHON_USEDEP}]
 "

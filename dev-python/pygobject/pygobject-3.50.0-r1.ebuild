@@ -20,6 +20,9 @@ KEYWORDS="amd64 arm64"
 IUSE="+cairo test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	pycairo>=1.16
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pycairo-1.16[${PYTHON_USEDEP}]
 "

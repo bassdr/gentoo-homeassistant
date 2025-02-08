@@ -16,7 +16,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	PrettyTable>=0.7.2
+	PyYAML>=3.12
+	autopage>=0.4.0
+	cmd2>=1.0.0
+	importlib-metadata>=4.4; python_version < "3.10"
+	stevedore>=2.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/autopage-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/cmd2-1.0.0[${PYTHON_USEDEP}]

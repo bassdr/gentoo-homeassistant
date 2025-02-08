@@ -18,6 +18,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	zeroconf
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/zeroconf[${PYTHON_USEDEP}]
 "

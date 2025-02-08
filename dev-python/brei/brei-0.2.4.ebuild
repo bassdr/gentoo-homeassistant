@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	argh<0.31.0,>=0.30.2
+	rich-argparse<2.0.0,>=1.3.0
+	rich<14.0.0,>=13.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/argh-0.31.0[${PYTHON_USEDEP}]
-	<dev-python/rich-14.0.0[${PYTHON_USEDEP}]
-	<dev-python/rich-argparse-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/argh-0.30.2[${PYTHON_USEDEP}] <dev-python/argh-0.31.0[${PYTHON_USEDEP}]
+	>=dev-python/rich-13.6.0[${PYTHON_USEDEP}] <dev-python/rich-14.0.0[${PYTHON_USEDEP}]
+	>=dev-python/rich-argparse-1.3.0[${PYTHON_USEDEP}] <dev-python/rich-argparse-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

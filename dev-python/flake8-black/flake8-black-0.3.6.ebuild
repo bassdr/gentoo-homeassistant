@@ -17,6 +17,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black (>=22.1.0)
+	build ; extra == 'develop'
+	flake8 (>=3)
+	tomli ; python_version < "3.11"
+	twine ; extra == 'develop'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/black-22.1.0[${PYTHON_USEDEP}]
 	develop? ( dev-python/build[${PYTHON_USEDEP}] )

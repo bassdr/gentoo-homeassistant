@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp
+	cryptography
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]

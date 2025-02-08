@@ -20,10 +20,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	ciso8601 (<3,>=2.1.3)
+	requests (<3,>=2.23.0)
+	urllib3 (<3,>=1.25.8)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/ciso8601-3[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
-	<dev-python/urllib3-3[${PYTHON_USEDEP}]
+	>=dev-python/ciso8601-2.1.3[${PYTHON_USEDEP}] <dev-python/ciso8601-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.25.8[${PYTHON_USEDEP}] <dev-python/urllib3-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}]

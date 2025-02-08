@@ -12,12 +12,37 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.dublincore/"
+  https://pypi.org/project/zope-dublincore/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	BTrees ; extra == 'test'
+	BTrees ; extra == 'testing'
+	Sphinx ; extra == 'docs'
+	persistent
+	pytz
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	zope.annotation
+	zope.component[zcml]
+	zope.configuration ; extra == 'test'
+	zope.configuration ; extra == 'testing'
+	zope.datetime
+	zope.interface
+	zope.lifecycleevent
+	zope.location
+	zope.publisher ; extra == 'test'
+	zope.schema
+	zope.security[zcml] (>=3.8)
+	zope.testing (>=3.8) ; extra == 'test'
+	zope.testing (>=3.8) ; extra == 'testing'
+	zope.testing ; extra == 'docs'
+	zope.testrunner ; extra == 'test'
+	zope.testrunner ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/persistent[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

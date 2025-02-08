@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black; extra == "dev"
+	build; extra == "dev"
+	commitizen; extra == "dev"
+	dnspython>=1.15.0
+	greenlet>=1.0
+	isort; extra == "dev"
+	pip-tools; extra == "dev"
+	pre-commit; extra == "dev"
+	twine; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dnspython-1.15.0[${PYTHON_USEDEP}]
 	>=dev-python/greenlet-1.0[${PYTHON_USEDEP}]

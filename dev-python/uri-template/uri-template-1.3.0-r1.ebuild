@@ -23,7 +23,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
@@ -33,7 +32,5 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 python_test() {
 	"${EPYTHON}" "test.py" || die "Tests fail with ${EPYTHON}"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
 # GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx>=4.3.2; extra == "docs"
+	coverage; extra == "testing"
+	pylons-sphinx-themes; extra == "docs"
+	pytest-cov; extra == "testing"
+	pytest; extra == "testing"
+	repoze.sphinx.autointerface; extra == "docs"
+	sphinx-copybutton; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/pylons-sphinx-themes[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )

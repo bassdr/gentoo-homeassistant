@@ -19,6 +19,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	Click (>=6.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-6.0[${PYTHON_USEDEP}]
 "

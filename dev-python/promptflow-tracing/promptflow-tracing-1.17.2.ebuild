@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,15 +15,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	openai
+	opentelemetry-sdk<2.0.0,>=1.22.0
+	tiktoken>=0.4.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/openai[${PYTHON_USEDEP}]
-	<dev-python/opentelemetry-sdk-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/opentelemetry-sdk-1.22.0[${PYTHON_USEDEP}] <dev-python/opentelemetry-sdk-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/tiktoken-0.4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

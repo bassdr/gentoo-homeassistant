@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docutils (>=0.14); extra == 'tests'
+	numpy; extra == 'optional'
+	pandas; extra == 'optional'
+	pytest (>=3.1); extra == 'tests'
+	xlrd; extra == 'optional'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	optional? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	optional? ( dev-python/pandas[${PYTHON_USEDEP}] )

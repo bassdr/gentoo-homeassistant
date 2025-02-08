@@ -18,12 +18,40 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs json memcached-session routes-dispatcher ssl xcgi"
 IUSE="${GENERATED_IUSE} ssl test"
 
+REQUIRES_DIST="
+	alabaster; extra == "docs"
+	cheroot>=8.2.1
+	docutils; extra == "docs"
+	flup; extra == "xcgi"
+	importlib-metadata; python_version <= "3.7"
+	jaraco.collections
+	jaraco.packaging>=3.2; extra == "docs"
+	more-itertools
+	objgraph; extra == "testing"
+	path.py; extra == "testing"
+	portend>=2.1.1
+	pyOpenSSL; extra == "ssl"
+	pytest-cov; extra == "testing"
+	pytest-forked; extra == "testing"
+	pytest-services>=2; extra == "testing"
+	pytest-sugar; extra == "testing"
+	pytest>=5.3.5; extra == "testing"
+	python-memcached>=1.58; extra == "memcached-session"
+	pywin32>=227; sys_platform == "win32" and implementation_name == "cpython" and python_version < "3.10"
+	requests-toolbelt; extra == "testing"
+	routes>=2.3.1; extra == "routes-dispatcher"
+	rst.linker>=1.11; extra == "docs"
+	setuptools; extra == "testing"
+	simplejson; extra == "json"
+	sphinx; extra == "docs"
+	sphinxcontrib-apidoc>=0.3.0; extra == "docs"
+	zc.lockfile
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/alabaster[${PYTHON_USEDEP}] )
 	>=dev-python/cheroot-8.2.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	xcgi? ( dev-python/flup[${PYTHON_USEDEP}] )
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jaraco-packaging-3.2[${PYTHON_USEDEP}] )
 	dev-python/more-itertools[${PYTHON_USEDEP}]

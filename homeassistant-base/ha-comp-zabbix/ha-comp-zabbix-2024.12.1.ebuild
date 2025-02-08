@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/py-zabbix-1.1.7[${PYTHON_USEDEP}]
+	~dev-python/py-zabbix-1.1.7[${PYTHON_USEDEP}]
 "

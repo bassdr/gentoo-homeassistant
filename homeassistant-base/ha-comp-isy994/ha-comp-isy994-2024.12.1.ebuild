@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyisy-3.1.14[${PYTHON_USEDEP}]
+	~dev-python/pyisy-3.1.14[${PYTHON_USEDEP}]
 "

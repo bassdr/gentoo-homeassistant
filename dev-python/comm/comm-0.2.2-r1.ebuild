@@ -21,7 +21,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest; extra == 'test'
+	traitlets>=4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/traitlets-4[${PYTHON_USEDEP}]
 "

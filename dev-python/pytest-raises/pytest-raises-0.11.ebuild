@@ -17,6 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pylint ; extra == 'develop'
+	pytest (>=3.2.2)
+	pytest-cov ; extra == 'develop'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/pylint[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-3.2.2[${PYTHON_USEDEP}]

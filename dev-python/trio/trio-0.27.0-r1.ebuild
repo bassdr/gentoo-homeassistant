@@ -24,7 +24,15 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	attrs>=23.2.0
+	cffi>=1.14; os_name == "nt" and implementation_name != "pypy"
+	exceptiongroup; python_version < "3.11"
+	idna
+	outcome
+	sniffio>=1.3.0
+	sortedcontainers
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-23.2.0[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]

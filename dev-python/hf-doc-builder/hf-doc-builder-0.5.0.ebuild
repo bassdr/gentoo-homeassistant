@@ -17,6 +17,50 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython
+	black
+	black (~=22.0) ; extra == 'all'
+	black (~=22.0) ; extra == 'dev'
+	black (~=22.0) ; extra == 'quality'
+	flake8 (>=3.8.3) ; extra == 'all'
+	flake8 (>=3.8.3) ; extra == 'dev'
+	flake8 (>=3.8.3) ; extra == 'quality'
+	google-api-python-client ; extra == 'all'
+	google-api-python-client ; extra == 'dev'
+	google-api-python-client ; extra == 'testing'
+	huggingface-hub
+	isort (>=5.5.4) ; extra == 'all'
+	isort (>=5.5.4) ; extra == 'dev'
+	isort (>=5.5.4) ; extra == 'quality'
+	nbformat
+	packaging
+	pytest ; extra == 'all'
+	pytest ; extra == 'dev'
+	pytest ; extra == 'testing'
+	pytest-xdist ; extra == 'all'
+	pytest-xdist ; extra == 'dev'
+	pytest-xdist ; extra == 'testing'
+	pyyaml
+	requests ; extra == 'all'
+	requests ; extra == 'dev'
+	requests ; extra == 'testing'
+	timm ; extra == 'all'
+	timm ; extra == 'dev'
+	timm ; extra == 'testing'
+	tokenizers ; extra == 'all'
+	tokenizers ; extra == 'dev'
+	tokenizers ; extra == 'testing'
+	torch ; extra == 'all'
+	torch ; extra == 'dev'
+	torch ; extra == 'testing'
+	tqdm
+	transformers ; extra == 'all'
+	transformers ; extra == 'dev'
+	transformers ; extra == 'testing'
+	transformers[dev] ; extra == 'transformers'
+	twine ; extra == 'release'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}] )
 	dev-python/black[${PYTHON_USEDEP}]

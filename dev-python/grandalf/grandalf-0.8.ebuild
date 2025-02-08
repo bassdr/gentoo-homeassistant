@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy ; extra == 'full'
+	ply ; extra == 'full'
+	pyparsing
+"
 GENERATED_RDEPEND="${RDEPEND}
 	full? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	full? ( dev-python/ply[${PYTHON_USEDEP}] )

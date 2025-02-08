@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/openevsewifi-1.1.2[${PYTHON_USEDEP}]
+	~dev-python/openevsewifi-1.1.2[${PYTHON_USEDEP}]
 "

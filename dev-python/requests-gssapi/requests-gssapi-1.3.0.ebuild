@@ -3,19 +3,26 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/requests_gssapi/"
+  https://pypi.org/project/requests-gssapi/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ==24.2.0 ; extra == 'dev'
+	gssapi
+	isort ==5.13.2 ; extra == 'dev'
+	pytest ; extra == 'dev'
+	requests >=1.1.0
+	tox >=4.0.0 ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/gssapi[${PYTHON_USEDEP}]
 	>=dev-python/requests-1.1.0[${PYTHON_USEDEP}]
@@ -25,8 +32,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-24.2.0[${PYTHON_USEDEP}]
-		=dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+		~dev-python/black-24.2.0[${PYTHON_USEDEP}]
+		~dev-python/isort-5.13.2[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		>=dev-python/tox-4.0.0[${PYTHON_USEDEP}]
 	)

@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-timeout (>=4.0)
+	bitstring (>=3.1)
+	pyserial-asyncio (>=0.6)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-timeout-4.0[${PYTHON_USEDEP}]
 	>=dev-python/bitstring-3.1[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML~=6.0
+	fsspec>=2021.04.0
+	typing-extensions; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fsspec-2021.04.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}] =dev-python/pyyaml-6*[${PYTHON_USEDEP}]

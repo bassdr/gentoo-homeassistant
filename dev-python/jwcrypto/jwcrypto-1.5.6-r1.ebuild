@@ -20,7 +20,10 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	cryptography >=3.4
+	typing-extensions >=4.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-3.4[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.5.0[${PYTHON_USEDEP}]

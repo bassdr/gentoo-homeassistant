@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python 3 asyncio package for interacting with Control4 systems"
 HOMEPAGE="
-  https://pypi.org/project/pyControl4/
+  https://pypi.org/project/pycontrol4/
 "
 
 LICENSE="Apache-2.0"
@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	python-socketio-v4
+	websocket-client
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/python-socketio-v4[${PYTHON_USEDEP}]

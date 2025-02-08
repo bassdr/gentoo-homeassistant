@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-telegram-bot-21.5[socks,${PYTHON_USEDEP}]
+	~dev-python/python-telegram-bot-21.5[socks,${PYTHON_USEDEP}]
 "

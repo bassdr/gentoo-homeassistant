@@ -16,8 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bashlex!=0.13
+	bracex
+	certifi
+	dependency-groups>=1.2
+	filelock
+	packaging>=20.9
+	platformdirs
+	tomli; python_version < "3.11"
+	typing-extensions>=4.1.0; python_version < "3.11"
+	uv; extra == "uv"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/bashlex-0.13[${PYTHON_USEDEP}]
+	!~dev-python/bashlex-0.13[${PYTHON_USEDEP}]
 	dev-python/bracex[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/dependency-groups-1.2[${PYTHON_USEDEP}]

@@ -29,9 +29,24 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all gssapi invoke"
 IUSE="${GENERATED_IUSE} examples server"
 
+REQUIRES_DIST="
+	bcrypt>=3.2
+	cryptography>=3.3
+	gssapi>=1.4.1; platform_system != "Windows" and extra == "all"
+	gssapi>=1.4.1; platform_system != "Windows" and extra == "gssapi"
+	invoke>=2.0; extra == "all"
+	invoke>=2.0; extra == "invoke"
+	pyasn1>=0.1.7; extra == "all"
+	pyasn1>=0.1.7; extra == "gssapi"
+	pynacl>=1.5
+	pywin32>=2.1.8; platform_system == "Windows" and extra == "all"
+	pywin32>=2.1.8; platform_system == "Windows" and extra == "gssapi"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bcrypt-3.2[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-3.3[${PYTHON_USEDEP}]
+	all? ( >=dev-python/gssapi-1.4.1[${PYTHON_USEDEP}] )
+	gssapi? ( >=dev-python/gssapi-1.4.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/invoke-2.0[${PYTHON_USEDEP}] )
 	invoke? ( >=dev-python/invoke-2.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}] )

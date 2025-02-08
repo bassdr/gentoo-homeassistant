@@ -16,6 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py
+	kagglehub
+	numpy
+	packaging
+	regex
+	rich
+	rouge-score; extra == "extras"
+	sentencepiece; extra == "extras"
+	tensorflow-text; platform_system != "Darwin"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	dev-python/kagglehub[${PYTHON_USEDEP}]
@@ -25,6 +36,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]
 	extras? ( dev-python/rouge-score[${PYTHON_USEDEP}] )
 	extras? ( dev-python/sentencepiece[${PYTHON_USEDEP}] )
+	dev-python/tensorflow-text[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

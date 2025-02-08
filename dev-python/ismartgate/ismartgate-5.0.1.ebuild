@@ -21,6 +21,67 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx >=3.4.3 ; extra == 'all'
+	Sphinx >=3.4.3 ; extra == 'dev'
+	black >=22.12.0 ; extra == 'all'
+	black >=22.12.0 ; extra == 'dev'
+	black >=22.12.0 ; extra == 'test'
+	bump2version >=1.0.1 ; extra == 'all'
+	bump2version >=1.0.1 ; extra == 'dev'
+	codecov >=2.1.4 ; extra == 'all'
+	codecov >=2.1.4 ; extra == 'dev'
+	codecov >=2.1.4 ; extra == 'test'
+	coverage >=5.1 ; extra == 'all'
+	coverage >=5.1 ; extra == 'dev'
+	defusedxml >=0.7.1
+	defusedxml >=0.7.1 ; extra == 'all'
+	dicttoxml >=1.7.4
+	dicttoxml >=1.7.4 ; extra == 'all'
+	flake8 >=3.8.3 ; extra == 'all'
+	flake8 >=3.8.3 ; extra == 'dev'
+	flake8 >=3.8.3 ; extra == 'test'
+	flake8-debugger >=3.2.1 ; extra == 'all'
+	flake8-debugger >=3.2.1 ; extra == 'dev'
+	flake8-debugger >=3.2.1 ; extra == 'test'
+	httpx >=0.18.0
+	httpx >=0.18.0 ; extra == 'all'
+	ipython >=7.15.0 ; extra == 'all'
+	ipython >=7.15.0 ; extra == 'dev'
+	m2r2 >=0.2.7 ; extra == 'all'
+	m2r2 >=0.2.7 ; extra == 'dev'
+	pycryptodome >=3.9.8
+	pycryptodome >=3.9.8 ; extra == 'all'
+	pytest >=5.4.3 ; extra == 'all'
+	pytest >=5.4.3 ; extra == 'dev'
+	pytest >=5.4.3 ; extra == 'test'
+	pytest-asyncio ; extra == 'all'
+	pytest-asyncio ; extra == 'dev'
+	pytest-asyncio ; extra == 'test'
+	pytest-cov >=2.9.0 ; extra == 'all'
+	pytest-cov >=2.9.0 ; extra == 'dev'
+	pytest-cov >=2.9.0 ; extra == 'test'
+	pytest-raises >=0.11 ; extra == 'all'
+	pytest-raises >=0.11 ; extra == 'dev'
+	pytest-raises >=0.11 ; extra == 'test'
+	pytest-runner >=5.2 ; extra == 'all'
+	pytest-runner >=5.2 ; extra == 'dev'
+	pytest-runner >=5.2 ; extra == 'setup'
+	respx >=0.17.0 ; extra == 'all'
+	respx >=0.17.0 ; extra == 'dev'
+	respx >=0.17.0 ; extra == 'test'
+	sphinx-rtd-theme >=0.5.1 ; extra == 'all'
+	sphinx-rtd-theme >=0.5.1 ; extra == 'dev'
+	tox >=3.15.2 ; extra == 'all'
+	tox >=3.15.2 ; extra == 'dev'
+	twine >=3.1.1 ; extra == 'all'
+	twine >=3.1.1 ; extra == 'dev'
+	typing-extensions >=3.10.0.0 ; extra == 'all'
+	typing-extensions >=3.10.0.0 ; extra == 'dev'
+	typing-extensions >=3.10.0.0 ; extra == 'test'
+	wheel >=0.34.2 ; extra == 'all'
+	wheel >=0.34.2 ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/black-22.12.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/bump2version-1.0.1[${PYTHON_USEDEP}] )

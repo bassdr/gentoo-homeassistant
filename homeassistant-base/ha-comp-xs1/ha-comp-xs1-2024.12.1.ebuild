@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/xs1-api-client-3.0.0[${PYTHON_USEDEP}]
+	~dev-python/xs1-api-client-3.0.0[${PYTHON_USEDEP}]
 "

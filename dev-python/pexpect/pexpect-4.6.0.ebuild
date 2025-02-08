@@ -19,6 +19,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="examples"
 
+REQUIRES_DIST="
+	ptyprocess (>=0.5)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ptyprocess-0.5[${PYTHON_USEDEP}]
 "

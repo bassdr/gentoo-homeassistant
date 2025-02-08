@@ -24,13 +24,19 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="jupyter"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	colorama (>=0.4.0,<0.5.0)
+	commonmark (>=0.9.0,<0.10.0)
+	dataclasses (>=0.7,<0.9); python_version < "3.7"
+	ipywidgets (>=7.5.1,<8.0.0); extra == "jupyter"
+	pygments (>=2.6.0,<3.0.0)
+	typing-extensions (>=3.7.4,<5.0); python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/colorama-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/commonmark-0.9.0[${PYTHON_USEDEP}]
-	>=dev-python/dataclasses-0.7[${PYTHON_USEDEP}]
-	jupyter? ( >=dev-python/ipywidgets-7.5.1[${PYTHON_USEDEP}] )
-	>=dev-python/pygments-2.6.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
+	>=dev-python/colorama-0.4.0[${PYTHON_USEDEP}] <dev-python/colorama-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/commonmark-0.9.0[${PYTHON_USEDEP}] <dev-python/commonmark-0.10.0[${PYTHON_USEDEP}]
+	jupyter? ( >=dev-python/ipywidgets-7.5.1[${PYTHON_USEDEP}] <dev-python/ipywidgets-8.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/pygments-2.6.0[${PYTHON_USEDEP}] <dev-python/pygments-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/colorama[${PYTHON_USEDEP}]

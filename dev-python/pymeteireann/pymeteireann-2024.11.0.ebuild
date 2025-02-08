@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library to communicate with the Met Éireann Public Weather Forecast and Weather Warning APIs"
 HOMEPAGE="
-  https://pypi.org/project/PyMetEireann/
+  https://pypi.org/project/pymeteireann/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	async_timeout
+	pytz
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/async-timeout[${PYTHON_USEDEP}]

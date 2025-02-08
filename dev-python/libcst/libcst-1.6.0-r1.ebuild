@@ -136,7 +136,29 @@ LICENSE+=" Apache-2.0 Apache-2.0-with-LLVM-exceptions MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Sphinx>=5.1.1; extra == "dev"
+	black==24.8.0; extra == "dev"
+	build>=0.10.0; extra == "dev"
+	coverage[toml]>=4.5.4; extra == "dev"
+	fixit==2.1.0; extra == "dev"
+	flake8==7.1.1; extra == "dev"
+	hypothesis>=4.36.0; extra == "dev"
+	hypothesmith>=0.0.4; extra == "dev"
+	jinja2==3.1.5; extra == "dev"
+	jupyter>=1.0.0; extra == "dev"
+	maturin<1.8,>=1.7.0; extra == "dev"
+	nbsphinx>=0.4.2; extra == "dev"
+	prompt-toolkit>=2.0.9; extra == "dev"
+	pyre-check==0.9.18; platform_system != "Windows" and extra == "dev"
+	pyyaml>=5.2
+	setuptools-rust>=1.5.2; extra == "dev"
+	setuptools_scm>=6.0.1; extra == "dev"
+	slotscheck>=0.7.1; extra == "dev"
+	sphinx-rtd-theme>=0.4.3; extra == "dev"
+	ufmt==2.8.0; extra == "dev"
+	usort==1.0.8.post1; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyyaml-5.2[${PYTHON_USEDEP}]
 "
@@ -155,25 +177,26 @@ EPYTEST_XDIST=1
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-24.8.0[${PYTHON_USEDEP}]
+		~dev-python/black-24.8.0[${PYTHON_USEDEP}]
 		>=dev-python/build-0.10.0[${PYTHON_USEDEP}]
 		>=dev-python/coverage-4.5.4[toml,${PYTHON_USEDEP}]
-		=dev-python/fixit-2.1.0[${PYTHON_USEDEP}]
-		=dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
+		~dev-python/fixit-2.1.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
 		>=dev-python/hypothesis-4.36.0[${PYTHON_USEDEP}]
 		>=dev-python/hypothesmith-0.0.4[${PYTHON_USEDEP}]
-		=dev-python/jinja2-3.1.5[${PYTHON_USEDEP}]
+		~dev-python/jinja2-3.1.5[${PYTHON_USEDEP}]
 		>=dev-python/jupyter-1.0.0[${PYTHON_USEDEP}]
-		<dev-python/maturin-1.8[${PYTHON_USEDEP}]
+		>=dev-python/maturin-1.7.0[${PYTHON_USEDEP}] <dev-python/maturin-1.8[${PYTHON_USEDEP}]
 		>=dev-python/nbsphinx-0.4.2[${PYTHON_USEDEP}]
 		>=dev-python/prompt-toolkit-2.0.9[${PYTHON_USEDEP}]
+		~dev-python/pyre-check-0.9.18[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-rust-1.5.2[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-scm-6.0.1[${PYTHON_USEDEP}]
 		>=dev-python/slotscheck-0.7.1[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-5.1.1[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-rtd-theme-0.4.3[${PYTHON_USEDEP}]
-		=dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
-		=dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
+		~dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
+		~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

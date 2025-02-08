@@ -33,7 +33,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/argcomplete-3.0.3[${PYTHON_USEDEP}]
 		>=dev-python/mypy-1.7.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-8.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}] <dev-python/pytest-8.2[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/pytest-mypy-testing[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]

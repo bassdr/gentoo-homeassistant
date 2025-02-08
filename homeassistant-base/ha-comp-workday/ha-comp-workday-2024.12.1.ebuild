@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/holidays-0.62[${PYTHON_USEDEP}]
+	~dev-python/holidays-0.62[${PYTHON_USEDEP}]
 "

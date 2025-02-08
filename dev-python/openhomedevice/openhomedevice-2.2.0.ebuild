@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-upnp-client
+	lxml
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-upnp-client[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	mypy; extra == "test"
+	pandas>=1.2.5
+	pytest>=7.4.4; extra == "test"
+	python-dateutil>=2.8.2
+	requests>=2.31.0
+	responses>=0.23.1; extra == "test"
+	ruff==0.3.3; extra == "test"
+	types-python-dateutil; extra == "test"
+	types-requests; extra == "test"
+	urllib3>=1.26.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-1.2.5[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
@@ -29,7 +40,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/mypy[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.4.4[${PYTHON_USEDEP}]
 		>=dev-python/responses-0.23.1[${PYTHON_USEDEP}]
-		=dev-python/ruff-0.3.3[${PYTHON_USEDEP}]
+		~dev-python/ruff-0.3.3[${PYTHON_USEDEP}]
 		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
 		dev-python/types-requests[${PYTHON_USEDEP}]
 	)

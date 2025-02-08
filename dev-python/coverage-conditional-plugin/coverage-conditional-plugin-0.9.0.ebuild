@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage (>=7,<8)
+	importlib_metadata ; python_version < "3.10"
+	packaging (>=20.4)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/coverage-7[${PYTHON_USEDEP}]
+	>=dev-python/coverage-7[${PYTHON_USEDEP}] <dev-python/coverage-8[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

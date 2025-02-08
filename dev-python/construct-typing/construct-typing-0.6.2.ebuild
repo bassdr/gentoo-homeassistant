@@ -21,8 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	construct (==2.10.68)
+	typing-extensions (>=4.6.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/construct-2.10.68[${PYTHON_USEDEP}]
+	~dev-python/construct-2.10.68[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

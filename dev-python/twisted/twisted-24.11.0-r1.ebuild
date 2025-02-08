@@ -32,6 +32,155 @@ GENERATED_IUSE="all-non-platform conch dev-release gtk-platform http2 macos-plat
 IUSE="${GENERATED_IUSE} conch http2 serial ssl test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	appdirs>=1.4.0; extra == "all-non-platform"
+	appdirs>=1.4.0; extra == "conch"
+	appdirs>=1.4.0; extra == "gtk-platform"
+	appdirs>=1.4.0; extra == "macos-platform"
+	appdirs>=1.4.0; extra == "mypy"
+	appdirs>=1.4.0; extra == "osx-platform"
+	appdirs>=1.4.0; extra == "windows-platform"
+	attrs>=22.2.0
+	automat>=24.8.0
+	bcrypt>=3.1.3; extra == "all-non-platform"
+	bcrypt>=3.1.3; extra == "conch"
+	bcrypt>=3.1.3; extra == "gtk-platform"
+	bcrypt>=3.1.3; extra == "macos-platform"
+	bcrypt>=3.1.3; extra == "mypy"
+	bcrypt>=3.1.3; extra == "osx-platform"
+	bcrypt>=3.1.3; extra == "windows-platform"
+	constantly>=15.1
+	coverage~=7.5; extra == "dev"
+	coverage~=7.5; extra == "mypy"
+	cryptography>=3.3; extra == "all-non-platform"
+	cryptography>=3.3; extra == "conch"
+	cryptography>=3.3; extra == "gtk-platform"
+	cryptography>=3.3; extra == "macos-platform"
+	cryptography>=3.3; extra == "mypy"
+	cryptography>=3.3; extra == "osx-platform"
+	cryptography>=3.3; extra == "windows-platform"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "all-non-platform"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "dev"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "gtk-platform"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "macos-platform"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "mypy"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "osx-platform"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "test"
+	cython-test-exception-raiser<2,>=1.0.2; extra == "windows-platform"
+	h2<5.0,>=3.2; extra == "all-non-platform"
+	h2<5.0,>=3.2; extra == "gtk-platform"
+	h2<5.0,>=3.2; extra == "http2"
+	h2<5.0,>=3.2; extra == "macos-platform"
+	h2<5.0,>=3.2; extra == "mypy"
+	h2<5.0,>=3.2; extra == "osx-platform"
+	h2<5.0,>=3.2; extra == "windows-platform"
+	httpx[http2]>=0.27; extra == "all-non-platform"
+	httpx[http2]>=0.27; extra == "dev"
+	httpx[http2]>=0.27; extra == "gtk-platform"
+	httpx[http2]>=0.27; extra == "macos-platform"
+	httpx[http2]>=0.27; extra == "mypy"
+	httpx[http2]>=0.27; extra == "osx-platform"
+	httpx[http2]>=0.27; extra == "test"
+	httpx[http2]>=0.27; extra == "windows-platform"
+	hyperlink>=17.1.1
+	hypothesis>=6.56; extra == "all-non-platform"
+	hypothesis>=6.56; extra == "dev"
+	hypothesis>=6.56; extra == "gtk-platform"
+	hypothesis>=6.56; extra == "macos-platform"
+	hypothesis>=6.56; extra == "mypy"
+	hypothesis>=6.56; extra == "osx-platform"
+	hypothesis>=6.56; extra == "test"
+	hypothesis>=6.56; extra == "windows-platform"
+	idna>=2.4; extra == "all-non-platform"
+	idna>=2.4; extra == "gtk-platform"
+	idna>=2.4; extra == "macos-platform"
+	idna>=2.4; extra == "mypy"
+	idna>=2.4; extra == "osx-platform"
+	idna>=2.4; extra == "tls"
+	idna>=2.4; extra == "windows-platform"
+	incremental>=24.7.0
+	mypy-zope==1.0.6; extra == "mypy"
+	mypy==1.10.1; extra == "mypy"
+	priority<2.0,>=1.1.0; extra == "all-non-platform"
+	priority<2.0,>=1.1.0; extra == "gtk-platform"
+	priority<2.0,>=1.1.0; extra == "http2"
+	priority<2.0,>=1.1.0; extra == "macos-platform"
+	priority<2.0,>=1.1.0; extra == "mypy"
+	priority<2.0,>=1.1.0; extra == "osx-platform"
+	priority<2.0,>=1.1.0; extra == "windows-platform"
+	pydoctor~=23.9.0; extra == "dev"
+	pydoctor~=23.9.0; extra == "dev-release"
+	pydoctor~=23.9.0; extra == "mypy"
+	pyflakes~=2.2; extra == "dev"
+	pyflakes~=2.2; extra == "mypy"
+	pygobject; extra == "gtk-platform"
+	pyhamcrest>=2; extra == "all-non-platform"
+	pyhamcrest>=2; extra == "dev"
+	pyhamcrest>=2; extra == "gtk-platform"
+	pyhamcrest>=2; extra == "macos-platform"
+	pyhamcrest>=2; extra == "mypy"
+	pyhamcrest>=2; extra == "osx-platform"
+	pyhamcrest>=2; extra == "test"
+	pyhamcrest>=2; extra == "windows-platform"
+	pyobjc-core; extra == "macos-platform"
+	pyobjc-core; extra == "osx-platform"
+	pyobjc-framework-cfnetwork; extra == "macos-platform"
+	pyobjc-framework-cfnetwork; extra == "osx-platform"
+	pyobjc-framework-cocoa; extra == "macos-platform"
+	pyobjc-framework-cocoa; extra == "osx-platform"
+	pyopenssl>=21.0.0; extra == "all-non-platform"
+	pyopenssl>=21.0.0; extra == "gtk-platform"
+	pyopenssl>=21.0.0; extra == "macos-platform"
+	pyopenssl>=21.0.0; extra == "mypy"
+	pyopenssl>=21.0.0; extra == "osx-platform"
+	pyopenssl>=21.0.0; extra == "tls"
+	pyopenssl>=21.0.0; extra == "windows-platform"
+	pyserial>=3.0; extra == "all-non-platform"
+	pyserial>=3.0; extra == "gtk-platform"
+	pyserial>=3.0; extra == "macos-platform"
+	pyserial>=3.0; extra == "mypy"
+	pyserial>=3.0; extra == "osx-platform"
+	pyserial>=3.0; extra == "serial"
+	pyserial>=3.0; extra == "windows-platform"
+	python-subunit~=1.4; extra == "dev"
+	python-subunit~=1.4; extra == "mypy"
+	pywin32!=226; extra == "windows-platform"
+	pywin32!=226; platform_system == "Windows" and extra == "all-non-platform"
+	pywin32!=226; platform_system == "Windows" and extra == "all_non_platform"
+	pywin32!=226; platform_system == "Windows" and extra == "gtk-platform"
+	pywin32!=226; platform_system == "Windows" and extra == "gtk_platform"
+	pywin32!=226; platform_system == "Windows" and extra == "macos-platform"
+	pywin32!=226; platform_system == "Windows" and extra == "macos_platform"
+	pywin32!=226; platform_system == "Windows" and extra == "mypy"
+	pywin32!=226; platform_system == "Windows" and extra == "osx-platform"
+	pywin32!=226; platform_system == "Windows" and extra == "osx_platform"
+	pywin32!=226; platform_system == "Windows" and extra == "serial"
+	pywin32!=226; platform_system == "Windows" and extra == "windows-platform"
+	pywin32!=226; platform_system == "Windows" and extra == "windows_platform"
+	service-identity>=18.1.0; extra == "all-non-platform"
+	service-identity>=18.1.0; extra == "gtk-platform"
+	service-identity>=18.1.0; extra == "macos-platform"
+	service-identity>=18.1.0; extra == "mypy"
+	service-identity>=18.1.0; extra == "osx-platform"
+	service-identity>=18.1.0; extra == "tls"
+	service-identity>=18.1.0; extra == "windows-platform"
+	sphinx-rtd-theme~=1.3; extra == "dev"
+	sphinx-rtd-theme~=1.3; extra == "dev-release"
+	sphinx-rtd-theme~=1.3; extra == "mypy"
+	sphinx<7,>=6; extra == "dev"
+	sphinx<7,>=6; extra == "dev-release"
+	sphinx<7,>=6; extra == "mypy"
+	towncrier~=23.6; extra == "dev"
+	towncrier~=23.6; extra == "dev-release"
+	towncrier~=23.6; extra == "mypy"
+	twisted-iocpsupport>=1.0.2; extra == "windows-platform"
+	twistedchecker~=0.7; extra == "dev"
+	twistedchecker~=0.7; extra == "mypy"
+	types-pyopenssl; extra == "mypy"
+	types-setuptools; extra == "mypy"
+	typing-extensions>=4.2.0
+	zope-interface>=5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all-non-platform? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
 	conch? ( >=dev-python/appdirs-1.4.0[${PYTHON_USEDEP}] )
@@ -58,19 +207,19 @@ GENERATED_RDEPEND="${RDEPEND}
 	mypy? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
 	osx-platform? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/cryptography-3.3[${PYTHON_USEDEP}] )
-	all-non-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	gtk-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	macos-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	mypy? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	osx-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	windows-platform? ( <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
-	all-non-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
-	gtk-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
-	http2? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
-	macos-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
-	mypy? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
-	osx-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
-	windows-platform? ( <dev-python/h2-5.0[${PYTHON_USEDEP}] )
+	all-non-platform? ( >=dev-python/cython-test-exception-raiser-1.0.2[${PYTHON_USEDEP}] <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
+	gtk-platform? ( >=dev-python/cython-test-exception-raiser-1.0.2[${PYTHON_USEDEP}] <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
+	macos-platform? ( >=dev-python/cython-test-exception-raiser-1.0.2[${PYTHON_USEDEP}] <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
+	mypy? ( >=dev-python/cython-test-exception-raiser-1.0.2[${PYTHON_USEDEP}] <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
+	osx-platform? ( >=dev-python/cython-test-exception-raiser-1.0.2[${PYTHON_USEDEP}] <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
+	windows-platform? ( >=dev-python/cython-test-exception-raiser-1.0.2[${PYTHON_USEDEP}] <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}] )
+	all-non-platform? ( >=dev-python/h2-3.2[${PYTHON_USEDEP}] <dev-python/h2-5.0[${PYTHON_USEDEP}] )
+	gtk-platform? ( >=dev-python/h2-3.2[${PYTHON_USEDEP}] <dev-python/h2-5.0[${PYTHON_USEDEP}] )
+	http2? ( >=dev-python/h2-3.2[${PYTHON_USEDEP}] <dev-python/h2-5.0[${PYTHON_USEDEP}] )
+	macos-platform? ( >=dev-python/h2-3.2[${PYTHON_USEDEP}] <dev-python/h2-5.0[${PYTHON_USEDEP}] )
+	mypy? ( >=dev-python/h2-3.2[${PYTHON_USEDEP}] <dev-python/h2-5.0[${PYTHON_USEDEP}] )
+	osx-platform? ( >=dev-python/h2-3.2[${PYTHON_USEDEP}] <dev-python/h2-5.0[${PYTHON_USEDEP}] )
+	windows-platform? ( >=dev-python/h2-3.2[${PYTHON_USEDEP}] <dev-python/h2-5.0[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
 	macos-platform? ( >=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}] )
@@ -92,15 +241,15 @@ GENERATED_RDEPEND="${RDEPEND}
 	tls? ( >=dev-python/idna-2.4[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/idna-2.4[${PYTHON_USEDEP}] )
 	>=dev-python/incremental-24.7.0[${PYTHON_USEDEP}]
-	mypy? ( =dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
-	mypy? ( =dev-python/mypy-zope-1.0.6[${PYTHON_USEDEP}] )
-	all-non-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
-	gtk-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
-	http2? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
-	macos-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
-	mypy? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
-	osx-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
-	windows-platform? ( <dev-python/priority-2.0[${PYTHON_USEDEP}] )
+	mypy? ( ~dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
+	mypy? ( ~dev-python/mypy-zope-1.0.6[${PYTHON_USEDEP}] )
+	all-non-platform? ( >=dev-python/priority-1.1.0[${PYTHON_USEDEP}] <dev-python/priority-2.0[${PYTHON_USEDEP}] )
+	gtk-platform? ( >=dev-python/priority-1.1.0[${PYTHON_USEDEP}] <dev-python/priority-2.0[${PYTHON_USEDEP}] )
+	http2? ( >=dev-python/priority-1.1.0[${PYTHON_USEDEP}] <dev-python/priority-2.0[${PYTHON_USEDEP}] )
+	macos-platform? ( >=dev-python/priority-1.1.0[${PYTHON_USEDEP}] <dev-python/priority-2.0[${PYTHON_USEDEP}] )
+	mypy? ( >=dev-python/priority-1.1.0[${PYTHON_USEDEP}] <dev-python/priority-2.0[${PYTHON_USEDEP}] )
+	osx-platform? ( >=dev-python/priority-1.1.0[${PYTHON_USEDEP}] <dev-python/priority-2.0[${PYTHON_USEDEP}] )
+	windows-platform? ( >=dev-python/priority-1.1.0[${PYTHON_USEDEP}] <dev-python/priority-2.0[${PYTHON_USEDEP}] )
 	dev-release? ( >=dev-python/pydoctor-23.9.0[${PYTHON_USEDEP}] =dev-python/pydoctor-23.9*[${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/pydoctor-23.9.0[${PYTHON_USEDEP}] =dev-python/pydoctor-23.9*[${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/pyflakes-2.2[${PYTHON_USEDEP}] =dev-python/pyflakes-2*[${PYTHON_USEDEP}] )
@@ -132,7 +281,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	serial? ( >=dev-python/pyserial-3.0[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/pyserial-3.0[${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/python-subunit-1.4[${PYTHON_USEDEP}] =dev-python/python-subunit-1*[${PYTHON_USEDEP}] )
-	windows-platform? ( !=dev-python/pywin32-226[${PYTHON_USEDEP}] )
+	windows-platform? ( !~dev-python/pywin32-226[${PYTHON_USEDEP}] )
 	all-non-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	gtk-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	macos-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
@@ -140,8 +289,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	osx-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	tls? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
 	windows-platform? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
-	dev-release? ( <dev-python/sphinx-7[${PYTHON_USEDEP}] )
-	mypy? ( <dev-python/sphinx-7[${PYTHON_USEDEP}] )
+	dev-release? ( >=dev-python/sphinx-6[${PYTHON_USEDEP}] <dev-python/sphinx-7[${PYTHON_USEDEP}] )
+	mypy? ( >=dev-python/sphinx-6[${PYTHON_USEDEP}] <dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	dev-release? ( >=dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-1*[${PYTHON_USEDEP}] )
 	mypy? ( >=dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-1*[${PYTHON_USEDEP}] )
 	dev-release? ( >=dev-python/towncrier-23.6[${PYTHON_USEDEP}] =dev-python/towncrier-23*[${PYTHON_USEDEP}] )

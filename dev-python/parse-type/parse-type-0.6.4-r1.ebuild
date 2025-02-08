@@ -17,23 +17,49 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="develop docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx>=1.6; extra == "docs"
+	build>=0.5.1; extra == "develop"
+	coverage>=4.4; extra == "develop"
+	enum34; python_version < "3.4"
+	parse>=1.13.1; python_version <= "2.7"
+	parse>=1.18.0; python_version >= "3.0"
+	pylint; extra == "develop"
+	pytest-cov; extra == "develop"
+	pytest-html>=1.19.0; extra == "develop"
+	pytest-html>=1.19.0; extra == "testing"
+	pytest<5.0; python_version < "3.0" and extra == "develop"
+	pytest<5.0; python_version < "3.0" and extra == "testing"
+	pytest>=5.0; python_version >= "3.0" and extra == "develop"
+	pytest>=5.0; python_version >= "3.0" and extra == "testing"
+	ruff; python_version >= "3.7" and extra == "develop"
+	setuptools-scm; extra == "develop"
+	setuptools; extra == "develop"
+	six>=1.15
+	sphinx-bootstrap-theme>=0.6.0; extra == "docs"
+	tox<4.0,>=2.8; extra == "develop"
+	twine>=1.13.0; extra == "develop"
+	virtualenv<20.22.0; python_version <= "3.6" and extra == "develop"
+	virtualenv>=20.0.0; python_version > "3.6" and extra == "develop"
+	wheel; extra == "develop"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( >=dev-python/build-0.5.1[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/coverage-4.4[${PYTHON_USEDEP}] )
-	dev-python/enum34[${PYTHON_USEDEP}]
 	>=dev-python/parse-1.18.0[${PYTHON_USEDEP}]
 	develop? ( dev-python/pylint[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
+	develop? ( >=dev-python/pytest-5.0[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}] )
+	develop? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	develop? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	develop? ( dev-python/setuptools-scm[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.15[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-1.6[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-bootstrap-theme-0.6.0[${PYTHON_USEDEP}] )
-	develop? ( <dev-python/tox-4.0[${PYTHON_USEDEP}] )
+	develop? ( >=dev-python/tox-2.8[${PYTHON_USEDEP}] <dev-python/tox-4.0[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/twine-1.13.0[${PYTHON_USEDEP}] )
-	<dev-python/virtualenv-20.22.0[${PYTHON_USEDEP}]
+	develop? ( >=dev-python/virtualenv-20.0.0[${PYTHON_USEDEP}] )
 	develop? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
@@ -47,6 +73,7 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
+		>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}]
 	)
 "

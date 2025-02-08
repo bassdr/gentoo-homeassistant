@@ -12,12 +12,30 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.pagetemplate/"
+  https://pypi.org/project/zope-pagetemplate/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	zope.component
+	zope.i18n >=4.0.1
+	zope.i18nmessageid
+	zope.interface
+	zope.proxy ; extra == 'test'
+	zope.security ; extra == 'test'
+	zope.tal >=4.2.0
+	zope.tales
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+	zope.traversing
+	zope.untrustedpython >=5.0.dev0 ; extra == 'test'
+	zope.untrustedpython >=5.0.dev0 ; extra == 'untrusted'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

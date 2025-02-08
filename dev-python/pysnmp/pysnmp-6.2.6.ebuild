@@ -19,11 +19,15 @@ KEYWORDS="amd64 arm64"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-IUSE=""
+REQUIRES_DIST="
+	pyasn1!=0.5.0,>=0.4.8
+	pysmi<2.0.0,>=1.3.0
+	pysnmpcrypto<0.0.5,>=0.0.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/pyasn1-0.5.0[${PYTHON_USEDEP}]
-	<dev-python/pysmi-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/pysnmpcrypto-0.0.5[${PYTHON_USEDEP}]
+	>=dev-python/pyasn1-0.4.8[${PYTHON_USEDEP}] !~dev-python/pyasn1-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/pysmi-1.3.0[${PYTHON_USEDEP}] <dev-python/pysmi-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pysnmpcrypto-0.0.4[${PYTHON_USEDEP}] <dev-python/pysnmpcrypto-0.0.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]

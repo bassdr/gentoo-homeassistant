@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	six (<2.0,>=1.6.1)
+	wheel (<1.0,>=0.23.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/six-2.0[${PYTHON_USEDEP}]
-	<dev-python/wheel-1.0[${PYTHON_USEDEP}]
+	>=dev-python/six-1.6.1[${PYTHON_USEDEP}] <dev-python/six-2.0[${PYTHON_USEDEP}]
+	>=dev-python/wheel-0.23.0[${PYTHON_USEDEP}] <dev-python/wheel-1.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

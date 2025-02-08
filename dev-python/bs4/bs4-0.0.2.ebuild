@@ -14,7 +14,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	beautifulsoup4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 "

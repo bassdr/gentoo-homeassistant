@@ -12,13 +12,15 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/WSGIProxy2/"
+  https://pypi.org/project/wsgiproxy2/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	webob
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/webob[${PYTHON_USEDEP}]
 "

@@ -20,10 +20,30 @@ GENERATED_IUSE="codegen docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	Sphinx; extra == "dev"
+	Sphinx; extra == "docs"
+	coverage; extra == "dev"
+	elementpath<5.0.0,>=4.4.0
+	elementpath<5.0.0,>=4.4.0; extra == "codegen"
+	elementpath<5.0.0,>=4.4.0; extra == "dev"
+	elementpath<5.0.0,>=4.4.0; extra == "docs"
+	flake8; extra == "dev"
+	jinja2; extra == "codegen"
+	jinja2; extra == "dev"
+	jinja2; extra == "docs"
+	lxml-stubs; extra == "dev"
+	lxml; extra == "dev"
+	memory-profiler; extra == "dev"
+	mypy; extra == "dev"
+	sphinx-rtd-theme; extra == "dev"
+	sphinx-rtd-theme; extra == "docs"
+	tox; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/elementpath-5.0.0[${PYTHON_USEDEP}]
-	codegen? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/elementpath-4.4.0[${PYTHON_USEDEP}] <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}]
+	codegen? ( >=dev-python/elementpath-4.4.0[${PYTHON_USEDEP}] <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/elementpath-4.4.0[${PYTHON_USEDEP}] <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}] )
 	codegen? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

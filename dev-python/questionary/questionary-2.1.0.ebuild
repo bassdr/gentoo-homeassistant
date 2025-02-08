@@ -15,9 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	prompt_toolkit<4.0,>=2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/prompt-toolkit-4.0[${PYTHON_USEDEP}]
+	>=dev-python/prompt-toolkit-2.0[${PYTHON_USEDEP}] <dev-python/prompt-toolkit-4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND} dev-python/prompt-toolkit[${PYTHON_USEDEP}]"
 distutils_enable_tests pytest

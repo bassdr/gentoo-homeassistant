@@ -16,7 +16,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
@@ -33,5 +32,3 @@ python_test() {
 	# Disable pytest-cov
 	epytest -o addopts=
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

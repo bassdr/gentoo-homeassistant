@@ -16,13 +16,36 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2; extra == "dev"
+	black>=23.1.0; extra == "dev"
+	flake8>=6.0.0; extra == "dev"
+	griffe==0.47.0; extra == "docs"
+	htmltools>=0.2.0
+	isort>=5.11.2; extra == "dev"
+	jupyter; extra == "docs"
+	libsass; extra == "dev"
+	matplotlib; extra == "dev"
+	packaging>=20.9
+	pandas; extra == "dev"
+	plum-dispatch; extra == "docs"
+	pre-commit>=2.15.0; extra == "dev"
+	pyright>=1.1.301; extra == "dev"
+	pytest>=6.2.4; extra == "test"
+	quartodoc==0.7.5; extra == "docs"
+	shiny>=1.2.0
+	shinylive; extra == "docs"
+	tinycss2; extra == "dev"
+	typing-extensions>=3.10.0.0
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( =dev-python/griffe-0.47.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/griffe-0.47.0[${PYTHON_USEDEP}] )
 	>=dev-python/htmltools-0.2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/jupyter[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
 	docs? ( dev-python/plum-dispatch[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/quartodoc-0.7.5[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/quartodoc-0.7.5[${PYTHON_USEDEP}] )
 	>=dev-python/shiny-1.2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/shinylive[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]

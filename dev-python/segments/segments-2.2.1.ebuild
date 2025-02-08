@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	clldutils (>=1.7.3)
+	csvw (>=1.5.6)
+	flake8 ; extra == 'dev'
+	pytest (>=5) ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-mock ; extra == 'test'
+	regex
+	twine ; extra == 'dev'
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/clldutils-1.7.3[${PYTHON_USEDEP}]
 	>=dev-python/csvw-1.5.6[${PYTHON_USEDEP}]

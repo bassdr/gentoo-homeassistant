@@ -18,28 +18,54 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="azureservicebus azurestoragequeues confluentkafka consul mongodb msgpack pyro qpid redis slmq sqlalchemy sqs yaml zookeeper"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	PyYAML>=3.10; extra == "yaml"
+	amqp<6.0.0,>=5.1.1
+	azure-identity>=1.12.0; extra == "azurestoragequeues"
+	azure-servicebus>=7.10.0; extra == "azureservicebus"
+	azure-storage-queue>=12.6.0; extra == "azurestoragequeues"
+	backports.zoneinfo[tzdata]>=0.2.1; python_version < "3.9"
+	boto3>=1.26.143; extra == "sqs"
+	confluent-kafka>=2.2.0; extra == "confluentkafka"
+	kazoo>=2.8.0; extra == "zookeeper"
+	librabbitmq>=2.0.0; python_version < "3.11" and extra == "librabbitmq"
+	msgpack==1.1.0; extra == "msgpack"
+	pycurl>=7.43.0.5; (sys_platform != "win32" and platform_python_implementation == "CPython") and extra == "sqs"
+	pymongo>=4.1.1; extra == "mongodb"
+	pyro4==4.82; extra == "pyro"
+	python-consul2==0.1.5; extra == "consul"
+	qpid-python>=0.26; extra == "qpid"
+	qpid-tools>=0.26; extra == "qpid"
+	redis!=4.5.5,!=5.0.2,>=4.5.2; extra == "redis"
+	softlayer-messaging>=1.0.3; extra == "slmq"
+	sqlalchemy<2.1,>=1.4.48; extra == "sqlalchemy"
+	typing-extensions==4.12.2; python_version < "3.10"
+	tzdata; python_version >= "3.9"
+	urllib3>=1.26.16; extra == "sqs"
+	vine==5.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/amqp-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/amqp-5.1.1[${PYTHON_USEDEP}] <dev-python/amqp-6.0.0[${PYTHON_USEDEP}]
 	azurestoragequeues? ( >=dev-python/azure-identity-1.12.0[${PYTHON_USEDEP}] )
 	azureservicebus? ( >=dev-python/azure-servicebus-7.10.0[${PYTHON_USEDEP}] )
 	azurestoragequeues? ( >=dev-python/azure-storage-queue-12.6.0[${PYTHON_USEDEP}] )
-	>=dev-python/backports-zoneinfo-0.2.1[tzdata,${PYTHON_USEDEP}]
 	sqs? ( >=dev-python/boto3-1.26.143[${PYTHON_USEDEP}] )
 	confluentkafka? ( >=dev-python/confluent-kafka-2.2.0[${PYTHON_USEDEP}] )
 	zookeeper? ( >=dev-python/kazoo-2.8.0[${PYTHON_USEDEP}] )
-	msgpack? ( =dev-python/msgpack-1.1.0[${PYTHON_USEDEP}] )
-	>=dev-python/pycurl-7.43.0.5[${PYTHON_USEDEP}]
+	msgpack? ( ~dev-python/msgpack-1.1.0[${PYTHON_USEDEP}] )
+	sqs? ( >=dev-python/pycurl-7.43.0.5[${PYTHON_USEDEP}] )
 	mongodb? ( >=dev-python/pymongo-4.1.1[${PYTHON_USEDEP}] )
-	pyro? ( =dev-python/pyro4-4.82[${PYTHON_USEDEP}] )
-	consul? ( =dev-python/python-consul2-0.1.5[${PYTHON_USEDEP}] )
+	pyro? ( ~dev-python/pyro4-4.82[${PYTHON_USEDEP}] )
+	consul? ( ~dev-python/python-consul2-0.1.5[${PYTHON_USEDEP}] )
 	yaml? ( >=dev-python/pyyaml-3.10[${PYTHON_USEDEP}] )
 	qpid? ( >=dev-python/qpid-python-0.26[${PYTHON_USEDEP}] )
 	qpid? ( >=dev-python/qpid-tools-0.26[${PYTHON_USEDEP}] )
-	redis? ( !=dev-python/redis-4.5.5[${PYTHON_USEDEP}] )
+	redis? ( >=dev-python/redis-4.5.2[${PYTHON_USEDEP}] !~dev-python/redis-4.5.5[${PYTHON_USEDEP}] !~dev-python/redis-5.0.2[${PYTHON_USEDEP}] )
 	slmq? ( >=dev-python/softlayer-messaging-1.0.3[${PYTHON_USEDEP}] )
-	sqlalchemy? ( <dev-python/sqlalchemy-2.1[${PYTHON_USEDEP}] )
+	sqlalchemy? ( >=dev-python/sqlalchemy-1.4.48[${PYTHON_USEDEP}] <dev-python/sqlalchemy-2.1[${PYTHON_USEDEP}] )
+	dev-python/tzdata[${PYTHON_USEDEP}]
 	sqs? ( >=dev-python/urllib3-1.26.16[${PYTHON_USEDEP}] )
-	=dev-python/vine-5.1.0[${PYTHON_USEDEP}]
+	~dev-python/vine-5.1.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/amqp-5.1.1[${PYTHON_USEDEP}]

@@ -16,10 +16,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage; extra == "testing"
+	eventlet!=0.36.0,>=0.24.1; extra == "eventlet"
+	eventlet; extra == "testing"
+	gevent; extra == "testing"
+	gevent>=1.4.0; extra == "gevent"
+	importlib-metadata; python_version < "3.8"
+	packaging
+	pytest-cov; extra == "testing"
+	pytest; extra == "testing"
+	setproctitle; extra == "setproctitle"
+	tornado>=0.2; extra == "tornado"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	eventlet? ( !=dev-python/eventlet-0.36.0[${PYTHON_USEDEP}] )
+	eventlet? ( >=dev-python/eventlet-0.24.1[${PYTHON_USEDEP}] !~dev-python/eventlet-0.36.0[${PYTHON_USEDEP}] )
 	gevent? ( >=dev-python/gevent-1.4.0[${PYTHON_USEDEP}] )
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	setproctitle? ( dev-python/setproctitle[${PYTHON_USEDEP}] )
 	tornado? ( >=dev-python/tornado-0.2[${PYTHON_USEDEP}] )

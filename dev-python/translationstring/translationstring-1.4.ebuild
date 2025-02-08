@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx (>=1.3.1) ; extra == 'docs'
+	docutils ; extra == 'docs'
+	pylons-sphinx-themes ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pylons-sphinx-themes[${PYTHON_USEDEP}] )

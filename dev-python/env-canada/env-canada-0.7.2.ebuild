@@ -20,6 +20,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Pillow>=10.0.1
+	aiohttp>=3.9.0
+	defusedxml
+	geopy
+	imageio>=2.28.0
+	lxml
+	numpy>=1.22.2
+	pandas>=1.3.0
+	python-dateutil
+	voluptuous
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]

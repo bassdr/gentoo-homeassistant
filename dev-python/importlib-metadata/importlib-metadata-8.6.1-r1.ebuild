@@ -21,9 +21,31 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="check cover doc enabler perf type"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	flufl.flake8; extra == "test"
+	furo; extra == "doc"
+	importlib_resources>=1.3; python_version < "3.9" and extra == "test"
+	ipython; extra == "perf"
+	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.test>=5.4; extra == "test"
+	jaraco.tidelift>=1.4; extra == "doc"
+	packaging; extra == "test"
+	pyfakefs; extra == "test"
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "check"
+	pytest-cov; extra == "cover"
+	pytest-enabler>=2.2; extra == "enabler"
+	pytest-mypy; extra == "type"
+	pytest-perf>=0.9.2; extra == "test"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	typing-extensions>=3.6.4; python_version < "3.8"
+	zipp>=3.20
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
-	>=dev-python/importlib-resources-1.3[${PYTHON_USEDEP}]
 	perf? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-packaging-9.3[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
@@ -31,10 +53,10 @@ GENERATED_RDEPEND="${RDEPEND}
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	check? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
-	>=dev-python/typing-extensions-3.6.4[${PYTHON_USEDEP}]
 	>=dev-python/zipp-3.20[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
@@ -55,7 +77,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]
 		dev-python/pyfakefs[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-perf-0.9.2[${PYTHON_USEDEP}]
 	)
 "

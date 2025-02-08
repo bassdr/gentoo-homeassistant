@@ -21,6 +21,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-timeout
+	m2r2 ; extra == 'docs'
+	pre-commit ; extra == 'dev'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-mypy ; extra == 'test'
+	sphinx ; extra == 'docs'
+	sphinx-rtd-theme ; extra == 'docs'
+	sphinxcontrib.apidoc ; extra == 'docs'
+	tenacity
+	tox ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	docs? ( dev-python/m2r2[${PYTHON_USEDEP}] )

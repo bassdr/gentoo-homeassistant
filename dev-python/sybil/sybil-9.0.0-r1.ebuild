@@ -23,6 +23,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build pytest"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	furo; extra == "build"
+	mypy; extra == "test"
+	myst-parser; extra == "test"
+	pytest-cov; extra == "test"
+	pytest>=8; extra == "pytest"
+	pytest>=8; extra == "test"
+	seedir; extra == "test"
+	sphinx; extra == "build"
+	testfixtures; extra == "test"
+	twine; extra == "build"
+	types-PyYAML; extra == "test"
+	urllib3<2; extra == "build"
+	wheel; extra == "build"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/furo[${PYTHON_USEDEP}] )
 	pytest? ( >=dev-python/pytest-8[${PYTHON_USEDEP}] )

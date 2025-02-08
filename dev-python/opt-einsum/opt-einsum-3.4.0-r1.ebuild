@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/opt_einsum/"
+  https://pypi.org/project/opt-einsum/"
 
 LICENSE="MIT"
 SLOT="0"

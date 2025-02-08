@@ -17,7 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	docutils (>=0.14)
+	pybtex (>=0.16)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.14[${PYTHON_USEDEP}]
 	>=dev-python/pybtex-0.16[${PYTHON_USEDEP}]

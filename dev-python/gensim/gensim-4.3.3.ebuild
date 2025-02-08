@@ -16,12 +16,45 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	POT; extra == "docs"
+	POT; extra == "test"
+	POT; extra == "test-win"
+	Pyro4; extra == "docs"
+	Pyro4>=4.27; extra == "distributed"
+	Pyro4>=4.27; extra == "docs"
+	annoy; extra == "docs"
+	matplotlib; extra == "docs"
+	memory-profiler; extra == "docs"
+	nltk; extra == "docs"
+	numpy<2.0,>=1.18.5
+	pandas; extra == "docs"
+	pytest-cov; extra == "docs"
+	pytest-cov; extra == "test"
+	pytest-cov; extra == "test-win"
+	pytest; extra == "docs"
+	pytest; extra == "test"
+	pytest; extra == "test-win"
+	scikit-learn; extra == "docs"
+	scipy<1.14.0,>=1.7.0
+	smart-open>=1.8.1
+	sphinx-gallery==0.11.1; extra == "docs"
+	sphinx==5.1.1; extra == "docs"
+	sphinxcontrib-napoleon==0.7; extra == "docs"
+	sphinxcontrib.programoutput==0.17; extra == "docs"
+	statsmodels; extra == "docs"
+	testfixtures; extra == "docs"
+	testfixtures; extra == "test"
+	testfixtures; extra == "test-win"
+	visdom!=0.1.8.7,>=0.1.8; extra == "docs"
+	visdom!=0.1.8.7,>=0.1.8; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/annoy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( dev-python/memory-profiler[${PYTHON_USEDEP}] )
 	docs? ( dev-python/nltk[${PYTHON_USEDEP}] )
-	<dev-python/numpy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.18.5[${PYTHON_USEDEP}] <dev-python/numpy-2.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pot[${PYTHON_USEDEP}] )
 	test-win? ( dev-python/pot[${PYTHON_USEDEP}] )
@@ -33,16 +66,16 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	test-win? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	docs? ( dev-python/scikit-learn[${PYTHON_USEDEP}] )
-	<dev-python/scipy-1.14.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.7.0[${PYTHON_USEDEP}] <dev-python/scipy-1.14.0[${PYTHON_USEDEP}]
 	>=dev-python/smart-open-1.8.1[${PYTHON_USEDEP}]
-	docs? ( =dev-python/sphinx-5.1.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-gallery-0.11.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinxcontrib-napoleon-0.7[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-5.1.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-gallery-0.11.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinxcontrib-napoleon-0.7[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinxcontrib-programoutput-0.17[${PYTHON_USEDEP}] )
 	docs? ( dev-python/statsmodels[${PYTHON_USEDEP}] )
 	docs? ( dev-python/testfixtures[${PYTHON_USEDEP}] )
 	test-win? ( dev-python/testfixtures[${PYTHON_USEDEP}] )
-	docs? ( !=dev-python/visdom-0.1.8.7[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/visdom-0.1.8[${PYTHON_USEDEP}] !~dev-python/visdom-0.1.8.7[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
@@ -53,7 +86,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/testfixtures[${PYTHON_USEDEP}]
-		!=dev-python/visdom-0.1.8.7[${PYTHON_USEDEP}]
+		>=dev-python/visdom-0.1.8[${PYTHON_USEDEP}] !~dev-python/visdom-0.1.8.7[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	certifi
+	urllib3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]

@@ -16,48 +16,134 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=22.2.0
+	beautifulsoup4>=4.4; extra == "tests"
+	celery
+	colorama>=0.3.9
+	configobj>=5.0.9
+	distro>=1.3
+	dpath<3,>=2.1.0
+	dulwich
+	dvc-azure<4,>=3.1.0; extra == "azure"
+	dvc-data<3.17,>=3.16.2
+	dvc-gdrive<4,>=3; extra == "gdrive"
+	dvc-gs<4,>=3; extra == "gs"
+	dvc-hdfs<4,>=3; extra == "hdfs"
+	dvc-http>=2.29.0
+	dvc-objects
+	dvc-oss<4,>=3; extra == "oss"
+	dvc-render<2,>=1.0.1
+	dvc-s3<4,>=3.2.0; extra == "s3"
+	dvc-ssh; extra == "tests"
+	dvc-ssh<5,>=4; extra == "ssh"
+	dvc-ssh[gssapi]<5,>=4; extra == "ssh-gssapi"
+	dvc-studio-client<1,>=0.21
+	dvc-task<1,>=0.3.0
+	dvc-webdav<4,>=3; extra == "webdav"
+	dvc-webhdfs<4,>=3.1; extra == "webhdfs"
+	dvc-webhdfs[kerberos]<4,>=3.1; extra == "webhdfs-kerberos"
+	dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs]; extra == "dev"
+	dvc[azure,gdrive,gs,hdfs,oss,s3,ssh,webdav,webhdfs]; extra == "all"
+	dvc[testing]; extra == "tests"
+	filelock; extra == "tests"
+	flatten_dict<1,>=0.4.1
+	flufl.lock<9,>=8.1.0
+	fsspec>=2024.2.0
+	funcy>=1.14
+	grandalf<1,>=0.7
+	gto<2,>=1.6.0
+	hydra-core>=1.1
+	iterative-telemetry>=0.0.7
+	kombu
+	mypy==1.14.1; extra == "lint"
+	networkx>=2.5
+	omegaconf
+	packaging>=19
+	pandas-stubs; extra == "lint"
+	pandas>=1; extra == "tests"
+	pathspec>=0.10.3
+	platformdirs<5,>=3.1.1
+	psutil>=5.8
+	pydot>=1.2.4
+	pygtrie>=2.3.2
+	pyparsing>=2.4.7
+	pytest-benchmark[histogram]<6,>=5; extra == "testing"
+	pytest-cov>=4.1.0; extra == "tests"
+	pytest-docker<4,>=1; extra == "tests"
+	pytest-mock; extra == "tests"
+	pytest-rerunfailures; extra == "tests"
+	pytest-test-utils; extra == "testing"
+	pytest-test-utils; extra == "tests"
+	pytest-timeout>=2; extra == "tests"
+	pytest-xdist>=3.2; extra == "tests"
+	pytest<9,>=7; extra == "tests"
+	pywin32>=225; sys_platform == "win32" and extra == "tests"
+	requests>=2.22
+	rich>=12
+	ruamel.yaml>=0.17.11
+	scmrepo<4,>=3.3.8
+	shortuuid>=0.5
+	shtab<2,>=1.3.4
+	sqlalchemy<3,>=1; extra == "tests"
+	tabulate>=0.8.7
+	tomlkit>=0.11.1
+	tqdm<5,>=4.63.1
+	types-colorama; extra == "lint"
+	types-psutil; extra == "lint"
+	types-pyinstaller; extra == "lint"
+	types-requests; extra == "lint"
+	types-tabulate; extra == "lint"
+	types-toml; extra == "lint"
+	types-tqdm; extra == "lint"
+	typing-extensions; extra == "lint"
+	tzdata; sys_platform == "win32" and extra == "tests"
+	uv; extra == "testing"
+	voluptuous>=0.11.7
+	zc.lockfile>=1.2.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	dev-python/celery[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.3.9[${PYTHON_USEDEP}]
 	>=dev-python/configobj-5.0.9[${PYTHON_USEDEP}]
 	>=dev-python/distro-1.3[${PYTHON_USEDEP}]
-	<dev-python/dpath-3[${PYTHON_USEDEP}]
+	>=dev-python/dpath-2.1.0[${PYTHON_USEDEP}] <dev-python/dpath-3[${PYTHON_USEDEP}]
 	dev-python/dulwich[${PYTHON_USEDEP}]
 	all? ( dev-python/dvc[azure,gdrive,gs,hdfs,oss,s3,ssh,webdav,webhdfs,${PYTHON_USEDEP}] )
-	azure? ( <dev-python/dvc-azure-4[${PYTHON_USEDEP}] )
-	<dev-python/dvc-data-3.17[${PYTHON_USEDEP}]
-	gdrive? ( <dev-python/dvc-gdrive-4[${PYTHON_USEDEP}] )
-	gs? ( <dev-python/dvc-gs-4[${PYTHON_USEDEP}] )
-	hdfs? ( <dev-python/dvc-hdfs-4[${PYTHON_USEDEP}] )
+	azure? ( >=dev-python/dvc-azure-3.1.0[${PYTHON_USEDEP}] <dev-python/dvc-azure-4[${PYTHON_USEDEP}] )
+	>=dev-python/dvc-data-3.16.2[${PYTHON_USEDEP}] <dev-python/dvc-data-3.17[${PYTHON_USEDEP}]
+	gdrive? ( >=dev-python/dvc-gdrive-3[${PYTHON_USEDEP}] <dev-python/dvc-gdrive-4[${PYTHON_USEDEP}] )
+	gs? ( >=dev-python/dvc-gs-3[${PYTHON_USEDEP}] <dev-python/dvc-gs-4[${PYTHON_USEDEP}] )
+	hdfs? ( >=dev-python/dvc-hdfs-3[${PYTHON_USEDEP}] <dev-python/dvc-hdfs-4[${PYTHON_USEDEP}] )
 	>=dev-python/dvc-http-2.29.0[${PYTHON_USEDEP}]
 	dev-python/dvc-objects[${PYTHON_USEDEP}]
-	oss? ( <dev-python/dvc-oss-4[${PYTHON_USEDEP}] )
-	<dev-python/dvc-render-2[${PYTHON_USEDEP}]
-	s3? ( <dev-python/dvc-s3-4[${PYTHON_USEDEP}] )
-	ssh-gssapi? ( <dev-python/dvc-ssh-5[gssapi,${PYTHON_USEDEP}] )
-	ssh? ( <dev-python/dvc-ssh-5[${PYTHON_USEDEP}] )
-	<dev-python/dvc-studio-client-1[${PYTHON_USEDEP}]
-	<dev-python/dvc-task-1[${PYTHON_USEDEP}]
-	webdav? ( <dev-python/dvc-webdav-4[${PYTHON_USEDEP}] )
-	webhdfs-kerberos? ( <dev-python/dvc-webhdfs-4[kerberos,${PYTHON_USEDEP}] )
-	webhdfs? ( <dev-python/dvc-webhdfs-4[${PYTHON_USEDEP}] )
-	<dev-python/flatten-dict-1[${PYTHON_USEDEP}]
-	<dev-python/flufl-lock-9[${PYTHON_USEDEP}]
+	oss? ( >=dev-python/dvc-oss-3[${PYTHON_USEDEP}] <dev-python/dvc-oss-4[${PYTHON_USEDEP}] )
+	>=dev-python/dvc-render-1.0.1[${PYTHON_USEDEP}] <dev-python/dvc-render-2[${PYTHON_USEDEP}]
+	s3? ( >=dev-python/dvc-s3-3.2.0[${PYTHON_USEDEP}] <dev-python/dvc-s3-4[${PYTHON_USEDEP}] )
+	ssh-gssapi? ( >=dev-python/dvc-ssh-4[gssapi,${PYTHON_USEDEP}] <dev-python/dvc-ssh-5[gssapi,${PYTHON_USEDEP}] )
+	ssh? ( >=dev-python/dvc-ssh-4[${PYTHON_USEDEP}] <dev-python/dvc-ssh-5[${PYTHON_USEDEP}] )
+	>=dev-python/dvc-studio-client-0.21[${PYTHON_USEDEP}] <dev-python/dvc-studio-client-1[${PYTHON_USEDEP}]
+	>=dev-python/dvc-task-0.3.0[${PYTHON_USEDEP}] <dev-python/dvc-task-1[${PYTHON_USEDEP}]
+	webdav? ( >=dev-python/dvc-webdav-3[${PYTHON_USEDEP}] <dev-python/dvc-webdav-4[${PYTHON_USEDEP}] )
+	webhdfs-kerberos? ( >=dev-python/dvc-webhdfs-3.1[kerberos,${PYTHON_USEDEP}] <dev-python/dvc-webhdfs-4[kerberos,${PYTHON_USEDEP}] )
+	webhdfs? ( >=dev-python/dvc-webhdfs-3.1[${PYTHON_USEDEP}] <dev-python/dvc-webhdfs-4[${PYTHON_USEDEP}] )
+	>=dev-python/flatten-dict-0.4.1[${PYTHON_USEDEP}] <dev-python/flatten-dict-1[${PYTHON_USEDEP}]
+	>=dev-python/flufl-lock-8.1.0[${PYTHON_USEDEP}] <dev-python/flufl-lock-9[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2024.2.0[${PYTHON_USEDEP}]
 	>=dev-python/funcy-1.14[${PYTHON_USEDEP}]
-	<dev-python/grandalf-1[${PYTHON_USEDEP}]
-	<dev-python/gto-2[${PYTHON_USEDEP}]
+	>=dev-python/grandalf-0.7[${PYTHON_USEDEP}] <dev-python/grandalf-1[${PYTHON_USEDEP}]
+	>=dev-python/gto-1.6.0[${PYTHON_USEDEP}] <dev-python/gto-2[${PYTHON_USEDEP}]
 	>=dev-python/hydra-core-1.1[${PYTHON_USEDEP}]
 	>=dev-python/iterative-telemetry-0.0.7[${PYTHON_USEDEP}]
 	dev-python/kombu[${PYTHON_USEDEP}]
-	lint? ( =dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/mypy-1.14.1[${PYTHON_USEDEP}] )
 	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]
 	dev-python/omegaconf[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 	lint? ( dev-python/pandas-stubs[${PYTHON_USEDEP}] )
 	>=dev-python/pathspec-0.10.3[${PYTHON_USEDEP}]
-	<dev-python/platformdirs-5[${PYTHON_USEDEP}]
+	>=dev-python/platformdirs-3.1.1[${PYTHON_USEDEP}] <dev-python/platformdirs-5[${PYTHON_USEDEP}]
 	>=dev-python/psutil-5.8[${PYTHON_USEDEP}]
 	>=dev-python/pydot-1.2.4[${PYTHON_USEDEP}]
 	>=dev-python/pygtrie-2.3.2[${PYTHON_USEDEP}]
@@ -65,12 +151,12 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
 	>=dev-python/rich-12[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.17.11[${PYTHON_USEDEP}]
-	<dev-python/scmrepo-4[${PYTHON_USEDEP}]
+	>=dev-python/scmrepo-3.3.8[${PYTHON_USEDEP}] <dev-python/scmrepo-4[${PYTHON_USEDEP}]
 	>=dev-python/shortuuid-0.5[${PYTHON_USEDEP}]
-	<dev-python/shtab-2[${PYTHON_USEDEP}]
+	>=dev-python/shtab-1.3.4[${PYTHON_USEDEP}] <dev-python/shtab-2[${PYTHON_USEDEP}]
 	>=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.11.1[${PYTHON_USEDEP}]
-	<dev-python/tqdm-5[${PYTHON_USEDEP}]
+	>=dev-python/tqdm-4.63.1[${PYTHON_USEDEP}] <dev-python/tqdm-5[${PYTHON_USEDEP}]
 	lint? ( dev-python/types-colorama[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-psutil[${PYTHON_USEDEP}] )
 	lint? ( dev-python/types-pyinstaller[${PYTHON_USEDEP}] )
@@ -93,16 +179,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/dvc-ssh[${PYTHON_USEDEP}]
 		dev-python/filelock[${PYTHON_USEDEP}]
 		>=dev-python/pandas-1[${PYTHON_USEDEP}]
-		<dev-python/pytest-9[${PYTHON_USEDEP}]
-		<dev-python/pytest-benchmark-6[histogram,${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-benchmark-5[histogram,${PYTHON_USEDEP}] <dev-python/pytest-benchmark-6[histogram,${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-docker-4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-docker-1[${PYTHON_USEDEP}] <dev-python/pytest-docker-4[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
 		dev-python/pytest-test-utils[${PYTHON_USEDEP}]
 		>=dev-python/pytest-timeout-2[${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}]
-		<dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
+		>=dev-python/sqlalchemy-1[${PYTHON_USEDEP}] <dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
 		dev-python/uv[${PYTHON_USEDEP}]
 	)
 "

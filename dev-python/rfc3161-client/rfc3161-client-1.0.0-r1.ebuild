@@ -88,10 +88,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	coverage[toml]; extra == "test"
+	cryptography<45,>=43
+	interrogate; extra == "lint"
+	maturin<2.0,>=1.7; extra == "dev"
+	pretend; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	rfc3161-client[doc,lint,test]; extra == "dev"
+	ruff<0.9,>=0.7; extra == "lint"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/cryptography-45[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-43[${PYTHON_USEDEP}] <dev-python/cryptography-45[${PYTHON_USEDEP}]
 	lint? ( dev-python/interrogate[${PYTHON_USEDEP}] )
-	lint? ( <dev-python/ruff-0.9[${PYTHON_USEDEP}] )
+	lint? ( >=dev-python/ruff-0.7[${PYTHON_USEDEP}] <dev-python/ruff-0.9[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	=dev-python/cryptography-44*[${PYTHON_USEDEP}]
@@ -106,7 +117,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[toml,${PYTHON_USEDEP}]
-		<dev-python/maturin-2.0[${PYTHON_USEDEP}]
+		>=dev-python/maturin-1.7[${PYTHON_USEDEP}] <dev-python/maturin-2.0[${PYTHON_USEDEP}]
 		dev-python/pretend[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

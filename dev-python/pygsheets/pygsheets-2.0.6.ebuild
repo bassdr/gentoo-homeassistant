@@ -16,8 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	enum34 (>=1.1.6) ; python_version < "3.4"
+	google-api-python-client (>=2.50.0)
+	google-auth-oauthlib (>=0.7.1)
+	pandas (>=0.14.0) ; extra == 'pandas'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/enum34-1.1.6[${PYTHON_USEDEP}]
 	>=dev-python/google-api-python-client-2.50.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-oauthlib-0.7.1[${PYTHON_USEDEP}]
 	pandas? ( >=dev-python/pandas-0.14.0[${PYTHON_USEDEP}] )

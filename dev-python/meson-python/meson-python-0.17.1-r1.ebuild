@@ -27,10 +27,29 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	build; extra == "test"
+	cython>=3.0.3; extra == "test"
+	furo>=2023.5.20; extra == "docs"
+	meson>=0.63.3; python_version < "3.12"
+	meson>=1.2.3; python_version >= "3.12"
+	packaging>=19.0
+	packaging>=23.1; extra == "test"
+	pyproject-metadata>=0.7.1
+	pytest-cov[toml]; extra == "test"
+	pytest-mock; extra == "test"
+	pytest>=6.0; extra == "test"
+	sphinx-copybutton>=0.5.0; extra == "docs"
+	sphinx-design>=0.1.0; extra == "docs"
+	sphinxext-opengraph>=0.7.0; extra == "docs"
+	sphinx~=6.2; extra == "docs"
+	tomli>=1.0.0; python_version < "3.11"
+	typing-extensions>=3.7.4; python_version < "3.11" and extra == "test"
+	wheel; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2023.5.20[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '>=dev-python/meson-0.63.3[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/meson-1.2.3[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/meson-1.2.3[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/pyproject-metadata-0.7.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-6.2[${PYTHON_USEDEP}] =dev-python/sphinx-6*[${PYTHON_USEDEP}] )

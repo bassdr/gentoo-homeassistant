@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,9 +15,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	graphql-core (<3.3,>=3.2)
+	typing-extensions (<5,>=4.1) ; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/graphql-core-3.3[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
+	>=dev-python/graphql-core-3.2[${PYTHON_USEDEP}] <dev-python/graphql-core-3.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

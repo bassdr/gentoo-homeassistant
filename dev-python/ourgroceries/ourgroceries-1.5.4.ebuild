@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp >=3.6.1
+	beautifulsoup4 >=4.7.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.6.1[${PYTHON_USEDEP}]
 	>=dev-python/beautifulsoup4-4.7.1[${PYTHON_USEDEP}]

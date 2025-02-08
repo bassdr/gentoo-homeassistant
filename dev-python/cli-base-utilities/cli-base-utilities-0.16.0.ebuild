@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bx_py_utils
+	click
+	packaging
+	python-dateutil
+	rich
+	tomlkit
+	tyro
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bx-py-utils[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

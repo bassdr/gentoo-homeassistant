@@ -16,6 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	glcontext>=3.0.0
+	glcontext>=3.0.0; extra == "headless"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/glcontext-3.0.0[${PYTHON_USEDEP}]
 	headless? ( >=dev-python/glcontext-3.0.0[${PYTHON_USEDEP}] )

@@ -16,38 +16,92 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flask<3.1,>=1.0.4
+	PyYAML>=5.4.1; extra == "dev"
+	Werkzeug<3.1
+	beautifulsoup4>=4.8.2; extra == "testing"
+	black==22.3.0; extra == "ci"
+	celery[redis]>=5.1.2; extra == "celery"
+	coloredlogs>=15.0.1; extra == "dev"
+	cryptography; extra == "testing"
+	dash-core-components==2.0.0
+	dash-dangerously-set-inner-html; extra == "ci"
+	dash-flow-example==0.0.5; extra == "ci"
+	dash-html-components==2.0.0
+	dash-table==5.0.0
+	dash-testing-stub>=0.0.2; extra == "testing"
+	diskcache>=5.2.1; extra == "diskcache"
+	fire>=0.4.0; extra == "dev"
+	flake8==7.0.0; extra == "ci"
+	flaky==3.8.1; extra == "ci"
+	flask-compress; extra == "compress"
+	flask-talisman==1.0.0; extra == "ci"
+	importlib-metadata
+	jupyterlab<4.0.0; extra == "ci"
+	lxml>=4.6.2; extra == "testing"
+	mimesis<=11.1.0; extra == "ci"
+	mock==4.0.3; extra == "ci"
+	multiprocess>=0.70.12; extra == "diskcache"
+	multiprocess>=0.70.12; extra == "testing"
+	nest-asyncio
+	numpy<=1.26.3; extra == "ci"
+	openpyxl; extra == "ci"
+	orjson==3.10.3; extra == "ci"
+	pandas>=1.4.0; extra == "ci"
+	percy>=2.0.2; extra == "testing"
+	plotly>=5.0.0
+	psutil>=5.8.0; extra == "diskcache"
+	psutil>=5.8.0; extra == "testing"
+	pyarrow; extra == "ci"
+	pylint==3.0.3; extra == "ci"
+	pytest-mock; extra == "ci"
+	pytest-rerunfailures; extra == "ci"
+	pytest-sugar==0.9.6; extra == "ci"
+	pytest>=6.0.2; extra == "testing"
+	pyzmq==25.1.2; extra == "ci"
+	redis>=3.5.3; extra == "celery"
+	requests
+	requests[security]>=2.21.0; extra == "testing"
+	retrying
+	selenium<=4.2.0,>=3.141.0; extra == "testing"
+	setuptools
+	typing-extensions>=4.1.1
+	waitress>=1.4.4; extra == "testing"
+	xlrd>=2.0.1; extra == "ci"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	ci? ( =dev-python/black-22.3.0[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )
 	celery? ( >=dev-python/celery-5.1.2[redis,${PYTHON_USEDEP}] )
-	=dev-python/dash-core-components-2.0.0[${PYTHON_USEDEP}]
+	~dev-python/dash-core-components-2.0.0[${PYTHON_USEDEP}]
 	ci? ( dev-python/dash-dangerously-set-inner-html[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/dash-flow-example-0.0.5[${PYTHON_USEDEP}] )
-	=dev-python/dash-html-components-2.0.0[${PYTHON_USEDEP}]
-	=dev-python/dash-table-5.0.0[${PYTHON_USEDEP}]
+	ci? ( ~dev-python/dash-flow-example-0.0.5[${PYTHON_USEDEP}] )
+	~dev-python/dash-html-components-2.0.0[${PYTHON_USEDEP}]
+	~dev-python/dash-table-5.0.0[${PYTHON_USEDEP}]
 	diskcache? ( >=dev-python/diskcache-5.2.1[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/flake8-7.0.0[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/flaky-3.8.1[${PYTHON_USEDEP}] )
-	<dev-python/flask-3.1[${PYTHON_USEDEP}]
+	ci? ( ~dev-python/flake8-7.0.0[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/flaky-3.8.1[${PYTHON_USEDEP}] )
+	>=dev-python/flask-1.0.4[${PYTHON_USEDEP}] <dev-python/flask-3.1[${PYTHON_USEDEP}]
 	compress? ( dev-python/flask-compress[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/flask-talisman-1.0.0[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/flask-talisman-1.0.0[${PYTHON_USEDEP}] )
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	ci? ( <dev-python/jupyterlab-4.0.0[${PYTHON_USEDEP}] )
 	ci? ( <=dev-python/mimesis-11.1.0[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
 	diskcache? ( >=dev-python/multiprocess-0.70.12[${PYTHON_USEDEP}] )
 	dev-python/nest-asyncio[${PYTHON_USEDEP}]
 	ci? ( <=dev-python/numpy-1.26.3[${PYTHON_USEDEP}] )
 	ci? ( dev-python/openpyxl[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/orjson-3.10.3[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/orjson-3.10.3[${PYTHON_USEDEP}] )
 	ci? ( >=dev-python/pandas-1.4.0[${PYTHON_USEDEP}] )
 	>=dev-python/plotly-5.0.0[${PYTHON_USEDEP}]
 	diskcache? ( >=dev-python/psutil-5.8.0[${PYTHON_USEDEP}] )
 	ci? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/pylint-3.0.3[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/pylint-3.0.3[${PYTHON_USEDEP}] )
 	ci? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )
 	ci? ( dev-python/pytest-rerunfailures[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/pytest-sugar-0.9.6[${PYTHON_USEDEP}] )
-	ci? ( =dev-python/pyzmq-25.1.2[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/pytest-sugar-0.9.6[${PYTHON_USEDEP}] )
+	ci? ( ~dev-python/pyzmq-25.1.2[${PYTHON_USEDEP}] )
 	celery? ( >=dev-python/redis-3.5.3[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/retrying[${PYTHON_USEDEP}]
@@ -73,7 +127,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-6.0.2[${PYTHON_USEDEP}]
 		>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.21.0[security,${PYTHON_USEDEP}]
-		<=dev-python/selenium-4.2.0[${PYTHON_USEDEP}]
+		>=dev-python/selenium-3.141.0[${PYTHON_USEDEP}] <=dev-python/selenium-4.2.0[${PYTHON_USEDEP}]
 		>=dev-python/waitress-1.4.4[${PYTHON_USEDEP}]
 	)
 "

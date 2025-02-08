@@ -30,6 +30,32 @@ REQUIRED_USE="all? ( ext http2 passport socks )
 	ext? ( callback-data job-queue rate-limiter webhooks )"
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiolimiter~=1.1.0; extra == "all"
+	aiolimiter~=1.1.0; extra == "ext"
+	aiolimiter~=1.1.0; extra == "rate-limiter"
+	apscheduler~=3.10.4; extra == "all"
+	apscheduler~=3.10.4; extra == "ext"
+	apscheduler~=3.10.4; extra == "job-queue"
+	cachetools<5.6.0,>=5.3.3; extra == "all"
+	cachetools<5.6.0,>=5.3.3; extra == "callback-data"
+	cachetools<5.6.0,>=5.3.3; extra == "ext"
+	cffi>=1.17.0rc1; python_version > "3.12" and extra == "all"
+	cffi>=1.17.0rc1; python_version > "3.12" and extra == "passport"
+	cryptography!=3.4,!=3.4.1,!=3.4.2,!=3.4.3,>=39.0.1; extra == "all"
+	cryptography!=3.4,!=3.4.1,!=3.4.2,!=3.4.3,>=39.0.1; extra == "passport"
+	httpx[http2]; extra == "all"
+	httpx[http2]; extra == "http2"
+	httpx[socks]; extra == "all"
+	httpx[socks]; extra == "socks"
+	httpx~=0.27
+	pytz>=2018.6; extra == "all"
+	pytz>=2018.6; extra == "ext"
+	pytz>=2018.6; extra == "job-queue"
+	tornado~=6.4; extra == "all"
+	tornado~=6.4; extra == "ext"
+	tornado~=6.4; extra == "webhooks"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] =dev-python/aiolimiter-1.1*[${PYTHON_USEDEP}] )
 	ext? ( >=dev-python/aiolimiter-1.1.0[${PYTHON_USEDEP}] =dev-python/aiolimiter-1.1*[${PYTHON_USEDEP}] )
@@ -37,12 +63,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] =dev-python/apscheduler-3.10*[${PYTHON_USEDEP}] )
 	ext? ( >=dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] =dev-python/apscheduler-3.10*[${PYTHON_USEDEP}] )
 	job-queue? ( >=dev-python/apscheduler-3.10.4[${PYTHON_USEDEP}] =dev-python/apscheduler-3.10*[${PYTHON_USEDEP}] )
-	all? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
-	callback-data? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
-	ext? ( <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
-	>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]
-	all? ( !=dev-python/cryptography-3.4[${PYTHON_USEDEP}] )
-	passport? ( !=dev-python/cryptography-3.4[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/cachetools-5.3.3[${PYTHON_USEDEP}] <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
+	callback-data? ( >=dev-python/cachetools-5.3.3[${PYTHON_USEDEP}] <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
+	ext? ( >=dev-python/cachetools-5.3.3[${PYTHON_USEDEP}] <dev-python/cachetools-5.6.0[${PYTHON_USEDEP}] )
+	all? ( $(python_gen_cond_dep '>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]' python3_13{,t}) )
+	passport? ( $(python_gen_cond_dep '>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]' python3_13{,t}) )
+	all? ( >=dev-python/cryptography-39.0.1[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4.1[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4.2[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4.3[${PYTHON_USEDEP}] )
+	passport? ( >=dev-python/cryptography-39.0.1[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4.1[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4.2[${PYTHON_USEDEP}] !~dev-python/cryptography-3.4.3[${PYTHON_USEDEP}] )
 	>=dev-python/httpx-0.27[${PYTHON_USEDEP}] =dev-python/httpx-0*[${PYTHON_USEDEP}]
 	all? ( dev-python/httpx[http2,${PYTHON_USEDEP}] )
 	all? ( dev-python/httpx[socks,${PYTHON_USEDEP}] )

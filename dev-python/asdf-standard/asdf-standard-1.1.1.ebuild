@@ -16,6 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	asdf >=3.0.0 ; extra == 'test'
+	docutils ; extra == 'docs'
+	graphviz ; extra == 'docs'
+	matplotlib ; extra == 'docs'
+	packaging >=16.0 ; extra == 'test'
+	pytest ; extra == 'test'
+	pyyaml ; extra == 'test'
+	sphinx >=4.0 ; extra == 'docs'
+	sphinx-asdf >=0.1.3 ; extra == 'docs'
+	sphinx-rtd-theme >1.2.0 ; extra == 'docs'
+	tomli ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	docs? ( dev-python/graphviz[${PYTHON_USEDEP}] )

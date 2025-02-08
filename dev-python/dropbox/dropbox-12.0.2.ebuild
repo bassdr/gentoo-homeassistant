@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	requests>=2.16.2
+	six>=1.12.0
+	stone<3.3.3,>=2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.16.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.12.0[${PYTHON_USEDEP}]
-	<dev-python/stone-3.3.3[${PYTHON_USEDEP}]
+	>=dev-python/stone-2[${PYTHON_USEDEP}] <dev-python/stone-3.3.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

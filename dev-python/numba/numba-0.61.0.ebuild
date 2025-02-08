@@ -19,9 +19,13 @@ KEYWORDS="amd64 arm64"
 
 DEPEND="tbb? ( <dev-cpp/tbb-2021.5.0-r1 )
 	<dev-python/numpy-2.2.0[${PYTHON_USEDEP}]"
+REQUIRES_DIST="
+	llvmlite<0.45,>=0.44.0dev0
+	numpy<2.2,>=1.24
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/llvmlite-0.45[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.2[${PYTHON_USEDEP}]
+	>=dev-python/llvmlite-0.44.0_pre0[${PYTHON_USEDEP}] <dev-python/llvmlite-0.45[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.24[${PYTHON_USEDEP}] <dev-python/numpy-2.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND} dev-python/llvmlite[${PYTHON_USEDEP}]
 	dev-python/setuptools:0[${PYTHON_USEDEP}]"

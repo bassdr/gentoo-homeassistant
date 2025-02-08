@@ -16,7 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	jsonschema (>2.4.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/jsonschema-2.4.0[${PYTHON_USEDEP}]
 "

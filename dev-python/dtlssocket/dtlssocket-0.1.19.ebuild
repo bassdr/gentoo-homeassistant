@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="DTLSSocket is a cython wrapper for tinydtls with a Socket like interface"
 HOMEPAGE="
-  https://pypi.org/project/DTLSSocket/
+  https://pypi.org/project/dtlssocket/
 "
 
 LICENSE="EPL-1.0"

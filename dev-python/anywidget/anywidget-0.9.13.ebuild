@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	comm>=0.1.0; extra == "dev"
+	importlib-metadata; python_version < "3.8"
+	ipython<8.13; python_version < "3.9" and extra == "test"
+	ipywidgets>=7.6.0
+	msgspec; python_version > "3.7" and extra == "test"
+	mypy==1.10.0; python_version > "3.7" and extra == "test"
+	psygnal>=0.8.1
+	pydantic; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	ruff; extra == "test"
+	typing-extensions>=4.2.0
+	watchfiles>=0.18.0; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	<dev-python/ipython-8.13[${PYTHON_USEDEP}]
 	>=dev-python/ipywidgets-7.6.0[${PYTHON_USEDEP}]
 	>=dev-python/psygnal-0.8.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.2.0[${PYTHON_USEDEP}]
@@ -28,6 +40,8 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/comm-0.1.0[${PYTHON_USEDEP}]
+		dev-python/msgspec[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
 		dev-python/pydantic[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

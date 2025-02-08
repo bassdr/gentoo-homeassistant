@@ -22,6 +22,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="colors plugins"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	colorama; extra == "colors"
+	setuptools; extra == "plugins"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	colors? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	plugins? ( dev-python/setuptools[${PYTHON_USEDEP}] )

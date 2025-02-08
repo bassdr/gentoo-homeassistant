@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1
 SRC_URI="https://github.com/bqplot/bqplot/archive/refs/tags/0.12.43.tar.gz -> ${P}.gh.tar.gz"
@@ -16,17 +15,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ipywidgets<9,>=7.5.0
+	numpy>=1.10.4
+	pandas<3.0.0,>=1.0.0
+	traitlets>=4.3.0
+	traittypes>=0.0.6
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/ipywidgets-9[${PYTHON_USEDEP}]
+	>=dev-python/ipywidgets-7.5.0[${PYTHON_USEDEP}] <dev-python/ipywidgets-9[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.10.4[${PYTHON_USEDEP}]
-	<dev-python/pandas-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.0.0[${PYTHON_USEDEP}] <dev-python/pandas-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-4.3.0[${PYTHON_USEDEP}]
 	>=dev-python/traittypes-0.0.6[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

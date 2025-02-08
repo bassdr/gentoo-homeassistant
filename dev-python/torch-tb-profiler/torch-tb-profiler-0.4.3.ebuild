@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-storage-blob ; extra == 'blob'
+	boto3 ; extra == 's3'
+	fsspec ; extra == 'hdfs'
+	google-cloud-storage ; extra == 'gs'
+	pandas (>=1.0.0)
+	pyarrow ; extra == 'hdfs'
+	tensorboard (!=2.1.0,>=1.15)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	blob? ( dev-python/azure-storage-blob[${PYTHON_USEDEP}] )
 	s3? ( dev-python/boto3[${PYTHON_USEDEP}] )
@@ -23,7 +32,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	gs? ( dev-python/google-cloud-storage[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-1.0.0[${PYTHON_USEDEP}]
 	hdfs? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
-	!=dev-python/tensorboard-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/tensorboard-1.15[${PYTHON_USEDEP}] !~dev-python/tensorboard-2.1.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

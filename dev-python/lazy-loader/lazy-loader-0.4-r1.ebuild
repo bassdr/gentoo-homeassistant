@@ -18,10 +18,17 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	changelist==0.5; extra == "dev"
+	importlib-metadata; python_version < "3.8"
+	packaging
+	pre-commit==3.7.0; extra == "lint"
+	pytest-cov>=4.1; extra == "test"
+	pytest>=7.4; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	lint? ( =dev-vcs/pre-commit-3.7.0[${PYTHON_USEDEP}] )
+	lint? ( ~dev-vcs/pre-commit-3.7.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -30,7 +37,7 @@ RDEPEND="${GENERATED_RDEPEND}
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/changelist-0.5[${PYTHON_USEDEP}]
+		~dev-python/changelist-0.5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}]
 	)

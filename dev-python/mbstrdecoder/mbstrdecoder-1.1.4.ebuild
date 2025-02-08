@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Faker>=1.0.2; extra == "test"
+	chardet<6,>=3.0.4
+	pytest-md-report>=0.6.2; extra == "test"
+	pytest>=6.0.1; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/chardet-6[${PYTHON_USEDEP}]
+	>=dev-python/chardet-3.0.4[${PYTHON_USEDEP}] <dev-python/chardet-6[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

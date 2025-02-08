@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,27 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beartype>=0.16.2
+	black==23.9.0; extra == "dev"
+	build; extra == "dev"
+	coveralls; extra == "dev"
+	ghp-import; extra == "dev"
+	ipython; extra == "dev"
+	jupyter-book; extra == "dev"
+	mypy; extra == "dev"
+	numpy; extra == "dev"
+	pre-commit; extra == "dev"
+	pyright>=1.1.331; extra == "dev"
+	pytest-cov; extra == "dev"
+	pytest>=6; extra == "dev"
+	rich>=10.0
+	ruff>=0.2.1; extra == "dev"
+	sybil; extra == "dev"
+	tox; extra == "dev"
+	typing-extensions>=4.9.0
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beartype-0.16.2[${PYTHON_USEDEP}]
 	>=dev-python/rich-10.0[${PYTHON_USEDEP}]
@@ -25,7 +45,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-23.9.0[${PYTHON_USEDEP}]
+		~dev-python/black-23.9.0[${PYTHON_USEDEP}]
 		dev-python/build[${PYTHON_USEDEP}]
 		dev-python/coveralls[${PYTHON_USEDEP}]
 		dev-python/ghp-import[${PYTHON_USEDEP}]

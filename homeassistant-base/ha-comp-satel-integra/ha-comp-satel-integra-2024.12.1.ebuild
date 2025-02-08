@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/satel-integra-0.3.7[${PYTHON_USEDEP}]
+	~dev-python/satel-integra-0.3.7[${PYTHON_USEDEP}]
 "

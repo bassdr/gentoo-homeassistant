@@ -24,8 +24,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pycrc16 (==0.1.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/pycrc16-0.1.2[${PYTHON_USEDEP}]
+	~dev-python/pycrc16-0.1.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pycrc16[${PYTHON_USEDEP}]"
@@ -40,7 +43,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

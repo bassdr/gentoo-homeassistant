@@ -17,7 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.md"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp >=3.3.0
+	async-timeout >=3.0.0
+	pyserial-asyncio >=0.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.3.0[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]

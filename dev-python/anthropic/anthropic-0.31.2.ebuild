@@ -23,18 +23,31 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	anyio<5,>=3.5.0
+	boto3>=1.28.57; extra == "bedrock"
+	botocore>=1.31.57; extra == "bedrock"
+	cached-property; python_version < "3.8"
+	distro<2,>=1.7.0
+	google-auth<3,>=2; extra == "vertex"
+	httpx<1,>=0.23.0
+	jiter<1,>=0.4.0
+	pydantic<3,>=1.9.0
+	sniffio
+	tokenizers>=0.13.0
+	typing-extensions<5,>=4.7
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/anyio-5[${PYTHON_USEDEP}]
+	>=dev-python/anyio-3.5.0[${PYTHON_USEDEP}] <dev-python/anyio-5[${PYTHON_USEDEP}]
 	bedrock? ( >=dev-python/boto3-1.28.57[${PYTHON_USEDEP}] )
 	bedrock? ( >=dev-python/botocore-1.31.57[${PYTHON_USEDEP}] )
-	dev-python/cached-property[${PYTHON_USEDEP}]
-	<dev-python/distro-2[${PYTHON_USEDEP}]
-	vertex? ( <dev-python/google-auth-3[${PYTHON_USEDEP}] )
-	<dev-python/httpx-1[${PYTHON_USEDEP}]
-	<dev-python/jiter-1[${PYTHON_USEDEP}]
-	<dev-python/pydantic-3[${PYTHON_USEDEP}]
+	>=dev-python/distro-1.7.0[${PYTHON_USEDEP}] <dev-python/distro-2[${PYTHON_USEDEP}]
+	vertex? ( >=dev-python/google-auth-2[${PYTHON_USEDEP}] <dev-python/google-auth-3[${PYTHON_USEDEP}] )
+	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}] <dev-python/httpx-1[${PYTHON_USEDEP}]
+	>=dev-python/jiter-0.4.0[${PYTHON_USEDEP}] <dev-python/jiter-1[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.7[${PYTHON_USEDEP}] <dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 	>=sci-libs/tokenizers-0.13.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

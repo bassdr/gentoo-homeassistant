@@ -22,9 +22,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.8.1
+	aiomqtt<3.0.0,>=2.0.0
+	pydantic>=1.9.0
+	tenacity>=8.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
-	<dev-python/aiomqtt-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiomqtt-2.0.0[${PYTHON_USEDEP}] <dev-python/aiomqtt-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/tenacity-8.1.0[${PYTHON_USEDEP}]
 "

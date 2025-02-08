@@ -20,7 +20,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "

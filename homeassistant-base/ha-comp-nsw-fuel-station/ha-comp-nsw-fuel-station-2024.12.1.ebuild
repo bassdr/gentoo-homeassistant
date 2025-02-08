@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/nsw-fuel-api-client-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/nsw-fuel-api-client-1.1.0[${PYTHON_USEDEP}]
 "

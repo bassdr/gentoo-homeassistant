@@ -18,6 +18,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="md"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Pygments>=2.5.1
+	cmarkgfm>=0.8.0; extra == "md"
+	docutils>=0.21.2
+	nh3>=0.2.14
+"
 GENERATED_RDEPEND="${RDEPEND}
 	md? ( >=dev-python/cmarkgfm-0.8.0[${PYTHON_USEDEP}] )
 	>=dev-python/docutils-0.21.2[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ahocorapy (==1.6.1)
+	check-manifest ; extra == 'dev'
+	check-manifest ; extra == 'test'
+	construct (<2.11,>=2.9.52)
+	coveralls (~=2.1) ; extra == 'test'
+	docutils ; extra == 'test'
+	mock (~=4.0) ; extra == 'test'
+	pylint ; extra == 'test'
+	pytest (~=6.0) ; extra == 'test'
+	pytest-cov (~=2.10) ; extra == 'test'
+	readme-renderer ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/ahocorapy-1.6.1[${PYTHON_USEDEP}]
-	<dev-python/construct-2.11[${PYTHON_USEDEP}]
+	~dev-python/ahocorapy-1.6.1[${PYTHON_USEDEP}]
+	>=dev-python/construct-2.9.52[${PYTHON_USEDEP}] <dev-python/construct-2.11[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

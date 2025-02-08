@@ -28,6 +28,41 @@ RESTRICT="test !test? ( test )"
 
 GENERATED_IUSE="docs e2e"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aiofiles~=24.1
+	aiohttp-socks~=0.8
+	aiohttp~=3.10
+	aioresponses~=0.7; extra == "dev"
+	atomicwrites~=1.4; extra == "e2e"
+	cachetools~=5.3; extra == "e2e"
+	faker~=8.0; extra == "dev"
+	h11~=0.14
+	h2~=4.0
+	hpack~=4.0; extra == "dev"
+	hyperframe~=6.0; extra == "dev"
+	hypothesis~=6.8; extra == "dev"
+	jsonschema~=4.14
+	matrix-nio[dev]; extra == "docs"
+	matrix-nio[e2e]; extra == "dev"
+	mypy-extensions~=1.0; extra == "dev"
+	mypy~=1.11; extra == "dev"
+	peewee~=3.14; extra == "e2e"
+	pre-commit; extra == "dev"
+	pycryptodome~=3.10
+	pytest-aiohttp~=0.3; extra == "dev"
+	pytest-asyncio~=0.24; extra == "dev"
+	pytest-benchmark~=4.0; extra == "dev"
+	pytest-cov~=2.11; extra == "dev"
+	pytest-flake8~=1.2; extra == "dev"
+	pytest~=8.2; extra == "dev"
+	python-olm~=3.2; extra == "e2e"
+	setuptools>=61.0; extra == "docs"
+	sphinx-autodoc-typehints~=2.1; extra == "docs"
+	sphinx-mdinclude>=0.5; extra == "docs"
+	sphinx-rtd-theme~=2.0; extra == "docs"
+	sphinx~=7.4; extra == "docs"
+	unpaddedbase64~=2.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-24.1[${PYTHON_USEDEP}] =dev-python/aiofiles-24*[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]

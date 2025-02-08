@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-roborock-2.7.2[${PYTHON_USEDEP}]
-	=dev-python/vacuum-map-parser-roborock-0.1.2[${PYTHON_USEDEP}]
+	~dev-python/python-roborock-2.7.2[${PYTHON_USEDEP}]
+	~dev-python/vacuum-map-parser-roborock-0.1.2[${PYTHON_USEDEP}]
 "

@@ -21,15 +21,29 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiocoap>=0.4.5
+	aiohappyeyeballs>=2.3.0
+	async-interrupt>=1.1.1
+	async-timeout>=4.0.2; python_version < "3.11"
+	bleak-retry-connector>=2.9.0
+	bleak>=0.19.0
+	chacha20poly1305-reuseable>=0.12.1
+	chacha20poly1305<0.0.4,>=0.0.3
+	commentjson<0.10.0,>=0.9.0
+	cryptography>=2.9.2
+	orjson>=3.7.8
+	zeroconf>=0.132.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiocoap-0.4.5[${PYTHON_USEDEP}]
 	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/async-interrupt-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-2.9.0[${PYTHON_USEDEP}]
-	<dev-python/chacha20poly1305-0.0.4[${PYTHON_USEDEP}]
+	>=dev-python/chacha20poly1305-0.0.3[${PYTHON_USEDEP}] <dev-python/chacha20poly1305-0.0.4[${PYTHON_USEDEP}]
 	>=dev-python/chacha20poly1305-reuseable-0.12.1[${PYTHON_USEDEP}]
-	<dev-python/commentjson-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/commentjson-0.9.0[${PYTHON_USEDEP}] <dev-python/commentjson-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.9.2[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.7.8[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.132.2[${PYTHON_USEDEP}]

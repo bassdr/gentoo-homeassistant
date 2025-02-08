@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all orjson playground postgres sqlite"
+GENERATED_IUSE="all orjson playground postgres sqlite uvloop"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,6 +16,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2>=2.11.0
+	aiosqlite>=0.16.0; extra == "all"
+	aiosqlite>=0.16.0; extra == "sqlite"
+	asyncpg>=0.30.0; extra == "all"
+	asyncpg>=0.30.0; extra == "postgres"
+	black
+	colorama>=0.4.0
+	inflection>=0.5.1
+	ipython; extra == "all"
+	ipython; extra == "playground"
+	orjson>=3.5.1; extra == "all"
+	orjson>=3.5.1; extra == "orjson"
+	pydantic[email]==2.*
+	targ>=0.3.7
+	typing-extensions>=4.3.0
+	uvloop>=0.12.0; sys_platform != "win32" and extra == "all"
+	uvloop>=0.12.0; sys_platform != "win32" and extra == "uvloop"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/aiosqlite-0.16.0[${PYTHON_USEDEP}] )
 	sqlite? ( >=dev-python/aiosqlite-0.16.0[${PYTHON_USEDEP}] )
@@ -32,6 +51,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/pydantic-2*[email,${PYTHON_USEDEP}]
 	>=dev-python/targ-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]
+	all? ( >=dev-python/uvloop-0.12.0[${PYTHON_USEDEP}] )
+	uvloop? ( >=dev-python/uvloop-0.12.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

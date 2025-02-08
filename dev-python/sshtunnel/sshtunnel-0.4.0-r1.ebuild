@@ -19,6 +19,13 @@ RESTRICT="test"
 
 GENERATED_IUSE="build_sphinx"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	check-manifest ; extra == 'dev'
+	paramiko (>=2.7.2)
+	sphinx ; extra == 'build_sphinx'
+	sphinxcontrib-napoleon ; extra == 'build_sphinx'
+	tox (>=1.8.1) ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/paramiko-2.7.2[${PYTHON_USEDEP}]
 	build_sphinx? ( dev-python/sphinx[${PYTHON_USEDEP}] )

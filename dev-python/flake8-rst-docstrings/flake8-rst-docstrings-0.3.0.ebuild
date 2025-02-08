@@ -17,6 +17,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build ; extra == 'develop'
+	flake8 (>=3)
+	pygments
+	restructuredtext-lint
+	twine ; extra == 'develop'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/build[${PYTHON_USEDEP}] )
 	>=dev-python/flake8-3[${PYTHON_USEDEP}]

@@ -24,8 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiodns<4.0.0,>=3.0.0
+	aiohttp>=3.0.0
+	yarl>=1.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiodns-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiodns-3.0.0[${PYTHON_USEDEP}] <dev-python/aiodns-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]
 "

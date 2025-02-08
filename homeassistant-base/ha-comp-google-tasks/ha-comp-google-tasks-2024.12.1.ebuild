@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/google-api-python-client-2.71.0[${PYTHON_USEDEP}]
+	~dev-python/google-api-python-client-2.71.0[${PYTHON_USEDEP}]
 "

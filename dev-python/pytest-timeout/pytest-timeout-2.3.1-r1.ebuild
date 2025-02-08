@@ -19,7 +19,6 @@ KEYWORDS="amd64 arm64"
 
 # do not rdepend on pytest, it won't be used without it anyway
 # pytest-cov used to test compatibility
-IUSE=""
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

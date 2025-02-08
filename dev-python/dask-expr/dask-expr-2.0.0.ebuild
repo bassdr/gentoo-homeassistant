@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+IUSE=""
+REQUIRES_DIST="
+	dask>=2025.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dask-2025.1.0[${PYTHON_USEDEP}]
 "

@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pyserial
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyserial[${PYTHON_USEDEP}]
 "

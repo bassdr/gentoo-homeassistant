@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,14 +14,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	authlib<1.3.2,>=1.2.1
+	grpcio-health-checking<2.0.0,>=1.66.2
+	grpcio-tools<2.0.0,>=1.66.2
+	grpcio<2.0.0,>=1.66.2
+	httpx<0.29.0,>=0.26.0
+	pydantic<3.0.0,>=2.8.0
+	validators==0.34.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/authlib-1.3.2[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/grpcio-health-checking-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/grpcio-tools-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/httpx-0.29.0[${PYTHON_USEDEP}]
-	<dev-python/pydantic-3.0.0[${PYTHON_USEDEP}]
-	=dev-python/validators-0.34.0[${PYTHON_USEDEP}]
+	>=dev-python/authlib-1.2.1[${PYTHON_USEDEP}] <dev-python/authlib-1.3.2[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.66.2[${PYTHON_USEDEP}] <dev-python/grpcio-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-health-checking-1.66.2[${PYTHON_USEDEP}] <dev-python/grpcio-health-checking-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-tools-1.66.2[${PYTHON_USEDEP}] <dev-python/grpcio-tools-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.26.0[${PYTHON_USEDEP}] <dev-python/httpx-0.29.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2.8.0[${PYTHON_USEDEP}] <dev-python/pydantic-3.0.0[${PYTHON_USEDEP}]
+	~dev-python/validators-0.34.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

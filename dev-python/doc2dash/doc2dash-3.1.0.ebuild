@@ -16,6 +16,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=23.2
+	beautifulsoup4
+	click>8
+	coverage[toml]; extra == 'tests'
+	doc2dash[tests,typing]; extra == 'dev'
+	mkdocs-callouts; extra == 'docs'
+	mkdocs-click; extra == 'docs'
+	mkdocs-include-markdown-plugin; extra == 'docs'
+	mkdocs-material; extra == 'docs'
+	mkdocs; extra == 'docs'
+	mkdocstrings[python]; extra == 'docs'
+	mypy; extra == 'typing'
+	nox; extra == 'dev'
+	pytest; extra == 'tests'
+	rich
+	types-urllib3; extra == 'typing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-23.2[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]

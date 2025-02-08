@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build>=0.1
+	mock>=3.0.0; python_version == "3.7" and extra == "test"
+	pytest; extra == "test"
+	setuptools
+	tomli; python_version < "3.11"
+	wheel; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-0.1[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

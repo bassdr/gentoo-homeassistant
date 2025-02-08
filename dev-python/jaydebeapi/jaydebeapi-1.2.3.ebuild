@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="JayDeBeApi"
@@ -17,6 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	JPype1 (<=0.7.1) ; python_version <= "2.7" and platform_python_implementation != "Jython"
+	JPype1 ; python_version > "2.7" and platform_python_implementation != "Jython"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jpype1[${PYTHON_USEDEP}]
 "

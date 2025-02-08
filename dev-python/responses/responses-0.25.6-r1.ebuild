@@ -18,11 +18,26 @@ KEYWORDS="amd64 arm64"
 
 # tomli backend is optional now, with pyyaml being the new default.
 # However, keeping it unconditional here for backwards compatibility.
-IUSE=""
+REQUIRES_DIST="
+	coverage>=6.0.0; extra == "tests"
+	flake8; extra == "tests"
+	mypy; extra == "tests"
+	pytest-asyncio; extra == "tests"
+	pytest-cov; extra == "tests"
+	pytest-httpserver; extra == "tests"
+	pytest>=7.0.0; extra == "tests"
+	pyyaml
+	requests<3.0,>=2.30.0
+	tomli-w; extra == "tests"
+	tomli; python_version < "3.11" and extra == "tests"
+	types-PyYAML; extra == "tests"
+	types-requests; extra == "tests"
+	urllib3<3.0,>=1.25.10
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0[${PYTHON_USEDEP}]
-	<dev-python/urllib3-3.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.30.0[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.25.10[${PYTHON_USEDEP}] <dev-python/urllib3-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/nice-go-0.3.10[${PYTHON_USEDEP}]
+	~dev-python/nice-go-0.3.10[${PYTHON_USEDEP}]
 "

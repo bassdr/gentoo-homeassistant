@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	hypothesis
+	numpy<2.0.0,>=1.5.0
+	scipy>=0.10.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/hypothesis[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.5.0[${PYTHON_USEDEP}] <dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-0.10.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

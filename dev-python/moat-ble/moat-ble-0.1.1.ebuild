@@ -26,13 +26,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx (>=5.0,<6.0); extra == "docs"
+	bluetooth-sensor-state-data (>=1.5.0)
+	home-assistant-bluetooth (>=1.3.0)
+	myst-parser (>=0.18,<0.19); extra == "docs"
+	sensor-state-data (>=2.0.2)
+	sphinx-rtd-theme (>=1.0,<2.0); extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-sensor-state-data-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
-	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
 	>=dev-python/sensor-state-data-2.0.2[${PYTHON_USEDEP}]
-	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]

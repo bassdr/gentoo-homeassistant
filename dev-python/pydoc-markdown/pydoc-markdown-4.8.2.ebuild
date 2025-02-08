@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,19 +14,35 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML (>=5.0,<7.0)
+	click (>=7.1,<9.0)
+	databind.core (>=4.4.0,<5.0.0)
+	databind.json (>=4.4.0,<5.0.0)
+	docspec (>=2.2.1,<3.0.0)
+	docspec-python (>=2.2.1,<3.0.0)
+	docstring-parser (>=0.11,<0.12)
+	jinja2 (>=3.0.0,<4.0.0)
+	nr.util (>=0.7.5,<1.0.0)
+	requests (>=2.23.0,<3.0.0)
+	tomli (>=2.0.0,<3.0.0)
+	tomli_w (>=1.0.0,<2.0.0)
+	watchdog
+	yapf (>=0.30.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/click-7.1[${PYTHON_USEDEP}]
-	>=dev-python/databind-core-4.4.0[${PYTHON_USEDEP}]
-	>=dev-python/databind-json-4.4.0[${PYTHON_USEDEP}]
-	>=dev-python/docspec-2.2.1[${PYTHON_USEDEP}]
-	>=dev-python/docspec-python-2.2.1[${PYTHON_USEDEP}]
-	>=dev-python/docstring-parser-0.11[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/nr-util-0.7.5[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}]
-	>=dev-python/tomli-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/tomli-w-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/click-7.1[${PYTHON_USEDEP}] <dev-python/click-9.0[${PYTHON_USEDEP}]
+	>=dev-python/databind-core-4.4.0[${PYTHON_USEDEP}] <dev-python/databind-core-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/databind-json-4.4.0[${PYTHON_USEDEP}] <dev-python/databind-json-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/docspec-2.2.1[${PYTHON_USEDEP}] <dev-python/docspec-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/docspec-python-2.2.1[${PYTHON_USEDEP}] <dev-python/docspec-python-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/docstring-parser-0.11[${PYTHON_USEDEP}] <dev-python/docstring-parser-0.12[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] <dev-python/jinja2-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/nr-util-0.7.5[${PYTHON_USEDEP}] <dev-python/nr-util-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.0[${PYTHON_USEDEP}] <dev-python/pyyaml-7.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.23.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tomli-2.0.0[${PYTHON_USEDEP}] <dev-python/tomli-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tomli-w-1.0.0[${PYTHON_USEDEP}] <dev-python/tomli-w-2.0.0[${PYTHON_USEDEP}]
 	dev-python/watchdog[${PYTHON_USEDEP}]
 	>=dev-python/yapf-0.30.0[${PYTHON_USEDEP}]
 "

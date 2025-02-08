@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="MultiEL"
@@ -17,6 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	accelerate (>=0.9.0)
+	fairscale
+	faiss-gpu
+	h5py
+	huggingface-hub
+	hydra-core
+	hydra-submitit-launcher
+	protobuf (==3.20)
+	pytorch-lightning
+	pyyaml
+	sentencepiece
+	tqdm
+	transformers
+	ujson
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/accelerate-0.9.0[${PYTHON_USEDEP}]
 	dev-python/fairscale[${PYTHON_USEDEP}]
@@ -25,7 +40,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/huggingface-hub[${PYTHON_USEDEP}]
 	dev-python/hydra-core[${PYTHON_USEDEP}]
 	dev-python/hydra-submitit-launcher[${PYTHON_USEDEP}]
-	=dev-python/protobuf-3.20[${PYTHON_USEDEP}]
+	~dev-python/protobuf-3.20[${PYTHON_USEDEP}]
 	dev-python/pytorch-lightning[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/sentencepiece[${PYTHON_USEDEP}]

@@ -16,6 +16,23 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	check-manifest ; extra == 'check'
+	coverage[toml] (>=5.2) ; extra == 'test'
+	coveralls (>=2.1.1) ; extra == 'test'
+	flake8 ; extra == 'check'
+	flake8-black ; extra == 'check'
+	hypothesis ; extra == 'test'
+	isort (>=5.0.3) ; extra == 'check'
+	mypy ; extra == 'type'
+	mypy-extensions ; extra == 'type'
+	pyannotate ; extra == 'test'
+	pygments ; extra == 'check'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	readme-renderer ; extra == 'check'
+	twine ; extra == 'check'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	check? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 	check? ( dev-python/flake8[${PYTHON_USEDEP}] )

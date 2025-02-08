@@ -25,12 +25,9 @@ distutils_enable_sphinx doc \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

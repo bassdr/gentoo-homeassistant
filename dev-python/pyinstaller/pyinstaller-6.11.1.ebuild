@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	altgraph
+	argcomplete; extra == "completion"
+	execnet>=1.5.0; extra == "hook-testing"
+	importlib-metadata>=4.6; python_version < "3.10"
+	macholib>=1.8; sys_platform == "darwin"
+	packaging>=22.0
+	pefile!=2024.8.26,>=2022.5.30; sys_platform == "win32"
+	psutil; extra == "hook-testing"
+	pyinstaller-hooks-contrib>=2024.9
+	pytest>=2.7.3; extra == "hook-testing"
+	pywin32-ctypes>=0.2.1; sys_platform == "win32"
+	setuptools>=42.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/altgraph[${PYTHON_USEDEP}]
 	completion? ( dev-python/argcomplete[${PYTHON_USEDEP}] )

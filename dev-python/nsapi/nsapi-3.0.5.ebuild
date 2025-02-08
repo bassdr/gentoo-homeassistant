@@ -21,6 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	future
+	pytz
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

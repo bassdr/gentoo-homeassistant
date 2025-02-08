@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	oyaml
+	paramiko
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/oyaml[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]

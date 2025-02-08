@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/spotifyaio-0.8.11[${PYTHON_USEDEP}]
+	~dev-python/spotifyaio-0.8.11[${PYTHON_USEDEP}]
 "

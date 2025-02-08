@@ -16,6 +16,46 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	affine
+	attrs
+	boto3>=1.2.4; extra == "all"
+	boto3>=1.2.4; extra == "s3"
+	boto3>=1.2.4; extra == "test"
+	certifi
+	click-plugins
+	click>=4.0
+	cligj>=0.5
+	fsspec; extra == "all"
+	fsspec; extra == "test"
+	ghp-import; extra == "all"
+	ghp-import; extra == "docs"
+	hypothesis; extra == "all"
+	hypothesis; extra == "test"
+	importlib-metadata; python_version < "3.10"
+	ipython>=2.0; extra == "all"
+	ipython>=2.0; extra == "ipython"
+	matplotlib; extra == "all"
+	matplotlib; extra == "plot"
+	numpy>=1.24
+	numpydoc; extra == "all"
+	numpydoc; extra == "docs"
+	packaging; extra == "all"
+	packaging; extra == "test"
+	pyparsing
+	pytest-cov>=2.2.0; extra == "all"
+	pytest-cov>=2.2.0; extra == "test"
+	pytest>=2.8.2; extra == "all"
+	pytest>=2.8.2; extra == "test"
+	shapely; extra == "all"
+	shapely; extra == "test"
+	sphinx-click; extra == "all"
+	sphinx-click; extra == "docs"
+	sphinx-rtd-theme; extra == "all"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "all"
+	sphinx; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/affine[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]

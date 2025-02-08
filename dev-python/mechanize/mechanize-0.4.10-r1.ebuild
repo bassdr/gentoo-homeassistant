@@ -20,6 +20,16 @@ GENERATED_IUSE="binarytest fast"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	html5-parser; extra == "binarytest"
+	html5-parser>=0.4.4; extra == "fast"
+	html5lib; extra == "test"
+	html5lib>=0.999999999
+	lxml; extra == "binarytest"
+	service-identity; extra == "test"
+	six; extra == "test"
+	twisted; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	binarytest? ( dev-python/html5-parser[${PYTHON_USEDEP}] )
 	fast? ( >=dev-python/html5-parser-0.4.4[${PYTHON_USEDEP}] )

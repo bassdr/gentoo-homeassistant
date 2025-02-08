@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,7 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp; python_version >= "3.5.3"
+	curlify>=2.1.0
+	pycountry>=19.8.18
+	requests>=2.3.0
+	six>=1.7.3
+"
 GENERATED_RDEPEND="${RDEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/curlify-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pycountry-19.8.18[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.3.0[${PYTHON_USEDEP}]

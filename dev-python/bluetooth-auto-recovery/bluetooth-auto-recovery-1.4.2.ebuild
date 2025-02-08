@@ -25,13 +25,23 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyRIC>=0.1.6.3
+	Sphinx<6.0,>=5.0; extra == "docs"
+	async-timeout>=3.0.0; python_version < "3.11"
+	bluetooth-adapters>=0.16.0
+	btsocket>=0.2.0
+	myst-parser<0.19,>=0.18; extra == "docs"
+	sphinx-rtd-theme<2.0,>=1.0; extra == "docs"
+	usb-devices>=0.4.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-adapters-0.16.0[${PYTHON_USEDEP}]
 	>=dev-python/btsocket-0.2.0[${PYTHON_USEDEP}]
-	docs? ( <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
 	>=dev-python/pyric-0.1.6.3[${PYTHON_USEDEP}]
-	docs? ( <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 	>=dev-python/usb-devices-0.4.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

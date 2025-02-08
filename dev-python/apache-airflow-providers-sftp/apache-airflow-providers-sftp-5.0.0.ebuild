@@ -16,6 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-common-compat; extra == "common-compat"
+	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow-providers-ssh>=2.1.0
+	apache-airflow>=2.9.0
+	asyncssh>=2.12.0
+	paramiko>=2.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	common-compat? ( dev-python/apache-airflow-providers-common-compat[${PYTHON_USEDEP}] )

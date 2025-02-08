@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="fs.smbfs"
@@ -17,9 +16,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	configparser (~=3.2) ; python_version < "3"
+	fs (~=2.2)
+	pysmb (!=1.1.26,!=1.1.29,<=1.2.9.1,>=1.1.22)
+	setuptools (>=38.3.0)
+	six (~=1.10)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fs-2.2[${PYTHON_USEDEP}] =dev-python/fs-2*[${PYTHON_USEDEP}]
-	!=dev-python/pysmb-1.1.26[${PYTHON_USEDEP}]
+	>=dev-python/pysmb-1.1.22[${PYTHON_USEDEP}] <=dev-python/pysmb-1.2.9.1[${PYTHON_USEDEP}] !~dev-python/pysmb-1.1.26[${PYTHON_USEDEP}] !~dev-python/pysmb-1.1.29[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-38.3.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.10[${PYTHON_USEDEP}] =dev-python/six-1*[${PYTHON_USEDEP}]
 "

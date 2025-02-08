@@ -14,7 +14,7 @@ EIGEN_CommitId="7bf2968fed5f246c0589e1111004cb420fcd7c71"
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/ml_dtypes/"
+  https://pypi.org/project/ml-dtypes/"
 SRC_URI="
 	https://github.com/jax-ml/ml_dtypes/archive/v${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -26,15 +26,27 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	>=dev-python/numpy-1.21:=[${PYTHON_USEDEP}]
+"
+REQUIRES_DIST="
+	absl-py; extra == "dev"
+	numpy>=1.21
+	numpy>=1.21.2; python_version >= "3.10"
+	numpy>=1.23.3; python_version >= "3.11"
+	numpy>=1.26.0; python_version >= "3.12"
+	numpy>=2.1.0; python_version >= "3.13"
+	pyink; extra == "dev"
+	pylint>=2.6.0; extra == "dev"
+	pytest-xdist; extra == "dev"
+	pytest; extra == "dev"
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.21.2[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.23.3[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/numpy-2.1.0[${PYTHON_USEDEP}]' python3_13{,t})
 "
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}

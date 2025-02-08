@@ -16,6 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click
+	joblib
+	matplotlib; extra == "all"
+	matplotlib; extra == "plot"
+	numpy; extra == "all"
+	numpy; extra == "machine-learning"
+	pyparsing; extra == "all"
+	pyparsing; extra == "tgrep"
+	python-crfsuite; extra == "all"
+	python-crfsuite; extra == "machine-learning"
+	regex>=2021.8.3
+	requests; extra == "all"
+	requests; extra == "corenlp"
+	scikit-learn; extra == "all"
+	scikit-learn; extra == "machine-learning"
+	scipy; extra == "all"
+	scipy; extra == "machine-learning"
+	tqdm
+	twython; extra == "all"
+	twython; extra == "twitter"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/joblib[${PYTHON_USEDEP}]

@@ -16,26 +16,41 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attribution==1.8.0; extra == "dev"
+	black==24.10.0; extra == "dev"
+	build>=1; extra == "dev"
+	coverage==7.6.8; extra == "dev"
+	fissix==24.4.24; extra == "dev"
+	flake8==7.1.1; extra == "dev"
+	flit==3.10.1; extra == "dev"
+	mypy==1.13.0; extra == "dev"
+	packaging==24.2; extra == "dev"
+	sphinx-mdinclude==0.6.2; extra == "docs"
+	sphinx==8.1.3; extra == "docs"
+	ufmt==2.8.0; extra == "dev"
+	usort==1.0.8.post1; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-mdinclude-0.6.2[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-mdinclude-0.6.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/attribution-1.8.0[${PYTHON_USEDEP}]
-		=dev-python/black-24.10.0[${PYTHON_USEDEP}]
+		~dev-python/attribution-1.8.0[${PYTHON_USEDEP}]
+		~dev-python/black-24.10.0[${PYTHON_USEDEP}]
 		>=dev-python/build-1[${PYTHON_USEDEP}]
-		=dev-python/coverage-7.6.8[${PYTHON_USEDEP}]
-		=dev-python/fissix-24.4.24[${PYTHON_USEDEP}]
-		=dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
-		=dev-python/flit-3.10.1[${PYTHON_USEDEP}]
-		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-		=dev-python/packaging-24.2[${PYTHON_USEDEP}]
-		=dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
-		=dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
+		~dev-python/coverage-7.6.8[${PYTHON_USEDEP}]
+		~dev-python/fissix-24.4.24[${PYTHON_USEDEP}]
+		~dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
+		~dev-python/flit-3.10.1[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		~dev-python/packaging-24.2[${PYTHON_USEDEP}]
+		~dev-python/ufmt-2.8.0[${PYTHON_USEDEP}]
+		~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

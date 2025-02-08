@@ -24,7 +24,9 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	arrow (>=0.15.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/arrow-0.15.0[${PYTHON_USEDEP}]
 "

@@ -19,7 +19,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.md"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "

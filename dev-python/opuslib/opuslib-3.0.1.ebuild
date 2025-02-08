@@ -20,7 +20,6 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-RDEPEND=""
 BDEPEND="
 	test? (
 		>=dev-python/coverage-4.4.1[${PYTHON_USEDEP}]

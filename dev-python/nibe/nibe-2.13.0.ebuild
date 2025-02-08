@@ -22,11 +22,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-modbus>=0.2.0
+	async-timeout>=4.0.0
+	asyncclick>=8.1.3.4; extra == "cli"
+	construct<3.0.0,>=2.10.0
+	exceptiongroup>=1.0.0
+	pandas>=1.0.5; extra == "convert"
+	python-slugify>=4.0.0; extra == "convert"
+	tenacity>=8.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-modbus-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]
 	cli? ( >=dev-python/asyncclick-8.1.3.4[${PYTHON_USEDEP}] )
-	<dev-python/construct-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/construct-2.10.0[${PYTHON_USEDEP}] <dev-python/construct-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/exceptiongroup-1.0.0[${PYTHON_USEDEP}]
 	convert? ( >=dev-python/pandas-1.0.5[${PYTHON_USEDEP}] )
 	convert? ( >=dev-python/python-slugify-4.0.0[${PYTHON_USEDEP}] )

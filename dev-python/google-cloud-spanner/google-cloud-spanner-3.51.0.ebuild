@@ -16,17 +16,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0dev,>=1.34.0
+	google-cloud-core<3.0dev,>=1.4.4
+	grpc-google-iam-v1<1.0.0dev,>=0.12.4
+	grpc-interceptor>=0.15.4
+	libcst>=0.2.5; extra == "libcst"
+	opentelemetry-api>=1.22.0; extra == "tracing"
+	opentelemetry-sdk>=1.22.0; extra == "tracing"
+	opentelemetry-semantic-conventions>=0.43b0; extra == "tracing"
+	proto-plus<2.0.0dev,>=1.22.0
+	proto-plus<2.0.0dev,>=1.22.2; python_version >= "3.11"
+	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
+	sqlparse>=0.4.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}]
-	<dev-python/google-cloud-core-3.0_pre[${PYTHON_USEDEP}]
-	<dev-python/grpc-google-iam-v1-1.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-api-core-1.34.0[grpc,${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.1*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.10*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.2*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.3*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.4*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.5*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.6*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.7*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.8*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.9*[grpc,${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-core-1.4.4[${PYTHON_USEDEP}] <dev-python/google-cloud-core-3.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/grpc-google-iam-v1-0.12.4[${PYTHON_USEDEP}] <dev-python/grpc-google-iam-v1-1.0.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/grpc-interceptor-0.15.4[${PYTHON_USEDEP}]
 	libcst? ( >=dev-python/libcst-0.2.5[${PYTHON_USEDEP}] )
 	tracing? ( >=dev-python/opentelemetry-api-1.22.0[${PYTHON_USEDEP}] )
 	tracing? ( >=dev-python/opentelemetry-sdk-1.22.0[${PYTHON_USEDEP}] )
 	tracing? ( >=dev-python/opentelemetry-semantic-conventions-0.43_beta0[${PYTHON_USEDEP}] )
-	<dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
-	!=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
+	>=dev-python/proto-plus-1.22.0[${PYTHON_USEDEP}] <dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/proto-plus-1.22.2[${PYTHON_USEDEP}] <dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.20.2[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.0[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.2[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.3[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.4[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.5[${PYTHON_USEDEP}]
 	>=dev-python/sqlparse-0.4.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

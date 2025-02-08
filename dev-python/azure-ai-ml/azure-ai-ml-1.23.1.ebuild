@@ -16,6 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-common>=1.1
+	azure-core>=1.23.0
+	azure-mgmt-core>=1.3.0
+	azure-storage-blob>=12.10.0
+	azure-storage-file-datalake>=12.2.0
+	azure-storage-file-share
+	azureml-dataprep-rslex>=2.22.0; extra == "mount"
+	colorama
+	isodate
+	jsonschema>=4.0.0
+	marshmallow>=3.5
+	mldesigner; extra == "designer"
+	msrest>=0.6.18
+	opencensus-ext-azure
+	opencensus-ext-logging
+	pydash>=6.0.0
+	pyjwt
+	pyyaml>=5.1.0
+	strictyaml
+	tqdm
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-common-1.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-core-1.23.0[${PYTHON_USEDEP}]

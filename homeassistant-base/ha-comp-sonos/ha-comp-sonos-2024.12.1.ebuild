@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/soco-0.30.6[${PYTHON_USEDEP}]
-	=dev-python/sonos-websocket-0.1.3[${PYTHON_USEDEP}]
+	~dev-python/soco-0.30.6[${PYTHON_USEDEP}]
+	~dev-python/sonos-websocket-0.1.3[${PYTHON_USEDEP}]
 "

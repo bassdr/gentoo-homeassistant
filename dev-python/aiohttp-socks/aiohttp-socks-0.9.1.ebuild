@@ -23,10 +23,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp>=3.10.0
+	python-socks[asyncio]<3.0.0,>=2.4.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
-	<dev-python/python-socks-3.0.0[asyncio,${PYTHON_USEDEP}]
+	>=dev-python/python-socks-2.4.3[asyncio,${PYTHON_USEDEP}] <dev-python/python-socks-3.0.0[asyncio,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]

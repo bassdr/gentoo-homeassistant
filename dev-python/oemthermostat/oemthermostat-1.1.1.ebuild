@@ -21,6 +21,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	requests
+	sphinx ; extra == 'docs'
+	sphinx-automodapi ; extra == 'docs'
+	sphinx-rtd-theme ; extra == 'docs'
+	sphinxcontrib-httpdomain ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Automated JSON API based communication with Fronius Symo"
 HOMEPAGE="
-  https://pypi.org/project/PyFronius/
+  https://pypi.org/project/pyfronius/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 "

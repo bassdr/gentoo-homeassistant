@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	pyserial
+	pyserial-asyncio
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]

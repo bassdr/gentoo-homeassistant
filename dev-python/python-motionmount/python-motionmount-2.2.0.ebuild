@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Control your MotionMount Signature TVM7675 Pro using Python"
 HOMEPAGE="
-  https://pypi.org/project/python-MotionMount/
+  https://pypi.org/project/python-motionmount/
   Bug Tracker, https://github.com/vogelsproducts/python-MotionMount/issues
   repository, https://github.com/vogelsproducts/python-MotionMount
 "

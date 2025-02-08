@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jaraco.vcs/"
+  https://pypi.org/project/jaraco-vcs/"
 
 LICENSE="MIT"
 SLOT="0"
@@ -18,6 +18,29 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	furo; extra == "doc"
+	jaraco.classes
+	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.path
+	jaraco.versioning
+	more-itertools
+	packaging
+	pygments; extra == "test"
+	pytest!=8.1.1,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-enabler>=2.2; extra == "test"
+	pytest-home; extra == "test"
+	pytest-mypy; extra == "test"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
+	python-dateutil
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	tempora
+	types-python-dateutil; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	dev-python/jaraco-classes[${PYTHON_USEDEP}]
@@ -52,12 +75,13 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pygments[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !~dev-python/pytest-8.1.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
 		dev-python/pytest-home[${PYTHON_USEDEP}]
 		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
 	)
 "

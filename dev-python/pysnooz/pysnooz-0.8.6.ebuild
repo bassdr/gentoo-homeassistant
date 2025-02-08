@@ -23,13 +23,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Events (>=0.4,<0.5)
+	bleak (>=0.20.2)
+	bleak-retry-connector (>=3.0.2)
+	bluetooth-sensor-state-data (>=1.5.0)
+	home-assistant-bluetooth (>=1.3.0)
+	transitions (>=0.8.11,<0.9.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 	>=dev-python/bleak-retry-connector-3.0.2[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.5.0[${PYTHON_USEDEP}]
-	>=dev-python/events-0.4[${PYTHON_USEDEP}]
+	>=dev-python/events-0.4[${PYTHON_USEDEP}] <dev-python/events-0.5[${PYTHON_USEDEP}]
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
-	>=dev-python/transitions-0.8.11[${PYTHON_USEDEP}]
+	>=dev-python/transitions-0.8.11[${PYTHON_USEDEP}] <dev-python/transitions-0.9.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]

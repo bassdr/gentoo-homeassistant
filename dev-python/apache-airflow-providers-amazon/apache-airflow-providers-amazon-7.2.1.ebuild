@@ -17,6 +17,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow (>=2.3.0)
+	apache-airflow-providers-apache-hive ; extra == 'apache.hive'
+	apache-airflow-providers-cncf-kubernetes ; extra == 'cncf.kubernetes'
+	apache-airflow-providers-common-sql (>=1.3.1)
+	apache-airflow-providers-common-sql ; extra == 'common.sql'
+	apache-airflow-providers-exasol ; extra == 'exasol'
+	apache-airflow-providers-ftp ; extra == 'ftp'
+	apache-airflow-providers-google ; extra == 'google'
+	apache-airflow-providers-imap ; extra == 'imap'
+	apache-airflow-providers-mongo ; extra == 'mongo'
+	apache-airflow-providers-salesforce ; extra == 'salesforce'
+	apache-airflow-providers-ssh ; extra == 'ssh'
+	boto3 (>=1.24.0)
+	jsonpath-ng (>=1.5.3)
+	mypy-boto3-appflow (>=1.24.0)
+	mypy-boto3-rds (>=1.24.0)
+	mypy-boto3-redshift-data (>=1.24.0)
+	pandas (>=0.17.1) ; extra == 'pandas'
+	redshift-connector (>=2.0.888)
+	sqlalchemy-redshift (>=0.8.6)
+	watchtower (~=2.0.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.3.0[${PYTHON_USEDEP}]
 	apache.hive? ( dev-python/apache-airflow-providers-apache-hive[${PYTHON_USEDEP}] )

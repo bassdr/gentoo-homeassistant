@@ -24,6 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	grpcio>=1.12.0
+	protobuf>=3.6.0
+	typing-extensions>=4.3.0
+	yagrc>=1.1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.6.0[${PYTHON_USEDEP}]
@@ -41,10 +47,6 @@ BDEPEND="
 	)"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# remove unsupported dynamic-versioning plugin

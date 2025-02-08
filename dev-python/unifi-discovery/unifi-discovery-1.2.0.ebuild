@@ -24,12 +24,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx<6.0.0,>=5.0.0; extra == "docs"
+	aiohttp>=3.8.0
+	myst-parser>=0.17.0; extra == "docs"
+	pyroute2>=0.6.5
+	sphinx-rtd-theme<2.0.0,>=1.0.0; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/myst-parser-0.17.0[${PYTHON_USEDEP}] )
 	>=dev-python/pyroute2-0.6.5[${PYTHON_USEDEP}]
-	docs? ( <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]

@@ -16,9 +16,46 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bleach
+	bokeh-fastapi>=0.1.1; extra == "fastapi"
+	bokeh<3.7.0,>=3.5.0
+	fastapi[standard]; extra == "fastapi"
+	holoviews>=1.18.0; extra == "recommended"
+	jupyterlab; extra == "recommended"
+	linkify-it-py
+	markdown
+	markdown-it-py
+	matplotlib; extra == "recommended"
+	mdit-py-plugins
+	mypy; extra == "mypy"
+	packaging
+	pandas-stubs; extra == "mypy"
+	pandas>=1.2
+	param<3.0,>=2.1.0
+	pillow; extra == "recommended"
+	plotly; extra == "recommended"
+	psutil; extra == "tests"
+	pytest-asyncio; extra == "tests"
+	pytest-rerunfailures; extra == "tests"
+	pytest-xdist; extra == "tests"
+	pytest; extra == "tests"
+	pyviz-comms>=2.0.0
+	requests
+	tqdm
+	types-bleach; extra == "mypy"
+	types-croniter; extra == "mypy"
+	types-markdown; extra == "mypy"
+	types-psutil; extra == "mypy"
+	types-requests; extra == "mypy"
+	types-tqdm; extra == "mypy"
+	typing-extensions
+	typing-extensions; extra == "mypy"
+	watchfiles; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bleach[${PYTHON_USEDEP}]
-	<dev-python/bokeh-3.7.0[${PYTHON_USEDEP}]
+	>=dev-python/bokeh-3.5.0[${PYTHON_USEDEP}] <dev-python/bokeh-3.7.0[${PYTHON_USEDEP}]
 	fastapi? ( >=dev-python/bokeh-fastapi-0.1.1[${PYTHON_USEDEP}] )
 	fastapi? ( dev-python/fastapi[standard,${PYTHON_USEDEP}] )
 	recommended? ( >=dev-python/holoviews-1.18.0[${PYTHON_USEDEP}] )
@@ -32,7 +69,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.2[${PYTHON_USEDEP}]
 	mypy? ( dev-python/pandas-stubs[${PYTHON_USEDEP}] )
-	<dev-python/param-3.0[${PYTHON_USEDEP}]
+	>=dev-python/param-2.1.0[${PYTHON_USEDEP}] <dev-python/param-3.0[${PYTHON_USEDEP}]
 	recommended? ( dev-python/pillow[${PYTHON_USEDEP}] )
 	recommended? ( dev-python/plotly[${PYTHON_USEDEP}] )
 	>=dev-python/pyviz-comms-2.0.0[${PYTHON_USEDEP}]

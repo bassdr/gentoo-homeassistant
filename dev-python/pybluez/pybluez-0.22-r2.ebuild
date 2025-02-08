@@ -11,7 +11,7 @@ SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} ${PV} .zip)"
 
 DESCRIPTION="Bluetooth Python extension module"
 HOMEPAGE="
-  https://pypi.org/project/PyBluez/
+  https://pypi.org/project/pybluez/
 "
 LICENSE="GPL-2"
 SLOT="0"

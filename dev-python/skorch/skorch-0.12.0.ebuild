@@ -16,6 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	numpy (>=1.13.3)
+	numpydoc ; extra == 'docs'
+	pytest ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	scikit-learn (>=0.22.0)
+	scipy (>=1.1.0)
+	sphinx-rtd-theme ; extra == 'docs'
+	tabulate (>=0.7.7)
+	tqdm (>=4.14.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.13.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )

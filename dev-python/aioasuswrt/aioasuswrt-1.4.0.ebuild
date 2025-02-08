@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	asyncssh
+	check-manifest ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/asyncssh[${PYTHON_USEDEP}]
 "

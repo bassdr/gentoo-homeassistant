@@ -18,6 +18,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	pyhamcrest
+	requests
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyhamcrest[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

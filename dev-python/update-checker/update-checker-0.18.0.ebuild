@@ -17,6 +17,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	black ; extra == 'lint'
+	flake8 ; extra == 'dev'
+	flake8 ; extra == 'lint'
+	pytest (>=2.7.3) ; extra == 'dev'
+	pytest (>=2.7.3) ; extra == 'test'
+	requests (>=2.3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/black[${PYTHON_USEDEP}] )
 	lint? ( dev-python/flake8[${PYTHON_USEDEP}] )

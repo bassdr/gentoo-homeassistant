@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyownet-0.10.0_p1[${PYTHON_USEDEP}]
+	~dev-python/pyownet-0.10.0_p1[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow>=2.9.0
+	google-auth-httplib2>=0.0.1
+	google-auth<3.0.0,>=1.0.0
+	grpcio>=1.59.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/google-auth-1.0.0[${PYTHON_USEDEP}] <dev-python/google-auth-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-httplib2-0.0.1[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.59.0[${PYTHON_USEDEP}]
 "

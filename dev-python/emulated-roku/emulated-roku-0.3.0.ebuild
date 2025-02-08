@@ -18,6 +18,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	aiohttp >3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/aiohttp-3[${PYTHON_USEDEP}]
 "

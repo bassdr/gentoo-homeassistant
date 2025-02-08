@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/psutil-6.1.0[${PYTHON_USEDEP}]
-	=dev-python/psutil-home-assistant-0.0.1[${PYTHON_USEDEP}]
+	~dev-python/psutil-6.1.0[${PYTHON_USEDEP}]
+	~dev-python/psutil-home-assistant-0.0.1[${PYTHON_USEDEP}]
 "

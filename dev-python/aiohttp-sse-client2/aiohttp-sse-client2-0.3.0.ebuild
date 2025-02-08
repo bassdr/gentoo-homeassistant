@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Server-Sent Event python client base on aiohttp"
 HOMEPAGE="
-  https://pypi.org/project/aiohttp_sse_client2/
+  https://pypi.org/project/aiohttp-sse-client2/
 "
 
 LICENSE="Apache-2.0"
@@ -21,6 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp (>=3)
+	attrs
+	multidict
+	yarl
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]

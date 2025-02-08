@@ -30,6 +30,16 @@ IUSE="${GENERATED_IUSE}"
 DEPEND="
 	net-dns/libidn:=
 "
+REQUIRES_DIST="
+	aiodns>=1.0
+	aiohttp; extra == "xep-0363"
+	cryptography; extra == "xep-0454"
+	defusedxml; extra == "safer-xml-parsing"
+	emoji; extra == "xep-0444-compliance"
+	pyasn1
+	pyasn1_modules
+	typing_extensions; python_version < "3.8.0"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiodns-1.0[${PYTHON_USEDEP}]
 	xep-0363? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
@@ -38,7 +48,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	xep-0444-compliance? ( dev-python/emoji[${PYTHON_USEDEP}] )
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiodns[${PYTHON_USEDEP}]

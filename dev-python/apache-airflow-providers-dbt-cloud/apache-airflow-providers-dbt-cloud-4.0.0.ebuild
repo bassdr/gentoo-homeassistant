@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.2
+	apache-airflow-providers-http
+	apache-airflow-providers-openlineage>=1.7.0; extra == "openlineage"
+	apache-airflow>=2.9.0
+	asgiref>=2.3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]

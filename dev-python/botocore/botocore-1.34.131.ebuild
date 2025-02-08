@@ -23,11 +23,18 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	awscrt==0.20.11; extra == "crt"
+	jmespath<2.0.0,>=0.7.1
+	python-dateutil<3.0.0,>=2.1
+	urllib3!=2.2.0,<3,>=1.25.4; python_version >= "3.10"
+	urllib3<1.27,>=1.25.4; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	crt? ( =dev-python/awscrt-0.20.11[${PYTHON_USEDEP}] )
-	<dev-python/jmespath-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
-	!=dev-python/urllib3-2.2.0[${PYTHON_USEDEP}]
+	crt? ( ~dev-python/awscrt-0.20.11[${PYTHON_USEDEP}] )
+	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}] <dev-python/jmespath-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}] <dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.25.4[${PYTHON_USEDEP}] <dev-python/urllib3-3[${PYTHON_USEDEP}] !~dev-python/urllib3-2.2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/jmespath-2[${PYTHON_USEDEP}]

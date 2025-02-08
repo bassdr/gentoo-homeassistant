@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,9 +15,33 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8 <6.0.0,>=3.8.0 ; extra == 'dev'
+	flake8 <8.0,>=3.8.0
+	flake8-annotations ; extra == 'dev'
+	flake8-bandit ; extra == 'dev'
+	flake8-bugbear ; extra == 'dev'
+	flake8-commas ; extra == 'dev'
+	flake8-comprehensions ; extra == 'dev'
+	flake8-continuation ; extra == 'dev'
+	flake8-datetimez ; extra == 'dev'
+	flake8-docstrings ; extra == 'dev'
+	flake8-import-order ; extra == 'dev'
+	flake8-literal ; extra == 'dev'
+	flake8-modern-annotations ; extra == 'dev'
+	flake8-noqa ; extra == 'dev'
+	flake8-polyfill ; extra == 'dev'
+	flake8-pyproject ; extra == 'dev'
+	flake8-requirements ; extra == 'dev'
+	flake8-typechecking-import ; extra == 'dev'
+	flake8-use-fstring ; extra == 'dev'
+	importlib-metadata <5.0.0,>=4.0.0 ; python_version < "3.8.0"
+	mypy ; extra == 'dev'
+	pep8-naming ; extra == 'dev'
+	typing-extensions >=3.7.4.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/flake8-8.0[${PYTHON_USEDEP}]
-	<dev-python/importlib-metadata-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-3.8.0[${PYTHON_USEDEP}] <dev-python/flake8-8.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.7.4.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -26,7 +49,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.8.0[${PYTHON_USEDEP}] <dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
 		dev-python/flake8-annotations[${PYTHON_USEDEP}]
 		dev-python/flake8-bandit[${PYTHON_USEDEP}]
 		dev-python/flake8-bugbear[${PYTHON_USEDEP}]

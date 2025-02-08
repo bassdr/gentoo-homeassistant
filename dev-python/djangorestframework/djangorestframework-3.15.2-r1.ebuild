@@ -23,9 +23,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	backports.zoneinfo; python_version < "3.9"
+	django>=4.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	>=dev-python/django-4.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

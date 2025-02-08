@@ -23,7 +23,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
@@ -37,5 +36,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -o addopts= -p asyncio
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

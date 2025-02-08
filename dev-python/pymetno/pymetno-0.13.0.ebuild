@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library to communicate with the met.no api"
 HOMEPAGE="
-  https://pypi.org/project/PyMetno/
+  https://pypi.org/project/pymetno/
 "
 
 LICENSE="MIT"
@@ -18,6 +18,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	aiohttp>=3.0.6
+	async-timeout>=3.0.0
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.6[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}]

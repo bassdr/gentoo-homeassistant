@@ -17,6 +17,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cffi~=1.14
+	furiosa-common==0.10.*
+	furiosa-native-runtime==0.10.*
+	mnist; extra == "test"
+	mypy; extra == "test"
+	numpy~=1.24
+	onnxruntime~=1.15.1; extra == "test"
+	package-extras; extra == "legacy"
+	pandas~=2.0.3
+	pydantic
+	pytest; extra == "test"
+	ruff; extra == "test"
+	types-PyYAML; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.14[${PYTHON_USEDEP}] =dev-python/cffi-1*[${PYTHON_USEDEP}]
 	=dev-python/furiosa-common-0.10*[${PYTHON_USEDEP}]
@@ -30,7 +45,6 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/mnist[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]

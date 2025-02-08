@@ -16,6 +16,24 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	cloudpickle
+	future
+	lightgbm ; extra == 'atpe'
+	networkx (>=2.2)
+	nose ; extra == 'dev'
+	numpy
+	pre-commit ; extra == 'dev'
+	py4j
+	pymongo ; extra == 'mongotrials'
+	pyspark ; extra == 'sparktrials'
+	pytest ; extra == 'dev'
+	scikit-learn ; extra == 'atpe'
+	scipy
+	six
+	tqdm
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
 	dev-python/future[${PYTHON_USEDEP}]

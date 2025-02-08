@@ -16,6 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=18.1
+	coverage[toml]; extra == "test"
+	dlinfo
+	joblib
+	pytest-cov; extra == "test"
+	pytest>=6.0; extra == "test"
+	segments
+	sphinx-rtd-theme; extra == "doc"
+	sphinx; extra == "doc"
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]
 	dev-python/dlinfo[${PYTHON_USEDEP}]

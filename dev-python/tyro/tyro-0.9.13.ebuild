@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,14 +14,37 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=21.4.0; extra == "dev"
+	backports-cached-property>=1.0.2; python_version < "3.8"
+	colorama>=0.4.0; platform_system == "Windows"
+	coverage[toml]>=6.5.0; extra == "dev"
+	docstring-parser>=0.15
+	eval-type-backport>=0.1.3; extra == "dev"
+	eval-type-backport>=0.1.3; python_version < "3.10"
+	flax>=0.6.9; (python_version >= "3.8" and python_version <= "3.12") and extra == "dev"
+	mypy>=1.4.1; extra == "dev"
+	numpy>=1.20.0; extra == "dev"
+	omegaconf>=2.2.2; extra == "dev"
+	pydantic!=2.10.0,>=2.5.2; extra == "dev"
+	pyright!=1.1.379,>=1.1.349; extra == "dev"
+	pytest-cov>=3.0.0; extra == "dev"
+	pytest>=7.1.2; extra == "dev"
+	pyyaml>=6.0; extra == "dev"
+	rich>=11.1.0
+	ruff>=0.1.13; extra == "dev"
+	shtab>=1.5.6
+	torch>=1.10.0; python_version <= "3.12" and extra == "dev"
+	typeguard>=4.0.0
+	typing-extensions>=4.7.0; python_version < "3.8"
+	typing-extensions>=4.9.0; python_version >= "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/backports-cached-property-1.0.2[${PYTHON_USEDEP}]
 	>=dev-python/docstring-parser-0.15[${PYTHON_USEDEP}]
-	>=dev-python/flax-0.6.9[${PYTHON_USEDEP}]
 	>=dev-python/rich-11.1.0[${PYTHON_USEDEP}]
 	>=dev-python/shtab-1.5.6[${PYTHON_USEDEP}]
 	>=dev-python/typeguard-4.0.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.9.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
@@ -32,15 +54,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/attrs-21.4.0[${PYTHON_USEDEP}]
 		>=dev-python/coverage-6.5.0[toml,${PYTHON_USEDEP}]
 		>=dev-python/eval-type-backport-0.1.3[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '>=dev-python/flax-0.6.9[${PYTHON_USEDEP}]' python3_12)
 		>=dev-python/mypy-1.4.1[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
 		>=dev-python/omegaconf-2.2.2[${PYTHON_USEDEP}]
-		!=dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
-		!=dev-python/pyright-1.1.379[${PYTHON_USEDEP}]
+		>=dev-python/pydantic-2.5.2[${PYTHON_USEDEP}] !~dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
+		>=dev-python/pyright-1.1.349[${PYTHON_USEDEP}] !~dev-python/pyright-1.1.379[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 		>=dev-python/ruff-0.1.13[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '>=dev-python/torch-1.10.0[${PYTHON_USEDEP}]' python3_12)
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

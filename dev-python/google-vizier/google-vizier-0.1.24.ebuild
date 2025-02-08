@@ -16,6 +16,70 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py>=1.0.0
+	ale-py; extra == "all"
+	ale-py; extra == "benchmarks"
+	attrs>=23.1.0
+	chex>=0.1.87; extra == "all"
+	chex>=0.1.87; extra == "jax"
+	coverage<=6.4.2,>=4.5; extra == "all"
+	coverage<=6.4.2,>=4.5; extra == "test"
+	cvxopt; extra == "algorithms"
+	cvxopt; extra == "all"
+	cvxpy; extra == "algorithms"
+	cvxpy; extra == "all"
+	diversipy==0.9; extra == "all"
+	diversipy==0.9; extra == "benchmarks"
+	equinox==0.11.7; extra == "all"
+	equinox==0.11.7; extra == "jax"
+	evojax; extra == "algorithms"
+	evojax; extra == "all"
+	flax>=0.10.0; extra == "all"
+	flax>=0.10.0; extra == "jax"
+	googleapis-common-protos>=1.56.4
+	grpcio>=1.49.0
+	jax>=0.4.34; extra == "all"
+	jax>=0.4.34; extra == "jax"
+	jaxlib>=0.4.34; extra == "all"
+	jaxlib>=0.4.34; extra == "jax"
+	jaxopt>=0.8.3; extra == "all"
+	jaxopt>=0.8.3; extra == "jax"
+	jaxtyping>=0.2.34; extra == "all"
+	jaxtyping>=0.2.34; extra == "jax"
+	lightgbm; extra == "algorithms"
+	lightgbm; extra == "all"
+	matplotlib; extra == "all"
+	matplotlib; extra == "benchmarks"
+	mock<=4.0.3,>=3.0; extra == "all"
+	mock<=4.0.3,>=3.0; extra == "test"
+	nats_bench; extra == "all"
+	nats_bench; extra == "benchmarks"
+	numpy>=1.21.5
+	optax>=0.2.3; extra == "all"
+	optax>=0.2.3; extra == "jax"
+	optproblems==1.3; extra == "all"
+	optproblems==1.3; extra == "benchmarks"
+	pandas; extra == "all"
+	pandas; extra == "benchmarks"
+	portpicker>=1.3.1
+	protobuf>=3.6
+	pytest; extra == "all"
+	pytest; extra == "test"
+	ray[default]; extra == "all"
+	ray[default]; extra == "benchmarks"
+	scikit-learn; extra == "algorithms"
+	scikit-learn; extra == "all"
+	sqlalchemy>=1.4
+	tensorflow>=2.9.1; extra == "all"
+	tensorflow>=2.9.1; extra == "tf"
+	tfp-nightly[jax]; extra == "all"
+	tfp-nightly[jax]; extra == "jax"
+	typeguard<=2.13.3; extra == "all"
+	typeguard<=2.13.3; extra == "jax"
+	xgboost; extra == "all"
+	xgboost; extra == "benchmarks"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]
 	all? ( dev-python/ale-py[${PYTHON_USEDEP}] )
@@ -23,15 +87,15 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-23.1.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/chex-0.1.87[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/chex-0.1.87[${PYTHON_USEDEP}] )
-	all? ( <=dev-python/coverage-6.4.2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/coverage-4.5[${PYTHON_USEDEP}] <=dev-python/coverage-6.4.2[${PYTHON_USEDEP}] )
 	algorithms? ( dev-python/cvxopt[${PYTHON_USEDEP}] )
 	all? ( dev-python/cvxopt[${PYTHON_USEDEP}] )
 	algorithms? ( dev-python/cvxpy[${PYTHON_USEDEP}] )
 	all? ( dev-python/cvxpy[${PYTHON_USEDEP}] )
-	all? ( =dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
-	benchmarks? ( =dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
-	all? ( =dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
-	jax? ( =dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
+	benchmarks? ( ~dev-python/diversipy-0.9[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
+	jax? ( ~dev-python/equinox-0.11.7[${PYTHON_USEDEP}] )
 	algorithms? ( dev-python/evojax[${PYTHON_USEDEP}] )
 	all? ( dev-python/evojax[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/flax-0.10.0[${PYTHON_USEDEP}] )
@@ -50,14 +114,14 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/lightgbm[${PYTHON_USEDEP}] )
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	all? ( <=dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/mock-3.0[${PYTHON_USEDEP}] <=dev-python/mock-4.0.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/nats-bench[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/nats-bench[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.21.5[${PYTHON_USEDEP}]
 	all? ( >=dev-python/optax-0.2.3[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/optax-0.2.3[${PYTHON_USEDEP}] )
-	all? ( =dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
-	benchmarks? ( =dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
+	benchmarks? ( ~dev-python/optproblems-1.3[${PYTHON_USEDEP}] )
 	all? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	benchmarks? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	>=dev-python/portpicker-1.3.1[${PYTHON_USEDEP}]
@@ -82,8 +146,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<=dev-python/coverage-6.4.2[${PYTHON_USEDEP}]
-		<=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
+		>=dev-python/coverage-4.5[${PYTHON_USEDEP}] <=dev-python/coverage-6.4.2[${PYTHON_USEDEP}]
+		>=dev-python/mock-3.0[${PYTHON_USEDEP}] <=dev-python/mock-4.0.3[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "

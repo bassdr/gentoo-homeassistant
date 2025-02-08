@@ -20,10 +20,17 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	flaky; extra == 'tests'
+	httpx
+	importlib-metadata; python_version < '3.8'
+	pytest-cov; extra == 'tests'
+	pytest-random-order; extra == 'tests'
+	pytest; extra == 'tests'
+	pyyaml; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]

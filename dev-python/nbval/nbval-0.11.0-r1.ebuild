@@ -16,7 +16,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	coverage
+	ipykernel
+	jupyter-client
+	nbformat
+	pytest >=7
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/coverage[${PYTHON_USEDEP}]
 	dev-python/ipykernel[${PYTHON_USEDEP}]

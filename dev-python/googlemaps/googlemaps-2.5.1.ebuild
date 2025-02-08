@@ -18,8 +18,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	requests (<3.0,>=2.11.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/requests-3.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.11.1[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="

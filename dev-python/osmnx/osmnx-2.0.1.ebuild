@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	geopandas>=1.0
+	matplotlib>=3.5; extra == "visualization"
+	networkx>=2.5
+	numpy>=1.22
+	pandas>=1.4
+	rasterio>=1.3; extra == "raster"
+	requests>=2.27
+	rio-vrt>=0.3; extra == "raster"
+	scikit-learn>=0.23; extra == "neighbors"
+	scipy>=1.5; extra == "entropy"
+	scipy>=1.5; extra == "neighbors"
+	shapely>=2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/geopandas-1.0[${PYTHON_USEDEP}]
 	visualization? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )

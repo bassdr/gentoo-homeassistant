@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow; extra == "dev"
+	fastcore>=1.5.5
+	ipython
+	matplotlib; extra == "dev"
+	mistletoe; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fastcore-1.5.5[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]

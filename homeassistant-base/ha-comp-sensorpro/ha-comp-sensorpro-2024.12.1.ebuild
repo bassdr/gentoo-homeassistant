@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/sensorpro-ble-0.5.3[${PYTHON_USEDEP}]
+	~dev-python/sensorpro-ble-0.5.3[${PYTHON_USEDEP}]
 "

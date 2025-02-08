@@ -21,6 +21,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	IntelHex (>=2.2.1)
+	awesomeversion
+	click
+	crcmod (>=1.7)
+	getmac
+	paho-mqtt ; extra == 'mqtt-client'
+	pyserial (>=3.4)
+	pyserial-asyncio (>=0.4)
+	voluptuous (>=0.11.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/awesomeversion[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

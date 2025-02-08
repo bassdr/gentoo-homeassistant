@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="DateTime"
@@ -17,6 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytz
+	zope.interface
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]

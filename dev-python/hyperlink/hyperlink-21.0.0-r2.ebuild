@@ -17,7 +17,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	idna
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/idna[${PYTHON_USEDEP}]
 "

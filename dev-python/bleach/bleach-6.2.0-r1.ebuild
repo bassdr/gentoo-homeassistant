@@ -19,8 +19,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="css"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	tinycss2<1.5,>=1.1.0; extra == "css"
+	webencodings
+"
 GENERATED_RDEPEND="${RDEPEND}
-	css? ( <dev-python/tinycss2-1.5[${PYTHON_USEDEP}] )
+	css? ( >=dev-python/tinycss2-1.1.0[${PYTHON_USEDEP}] <dev-python/tinycss2-1.5[${PYTHON_USEDEP}] )
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

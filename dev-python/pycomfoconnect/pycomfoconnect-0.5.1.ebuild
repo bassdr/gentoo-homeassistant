@@ -19,6 +19,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	protobuf
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/protobuf[${PYTHON_USEDEP}]
 "

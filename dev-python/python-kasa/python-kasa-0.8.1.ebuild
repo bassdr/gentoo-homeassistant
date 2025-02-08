@@ -25,6 +25,22 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3
+	asyncclick>=8.1.7
+	cryptography>=1.9
+	docutils>=0.17; extra == "docs"
+	kasa-crypt>=0.2.0; extra == "speedups"
+	mashumaro>=3.14
+	myst-parser; extra == "docs"
+	orjson>=3.9.1; extra == "speedups"
+	ptpython; extra == "shell"
+	rich; extra == "shell"
+	sphinx-rtd-theme~=2.0; extra == "docs"
+	sphinx>=7.4.7; extra == "docs"
+	sphinxcontrib-programoutput~=0.0; extra == "docs"
+	tzdata>=2024.2; platform_system == "Windows"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	>=dev-python/asyncclick-8.1.7[${PYTHON_USEDEP}]

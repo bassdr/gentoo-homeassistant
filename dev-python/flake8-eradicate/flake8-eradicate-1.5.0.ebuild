@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs
+	eradicate (>=2.0,<3.0)
+	flake8 (>5)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
-	>=dev-python/eradicate-2.0[${PYTHON_USEDEP}]
+	>=dev-python/eradicate-2.0[${PYTHON_USEDEP}] <dev-python/eradicate-3.0[${PYTHON_USEDEP}]
 	>dev-python/flake8-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

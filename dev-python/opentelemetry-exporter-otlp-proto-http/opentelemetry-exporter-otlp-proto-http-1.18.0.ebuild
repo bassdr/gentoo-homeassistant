@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	backoff<2.0.0,>=1.10.0; python_version < '3.7'
+	backoff<3.0.0,>=1.10.0; python_version >= '3.7'
+	deprecated>=1.2.6
+	googleapis-common-protos~=1.52
+	opentelemetry-api~=1.15
+	opentelemetry-exporter-otlp-proto-common==1.18.0
+	opentelemetry-proto==1.18.0
+	opentelemetry-sdk~=1.18.0
+	requests~=2.7
+	responses==0.22.0; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/backoff-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/backoff-1.10.0[${PYTHON_USEDEP}] <dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/deprecated-1.2.6[${PYTHON_USEDEP}]
 	>=dev-python/googleapis-common-protos-1.52[${PYTHON_USEDEP}] =dev-python/googleapis-common-protos-1*[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-api-1.15[${PYTHON_USEDEP}] =dev-python/opentelemetry-api-1*[${PYTHON_USEDEP}]
-	=dev-python/opentelemetry-exporter-otlp-proto-common-1.18.0[${PYTHON_USEDEP}]
-	=dev-python/opentelemetry-proto-1.18.0[${PYTHON_USEDEP}]
+	~dev-python/opentelemetry-exporter-otlp-proto-common-1.18.0[${PYTHON_USEDEP}]
+	~dev-python/opentelemetry-proto-1.18.0[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-sdk-1.18.0[${PYTHON_USEDEP}] =dev-python/opentelemetry-sdk-1.18*[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.7[${PYTHON_USEDEP}] =dev-python/requests-2*[${PYTHON_USEDEP}]
 "
@@ -30,7 +41,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/responses-0.22.0[${PYTHON_USEDEP}]
+		~dev-python/responses-0.22.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

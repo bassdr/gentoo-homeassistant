@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A library to communicate with Switchmate"
 HOMEPAGE="
-  https://pypi.org/project/PySwitchmate/
+  https://pypi.org/project/pyswitchmate/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	bleak
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bleak[${PYTHON_USEDEP}]
 "

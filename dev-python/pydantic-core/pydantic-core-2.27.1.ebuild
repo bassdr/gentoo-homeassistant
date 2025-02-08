@@ -128,9 +128,11 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	typing-extensions!=4.7.0,>=4.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}] !~dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typing-extensions-4.7.1[${PYTHON_USEDEP}]

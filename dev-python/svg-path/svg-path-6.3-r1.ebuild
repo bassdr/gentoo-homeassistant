@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=${P/-/.}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/svg.path/"
+  https://pypi.org/project/svg-path/"
 # no tests in sdist, as of 6.3
 SRC_URI="
 	https://github.com/regebro/svg.path/archive/${PV}.tar.gz
@@ -23,7 +23,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/pillow[${PYTHON_USEDEP}]
@@ -51,5 +50,3 @@ EPYTEST_DESELECT=(
 	tests/test_boundingbox_image.py::BoundingBoxImageTest::test_image
 	tests/test_image.py::ImageTest::test_image
 )
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

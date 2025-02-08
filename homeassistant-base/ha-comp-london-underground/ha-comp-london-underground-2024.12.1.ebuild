@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/london-tube-status-0.5[${PYTHON_USEDEP}]
+	~dev-python/london-tube-status-0.5[${PYTHON_USEDEP}]
 "

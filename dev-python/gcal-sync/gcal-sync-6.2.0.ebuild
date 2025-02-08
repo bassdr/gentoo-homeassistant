@@ -21,6 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.8.1
+	ical>=6.1.0
+	pydantic>=1.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
 	>=dev-python/ical-6.1.0[${PYTHON_USEDEP}]

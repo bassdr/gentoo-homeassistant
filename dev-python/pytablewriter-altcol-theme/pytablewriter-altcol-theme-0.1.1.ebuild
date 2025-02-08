@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,9 +15,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytablewriter <2,>=0.59.0
+	pytest >=6.0.1 ; extra == 'test'
+	tcolorpy <1,>=0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/pytablewriter-2[${PYTHON_USEDEP}]
-	<dev-python/tcolorpy-1[${PYTHON_USEDEP}]
+	>=dev-python/pytablewriter-0.59.0[${PYTHON_USEDEP}] <dev-python/pytablewriter-2[${PYTHON_USEDEP}]
+	>=dev-python/tcolorpy-0.1[${PYTHON_USEDEP}] <dev-python/tcolorpy-1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

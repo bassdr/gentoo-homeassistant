@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	adb-shell>=0.4.0
+	adb-shell[usb]>=0.4.0; extra == "usb"
+	aiofiles>=0.4.0; extra == "async"
+	async_timeout>=3.0.0; extra == "async"
+	pure-python-adb>=0.3.0.dev0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/adb-shell-0.4.0[${PYTHON_USEDEP}]
 	usb? ( >=dev-python/adb-shell-0.4.0[usb,${PYTHON_USEDEP}] )

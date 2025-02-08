@@ -16,11 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	allennlp ; extra == 'elmo'
+	dill
+	nltk
+	numpy (<1.21.5) ; python_version < "3.8"
+	stanza
+	torch (>=1.7.1)
+	transformers (>=4.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	elmo? ( dev-python/allennlp[${PYTHON_USEDEP}] )
 	dev-python/dill[${PYTHON_USEDEP}]
 	dev-python/nltk[${PYTHON_USEDEP}]
-	<dev-python/numpy-1.21.5[${PYTHON_USEDEP}]
 	dev-python/stanza[${PYTHON_USEDEP}]
 	>=dev-python/torch-1.7.1[${PYTHON_USEDEP}]
 	>=dev-python/transformers-4.0.0[${PYTHON_USEDEP}]

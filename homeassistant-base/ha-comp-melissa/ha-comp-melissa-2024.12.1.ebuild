@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/py-melissa-climate-2.1.4[${PYTHON_USEDEP}]
+	~dev-python/py-melissa-climate-2.1.4[${PYTHON_USEDEP}]
 "

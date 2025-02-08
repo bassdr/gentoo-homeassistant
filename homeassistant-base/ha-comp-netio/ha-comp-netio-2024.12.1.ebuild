@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pynetio-0.1.9.1[${PYTHON_USEDEP}]
+	~dev-python/pynetio-0.1.9.1[${PYTHON_USEDEP}]
 "

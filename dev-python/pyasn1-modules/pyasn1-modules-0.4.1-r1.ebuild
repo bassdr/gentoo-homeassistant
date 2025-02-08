@@ -20,9 +20,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pyasn1<0.7.0,>=0.4.6
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/pyasn1-0.7.0[${PYTHON_USEDEP}]
+	>=dev-python/pyasn1-0.4.6[${PYTHON_USEDEP}] <dev-python/pyasn1-0.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/pyasn1-0.7.0[${PYTHON_USEDEP}]

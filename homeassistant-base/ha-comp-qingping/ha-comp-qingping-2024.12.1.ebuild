@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/qingping-ble-0.10.0[${PYTHON_USEDEP}]
+	~dev-python/qingping-ble-0.10.0[${PYTHON_USEDEP}]
 "

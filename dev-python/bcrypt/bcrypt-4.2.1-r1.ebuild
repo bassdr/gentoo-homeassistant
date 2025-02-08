@@ -78,7 +78,7 @@ QA_FLAGS_IGNORED="usr/lib.*/py.*/site-packages/bcrypt/_bcrypt.*.so"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.2.1[${PYTHON_USEDEP}] !~dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

@@ -16,7 +16,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	mock (>=3.0.5) ; extra == 'test'
+	pytest (>=5.4.0) ; extra == 'test'
+	pytest-cov (>=2.7.1) ; extra == 'test'
+	pytest-mock (>=3.3.1) ; extra == 'test'
+	pytest-plus ; extra == 'test'
+	pytest-xdist (>=1.29.0) ; extra == 'test'
+	rich (>=9.5.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-9.5.1[${PYTHON_USEDEP}]
 "

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pynobo-1.8.1[${PYTHON_USEDEP}]
+	~dev-python/pynobo-1.8.1[${PYTHON_USEDEP}]
 "

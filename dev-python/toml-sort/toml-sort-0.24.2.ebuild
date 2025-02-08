@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	tomlkit>=0.13.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/tomlkit-0.13.2[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,9 @@ LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docutils (>=0.14)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.14[${PYTHON_USEDEP}]
 "

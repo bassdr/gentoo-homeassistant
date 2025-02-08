@@ -21,6 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	ifaddr (>=0.1.0)
+	lxml (>=4.6)
+	requests (>=2.0)
+	urllib3 (>=1.26.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ifaddr-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.6[${PYTHON_USEDEP}]

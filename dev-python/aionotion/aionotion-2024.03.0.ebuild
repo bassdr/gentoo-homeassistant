@@ -25,12 +25,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyJWT (>=2.4.0)
+	aiohttp (>=3.9.0)
+	certifi (>=2023.07.22)
+	ciso8601 (>=2.3.0,<3.0.0)
+	frozenlist (>=1.4.0,<2.0.0)
+	mashumaro (>=3.12,<4.0)
+	yarl (>=1.9.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
-	>=dev-python/ciso8601-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/frozenlist-1.4.0[${PYTHON_USEDEP}]
-	>=dev-python/mashumaro-3.12[${PYTHON_USEDEP}]
+	>=dev-python/ciso8601-2.3.0[${PYTHON_USEDEP}] <dev-python/ciso8601-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/frozenlist-1.4.0[${PYTHON_USEDEP}] <dev-python/frozenlist-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/mashumaro-3.12[${PYTHON_USEDEP}] <dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9.2[${PYTHON_USEDEP}]
 "

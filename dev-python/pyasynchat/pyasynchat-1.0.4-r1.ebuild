@@ -18,6 +18,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	pyasyncore >=1.0.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyasyncore-1.0.2[${PYTHON_USEDEP}]
 "

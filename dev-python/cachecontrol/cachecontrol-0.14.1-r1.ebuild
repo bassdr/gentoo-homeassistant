@@ -22,9 +22,29 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="filecache redis"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	CacheControl[filecache,redis]; extra == "dev"
+	build; extra == "dev"
+	cherrypy; extra == "dev"
+	codespell[tomli]; extra == "dev"
+	filelock>=3.8.0; extra == "filecache"
+	furo; extra == "dev"
+	msgpack<2.0.0,>=0.5.2
+	mypy; extra == "dev"
+	pytest-cov; extra == "dev"
+	pytest; extra == "dev"
+	redis>=2.10.5; extra == "redis"
+	requests>=2.16.0
+	ruff; extra == "dev"
+	sphinx-copybutton; extra == "dev"
+	sphinx; extra == "dev"
+	tox; extra == "dev"
+	types-redis; extra == "dev"
+	types-requests; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	filecache? ( >=dev-python/filelock-3.8.0[${PYTHON_USEDEP}] )
-	<dev-python/msgpack-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/msgpack-0.5.2[${PYTHON_USEDEP}] <dev-python/msgpack-2.0.0[${PYTHON_USEDEP}]
 	redis? ( >=dev-python/redis-2.10.5[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
 "

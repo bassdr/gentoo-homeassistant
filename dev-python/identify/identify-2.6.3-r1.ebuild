@@ -23,6 +23,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="license"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	ukkonen; extra == "license"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	license? ( dev-python/ukkonen[${PYTHON_USEDEP}] )
 "

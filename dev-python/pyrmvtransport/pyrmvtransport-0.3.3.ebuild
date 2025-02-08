@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python library to make use of transport information from opendata.rmv.de."
 HOMEPAGE="
-  https://pypi.org/project/PyRMVtransport/
+  https://pypi.org/project/pyrmvtransport/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,27 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-timeout>=4.0.0
+	asynctest ; extra == "test"
+	bandit ; extra == "test"
+	black ; extra == "test"
+	codecov ; extra == "test"
+	coverage ; extra == "test"
+	flake8 ; extra == "test"
+	httpx
+	lxml
+	mock ; extra == "test"
+	mypy ; extra == "test"
+	pre-commit ; extra == "test"
+	pylint ; extra == "test"
+	pytest >= 5.2.2 ; extra == "test"
+	pytest-asyncio ; extra == "test"
+	pytest-cov >= 2.8.1 ; extra == "test"
+	pytest-httpx ; extra == "test"
+	pytest-mock ; extra == "test"
+	tox ; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]

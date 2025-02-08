@@ -16,6 +16,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow
+	Pillow; extra == "extra"
+	Pillow; extra == "tests"
+	numpy
+	numpy; extra == "extra"
+	numpy; extra == "tests"
+	opencv-python-headless; extra == "extra"
+	pandas
+	pandas; extra == "extra"
+	pandas; extra == "tests"
+	parameterized; extra == "tests"
+	plotly
+	plotly; extra == "extra"
+	plotly; extra == "tests"
+	pycocotools; extra == "tests"
+	pytest-cov; extra == "tests"
+	pytest; extra == "tests"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 	extra? ( dev-python/numpy[${PYTHON_USEDEP}] )

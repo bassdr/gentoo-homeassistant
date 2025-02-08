@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Levenshtein
+	black ; extra == 'dev'
+	flake8 ; extra == 'dev'
+	isort (>=5.5.4) ; extra == 'dev'
+	pytest ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/levenshtein[${PYTHON_USEDEP}]
 "

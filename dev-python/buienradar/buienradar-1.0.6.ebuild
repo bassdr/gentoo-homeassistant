@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	docopt
+	pytz
+	requests
+	vincenty
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docopt[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

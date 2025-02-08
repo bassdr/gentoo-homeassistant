@@ -12,13 +12,15 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/oslo.i18n/"
+  https://pypi.org/project/oslo-i18n/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pbr>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pbr-2.0.0[${PYTHON_USEDEP}]
 "

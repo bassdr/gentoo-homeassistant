@@ -16,6 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	asv-runner>=0.2.0
+	memray>=1.7.0
+	ruff>=0.0.265; extra == 'lint'
+	tbump; extra == 'rel'
+	towncrier; extra == 'rel'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asv-runner-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/memray-1.7.0[${PYTHON_USEDEP}]

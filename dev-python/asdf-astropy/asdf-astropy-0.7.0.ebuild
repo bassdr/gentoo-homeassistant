@@ -16,6 +16,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	asdf-coordinates-schemas>=0.3
+	asdf-standard>=1.1.0
+	asdf-transform-schemas>=0.5
+	asdf>=2.14.4
+	astropy>=5.2.0
+	coverage; extra == "test"
+	docutils; extra == "docs"
+	graphviz; extra == "docs"
+	matplotlib; extra == "docs"
+	numpy>=1.24
+	packaging>=19
+	pytest-astropy; extra == "test"
+	pytest; extra == "test"
+	scipy; extra == "test"
+	sphinx-asdf; extra == "docs"
+	sphinx-astropy; extra == "docs"
+	sphinx-automodapi; extra == "docs"
+	sphinx; extra == "docs"
+	tomli; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asdf-2.14.4[${PYTHON_USEDEP}]
 	>=dev-python/asdf-coordinates-schemas-0.3[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage; extra == "dev"
+	coverage; extra == "test"
+	flake8-quotes; extra == "dev"
+	flake8-quotes; extra == "test"
+	flake8>=3.0; extra == "dev"
+	flake8>=3.0; extra == "test"
+	importlib-metadata
+	importlib-resources
+	jinja2>=2.7
+	mkdocs>=1.0
+	pyparsing>=3.0
+	pyyaml-env-tag
+	pyyaml>=5.1
+	shtab; extra == "dev"
+	shtab; extra == "test"
+	verspec
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]

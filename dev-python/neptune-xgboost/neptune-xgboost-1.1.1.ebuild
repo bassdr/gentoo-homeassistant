@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	graphviz
+	importlib-metadata ; python_version < "3.8"
+	matplotlib
+	neptune (>=1.0.0) ; extra == "dev"
+	pre-commit ; extra == "dev"
+	pytest (>=5.0) ; extra == "dev"
+	pytest-cov (==2.10.1) ; extra == "dev"
+	xgboost (>=1.3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/graphviz[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	>=dev-python/xgboost-1.3.0[${PYTHON_USEDEP}]
 "
@@ -28,7 +36,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/neptune-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "

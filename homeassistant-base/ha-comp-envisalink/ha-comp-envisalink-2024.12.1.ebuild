@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyenvisalink-4.7[${PYTHON_USEDEP}]
+	~dev-python/pyenvisalink-4.7[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black >=23.1.0 ; extra == 'dev'
+	flake8 ==3.9.2 ; (python_version <= "3.7") and extra == 'dev'
+	flake8 >=6.0.0 ; (python_version > "3.7") and extra == 'dev'
+	htmltools >=0.1.4.9002
+	pytest >=6.2.4 ; extra == 'test'
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/flake8-3.9.2[${PYTHON_USEDEP}]
-	>=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/htmltools-0.1.4.9002[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -26,6 +31,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)

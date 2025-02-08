@@ -16,13 +16,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	SQLAlchemy<3,>=1.4; extra == "optional"
+	aiodns>1.0; extra == "optional"
+	aiohttp<4,>=3.7.3; extra == "optional"
+	boto3<=2; extra == "optional"
+	websocket-client<2,>=1; extra == "optional"
+	websockets<15,>=9.1; extra == "optional"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	optional? ( >dev-python/aiodns-1.0[${PYTHON_USEDEP}] )
-	optional? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
+	optional? ( >=dev-python/aiohttp-3.7.3[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	optional? ( <=dev-python/boto3-2[${PYTHON_USEDEP}] )
-	optional? ( <dev-python/sqlalchemy-3[${PYTHON_USEDEP}] )
-	optional? ( <dev-python/websocket-client-2[${PYTHON_USEDEP}] )
-	optional? ( <dev-python/websockets-15[${PYTHON_USEDEP}] )
+	optional? ( >=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}] <dev-python/sqlalchemy-3[${PYTHON_USEDEP}] )
+	optional? ( >=dev-python/websocket-client-1[${PYTHON_USEDEP}] <dev-python/websocket-client-2[${PYTHON_USEDEP}] )
+	optional? ( >=dev-python/websockets-9.1[${PYTHON_USEDEP}] <dev-python/websockets-15[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

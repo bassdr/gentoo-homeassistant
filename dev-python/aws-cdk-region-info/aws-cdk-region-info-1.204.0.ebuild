@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="aws-cdk.region-info"
@@ -11,14 +10,19 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/aws-cdk.region-info/"
+  https://pypi.org/project/aws-cdk-region-info/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jsii (<2.0.0,>=1.84.0)
+	publication (>=0.0.3)
+	typeguard (~=2.13.3)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/jsii-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jsii-1.84.0[${PYTHON_USEDEP}] <dev-python/jsii-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/publication-0.0.3[${PYTHON_USEDEP}]
 	>=dev-python/typeguard-2.13.3[${PYTHON_USEDEP}] =dev-python/typeguard-2.13*[${PYTHON_USEDEP}]
 "

@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	grpcio (>=1.12.0)
+	grpcio-reflection (>=1.7.3)
+	protobuf (>=4.22.0)
+	pytest ; extra == 'test'
+	pytest-grpc ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-reflection-1.7.3[${PYTHON_USEDEP}]

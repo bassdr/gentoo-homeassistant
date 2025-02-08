@@ -24,26 +24,46 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	PyYAML (>=5,<7)
+	android_backup (>=0,<1)
+	appdirs (>=1,<2)
+	attrs
+	click (>=8)
+	construct (>=2.10.56,<3.0.0)
+	croniter (>=1)
+	cryptography (>=35)
+	defusedxml (>=0,<1)
+	importlib_metadata (>=1,<2); python_version <= "3.7"
+	micloud
+	netifaces (>=0,<1)
+	pytz
+	sphinx (>=4.2); extra == "docs"
+	sphinx_click; extra == "docs"
+	sphinx_rtd_theme (>=0,<1); extra == "docs"
+	sphinxcontrib-apidoc (>=0,<1); extra == "docs"
+	tqdm (>=4,<5)
+	zeroconf (>=0,<1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/android-backup-0[${PYTHON_USEDEP}]
-	>=dev-python/appdirs-1[${PYTHON_USEDEP}]
+	>=dev-python/android-backup-0[${PYTHON_USEDEP}] <dev-python/android-backup-1[${PYTHON_USEDEP}]
+	>=dev-python/appdirs-1[${PYTHON_USEDEP}] <dev-python/appdirs-2[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	>=dev-python/click-8[${PYTHON_USEDEP}]
-	>=dev-python/construct-2.10.56[${PYTHON_USEDEP}]
+	>=dev-python/construct-2.10.56[${PYTHON_USEDEP}] <dev-python/construct-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/croniter-1[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-35[${PYTHON_USEDEP}]
-	>=dev-python/defusedxml-0[${PYTHON_USEDEP}]
-	>=dev-python/importlib-metadata-1[${PYTHON_USEDEP}]
+	>=dev-python/defusedxml-0[${PYTHON_USEDEP}] <dev-python/defusedxml-1[${PYTHON_USEDEP}]
 	dev-python/micloud[${PYTHON_USEDEP}]
-	>=dev-python/netifaces-0[${PYTHON_USEDEP}]
+	>=dev-python/netifaces-0[${PYTHON_USEDEP}] <dev-python/netifaces-1[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5[${PYTHON_USEDEP}] <dev-python/pyyaml-7[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-4.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-click[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-rtd-theme-0[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinxcontrib-apidoc-0[${PYTHON_USEDEP}] )
-	>=dev-python/tqdm-4[${PYTHON_USEDEP}]
-	>=dev-python/zeroconf-0[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/sphinx-rtd-theme-0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinxcontrib-apidoc-0[${PYTHON_USEDEP}] <dev-python/sphinxcontrib-apidoc-1[${PYTHON_USEDEP}] )
+	>=dev-python/tqdm-4[${PYTHON_USEDEP}] <dev-python/tqdm-5[${PYTHON_USEDEP}]
+	>=dev-python/zeroconf-0[${PYTHON_USEDEP}] <dev-python/zeroconf-1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]

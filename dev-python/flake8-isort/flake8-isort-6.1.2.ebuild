@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8
+	isort<7,>=5.0.0
+	pytest; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/flake8[${PYTHON_USEDEP}]
-	<dev-python/isort-7[${PYTHON_USEDEP}]
+	>=dev-python/isort-5.0.0[${PYTHON_USEDEP}] <dev-python/isort-7[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

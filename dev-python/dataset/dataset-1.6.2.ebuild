@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,23 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyMySQL ; extra == 'dev'
+	alembic (>=0.6.2)
+	banal (>=1.0.1)
+	coverage ; extra == 'dev'
+	cryptography ; extra == 'dev'
+	flake8 ; extra == 'dev'
+	pip ; extra == 'dev'
+	psycopg2-binary ; extra == 'dev'
+	pytest ; extra == 'dev'
+	sqlalchemy (<2.0.0,>=1.3.2)
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/banal-1.0.1[${PYTHON_USEDEP}]
-	<dev-python/sqlalchemy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-1.3.2[${PYTHON_USEDEP}] <dev-python/sqlalchemy-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

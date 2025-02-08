@@ -20,6 +20,16 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiobotocore
+	aiohttp
+	attr
+	aws_request_signer
+	boto3
+	botocore
+	pycognito
+	requests_aws4auth
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiobotocore[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]

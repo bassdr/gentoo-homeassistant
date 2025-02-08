@@ -27,6 +27,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="express"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	narwhals>=1.15.1
+	numpy; extra == "express"
+	packaging
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/narwhals-1.15.1[${PYTHON_USEDEP}]
 	express? ( dev-python/numpy[${PYTHON_USEDEP}] )

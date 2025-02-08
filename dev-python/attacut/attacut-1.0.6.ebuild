@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docopt (>=0.6.2)
+	fire (>=0.1.3)
+	nptyping (>=0.2.0)
+	numpy (>=1.17.0)
+	pyyaml (>=5.1.2)
+	six (>=1.12.0)
+	ssg (>=0.0.4)
+	torch (>=1.2.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/fire-0.1.3[${PYTHON_USEDEP}]

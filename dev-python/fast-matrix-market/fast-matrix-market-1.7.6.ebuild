@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytest; extra == "test"
+	pytest; extra == "testmin"
+	scipy; extra == "test"
+	threadpoolctl; extra == "test"
+	threadpoolctl; extra == "testmin"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	testmin? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	testmin? ( dev-python/threadpoolctl[${PYTHON_USEDEP}] )

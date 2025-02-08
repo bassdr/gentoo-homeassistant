@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioazuredevops-2.2.1[${PYTHON_USEDEP}]
+	~dev-python/aioazuredevops-2.2.1[${PYTHON_USEDEP}]
 "

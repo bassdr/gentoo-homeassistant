@@ -17,7 +17,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/lxml[${PYTHON_USEDEP}]
@@ -46,5 +45,3 @@ EPYTEST_IGNORE=(
 	# fails for some reason, more fit for upstream testing anyway
 	tests/test_typing.py
 )
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

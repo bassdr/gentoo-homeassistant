@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pygments (>=1.2) ; extra == 'test'
+	flake8 (>=2.4.0) ; extra == 'test'
+	infinity (>=0.1.3)
+	isort (>=4.2.2) ; extra == 'test'
+	pytest (>=2.2.3) ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/infinity-0.1.3[${PYTHON_USEDEP}]
 "

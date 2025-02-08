@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	dataclasses (>=0.7,<0.8); python_version == "3.6"
+	libcst (>=0.3.10,<0.5.0)
+	pathspec (>=0.9.0,<0.10.0)
+	pyyaml (>=5.3.1,<7.0.0)
+	tomlkit (>=0.11.1,<0.12.0)
+	typer (>=0.4.1,<0.7.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/libcst-0.3.10[${PYTHON_USEDEP}]
-	>=dev-python/pathspec-0.9.0[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
-	>=dev-python/tomlkit-0.11.1[${PYTHON_USEDEP}]
-	>=dev-python/typer-0.4.1[${PYTHON_USEDEP}]
+	>=dev-python/libcst-0.3.10[${PYTHON_USEDEP}] <dev-python/libcst-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/pathspec-0.9.0[${PYTHON_USEDEP}] <dev-python/pathspec-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}] <dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tomlkit-0.11.1[${PYTHON_USEDEP}] <dev-python/tomlkit-0.12.0[${PYTHON_USEDEP}]
+	>=dev-python/typer-0.4.1[${PYTHON_USEDEP}] <dev-python/typer-0.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

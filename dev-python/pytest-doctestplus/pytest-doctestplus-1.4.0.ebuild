@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy; extra == "test"
+	packaging>=17.0
+	pytest-remotedata>=0.3.2; extra == "test"
+	pytest>=4.6
+	setuptools>=30.3.0; extra == "test"
+	sphinx; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]

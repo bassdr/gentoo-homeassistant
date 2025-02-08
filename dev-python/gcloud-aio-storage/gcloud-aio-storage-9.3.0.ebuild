@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiofiles<24.0.0,>=0.6.0
+	gcloud-aio-auth<6.0.0,>=5.3.0
+	pyasn1-modules<0.4.1,>=0.2.1
+	rsa<5.0.0,>=3.1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiofiles-24.0.0[${PYTHON_USEDEP}]
-	<dev-python/gcloud-aio-auth-6.0.0[${PYTHON_USEDEP}]
-	<dev-python/pyasn1-modules-0.4.1[${PYTHON_USEDEP}]
-	<dev-python/rsa-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiofiles-0.6.0[${PYTHON_USEDEP}] <dev-python/aiofiles-24.0.0[${PYTHON_USEDEP}]
+	>=dev-python/gcloud-aio-auth-5.3.0[${PYTHON_USEDEP}] <dev-python/gcloud-aio-auth-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyasn1-modules-0.2.1[${PYTHON_USEDEP}] <dev-python/pyasn1-modules-0.4.1[${PYTHON_USEDEP}]
+	>=dev-python/rsa-3.1.4[${PYTHON_USEDEP}] <dev-python/rsa-5.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

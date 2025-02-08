@@ -23,6 +23,22 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx>=5.0.2; extra == "docs"
+	black; extra == "testing"
+	boolean.py>=4.0
+	doc8>=0.11.2; extra == "docs"
+	isort; extra == "testing"
+	pytest!=7.0.0,>=6; extra == "testing"
+	pytest-xdist>=2; extra == "testing"
+	sphinx-autobuild; extra == "docs"
+	sphinx-copybutton; extra == "docs"
+	sphinx-reredirects>=0.1.2; extra == "docs"
+	sphinx-rtd-dark-mode>=1.3.0; extra == "docs"
+	sphinx-rtd-theme>=1.0.0; extra == "docs"
+	sphinxcontrib-apidoc>=0.4.0; extra == "docs"
+	twine; extra == "testing"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boolean-py-4.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/doc8-0.11.2[${PYTHON_USEDEP}] )
@@ -46,7 +62,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
 		dev-python/isort[${PYTHON_USEDEP}]
-		!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-2[${PYTHON_USEDEP}]
 		dev-python/twine[${PYTHON_USEDEP}]
 	)

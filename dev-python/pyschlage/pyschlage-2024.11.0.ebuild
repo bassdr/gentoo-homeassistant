@@ -24,6 +24,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pycognito
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pycognito[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

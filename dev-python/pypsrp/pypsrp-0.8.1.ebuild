@@ -16,6 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cryptography
+	pyspnego (<1.0.0)
+	pyspnego[kerberos] ; extra == 'kerberos'
+	requests (>=2.9.1)
+	requests-credssp (>=2.0.0) ; extra == 'credssp'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	<dev-python/pyspnego-1.0.0[${PYTHON_USEDEP}]

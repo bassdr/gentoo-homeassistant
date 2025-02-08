@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/habitipy-0.3.3[${PYTHON_USEDEP}]
+	~dev-python/habitipy-0.3.3[${PYTHON_USEDEP}]
 "

@@ -17,6 +17,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp ; extra == 'asyncio'
+	requests
+	six (>=1.4)
+	tornado ; extra == 'tornado'
+	treq ; extra == 'twisted'
+	twisted ; extra == 'twisted'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	asyncio? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]

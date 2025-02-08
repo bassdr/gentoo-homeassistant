@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_wheel_url --unpack)"
@@ -16,6 +15,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy (>=1.14.3)
+	pillow (>=8.1)
+	requests
+	scipy (>=1.0.1)
+	torch
+	torchvision
+	tqdm (>=4.28.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.14.3[${PYTHON_USEDEP}]
 	>=dev-python/pillow-8.1[${PYTHON_USEDEP}]
@@ -30,7 +38,3 @@ RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND+=" app-arch/unzip"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

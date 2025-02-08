@@ -23,7 +23,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	typing_extensions>=4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4[${PYTHON_USEDEP}]
 "

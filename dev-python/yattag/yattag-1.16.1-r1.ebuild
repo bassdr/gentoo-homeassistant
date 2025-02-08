@@ -22,5 +22,3 @@ python_test() {
 	cd test || die
 	eunittest
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

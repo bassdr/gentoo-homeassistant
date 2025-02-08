@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	bleak (>=0.15)
+	pyyaml (>=5.3.1)
+	voluptuous (>=0.12)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.15[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/huum-0.7.12[${PYTHON_USEDEP}]
+	~dev-python/huum-0.7.12[${PYTHON_USEDEP}]
 "

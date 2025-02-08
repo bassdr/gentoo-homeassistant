@@ -20,7 +20,14 @@ KEYWORDS="amd64 arm64"
 
 DOCS="DESCRIPTION.rst"
 
-IUSE=""
+REQUIRES_DIST="
+	aiofiles
+	aiohttp
+	pypubsub
+	pyserial
+	pyserial-asyncio>=0.5
+	voluptuous
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]

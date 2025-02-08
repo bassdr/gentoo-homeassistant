@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyblu-1.0.4[${PYTHON_USEDEP}]
+	~dev-python/pyblu-1.0.4[${PYTHON_USEDEP}]
 "

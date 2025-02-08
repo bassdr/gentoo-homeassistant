@@ -16,9 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	python-snappy; extra == "snappy"
+	typing-extensions; python_version < "3.8"
+	zstandard; extra == "zstandard"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	snappy? ( dev-python/python-snappy[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	zstandard? ( dev-python/zstandard[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"

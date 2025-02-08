@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyxeoma-1.4.2[${PYTHON_USEDEP}]
+	~dev-python/pyxeoma-1.4.2[${PYTHON_USEDEP}]
 "

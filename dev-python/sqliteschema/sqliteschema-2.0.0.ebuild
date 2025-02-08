@@ -16,21 +16,35 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	SimpleSQLite >=1.3.2 ; extra == 'test'
+	loguru <1,>=0.4.1 ; extra == 'cli'
+	loguru <1,>=0.4.1 ; extra == 'logging'
+	mbstrdecoder <2,>=0.8.3
+	pytablewriter <2,>=0.64.0 ; extra == 'cli'
+	pytablewriter <2,>=0.64.0 ; extra == 'dumps'
+	pytablewriter <2,>=0.64.0 ; extra == 'test'
+	pytest >=6.0.1 ; extra == 'test'
+	pytest-discord >=0.1.6 ; extra == 'test'
+	pytest-md-report >=0.5.0 ; extra == 'test'
+	tabledata <2,>=1.3.1
+	typepy <2,>=1.1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	cli? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
-	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
-	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
-	cli? ( <dev-python/pytablewriter-2[${PYTHON_USEDEP}] )
-	dumps? ( <dev-python/pytablewriter-2[${PYTHON_USEDEP}] )
-	<dev-python/tabledata-2[${PYTHON_USEDEP}]
-	<dev-python/typepy-2[${PYTHON_USEDEP}]
+	cli? ( >=dev-python/loguru-0.4.1[${PYTHON_USEDEP}] <dev-python/loguru-1[${PYTHON_USEDEP}] )
+	logging? ( >=dev-python/loguru-0.4.1[${PYTHON_USEDEP}] <dev-python/loguru-1[${PYTHON_USEDEP}] )
+	>=dev-python/mbstrdecoder-0.8.3[${PYTHON_USEDEP}] <dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
+	cli? ( >=dev-python/pytablewriter-0.64.0[${PYTHON_USEDEP}] <dev-python/pytablewriter-2[${PYTHON_USEDEP}] )
+	dumps? ( >=dev-python/pytablewriter-0.64.0[${PYTHON_USEDEP}] <dev-python/pytablewriter-2[${PYTHON_USEDEP}] )
+	>=dev-python/tabledata-1.3.1[${PYTHON_USEDEP}] <dev-python/tabledata-2[${PYTHON_USEDEP}]
+	>=dev-python/typepy-1.1.4[${PYTHON_USEDEP}] <dev-python/typepy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/pytablewriter-2[${PYTHON_USEDEP}]
+		>=dev-python/pytablewriter-0.64.0[${PYTHON_USEDEP}] <dev-python/pytablewriter-2[${PYTHON_USEDEP}]
 		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-discord-0.1.6[${PYTHON_USEDEP}]
 		>=dev-python/pytest-md-report-0.5.0[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	build ; extra == 'dev'
+	click (<9,>=6)
+	first
+	packaging (>=17.1)
+	pytest ; extra == 'dev'
+	toml
+	twine ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/click-9[${PYTHON_USEDEP}]
+	>=dev-python/click-6[${PYTHON_USEDEP}] <dev-python/click-9[${PYTHON_USEDEP}]
 	dev-python/first[${PYTHON_USEDEP}]
 	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
 	dev-python/toml[${PYTHON_USEDEP}]

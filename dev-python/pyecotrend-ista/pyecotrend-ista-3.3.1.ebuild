@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	dataclasses-json>=0.6
+	requests>=2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dataclasses-json-0.6[${PYTHON_USEDEP}]
 	>=dev-python/requests-2[${PYTHON_USEDEP}]

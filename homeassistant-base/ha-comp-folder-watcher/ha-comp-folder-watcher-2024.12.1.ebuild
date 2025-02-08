@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/watchdog-2.3.1[${PYTHON_USEDEP}]
+	~dev-python/watchdog-2.3.1[${PYTHON_USEDEP}]
 "

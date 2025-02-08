@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioftp-0.21.3[${PYTHON_USEDEP}]
+	~dev-python/aioftp-0.21.3[${PYTHON_USEDEP}]
 "

@@ -20,6 +20,11 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test ) mirror"
 
+REQUIRES_DIST="
+	oauthlib
+	requests
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/oauthlib[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

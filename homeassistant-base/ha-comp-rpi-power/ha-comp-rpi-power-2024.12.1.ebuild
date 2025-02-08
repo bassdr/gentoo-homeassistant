@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/rpi-bad-power-0.1.0[${PYTHON_USEDEP}]
+	~dev-python/rpi-bad-power-0.1.0[${PYTHON_USEDEP}]
 "

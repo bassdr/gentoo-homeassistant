@@ -21,9 +21,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	>=sci-libs/proj-9.0.0:=
+"
+REQUIRES_DIST="
+	certifi
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]

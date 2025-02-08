@@ -16,9 +16,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	jupyter-server<3,>=1.8
+	pytest-console-scripts; extra == 'test'
+	pytest-jupyter; extra == 'test'
+	pytest-tornasync; extra == 'test'
+	pytest; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-server-1.8[${PYTHON_USEDEP}] <dev-python/jupyter-server-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]

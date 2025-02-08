@@ -14,7 +14,7 @@ inherit distutils-r1 multiprocessing virtualx wxwidgets pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/wxPython/"
+  https://pypi.org/project/wxpython/"
 
 LICENSE="wxWinLL-3"
 SLOT="4.0"
@@ -31,8 +31,12 @@ DEPEND="
 	media-libs/tiff:=
 	media-libs/libjpeg-turbo:=
 "
+REQUIRES_DIST="
+	numpy; python_version >= "3.0" and python_version < "3.12"
+	numpy<1.17; python_version <= "2.7"
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

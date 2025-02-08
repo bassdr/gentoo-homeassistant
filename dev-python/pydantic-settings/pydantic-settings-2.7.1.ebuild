@@ -16,6 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-identity>=1.16.0; extra == "azure-key-vault"
+	azure-keyvault-secrets>=4.8.0; extra == "azure-key-vault"
+	pydantic>=2.7.0
+	python-dotenv>=0.21.0
+	pyyaml>=6.0.1; extra == "yaml"
+	tomli>=2.0.1; extra == "toml"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	azure-key-vault? ( >=dev-python/azure-identity-1.16.0[${PYTHON_USEDEP}] )
 	azure-key-vault? ( >=dev-python/azure-keyvault-secrets-4.8.0[${PYTHON_USEDEP}] )

@@ -16,6 +16,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bokeh ; extra == 'examples'
+	colorcet[doc] ; extra == 'all'
+	colorcet[examples] ; extra == 'all'
+	colorcet[examples] ; extra == 'doc'
+	colorcet[examples] ; extra == 'tests_examples'
+	colorcet[tests] ; extra == 'all'
+	colorcet[tests] ; extra == 'tests_extra'
+	colorcet[tests_extra] ; extra == 'all'
+	holoviews ; extra == 'examples'
+	matplotlib ; extra == 'examples'
+	nbsite >=0.8.4 ; extra == 'doc'
+	nbval ; extra == 'tests_examples'
+	numpy ; extra == 'examples'
+	packaging ; extra == 'tests'
+	pre-commit ; extra == 'tests'
+	pytest >=2.8.5 ; extra == 'tests'
+	pytest-cov ; extra == 'tests'
+	pytest-mpl ; extra == 'tests_extra'
+	sphinx-copybutton ; extra == 'doc'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/bokeh[${PYTHON_USEDEP}] )
 	all? ( dev-python/colorcet[doc,${PYTHON_USEDEP}] )

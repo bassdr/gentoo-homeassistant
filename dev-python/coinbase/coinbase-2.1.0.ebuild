@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="PYPIREADME.rst"
 
+REQUIRES_DIST="
+	pycryptodome
+	requests
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

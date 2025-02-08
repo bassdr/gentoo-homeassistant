@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/krakenex-2.2.2[${PYTHON_USEDEP}]
-	=dev-python/pykrakenapi-0.1.8[${PYTHON_USEDEP}]
+	~dev-python/krakenex-2.2.2[${PYTHON_USEDEP}]
+	~dev-python/pykrakenapi-0.1.8[${PYTHON_USEDEP}]
 "

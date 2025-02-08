@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/starlink-grpc-core-1.2.0[${PYTHON_USEDEP}]
+	~dev-python/starlink-grpc-core-1.2.0[${PYTHON_USEDEP}]
 "

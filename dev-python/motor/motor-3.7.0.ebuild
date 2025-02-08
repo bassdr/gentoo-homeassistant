@@ -16,20 +16,41 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp; extra == "docs"
+	aiohttp>=3.8.7; extra == "test"
+	cffi>=1.17.0rc1; python_version == "3.13" and extra == "test"
+	furo==2024.8.6; extra == "docs"
+	mockupdb; extra == "test"
+	pymongo<5.0,>=4.9
+	pymongo[aws]<5,>=4.5; extra == "aws"
+	pymongo[encryption]<5,>=4.5; extra == "encryption"
+	pymongo[encryption]<5,>=4.5; extra == "test"
+	pymongo[gssapi]<5,>=4.5; extra == "gssapi"
+	pymongo[ocsp]<5,>=4.5; extra == "ocsp"
+	pymongo[snappy]<5,>=4.5; extra == "snappy"
+	pymongo[zstd]<5,>=4.5; extra == "zstd"
+	pytest-asyncio; extra == "test"
+	pytest>=7; extra == "test"
+	readthedocs-sphinx-search~=0.3; extra == "docs"
+	sphinx-rtd-theme<3,>=2; extra == "docs"
+	sphinx<8,>=5.3; extra == "docs"
+	tornado; extra == "docs"
+	tornado>=5; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]' python3_13{,t})
-	docs? ( =dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
-	<dev-python/pymongo-5.0[${PYTHON_USEDEP}]
-	aws? ( <dev-python/pymongo-5[aws,${PYTHON_USEDEP}] )
-	encryption? ( <dev-python/pymongo-5[encryption,${PYTHON_USEDEP}] )
-	gssapi? ( <dev-python/pymongo-5[gssapi,${PYTHON_USEDEP}] )
-	ocsp? ( <dev-python/pymongo-5[ocsp,${PYTHON_USEDEP}] )
-	snappy? ( <dev-python/pymongo-5[snappy,${PYTHON_USEDEP}] )
-	zstd? ( <dev-python/pymongo-5[zstd,${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	>=dev-python/pymongo-4.9[${PYTHON_USEDEP}] <dev-python/pymongo-5.0[${PYTHON_USEDEP}]
+	aws? ( >=dev-python/pymongo-4.5[aws,${PYTHON_USEDEP}] <dev-python/pymongo-5[aws,${PYTHON_USEDEP}] )
+	encryption? ( >=dev-python/pymongo-4.5[encryption,${PYTHON_USEDEP}] <dev-python/pymongo-5[encryption,${PYTHON_USEDEP}] )
+	gssapi? ( >=dev-python/pymongo-4.5[gssapi,${PYTHON_USEDEP}] <dev-python/pymongo-5[gssapi,${PYTHON_USEDEP}] )
+	ocsp? ( >=dev-python/pymongo-4.5[ocsp,${PYTHON_USEDEP}] <dev-python/pymongo-5[ocsp,${PYTHON_USEDEP}] )
+	snappy? ( >=dev-python/pymongo-4.5[snappy,${PYTHON_USEDEP}] <dev-python/pymongo-5[snappy,${PYTHON_USEDEP}] )
+	zstd? ( >=dev-python/pymongo-4.5[zstd,${PYTHON_USEDEP}] <dev-python/pymongo-5[zstd,${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/readthedocs-sphinx-search-0.3[${PYTHON_USEDEP}] =dev-python/readthedocs-sphinx-search-0*[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-rtd-theme-3[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.3[${PYTHON_USEDEP}] <dev-python/sphinx-8[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-2[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-3[${PYTHON_USEDEP}] )
 	docs? ( dev-python/tornado[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -38,8 +59,9 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/aiohttp-3.8.7[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]' python3_13{,t})
 		dev-python/mockupdb[${PYTHON_USEDEP}]
-		<dev-python/pymongo-5[encryption,${PYTHON_USEDEP}]
+		>=dev-python/pymongo-4.5[encryption,${PYTHON_USEDEP}] <dev-python/pymongo-5[encryption,${PYTHON_USEDEP}]
 		>=dev-python/pytest-7[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		>=dev-python/tornado-5[${PYTHON_USEDEP}]

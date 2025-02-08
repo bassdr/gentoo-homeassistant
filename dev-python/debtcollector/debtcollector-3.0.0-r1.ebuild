@@ -16,7 +16,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	wrapt (>=1.7.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/wrapt-1.7.0[${PYTHON_USEDEP}]
 "

@@ -21,9 +21,13 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="pcsc"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	cryptography (>=2.6,!=35,<44)
+	pyscard (>=1.9,<3) ; extra == "pcsc"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/cryptography-2.6[${PYTHON_USEDEP}]
-	pcsc? ( >=dev-python/pyscard-1.9[${PYTHON_USEDEP}] )
+	>=dev-python/cryptography-2.6[${PYTHON_USEDEP}] <dev-python/cryptography-44[${PYTHON_USEDEP}] !~dev-python/cryptography-35[${PYTHON_USEDEP}]
+	pcsc? ( >=dev-python/pyscard-1.9[${PYTHON_USEDEP}] <dev-python/pyscard-3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/cryptography-45[${PYTHON_USEDEP}]

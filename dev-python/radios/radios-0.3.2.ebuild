@@ -24,6 +24,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiodns>=3.0
+	aiohttp>=3.0.0
+	awesomeversion>=21.10.1
+	backoff>=1.9.0
+	cachetools>=4.0.0
+	mashumaro>=3.10
+	orjson>=3.9.8
+	pycountry<25.0.0,>=24.0.0
+	yarl>=1.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiodns-3.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
@@ -32,7 +43,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachetools-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.10[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.8[${PYTHON_USEDEP}]
-	<dev-python/pycountry-25.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pycountry-24.0.0[${PYTHON_USEDEP}] <dev-python/pycountry-25.0.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

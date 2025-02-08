@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	appdirs
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/appdirs[${PYTHON_USEDEP}]
 "

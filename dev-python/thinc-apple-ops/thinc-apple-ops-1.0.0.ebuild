@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy<3.0.0,>=2.0.0
+	thinc<9.0.0,>=8.3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/numpy-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/thinc-9.0.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-2.0.0[${PYTHON_USEDEP}] <dev-python/numpy-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/thinc-8.3.0[${PYTHON_USEDEP}] <dev-python/thinc-9.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

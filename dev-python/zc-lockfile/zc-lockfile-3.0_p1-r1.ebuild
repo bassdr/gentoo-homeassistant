@@ -13,13 +13,12 @@ S="${WORKDIR}/${PYPI_PN}-3.0.post1"
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zc.lockfile/"
+  https://pypi.org/project/zc-lockfile/"
 
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/zope-testing[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata (>=2.0.0,<5.0.0) ; python_version < "3.8"
+	snowballstemmer (>=2.2.0)
+	tomli (>=1.2.3) ; (python_version < "3.11") and (extra == "toml")
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/importlib-metadata-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/snowballstemmer-2.2.0[${PYTHON_USEDEP}]
-	>=dev-python/tomli-1.2.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/velbus-aio-2024.11.1[${PYTHON_USEDEP}]
+	~dev-python/velbus-aio-2024.11.1[${PYTHON_USEDEP}]
 "

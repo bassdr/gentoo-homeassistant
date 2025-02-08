@@ -22,10 +22,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	PyJWT<3.0.0,>=2.8.0
+	requests-toolbelt<2.0.0,>=1.0.0
+	requests<3.0.0,>=2.32.3
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/requests-toolbelt-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-2.8.0[${PYTHON_USEDEP}] <dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-toolbelt-1.0.0[${PYTHON_USEDEP}] <dev-python/requests-toolbelt-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]

@@ -12,13 +12,39 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.app.wsgi/"
+  https://pypi.org/project/zope-app-wsgi/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	WebTest; extra == "test"
+	WebTest; extra == "testlayer"
+	ZConfig
+	legacy-cgi; python_version >= "3.13"
+	setuptools
+	transaction
+	zope.app.appsetup>=4.0
+	zope.app.publication>=4.0
+	zope.authentication; extra == "test"
+	zope.browserpage; extra == "test"
+	zope.component
+	zope.container>=4.0.0a1
+	zope.event
+	zope.interface
+	zope.principalregistry>=4.0.0a1; extra == "test"
+	zope.processlifetime
+	zope.publisher>=4.0.0a3
+	zope.security>4.0.0a2
+	zope.securitypolicy>=4.0.0a1; extra == "test"
+	zope.site>=4.0.0a1
+	zope.testing; extra == "test"
+	zope.testrunner; extra == "test"
+	zope.traversing>=4.0.0a1
+"
 GENERATED_RDEPEND="${RDEPEND}
+	$(python_gen_cond_dep 'dev-python/legacy-cgi[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/transaction[${PYTHON_USEDEP}]
 	testlayer? ( dev-python/webtest[${PYTHON_USEDEP}] )

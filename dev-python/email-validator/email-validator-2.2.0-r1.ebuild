@@ -16,7 +16,10 @@ LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	dnspython>=2.0.0
+	idna>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dnspython-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/idna-2.0.0[${PYTHON_USEDEP}]

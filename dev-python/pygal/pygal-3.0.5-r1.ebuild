@@ -23,6 +23,25 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs lxml moulinrouge png"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	cairosvg; extra == "png"
+	cairosvg; extra == "test"
+	coveralls; extra == "test"
+	flask; extra == "moulinrouge"
+	importlib-metadata
+	lxml; extra == "lxml"
+	lxml; extra == "test"
+	pygal-maps-ch; extra == "moulinrouge"
+	pygal-maps-fr; extra == "moulinrouge"
+	pygal-maps-world; extra == "moulinrouge"
+	pygal-sphinx-directives; extra == "docs"
+	pyquery; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	ruff>=0.5.6; extra == "test"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	png? ( dev-python/cairosvg[${PYTHON_USEDEP}] )
 	moulinrouge? ( dev-python/flask[${PYTHON_USEDEP}] )

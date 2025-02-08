@@ -16,7 +16,10 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	requests>=2.19.1
+	securesystemslib~=1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.19.1[${PYTHON_USEDEP}]
 	>=dev-python/securesystemslib-1.0[${PYTHON_USEDEP}] =dev-python/securesystemslib-1*[${PYTHON_USEDEP}]

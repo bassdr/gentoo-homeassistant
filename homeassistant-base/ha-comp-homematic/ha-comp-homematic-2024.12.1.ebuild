@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyhomematic-0.1.77[${PYTHON_USEDEP}]
+	~dev-python/pyhomematic-0.1.77[${PYTHON_USEDEP}]
 "

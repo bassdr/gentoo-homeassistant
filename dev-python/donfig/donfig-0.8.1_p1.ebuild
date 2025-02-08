@@ -18,6 +18,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cloudpickle; extra == "docs"
+	cloudpickle; extra == "test"
+	numpydoc; extra == "docs"
+	pytest; extra == "docs"
+	pytest; extra == "test"
+	pyyaml
+	sphinx>=4.0.0; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )

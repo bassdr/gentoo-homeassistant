@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy>=1.23.5
+	types-pytz>=2022.1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]
 	>=dev-python/types-pytz-2022.1.1[${PYTHON_USEDEP}]

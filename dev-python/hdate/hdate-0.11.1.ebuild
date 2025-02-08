@@ -22,8 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	astral<3.0,>=2.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/astral-3.0[${PYTHON_USEDEP}]
+	>=dev-python/astral-2.2[${PYTHON_USEDEP}] <dev-python/astral-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]

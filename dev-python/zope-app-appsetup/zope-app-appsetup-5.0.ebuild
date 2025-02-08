@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.app.appsetup"
@@ -11,12 +10,33 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.app.appsetup/"
+  https://pypi.org/project/zope-app-appsetup/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ZODB
+	setuptools
+	zdaemon
+	zope.app.publication (>=4.0)
+	zope.component (>=3.8.0)
+	zope.componentvocabulary (>=2.0.0a1) ; extra == 'test'
+	zope.configuration
+	zope.container (>=4.0.0a2)
+	zope.error
+	zope.event
+	zope.interface
+	zope.principalregistry (>=4.0.0a1) ; extra == 'test'
+	zope.processlifetime
+	zope.security (>=4.0.0a2)
+	zope.session (>=4.0.0a1)
+	zope.site (>=4.0.0a1)
+	zope.testing (>=3.10) ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+	zope.traversing (>=4.0.0a2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/zdaemon[${PYTHON_USEDEP}]

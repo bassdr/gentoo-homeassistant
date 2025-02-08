@@ -17,6 +17,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apeye-core>=1.0.0
+	attrs>=20.3.0
+	click>=7.1.2; extra == "all"
+	click>=7.1.2; extra == "cli"
+	consolekit>=1.4.1; extra == "all"
+	consolekit>=1.4.1; extra == "cli"
+	docutils>=0.16; extra == "all"
+	docutils>=0.16; extra == "readme"
+	dom-toml>=2.0.0
+	domdf-python-tools>=2.8.0
+	natsort>=7.1.1
+	packaging>=20.9
+	readme-renderer[md]>=27.0; extra == "all"
+	readme-renderer[md]>=27.0; extra == "readme"
+	sdjson>=0.3.1; extra == "all"
+	sdjson>=0.3.1; extra == "cli"
+	shippinglabel>=1.0.0
+	typing-extensions!=4.7.0,>=3.7.4.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apeye-core-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/attrs-20.3.0[${PYTHON_USEDEP}]
@@ -35,7 +55,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/sdjson-0.3.1[${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/sdjson-0.3.1[${PYTHON_USEDEP}] )
 	>=dev-python/shippinglabel-1.0.0[${PYTHON_USEDEP}]
-	!=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}] !~dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

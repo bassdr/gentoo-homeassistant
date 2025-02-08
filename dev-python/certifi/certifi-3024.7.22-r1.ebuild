@@ -35,10 +35,6 @@ EPYTEST_IGNORE=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	sed -i -e "s^/etc^${EPREFIX}/etc^" src/certifi/core.py || die

@@ -16,6 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py
+	absl-py; extra == "flags"
+	cloudpickle; extra == "testing"
+	etils[epath]; extra == "flags"
+	fiddle[flags]; extra == "testing"
+	flax; extra == "testing"
+	graphviz
+	graphviz; extra == "testing"
+	libcst
+	pytest; extra == "testing"
+	pytype; extra == "testing"
+	seqio; extra == "testing"
+	tfds-nightly>=4.9.2.dev202308090034; extra == "testing"
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	flags? ( dev-python/absl-py[${PYTHON_USEDEP}] )

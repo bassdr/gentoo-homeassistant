@@ -16,9 +16,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	build ; extra == 'dev'
+	coverage ; extra == 'tests'
+	isort ; extra == 'dev'
+	myst-parser ; extra == 'docs'
+	pylint ; extra == 'dev'
+	pymeeus (<=1,>=0.3.13)
+	sphinx ; extra == 'docs'
+	sphinx-rtd-theme ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	<=dev-python/pymeeus-1[${PYTHON_USEDEP}]
+	>=dev-python/pymeeus-0.3.13[${PYTHON_USEDEP}] <=dev-python/pymeeus-1[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "

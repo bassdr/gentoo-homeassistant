@@ -24,11 +24,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.0.0
+	async-timeout<5.0.0,>=4.0.3
+	backoff<3.0.0,>=2.2.1
+	multidict<7.0.0,>=6.0.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/async-timeout-5.0.0[${PYTHON_USEDEP}]
-	<dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/multidict-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-4.0.3[${PYTHON_USEDEP}] <dev-python/async-timeout-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/backoff-2.2.1[${PYTHON_USEDEP}] <dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/multidict-6.0.5[${PYTHON_USEDEP}] <dev-python/multidict-7.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"

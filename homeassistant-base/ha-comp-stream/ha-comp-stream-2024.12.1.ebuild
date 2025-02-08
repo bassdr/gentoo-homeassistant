@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/av-13.1.0[${PYTHON_USEDEP}]
-	=dev-python/numpy-2.1.3[${PYTHON_USEDEP}]
-	=dev-python/pyturbojpeg-1.7.5[${PYTHON_USEDEP}]
+	~dev-python/av-13.1.0[${PYTHON_USEDEP}]
+	~dev-python/numpy-2.1.3[${PYTHON_USEDEP}]
+	~dev-python/pyturbojpeg-1.7.5[${PYTHON_USEDEP}]
 "

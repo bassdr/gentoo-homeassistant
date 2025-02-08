@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	defusedxml
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

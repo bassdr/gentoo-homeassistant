@@ -3,18 +3,20 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/mdx_truly_sane_lists/"
+  https://pypi.org/project/mdx-truly-sane-lists/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Markdown (>=2.6)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/markdown-2.6[${PYTHON_USEDEP}]
 "

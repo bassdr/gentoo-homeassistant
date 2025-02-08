@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Cython (>=0.27.2)
+	cffi (>=1.10)
+	fasteners (~=0.15)
+	glfw (>=1.4.0)
+	imageio (>=2.1.2)
+	numpy (>=1.11)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.10[${PYTHON_USEDEP}]
 	>=dev-python/cython-0.27.2[${PYTHON_USEDEP}]

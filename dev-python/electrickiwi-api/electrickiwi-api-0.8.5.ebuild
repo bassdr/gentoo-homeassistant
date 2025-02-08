@@ -16,7 +16,9 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 DOCS="README.md"
-IUSE=""
+REQUIRES_DIST="
+	aiohttp (>=3.8.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
 "

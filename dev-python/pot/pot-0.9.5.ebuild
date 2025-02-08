@@ -10,12 +10,37 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/POT/"
+  https://pypi.org/project/pot/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	autograd; extra == "all"
+	autograd; extra == "dr"
+	cvxopt; extra == "all"
+	cvxopt; extra == "cvxopt"
+	jax; extra == "all"
+	jax; extra == "backend-jax"
+	jaxlib; extra == "all"
+	jaxlib; extra == "backend-jax"
+	matplotlib; extra == "all"
+	matplotlib; extra == "plot"
+	numpy>=1.16
+	pymanopt; extra == "all"
+	pymanopt; extra == "dr"
+	scikit-learn; extra == "all"
+	scikit-learn; extra == "dr"
+	scipy>=1.6
+	tensorflow; extra == "all"
+	tensorflow; extra == "backend-tf"
+	torch-geometric; extra == "all"
+	torch-geometric; extra == "gnn"
+	torch; extra == "all"
+	torch; extra == "backend-torch"
+	torch; extra == "gnn"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/autograd[${PYTHON_USEDEP}] )
 	dr? ( dev-python/autograd[${PYTHON_USEDEP}] )

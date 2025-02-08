@@ -16,23 +16,41 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML<7,>=5.3
+	click<9,>=8.0.0
+	docker; extra == "all"
+	docstring-parser<1,>=0.7.3
+	google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5
+	google-auth<3,>=1.6.1
+	google-cloud-storage<3,>=2.2.1
+	kfp-kubernetes<2; extra == "all"
+	kfp-kubernetes<2; extra == "kubernetes"
+	kfp-pipeline-spec==0.6.0
+	kfp-server-api<2.4.0,>=2.1.0
+	kubernetes<31,>=8.0.0
+	protobuf<5,>=4.21.1
+	requests-toolbelt<1,>=0.8.0
+	tabulate<1,>=0.8.6
+	typing-extensions<5,>=3.7.4; python_version < "3.9"
+	urllib3<2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/click-9[${PYTHON_USEDEP}]
+	>=dev-python/click-8.0.0[${PYTHON_USEDEP}] <dev-python/click-9[${PYTHON_USEDEP}]
 	all? ( dev-python/docker[${PYTHON_USEDEP}] )
-	<dev-python/docstring-parser-1[${PYTHON_USEDEP}]
-	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-storage-3[${PYTHON_USEDEP}]
+	>=dev-python/docstring-parser-0.7.3[${PYTHON_USEDEP}] <dev-python/docstring-parser-1[${PYTHON_USEDEP}]
+	>=dev-python/google-api-core-1.31.5[${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.1*[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.2*[${PYTHON_USEDEP}] !~dev-python/google-api-core-2.3.0[${PYTHON_USEDEP}]
+	>=dev-python/google-auth-1.6.1[${PYTHON_USEDEP}] <dev-python/google-auth-3[${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-storage-2.2.1[${PYTHON_USEDEP}] <dev-python/google-cloud-storage-3[${PYTHON_USEDEP}]
 	all? ( <dev-python/kfp-kubernetes-2[${PYTHON_USEDEP}] )
 	kubernetes? ( <dev-python/kfp-kubernetes-2[${PYTHON_USEDEP}] )
-	=dev-python/kfp-pipeline-spec-0.6.0[${PYTHON_USEDEP}]
-	<dev-python/kfp-server-api-2.4.0[${PYTHON_USEDEP}]
-	<dev-python/kubernetes-31[${PYTHON_USEDEP}]
-	<dev-python/protobuf-5[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	<dev-python/requests-toolbelt-1[${PYTHON_USEDEP}]
-	<dev-python/tabulate-1[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
+	~dev-python/kfp-pipeline-spec-0.6.0[${PYTHON_USEDEP}]
+	>=dev-python/kfp-server-api-2.1.0[${PYTHON_USEDEP}] <dev-python/kfp-server-api-2.4.0[${PYTHON_USEDEP}]
+	>=dev-python/kubernetes-8.0.0[${PYTHON_USEDEP}] <dev-python/kubernetes-31[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] <dev-python/protobuf-5[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.3[${PYTHON_USEDEP}] <dev-python/pyyaml-7[${PYTHON_USEDEP}]
+	>=dev-python/requests-toolbelt-0.8.0[${PYTHON_USEDEP}] <dev-python/requests-toolbelt-1[${PYTHON_USEDEP}]
+	>=dev-python/tabulate-0.8.6[${PYTHON_USEDEP}] <dev-python/tabulate-1[${PYTHON_USEDEP}]
 	<dev-python/urllib3-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

@@ -18,6 +18,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	Pillow
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
 "

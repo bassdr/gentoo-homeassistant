@@ -16,9 +16,44 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black==22.3; extra == "quality"
+	click==8.0.4; extra == "quality"
+	flake8>=3.8.3; extra == "quality"
+	flax>=0.6.3; extra == "jax"
+	h5py>=3.7.0; extra == "testing"
+	huggingface-hub>=0.12.1; extra == "testing"
+	hypothesis>=6.70.2; extra == "testing"
+	isort>=5.5.4; extra == "quality"
+	jax>=0.3.25; extra == "jax"
+	jaxlib>=0.3.25; extra == "jax"
+	mlx>=0.0.9; extra == "mlx"
+	numpy>=1.21.6; extra == "numpy"
+	paddlepaddle>=2.4.1; extra == "paddlepaddle"
+	pytest-benchmark>=4.0.0; extra == "testing"
+	pytest>=7.2.0; extra == "testing"
+	safetensors[all]; extra == "dev"
+	safetensors[jax]; extra == "all"
+	safetensors[numpy]; extra == "all"
+	safetensors[numpy]; extra == "jax"
+	safetensors[numpy]; extra == "paddlepaddle"
+	safetensors[numpy]; extra == "pinned-tf"
+	safetensors[numpy]; extra == "tensorflow"
+	safetensors[numpy]; extra == "testing"
+	safetensors[numpy]; extra == "torch"
+	safetensors[paddlepaddle]; extra == "all"
+	safetensors[pinned-tf]; extra == "all"
+	safetensors[quality]; extra == "all"
+	safetensors[testing]; extra == "all"
+	safetensors[torch]; extra == "all"
+	setuptools-rust>=1.5.2; extra == "testing"
+	tensorflow==2.18.0; extra == "pinned-tf"
+	tensorflow>=2.11.0; extra == "tensorflow"
+	torch>=1.10; extra == "torch"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	quality? ( =dev-python/black-22.3[${PYTHON_USEDEP}] )
-	quality? ( =dev-python/click-8.0.4[${PYTHON_USEDEP}] )
+	quality? ( ~dev-python/black-22.3[${PYTHON_USEDEP}] )
+	quality? ( ~dev-python/click-8.0.4[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/flake8-3.8.3[${PYTHON_USEDEP}] )
 	jax? ( >=dev-python/flax-0.6.3[${PYTHON_USEDEP}] )
 	quality? ( >=dev-python/isort-5.5.4[${PYTHON_USEDEP}] )
@@ -39,7 +74,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	pinned-tf? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	tensorflow? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
 	torch? ( dev-python/safetensors[numpy,${PYTHON_USEDEP}] )
-	pinned-tf? ( =dev-python/tensorflow-2.18.0[${PYTHON_USEDEP}] )
+	pinned-tf? ( ~dev-python/tensorflow-2.18.0[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-2.11.0[${PYTHON_USEDEP}] )
 	torch? ( >=dev-python/torch-1.10[${PYTHON_USEDEP}] )
 "

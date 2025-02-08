@@ -20,11 +20,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	bump2version; extra == "dev"
+	docutils<0.22,>0.18
+	sphinx<9,>=6
+	sphinxcontrib-jquery<5,>=4
+	transifex-client; extra == "dev"
+	twine; extra == "dev"
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
-	<dev-python/sphinx-9[${PYTHON_USEDEP}]
-	<dev-python/sphinxcontrib-jquery-5[${PYTHON_USEDEP}]
+	>dev-python/docutils-0.18[${PYTHON_USEDEP}] <dev-python/docutils-0.22[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-6[${PYTHON_USEDEP}] <dev-python/sphinx-9[${PYTHON_USEDEP}]
+	>=dev-python/sphinxcontrib-jquery-4[${PYTHON_USEDEP}] <dev-python/sphinxcontrib-jquery-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/docutils-0.18[${PYTHON_USEDEP}]

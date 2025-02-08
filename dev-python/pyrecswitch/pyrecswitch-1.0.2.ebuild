@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pycryptodome (>=3.6.6)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pycryptodome-3.6.6[${PYTHON_USEDEP}]
 "

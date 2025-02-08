@@ -19,6 +19,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.7.3
+	google-api-python-client>=2.71.0
+	google-auth>=1.22.0
+	mashumaro>=3.12
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.7.3[${PYTHON_USEDEP}]
 	>=dev-python/google-api-python-client-2.71.0[${PYTHON_USEDEP}]

@@ -21,9 +21,20 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	importlib-metadata ; python_version < "3.8"
+	mypy ; extra == 'test'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	setuptools ; extra == 'test'
+	setuptools-scm ; extra == 'test'
+	tox ; extra == 'test'
+	types-requests ; extra == 'test'
+	wheel ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]"

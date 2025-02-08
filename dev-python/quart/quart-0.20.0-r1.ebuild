@@ -23,6 +23,20 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="dotenv"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aiofiles
+	blinker>=1.6
+	click>=8.0
+	flask>=3.0
+	hypercorn>=0.11.2
+	importlib-metadata; python_version < "3.10"
+	itsdangerous
+	jinja2
+	markupsafe
+	python-dotenv; extra == "dotenv"
+	typing-extensions; python_version < "3.10"
+	werkzeug>=3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	>=dev-python/blinker-1.6[${PYTHON_USEDEP}]

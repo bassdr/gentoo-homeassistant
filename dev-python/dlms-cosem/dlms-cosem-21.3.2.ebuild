@@ -25,6 +25,25 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	asn1crypto (>=1.4.0)
+	attrs (>=20.3.0)
+	cryptography (>=35.0.0)
+	mkdocs ; extra == 'dev'
+	mkdocs ; extra == 'docs'
+	mkdocs-material ; extra == 'dev'
+	mkdocs-material ; extra == 'docs'
+	pre-commit ; extra == 'dev'
+	pyserial (>=3.5)
+	pytest ; extra == 'dev'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'dev'
+	pytest-cov ; extra == 'test'
+	pytest-sugar ; extra == 'dev'
+	pytest-sugar ; extra == 'test'
+	python-dateutil (>=2.8.1)
+	typing-extensions (>=3.10)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asn1crypto-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/attrs-20.3.0[${PYTHON_USEDEP}]

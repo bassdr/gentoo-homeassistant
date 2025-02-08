@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,23 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	backports.zoneinfo (>=0.2.1) ; python_version < "3.9"
+	importlib-resources (>=5.9.0) ; python_version < "3.9"
+	python-dateutil (>=2.6)
+	time-machine (>=2.6.0) ; (implementation_name != "pypy") and (extra == "test")
+	tzdata (>=2020.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/backports-zoneinfo-0.2.1[${PYTHON_USEDEP}]
-	>=dev-python/importlib-resources-5.9.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.6[${PYTHON_USEDEP}]
-	>=dev-python/time-machine-2.6.0[${PYTHON_USEDEP}]
 	>=dev-python/tzdata-2020.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/time-machine-2.6.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

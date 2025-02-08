@@ -16,6 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8; extra == "test"
+	ipykernel; extra == "docs"
+	ipython; extra == "docs"
+	ipywidgets; extra == "docs"
+	matplotlib; extra == "docs"
+	mypy; extra == "test"
+	nbsphinx; extra == "docs"
+	numpy>=1.21
+	pandas
+	pydata-sphinx-theme<0.9; extra == "docs"
+	pylint; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-order; extra == "test"
+	pytest; extra == "test"
+	sphinx-copybutton; extra == "docs"
+	sphinx<6,>5; extra == "docs"
+	stanio<2.0.0,>=0.4.0
+	tqdm
+	xarray; extra == "all"
+	xarray; extra == "docs"
+	xarray; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -25,9 +48,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 	docs? ( <dev-python/pydata-sphinx-theme-0.9[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-6[${PYTHON_USEDEP}] )
+	docs? ( >dev-python/sphinx-5[${PYTHON_USEDEP}] <dev-python/sphinx-6[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
-	<dev-python/stanio-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/stanio-0.4.0[${PYTHON_USEDEP}] <dev-python/stanio-2.0.0[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	all? ( dev-python/xarray[${PYTHON_USEDEP}] )
 	docs? ( dev-python/xarray[${PYTHON_USEDEP}] )

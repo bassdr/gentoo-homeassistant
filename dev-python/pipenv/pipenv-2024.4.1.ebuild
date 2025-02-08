@@ -24,7 +24,24 @@ PATCHES=(
 	"${FILESDIR}/pipenv-2023.9.8-append-always-install-to-pip-extra-args.patch"
 )
 
-IUSE=""
+REQUIRES_DIST="
+	beautifulsoup4; extra == "dev"
+	black==24.3.0; extra == "dev"
+	certifi
+	flake8<4,>=3.3; extra == "dev"
+	flaky; extra == "tests"
+	invoke; extra == "dev"
+	mock; extra == "tests"
+	packaging>=22
+	parver; extra == "dev"
+	pytest-timeout; extra == "tests"
+	pytest-xdist; extra == "tests"
+	pytest>=5; extra == "tests"
+	setuptools>=67
+	sphinx; extra == "dev"
+	towncrier; extra == "dev"
+	virtualenv>=20.24.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22[${PYTHON_USEDEP}]
@@ -67,8 +84,8 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-		=dev-python/black-24.3.0[${PYTHON_USEDEP}]
-		<dev-python/flake8-4[${PYTHON_USEDEP}]
+		~dev-python/black-24.3.0[${PYTHON_USEDEP}]
+		>=dev-python/flake8-3.3[${PYTHON_USEDEP}] <dev-python/flake8-4[${PYTHON_USEDEP}]
 		dev-python/flaky[${PYTHON_USEDEP}]
 		dev-python/invoke[${PYTHON_USEDEP}]
 		dev-python/mock[${PYTHON_USEDEP}]

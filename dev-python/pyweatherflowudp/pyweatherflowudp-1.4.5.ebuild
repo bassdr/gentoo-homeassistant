@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Pint (>=0.19)
+	PsychroLib (>=2.5.0,<3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pint-0.19[${PYTHON_USEDEP}]
-	>=dev-python/psychrolib-2.5.0[${PYTHON_USEDEP}]
+	>=dev-python/psychrolib-2.5.0[${PYTHON_USEDEP}] <dev-python/psychrolib-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="

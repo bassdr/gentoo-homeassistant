@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/skyboxremote-0.0.6[${PYTHON_USEDEP}]
+	~dev-python/skyboxremote-0.0.6[${PYTHON_USEDEP}]
 "

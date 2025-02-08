@@ -16,6 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	colorama; extra == "colorization"
+	rich; extra == "parproc"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	colorization? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	parproc? ( dev-python/rich[${PYTHON_USEDEP}] )

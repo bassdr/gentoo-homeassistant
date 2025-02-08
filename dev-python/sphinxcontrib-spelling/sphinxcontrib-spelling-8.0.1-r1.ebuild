@@ -16,7 +16,14 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	PyEnchant>=3.1.1
+	Sphinx>=3.0.0
+	coverage!=4.4,>=4.0; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	requests>=2.32.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyenchant-3.1.1[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
@@ -37,7 +44,7 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/coverage-4.4[${PYTHON_USEDEP}]
+		>=dev-python/coverage-4.0[${PYTHON_USEDEP}] !~dev-python/coverage-4.4[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)

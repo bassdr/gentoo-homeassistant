@@ -28,6 +28,10 @@ src_prepare() {
 	eapply_user
 }
 
+REQUIRES_DIST="
+	paho-mqtt
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

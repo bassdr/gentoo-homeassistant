@@ -8,7 +8,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python module to help parse and construct Tasmota MQTT messages."
 HOMEPAGE="
-  https://pypi.org/project/HATasmota/
+  https://pypi.org/project/hatasmota/
 "
 
 LICENSE="MIT"
@@ -19,6 +19,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	voluptuous>=0.12.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/voluptuous-0.12.0[${PYTHON_USEDEP}]
 "

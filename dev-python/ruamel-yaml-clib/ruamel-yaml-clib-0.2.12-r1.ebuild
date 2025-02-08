@@ -13,7 +13,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="C version of reader, parser and emitter for ruamel.yaml derived from libyaml"
 HOMEPAGE="
-  https://pypi.org/project/ruamel.yaml.clib/
+  https://pypi.org/project/ruamel-yaml-clib/
   Home, https://sourceforge.net/p/ruamel-yaml-clib/
   Source, https://sourceforge.net/p/ruamel-yaml-clib/code/ci/default/tree/
   Tracker, https://sourceforge.net/p/ruamel-yaml-clib/tickets/

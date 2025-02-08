@@ -16,9 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata>=3.6.0; python_version < "3.9"
+	importlib-resources>=3.0.0; python_version < "3.9"
+	natsort>=7.0.1
+	pytz>=2019.1; extra == "all"
+	pytz>=2019.1; extra == "dates"
+	typing-extensions>=3.7.4.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/importlib-metadata-3.6.0[${PYTHON_USEDEP}]
-	>=dev-python/importlib-resources-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/natsort-7.0.1[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pytz-2019.1[${PYTHON_USEDEP}] )
 	dates? ( >=dev-python/pytz-2019.1[${PYTHON_USEDEP}] )

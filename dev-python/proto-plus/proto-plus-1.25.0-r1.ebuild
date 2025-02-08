@@ -23,9 +23,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	google-api-core>=1.31.5; extra == "testing"
+	protobuf<6.0.0dev,>=3.19.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.19.0[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]

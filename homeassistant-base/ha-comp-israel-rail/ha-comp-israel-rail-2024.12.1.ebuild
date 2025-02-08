@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/israel-rail-api-0.1.2[${PYTHON_USEDEP}]
+	~dev-python/israel-rail-api-0.1.2[${PYTHON_USEDEP}]
 "

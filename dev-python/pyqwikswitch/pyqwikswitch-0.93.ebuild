@@ -18,6 +18,10 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	attrs
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

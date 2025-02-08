@@ -20,7 +20,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
@@ -39,6 +38,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/ipython[${PYTHON_USEDEP}]
 		dev-python/littleutils[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
@@ -73,5 +73,3 @@ python_test() {
 pkg_postinst() {
 	optfeature "getting node's source code" dev-python/asttokens
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

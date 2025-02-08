@@ -21,9 +21,16 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp<4.0,>3.9.0
+	async-timeout<5.0,>=3.0
+	defusedxml>=0.6.0
+	python-didl-lite~=1.4.0
+	voluptuous>=0.14.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
-	<dev-python/async-timeout-5.0[${PYTHON_USEDEP}]
+	>dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-3.0[${PYTHON_USEDEP}] <dev-python/async-timeout-5.0[${PYTHON_USEDEP}]
 	>=dev-python/defusedxml-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/python-didl-lite-1.4.0[${PYTHON_USEDEP}] =dev-python/python-didl-lite-1.4*[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.14.2[${PYTHON_USEDEP}]

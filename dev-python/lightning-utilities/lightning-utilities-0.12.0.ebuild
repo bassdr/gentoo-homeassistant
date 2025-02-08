@@ -16,10 +16,20 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	fire; extra == "cli"
+	fire; extra == "typing"
+	importlib-metadata>=4.0.0; python_version < "3.8"
+	mypy>=1.0.0; extra == "typing"
+	packaging>=17.1
+	requests>=2.0.0; extra == "docs"
+	setuptools
+	types-setuptools; extra == "typing"
+	typing_extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( dev-python/fire[${PYTHON_USEDEP}] )
 	typing? ( dev-python/fire[${PYTHON_USEDEP}] )
-	>=dev-python/importlib-metadata-4.0.0[${PYTHON_USEDEP}]
 	typing? ( >=dev-python/mypy-1.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/requests-2.0.0[${PYTHON_USEDEP}] )

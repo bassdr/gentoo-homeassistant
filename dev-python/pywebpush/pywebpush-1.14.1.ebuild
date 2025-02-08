@@ -17,6 +17,13 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	cryptography >=2.6.1
+	http-ece >=1.1.0
+	py-vapid >=1.7.0
+	requests >=2.21.0
+	six >=1.15.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.6.1[${PYTHON_USEDEP}]
 	>=dev-python/http-ece-1.1.0[${PYTHON_USEDEP}]

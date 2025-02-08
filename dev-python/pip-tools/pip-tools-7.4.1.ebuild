@@ -17,6 +17,23 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build>=1.0.0
+	click>=8
+	covdefaults; extra == "coverage"
+	flit_core<4,>=2; extra == "testing"
+	pip>=22.2
+	poetry_core>=1.0.0; extra == "testing"
+	pyproject_hooks
+	pytest-cov; extra == "coverage"
+	pytest-rerunfailures; extra == "testing"
+	pytest-xdist; extra == "testing"
+	pytest>=7.2.0; extra == "testing"
+	setuptools
+	tomli-w; extra == "testing"
+	tomli; python_version < "3.11"
+	wheel
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8[${PYTHON_USEDEP}]
@@ -32,7 +49,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/flit-core-4[${PYTHON_USEDEP}]
+		>=dev-python/flit-core-2[${PYTHON_USEDEP}] <dev-python/flit-core-4[${PYTHON_USEDEP}]
 		>=dev-python/poetry-core-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]
 		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]

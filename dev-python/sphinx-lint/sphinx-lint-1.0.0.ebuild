@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	polib
+	pytest-cov; extra == "tests"
+	pytest; extra == "tests"
+	regex
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/polib[${PYTHON_USEDEP}]
 	dev-python/regex[${PYTHON_USEDEP}]

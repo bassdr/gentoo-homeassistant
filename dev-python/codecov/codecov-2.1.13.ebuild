@@ -21,6 +21,10 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	coverage
+	requests (>=2.7.9)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/coverage[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.7.9[${PYTHON_USEDEP}]

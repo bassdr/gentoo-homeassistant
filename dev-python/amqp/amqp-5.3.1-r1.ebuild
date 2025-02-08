@@ -17,8 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="extras"
 
+REQUIRES_DIST="
+	vine<6.0.0,>=5.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/vine-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/vine-5.0.0[${PYTHON_USEDEP}] <dev-python/vine-6.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/vine-5.0.0[${PYTHON_USEDEP}]

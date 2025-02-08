@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	chex
+	dotmap
+	flax
+	jax
+	jaxlib >=0.1.37
+	matplotlib
+	numpy
+	pickle5 ; python_version < "3.8"
+	pyyaml
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/chex[${PYTHON_USEDEP}]
 	dev-python/dotmap[${PYTHON_USEDEP}]
@@ -23,7 +33,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jaxlib-0.1.37[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pickle5[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

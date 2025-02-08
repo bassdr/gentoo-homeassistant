@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A python3 library to communicate with Tibber"
 HOMEPAGE="
-  https://pypi.org/project/pyTibber/
+  https://pypi.org/project/pytibber/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.0.6
+	gql>=3.0.0
+	websockets>=10.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.6[${PYTHON_USEDEP}]
 	>=dev-python/gql-3.0.0[${PYTHON_USEDEP}]

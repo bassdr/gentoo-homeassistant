@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/amcrest-1.9.8[${PYTHON_USEDEP}]
+	~dev-python/amcrest-1.9.8[${PYTHON_USEDEP}]
 "

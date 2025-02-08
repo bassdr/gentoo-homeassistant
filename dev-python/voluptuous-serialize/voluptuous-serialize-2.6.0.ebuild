@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	voluptuous
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "

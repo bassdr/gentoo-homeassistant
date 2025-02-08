@@ -16,6 +16,58 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2 (<=3.0.3) ; extra == 'dev'
+	Pillow (>=6.1) ; extra == 'all'
+	Pillow (>=6.1) ; extra == 'cv'
+	accelerate (>=0.5.1)
+	black (==21.8b0) ; extra == 'dev'
+	catalyst-codestyle (==21.09.2) ; extra == 'dev'
+	catalyst-sphinx-theme (==1.2.0) ; extra == 'dev'
+	click (<=8.0.4) ; extra == 'dev'
+	comet-ml ; extra == 'comet'
+	deepspeed (>=0.4.0) ; extra == 'deepspeed'
+	docutils (==0.17.1) ; extra == 'dev'
+	hydra-slayer (>=0.4.0)
+	imageio (>=2.5.0) ; extra == 'all'
+	imageio (>=2.5.0) ; extra == 'cv'
+	matplotlib (>=3.1.0) ; extra == 'all'
+	matplotlib (>=3.1.0) ; extra == 'ml'
+	mlflow ; extra == 'mlflow'
+	mock (==3.0.5) ; extra == 'dev'
+	neptune-client (>=0.9.8) ; extra == 'neptune'
+	numpy (>=1.18)
+	onnx ; extra == 'onnx'
+	onnx ; extra == 'onnx-gpu'
+	onnxruntime ; extra == 'onnx'
+	onnxruntime-gpu ; extra == 'onnx-gpu'
+	opencv-python-headless (>=4.2.0.32) ; extra == 'all'
+	opencv-python-headless (>=4.2.0.32) ; extra == 'cv'
+	optuna (>=2.0.0) ; extra == 'all'
+	optuna (>=2.0.0) ; extra == 'optuna'
+	pandas (>=1.0.0) ; extra == 'all'
+	pandas (>=1.0.0) ; extra == 'ml'
+	path ; extra == 'dev'
+	pre-commit (==2.13.0) ; extra == 'dev'
+	pytest ; extra == 'dev'
+	requests ; extra == 'all'
+	requests ; extra == 'cv'
+	scikit-image (<0.19.0>=0.16.1) ; extra == 'all'
+	scikit-image (<0.19.0>=0.16.1) ; extra == 'cv'
+	scikit-learn (>=1.0) ; extra == 'all'
+	scikit-learn (>=1.0) ; extra == 'ml'
+	scipy (>=1.4.1) ; extra == 'all'
+	scipy (>=1.4.1) ; extra == 'ml'
+	sphinx (==2.2.1) ; extra == 'dev'
+	tensorboardX (>=2.1.0)
+	tomlkit (==0.7.2) ; extra == 'dev'
+	torch (>=1.4.0)
+	torch-tb-profiler ; extra == 'profiler'
+	torchvision (>=0.5.0) ; extra == 'all'
+	torchvision (>=0.5.0) ; extra == 'cv'
+	tqdm (>=4.33.0)
+	wandb ; extra == 'wandb'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/accelerate-0.5.1[${PYTHON_USEDEP}]
 	comet? ( dev-python/comet-ml[${PYTHON_USEDEP}] )
@@ -61,18 +113,18 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-21.8_beta0[${PYTHON_USEDEP}]
-		=dev-python/catalyst-codestyle-21.09.2[${PYTHON_USEDEP}]
-		=dev-python/catalyst-sphinx-theme-1.2.0[${PYTHON_USEDEP}]
+		~dev-python/black-21.8_beta0[${PYTHON_USEDEP}]
+		~dev-python/catalyst-codestyle-21.09.2[${PYTHON_USEDEP}]
+		~dev-python/catalyst-sphinx-theme-1.2.0[${PYTHON_USEDEP}]
 		<=dev-python/click-8.0.4[${PYTHON_USEDEP}]
-		=dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
+		~dev-python/docutils-0.17.1[${PYTHON_USEDEP}]
 		<=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
-		=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
+		~dev-python/mock-3.0.5[${PYTHON_USEDEP}]
 		dev-python/path[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
-		=dev-python/sphinx-2.2.1[${PYTHON_USEDEP}]
-		=dev-python/tomlkit-0.7.2[${PYTHON_USEDEP}]
-		=dev-vcs/pre-commit-2.13.0[${PYTHON_USEDEP}]
+		~dev-python/sphinx-2.2.1[${PYTHON_USEDEP}]
+		~dev-python/tomlkit-0.7.2[${PYTHON_USEDEP}]
+		~dev-vcs/pre-commit-2.13.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

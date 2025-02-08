@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-join-api-0.0.9[${PYTHON_USEDEP}]
+	~dev-python/python-join-api-0.0.9[${PYTHON_USEDEP}]
 "

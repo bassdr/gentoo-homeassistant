@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioesphomeapi-28.0.0[${PYTHON_USEDEP}]
-	=dev-python/bleak-esphome-1.1.0[${PYTHON_USEDEP}]
-	=dev-python/esphome-dashboard-api-1.2.3[${PYTHON_USEDEP}]
+	~dev-python/aioesphomeapi-28.0.0[${PYTHON_USEDEP}]
+	~dev-python/bleak-esphome-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/esphome-dashboard-api-1.2.3[${PYTHON_USEDEP}]
 "

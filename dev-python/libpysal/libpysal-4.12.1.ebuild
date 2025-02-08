@@ -16,6 +16,42 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4>=4.10
+	codecov; extra == "tests"
+	geodatasets>=2023.3.0; extra == "tests"
+	geopandas>=0.10.0
+	joblib>=1.2; extra == "plus"
+	matplotlib>=3.6; extra == "tests"
+	myst-parser; extra == "docs"
+	nbsphinx; extra == "docs"
+	networkx>=2.7; extra == "plus"
+	numba>=0.55; extra == "plus"
+	numpy>=1.22
+	numpydoc; extra == "docs"
+	packaging>=22
+	pandas>=1.4
+	pandoc; extra == "docs"
+	platformdirs>=2.0.2
+	pre-commit; extra == "dev"
+	pyarrow>=7.0; extra == "plus"
+	pytest-cov; extra == "tests"
+	pytest-mpl; extra == "tests"
+	pytest-xdist; extra == "tests"
+	pytest; extra == "tests"
+	requests>=2.27
+	ruff; extra == "dev"
+	scikit-learn>=1.1
+	scipy>=1.8
+	shapely>=2.0.1
+	sphinx-bootstrap-theme; extra == "docs"
+	sphinx; extra == "docs"
+	sphinxcontrib-bibtex; extra == "docs"
+	sqlalchemy>=2.0; extra == "plus"
+	watermark; extra == "dev"
+	xarray>=2022.3; extra == "plus"
+	zstd; extra == "plus"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beautifulsoup4-4.10[${PYTHON_USEDEP}]
 	>=dev-python/geopandas-0.10.0[${PYTHON_USEDEP}]

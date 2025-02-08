@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	pyserial
+	pyyaml
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]

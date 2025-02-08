@@ -17,7 +17,20 @@ LICENSE="|| ( GPL-3 Apache-2.0 )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	coverage ; extra == 'test'
+	icalendar
+	lxml
+	pytest ; extra == 'test'
+	pytest-coverage ; extra == 'test'
+	pytz
+	recurring-ical-events (>=2.0.0)
+	requests
+	sphinx ; extra == 'test'
+	tzlocal
+	vobject
+	xandikos ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/icalendar[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]

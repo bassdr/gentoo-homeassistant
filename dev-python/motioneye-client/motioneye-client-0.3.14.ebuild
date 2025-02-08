@@ -22,8 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.1,<4.0.0,!=3.8.2,!=3.8.3)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}] !~dev-python/aiohttp-3.8.2[${PYTHON_USEDEP}] !~dev-python/aiohttp-3.8.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]"

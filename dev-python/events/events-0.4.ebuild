@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION="Bringing the elegance of C# EventHandler to Python"
 HOMEPAGE="
-  https://pypi.org/project/Events/
+  https://pypi.org/project/events/
 "
 # No sdist in pypi as of PV=0.5
 SRC_URI="

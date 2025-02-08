@@ -19,8 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pymodbus<4.0.0,>=3.6.9
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/pymodbus-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pymodbus-3.6.9[${PYTHON_USEDEP}] <dev-python/pymodbus-4.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pymodbus-3.6.9[${PYTHON_USEDEP}]"

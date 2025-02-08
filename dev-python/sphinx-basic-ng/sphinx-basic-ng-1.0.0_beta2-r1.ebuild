@@ -27,6 +27,14 @@ GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	furo ; extra == 'docs'
+	ipython ; extra == 'docs'
+	myst-parser ; extra == 'docs'
+	sphinx (>=4.0)
+	sphinx-copybutton ; extra == 'docs'
+	sphinx-inline-tabs ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )

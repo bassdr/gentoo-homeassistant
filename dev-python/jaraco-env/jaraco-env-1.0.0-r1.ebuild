@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jaraco.env/"
+  https://pypi.org/project/jaraco-env/"
 
 LICENSE="MIT"
 SLOT="0"
@@ -28,9 +28,11 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 		dev-python/pytest-ruff[${PYTHON_USEDEP}]
 	)
 "

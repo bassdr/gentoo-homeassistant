@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Tami4EdgeAPI/
+  https://pypi.org/project/tami4edgeapi/
 "
 
 LICENSE="MIT"
@@ -21,6 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pyjwt
+	pypasser
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/pypasser[${PYTHON_USEDEP}]

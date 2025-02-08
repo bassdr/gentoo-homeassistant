@@ -18,7 +18,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest (>=3.0)
+	tornado (>=5.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-3.0[${PYTHON_USEDEP}]
 	>=dev-python/tornado-5.0[${PYTHON_USEDEP}]

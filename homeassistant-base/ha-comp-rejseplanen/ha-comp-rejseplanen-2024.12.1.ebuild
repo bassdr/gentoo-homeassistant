@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/rjpl-0.3.6[${PYTHON_USEDEP}]
+	~dev-python/rjpl-0.3.6[${PYTHON_USEDEP}]
 "

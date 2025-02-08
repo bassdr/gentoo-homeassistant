@@ -21,11 +21,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	click ==8.1.3 ; extra == 'cli'
+	ordered-set <4.2.0,>=4.0.2
+	orjson ; extra == 'optimize'
+	pyyaml ==6.0.1 ; extra == 'cli'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	cli? ( =dev-python/click-8.1.3[${PYTHON_USEDEP}] )
-	<dev-python/ordered-set-4.2.0[${PYTHON_USEDEP}]
+	cli? ( ~dev-python/click-8.1.3[${PYTHON_USEDEP}] )
+	>=dev-python/ordered-set-4.0.2[${PYTHON_USEDEP}] <dev-python/ordered-set-4.2.0[${PYTHON_USEDEP}]
 	optimize? ( dev-python/orjson[${PYTHON_USEDEP}] )
-	cli? ( =dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
+	cli? ( ~dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/ordered-set-4.0.2[${PYTHON_USEDEP}]"

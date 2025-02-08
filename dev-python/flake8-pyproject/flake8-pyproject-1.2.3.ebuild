@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 PYPI_PN="Flake8-pyproject"
 inherit distutils-r1 pypi
@@ -17,15 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flake8 >= 5
+	TOMLi < 2; python_version < "3.7"
+	TOMLi; python_version < "3.11"
+	pyTest ; extra == "dev"
+	pyTest-cov ; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flake8-5[${PYTHON_USEDEP}]
-	<dev-python/tomli-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

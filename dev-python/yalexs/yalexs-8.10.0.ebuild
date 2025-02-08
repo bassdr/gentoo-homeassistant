@@ -24,6 +24,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiofiles>=23
+	aiohttp>=3.10.5
+	ciso8601>=2.1.3
+	freenub>=0.1.0
+	propcache>=0.0.0
+	pyjwt>=2.8.0
+	python-dateutil>=2.9.0
+	python-socketio[asyncio-client]>=5.11.3
+	requests>=2
+	typing-extensions>=4.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-23[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]

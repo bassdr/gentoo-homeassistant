@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -18,6 +17,5 @@ KEYWORDS="amd64 arm64"
 GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep 'dev-python/typing-extensions[${PYTHON_USEDEP}]' python3_12)
 "
-RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

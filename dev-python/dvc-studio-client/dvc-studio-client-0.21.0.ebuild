@@ -16,13 +16,30 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	dulwich
+	dvc-studio-client[docs,tests]; extra == "dev"
+	mkdocs-gen-files<1,>=0.5.0; extra == "docs"
+	mkdocs-material<10,>=9.3.1; extra == "docs"
+	mkdocs-section-index<1,>=0.3.6; extra == "docs"
+	mkdocs<2,>=1.5.2; extra == "docs"
+	mkdocstrings-python<2,>=1.6.3; extra == "docs"
+	mypy==1.10.1; extra == "dev"
+	pytest-cov>=4.1.0; extra == "tests"
+	pytest-mock; extra == "tests"
+	pytest-sugar; extra == "tests"
+	pytest<9,>=7; extra == "tests"
+	requests
+	types-requests; extra == "dev"
+	voluptuous
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/dulwich[${PYTHON_USEDEP}]
-	docs? ( <dev-python/mkdocs-2[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocs-gen-files-1[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocs-material-10[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocs-section-index-1[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-1.5.2[${PYTHON_USEDEP}] <dev-python/mkdocs-2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-gen-files-0.5.0[${PYTHON_USEDEP}] <dev-python/mkdocs-gen-files-1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-material-9.3.1[${PYTHON_USEDEP}] <dev-python/mkdocs-material-10[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-section-index-0.3.6[${PYTHON_USEDEP}] <dev-python/mkdocs-section-index-1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocstrings-python-1.6.3[${PYTHON_USEDEP}] <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
@@ -32,8 +49,8 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/dvc-studio-client[docs,tests,${PYTHON_USEDEP}]
-		=dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
-		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/pytest-sugar[${PYTHON_USEDEP}]

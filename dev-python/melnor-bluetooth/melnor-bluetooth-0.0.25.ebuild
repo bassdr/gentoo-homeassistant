@@ -20,6 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Deprecated (>=1.2.13)
+	aioconsole (>=0.4.1)
+	bleak (>=0.15.1)
+	bleak-retry-connector (>=1.11.0)
+	tzdata (>=2022.1)
+	tzlocal (>=4.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aioconsole-0.4.1[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.15.1[${PYTHON_USEDEP}]

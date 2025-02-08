@@ -16,6 +16,24 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs; extra == "full"
+	attrs>=22.2.0; extra == "attrs"
+	beanie; extra == "beanie"
+	beanie; extra == "full"
+	faker
+	msgspec; extra == "full"
+	msgspec; extra == "msgspec"
+	odmantic; extra == "full"
+	odmantic<1.0.0; extra == "odmantic"
+	pydantic; extra == "full"
+	pydantic[email]; extra == "beanie"
+	pydantic[email]; extra == "odmantic"
+	pydantic[email]>=1.10; extra == "pydantic"
+	sqlalchemy; extra == "full"
+	sqlalchemy>=1.4.29; extra == "sqlalchemy"
+	typing-extensions>=4.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	attrs? ( >=dev-python/attrs-22.2.0[${PYTHON_USEDEP}] )
 	full? ( dev-python/attrs[${PYTHON_USEDEP}] )

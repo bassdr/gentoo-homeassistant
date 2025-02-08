@@ -25,13 +25,21 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx (>=5.0,<6.0) ; extra == "docs"
+	aiooui (>=0.1.1)
+	home-assistant-bluetooth (>=1.3.0)
+	mac-vendor-lookup (>=0.1.11)
+	myst-parser (>=0.18,<0.19) ; extra == "docs"
+	sphinx-rtd-theme (>=1.0,<2.0) ; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiooui-0.1.1[${PYTHON_USEDEP}]
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/mac-vendor-lookup-0.1.11[${PYTHON_USEDEP}]
-	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
-	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]

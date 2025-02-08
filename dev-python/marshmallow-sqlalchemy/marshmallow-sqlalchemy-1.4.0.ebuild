@@ -16,15 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	SQLAlchemy<3.0,>=1.4.40
+	furo==2024.8.6; extra == "docs"
+	marshmallow-sqlalchemy[tests]; extra == "dev"
+	marshmallow>=3.18.0
+	pre-commit<5.0,>=3.5; extra == "dev"
+	pytest-lazy-fixtures; extra == "tests"
+	pytest<9; extra == "tests"
+	sphinx-copybutton==0.5.2; extra == "docs"
+	sphinx-design==0.6.1; extra == "docs"
+	sphinx-issues==5.0.0; extra == "docs"
+	sphinx==8.1.3; extra == "docs"
+	sphinxext-opengraph==0.9.1; extra == "docs"
+	tox; extra == "dev"
+	typing-extensions; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( =dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
 	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
-	docs? ( =dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-design-0.6.1[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
-	<dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}]
+	docs? ( ~dev-python/sphinx-8.1.3[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-design-0.6.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-issues-5.0.0[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinxext-opengraph-0.9.1[${PYTHON_USEDEP}] )
+	>=dev-python/sqlalchemy-1.4.40[${PYTHON_USEDEP}] <dev-python/sqlalchemy-3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
@@ -35,7 +51,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		<dev-python/pytest-9[${PYTHON_USEDEP}]
 		dev-python/pytest-lazy-fixtures[${PYTHON_USEDEP}]
 		dev-python/tox[${PYTHON_USEDEP}]
-		<dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-3.5[${PYTHON_USEDEP}] <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

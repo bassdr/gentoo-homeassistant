@@ -16,11 +16,23 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy<2,>1.26.0; extra == "numpy"
+	orjson>=3.6; extra == "orjson"
+	packaging
+	pandas[numpy]<3,>=2; extra == "pandas"
+	pproxy; extra == "examples"
+	pyopenssl
+	python-rapidjson; extra == "rapidjson"
+	rsa
+	ujson; extra == "ujson"
+	websocket-client>=1.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	numpy? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
+	numpy? ( >dev-python/numpy-1.26.0[${PYTHON_USEDEP}] <dev-python/numpy-2[${PYTHON_USEDEP}] )
 	orjson? ( >=dev-python/orjson-3.6[${PYTHON_USEDEP}] )
 	dev-python/packaging[${PYTHON_USEDEP}]
-	pandas? ( <dev-python/pandas-3[numpy,${PYTHON_USEDEP}] )
+	pandas? ( >=dev-python/pandas-2[numpy,${PYTHON_USEDEP}] <dev-python/pandas-3[numpy,${PYTHON_USEDEP}] )
 	examples? ( dev-python/pproxy[${PYTHON_USEDEP}] )
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
 	rapidjson? ( dev-python/python-rapidjson[${PYTHON_USEDEP}] )

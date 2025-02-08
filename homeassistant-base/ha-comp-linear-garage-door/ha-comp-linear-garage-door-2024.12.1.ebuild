@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/linear-garage-door-0.2.9[${PYTHON_USEDEP}]
+	~dev-python/linear-garage-door-0.2.9[${PYTHON_USEDEP}]
 "

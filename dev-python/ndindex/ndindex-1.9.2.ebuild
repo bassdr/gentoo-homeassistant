@@ -16,6 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy; extra == "arrays"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	arrays? ( dev-python/numpy[${PYTHON_USEDEP}] )
 "

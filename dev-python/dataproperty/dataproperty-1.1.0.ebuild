@@ -10,16 +10,24 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/DataProperty/"
+  https://pypi.org/project/dataproperty/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	loguru<1,>=0.4.1; extra == "logging"
+	mbstrdecoder<2,>=1.0.0
+	pytest-md-report>=0.6.2; extra == "test"
+	pytest>=6.0.1; extra == "test"
+	tcolorpy>=0.1.2; extra == "test"
+	typepy[datetime]<2,>=1.3.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
-	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
-	<dev-python/typepy-2[datetime,${PYTHON_USEDEP}]
+	logging? ( >=dev-python/loguru-0.4.1[${PYTHON_USEDEP}] <dev-python/loguru-1[${PYTHON_USEDEP}] )
+	>=dev-python/mbstrdecoder-1.0.0[${PYTHON_USEDEP}] <dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
+	>=dev-python/typepy-1.3.2[datetime,${PYTHON_USEDEP}] <dev-python/typepy-2[datetime,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

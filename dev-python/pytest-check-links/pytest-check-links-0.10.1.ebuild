@@ -16,12 +16,24 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docutils>=0.20.1
+	flaky; extra == "test"
+	html5lib>=1.1
+	nbconvert>=7.1
+	nbformat>=5.1
+	pre-commit; extra == "test"
+	pytest<9,>=7.0
+	requests-cache>=0.9.7; extra == "cache"
+	requests-cache>=0.9.7; extra == "test"
+	requests>=2.22
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.20.1[${PYTHON_USEDEP}]
 	>=dev-python/html5lib-1.1[${PYTHON_USEDEP}]
 	>=dev-python/nbconvert-7.1[${PYTHON_USEDEP}]
 	>=dev-python/nbformat-5.1[${PYTHON_USEDEP}]
-	<dev-python/pytest-9[${PYTHON_USEDEP}]
+	>=dev-python/pytest-7.0[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
 	cache? ( >=dev-python/requests-cache-0.9.7[${PYTHON_USEDEP}] )
 "

@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/PyWavelets/"
+  https://pypi.org/project/pywavelets/"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,8 +19,12 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="optional"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	numpy<3,>=1.23
+	scipy>=1.9; extra == "optional"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/numpy-3[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.23[${PYTHON_USEDEP}] <dev-python/numpy-3[${PYTHON_USEDEP}]
 	optional? ( >=dev-python/scipy-1.9[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}

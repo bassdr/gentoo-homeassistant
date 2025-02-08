@@ -13,7 +13,7 @@ MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="A tiny LRU cache implementation and decorator"
 HOMEPAGE="
-  https://pypi.org/project/repoze.lru/
+  https://pypi.org/project/repoze-lru/
 "
 SRC_URI="
 	https://github.com/repoze/repoze.lru/archive/${PV}.tar.gz

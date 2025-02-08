@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	protobuf (<4.21.0,>=3.0.0) ; python_version < "3.7"
+	protobuf (>=3.0.0) ; python_version >= "3.7"
+	six
+	typing ; python_version < "3.5"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/protobuf-4.21.0[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.0.0[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
-	dev-python/typing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

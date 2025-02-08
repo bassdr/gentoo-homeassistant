@@ -16,6 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flask-Session[cachelib,memcached,mongodb,redis,sqlalchemy]; extra == "all"
+	cachelib
+	cachelib>=0.10.2; extra == "cachelib"
+	flask-sqlalchemy>=3.0.5; extra == "sqlalchemy"
+	flask>=2.2
+	msgspec>=0.18.6
+	pymemcache; extra == "memcached"
+	pymongo>=4.6.2; extra == "mongodb"
+	redis>=5.0.3; extra == "redis"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cachelib? ( >=dev-python/cachelib-0.10.2[${PYTHON_USEDEP}] )
 	dev-python/cachelib[${PYTHON_USEDEP}]

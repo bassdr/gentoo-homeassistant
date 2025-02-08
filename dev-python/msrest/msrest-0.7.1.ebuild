@@ -3,7 +3,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
+GENERATED_IUSE="async"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} ${PV} .zip)"
@@ -16,9 +17,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiodns ; (python_version>='3.5') and extra == 'async'
+	aiohttp (>=3.0) ; (python_version>='3.5') and extra == 'async'
+	azure-core (>=1.24.0)
+	certifi (>=2017.4.17)
+	isodate (>=0.6.0)
+	requests (~=2.16)
+	requests-oauthlib (>=0.5.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/aiodns[${PYTHON_USEDEP}]
-	>=dev-python/aiohttp-3.0[${PYTHON_USEDEP}]
+	async? ( dev-python/aiodns[${PYTHON_USEDEP}] )
+	async? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/azure-core-1.24.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]

@@ -16,6 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	rich-toolkit>=0.11.1
+	typer>=0.12.3
+	uvicorn[standard]>=0.15.0
+	uvicorn[standard]>=0.15.0; extra == "standard"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-toolkit-0.11.1[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.12.3[${PYTHON_USEDEP}]

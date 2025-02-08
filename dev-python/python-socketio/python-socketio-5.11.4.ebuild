@@ -23,6 +23,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.4; extra == "asyncio-client"
+	bidict>=0.21.0
+	python-engineio>=4.8.0
+	requests>=2.21.0; extra == "client"
+	sphinx; extra == "docs"
+	websocket-client>=0.54.0; extra == "client"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 	>=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]

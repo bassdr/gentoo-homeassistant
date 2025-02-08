@@ -23,6 +23,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pyserial-asyncio-fast>=0.11
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
 "

@@ -22,9 +22,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	enum-compat (>=0.0.2)
+	requests (<3,>=2)
+	websocket-client (>=0.40.0)
+	zeroconf (>=0.19.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/enum-compat-0.0.2[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-0.40.0[${PYTHON_USEDEP}]
 	>=dev-python/zeroconf-0.19.1[${PYTHON_USEDEP}]
 "

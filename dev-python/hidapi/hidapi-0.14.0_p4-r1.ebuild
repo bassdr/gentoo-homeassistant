@@ -19,9 +19,11 @@ LICENSE="|| ( BSD GPL-3 )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	>=dev-libs/hidapi-$(ver_cut 1-3)
+"
+REQUIRES_DIST="
+	setuptools>=19.0
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/setuptools-19.0[${PYTHON_USEDEP}]

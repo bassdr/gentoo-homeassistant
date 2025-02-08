@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	netifaces
+	pycryptodome~=3.10
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/netifaces[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodome-3.10[${PYTHON_USEDEP}] =dev-python/pycryptodome-3*[${PYTHON_USEDEP}]

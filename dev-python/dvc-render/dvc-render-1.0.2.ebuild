@@ -17,15 +17,33 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	dvc-render[docs,tests]; extra == "dev"
+	dvc-render[markdown,table]; extra == "tests"
+	dvc-render[table]; extra == "markdown"
+	flatten-dict<1,>=0.4.1; extra == "table"
+	matplotlib; extra == "markdown"
+	mkdocs-gen-files<1,>=0.5.0; extra == "docs"
+	mkdocs-material<10,>=9.3.1; extra == "docs"
+	mkdocs-section-index<1,>=0.3.6; extra == "docs"
+	mkdocs<2,>=1.5.2; extra == "docs"
+	mkdocstrings-python<2,>=1.6.3; extra == "docs"
+	mypy==1.9.0; extra == "dev"
+	pytest-cov>=4.1.0; extra == "tests"
+	pytest-mock; extra == "tests"
+	pytest-sugar; extra == "tests"
+	pytest<9,>=7; extra == "tests"
+	tabulate>=0.8.7; extra == "table"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	markdown? ( dev-python/dvc-render[table,${PYTHON_USEDEP}] )
-	table? ( <dev-python/flatten-dict-1[${PYTHON_USEDEP}] )
+	table? ( >=dev-python/flatten-dict-0.4.1[${PYTHON_USEDEP}] <dev-python/flatten-dict-1[${PYTHON_USEDEP}] )
 	markdown? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocs-2[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocs-gen-files-1[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocs-material-10[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocs-section-index-1[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-1.5.2[${PYTHON_USEDEP}] <dev-python/mkdocs-2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-gen-files-0.5.0[${PYTHON_USEDEP}] <dev-python/mkdocs-gen-files-1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-material-9.3.1[${PYTHON_USEDEP}] <dev-python/mkdocs-material-10[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-section-index-0.3.6[${PYTHON_USEDEP}] <dev-python/mkdocs-section-index-1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocstrings-python-1.6.3[${PYTHON_USEDEP}] <dev-python/mkdocstrings-python-2[${PYTHON_USEDEP}] )
 	table? ( >=dev-python/tabulate-0.8.7[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -35,8 +53,8 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/dvc-render[docs,tests,${PYTHON_USEDEP}]
 		dev-python/dvc-render[markdown,table,${PYTHON_USEDEP}]
-		=dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/pytest-sugar[${PYTHON_USEDEP}]

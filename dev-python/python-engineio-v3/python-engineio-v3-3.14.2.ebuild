@@ -21,6 +21,12 @@ DOCS="README.rst"
 
 GENERATED_IUSE="asyncio-client client"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aiohttp>=3.4; extra == "asyncio-client"
+	requests>=2.21.0; extra == "client"
+	six>=1.9.0
+	websocket-client>=0.54.0; extra == "client"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 	client? ( >=dev-python/requests-2.21.0[${PYTHON_USEDEP}] )

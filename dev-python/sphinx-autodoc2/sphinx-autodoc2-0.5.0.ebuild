@@ -16,8 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	astroid>=2.7,<4
+	furo ; extra == "docs"
+	myst-parser ; extra == "docs"
+	pytest ; extra == "testing"
+	pytest-cov ; extra == "testing"
+	pytest-regressions ; extra == "testing"
+	sphinx>=4.0.0 ; extra == "docs"
+	sphinx>=4.0.0 ; extra == "sphinx"
+	sphinx>=4.0.0,<7 ; extra == "testing"
+	tomli; python_version<'3.11'
+	typer[all] ; extra == "cli"
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/astroid-2.7[${PYTHON_USEDEP}]
+	>=dev-python/astroid-2.7[${PYTHON_USEDEP}] <dev-python/astroid-4[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}] )
@@ -33,7 +47,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-		>=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-7[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

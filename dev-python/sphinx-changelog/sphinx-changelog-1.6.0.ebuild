@@ -16,11 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	sphinx
+	sphinx-automodapi; extra == "docs"
+	sphinx; extra == "docs"
+	towncrier==24.8.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-automodapi[${PYTHON_USEDEP}] )
-	=dev-python/towncrier-24.8.0[${PYTHON_USEDEP}]
+	~dev-python/towncrier-24.8.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

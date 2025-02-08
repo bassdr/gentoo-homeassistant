@@ -16,7 +16,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp>=3.11.0b0
+	coverage==6.2; extra == "testing"
+	mypy==1.12.1; extra == "testing"
+	pytest-asyncio>=0.17.2
+	pytest>=6.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.11.0_beta0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-6.1.0[${PYTHON_USEDEP}]
@@ -34,8 +40,8 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/coverage-6.2[${PYTHON_USEDEP}]
-		=dev-python/mypy-1.12.1[${PYTHON_USEDEP}]
+		~dev-python/coverage-6.2[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.12.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

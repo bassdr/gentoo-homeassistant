@@ -16,6 +16,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Chameleon ; extra == "chameleonextractor"
+	black >= 22.1.0 ; extra == "dev"
+	click >= 8.0.3
+	flake8 >= 4.0.1 ; extra == "dev"
+	polib >= 1.1.1
+	pytest >=7.0.1 ; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	chameleonextractor? ( dev-python/chameleon[${PYTHON_USEDEP}] )
 	>=dev-python/click-8.0.3[${PYTHON_USEDEP}]

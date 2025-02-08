@@ -16,6 +16,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	geopandas; extra == "tests"
+	libpysal; extra == "tests"
+	matplotlib; extra == "tests"
+	nbsphinx; extra == "docs"
+	networkx>=2.7
+	numba>=0.54; extra == "speedups"
+	numba[dev,docs,speedups,tests]; extra == "all"
+	numpy>=1.23
+	numpydoc; extra == "docs"
+	pandas!=1.5.0,>=1.4
+	pre-commit; extra == "dev"
+	pytest-cov; extra == "tests"
+	pytest-doctestplus; extra == "tests"
+	pytest-mpl; extra == "tests"
+	pytest-xdist; extra == "tests"
+	pytest; extra == "tests"
+	ruff; extra == "dev"
+	scikit-learn>=1.0
+	scipy>=1.8
+	sphinx-bootstrap-theme; extra == "docs"
+	sphinx-gallery; extra == "docs"
+	sphinx>=1.4.3; extra == "docs"
+	sphinxcontrib-bibtex; extra == "docs"
+	watermark; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/nbsphinx[${PYTHON_USEDEP}] )
 	>=dev-python/networkx-2.7[${PYTHON_USEDEP}]
@@ -23,7 +49,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	speedups? ( >=dev-python/numba-0.54[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
-	!=dev-python/pandas-1.5.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.4[${PYTHON_USEDEP}] !~dev-python/pandas-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-1.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-1.4.3[${PYTHON_USEDEP}] )

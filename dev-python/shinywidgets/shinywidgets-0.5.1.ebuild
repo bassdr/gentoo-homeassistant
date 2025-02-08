@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,27 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	altair; extra == "dev"
+	anywidget
+	black>=23.1.0; extra == "dev"
+	bokeh; extra == "dev"
+	flake8==3.9.2; python_version <= "3.7" and extra == "dev"
+	flake8>=6.0.0; python_version > "3.7" and extra == "dev"
+	ipywidgets>=7.6.5
+	isort>=5.11.2; extra == "dev"
+	jupyter_bokeh; extra == "dev"
+	jupyter_core
+	plotly; extra == "dev"
+	pydeck; extra == "dev"
+	pyright>=1.1.284; extra == "dev"
+	pytest>=6.2.4; extra == "test"
+	python-dateutil>=2.8.2
+	shiny>=0.6.1.9005
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/anywidget[${PYTHON_USEDEP}]
-	=dev-python/flake8-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/ipywidgets-7.6.5[${PYTHON_USEDEP}]
 	dev-python/jupyter-core[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
@@ -31,6 +48,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/altair[${PYTHON_USEDEP}]
 		>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
+		>=dev-python/flake8-6.0.0[${PYTHON_USEDEP}]
 		>=dev-python/isort-5.11.2[${PYTHON_USEDEP}]
 		dev-python/jupyter-bokeh[${PYTHON_USEDEP}]
 		dev-python/plotly[${PYTHON_USEDEP}]

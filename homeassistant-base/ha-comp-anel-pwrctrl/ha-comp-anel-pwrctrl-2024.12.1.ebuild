@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/anel-pwrctrl-homeassistant-0.0.1_pre2[${PYTHON_USEDEP}]
+	~dev-python/anel-pwrctrl-homeassistant-0.0.1_pre2[${PYTHON_USEDEP}]
 "

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/sentry-sdk-1.40.3[${PYTHON_USEDEP}]
+	~dev-python/sentry-sdk-1.40.3[${PYTHON_USEDEP}]
 "

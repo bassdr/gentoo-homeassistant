@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P="${P/-/.}"
 DESCRIPTION="ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
 HOMEPAGE="
-  https://pypi.org/project/ruamel.yaml/
+  https://pypi.org/project/ruamel-yaml/
 "
 # PyPI tarballs do not include tests
 SRC_URI="https://downloads.sourceforge.net/ruamel-dl-tagged-releases/${MY_P}.tar.xz"
@@ -23,9 +23,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs jinja2"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	mercurial >5.7 ; extra == 'docs'
+	ruamel.yaml.clib >=0.2.7 ; platform_python_implementation=="CPython" and python_version<"3.13"
+	ruamel.yaml.jinja2 >=0.2 ; extra == 'jinja2'
+	ryd ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >dev-python/mercurial-5.7[${PYTHON_USEDEP}] )
-	>=dev-python/ruamel-yaml-clib-0.2.7[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/ruamel-yaml-clib-0.2.7[${PYTHON_USEDEP}]' python3_12)
 	jinja2? ( >=dev-python/ruamel-yaml-jinja2-0.2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ryd[${PYTHON_USEDEP}] )
 "

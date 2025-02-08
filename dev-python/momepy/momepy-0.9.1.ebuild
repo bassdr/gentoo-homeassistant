@@ -16,6 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	esda; extra == "plus"
+	geopandas>=0.12.0
+	inequality; extra == "plus"
+	libpysal>=4.12.0
+	mapclassify; extra == "plus"
+	networkx>=2.8
+	numba; extra == "plus"
+	packaging
+	pandas>=1.5.1
+	shapely>=2
+	tqdm>=4.63.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	plus? ( dev-python/esda[${PYTHON_USEDEP}] )
 	>=dev-python/geopandas-0.12.0[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/bthome-ble-3.9.1[${PYTHON_USEDEP}]
+	~dev-python/bthome-ble-3.9.1[${PYTHON_USEDEP}]
 "

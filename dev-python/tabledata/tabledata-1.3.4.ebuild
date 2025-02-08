@@ -16,10 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	DataProperty<2,>=1.0.1
+	loguru<1,>=0.4.1; extra == "logging"
+	pytablewriter>=0.46; extra == "test"
+	pytest; extra == "test"
+	typepy<2,>=1.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/dataproperty-2[${PYTHON_USEDEP}]
-	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
-	<dev-python/typepy-2[${PYTHON_USEDEP}]
+	>=dev-python/dataproperty-1.0.1[${PYTHON_USEDEP}] <dev-python/dataproperty-2[${PYTHON_USEDEP}]
+	logging? ( >=dev-python/loguru-0.4.1[${PYTHON_USEDEP}] <dev-python/loguru-1[${PYTHON_USEDEP}] )
+	>=dev-python/typepy-1.2.0[${PYTHON_USEDEP}] <dev-python/typepy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

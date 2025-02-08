@@ -23,6 +23,17 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx>=7; extra == "doc"
+	coverage[toml]>=7; extra == "test"
+	importlib-metadata>=3.6; python_version < "3.10"
+	mypy>=1.2.0; platform_python_implementation != "PyPy" and extra == "test"
+	packaging; extra == "doc"
+	pytest>=7; extra == "test"
+	sphinx-autodoc-typehints>=1.2.0; extra == "doc"
+	sphinx-rtd-theme>=1.3.0; extra == "doc"
+	typing-extensions>=4.10.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
@@ -41,6 +52,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-7[toml,${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7[${PYTHON_USEDEP}]
 	)
 "

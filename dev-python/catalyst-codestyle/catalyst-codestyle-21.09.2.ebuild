@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 21.9.2)"
@@ -17,22 +16,39 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black (>=19.10b0)
+	darglint (<2.0,>=1.5)
+	flake8 (<4.0,>=3.7)
+	flake8-blind-except (<0.2,>=0.1.1)
+	flake8-broken-line (<0.4,>=0.3)
+	flake8-bugbear (<22.0,>=20.1)
+	flake8-comprehensions (<4.0,>=3.1)
+	flake8-debugger (<5.0,>=4.0)
+	flake8-docstrings (<2.0,>=1.4)
+	flake8-quotes (<4.0,>=3.0)
+	flake8-rst-docstrings (<0.3.0,>=0.2.3)
+	flake8-string-format (<0.4,>=0.3)
+	isort (<6.0,>=5.0)
+	nitpick (<0.28,>=0.27)
+	pep8-naming (<0.13,>=0.11)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
-	<dev-python/darglint-2.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-4.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-blind-except-0.2[${PYTHON_USEDEP}]
-	<dev-python/flake8-broken-line-0.4[${PYTHON_USEDEP}]
-	<dev-python/flake8-bugbear-22.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-comprehensions-4.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-debugger-5.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-docstrings-2.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-quotes-4.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-rst-docstrings-0.3.0[${PYTHON_USEDEP}]
-	<dev-python/flake8-string-format-0.4[${PYTHON_USEDEP}]
-	<dev-python/isort-6.0[${PYTHON_USEDEP}]
-	<dev-python/nitpick-0.28[${PYTHON_USEDEP}]
-	<dev-python/pep8-naming-0.13[${PYTHON_USEDEP}]
+	>=dev-python/darglint-1.5[${PYTHON_USEDEP}] <dev-python/darglint-2.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-3.7[${PYTHON_USEDEP}] <dev-python/flake8-4.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-blind-except-0.1.1[${PYTHON_USEDEP}] <dev-python/flake8-blind-except-0.2[${PYTHON_USEDEP}]
+	>=dev-python/flake8-broken-line-0.3[${PYTHON_USEDEP}] <dev-python/flake8-broken-line-0.4[${PYTHON_USEDEP}]
+	>=dev-python/flake8-bugbear-20.1[${PYTHON_USEDEP}] <dev-python/flake8-bugbear-22.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-comprehensions-3.1[${PYTHON_USEDEP}] <dev-python/flake8-comprehensions-4.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-debugger-4.0[${PYTHON_USEDEP}] <dev-python/flake8-debugger-5.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-docstrings-1.4[${PYTHON_USEDEP}] <dev-python/flake8-docstrings-2.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-quotes-3.0[${PYTHON_USEDEP}] <dev-python/flake8-quotes-4.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-rst-docstrings-0.2.3[${PYTHON_USEDEP}] <dev-python/flake8-rst-docstrings-0.3.0[${PYTHON_USEDEP}]
+	>=dev-python/flake8-string-format-0.3[${PYTHON_USEDEP}] <dev-python/flake8-string-format-0.4[${PYTHON_USEDEP}]
+	>=dev-python/isort-5.0[${PYTHON_USEDEP}] <dev-python/isort-6.0[${PYTHON_USEDEP}]
+	>=dev-python/nitpick-0.27[${PYTHON_USEDEP}] <dev-python/nitpick-0.28[${PYTHON_USEDEP}]
+	>=dev-python/pep8-naming-0.11[${PYTHON_USEDEP}] <dev-python/pep8-naming-0.13[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

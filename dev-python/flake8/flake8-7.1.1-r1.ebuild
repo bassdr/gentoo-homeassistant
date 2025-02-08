@@ -20,11 +20,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	mccabe<0.8.0,>=0.7.0
+	pycodestyle<2.13.0,>=2.12.0
+	pyflakes<3.3.0,>=3.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/mccabe-0.8.0[${PYTHON_USEDEP}]
-	<dev-python/pycodestyle-2.13.0[${PYTHON_USEDEP}]
-	<dev-python/pyflakes-3.3.0[${PYTHON_USEDEP}]
+	>=dev-python/mccabe-0.7.0[${PYTHON_USEDEP}] <dev-python/mccabe-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/pycodestyle-2.12.0[${PYTHON_USEDEP}] <dev-python/pycodestyle-2.13.0[${PYTHON_USEDEP}]
+	>=dev-python/pyflakes-3.2.0[${PYTHON_USEDEP}] <dev-python/pyflakes-3.3.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	=dev-python/pyflakes-3.2*[${PYTHON_USEDEP}]

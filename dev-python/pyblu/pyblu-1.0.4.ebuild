@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.10.8
+	lxml<6.0.0,>=5.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/lxml-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.10.8[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/lxml-5.0.0[${PYTHON_USEDEP}] <dev-python/lxml-6.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.10.8[${PYTHON_USEDEP}]

@@ -16,6 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata>=5.0.0; python_version < "3.10"
+	termcolor; extra == "cli"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( dev-python/termcolor[${PYTHON_USEDEP}] )
 "

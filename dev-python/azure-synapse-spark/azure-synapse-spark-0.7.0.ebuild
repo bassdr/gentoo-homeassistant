@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} ${PV} .zip)"
@@ -16,9 +15,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-common (~=1.1)
+	azure-core (<2.0.0,>=1.6.0)
+	azure-synapse-nspkg ; python_version<'3.0'
+	msrest (>=0.5.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-common-1.1[${PYTHON_USEDEP}] =dev-python/azure-common-1*[${PYTHON_USEDEP}]
-	<dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.6.0[${PYTHON_USEDEP}] <dev-python/azure-core-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/msrest-0.5.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

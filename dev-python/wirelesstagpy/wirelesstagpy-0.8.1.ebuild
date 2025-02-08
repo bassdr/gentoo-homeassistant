@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	requests (>=2.18.4)
+	unittest ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.18.4[${PYTHON_USEDEP}]
 "

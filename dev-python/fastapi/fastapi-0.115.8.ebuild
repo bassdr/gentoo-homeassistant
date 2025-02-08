@@ -16,6 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	email-validator>=2.0.0; extra == "all"
+	email-validator>=2.0.0; extra == "standard"
+	fastapi-cli[standard]>=0.0.5; extra == "all"
+	fastapi-cli[standard]>=0.0.5; extra == "standard"
+	httpx>=0.23.0; extra == "all"
+	httpx>=0.23.0; extra == "standard"
+	itsdangerous>=1.1.0; extra == "all"
+	jinja2>=3.1.5; extra == "all"
+	jinja2>=3.1.5; extra == "standard"
+	orjson>=3.2.1; extra == "all"
+	pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4
+	pydantic-extra-types>=2.0.0; extra == "all"
+	pydantic-settings>=2.0.0; extra == "all"
+	python-multipart>=0.0.18; extra == "all"
+	python-multipart>=0.0.18; extra == "standard"
+	pyyaml>=5.3.1; extra == "all"
+	starlette<0.46.0,>=0.40.0
+	typing-extensions>=4.8.0
+	ujson!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0,>=4.0.1; extra == "all"
+	uvicorn[standard]>=0.12.0; extra == "all"
+	uvicorn[standard]>=0.12.0; extra == "standard"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/email-validator-2.0.0[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/email-validator-2.0.0[${PYTHON_USEDEP}] )
@@ -27,15 +50,15 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/jinja2-3.1.5[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/jinja2-3.1.5[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/orjson-3.2.1[${PYTHON_USEDEP}] )
-	!=dev-python/pydantic-1.8[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.7.4[${PYTHON_USEDEP}] <dev-python/pydantic-3.0.0[${PYTHON_USEDEP}] !~dev-python/pydantic-1.8[${PYTHON_USEDEP}] !~dev-python/pydantic-1.8.1[${PYTHON_USEDEP}] !~dev-python/pydantic-2.0.0[${PYTHON_USEDEP}] !~dev-python/pydantic-2.0.1[${PYTHON_USEDEP}] !~dev-python/pydantic-2.1.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/pydantic-extra-types-2.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pydantic-settings-2.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/python-multipart-0.0.18[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/python-multipart-0.0.18[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}] )
-	<dev-python/starlette-0.46.0[${PYTHON_USEDEP}]
+	>=dev-python/starlette-0.40.0[${PYTHON_USEDEP}] <dev-python/starlette-0.46.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.8.0[${PYTHON_USEDEP}]
-	all? ( !=dev-python/ujson-4.0.2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/ujson-4.0.1[${PYTHON_USEDEP}] !~dev-python/ujson-4.0.2[${PYTHON_USEDEP}] !~dev-python/ujson-4.1.0[${PYTHON_USEDEP}] !~dev-python/ujson-4.2.0[${PYTHON_USEDEP}] !~dev-python/ujson-4.3.0[${PYTHON_USEDEP}] !~dev-python/ujson-5.0.0[${PYTHON_USEDEP}] !~dev-python/ujson-5.1.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/uvicorn-0.12.0[standard,${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/uvicorn-0.12.0[standard,${PYTHON_USEDEP}] )
 "

@@ -23,13 +23,15 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	<dev-cpp/rapidfuzz-cpp-4
 	>=dev-cpp/rapidfuzz-cpp-3.0.0
 "
+REQUIRES_DIST="
+	rapidfuzz<4.0.0,>=3.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/rapidfuzz-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/rapidfuzz-3.9.0[${PYTHON_USEDEP}] <dev-python/rapidfuzz-4.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/rapidfuzz-4.0.0[${PYTHON_USEDEP}]

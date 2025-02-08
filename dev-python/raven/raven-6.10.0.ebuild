@@ -16,9 +16,41 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flask (>=0.8); extra == 'flask'
+	Flask (>=0.8); extra == 'tests'
+	Flask-Login (>=0.2.0); extra == 'tests'
+	ZConfig; extra == 'tests'
+	aiohttp; extra == 'tests'
+	anyjson; extra == 'tests'
+	blinker (>=1.1); extra == 'flask'
+	blinker (>=1.1); extra == 'tests'
+	bottle; extra == 'tests'
+	celery (>=2.5); extra == 'tests'
+	contextlib2; python_version<"3.2"
+	coverage (<4); extra == 'tests'
+	exam (>=0.5.2); extra == 'tests'
+	flake8 (==3.5.0); extra == 'tests'
+	logbook; extra == 'tests'
+	mock; extra == 'tests'
+	nose; extra == 'tests'
+	pytest (<3.3.0,>=3.2.0); extra == 'tests'
+	pytest-cov (==2.5.1); extra == 'tests'
+	pytest-flake8 (==1.0.0); extra == 'tests'
+	pytest-pythonpath (==0.7.2); extra == 'tests'
+	pytest-timeout (==1.2.1); extra == 'tests'
+	pytest-xdist (==1.18.2); extra == 'tests'
+	pytz; extra == 'tests'
+	requests; extra == 'tests'
+	sanic (>=0.7.0); extra == 'tests'
+	tornado (<5.0,>=4.1); extra == 'tests'
+	tox; extra == 'tests'
+	webob; extra == 'tests'
+	webtest; extra == 'tests'
+	wheel; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	flask? ( >=dev-python/blinker-1.1[${PYTHON_USEDEP}] )
-	dev-python/contextlib2[${PYTHON_USEDEP}]
 	flask? ( >=dev-python/flask-0.8[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -33,22 +65,22 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/celery-2.5[${PYTHON_USEDEP}]
 		<dev-python/coverage-4[${PYTHON_USEDEP}]
 		>=dev-python/exam-0.5.2[${PYTHON_USEDEP}]
-		=dev-python/flake8-3.5.0[${PYTHON_USEDEP}]
+		~dev-python/flake8-3.5.0[${PYTHON_USEDEP}]
 		>=dev-python/flask-0.8[${PYTHON_USEDEP}]
 		>=dev-python/flask-login-0.2.0[${PYTHON_USEDEP}]
 		dev-python/logbook[${PYTHON_USEDEP}]
 		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/nose[${PYTHON_USEDEP}]
-		<dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-2.5.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-flake8-1.0.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-pythonpath-0.7.2[${PYTHON_USEDEP}]
-		=dev-python/pytest-timeout-1.2.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-xdist-1.18.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.2.0[${PYTHON_USEDEP}] <dev-python/pytest-3.3.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-2.5.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-flake8-1.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-pythonpath-0.7.2[${PYTHON_USEDEP}]
+		~dev-python/pytest-timeout-1.2.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-xdist-1.18.2[${PYTHON_USEDEP}]
 		dev-python/pytz[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		>=dev-python/sanic-0.7.0[${PYTHON_USEDEP}]
-		<dev-python/tornado-5.0[${PYTHON_USEDEP}]
+		>=dev-python/tornado-4.1[${PYTHON_USEDEP}] <dev-python/tornado-5.0[${PYTHON_USEDEP}]
 		dev-python/tox[${PYTHON_USEDEP}]
 		dev-python/webob[${PYTHON_USEDEP}]
 		dev-python/webtest[${PYTHON_USEDEP}]

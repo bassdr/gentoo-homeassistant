@@ -10,20 +10,30 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Flask-Limiter/"
+  https://pypi.org/project/flask-limiter/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flask>=2
+	limits>=3.13
+	limits[memcached]; extra == "memcached"
+	limits[mongodb]; extra == "mongodb"
+	limits[redis]; extra == "redis"
+	ordered-set<5,>4
+	rich<14,>=12
+	typing-extensions>=4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flask-2[${PYTHON_USEDEP}]
 	>=dev-python/limits-3.13[${PYTHON_USEDEP}]
 	memcached? ( dev-python/limits[memcached,${PYTHON_USEDEP}] )
 	mongodb? ( dev-python/limits[mongodb,${PYTHON_USEDEP}] )
 	redis? ( dev-python/limits[redis,${PYTHON_USEDEP}] )
-	<dev-python/ordered-set-5[${PYTHON_USEDEP}]
-	<dev-python/rich-14[${PYTHON_USEDEP}]
+	>dev-python/ordered-set-4[${PYTHON_USEDEP}] <dev-python/ordered-set-5[${PYTHON_USEDEP}]
+	>=dev-python/rich-12[${PYTHON_USEDEP}] <dev-python/rich-14[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

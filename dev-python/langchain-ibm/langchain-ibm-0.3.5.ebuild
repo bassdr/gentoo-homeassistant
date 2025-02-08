@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ibm-watsonx-ai<2.0.0,>=1.1.16
+	langchain-core<0.4,>=0.3.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/ibm-watsonx-ai-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/langchain-core-0.4[${PYTHON_USEDEP}]
+	>=dev-python/ibm-watsonx-ai-1.1.16[${PYTHON_USEDEP}] <dev-python/ibm-watsonx-ai-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/langchain-core-0.3.0[${PYTHON_USEDEP}] <dev-python/langchain-core-0.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

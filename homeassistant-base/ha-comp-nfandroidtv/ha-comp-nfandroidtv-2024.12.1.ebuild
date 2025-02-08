@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/notifications-android-tv-0.1.5[${PYTHON_USEDEP}]
+	~dev-python/notifications-android-tv-0.1.5[${PYTHON_USEDEP}]
 "

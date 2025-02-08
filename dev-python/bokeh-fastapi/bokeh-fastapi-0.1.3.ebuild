@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bokeh>=2.3.3
+	fastapi>=0.68.0
+	starlette
+	websockets>=10.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bokeh-2.3.3[${PYTHON_USEDEP}]
 	>=dev-python/fastapi-0.68.0[${PYTHON_USEDEP}]

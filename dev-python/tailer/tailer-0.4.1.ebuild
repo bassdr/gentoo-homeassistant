@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python tail is a simple implementation of GNU tail and head."
 HOMEPAGE="
-  https://pypi.org/project/Tailer/
+  https://pypi.org/project/tailer/
 "
 
 LICENSE="MIT"

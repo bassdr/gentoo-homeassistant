@@ -24,6 +24,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Pillow
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
 "

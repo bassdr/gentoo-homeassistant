@@ -19,14 +19,18 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE=""
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.0)
+	asyncio_dgram (>=2.0.0,<3.0.0)
+	voluptuous (>=0.11.7)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
-	>=dev-python/asyncio-dgram-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/asyncio-dgram-2.0.0[${PYTHON_USEDEP}] <dev-python/asyncio-dgram-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.11.7[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
@@ -39,8 +43,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	dev-python/asynctest[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
-	dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
-)"

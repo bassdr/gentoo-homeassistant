@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/volvooncall-0.10.3[${PYTHON_USEDEP}]
+	~dev-python/volvooncall-0.10.3[${PYTHON_USEDEP}]
 "

@@ -16,6 +16,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adal>=1.0.2; extra == "adal"
+	certifi>=14.05.14
+	durationpy>=0.7
+	google-auth>=1.0.1
+	oauthlib>=3.2.2
+	python-dateutil>=2.5.3
+	pyyaml>=5.4.1
+	requests
+	requests-oauthlib
+	six>=1.9.0
+	urllib3>=1.24.2
+	websocket-client!=0.40.0,!=0.41.*,!=0.42.*,>=0.32.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	adal? ( >=dev-python/adal-1.0.2[${PYTHON_USEDEP}] )
 	>=dev-python/certifi-14.05.14[${PYTHON_USEDEP}]
@@ -28,7 +42,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests-oauthlib[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.24.2[${PYTHON_USEDEP}]
-	!=dev-python/websocket-client-0.40.0[${PYTHON_USEDEP}]
+	>=dev-python/websocket-client-0.32.0[${PYTHON_USEDEP}] !~dev-python/websocket-client-0.40.0[${PYTHON_USEDEP}] !=dev-python/websocket-client-0.41*[${PYTHON_USEDEP}] !=dev-python/websocket-client-0.42*[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

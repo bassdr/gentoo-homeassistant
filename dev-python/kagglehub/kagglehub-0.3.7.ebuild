@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	datasets; extra == "hf-datasets"
+	model-signing
+	packaging
+	pandas; extra == "hf-datasets"
+	pandas; extra == "pandas-datasets"
+	requests
+	tqdm
+"
 GENERATED_RDEPEND="${RDEPEND}
 	hf-datasets? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	dev-python/model-signing[${PYTHON_USEDEP}]

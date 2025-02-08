@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flake8-pyproject; extra == "dev"
+	black>=24.2.0; extra == "dev"
+	build; extra == "dev"
+	flake8>=6.0.0; extra == "dev"
+	isort>=5.11.2; extra == "dev"
+	packaging>=20.9
+	pre-commit>=2.15.0; extra == "dev"
+	pyright>=1.1.348; extra == "dev"
+	pytest>=6.2.4; extra == "test"
+	syrupy>=4.6.0; extra == "test"
+	typing-extensions>=3.10.0.0
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]

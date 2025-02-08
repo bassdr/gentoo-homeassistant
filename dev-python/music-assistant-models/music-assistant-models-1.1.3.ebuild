@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Music Assistant Base Models"
 HOMEPAGE="
-  https://pypi.org/project/music_assistant_models/
+  https://pypi.org/project/music-assistant-models/
 "
 
 LICENSE="Apache-2.0"
@@ -20,6 +20,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	codespell==2.3.0; extra == "test"
+	isort==5.13.2; extra == "test"
+	mashumaro>=3.14
+	mypy==1.13.0; extra == "test"
+	orjson>=3.9
+	pre-commit-hooks==5.0.0; extra == "test"
+	pre-commit==4.0.1; extra == "test"
+	pytest-cov==6.0.0; extra == "test"
+	pytest==8.3.3; extra == "test"
+	ruff==0.7.4; extra == "test"
+	tomli==2.1.0; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mashumaro-3.14[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9[${PYTHON_USEDEP}]
@@ -36,15 +49,15 @@ src_prepare() {
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
-		=dev-python/isort-5.13.2[${PYTHON_USEDEP}]
-		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
-		=dev-python/pre-commit-hooks-5.0.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
-		=dev-python/ruff-0.7.4[${PYTHON_USEDEP}]
-		=dev-python/tomli-2.1.0[${PYTHON_USEDEP}]
-		=dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
+		~dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
+		~dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		~dev-python/pre-commit-hooks-5.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
+		~dev-python/ruff-0.7.4[${PYTHON_USEDEP}]
+		~dev-python/tomli-2.1.0[${PYTHON_USEDEP}]
+		~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

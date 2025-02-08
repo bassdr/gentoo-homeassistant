@@ -16,13 +16,23 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-resources ; python_version < "3.9"
+	numba >=0.53
+	numpy >=1.17
+	numpydoc ; extra == 'docs'
+	optuna >=2.10.0 ; extra == 'design'
+	pytest <8 ; extra == 'tests'
+	pytest-cov ; extra == 'tests'
+	scipy >=1.1 ; extra == 'tests'
+	sphinx !=1.3.1 ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	>=dev-python/numba-0.53[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	design? ( >=dev-python/optuna-2.10.0[${PYTHON_USEDEP}] )
-	docs? ( !=dev-python/sphinx-1.3.1[${PYTHON_USEDEP}] )
+	docs? ( !~dev-python/sphinx-1.3.1[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

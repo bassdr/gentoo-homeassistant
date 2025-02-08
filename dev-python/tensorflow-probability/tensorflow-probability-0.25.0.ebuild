@@ -12,12 +12,26 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/tensorflow_probability/"
+  https://pypi.org/project/tensorflow-probability/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py
+	cloudpickle>=1.3
+	decorator
+	dm-tree
+	gast>=0.3.2
+	jax; extra == "jax"
+	jaxlib; extra == "jax"
+	numpy>=1.13.3
+	six>=1.10.0
+	tensorflow-datasets>=2.2.0; extra == "tfds"
+	tensorflow>=2.16; extra == "tf"
+	tf-keras>=2.16; extra == "tf"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
@@ -35,7 +49,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

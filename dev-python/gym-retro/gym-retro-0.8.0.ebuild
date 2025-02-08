@@ -17,10 +17,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	gym
+	m2r ; extra == 'docs'
+	pyglet (==1.*,>=1.3.2)
+	sphinx ; extra == 'docs'
+	sphinx-autobuild ; extra == 'docs'
+	sphinx-rtd-theme ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/gym[${PYTHON_USEDEP}]
 	docs? ( dev-python/m2r[${PYTHON_USEDEP}] )
-	=dev-python/pyglet-1*[${PYTHON_USEDEP}]
+	=dev-python/pyglet-1*[${PYTHON_USEDEP}] >=dev-python/pyglet-1.3.2[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
@@ -28,7 +36,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

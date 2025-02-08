@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A python3 library to communicate with Adax"
 HOMEPAGE="
-  https://pypi.org/project/Adax-local/
+  https://pypi.org/project/adax-local/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.0.6)
+	async-timeout (>=1.4.0)
+	bleak
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.6[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-1.4.0[${PYTHON_USEDEP}]

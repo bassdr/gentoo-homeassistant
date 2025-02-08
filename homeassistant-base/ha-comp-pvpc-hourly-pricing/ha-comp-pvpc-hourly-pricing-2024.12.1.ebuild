@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aiopvpc-4.2.2[${PYTHON_USEDEP}]
+	~dev-python/aiopvpc-4.2.2[${PYTHON_USEDEP}]
 "

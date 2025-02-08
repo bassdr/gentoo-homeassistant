@@ -26,6 +26,29 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs idna mypy"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	attrs>=19.1.0
+	coverage[toml]>=5.0.2; extra == "dev"
+	coverage[toml]>=5.0.2; extra == "tests"
+	cryptography
+	furo; extra == "docs"
+	idna; extra == "dev"
+	idna; extra == "idna"
+	idna; extra == "mypy"
+	mypy; extra == "dev"
+	mypy; extra == "mypy"
+	myst-parser; extra == "docs"
+	pyasn1
+	pyasn1-modules
+	pyopenssl; extra == "dev"
+	pyopenssl; extra == "docs"
+	pytest; extra == "dev"
+	pytest; extra == "tests"
+	sphinx-notfound-page; extra == "docs"
+	sphinx; extra == "docs"
+	types-pyopenssl; extra == "dev"
+	types-pyopenssl; extra == "mypy"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.1.0[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]

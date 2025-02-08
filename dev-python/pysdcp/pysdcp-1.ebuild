@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="SDCP library to control Sony Projectors"
 HOMEPAGE="
-  https://pypi.org/project/pySDCP/
+  https://pypi.org/project/pysdcp/
 "
 
 LICENSE="MIT"

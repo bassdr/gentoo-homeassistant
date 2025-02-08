@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/upcloud-api-2.6.0[${PYTHON_USEDEP}]
+	~dev-python/upcloud-api-2.6.0[${PYTHON_USEDEP}]
 "

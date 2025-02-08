@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioecowitt-2024.2.1[${PYTHON_USEDEP}]
+	~dev-python/aioecowitt-2024.2.1[${PYTHON_USEDEP}]
 "

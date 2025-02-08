@@ -21,6 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	azure-core>=1.31.0
+	cryptography>=2.5
+	msal-extensions>=1.2.0
+	msal>=1.30.0
+	typing-extensions>=4.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-core-1.31.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]

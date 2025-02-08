@@ -25,16 +25,27 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.0.0
+	awesomeversion>=22.1.0
+	backoff>=2.2.0
+	cachetools>=4.0.0
+	mashumaro<4.0,>=3.13
+	orjson>=3.9.8
+	typer[all]<0.13.0,>=0.12.3; extra == "cli"
+	yarl>=1.6.0
+	zeroconf[all]<0.133.0,>=0.132.2; extra == "cli"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/awesomeversion-22.1.0[${PYTHON_USEDEP}]
 	>=dev-python/backoff-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/cachetools-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
+	>=dev-python/mashumaro-3.13[${PYTHON_USEDEP}] <dev-python/mashumaro-4.0[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.9.8[${PYTHON_USEDEP}]
-	cli? ( <dev-python/typer-0.13.0[all,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/typer-0.12.3[all,${PYTHON_USEDEP}] <dev-python/typer-0.13.0[all,${PYTHON_USEDEP}] )
 	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]
-	cli? ( <dev-python/zeroconf-0.133.0[all,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/zeroconf-0.132.2[all,${PYTHON_USEDEP}] <dev-python/zeroconf-0.133.0[all,${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]

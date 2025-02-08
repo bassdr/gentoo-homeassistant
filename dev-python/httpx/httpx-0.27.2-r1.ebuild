@@ -24,19 +24,34 @@ SRC_URI="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="cli http2 socks zstd"
+GENERATED_IUSE="brotli cli http2 socks zstd"
 IUSE="${GENERATED_IUSE} brotli cli http2 +socks zstd"
 
+REQUIRES_DIST="
+	anyio
+	brotli; platform_python_implementation == "CPython" and extra == "brotli"
+	brotlicffi; platform_python_implementation != "CPython" and extra == "brotli"
+	certifi
+	click==8.*; extra == "cli"
+	h2<5,>=3; extra == "http2"
+	httpcore==1.*
+	idna
+	pygments==2.*; extra == "cli"
+	rich<14,>=10; extra == "cli"
+	sniffio
+	socksio==1.*; extra == "socks"
+	zstandard>=0.18.0; extra == "zstd"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/anyio[${PYTHON_USEDEP}]
-	dev-python/brotli[${PYTHON_USEDEP}]
+	brotli? ( dev-python/brotli[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
 	cli? ( =dev-python/click-8*[${PYTHON_USEDEP}] )
-	http2? ( <dev-python/h2-5[${PYTHON_USEDEP}] )
+	http2? ( >=dev-python/h2-3[${PYTHON_USEDEP}] <dev-python/h2-5[${PYTHON_USEDEP}] )
 	=dev-python/httpcore-1*[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
 	cli? ( =dev-python/pygments-2*[${PYTHON_USEDEP}] )
-	cli? ( <dev-python/rich-14[${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/rich-10[${PYTHON_USEDEP}] <dev-python/rich-14[${PYTHON_USEDEP}] )
 	dev-python/sniffio[${PYTHON_USEDEP}]
 	socks? ( =dev-python/socksio-1*[${PYTHON_USEDEP}] )
 	zstd? ( >=dev-python/zstandard-0.18.0[${PYTHON_USEDEP}] )

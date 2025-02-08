@@ -17,7 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Jinja2 (>=2.9)
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-2.9[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

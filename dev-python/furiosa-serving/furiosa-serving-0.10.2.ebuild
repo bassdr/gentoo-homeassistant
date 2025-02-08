@@ -17,6 +17,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow
+	furiosa-server==0.10.*
+	furiosa-server[openvino]==0.10.*; extra == "openvino"
+	httpx
+	mypy; extra == "test"
+	opentelemetry-api
+	opentelemetry-exporter-otlp
+	opentelemetry-instrumentation-fastapi
+	opentelemetry-instrumentation-logging
+	opentelemetry-sdk
+	prometheus-client
+	pytest-asyncio~=0.17.2; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	python-multipart
+	ruff; extra == "test"
+	transformers; extra == "openvino"
+	types-Pillow; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/furiosa-server-0.10*[${PYTHON_USEDEP}]
 	openvino? ( =dev-python/furiosa-server-0.10*[openvino,${PYTHON_USEDEP}] )
@@ -35,7 +55,6 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/mypy[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

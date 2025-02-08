@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pytrydan-0.8.0[${PYTHON_USEDEP}]
+	~dev-python/pytrydan-0.8.0[${PYTHON_USEDEP}]
 "

@@ -18,7 +18,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	click (>=4.0)
+	coveralls ; extra == 'dev'
+	pytest (>=3.6) ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-4.0[${PYTHON_USEDEP}]
 "

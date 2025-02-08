@@ -22,6 +22,23 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Pygments>=2.0; extra == "test"
+	anyio; extra == "test"
+	changelogd; extra == "dev"
+	changelogd; extra == "docs"
+	docutils>=0.12; extra == "test"
+	furo; extra == "docs"
+	nox; extra == "dev"
+	pytest-asyncio>=0.15.1; extra == "test"
+	pytest-rerunfailures; extra == "test"
+	pytest-timeout; extra == "test"
+	pytest>=4.0.0
+	pytest>=4.0; extra == "test"
+	sphinx-autodoc-typehints; extra == "docs"
+	sphinx; extra == "docs"
+	sphinxcontrib-napoleon; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/changelogd[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )

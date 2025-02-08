@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,22 +14,33 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML<7.0,>=5.1
+	google-api-core<=3.0.0,>=2.13.0
+	google-auth-oauthlib<2.0.0,>=0.3.0
+	googleapis-common-protos<2.0.0,>=1.56.3
+	grpcio-status<2.0.0,>=1.59.0
+	grpcio<2.0.0,>=1.59.0
+	nox<2022.6,>=2020.12.31; extra == "tests"
+	proto-plus<2.0.0,>=1.22.3
+	protobuf<6.0.0,>=4.25.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<=dev-python/google-api-core-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/google-auth-oauthlib-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/googleapis-common-protos-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/grpcio-status-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/proto-plus-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6.0.0[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7.0[${PYTHON_USEDEP}]
+	>=dev-python/google-api-core-2.13.0[${PYTHON_USEDEP}] <=dev-python/google-api-core-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/google-auth-oauthlib-0.3.0[${PYTHON_USEDEP}] <dev-python/google-auth-oauthlib-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/googleapis-common-protos-1.56.3[${PYTHON_USEDEP}] <dev-python/googleapis-common-protos-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.59.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-status-1.59.0[${PYTHON_USEDEP}] <dev-python/grpcio-status-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/proto-plus-1.22.3[${PYTHON_USEDEP}] <dev-python/proto-plus-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-4.25.0[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}] <dev-python/pyyaml-7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/nox-2022.6[${PYTHON_USEDEP}]
+		>=dev-python/nox-2020.12.31[${PYTHON_USEDEP}] <dev-python/nox-2022.6[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	boto3>=1.10.49
+	envs>=1.3
+	pyjwt[crypto]>=2.8.0
+	requests>=2.22.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.10.49[${PYTHON_USEDEP}]
 	>=dev-python/envs-1.3[${PYTHON_USEDEP}]

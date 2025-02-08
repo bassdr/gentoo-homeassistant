@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="readme.md"
 
+REQUIRES_DIST="
+	cryptography
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

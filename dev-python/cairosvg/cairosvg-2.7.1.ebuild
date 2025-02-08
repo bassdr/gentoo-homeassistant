@@ -18,6 +18,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cairocffi
+	cssselect2
+	defusedxml
+	flake8 ; extra == 'test'
+	isort ; extra == 'test'
+	pillow
+	pytest ; extra == 'test'
+	sphinx ; extra == 'doc'
+	sphinx-rtd-theme ; extra == 'doc'
+	tinycss2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cairocffi[${PYTHON_USEDEP}]
 	dev-python/cssselect2[${PYTHON_USEDEP}]

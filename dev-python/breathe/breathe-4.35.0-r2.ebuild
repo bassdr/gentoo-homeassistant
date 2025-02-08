@@ -20,10 +20,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Sphinx (!=5.0.0,>=4.0)
+	docutils (>=0.12)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.12[${PYTHON_USEDEP}]
-	!=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-4.0[${PYTHON_USEDEP}] !~dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	app-text/doxygen

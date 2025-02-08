@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/alpha-vantage-2.3.1[${PYTHON_USEDEP}]
+	~dev-python/alpha-vantage-2.3.1[${PYTHON_USEDEP}]
 "

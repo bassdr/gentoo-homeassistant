@@ -16,6 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docutils
+	ipython ; extra == 'test'
+	jinja2
+	matplotlib (>=2.2.4) ; extra == 'plot'
+	matplotlib (>=2.2.4) ; extra == 'test'
+	numpy ; extra == 'test'
+	playwright ; extra == 'visual_test'
+	pytest (>=6.0.0) ; extra == 'test'
+	pytest-asyncio ; extra == 'test'
+	sphinx (>=1.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]

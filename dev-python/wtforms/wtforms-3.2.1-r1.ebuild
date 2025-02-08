@@ -18,6 +18,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="email"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	email-validator; extra == "email"
+	markupsafe
+"
 GENERATED_RDEPEND="${RDEPEND}
 	email? ( dev-python/email-validator[${PYTHON_USEDEP}] )
 	dev-python/markupsafe[${PYTHON_USEDEP}]

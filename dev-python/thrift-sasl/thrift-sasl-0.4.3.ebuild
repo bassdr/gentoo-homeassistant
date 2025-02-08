@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pure-sasl (>=0.6.2)
+	six (>=1.13.0)
+	thrift (>=0.10.0) ; python_version >= "3.0"
+	thrift (>=0.9.3) ; python_version < "3.0"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pure-sasl-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.13.0[${PYTHON_USEDEP}]

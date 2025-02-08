@@ -25,11 +25,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx<8.0.0,>=7.0.0; extra == "docs"
+	aiolifx<2.0.0,>=1.1.0
+	myst-parser<4.0.0,>=3.0.0; extra == "docs"
+	sphinx-rtd-theme<3.0.0,>=2.0.0; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiolifx-2.0.0[${PYTHON_USEDEP}]
-	docs? ( <dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-rtd-theme-3.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/aiolifx-1.1.0[${PYTHON_USEDEP}] <dev-python/aiolifx-2.0.0[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/myst-parser-3.0.0[${PYTHON_USEDEP}] <dev-python/myst-parser-4.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-7.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-3.0.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiolifx-1.1.0[${PYTHON_USEDEP}]"

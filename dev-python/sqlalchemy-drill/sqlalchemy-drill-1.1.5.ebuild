@@ -16,6 +16,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	JPype1; extra == "jdbc"
+	JayDeBeApi; extra == "jdbc"
+	ijson
+	pyodbc; extra == "odbc"
+	requests
+	sqlalchemy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ijson[${PYTHON_USEDEP}]
 	jdbc? ( dev-python/jaydebeapi[${PYTHON_USEDEP}] )

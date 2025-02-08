@@ -16,6 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docutils>=0.15
+	furo; extra == "docs"
+	jaraco.packaging>=9.3; extra == "docs"
+	jaraco.packaging>=9.5
+	pytest!=8.1.*,>=6; extra == "testing"
+	pytest-checkdocs>=2.4; extra == "testing"
+	pytest-cov; extra == "testing"
+	pytest-enabler>=2.2; extra == "testing"
+	pytest-mypy; extra == "testing"
+	pytest-ruff>=0.2.1; extra == "testing"
+	rst.linker>=1.9; extra == "docs"
+	sphinx-lint; extra == "docs"
+	sphinx>=3.5; extra == "docs"
+	types-docutils; extra == "testing"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.15[${PYTHON_USEDEP}]
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -30,7 +46,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]

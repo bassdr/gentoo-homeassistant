@@ -20,8 +20,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="examples"
 
+REQUIRES_DIST="
+	click <9,>=7.0
+	mypy ; extra == 'dev'
+	pytest ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/click-9[${PYTHON_USEDEP}]
+	>=dev-python/click-7.0[${PYTHON_USEDEP}] <dev-python/click-9[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]

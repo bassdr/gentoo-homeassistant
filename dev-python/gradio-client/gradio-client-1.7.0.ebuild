@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	fsspec
+	httpx>=0.24.1
+	huggingface-hub>=0.19.3
+	packaging
+	typing-extensions~=4.0
+	websockets<15.0,>=10.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fsspec[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
 	>=dev-python/huggingface-hub-0.19.3[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}] =dev-python/typing-extensions-4*[${PYTHON_USEDEP}]
-	<dev-python/websockets-15.0[${PYTHON_USEDEP}]
+	>=dev-python/websockets-10.0[${PYTHON_USEDEP}] <dev-python/websockets-15.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -21,6 +21,16 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	convertdate ; extra == 'calendars'
+	fasttext ; extra == 'fasttext'
+	hijri-converter ; extra == 'calendars'
+	langdetect ; extra == 'langdetect'
+	python-dateutil
+	pytz
+	regex !=2019.02.19,!=2021.8.27
+	tzlocal
+"
 GENERATED_RDEPEND="${RDEPEND}
 	calendars? ( dev-python/convertdate[${PYTHON_USEDEP}] )
 	fasttext? ( dev-python/fasttext[${PYTHON_USEDEP}] )
@@ -28,7 +38,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	langdetect? ( dev-python/langdetect[${PYTHON_USEDEP}] )
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	!=dev-python/regex-2019.02.19[${PYTHON_USEDEP}]
+	!~dev-python/regex-2019.02.19[${PYTHON_USEDEP}] !~dev-python/regex-2021.8.27[${PYTHON_USEDEP}]
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

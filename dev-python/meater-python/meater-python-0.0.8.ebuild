@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (<=4)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	<=dev-python/aiohttp-4[${PYTHON_USEDEP}]
 "

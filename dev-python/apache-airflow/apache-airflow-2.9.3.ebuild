@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="aiobotocore airbyte alibaba all all-core all-dbs amazon apache-atlas apache-cassandra apache-drill apache-druid apache-flink apache-hdfs apache-hive apache-impala apache-kafka apache-kylin apache-livy apache-pig apache-pinot apache-spark apache-webhdfs apprise arangodb asana async atlas atlassian-jira aws azure cassandra celery cgroups cloudant cncf-kubernetes cohere common-io common-sql databricks datadog dbt-cloud deprecated-api devel-ci dingding discord docker druid elasticsearch exasol fab facebook ftp gcp gcp-api github github-enterprise google google-auth graphviz grpc hashicorp hdfs hive http imap influxdb jdbc jenkins kerberos kubernetes ldap leveldb microsoft-azure microsoft-mssql microsoft-psrp microsoft-winrm mongo mssql mysql neo4j odbc openai openfaas openlineage opensearch opsgenie oracle otel pagerduty pandas password pgvector pinecone pinot postgres presto pydantic qdrant rabbitmq redis s3 s3fs salesforce samba saml segment sendgrid sentry sftp singularity slack smtp snowflake spark sqlite ssh statsd tableau tabular telegram teradata trino uv vertica virtualenv weaviate webhdfs winrm yandex zendesk"
+GENERATED_IUSE="aiobotocore airbyte alibaba all all-core all-dbs amazon apache-atlas apache-beam apache-cassandra apache-drill apache-druid apache-flink apache-hdfs apache-hive apache-impala apache-kafka apache-kylin apache-livy apache-pig apache-pinot apache-spark apache-webhdfs apprise arangodb asana async atlas atlassian-jira aws azure cassandra celery cgroups cloudant cncf-kubernetes cohere common-io common-sql databricks datadog dbt-cloud deprecated-api devel-ci dingding discord docker druid elasticsearch exasol fab facebook ftp gcp gcp-api github github-enterprise google google-auth graphviz grpc hashicorp hdfs hive http imap influxdb jdbc jenkins kerberos kubernetes ldap leveldb microsoft-azure microsoft-mssql microsoft-psrp microsoft-winrm mongo mssql mysql neo4j odbc openai openfaas openlineage opensearch opsgenie oracle otel pagerduty pandas papermill password pgvector pinecone pinot postgres presto pydantic qdrant rabbitmq redis s3 s3fs salesforce samba saml segment sendgrid sentry sftp singularity slack smtp snowflake spark sqlite ssh statsd tableau tabular telegram teradata trino uv vertica virtualenv weaviate webhdfs winrm yandex zendesk"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,12 +16,484 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiobotocore>=2.7.0; extra == "aiobotocore"
+	aiobotocore>=2.7.0; extra == "devel-ci"
+	aiofiles>=23.2.0; extra == "devel-ci"
+	aioresponses>=0.7.6; extra == "devel-ci"
+	alembic<2.0,>=1.13.1
+	amqp; extra == "devel-ci"
+	amqp; extra == "rabbitmq"
+	apache-airflow-providers-airbyte; extra == "airbyte"
+	apache-airflow-providers-alibaba; extra == "alibaba"
+	apache-airflow-providers-amazon; extra == "amazon"
+	apache-airflow-providers-apache-beam; python_version != "3.12" and extra == "apache-beam"
+	apache-airflow-providers-apache-cassandra; extra == "apache-cassandra"
+	apache-airflow-providers-apache-drill; extra == "apache-drill"
+	apache-airflow-providers-apache-druid; extra == "apache-druid"
+	apache-airflow-providers-apache-flink; extra == "apache-flink"
+	apache-airflow-providers-apache-hdfs; extra == "apache-hdfs"
+	apache-airflow-providers-apache-hive; extra == "apache-hive"
+	apache-airflow-providers-apache-impala; extra == "apache-impala"
+	apache-airflow-providers-apache-kafka; extra == "apache-kafka"
+	apache-airflow-providers-apache-kylin; extra == "apache-kylin"
+	apache-airflow-providers-apache-livy; extra == "apache-livy"
+	apache-airflow-providers-apache-pig; extra == "apache-pig"
+	apache-airflow-providers-apache-pinot; extra == "apache-pinot"
+	apache-airflow-providers-apache-spark; extra == "apache-spark"
+	apache-airflow-providers-apprise; extra == "apprise"
+	apache-airflow-providers-arangodb; extra == "arangodb"
+	apache-airflow-providers-asana; extra == "asana"
+	apache-airflow-providers-atlassian-jira; extra == "atlassian-jira"
+	apache-airflow-providers-celery; extra == "celery"
+	apache-airflow-providers-cloudant; extra == "cloudant"
+	apache-airflow-providers-cncf-kubernetes; extra == "cncf-kubernetes"
+	apache-airflow-providers-cohere; extra == "cohere"
+	apache-airflow-providers-common-io
+	apache-airflow-providers-common-io; extra == "common-io"
+	apache-airflow-providers-common-sql
+	apache-airflow-providers-common-sql; extra == "common-sql"
+	apache-airflow-providers-databricks; extra == "databricks"
+	apache-airflow-providers-datadog; extra == "datadog"
+	apache-airflow-providers-dbt-cloud; extra == "dbt-cloud"
+	apache-airflow-providers-dingding; extra == "dingding"
+	apache-airflow-providers-discord; extra == "discord"
+	apache-airflow-providers-docker; extra == "docker"
+	apache-airflow-providers-elasticsearch; extra == "elasticsearch"
+	apache-airflow-providers-exasol; extra == "exasol"
+	apache-airflow-providers-fab; extra == "fab"
+	apache-airflow-providers-fab>=1.0.2
+	apache-airflow-providers-facebook; extra == "facebook"
+	apache-airflow-providers-ftp
+	apache-airflow-providers-ftp; extra == "ftp"
+	apache-airflow-providers-github; extra == "github"
+	apache-airflow-providers-google; extra == "google"
+	apache-airflow-providers-grpc; extra == "grpc"
+	apache-airflow-providers-hashicorp; extra == "hashicorp"
+	apache-airflow-providers-http
+	apache-airflow-providers-http; extra == "http"
+	apache-airflow-providers-imap
+	apache-airflow-providers-imap; extra == "imap"
+	apache-airflow-providers-influxdb; extra == "influxdb"
+	apache-airflow-providers-jdbc; extra == "jdbc"
+	apache-airflow-providers-jenkins; extra == "jenkins"
+	apache-airflow-providers-microsoft-azure; extra == "microsoft-azure"
+	apache-airflow-providers-microsoft-mssql; extra == "microsoft-mssql"
+	apache-airflow-providers-microsoft-psrp; extra == "microsoft-psrp"
+	apache-airflow-providers-microsoft-winrm; extra == "microsoft-winrm"
+	apache-airflow-providers-mongo; extra == "mongo"
+	apache-airflow-providers-mysql; extra == "mysql"
+	apache-airflow-providers-neo4j; extra == "neo4j"
+	apache-airflow-providers-odbc; extra == "odbc"
+	apache-airflow-providers-openai; extra == "openai"
+	apache-airflow-providers-openfaas; extra == "openfaas"
+	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow-providers-opensearch; extra == "opensearch"
+	apache-airflow-providers-opsgenie; extra == "opsgenie"
+	apache-airflow-providers-oracle; extra == "oracle"
+	apache-airflow-providers-pagerduty; extra == "pagerduty"
+	apache-airflow-providers-papermill; python_version != "3.12" and extra == "papermill"
+	apache-airflow-providers-pgvector; extra == "pgvector"
+	apache-airflow-providers-pinecone; extra == "pinecone"
+	apache-airflow-providers-postgres; extra == "postgres"
+	apache-airflow-providers-presto; extra == "presto"
+	apache-airflow-providers-qdrant; extra == "qdrant"
+	apache-airflow-providers-redis; extra == "redis"
+	apache-airflow-providers-salesforce; extra == "salesforce"
+	apache-airflow-providers-samba; extra == "samba"
+	apache-airflow-providers-segment; extra == "segment"
+	apache-airflow-providers-sendgrid; extra == "sendgrid"
+	apache-airflow-providers-sftp; extra == "sftp"
+	apache-airflow-providers-singularity; extra == "singularity"
+	apache-airflow-providers-slack; extra == "slack"
+	apache-airflow-providers-smtp
+	apache-airflow-providers-smtp; extra == "smtp"
+	apache-airflow-providers-snowflake; extra == "snowflake"
+	apache-airflow-providers-sqlite
+	apache-airflow-providers-sqlite; extra == "sqlite"
+	apache-airflow-providers-ssh; extra == "ssh"
+	apache-airflow-providers-tableau; extra == "tableau"
+	apache-airflow-providers-tabular; extra == "tabular"
+	apache-airflow-providers-telegram; extra == "telegram"
+	apache-airflow-providers-teradata; extra == "teradata"
+	apache-airflow-providers-trino; extra == "trino"
+	apache-airflow-providers-vertica; extra == "vertica"
+	apache-airflow-providers-weaviate; extra == "weaviate"
+	apache-airflow-providers-yandex; extra == "yandex"
+	apache-airflow-providers-zendesk; extra == "zendesk"
+	apache-airflow[aiobotocore]; extra == "all"
+	apache-airflow[aiobotocore]; extra == "all-core"
+	apache-airflow[airbyte]; extra == "all"
+	apache-airflow[alibaba]; extra == "all"
+	apache-airflow[all-dbs]; extra == "all"
+	apache-airflow[amazon]; extra == "all"
+	apache-airflow[amazon]; extra == "aws"
+	apache-airflow[amazon]; extra == "s3"
+	apache-airflow[apache-atlas]; extra == "all"
+	apache-airflow[apache-atlas]; extra == "all-core"
+	apache-airflow[apache-atlas]; extra == "atlas"
+	apache-airflow[apache-beam]; extra == "all"
+	apache-airflow[apache-cassandra]; extra == "all"
+	apache-airflow[apache-cassandra]; extra == "all-dbs"
+	apache-airflow[apache-cassandra]; extra == "cassandra"
+	apache-airflow[apache-drill]; extra == "all"
+	apache-airflow[apache-drill]; extra == "all-dbs"
+	apache-airflow[apache-druid]; extra == "all"
+	apache-airflow[apache-druid]; extra == "all-dbs"
+	apache-airflow[apache-druid]; extra == "druid"
+	apache-airflow[apache-flink]; extra == "all"
+	apache-airflow[apache-hdfs]; extra == "all"
+	apache-airflow[apache-hdfs]; extra == "all-dbs"
+	apache-airflow[apache-hdfs]; extra == "hdfs"
+	apache-airflow[apache-hive]; extra == "all"
+	apache-airflow[apache-hive]; extra == "all-dbs"
+	apache-airflow[apache-hive]; extra == "hive"
+	apache-airflow[apache-impala]; extra == "all"
+	apache-airflow[apache-impala]; extra == "all-dbs"
+	apache-airflow[apache-kafka]; extra == "all"
+	apache-airflow[apache-kylin]; extra == "all"
+	apache-airflow[apache-livy]; extra == "all"
+	apache-airflow[apache-pig]; extra == "all"
+	apache-airflow[apache-pinot]; extra == "all"
+	apache-airflow[apache-pinot]; extra == "all-dbs"
+	apache-airflow[apache-pinot]; extra == "pinot"
+	apache-airflow[apache-spark]; extra == "all"
+	apache-airflow[apache-spark]; extra == "spark"
+	apache-airflow[apache-webhdfs]; extra == "all"
+	apache-airflow[apache-webhdfs]; extra == "all-core"
+	apache-airflow[apache-webhdfs]; extra == "webhdfs"
+	apache-airflow[apprise]; extra == "all"
+	apache-airflow[arangodb]; extra == "all"
+	apache-airflow[arangodb]; extra == "all-dbs"
+	apache-airflow[asana]; extra == "all"
+	apache-airflow[async]; extra == "all"
+	apache-airflow[async]; extra == "all-core"
+	apache-airflow[atlassian-jira]; extra == "all"
+	apache-airflow[celery]; extra == "all"
+	apache-airflow[cgroups]; extra == "all"
+	apache-airflow[cgroups]; extra == "all-core"
+	apache-airflow[cloudant]; extra == "all"
+	apache-airflow[cloudant]; extra == "all-dbs"
+	apache-airflow[cncf-kubernetes]; extra == "all"
+	apache-airflow[cncf-kubernetes]; extra == "kubernetes"
+	apache-airflow[cohere]; extra == "all"
+	apache-airflow[common-io]; extra == "all"
+	apache-airflow[common-sql]; extra == "all"
+	apache-airflow[databricks]; extra == "all"
+	apache-airflow[databricks]; extra == "all-dbs"
+	apache-airflow[datadog]; extra == "all"
+	apache-airflow[dbt-cloud]; extra == "all"
+	apache-airflow[deprecated-api]; extra == "all"
+	apache-airflow[deprecated-api]; extra == "all-core"
+	apache-airflow[dingding]; extra == "all"
+	apache-airflow[discord]; extra == "all"
+	apache-airflow[docker]; extra == "all"
+	apache-airflow[elasticsearch]; extra == "all"
+	apache-airflow[exasol]; extra == "all"
+	apache-airflow[exasol]; extra == "all-dbs"
+	apache-airflow[fab]; extra == "all"
+	apache-airflow[fab]; extra == "github-enterprise"
+	apache-airflow[fab]; extra == "google-auth"
+	apache-airflow[facebook]; extra == "all"
+	apache-airflow[ftp]; extra == "all"
+	apache-airflow[github-enterprise]; extra == "all"
+	apache-airflow[github-enterprise]; extra == "all-core"
+	apache-airflow[github]; extra == "all"
+	apache-airflow[google-auth]; extra == "all"
+	apache-airflow[google-auth]; extra == "all-core"
+	apache-airflow[google]; extra == "all"
+	apache-airflow[google]; extra == "gcp"
+	apache-airflow[google]; extra == "gcp-api"
+	apache-airflow[graphviz]; extra == "all"
+	apache-airflow[graphviz]; extra == "all-core"
+	apache-airflow[grpc]; extra == "all"
+	apache-airflow[hashicorp]; extra == "all"
+	apache-airflow[http]; extra == "all"
+	apache-airflow[imap]; extra == "all"
+	apache-airflow[influxdb]; extra == "all"
+	apache-airflow[influxdb]; extra == "all-dbs"
+	apache-airflow[jdbc]; extra == "all"
+	apache-airflow[jenkins]; extra == "all"
+	apache-airflow[kerberos]; extra == "all"
+	apache-airflow[kerberos]; extra == "all-core"
+	apache-airflow[ldap]; extra == "all"
+	apache-airflow[ldap]; extra == "all-core"
+	apache-airflow[leveldb]; extra == "all"
+	apache-airflow[leveldb]; extra == "all-core"
+	apache-airflow[microsoft-azure]; extra == "all"
+	apache-airflow[microsoft-azure]; extra == "azure"
+	apache-airflow[microsoft-mssql]; extra == "all"
+	apache-airflow[microsoft-mssql]; extra == "all-dbs"
+	apache-airflow[microsoft-mssql]; extra == "mssql"
+	apache-airflow[microsoft-psrp]; extra == "all"
+	apache-airflow[microsoft-winrm]; extra == "all"
+	apache-airflow[microsoft-winrm]; extra == "winrm"
+	apache-airflow[mongo]; extra == "all"
+	apache-airflow[mongo]; extra == "all-dbs"
+	apache-airflow[mysql]; extra == "all"
+	apache-airflow[mysql]; extra == "all-dbs"
+	apache-airflow[neo4j]; extra == "all"
+	apache-airflow[neo4j]; extra == "all-dbs"
+	apache-airflow[odbc]; extra == "all"
+	apache-airflow[openai]; extra == "all"
+	apache-airflow[openfaas]; extra == "all"
+	apache-airflow[openlineage]; extra == "all"
+	apache-airflow[opensearch]; extra == "all"
+	apache-airflow[opsgenie]; extra == "all"
+	apache-airflow[oracle]; extra == "all"
+	apache-airflow[otel]; extra == "all"
+	apache-airflow[otel]; extra == "all-core"
+	apache-airflow[pagerduty]; extra == "all"
+	apache-airflow[pandas]; extra == "all"
+	apache-airflow[pandas]; extra == "all-core"
+	apache-airflow[papermill]; extra == "all"
+	apache-airflow[password]; extra == "all"
+	apache-airflow[password]; extra == "all-core"
+	apache-airflow[pgvector]; extra == "all"
+	apache-airflow[pinecone]; extra == "all"
+	apache-airflow[postgres]; extra == "all"
+	apache-airflow[postgres]; extra == "all-dbs"
+	apache-airflow[presto]; extra == "all"
+	apache-airflow[presto]; extra == "all-dbs"
+	apache-airflow[pydantic]; extra == "all"
+	apache-airflow[pydantic]; extra == "all-core"
+	apache-airflow[qdrant]; extra == "all"
+	apache-airflow[rabbitmq]; extra == "all"
+	apache-airflow[rabbitmq]; extra == "all-core"
+	apache-airflow[redis]; extra == "all"
+	apache-airflow[s3fs]; extra == "all"
+	apache-airflow[s3fs]; extra == "all-core"
+	apache-airflow[salesforce]; extra == "all"
+	apache-airflow[samba]; extra == "all"
+	apache-airflow[saml]; extra == "all"
+	apache-airflow[saml]; extra == "all-core"
+	apache-airflow[segment]; extra == "all"
+	apache-airflow[sendgrid]; extra == "all"
+	apache-airflow[sentry]; extra == "all"
+	apache-airflow[sentry]; extra == "all-core"
+	apache-airflow[sftp]; extra == "all"
+	apache-airflow[singularity]; extra == "all"
+	apache-airflow[slack]; extra == "all"
+	apache-airflow[smtp]; extra == "all"
+	apache-airflow[snowflake]; extra == "all"
+	apache-airflow[sqlite]; extra == "all"
+	apache-airflow[ssh]; extra == "all"
+	apache-airflow[statsd]; extra == "all"
+	apache-airflow[statsd]; extra == "all-core"
+	apache-airflow[tableau]; extra == "all"
+	apache-airflow[tabular]; extra == "all"
+	apache-airflow[telegram]; extra == "all"
+	apache-airflow[teradata]; extra == "all"
+	apache-airflow[trino]; extra == "all"
+	apache-airflow[trino]; extra == "all-dbs"
+	apache-airflow[uv]; extra == "all"
+	apache-airflow[uv]; extra == "all-core"
+	apache-airflow[vertica]; extra == "all"
+	apache-airflow[vertica]; extra == "all-dbs"
+	apache-airflow[virtualenv]; extra == "all"
+	apache-airflow[virtualenv]; extra == "all-core"
+	apache-airflow[weaviate]; extra == "all"
+	apache-airflow[yandex]; extra == "all"
+	apache-airflow[zendesk]; extra == "all"
+	argcomplete>=1.10
+	asgiref
+	astroid<3.0,>=2.12.3; extra == "devel-ci"
+	atlasclient>=0.1.2; extra == "apache-atlas"
+	atlasclient>=0.1.2; extra == "devel-ci"
+	attrs>=22.1.0
+	authlib>=1.0.0; extra == "devel-ci"
+	authlib>=1.0.0; extra == "github-enterprise"
+	authlib>=1.0.0; extra == "google-auth"
+	backports-zoneinfo>=0.2.1; python_version < "3.9" and extra == "devel-ci"
+	bcrypt>=2.0.0; extra == "devel-ci"
+	bcrypt>=2.0.0; extra == "password"
+	beautifulsoup4>=4.7.1; extra == "devel-ci"
+	black>=23.12.0; extra == "devel-ci"
+	blinker>=1.1; extra == "devel-ci"
+	blinker>=1.1; extra == "sentry"
+	blinker>=1.6.2
+	blinker>=1.7.0; extra == "devel-ci"
+	cgroupspy>=0.2.2; extra == "cgroups"
+	cgroupspy>=0.2.2; extra == "devel-ci"
+	checksumdir>=1.2.0; extra == "devel-ci"
+	click!=8.1.4,!=8.1.5,>=8.0; extra == "devel-ci"
+	click>=8.0; extra == "devel-ci"
+	colorlog<5.0,>=4.0.2
+	configupdater>=3.1.1
+	connexion[flask]<3.0,>=2.10.0
+	coverage>=7.4.0; extra == "devel-ci"
+	cron-descriptor>=1.2.24
+	croniter>=2.0.2
+	cryptography>=39.0.0
+	deprecated>=1.2.13
+	diagrams>=0.23.4; extra == "devel-ci"
+	dill>=0.2.2
+	docutils<0.17,>=0.16; extra == "devel-ci"
+	duckdb>=0.10.0; python_version >= "3.12" and extra == "devel-ci"
+	duckdb>=0.9.0; python_version < "3.12" and extra == "devel-ci"
+	eralchemy2>=1.3.8; extra == "devel-ci"
+	eventlet>=0.33.3; extra == "async"
+	eventlet>=0.33.3; extra == "devel-ci"
+	flask-bcrypt>=0.7.1; extra == "devel-ci"
+	flask-bcrypt>=0.7.1; extra == "password"
+	flask-caching>=1.5.0
+	flask-session<0.6,>=0.4.0
+	flask-wtf>=0.15
+	flask<2.3,>=2.2
+	fsspec>=2023.10.0
+	gevent>=0.13; extra == "async"
+	gevent>=0.13; extra == "devel-ci"
+	gitpython>=3.1.40; extra == "devel-ci"
+	google-re2>=1.0
+	graphviz>=0.12; extra == "devel-ci"
+	graphviz>=0.12; extra == "graphviz"
+	greenlet>=0.4.9; extra == "async"
+	greenlet>=0.4.9; extra == "devel-ci"
+	gunicorn>=20.1.0
+	hatch>=1.9.1; extra == "devel-ci"
+	hdfs[avro,dataframe,kerberos]>=2.0.4; extra == "apache-webhdfs"
+	hdfs[avro,dataframe,kerberos]>=2.0.4; extra == "devel-ci"
+	httpx
+	importlib_metadata>=6.5; python_version < "3.12"
+	importlib_resources!=6.2.0,!=6.3.0,!=6.3.1,>=5.2; python_version < "3.9"
+	ipdb>=0.13.13; extra == "devel-ci"
+	itsdangerous>=2.0
+	jinja2>=3.0.0
+	jsonschema>=4.18.0
+	lazy-object-proxy
+	ldap3>=2.5.1; extra == "devel-ci"
+	ldap3>=2.5.1; extra == "ldap"
+	linkify-it-py>=2.0.0
+	lockfile>=0.12.2
+	markdown-it-py>=2.1.0
+	markupsafe>=1.1.1
+	marshmallow-oneofschema>=2.0.1
+	mdit-py-plugins>=0.3.0
+	methodtools>=0.4.7
+	mypy==1.9.0; extra == "devel-ci"
+	opentelemetry-api>=1.15.0
+	opentelemetry-exporter-otlp
+	opentelemetry-exporter-prometheus; extra == "devel-ci"
+	opentelemetry-exporter-prometheus; extra == "otel"
+	packaging>=14.0
+	pandas<2.2,>=1.2.5; extra == "devel-ci"
+	pandas<2.2,>=1.2.5; extra == "pandas"
+	pathspec>=0.9.0
+	pendulum<4.0,>=2.1.2
+	pipdeptree>=2.13.1; extra == "devel-ci"
+	pluggy>=1.0
+	plyvel; extra == "devel-ci"
+	plyvel; extra == "leveldb"
+	pre-commit>=3.5.0; extra == "devel-ci"
+	psutil>=4.2.0
+	pydantic>=2.3.0; extra == "devel-ci"
+	pydantic>=2.3.0; extra == "pydantic"
+	pygithub>=2.1.1; extra == "devel-ci"
+	pygments>=2.0.1
+	pyjwt>=2.0.0
+	pykerberos>=1.1.13; extra == "devel-ci"
+	pykerberos>=1.1.13; extra == "kerberos"
+	pytest-asyncio>=0.23.3; extra == "devel-ci"
+	pytest-cov>=4.1.0; extra == "devel-ci"
+	pytest-custom-exit-code>=0.3.0; extra == "devel-ci"
+	pytest-icdiff>=0.9; extra == "devel-ci"
+	pytest-instafail>=0.5.0; extra == "devel-ci"
+	pytest-mock>=3.12.0; extra == "devel-ci"
+	pytest-rerunfailures>=13.0; extra == "devel-ci"
+	pytest-timeouts>=1.2.1; extra == "devel-ci"
+	pytest-xdist>=3.5.0; extra == "devel-ci"
+	pytest<8.0,>=7.4.4; extra == "devel-ci"
+	python-daemon>=3.0.0
+	python-dateutil>=2.3
+	python-ldap; extra == "devel-ci"
+	python-ldap; extra == "ldap"
+	python-nvd3>=0.15.0
+	python-slugify>=5.0
+	python3-saml>=1.16.0; extra == "devel-ci"
+	python3-saml>=1.16.0; extra == "saml"
+	requests-kerberos>=0.10.0; extra == "devel-ci"
+	requests-kerberos>=0.10.0; extra == "kerberos"
+	requests-mock>=1.11.0; extra == "devel-ci"
+	requests<3,>=2.27.0
+	requests<3,>=2.27.0; extra == "deprecated-api"
+	requests<3,>=2.27.0; extra == "devel-ci"
+	restructuredtext-lint>=1.4.0; extra == "devel-ci"
+	rfc3339-validator>=0.1.4
+	rich-argparse>=1.0.0
+	rich-click>=1.7.0; extra == "devel-ci"
+	rich>=12.4.4
+	ruff==0.3.3; extra == "devel-ci"
+	s3fs>=2023.10.0; extra == "devel-ci"
+	s3fs>=2023.10.0; extra == "s3fs"
+	semver>=3.0.2; extra == "devel-ci"
+	sentry-sdk!=1.33.0,>=1.32.0; extra == "devel-ci"
+	sentry-sdk!=1.33.0,>=1.32.0; extra == "sentry"
+	setproctitle>=1.1.8
+	sphinx-airflow-theme>=0.0.12; extra == "devel-ci"
+	sphinx-argparse>=0.4.0; extra == "devel-ci"
+	sphinx-autoapi>=2.1.1; extra == "devel-ci"
+	sphinx-copybutton>=0.5.2; extra == "devel-ci"
+	sphinx-design>=0.5.0; extra == "devel-ci"
+	sphinx-jinja>=2.0.2; extra == "devel-ci"
+	sphinx-rtd-theme>=2.0.0; extra == "devel-ci"
+	sphinx<6.0.0,>=5.3.0; extra == "devel-ci"
+	sphinxcontrib-applehelp>=1.0.4; extra == "devel-ci"
+	sphinxcontrib-devhelp>=1.0.2; extra == "devel-ci"
+	sphinxcontrib-htmlhelp>=2.0.1; extra == "devel-ci"
+	sphinxcontrib-httpdomain>=1.8.1; extra == "devel-ci"
+	sphinxcontrib-jquery>=4.1; extra == "devel-ci"
+	sphinxcontrib-jsmath>=1.0.1; extra == "devel-ci"
+	sphinxcontrib-qthelp>=1.0.3; extra == "devel-ci"
+	sphinxcontrib-redoc>=1.6.0; extra == "devel-ci"
+	sphinxcontrib-serializinghtml==1.1.5; extra == "devel-ci"
+	sphinxcontrib-spelling>=8.0.0; extra == "devel-ci"
+	sqlalchemy-jsonfield>=1.0
+	sqlalchemy<2.0,>=1.4.36
+	statsd>=3.3.0; extra == "devel-ci"
+	statsd>=3.3.0; extra == "statsd"
+	tabulate>=0.7.5
+	tenacity!=8.2.0,>=6.2.0
+	termcolor>=1.1.0
+	thrift-sasl>=0.2.0; extra == "devel-ci"
+	thrift-sasl>=0.2.0; extra == "kerberos"
+	time-machine>=2.13.0; extra == "devel-ci"
+	towncrier>=23.11.0; extra == "devel-ci"
+	twine>=4.0.2; extra == "devel-ci"
+	types-aiofiles; extra == "devel-ci"
+	types-certifi; extra == "devel-ci"
+	types-croniter; extra == "devel-ci"
+	types-deprecated; extra == "devel-ci"
+	types-docutils; extra == "devel-ci"
+	types-markdown; extra == "devel-ci"
+	types-paramiko; extra == "devel-ci"
+	types-protobuf; extra == "devel-ci"
+	types-pymysql; extra == "devel-ci"
+	types-python-dateutil; extra == "devel-ci"
+	types-python-slugify; extra == "devel-ci"
+	types-pytz; extra == "devel-ci"
+	types-pyyaml; extra == "devel-ci"
+	types-redis; extra == "devel-ci"
+	types-requests; extra == "devel-ci"
+	types-setuptools; extra == "devel-ci"
+	types-tabulate; extra == "devel-ci"
+	types-termcolor; extra == "devel-ci"
+	types-toml; extra == "devel-ci"
+	unicodecsv>=0.14.1
+	universal-pathlib>=0.2.2
+	uv>=0.1.32; extra == "devel-ci"
+	uv>=0.1.32; extra == "uv"
+	virtualenv; extra == "devel-ci"
+	virtualenv; extra == "virtualenv"
+	werkzeug<3,>=2.0
+	wheel>=0.42.0; extra == "devel-ci"
+	yamllint>=1.33.0; extra == "devel-ci"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	aiobotocore? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aiofiles-23.2.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/aioresponses-0.7.6[${PYTHON_USEDEP}] )
-	<dev-python/alembic-2.0[${PYTHON_USEDEP}]
+	>=dev-python/alembic-1.13.1[${PYTHON_USEDEP}] <dev-python/alembic-2.0[${PYTHON_USEDEP}]
 	devel-ci? ( dev-python/amqp[${PYTHON_USEDEP}] )
 	rabbitmq? ( dev-python/amqp[${PYTHON_USEDEP}] )
 	all-core? ( dev-python/apache-airflow[aiobotocore,${PYTHON_USEDEP}] )
@@ -201,7 +673,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	airbyte? ( dev-python/apache-airflow-providers-airbyte[${PYTHON_USEDEP}] )
 	alibaba? ( dev-python/apache-airflow-providers-alibaba[${PYTHON_USEDEP}] )
 	amazon? ( dev-python/apache-airflow-providers-amazon[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep 'dev-python/apache-airflow-providers-apache-beam[${PYTHON_USEDEP}]' python3_13{,t})
+	apache-beam? ( $(python_gen_cond_dep 'dev-python/apache-airflow-providers-apache-beam[${PYTHON_USEDEP}]' python3_13{,t}) )
 	apache-cassandra? ( dev-python/apache-airflow-providers-apache-cassandra[${PYTHON_USEDEP}] )
 	apache-drill? ( dev-python/apache-airflow-providers-apache-drill[${PYTHON_USEDEP}] )
 	apache-druid? ( dev-python/apache-airflow-providers-apache-druid[${PYTHON_USEDEP}] )
@@ -266,7 +738,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	opsgenie? ( dev-python/apache-airflow-providers-opsgenie[${PYTHON_USEDEP}] )
 	oracle? ( dev-python/apache-airflow-providers-oracle[${PYTHON_USEDEP}] )
 	pagerduty? ( dev-python/apache-airflow-providers-pagerduty[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep 'dev-python/apache-airflow-providers-papermill[${PYTHON_USEDEP}]' python3_13{,t})
+	papermill? ( $(python_gen_cond_dep 'dev-python/apache-airflow-providers-papermill[${PYTHON_USEDEP}]' python3_13{,t}) )
 	pgvector? ( dev-python/apache-airflow-providers-pgvector[${PYTHON_USEDEP}] )
 	pinecone? ( dev-python/apache-airflow-providers-pinecone[${PYTHON_USEDEP}] )
 	postgres? ( dev-python/apache-airflow-providers-postgres[${PYTHON_USEDEP}] )
@@ -297,14 +769,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	zendesk? ( dev-python/apache-airflow-providers-zendesk[${PYTHON_USEDEP}] )
 	>=dev-python/argcomplete-1.10[${PYTHON_USEDEP}]
 	dev-python/asgiref[${PYTHON_USEDEP}]
-	devel-ci? ( <dev-python/astroid-3.0[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/astroid-2.12.3[${PYTHON_USEDEP}] <dev-python/astroid-3.0[${PYTHON_USEDEP}] )
 	apache-atlas? ( >=dev-python/atlasclient-0.1.2[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/atlasclient-0.1.2[${PYTHON_USEDEP}] )
 	>=dev-python/attrs-22.1.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/authlib-1.0.0[${PYTHON_USEDEP}] )
 	github-enterprise? ( >=dev-python/authlib-1.0.0[${PYTHON_USEDEP}] )
 	google-auth? ( >=dev-python/authlib-1.0.0[${PYTHON_USEDEP}] )
-	>=dev-python/backports-zoneinfo-0.2.1[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/bcrypt-2.0.0[${PYTHON_USEDEP}] )
 	password? ( >=dev-python/bcrypt-2.0.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/beautifulsoup4-4.7.1[${PYTHON_USEDEP}] )
@@ -316,11 +787,11 @@ GENERATED_RDEPEND="${RDEPEND}
 	cgroups? ( >=dev-python/cgroupspy-0.2.2[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/cgroupspy-0.2.2[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/checksumdir-1.2.0[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/click-8.0[${PYTHON_USEDEP}] !~dev-python/click-8.1.4[${PYTHON_USEDEP}] !~dev-python/click-8.1.5[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/click-8.0[${PYTHON_USEDEP}] )
-	devel-ci? ( !=dev-python/click-8.1.4[${PYTHON_USEDEP}] )
-	<dev-python/colorlog-5.0[${PYTHON_USEDEP}]
+	>=dev-python/colorlog-4.0.2[${PYTHON_USEDEP}] <dev-python/colorlog-5.0[${PYTHON_USEDEP}]
 	>=dev-python/configupdater-3.1.1[${PYTHON_USEDEP}]
-	<dev-python/connexion-3.0[flask,${PYTHON_USEDEP}]
+	>=dev-python/connexion-2.10.0[flask,${PYTHON_USEDEP}] <dev-python/connexion-3.0[flask,${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/coverage-7.4.0[${PYTHON_USEDEP}] )
 	>=dev-python/cron-descriptor-1.2.24[${PYTHON_USEDEP}]
 	>=dev-python/croniter-2.0.2[${PYTHON_USEDEP}]
@@ -328,17 +799,16 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/deprecated-1.2.13[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/diagrams-0.23.4[${PYTHON_USEDEP}] )
 	>=dev-python/dill-0.2.2[${PYTHON_USEDEP}]
-	devel-ci? ( <dev-python/docutils-0.17[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '>=dev-python/duckdb-0.10.0[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/duckdb-0.9.0[${PYTHON_USEDEP}]' python3_12)
+	devel-ci? ( >=dev-python/docutils-0.16[${PYTHON_USEDEP}] <dev-python/docutils-0.17[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/duckdb-0.10.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/eralchemy2-1.3.8[${PYTHON_USEDEP}] )
 	async? ( >=dev-python/eventlet-0.33.3[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/eventlet-0.33.3[${PYTHON_USEDEP}] )
-	<dev-python/flask-2.3[${PYTHON_USEDEP}]
+	>=dev-python/flask-2.2[${PYTHON_USEDEP}] <dev-python/flask-2.3[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/flask-bcrypt-0.7.1[${PYTHON_USEDEP}] )
 	password? ( >=dev-python/flask-bcrypt-0.7.1[${PYTHON_USEDEP}] )
 	>=dev-python/flask-caching-1.5.0[${PYTHON_USEDEP}]
-	<dev-python/flask-session-0.6[${PYTHON_USEDEP}]
+	>=dev-python/flask-session-0.4.0[${PYTHON_USEDEP}] <dev-python/flask-session-0.6[${PYTHON_USEDEP}]
 	>=dev-python/flask-wtf-0.15[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}]
 	async? ( >=dev-python/gevent-0.13[${PYTHON_USEDEP}] )
@@ -354,8 +824,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	apache-webhdfs? ( >=dev-python/hdfs-2.0.4[avro,dataframe,kerberos,${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/hdfs-2.0.4[avro,dataframe,kerberos,${PYTHON_USEDEP}] )
 	dev-python/httpx[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/importlib-metadata-6.5[${PYTHON_USEDEP}]' python3_12)
-	!=dev-python/importlib-resources-6.2.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/ipdb-0.13.13[${PYTHON_USEDEP}] )
 	>=dev-python/itsdangerous-2.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
@@ -370,16 +838,16 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/marshmallow-oneofschema-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/mdit-py-plugins-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/methodtools-0.4.7[${PYTHON_USEDEP}]
-	devel-ci? ( =dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
+	devel-ci? ( ~dev-python/mypy-1.9.0[${PYTHON_USEDEP}] )
 	>=dev-python/opentelemetry-api-1.15.0[${PYTHON_USEDEP}]
 	dev-python/opentelemetry-exporter-otlp[${PYTHON_USEDEP}]
 	devel-ci? ( dev-python/opentelemetry-exporter-prometheus[${PYTHON_USEDEP}] )
 	otel? ( dev-python/opentelemetry-exporter-prometheus[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-14.0[${PYTHON_USEDEP}]
-	devel-ci? ( <dev-python/pandas-2.2[${PYTHON_USEDEP}] )
-	pandas? ( <dev-python/pandas-2.2[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/pandas-1.2.5[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}] )
+	pandas? ( >=dev-python/pandas-1.2.5[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}] )
 	>=dev-python/pathspec-0.9.0[${PYTHON_USEDEP}]
-	<dev-python/pendulum-4.0[${PYTHON_USEDEP}]
+	>=dev-python/pendulum-2.1.2[${PYTHON_USEDEP}] <dev-python/pendulum-4.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/pipdeptree-2.13.1[${PYTHON_USEDEP}] )
 	>=dev-python/pluggy-1.0[${PYTHON_USEDEP}]
 	devel-ci? ( dev-python/plyvel[${PYTHON_USEDEP}] )
@@ -392,7 +860,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyjwt-2.0.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/pykerberos-1.1.13[${PYTHON_USEDEP}] )
 	kerberos? ( >=dev-python/pykerberos-1.1.13[${PYTHON_USEDEP}] )
-	devel-ci? ( <dev-python/pytest-8.0[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/pytest-7.4.4[${PYTHON_USEDEP}] <dev-python/pytest-8.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/pytest-asyncio-0.23.3[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/pytest-custom-exit-code-0.3.0[${PYTHON_USEDEP}] )
@@ -410,9 +878,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/python-slugify-5.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/python3-saml-1.16.0[${PYTHON_USEDEP}] )
 	saml? ( >=dev-python/python3-saml-1.16.0[${PYTHON_USEDEP}] )
-	<dev-python/requests-3[${PYTHON_USEDEP}]
-	deprecated-api? ( <dev-python/requests-3[${PYTHON_USEDEP}] )
-	devel-ci? ( <dev-python/requests-3[${PYTHON_USEDEP}] )
+	>=dev-python/requests-2.27.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
+	deprecated-api? ( >=dev-python/requests-2.27.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/requests-2.27.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/requests-kerberos-0.10.0[${PYTHON_USEDEP}] )
 	kerberos? ( >=dev-python/requests-kerberos-0.10.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/requests-mock-1.11.0[${PYTHON_USEDEP}] )
@@ -421,14 +889,14 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-12.4.4[${PYTHON_USEDEP}]
 	>=dev-python/rich-argparse-1.0.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/rich-click-1.7.0[${PYTHON_USEDEP}] )
-	devel-ci? ( =dev-python/ruff-0.3.3[${PYTHON_USEDEP}] )
+	devel-ci? ( ~dev-python/ruff-0.3.3[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/s3fs-2023.10.0[${PYTHON_USEDEP}] )
 	s3fs? ( >=dev-python/s3fs-2023.10.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/semver-3.0.2[${PYTHON_USEDEP}] )
-	devel-ci? ( !=dev-python/sentry-sdk-1.33.0[${PYTHON_USEDEP}] )
-	sentry? ( !=dev-python/sentry-sdk-1.33.0[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/sentry-sdk-1.32.0[${PYTHON_USEDEP}] !~dev-python/sentry-sdk-1.33.0[${PYTHON_USEDEP}] )
+	sentry? ( >=dev-python/sentry-sdk-1.32.0[${PYTHON_USEDEP}] !~dev-python/sentry-sdk-1.33.0[${PYTHON_USEDEP}] )
 	>=dev-python/setproctitle-1.1.8[${PYTHON_USEDEP}]
-	devel-ci? ( <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
+	devel-ci? ( >=dev-python/sphinx-5.3.0[${PYTHON_USEDEP}] <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinx-airflow-theme-0.0.12[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinx-argparse-0.4.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinx-autoapi-2.1.1[${PYTHON_USEDEP}] )
@@ -444,14 +912,14 @@ GENERATED_RDEPEND="${RDEPEND}
 	devel-ci? ( >=dev-python/sphinxcontrib-jsmath-1.0.1[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinxcontrib-qthelp-1.0.3[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinxcontrib-redoc-1.6.0[${PYTHON_USEDEP}] )
-	devel-ci? ( =dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
+	devel-ci? ( ~dev-python/sphinxcontrib-serializinghtml-1.1.5[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/sphinxcontrib-spelling-8.0.0[${PYTHON_USEDEP}] )
-	<dev-python/sqlalchemy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-1.4.36[${PYTHON_USEDEP}] <dev-python/sqlalchemy-2.0[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-jsonfield-1.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/statsd-3.3.0[${PYTHON_USEDEP}] )
 	statsd? ( >=dev-python/statsd-3.3.0[${PYTHON_USEDEP}] )
 	>=dev-python/tabulate-0.7.5[${PYTHON_USEDEP}]
-	!=dev-python/tenacity-8.2.0[${PYTHON_USEDEP}]
+	>=dev-python/tenacity-6.2.0[${PYTHON_USEDEP}] !~dev-python/tenacity-8.2.0[${PYTHON_USEDEP}]
 	>=dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/thrift-sasl-0.2.0[${PYTHON_USEDEP}] )
 	kerberos? ( >=dev-python/thrift-sasl-0.2.0[${PYTHON_USEDEP}] )
@@ -483,7 +951,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	uv? ( >=dev-python/uv-0.1.32[${PYTHON_USEDEP}] )
 	devel-ci? ( dev-python/virtualenv[${PYTHON_USEDEP}] )
 	virtualenv? ( dev-python/virtualenv[${PYTHON_USEDEP}] )
-	<dev-python/werkzeug-3[${PYTHON_USEDEP}]
+	>=dev-python/werkzeug-2.0[${PYTHON_USEDEP}] <dev-python/werkzeug-3[${PYTHON_USEDEP}]
 	devel-ci? ( >=dev-python/wheel-0.42.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-python/yamllint-1.33.0[${PYTHON_USEDEP}] )
 	devel-ci? ( >=dev-vcs/pre-commit-3.5.0[${PYTHON_USEDEP}] )

@@ -19,6 +19,18 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	async-timeout; python_version < "3.11"
+	gpiozero
+	pytest-asyncio>=0.19.0; extra == "testing"
+	pytest-cov>=3.0.0; extra == "testing"
+	pytest-mock>=3.8.2; extra == "testing"
+	pytest-timeout>=2.1.0; extra == "testing"
+	pytest>=7.1.2; extra == "testing"
+	pyusb>=1.1.0
+	voluptuous
+	zigpy>=0.70.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/gpiozero[${PYTHON_USEDEP}]
 	>=dev-python/pyusb-1.1.0[${PYTHON_USEDEP}]

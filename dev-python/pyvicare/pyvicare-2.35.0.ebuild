@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Library to communicate with the Viessmann ViCare API."
 HOMEPAGE="
-  https://pypi.org/project/PyViCare/
+  https://pypi.org/project/pyvicare/
   Bug Tracker, https://github.com/openviess/PyViCare/issues
   Changelog, https://github.com/openviess/PyViCare/releases
   Documentation, https://github.com/openviess/PyViCare
@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	authlib>1.2.0
+	requests>=2.31.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/authlib-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]

@@ -16,6 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	igraph ; extra == 'docs'
+	ipywidgets ; extra == 'docs'
+	jupyterlite-pyodide-kernel ; extra == 'docs'
+	jupyterlite-sphinx ; extra == 'docs'
+	matplotlib ; extra == 'docs'
+	matplotlib >=3.8 ; extra == 'typing'
+	mypy ; extra == 'typing'
+	myst-parser ; extra == 'docs'
+	numpy
+	numpy >=1.14 ; extra == 'test'
+	pandas
+	pandas-stubs ; extra == 'typing'
+	pydata-sphinx-theme ; extra == 'docs'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	sphinx >=3.1 ; extra == 'docs'
+	sphinx-codeautolink ; extra == 'docs'
+	sphinx-gallery ; extra == 'docs'
+	typing-extensions >4.4
+	xarray
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/igraph[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )

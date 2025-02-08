@@ -82,7 +82,9 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	anyio>=3.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/anyio-3.0.0[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,14 +14,23 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	appdirs (>=1.4.3,<2.0.0)
+	certifi (>=2023)
+	importlib-metadata (>=1.4)
+	pyee (>=11.0.0,<12.0.0)
+	tqdm (>=4.42.1,<5.0.0)
+	urllib3 (>=1.25.8,<2.0.0)
+	websockets (>=10.0,<11.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}]
+	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] <dev-python/appdirs-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-1.4[${PYTHON_USEDEP}]
-	>=dev-python/pyee-11.0.0[${PYTHON_USEDEP}]
-	>=dev-python/tqdm-4.42.1[${PYTHON_USEDEP}]
-	>=dev-python/urllib3-1.25.8[${PYTHON_USEDEP}]
-	>=dev-python/websockets-10.0[${PYTHON_USEDEP}]
+	>=dev-python/pyee-11.0.0[${PYTHON_USEDEP}] <dev-python/pyee-12.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tqdm-4.42.1[${PYTHON_USEDEP}] <dev-python/tqdm-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.25.8[${PYTHON_USEDEP}] <dev-python/urllib3-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/websockets-10.0[${PYTHON_USEDEP}] <dev-python/websockets-11.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

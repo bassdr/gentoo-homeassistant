@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/motionblindsble-0.1.3[${PYTHON_USEDEP}]
+	~dev-python/motionblindsble-0.1.3[${PYTHON_USEDEP}]
 "

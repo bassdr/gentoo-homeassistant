@@ -21,10 +21,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Jinja2
+	PyYAML
+	astroid>=2.7; python_version < "3.12"
+	astroid>=3.0.0a1; python_version >= "3.12"
+	sphinx>=6.1.0
+	stdlib_list; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	$(python_gen_cond_dep '>=dev-python/astroid-2.7[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/astroid-3.0.0_alpha1[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/astroid-3.0.0_alpha1[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-6.1.0[${PYTHON_USEDEP}]

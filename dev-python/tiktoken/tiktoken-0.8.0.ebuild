@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	blobfile>=2; extra == "blobfile"
+	regex>=2022.1.18
+	requests>=2.26.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	blobfile? ( >=dev-python/blobfile-2[${PYTHON_USEDEP}] )
 	>=dev-python/regex-2022.1.18[${PYTHON_USEDEP}]

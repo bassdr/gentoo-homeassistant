@@ -17,6 +17,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	defusedxml
+	mysql-connector-python ; extra == 'mysql'
+	psycopg2 ; extra == 'postgresql'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	mysql? ( dev-python/mysql-connector-python[${PYTHON_USEDEP}] )

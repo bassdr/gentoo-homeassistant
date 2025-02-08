@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy (>=1.16)
+	packaging
+	pandas
+	ray (>=2.7)
+	wrapt (>=1.12.1)
+	xgboost (>=0.90)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

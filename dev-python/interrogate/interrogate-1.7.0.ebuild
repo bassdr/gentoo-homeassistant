@@ -16,6 +16,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs
+	cairosvg; extra == "dev"
+	cairosvg; extra == "png"
+	click>=7.1
+	colorama
+	coverage[toml]; extra == "dev"
+	coverage[toml]; extra == "tests"
+	pre-commit; extra == "dev"
+	py
+	pytest-cov; extra == "dev"
+	pytest-cov; extra == "tests"
+	pytest-mock; extra == "dev"
+	pytest-mock; extra == "tests"
+	pytest; extra == "dev"
+	pytest; extra == "tests"
+	sphinx-autobuild; extra == "dev"
+	sphinx-autobuild; extra == "docs"
+	sphinx; extra == "dev"
+	sphinx; extra == "docs"
+	tabulate
+	tomli; python_version < "3.11"
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]
 	png? ( dev-python/cairosvg[${PYTHON_USEDEP}] )

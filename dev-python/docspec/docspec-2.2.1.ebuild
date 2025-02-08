@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Deprecated (>=1.2.12,<2.0.0)
+	databind.core (>=4.2.6,<5.0.0)
+	databind.json (>=4.2.6,<5.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/databind-core-4.2.6[${PYTHON_USEDEP}]
-	>=dev-python/databind-json-4.2.6[${PYTHON_USEDEP}]
-	>=dev-python/deprecated-1.2.12[${PYTHON_USEDEP}]
+	>=dev-python/databind-core-4.2.6[${PYTHON_USEDEP}] <dev-python/databind-core-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/databind-json-4.2.6[${PYTHON_USEDEP}] <dev-python/databind-json-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/deprecated-1.2.12[${PYTHON_USEDEP}] <dev-python/deprecated-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -25,11 +25,17 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	botocore<1.35.0,>=1.34.131
+	botocore[crt]<2.0a0,>=1.21.0; extra == "crt"
+	jmespath<2.0.0,>=0.7.1
+	s3transfer<0.11.0,>=0.10.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/botocore-1.35.0[${PYTHON_USEDEP}]
-	crt? ( <dev-python/botocore-2.0_alpha0[crt,${PYTHON_USEDEP}] )
-	<dev-python/jmespath-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/s3transfer-0.11.0[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.34.131[${PYTHON_USEDEP}] <dev-python/botocore-1.35.0[${PYTHON_USEDEP}]
+	crt? ( >=dev-python/botocore-1.21.0[crt,${PYTHON_USEDEP}] <dev-python/botocore-2.0_alpha0[crt,${PYTHON_USEDEP}] )
+	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}] <dev-python/jmespath-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/s3transfer-0.10.0[${PYTHON_USEDEP}] <dev-python/s3transfer-0.11.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/botocore-${PV}[${PYTHON_USEDEP}]

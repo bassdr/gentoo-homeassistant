@@ -20,7 +20,10 @@ KEYWORDS="amd64 arm64"
 
 DOCS="README.md"
 
-IUSE=""
+REQUIRES_DIST="
+	pyasn1
+	tqdm
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
@@ -30,7 +33,4 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyasn1[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"
+# GENERATED_BDEPEND could not be inserted in this ebuild

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	playwright>=1.18
+	pytest-base-url<3.0.0,>=1.0.0
+	pytest<9.0.0,>=6.2.4
+	python-slugify<9.0.0,>=6.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/playwright-1.18[${PYTHON_USEDEP}]
-	<dev-python/pytest-9.0.0[${PYTHON_USEDEP}]
-	<dev-python/pytest-base-url-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/python-slugify-9.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}] <dev-python/pytest-9.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pytest-base-url-1.0.0[${PYTHON_USEDEP}] <dev-python/pytest-base-url-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-slugify-6.0.0[${PYTHON_USEDEP}] <dev-python/python-slugify-9.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

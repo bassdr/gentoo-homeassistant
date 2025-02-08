@@ -16,6 +16,94 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Werkzeug>=1.0.1; extra == "dev"
+	Werkzeug>=1.0.1; extra == "tests"
+	absl-py; extra == "dev"
+	absl-py; extra == "tests"
+	accelerate; extra == "dev"
+	accelerate; extra == "tests"
+	bert-score>=0.3.6; extra == "dev"
+	bert-score>=0.3.6; extra == "tests"
+	black~=22.0; extra == "dev"
+	black~=22.0; extra == "quality"
+	cer>=1.2.0; extra == "dev"
+	cer>=1.2.0; extra == "tests"
+	charcut>=1.1.1; extra == "dev"
+	charcut>=1.1.1; extra == "tests"
+	cookiecutter; extra == "template"
+	datasets>=2.0.0
+	dill
+	flake8>=3.8.3; extra == "dev"
+	flake8>=3.8.3; extra == "quality"
+	fsspec[http]>=2021.05.0
+	gradio>=3.0.0; extra == "template"
+	huggingface-hub>=0.7.0
+	importlib-metadata; python_version < "3.8"
+	isort>=5.0.0; extra == "dev"
+	isort>=5.0.0; extra == "quality"
+	jiwer; extra == "dev"
+	jiwer; extra == "tests"
+	mauve-text; extra == "dev"
+	mauve-text; extra == "tests"
+	multiprocess
+	nltk<3.9; extra == "dev"
+	nltk<3.9; extra == "tests"
+	numpy>=1.17
+	packaging
+	pandas
+	pytest-datadir; extra == "dev"
+	pytest-datadir; extra == "tests"
+	pytest-xdist; extra == "dev"
+	pytest-xdist; extra == "tests"
+	pytest; extra == "dev"
+	pytest; extra == "tests"
+	pyyaml>=5.3.1; extra == "dev"
+	pyyaml>=5.3.1; extra == "quality"
+	requests-file>=1.5.1; extra == "dev"
+	requests-file>=1.5.1; extra == "tests"
+	requests>=2.19.0
+	rouge-score>=0.1.2; extra == "dev"
+	rouge-score>=0.1.2; extra == "tests"
+	s3fs; extra == "docs"
+	sacrebleu; extra == "dev"
+	sacrebleu; extra == "tests"
+	sacremoses; extra == "dev"
+	sacremoses; extra == "tests"
+	scikit-learn; extra == "dev"
+	scikit-learn; extra == "tests"
+	scipy>=1.10.0; extra == "dev"
+	scipy>=1.10.0; extra == "tests"
+	scipy>=1.7.1; extra == "evaluator"
+	sentencepiece; extra == "dev"
+	sentencepiece; extra == "tests"
+	seqeval; extra == "dev"
+	seqeval; extra == "tests"
+	six~=1.15.0; extra == "dev"
+	six~=1.15.0; extra == "tests"
+	tensorflow!=2.6.0,!=2.6.1,<=2.10,>=2.3; extra == "dev"
+	tensorflow!=2.6.0,!=2.6.1,<=2.10,>=2.3; extra == "tests"
+	tensorflow!=2.6.0,!=2.6.1,>=2.2.0; extra == "tensorflow"
+	tensorflow-gpu!=2.6.0,!=2.6.1,>=2.2.0; extra == "tensorflow-gpu"
+	texttable>=1.6.3; extra == "dev"
+	texttable>=1.6.3; extra == "tests"
+	tldextract>=3.1.0; extra == "dev"
+	tldextract>=3.1.0; extra == "tests"
+	toml>=0.10.1; extra == "dev"
+	toml>=0.10.1; extra == "tests"
+	torch; extra == "dev"
+	torch; extra == "tests"
+	torch; extra == "torch"
+	tqdm>=4.62.1
+	transformers; extra == "dev"
+	transformers; extra == "evaluator"
+	transformers; extra == "tests"
+	trectools; extra == "dev"
+	trectools; extra == "tests"
+	unidecode>=1.3.4; extra == "dev"
+	unidecode>=1.3.4; extra == "tests"
+	xxhash
+"
 GENERATED_RDEPEND="${RDEPEND}
 	quality? ( >=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}] )
 	template? ( dev-python/cookiecutter[${PYTHON_USEDEP}] )
@@ -25,7 +113,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fsspec-2021.05.0[http,${PYTHON_USEDEP}]
 	template? ( >=dev-python/gradio-3.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.7.0[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	quality? ( >=dev-python/isort-5.0.0[${PYTHON_USEDEP}] )
 	dev-python/multiprocess[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
@@ -35,8 +122,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	evaluator? ( >=dev-python/scipy-1.7.1[${PYTHON_USEDEP}] )
-	tensorflow? ( !=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] )
-	tensorflow-gpu? ( !=dev-python/tensorflow-gpu-2.6.0[${PYTHON_USEDEP}] )
+	tensorflow? ( >=dev-python/tensorflow-2.2.0[${PYTHON_USEDEP}] !~dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] !~dev-python/tensorflow-2.6.1[${PYTHON_USEDEP}] )
+	tensorflow-gpu? ( >=dev-python/tensorflow-gpu-2.2.0[${PYTHON_USEDEP}] !~dev-python/tensorflow-gpu-2.6.0[${PYTHON_USEDEP}] !~dev-python/tensorflow-gpu-2.6.1[${PYTHON_USEDEP}] )
 	torch? ( dev-python/torch[${PYTHON_USEDEP}] )
 	>=dev-python/tqdm-4.62.1[${PYTHON_USEDEP}]
 	evaluator? ( dev-python/transformers[${PYTHON_USEDEP}] )
@@ -71,7 +158,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/sentencepiece[${PYTHON_USEDEP}]
 		dev-python/seqeval[${PYTHON_USEDEP}]
 		>=dev-python/six-1.15.0[${PYTHON_USEDEP}] =dev-python/six-1.15*[${PYTHON_USEDEP}]
-		!=dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}]
+		>=dev-python/tensorflow-2.3[${PYTHON_USEDEP}] <=dev-python/tensorflow-2.10[${PYTHON_USEDEP}] !~dev-python/tensorflow-2.6.0[${PYTHON_USEDEP}] !~dev-python/tensorflow-2.6.1[${PYTHON_USEDEP}]
 		>=dev-python/texttable-1.6.3[${PYTHON_USEDEP}]
 		>=dev-python/tldextract-3.1.0[${PYTHON_USEDEP}]
 		>=dev-python/toml-0.10.1[${PYTHON_USEDEP}]

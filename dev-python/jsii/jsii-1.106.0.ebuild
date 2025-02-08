@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,14 +14,23 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs<25.0,>=21.2
+	cattrs<24.2,>=1.8
+	importlib-resources>=5.2.0
+	publication>=0.0.3
+	python-dateutil
+	typeguard<4.5.0,>=2.13.3
+	typing-extensions<5.0,>=3.8
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/attrs-25.0[${PYTHON_USEDEP}]
-	<dev-python/cattrs-24.2[${PYTHON_USEDEP}]
+	>=dev-python/attrs-21.2[${PYTHON_USEDEP}] <dev-python/attrs-25.0[${PYTHON_USEDEP}]
+	>=dev-python/cattrs-1.8[${PYTHON_USEDEP}] <dev-python/cattrs-24.2[${PYTHON_USEDEP}]
 	>=dev-python/importlib-resources-5.2.0[${PYTHON_USEDEP}]
 	>=dev-python/publication-0.0.3[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	<dev-python/typeguard-4.5.0[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
+	>=dev-python/typeguard-2.13.3[${PYTHON_USEDEP}] <dev-python/typeguard-4.5.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-3.8[${PYTHON_USEDEP}] <dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

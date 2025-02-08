@@ -17,17 +17,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	tensorflow-aarch64<2.17.0,>=2.16.0; extra == "tensorflow-aarch64"
+	tensorflow-cpu<2.17.0,>=2.16.0; extra == "tensorflow-cpu"
+	tensorflow-gpu<2.17.0,>=2.16.0; extra == "tensorflow-gpu"
+	tensorflow-rocm<2.17.0,>=2.16.0; extra == "tensorflow-rocm"
+	tensorflow<2.17.0,>=2.16.0; extra == "tensorflow"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	tensorflow? ( <dev-python/tensorflow-2.17.0[${PYTHON_USEDEP}] )
-	tensorflow-aarch64? ( <dev-python/tensorflow-aarch64-2.17.0[${PYTHON_USEDEP}] )
-	tensorflow-cpu? ( <dev-python/tensorflow-cpu-2.17.0[${PYTHON_USEDEP}] )
-	tensorflow-gpu? ( <dev-python/tensorflow-gpu-2.17.0[${PYTHON_USEDEP}] )
-	tensorflow-rocm? ( <dev-python/tensorflow-rocm-2.17.0[${PYTHON_USEDEP}] )
+	tensorflow? ( >=dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}] <dev-python/tensorflow-2.17.0[${PYTHON_USEDEP}] )
+	tensorflow-aarch64? ( >=dev-python/tensorflow-aarch64-2.16.0[${PYTHON_USEDEP}] <dev-python/tensorflow-aarch64-2.17.0[${PYTHON_USEDEP}] )
+	tensorflow-cpu? ( >=dev-python/tensorflow-cpu-2.16.0[${PYTHON_USEDEP}] <dev-python/tensorflow-cpu-2.17.0[${PYTHON_USEDEP}] )
+	tensorflow-gpu? ( >=dev-python/tensorflow-gpu-2.16.0[${PYTHON_USEDEP}] <dev-python/tensorflow-gpu-2.17.0[${PYTHON_USEDEP}] )
+	tensorflow-rocm? ( >=dev-python/tensorflow-rocm-2.16.0[${PYTHON_USEDEP}] <dev-python/tensorflow-rocm-2.17.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

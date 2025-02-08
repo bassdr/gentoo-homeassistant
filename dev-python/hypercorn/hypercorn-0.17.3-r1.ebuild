@@ -20,16 +20,32 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs h3 trio"
+GENERATED_IUSE="docs h3 trio uvloop"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aioquic<1.0,>=0.9.0; extra == "h3"
+	exceptiongroup>=1.1.0; python_version < "3.11"
+	h11
+	h2>=3.1.0
+	priority
+	pydata_sphinx_theme; extra == "docs"
+	sphinxcontrib_mermaid; extra == "docs"
+	taskgroup; python_version < "3.11"
+	tomli; python_version < "3.11"
+	trio>=0.22.0; extra == "trio"
+	typing_extensions; python_version < "3.11"
+	uvloop>=0.18; platform_system != "Windows" and extra == "uvloop"
+	wsproto>=0.14.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	h3? ( <dev-python/aioquic-1.0[${PYTHON_USEDEP}] )
+	h3? ( >=dev-python/aioquic-0.9.0[${PYTHON_USEDEP}] <dev-python/aioquic-1.0[${PYTHON_USEDEP}] )
 	dev-python/h11[${PYTHON_USEDEP}]
 	>=dev-python/h2-3.1.0[${PYTHON_USEDEP}]
 	dev-python/priority[${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-mermaid[${PYTHON_USEDEP}] )
 	trio? ( >=dev-python/trio-0.22.0[${PYTHON_USEDEP}] )
+	uvloop? ( >=dev-python/uvloop-0.18[${PYTHON_USEDEP}] )
 	>=dev-python/wsproto-0.14.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

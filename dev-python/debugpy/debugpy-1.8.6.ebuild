@@ -35,10 +35,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	# Unbundle dev-python/pydevd
@@ -81,3 +77,4 @@ python_test() {
 	epytest -p timeout -p xdist -n "$(makeopts_jobs)" --dist=worksteal \
 		-k "not attach_pid"
 }
+# GENERATED_BDEPEND could not be inserted in this ebuild

@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,26 +15,39 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cffi (<2.0.0,>=1.13.0)
+	glfw (<2.0.0,>=1.8.6)
+	gym (==0.17.2); extra == 'test'
+	gym-retro (==0.8.0); extra == 'test'
+	imageio (<3.0.0,>=2.6.0)
+	imageio-ffmpeg (<0.4.0,>=0.3.0)
+	moderngl (<6.0.0,>=5.5.4)
+	mpi4py (==3.0.3); extra == 'test'
+	numpy (<2.0.0,>=1.11.0)
+	pytest (==5.2.1); extra == 'test'
+	pytest-benchmark (==3.2.2); extra == 'test'
+	tensorflow (==1.15.0); extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/cffi-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/glfw-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/imageio-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/imageio-ffmpeg-0.4.0[${PYTHON_USEDEP}]
-	<dev-python/moderngl-6.0.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/cffi-1.13.0[${PYTHON_USEDEP}] <dev-python/cffi-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/glfw-1.8.6[${PYTHON_USEDEP}] <dev-python/glfw-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/imageio-2.6.0[${PYTHON_USEDEP}] <dev-python/imageio-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/imageio-ffmpeg-0.3.0[${PYTHON_USEDEP}] <dev-python/imageio-ffmpeg-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/moderngl-5.5.4[${PYTHON_USEDEP}] <dev-python/moderngl-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.11.0[${PYTHON_USEDEP}] <dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
-		=dev-python/gym-0.17.2[${PYTHON_USEDEP}]
-		=dev-python/gym-retro-0.8.0[${PYTHON_USEDEP}]
-		=dev-python/mpi4py-3.0.3[${PYTHON_USEDEP}]
-		=dev-python/pytest-5.2.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-benchmark-3.2.2[${PYTHON_USEDEP}]
-		=dev-python/tensorflow-1.15.0[${PYTHON_USEDEP}]
+		~dev-python/gym-0.17.2[${PYTHON_USEDEP}]
+		~dev-python/gym-retro-0.8.0[${PYTHON_USEDEP}]
+		~dev-python/mpi4py-3.0.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-5.2.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-benchmark-3.2.2[${PYTHON_USEDEP}]
+		~dev-python/tensorflow-1.15.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

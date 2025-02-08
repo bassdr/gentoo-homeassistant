@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="databind.json"
@@ -17,8 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	databind<5.0.0,>=4.5.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/databind-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/databind-4.5.2[${PYTHON_USEDEP}] <dev-python/databind-5.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

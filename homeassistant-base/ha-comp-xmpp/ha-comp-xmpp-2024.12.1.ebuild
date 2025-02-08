@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/emoji-2.8.0[${PYTHON_USEDEP}]
-	=dev-python/slixmpp-1.8.5[${PYTHON_USEDEP}]
+	~dev-python/emoji-2.8.0[${PYTHON_USEDEP}]
+	~dev-python/slixmpp-1.8.5[${PYTHON_USEDEP}]
 "

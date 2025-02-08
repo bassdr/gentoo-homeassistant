@@ -30,13 +30,29 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	coverage[toml]; extra == "test"
+	ddt!=1.4.3,>=1.1.1; extra == "test"
+	gitdb<5,>=4.0.1
+	mock; python_version < "3.8" and extra == "test"
+	mypy; extra == "test"
+	pre-commit; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-instafail; extra == "test"
+	pytest-mock; extra == "test"
+	pytest-sugar; extra == "test"
+	pytest>=7.3.1; extra == "test"
+	sphinx-autodoc-typehints; extra == "doc"
+	sphinx<7.2,>=7.1.2; extra == "doc"
+	sphinx_rtd_theme; extra == "doc"
+	typing-extensions; python_version < "3.11" and extra == "test"
+	typing-extensions>=3.7.4.3; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/gitdb-5[${PYTHON_USEDEP}]
-	dev-python/mock[${PYTHON_USEDEP}]
-	doc? ( <dev-python/sphinx-7.2[${PYTHON_USEDEP}] )
+	>=dev-python/gitdb-4.0.1[${PYTHON_USEDEP}] <dev-python/gitdb-5[${PYTHON_USEDEP}]
+	doc? ( >=dev-python/sphinx-7.1.2[${PYTHON_USEDEP}] <dev-python/sphinx-7.2[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	>=dev-python/typing-extensions-3.7.4.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-vcs/git
@@ -56,7 +72,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[toml,${PYTHON_USEDEP}]
-		!=dev-python/ddt-1.4.3[${PYTHON_USEDEP}]
+		>=dev-python/ddt-1.1.1[${PYTHON_USEDEP}] !~dev-python/ddt-1.4.3[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

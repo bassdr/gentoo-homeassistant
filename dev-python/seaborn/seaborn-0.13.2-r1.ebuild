@@ -18,14 +18,38 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs stats"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	flake8 ; extra == "dev"
+	flit ; extra == "dev"
+	ipykernel ; extra == "docs"
+	matplotlib>=3.4,!=3.6.1
+	mypy ; extra == "dev"
+	nbconvert ; extra == "docs"
+	numpy>=1.20,!=1.24.0
+	numpydoc ; extra == "docs"
+	pandas-stubs ; extra == "dev"
+	pandas>=1.2
+	pre-commit ; extra == "dev"
+	pydata_sphinx_theme==0.10.0rc2 ; extra == "docs"
+	pytest ; extra == "dev"
+	pytest-cov ; extra == "dev"
+	pytest-xdist ; extra == "dev"
+	pyyaml ; extra == "docs"
+	scipy>=1.7 ; extra == "stats"
+	sphinx-copybutton ; extra == "docs"
+	sphinx-design ; extra == "docs"
+	sphinx-issues ; extra == "docs"
+	sphinx<6.0.0 ; extra == "docs"
+	statsmodels>=0.12 ; extra == "stats"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
-	>=dev-python/matplotlib-3.4[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.4[${PYTHON_USEDEP}] !~dev-python/matplotlib-3.6.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/nbconvert[${PYTHON_USEDEP}] )
-	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.20[${PYTHON_USEDEP}] !~dev-python/numpy-1.24.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	>=dev-python/pandas-1.2[${PYTHON_USEDEP}]
-	docs? ( =dev-python/pydata-sphinx-theme-0.10.0_rc2[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/pydata-sphinx-theme-0.10.0_rc2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
 	stats? ( >=dev-python/scipy-1.7[${PYTHON_USEDEP}] )
 	docs? ( <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )

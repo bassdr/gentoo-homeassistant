@@ -16,7 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	PyYAML (>=3.01)
+	latexcodec (>=1.0.4)
+	pytest ; extra == 'test'
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/latexcodec-1.0.4[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.01[${PYTHON_USEDEP}]

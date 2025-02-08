@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyipma-3.0.7[${PYTHON_USEDEP}]
+	~dev-python/pyipma-3.0.7[${PYTHON_USEDEP}]
 "

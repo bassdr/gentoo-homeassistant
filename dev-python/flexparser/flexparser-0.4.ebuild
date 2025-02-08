@@ -15,7 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest-cov; extra == "test"
+	pytest-mpl; extra == "test"
+	pytest-subtests; extra == "test"
+	pytest; extra == "test"
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "

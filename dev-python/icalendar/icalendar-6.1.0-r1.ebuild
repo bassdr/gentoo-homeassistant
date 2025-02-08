@@ -23,9 +23,16 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	backports-zoneinfo; python_version < "3.9"
+	coverage; extra == "test"
+	hypothesis; extra == "test"
+	pytest; extra == "test"
+	python-dateutil
+	pytz; extra == "test"
+	tzdata
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/tzdata[${PYTHON_USEDEP}]
 "

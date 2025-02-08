@@ -10,12 +10,19 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/numpy_groupies/"
+  https://pypi.org/project/numpy-groupies/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numba; extra == "dev"
+	numba; extra == "fast"
+	numpy
+	pandas; extra == "dev"
+	pytest; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	fast? ( dev-python/numba[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]

@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.deprecation/"
+  https://pypi.org/project/zope-deprecation/"
 
 LICENSE="ZPL"
 SLOT="0"
@@ -18,6 +18,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx; extra == "docs"
+	setuptools
+	zope.testrunner; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

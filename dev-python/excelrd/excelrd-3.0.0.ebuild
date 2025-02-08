@@ -16,6 +16,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx (>=2.4) ; extra == 'docs'
+	pytest (>=6.0.1) ; extra == 'dev'
+	pytest (>=6.0.1) ; extra == 'test'
+	pytest-md-report (>=0.3) ; extra == 'dev'
+	pytest-md-report (>=0.3) ; extra == 'test'
+	releasecmd (<1,>=0.2.0) ; extra == 'dev'
+	sphinx-rtd-theme (>=1.2.2) ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-2.4[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.2.2[${PYTHON_USEDEP}] )
@@ -27,7 +36,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-md-report-0.3[${PYTHON_USEDEP}]
-		<dev-python/releasecmd-1[${PYTHON_USEDEP}]
+		>=dev-python/releasecmd-0.2.0[${PYTHON_USEDEP}] <dev-python/releasecmd-1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

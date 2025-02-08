@@ -24,6 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-interrupt>=1.1.1
+	async-timeout>=3.0.0; python_version < "3.11"
+	bleak-retry-connector>=3.4.0
+	bleak>=0.19.0
+	cryptography>=38.0.0
+	lru-dict>=1.1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-interrupt-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]

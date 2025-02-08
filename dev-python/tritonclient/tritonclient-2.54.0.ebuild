@@ -17,23 +17,46 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.8.1; extra == "all"
+	aiohttp<4.0.0,>=3.8.1; extra == "http"
+	cuda-python; extra == "all"
+	cuda-python; extra == "cuda"
+	geventhttpclient>=2.3.3; extra == "all"
+	geventhttpclient>=2.3.3; extra == "http"
+	grpcio<1.68,>=1.63.0; extra == "all"
+	grpcio<1.68,>=1.63.0; extra == "grpc"
+	numpy<2,>=1.19.1
+	numpy<2,>=1.19.1; extra == "all"
+	numpy<2,>=1.19.1; extra == "grpc"
+	numpy<2,>=1.19.1; extra == "http"
+	packaging>=14.1; extra == "all"
+	packaging>=14.1; extra == "grpc"
+	protobuf<6.0dev,>=5.26.1; extra == "all"
+	protobuf<6.0dev,>=5.26.1; extra == "grpc"
+	python-rapidjson>=0.9.1
+	python-rapidjson>=0.9.1; extra == "all"
+	python-rapidjson>=0.9.1; extra == "grpc"
+	python-rapidjson>=0.9.1; extra == "http"
+	urllib3>=2.0.7
+"
 GENERATED_RDEPEND="${RDEPEND}
-	all? ( <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}] )
-	http? ( <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}] )
+	http? ( >=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/cuda-python[${PYTHON_USEDEP}] )
 	cuda? ( dev-python/cuda-python[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/geventhttpclient-2.3.3[${PYTHON_USEDEP}] )
 	http? ( >=dev-python/geventhttpclient-2.3.3[${PYTHON_USEDEP}] )
-	all? ( <dev-python/grpcio-1.68[${PYTHON_USEDEP}] )
-	grpc? ( <dev-python/grpcio-1.68[${PYTHON_USEDEP}] )
-	<dev-python/numpy-2[${PYTHON_USEDEP}]
-	all? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
-	grpc? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
-	http? ( <dev-python/numpy-2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/grpcio-1.63.0[${PYTHON_USEDEP}] <dev-python/grpcio-1.68[${PYTHON_USEDEP}] )
+	grpc? ( >=dev-python/grpcio-1.63.0[${PYTHON_USEDEP}] <dev-python/grpcio-1.68[${PYTHON_USEDEP}] )
+	>=dev-python/numpy-1.19.1[${PYTHON_USEDEP}] <dev-python/numpy-2[${PYTHON_USEDEP}]
+	all? ( >=dev-python/numpy-1.19.1[${PYTHON_USEDEP}] <dev-python/numpy-2[${PYTHON_USEDEP}] )
+	grpc? ( >=dev-python/numpy-1.19.1[${PYTHON_USEDEP}] <dev-python/numpy-2[${PYTHON_USEDEP}] )
+	http? ( >=dev-python/numpy-1.19.1[${PYTHON_USEDEP}] <dev-python/numpy-2[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/packaging-14.1[${PYTHON_USEDEP}] )
 	grpc? ( >=dev-python/packaging-14.1[${PYTHON_USEDEP}] )
-	all? ( <dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}] )
-	grpc? ( <dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/protobuf-5.26.1[${PYTHON_USEDEP}] <dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}] )
+	grpc? ( >=dev-python/protobuf-5.26.1[${PYTHON_USEDEP}] <dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}] )
 	>=dev-python/python-rapidjson-0.9.1[${PYTHON_USEDEP}]
 	all? ( >=dev-python/python-rapidjson-0.9.1[${PYTHON_USEDEP}] )
 	grpc? ( >=dev-python/python-rapidjson-0.9.1[${PYTHON_USEDEP}] )
@@ -43,7 +66,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

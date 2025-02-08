@@ -24,9 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Pillow
+	vacuum-map-parser-base==0.1.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
-	=dev-python/vacuum-map-parser-base-0.1.3[${PYTHON_USEDEP}]
+	~dev-python/vacuum-map-parser-base-0.1.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]

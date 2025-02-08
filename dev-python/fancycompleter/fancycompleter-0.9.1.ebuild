@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pyreadline ; platform_system == "Windows"
+	pyrepl (>=0.8.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyrepl-0.8.2[${PYTHON_USEDEP}]
 "
@@ -22,4 +25,3 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 
-BDEPEND=""

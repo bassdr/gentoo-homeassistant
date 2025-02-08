@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/oslo.log/"
+  https://pypi.org/project/oslo-log/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -20,6 +20,23 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="fixtures systemd"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	coverage>=4.5.1; extra == "test"
+	eventlet>=0.30.1; extra == "test"
+	fixtures>=3.0.0; extra == "fixtures"
+	fixtures>=3.0.0; extra == "test"
+	oslo.config>=5.2.0
+	oslo.context>=2.21.0
+	oslo.i18n>=3.20.0
+	oslo.serialization>=2.25.0
+	oslo.utils>=3.36.0
+	oslotest>=3.3.0; extra == "test"
+	pbr>=3.1.1
+	python-dateutil>=2.7.0
+	stestr>=2.0.0; extra == "test"
+	systemd-python>=234; extra == "systemd"
+	testtools>=2.3.0; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	fixtures? ( >=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/oslo-config-5.2.0[${PYTHON_USEDEP}]

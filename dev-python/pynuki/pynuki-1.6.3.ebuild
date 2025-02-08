@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pynacl (>=1.5.0,<2.0.0)
+	requests (>=2.27,<3)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/pynacl-1.5.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.27[${PYTHON_USEDEP}]
+	>=dev-python/pynacl-1.5.0[${PYTHON_USEDEP}] <dev-python/pynacl-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.27[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]

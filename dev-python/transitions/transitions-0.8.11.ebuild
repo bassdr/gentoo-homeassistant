@@ -23,6 +23,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="diagrams"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	pygraphviz ; extra == 'diagrams'
+	pytest ; extra == 'test'
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	diagrams? ( dev-python/pygraphviz[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]

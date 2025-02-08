@@ -16,6 +16,32 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	codecov; extra == "tests"
+	folium; extra == "tests"
+	jupyterlab; extra == "tests"
+	libpysal>=4.5
+	mapclassify; extra == "tests"
+	matplotlib; extra == "pen"
+	matplotlib>=3.6
+	nbsphinx; extra == "docs"
+	numpy>=1.23
+	numpydoc; extra == "docs"
+	pandas; extra == "pen"
+	pre-commit; extra == "dev"
+	pydata-sphinx-theme; extra == "docs"
+	pytest-cov; extra == "tests"
+	pytest-xdist; extra == "tests"
+	pytest; extra == "tests"
+	ruff; extra == "dev"
+	scipy>=1.8
+	seaborn; extra == "pen"
+	seaborn; extra == "tests"
+	sphinx-gallery; extra == "docs"
+	sphinx; extra == "docs"
+	sphinx_bootstrap_theme; extra == "docs"
+	sphinxcontrib-bibtex; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/libpysal-4.5[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.6[${PYTHON_USEDEP}]

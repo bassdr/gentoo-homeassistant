@@ -20,9 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (<4.0,>=3.6.2)
+	async-timeout (<5.0,>=4.0.0)
+	pytz (>=2020.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
-	<dev-python/async-timeout-5.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-4.0.0[${PYTHON_USEDEP}] <dev-python/async-timeout-5.0[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2020.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

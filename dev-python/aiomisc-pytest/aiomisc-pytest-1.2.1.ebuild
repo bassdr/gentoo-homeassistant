@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiomisc>=17
+	pytest==8.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiomisc-17[${PYTHON_USEDEP}]
-	=dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
+	~dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

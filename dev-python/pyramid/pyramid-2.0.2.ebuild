@@ -16,6 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx >=3.0.0 ; extra == 'docs'
+	coverage ; extra == 'testing'
+	docutils ; extra == 'docs'
+	hupper >=1.5
+	plaster
+	plaster-pastedeploy
+	pylons-sphinx-latesturl ; extra == 'docs'
+	pylons-sphinx-themes >=1.0.8 ; extra == 'docs'
+	pytest >=5.4.2 ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	sphinx-copybutton ; extra == 'docs'
+	sphinxcontrib-autoprogram ; extra == 'docs'
+	translationstring >=0.4
+	venusian >=1.0
+	webob >=1.8.3
+	webtest >=1.3.1 ; extra == 'testing'
+	zope.component >=4.0 ; extra == 'testing'
+	zope.deprecation >=3.5.0
+	zope.interface >=3.8.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	>=dev-python/hupper-1.5[${PYTHON_USEDEP}]

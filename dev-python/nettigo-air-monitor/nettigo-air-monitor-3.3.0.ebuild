@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.7.0
+	aqipy-atmotech
+	dacite>=1.7.0
+	tenacity
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}]
 	dev-python/aqipy-atmotech[${PYTHON_USEDEP}]

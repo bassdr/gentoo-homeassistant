@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	joblib (>=0.10)
+	matplotlib (>=1.4.0)
+	pytest; extra == 'testing'
+	scikit-learn (>=0.18)
+	scipy (>=0.9)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/joblib-0.10[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-1.4.0[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-linkplay-0.0.20[${PYTHON_USEDEP}]
+	~dev-python/python-linkplay-0.0.20[${PYTHON_USEDEP}]
 "

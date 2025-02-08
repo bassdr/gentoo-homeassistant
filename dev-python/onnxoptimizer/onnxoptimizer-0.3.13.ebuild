@@ -16,8 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	mypy (==0.600) ; extra == 'mypy'
+	onnx
+"
 GENERATED_RDEPEND="${RDEPEND}
-	mypy? ( =dev-python/mypy-0.600[${PYTHON_USEDEP}] )
+	mypy? ( ~dev-python/mypy-0.600[${PYTHON_USEDEP}] )
 	dev-python/onnx[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

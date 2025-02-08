@@ -23,18 +23,30 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	anyio<5,>=3.5.0
+	cached-property; python_version < "3.8"
+	distro<2,>=1.7.0
+	httpx<1,>=0.23.0
+	numpy>=1; extra == "datalib"
+	pandas-stubs>=1.1.0.11; extra == "datalib"
+	pandas>=1.2.3; extra == "datalib"
+	pydantic<3,>=1.9.0
+	sniffio
+	tqdm>4
+	typing-extensions<5,>=4.7
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/anyio-5[${PYTHON_USEDEP}]
-	dev-python/cached-property[${PYTHON_USEDEP}]
-	<dev-python/distro-2[${PYTHON_USEDEP}]
-	<dev-python/httpx-1[${PYTHON_USEDEP}]
+	>=dev-python/anyio-3.5.0[${PYTHON_USEDEP}] <dev-python/anyio-5[${PYTHON_USEDEP}]
+	>=dev-python/distro-1.7.0[${PYTHON_USEDEP}] <dev-python/distro-2[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}] <dev-python/httpx-1[${PYTHON_USEDEP}]
 	datalib? ( >=dev-python/numpy-1[${PYTHON_USEDEP}] )
 	datalib? ( >=dev-python/pandas-1.2.3[${PYTHON_USEDEP}] )
 	datalib? ( >=dev-python/pandas-stubs-1.1.0.11[${PYTHON_USEDEP}] )
-	<dev-python/pydantic-3[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
 	>dev-python/tqdm-4[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.7[${PYTHON_USEDEP}] <dev-python/typing-extensions-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]

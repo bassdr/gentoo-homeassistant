@@ -16,12 +16,21 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Sphinx>=3.5
+	docutils!=0.18.*,!=0.19.*,>=0.8
+	importlib-metadata>=3.6; python_version < "3.10"
+	pybtex-docutils>=1.0.0
+	pybtex>=0.24
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	setuptools; python_version >= "3.12"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/docutils-0.18*[${PYTHON_USEDEP}]
+	>=dev-python/docutils-0.8[${PYTHON_USEDEP}] !=dev-python/docutils-0.18*[${PYTHON_USEDEP}] !=dev-python/docutils-0.19*[${PYTHON_USEDEP}]
 	>=dev-python/pybtex-0.24[${PYTHON_USEDEP}]
 	>=dev-python/pybtex-docutils-1.0.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-3.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

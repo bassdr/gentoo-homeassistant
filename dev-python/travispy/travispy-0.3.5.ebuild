@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python API for Travis CI."
 HOMEPAGE="
-  https://pypi.org/project/TravisPy/
+  https://pypi.org/project/travispy/
 "
 
 LICENSE="GPL-3"
@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	pytest
+	pytest-rerunfailures
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]

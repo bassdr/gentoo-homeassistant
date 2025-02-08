@@ -15,11 +15,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	APScheduler
+	dash
+	dash-bootstrap-components
+	dataclasses ; python_version < "3.7"
+	fire
+	pandas
+	py-cpuinfo
+	pynvml
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/apscheduler[${PYTHON_USEDEP}]
 	dev-python/dash[${PYTHON_USEDEP}]
 	dev-python/dash-bootstrap-components[${PYTHON_USEDEP}]
-	dev-python/dataclasses[${PYTHON_USEDEP}]
 	dev-python/fire[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]

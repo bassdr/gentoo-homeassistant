@@ -74,9 +74,33 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs docstest nox pep8test sdist ssh test-randomorder"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	bcrypt>=3.1.5; extra == "ssh"
+	build; extra == "sdist"
+	certifi; extra == "test"
+	cffi>=1.12; platform_python_implementation != "PyPy"
+	check-sdist; extra == "pep8test"
+	click; extra == "pep8test"
+	cryptography-vectors==43.0.1; extra == "test"
+	mypy; extra == "pep8test"
+	nox; extra == "nox"
+	pretend; extra == "test"
+	pyenchant>=1.6.11; extra == "docstest"
+	pytest-benchmark; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-randomly; extra == "test-randomorder"
+	pytest-xdist; extra == "test"
+	pytest>=6.2.0; extra == "test"
+	readme-renderer; extra == "docstest"
+	ruff; extra == "pep8test"
+	sphinx-rtd-theme>=1.1.1; extra == "docs"
+	sphinx>=5.3.0; extra == "docs"
+	sphinxcontrib-spelling>=4.0.1; extra == "docstest"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ssh? ( >=dev-python/bcrypt-3.1.5[${PYTHON_USEDEP}] )
 	sdist? ( dev-python/build[${PYTHON_USEDEP}] )
+	>=dev-python/cffi-1.12[${PYTHON_USEDEP}]
 	pep8test? ( dev-python/check-sdist[${PYTHON_USEDEP}] )
 	pep8test? ( dev-python/click[${PYTHON_USEDEP}] )
 	pep8test? ( dev-python/mypy[${PYTHON_USEDEP}] )
@@ -121,7 +145,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/certifi[${PYTHON_USEDEP}]
-		=dev-python/cryptography-vectors-43.0.1[${PYTHON_USEDEP}]
+		~dev-python/cryptography-vectors-43.0.1[${PYTHON_USEDEP}]
 		dev-python/pretend[${PYTHON_USEDEP}]
 		>=dev-python/pytest-6.2.0[${PYTHON_USEDEP}]
 		dev-python/pytest-benchmark[${PYTHON_USEDEP}]

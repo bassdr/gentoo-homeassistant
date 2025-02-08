@@ -21,6 +21,16 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	RPi.GPIO ; extra == 'test'
+	colorzero
+	coverage ; extra == 'test'
+	mock ; extra == 'test'
+	pigpio ; extra == 'test'
+	pytest ; extra == 'test'
+	sphinx ; extra == 'doc'
+	sphinx-rtd-theme ; extra == 'doc'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/colorzero[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/wirelesstagpy-0.8.1[${PYTHON_USEDEP}]
+	~dev-python/wirelesstagpy-0.8.1[${PYTHON_USEDEP}]
 "

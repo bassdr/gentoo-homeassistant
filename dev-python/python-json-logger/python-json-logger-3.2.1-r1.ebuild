@@ -16,7 +16,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/freezegun[${PYTHON_USEDEP}]
@@ -38,7 +37,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/mkdocs-literate-nav[${PYTHON_USEDEP}]
 		>=dev-python/mkdocs-material-8.5[${PYTHON_USEDEP}]
 		dev-python/mkdocstrings[python,${PYTHON_USEDEP}]
+		$(python_gen_cond_dep 'dev-python/msgspec[${PYTHON_USEDEP}]' python3_12)
+		$(python_gen_cond_dep 'dev-python/msgspec-python313-pre[${PYTHON_USEDEP}]' python3_13{,t})
 		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/orjson[${PYTHON_USEDEP}]
 		dev-python/pylint[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/tzdata[${PYTHON_USEDEP}]
@@ -51,5 +53,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

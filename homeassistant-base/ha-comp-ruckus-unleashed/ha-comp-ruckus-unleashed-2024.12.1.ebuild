@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioruckus-0.42[${PYTHON_USEDEP}]
+	~dev-python/aioruckus-0.42[${PYTHON_USEDEP}]
 "

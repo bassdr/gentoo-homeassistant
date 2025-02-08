@@ -32,7 +32,7 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/astroid-4[${PYTHON_USEDEP}]
+		>=dev-python/astroid-2[${PYTHON_USEDEP}] <dev-python/astroid-4[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]

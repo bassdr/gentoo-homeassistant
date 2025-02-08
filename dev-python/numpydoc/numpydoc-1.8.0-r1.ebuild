@@ -24,6 +24,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="developer doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	intersphinx-registry; extra == "doc"
+	matplotlib; extra == "test"
+	matplotlib>=3.5; extra == "doc"
+	numpy>=1.22; extra == "doc"
+	pre-commit>=3.3; extra == "developer"
+	pydata-sphinx-theme>=0.13.3; extra == "doc"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	sphinx>=6
+	sphinx>=7; extra == "doc"
+	tabulate>=0.8.10
+	tomli; python_version < "3.11" and extra == "developer"
+	tomli>=1.1.0; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/matplotlib-3.5[${PYTHON_USEDEP}] )

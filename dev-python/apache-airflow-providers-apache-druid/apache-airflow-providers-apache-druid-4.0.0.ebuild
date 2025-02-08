@@ -16,6 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-apache-hive; extra == "apache-hive"
+	apache-airflow-providers-common-sql>=1.20.0
+	apache-airflow>=2.9.0
+	pydruid>=0.4.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	apache-hive? ( dev-python/apache-airflow-providers-apache-hive[${PYTHON_USEDEP}] )

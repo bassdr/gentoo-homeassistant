@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/fints-3.1.0[${PYTHON_USEDEP}]
+	~dev-python/fints-3.1.0[${PYTHON_USEDEP}]
 "

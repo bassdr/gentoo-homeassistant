@@ -22,8 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	opuslib (==3.0.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/opuslib-3.0.1[${PYTHON_USEDEP}]
+	~dev-python/opuslib-3.0.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	~dev-python/opuslib-3.0.1[${PYTHON_USEDEP}]"

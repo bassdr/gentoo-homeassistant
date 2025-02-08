@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} 0.1.1.post1)"
@@ -17,6 +16,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow
+	accelerate
+	clean-fid
+	clip-anytorch
+	dctorch
+	einops
+	jsonmerge
+	kornia
+	safetensors
+	scikit-image
+	scipy
+	torch >=2.0
+	torchdiffeq
+	torchsde
+	torchvision
+	tqdm
+	wandb
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/accelerate[${PYTHON_USEDEP}]
 	dev-python/clean-fid[${PYTHON_USEDEP}]

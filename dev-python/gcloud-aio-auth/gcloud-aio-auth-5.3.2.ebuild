@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.9.0
+	backoff<3.0.0,>=1.0.0
+	chardet<6.0,>=2.0
+	cryptography<45.0.0,>=2.0.0
+	pyjwt<3.0.0,>=1.5.3
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/chardet-6.0[${PYTHON_USEDEP}]
-	<dev-python/cryptography-45.0.0[${PYTHON_USEDEP}]
-	<dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/backoff-1.0.0[${PYTHON_USEDEP}] <dev-python/backoff-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/chardet-2.0[${PYTHON_USEDEP}] <dev-python/chardet-6.0[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-2.0.0[${PYTHON_USEDEP}] <dev-python/cryptography-45.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-1.5.3[${PYTHON_USEDEP}] <dev-python/pyjwt-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	httpx~=0.20
+	marshmallow-dataclass[enum,union]~=8.1
+	marshmallow~=3.8
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.20[${PYTHON_USEDEP}] =dev-python/httpx-0*[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-3.8[${PYTHON_USEDEP}] =dev-python/marshmallow-3*[${PYTHON_USEDEP}]

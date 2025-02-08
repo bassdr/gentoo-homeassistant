@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy>=1.23
+	packaging
+	pyproj>=3.3
+	rasterio>=1.3.7
+	scipy; extra == "all"
+	scipy; extra == "interp"
+	xarray>=2024.7.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

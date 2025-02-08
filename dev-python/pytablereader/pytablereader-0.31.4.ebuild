@@ -16,35 +16,74 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	DataProperty (<2,>=0.54.2)
+	Markdown (<4,>=2.6.6) ; extra == 'all'
+	Markdown (<4,>=2.6.6) ; extra == 'md'
+	Markdown (<4,>=2.6.6) ; extra == 'test'
+	SimpleSQLite (<2,>=1.3.2) ; extra == 'all'
+	SimpleSQLite (<2,>=1.3.2) ; extra == 'gs'
+	SimpleSQLite (<2,>=1.3.2) ; extra == 'sqlite'
+	SimpleSQLite (<2,>=1.3.2) ; extra == 'test'
+	beautifulsoup4 (<5,>=4.5.3)
+	excelrd (>=2.0.2) ; extra == 'all'
+	excelrd (>=2.0.2) ; extra == 'excel'
+	excelrd (>=2.0.2) ; extra == 'test'
+	gspread ; extra == 'all'
+	gspread ; extra == 'gs'
+	jsonschema (<5,>=2.5.1)
+	loguru (<1,>=0.4.1) ; extra == 'all'
+	loguru (<1,>=0.4.1) ; extra == 'logging'
+	mbstrdecoder (<2,>=1.0.0)
+	oauth2client ; extra == 'all'
+	oauth2client ; extra == 'gs'
+	path (<17,>=13)
+	pathvalidate (<4,>=2.5.2)
+	pyOpenSSL ; extra == 'all'
+	pyOpenSSL ; extra == 'gs'
+	pypandoc ; extra == 'all'
+	pypandoc ; extra == 'mediawiki'
+	pypandoc ; extra == 'test'
+	pytablewriter[excel] (>=0.50) ; extra == 'test'
+	pytest (>=5) ; extra == 'test'
+	responses ; extra == 'test'
+	retryrequests (<1,>=0.1) ; extra == 'all'
+	retryrequests (<1,>=0.1) ; extra == 'test'
+	retryrequests (<1,>=0.1) ; extra == 'url'
+	setuptools (>=38.3.0)
+	subprocrunner ; extra == 'test'
+	tabledata (<2,>=1.1.1)
+	typepy (<2,>=1.2.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/beautifulsoup4-5[${PYTHON_USEDEP}]
-	<dev-python/dataproperty-2[${PYTHON_USEDEP}]
+	>=dev-python/beautifulsoup4-4.5.3[${PYTHON_USEDEP}] <dev-python/beautifulsoup4-5[${PYTHON_USEDEP}]
+	>=dev-python/dataproperty-0.54.2[${PYTHON_USEDEP}] <dev-python/dataproperty-2[${PYTHON_USEDEP}]
 	all? ( >=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}] )
 	excel? ( >=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/gspread[${PYTHON_USEDEP}] )
 	gs? ( dev-python/gspread[${PYTHON_USEDEP}] )
-	<dev-python/jsonschema-5[${PYTHON_USEDEP}]
-	all? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
-	logging? ( <dev-python/loguru-1[${PYTHON_USEDEP}] )
-	all? ( <dev-python/markdown-4[${PYTHON_USEDEP}] )
-	md? ( <dev-python/markdown-4[${PYTHON_USEDEP}] )
-	<dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-2.5.1[${PYTHON_USEDEP}] <dev-python/jsonschema-5[${PYTHON_USEDEP}]
+	all? ( >=dev-python/loguru-0.4.1[${PYTHON_USEDEP}] <dev-python/loguru-1[${PYTHON_USEDEP}] )
+	logging? ( >=dev-python/loguru-0.4.1[${PYTHON_USEDEP}] <dev-python/loguru-1[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/markdown-2.6.6[${PYTHON_USEDEP}] <dev-python/markdown-4[${PYTHON_USEDEP}] )
+	md? ( >=dev-python/markdown-2.6.6[${PYTHON_USEDEP}] <dev-python/markdown-4[${PYTHON_USEDEP}] )
+	>=dev-python/mbstrdecoder-1.0.0[${PYTHON_USEDEP}] <dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]
 	all? ( dev-python/oauth2client[${PYTHON_USEDEP}] )
 	gs? ( dev-python/oauth2client[${PYTHON_USEDEP}] )
-	<dev-python/path-17[${PYTHON_USEDEP}]
-	<dev-python/pathvalidate-4[${PYTHON_USEDEP}]
+	>=dev-python/path-13[${PYTHON_USEDEP}] <dev-python/path-17[${PYTHON_USEDEP}]
+	>=dev-python/pathvalidate-2.5.2[${PYTHON_USEDEP}] <dev-python/pathvalidate-4[${PYTHON_USEDEP}]
 	all? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	gs? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	all? ( dev-python/pypandoc[${PYTHON_USEDEP}] )
 	mediawiki? ( dev-python/pypandoc[${PYTHON_USEDEP}] )
-	all? ( <dev-python/retryrequests-1[${PYTHON_USEDEP}] )
-	url? ( <dev-python/retryrequests-1[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/retryrequests-0.1[${PYTHON_USEDEP}] <dev-python/retryrequests-1[${PYTHON_USEDEP}] )
+	url? ( >=dev-python/retryrequests-0.1[${PYTHON_USEDEP}] <dev-python/retryrequests-1[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-38.3.0[${PYTHON_USEDEP}]
-	all? ( <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
-	gs? ( <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
-	sqlite? ( <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
-	<dev-python/tabledata-2[${PYTHON_USEDEP}]
-	<dev-python/typepy-2[${PYTHON_USEDEP}]
+	all? ( >=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}] <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
+	gs? ( >=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}] <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
+	sqlite? ( >=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}] <dev-python/simplesqlite-2[${PYTHON_USEDEP}] )
+	>=dev-python/tabledata-1.1.1[${PYTHON_USEDEP}] <dev-python/tabledata-2[${PYTHON_USEDEP}]
+	>=dev-python/typepy-1.2.0[${PYTHON_USEDEP}] <dev-python/typepy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
@@ -52,13 +91,13 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/excelrd-2.0.2[${PYTHON_USEDEP}]
-		<dev-python/markdown-4[${PYTHON_USEDEP}]
+		>=dev-python/markdown-2.6.6[${PYTHON_USEDEP}] <dev-python/markdown-4[${PYTHON_USEDEP}]
 		dev-python/pypandoc[${PYTHON_USEDEP}]
 		>=dev-python/pytablewriter-0.50[excel,${PYTHON_USEDEP}]
 		>=dev-python/pytest-5[${PYTHON_USEDEP}]
 		dev-python/responses[${PYTHON_USEDEP}]
-		<dev-python/retryrequests-1[${PYTHON_USEDEP}]
-		<dev-python/simplesqlite-2[${PYTHON_USEDEP}]
+		>=dev-python/retryrequests-0.1[${PYTHON_USEDEP}] <dev-python/retryrequests-1[${PYTHON_USEDEP}]
+		>=dev-python/simplesqlite-1.3.2[${PYTHON_USEDEP}] <dev-python/simplesqlite-2[${PYTHON_USEDEP}]
 		dev-python/subprocrunner[${PYTHON_USEDEP}]
 	)
 "

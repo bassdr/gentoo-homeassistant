@@ -16,6 +16,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML>=3.0
+	appdirs>=1.4.3; extra == "fsspec"
+	black==24.10.0; extra == "tests"
+	cryptography<44
+	flake8-docstrings; extra == "tests"
+	flake8; extra == "tests"
+	fsspec>=2021.07.0; extra == "fsspec"
+	funcy>=1.14; extra == "fsspec"
+	funcy>=1.14; extra == "tests"
+	google-api-python-client>=1.12.5
+	importlib-resources<6; python_version < "3.10" and extra == "tests"
+	oauth2client>=4.0.0
+	pyOpenSSL<=24.2.1,>=19.1.0
+	pyinstaller; extra == "tests"
+	pytest-mock; extra == "tests"
+	pytest>=4.6.0; extra == "tests"
+	timeout-decorator; extra == "tests"
+	tqdm>=4.0.0; extra == "fsspec"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	fsspec? ( >=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] )
 	<dev-python/cryptography-44[${PYTHON_USEDEP}]
@@ -23,7 +43,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	fsspec? ( >=dev-python/funcy-1.14[${PYTHON_USEDEP}] )
 	>=dev-python/google-api-python-client-1.12.5[${PYTHON_USEDEP}]
 	>=dev-python/oauth2client-4.0.0[${PYTHON_USEDEP}]
-	<=dev-python/pyopenssl-24.2.1[${PYTHON_USEDEP}]
+	>=dev-python/pyopenssl-19.1.0[${PYTHON_USEDEP}] <=dev-python/pyopenssl-24.2.1[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.0[${PYTHON_USEDEP}]
 	fsspec? ( >=dev-python/tqdm-4.0.0[${PYTHON_USEDEP}] )
 "
@@ -32,7 +52,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-24.10.0[${PYTHON_USEDEP}]
+		~dev-python/black-24.10.0[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/flake8-docstrings[${PYTHON_USEDEP}]
 		>=dev-python/funcy-1.14[${PYTHON_USEDEP}]

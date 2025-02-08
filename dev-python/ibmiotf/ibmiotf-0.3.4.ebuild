@@ -20,6 +20,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	dicttoxml
+	iso8601
+	paho-mqtt
+	pytz
+	requests
+	requests-toolbelt
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/dicttoxml[${PYTHON_USEDEP}]
 	dev-python/iso8601[${PYTHON_USEDEP}]

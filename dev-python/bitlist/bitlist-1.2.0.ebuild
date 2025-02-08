@@ -16,6 +16,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build ~=0.10 ; extra == 'publish'
+	coveralls ~=3.3.1 ; extra == 'coveralls'
+	parts ~=1.7
+	pylint ~=2.17.0 ; extra == 'lint'
+	pytest ~=7.2 ; extra == 'test'
+	pytest-cov ~=4.0 ; extra == 'test'
+	sphinx ~=4.2.0 ; extra == 'docs'
+	sphinx-rtd-theme ~=1.0.0 ; extra == 'docs'
+	toml ~=0.10.2 ; extra == 'docs'
+	twine ~=4.0 ; extra == 'publish'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	publish? ( >=dev-python/build-0.10[${PYTHON_USEDEP}] =dev-python/build-0*[${PYTHON_USEDEP}] )
 	coveralls? ( >=dev-python/coveralls-3.3.1[${PYTHON_USEDEP}] =dev-python/coveralls-3.3*[${PYTHON_USEDEP}] )

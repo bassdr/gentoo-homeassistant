@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyebox-1.1.4[${PYTHON_USEDEP}]
+	~dev-python/pyebox-1.1.4[${PYTHON_USEDEP}]
 "

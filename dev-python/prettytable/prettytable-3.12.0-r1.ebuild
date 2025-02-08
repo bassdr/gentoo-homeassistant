@@ -21,7 +21,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest-cov; extra == "tests"
+	pytest-lazy-fixtures; extra == "tests"
+	pytest; extra == "tests"
+	wcwidth
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/wcwidth[${PYTHON_USEDEP}]
 "

@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python library to access the Solar-Log"
 HOMEPAGE="
-  https://pypi.org/project/solarlog_cli/
+  https://pypi.org/project/solarlog-cli/
   Repository, https://github.com/dontinelli/solarlog_cli.git
   Issues, https://github.com/dontinelli/solarlog_cli/issues
   Changelog, https://github.com/dontinelli/solarlog_cli/blob/master/CHANGELOG.md
@@ -25,6 +25,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	mashumaro>=3.13
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/mashumaro-3.13[${PYTHON_USEDEP}]

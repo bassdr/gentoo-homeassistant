@@ -25,13 +25,28 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="spelling testutils"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	astroid<=3.4.0-dev0,>=3.3.8
+	colorama>=0.4.5; sys_platform == "win32"
+	dill>=0.2; python_version < "3.11"
+	dill>=0.3.6; python_version >= "3.11"
+	dill>=0.3.7; python_version >= "3.12"
+	gitpython>3; extra == "testutils"
+	isort!=5.13.0,<7,>=4.2.5
+	mccabe<0.8,>=0.6
+	platformdirs>=2.2.0
+	pyenchant~=3.2; extra == "spelling"
+	tomli>=1.1.0; python_version < "3.11"
+	tomlkit>=0.10.1
+	typing-extensions>=3.10.0; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<=dev-python/astroid-3.4.0-de0[${PYTHON_USEDEP}]
+	>=dev-python/astroid-3.3.8[${PYTHON_USEDEP}] <=dev-python/astroid-3.4.0-de0[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/dill-0.3.7[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/dill-0.3.7[${PYTHON_USEDEP}]
 	testutils? ( >dev-python/gitpython-3[${PYTHON_USEDEP}] )
-	!=dev-python/isort-5.13.0[${PYTHON_USEDEP}]
-	<dev-python/mccabe-0.8[${PYTHON_USEDEP}]
+	>=dev-python/isort-4.2.5[${PYTHON_USEDEP}] <dev-python/isort-7[${PYTHON_USEDEP}] !~dev-python/isort-5.13.0[${PYTHON_USEDEP}]
+	>=dev-python/mccabe-0.6[${PYTHON_USEDEP}] <dev-python/mccabe-0.8[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-2.2.0[${PYTHON_USEDEP}]
 	spelling? ( >=dev-python/pyenchant-3.2[${PYTHON_USEDEP}] =dev-python/pyenchant-3*[${PYTHON_USEDEP}] )
 	>=dev-python/tomlkit-0.10.1[${PYTHON_USEDEP}]

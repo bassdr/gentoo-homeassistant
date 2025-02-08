@@ -20,7 +20,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	click>=7
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-7[${PYTHON_USEDEP}]
 "

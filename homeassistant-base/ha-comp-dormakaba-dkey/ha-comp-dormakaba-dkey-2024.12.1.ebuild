@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/py-dormakaba-dkey-1.0.5[${PYTHON_USEDEP}]
+	~dev-python/py-dormakaba-dkey-1.0.5[${PYTHON_USEDEP}]
 "

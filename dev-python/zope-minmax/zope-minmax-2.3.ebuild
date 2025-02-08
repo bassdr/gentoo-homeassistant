@@ -12,12 +12,20 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.minmax/"
+  https://pypi.org/project/zope-minmax/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	persistent
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	zope.interface
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/persistent[${PYTHON_USEDEP}]
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )

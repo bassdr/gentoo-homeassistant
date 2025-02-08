@@ -16,6 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	click>=8.1.0
+	docstring_parser_fork>=0.0.12
+	flake8>=4; extra == "flake8"
+	tomli>=2.0.1; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.1.0[${PYTHON_USEDEP}]
 	>=dev-python/docstring-parser-fork-0.0.12[${PYTHON_USEDEP}]

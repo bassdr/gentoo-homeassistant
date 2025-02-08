@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pymicro-vad-1.0.1[${PYTHON_USEDEP}]
-	=dev-python/pyspeex-noise-1.0.2[${PYTHON_USEDEP}]
+	~dev-python/pymicro-vad-1.0.1[${PYTHON_USEDEP}]
+	~dev-python/pyspeex-noise-1.0.2[${PYTHON_USEDEP}]
 "

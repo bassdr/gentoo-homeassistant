@@ -19,17 +19,34 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="completion docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	SecretStorage (>=3.2) ; sys_platform == "linux"
+	flake8 (<5) ; extra == 'testing'
+	furo ; extra == 'docs'
+	importlib-metadata (>=4.11.4) ; python_version < "3.12"
+	importlib-resources ; python_version < "3.9"
+	jaraco.classes
+	jaraco.packaging (>=9) ; extra == 'docs'
+	jaraco.tidelift (>=1.4) ; extra == 'docs'
+	jeepney (>=0.4.2) ; sys_platform == "linux"
+	pytest (>=6) ; extra == 'testing'
+	pytest-black (>=0.3.7) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-checkdocs (>=2.4) ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-enabler (>=1.3) ; extra == 'testing'
+	pytest-flake8 ; (python_version < "3.12") and extra == 'testing'
+	pytest-mypy (>=0.9.1) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pywin32-ctypes (>=0.2.0) ; sys_platform == "win32"
+	rst.linker (>=1.9) ; extra == 'docs'
+	shtab ; extra == 'completion'
+	sphinx (>=3.5) ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]' python3_12)
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/jaraco-classes[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/jaraco-tidelift-1.4[${PYTHON_USEDEP}] )
 	>=dev-python/jeepney-0.4.2[${PYTHON_USEDEP}]
-	>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
-	dev-python/pytest-flake8[${PYTHON_USEDEP}]
-	>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
 	>=dev-python/secretstorage-3.2[${PYTHON_USEDEP}]
 	completion? ( dev-python/shtab[${PYTHON_USEDEP}] )
@@ -57,9 +74,11 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		<dev-python/flake8-5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-6[${PYTHON_USEDEP}]
+		>=dev-python/pytest-black-0.3.7[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-1.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

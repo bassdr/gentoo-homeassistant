@@ -22,7 +22,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	six >=1.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/six-1.5[${PYTHON_USEDEP}]
 "

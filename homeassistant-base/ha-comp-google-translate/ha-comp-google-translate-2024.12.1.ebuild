@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/gtts-2.2.4[${PYTHON_USEDEP}]
+	~dev-python/gtts-2.2.4[${PYTHON_USEDEP}]
 "

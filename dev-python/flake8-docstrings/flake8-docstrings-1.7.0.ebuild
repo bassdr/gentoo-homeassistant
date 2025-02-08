@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8 (>=3)
+	pydocstyle (>=2.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flake8-3[${PYTHON_USEDEP}]
 	>=dev-python/pydocstyle-2.1[${PYTHON_USEDEP}]

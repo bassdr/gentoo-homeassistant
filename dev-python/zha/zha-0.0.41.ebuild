@@ -21,16 +21,28 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bellows==0.42.2
+	pyserial-asyncio-fast
+	pyserial==3.5
+	pytest; extra == "testing"
+	zha-quirks==0.0.125
+	zigpy-deconz==0.24.1
+	zigpy-xbee==0.21.0
+	zigpy-zigate==0.13.2
+	zigpy-znp==0.13.1
+	zigpy==0.73.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/bellows-0.42.2[${PYTHON_USEDEP}]
-	=dev-python/pyserial-3.5[${PYTHON_USEDEP}]
+	~dev-python/bellows-0.42.2[${PYTHON_USEDEP}]
+	~dev-python/pyserial-3.5[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio-fast[${PYTHON_USEDEP}]
-	=dev-python/zha-quirks-0.0.125[${PYTHON_USEDEP}]
-	=dev-python/zigpy-0.73.1[${PYTHON_USEDEP}]
-	=dev-python/zigpy-deconz-0.24.1[${PYTHON_USEDEP}]
-	=dev-python/zigpy-xbee-0.21.0[${PYTHON_USEDEP}]
-	=dev-python/zigpy-zigate-0.13.2[${PYTHON_USEDEP}]
-	=dev-python/zigpy-znp-0.13.1[${PYTHON_USEDEP}]
+	~dev-python/zha-quirks-0.0.125[${PYTHON_USEDEP}]
+	~dev-python/zigpy-0.73.1[${PYTHON_USEDEP}]
+	~dev-python/zigpy-deconz-0.24.1[${PYTHON_USEDEP}]
+	~dev-python/zigpy-xbee-0.21.0[${PYTHON_USEDEP}]
+	~dev-python/zigpy-zigate-0.13.2[${PYTHON_USEDEP}]
+	~dev-python/zigpy-znp-0.13.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

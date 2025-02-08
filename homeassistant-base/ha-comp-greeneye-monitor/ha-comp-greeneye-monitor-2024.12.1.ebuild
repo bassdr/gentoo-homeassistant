@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/greeneye-monitor-3.0.3[${PYTHON_USEDEP}]
+	~dev-python/greeneye-monitor-3.0.3[${PYTHON_USEDEP}]
 "

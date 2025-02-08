@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-tado-0.17.7[${PYTHON_USEDEP}]
+	~dev-python/python-tado-0.17.7[${PYTHON_USEDEP}]
 "

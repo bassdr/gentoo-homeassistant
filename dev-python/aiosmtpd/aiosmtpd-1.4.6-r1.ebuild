@@ -20,7 +20,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	atpublic
+	attrs
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/atpublic[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]

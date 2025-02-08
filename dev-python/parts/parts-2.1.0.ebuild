@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="coveralls docs publish"
+GENERATED_IUSE="coveralls docs lint publish"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,15 +16,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build~=0.10; extra == "publish"
+	coveralls~=4.0; extra == "coveralls"
+	pylint~=2.17.0; python_version < "3.12" and extra == "lint"
+	pylint~=3.2.0; python_version >= "3.12" and extra == "lint"
+	pytest-cov~=4.1; python_version < "3.12" and extra == "test"
+	pytest-cov~=5.0; python_version >= "3.12" and extra == "test"
+	pytest~=7.4; python_version < "3.12" and extra == "test"
+	pytest~=8.2; python_version >= "3.12" and extra == "test"
+	sphinx-autodoc-typehints~=1.23.0; extra == "docs"
+	sphinx-rtd-theme~=2.0.0; extra == "docs"
+	sphinx~=5.0; extra == "docs"
+	toml~=0.10.2; extra == "docs"
+	twine~=4.0; extra == "publish"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	publish? ( >=dev-python/build-0.10[${PYTHON_USEDEP}] =dev-python/build-0*[${PYTHON_USEDEP}] )
 	coveralls? ( >=dev-python/coveralls-4.0[${PYTHON_USEDEP}] =dev-python/coveralls-4*[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '>=dev-python/pylint-2.17.0[${PYTHON_USEDEP}] =dev-python/pylint-2.17*[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/pylint-3.2.0[${PYTHON_USEDEP}] =dev-python/pylint-3.2*[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/pytest-7.4[${PYTHON_USEDEP}] =dev-python/pytest-7*[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/pytest-8.2[${PYTHON_USEDEP}] =dev-python/pytest-8*[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '>=dev-python/pytest-cov-4.1[${PYTHON_USEDEP}] =dev-python/pytest-cov-4*[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/pytest-cov-5.0[${PYTHON_USEDEP}] =dev-python/pytest-cov-5*[${PYTHON_USEDEP}]' python3_13{,t})
+	lint? ( >=dev-python/pylint-3.2.0[${PYTHON_USEDEP}] =dev-python/pylint-3.2*[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] =dev-python/sphinx-5*[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-1.23.0[${PYTHON_USEDEP}] =dev-python/sphinx-autodoc-typehints-1.23*[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-2.0.0[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-2.0*[${PYTHON_USEDEP}] )
@@ -34,7 +44,10 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-BDEPEND+=" test? (
-	~dev-python/pytest-7.2[${PYTHON_USEDEP}]
-	~dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
-)"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-8.2[${PYTHON_USEDEP}] =dev-python/pytest-8*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-5.0[${PYTHON_USEDEP}] =dev-python/pytest-cov-5*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

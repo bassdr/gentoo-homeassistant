@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.component/"
+  https://pypi.org/project/zope-component/"
 
 LICENSE="ZPL"
 SLOT="0"
@@ -20,6 +20,33 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs mintests persistentregistry security zcml"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	ZODB ; extra == 'docs'
+	persistent ; extra == 'persistentregistry'
+	persistent ; extra == 'test'
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	zope.configuration ; extra == 'mintests'
+	zope.configuration ; extra == 'test'
+	zope.configuration ; extra == 'zcml'
+	zope.event
+	zope.hookable (>=4.2.0)
+	zope.i18nmessageid ; extra == 'mintests'
+	zope.i18nmessageid ; extra == 'test'
+	zope.i18nmessageid ; extra == 'zcml'
+	zope.interface (>=5.3)
+	zope.location ; extra == 'security'
+	zope.location ; extra == 'test'
+	zope.proxy ; extra == 'security'
+	zope.proxy ; extra == 'test'
+	zope.security ; extra == 'security'
+	zope.security ; extra == 'test'
+	zope.testing ; extra == 'mintests'
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'mintests'
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	persistentregistry? ( dev-python/persistent[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )

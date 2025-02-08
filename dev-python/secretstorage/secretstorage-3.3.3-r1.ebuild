@@ -12,14 +12,17 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python bindings to FreeDesktop.org Secret Service API"
 HOMEPAGE="
-  https://pypi.org/project/SecretStorage/
+  https://pypi.org/project/secretstorage/
 "
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	cryptography (>=2.0)
+	jeepney (>=0.6)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.0[${PYTHON_USEDEP}]
 	>=dev-python/jeepney-0.6[${PYTHON_USEDEP}]

@@ -25,12 +25,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.0)
+	certifi (>=2023.07.22)
+	numpy (>=1.22.0)
+	pygments (>=2.15.0)
+	pysmb (>=1.2.6,<2.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.22.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.15.0[${PYTHON_USEDEP}]
-	>=dev-python/pysmb-1.2.6[${PYTHON_USEDEP}]
+	>=dev-python/pysmb-1.2.6[${PYTHON_USEDEP}] <dev-python/pysmb-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

@@ -41,7 +41,5 @@ pkg_postinst() {
 	ewarn "/usr/bin/cmark has been renamed to /usr/bin/cmark.py due file"
 	ewarn "collision with app-text/cmark (see bug #627034)"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
 # GENERATED_BDEPEND could not be inserted in this ebuild
 # BDEPEND could not be inserted in this ebuild

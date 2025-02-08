@@ -17,13 +17,19 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	google-api-core (!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5)
+	google-auth (<3.0.0dev,>=1.19.0)
+	google-auth-httplib2 (>=0.1.0)
+	httplib2 (<1dev,>=0.15.0)
+	uritemplate (<5,>=3.0.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-api-core-1.31.5[${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.0*[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.1*[${PYTHON_USEDEP}] !=dev-python/google-api-core-2.2*[${PYTHON_USEDEP}] !~dev-python/google-api-core-2.3.0[${PYTHON_USEDEP}]
+	>=dev-python/google-auth-1.19.0[${PYTHON_USEDEP}] <dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-httplib2-0.1.0[${PYTHON_USEDEP}]
-	<dev-python/httplib2-1_pre[${PYTHON_USEDEP}]
-	<dev-python/uritemplate-5[${PYTHON_USEDEP}]
+	>=dev-python/httplib2-0.15.0[${PYTHON_USEDEP}] <dev-python/httplib2-1_pre[${PYTHON_USEDEP}]
+	>=dev-python/uritemplate-3.0.1[${PYTHON_USEDEP}] <dev-python/uritemplate-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httplib2-0.15[${PYTHON_USEDEP}]

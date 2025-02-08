@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Deprecated
+	alive-progress
+	autograd>=1.4
+	cma==3.2.2
+	dill
+	matplotlib>=3
+	numpy>=1.15
+	scipy>=1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/alive-progress[${PYTHON_USEDEP}]
 	>=dev-python/autograd-1.4[${PYTHON_USEDEP}]
-	=dev-python/cma-3.2.2[${PYTHON_USEDEP}]
+	~dev-python/cma-3.2.2[${PYTHON_USEDEP}]
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	dev-python/dill[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3[${PYTHON_USEDEP}]

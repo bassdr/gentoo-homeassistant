@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="annotated-types attrs brotli cli cryptography full jinja jwt mako minijinja opentelemetry piccolo prometheus pydantic redis sqlalchemy standard structlog valkey"
+GENERATED_IUSE="annotated-types attrs brotli cli cryptography full jinja jwt mako minijinja opentelemetry piccolo picologging prometheus pydantic redis sqlalchemy standard structlog valkey"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,6 +16,77 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	advanced-alchemy>=0.2.2; extra == "full"
+	advanced-alchemy>=0.2.2; extra == "sqlalchemy"
+	annotated-types; extra == "annotated-types"
+	annotated-types; extra == "full"
+	anyio>=3
+	attrs; extra == "attrs"
+	attrs; extra == "full"
+	brotli; extra == "brotli"
+	brotli; extra == "full"
+	click
+	cryptography; extra == "cryptography"
+	cryptography; extra == "full"
+	cryptography; extra == "jwt"
+	email-validator; extra == "full"
+	email-validator; extra == "pydantic"
+	exceptiongroup; python_version < "3.11"
+	fast-query-parsers>=1.0.2; extra == "full"
+	fast-query-parsers>=1.0.2; extra == "standard"
+	httpx>=0.22
+	importlib-metadata; python_version < "3.10"
+	importlib-resources>=5.12.0; python_version < "3.9"
+	jinja2; extra == "full"
+	jinja2; extra == "standard"
+	jinja2>=3.1.2; extra == "full"
+	jinja2>=3.1.2; extra == "jinja"
+	jsbeautifier; extra == "cli"
+	jsbeautifier; extra == "full"
+	jsbeautifier; extra == "standard"
+	litestar-htmx>=0.4.0
+	mako>=1.2.4; extra == "full"
+	mako>=1.2.4; extra == "mako"
+	minijinja>=1.0.0; extra == "full"
+	minijinja>=1.0.0; extra == "minijinja"
+	msgspec>=0.18.2
+	multidict>=6.0.2
+	multipart>=1.2.0
+	opentelemetry-instrumentation-asgi; extra == "full"
+	opentelemetry-instrumentation-asgi; extra == "opentelemetry"
+	piccolo; extra == "full"
+	piccolo; extra == "piccolo"
+	picologging; python_version < "3.13" and extra == "full"
+	picologging; python_version < "3.13" and extra == "picologging"
+	polyfactory>=2.6.3
+	prometheus-client; extra == "full"
+	prometheus-client; extra == "prometheus"
+	pydantic-extra-types!=2.9.0; python_version < "3.9" and extra == "full"
+	pydantic-extra-types!=2.9.0; python_version < "3.9" and extra == "pydantic"
+	pydantic-extra-types; python_version >= "3.9" and extra == "full"
+	pydantic-extra-types; python_version >= "3.9" and extra == "pydantic"
+	pydantic; extra == "full"
+	pydantic; extra == "pydantic"
+	pyjwt>=2.9.0; extra == "full"
+	pyjwt>=2.9.0; extra == "jwt"
+	pyyaml
+	redis[hiredis]>=4.4.4; extra == "full"
+	redis[hiredis]>=4.4.4; extra == "redis"
+	rich-click
+	rich>=13.0.0
+	structlog; extra == "full"
+	structlog; extra == "structlog"
+	typing-extensions
+	uvicorn[standard]; extra == "cli"
+	uvicorn[standard]; extra == "full"
+	uvicorn[standard]; extra == "standard"
+	uvloop>=0.18.0; sys_platform != "win32" and extra == "cli"
+	uvloop>=0.18.0; sys_platform != "win32" and extra == "full"
+	uvloop>=0.18.0; sys_platform != "win32" and extra == "standard"
+	valkey[libvalkey]>=6.0.2; extra == "full"
+	valkey[libvalkey]>=6.0.2; extra == "valkey"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	full? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
 	sqlalchemy? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
@@ -35,7 +106,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	full? ( >=dev-python/fast-query-parsers-1.0.2[${PYTHON_USEDEP}] )
 	standard? ( >=dev-python/fast-query-parsers-1.0.2[${PYTHON_USEDEP}] )
 	>=dev-python/httpx-0.22[${PYTHON_USEDEP}]
-	>=dev-python/importlib-resources-5.12.0[${PYTHON_USEDEP}]
 	full? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
 	full? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	jinja? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
@@ -55,13 +125,15 @@ GENERATED_RDEPEND="${RDEPEND}
 	opentelemetry? ( dev-python/opentelemetry-instrumentation-asgi[${PYTHON_USEDEP}] )
 	full? ( dev-python/piccolo[${PYTHON_USEDEP}] )
 	piccolo? ( dev-python/piccolo[${PYTHON_USEDEP}] )
-	dev-python/picologging[${PYTHON_USEDEP}]
+	full? ( $(python_gen_cond_dep 'dev-python/picologging[${PYTHON_USEDEP}]' python3_12) )
+	picologging? ( $(python_gen_cond_dep 'dev-python/picologging[${PYTHON_USEDEP}]' python3_12) )
 	>=dev-python/polyfactory-2.6.3[${PYTHON_USEDEP}]
 	full? ( dev-python/prometheus-client[${PYTHON_USEDEP}] )
 	prometheus? ( dev-python/prometheus-client[${PYTHON_USEDEP}] )
 	full? ( dev-python/pydantic[${PYTHON_USEDEP}] )
 	pydantic? ( dev-python/pydantic[${PYTHON_USEDEP}] )
-	!=dev-python/pydantic-extra-types-2.9.0[${PYTHON_USEDEP}]
+	full? ( dev-python/pydantic-extra-types[${PYTHON_USEDEP}] )
+	pydantic? ( dev-python/pydantic-extra-types[${PYTHON_USEDEP}] )
 	full? ( >=dev-python/pyjwt-2.9.0[${PYTHON_USEDEP}] )
 	jwt? ( >=dev-python/pyjwt-2.9.0[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
@@ -75,6 +147,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	cli? ( dev-python/uvicorn[standard,${PYTHON_USEDEP}] )
 	full? ( dev-python/uvicorn[standard,${PYTHON_USEDEP}] )
 	standard? ( dev-python/uvicorn[standard,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/uvloop-0.18.0[${PYTHON_USEDEP}] )
+	full? ( >=dev-python/uvloop-0.18.0[${PYTHON_USEDEP}] )
+	standard? ( >=dev-python/uvloop-0.18.0[${PYTHON_USEDEP}] )
 	full? ( >=dev-python/valkey-6.0.2[libvalkey,${PYTHON_USEDEP}] )
 	valkey? ( >=dev-python/valkey-6.0.2[libvalkey,${PYTHON_USEDEP}] )
 "

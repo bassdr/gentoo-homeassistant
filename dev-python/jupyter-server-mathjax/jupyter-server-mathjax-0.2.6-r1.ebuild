@@ -16,7 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	jupyter-server (>=1.1)
+	jupyter-server[test] ; extra == 'test'
+	pytest ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jupyter-server-1.1[${PYTHON_USEDEP}]
 "

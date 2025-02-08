@@ -15,7 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	humanfriendly (>=8.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/humanfriendly-8.0[${PYTHON_USEDEP}]
 "

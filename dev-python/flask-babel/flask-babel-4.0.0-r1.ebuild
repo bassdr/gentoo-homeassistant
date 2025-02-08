@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Flask-Babel/"
+  https://pypi.org/project/flask-babel/"
 SRC_URI="
 	https://github.com/python-babel/flask-babel/archive/refs/tags/v${PV}.tar.gz
 		-> ${P}.gh.tar.gz
@@ -20,7 +20,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Babel (>=2.12)
+	Flask (>=2.0)
+	Jinja2 (>=3.1)
+	pytz (>=2022.7)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/babel-2.12[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.0[${PYTHON_USEDEP}]

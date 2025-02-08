@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md"
 
+REQUIRES_DIST="
+	pyserial-asyncio-fast>=0.11
+	pytz>=2021
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyserial-asyncio-fast-0.11[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2021[${PYTHON_USEDEP}]

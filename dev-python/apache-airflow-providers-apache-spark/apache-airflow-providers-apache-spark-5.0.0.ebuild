@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-cncf-kubernetes>=7.4.0; extra == "cncf-kubernetes"
+	apache-airflow-providers-common-compat; extra == "common-compat"
+	apache-airflow>=2.9.0
+	grpcio-status>=1.59.0
+	pyspark>=3.1.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	cncf-kubernetes? ( >=dev-python/apache-airflow-providers-cncf-kubernetes-7.4.0[${PYTHON_USEDEP}] )

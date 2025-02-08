@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.5
+	async-timeout>=4.0.3
+	yarl>=1.9.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-4.0.3[${PYTHON_USEDEP}]

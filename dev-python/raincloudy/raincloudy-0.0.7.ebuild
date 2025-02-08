@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	bs4
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bs4[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

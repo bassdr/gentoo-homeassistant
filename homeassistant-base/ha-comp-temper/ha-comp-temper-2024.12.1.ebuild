@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/temperusb-1.6.1[${PYTHON_USEDEP}]
+	~dev-python/temperusb-1.6.1[${PYTHON_USEDEP}]
 "

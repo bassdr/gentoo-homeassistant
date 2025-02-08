@@ -16,12 +16,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	docutils
+	hatch; extra == "dev"
+	jupyter-server
+	jupyterlab-server
+	jupyterlite-core<0.6,>=0.2
+	jupyterlite-xeus<4,>=0.1.8; extra == "docs"
+	jupytext
+	myst-parser; extra == "docs"
+	nbformat
+	pydata-sphinx-theme; extra == "docs"
+	sphinx>=4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/jupyter-server[${PYTHON_USEDEP}]
 	dev-python/jupyterlab-server[${PYTHON_USEDEP}]
-	<dev-python/jupyterlite-core-0.6[${PYTHON_USEDEP}]
-	docs? ( <dev-python/jupyterlite-xeus-4[${PYTHON_USEDEP}] )
+	>=dev-python/jupyterlite-core-0.2[${PYTHON_USEDEP}] <dev-python/jupyterlite-core-0.6[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/jupyterlite-xeus-0.1.8[${PYTHON_USEDEP}] <dev-python/jupyterlite-xeus-4[${PYTHON_USEDEP}] )
 	dev-python/jupytext[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	dev-python/nbformat[${PYTHON_USEDEP}]

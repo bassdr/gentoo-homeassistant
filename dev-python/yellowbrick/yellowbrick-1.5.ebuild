@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cycler (>=0.10.0)
+	matplotlib (!=3.0.0,>=2.0.2)
+	numpy (>=1.16.0)
+	scikit-learn (>=1.0.0)
+	scipy (>=1.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cycler-0.10.0[${PYTHON_USEDEP}]
-	!=dev-python/matplotlib-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-2.0.2[${PYTHON_USEDEP}] !~dev-python/matplotlib-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.16.0[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.0.0[${PYTHON_USEDEP}]

@@ -25,6 +25,16 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.0.0
+	awesomeversion>=22.8.0
+	backoff>=2.2.1
+	mashumaro>=3.10
+	orjson>=3.9.8
+	typer[all]>=0.9; extra == "cli"
+	yarl>=1.6.0
+	zeroconf>=0.126.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/awesomeversion-22.8.0[${PYTHON_USEDEP}]

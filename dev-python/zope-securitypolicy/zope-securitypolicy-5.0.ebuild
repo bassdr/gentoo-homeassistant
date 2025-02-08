@@ -12,12 +12,28 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.securitypolicy/"
+  https://pypi.org/project/zope-securitypolicy/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	persistent
+	setuptools
+	zope.annotation
+	zope.authentication
+	zope.component
+	zope.configuration
+	zope.dublincore (>=3.7) ; extra == 'dublincore'
+	zope.i18nmessageid
+	zope.interface (>=3.8)
+	zope.location
+	zope.schema
+	zope.security
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/persistent[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

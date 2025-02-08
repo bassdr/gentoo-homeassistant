@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,40 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	entrypoints
+	freezegun; extra == "tests"
+	funcy
+	gto[tests]; extra == "dev"
+	mypy==1.13.0; extra == "dev"
+	pydantic!=2.0.0,<3,>=1.9.0
+	pygit2; extra == "tests"
+	pylint==3.3.2; extra == "dev"
+	pytest-cov; extra == "tests"
+	pytest-mock; extra == "tests"
+	pytest-test-utils; extra == "tests"
+	pytest; extra == "tests"
+	rich
+	ruamel.yaml
+	scmrepo<4,>=3
+	semver>=2.13.0
+	tabulate>=0.8.10
+	typer>=0.4.1
+	types-PyYAML; extra == "dev"
+	types-filelock; extra == "dev"
+	types-freezegun; extra == "dev"
+	types-requests; extra == "dev"
+	types-setuptools; extra == "dev"
+	types-six; extra == "dev"
+	types-tabulate; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/entrypoints[${PYTHON_USEDEP}]
 	dev-python/funcy[${PYTHON_USEDEP}]
-	!=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}] !~dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
 	dev-python/rich[${PYTHON_USEDEP}]
 	dev-python/ruamel-yaml[${PYTHON_USEDEP}]
-	<dev-python/scmrepo-4[${PYTHON_USEDEP}]
+	>=dev-python/scmrepo-3[${PYTHON_USEDEP}] <dev-python/scmrepo-4[${PYTHON_USEDEP}]
 	>=dev-python/semver-2.13.0[${PYTHON_USEDEP}]
 	>=dev-python/tabulate-0.8.10[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.4.1[${PYTHON_USEDEP}]
@@ -33,9 +59,9 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/freezegun[${PYTHON_USEDEP}]
 		dev-python/gto[tests,${PYTHON_USEDEP}]
-		=dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
 		dev-python/pygit2[${PYTHON_USEDEP}]
-		=dev-python/pylint-3.3.2[${PYTHON_USEDEP}]
+		~dev-python/pylint-3.3.2[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]

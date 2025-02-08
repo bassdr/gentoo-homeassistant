@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 2.7.4.post1)"
@@ -17,6 +16,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	einops
+	torch
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/einops[${PYTHON_USEDEP}]
 	dev-python/torch[${PYTHON_USEDEP}]

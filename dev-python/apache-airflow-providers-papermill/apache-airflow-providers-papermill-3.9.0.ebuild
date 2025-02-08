@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow>=2.9.0
+	ipykernel>=6.29.4
+	pandas<2.2,>=1.5.3; python_version < "3.9"
+	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	papermill[all]>=2.6.0
+	scrapbook[all]>=0.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/ipykernel-6.29.4[${PYTHON_USEDEP}]
-	<dev-python/pandas-2.2[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.1.2[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}]
 	>=dev-python/papermill-2.6.0[all,${PYTHON_USEDEP}]
 	>=dev-python/scrapbook-0.5.0[all,${PYTHON_USEDEP}]
 "

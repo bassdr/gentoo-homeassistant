@@ -16,6 +16,49 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ConfigUpdater
+	StrEnum
+	attrs (>=20.1.0)
+	autorepr
+	click
+	dictdiffer
+	dpath
+	flake8 (>=3.0.0)
+	flatten-dict
+	freezegun ; extra == "test"
+	furl
+	gitignore_parser
+	identify
+	importlib-resources ; python_version >= "3.8" and python_version < "3.9"
+	jmespath
+	loguru
+	marshmallow (>=3.0.0b10)
+	marshmallow-polyfield (>=5.10,<6.0)
+	more-itertools
+	packaging
+	pluggy
+	pylint ; extra == "lint"
+	pytest ; extra == "test"
+	pytest-cov ; extra == "test"
+	pytest-datadir ; extra == "test"
+	pytest-socket ; extra == "test"
+	pytest-testmon ; extra == "test"
+	pytest-watch ; extra == "test"
+	python-slugify
+	requests
+	requests-cache (>=1.0.0)
+	responses ; extra == "test"
+	ruamel.yaml
+	sortedcontainers
+	sphinx ; extra == "doc"
+	sphinx-gitref ; extra == "doc"
+	sphinx_rtd_theme ; extra == "doc"
+	sphobjinv ; extra == "doc"
+	testfixtures ; extra == "test"
+	toml
+	tomlkit (>=0.8.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-20.1.0[${PYTHON_USEDEP}]
 	dev-python/autorepr[${PYTHON_USEDEP}]
@@ -31,7 +74,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jmespath[${PYTHON_USEDEP}]
 	dev-python/loguru[${PYTHON_USEDEP}]
 	>=dev-python/marshmallow-3.0.0_beta10[${PYTHON_USEDEP}]
-	>=dev-python/marshmallow-polyfield-5.10[${PYTHON_USEDEP}]
+	>=dev-python/marshmallow-polyfield-5.10[${PYTHON_USEDEP}] <dev-python/marshmallow-polyfield-6.0[${PYTHON_USEDEP}]
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pluggy[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,8 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	requests (<3,>2.2)
+	sphinx (<2.0,>=1.8.5) ; python_version < "3.0"
+	sphinx (>=2.0) ; python_version >= "3.0"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>dev-python/requests-2.2[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

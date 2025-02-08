@@ -17,6 +17,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	google-auth ; extra == 'carto-dw'
+	google-cloud-bigquery (>=2.34.4) ; extra == 'carto-dw'
+	pyyaml
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	carto-dw? ( dev-python/google-auth[${PYTHON_USEDEP}] )
 	carto-dw? ( >=dev-python/google-cloud-bigquery-2.34.4[${PYTHON_USEDEP}] )

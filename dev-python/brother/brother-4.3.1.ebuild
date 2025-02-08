@@ -20,9 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	dacite>=1.7.0
+	pysnmp<7.0,>=6.2.6
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dacite-1.7.0[${PYTHON_USEDEP}]
-	<dev-python/pysnmp-7.0[${PYTHON_USEDEP}]
+	>=dev-python/pysnmp-6.2.6[${PYTHON_USEDEP}] <dev-python/pysnmp-7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/dacite-1.7.0[${PYTHON_USEDEP}]

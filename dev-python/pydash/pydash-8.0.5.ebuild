@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == "dev"
+	coverage; extra == "dev"
+	furo; extra == "dev"
+	invoke; extra == "dev"
+	mypy; extra == "dev"
+	pytest-cov; extra == "dev"
+	pytest-mypy-testing; extra == "dev"
+	pytest; extra == "dev"
+	ruff; extra == "dev"
+	sphinx-autodoc-typehints; extra == "dev"
+	sphinx; extra == "dev"
+	tox; extra == "dev"
+	twine; extra == "dev"
+	typing-extensions!=4.6.0,>3.10
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
+	>dev-python/typing-extensions-3.10[${PYTHON_USEDEP}] !~dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

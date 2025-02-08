@@ -21,6 +21,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	python-dateutil (>=2.8.0)
+	requests (>=2.22.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/python-dateutil-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]

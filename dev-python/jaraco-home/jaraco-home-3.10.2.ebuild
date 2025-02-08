@@ -10,17 +10,47 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jaraco.home/"
+  https://pypi.org/project/jaraco-home/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	autocommand
+	dnspython
+	furo; extra == "doc"
+	importlib-resources; python_version < "3.9"
+	jaraco.collections
+	jaraco.compat>=4.1
+	jaraco.functools
+	jaraco.mongodb
+	jaraco.packaging>=9.3; extra == "doc"
+	keyring
+	lxml>=4.2.6
+	mockproc; extra == "test"
+	pymongo
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-enabler>=2.2; extra == "test"
+	pytest-mypy; extra == "test"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
+	python-dateutil
+	requests
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	splinter[selenium]
+	tempora>=5.7
+	types-python-dateutil; extra == "test"
+	types-requests; extra == "test"
+	victor-smart-kill
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]
 	dev-python/dnspython[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/jaraco-collections[${PYTHON_USEDEP}]
 	>=dev-python/jaraco-compat-4.1[${PYTHON_USEDEP}]
 	dev-python/jaraco-functools[${PYTHON_USEDEP}]
@@ -44,11 +74,12 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/mockproc[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
 		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
 		dev-python/types-requests[${PYTHON_USEDEP}]
 	)

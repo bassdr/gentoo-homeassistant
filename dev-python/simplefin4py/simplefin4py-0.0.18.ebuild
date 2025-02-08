@@ -20,9 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.1
+	dataclasses-json<0.7.0,>=0.6.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]
-	<dev-python/dataclasses-json-0.7.0[${PYTHON_USEDEP}]
+	>=dev-python/dataclasses-json-0.6.3[${PYTHON_USEDEP}] <dev-python/dataclasses-json-0.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]

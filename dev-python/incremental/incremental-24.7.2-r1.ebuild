@@ -24,6 +24,11 @@ GENERATED_IUSE="scripts"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	click>=6.0; extra == "scripts"
+	setuptools>=61.0
+	tomli; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	scripts? ( >=dev-python/click-6.0[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-61.0[${PYTHON_USEDEP}]

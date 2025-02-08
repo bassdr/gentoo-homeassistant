@@ -22,6 +22,32 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="async docs xmlsec"
 IUSE="${GENERATED_IUSE} +async"
 
+REQUIRES_DIST="
+	attrs>=17.2.0
+	coverage[toml]==7.6.2; extra == "test"
+	flake8-blind-except==0.2.1; extra == "test"
+	flake8-debugger==4.1.2; extra == "test"
+	flake8-imports==0.1.1; extra == "test"
+	flake8==7.1.1; extra == "test"
+	freezegun==1.5.1; extra == "test"
+	httpx>=0.15.0; extra == "async"
+	isodate>=0.5.4
+	isort==5.13.2; extra == "test"
+	lxml>=4.6.0
+	platformdirs>=1.4.0
+	pretend==1.0.9; extra == "test"
+	pytest-asyncio; extra == "test"
+	pytest-cov==5.0.0; extra == "test"
+	pytest-httpx; extra == "test"
+	pytest==8.3.3; extra == "test"
+	pytz
+	requests-file>=1.5.1
+	requests-mock==1.12.1; extra == "test"
+	requests-toolbelt>=0.7.1
+	requests>=2.7.0
+	sphinx>=1.4.0; extra == "docs"
+	xmlsec>=0.6.1; extra == "xmlsec"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-17.2.0[${PYTHON_USEDEP}]
 	async? ( >=dev-python/httpx-0.15.0[${PYTHON_USEDEP}] )
@@ -61,19 +87,19 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/coverage-7.6.2[toml,${PYTHON_USEDEP}]
-		=dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
-		=dev-python/flake8-blind-except-0.2.1[${PYTHON_USEDEP}]
-		=dev-python/flake8-debugger-4.1.2[${PYTHON_USEDEP}]
-		=dev-python/flake8-imports-0.1.1[${PYTHON_USEDEP}]
-		=dev-python/freezegun-1.5.1[${PYTHON_USEDEP}]
-		=dev-python/isort-5.13.2[${PYTHON_USEDEP}]
-		=dev-python/pretend-1.0.9[${PYTHON_USEDEP}]
-		=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+		~dev-python/coverage-7.6.2[toml,${PYTHON_USEDEP}]
+		~dev-python/flake8-7.1.1[${PYTHON_USEDEP}]
+		~dev-python/flake8-blind-except-0.2.1[${PYTHON_USEDEP}]
+		~dev-python/flake8-debugger-4.1.2[${PYTHON_USEDEP}]
+		~dev-python/flake8-imports-0.1.1[${PYTHON_USEDEP}]
+		~dev-python/freezegun-1.5.1[${PYTHON_USEDEP}]
+		~dev-python/isort-5.13.2[${PYTHON_USEDEP}]
+		~dev-python/pretend-1.0.9[${PYTHON_USEDEP}]
+		~dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
 		dev-python/pytest-httpx[${PYTHON_USEDEP}]
-		=dev-python/requests-mock-1.12.1[${PYTHON_USEDEP}]
+		~dev-python/requests-mock-1.12.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

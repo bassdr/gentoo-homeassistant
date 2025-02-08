@@ -21,6 +21,10 @@ RESTRICT="!test? ( test )"
 
 #DOCS="DESCRIPTION.rst"
 
+REQUIRES_DIST="
+	jsonpickle
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jsonpickle[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

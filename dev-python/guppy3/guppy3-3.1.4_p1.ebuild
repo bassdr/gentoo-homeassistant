@@ -22,6 +22,5 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-RDEPEND=""
 
 distutils_enable_tests pytest

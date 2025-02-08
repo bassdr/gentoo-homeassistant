@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy (>=1.14.3)
+	scipy (>=1.0.1)
+	torch (>=0.4.0)
+	torchvision (>=0.2.1)
+	tqdm (>=4.28.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.14.3[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.0.1[${PYTHON_USEDEP}]

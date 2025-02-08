@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python bindings for the Plex API."
 HOMEPAGE="
-  https://pypi.org/project/PlexAPI/
+  https://pypi.org/project/plexapi/
 "
 
 LICENSE="BSD"
@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	requests
+	websocket-client>=1.3.3; extra == "alert"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	alert? ( >=dev-python/websocket-client-1.3.3[${PYTHON_USEDEP}] )

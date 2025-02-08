@@ -23,8 +23,22 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	importlib-metadata ; python_version < "3.8"
+	mypy ; extra == 'typing'
+	pycryptodome
+	pydocstyle ; extra == 'testing'
+	pylint ; extra == 'testing'
+	pytest ; extra == 'testing'
+	pytest-asyncio ; extra == 'testing'
+	pytest-cases ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytz
+	tox ; extra == 'testing'
+	types-pytz ; extra == 'typing'
+	types-setuptools ; extra == 'typing'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]

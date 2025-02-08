@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/beautifulsoup4-4.12.3[${PYTHON_USEDEP}]
-	=dev-python/lxml-5.3.0[${PYTHON_USEDEP}]
+	~dev-python/beautifulsoup4-4.12.3[${PYTHON_USEDEP}]
+	~dev-python/lxml-5.3.0[${PYTHON_USEDEP}]
 "

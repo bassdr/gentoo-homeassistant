@@ -16,6 +16,69 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	autopep8; extra == "dev"
+	autopep8; extra == "test-external"
+	black; extra == "dev"
+	black; extra == "test-external"
+	calysto-bash; extra == "test-ui"
+	flake8; extra == "dev"
+	flake8; extra == "test-external"
+	gitpython; extra == "dev"
+	gitpython; extra == "test-external"
+	ipykernel; extra == "dev"
+	ipykernel; extra == "test-cov"
+	ipykernel; extra == "test-external"
+	ipykernel; extra == "test-integration"
+	isort; extra == "dev"
+	isort; extra == "test-external"
+	jupyter-fs>=1.0; extra == "dev"
+	jupyter-fs>=1.0; extra == "test-external"
+	jupyter-server!=2.11; extra == "dev"
+	jupyter-server!=2.11; extra == "test-cov"
+	jupyter-server!=2.11; extra == "test-external"
+	jupyter-server!=2.11; extra == "test-integration"
+	markdown-it-py>=1.0
+	mdit-py-plugins
+	myst-parser; extra == "docs"
+	nbconvert; extra == "dev"
+	nbconvert; extra == "test-cov"
+	nbconvert; extra == "test-external"
+	nbconvert; extra == "test-integration"
+	nbformat
+	packaging
+	pre-commit; extra == "dev"
+	pre-commit; extra == "test-external"
+	pytest-cov>=2.6.1; extra == "dev"
+	pytest-cov>=2.6.1; extra == "test-cov"
+	pytest-randomly; extra == "dev"
+	pytest-randomly; extra == "test"
+	pytest-randomly; extra == "test-cov"
+	pytest-randomly; extra == "test-external"
+	pytest-randomly; extra == "test-functional"
+	pytest-randomly; extra == "test-integration"
+	pytest-xdist; extra == "dev"
+	pytest-xdist; extra == "test"
+	pytest-xdist; extra == "test-cov"
+	pytest-xdist; extra == "test-external"
+	pytest-xdist; extra == "test-functional"
+	pytest-xdist; extra == "test-integration"
+	pytest; extra == "dev"
+	pytest; extra == "test"
+	pytest; extra == "test-cov"
+	pytest; extra == "test-external"
+	pytest; extra == "test-functional"
+	pytest; extra == "test-integration"
+	pyyaml
+	sphinx-copybutton; extra == "docs"
+	sphinx-gallery<0.8; extra == "dev"
+	sphinx-gallery<0.8; extra == "test-external"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "docs"
+	sphinx<8; extra == "dev"
+	sphinx<8; extra == "test-external"
+	tomli; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	test-external? ( dev-python/autopep8[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/black[${PYTHON_USEDEP}] )
@@ -27,9 +90,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	test-integration? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	test-external? ( dev-python/isort[${PYTHON_USEDEP}] )
 	test-external? ( >=dev-python/jupyter-fs-1.0[${PYTHON_USEDEP}] )
-	test-cov? ( !=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
-	test-external? ( !=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
-	test-integration? ( !=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
+	test-cov? ( !~dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
+	test-external? ( !~dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
+	test-integration? ( !~dev-python/jupyter-server-2.11[${PYTHON_USEDEP}] )
 	>=dev-python/markdown-it-py-1.0[${PYTHON_USEDEP}]
 	dev-python/mdit-py-plugins[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
@@ -71,7 +134,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/ipykernel[${PYTHON_USEDEP}]
 		dev-python/isort[${PYTHON_USEDEP}]
 		>=dev-python/jupyter-fs-1.0[${PYTHON_USEDEP}]
-		!=dev-python/jupyter-server-2.11[${PYTHON_USEDEP}]
+		!~dev-python/jupyter-server-2.11[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-2.6.1[${PYTHON_USEDEP}]

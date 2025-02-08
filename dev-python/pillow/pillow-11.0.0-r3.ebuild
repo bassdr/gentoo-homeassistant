@@ -50,6 +50,28 @@ DEPEND="
 	xcb? ( x11-libs/libxcb )
 	zlib? ( sys-libs/zlib:= )
 "
+REQUIRES_DIST="
+	check-manifest; extra == "tests"
+	coverage; extra == "tests"
+	defusedxml; extra == "tests"
+	defusedxml; extra == "xmp"
+	furo; extra == "docs"
+	markdown2; extra == "tests"
+	olefile; extra == "docs"
+	olefile; extra == "fpx"
+	olefile; extra == "mic"
+	olefile; extra == "tests"
+	packaging; extra == "tests"
+	pyroma; extra == "tests"
+	pytest-cov; extra == "tests"
+	pytest-timeout; extra == "tests"
+	pytest; extra == "tests"
+	sphinx-copybutton; extra == "docs"
+	sphinx-inline-tabs; extra == "docs"
+	sphinx>=8.1; extra == "docs"
+	sphinxext-opengraph; extra == "docs"
+	typing-extensions; python_version < "3.10" and extra == "typing"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	xmp? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )

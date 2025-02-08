@@ -22,6 +22,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="codecov"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	pytest
+	pytest-cov ; extra == "codecov"
+	ruamel.yaml>=0.15
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 	codecov? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )

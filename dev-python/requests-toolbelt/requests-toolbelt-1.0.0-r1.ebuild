@@ -25,8 +25,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="test-rust"
 
+REQUIRES_DIST="
+	requests (<3.0.0,>=2.0.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.0.1[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]

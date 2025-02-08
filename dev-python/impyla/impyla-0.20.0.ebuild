@@ -16,12 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bitarray<3
+	kerberos>=1.3.0; extra == "kerberos"
+	six
+	thrift-sasl==0.4.3
+	thrift==0.16.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/bitarray-3[${PYTHON_USEDEP}]
 	kerberos? ( >=dev-python/kerberos-1.3.0[${PYTHON_USEDEP}] )
 	dev-python/six[${PYTHON_USEDEP}]
-	=dev-python/thrift-0.16.0[${PYTHON_USEDEP}]
-	=dev-python/thrift-sasl-0.4.3[${PYTHON_USEDEP}]
+	~dev-python/thrift-0.16.0[${PYTHON_USEDEP}]
+	~dev-python/thrift-sasl-0.4.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bleak>=0.22.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.22.0[${PYTHON_USEDEP}]
 "

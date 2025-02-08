@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-core>=1.30.0
+	azure-core[aio]>=1.30.0; extra == "aio"
+	azure-storage-blob>=12.24.1
+	isodate>=0.6.1
+	typing-extensions>=4.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-core-1.30.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/azure-core-1.30.0[aio,${PYTHON_USEDEP}] )

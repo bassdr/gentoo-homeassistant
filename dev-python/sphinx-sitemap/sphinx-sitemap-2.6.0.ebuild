@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == "dev"
+	flake8; extra == "dev"
+	pre-commit; extra == "dev"
+	pytest; extra == "dev"
+	sphinx; extra == "dev"
+	sphinx>=1.2
+	tox; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinx-1.2[${PYTHON_USEDEP}]
 "

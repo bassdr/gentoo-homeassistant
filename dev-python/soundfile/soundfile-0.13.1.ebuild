@@ -16,7 +16,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	cffi>=1.0
+	numpy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]

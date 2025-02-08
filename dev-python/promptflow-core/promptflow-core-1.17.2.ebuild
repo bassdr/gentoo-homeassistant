@@ -17,24 +17,34 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-ai-ml<2.0.0,>=1.14.0; extra == "azureml-serving"
+	azure-identity<2.0.0,>=1.12.0; extra == "azureml-serving"
+	azureml-ai-monitoring<1.0.0,>=0.1.0b3; extra == "azureml-serving"
+	docstring_parser
+	fastapi<1.0.0,>=0.109.0
+	filetype>=1.2.0
+	flask<4.0.0,>=2.2.3
+	jsonschema<5.0.0,>=4.0.0
+	promptflow-tracing==1.17.2
+	psutil
+	python-dateutil<3.0.0,>=2.1.0
+	ruamel.yaml<1.0.0,>=0.17.10
+"
 GENERATED_RDEPEND="${RDEPEND}
-	azureml-serving? ( <dev-python/azure-ai-ml-2.0.0[${PYTHON_USEDEP}] )
-	azureml-serving? ( <dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}] )
-	azureml-serving? ( <dev-python/azureml-ai-monitoring-1.0.0[${PYTHON_USEDEP}] )
+	azureml-serving? ( >=dev-python/azure-ai-ml-1.14.0[${PYTHON_USEDEP}] <dev-python/azure-ai-ml-2.0.0[${PYTHON_USEDEP}] )
+	azureml-serving? ( >=dev-python/azure-identity-1.12.0[${PYTHON_USEDEP}] <dev-python/azure-identity-2.0.0[${PYTHON_USEDEP}] )
+	azureml-serving? ( >=dev-python/azureml-ai-monitoring-0.1.0_beta3[${PYTHON_USEDEP}] <dev-python/azureml-ai-monitoring-1.0.0[${PYTHON_USEDEP}] )
 	dev-python/docstring-parser[${PYTHON_USEDEP}]
-	<dev-python/fastapi-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/fastapi-0.109.0[${PYTHON_USEDEP}] <dev-python/fastapi-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/filetype-1.2.0[${PYTHON_USEDEP}]
-	<dev-python/flask-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/jsonschema-5.0.0[${PYTHON_USEDEP}]
-	=dev-python/promptflow-tracing-1.17.2[${PYTHON_USEDEP}]
+	>=dev-python/flask-2.2.3[${PYTHON_USEDEP}] <dev-python/flask-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-4.0.0[${PYTHON_USEDEP}] <dev-python/jsonschema-5.0.0[${PYTHON_USEDEP}]
+	~dev-python/promptflow-tracing-1.17.2[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
-	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/ruamel-yaml-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.1.0[${PYTHON_USEDEP}] <dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/ruamel-yaml-0.17.10[${PYTHON_USEDEP}] <dev-python/ruamel-yaml-1.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

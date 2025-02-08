@@ -22,6 +22,9 @@ DEPEND="
 	>=dev-python/numpy-1.17.3:=[${PYTHON_USEDEP}]
 	>=sci-libs/hdf5-1.10.4:=[hl(+)]
 "
+REQUIRES_DIST="
+	numpy>=1.19.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
 "

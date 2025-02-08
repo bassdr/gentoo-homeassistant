@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="An OrderedSet is a custom MutableSet that remembers its order, so that every"
 HOMEPAGE="
-  https://pypi.org/project/ordered_set/
+  https://pypi.org/project/ordered-set/
   Home, https://github.com/rspeer/ordered-set
 "
 
@@ -29,5 +29,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

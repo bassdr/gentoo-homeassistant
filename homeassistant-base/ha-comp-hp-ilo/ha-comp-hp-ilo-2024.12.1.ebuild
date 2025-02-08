@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-hpilo-4.4.3[${PYTHON_USEDEP}]
+	~dev-python/python-hpilo-4.4.3[${PYTHON_USEDEP}]
 "

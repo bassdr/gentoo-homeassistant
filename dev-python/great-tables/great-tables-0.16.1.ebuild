@@ -16,6 +16,35 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Babel>=2.13.1
+	Pillow>=10.2.0; extra == "extra"
+	commonmark>=0.9.1
+	css-inline>=0.14.1
+	faicons>=0.2.2
+	great_tables[dev-no-pandas]; extra == "dev"
+	great_tables[dev]; extra == "all"
+	great_tables[extra]; extra == "all"
+	griffe==0.38.1; extra == "dev-no-pandas"
+	htmltools>=0.4.1
+	importlib-metadata
+	importlib-resources
+	jupyter; extra == "dev-no-pandas"
+	numpy>=1.22.4
+	pandas; extra == "dev"
+	polars; extra == "dev-no-pandas"
+	pre-commit==2.15.0; extra == "dev-no-pandas"
+	pyarrow; extra == "dev-no-pandas"
+	pyright>=1.1.244; extra == "dev-no-pandas"
+	pytest-cov; extra == "dev-no-pandas"
+	pytest>=3; extra == "dev-no-pandas"
+	quartodoc>=0.8.1; python_version >= "3.9" and extra == "dev-no-pandas"
+	ruff==0.8.0; extra == "dev-no-pandas"
+	selenium>=4.18.1; extra == "extra"
+	shiny; extra == "dev-no-pandas"
+	syrupy; extra == "dev-no-pandas"
+	typing_extensions>=3.10.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/babel-2.13.1[${PYTHON_USEDEP}]
 	>=dev-python/commonmark-0.9.1[${PYTHON_USEDEP}]
@@ -23,7 +52,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/faicons-0.2.2[${PYTHON_USEDEP}]
 	all? ( dev-python/great-tables[dev,${PYTHON_USEDEP}] )
 	all? ( dev-python/great-tables[extra,${PYTHON_USEDEP}] )
-	dev-no-pandas? ( =dev-python/griffe-0.38.1[${PYTHON_USEDEP}] )
+	dev-no-pandas? ( ~dev-python/griffe-0.38.1[${PYTHON_USEDEP}] )
 	>=dev-python/htmltools-0.4.1[${PYTHON_USEDEP}]
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/importlib-resources[${PYTHON_USEDEP}]
@@ -35,12 +64,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-no-pandas? ( >=dev-python/pyright-1.1.244[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( >=dev-python/pytest-3[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
-	dev-no-pandas? ( =dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
+	dev-no-pandas? ( >=dev-python/quartodoc-0.8.1[${PYTHON_USEDEP}] )
+	dev-no-pandas? ( ~dev-python/ruff-0.8.0[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/selenium-4.18.1[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/shiny[${PYTHON_USEDEP}] )
 	dev-no-pandas? ( dev-python/syrupy[${PYTHON_USEDEP}] )
 	>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
-	dev-no-pandas? ( =dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}] )
+	dev-no-pandas? ( ~dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

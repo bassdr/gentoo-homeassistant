@@ -24,18 +24,50 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code-style linkify rtd testing-docutils"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	beautifulsoup4; extra == "testing"
+	coverage[toml]; extra == "testing"
+	defusedxml; extra == "testing"
+	docutils<0.22,>=0.19
+	ipython; extra == "rtd"
+	jinja2
+	linkify-it-py~=2.0; extra == "linkify"
+	markdown-it-py~=3.0
+	mdit-py-plugins>=0.4.1,~=0.4
+	pre-commit~=3.0; extra == "code-style"
+	pygments; extra == "testing-docutils"
+	pytest-cov; extra == "testing"
+	pytest-param-files~=0.6.0; extra == "testing"
+	pytest-param-files~=0.6.0; extra == "testing-docutils"
+	pytest-regressions; extra == "testing"
+	pytest<9,>=8; extra == "testing"
+	pytest<9,>=8; extra == "testing-docutils"
+	pyyaml
+	sphinx-autodoc2~=0.5.0; extra == "rtd"
+	sphinx-book-theme~=1.1; extra == "rtd"
+	sphinx-copybutton; extra == "rtd"
+	sphinx-design; extra == "rtd"
+	sphinx-pyscript; extra == "rtd"
+	sphinx-pytest; extra == "testing"
+	sphinx-tippy>=0.4.3; extra == "rtd"
+	sphinx-togglebutton; extra == "rtd"
+	sphinx<9,>=7
+	sphinx>=7; extra == "rtd"
+	sphinxext-opengraph~=0.9.0; extra == "rtd"
+	sphinxext-rediraffe~=0.2.7; extra == "rtd"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
+	>=dev-python/docutils-0.19[${PYTHON_USEDEP}] <dev-python/docutils-0.22[${PYTHON_USEDEP}]
 	rtd? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	linkify? ( >=dev-python/linkify-it-py-2.0[${PYTHON_USEDEP}] =dev-python/linkify-it-py-2*[${PYTHON_USEDEP}] )
 	>=dev-python/markdown-it-py-3.0[${PYTHON_USEDEP}] =dev-python/markdown-it-py-3*[${PYTHON_USEDEP}]
-	>=dev-python/mdit-py-plugins-0.4.1[${PYTHON_USEDEP}]
+	>=dev-python/mdit-py-plugins-0.4[${PYTHON_USEDEP}] =dev-python/mdit-py-plugins-0*[${PYTHON_USEDEP}] >=dev-python/mdit-py-plugins-0.4.1[${PYTHON_USEDEP}]
 	testing-docutils? ( dev-python/pygments[${PYTHON_USEDEP}] )
-	testing-docutils? ( <dev-python/pytest-9[${PYTHON_USEDEP}] )
+	testing-docutils? ( >=dev-python/pytest-8[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}] )
 	testing-docutils? ( >=dev-python/pytest-param-files-0.6.0[${PYTHON_USEDEP}] =dev-python/pytest-param-files-0.6*[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	<dev-python/sphinx-9[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-7[${PYTHON_USEDEP}] <dev-python/sphinx-9[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	rtd? ( >=dev-python/sphinx-autodoc2-0.5.0[${PYTHON_USEDEP}] =dev-python/sphinx-autodoc2-0.5*[${PYTHON_USEDEP}] )
 	rtd? ( >=dev-python/sphinx-book-theme-1.1[${PYTHON_USEDEP}] =dev-python/sphinx-book-theme-1*[${PYTHON_USEDEP}] )
@@ -78,7 +110,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 		dev-python/coverage[toml,${PYTHON_USEDEP}]
 		dev-python/defusedxml[${PYTHON_USEDEP}]
-		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-param-files-0.6.0[${PYTHON_USEDEP}] =dev-python/pytest-param-files-0.6*[${PYTHON_USEDEP}]
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]

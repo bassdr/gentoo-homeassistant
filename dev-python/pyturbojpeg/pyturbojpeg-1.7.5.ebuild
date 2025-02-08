@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Python wrapper of libjpeg-turbo for decoding and encoding JPEG image."
 HOMEPAGE="
-  https://pypi.org/project/PyTurboJPEG/
+  https://pypi.org/project/pyturbojpeg/
 "
 
 LICENSE="MIT"
@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	numpy
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]
 "

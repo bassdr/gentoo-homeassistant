@@ -18,6 +18,26 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	jinja2; extra == 'docs'
+	jupyter-server; extra == 'docs'
+	jupyter-server>=2.0.0; extra == 'test'
+	mistune<4.0; extra == 'docs'
+	myst-parser; extra == 'docs'
+	nbformat; extra == 'docs'
+	packaging; extra == 'docs'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-jupyter[server]>=0.5.3; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest>=7.0; extra == 'test'
+	pywinpty>=2.0.3; os_name == 'nt'
+	sphinxcontrib-github-alt; extra == 'docs'
+	sphinxcontrib-openapi; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
+	sphinxemoji; extra == 'docs'
+	terminado>=0.8.3
+	tornado; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	docs? ( dev-python/jupyter-server[${PYTHON_USEDEP}] )

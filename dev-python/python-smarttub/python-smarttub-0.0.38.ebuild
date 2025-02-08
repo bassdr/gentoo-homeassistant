@@ -19,8 +19,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4,>=3.7.4
+	inflection~=0.5
+	pyjwt~=2.4
+	python-dateutil~=2.8
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>=dev-python/inflection-0.5[${PYTHON_USEDEP}] =dev-python/inflection-0*[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-2.4[${PYTHON_USEDEP}] =dev-python/pyjwt-2*[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8[${PYTHON_USEDEP}] =dev-python/python-dateutil-2*[${PYTHON_USEDEP}]

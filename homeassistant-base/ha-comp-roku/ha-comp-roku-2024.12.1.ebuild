@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/rokuecp-0.19.3[${PYTHON_USEDEP}]
+	~dev-python/rokuecp-0.19.3[${PYTHON_USEDEP}]
 "

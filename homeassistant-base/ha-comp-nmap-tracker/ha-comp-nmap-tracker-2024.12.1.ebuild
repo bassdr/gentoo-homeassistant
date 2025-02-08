@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aiooui-0.1.7[${PYTHON_USEDEP}]
-	=dev-python/getmac-0.9.4[${PYTHON_USEDEP}]
-	=dev-python/netmap-0.7.0.2[${PYTHON_USEDEP}]
+	~dev-python/aiooui-0.1.7[${PYTHON_USEDEP}]
+	~dev-python/getmac-0.9.4[${PYTHON_USEDEP}]
+	~dev-python/netmap-0.7.0.2[${PYTHON_USEDEP}]
 "

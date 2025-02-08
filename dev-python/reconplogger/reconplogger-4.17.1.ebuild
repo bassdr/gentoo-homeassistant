@@ -16,6 +16,27 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flask>=1.1.1; extra == "all"
+	Flask>=1.1.1; extra == "dev"
+	PyYAML>=3.13
+	Sphinx>=1.7.9; extra == "doc"
+	autodocsumm>=0.1.10; extra == "doc"
+	bump2version>=0.5.11; extra == "maintainer"
+	coverage>=4.5.1; extra == "dev"
+	coverage>=4.5.1; extra == "test"
+	pre-commit>=2.19.0; extra == "dev"
+	pylint>=1.8.3; extra == "dev"
+	python-json-logger>=3.2.1
+	requests>=2.24.0; extra == "all"
+	requests>=2.24.0; extra == "dev"
+	sphinx-autodoc-typehints>=1.11.1; extra == "doc"
+	sphinx-rtd-theme>=0.4.3; extra == "doc"
+	testfixtures==6.10.0; extra == "dev"
+	testfixtures==6.10.0; extra == "test"
+	tox>=3.25.0; extra == "dev"
+	twine>=3.1.1; extra == "maintainer"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( >=dev-python/autodocsumm-0.1.10[${PYTHON_USEDEP}] )
 	maintainer? ( >=dev-python/bump2version-0.5.11[${PYTHON_USEDEP}] )
@@ -37,7 +58,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/flask-1.1.1[${PYTHON_USEDEP}]
 		>=dev-python/pylint-1.8.3[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.24.0[${PYTHON_USEDEP}]
-		=dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}]
+		~dev-python/testfixtures-6.10.0[${PYTHON_USEDEP}]
 		>=dev-python/tox-3.25.0[${PYTHON_USEDEP}]
 		>=dev-vcs/pre-commit-2.19.0[${PYTHON_USEDEP}]
 	)

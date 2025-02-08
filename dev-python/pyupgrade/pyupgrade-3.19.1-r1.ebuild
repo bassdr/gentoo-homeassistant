@@ -21,7 +21,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	tokenize-rt>=6.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/tokenize-rt-6.1.0[${PYTHON_USEDEP}]
 "

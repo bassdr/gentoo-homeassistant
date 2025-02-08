@@ -15,7 +15,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-mpl ; extra == 'test'
+	pytest-subtests ; extra == 'test'
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "

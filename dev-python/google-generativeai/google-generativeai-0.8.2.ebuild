@@ -24,8 +24,26 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Pillow; extra == "dev"
+	absl-py; extra == "dev"
+	black; extra == "dev"
+	google-ai-generativelanguage==0.6.10
+	google-api-core
+	google-api-python-client
+	google-auth>=2.15.0
+	ipython; extra == "dev"
+	nose2; extra == "dev"
+	pandas; extra == "dev"
+	protobuf
+	pydantic
+	pytype; extra == "dev"
+	pyyaml; extra == "dev"
+	tqdm
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/google-ai-generativelanguage-0.6.10[${PYTHON_USEDEP}]
+	~dev-python/google-ai-generativelanguage-0.6.10[${PYTHON_USEDEP}]
 	dev-python/google-api-core[${PYTHON_USEDEP}]
 	dev-python/google-api-python-client[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-2.15.0[${PYTHON_USEDEP}]

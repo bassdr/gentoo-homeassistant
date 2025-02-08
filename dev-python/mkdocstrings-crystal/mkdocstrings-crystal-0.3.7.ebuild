@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jinja2>=2.11.2
+	markdown-callouts>=0.1.0
+	markupsafe>=1.1.1
+	mkdocs-autorefs>=0.3.1
+	mkdocstrings>=0.19.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-2.11.2[${PYTHON_USEDEP}]
 	>=dev-python/markdown-callouts-0.1.0[${PYTHON_USEDEP}]

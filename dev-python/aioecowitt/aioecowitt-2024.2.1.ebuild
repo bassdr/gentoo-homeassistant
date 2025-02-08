@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp >3
+	meteocalc >=1.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/aiohttp-3[${PYTHON_USEDEP}]
 	>=dev-python/meteocalc-1.1.0[${PYTHON_USEDEP}]

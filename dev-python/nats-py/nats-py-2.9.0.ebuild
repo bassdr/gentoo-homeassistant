@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp; extra == "aiohttp"
+	fast-mail-parser; extra == "fast-parse"
+	nkeys; extra == "nkeys"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	fast-parse? ( dev-python/fast-mail-parser[${PYTHON_USEDEP}] )

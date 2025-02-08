@@ -22,6 +22,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.0; extra == "aio"
+	requests>=2.21.0
+	six>=1.11.0
+	typing-extensions>=4.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	aio? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]

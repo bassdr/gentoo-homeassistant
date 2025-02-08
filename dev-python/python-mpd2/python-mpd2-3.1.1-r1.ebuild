@@ -24,6 +24,9 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="twisted"
 IUSE="${GENERATED_IUSE} examples +twisted"
 
+REQUIRES_DIST="
+	Twisted ; extra == 'twisted'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
 "

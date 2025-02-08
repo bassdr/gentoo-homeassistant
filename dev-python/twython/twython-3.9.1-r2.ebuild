@@ -20,7 +20,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	requests (>=2.1.0)
+	requests-oauthlib (>=0.4.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-oauthlib-0.4.0[${PYTHON_USEDEP}]

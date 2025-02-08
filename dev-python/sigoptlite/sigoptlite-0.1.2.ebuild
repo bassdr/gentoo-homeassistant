@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	libsigopt (==1.0.0)
+	numpy (<2,>=1.22.4)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/libsigopt-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/numpy-2[${PYTHON_USEDEP}]
+	~dev-python/libsigopt-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.22.4[${PYTHON_USEDEP}] <dev-python/numpy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -21,9 +21,11 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	astunparse>=1.6; python_version < "3.9"
+	colorama>=0.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/astunparse-1.6[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

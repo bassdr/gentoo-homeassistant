@@ -3,8 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,19 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	itk-core==5.4.0
+	itk-filtering==5.4.0
+	itk-io==5.4.0
+	itk-numerics==5.4.0
+	itk-registration==5.4.0
+	itk-segmentation==5.4.0
+	numpy
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/itk-core-5.4.0[${PYTHON_USEDEP}]
-	=dev-python/itk-filtering-5.4.0[${PYTHON_USEDEP}]
-	=dev-python/itk-io-5.4.0[${PYTHON_USEDEP}]
-	=dev-python/itk-numerics-5.4.0[${PYTHON_USEDEP}]
-	=dev-python/itk-registration-5.4.0[${PYTHON_USEDEP}]
-	=dev-python/itk-segmentation-5.4.0[${PYTHON_USEDEP}]
+	~dev-python/itk-core-5.4.0[${PYTHON_USEDEP}]
+	~dev-python/itk-filtering-5.4.0[${PYTHON_USEDEP}]
+	~dev-python/itk-io-5.4.0[${PYTHON_USEDEP}]
+	~dev-python/itk-numerics-5.4.0[${PYTHON_USEDEP}]
+	~dev-python/itk-registration-5.4.0[${PYTHON_USEDEP}]
+	~dev-python/itk-segmentation-5.4.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"
+

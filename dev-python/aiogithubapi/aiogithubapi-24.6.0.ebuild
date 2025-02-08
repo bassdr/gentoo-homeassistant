@@ -22,9 +22,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4.0,>=3.8
+	async-timeout<5,>=4
+	backoff<3
+	securesystemslib<1; extra == "deprecated-verify"
+	setuptools>=60.0.0; extra == "deprecated-verify"
+	sigstore<2; extra == "deprecated-verify"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
-	<dev-python/async-timeout-5[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0[${PYTHON_USEDEP}]
+	>=dev-python/async-timeout-4[${PYTHON_USEDEP}] <dev-python/async-timeout-5[${PYTHON_USEDEP}]
 	<dev-python/backoff-3[${PYTHON_USEDEP}]
 	deprecated-verify? ( <dev-python/securesystemslib-1[${PYTHON_USEDEP}] )
 	deprecated-verify? ( >=dev-python/setuptools-60.0.0[${PYTHON_USEDEP}] )

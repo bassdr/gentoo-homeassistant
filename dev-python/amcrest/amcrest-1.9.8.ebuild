@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	argcomplete
+	httpx
+	requests
+	typing-extensions
+	urllib3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/argcomplete[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]

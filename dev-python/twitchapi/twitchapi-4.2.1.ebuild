@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A Python 3.7+ implementation of the Twitch Helix API, PubSub, EventSub and Chat"
 HOMEPAGE="
-  https://pypi.org/project/twitchAPI/
+  https://pypi.org/project/twitchapi/
 "
 
 LICENSE="MIT"
@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.3
+	python-dateutil>=2.8.2
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]

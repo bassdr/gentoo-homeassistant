@@ -16,6 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	etils[ecolab]; extra == "dev"
+	etils[edc,enp,epath,epy,etree]
+	myst_nb; extra == "ext"
+	pyink; extra == "dev"
+	pylint>=2.6.0; extra == "dev"
+	pytest-xdist; extra == "dev"
+	pytest>=3.4; extra == "dev"
+	sphinx-apitree[ext]; extra == "dev"
+	sphinx; extra == "ext"
+	sphinx_book_theme; extra == "ext"
+	typing_extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/etils[edc,enp,epath,epy,etree,${PYTHON_USEDEP}]
 	ext? ( dev-python/myst-nb[${PYTHON_USEDEP}] )

@@ -18,11 +18,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	mypy; extra == "typing"
+	ninja>=1.8.2; extra == "ninja"
+	tqdm; extra == "progress"
+	typing-extensions; python_version < "3.8" and extra == "typing"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	ninja? ( >=dev-python/ninja-1.8.2[${PYTHON_USEDEP}] )
 	progress? ( dev-python/tqdm[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

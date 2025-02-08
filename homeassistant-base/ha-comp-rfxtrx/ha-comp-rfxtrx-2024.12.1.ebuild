@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyrfxtrx-0.31.1[${PYTHON_USEDEP}]
+	~dev-python/pyrfxtrx-0.31.1[${PYTHON_USEDEP}]
 "

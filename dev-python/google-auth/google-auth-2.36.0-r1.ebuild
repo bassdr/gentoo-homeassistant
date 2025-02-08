@@ -19,18 +19,31 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="aiohttp enterprise-cert pyopenssl reauth requests"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aiohttp<4.0.0.dev0,>=3.6.2; extra == "aiohttp"
+	cachetools<6.0,>=2.0.0
+	cryptography; extra == "enterprise-cert"
+	cryptography>=38.0.3; extra == "pyopenssl"
+	pyasn1-modules>=0.2.1
+	pyopenssl; extra == "enterprise-cert"
+	pyopenssl>=20.0.0; extra == "pyopenssl"
+	pyu2f>=0.1.5; extra == "reauth"
+	requests<3.0.0.dev0,>=2.20.0; extra == "aiohttp"
+	requests<3.0.0.dev0,>=2.20.0; extra == "requests"
+	rsa<5,>=3.1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	aiohttp? ( <dev-python/aiohttp-4.0.0_pre0[${PYTHON_USEDEP}] )
-	<dev-python/cachetools-6.0[${PYTHON_USEDEP}]
+	aiohttp? ( >=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0_pre0[${PYTHON_USEDEP}] )
+	>=dev-python/cachetools-2.0.0[${PYTHON_USEDEP}] <dev-python/cachetools-6.0[${PYTHON_USEDEP}]
 	enterprise-cert? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	pyopenssl? ( >=dev-python/cryptography-38.0.3[${PYTHON_USEDEP}] )
 	>=dev-python/pyasn1-modules-0.2.1[${PYTHON_USEDEP}]
 	enterprise-cert? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 	pyopenssl? ( >=dev-python/pyopenssl-20.0.0[${PYTHON_USEDEP}] )
 	reauth? ( >=dev-python/pyu2f-0.1.5[${PYTHON_USEDEP}] )
-	aiohttp? ( <dev-python/requests-3.0.0_pre0[${PYTHON_USEDEP}] )
-	requests? ( <dev-python/requests-3.0.0_pre0[${PYTHON_USEDEP}] )
-	<dev-python/rsa-5[${PYTHON_USEDEP}]
+	aiohttp? ( >=dev-python/requests-2.20.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0_pre0[${PYTHON_USEDEP}] )
+	requests? ( >=dev-python/requests-2.20.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0_pre0[${PYTHON_USEDEP}] )
+	>=dev-python/rsa-3.1.4[${PYTHON_USEDEP}] <dev-python/rsa-5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]

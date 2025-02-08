@@ -21,7 +21,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	betamax (>=0.3.2)
+	requests-toolbelt (>=0.4.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/betamax-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-toolbelt-0.4.0[${PYTHON_USEDEP}]

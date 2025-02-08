@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyoverkiz-1.15.0[${PYTHON_USEDEP}]
+	~dev-python/pyoverkiz-1.15.0[${PYTHON_USEDEP}]
 "

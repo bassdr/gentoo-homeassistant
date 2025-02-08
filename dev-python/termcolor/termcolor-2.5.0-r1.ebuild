@@ -16,7 +16,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
@@ -36,5 +35,3 @@ src_prepare() {
 	# avoid dep on coverage (to ignore warnings from coverage)
 	sed -i -e '/coverage/d' pyproject.toml || die
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

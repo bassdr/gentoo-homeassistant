@@ -20,9 +20,6 @@ KEYWORDS="amd64 arm64"
 # tests need root access
 RESTRICT="test"
 
-IUSE=""
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,17 +15,37 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	argon2-cffi
+	attrs>=22.2.0
+	defusedxml
+	devpi-common<5,>3.6.0
+	httpx
+	itsdangerous>=0.24
+	lazy
+	legacy-cgi; python_version >= "3.13"
+	passlib[argon2]
+	platformdirs
+	pluggy<2.0,>=0.6.0
+	py>=1.4.23
+	pyramid>=2
+	repoze.lru>=0.6
+	ruamel.yaml
+	strictyaml
+	waitress>=1.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/argon2-cffi[${PYTHON_USEDEP}]
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
-	<dev-python/devpi-common-5[${PYTHON_USEDEP}]
+	>dev-python/devpi-common-3.6.0[${PYTHON_USEDEP}] <dev-python/devpi-common-5[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]
 	>=dev-python/itsdangerous-0.24[${PYTHON_USEDEP}]
 	dev-python/lazy[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'dev-python/legacy-cgi[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/passlib[argon2,${PYTHON_USEDEP}]
 	dev-python/platformdirs[${PYTHON_USEDEP}]
-	<dev-python/pluggy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/pluggy-0.6.0[${PYTHON_USEDEP}] <dev-python/pluggy-2.0[${PYTHON_USEDEP}]
 	>=dev-python/py-1.4.23[${PYTHON_USEDEP}]
 	>=dev-python/pyramid-2[${PYTHON_USEDEP}]
 	>=dev-python/repoze-lru-0.6[${PYTHON_USEDEP}]

@@ -21,7 +21,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	httpx>=0.25.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.25.0[${PYTHON_USEDEP}]
 "

@@ -16,7 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	gnureadline>=8; platform_system == "Darwin"
+	pyperclip>=1.8
+	pyreadline3>=3.4; platform_system == "Windows"
+	wcwidth>=0.2.10
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyperclip-1.8[${PYTHON_USEDEP}]
 	>=dev-python/wcwidth-0.2.10[${PYTHON_USEDEP}]

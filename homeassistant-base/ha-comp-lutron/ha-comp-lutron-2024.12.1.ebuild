@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pylutron-0.2.16[${PYTHON_USEDEP}]
+	~dev-python/pylutron-0.2.16[${PYTHON_USEDEP}]
 "

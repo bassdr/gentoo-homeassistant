@@ -16,6 +16,29 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	OWSLib>=0.27.0; extra == "ows"
+	beautifulsoup4; extra == "srtm"
+	coveralls; extra == "test"
+	fiona; extra == "speedups"
+	matplotlib>=3.6
+	numpy>=1.23
+	packaging>=21
+	pillow>=9.1; extra == "ows"
+	pillow>=9.1; extra == "plotting"
+	pydata-sphinx-theme; extra == "doc"
+	pykdtree; extra == "speedups"
+	pyproj>=3.3.1
+	pyshp>=2.3
+	pytest-cov; extra == "test"
+	pytest-mpl>=0.11; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest>=5.1.2; extra == "test"
+	scipy>=1.9; extra == "plotting"
+	shapely>=1.8
+	sphinx-gallery; extra == "doc"
+	sphinx; extra == "doc"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	srtm? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	speedups? ( dev-python/fiona[${PYTHON_USEDEP}] )

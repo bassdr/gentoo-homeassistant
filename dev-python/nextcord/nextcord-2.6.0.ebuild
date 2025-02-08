@@ -21,6 +21,10 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
+REQUIRES_DIST="
+	aiohttp
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]

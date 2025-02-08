@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aiosolaredge-0.2.0[${PYTHON_USEDEP}]
-	=dev-python/stringcase-1.2.0[${PYTHON_USEDEP}]
+	~dev-python/aiosolaredge-0.2.0[${PYTHON_USEDEP}]
+	~dev-python/stringcase-1.2.0[${PYTHON_USEDEP}]
 "

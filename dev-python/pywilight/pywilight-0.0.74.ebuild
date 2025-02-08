@@ -19,6 +19,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	ifaddr
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

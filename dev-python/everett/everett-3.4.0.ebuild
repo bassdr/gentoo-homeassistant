@@ -16,6 +16,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyYAML; extra == "yaml"
+	Sphinx==7.2.6; extra == "dev"
+	build; extra == "dev"
+	cogapp; extra == "dev"
+	configobj; extra == "ini"
+	mypy; extra == "dev"
+	pytest; extra == "dev"
+	ruff; extra == "dev"
+	sphinx-rtd-theme; extra == "dev"
+	sphinx; extra == "sphinx"
+	tox-gh-actions; extra == "dev"
+	tox-uv; extra == "dev"
+	tox; extra == "dev"
+	twine; extra == "dev"
+	types-PyYAML; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ini? ( dev-python/configobj[${PYTHON_USEDEP}] )
 	yaml? ( dev-python/pyyaml[${PYTHON_USEDEP}] )
@@ -31,7 +48,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/mypy[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/ruff[${PYTHON_USEDEP}]
-		=dev-python/sphinx-7.2.6[${PYTHON_USEDEP}]
+		~dev-python/sphinx-7.2.6[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/tox[${PYTHON_USEDEP}]
 		dev-python/tox-gh-actions[${PYTHON_USEDEP}]

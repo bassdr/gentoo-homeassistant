@@ -24,6 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	Pillow
+	Pillow; extra == "china"
+	httpx
+	pycryptodome>=3.4
+	pyjwt>=2.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]
 	china? ( dev-python/pillow[${PYTHON_USEDEP}] )

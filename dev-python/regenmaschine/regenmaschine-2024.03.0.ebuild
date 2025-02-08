@@ -25,11 +25,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.0)
+	certifi (>=2023.07.22)
+	frozenlist (>=1.4.0,<2.0.0)
+	typing-extensions (>=4.3.0,<5.0.0)
+	yarl (>=1.9.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
-	>=dev-python/frozenlist-1.4.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]
+	>=dev-python/frozenlist-1.4.0[${PYTHON_USEDEP}] <dev-python/frozenlist-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}] <dev-python/typing-extensions-5.0.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

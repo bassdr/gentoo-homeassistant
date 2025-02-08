@@ -23,6 +23,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="examples"
 
+REQUIRES_DIST="
+	tornado
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/tornado[${PYTHON_USEDEP}]
 "

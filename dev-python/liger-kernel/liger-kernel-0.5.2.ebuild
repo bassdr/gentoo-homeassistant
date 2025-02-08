@@ -16,6 +16,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black>=24.4.2; extra == "dev"
+	datasets>=2.19.2; extra == "dev"
+	flake8>=4.0.1.1; extra == "dev"
+	isort>=5.13.2; extra == "dev"
+	matplotlib>=3.7.2; extra == "dev"
+	pytest-rerunfailures; extra == "dev"
+	pytest-xdist; extra == "dev"
+	pytest>=7.1.2; extra == "dev"
+	seaborn; extra == "dev"
+	setuptools-scm>=8; extra == "amd"
+	torch>=2.1.2
+	torch>=2.6.0.dev; extra == "amd"
+	torchvision>=0.16.2; extra == "dev"
+	torchvision>=0.20.0.dev; extra == "amd"
+	transformers>=4.44.2; extra == "dev"
+	transformers~=4.0; extra == "transformers"
+	triton>=2.3.1
+	triton>=3.0.0; extra == "amd"
+	trl>=0.11.0; extra == "trl"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	amd? ( >=dev-python/setuptools-scm-8[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.1.2[${PYTHON_USEDEP}]

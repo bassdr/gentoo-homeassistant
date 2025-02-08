@@ -23,9 +23,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	>=dev-python/numpy-2.0.0_rc:=[${PYTHON_USEDEP}]
+"
+REQUIRES_DIST="
+	numpy>=1.23.0
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]

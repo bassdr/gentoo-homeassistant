@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pydantic>=1.9.1
+	pyparsing>=3.0.9
+	python-dateutil>=2.8.2
+	tzdata>=2023.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pydantic-1.9.1[${PYTHON_USEDEP}]
 	>=dev-python/pyparsing-3.0.9[${PYTHON_USEDEP}]

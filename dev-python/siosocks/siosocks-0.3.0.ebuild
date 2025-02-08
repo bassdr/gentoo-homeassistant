@@ -16,6 +16,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytest ; extra == 'dev'
+	pytest-asyncio ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+	pytest-trio ; extra == 'dev'
+	trio ; extra == 'dev'
+	trio ; extra == 'trio'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	trio? ( dev-python/trio[${PYTHON_USEDEP}] )
 "

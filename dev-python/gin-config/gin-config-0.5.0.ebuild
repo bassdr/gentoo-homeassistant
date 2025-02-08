@@ -17,6 +17,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py (>=0.1.6) ; extra == 'testing'
+	mock (>=3.0.5) ; extra == 'testing'
+	nose ; extra == 'testing'
+	pytorch-nightly ; extra == 'pytorch-nightly'
+	tensorflow (>=1.13.0) ; extra == 'tensorflow'
+	tensorflow-gpu (>=1.13.0) ; extra == 'tensorflow-gpu'
+	tf-nightly ; extra == 'tf-nightly'
+	torch (>=1.3.0) ; extra == 'torch'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	pytorch-nightly? ( dev-python/pytorch-nightly[${PYTHON_USEDEP}] )
 	tensorflow? ( >=dev-python/tensorflow-1.13.0[${PYTHON_USEDEP}] )

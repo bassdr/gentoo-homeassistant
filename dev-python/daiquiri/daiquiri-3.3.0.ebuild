@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytest; extra == "test"
+	python-json-logger>=3
+	systemd-python>=234; extra == "systemd"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/python-json-logger-3[${PYTHON_USEDEP}]
 	systemd? ( >=dev-python/systemd-python-234[${PYTHON_USEDEP}] )

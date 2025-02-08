@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyrecswitch-1.0.2[${PYTHON_USEDEP}]
+	~dev-python/pyrecswitch-1.0.2[${PYTHON_USEDEP}]
 "

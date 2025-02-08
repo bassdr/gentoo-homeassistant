@@ -25,11 +25,15 @@ fi
 LICENSE="BSD"
 SLOT="0"
 
-IUSE=""
+REQUIRES_DIST="
+	colorama<0.5.0,>=0.4.1
+	tabulate<0.10.0,>=0.9.0
+	unidecode<2.0.0,>=1.3.6
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/colorama-0.5.0[${PYTHON_USEDEP}]
-	<dev-python/tabulate-0.10.0[${PYTHON_USEDEP}]
-	<dev-python/unidecode-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/colorama-0.4.1[${PYTHON_USEDEP}] <dev-python/colorama-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/tabulate-0.9.0[${PYTHON_USEDEP}] <dev-python/tabulate-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/unidecode-1.3.6[${PYTHON_USEDEP}] <dev-python/unidecode-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/colorama-0.4.1[${PYTHON_USEDEP}]

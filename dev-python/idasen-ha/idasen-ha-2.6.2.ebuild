@@ -21,8 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	idasen<=0.12.0,>=0.10
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<=dev-python/idasen-0.12.0[${PYTHON_USEDEP}]
+	>=dev-python/idasen-0.10[${PYTHON_USEDEP}] <=dev-python/idasen-0.12.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/idasen-0.10[${PYTHON_USEDEP}]"

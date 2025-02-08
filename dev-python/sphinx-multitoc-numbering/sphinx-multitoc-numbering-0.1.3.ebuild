@@ -17,14 +17,28 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ; extra == 'code_style'
+	coverage (<5.0) ; extra == 'testing'
+	flake8 (<3.8.0,>=3.7.0) ; extra == 'code_style'
+	jupyter-book ; extra == 'testing'
+	myst-parser ; extra == 'rtd'
+	pre-commit (==1.17.0) ; extra == 'code_style'
+	pytest (~=5.4) ; extra == 'testing'
+	pytest-cov (~=2.8) ; extra == 'testing'
+	pytest-regressions ; extra == 'testing'
+	sphinx (>=3)
+	sphinx (>=3.0) ; extra == 'rtd'
+	sphinx-book-theme ; extra == 'rtd'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	code_style? ( dev-python/black[${PYTHON_USEDEP}] )
-	code_style? ( <dev-python/flake8-3.8.0[${PYTHON_USEDEP}] )
+	code_style? ( >=dev-python/flake8-3.7.0[${PYTHON_USEDEP}] <dev-python/flake8-3.8.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-3[${PYTHON_USEDEP}]
 	rtd? ( >=dev-python/sphinx-3.0[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
-	code_style? ( =dev-vcs/pre-commit-1.17.0[${PYTHON_USEDEP}] )
+	code_style? ( ~dev-vcs/pre-commit-1.17.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

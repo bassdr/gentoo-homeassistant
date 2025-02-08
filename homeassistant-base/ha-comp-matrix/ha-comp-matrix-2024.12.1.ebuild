@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/matrix-nio-0.25.2[${PYTHON_USEDEP}]
-	=dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
+	~dev-python/matrix-nio-0.25.2[${PYTHON_USEDEP}]
+	~dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
 "

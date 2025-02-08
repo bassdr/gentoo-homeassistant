@@ -23,6 +23,16 @@ DEPEND="
 	x11-libs/cairo:0=[X,xcb(+)]
 	x11-libs/gdk-pixbuf[jpeg]
 "
+REQUIRES_DIST="
+	cffi>=1.1.0
+	numpy; extra == "test"
+	pikepdf; extra == "test"
+	pytest; extra == "test"
+	ruff; extra == "test"
+	sphinx; extra == "doc"
+	sphinx_rtd_theme; extra == "doc"
+	xcffib>=1.4.0; extra == "xcb"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.1.0[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )

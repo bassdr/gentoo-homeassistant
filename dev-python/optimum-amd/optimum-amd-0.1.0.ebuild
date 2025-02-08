@@ -17,13 +17,24 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ~=23.1 ; extra == 'quality'
+	onnx
+	onnxruntime <1.16.0
+	onnxruntime-extensions
+	optimum
+	parameterized ; extra == 'tests'
+	pytest ; extra == 'tests'
+	ruff <=0.0.259,>=0.0.241 ; extra == 'quality'
+	transformers
+"
 GENERATED_RDEPEND="${RDEPEND}
 	quality? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
 	dev-python/onnx[${PYTHON_USEDEP}]
 	<dev-python/onnxruntime-1.16.0[${PYTHON_USEDEP}]
 	dev-python/onnxruntime-extensions[${PYTHON_USEDEP}]
 	dev-python/optimum[${PYTHON_USEDEP}]
-	quality? ( <=dev-python/ruff-0.0.259[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/ruff-0.0.241[${PYTHON_USEDEP}] <=dev-python/ruff-0.0.259[${PYTHON_USEDEP}] )
 	dev-python/transformers[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

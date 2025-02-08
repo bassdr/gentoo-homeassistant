@@ -19,13 +19,38 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	hatch; extra == "dev"
+	importlib-resources>=5.0; python_version < "3.10" and extra == "test"
+	ipykernel; extra == "test"
+	jupyter-server<3,>=2.4.0
+	jupyter-server[test]<3,>=2.4.0; extra == "test"
+	jupyterlab-server<3,>=2.27.1
+	jupyterlab-server[test]<3,>=2.27.1; extra == "test"
+	jupyterlab<4.4,>=4.3.4
+	myst-parser; extra == "docs"
+	nbsphinx; extra == "docs"
+	nbval; extra == "test"
+	notebook-shim<0.3,>=0.2
+	pre-commit; extra == "dev"
+	pydata-sphinx-theme; extra == "docs"
+	pytest-console-scripts; extra == "test"
+	pytest-timeout; extra == "test"
+	pytest-tornasync; extra == "test"
+	pytest>=7.0; extra == "test"
+	requests; extra == "test"
+	sphinx>=1.3.6; extra == "docs"
+	sphinxcontrib-github-alt; extra == "docs"
+	sphinxcontrib-spelling; extra == "docs"
+	tornado>=6.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]
-	<dev-python/jupyterlab-4.4[${PYTHON_USEDEP}]
-	<dev-python/jupyterlab-server-3[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-server-2.4.0[${PYTHON_USEDEP}] <dev-python/jupyter-server-3[${PYTHON_USEDEP}]
+	>=dev-python/jupyterlab-4.3.4[${PYTHON_USEDEP}] <dev-python/jupyterlab-4.4[${PYTHON_USEDEP}]
+	>=dev-python/jupyterlab-server-2.27.1[${PYTHON_USEDEP}] <dev-python/jupyterlab-server-3[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	docs? ( dev-python/nbsphinx[${PYTHON_USEDEP}] )
-	<dev-python/notebook-shim-0.3[${PYTHON_USEDEP}]
+	>=dev-python/notebook-shim-0.2[${PYTHON_USEDEP}] <dev-python/notebook-shim-0.3[${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.3.6[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinxcontrib-github-alt[${PYTHON_USEDEP}] )
@@ -65,8 +90,8 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/hatch[${PYTHON_USEDEP}]
 		dev-python/ipykernel[${PYTHON_USEDEP}]
-		<dev-python/jupyter-server-3[test,${PYTHON_USEDEP}]
-		<dev-python/jupyterlab-server-3[test,${PYTHON_USEDEP}]
+		>=dev-python/jupyter-server-2.4.0[test,${PYTHON_USEDEP}] <dev-python/jupyter-server-3[test,${PYTHON_USEDEP}]
+		>=dev-python/jupyterlab-server-2.27.1[test,${PYTHON_USEDEP}] <dev-python/jupyterlab-server-3[test,${PYTHON_USEDEP}]
 		dev-python/nbval[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]

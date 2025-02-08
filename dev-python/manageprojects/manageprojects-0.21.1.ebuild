@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	EditorConfig
+	autoflake
+	autopep8
+	cli-base-utilities
+	click
+	codespell
+	cookiecutter>=2.4.0
+	darker[color,flynt,isort]
+	flake8
+	flake8-bugbear
+	mypy
+	pyflakes
+	pyupgrade
+	refurb
+	rich
+	rich-click
+	tomlkit
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autoflake[${PYTHON_USEDEP}]
 	dev-python/autopep8[${PYTHON_USEDEP}]

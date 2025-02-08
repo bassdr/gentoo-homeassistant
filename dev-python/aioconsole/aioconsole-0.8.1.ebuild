@@ -40,8 +40,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-repeat[${PYTHON_USEDEP}]
+		dev-python/uvloop[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

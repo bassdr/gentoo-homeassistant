@@ -23,6 +23,11 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="rsa"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	oauthlib>=3.0.0
+	oauthlib[signedtoken]>=3.0.0; extra == "rsa"
+	requests>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/oauthlib-3.0.0[${PYTHON_USEDEP}]
 	rsa? ( >=dev-python/oauthlib-3.0.0[signedtoken,${PYTHON_USEDEP}] )

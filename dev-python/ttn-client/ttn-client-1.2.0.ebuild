@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A python client to fetch/receive and parse uplink messages from The Thinks Network"
 HOMEPAGE="
-  https://pypi.org/project/ttn_client/
+  https://pypi.org/project/ttn-client/
   Homepage, https://github.com/angelnu/thethinksnetwork_python_client
   Issues, https://github.com/angelnu/thethinksnetwork_python_client/issues
 "

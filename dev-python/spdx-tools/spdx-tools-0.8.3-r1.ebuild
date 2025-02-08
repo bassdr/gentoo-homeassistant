@@ -19,6 +19,30 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code-style development graph-generation"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	beartype
+	black; extra == "code-style"
+	black; extra == "development"
+	click
+	flake8; extra == "code-style"
+	flake8; extra == "development"
+	isort; extra == "code-style"
+	isort; extra == "development"
+	license-expression
+	networkx; extra == "development"
+	networkx; extra == "graph-generation"
+	ply
+	pygraphviz; extra == "graph-generation"
+	pyshacl; extra == "test"
+	pytest; extra == "development"
+	pytest; extra == "test"
+	pyyaml
+	rdflib
+	semantic-version
+	tzdata; extra == "test"
+	uritools
+	xmltodict
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beartype[${PYTHON_USEDEP}]
 	code-style? ( dev-python/black[${PYTHON_USEDEP}] )

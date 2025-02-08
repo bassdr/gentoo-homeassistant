@@ -16,16 +16,37 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bigframes>=1.17.0; extra == "all"
+	bigframes>=1.17.0; extra == "bigframes"
+	db-dtypes<2.0.0dev,>=0.3.0
+	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == "all"
+	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == "bqstorage"
+	google-cloud-bigquery<4.0.0dev,>=3.13.0
+	grpcio<2.0dev,>=1.47.0; extra == "all"
+	grpcio<2.0dev,>=1.47.0; extra == "bqstorage"
+	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "all"
+	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "bqstorage"
+	ipykernel>=5.5.6
+	ipython>=7.23.1
+	ipywidgets>=7.7.1
+	packaging>=20.0.0
+	pandas>=1.1.0
+	pyarrow>=3.0.0
+	pydata-google-auth>=1.5.0
+	tqdm<5.0.0dev,>=4.7.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/bigframes-1.17.0[${PYTHON_USEDEP}] )
 	bigframes? ( >=dev-python/bigframes-1.17.0[${PYTHON_USEDEP}] )
-	<dev-python/db-dtypes-2.0.0_pre[${PYTHON_USEDEP}]
-	<dev-python/google-cloud-bigquery-4.0.0_pre[${PYTHON_USEDEP}]
-	all? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
-	bqstorage? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
-	<dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}]
-	all? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
-	bqstorage? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	>=dev-python/db-dtypes-0.3.0[${PYTHON_USEDEP}] <dev-python/db-dtypes-2.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-bigquery-3.13.0[${PYTHON_USEDEP}] <dev-python/google-cloud-bigquery-4.0.0_pre[${PYTHON_USEDEP}]
+	all? ( >=dev-python/google-cloud-bigquery-storage-2.6.0[${PYTHON_USEDEP}] <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( >=dev-python/google-cloud-bigquery-storage-2.6.0[${PYTHON_USEDEP}] <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/grpcio-1.47.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( >=dev-python/grpcio-1.47.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( >=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
 	>=dev-python/ipykernel-5.5.6[${PYTHON_USEDEP}]
 	>=dev-python/ipython-7.23.1[${PYTHON_USEDEP}]
 	>=dev-python/ipywidgets-7.7.1[${PYTHON_USEDEP}]
@@ -33,7 +54,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pyarrow-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pydata-google-auth-1.5.0[${PYTHON_USEDEP}]
-	<dev-python/tqdm-5.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/tqdm-4.7.4[${PYTHON_USEDEP}] <dev-python/tqdm-5.0.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

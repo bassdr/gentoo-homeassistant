@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aionotion-2024.03.0[${PYTHON_USEDEP}]
+	~dev-python/aionotion-2024.03.0[${PYTHON_USEDEP}]
 "

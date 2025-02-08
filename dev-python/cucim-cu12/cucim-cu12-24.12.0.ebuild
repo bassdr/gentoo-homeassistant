@@ -22,22 +22,51 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black; extra == "developer"
+	click
+	cupy-cuda12x>=12.0.0
+	imagecodecs>=2021.6.8; platform_machine == "x86_64" and extra == "test"
+	ipython; extra == "docs"
+	isort; extra == "developer"
+	lazy_loader>=0.1
+	matplotlib; extra == "test"
+	nbsphinx; extra == "docs"
+	numpy<3.0a0,>=1.23.4
+	numpydoc>=1.5; extra == "docs"
+	numpydoc>=1.5; extra == "test"
+	opencv-python-headless>=4.6; extra == "test"
+	openslide-python>=1.3.0; platform_machine == "x86_64" and extra == "test"
+	pooch>=1.6.0; extra == "test"
+	pre-commit; extra == "developer"
+	psutil>=5.8.0; extra == "test"
+	pydata-sphinx-theme; extra == "docs"
+	pytest-cov>=2.12.1; extra == "test"
+	pytest-lazy-fixtures>=1.0.0; extra == "test"
+	pytest-xdist; extra == "test"
+	pytest<8.0.0a0,>=6.2.4; extra == "test"
+	pywavelets>=1.0; extra == "test"
+	recommonmark; extra == "docs"
+	ruff; extra == "developer"
+	scikit-image<0.25.0a0,>=0.19.0
+	scipy>=1.6.0
+	sphinx<6; extra == "docs"
+	tifffile>=2022.7.28; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	developer? ( dev-python/black[${PYTHON_USEDEP}] )
 	dev-python/click[${PYTHON_USEDEP}]
 	>=dev-python/cupy-cuda12x-12.0.0[${PYTHON_USEDEP}]
-	>=dev-python/imagecodecs-2021.6.8[${PYTHON_USEDEP}]
 	docs? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	developer? ( dev-python/isort[${PYTHON_USEDEP}] )
 	>=dev-python/lazy-loader-0.1[${PYTHON_USEDEP}]
 	docs? ( dev-python/nbsphinx[${PYTHON_USEDEP}] )
-	<dev-python/numpy-3.0_alpha0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.23.4[${PYTHON_USEDEP}] <dev-python/numpy-3.0_alpha0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/numpydoc-1.5[${PYTHON_USEDEP}] )
-	>=dev-python/openslide-python-1.3.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/recommonmark[${PYTHON_USEDEP}] )
 	developer? ( dev-python/ruff[${PYTHON_USEDEP}] )
-	<dev-python/scikit-image-0.25.0_alpha0[${PYTHON_USEDEP}]
+	>=dev-python/scikit-image-0.19.0[${PYTHON_USEDEP}] <dev-python/scikit-image-0.25.0_alpha0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]
 	docs? ( <dev-python/sphinx-6[${PYTHON_USEDEP}] )
 	developer? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
@@ -46,14 +75,15 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
+		>=dev-python/imagecodecs-2021.6.8[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		>=dev-python/numpydoc-1.5[${PYTHON_USEDEP}]
 		>=dev-python/opencv-python-headless-4.6[${PYTHON_USEDEP}]
+		>=dev-python/openslide-python-1.3.0[${PYTHON_USEDEP}]
 		>=dev-python/pooch-1.6.0[${PYTHON_USEDEP}]
 		>=dev-python/psutil-5.8.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-8.0.0_alpha0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}] <dev-python/pytest-8.0.0_alpha0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-2.12.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-lazy-fixtures-1.0.0[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]

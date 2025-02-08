@@ -17,7 +17,11 @@ LICENSE="|| ( MIT Apache-2.0 )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	outcome (>=1.1.0)
+	pytest (>=7.2.0)
+	trio (>=0.22.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/outcome-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7.2.0[${PYTHON_USEDEP}]

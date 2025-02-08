@@ -21,12 +21,18 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	async-timeout
+	docopt
+	pyserial
+	pyserial-asyncio
+	typing ; python_version < "3.5"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/docopt[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
-	dev-python/typing[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]

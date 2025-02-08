@@ -123,8 +123,12 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	semantic-version<3,>=2.8.2
+	setuptools>=62.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/semantic-version-3[${PYTHON_USEDEP}]
+	>=dev-python/semantic-version-2.8.2[${PYTHON_USEDEP}] <dev-python/semantic-version-3[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-62.4[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

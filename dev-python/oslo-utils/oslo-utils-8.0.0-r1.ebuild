@@ -12,13 +12,23 @@ inherit check-reqs distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/oslo.utils/"
+  https://pypi.org/project/oslo-utils/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	PyYAML>=3.13
+	debtcollector>=1.2.0
+	iso8601>=0.1.11
+	netaddr>=0.10.0
+	oslo.i18n>=3.15.3
+	packaging>=20.4
+	psutil>=3.2.2
+	pyparsing>=2.1.0
+	tzdata>=2022.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/debtcollector-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.11[${PYTHON_USEDEP}]

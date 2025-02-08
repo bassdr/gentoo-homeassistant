@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiofiles>=0.8
+	cryptography>=3
+	protobuf>=4.21
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-0.8[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-3[${PYTHON_USEDEP}]

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	branca>=0.6.0
+	jinja2>=2.9
+	numpy
+	pytest; extra == "testing"
+	requests
+	xyzservices
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/branca-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.9[${PYTHON_USEDEP}]

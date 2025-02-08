@@ -8,7 +8,7 @@ inherit distutils-r1
 
 DESCRIPTION="Python API wrapper for Rocket.Chat"
 HOMEPAGE="
-  https://pypi.org/project/rocketchat-API/
+  https://pypi.org/project/rocketchat-api/
 "
 MY_PN=${PN/-/_}
 SRC_URI="https://github.com/jadolg/${MY_PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
@@ -20,6 +20,9 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 "
@@ -36,7 +39,3 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

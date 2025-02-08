@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/whois-0.9.27[${PYTHON_USEDEP}]
+	~dev-python/whois-0.9.27[${PYTHON_USEDEP}]
 "

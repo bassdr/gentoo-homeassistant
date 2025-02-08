@@ -19,7 +19,7 @@ IUSE="doc"
 
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}
+RDEPEND="
 	>=dev-python/pytoolconfig-1.2.2[${PYTHON_USEDEP}]
 "
 BDEPEND="

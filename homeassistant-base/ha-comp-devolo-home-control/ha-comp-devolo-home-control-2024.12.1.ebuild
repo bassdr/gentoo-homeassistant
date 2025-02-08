@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/devolo-home-control-api-0.18.3[${PYTHON_USEDEP}]
+	~dev-python/devolo-home-control-api-0.18.3[${PYTHON_USEDEP}]
 "

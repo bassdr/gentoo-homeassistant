@@ -16,6 +16,27 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py
+	apache-beam ; extra == 'cache-tasks'
+	clu
+	editdistance
+	gevent ; extra == 'gcp'
+	google-api-python-client ; extra == 'gcp'
+	google-cloud-storage ; extra == 'gcp'
+	google-compute-engine ; extra == 'gcp'
+	jax
+	jaxlib
+	numpy
+	oauth2client ; extra == 'gcp'
+	packaging
+	protobuf <=3.20.3
+	pyglove
+	pytest ; extra == 'test'
+	sentencepiece
+	tensorflow-text
+	tfds-nightly ==4.9.2.dev202308090034
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	cache-tasks? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
@@ -34,7 +55,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyglove[${PYTHON_USEDEP}]
 	dev-python/sentencepiece[${PYTHON_USEDEP}]
 	dev-python/tensorflow-text[${PYTHON_USEDEP}]
-	=dev-python/tfds-nightly-4.9.2_pre202308090034[${PYTHON_USEDEP}]
+	~dev-python/tfds-nightly-4.9.2_pre202308090034[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cachetools>=3.1.0
+	python-dateutil>=2.7.5
+	pytz>=2018.9
+	requests>=2.14.2
+	six>=1.14.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachetools-3.1.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.7.5[${PYTHON_USEDEP}]

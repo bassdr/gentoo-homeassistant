@@ -29,7 +29,7 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
+		~dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
 		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
 		>=dev-python/pytest-8.3.2[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-5[${PYTHON_USEDEP}]

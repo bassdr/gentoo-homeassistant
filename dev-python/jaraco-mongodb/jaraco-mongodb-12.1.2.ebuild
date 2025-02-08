@@ -10,15 +10,47 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jaraco.mongodb/"
+  https://pypi.org/project/jaraco-mongodb/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	autocommand
+	backports.tarfile; python_version < "3.12"
+	cachetools
+	cherrypy; extra == "doc"
+	cherrypy; extra == "test"
+	furo; extra == "doc"
+	jaraco.collections>=2
+	jaraco.context>=2
+	jaraco.functools>=2
+	jaraco.itertools>=2
+	jaraco.logging>=2
+	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.services>=2
+	jaraco.ui>=2
+	more-itertools
+	portend
+	pymongo>=3.5
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "check"
+	pytest-cov; extra == "cover"
+	pytest-enabler>=2.2; extra == "enabler"
+	pytest-mypy; extra == "type"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
+	python-dateutil
+	pytimeparse
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	tempora
+	types-cachetools; extra == "type"
+	types-python-dateutil; extra == "type"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/backports-tarfile[${PYTHON_USEDEP}]' python3_12)
 	dev-python/cachetools[${PYTHON_USEDEP}]
 	doc? ( dev-python/cherrypy[${PYTHON_USEDEP}] )
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -37,6 +69,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	check? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pytimeparse[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
@@ -52,7 +85,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/cherrypy[${PYTHON_USEDEP}]
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

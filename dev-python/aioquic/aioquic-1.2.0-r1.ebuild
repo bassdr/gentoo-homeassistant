@@ -17,14 +17,21 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	dev-libs/openssl:=
+"
+REQUIRES_DIST="
+	certifi
+	coverage[toml]>=7.2.2; extra == "dev"
+	cryptography>=42.0.0
+	pylsqpack<0.4.0,>=0.3.3
+	pyopenssl>=24
+	service-identity>=24.1.0
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
-	<dev-python/pylsqpack-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/pylsqpack-0.3.3[${PYTHON_USEDEP}] <dev-python/pylsqpack-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-24[${PYTHON_USEDEP}]
 	>=dev-python/service-identity-24.1.0[${PYTHON_USEDEP}]
 "

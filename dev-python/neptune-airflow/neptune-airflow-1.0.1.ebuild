@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -18,14 +17,13 @@ KEYWORDS="amd64 arm64"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/neptune-1.6.3[${PYTHON_USEDEP}]
 		>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "

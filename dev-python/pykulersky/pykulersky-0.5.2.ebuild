@@ -18,6 +18,10 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	Click
+	bleak
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bleak[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

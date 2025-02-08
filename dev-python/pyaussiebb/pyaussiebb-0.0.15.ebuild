@@ -23,10 +23,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.8.1,<4.0.0)
+	pydantic (>=1.9.0,<2.0.0)
+	requests (>=2.27.1,<3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.27.1[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}] <dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.27.1[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.27.1[${PYTHON_USEDEP}]

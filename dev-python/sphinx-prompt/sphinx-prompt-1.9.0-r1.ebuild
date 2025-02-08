@@ -20,13 +20,20 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Sphinx<9.0.0,>=8.0.0
+	certifi
+	docutils
+	idna
+	pygments
+	urllib3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/idna[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
-	<dev-python/sphinx-9.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-8.0.0[${PYTHON_USEDEP}] <dev-python/sphinx-9.0.0[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

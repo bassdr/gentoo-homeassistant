@@ -24,6 +24,10 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	netaddr
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/netaddr[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

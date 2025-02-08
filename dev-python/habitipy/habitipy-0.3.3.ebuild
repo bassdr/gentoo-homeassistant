@@ -19,6 +19,13 @@ GENERATED_IUSE="aio emoji"
 IUSE="${GENERATED_IUSE} test emoji +aio"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	aiohttp; extra == "aio"
+	emoji; extra == "emoji"
+	plumbum
+	requests
+	setuptools
+"
 GENERATED_RDEPEND="${RDEPEND}
 	aio? ( dev-python/aiohttp[${PYTHON_USEDEP}] )
 	emoji? ( dev-python/emoji[${PYTHON_USEDEP}] )

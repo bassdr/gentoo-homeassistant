@@ -23,9 +23,25 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	async-timeout<5,>=3.0.0; python_version < "3.11"
+	bleak-winrt<2.0.0,>=1.2.0; platform_system == "Windows" and python_version < "3.12"
+	dbus-fast<3,>=1.83.0; platform_system == "Linux"
+	pyobjc-core<11.0,>=10.3; platform_system == "Darwin"
+	pyobjc-framework-CoreBluetooth<11.0,>=10.3; platform_system == "Darwin"
+	pyobjc-framework-libdispatch<11.0,>=10.3; platform_system == "Darwin"
+	typing-extensions>=4.7.0; python_version < "3.12"
+	winrt-Windows.Devices.Bluetooth.Advertisement<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+	winrt-Windows.Devices.Bluetooth.GenericAttributeProfile<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+	winrt-Windows.Devices.Bluetooth<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+	winrt-Windows.Devices.Enumeration<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+	winrt-Windows.Foundation.Collections<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+	winrt-Windows.Foundation<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+	winrt-Windows.Storage.Streams<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+	winrt-runtime<3,>=2; platform_system == "Windows" and python_version >= "3.12"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/dbus-fast-3[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]' python3_12)
+	>=dev-python/dbus-fast-1.83.0[${PYTHON_USEDEP}] <dev-python/dbus-fast-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_{10..11})

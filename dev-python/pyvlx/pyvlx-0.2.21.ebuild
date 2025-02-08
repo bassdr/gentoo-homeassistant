@@ -19,6 +19,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyYAML
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "

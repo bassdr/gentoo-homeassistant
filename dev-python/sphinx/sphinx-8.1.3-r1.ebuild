@@ -32,20 +32,59 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs lint"
 IUSE="${GENERATED_IUSE} doc latex"
 
+REQUIRES_DIST="
+	Jinja2>=3.1
+	Pygments>=2.17
+	alabaster>=0.7.14
+	babel>=2.13
+	colorama>=0.4.6; sys_platform == "win32"
+	cython>=3.0; extra == "test"
+	defusedxml>=0.7.1; extra == "test"
+	docutils<0.22,>=0.20
+	flake8>=6.0; extra == "lint"
+	imagesize>=1.3
+	mypy==1.11.1; extra == "lint"
+	packaging>=23.0
+	pyright==1.1.384; extra == "lint"
+	pytest>=6.0; extra == "lint"
+	pytest>=8.0; extra == "test"
+	requests>=2.30.0
+	ruff==0.6.9; extra == "lint"
+	setuptools>=70.0; extra == "test"
+	snowballstemmer>=2.2
+	sphinx-lint>=0.9; extra == "lint"
+	sphinxcontrib-applehelp>=1.0.7
+	sphinxcontrib-devhelp>=1.0.6
+	sphinxcontrib-htmlhelp>=2.0.6
+	sphinxcontrib-jsmath>=1.0.1
+	sphinxcontrib-qthelp>=1.0.6
+	sphinxcontrib-serializinghtml>=1.1.9
+	sphinxcontrib-websupport; extra == "docs"
+	tomli>=2; extra == "lint"
+	tomli>=2; python_version < "3.11"
+	types-Pillow==10.2.0.20240822; extra == "lint"
+	types-Pygments==2.18.0.20240506; extra == "lint"
+	types-colorama==0.4.15.20240311; extra == "lint"
+	types-defusedxml==0.7.0.20240218; extra == "lint"
+	types-docutils==0.21.0.20241005; extra == "lint"
+	types-requests==2.32.0.20240914; extra == "lint"
+	types-urllib3==1.26.25.14; extra == "lint"
+	typing_extensions>=4.9; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alabaster-0.7.14[${PYTHON_USEDEP}]
 	>=dev-python/babel-2.13[${PYTHON_USEDEP}]
-	<dev-python/docutils-0.22[${PYTHON_USEDEP}]
+	>=dev-python/docutils-0.20[${PYTHON_USEDEP}] <dev-python/docutils-0.22[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/flake8-6.0[${PYTHON_USEDEP}] )
 	>=dev-python/imagesize-1.3[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.1[${PYTHON_USEDEP}]
-	lint? ( =dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/mypy-1.11.1[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.17[${PYTHON_USEDEP}]
-	lint? ( =dev-python/pyright-1.1.384[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/pyright-1.1.384[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/pytest-6.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.30.0[${PYTHON_USEDEP}]
-	lint? ( =dev-python/ruff-0.6.9[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/ruff-0.6.9[${PYTHON_USEDEP}] )
 	>=dev-python/snowballstemmer-2.2[${PYTHON_USEDEP}]
 	lint? ( >=dev-python/sphinx-lint-0.9[${PYTHON_USEDEP}] )
 	>=dev-python/sphinxcontrib-applehelp-1.0.7[${PYTHON_USEDEP}]
@@ -56,13 +95,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinxcontrib-serializinghtml-1.1.9[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinxcontrib-websupport[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/tomli-2[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/types-colorama-0.4.15.20240311[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/types-defusedxml-0.7.0.20240218[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/types-docutils-0.21.0.20241005[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/types-pillow-10.2.0.20240822[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/types-pygments-2.18.0.20240506[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/types-requests-2.32.0.20240914[${PYTHON_USEDEP}] )
-	lint? ( =dev-python/types-urllib3-1.26.25.14[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/types-colorama-0.4.15.20240311[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/types-defusedxml-0.7.0.20240218[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/types-docutils-0.21.0.20241005[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/types-pillow-10.2.0.20240822[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/types-pygments-2.18.0.20240506[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/types-requests-2.32.0.20240914[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/types-urllib3-1.26.25.14[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/alabaster-0.7.14[${PYTHON_USEDEP}]

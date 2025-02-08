@@ -16,11 +16,14 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	astunparse>=1.6; python_version < "3.9"
+	cached-property>=1.5; python_version < "3.8"
+	docstring_parser>=0.7; extra == "numpy-style"
+	typing-extensions>=3.7; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/astunparse-1.6[${PYTHON_USEDEP}]
-	>=dev-python/cached-property-1.5[${PYTHON_USEDEP}]
 	numpy-style? ( >=dev-python/docstring-parser-0.7[${PYTHON_USEDEP}] )
-	>=dev-python/typing-extensions-3.7[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

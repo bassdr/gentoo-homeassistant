@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	serialio
+	sockio
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/serialio[${PYTHON_USEDEP}]
 	dev-python/sockio[${PYTHON_USEDEP}]

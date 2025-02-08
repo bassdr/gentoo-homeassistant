@@ -20,10 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyYAML<7,>=6.0
+	importlib-resources; python_version < "3.9"
+	unicode-rbnf<3,>=2.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7[${PYTHON_USEDEP}]
-	<dev-python/unicode-rbnf-3[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}] <dev-python/pyyaml-7[${PYTHON_USEDEP}]
+	>=dev-python/unicode-rbnf-2.1[${PYTHON_USEDEP}] <dev-python/unicode-rbnf-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]

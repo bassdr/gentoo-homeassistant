@@ -18,13 +18,37 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black; extra == 'local'
+	build; extra == 'local'
+	coverage; extra == 'tests'
+	flake8; extra == 'local'
+	furo; extra == 'docs'
+	hatch-fancy-pypi-readme; extra == 'local'
+	importlib-metadata; python_version < '3.8'
+	ipython; extra == 'local'
+	lunr[docs,local,tests]; extra == 'dev'
+	lunr[languages]; extra == 'tests'
+	mypy; extra == 'local'
+	myst-parser; extra == 'docs'
+	nltk; extra == 'languages'
+	pdbpp; extra == 'local'
+	pytest-benchmark; extra == 'local'
+	pytest-timeout; extra == 'tests'
+	pytest; extra == 'tests'
+	sphinx-autobuild; extra == 'docs'
+	sphinx; extra == 'docs'
+	tox; extra == 'tests'
+	twine; extra == 'local'
+	typing-extensions; python_version < '3.8'
+	wheel; extra == 'local'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	local? ( dev-python/black[${PYTHON_USEDEP}] )
 	local? ( dev-python/build[${PYTHON_USEDEP}] )
 	local? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	local? ( dev-python/hatch-fancy-pypi-readme[${PYTHON_USEDEP}] )
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	local? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	local? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
@@ -34,7 +58,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
 	local? ( dev-python/twine[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	local? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"

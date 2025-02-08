@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bleach
+	mt-940
+	requests
+	sepaxml (~=2.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bleach[${PYTHON_USEDEP}]
 	dev-python/mt_940[${PYTHON_USEDEP}]

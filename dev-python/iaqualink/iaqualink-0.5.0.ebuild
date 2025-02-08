@@ -21,6 +21,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httpx[http2]
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpx[http2,${PYTHON_USEDEP}]
 "

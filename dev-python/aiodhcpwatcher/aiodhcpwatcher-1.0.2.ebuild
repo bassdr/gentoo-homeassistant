@@ -24,6 +24,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	scapy>=2.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=net-analyzer/scapy-2.5.0[${PYTHON_USEDEP}]
 "

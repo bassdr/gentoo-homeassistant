@@ -20,7 +20,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 RESTRICT="test"
 
-IUSE=""
+REQUIRES_DIST="
+	pyjsparser (>=2.5.1)
+	six (>=1.10)
+	tzlocal (>=1.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyjsparser-2.5.1[${PYTHON_USEDEP}]
 	>=dev-python/six-1.10[${PYTHON_USEDEP}]

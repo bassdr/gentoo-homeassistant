@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,16 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	dask>=2.2
+	fsspec>2022
+	intake>=2
+	msgpack
+	netcdf4
+	requests
+	xarray>=02022
+	zarr
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dask-2.2[${PYTHON_USEDEP}]
 	>dev-python/fsspec-2022[${PYTHON_USEDEP}]

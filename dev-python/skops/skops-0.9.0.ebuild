@@ -16,6 +16,36 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	catboost >=1.0 ; extra == 'tests'
+	fairlearn >=0.7.0 ; extra == 'docs'
+	fairlearn >=0.7.0 ; extra == 'tests'
+	flake8 >=3.8.2 ; extra == 'tests'
+	flaky >=3.7.0 ; extra == 'tests'
+	huggingface-hub >=0.17.0
+	lightgbm >=3 ; extra == 'tests'
+	matplotlib >=3.3 ; extra == 'docs'
+	matplotlib >=3.3 ; extra == 'tests'
+	numpydoc >=1.0.0 ; extra == 'docs'
+	packaging >=17.0
+	pandas >=1 ; extra == 'docs'
+	pandas >=1 ; extra == 'tests'
+	pytest >=5.0.1 ; extra == 'tests'
+	pytest-cov >=2.9.0 ; extra == 'tests'
+	quantile-forest >=1.0.0 ; extra == 'tests'
+	rich >=12 ; extra == 'rich'
+	rich >=12 ; extra == 'tests'
+	scikit-learn >=0.24
+	scikit-learn-intelex >=2021.7.1 ; extra == 'docs'
+	sphinx >=3.2.0 ; extra == 'docs'
+	sphinx-gallery >=0.7.0 ; extra == 'docs'
+	sphinx-issues >=1.2.0 ; extra == 'docs'
+	sphinx-prompt >=1.3.0 ; extra == 'docs'
+	sphinx-rtd-theme >=1 ; extra == 'docs'
+	tabulate >=0.8.8
+	types-requests >=2.28.5 ; extra == 'tests'
+	xgboost >=1.6 ; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/fairlearn-0.7.0[${PYTHON_USEDEP}] )
 	>=dev-python/huggingface-hub-0.17.0[${PYTHON_USEDEP}]

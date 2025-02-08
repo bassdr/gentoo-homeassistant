@@ -20,7 +20,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytz
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]
 "

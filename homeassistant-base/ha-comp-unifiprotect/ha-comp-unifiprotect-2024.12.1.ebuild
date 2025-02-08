@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/uiprotect-6.6.5[${PYTHON_USEDEP}]
-	=dev-python/unifi-discovery-1.2.0[${PYTHON_USEDEP}]
+	~dev-python/uiprotect-6.6.5[${PYTHON_USEDEP}]
+	~dev-python/unifi-discovery-1.2.0[${PYTHON_USEDEP}]
 "

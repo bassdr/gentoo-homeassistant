@@ -2,8 +2,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_12 )
-IUSE=""
+PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_wheel_url --unpack ${PN/-/_} ${PV} cp312 cp312-manylinux1_x86_64)"
@@ -16,7 +15,6 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
 
 distutils_enable_tests pytest
 BDEPEND="${BDEPEND} app-arch/unzip"

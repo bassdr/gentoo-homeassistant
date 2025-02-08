@@ -17,7 +17,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/six[${PYTHON_USEDEP}]
 "

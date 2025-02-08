@@ -9,7 +9,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Physical quantities module"
 HOMEPAGE="
-  https://pypi.org/project/Pint/
+  https://pypi.org/project/pint/
   Homepage, https://github.com/hgrecco/pint
   Documentation, https://pint.readthedocs.io/
 "

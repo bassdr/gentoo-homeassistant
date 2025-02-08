@@ -12,12 +12,28 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.browserpage/"
+  https://pypi.org/project/zope-browserpage/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	setuptools
+	zope.browsermenu ; extra == 'menu'
+	zope.browsermenu ; extra == 'test'
+	zope.component (>=3.7)
+	zope.configuration
+	zope.interface
+	zope.pagetemplate
+	zope.publisher (>=3.8)
+	zope.schema
+	zope.security
+	zope.tal (>=4.2.0)
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+	zope.traversing
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	menu? ( dev-python/zope-browsermenu[${PYTHON_USEDEP}] )

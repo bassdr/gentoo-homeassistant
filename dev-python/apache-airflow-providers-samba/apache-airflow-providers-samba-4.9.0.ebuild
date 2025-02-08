@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow-providers-google; extra == "google"
+	apache-airflow>=2.9.0
+	smbprotocol>=1.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	google? ( dev-python/apache-airflow-providers-google[${PYTHON_USEDEP}] )

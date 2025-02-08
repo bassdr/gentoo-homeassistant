@@ -25,19 +25,79 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build data developer docs optional"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Cython>=3.0.8; extra == "build"
+	PyWavelets>=1.6; extra == "docs"
+	PyWavelets>=1.6; extra == "optional"
+	SimpleITK; extra == "optional"
+	astropy>=5.0; extra == "optional"
+	asv; extra == "test"
+	build>=1.2.1; extra == "build"
+	cloudpickle>=0.2.1; extra == "optional"
+	dask[array]!=2024.8.0,>=2021.1.0; extra == "optional"
+	dask[array]>=2022.9.2; extra == "docs"
+	imageio!=2.35.0,>=2.33
+	intersphinx-registry>=0.2411.14; extra == "docs"
+	ipykernel; extra == "docs"
+	ipython; extra == "developer"
+	ipywidgets; extra == "docs"
+	kaleido==0.2.1; extra == "docs"
+	lazy-loader>=0.4
+	matplotlib>=3.7; extra == "docs"
+	matplotlib>=3.7; extra == "optional"
+	meson-python>=0.16; extra == "build"
+	myst-parser; extra == "docs"
+	networkx>=3.0
+	ninja>=1.11.1.1; extra == "build"
+	numpy>=1.24
+	numpy>=2.0; extra == "build"
+	numpydoc>=1.7; extra == "docs"
+	numpydoc>=1.7; extra == "test"
+	packaging>=21
+	pandas>=2.0; extra == "docs"
+	pillow>=10.1
+	plotly>=5.20; extra == "docs"
+	pooch>=1.6.0; extra == "data"
+	pooch>=1.6.0; extra == "optional"
+	pooch>=1.6.0; extra == "test"
+	pooch>=1.6; extra == "docs"
+	pre-commit; extra == "developer"
+	pyamg>=5.2; extra == "optional"
+	pydata-sphinx-theme>=0.16; extra == "docs"
+	pytest-cov>=2.11.0; extra == "test"
+	pytest-doctestplus; extra == "docs"
+	pytest-doctestplus; extra == "test"
+	pytest-faulthandler; extra == "test"
+	pytest-localserver; extra == "test"
+	pytest>=7.0; extra == "test"
+	pythran>=0.16; extra == "build"
+	scikit-learn>=1.2; extra == "docs"
+	scikit-learn>=1.2; extra == "optional"
+	scipy>=1.11.2
+	seaborn>=0.11; extra == "docs"
+	setuptools>=68; extra == "build"
+	sphinx-copybutton; extra == "docs"
+	sphinx-gallery[parallel]>=0.18; extra == "docs"
+	sphinx>=8.0; extra == "docs"
+	sphinx_design>=0.5; extra == "docs"
+	spin==0.13; extra == "build"
+	tifffile>=2022.8.12
+	tifffile>=2022.8.12; extra == "docs"
+	tomli; python_version < "3.11" and extra == "developer"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	optional? ( >=dev-python/astropy-5.0[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/build-1.2.1[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/cloudpickle-0.2.1[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/dask-2022.9.2[array,${PYTHON_USEDEP}] )
-	optional? ( !=dev-python/dask-2024.8.0[array,${PYTHON_USEDEP}] )
-	!=dev-python/imageio-2.35.0[${PYTHON_USEDEP}]
+	optional? ( >=dev-python/dask-2021.1.0[array,${PYTHON_USEDEP}] !~dev-python/dask-2024.8.0[array,${PYTHON_USEDEP}] )
+	>=dev-python/imageio-2.33[${PYTHON_USEDEP}] !~dev-python/imageio-2.35.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/intersphinx-registry-0.2411.14[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	developer? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipywidgets[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/kaleido-0.2.1[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/kaleido-0.2.1[${PYTHON_USEDEP}] )
 	>=dev-python/lazy-loader-0.4[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/matplotlib-3.7[${PYTHON_USEDEP}] )
 	optional? ( >=dev-python/matplotlib-3.7[${PYTHON_USEDEP}] )
@@ -71,7 +131,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx-copybutton[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-design-0.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-gallery-0.18[parallel,${PYTHON_USEDEP}] )
-	build? ( =dev-python/spin-0.13[${PYTHON_USEDEP}] )
+	build? ( ~dev-python/spin-0.13[${PYTHON_USEDEP}] )
 	>=dev-python/tifffile-2022.8.12[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/tifffile-2022.8.12[${PYTHON_USEDEP}] )
 	developer? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )

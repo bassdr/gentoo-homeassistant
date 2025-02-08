@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/nad-receiver-0.3.0[${PYTHON_USEDEP}]
+	~dev-python/nad-receiver-0.3.0[${PYTHON_USEDEP}]
 "

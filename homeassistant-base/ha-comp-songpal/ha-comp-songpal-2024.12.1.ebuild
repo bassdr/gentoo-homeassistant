@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-songpal-0.16.2[${PYTHON_USEDEP}]
+	~dev-python/python-songpal-0.16.2[${PYTHON_USEDEP}]
 "

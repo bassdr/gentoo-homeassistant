@@ -16,17 +16,44 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyMySql; extra == 'test'
+	SQLAlchemy (!=1.1.5,!=1.1.6,!=1.1.7,!=1.1.8,>=1.0.10)
+	alembic (>=0.8.10)
+	coverage (>=3.6); extra == 'test'
+	fixtures (>=0.3.14); extra == 'test'
+	hacking (!=0.13.0,<0.14,>=0.12.0); extra == 'test'
+	matplotlib (>=2.0.2); extra == 'graph'
+	mock (>=1.0); extra == 'test'
+	openstackdocstheme (>=1.11.0); extra == 'test'
+	oslo.concurrency (>=3.5.0); extra == 'test'
+	oslo.config (>=4.0.0)
+	oslo.db (>=4.24.0)
+	pandas (>=0.20.1); extra == 'graph'
+	pbr (!=2.1.0,>=2.0.0)
+	psycopg2; extra == 'test'
+	python-dateutil (>=2.4.2)
+	python-subunit (>=0.0.18)
+	reno (>=0.1.1); extra == 'test'
+	six (>=1.9.0)
+	sphinx (>=1.6.2); extra == 'test'
+	stestr (>=1.0.0); extra == 'test'
+	stevedore (>=1.20.0)
+	testresources (>=0.2.4); extra == 'test'
+	testscenarios (>=0.4); extra == 'test'
+	testtools (>=0.9.34); extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-0.8.10[${PYTHON_USEDEP}]
 	graph? ( >=dev-python/matplotlib-2.0.2[${PYTHON_USEDEP}] )
 	>=dev-python/oslo-config-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-db-4.24.0[${PYTHON_USEDEP}]
 	graph? ( >=dev-python/pandas-0.20.1[${PYTHON_USEDEP}] )
-	!=dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pbr-2.0.0[${PYTHON_USEDEP}] !~dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.4.2[${PYTHON_USEDEP}]
 	>=dev-python/python-subunit-0.0.18[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
-	!=dev-python/sqlalchemy-1.1.5[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-1.0.10[${PYTHON_USEDEP}] !~dev-python/sqlalchemy-1.1.5[${PYTHON_USEDEP}] !~dev-python/sqlalchemy-1.1.6[${PYTHON_USEDEP}] !~dev-python/sqlalchemy-1.1.7[${PYTHON_USEDEP}] !~dev-python/sqlalchemy-1.1.8[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-1.20.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -36,7 +63,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
-		!=dev-python/hacking-0.13.0[${PYTHON_USEDEP}]
+		>=dev-python/hacking-0.12.0[${PYTHON_USEDEP}] <dev-python/hacking-0.14[${PYTHON_USEDEP}] !~dev-python/hacking-0.13.0[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
 		>=dev-python/openstackdocstheme-1.11.0[${PYTHON_USEDEP}]
 		>=dev-python/oslo-concurrency-3.5.0[${PYTHON_USEDEP}]

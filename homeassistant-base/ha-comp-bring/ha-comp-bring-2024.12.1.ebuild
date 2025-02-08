@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/bring-api-0.9.1[${PYTHON_USEDEP}]
+	~dev-python/bring-api-0.9.1[${PYTHON_USEDEP}]
 "

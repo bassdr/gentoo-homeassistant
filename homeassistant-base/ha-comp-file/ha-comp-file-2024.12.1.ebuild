@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/file-read-backwards-2.0.0[${PYTHON_USEDEP}]
+	~dev-python/file-read-backwards-2.0.0[${PYTHON_USEDEP}]
 "

@@ -23,7 +23,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	referencing>=0.31.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/referencing-0.31.0[${PYTHON_USEDEP}]
 "

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pydantic>=2.7
+	wandb>=0.13.7
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pydantic-2.7[${PYTHON_USEDEP}]
 	>=dev-python/wandb-0.13.7[${PYTHON_USEDEP}]

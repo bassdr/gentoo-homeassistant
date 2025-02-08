@@ -19,11 +19,30 @@ GENERATED_IUSE="sql"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	PyYAML >=3.10.0
+	black ~=22.0 ; extra == 'test'
+	cliff >=2.8.0
+	coverage >=4.0 ; extra == 'test'
+	ddt >=1.0.1 ; extra == 'test'
+	doc8 >=0.8.0 ; extra == 'test'
+	extras >=1.0.0
+	fixtures >=3.0.0
+	hacking <3.2.0,>=3.1.0 ; extra == 'test'
+	iso8601 ; extra == 'test'
+	pbr !=2.1.0,!=4.0.0,!=4.0.1,!=4.0.2,!=4.0.3,>=2.0.0
+	python-subunit >=1.4.0
+	sphinx >2.1.0 ; extra == 'test'
+	subunit2sql >=1.8.0 ; extra == 'sql'
+	testtools >=2.2.0
+	tomlkit >=0.11.6
+	voluptuous >=0.8.9
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cliff-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/extras-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-	!=dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pbr-2.0.0[${PYTHON_USEDEP}] !~dev-python/pbr-2.1.0[${PYTHON_USEDEP}] !~dev-python/pbr-4.0.0[${PYTHON_USEDEP}] !~dev-python/pbr-4.0.1[${PYTHON_USEDEP}] !~dev-python/pbr-4.0.2[${PYTHON_USEDEP}] !~dev-python/pbr-4.0.3[${PYTHON_USEDEP}]
 	>=dev-python/python-subunit-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10.0[${PYTHON_USEDEP}]
 	sql? ( >=dev-python/subunit2sql-1.8.0[${PYTHON_USEDEP}] )

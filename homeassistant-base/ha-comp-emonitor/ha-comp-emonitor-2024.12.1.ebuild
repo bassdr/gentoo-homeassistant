@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aioemonitor-1.0.5[${PYTHON_USEDEP}]
+	~dev-python/aioemonitor-1.0.5[${PYTHON_USEDEP}]
 "

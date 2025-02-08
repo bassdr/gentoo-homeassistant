@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.app.http"
@@ -11,12 +10,28 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.app.http/"
+  https://pypi.org/project/zope-app-http/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	setuptools
+	zope.app.wsgi[testlayer] (>=4.0) ; extra == 'test'
+	zope.browserpage ; extra == 'test'
+	zope.component ; extra == 'test'
+	zope.container (>=4.0.0a2)
+	zope.filerepresentation
+	zope.interface
+	zope.login ; extra == 'test'
+	zope.password ; extra == 'test'
+	zope.principalregistry ; extra == 'test'
+	zope.publisher (>=4.0.0a2)
+	zope.securitypolicy (>=4.0.0a1) ; extra == 'test'
+	zope.site (>=4.0.0a1) ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/zope-container-4.0.0_alpha2[${PYTHON_USEDEP}]

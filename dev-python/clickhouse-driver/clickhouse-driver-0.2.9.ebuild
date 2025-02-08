@@ -17,9 +17,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	clickhouse-cityhash>=1.0.2.1; extra == "lz4"
+	clickhouse-cityhash>=1.0.2.1; extra == "zstd"
+	lz4; implementation_name != "pypy" and extra == "lz4"
+	lz4<=3.0.1; implementation_name == "pypy" and extra == "lz4"
+	numpy>=1.12.0; extra == "numpy"
+	pandas>=0.24.0; extra == "numpy"
+	pytz
+	tzlocal
+	zstd; extra == "zstd"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	lz4? ( >=dev-python/clickhouse-cityhash-1.0.2.1[${PYTHON_USEDEP}] )
 	zstd? ( >=dev-python/clickhouse-cityhash-1.0.2.1[${PYTHON_USEDEP}] )
+	lz4? ( dev-python/lz4[${PYTHON_USEDEP}] )
 	numpy? ( >=dev-python/numpy-1.12.0[${PYTHON_USEDEP}] )
 	numpy? ( >=dev-python/pandas-0.24.0[${PYTHON_USEDEP}] )
 	dev-python/pytz[${PYTHON_USEDEP}]

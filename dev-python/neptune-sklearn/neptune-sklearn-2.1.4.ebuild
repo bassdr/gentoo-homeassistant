@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,18 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	importlib-metadata; python_version < "3.8"
+	neptune>=1.0.0; extra == "dev"
+	pre-commit; extra == "dev"
+	pytest-cov==2.10.1; extra == "dev"
+	pytest>=5.0; extra == "dev"
+	scikit-learn>=0.24.1
+	scikit-plot>=0.3.7
+	scipy<1.12
+	yellowbrick>=1.3
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-0.24.1[${PYTHON_USEDEP}]
 	>=dev-python/scikit-plot-0.3.7[${PYTHON_USEDEP}]
 	<dev-python/scipy-1.12[${PYTHON_USEDEP}]
@@ -29,7 +38,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/neptune-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-2.10.1[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "

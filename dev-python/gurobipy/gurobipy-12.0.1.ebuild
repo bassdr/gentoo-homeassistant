@@ -17,6 +17,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	numpy; extra == "matrixapi"
+	scipy; extra == "matrixapi"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	matrixapi? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	matrixapi? ( dev-python/scipy[${PYTHON_USEDEP}] )
@@ -24,7 +28,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

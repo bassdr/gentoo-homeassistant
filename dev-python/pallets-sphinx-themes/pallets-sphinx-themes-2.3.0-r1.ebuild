@@ -16,7 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	packaging
+	sphinx-notfound-page
+	sphinx>=3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-3[${PYTHON_USEDEP}]

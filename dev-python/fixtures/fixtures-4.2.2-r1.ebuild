@@ -18,6 +18,12 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs streams"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	docutils; extra == "docs"
+	pbr>=5.7.0
+	testtools; extra == "streams"
+	testtools; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	>=dev-python/pbr-5.7.0[${PYTHON_USEDEP}]

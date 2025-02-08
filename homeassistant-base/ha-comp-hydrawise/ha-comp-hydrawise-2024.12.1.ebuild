@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pydrawise-2024.9.0[${PYTHON_USEDEP}]
+	~dev-python/pydrawise-2024.9.0[${PYTHON_USEDEP}]
 "

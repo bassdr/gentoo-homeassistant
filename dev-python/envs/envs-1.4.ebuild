@@ -21,10 +21,15 @@ RESTRICT="!test? ( test )"
 
 # missing DOCS="README.md"
 
+REQUIRES_DIST="
+	Jinja2[cli] (>=3.0.3,<4.0.0); extra == "cli"
+	click[cli] (>=8.0.3,<9.0.0); extra == "cli"
+	terminaltables[cli] (>=3.1.10,<4.0.0); extra == "cli"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	cli? ( >=dev-python/click-8.0.3[cli,${PYTHON_USEDEP}] )
-	cli? ( >=dev-python/jinja2-3.0.3[cli,${PYTHON_USEDEP}] )
-	cli? ( >=dev-python/terminaltables-3.1.10[cli,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/click-8.0.3[cli,${PYTHON_USEDEP}] <dev-python/click-9.0.0[cli,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/jinja2-3.0.3[cli,${PYTHON_USEDEP}] <dev-python/jinja2-4.0.0[cli,${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/terminaltables-3.1.10[cli,${PYTHON_USEDEP}] <dev-python/terminaltables-4.0.0[cli,${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND} cli? (
 			  >=dev-python/jinja-3.0.3[${PYTHON_USEDEP}]

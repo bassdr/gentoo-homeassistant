@@ -23,8 +23,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	paho-mqtt (>=1.6.0,<2.0.0)
+	typing-extensions (>=4.4.0,<5.0.0) ; python_version < "3.10"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/paho-mqtt-1.6.0[${PYTHON_USEDEP}]
+	>=dev-python/paho-mqtt-1.6.0[${PYTHON_USEDEP}] <dev-python/paho-mqtt-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/paho-mqtt-2.0.0[${PYTHON_USEDEP}]"

@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cerberus; extra == "validators"
+	django; extra == "validators"
+	djangorestframework; extra == "validators"
+	marshmallow>=3.0.1; extra == "validators"
+	pyschemes; extra == "validators"
+	pytest; extra == "tests"
+	wtforms; extra == "validators"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	validators? ( dev-python/cerberus[${PYTHON_USEDEP}] )
 	validators? ( dev-python/django[${PYTHON_USEDEP}] )

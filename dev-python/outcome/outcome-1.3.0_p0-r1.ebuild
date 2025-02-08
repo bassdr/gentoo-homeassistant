@@ -22,7 +22,9 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	attrs >=19.2.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
 "

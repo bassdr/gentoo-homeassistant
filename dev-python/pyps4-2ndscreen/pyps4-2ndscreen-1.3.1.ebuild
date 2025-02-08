@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiohttp (>=3.5.4)
+	click (>=7.0)
+	construct (>=2.9.45)
+	pycryptodomex (>=3.7.2)
+	windows-curses (>=2.1.0) ; platform_system == "Windows"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.5.4[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]

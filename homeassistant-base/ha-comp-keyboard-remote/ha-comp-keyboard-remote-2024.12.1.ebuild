@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/asyncinotify-4.0.2[${PYTHON_USEDEP}]
-	=dev-python/evdev-1.6.1[${PYTHON_USEDEP}]
+	~dev-python/asyncinotify-4.0.2[${PYTHON_USEDEP}]
+	~dev-python/evdev-1.6.1[${PYTHON_USEDEP}]
 "

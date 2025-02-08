@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	check-manifest ; extra == "lint"
+	mypy ; extra == "lint"
+	pytest ; extra == "test"
+	pytest-console-scripts ; extra == "test"
+	pytest-cov ; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )

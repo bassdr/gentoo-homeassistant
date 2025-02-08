@@ -18,6 +18,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	gast>=0.5.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/gast-0.5.0[${PYTHON_USEDEP}]
 "

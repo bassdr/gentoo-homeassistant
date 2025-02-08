@@ -23,7 +23,9 @@ KEYWORDS="amd64 arm64"
 # tests require a ldap server and extra configuration
 RESTRICT="test"
 
-IUSE=""
+REQUIRES_DIST="
+	pyasn1 (>=0.4.6)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyasn1-0.4.6[${PYTHON_USEDEP}]
 "

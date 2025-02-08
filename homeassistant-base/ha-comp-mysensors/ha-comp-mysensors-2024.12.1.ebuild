@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pymysensors-0.24.0[${PYTHON_USEDEP}]
+	~dev-python/pymysensors-0.24.0[${PYTHON_USEDEP}]
 "

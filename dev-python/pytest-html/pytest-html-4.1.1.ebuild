@@ -16,6 +16,22 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	assertpy>=1.1; extra == 'test'
+	beautifulsoup4>=4.11.1; extra == 'test'
+	black>=22.1.0; extra == 'test'
+	flake8>=4.0.1; extra == 'test'
+	jinja2>=3.0.0
+	pip-tools>=6.13.0; extra == 'docs'
+	pre-commit>=2.17.0; extra == 'test'
+	pytest-metadata>=2.0.0
+	pytest-mock>=3.7.0; extra == 'test'
+	pytest-rerunfailures>=11.1.2; extra == 'test'
+	pytest-xdist>=2.4.0; extra == 'test'
+	pytest>=7.0.0
+	selenium>=4.3.0; extra == 'test'
+	tox>=3.24.5; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/pip-tools-6.13.0[${PYTHON_USEDEP}] )

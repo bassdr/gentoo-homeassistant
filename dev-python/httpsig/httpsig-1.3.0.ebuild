@@ -20,8 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	pycryptodome (<4,>=3)
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/pycryptodome-4[${PYTHON_USEDEP}]
+	>=dev-python/pycryptodome-3[${PYTHON_USEDEP}] <dev-python/pycryptodome-4[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

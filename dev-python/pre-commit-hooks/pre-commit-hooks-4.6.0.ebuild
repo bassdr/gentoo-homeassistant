@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ruamel.yaml>=0.15
+	tomli>=1.1.0; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ruamel-yaml-0.15[${PYTHON_USEDEP}]
 "

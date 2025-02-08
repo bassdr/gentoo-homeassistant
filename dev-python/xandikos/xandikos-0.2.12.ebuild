@@ -16,6 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp
+	aiohttp_openmetrics; extra == "prometheus"
+	defusedxml
+	dulwich>=0.21.6
+	icalendar>=5.0.4
+	jinja2
+	multidict
+	systemd_python; extra == "systemd"
+	vobject
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	prometheus? ( dev-python/aiohttp-openmetrics[${PYTHON_USEDEP}] )

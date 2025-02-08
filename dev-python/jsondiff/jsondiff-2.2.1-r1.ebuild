@@ -20,7 +20,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	build; extra == "dev"
+	hypothesis; extra == "dev"
+	pytest; extra == "dev"
+	pyyaml
+	setuptools-scm; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "

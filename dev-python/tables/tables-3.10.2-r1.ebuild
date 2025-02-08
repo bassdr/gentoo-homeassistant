@@ -30,6 +30,14 @@ DEPEND="
 	>=dev-python/numpy-1.19.0:=[${PYTHON_USEDEP}]
 	>=sci-libs/hdf5-1.8.4:=
 "
+REQUIRES_DIST="
+	blosc2>=2.3.0
+	numexpr>=2.6.2
+	numpy>=1.20.0
+	packaging
+	py-cpuinfo
+	typing-extensions>=4.4.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/blosc2-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/numexpr-2.6.2[${PYTHON_USEDEP}]

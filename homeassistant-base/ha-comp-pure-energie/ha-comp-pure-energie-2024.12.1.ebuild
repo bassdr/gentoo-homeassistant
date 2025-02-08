@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/gridnet-5.0.1[${PYTHON_USEDEP}]
+	~dev-python/gridnet-5.0.1[${PYTHON_USEDEP}]
 "

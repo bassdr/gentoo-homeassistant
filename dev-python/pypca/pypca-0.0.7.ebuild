@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	colorlog
+	pyserial
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/colorlog[${PYTHON_USEDEP}]
 	dev-python/pyserial[${PYTHON_USEDEP}]

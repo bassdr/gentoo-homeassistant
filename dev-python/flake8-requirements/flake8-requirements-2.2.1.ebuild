@@ -17,6 +17,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flake8-pyproject; extra == "pyproject"
+	flake8>=4.0.0
+	setuptools>=10.0.0
+	tomli>=1.2.1; python_version < "3.11"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flake8-4.0.0[${PYTHON_USEDEP}]
 	pyproject? ( dev-python/flake8-pyproject[${PYTHON_USEDEP}] )
@@ -25,7 +31,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

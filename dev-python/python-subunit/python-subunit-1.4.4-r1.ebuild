@@ -25,6 +25,14 @@ GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} static-libs test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	docutils ; extra == 'docs'
+	fixtures ; extra == 'test'
+	hypothesis ; extra == 'test'
+	iso8601
+	testscenarios ; extra == 'test'
+	testtools (>=0.9.34)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	dev-python/iso8601[${PYTHON_USEDEP}]

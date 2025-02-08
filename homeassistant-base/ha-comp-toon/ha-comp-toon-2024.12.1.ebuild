@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/toonapi-0.3.0[${PYTHON_USEDEP}]
+	~dev-python/toonapi-0.3.0[${PYTHON_USEDEP}]
 "

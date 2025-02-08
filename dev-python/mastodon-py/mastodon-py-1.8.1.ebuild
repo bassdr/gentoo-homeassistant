@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python wrapper for the Mastodon API"
 HOMEPAGE="
-  https://pypi.org/project/Mastodon.py/
+  https://pypi.org/project/mastodon-py/
 "
 
 LICENSE="MIT"
@@ -23,6 +23,29 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	blurhash (>=1.1.4)
+	blurhash (>=1.1.4) ; extra == 'blurhash'
+	blurhash (>=1.1.4) ; extra == 'test'
+	cryptography (>=1.6.0) ; extra == 'test'
+	cryptography (>=1.6.0) ; extra == 'webpush'
+	decorator (>=4.0.0)
+	http-ece (>=1.0.5) ; extra == 'test'
+	http-ece (>=1.0.5) ; extra == 'webpush'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-mock ; extra == 'test'
+	pytest-runner ; extra == 'test'
+	pytest-vcr ; extra == 'test'
+	python-dateutil
+	python-magic ; platform_system != "Windows"
+	python-magic-bin ; platform_system == "Windows"
+	pytz ; extra == 'test'
+	requests (>=2.4.2)
+	requests-mock ; extra == 'test'
+	six
+	vcrpy ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/blurhash-1.1.4[${PYTHON_USEDEP}]
 	blurhash? ( >=dev-python/blurhash-1.1.4[${PYTHON_USEDEP}] )
@@ -30,6 +53,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/decorator-4.0.0[${PYTHON_USEDEP}]
 	webpush? ( >=dev-python/http-ece-1.0.5[${PYTHON_USEDEP}] )
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/python-magic[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4.2[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "

@@ -16,9 +16,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4 <5.0,>=4.10.0 ; extra == 'parse'
+	pytest ~=6.2 ; extra == 'dev'
+	pytest-cov ~=3.0 ; extra == 'dev'
+	pytest-mock ~=3.6 ; extra == 'dev'
+	requests <3,>=2.12.0 ; extra == 'parse'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	parse? ( <dev-python/beautifulsoup4-5.0[${PYTHON_USEDEP}] )
-	parse? ( <dev-python/requests-3[${PYTHON_USEDEP}] )
+	parse? ( >=dev-python/beautifulsoup4-4.10.0[${PYTHON_USEDEP}] <dev-python/beautifulsoup4-5.0[${PYTHON_USEDEP}] )
+	parse? ( >=dev-python/requests-2.12.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

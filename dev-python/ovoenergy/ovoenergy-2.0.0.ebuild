@@ -21,9 +21,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.8.5; python_version < "3.12"
+	aiohttp>=3.9.0b0; python_version >= "3.12"
+	incremental>=22.10.0
+	typer>=0.6.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]
 	>=dev-python/incremental-22.10.0[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.6.1[${PYTHON_USEDEP}]
 "

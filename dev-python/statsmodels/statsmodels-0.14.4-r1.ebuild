@@ -25,11 +25,40 @@ DEPEND="
 	>=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 "
+REQUIRES_DIST="
+	colorama; extra == "develop"
+	cython<4,>=3.0.10; extra == "develop"
+	cython>=3.0.10; extra == "build"
+	cython>=3.0.10; extra == "develop"
+	flake8; extra == "develop"
+	ipykernel; extra == "docs"
+	isort; extra == "develop"
+	joblib; extra == "develop"
+	jupyter-client; extra == "docs"
+	matplotlib; extra == "docs"
+	matplotlib>=3; extra == "develop"
+	nbconvert; extra == "docs"
+	nbformat; extra == "docs"
+	numpy<3,>=1.22.3
+	numpydoc; extra == "docs"
+	packaging>=21.3
+	pandas!=2.1.0,>=1.4
+	pandas-datareader; extra == "docs"
+	patsy>=0.5.6
+	pytest-cov; extra == "develop"
+	pytest-randomly; extra == "develop"
+	pytest-xdist; extra == "develop"
+	pytest<8,>=7.3.0; extra == "develop"
+	pywinpty; os_name == "nt" and extra == "develop"
+	scipy!=1.9.2,>=1.8
+	setuptools-scm[toml]~=8.0; extra == "develop"
+	sphinx; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
+	develop? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] <dev-python/cython-4[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
-	develop? ( <dev-python/cython-4[${PYTHON_USEDEP}] )
 	develop? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	docs? ( dev-python/ipykernel[${PYTHON_USEDEP}] )
 	develop? ( dev-python/isort[${PYTHON_USEDEP}] )
@@ -39,17 +68,17 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	docs? ( dev-python/nbconvert[${PYTHON_USEDEP}] )
 	docs? ( dev-python/nbformat[${PYTHON_USEDEP}] )
-	<dev-python/numpy-3[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.22.3[${PYTHON_USEDEP}] <dev-python/numpy-3[${PYTHON_USEDEP}]
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
-	!=dev-python/pandas-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.4[${PYTHON_USEDEP}] !~dev-python/pandas-2.1.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/pandas-datareader[${PYTHON_USEDEP}] )
 	>=dev-python/patsy-0.5.6[${PYTHON_USEDEP}]
-	develop? ( <dev-python/pytest-8[${PYTHON_USEDEP}] )
+	develop? ( >=dev-python/pytest-7.3.0[${PYTHON_USEDEP}] <dev-python/pytest-8[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-randomly[${PYTHON_USEDEP}] )
 	develop? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )
-	!=dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.8[${PYTHON_USEDEP}] !~dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
 	develop? ( >=dev-python/setuptools-scm-8.0[toml,${PYTHON_USEDEP}] =dev-python/setuptools-scm-8*[toml,${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "

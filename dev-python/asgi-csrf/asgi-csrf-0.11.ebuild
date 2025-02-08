@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,16 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	asgi-lifespan; extra == "test"
+	httpx>=0.16; extra == "test"
+	itsdangerous
+	pytest-asyncio; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	python-multipart>=0.0.13
+	starlette; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/itsdangerous[${PYTHON_USEDEP}]
 	>=dev-python/python-multipart-0.0.13[${PYTHON_USEDEP}]

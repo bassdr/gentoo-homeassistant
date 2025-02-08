@@ -23,9 +23,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<4.0.0,>=3.9.5
+	cbor2<6.0.0,>=5.6.4
+	pycryptodomex>=3.3
+	requests>=2.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/cbor2-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/cbor2-5.6.4[${PYTHON_USEDEP}] <dev-python/cbor2-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodomex-3.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4[${PYTHON_USEDEP}]
 "

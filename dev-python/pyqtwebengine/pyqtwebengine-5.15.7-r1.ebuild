@@ -28,10 +28,15 @@ DEPEND="
 	dev-qt/qtwidgets:5
 	dev-qt/qtwebengine:5[widgets]
 "
+REQUIRES_DIST="
+	PyQt5-sip<13,>=12.13
+	PyQt5>=5.15.4
+	PyQtWebEngine-Qt5<5.16.0,>=5.15.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyqt5-5.15.4[${PYTHON_USEDEP}]
-	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
-	<dev-python/pyqtwebengine-qt5-5.16.0[${PYTHON_USEDEP}]
+	>=dev-python/pyqt5-sip-12.13[${PYTHON_USEDEP}] <dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
+	>=dev-python/pyqtwebengine-qt5-5.15.0[${PYTHON_USEDEP}] <dev-python/pyqtwebengine-qt5-5.16.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}

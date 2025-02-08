@@ -16,6 +16,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	check-manifest; extra == "check"
+	docutils; extra == "docs"
+	flake8-black; extra == "check"
+	flake8-deprecated; extra == "check"
+	flake8-isort; extra == "check"
+	flake8; extra == "check"
+	mypy>=1.10.0; extra == "check"
+	mypy_extensions>=0.4.1; extra == "check"
+	pygments; extra == "check"
+	pytest; extra == "test"
+	readme-renderer; extra == "check"
+	sphinx>=5.0; extra == "docs"
+	twine; extra == "check"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	check? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )

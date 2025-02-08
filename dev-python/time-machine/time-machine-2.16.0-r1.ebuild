@@ -21,7 +21,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	python-dateutil
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 "

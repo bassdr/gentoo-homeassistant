@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.4
+	tenacity
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.4[${PYTHON_USEDEP}]
 	dev-python/tenacity[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/triggercmd-0.0.27[${PYTHON_USEDEP}]
+	~dev-python/triggercmd-0.0.27[${PYTHON_USEDEP}]
 "

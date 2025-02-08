@@ -16,6 +16,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Pillow; extra == "reference"
+	google-re2; extra == "reference"
+	numpy>=1.20
+	protobuf>=3.20.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	reference? ( dev-python/google-re2[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]

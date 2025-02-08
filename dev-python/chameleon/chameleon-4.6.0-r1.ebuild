@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/Chameleon/"
+  https://pypi.org/project/chameleon/"
 
 LICENSE="repoze"
 SLOT="0"

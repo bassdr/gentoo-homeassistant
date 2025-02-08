@@ -16,8 +16,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage; extra == "test"
+	cython; extra == "test"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	setuptools; python_version >= "3.12" and extra == "test"
+	sphinx-rtd-theme; extra == "rtd"
+	sphinx<7; extra == "rtd"
+	sphinx>=4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]' python3_13{,t})
 	>=dev-python/sphinx-4[${PYTHON_USEDEP}]
 	rtd? ( <dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
@@ -31,6 +40,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/cython[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

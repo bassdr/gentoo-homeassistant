@@ -20,10 +20,17 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="build publish"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	build (==0.10.0) ; extra == 'build'
+	pytest ; extra == 'test'
+	requests (>=2.26.0)
+	requests-mock ; extra == 'test'
+	twine (==4.0.2) ; extra == 'publish'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	build? ( =dev-python/build-0.10.0[${PYTHON_USEDEP}] )
+	build? ( ~dev-python/build-0.10.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
-	publish? ( =dev-python/twine-4.0.2[${PYTHON_USEDEP}] )
+	publish? ( ~dev-python/twine-4.0.2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyopenssl[${PYTHON_USEDEP}]

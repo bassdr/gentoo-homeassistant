@@ -16,6 +16,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage; extra == "test"
+	crc32c>=2.7; extra == "crc32c"
+	deprecated
+	importlib_metadata; extra == "test-extras"
+	msgpack; extra == "msgpack"
+	numpy>=1.24
+	numpydoc; extra == "docs"
+	pcodec<0.4,>=0.3; extra == "pcodec"
+	pydata-sphinx-theme; extra == "docs"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	sphinx-issues; extra == "docs"
+	sphinx; extra == "docs"
+	zfpy>=1.0.0; extra == "zfpy"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	crc32c? ( >=dev-python/crc32c-2.7[${PYTHON_USEDEP}] )
 	dev-python/deprecated[${PYTHON_USEDEP}]
@@ -23,7 +39,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
-	pcodec? ( <dev-python/pcodec-0.4[${PYTHON_USEDEP}] )
+	pcodec? ( >=dev-python/pcodec-0.3[${PYTHON_USEDEP}] <dev-python/pcodec-0.4[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-issues[${PYTHON_USEDEP}] )

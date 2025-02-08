@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,31 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=22.0
+	black; extra == "dev"
+	cached-property>=1.5
+	deepmerge>=0.3
+	docstring-parser>=0.10
+	frictionless[excel,json]>=4.0
+	gitpython>=3.1
+	giturlparse>=0.10
+	ipython; extra == "dev"
+	jinja2>=3.0
+	jsonschema>=2.5
+	livereload>=2.6
+	marko==1.*
+	mypy; extra == "dev"
+	pyflakes==2.4.0; extra == "dev"
+	pylama; extra == "dev"
+	pyquery==1.*
+	pytest-cov; extra == "dev"
+	pytest-only; extra == "dev"
+	pytest-vcr; extra == "dev"
+	pytest; extra == "dev"
+	pyyaml>=5.3
+	typer>=0.12
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.0[${PYTHON_USEDEP}]
 	>=dev-python/cached-property-1.5[${PYTHON_USEDEP}]
@@ -39,7 +63,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/black[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]
-		=dev-python/pyflakes-2.4.0[${PYTHON_USEDEP}]
+		~dev-python/pyflakes-2.4.0[${PYTHON_USEDEP}]
 		dev-python/pylama[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

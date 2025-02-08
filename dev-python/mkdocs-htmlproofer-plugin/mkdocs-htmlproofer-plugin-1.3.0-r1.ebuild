@@ -21,7 +21,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Markdown
+	beautifulsoup4
+	mkdocs>=1.4.0
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/markdown[${PYTHON_USEDEP}]

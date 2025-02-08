@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	gcloud-aio-auth (>=3.1.0,<6.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/gcloud-aio-auth-3.1.0[${PYTHON_USEDEP}]
+	>=dev-python/gcloud-aio-auth-3.1.0[${PYTHON_USEDEP}] <dev-python/gcloud-aio-auth-6.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-mpd2-3.1.1[${PYTHON_USEDEP}]
+	~dev-python/python-mpd2-3.1.1[${PYTHON_USEDEP}]
 "

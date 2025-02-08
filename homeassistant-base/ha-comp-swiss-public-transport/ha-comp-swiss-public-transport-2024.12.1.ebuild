@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-opendata-transport-0.5.0[${PYTHON_USEDEP}]
+	~dev-python/python-opendata-transport-0.5.0[${PYTHON_USEDEP}]
 "

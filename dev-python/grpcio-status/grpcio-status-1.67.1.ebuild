@@ -23,11 +23,15 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	googleapis-common-protos>=1.5.5
+	grpcio>=1.67.1
+	protobuf<6.0dev,>=5.26.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/googleapis-common-protos-1.5.5[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.67.1[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-5.26.1[${PYTHON_USEDEP}] <dev-python/protobuf-6.0_pre[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/grpcio-${PV}[${PYTHON_USEDEP}]

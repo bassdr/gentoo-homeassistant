@@ -21,8 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	httpx<1,>=0.23
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/httpx-1[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.23[${PYTHON_USEDEP}] <dev-python/httpx-1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httpx-0.23[${PYTHON_USEDEP}]"

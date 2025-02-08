@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyvesync-2.1.12[${PYTHON_USEDEP}]
+	~dev-python/pyvesync-2.1.12[${PYTHON_USEDEP}]
 "

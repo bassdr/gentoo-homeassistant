@@ -16,6 +16,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cramjam; extra == "codecs"
+	cramjam; extra == "snappy"
+	lz4; extra == "codecs"
+	lz4; extra == "lz4"
+	zstandard; extra == "codecs"
+	zstandard; extra == "zstandard"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	codecs? ( dev-python/cramjam[${PYTHON_USEDEP}] )
 	snappy? ( dev-python/cramjam[${PYTHON_USEDEP}] )

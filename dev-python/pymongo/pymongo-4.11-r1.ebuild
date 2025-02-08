@@ -22,26 +22,50 @@ S=${WORKDIR}/${MY_P}
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="aws docs encryption ocsp snappy zstd"
+GENERATED_IUSE="aws docs encryption gssapi ocsp snappy zstd"
 IUSE="${GENERATED_IUSE} doc kerberos +native-extensions +test-full"
 
+REQUIRES_DIST="
+	certifi; (os_name == "nt" or sys_platform == "darwin") and extra == "encryption"
+	certifi; (os_name == "nt" or sys_platform == "darwin") and extra == "ocsp"
+	cryptography>=2.5; extra == "ocsp"
+	dnspython<3.0.0,>=1.16.0
+	furo==2024.8.6; extra == "docs"
+	pykerberos; os_name != "nt" and extra == "gssapi"
+	pymongo-auth-aws<2.0.0,>=1.1.0; extra == "aws"
+	pymongo-auth-aws<2.0.0,>=1.1.0; extra == "encryption"
+	pymongocrypt<2.0.0,>=1.12.0; extra == "encryption"
+	pyopenssl>=17.2.0; extra == "ocsp"
+	pytest-asyncio>=0.24.0; extra == "test"
+	pytest>=8.2; extra == "test"
+	python-snappy; extra == "snappy"
+	readthedocs-sphinx-search~=0.3; extra == "docs"
+	requests<3.0.0; extra == "ocsp"
+	service-identity>=18.1.0; extra == "ocsp"
+	sphinx-autobuild>=2020.9.1; extra == "docs"
+	sphinx-rtd-theme<4,>=2; extra == "docs"
+	sphinx<9,>=5.3; extra == "docs"
+	sphinxcontrib-shellcheck<2,>=1; extra == "docs"
+	winkerberos>=0.5.0; os_name == "nt" and extra == "gssapi"
+	zstandard; extra == "zstd"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/certifi[${PYTHON_USEDEP}]
 	ocsp? ( >=dev-python/cryptography-2.5[${PYTHON_USEDEP}] )
-	<dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]
-	docs? ( =dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
-	aws? ( <dev-python/pymongo-auth-aws-2.0.0[${PYTHON_USEDEP}] )
-	encryption? ( <dev-python/pymongo-auth-aws-2.0.0[${PYTHON_USEDEP}] )
-	encryption? ( <dev-python/pymongocrypt-2.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/dnspython-1.16.0[${PYTHON_USEDEP}] <dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]
+	docs? ( ~dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	gssapi? ( dev-python/pykerberos[${PYTHON_USEDEP}] )
+	aws? ( >=dev-python/pymongo-auth-aws-1.1.0[${PYTHON_USEDEP}] <dev-python/pymongo-auth-aws-2.0.0[${PYTHON_USEDEP}] )
+	encryption? ( >=dev-python/pymongo-auth-aws-1.1.0[${PYTHON_USEDEP}] <dev-python/pymongo-auth-aws-2.0.0[${PYTHON_USEDEP}] )
+	encryption? ( >=dev-python/pymongocrypt-1.12.0[${PYTHON_USEDEP}] <dev-python/pymongocrypt-2.0.0[${PYTHON_USEDEP}] )
 	ocsp? ( >=dev-python/pyopenssl-17.2.0[${PYTHON_USEDEP}] )
 	snappy? ( dev-python/python-snappy[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/readthedocs-sphinx-search-0.3[${PYTHON_USEDEP}] =dev-python/readthedocs-sphinx-search-0*[${PYTHON_USEDEP}] )
 	ocsp? ( <dev-python/requests-3.0.0[${PYTHON_USEDEP}] )
 	ocsp? ( >=dev-python/service-identity-18.1.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-9[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.3[${PYTHON_USEDEP}] <dev-python/sphinx-9[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autobuild-2020.9.1[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinx-rtd-theme-4[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/sphinxcontrib-shellcheck-2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-2[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-4[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinxcontrib-shellcheck-1[${PYTHON_USEDEP}] <dev-python/sphinxcontrib-shellcheck-2[${PYTHON_USEDEP}] )
 	zstd? ( dev-python/zstandard[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}

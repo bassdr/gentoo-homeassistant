@@ -20,6 +20,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cuda-bindings[all]~=12.8.0; extra == "all"
+	cuda-bindings~=12.8.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cuda-bindings-12.8.0[${PYTHON_USEDEP}] =dev-python/cuda-bindings-12.8*[${PYTHON_USEDEP}]
 	all? ( >=dev-python/cuda-bindings-12.8.0[all,${PYTHON_USEDEP}] =dev-python/cuda-bindings-12.8*[all,${PYTHON_USEDEP}] )
@@ -27,7 +31,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

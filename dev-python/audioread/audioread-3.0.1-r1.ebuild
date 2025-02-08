@@ -20,7 +20,7 @@ IUSE="ffmpeg gstreamer mad"
 
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}
+RDEPEND="
 	ffmpeg? (
 		media-video/ffmpeg
 	)

@@ -3,18 +3,25 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/dp_accounting/"
+  https://pypi.org/project/dp-accounting/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py~=1.0
+	attrs>=22
+	dm-tree~=0.1.8
+	mpmath~=1.2
+	numpy~=1.21
+	scipy~=1.7
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.0[${PYTHON_USEDEP}] =dev-python/absl-py-1*[${PYTHON_USEDEP}]
 	>=dev-python/attrs-22[${PYTHON_USEDEP}]

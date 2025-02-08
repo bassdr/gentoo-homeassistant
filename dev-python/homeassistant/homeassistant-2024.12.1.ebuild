@@ -25,51 +25,101 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # external deps
-IUSE=""
+REQUIRES_DIST="
+	Jinja2==3.1.4
+	Pillow==11.0.0
+	PyJWT==2.10.1
+	PyYAML==6.0.2
+	SQLAlchemy==2.0.36
+	aiodns==3.2.0
+	aiohasupervisor==0.2.1
+	aiohttp-cors==0.7.0
+	aiohttp-fast-zlib==0.2.0
+	aiohttp==3.11.10
+	aiozoneinfo==0.2.1
+	astral==2.2
+	async-interrupt==1.2.0
+	atomicwrites-homeassistant==1.4.1
+	attrs==24.2.0
+	audioop-lts==0.2.1; python_version >= "3.13"
+	awesomeversion==24.6.0
+	bcrypt==4.2.0
+	certifi>=2021.5.30
+	ciso8601==2.3.1
+	cryptography==43.0.1
+	fnv-hash-fast==1.0.2
+	hass-nabucasa==0.86.0
+	home-assistant-bluetooth==1.13.0
+	httpx==0.27.2
+	ifaddr==0.2.0
+	lru-dict==1.3.0
+	orjson==3.10.12
+	packaging>=23.1
+	propcache==0.2.1
+	psutil-home-assistant==0.0.1
+	pyOpenSSL==24.2.1
+	python-slugify==8.0.4
+	requests==2.32.3
+	securetar==2024.11.0
+	standard-aifc==3.13.0; python_version >= "3.13"
+	standard-telnetlib==3.13.0; python_version >= "3.13"
+	typing-extensions<5.0,>=4.12.2
+	ulid-transform==1.0.2
+	urllib3<2,>=1.26.5
+	uv==0.5.4
+	voluptuous-openapi==0.0.5
+	voluptuous-serialize==2.6.0
+	voluptuous==0.15.2
+	webrtc-models==0.3.0
+	yarl==1.18.3
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
-	=dev-python/aiohasupervisor-0.2.1[${PYTHON_USEDEP}]
-	=dev-python/aiohttp-3.11.10[${PYTHON_USEDEP}]
-	=dev-python/aiohttp-cors-0.7.0[${PYTHON_USEDEP}]
-	=dev-python/aiohttp-fast-zlib-0.2.0[${PYTHON_USEDEP}]
-	=dev-python/aiozoneinfo-0.2.1[${PYTHON_USEDEP}]
-	=dev-python/astral-2.2[${PYTHON_USEDEP}]
-	=dev-python/async-interrupt-1.2.0[${PYTHON_USEDEP}]
-	=dev-python/atomicwrites-homeassistant-1.4.1[${PYTHON_USEDEP}]
-	=dev-python/attrs-24.2.0[${PYTHON_USEDEP}]
-	=dev-python/awesomeversion-24.6.0[${PYTHON_USEDEP}]
-	=dev-python/bcrypt-4.2.1[${PYTHON_USEDEP}]
+	~dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
+	~dev-python/aiohasupervisor-0.2.1[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-3.11.10[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-cors-0.7.0[${PYTHON_USEDEP}]
+	~dev-python/aiohttp-fast-zlib-0.2.0[${PYTHON_USEDEP}]
+	~dev-python/aiozoneinfo-0.2.1[${PYTHON_USEDEP}]
+	~dev-python/astral-2.2[${PYTHON_USEDEP}]
+	~dev-python/async-interrupt-1.2.0[${PYTHON_USEDEP}]
+	~dev-python/atomicwrites-homeassistant-1.4.1[${PYTHON_USEDEP}]
+	~dev-python/attrs-24.2.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '~dev-python/audioop-lts-0.2.1[${PYTHON_USEDEP}]' python3_13{,t})
+	~dev-python/awesomeversion-24.6.0[${PYTHON_USEDEP}]
+	~dev-python/bcrypt-4.2.1[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2021.5.30[${PYTHON_USEDEP}]
-	=dev-python/ciso8601-2.3.1[${PYTHON_USEDEP}]
-	=dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]
-	=dev-python/fnv-hash-fast-1.0.2[${PYTHON_USEDEP}]
-	=dev-python/hass-nabucasa-0.86.0[${PYTHON_USEDEP}]
-	=dev-python/home-assistant-bluetooth-1.13.0[${PYTHON_USEDEP}]
-	=dev-python/httpx-0.27.2[${PYTHON_USEDEP}]
-	=dev-python/ifaddr-0.2.0[${PYTHON_USEDEP}]
-	=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
-	=dev-python/lru-dict-1.3.0[${PYTHON_USEDEP}]
-	=dev-python/orjson-3.10.12[${PYTHON_USEDEP}]
+	~dev-python/ciso8601-2.3.1[${PYTHON_USEDEP}]
+	~dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]
+	~dev-python/fnv-hash-fast-1.0.2[${PYTHON_USEDEP}]
+	~dev-python/hass-nabucasa-0.86.0[${PYTHON_USEDEP}]
+	~dev-python/home-assistant-bluetooth-1.13.0[${PYTHON_USEDEP}]
+	~dev-python/httpx-0.27.2[${PYTHON_USEDEP}]
+	~dev-python/ifaddr-0.2.0[${PYTHON_USEDEP}]
+	~dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
+	~dev-python/lru-dict-1.3.0[${PYTHON_USEDEP}]
+	~dev-python/orjson-3.10.12[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
-	=dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
-	=dev-python/propcache-0.2.1[${PYTHON_USEDEP}]
-	=dev-python/psutil-home-assistant-0.0.1[${PYTHON_USEDEP}]
-	=dev-python/pyjwt-2.10.1[${PYTHON_USEDEP}]
-	=dev-python/pyopenssl-24.2.1[${PYTHON_USEDEP}]
-	=dev-python/python-slugify-8.0.4[${PYTHON_USEDEP}]
-	=dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}]
-	=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
-	=dev-python/securetar-2024.11.0[${PYTHON_USEDEP}]
-	=dev-python/sqlalchemy-2.0.36[${PYTHON_USEDEP}]
-	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
-	=dev-python/ulid-transform-1.0.2[${PYTHON_USEDEP}]
-	<dev-python/urllib3-2[${PYTHON_USEDEP}]
-	=dev-python/uv-0.5.6[${PYTHON_USEDEP}]
-	=dev-python/voluptuous-0.15.2[${PYTHON_USEDEP}]
-	=dev-python/voluptuous-openapi-0.0.5[${PYTHON_USEDEP}]
-	=dev-python/voluptuous-serialize-2.6.0[${PYTHON_USEDEP}]
-	=dev-python/webrtc-models-0.3.0[${PYTHON_USEDEP}]
-	=dev-python/yarl-1.18.3[${PYTHON_USEDEP}]
+	~dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
+	~dev-python/propcache-0.2.1[${PYTHON_USEDEP}]
+	~dev-python/psutil-home-assistant-0.0.1[${PYTHON_USEDEP}]
+	~dev-python/pyjwt-2.10.1[${PYTHON_USEDEP}]
+	~dev-python/pyopenssl-24.2.1[${PYTHON_USEDEP}]
+	~dev-python/python-slugify-8.0.4[${PYTHON_USEDEP}]
+	~dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}]
+	~dev-python/requests-2.32.3[${PYTHON_USEDEP}]
+	~dev-python/securetar-2024.11.0[${PYTHON_USEDEP}]
+	~dev-python/sqlalchemy-2.0.36[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '~dev-python/standard-aifc-3.13.0[${PYTHON_USEDEP}]' python3_13{,t})
+	$(python_gen_cond_dep '~dev-python/standard-telnetlib-3.13.0[${PYTHON_USEDEP}]' python3_13{,t})
+	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}] <dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
+	~dev-python/ulid-transform-1.0.2[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}] <dev-python/urllib3-2[${PYTHON_USEDEP}]
+	~dev-python/uv-0.5.6[${PYTHON_USEDEP}]
+	~dev-python/voluptuous-0.15.2[${PYTHON_USEDEP}]
+	~dev-python/voluptuous-openapi-0.0.5[${PYTHON_USEDEP}]
+	~dev-python/voluptuous-serialize-2.6.0[${PYTHON_USEDEP}]
+	~dev-python/webrtc-models-0.3.0[${PYTHON_USEDEP}]
+	~dev-python/yarl-1.18.3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND} ${PYTHON_DEPS}
 	acct-group/${PN} acct-user/${PN}

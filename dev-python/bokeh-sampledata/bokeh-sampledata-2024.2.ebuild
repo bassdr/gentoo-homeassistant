@@ -3,18 +3,21 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/bokeh_sampledata/"
+  https://pypi.org/project/bokeh-sampledata/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	icalendar
+	pandas>=1.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/icalendar[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.2[${PYTHON_USEDEP}]

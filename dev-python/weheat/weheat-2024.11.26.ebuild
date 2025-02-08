@@ -20,11 +20,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aenum
+	pydantic<3,>=1.10.5
+	python-dateutil
+	urllib3<2.1.0,>=1.25.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aenum[${PYTHON_USEDEP}]
-	<dev-python/pydantic-3[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.10.5[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	<dev-python/urllib3-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/urllib3-1.25.3[${PYTHON_USEDEP}] <dev-python/urllib3-2.1.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/urllib3-1.25.3[${PYTHON_USEDEP}]

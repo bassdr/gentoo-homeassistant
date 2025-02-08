@@ -16,7 +16,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	numpy>=1.4
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	scipy; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.4[${PYTHON_USEDEP}]
 "

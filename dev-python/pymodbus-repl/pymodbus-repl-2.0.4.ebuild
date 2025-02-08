@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,13 +14,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp>=3.8.6; python_version < "3.12"
+	aiohttp>=3.9.0b0; python_version == "3.12"
+	prompt-toolkit<4.0.0,>=3.0.43
+	pygments<3.0.0,>=2.17.2
+	tabulate<0.10.0,>=0.9.0
+	typer[all]<0.10.0,>=0.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	$(python_gen_cond_dep '>=dev-python/aiohttp-3.8.6[${PYTHON_USEDEP}]' python3_12)
 	$(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_12)
-	<dev-python/prompt-toolkit-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/pygments-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/tabulate-0.10.0[${PYTHON_USEDEP}]
-	<dev-python/typer-0.10.0[all,${PYTHON_USEDEP}]
+	>=dev-python/prompt-toolkit-3.0.43[${PYTHON_USEDEP}] <dev-python/prompt-toolkit-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pygments-2.17.2[${PYTHON_USEDEP}] <dev-python/pygments-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tabulate-0.9.0[${PYTHON_USEDEP}] <dev-python/tabulate-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/typer-0.9.0[all,${PYTHON_USEDEP}] <dev-python/typer-0.10.0[all,${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

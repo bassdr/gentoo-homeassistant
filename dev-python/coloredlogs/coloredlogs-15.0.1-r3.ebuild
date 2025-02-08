@@ -18,6 +18,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cron"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	capturer (>=2.4) ; extra == 'cron'
+	humanfriendly (>=9.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cron? ( >=dev-python/capturer-2.4[${PYTHON_USEDEP}] )
 	>=dev-python/humanfriendly-9.1[${PYTHON_USEDEP}]

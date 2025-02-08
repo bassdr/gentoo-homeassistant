@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	packaging
+	pyexecjs; extra == "pyexecjs"
+	pymongo; extra == "pymongo"
+	pytz
+	sentinels
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	pyexecjs? ( dev-python/pyexecjs[${PYTHON_USEDEP}] )

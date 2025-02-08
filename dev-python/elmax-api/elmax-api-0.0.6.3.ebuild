@@ -23,6 +23,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httpx>=0.18.0
+	pyjwt>=1.7.1
+	websockets>=13.0
+	yarl>=1.6.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.18.0[${PYTHON_USEDEP}]
 	>=dev-python/pyjwt-1.7.1[${PYTHON_USEDEP}]

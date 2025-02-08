@@ -17,6 +17,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	beautifulsoup4 ; extra == 'test'
+	nox ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pydata-sphinx-theme ; extra == 'doc'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	sphinx (<6) ; extra == 'doc'
+	sphinx (>=3.4)
+	sphinx-copybutton ; extra == 'doc'
+	sphinx-design ; extra == 'doc'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-3.4[${PYTHON_USEDEP}]

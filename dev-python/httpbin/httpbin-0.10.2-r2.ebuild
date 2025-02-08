@@ -18,16 +18,29 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="mainapp"
 IUSE="${GENERATED_IUSE} test-rust"
 
+REQUIRES_DIST="
+	brotlicffi
+	decorator
+	flasgger
+	flask >=2.2.4
+	gevent ; extra == 'mainapp'
+	greenlet <3.0 ; python_version < "3.12"
+	greenlet >=3.0.0a1 ; python_version >= "3.12.0rc0"
+	gunicorn ; extra == 'mainapp'
+	importlib-metadata ; python_version < "3.8"
+	pytest ; extra == 'test'
+	six
+	tox ; extra == 'test'
+	werkzeug >=2.2.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/brotlicffi[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/flasgger[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.2.4[${PYTHON_USEDEP}]
 	mainapp? ( dev-python/gevent[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '>=dev-python/greenlet-3.0.0_alpha1[${PYTHON_USEDEP}]' python3_13{,t})
-	$(python_gen_cond_dep '<dev-python/greenlet-3.0[${PYTHON_USEDEP}]' python3_12)
+	>=dev-python/greenlet-3.0.0_alpha1[${PYTHON_USEDEP}]
 	mainapp? ( dev-python/gunicorn[${PYTHON_USEDEP}] )
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	>=dev-python/werkzeug-2.2.2[${PYTHON_USEDEP}]
 "

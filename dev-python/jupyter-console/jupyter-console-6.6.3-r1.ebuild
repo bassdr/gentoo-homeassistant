@@ -16,12 +16,24 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	flaky; extra == 'test'
+	ipykernel>=6.14
+	ipython
+	jupyter-client>=7.0.0
+	jupyter-core!=5.0.*,>=4.12
+	pexpect; extra == 'test'
+	prompt-toolkit>=3.0.30
+	pygments
+	pytest; extra == 'test'
+	pyzmq>=17
+	traitlets>=5.4
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-7.0.0[${PYTHON_USEDEP}]
-	!=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-core-4.12[${PYTHON_USEDEP}] !=dev-python/jupyter-core-5.0*[${PYTHON_USEDEP}]
 	>=dev-python/prompt-toolkit-3.0.30[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 	>=dev-python/pyzmq-17[${PYTHON_USEDEP}]

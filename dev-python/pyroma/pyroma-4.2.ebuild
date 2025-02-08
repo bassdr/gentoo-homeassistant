@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build (>=0.7.0)
+	docutils
+	packaging
+	pygments
+	requests
+	setuptools (>=42)
+	setuptools (>=60) ; extra == 'test'
+	trove-classifiers (>=2022.6.26)
+	zest.releaser[recommended] ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-0.7.0[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]

@@ -20,8 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	monarchmoney<0.2.0,>=0.1.13
+	rich>=10.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/monarchmoney-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/monarchmoney-0.1.13[${PYTHON_USEDEP}] <dev-python/monarchmoney-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-10.1.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-izone-1.2.9[${PYTHON_USEDEP}]
+	~dev-python/python-izone-1.2.9[${PYTHON_USEDEP}]
 "

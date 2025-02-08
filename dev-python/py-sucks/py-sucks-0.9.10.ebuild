@@ -21,6 +21,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	click>=6
+	pycountry-convert>=0.5
+	pycryptodome>=3.4
+	pytest; extra == "dev"
+	requests-mock>=1.3; extra == "dev"
+	requests>=2.18
+	sleekxmppfs>=1.4.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-6[${PYTHON_USEDEP}]
 	>=dev-python/pycountry-convert-0.5[${PYTHON_USEDEP}]

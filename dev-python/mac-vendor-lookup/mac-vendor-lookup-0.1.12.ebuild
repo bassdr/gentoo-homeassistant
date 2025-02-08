@@ -25,6 +25,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiofiles
+	aiohttp
+	coverage ; extra == 'test'
+	pytest ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]

@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Wrappers to call pyproject.toml-based build backend hooks."
 HOMEPAGE="
-  https://pypi.org/project/pyproject_hooks/
+  https://pypi.org/project/pyproject-hooks/
   Changelog, https://pyproject-hooks.readthedocs.io/en/latest/changelog.html
   Documentation, https://pyproject-hooks.readthedocs.io/
   Source, https://github.com/pypa/pyproject-hooks

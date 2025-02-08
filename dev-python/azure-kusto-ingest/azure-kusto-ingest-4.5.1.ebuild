@@ -22,10 +22,17 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	azure-kusto-data==4.5.1
+	azure-storage-blob<13,>=12
+	azure-storage-queue<13,>=12
+	pandas; extra == "pandas"
+	tenacity>=8.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/azure-kusto-data-4.5.1[${PYTHON_USEDEP}]
-	<dev-python/azure-storage-blob-13[${PYTHON_USEDEP}]
-	<dev-python/azure-storage-queue-13[${PYTHON_USEDEP}]
+	~dev-python/azure-kusto-data-4.5.1[${PYTHON_USEDEP}]
+	>=dev-python/azure-storage-blob-12[${PYTHON_USEDEP}] <dev-python/azure-storage-blob-13[${PYTHON_USEDEP}]
+	>=dev-python/azure-storage-queue-12[${PYTHON_USEDEP}] <dev-python/azure-storage-queue-13[${PYTHON_USEDEP}]
 	pandas? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	>=dev-python/tenacity-8.0.0[${PYTHON_USEDEP}]
 "

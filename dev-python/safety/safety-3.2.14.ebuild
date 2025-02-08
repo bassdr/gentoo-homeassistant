@@ -16,6 +16,28 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Authlib>=1.2.0
+	Click>=8.0.2
+	dparse>=0.6.4
+	filelock~=3.16.1
+	jinja2>=3.1.0
+	marshmallow>=3.15.0
+	packaging>=21.0
+	psutil~=6.1.0
+	pydantic<2.10.0,>=2.6.0
+	pygithub>=1.43.3; extra == "github"
+	python-gitlab>=1.3.0; extra == "gitlab"
+	requests
+	rich
+	ruamel.yaml>=0.17.21
+	safety_schemas==0.0.10
+	setuptools>=65.5.1
+	spdx-tools>=0.8.2; extra == "spdx"
+	typer>=0.12.1
+	typing-extensions>=4.7.1
+	urllib3>=1.26.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/authlib-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0.2[${PYTHON_USEDEP}]
@@ -25,12 +47,12 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/marshmallow-3.15.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.0[${PYTHON_USEDEP}]
 	>=dev-python/psutil-6.1.0[${PYTHON_USEDEP}] =dev-python/psutil-6.1*[${PYTHON_USEDEP}]
-	<dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2.6.0[${PYTHON_USEDEP}] <dev-python/pydantic-2.10.0[${PYTHON_USEDEP}]
 	github? ( >=dev-python/pygithub-1.43.3[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/rich[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.17.21[${PYTHON_USEDEP}]
-	=dev-python/safety-schemas-0.0.10[${PYTHON_USEDEP}]
+	~dev-python/safety-schemas-0.0.10[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-65.5.1[${PYTHON_USEDEP}]
 	spdx? ( >=dev-python/spdx-tools-0.8.2[${PYTHON_USEDEP}] )
 	>=dev-python/typer-0.12.1[${PYTHON_USEDEP}]

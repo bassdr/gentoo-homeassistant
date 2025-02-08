@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyecotrend-ista-3.3.1[${PYTHON_USEDEP}]
+	~dev-python/pyecotrend-ista-3.3.1[${PYTHON_USEDEP}]
 "

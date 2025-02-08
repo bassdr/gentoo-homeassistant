@@ -16,6 +16,26 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == "build"
+	cython; extra == "build"
+	meson-python; extra == "build"
+	meson; extra == "build"
+	ninja; extra == "build"
+	numpy>=1.23.5
+	numpydoc; extra == "doc"
+	pytest-cov; extra == "test"
+	ruff; extra == "lint"
+	scikit-misc[build]; extra == "all"
+	scikit-misc[dev]; extra == "all"
+	scikit-misc[doc]; extra == "all"
+	scikit-misc[lint]; extra == "all"
+	scikit-misc[test]; extra == "all"
+	sphinx; extra == "doc"
+	spin; extra == "build"
+	twine; extra == "dev"
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	build? ( dev-python/cython[${PYTHON_USEDEP}] )

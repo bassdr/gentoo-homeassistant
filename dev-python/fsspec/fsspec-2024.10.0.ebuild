@@ -27,8 +27,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="abfs adl arrow dask doc dropbox full fuse gcs git github gs gui hdfs http libarchive oci s3 sftp smb ssh test-downstream test-full tqdm"
-IUSE="${GENERATED_IUSE}"
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
@@ -47,10 +45,10 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}]
+		!~dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}] !~dev-python/aiohttp-4.0.0_alpha1[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
-		!=dev-python/pytest-asyncio-0.22.0[${PYTHON_USEDEP}]
+		!~dev-python/pytest-asyncio-0.22.0[${PYTHON_USEDEP}]
 		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
@@ -82,3 +80,4 @@ python_test() {
 }
 # Requires could not be inserted in this ebuild
 # RDEPEND could not be inserted in this ebuild
+# extras could not be inserted in this ebuild

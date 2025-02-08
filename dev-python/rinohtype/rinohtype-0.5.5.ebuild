@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,15 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	appdirs<2.0.0,>=1.4.3
+	docutils>=0.15
+	myst-parser>=0.18.1
+	packaging>=14.0
+	rinoh-typeface-dejavuserif<0.2.0,>=0.1.3
+	rinoh-typeface-texgyrecursor<0.2.0,>=0.1.1
+	rinoh-typeface-texgyreheros<0.2.0,>=0.1.1
+	rinoh-typeface-texgyrepagella<0.2.0,>=0.1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/appdirs-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] <dev-python/appdirs-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/docutils-0.15[${PYTHON_USEDEP}]
 	>=dev-python/myst-parser-0.18.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-14.0[${PYTHON_USEDEP}]
-	<dev-python/rinoh-typeface-dejavuserif-0.2.0[${PYTHON_USEDEP}]
-	<dev-python/rinoh-typeface-texgyrecursor-0.2.0[${PYTHON_USEDEP}]
-	<dev-python/rinoh-typeface-texgyreheros-0.2.0[${PYTHON_USEDEP}]
-	<dev-python/rinoh-typeface-texgyrepagella-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/rinoh-typeface-dejavuserif-0.1.3[${PYTHON_USEDEP}] <dev-python/rinoh-typeface-dejavuserif-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/rinoh-typeface-texgyrecursor-0.1.1[${PYTHON_USEDEP}] <dev-python/rinoh-typeface-texgyrecursor-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/rinoh-typeface-texgyreheros-0.1.1[${PYTHON_USEDEP}] <dev-python/rinoh-typeface-texgyreheros-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/rinoh-typeface-texgyrepagella-0.1.1[${PYTHON_USEDEP}] <dev-python/rinoh-typeface-texgyrepagella-0.2.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

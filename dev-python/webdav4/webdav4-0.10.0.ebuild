@@ -16,18 +16,60 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	cheroot; extra == "dev"
+	cheroot; extra == "tests"
+	colorama; extra == "dev"
+	colorama; extra == "tests"
+	fsspec>=2021.7; extra == "all"
+	fsspec>=2021.7; extra == "dev"
+	fsspec>=2021.7; extra == "fsspec"
+	furo==2024.5.6; extra == "dev"
+	furo==2024.5.6; extra == "docs"
+	httpx<1,>=0.20
+	httpx[http2]<1,>=0.20; extra == "all"
+	httpx[http2]<1,>=0.20; extra == "dev"
+	httpx[http2]<1,>=0.20; extra == "http2"
+	mypy==1.10.1; extra == "dev"
+	mypy==1.10.1; extra == "qa"
+	myst-parser<4,>=3; extra == "dev"
+	myst-parser<4,>=3; extra == "docs"
+	pre-commit; extra == "dev"
+	pre-commit; extra == "qa"
+	pytest-cov; extra == "dev"
+	pytest-cov; extra == "tests"
+	pytest-xdist; extra == "dev"
+	pytest-xdist; extra == "tests"
+	pytest; extra == "dev"
+	pytest; extra == "tests"
+	python-dateutil>=2.8.1
+	sphinx-copybutton==0.5.2; extra == "dev"
+	sphinx-copybutton==0.5.2; extra == "docs"
+	sphinx<8,>=7; extra == "dev"
+	sphinx<8,>=7; extra == "docs"
+	types-colorama; extra == "dev"
+	types-colorama; extra == "qa"
+	types-pkg-resources; extra == "dev"
+	types-pkg-resources; extra == "qa"
+	types-python-dateutil; extra == "dev"
+	types-python-dateutil; extra == "qa"
+	typing-extensions; extra == "dev"
+	typing-extensions; extra == "tests"
+	wsgidav; extra == "dev"
+	wsgidav; extra == "tests"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/fsspec-2021.7[${PYTHON_USEDEP}] )
 	fsspec? ( >=dev-python/fsspec-2021.7[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/furo-2024.5.6[${PYTHON_USEDEP}] )
-	<dev-python/httpx-1[${PYTHON_USEDEP}]
-	all? ( <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
-	http2? ( <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
-	qa? ( =dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/furo-2024.5.6[${PYTHON_USEDEP}] )
+	>=dev-python/httpx-0.20[${PYTHON_USEDEP}] <dev-python/httpx-1[${PYTHON_USEDEP}]
+	all? ( >=dev-python/httpx-0.20[http2,${PYTHON_USEDEP}] <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
+	http2? ( >=dev-python/httpx-0.20[http2,${PYTHON_USEDEP}] <dev-python/httpx-1[http2,${PYTHON_USEDEP}] )
+	qa? ( ~dev-python/mypy-1.10.1[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-3[${PYTHON_USEDEP}] <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
 	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
-	docs? ( <dev-python/sphinx-8[${PYTHON_USEDEP}] )
-	docs? ( =dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] <dev-python/sphinx-8[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-colorama[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-pkg-resources[${PYTHON_USEDEP}] )
 	qa? ( dev-python/types-python-dateutil[${PYTHON_USEDEP}] )
@@ -41,15 +83,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/cheroot[${PYTHON_USEDEP}]
 		dev-python/colorama[${PYTHON_USEDEP}]
 		>=dev-python/fsspec-2021.7[${PYTHON_USEDEP}]
-		=dev-python/furo-2024.5.6[${PYTHON_USEDEP}]
-		<dev-python/httpx-1[http2,${PYTHON_USEDEP}]
-		=dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
-		<dev-python/myst-parser-4[${PYTHON_USEDEP}]
+		~dev-python/furo-2024.5.6[${PYTHON_USEDEP}]
+		>=dev-python/httpx-0.20[http2,${PYTHON_USEDEP}] <dev-python/httpx-1[http2,${PYTHON_USEDEP}]
+		~dev-python/mypy-1.10.1[${PYTHON_USEDEP}]
+		>=dev-python/myst-parser-3[${PYTHON_USEDEP}] <dev-python/myst-parser-4[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
-		<dev-python/sphinx-8[${PYTHON_USEDEP}]
-		=dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-7[${PYTHON_USEDEP}] <dev-python/sphinx-8[${PYTHON_USEDEP}]
+		~dev-python/sphinx-copybutton-0.5.2[${PYTHON_USEDEP}]
 		dev-python/types-colorama[${PYTHON_USEDEP}]
 		dev-python/types-pkg-resources[${PYTHON_USEDEP}]
 		dev-python/types-python-dateutil[${PYTHON_USEDEP}]

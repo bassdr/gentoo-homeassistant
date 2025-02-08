@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ZConfig
+	manuel; extra == "test"
+	mock; extra == "test"
+	setuptools
+	zc.customdoctests; extra == "test"
+	zope.testing; extra == "test"
+	zope.testrunner; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/zconfig[${PYTHON_USEDEP}]

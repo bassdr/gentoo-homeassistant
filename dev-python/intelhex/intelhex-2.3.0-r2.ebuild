@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python library for Intel HEX files manipulations"
 HOMEPAGE="
-  https://pypi.org/project/IntelHex/
+  https://pypi.org/project/intelhex/
 "
 
 LICENSE="BSD"

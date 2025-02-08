@@ -10,12 +10,23 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/BTrees/"
+  https://pypi.org/project/btrees/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx; extra == "docs"
+	ZODB; extra == "zodb"
+	persistent>=4.1.0
+	persistent>=4.4.3; extra == "test"
+	repoze.sphinx.autointerface; extra == "docs"
+	sphinx_rtd_theme; extra == "docs"
+	transaction; extra == "test"
+	zope.interface>=5.0.0
+	zope.testrunner; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/persistent-4.1.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )

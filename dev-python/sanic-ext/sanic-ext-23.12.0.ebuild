@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,26 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Jinja2 ; extra == 'dev'
+	Jinja2 ; extra == 'test'
+	black >=21.4b2 ; extra == 'dev'
+	coverage ; extra == 'dev'
+	coverage ; extra == 'test'
+	flake8 >=3.7.7 ; extra == 'dev'
+	isort >=5.0.0 ; extra == 'dev'
+	pytest ; extra == 'dev'
+	pytest ; extra == 'test'
+	pytest-asyncio ; extra == 'dev'
+	pytest-asyncio ; extra == 'test'
+	pytest-cov ; extra == 'dev'
+	pytest-cov ; extra == 'test'
+	pyyaml >=3.0.0
+	sanic-testing >=22.9.0 ; extra == 'dev'
+	sanic-testing >=22.9.0 ; extra == 'test'
+	tox ; extra == 'dev'
+	tox ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyyaml-3.0.0[${PYTHON_USEDEP}]
 "

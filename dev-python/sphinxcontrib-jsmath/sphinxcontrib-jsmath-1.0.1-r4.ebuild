@@ -18,7 +18,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 PDEPEND="
 	>=dev-python/sphinx-2.0[${PYTHON_USEDEP}]
 "
@@ -53,5 +52,3 @@ python_test() {
 	cd "${T}" || die
 	epytest "${S}"/tests
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

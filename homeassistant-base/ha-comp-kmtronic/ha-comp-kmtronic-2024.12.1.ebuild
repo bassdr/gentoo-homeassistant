@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pykmtronic-0.3.0[${PYTHON_USEDEP}]
+	~dev-python/pykmtronic-0.3.0[${PYTHON_USEDEP}]
 "

@@ -12,15 +12,35 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.testbrowser/"
+  https://pypi.org/project/zope-testbrowser/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	BeautifulSoup4
+	SoupSieve>=1.9.0
+	Sphinx; extra == "docs"
+	WSGIProxy2
+	WebTest>=2.0.30
+	legacy-cgi; python_version > "3.12"
+	mock; extra == "test"
+	pytz
+	repoze.sphinx.autointerface; extra == "docs"
+	setuptools
+	sphinx-rtd-theme; extra == "docs"
+	zope.app.wsgi; extra == "docs"
+	zope.cachedescriptors
+	zope.interface
+	zope.schema
+	zope.testbrowser[test]; extra == "test-bbb"
+	zope.testing; extra == "test"
+	zope.testrunner; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	dev-python/legacy-cgi[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'dev-python/legacy-cgi[${PYTHON_USEDEP}]' python3_13{,t})
 	dev-python/pytz[${PYTHON_USEDEP}]
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

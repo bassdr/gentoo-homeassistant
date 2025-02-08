@@ -20,6 +20,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	dateparser >=1.2.0
+	haversine >=2.8.1
+	requests >=2.31.0
+	xmltodict >=0.13.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dateparser-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/haversine-2.8.1[${PYTHON_USEDEP}]

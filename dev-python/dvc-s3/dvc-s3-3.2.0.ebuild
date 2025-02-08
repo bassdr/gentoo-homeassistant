@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiobotocore[boto3]>=2.5.0
+	dvc
+	dvc-s3[tests]; extra == "dev"
+	dvc[testing]; extra == "tests"
+	flatten-dict<1,>=0.4.1
+	mypy==1.9.0; extra == "dev"
+	pytest-cov>=4.1.0; extra == "tests"
+	pytest-servers[s3]>=0.4.0; extra == "tests"
+	pytest-xdist>=3.2; extra == "tests"
+	pytest<9,>=7; extra == "tests"
+	s3fs>=2023.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiobotocore-2.5.0[boto3,${PYTHON_USEDEP}]
 	dev-python/dvc[${PYTHON_USEDEP}]
-	<dev-python/flatten-dict-1[${PYTHON_USEDEP}]
+	>=dev-python/flatten-dict-0.4.1[${PYTHON_USEDEP}] <dev-python/flatten-dict-1[${PYTHON_USEDEP}]
 	>=dev-python/s3fs-2023.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -28,8 +40,8 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/dvc[testing,${PYTHON_USEDEP}]
 		dev-python/dvc-s3[tests,${PYTHON_USEDEP}]
-		=dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
-		<dev-python/pytest-9[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.9.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-servers-0.4.0[s3,${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-3.2[${PYTHON_USEDEP}]

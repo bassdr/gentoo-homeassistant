@@ -20,7 +20,9 @@ RESTRICT="test"
 
 DOCS="README.md"
 
-IUSE=""
+REQUIRES_DIST="
+	async-timeout
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]
 "

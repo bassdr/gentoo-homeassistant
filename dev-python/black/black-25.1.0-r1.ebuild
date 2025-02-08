@@ -18,6 +18,20 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="colorama d jupyter uvloop"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	aiohttp>=3.10; extra == "d"
+	click>=8.0.0
+	colorama>=0.4.3; extra == "colorama"
+	ipython>=7.8.0; extra == "jupyter"
+	mypy-extensions>=0.4.3
+	packaging>=22.0
+	pathspec>=0.9.0
+	platformdirs>=2
+	tokenize-rt>=3.2.0; extra == "jupyter"
+	tomli>=1.1.0; python_version < "3.11"
+	typing-extensions>=4.0.1; python_version < "3.11"
+	uvloop>=0.15.2; extra == "uvloop"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	d? ( >=dev-python/aiohttp-3.10[${PYTHON_USEDEP}] )
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
@@ -30,17 +44,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	jupyter? ( >=dev-python/tokenize-rt-3.2.0[${PYTHON_USEDEP}] )
 	uvloop? ( >=dev-python/uvloop-0.15.2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
-	>=dev-python/mypy-extensions-0.4.3[${PYTHON_USEDEP}]
-	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
-	>=dev-python/pathspec-0.9.0[${PYTHON_USEDEP}]
-	>=dev-python/platformdirs-2[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/tomli-1.1.0[${PYTHON_USEDEP}]
-		>=dev-python/typing-extensions-4.0.1[${PYTHON_USEDEP}]
-	' 3.10)
-"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	dev-python/hatch-fancy-pypi-readme[${PYTHON_USEDEP}]
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]

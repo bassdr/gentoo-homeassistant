@@ -19,6 +19,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp
+	click
+	jsonpickle
+	requests
+	tabulate
+	xmltodict
+	zeroconf
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

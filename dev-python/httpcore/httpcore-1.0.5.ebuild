@@ -26,13 +26,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="asyncio http2 socks trio"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	anyio<5.0,>=4.0; extra == "asyncio"
+	certifi
+	h11<0.15,>=0.13
+	h2<5,>=3; extra == "http2"
+	socksio==1.*; extra == "socks"
+	trio<0.26.0,>=0.22.0; extra == "trio"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	asyncio? ( <dev-python/anyio-5.0[${PYTHON_USEDEP}] )
+	asyncio? ( >=dev-python/anyio-4.0[${PYTHON_USEDEP}] <dev-python/anyio-5.0[${PYTHON_USEDEP}] )
 	dev-python/certifi[${PYTHON_USEDEP}]
-	<dev-python/h11-0.15[${PYTHON_USEDEP}]
-	http2? ( <dev-python/h2-5[${PYTHON_USEDEP}] )
+	>=dev-python/h11-0.13[${PYTHON_USEDEP}] <dev-python/h11-0.15[${PYTHON_USEDEP}]
+	http2? ( >=dev-python/h2-3[${PYTHON_USEDEP}] <dev-python/h2-5[${PYTHON_USEDEP}] )
 	socks? ( =dev-python/socksio-1*[${PYTHON_USEDEP}] )
-	trio? ( <dev-python/trio-0.26.0[${PYTHON_USEDEP}] )
+	trio? ( >=dev-python/trio-0.22.0[${PYTHON_USEDEP}] <dev-python/trio-0.26.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/anyio-5[${PYTHON_USEDEP}]

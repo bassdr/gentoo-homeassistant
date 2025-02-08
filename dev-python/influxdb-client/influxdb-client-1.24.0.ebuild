@@ -21,6 +21,26 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	certifi (>=14.05.14)
+	ciso8601 (>=2.1.1) ; extra == 'ciso'
+	coverage (>=4.0.3) ; extra == 'test'
+	httpretty (==1.0.5) ; extra == 'test'
+	nose (>=1.3.7) ; extra == 'test'
+	numpy ; extra == 'extra'
+	pandas (>=0.25.3) ; extra == 'extra'
+	pluggy (>=0.3.1) ; extra == 'test'
+	psutil (>=5.6.3) ; extra == 'test'
+	py (>=1.4.31) ; extra == 'test'
+	pytest (>=5.0.0) ; extra == 'test'
+	python-dateutil (>=2.5.3)
+	pytz (>=2019.1)
+	randomize (>=0.13) ; extra == 'test'
+	rx (>=3.0.1)
+	setuptools (>=21.0.0)
+	six (>=1.10)
+	urllib3 (>=1.15.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-14.05.14[${PYTHON_USEDEP}]
 	ciso? ( >=dev-python/ciso8601-2.1.1[${PYTHON_USEDEP}] )
@@ -60,7 +80,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-4.0.3[${PYTHON_USEDEP}]
-		=dev-python/httpretty-1.0.5[${PYTHON_USEDEP}]
+		~dev-python/httpretty-1.0.5[${PYTHON_USEDEP}]
 		>=dev-python/nose-1.3.7[${PYTHON_USEDEP}]
 		>=dev-python/pluggy-0.3.1[${PYTHON_USEDEP}]
 		>=dev-python/psutil-5.6.3[${PYTHON_USEDEP}]

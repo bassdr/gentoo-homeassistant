@@ -20,7 +20,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	httpbin
+	pytest; extra == "test"
+	requests; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpbin[${PYTHON_USEDEP}]
 "

@@ -16,11 +16,22 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiohttp!=4.0.0a0,!=4.0.0a1
+	crcmod; extra == "crc"
+	decorator>4.1.2
+	fsspec==2025.2.0
+	fusepy; extra == "gcsfuse"
+	google-auth-oauthlib
+	google-auth>=1.2
+	google-cloud-storage
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
-	!=dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}]
+	!~dev-python/aiohttp-4.0.0_alpha0[${PYTHON_USEDEP}] !~dev-python/aiohttp-4.0.0_alpha1[${PYTHON_USEDEP}]
 	crc? ( dev-python/crcmod[${PYTHON_USEDEP}] )
 	>dev-python/decorator-4.1.2[${PYTHON_USEDEP}]
-	=dev-python/fsspec-2025.2.0[${PYTHON_USEDEP}]
+	~dev-python/fsspec-2025.2.0[${PYTHON_USEDEP}]
 	gcsfuse? ( dev-python/fusepy[${PYTHON_USEDEP}] )
 	>=dev-python/google-auth-1.2[${PYTHON_USEDEP}]
 	dev-python/google-auth-oauthlib[${PYTHON_USEDEP}]

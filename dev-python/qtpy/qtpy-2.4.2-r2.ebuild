@@ -46,6 +46,12 @@ REQUIRED_USE="|| ( pyqt6 pyside6 )"
 #
 # Webengine is a special case, because PyQt6 provides this in a separate package
 # while PySide6 ships it in the same package.
+REQUIRES_DIST="
+	packaging
+	pytest!=7.0.0,!=7.0.1,>=6; extra == "test"
+	pytest-cov>=3.0.0; extra == "test"
+	pytest-qt; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
@@ -104,7 +110,7 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.0[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
 		dev-python/pytest-qt[${PYTHON_USEDEP}]
 	)

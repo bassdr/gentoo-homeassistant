@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	branca>=0.5.0
+	ipywidgets<9,>=7.6.0
+	jupyter-leaflet<0.20,>=0.19
+	traittypes<3,>=0.2.1
+	xyzservices>=2021.8.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/branca-0.5.0[${PYTHON_USEDEP}]
-	<dev-python/ipywidgets-9[${PYTHON_USEDEP}]
-	<dev-python/jupyter-leaflet-0.20[${PYTHON_USEDEP}]
-	<dev-python/traittypes-3[${PYTHON_USEDEP}]
+	>=dev-python/ipywidgets-7.6.0[${PYTHON_USEDEP}] <dev-python/ipywidgets-9[${PYTHON_USEDEP}]
+	>=dev-python/jupyter-leaflet-0.19[${PYTHON_USEDEP}] <dev-python/jupyter-leaflet-0.20[${PYTHON_USEDEP}]
+	>=dev-python/traittypes-0.2.1[${PYTHON_USEDEP}] <dev-python/traittypes-3[${PYTHON_USEDEP}]
 	>=dev-python/xyzservices-2021.8.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

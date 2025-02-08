@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/python-mystrom-2.2.0[${PYTHON_USEDEP}]
+	~dev-python/python-mystrom-2.2.0[${PYTHON_USEDEP}]
 "

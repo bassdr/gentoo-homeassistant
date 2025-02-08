@@ -24,6 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bluetooth-data-tools (>=0.3.1)
+	bluetooth-sensor-state-data (>=1.6.1)
+	home-assistant-bluetooth (>=1.9.2)
+	sensor-state-data (>=2.13.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-data-tools-0.3.1[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6.1[${PYTHON_USEDEP}]

@@ -18,6 +18,21 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytest ; extra == 'all'
+	pytest ; extra == 'dev'
+	pytest ; extra == 'tests'
+	pywin32
+	sphinx ; extra == 'all'
+	sphinx ; extra == 'dev'
+	sphinx ; extra == 'docs'
+	twine ; extra == 'all'
+	twine ; extra == 'dev'
+	twine ; extra == 'package'
+	wheel ; extra == 'all'
+	wheel ; extra == 'dev'
+	wheel ; extra == 'package'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	dev-python/pywin32[${PYTHON_USEDEP}]

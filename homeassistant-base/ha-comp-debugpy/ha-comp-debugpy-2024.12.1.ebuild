@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/debugpy-1.8.6[${PYTHON_USEDEP}]
+	~dev-python/debugpy-1.8.6[${PYTHON_USEDEP}]
 "

@@ -10,12 +10,23 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jupyter_sphinx/"
+  https://pypi.org/project/jupyter-sphinx/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	bash-kernel; extra == 'test'
+	ipykernel>=4.5.1
+	ipython
+	ipywidgets>=7.0.0
+	matplotlib; extra == 'doc'
+	nbconvert>=5.5
+	nbformat
+	pytest; extra == 'test'
+	sphinx>=7
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ipykernel-4.5.1[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]

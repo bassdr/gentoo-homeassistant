@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,19 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	celery (>=5.0.5)
+	humanize
+	prometheus-client (>=0.8.0)
+	pytz
+	tornado (<7.0.0,>=5.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/celery-5.0.5[${PYTHON_USEDEP}]
 	dev-python/humanize[${PYTHON_USEDEP}]
 	>=dev-python/prometheus-client-0.8.0[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	<dev-python/tornado-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/tornado-5.0.0[${PYTHON_USEDEP}] <dev-python/tornado-7.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

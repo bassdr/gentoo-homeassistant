@@ -25,11 +25,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.0b0
+	certifi>=2023.07.22
+	python-engineio<5.0.0,>=3.13.1
+	python-socketio<6.0,>=4.6
+	websockets>=11.0.1
+	yarl>=1.9.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2023.07.22[${PYTHON_USEDEP}]
-	<dev-python/python-engineio-5.0.0[${PYTHON_USEDEP}]
-	<dev-python/python-socketio-6.0[${PYTHON_USEDEP}]
+	>=dev-python/python-engineio-3.13.1[${PYTHON_USEDEP}] <dev-python/python-engineio-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-socketio-4.6[${PYTHON_USEDEP}] <dev-python/python-socketio-6.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-11.0.1[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.9.2[${PYTHON_USEDEP}]
 "

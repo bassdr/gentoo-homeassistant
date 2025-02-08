@@ -16,19 +16,47 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Shapely<3.0.0dev,>=1.8.4; extra == "geopandas"
+	bigquery-magics>=0.1.0; extra == "ipython"
+	db-dtypes<2.0.0dev,>=0.3.0; extra == "pandas"
+	geopandas<2.0dev,>=0.9.0; extra == "geopandas"
+	google-api-core[grpc]<3.0.0dev,>=2.11.1
+	google-auth<3.0.0dev,>=2.14.1
+	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == "bqstorage"
+	google-cloud-bigquery[bigquery_v2,bqstorage,geopandas,ipython,ipywidgets,opentelemetry,pandas,tqdm]; extra == "all"
+	google-cloud-core<3.0.0dev,>=2.4.1
+	google-resumable-media<3.0dev,>=2.0.0
+	grpcio<2.0dev,>=1.47.0; extra == "bqstorage"
+	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "bqstorage"
+	importlib-metadata>=1.0.0; python_version < "3.8" and extra == "pandas"
+	ipykernel>=6.0.0; extra == "ipywidgets"
+	ipywidgets>=7.7.0; extra == "ipywidgets"
+	opentelemetry-api>=1.1.0; extra == "opentelemetry"
+	opentelemetry-instrumentation>=0.20b0; extra == "opentelemetry"
+	opentelemetry-sdk>=1.1.0; extra == "opentelemetry"
+	packaging>=20.0.0
+	pandas>=1.1.0; extra == "pandas"
+	proto-plus<2.0.0dev,>=1.22.3; extra == "bigquery-v2"
+	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2; extra == "bigquery-v2"
+	pyarrow>=3.0.0; extra == "bqstorage"
+	pyarrow>=3.0.0; extra == "pandas"
+	python-dateutil<3.0dev,>=2.7.3
+	requests<3.0.0dev,>=2.21.0
+	tqdm<5.0.0dev,>=4.7.4; extra == "tqdm"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	ipython? ( >=dev-python/bigquery-magics-0.1.0[${PYTHON_USEDEP}] )
-	pandas? ( <dev-python/db-dtypes-2.0.0_pre[${PYTHON_USEDEP}] )
-	geopandas? ( <dev-python/geopandas-2.0_pre[${PYTHON_USEDEP}] )
-	<dev-python/google-api-core-3.0.0_pre[grpc,${PYTHON_USEDEP}]
-	<dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
+	pandas? ( >=dev-python/db-dtypes-0.3.0[${PYTHON_USEDEP}] <dev-python/db-dtypes-2.0.0_pre[${PYTHON_USEDEP}] )
+	geopandas? ( >=dev-python/geopandas-0.9.0[${PYTHON_USEDEP}] <dev-python/geopandas-2.0_pre[${PYTHON_USEDEP}] )
+	>=dev-python/google-api-core-2.11.1[grpc,${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[grpc,${PYTHON_USEDEP}]
+	>=dev-python/google-auth-2.14.1[${PYTHON_USEDEP}] <dev-python/google-auth-3.0.0_pre[${PYTHON_USEDEP}]
 	all? ( dev-python/google-cloud-bigquery[bigquery_v2,bqstorage,geopandas,ipython,ipywidgets,opentelemetry,pandas,tqdm,${PYTHON_USEDEP}] )
-	bqstorage? ( <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
-	<dev-python/google-cloud-core-3.0.0_pre[${PYTHON_USEDEP}]
-	<dev-python/google-resumable-media-3.0_pre[${PYTHON_USEDEP}]
-	<dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}]
-	bqstorage? ( <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
-	>=dev-python/importlib-metadata-1.0.0[${PYTHON_USEDEP}]
+	bqstorage? ( >=dev-python/google-cloud-bigquery-storage-2.6.0[${PYTHON_USEDEP}] <dev-python/google-cloud-bigquery-storage-3.0.0_pre[${PYTHON_USEDEP}] )
+	>=dev-python/google-cloud-core-2.4.1[${PYTHON_USEDEP}] <dev-python/google-cloud-core-3.0.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/google-resumable-media-2.0.0[${PYTHON_USEDEP}] <dev-python/google-resumable-media-3.0_pre[${PYTHON_USEDEP}]
+	bqstorage? ( >=dev-python/grpcio-1.47.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
+	bqstorage? ( >=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}] <dev-python/grpcio-2.0_pre[${PYTHON_USEDEP}] )
 	ipywidgets? ( >=dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}] )
 	ipywidgets? ( >=dev-python/ipywidgets-7.7.0[${PYTHON_USEDEP}] )
 	opentelemetry? ( >=dev-python/opentelemetry-api-1.1.0[${PYTHON_USEDEP}] )
@@ -36,14 +64,14 @@ GENERATED_RDEPEND="${RDEPEND}
 	opentelemetry? ( >=dev-python/opentelemetry-sdk-1.1.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-20.0.0[${PYTHON_USEDEP}]
 	pandas? ( >=dev-python/pandas-1.1.0[${PYTHON_USEDEP}] )
-	bigquery-v2? ( <dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}] )
-	bigquery-v2? ( !=dev-python/protobuf-4.21.0[${PYTHON_USEDEP}] )
+	bigquery-v2? ( >=dev-python/proto-plus-1.22.3[${PYTHON_USEDEP}] <dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}] )
+	bigquery-v2? ( >=dev-python/protobuf-3.20.2[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.0[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.2[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.3[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.4[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.5[${PYTHON_USEDEP}] )
 	bqstorage? ( >=dev-python/pyarrow-3.0.0[${PYTHON_USEDEP}] )
 	pandas? ( >=dev-python/pyarrow-3.0.0[${PYTHON_USEDEP}] )
-	<dev-python/python-dateutil-3.0_pre[${PYTHON_USEDEP}]
-	<dev-python/requests-3.0.0_pre[${PYTHON_USEDEP}]
-	geopandas? ( <dev-python/shapely-3.0.0_pre[${PYTHON_USEDEP}] )
-	tqdm? ( <dev-python/tqdm-5.0.0_pre[${PYTHON_USEDEP}] )
+	>=dev-python/python-dateutil-2.7.3[${PYTHON_USEDEP}] <dev-python/python-dateutil-3.0_pre[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0_pre[${PYTHON_USEDEP}]
+	geopandas? ( >=dev-python/shapely-1.8.4[${PYTHON_USEDEP}] <dev-python/shapely-3.0.0_pre[${PYTHON_USEDEP}] )
+	tqdm? ( >=dev-python/tqdm-4.7.4[${PYTHON_USEDEP}] <dev-python/tqdm-5.0.0_pre[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

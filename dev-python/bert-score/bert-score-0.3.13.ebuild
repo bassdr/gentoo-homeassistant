@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	matplotlib
+	numpy
+	packaging (>=20.9)
+	pandas (>=1.0.1)
+	requests
+	torch (>=1.0.0)
+	tqdm (>=4.31.1)
+	transformers (>=3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]

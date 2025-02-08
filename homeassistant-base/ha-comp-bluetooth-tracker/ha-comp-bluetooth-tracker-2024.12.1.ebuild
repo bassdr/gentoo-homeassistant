@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/bt-proximity-0.2.1[${PYTHON_USEDEP}]
-	=dev-python/pybluez-0.22[${PYTHON_USEDEP}]
+	~dev-python/bt-proximity-0.2.1[${PYTHON_USEDEP}]
+	~dev-python/pybluez-0.22[${PYTHON_USEDEP}]
 "

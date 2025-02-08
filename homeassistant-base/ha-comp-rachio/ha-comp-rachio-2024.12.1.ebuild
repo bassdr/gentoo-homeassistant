@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/rachiopy-1.1.0[${PYTHON_USEDEP}]
+	~dev-python/rachiopy-1.1.0[${PYTHON_USEDEP}]
 "

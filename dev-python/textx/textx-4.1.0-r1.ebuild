@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=textX-${PV}
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/textX/"
+  https://pypi.org/project/textx/"
 SRC_URI="
 	https://github.com/textX/textX/archive/${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -24,9 +24,26 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Arpeggio>=2.0.0
+	click<9.0,>=7.0; extra == "cli"
+	click<9.0,>=7.0; extra == "dev"
+	click<9.0,>=7.0; extra == "test"
+	coverage; extra == "test"
+	coveralls; extra == "test"
+	flit; extra == "dev"
+	html5lib; extra == "test"
+	importlib-metadata; python_version < "3.10"
+	jinja2; extra == "test"
+	mike; extra == "dev"
+	pytest; extra == "test"
+	ruff; extra == "dev"
+	ruff; extra == "test"
+	textX-dev; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/arpeggio-2.0.0[${PYTHON_USEDEP}]
-	cli? ( <dev-python/click-9.0[${PYTHON_USEDEP}] )
+	cli? ( >=dev-python/click-7.0[${PYTHON_USEDEP}] <dev-python/click-9.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/arpeggio-2.0.0[${PYTHON_USEDEP}]
@@ -41,7 +58,7 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/click-9.0[${PYTHON_USEDEP}]
+		>=dev-python/click-7.0[${PYTHON_USEDEP}] <dev-python/click-9.0[${PYTHON_USEDEP}]
 		dev-python/coverage[${PYTHON_USEDEP}]
 		dev-python/coveralls[${PYTHON_USEDEP}]
 		dev-python/flit[${PYTHON_USEDEP}]

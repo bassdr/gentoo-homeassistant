@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/avion-0.10[${PYTHON_USEDEP}]
+	~dev-python/avion-0.10[${PYTHON_USEDEP}]
 "

@@ -26,6 +26,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	wcwidth
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/wcwidth[${PYTHON_USEDEP}]
 "

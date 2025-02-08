@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Safely add untrusted strings to HTML/XML markup."
 HOMEPAGE="
-  https://pypi.org/project/MarkupSafe/
+  https://pypi.org/project/markupsafe/
   Donate, https://palletsprojects.com/donate
   Documentation, https://markupsafe.palletsprojects.com/
   Changes, https://markupsafe.palletsprojects.com/changes/

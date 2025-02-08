@@ -20,6 +20,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	websockets>=10.3
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/websockets-10.3[${PYTHON_USEDEP}]
 "

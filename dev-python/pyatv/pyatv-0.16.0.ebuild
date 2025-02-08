@@ -22,8 +22,23 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp<5,>=3.8.3
+	async-timeout>=4.0.2
+	chacha20poly1305-reuseable>=0.13.2
+	cryptography>=43.0.0
+	ifaddr>=0.1.7
+	miniaudio>=1.45
+	protobuf>=5.28.1
+	pydantic>=1.10.10
+	requests>=2.30.0
+	srptools>=0.2.0
+	tabulate>=0.9.0
+	tinytag>=1.10.0
+	zeroconf>=0.129.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/aiohttp-5[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.8.3[${PYTHON_USEDEP}] <dev-python/aiohttp-5[${PYTHON_USEDEP}]
 	>=dev-python/async-timeout-4.0.2[${PYTHON_USEDEP}]
 	>=dev-python/chacha20poly1305-reuseable-0.13.2[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-43.0.0[${PYTHON_USEDEP}]

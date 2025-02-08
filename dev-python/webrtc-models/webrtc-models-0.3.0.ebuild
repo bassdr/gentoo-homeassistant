@@ -23,6 +23,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	mashumaro~=3.13
+	orjson>=3.10.7
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mashumaro-3.13[${PYTHON_USEDEP}] =dev-python/mashumaro-3*[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.10.7[${PYTHON_USEDEP}]

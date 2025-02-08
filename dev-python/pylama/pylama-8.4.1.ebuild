@@ -16,6 +16,34 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	eradicate (>=2.0.0) ; extra == 'tests'
+	eradicate ; extra == 'all'
+	eradicate ; extra == 'eradicate'
+	mccabe (>=0.7.0)
+	mypy ; extra == 'all'
+	mypy ; extra == 'mypy'
+	mypy ; extra == 'tests'
+	pycodestyle (>=2.9.1)
+	pydocstyle (>=6.1.1)
+	pyflakes (>=2.5.0)
+	pylama-quotes ; extra == 'tests'
+	pylint (>=2.11.1) ; extra == 'tests'
+	pylint ; extra == 'all'
+	pylint ; extra == 'pylint'
+	pytest (>=7.1.2) ; extra == 'tests'
+	pytest-mypy ; extra == 'tests'
+	radon (>=5.1.0) ; extra == 'tests'
+	radon ; extra == 'all'
+	radon ; extra == 'radon'
+	toml (>=0.10.2) ; extra == 'toml'
+	toml ; extra == 'tests'
+	types-setuptools ; extra == 'tests'
+	types-toml ; extra == 'tests'
+	vulture ; extra == 'all'
+	vulture ; extra == 'tests'
+	vulture ; extra == 'vulture'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/eradicate[${PYTHON_USEDEP}] )
 	eradicate? ( dev-python/eradicate[${PYTHON_USEDEP}] )

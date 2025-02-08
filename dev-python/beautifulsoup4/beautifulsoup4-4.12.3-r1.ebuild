@@ -21,6 +21,14 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cchardet chardet charset-normalizer html5lib lxml"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	cchardet; extra == 'cchardet'
+	chardet; extra == 'chardet'
+	charset-normalizer; extra == 'charset-normalizer'
+	html5lib; extra == 'html5lib'
+	lxml; extra == 'lxml'
+	soupsieve>1.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cchardet? ( dev-python/cchardet[${PYTHON_USEDEP}] )
 	chardet? ( dev-python/chardet[${PYTHON_USEDEP}] )

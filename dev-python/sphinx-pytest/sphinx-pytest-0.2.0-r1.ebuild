@@ -20,7 +20,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	pytest
+	sphinx
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]

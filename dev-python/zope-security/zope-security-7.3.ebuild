@@ -10,12 +10,35 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.security/"
+  https://pypi.org/project/zope-security/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	BTrees; extra == "test"
+	Sphinx; extra == "docs"
+	pytz; extra == "pytz"
+	repoze.sphinx.autointerface; extra == "docs"
+	setuptools
+	sphinx-rtd-theme; extra == "docs"
+	zope.component
+	zope.component; extra == "test"
+	zope.configuration; extra == "docs"
+	zope.configuration; extra == "test"
+	zope.configuration; extra == "zcml"
+	zope.i18nmessageid
+	zope.interface
+	zope.location
+	zope.location; extra == "test"
+	zope.proxy>=5.2
+	zope.schema>=4.2.0
+	zope.testing; extra == "docs"
+	zope.testing; extra == "test"
+	zope.testrunner; extra == "test"
+	zope.untrustedpython>=5.0.dev0; extra == "untrustedpython"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	pytz? ( dev-python/pytz[${PYTHON_USEDEP}] )
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )

@@ -18,6 +18,11 @@ GENERATED_IUSE="console"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	docopt; extra == "console"
+	requests
+	requests_oauthlib
+"
 GENERATED_RDEPEND="${RDEPEND}
 	console? ( dev-python/docopt[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]

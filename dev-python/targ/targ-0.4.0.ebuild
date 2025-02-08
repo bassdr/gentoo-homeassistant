@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,10 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	colorama==0.4.*
+	docstring-parser>=0.12
+	typing-inspect>=0.6.0; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/colorama-0.4*[${PYTHON_USEDEP}]
 	>=dev-python/docstring-parser-0.12[${PYTHON_USEDEP}]
-	>=dev-python/typing-inspect-0.6.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

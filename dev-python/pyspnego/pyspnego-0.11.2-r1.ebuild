@@ -16,10 +16,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="yaml"
+GENERATED_IUSE="kerberos yaml"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	cryptography
+	gssapi>=1.6.0; sys_platform != "win32" and extra == "kerberos"
+	krb5>=0.3.0; sys_platform != "win32" and extra == "kerberos"
+	ruamel.yaml; extra == "yaml"
+	sspilib>=0.1.0; sys_platform == "win32"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]
+	kerberos? ( >=dev-python/gssapi-1.6.0[${PYTHON_USEDEP}] )
+	kerberos? ( >=dev-python/krb5-0.3.0[${PYTHON_USEDEP}] )
 	yaml? ( dev-python/ruamel-yaml[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}

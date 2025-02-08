@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/todoist-api-python-2.1.2[${PYTHON_USEDEP}]
+	~dev-python/todoist-api-python-2.1.2[${PYTHON_USEDEP}]
 "

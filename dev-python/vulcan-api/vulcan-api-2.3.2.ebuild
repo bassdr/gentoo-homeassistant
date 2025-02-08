@@ -22,6 +22,19 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aenum
+	aiodns
+	aiohttp
+	faust-cchardet
+	pyopenssl
+	pytest ; extra == 'testing'
+	python-dotenv ; extra == 'testing'
+	pytz
+	related-without-future
+	uonet-request-signer-hebe
+	yarl
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aenum[${PYTHON_USEDEP}]
 	dev-python/aiodns[${PYTHON_USEDEP}]

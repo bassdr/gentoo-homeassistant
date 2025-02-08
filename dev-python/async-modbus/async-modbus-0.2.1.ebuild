@@ -24,6 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	connio (>=0.2.0)
+	numpy (>=1.1) ; extra == 'numpy'
+	pytest (>=6) ; extra == 'tests'
+	pytest-asyncio ; extra == 'tests'
+	pytest-cov ; extra == 'tests'
+	umodbus (>=1.0.4)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/connio-0.2.0[${PYTHON_USEDEP}]
 	numpy? ( >=dev-python/numpy-1.1[${PYTHON_USEDEP}] )
@@ -47,7 +55,6 @@ src_prepare() {
 }
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		>=dev-python/pytest-6[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]

@@ -16,19 +16,42 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-storage-blob; extra == "bulk-writer"
+	black; extra == "dev"
+	grpcio-testing==1.62.2; extra == "dev"
+	grpcio-tools==1.62.2; extra == "dev"
+	grpcio<=1.67.1,>=1.49.1
+	grpcio==1.62.2; extra == "dev"
+	milvus-lite>=2.4.0; sys_platform != "win32"
+	milvus-model>=0.1.0; extra == "model"
+	minio>=7.0.0; extra == "bulk-writer"
+	numpy<1.25.0; python_version <= "3.8"
+	pandas>=1.2.4
+	protobuf>=3.20.0
+	pyarrow>=12.0.0; extra == "bulk-writer"
+	pytest-cov>=2.8.1; extra == "dev"
+	pytest-timeout>=1.3.4; extra == "dev"
+	pytest>=5.3.4; extra == "dev"
+	python-dotenv<2.0.0,>=1.0.1
+	requests; extra == "bulk-writer"
+	ruff>0.4.0; extra == "dev"
+	setuptools<70.1; python_version <= "3.8"
+	setuptools>69
+	ujson>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	bulk-writer? ( dev-python/azure-storage-blob[${PYTHON_USEDEP}] )
-	<=dev-python/grpcio-1.67.1[${PYTHON_USEDEP}]
+	>=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}] <=dev-python/grpcio-1.67.1[${PYTHON_USEDEP}]
+	>=dev-python/milvus-lite-2.4.0[${PYTHON_USEDEP}]
 	model? ( >=dev-python/milvus-model-0.1.0[${PYTHON_USEDEP}] )
 	bulk-writer? ( >=dev-python/minio-7.0.0[${PYTHON_USEDEP}] )
-	<dev-python/numpy-1.25.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.2.4[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.20.0[${PYTHON_USEDEP}]
 	bulk-writer? ( >=dev-python/pyarrow-12.0.0[${PYTHON_USEDEP}] )
-	<dev-python/python-dotenv-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dotenv-1.0.1[${PYTHON_USEDEP}] <dev-python/python-dotenv-2.0.0[${PYTHON_USEDEP}]
 	bulk-writer? ( dev-python/requests[${PYTHON_USEDEP}] )
 	>dev-python/setuptools-69[${PYTHON_USEDEP}]
-	<dev-python/setuptools-70.1[${PYTHON_USEDEP}]
 	>=dev-python/ujson-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -37,9 +60,9 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
-		=dev-python/grpcio-1.62.2[${PYTHON_USEDEP}]
-		=dev-python/grpcio-testing-1.62.2[${PYTHON_USEDEP}]
-		=dev-python/grpcio-tools-1.62.2[${PYTHON_USEDEP}]
+		~dev-python/grpcio-1.62.2[${PYTHON_USEDEP}]
+		~dev-python/grpcio-testing-1.62.2[${PYTHON_USEDEP}]
+		~dev-python/grpcio-tools-1.62.2[${PYTHON_USEDEP}]
 		>=dev-python/pytest-5.3.4[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-2.8.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-timeout-1.3.4[${PYTHON_USEDEP}]

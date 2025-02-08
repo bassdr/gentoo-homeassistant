@@ -24,6 +24,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	bluetooth-data-tools>=0.1
+	bluetooth-sensor-state-data>=1.6
+	home-assistant-bluetooth>=1.6
+	sensor-state-data>=2.9
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-data-tools-0.1[${PYTHON_USEDEP}]
 	>=dev-python/bluetooth-sensor-state-data-1.6[${PYTHON_USEDEP}]
@@ -45,7 +51,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

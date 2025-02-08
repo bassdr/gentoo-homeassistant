@@ -18,7 +18,6 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	test? (
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
@@ -31,5 +30,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -o addopts= -o required_plugins=
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

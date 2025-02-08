@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	beautifulsoup4 >=4.9
+	lxml >=4.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beautifulsoup4-4.9[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.5[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/qbittorrent-api-2024.2.59[${PYTHON_USEDEP}]
+	~dev-python/qbittorrent-api-2024.2.59[${PYTHON_USEDEP}]
 "

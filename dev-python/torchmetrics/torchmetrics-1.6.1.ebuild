@@ -16,8 +16,138 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyTDC==0.4.1; python_version < "3.12" and extra == "dev"
+	SciencePlots>=2.0.0; extra == "all"
+	SciencePlots>=2.0.0; extra == "dev"
+	SciencePlots>=2.0.0; extra == "visual"
+	bert_score==0.3.13; extra == "dev"
+	dython==0.7.6; python_version < "3.9" and extra == "dev"
+	dython~=0.7.8; python_version > "3.8" and extra == "dev"
+	fairlearn; extra == "dev"
+	fast-bss-eval>=0.1.0; extra == "dev"
+	faster-coco-eval>=1.6.3; extra == "dev"
+	gammatone>=1.0.0; extra == "all"
+	gammatone>=1.0.0; extra == "audio"
+	gammatone>=1.0.0; extra == "dev"
+	huggingface-hub<0.28; extra == "dev"
+	ipadic>=1.0.0; extra == "all"
+	ipadic>=1.0.0; extra == "dev"
+	ipadic>=1.0.0; extra == "text"
+	jiwer>=2.3.0; extra == "dev"
+	kornia>=0.6.7; extra == "dev"
+	librosa>=0.10.0; extra == "all"
+	librosa>=0.10.0; extra == "audio"
+	librosa>=0.10.0; extra == "dev"
+	lightning-utilities>=0.8.0
+	lpips<=0.1.4; extra == "dev"
+	matplotlib>=3.6.0; extra == "all"
+	matplotlib>=3.6.0; extra == "dev"
+	matplotlib>=3.6.0; extra == "visual"
+	mecab-ko-dic>=1.0.0; python_version < "3.12" and extra == "dev"
+	mecab-ko<1.1.0,>=1.0.0; python_version < "3.12" and extra == "dev"
+	mecab-python3>=1.0.6; extra == "all"
+	mecab-python3>=1.0.6; extra == "dev"
+	mecab-python3>=1.0.6; extra == "text"
+	mir-eval>=0.6; extra == "dev"
+	monai==1.3.2; python_version < "3.9" and extra == "dev"
+	monai==1.4.0; python_version > "3.8" and extra == "dev"
+	mypy==1.14.0; extra == "all"
+	mypy==1.14.0; extra == "dev"
+	mypy==1.14.0; extra == "typing"
+	netcal>1.0.0; extra == "dev"
+	nltk>3.8.1; extra == "all"
+	nltk>3.8.1; extra == "dev"
+	nltk>3.8.1; extra == "text"
+	numpy<2.0; extra == "all"
+	numpy<2.0; extra == "audio"
+	numpy<2.0; extra == "dev"
+	numpy<2.3.0; extra == "dev"
+	numpy>1.20.0
+	onnxruntime>=1.12.0; extra == "all"
+	onnxruntime>=1.12.0; extra == "audio"
+	onnxruntime>=1.12.0; extra == "dev"
+	packaging>17.1
+	pandas>1.4.0; extra == "dev"
+	permetrics==2.0.0; extra == "dev"
+	pesq>=0.0.4; extra == "all"
+	pesq>=0.0.4; extra == "audio"
+	pesq>=0.0.4; extra == "dev"
+	piq<=0.8.0; extra == "all"
+	piq<=0.8.0; extra == "dev"
+	piq<=0.8.0; extra == "multimodal"
+	pycocotools>2.0.0; extra == "all"
+	pycocotools>2.0.0; extra == "detection"
+	pycocotools>2.0.0; extra == "dev"
+	pystoi>=0.4.0; extra == "all"
+	pystoi>=0.4.0; extra == "audio"
+	pystoi>=0.4.0; extra == "dev"
+	pytorch-msssim==1.0.0; extra == "dev"
+	regex>=2021.9.24; extra == "all"
+	regex>=2021.9.24; extra == "dev"
+	regex>=2021.9.24; extra == "text"
+	requests>=2.19.0; extra == "all"
+	requests>=2.19.0; extra == "audio"
+	requests>=2.19.0; extra == "dev"
+	rouge-score>0.1.0; extra == "dev"
+	sacrebleu>=2.3.0; extra == "dev"
+	scikit-image>=0.19.0; extra == "dev"
+	scipy>1.0.0; extra == "all"
+	scipy>1.0.0; extra == "dev"
+	scipy>1.0.0; extra == "image"
+	sentencepiece>=0.2.0; extra == "all"
+	sentencepiece>=0.2.0; extra == "dev"
+	sentencepiece>=0.2.0; extra == "text"
+	sewar>=0.4.4; extra == "dev"
+	statsmodels>0.13.5; extra == "dev"
+	torch-fidelity<=0.4.0; extra == "all"
+	torch-fidelity<=0.4.0; extra == "dev"
+	torch-fidelity<=0.4.0; extra == "image"
+	torch==2.5.1; extra == "all"
+	torch==2.5.1; extra == "dev"
+	torch==2.5.1; extra == "typing"
+	torch>=2.0.0
+	torch_complex<0.5.0; extra == "dev"
+	torchaudio>=2.0.1; extra == "all"
+	torchaudio>=2.0.1; extra == "audio"
+	torchaudio>=2.0.1; extra == "dev"
+	torchvision>=0.15.1; extra == "all"
+	torchvision>=0.15.1; extra == "detection"
+	torchvision>=0.15.1; extra == "dev"
+	torchvision>=0.15.1; extra == "image"
+	tqdm<4.68.0; extra == "all"
+	tqdm<4.68.0; extra == "dev"
+	tqdm<4.68.0; extra == "text"
+	transformers>4.4.0; extra == "all"
+	transformers>4.4.0; extra == "dev"
+	transformers>4.4.0; extra == "text"
+	transformers>=4.42.3; extra == "all"
+	transformers>=4.42.3; extra == "dev"
+	transformers>=4.42.3; extra == "multimodal"
+	types-PyYAML; extra == "all"
+	types-PyYAML; extra == "dev"
+	types-PyYAML; extra == "typing"
+	types-emoji; extra == "all"
+	types-emoji; extra == "dev"
+	types-emoji; extra == "typing"
+	types-protobuf; extra == "all"
+	types-protobuf; extra == "dev"
+	types-protobuf; extra == "typing"
+	types-requests; extra == "all"
+	types-requests; extra == "dev"
+	types-requests; extra == "typing"
+	types-setuptools; extra == "all"
+	types-setuptools; extra == "dev"
+	types-setuptools; extra == "typing"
+	types-six; extra == "all"
+	types-six; extra == "dev"
+	types-six; extra == "typing"
+	types-tabulate; extra == "all"
+	types-tabulate; extra == "dev"
+	types-tabulate; extra == "typing"
+	typing-extensions; python_version < "3.9"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/dython-0.7.6[${PYTHON_USEDEP}]
 	all? ( >=dev-python/gammatone-1.0.0[${PYTHON_USEDEP}] )
 	audio? ( >=dev-python/gammatone-1.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/ipadic-1.0.0[${PYTHON_USEDEP}] )
@@ -27,13 +157,10 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}]
 	all? ( >=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}] )
 	visual? ( >=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '<dev-python/mecab-ko-1.1.0[${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/mecab-ko-dic-1.0.0[${PYTHON_USEDEP}]' python3_12)
 	all? ( >=dev-python/mecab-python3-1.0.6[${PYTHON_USEDEP}] )
 	text? ( >=dev-python/mecab-python3-1.0.6[${PYTHON_USEDEP}] )
-	=dev-python/monai-1.3.2[${PYTHON_USEDEP}]
-	all? ( =dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
-	typing? ( =dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
+	typing? ( ~dev-python/mypy-1.14.0[${PYTHON_USEDEP}] )
 	all? ( >dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
 	text? ( >dev-python/nltk-3.8.1[${PYTHON_USEDEP}] )
 	>dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
@@ -50,7 +177,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	detection? ( >dev-python/pycocotools-2.0.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/pystoi-0.4.0[${PYTHON_USEDEP}] )
 	audio? ( >=dev-python/pystoi-0.4.0[${PYTHON_USEDEP}] )
-	$(python_gen_cond_dep '=dev-python/pytdc-0.4.1[${PYTHON_USEDEP}]' python3_12)
 	all? ( >=dev-python/regex-2021.9.24[${PYTHON_USEDEP}] )
 	text? ( >=dev-python/regex-2021.9.24[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/requests-2.19.0[${PYTHON_USEDEP}] )
@@ -62,8 +188,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
 	text? ( >=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}] )
 	>=dev-python/torch-2.0.0[${PYTHON_USEDEP}]
-	all? ( =dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
-	typing? ( =dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
+	all? ( ~dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
+	typing? ( ~dev-python/torch-2.5.1[${PYTHON_USEDEP}] )
 	all? ( <=dev-python/torch-fidelity-0.4.0[${PYTHON_USEDEP}] )
 	image? ( <=dev-python/torch-fidelity-0.4.0[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/torchaudio-2.0.1[${PYTHON_USEDEP}] )
@@ -91,14 +217,14 @@ GENERATED_RDEPEND="${RDEPEND}
 	typing? ( dev-python/types-six[${PYTHON_USEDEP}] )
 	all? ( dev-python/types-tabulate[${PYTHON_USEDEP}] )
 	typing? ( dev-python/types-tabulate[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/bert-score-0.3.13[${PYTHON_USEDEP}]
+		~dev-python/bert-score-0.3.13[${PYTHON_USEDEP}]
+		>=dev-python/dython-0.7.8[${PYTHON_USEDEP}] =dev-python/dython-0.7*[${PYTHON_USEDEP}]
 		dev-python/fairlearn[${PYTHON_USEDEP}]
 		>=dev-python/fast-bss-eval-0.1.0[${PYTHON_USEDEP}]
 		>=dev-python/faster-coco-eval-1.6.3[${PYTHON_USEDEP}]
@@ -112,19 +238,20 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
 		>=dev-python/mecab-python3-1.0.6[${PYTHON_USEDEP}]
 		>=dev-python/mir-eval-0.6[${PYTHON_USEDEP}]
-		=dev-python/mypy-1.14.0[${PYTHON_USEDEP}]
+		~dev-python/monai-1.4.0[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.14.0[${PYTHON_USEDEP}]
 		>dev-python/netcal-1.0.0[${PYTHON_USEDEP}]
 		>dev-python/nltk-3.8.1[${PYTHON_USEDEP}]
 		<dev-python/numpy-2.0[${PYTHON_USEDEP}]
 		<dev-python/numpy-2.3.0[${PYTHON_USEDEP}]
 		>=dev-python/onnxruntime-1.12.0[${PYTHON_USEDEP}]
 		>dev-python/pandas-1.4.0[${PYTHON_USEDEP}]
-		=dev-python/permetrics-2.0.0[${PYTHON_USEDEP}]
+		~dev-python/permetrics-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pesq-0.0.4[${PYTHON_USEDEP}]
 		<=dev-python/piq-0.8.0[${PYTHON_USEDEP}]
 		>dev-python/pycocotools-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pystoi-0.4.0[${PYTHON_USEDEP}]
-		=dev-python/pytorch-msssim-1.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytorch-msssim-1.0.0[${PYTHON_USEDEP}]
 		>=dev-python/regex-2021.9.24[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.19.0[${PYTHON_USEDEP}]
 		>dev-python/rouge-score-0.1.0[${PYTHON_USEDEP}]
@@ -135,7 +262,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/sentencepiece-0.2.0[${PYTHON_USEDEP}]
 		>=dev-python/sewar-0.4.4[${PYTHON_USEDEP}]
 		>dev-python/statsmodels-0.13.5[${PYTHON_USEDEP}]
-		=dev-python/torch-2.5.1[${PYTHON_USEDEP}]
+		~dev-python/torch-2.5.1[${PYTHON_USEDEP}]
 		<dev-python/torch-complex-0.5.0[${PYTHON_USEDEP}]
 		<=dev-python/torch-fidelity-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/torchaudio-2.0.1[${PYTHON_USEDEP}]

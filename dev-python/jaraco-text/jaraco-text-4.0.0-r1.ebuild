@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Module for text manipulation"
 HOMEPAGE="
-  https://pypi.org/project/jaraco.text/
+  https://pypi.org/project/jaraco-text/
 "
 
 LICENSE="MIT"
@@ -20,10 +20,30 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc inflect"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	autocommand
+	furo; extra == "doc"
+	importlib-resources; python_version < "3.9"
+	inflect; extra == "inflect"
+	jaraco.context>=4.1
+	jaraco.functools
+	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.tidelift>=1.4; extra == "doc"
+	more-itertools
+	pathlib2; python_version < "3.10" and extra == "test"
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "test"
+	pytest-cov; extra == "test"
+	pytest-enabler>=2.2; extra == "test"
+	pytest-mypy; extra == "test"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
+	rst.linker>=1.9; extra == "doc"
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	inflect? ( dev-python/inflect[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-context-4.1[${PYTHON_USEDEP}]
 	dev-python/jaraco-functools[${PYTHON_USEDEP}]
@@ -42,11 +62,12 @@ RDEPEND="${GENERATED_RDEPEND}
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
 		dev-python/pytest-mypy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

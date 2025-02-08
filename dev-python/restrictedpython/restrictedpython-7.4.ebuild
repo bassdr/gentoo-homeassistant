@@ -11,7 +11,7 @@ MY_PV=${MY_PV1/_alpha/a}
 
 DESCRIPTION="RestrictedPython is a defined subset of the Python language which allows to provide a program input into a trusted environment."
 HOMEPAGE="
-  https://pypi.org/project/RestrictedPython/
+  https://pypi.org/project/restrictedpython/
   Documentation, https://restrictedpython.readthedocs.io/
   Source, https://github.com/zopefoundation/RestrictedPython
   Tracker, https://github.com/zopefoundation/RestrictedPython/issues

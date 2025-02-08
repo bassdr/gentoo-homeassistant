@@ -16,6 +16,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == "build"
+	language-data>=1.2
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	twine; extra == "build"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	>=dev-python/language-data-1.2[${PYTHON_USEDEP}]

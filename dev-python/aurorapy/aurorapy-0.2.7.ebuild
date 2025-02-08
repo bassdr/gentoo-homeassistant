@@ -18,6 +18,10 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	future (>=0.16.0)
+	pyserial (>=3.2.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/future-0.16.0[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-3.2.1[${PYTHON_USEDEP}]

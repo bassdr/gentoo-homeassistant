@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/reolink-aio-0.11.4[${PYTHON_USEDEP}]
+	~dev-python/reolink-aio-0.11.4[${PYTHON_USEDEP}]
 "

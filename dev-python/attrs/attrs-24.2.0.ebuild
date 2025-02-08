@@ -22,7 +22,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="benchmark cov docs"
+GENERATED_IUSE="benchmark cov docs tests-mypy"
 IUSE="${GENERATED_IUSE}"
 BDEPEND="
 	>=dev-python/hatch-fancy-pypi-readme-23.2.0[${PYTHON_USEDEP}]
@@ -38,9 +38,12 @@ BDEPEND="
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
+		dev-python/cloudpickle[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
+		>=dev-python/mypy-1.11.1[${PYTHON_USEDEP}]
 		dev-python/pympler[${PYTHON_USEDEP}]
 		>=dev-python/pytest-4.3.0[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep 'dev-python/pytest-mypy-plugins[${PYTHON_USEDEP}]' python3_12)
 		dev-python/pytest-xdist[psutil,${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)

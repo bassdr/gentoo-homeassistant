@@ -16,15 +16,25 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aiobotocore>=2.15.2; extra == "recipes"
+	async_timeout<6,>4
+	asyncache>=0.3.1; extra == "recipes"
+	deprecated>=1.2
+	packaging<25,>=21
+	pympler<2,>1
+	typing_extensions>=4.3
+	wrapt<2,>=1.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	recipes? ( >=dev-python/aiobotocore-2.15.2[${PYTHON_USEDEP}] )
-	<dev-python/async-timeout-6[${PYTHON_USEDEP}]
+	>dev-python/async-timeout-4[${PYTHON_USEDEP}] <dev-python/async-timeout-6[${PYTHON_USEDEP}]
 	recipes? ( >=dev-python/asyncache-0.3.1[${PYTHON_USEDEP}] )
 	>=dev-python/deprecated-1.2[${PYTHON_USEDEP}]
-	<dev-python/packaging-25[${PYTHON_USEDEP}]
-	<dev-python/pympler-2[${PYTHON_USEDEP}]
+	>=dev-python/packaging-21[${PYTHON_USEDEP}] <dev-python/packaging-25[${PYTHON_USEDEP}]
+	>dev-python/pympler-1[${PYTHON_USEDEP}] <dev-python/pympler-2[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3[${PYTHON_USEDEP}]
-	<dev-python/wrapt-2[${PYTHON_USEDEP}]
+	>=dev-python/wrapt-1.1.0[${PYTHON_USEDEP}] <dev-python/wrapt-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

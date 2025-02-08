@@ -29,14 +29,24 @@ KEYWORDS="amd64 arm64"
 # TODO: require only one crypto backend?
 GENERATED_IUSE="cryptography pycrypto pycryptodome"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	cryptography (>=3.4.0) ; extra == 'cryptography'
+	ecdsa (!=0.15)
+	pyasn1
+	pyasn1 ; extra == 'pycrypto'
+	pyasn1 ; extra == 'pycryptodome'
+	pycrypto (<2.7.0,>=2.6.0) ; extra == 'pycrypto'
+	pycryptodome (<4.0.0,>=3.3.1) ; extra == 'pycryptodome'
+	rsa
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cryptography? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )
-	!=dev-python/ecdsa-0.15[${PYTHON_USEDEP}]
+	!~dev-python/ecdsa-0.15[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 	pycrypto? ( dev-python/pyasn1[${PYTHON_USEDEP}] )
 	pycryptodome? ( dev-python/pyasn1[${PYTHON_USEDEP}] )
-	pycrypto? ( <dev-python/pycrypto-2.7.0[${PYTHON_USEDEP}] )
-	pycryptodome? ( <dev-python/pycryptodome-4.0.0[${PYTHON_USEDEP}] )
+	pycrypto? ( >=dev-python/pycrypto-2.6.0[${PYTHON_USEDEP}] <dev-python/pycrypto-2.7.0[${PYTHON_USEDEP}] )
+	pycryptodome? ( >=dev-python/pycryptodome-3.3.1[${PYTHON_USEDEP}] <dev-python/pycryptodome-4.0.0[${PYTHON_USEDEP}] )
 	dev-python/rsa[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

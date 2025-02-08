@@ -16,6 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	objprint; extra == "repr"
+	pygments; extra == "codehilite"
+	python-slugify; extra == "toc"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	repr? ( dev-python/objprint[${PYTHON_USEDEP}] )
 	codehilite? ( dev-python/pygments[${PYTHON_USEDEP}] )

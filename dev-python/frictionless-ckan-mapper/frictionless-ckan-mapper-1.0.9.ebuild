@@ -17,9 +17,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pylama ; extra == 'develop'
+	six (<2.0,>=1.9)
+	tox ; extra == 'develop'
+	unidecode
+"
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/pylama[${PYTHON_USEDEP}] )
-	<dev-python/six-2.0[${PYTHON_USEDEP}]
+	>=dev-python/six-1.9[${PYTHON_USEDEP}] <dev-python/six-2.0[${PYTHON_USEDEP}]
 	develop? ( dev-python/tox[${PYTHON_USEDEP}] )
 	dev-python/unidecode[${PYTHON_USEDEP}]
 "

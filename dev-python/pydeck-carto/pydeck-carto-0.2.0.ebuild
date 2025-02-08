@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	carto-auth>=0.2.0
+	pydeck>=0.9.0
+	typing-extensions>=4.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/carto-auth-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/pydeck-0.9.0[${PYTHON_USEDEP}]

@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyipp-0.17.0[${PYTHON_USEDEP}]
+	~dev-python/pyipp-0.17.0[${PYTHON_USEDEP}]
 "

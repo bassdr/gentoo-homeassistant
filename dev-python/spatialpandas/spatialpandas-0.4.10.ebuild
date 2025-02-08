@@ -16,6 +16,36 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	codecov ; extra == 'tests'
+	dask
+	datashader ; extra == 'examples'
+	descartes ; extra == 'examples'
+	distributed ; extra == 'examples'
+	flake8 ; extra == 'tests'
+	fsspec
+	geopandas ; extra == 'examples'
+	geopandas ; extra == 'tests'
+	hilbertcurve ; extra == 'tests'
+	holoviews ; extra == 'examples'
+	hypothesis ; extra == 'tests'
+	keyring ; extra == 'tests'
+	matplotlib ; extra == 'examples'
+	moto[s3,server] ; extra == 'tests'
+	numba
+	pandas
+	param
+	pyarrow >=1.0
+	pytest ; extra == 'tests'
+	pytest-cov ; extra == 'tests'
+	python-snappy ; extra == 'tests'
+	retrying
+	rfc3986 ; extra == 'tests'
+	s3fs ; extra == 'tests'
+	scipy ; extra == 'tests'
+	shapely ; extra == 'tests'
+	twine ; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/dask[${PYTHON_USEDEP}]
 	examples? ( dev-python/datashader[${PYTHON_USEDEP}] )

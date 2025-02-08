@@ -20,6 +20,27 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'dev'
+	aiohttp
+	appdirs
+	bump2version ; extra == 'dev'
+	coverage ; extra == 'dev'
+	ecdsa
+	flake8 ; extra == 'dev'
+	ms-cv
+	pip ; extra == 'dev'
+	pydantic
+	pytest ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+	pytest-runner ; extra == 'dev'
+	recommonmark ; extra == 'dev'
+	sphinx-rtd-theme ; extra == 'dev'
+	tox ; extra == 'dev'
+	twine ; extra == 'dev'
+	watchdog ; extra == 'dev'
+	wheel ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/appdirs[${PYTHON_USEDEP}]

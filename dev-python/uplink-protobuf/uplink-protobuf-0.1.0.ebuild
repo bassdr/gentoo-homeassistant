@@ -20,6 +20,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	protobuf
+	pytest-cov; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest; extra == 'tests'
+	uplink (>=0.6.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/protobuf[${PYTHON_USEDEP}]
 	>=dev-python/uplink-0.6.0[${PYTHON_USEDEP}]

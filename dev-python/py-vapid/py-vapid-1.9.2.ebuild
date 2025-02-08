@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	cryptography>=2.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]
 "

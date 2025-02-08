@@ -18,6 +18,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="doc"
 
+REQUIRES_DIST="
+	graphviz
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/graphviz[${PYTHON_USEDEP}]
 "

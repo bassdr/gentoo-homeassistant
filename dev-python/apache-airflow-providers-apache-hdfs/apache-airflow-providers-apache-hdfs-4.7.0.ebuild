@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	apache-airflow>=2.9.0
+	hdfs[avro,dataframe,kerberos]>=2.5.4; python_version < "3.12"
+	hdfs[avro,dataframe,kerberos]>=2.7.3; python_version >= "3.12"
+	pandas<2.2,>=1.5.3; python_version < "3.9"
+	pandas<2.2,>=2.1.2; python_version >= "3.9"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/hdfs-2.5.4[avro,dataframe,kerberos,${PYTHON_USEDEP}]' python3_12)
-	$(python_gen_cond_dep '>=dev-python/hdfs-2.7.3[avro,dataframe,kerberos,${PYTHON_USEDEP}]' python3_13{,t})
-	<dev-python/pandas-2.2[${PYTHON_USEDEP}]
+	>=dev-python/hdfs-2.7.3[avro,dataframe,kerberos,${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.1.2[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

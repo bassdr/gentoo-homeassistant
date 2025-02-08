@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	faker>=15.3.4
+	jsonschema>=4.17.3
+	pydantic>=2.0.0
+	rstr>=3.2.0
+	smart-open[http]>=6.3.0
+	typer>=0.7.0; extra == "cli"
+	typing-extensions>=4.9.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/faker-15.3.4[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-4.17.3[${PYTHON_USEDEP}]

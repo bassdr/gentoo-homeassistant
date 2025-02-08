@@ -12,12 +12,34 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.traversing/"
+  https://pypi.org/project/zope-traversing/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	repoze.sphinx.autointerface ; extra == 'docs'
+	setuptools
+	transaction
+	zope.annotation ; extra == 'test'
+	zope.browserresource[zcml] (>=3.12) ; extra == 'test'
+	zope.component
+	zope.component[zcml] ; extra == 'test'
+	zope.configuration ; extra == 'test'
+	zope.i18n
+	zope.i18nmessageid
+	zope.interface (>=4.0.4)
+	zope.location (>=3.7.0)
+	zope.proxy
+	zope.publisher
+	zope.security
+	zope.security[zcml] (>=3.8) ; extra == 'test'
+	zope.tales ; extra == 'test'
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

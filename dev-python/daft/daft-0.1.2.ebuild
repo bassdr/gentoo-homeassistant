@@ -16,6 +16,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jupytext ; extra == 'docs'
+	matplotlib
+	myst-nb ; extra == 'docs'
+	numpy
+	pytest ; extra == 'test'
+	setuptools
+	sphinx ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/jupytext[${PYTHON_USEDEP}] )
 	dev-python/matplotlib[${PYTHON_USEDEP}]

@@ -17,7 +17,9 @@ LICENSE="Apache2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	decorator (>=3.4.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/decorator-3.4.2[${PYTHON_USEDEP}]
 "
@@ -38,7 +40,3 @@ src_unpack() {
 	mv ${WORKDIR}/retry-${PV} ${S}
 }
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

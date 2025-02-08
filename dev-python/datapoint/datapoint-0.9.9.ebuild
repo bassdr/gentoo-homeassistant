@@ -20,10 +20,15 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	appdirs <2,>=1
+	pytz
+	requests <3,>=2.20.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/appdirs-2[${PYTHON_USEDEP}]
+	>=dev-python/appdirs-1[${PYTHON_USEDEP}] <dev-python/appdirs-2[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]

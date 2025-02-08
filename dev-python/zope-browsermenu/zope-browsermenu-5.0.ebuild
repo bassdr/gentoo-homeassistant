@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="zope.browsermenu"
@@ -11,12 +10,27 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.browsermenu/"
+  https://pypi.org/project/zope-browsermenu/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	setuptools
+	zope.browser
+	zope.component (>=3.7)
+	zope.configuration
+	zope.i18nmessageid
+	zope.interface
+	zope.pagetemplate (>=3.5)
+	zope.publisher (>=4.2.1)
+	zope.schema
+	zope.security
+	zope.testing ; extra == 'test'
+	zope.testrunner ; extra == 'test'
+	zope.traversing (>3.7)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/zope-browser[${PYTHON_USEDEP}]

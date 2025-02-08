@@ -17,7 +17,18 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	comm>=0.1.3
+	ipykernel; extra == "test"
+	ipython>=6.1.0
+	jsonschema; extra == "test"
+	jupyterlab-widgets~=3.0.12
+	pytest-cov; extra == "test"
+	pytest>=3.6.0; extra == "test"
+	pytz; extra == "test"
+	traitlets>=4.3.1
+	widgetsnbextension~=4.0.12
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/comm-0.1.3[${PYTHON_USEDEP}]
 	>=dev-python/ipython-6.1.0[${PYTHON_USEDEP}]

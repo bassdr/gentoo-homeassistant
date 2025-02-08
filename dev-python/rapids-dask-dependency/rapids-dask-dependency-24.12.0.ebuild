@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,17 +15,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	dask-expr==1.1.19
+	dask==2024.11.2
+	distributed==2024.11.2
+	pynvml<11.5.0a0,>=11.0.0
+	pytest; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/dask-2024.11.2[${PYTHON_USEDEP}]
-	=dev-python/dask-expr-1.1.19[${PYTHON_USEDEP}]
-	=dev-python/distributed-2024.11.2[${PYTHON_USEDEP}]
-	<dev-python/pynvml-11.5.0_alpha0[${PYTHON_USEDEP}]
+	~dev-python/dask-2024.11.2[${PYTHON_USEDEP}]
+	~dev-python/dask-expr-1.1.19[${PYTHON_USEDEP}]
+	~dev-python/distributed-2024.11.2[${PYTHON_USEDEP}]
+	>=dev-python/pynvml-11.0.0[${PYTHON_USEDEP}] <dev-python/pynvml-11.5.0_alpha0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)

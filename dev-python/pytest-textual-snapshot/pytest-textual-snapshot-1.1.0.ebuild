@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,11 +14,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	jinja2>=3.0.0
+	pytest>=8.0.0
+	rich>=12.0.0
+	syrupy==4.8.0
+	textual>=0.28.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-12.0.0[${PYTHON_USEDEP}]
-	=dev-python/syrupy-4.8.0[${PYTHON_USEDEP}]
+	~dev-python/syrupy-4.8.0[${PYTHON_USEDEP}]
 	>=dev-python/textual-0.28.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

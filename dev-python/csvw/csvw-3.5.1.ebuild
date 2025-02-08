@@ -16,6 +16,31 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=18.1
+	babel
+	build; extra == "dev"
+	colorama
+	flake8; extra == "dev"
+	frictionless; extra == "test"
+	isodate
+	jsonschema
+	language-tags
+	pytest-cov; extra == "test"
+	pytest-mock; extra == "test"
+	pytest>=5; extra == "test"
+	python-dateutil
+	rdflib
+	requests
+	requests-mock; extra == "test"
+	rfc3986<2
+	sphinx-autodoc-typehints; extra == "docs"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx<7; extra == "docs"
+	twine; extra == "dev"
+	uritemplate>=3.0.0
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]
 	dev-python/babel[${PYTHON_USEDEP}]

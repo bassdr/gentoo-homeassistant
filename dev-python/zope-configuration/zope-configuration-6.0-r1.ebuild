@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.configuration/"
+  https://pypi.org/project/zope-configuration/"
 
 LICENSE="ZPL"
 SLOT="0"
@@ -18,6 +18,16 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx; extra == "docs"
+	repoze.sphinx.autointerface; extra == "docs"
+	setuptools
+	zope.i18nmessageid
+	zope.interface
+	zope.schema>=4.9
+	zope.testing; extra == "test"
+	zope.testrunner; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )
 	dev-python/setuptools[${PYTHON_USEDEP}]

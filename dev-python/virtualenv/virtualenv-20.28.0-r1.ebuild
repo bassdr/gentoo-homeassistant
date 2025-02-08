@@ -23,18 +23,40 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	covdefaults>=2.3; extra == "test"
+	coverage-enable-subprocess>=1; extra == "test"
+	coverage>=7.2.7; extra == "test"
+	distlib<1,>=0.3.7
+	filelock<4,>=3.12.2
+	flaky>=3.7; extra == "test"
+	furo>=2023.7.26; extra == "docs"
+	importlib-metadata>=6.6; python_version < "3.8"
+	packaging>=23.1; extra == "test"
+	platformdirs<5,>=3.9.1
+	proselint>=0.13; extra == "docs"
+	pytest-env>=0.8.2; extra == "test"
+	pytest-freezer>=0.4.8; (platform_python_implementation == "PyPy" or (platform_python_implementation == "CPython" and sys_platform == "win32" and python_version >= "3.13")) and extra == "test"
+	pytest-mock>=3.11.1; extra == "test"
+	pytest-randomly>=3.12; extra == "test"
+	pytest-timeout>=2.1; extra == "test"
+	pytest>=7.4; extra == "test"
+	setuptools>=68; extra == "test"
+	sphinx!=7.3,>=7.1.2; extra == "docs"
+	sphinx-argparse>=0.4; extra == "docs"
+	sphinxcontrib-towncrier>=0.2.1a0; extra == "docs"
+	time-machine>=2.10; platform_python_implementation == "CPython" and extra == "test"
+	towncrier>=23.6; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/distlib-1[${PYTHON_USEDEP}]
-	<dev-python/filelock-4[${PYTHON_USEDEP}]
+	>=dev-python/distlib-0.3.7[${PYTHON_USEDEP}] <dev-python/distlib-1[${PYTHON_USEDEP}]
+	>=dev-python/filelock-3.12.2[${PYTHON_USEDEP}] <dev-python/filelock-4[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/furo-2023.7.26[${PYTHON_USEDEP}] )
-	>=dev-python/importlib-metadata-6.6[${PYTHON_USEDEP}]
-	<dev-python/platformdirs-5[${PYTHON_USEDEP}]
+	>=dev-python/platformdirs-3.9.1[${PYTHON_USEDEP}] <dev-python/platformdirs-5[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/proselint-0.13[${PYTHON_USEDEP}] )
-	>=dev-python/pytest-freezer-0.4.8[${PYTHON_USEDEP}]
-	docs? ( !=dev-python/sphinx-7.3[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-7.1.2[${PYTHON_USEDEP}] !~dev-python/sphinx-7.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-argparse-0.4[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-towncrier-0.2.1_alpha0[${PYTHON_USEDEP}] )
-	>=dev-python/time-machine-2.10[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/towncrier-23.6[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
@@ -83,6 +105,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-randomly-3.12[${PYTHON_USEDEP}]
 		>=dev-python/pytest-timeout-2.1[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-68[${PYTHON_USEDEP}]
+		>=dev-python/time-machine-2.10[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

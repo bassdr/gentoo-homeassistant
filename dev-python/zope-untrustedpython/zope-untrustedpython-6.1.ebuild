@@ -12,12 +12,18 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.untrustedpython/"
+  https://pypi.org/project/zope-untrustedpython/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	RestrictedPython>=4
+	Sphinx; extra == "docs"
+	setuptools
+	zope.security
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/restrictedpython-4[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]

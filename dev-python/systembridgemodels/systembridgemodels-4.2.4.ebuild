@@ -23,6 +23,9 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	incremental>=24.7.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/incremental-24.7.2[${PYTHON_USEDEP}]
 "

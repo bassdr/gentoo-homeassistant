@@ -17,7 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	python-dateutil
+	pytz>2021.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	>dev-python/pytz-2021.1[${PYTHON_USEDEP}]

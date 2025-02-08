@@ -16,7 +16,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	freezegun>=1.1
+	pytest>=3.6
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/freezegun-1.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-3.6[${PYTHON_USEDEP}]

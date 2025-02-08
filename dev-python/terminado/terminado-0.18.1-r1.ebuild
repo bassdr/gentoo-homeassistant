@@ -18,9 +18,23 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs typing"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	mypy~=1.6; extra == 'typing'
+	myst-parser; extra == 'docs'
+	pre-commit; extra == 'test'
+	ptyprocess; os_name != 'nt'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-timeout; extra == 'test'
+	pytest>=7.0; extra == 'test'
+	pywinpty>=1.1.0; os_name == 'nt'
+	sphinx; extra == 'docs'
+	tornado>=6.1.0
+	traitlets>=5.11.1; extra == 'typing'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	typing? ( >=dev-python/mypy-1.6[${PYTHON_USEDEP}] =dev-python/mypy-1*[${PYTHON_USEDEP}] )
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
+	dev-python/ptyprocess[${PYTHON_USEDEP}]
 	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	>=dev-python/tornado-6.1.0[${PYTHON_USEDEP}]

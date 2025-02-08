@@ -15,10 +15,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

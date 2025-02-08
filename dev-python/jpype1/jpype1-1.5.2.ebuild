@@ -10,12 +10,19 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/JPype1/"
+  https://pypi.org/project/jpype1/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	packaging
+	pytest; extra == "tests"
+	readthedocs-sphinx-ext; extra == "docs"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	docs? ( dev-python/readthedocs-sphinx-ext[${PYTHON_USEDEP}] )

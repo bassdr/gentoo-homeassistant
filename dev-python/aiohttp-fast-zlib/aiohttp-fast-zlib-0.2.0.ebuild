@@ -24,6 +24,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp>=3.9.0
+	isal>=1.6.1; extra == "isal"
+	zlib_ng>=0.4.3; extra == "zlib-ng"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	isal? ( >=dev-python/isal-1.6.1[${PYTHON_USEDEP}] )

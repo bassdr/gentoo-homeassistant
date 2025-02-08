@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.i18nmessageid/"
+  https://pypi.org/project/zope-i18nmessageid/"
 
 LICENSE="ZPL"
 SLOT="0"
@@ -19,6 +19,15 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx; extra == "docs"
+	coverage; extra == "test"
+	coverage; extra == "testing"
+	setuptools
+	sphinx-rtd-theme; extra == "docs"
+	zope.testrunner; extra == "test"
+	zope.testrunner; extra == "testing"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )

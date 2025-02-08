@@ -17,9 +17,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	dev-python/pbr[${PYTHON_USEDEP}]
+"
+REQUIRES_DIST="
+	Sphinx >=5.0.0
+	pbr
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pbr[${PYTHON_USEDEP}]

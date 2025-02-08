@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/weheat-2024.11.26[${PYTHON_USEDEP}]
+	~dev-python/weheat-2024.11.26[${PYTHON_USEDEP}]
 "

@@ -21,6 +21,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httmock
+	requests
+	voluptuous
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httmock[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

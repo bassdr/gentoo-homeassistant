@@ -12,12 +12,26 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/path.py/"
+  https://pypi.org/project/path-py/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	appdirs ; extra == 'testing'
+	jaraco.packaging (>=3.2) ; extra == 'docs'
+	packaging ; extra == 'testing'
+	path
+	pygments ; extra == 'testing'
+	pytest (!=3.7.3,>=3.5) ; extra == 'testing'
+	pytest-black-multipy ; extra == 'testing'
+	pytest-checkdocs (>=1.2.3) ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-flake8 ; extra == 'testing'
+	rst.linker (>=1.9) ; extra == 'docs'
+	sphinx ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/jaraco-packaging-3.2[${PYTHON_USEDEP}] )
 	dev-python/path[${PYTHON_USEDEP}]
@@ -32,7 +46,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/appdirs[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]
 		dev-python/pygments[${PYTHON_USEDEP}]
-		!=dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-3.5[${PYTHON_USEDEP}] !~dev-python/pytest-3.7.3[${PYTHON_USEDEP}]
 		dev-python/pytest-black-multipy[${PYTHON_USEDEP}]
 		>=dev-python/pytest-checkdocs-1.2.3[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

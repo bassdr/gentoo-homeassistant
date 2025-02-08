@@ -3,18 +3,20 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/gviz_api/"
+  https://pypi.org/project/gviz-api/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	six
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/six[${PYTHON_USEDEP}]
 "

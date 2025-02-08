@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,20 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ipykernel<7.0.0,>6.0.0
+	jupytext<2,>1.13.8
+	mkdocs-material>9.0.0
+	mkdocs<2,>=1.4.0
+	nbconvert<8,>=7.2.9
+	pygments>2.12.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/ipykernel-7.0.0[${PYTHON_USEDEP}]
-	<dev-python/jupytext-2[${PYTHON_USEDEP}]
-	<dev-python/mkdocs-2[${PYTHON_USEDEP}]
+	>dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}] <dev-python/ipykernel-7.0.0[${PYTHON_USEDEP}]
+	>dev-python/jupytext-1.13.8[${PYTHON_USEDEP}] <dev-python/jupytext-2[${PYTHON_USEDEP}]
+	>=dev-python/mkdocs-1.4.0[${PYTHON_USEDEP}] <dev-python/mkdocs-2[${PYTHON_USEDEP}]
 	>dev-python/mkdocs-material-9.0.0[${PYTHON_USEDEP}]
-	<dev-python/nbconvert-8[${PYTHON_USEDEP}]
+	>=dev-python/nbconvert-7.2.9[${PYTHON_USEDEP}] <dev-python/nbconvert-8[${PYTHON_USEDEP}]
 	>dev-python/pygments-2.12.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

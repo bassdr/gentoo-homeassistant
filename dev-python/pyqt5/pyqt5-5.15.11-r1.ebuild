@@ -13,7 +13,7 @@ inherit distutils-r1 flag-o-matic multiprocessing pypi qmake-utils
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/PyQt5/"
+  https://pypi.org/project/pyqt5/"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -80,9 +80,13 @@ DEPEND="
 	x11extras? ( >=dev-qt/qtx11extras-${QT_PV} )
 	xmlpatterns? ( >=dev-qt/qtxmlpatterns-${QT_PV} )
 "
+REQUIRES_DIST="
+	PyQt5-Qt5<5.16.0,>=5.15.2
+	PyQt5-sip<13,>=12.15
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/pyqt5-qt5-5.16.0[${PYTHON_USEDEP}]
-	<dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
+	>=dev-python/pyqt5-qt5-5.15.2[${PYTHON_USEDEP}] <dev-python/pyqt5-qt5-5.16.0[${PYTHON_USEDEP}]
+	>=dev-python/pyqt5-sip-12.15[${PYTHON_USEDEP}] <dev-python/pyqt5-sip-13[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}

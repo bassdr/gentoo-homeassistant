@@ -23,6 +23,10 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="unidecode"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Unidecode (>=1.1.1) ; extra == 'unidecode'
+	text-unidecode (>=1.3)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/text-unidecode-1.3[${PYTHON_USEDEP}]
 	unidecode? ( >=dev-python/unidecode-1.1.1[${PYTHON_USEDEP}] )

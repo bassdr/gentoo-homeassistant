@@ -25,6 +25,20 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	aiofiles>=23
+	aiohttp>=3
+	async-timeout>=3.0.0
+	asyncclick>=8.1.7.1
+	firebase-messaging>=0.4.0
+	myst-parser; extra == "docs"
+	oauthlib<4,>=3.0.0
+	pytz>=2022.0
+	sphinx-rtd-theme~=1.3; extra == "docs"
+	sphinx<7.2.6; extra == "docs"
+	typing-extensions<5.0,>=4.12.2
+	websockets>=13.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-23[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3[${PYTHON_USEDEP}]
@@ -32,11 +46,11 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asyncclick-8.1.7.1[${PYTHON_USEDEP}]
 	>=dev-python/firebase-messaging-0.4.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
-	<dev-python/oauthlib-4[${PYTHON_USEDEP}]
+	>=dev-python/oauthlib-3.0.0[${PYTHON_USEDEP}] <dev-python/oauthlib-4[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2022.0[${PYTHON_USEDEP}]
 	docs? ( <dev-python/sphinx-7.2.6[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-1*[${PYTHON_USEDEP}] )
-	<dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}] <dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-13.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

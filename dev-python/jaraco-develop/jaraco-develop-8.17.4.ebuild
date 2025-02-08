@@ -10,12 +10,45 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/jaraco.develop/"
+  https://pypi.org/project/jaraco-develop/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyNaCl
+	build
+	furo; extra == "doc"
+	ini2toml[full]
+	jaraco.context
+	jaraco.packaging>=10
+	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.ui>=2.4
+	jaraco.vcs>=1.1
+	keyring
+	packaging
+	path
+	pytest!=8.1.*,>=6; extra == "test"
+	pytest-checkdocs>=2.4; extra == "check"
+	pytest-cov; extra == "cover"
+	pytest-enabler>=2.2; extra == "enabler"
+	pytest-home; extra == "test"
+	pytest-mypy; extra == "type"
+	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
+	requests
+	requests-file
+	requests-toolbelt
+	rst.linker>=1.9; extra == "doc"
+	setuptools
+	sphinx-lint; extra == "doc"
+	sphinx>=3.5; extra == "doc"
+	subprocess-tee
+	typer
+	types-requests; extra == "test"
+	types-setuptools; extra == "type"
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/build[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
@@ -33,6 +66,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	cover? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 	enabler? ( >=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}] )
 	type? ( dev-python/pytest-mypy[${PYTHON_USEDEP}] )
+	check? ( >=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}] )
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-file[${PYTHON_USEDEP}]
 	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
@@ -50,7 +84,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		!=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 		dev-python/pytest-home[${PYTHON_USEDEP}]
 		dev-python/types-requests[${PYTHON_USEDEP}]
 	)

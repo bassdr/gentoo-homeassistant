@@ -11,7 +11,7 @@ inherit distutils-r1
 MY_P=${P/-/.}
 DESCRIPTION="Define boolean algebras, create and parse boolean expressions and create custom boolean DSL."
 HOMEPAGE="
-  https://pypi.org/project/boolean.py/
+  https://pypi.org/project/boolean-py/
 "
 SRC_URI="
 	https://github.com/bastikr/boolean.py/archive/v${PV}.tar.gz

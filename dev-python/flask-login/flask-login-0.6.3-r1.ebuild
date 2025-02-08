@@ -20,7 +20,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Flask >=1.0.4
+	Werkzeug >=1.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flask-1.0.4[${PYTHON_USEDEP}]
 	>=dev-python/werkzeug-1.0.1[${PYTHON_USEDEP}]

@@ -12,7 +12,7 @@ MY_P=editorconfig-core-py-${PV}
 TESTVER="d91029bdf1e3e0307714afe0d2cde7ba6fd208ab"
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/EditorConfig/"
+  https://pypi.org/project/editorconfig/"
 SRC_URI="
 	https://github.com/editorconfig/editorconfig-core-py/archive/v${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz

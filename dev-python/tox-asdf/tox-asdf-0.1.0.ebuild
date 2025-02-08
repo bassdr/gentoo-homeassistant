@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	flake8 ; extra == 'test'
+	mock (>=2.0.0) ; extra == 'test'
+	pluggy (>=0.7) ; extra == 'test'
+	pytest (>=4.0.0) ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-mock ; extra == 'test'
+	pytest-sugar ; extra == 'test'
+	tox (>=2.0)
+	wheel ; extra == 'test'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/tox-2.0[${PYTHON_USEDEP}]
 "

@@ -21,24 +21,51 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="bson docs dynamodb json mongodb redis security yaml"
+GENERATED_IUSE="all bson docs dynamodb json mongodb redis security yaml"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	attrs>=21.2
+	boto3>=1.15; extra == "dynamodb" or extra == "all"
+	botocore>=1.18; extra == "dynamodb" or extra == "all"
+	bson>=0.5; extra == "bson"
+	cattrs>=22.2
+	furo<2024.0,>=2023.3; extra == "docs"
+	itsdangerous>=2.0; extra == "security" or extra == "all"
+	linkify-it-py<3.0,>=2.0; extra == "docs"
+	myst-parser<2.0,>=1.0; extra == "docs"
+	platformdirs>=2.5
+	pymongo>=3; extra == "mongodb" or extra == "all"
+	pyyaml>=6.0.1; extra == "yaml" or extra == "all"
+	redis>=3; extra == "redis" or extra == "all"
+	requests>=2.22
+	sphinx-autodoc-typehints>=1.19; extra == "docs"
+	sphinx-automodapi>=0.14; extra == "docs"
+	sphinx-copybutton>=0.5; extra == "docs"
+	sphinx-design>=0.2; extra == "docs"
+	sphinx-notfound-page>=0.8; extra == "docs"
+	sphinx<6.0.0,>=5.0.2; extra == "docs"
+	sphinxcontrib-apidoc>=0.3; extra == "docs"
+	sphinxext-opengraph>=0.9; extra == "docs"
+	ujson>=5.4; extra == "json" or extra == "all"
+	url-normalize>=1.4
+	urllib3>=1.25.5
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-21.2[${PYTHON_USEDEP}]
-	dynamodb? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] )
-	dynamodb? ( >=dev-python/botocore-1.18[${PYTHON_USEDEP}] )
+	dynamodb? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] ) all? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/botocore-1.18[${PYTHON_USEDEP}] ) dynamodb? ( >=dev-python/botocore-1.18[${PYTHON_USEDEP}] )
 	bson? ( >=dev-python/bson-0.5[${PYTHON_USEDEP}] )
 	>=dev-python/cattrs-22.2[${PYTHON_USEDEP}]
-	docs? ( <dev-python/furo-2024.0[${PYTHON_USEDEP}] )
-	security? ( >=dev-python/itsdangerous-2.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/linkify-it-py-3.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/myst-parser-2.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/furo-2023.3[${PYTHON_USEDEP}] <dev-python/furo-2024.0[${PYTHON_USEDEP}] )
+	security? ( >=dev-python/itsdangerous-2.0[${PYTHON_USEDEP}] ) all? ( >=dev-python/itsdangerous-2.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/linkify-it-py-2.0[${PYTHON_USEDEP}] <dev-python/linkify-it-py-3.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/myst-parser-1.0[${PYTHON_USEDEP}] <dev-python/myst-parser-2.0[${PYTHON_USEDEP}] )
 	>=dev-python/platformdirs-2.5[${PYTHON_USEDEP}]
-	mongodb? ( >=dev-python/pymongo-3[${PYTHON_USEDEP}] )
-	yaml? ( >=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
-	redis? ( >=dev-python/redis-3[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pymongo-3[${PYTHON_USEDEP}] ) mongodb? ( >=dev-python/pymongo-3[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] ) yaml? ( >=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/redis-3[${PYTHON_USEDEP}] ) redis? ( >=dev-python/redis-3[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
-	docs? ( <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0.2[${PYTHON_USEDEP}] <dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-1.19[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-automodapi-0.14[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-copybutton-0.5[${PYTHON_USEDEP}] )
@@ -46,7 +73,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-notfound-page-0.8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-apidoc-0.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxext-opengraph-0.9[${PYTHON_USEDEP}] )
-	json? ( >=dev-python/ujson-5.4[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/ujson-5.4[${PYTHON_USEDEP}] ) json? ( >=dev-python/ujson-5.4[${PYTHON_USEDEP}] )
 	>=dev-python/url-normalize-1.4[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.25.5[${PYTHON_USEDEP}]
 "

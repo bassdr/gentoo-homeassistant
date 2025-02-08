@@ -20,6 +20,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	nvidia-cuda-nvrtc-cu12; extra == "all"
+	nvidia-nvjitlink-cu12>=12.3; extra == "all"
+	pywin32; sys_platform == "win32"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/nvidia-cuda-nvrtc-cu12[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/nvidia-nvjitlink-cu12-12.3[${PYTHON_USEDEP}] )
@@ -27,7 +32,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

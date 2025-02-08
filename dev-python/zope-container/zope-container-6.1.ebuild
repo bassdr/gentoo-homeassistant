@@ -10,12 +10,46 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/zope.container/"
+  https://pypi.org/project/zope-container/"
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	BTrees
+	Sphinx; extra == "docs"
+	ZODB>=3.10; extra == "test"
+	ZODB>=3.10; extra == "zodb"
+	persistent>=4.1.0
+	repoze.sphinx.autointerface; extra == "docs"
+	setuptools
+	sphinx_rtd_theme; extra == "docs"
+	zope.cachedescriptors
+	zope.component
+	zope.component[zcml]; extra == "test"
+	zope.component[zcml]; extra == "zcml"
+	zope.configuration; extra == "test"
+	zope.configuration; extra == "zcml"
+	zope.deferredimport
+	zope.dottedname
+	zope.event
+	zope.filerepresentation
+	zope.i18nmessageid
+	zope.interface
+	zope.lifecycleevent>=3.5.2
+	zope.location>=3.5.4
+	zope.proxy>=4.1.5
+	zope.publisher
+	zope.schema
+	zope.security
+	zope.security[zcml]>=4.0.0a3; extra == "test"
+	zope.security[zcml]>=4.0.0a3; extra == "zcml"
+	zope.size
+	zope.testing; extra == "test"
+	zope.testrunner; extra == "test"
+	zope.traversing>=4.0.0a1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/btrees[${PYTHON_USEDEP}]
 	>=dev-python/persistent-4.1.0[${PYTHON_USEDEP}]

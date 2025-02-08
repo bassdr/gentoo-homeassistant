@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pydeako-0.6.0[${PYTHON_USEDEP}]
+	~dev-python/pydeako-0.6.0[${PYTHON_USEDEP}]
 "

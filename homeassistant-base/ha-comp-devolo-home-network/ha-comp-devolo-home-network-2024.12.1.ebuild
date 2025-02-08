@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/devolo-plc-api-1.4.1[${PYTHON_USEDEP}]
+	~dev-python/devolo-plc-api-1.4.1[${PYTHON_USEDEP}]
 "

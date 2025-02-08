@@ -21,8 +21,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	html-table-parser-python3 (==0.1.5)
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
-	=dev-python/html-table-parser-python3-0.1.5[${PYTHON_USEDEP}]
+	~dev-python/html-table-parser-python3-0.1.5[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

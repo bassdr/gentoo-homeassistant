@@ -22,8 +22,18 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="code-style rtd"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	coverage; extra == "testing"
+	markdown-it-py<4.0.0,>=1.0.0
+	myst-parser; extra == "rtd"
+	pre-commit; extra == "code-style"
+	pytest-cov; extra == "testing"
+	pytest-regressions; extra == "testing"
+	pytest; extra == "testing"
+	sphinx-book-theme; extra == "rtd"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/markdown-it-py-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}] <dev-python/markdown-it-py-4.0.0[${PYTHON_USEDEP}]
 	rtd? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	rtd? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 	code-style? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )

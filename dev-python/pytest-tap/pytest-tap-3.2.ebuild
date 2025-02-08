@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,9 +15,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	pytest (>=3.0)
+	tap.py (<4.0,>=3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-3.0[${PYTHON_USEDEP}]
-	<dev-python/tap-py-4.0[${PYTHON_USEDEP}]
+	>=dev-python/tap-py-3.0[${PYTHON_USEDEP}] <dev-python/tap-py-4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

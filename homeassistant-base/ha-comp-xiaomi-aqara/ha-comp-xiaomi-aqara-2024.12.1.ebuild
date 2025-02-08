@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyxiaomigateway-0.14.3[${PYTHON_USEDEP}]
+	~dev-python/pyxiaomigateway-0.14.3[${PYTHON_USEDEP}]
 "

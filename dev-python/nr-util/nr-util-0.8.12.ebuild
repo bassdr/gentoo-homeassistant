@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 PYPI_PN="nr.util"
@@ -11,14 +10,18 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/nr.util/"
+  https://pypi.org/project/nr-util/"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	deprecated (>=1.2.0,<2.0.0)
+	typing-extensions (>=3.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/deprecated-1.2.0[${PYTHON_USEDEP}]
+	>=dev-python/deprecated-1.2.0[${PYTHON_USEDEP}] <dev-python/deprecated-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

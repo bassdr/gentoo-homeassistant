@@ -18,6 +18,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Flask
+	Sphinx ; extra == 'docs'
+	Werkzeug
+	pytest >=5.2
+	sphinx-rtd-theme ; extra == 'docs'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/flask[${PYTHON_USEDEP}]
 	>=dev-python/pytest-5.2[${PYTHON_USEDEP}]

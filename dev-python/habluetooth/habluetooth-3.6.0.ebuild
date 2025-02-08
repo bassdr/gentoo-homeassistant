@@ -24,6 +24,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	async-interrupt>=1.1.1
+	bleak-retry-connector>=3.3.0
+	bleak>=0.21.1
+	bluetooth-adapters>=0.16.1
+	bluetooth-auto-recovery>=1.2.3
+	bluetooth-data-tools>=1.16.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-interrupt-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/bleak-0.21.1[${PYTHON_USEDEP}]

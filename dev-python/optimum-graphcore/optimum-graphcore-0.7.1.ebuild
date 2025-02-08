@@ -17,18 +17,42 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython ; extra == 'testing'
+	black (~=23.1) ; extra == 'quality'
+	cppimport (==22.8.2)
+	datasets
+	diffusers[torch] (==0.12.1)
+	filelock ; extra == 'testing'
+	isort (>=5.5.4) ; extra == 'quality'
+	librosa ; extra == 'testing'
+	optimum (==1.6.1)
+	parameterized ; extra == 'testing'
+	pillow
+	psutil ; extra == 'testing'
+	pytest ; extra == 'testing'
+	pytest-pythonpath ; extra == 'testing'
+	pytest-xdist ; extra == 'testing'
+	ruff (<=0.0.259,>=0.0.241) ; extra == 'quality'
+	scipy
+	sentencepiece
+	soundfile ; extra == 'testing'
+	tokenizers
+	transformers (==4.29.2)
+	typeguard
+"
 GENERATED_RDEPEND="${RDEPEND}
 	quality? ( >=dev-python/black-23.1[${PYTHON_USEDEP}] =dev-python/black-23*[${PYTHON_USEDEP}] )
-	=dev-python/cppimport-22.8.2[${PYTHON_USEDEP}]
+	~dev-python/cppimport-22.8.2[${PYTHON_USEDEP}]
 	dev-python/datasets[${PYTHON_USEDEP}]
-	=dev-python/diffusers-0.12.1[torch,${PYTHON_USEDEP}]
+	~dev-python/diffusers-0.12.1[torch,${PYTHON_USEDEP}]
 	quality? ( >=dev-python/isort-5.5.4[${PYTHON_USEDEP}] )
-	=dev-python/optimum-1.6.1[${PYTHON_USEDEP}]
+	~dev-python/optimum-1.6.1[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
-	quality? ( <=dev-python/ruff-0.0.259[${PYTHON_USEDEP}] )
+	quality? ( >=dev-python/ruff-0.0.241[${PYTHON_USEDEP}] <=dev-python/ruff-0.0.259[${PYTHON_USEDEP}] )
 	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/sentencepiece[${PYTHON_USEDEP}]
-	=dev-python/transformers-4.29.2[${PYTHON_USEDEP}]
+	~dev-python/transformers-4.29.2[${PYTHON_USEDEP}]
 	dev-python/typeguard[${PYTHON_USEDEP}]
 	sci-libs/tokenizers[${PYTHON_USEDEP}]
 "

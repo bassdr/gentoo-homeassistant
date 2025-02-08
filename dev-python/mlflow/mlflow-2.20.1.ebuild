@@ -16,48 +16,104 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Flask<4
+	Jinja2<4,>=2.11; platform_system != "Windows"
+	Jinja2<4,>=3.0; platform_system == "Windows"
+	aiohttp<4; extra == "gateway"
+	aiohttp<4; extra == "genai"
+	alembic!=1.10.0,<2
+	aliyunstoreplugin; extra == "aliyun-oss"
+	azure-storage-file-datalake>12; extra == "databricks"
+	azureml-core>=1.2.0; extra == "extras"
+	boto3; extra == "extras"
+	boto3<2,>=1.28.56; extra == "gateway"
+	boto3<2,>=1.28.56; extra == "genai"
+	boto3>1; extra == "databricks"
+	botocore; extra == "databricks"
+	botocore; extra == "extras"
+	docker<8,>=4.0.0
+	fastapi<1; extra == "gateway"
+	fastapi<1; extra == "genai"
+	google-cloud-storage>=1.30.0; extra == "databricks"
+	google-cloud-storage>=1.30.0; extra == "extras"
+	graphene<4
+	gunicorn<24; platform_system != "Windows"
+	kubernetes; extra == "extras"
+	langchain<=0.3.14,>=0.1.0; extra == "langchain"
+	markdown<4,>=3.3
+	matplotlib<4
+	mlflow-dbstore; extra == "sqlserver"
+	mlflow-jfrog-plugin; extra == "jfrog"
+	mlflow-skinny==2.20.1
+	mlflow-xethub; extra == "xethub"
+	mlserver!=1.3.1,>=1.2.0; extra == "mlserver"
+	mlserver-mlflow!=1.3.1,>=1.2.0; extra == "mlserver"
+	numpy<3
+	pandas<3
+	prometheus-flask-exporter; extra == "extras"
+	pyarrow; extra == "extras"
+	pyarrow<19,>=4.0.0
+	pysftp; extra == "extras"
+	requests-auth-aws-sigv4; extra == "extras"
+	scikit-learn<2
+	scipy<2
+	slowapi<1,>=0.1.9; extra == "gateway"
+	slowapi<1,>=0.1.9; extra == "genai"
+	sqlalchemy<3,>=1.4.0
+	tiktoken<1; extra == "gateway"
+	tiktoken<1; extra == "genai"
+	uvicorn[standard]<1; extra == "gateway"
+	uvicorn[standard]<1; extra == "genai"
+	virtualenv; extra == "extras"
+	waitress<4; platform_system == "Windows"
+	watchfiles<2; extra == "gateway"
+	watchfiles<2; extra == "genai"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	gateway? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
 	genai? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )
-	!=dev-python/alembic-1.10.0[${PYTHON_USEDEP}]
+	<dev-python/alembic-2[${PYTHON_USEDEP}] !~dev-python/alembic-1.10.0[${PYTHON_USEDEP}]
 	aliyun-oss? ( dev-python/aliyunstoreplugin[${PYTHON_USEDEP}] )
 	databricks? ( >dev-python/azure-storage-file-datalake-12[${PYTHON_USEDEP}] )
 	extras? ( >=dev-python/azureml-core-1.2.0[${PYTHON_USEDEP}] )
 	databricks? ( >dev-python/boto3-1[${PYTHON_USEDEP}] )
 	extras? ( dev-python/boto3[${PYTHON_USEDEP}] )
-	gateway? ( <dev-python/boto3-2[${PYTHON_USEDEP}] )
-	genai? ( <dev-python/boto3-2[${PYTHON_USEDEP}] )
+	gateway? ( >=dev-python/boto3-1.28.56[${PYTHON_USEDEP}] <dev-python/boto3-2[${PYTHON_USEDEP}] )
+	genai? ( >=dev-python/boto3-1.28.56[${PYTHON_USEDEP}] <dev-python/boto3-2[${PYTHON_USEDEP}] )
 	databricks? ( dev-python/botocore[${PYTHON_USEDEP}] )
 	extras? ( dev-python/botocore[${PYTHON_USEDEP}] )
-	<dev-python/docker-8[${PYTHON_USEDEP}]
+	>=dev-python/docker-4.0.0[${PYTHON_USEDEP}] <dev-python/docker-8[${PYTHON_USEDEP}]
 	gateway? ( <dev-python/fastapi-1[${PYTHON_USEDEP}] )
 	genai? ( <dev-python/fastapi-1[${PYTHON_USEDEP}] )
 	<dev-python/flask-4[${PYTHON_USEDEP}]
 	databricks? ( >=dev-python/google-cloud-storage-1.30.0[${PYTHON_USEDEP}] )
 	extras? ( >=dev-python/google-cloud-storage-1.30.0[${PYTHON_USEDEP}] )
 	<dev-python/graphene-4[${PYTHON_USEDEP}]
+	<dev-python/gunicorn-24[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.11[${PYTHON_USEDEP}] <dev-python/jinja2-4[${PYTHON_USEDEP}]
 	extras? ( dev-python/kubernetes[${PYTHON_USEDEP}] )
-	langchain? ( <=dev-python/langchain-0.3.14[${PYTHON_USEDEP}] )
-	<dev-python/markdown-4[${PYTHON_USEDEP}]
+	langchain? ( >=dev-python/langchain-0.1.0[${PYTHON_USEDEP}] <=dev-python/langchain-0.3.14[${PYTHON_USEDEP}] )
+	>=dev-python/markdown-3.3[${PYTHON_USEDEP}] <dev-python/markdown-4[${PYTHON_USEDEP}]
 	<dev-python/matplotlib-4[${PYTHON_USEDEP}]
 	sqlserver? ( dev-python/mlflow-dbstore[${PYTHON_USEDEP}] )
 	jfrog? ( dev-python/mlflow-jfrog-plugin[${PYTHON_USEDEP}] )
-	=dev-python/mlflow-skinny-2.20.1[${PYTHON_USEDEP}]
+	~dev-python/mlflow-skinny-2.20.1[${PYTHON_USEDEP}]
 	xethub? ( dev-python/mlflow-xethub[${PYTHON_USEDEP}] )
-	mlserver? ( !=dev-python/mlserver-1.3.1[${PYTHON_USEDEP}] )
-	mlserver? ( !=dev-python/mlserver-mlflow-1.3.1[${PYTHON_USEDEP}] )
+	mlserver? ( >=dev-python/mlserver-1.2.0[${PYTHON_USEDEP}] !~dev-python/mlserver-1.3.1[${PYTHON_USEDEP}] )
+	mlserver? ( >=dev-python/mlserver-mlflow-1.2.0[${PYTHON_USEDEP}] !~dev-python/mlserver-mlflow-1.3.1[${PYTHON_USEDEP}] )
 	<dev-python/numpy-3[${PYTHON_USEDEP}]
 	<dev-python/pandas-3[${PYTHON_USEDEP}]
 	extras? ( dev-python/prometheus-flask-exporter[${PYTHON_USEDEP}] )
-	<dev-python/pyarrow-19[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-4.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19[${PYTHON_USEDEP}]
 	extras? ( dev-python/pyarrow[${PYTHON_USEDEP}] )
 	extras? ( dev-python/pysftp[${PYTHON_USEDEP}] )
 	extras? ( dev-python/requests-auth-aws-sigv4[${PYTHON_USEDEP}] )
 	<dev-python/scikit-learn-2[${PYTHON_USEDEP}]
 	<dev-python/scipy-2[${PYTHON_USEDEP}]
-	gateway? ( <dev-python/slowapi-1[${PYTHON_USEDEP}] )
-	genai? ( <dev-python/slowapi-1[${PYTHON_USEDEP}] )
-	<dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
+	gateway? ( >=dev-python/slowapi-0.1.9[${PYTHON_USEDEP}] <dev-python/slowapi-1[${PYTHON_USEDEP}] )
+	genai? ( >=dev-python/slowapi-0.1.9[${PYTHON_USEDEP}] <dev-python/slowapi-1[${PYTHON_USEDEP}] )
+	>=dev-python/sqlalchemy-1.4.0[${PYTHON_USEDEP}] <dev-python/sqlalchemy-3[${PYTHON_USEDEP}]
 	gateway? ( <dev-python/tiktoken-1[${PYTHON_USEDEP}] )
 	genai? ( <dev-python/tiktoken-1[${PYTHON_USEDEP}] )
 	gateway? ( <dev-python/uvicorn-1[standard,${PYTHON_USEDEP}] )

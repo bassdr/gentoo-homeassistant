@@ -18,6 +18,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="+dbus mqtt"
 
+REQUIRES_DIST="
+	PyYAML
+	certifi
+	click>=5.0
+	markdown
+	requests
+	requests-oauthlib
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	>=dev-python/click-5.0[${PYTHON_USEDEP}]

@@ -20,9 +20,14 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aio-geojson-client >=0.20
+	aiohttp <4,>=3.7.4
+	pytz >=2019.01
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aio-geojson-client-0.20[${PYTHON_USEDEP}]
-	<dev-python/aiohttp-4[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2019.01[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

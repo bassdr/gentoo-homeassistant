@@ -24,6 +24,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="CHANGELOG.md README.md"
 
+REQUIRES_DIST="
+	async-timeout>=3.0.1; python_version < "3.11"
+	click~=8.1.2; extra == "cli"
+	cryptography
+	xdg~=5.1.1; extra == "cli"
+	zeroconf~=0.38.4; extra == "cli"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/click-8.1.2[${PYTHON_USEDEP}] =dev-python/click-8.1*[${PYTHON_USEDEP}] )
 	dev-python/cryptography[${PYTHON_USEDEP}]

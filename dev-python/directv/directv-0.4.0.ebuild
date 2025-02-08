@@ -20,6 +20,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiohttp (>=3.6.2)
+	yarl (>=1.4.2)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.4.2[${PYTHON_USEDEP}]

@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	aiocache
+	aiohttp
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiocache[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]

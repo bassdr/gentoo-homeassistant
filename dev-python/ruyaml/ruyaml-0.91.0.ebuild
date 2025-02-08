@@ -16,6 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	Sphinx ; extra == 'docs'
+	distro (>=1.3.0)
+	setuptools (>=39.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/distro-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-39.0[${PYTHON_USEDEP}]

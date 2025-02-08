@@ -20,6 +20,10 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+REQUIRES_DIST="
+	pyserial (>=3.4)
+	pyserial-asyncio (>=0.4)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyserial-3.4[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-asyncio-0.4[${PYTHON_USEDEP}]

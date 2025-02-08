@@ -16,7 +16,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 BDEPEND="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
@@ -53,5 +52,3 @@ python_test() {
 	# written to cpython install dirs
 	epytest testing -k "not pypy3"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

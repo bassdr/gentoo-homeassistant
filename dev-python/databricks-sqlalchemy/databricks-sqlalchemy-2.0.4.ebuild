@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	databricks_sql_connector>=4.0.0
+	pyarrow<17,>=14.0.1
+	sqlalchemy>=2.0.21
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/databricks-sql-connector-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-17[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}] <dev-python/pyarrow-17[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-2.0.21[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

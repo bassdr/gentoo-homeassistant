@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,20 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black==23.3.0; extra == "dev"
+	cloudpickle>=1.2.1
+	coverage[toml]>=5.1; extra == "dev"
+	flit>=3.5.1; extra == "dev"
+	isort==5.11.5; extra == "dev"
+	mypy>=1.4.1; extra == "dev"
+	pre-commit>=1.15.2; extra == "dev"
+	pylint>=3.0.0; extra == "dev"
+	pytest-asyncio>=0.15.0; extra == "dev"
+	pytest-cov>=4.1.0; extra == "dev"
+	pytest>=7.4.2; extra == "dev"
+	typing_extensions>=3.7.4.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cloudpickle-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.7.4.2[${PYTHON_USEDEP}]
@@ -24,10 +37,10 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-23.3.0[${PYTHON_USEDEP}]
+		~dev-python/black-23.3.0[${PYTHON_USEDEP}]
 		>=dev-python/coverage-5.1[toml,${PYTHON_USEDEP}]
 		>=dev-python/flit-3.5.1[${PYTHON_USEDEP}]
-		=dev-python/isort-5.11.5[${PYTHON_USEDEP}]
+		~dev-python/isort-5.11.5[${PYTHON_USEDEP}]
 		>=dev-python/mypy-1.4.1[${PYTHON_USEDEP}]
 		>=dev-python/pylint-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.4.2[${PYTHON_USEDEP}]

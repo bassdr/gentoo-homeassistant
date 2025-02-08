@@ -16,6 +16,19 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	attrs>=19.2
+	click
+	dask[array]; extra == "tests"
+	eccodes>=0.9.8
+	flake8; extra == "tests"
+	numpy
+	pytest-cov; extra == "tests"
+	pytest; extra == "tests"
+	scipy; extra == "tests"
+	xarray>=0.15; extra == "tests"
+	xarray>=0.15; extra == "xarray"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]

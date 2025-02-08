@@ -16,6 +16,94 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	PyOpenSSL>=23.0.0
+	apache-airflow-providers-amazon>=2.6.0; extra == "amazon"
+	apache-airflow-providers-apache-beam; extra == "apache-beam"
+	apache-airflow-providers-apache-cassandra; extra == "apache-cassandra"
+	apache-airflow-providers-cncf-kubernetes>=10.1.0; extra == "cncf-kubernetes"
+	apache-airflow-providers-common-compat>=1.3.0
+	apache-airflow-providers-common-sql>=1.20.0
+	apache-airflow-providers-facebook>=2.2.0; extra == "facebook"
+	apache-airflow-providers-microsoft-azure; extra == "microsoft-azure"
+	apache-airflow-providers-microsoft-mssql; extra == "microsoft-mssql"
+	apache-airflow-providers-mysql; extra == "mysql"
+	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow-providers-oracle>=3.1.0; extra == "oracle"
+	apache-airflow-providers-postgres; extra == "postgres"
+	apache-airflow-providers-presto; extra == "presto"
+	apache-airflow-providers-salesforce; extra == "salesforce"
+	apache-airflow-providers-sftp; extra == "sftp"
+	apache-airflow-providers-ssh; extra == "ssh"
+	apache-airflow-providers-trino; extra == "trino"
+	apache-airflow>=2.9.0
+	apache-beam[gcp]; extra == "apache-beam"
+	asgiref>=3.5.2
+	dill>=0.2.3
+	gcloud-aio-auth>=5.2.0
+	gcloud-aio-bigquery>=6.1.2
+	gcloud-aio-storage>=9.0.0
+	gcsfs>=2023.10.0
+	google-ads>=25.1.0
+	google-analytics-admin>=0.9.0
+	google-api-core!=2.16.0,!=2.18.0,>=2.11.0
+	google-api-python-client>=2.0.2
+	google-auth-httplib2>=0.0.1
+	google-auth>=2.29.0
+	google-cloud-aiplatform>=1.73.0
+	google-cloud-alloydb
+	google-cloud-automl>=2.12.0
+	google-cloud-batch>=0.13.0
+	google-cloud-bigquery!=3.21.*,!=3.22.0,!=3.23.*,>=3.4.0
+	google-cloud-bigquery-datatransfer>=3.13.0
+	google-cloud-bigtable>=2.17.0
+	google-cloud-build>=3.22.0
+	google-cloud-compute>=1.10.0
+	google-cloud-container>=2.17.4
+	google-cloud-datacatalog>=3.23.0
+	google-cloud-dataflow-client>=0.8.6
+	google-cloud-dataform>=0.5.0
+	google-cloud-dataplex>=1.10.0
+	google-cloud-dataproc-metastore>=1.12.0
+	google-cloud-dataproc>=5.12.0
+	google-cloud-dlp>=3.12.0
+	google-cloud-kms>=2.15.0
+	google-cloud-language>=2.9.0
+	google-cloud-logging>=3.5.0
+	google-cloud-memcache>=1.7.0
+	google-cloud-monitoring>=2.18.0
+	google-cloud-orchestration-airflow>=1.10.0
+	google-cloud-os-login>=2.9.1
+	google-cloud-pubsub>=2.19.0
+	google-cloud-redis>=2.12.0
+	google-cloud-run>=0.10.0
+	google-cloud-secret-manager>=2.16.0
+	google-cloud-spanner!=3.49.0,>=3.11.1
+	google-cloud-speech>=2.18.0
+	google-cloud-storage-transfer>=1.4.1
+	google-cloud-storage>=2.7.0
+	google-cloud-tasks>=2.13.0
+	google-cloud-texttospeech>=2.14.1
+	google-cloud-translate>=3.16.0
+	google-cloud-videointelligence>=2.11.0
+	google-cloud-vision>=3.4.0
+	google-cloud-workflows>=1.10.0
+	grpcio-gcp>=0.2.2
+	httpx>=0.25.0
+	immutabledict>=4.2.0
+	json-merge-patch>=0.2
+	looker-sdk!=24.18.0,>=22.4.0
+	pandas-gbq>=0.7.0
+	pandas<2.2,>=1.5.3; python_version < "3.9"
+	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	plyvel>=1.5.1; extra == "leveldb"
+	proto-plus>=1.19.6
+	pyarrow>=14.0.1
+	python-slugify>=7.0.0
+	sqlalchemy-bigquery>=1.2.1
+	sqlalchemy-spanner>=1.6.2
+	tenacity>=8.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]
 	amazon? ( >=dev-python/apache-airflow-providers-amazon-2.6.0[${PYTHON_USEDEP}] )
@@ -45,7 +133,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/gcsfs-2023.10.0[${PYTHON_USEDEP}]
 	>=dev-python/google-ads-25.1.0[${PYTHON_USEDEP}]
 	>=dev-python/google-analytics-admin-0.9.0[${PYTHON_USEDEP}]
-	!=dev-python/google-api-core-2.16.0[${PYTHON_USEDEP}]
+	>=dev-python/google-api-core-2.11.0[${PYTHON_USEDEP}] !~dev-python/google-api-core-2.16.0[${PYTHON_USEDEP}] !~dev-python/google-api-core-2.18.0[${PYTHON_USEDEP}]
 	>=dev-python/google-api-python-client-2.0.2[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-2.29.0[${PYTHON_USEDEP}]
 	>=dev-python/google-auth-httplib2-0.0.1[${PYTHON_USEDEP}]
@@ -53,7 +141,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/google-cloud-alloydb[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-automl-2.12.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-batch-0.13.0[${PYTHON_USEDEP}]
-	!=dev-python/google-cloud-bigquery-3.21*[${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-bigquery-3.4.0[${PYTHON_USEDEP}] !=dev-python/google-cloud-bigquery-3.21*[${PYTHON_USEDEP}] !~dev-python/google-cloud-bigquery-3.22.0[${PYTHON_USEDEP}] !=dev-python/google-cloud-bigquery-3.23*[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigquery-datatransfer-3.13.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-bigtable-2.17.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-build-3.22.0[${PYTHON_USEDEP}]
@@ -77,7 +165,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/google-cloud-redis-2.12.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-run-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-secret-manager-2.16.0[${PYTHON_USEDEP}]
-	!=dev-python/google-cloud-spanner-3.49.0[${PYTHON_USEDEP}]
+	>=dev-python/google-cloud-spanner-3.11.1[${PYTHON_USEDEP}] !~dev-python/google-cloud-spanner-3.49.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-speech-2.18.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-storage-2.7.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-storage-transfer-1.4.1[${PYTHON_USEDEP}]
@@ -91,8 +179,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.25.0[${PYTHON_USEDEP}]
 	>=dev-python/immutabledict-4.2.0[${PYTHON_USEDEP}]
 	>=dev-python/json-merge-patch-0.2[${PYTHON_USEDEP}]
-	!=dev-python/looker-sdk-24.18.0[${PYTHON_USEDEP}]
-	<dev-python/pandas-2.2[${PYTHON_USEDEP}]
+	>=dev-python/looker-sdk-22.4.0[${PYTHON_USEDEP}] !~dev-python/looker-sdk-24.18.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.1.2[${PYTHON_USEDEP}] <dev-python/pandas-2.2[${PYTHON_USEDEP}]
 	>=dev-python/pandas-gbq-0.7.0[${PYTHON_USEDEP}]
 	leveldb? ( >=dev-python/plyvel-1.5.1[${PYTHON_USEDEP}] )
 	>=dev-python/proto-plus-1.19.6[${PYTHON_USEDEP}]

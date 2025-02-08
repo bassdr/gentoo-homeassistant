@@ -20,8 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	pyserial (>=3.1,<4.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/pyserial-3.1[${PYTHON_USEDEP}]
+	>=dev-python/pyserial-3.1[${PYTHON_USEDEP}] <dev-python/pyserial-4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyserial-3.1.1[${PYTHON_USEDEP}]"

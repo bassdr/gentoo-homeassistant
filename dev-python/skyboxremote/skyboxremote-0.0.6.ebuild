@@ -19,6 +19,26 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="spark"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	bandit[toml]==1.7.5; extra == "test"
+	black==23.3.0; extra == "test"
+	check-manifest==0.49; extra == "test"
+	flake8-bugbear==23.5.9; extra == "test"
+	flake8-docstrings; extra == "test"
+	flake8-formatter_junit_xml; extra == "test"
+	flake8-pyproject; extra == "test"
+	flake8; extra == "test"
+	pre-commit==3.3.1; extra == "test"
+	pylint==2.17.4; extra == "test"
+	pylint_junit; extra == "test"
+	pyspark>=3.0.0; extra == "spark"
+	pytest-cov==4.0.0; extra == "test"
+	pytest-github-actions-annotate-failures; extra == "test"
+	pytest-mock<3.10.1; extra == "test"
+	pytest-runner; extra == "test"
+	pytest==7.3.1; extra == "test"
+	shellcheck-py==0.9.0.2; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	spark? ( >=dev-python/pyspark-3.0.0[${PYTHON_USEDEP}] )
 "
@@ -28,23 +48,23 @@ EPYTEST_XDIST=1
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/bandit-1.7.5[toml,${PYTHON_USEDEP}]
-		=dev-python/black-23.3.0[${PYTHON_USEDEP}]
-		=dev-python/check-manifest-0.49[${PYTHON_USEDEP}]
+		~dev-python/bandit-1.7.5[toml,${PYTHON_USEDEP}]
+		~dev-python/black-23.3.0[${PYTHON_USEDEP}]
+		~dev-python/check-manifest-0.49[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
-		=dev-python/flake8-bugbear-23.5.9[${PYTHON_USEDEP}]
+		~dev-python/flake8-bugbear-23.5.9[${PYTHON_USEDEP}]
 		dev-python/flake8-docstrings[${PYTHON_USEDEP}]
 		dev-python/flake8-formatter-junit-xml[${PYTHON_USEDEP}]
 		dev-python/flake8-pyproject[${PYTHON_USEDEP}]
-		=dev-python/pylint-2.17.4[${PYTHON_USEDEP}]
+		~dev-python/pylint-2.17.4[${PYTHON_USEDEP}]
 		dev-python/pylint-junit[${PYTHON_USEDEP}]
-		=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]
 		dev-python/pytest-github-actions-annotate-failures[${PYTHON_USEDEP}]
 		<dev-python/pytest-mock-3.10.1[${PYTHON_USEDEP}]
 		dev-python/pytest-runner[${PYTHON_USEDEP}]
-		=dev-python/shellcheck-py-0.9.0.2[${PYTHON_USEDEP}]
-		=dev-vcs/pre-commit-3.3.1[${PYTHON_USEDEP}]
+		~dev-python/shellcheck-py-0.9.0.2[${PYTHON_USEDEP}]
+		~dev-vcs/pre-commit-3.3.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

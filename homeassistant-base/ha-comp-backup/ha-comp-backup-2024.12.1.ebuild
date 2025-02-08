@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/securetar-2024.11.0[${PYTHON_USEDEP}]
+	~dev-python/securetar-2024.11.0[${PYTHON_USEDEP}]
 "

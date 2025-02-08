@@ -16,11 +16,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ciso8601<3.0.0,>=2.1.3
+	httpx<0.28.0,>=0.23.0
+	requests<3.0.0,>=2.25.0; extra == "sqlalchemy"
+	sqlalchemy<2,>=1.4; extra == "sqlalchemy"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/ciso8601-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/httpx-0.28.0[${PYTHON_USEDEP}]
-	sqlalchemy? ( <dev-python/requests-3.0.0[${PYTHON_USEDEP}] )
-	sqlalchemy? ( <dev-python/sqlalchemy-2[${PYTHON_USEDEP}] )
+	>=dev-python/ciso8601-2.1.3[${PYTHON_USEDEP}] <dev-python/ciso8601-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}] <dev-python/httpx-0.28.0[${PYTHON_USEDEP}]
+	sqlalchemy? ( >=dev-python/requests-2.25.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}] )
+	sqlalchemy? ( >=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}] <dev-python/sqlalchemy-2[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

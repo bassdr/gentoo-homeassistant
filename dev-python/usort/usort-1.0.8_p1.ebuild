@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 1.0.8.post1)"
@@ -17,6 +16,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	LibCST (>=0.3.7)
+	attrs (>=21.2.0)
+	click (>=7.0.0)
+	moreorless (>=0.3.0)
+	stdlibs (>=2021.4.1)
+	toml (>=0.10.0)
+	trailrunner (>=1.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-21.2.0[${PYTHON_USEDEP}]
 	>=dev-python/click-7.0.0[${PYTHON_USEDEP}]

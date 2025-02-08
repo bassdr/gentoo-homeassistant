@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pysyncthru-0.7.10[${PYTHON_USEDEP}]
-	=dev-python/url-normalize-1.4.3[${PYTHON_USEDEP}]
+	~dev-python/pysyncthru-0.7.10[${PYTHON_USEDEP}]
+	~dev-python/url-normalize-1.4.3[${PYTHON_USEDEP}]
 "

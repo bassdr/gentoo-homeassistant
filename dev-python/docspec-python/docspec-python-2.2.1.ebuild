@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,9 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black (>=23.1.0,<24.0.0)
+	docspec (>=2.2.1,<3.0.0)
+	nr.util (>=0.7.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
-	>=dev-python/docspec-2.2.1[${PYTHON_USEDEP}]
+	>=dev-python/black-23.1.0[${PYTHON_USEDEP}] <dev-python/black-24.0.0[${PYTHON_USEDEP}]
+	>=dev-python/docspec-2.2.1[${PYTHON_USEDEP}] <dev-python/docspec-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/nr-util-0.7.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

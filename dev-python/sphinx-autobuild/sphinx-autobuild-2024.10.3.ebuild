@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	colorama>=0.4.6
+	httpx; extra == "test"
+	pytest>=6; extra == "test"
+	sphinx
+	starlette>=0.35
+	uvicorn>=0.25
+	watchfiles>=0.20
+	websockets>=11
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]

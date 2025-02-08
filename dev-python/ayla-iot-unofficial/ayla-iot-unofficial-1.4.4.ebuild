@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS=""
 
+REQUIRES_DIST="
+	aiohttp>=3.8.4
+	requests>=2.31.0
+	ujson>=5.8.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.4[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]

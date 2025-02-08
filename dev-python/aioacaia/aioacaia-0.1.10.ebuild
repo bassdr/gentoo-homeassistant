@@ -17,8 +17,16 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE=""
 
+REQUIRES_DIST="
+	bleak>=0.20.2
+	covdefaults==2.3.0; extra == "dev"
+	coverage==7.6.7; extra == "dev"
+	pytest-asyncio==0.24.0; extra == "dev"
+	pytest-cov==6.0.0; extra == "dev"
+	pytest==8.3.3; extra == "dev"
+	syrupy==4.7.2; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]
 "
@@ -36,12 +44,12 @@ EPYTEST_XDIST=1
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/covdefaults-2.3.0[${PYTHON_USEDEP}]
-		=dev-python/coverage-7.6.7[${PYTHON_USEDEP}]
-		=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
-		=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
-		=dev-python/syrupy-4.7.2[${PYTHON_USEDEP}]
+		~dev-python/covdefaults-2.3.0[${PYTHON_USEDEP}]
+		~dev-python/coverage-7.6.7[${PYTHON_USEDEP}]
+		~dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+		~dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-6.0.0[${PYTHON_USEDEP}]
+		~dev-python/syrupy-4.7.2[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python module to talk to Google Chromecast."
 HOMEPAGE="
-  https://pypi.org/project/PyChromecast/
+  https://pypi.org/project/pychromecast/
   Homepage, https://github.com/home-assistant-libs/pychromecast
 "
 DOCE="README.rst"
@@ -20,7 +20,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	casttube>=0.2.0
+	protobuf>=4.25.1
+	zeroconf>=0.25.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/casttube-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.25.1[${PYTHON_USEDEP}]

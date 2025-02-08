@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/libsoundtouch-0.8[${PYTHON_USEDEP}]
+	~dev-python/libsoundtouch-0.8[${PYTHON_USEDEP}]
 "

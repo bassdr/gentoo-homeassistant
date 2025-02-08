@@ -17,30 +17,48 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py<2.0.0,>=0.9
+	apache-beam[gcp]<3,>=2.47; python_version < "3.11"
+	apache-beam[gcp]<3,>=2.53; python_version >= "3.11"
+	ipython<8,>=7; extra == "all"
+	ipython<8,>=7; extra == "visualization"
+	joblib>=1.2.0
+	numpy>=1.22.0
+	pandas<2,>=1.0
+	protobuf<5,>=3.20.3; python_version < "3.11"
+	protobuf<6,>=4.25.2; python_version >= "3.11"
+	pyarrow<11,>=10
+	pyfarmhash<0.4,>=0.2.2
+	scikit-learn<2,>=1.0; extra == "all"
+	scikit-learn<2,>=1.0; extra == "mutual-information"
+	scipy<2,>=1.5; extra == "all"
+	scipy<2,>=1.5; extra == "mutual-information"
+	six<2,>=1.12
+	tensorflow-metadata<1.17,>=1.16.0
+	tensorflow<2.17,>=2.16
+	tfx-bsl<1.17,>=1.16.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/absl-py-2.0.0[${PYTHON_USEDEP}]
-	<dev-python/apache-beam-3[gcp,${PYTHON_USEDEP}]
-	all? ( <dev-python/ipython-8[${PYTHON_USEDEP}] )
-	visualization? ( <dev-python/ipython-8[${PYTHON_USEDEP}] )
+	>=dev-python/absl-py-0.9[${PYTHON_USEDEP}] <dev-python/absl-py-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/apache-beam-2.53[gcp,${PYTHON_USEDEP}] <dev-python/apache-beam-3[gcp,${PYTHON_USEDEP}]
+	all? ( >=dev-python/ipython-7[${PYTHON_USEDEP}] <dev-python/ipython-8[${PYTHON_USEDEP}] )
+	visualization? ( >=dev-python/ipython-7[${PYTHON_USEDEP}] <dev-python/ipython-8[${PYTHON_USEDEP}] )
 	>=dev-python/joblib-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.22.0[${PYTHON_USEDEP}]
-	<dev-python/pandas-2[${PYTHON_USEDEP}]
-	<dev-python/protobuf-6[${PYTHON_USEDEP}]
-	<dev-python/pyarrow-11[${PYTHON_USEDEP}]
-	<dev-python/pyfarmhash-0.4[${PYTHON_USEDEP}]
-	all? ( <dev-python/scikit-learn-2[${PYTHON_USEDEP}] )
-	mutual-information? ( <dev-python/scikit-learn-2[${PYTHON_USEDEP}] )
-	all? ( <dev-python/scipy-2[${PYTHON_USEDEP}] )
-	mutual-information? ( <dev-python/scipy-2[${PYTHON_USEDEP}] )
-	<dev-python/six-2[${PYTHON_USEDEP}]
-	<dev-python/tensorflow-2.17[${PYTHON_USEDEP}]
-	<dev-python/tensorflow-metadata-1.17[${PYTHON_USEDEP}]
-	<dev-python/tfx-bsl-1.17[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.0[${PYTHON_USEDEP}] <dev-python/pandas-2[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-4.25.2[${PYTHON_USEDEP}] <dev-python/protobuf-6[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-10[${PYTHON_USEDEP}] <dev-python/pyarrow-11[${PYTHON_USEDEP}]
+	>=dev-python/pyfarmhash-0.2.2[${PYTHON_USEDEP}] <dev-python/pyfarmhash-0.4[${PYTHON_USEDEP}]
+	all? ( >=dev-python/scikit-learn-1.0[${PYTHON_USEDEP}] <dev-python/scikit-learn-2[${PYTHON_USEDEP}] )
+	mutual-information? ( >=dev-python/scikit-learn-1.0[${PYTHON_USEDEP}] <dev-python/scikit-learn-2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/scipy-1.5[${PYTHON_USEDEP}] <dev-python/scipy-2[${PYTHON_USEDEP}] )
+	mutual-information? ( >=dev-python/scipy-1.5[${PYTHON_USEDEP}] <dev-python/scipy-2[${PYTHON_USEDEP}] )
+	>=dev-python/six-1.12[${PYTHON_USEDEP}] <dev-python/six-2[${PYTHON_USEDEP}]
+	>=dev-python/tensorflow-2.16[${PYTHON_USEDEP}] <dev-python/tensorflow-2.17[${PYTHON_USEDEP}]
+	>=dev-python/tensorflow-metadata-1.16.0[${PYTHON_USEDEP}] <dev-python/tensorflow-metadata-1.17[${PYTHON_USEDEP}]
+	>=dev-python/tfx-bsl-1.16.0[${PYTHON_USEDEP}] <dev-python/tfx-bsl-1.17[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

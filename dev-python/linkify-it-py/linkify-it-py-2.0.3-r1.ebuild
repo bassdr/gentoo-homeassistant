@@ -25,6 +25,22 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="benchmark doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	coverage ; extra == 'test'
+	flake8 ; extra == 'dev'
+	isort ; extra == 'dev'
+	myst-parser ; extra == 'doc'
+	pre-commit ; extra == 'dev'
+	pyproject-flake8 ; extra == 'dev'
+	pytest ; extra == 'benchmark'
+	pytest ; extra == 'test'
+	pytest-benchmark ; extra == 'benchmark'
+	pytest-cov ; extra == 'test'
+	sphinx ; extra == 'doc'
+	sphinx-book-theme ; extra == 'doc'
+	uc-micro-py
+"
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
 	benchmark? ( dev-python/pytest[${PYTHON_USEDEP}] )

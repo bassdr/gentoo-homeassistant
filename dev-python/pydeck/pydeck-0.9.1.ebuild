@@ -16,9 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	ipykernel>=5.1.2; python_version >= "3.4" and extra == "jupyter"
+	ipython>=5.8.0; python_version < "3.4" and extra == "jupyter"
+	ipywidgets<8,>=7; extra == "jupyter"
+	jinja2>=2.10.1
+	numpy>=1.16.4
+	pydeck-carto; extra == "carto"
+	traitlets>=4.3.2; extra == "jupyter"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/ipython-5.8.0[${PYTHON_USEDEP}]
-	jupyter? ( <dev-python/ipywidgets-8[${PYTHON_USEDEP}] )
+	jupyter? ( >=dev-python/ipykernel-5.1.2[${PYTHON_USEDEP}] )
+	jupyter? ( >=dev-python/ipywidgets-7[${PYTHON_USEDEP}] <dev-python/ipywidgets-8[${PYTHON_USEDEP}] )
 	>=dev-python/jinja2-2.10.1[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.16.4[${PYTHON_USEDEP}]
 	carto? ( dev-python/pydeck-carto[${PYTHON_USEDEP}] )

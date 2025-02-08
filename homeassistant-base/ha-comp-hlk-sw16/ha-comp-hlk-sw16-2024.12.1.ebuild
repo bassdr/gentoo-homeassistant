@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/hlk-sw16-0.0.9[${PYTHON_USEDEP}]
+	~dev-python/hlk-sw16-0.0.9[${PYTHON_USEDEP}]
 "

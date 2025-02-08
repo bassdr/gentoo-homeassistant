@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="docs pycryptodome"
+GENERATED_IUSE="docs pycryptodome pysha3"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,13 +16,38 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build>=0.9.0; extra == "dev"
+	bump_my_version>=0.19.0; extra == "dev"
+	ipython; extra == "dev"
+	mypy==1.10.0; extra == "dev"
+	pre-commit>=3.4.0; extra == "dev"
+	pycryptodome<4,>=3.6.6; extra == "pycryptodome"
+	pysha3<2.0.0,>=1.0.0; python_version < "3.9" and extra == "pysha3"
+	pytest-xdist>=2.4.0; extra == "dev"
+	pytest-xdist>=2.4.0; extra == "test"
+	pytest>=7.0.0; extra == "dev"
+	pytest>=7.0.0; extra == "test"
+	safe-pysha3>=1.0.0; python_version >= "3.9" and extra == "pysha3"
+	sphinx-autobuild>=2021.3.14; extra == "dev"
+	sphinx-autobuild>=2021.3.14; extra == "docs"
+	sphinx>=6.0.0; extra == "dev"
+	sphinx>=6.0.0; extra == "docs"
+	sphinx_rtd_theme>=1.0.0; extra == "dev"
+	sphinx_rtd_theme>=1.0.0; extra == "docs"
+	towncrier<25,>=24; extra == "dev"
+	towncrier<25,>=24; extra == "docs"
+	tox>=4.0.0; extra == "dev"
+	twine; extra == "dev"
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	pycryptodome? ( <dev-python/pycryptodome-4[${PYTHON_USEDEP}] )
-	<dev-python/pysha3-2.0.0[${PYTHON_USEDEP}]
+	pycryptodome? ( >=dev-python/pycryptodome-3.6.6[${PYTHON_USEDEP}] <dev-python/pycryptodome-4[${PYTHON_USEDEP}] )
+	pysha3? ( >=dev-python/safe-pysha3-1.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
-	docs? ( <dev-python/towncrier-25[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/towncrier-24[${PYTHON_USEDEP}] <dev-python/towncrier-25[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
@@ -32,13 +57,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/build-0.9.0[${PYTHON_USEDEP}]
 		>=dev-python/bump-my-version-0.19.0[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
-		=dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
+		~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-xdist-2.4.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}]
-		<dev-python/towncrier-25[${PYTHON_USEDEP}]
+		>=dev-python/towncrier-24[${PYTHON_USEDEP}] <dev-python/towncrier-25[${PYTHON_USEDEP}]
 		>=dev-python/tox-4.0.0[${PYTHON_USEDEP}]
 		dev-python/twine[${PYTHON_USEDEP}]
 		dev-python/wheel[${PYTHON_USEDEP}]

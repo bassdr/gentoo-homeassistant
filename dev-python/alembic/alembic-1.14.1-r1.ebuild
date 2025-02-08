@@ -18,10 +18,16 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="tz"
 IUSE="${GENERATED_IUSE} doc"
 
+REQUIRES_DIST="
+	Mako
+	SQLAlchemy>=1.3.0
+	backports.zoneinfo; python_version < "3.9" and extra == "tz"
+	importlib-metadata; python_version < "3.9"
+	importlib-resources; python_version < "3.9"
+	typing-extensions>=4
+	tzdata; extra == "tz"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/backports-zoneinfo[${PYTHON_USEDEP}]
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
-	dev-python/importlib-resources[${PYTHON_USEDEP}]
 	dev-python/mako[${PYTHON_USEDEP}]
 	>=dev-python/sqlalchemy-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4[${PYTHON_USEDEP}]

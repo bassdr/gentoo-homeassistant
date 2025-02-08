@@ -16,12 +16,22 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	black ; extra == 'testing'
+	flake8 ; extra == 'testing'
+	isort ; extra == 'testing'
+	pallets-sphinx-themes ; extra == 'documentation'
+	pygments-pytest ; extra == 'documentation'
+	pylint ; extra == 'testing'
+	pytest (>=6)
+	sphinx ; extra == 'documentation'
+	typing-extensions ; python_version < "3.8"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	documentation? ( dev-python/pallets-sphinx-themes[${PYTHON_USEDEP}] )
 	documentation? ( dev-python/pygments-pytest[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-6[${PYTHON_USEDEP}]
 	documentation? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	h5py
+	hmmlearn>=0.3.0
+	imageio>=2.3.0
+	matplotlib>=2.1.0
+	numpy>=1.14.0
+	resampy>=0.2.0
+	scikit-learn>=0.16
+	scipy>=1.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/h5py[${PYTHON_USEDEP}]
 	>=dev-python/hmmlearn-0.3.0[${PYTHON_USEDEP}]

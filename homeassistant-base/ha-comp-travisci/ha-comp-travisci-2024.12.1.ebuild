@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/travispy-0.3.5[${PYTHON_USEDEP}]
+	~dev-python/travispy-0.3.5[${PYTHON_USEDEP}]
 "

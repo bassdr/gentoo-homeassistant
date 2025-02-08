@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,6 +15,23 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	distro~=1.8.0
+	furiosa-device==0.10.*
+	furiosa-optimizer==0.10.*
+	furiosa-quantizer==0.10.*
+	furiosa-runtime==0.10.*
+	furiosa-tools==0.10.*
+	mnist; extra == "test"
+	mypy; extra == "test"
+	psutil~=5.9.4
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	ruff; extra == "test"
+	types-PyYAML; extra == "test"
+	types-protobuf; extra == "test"
+	types-psutil; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/distro-1.8.0[${PYTHON_USEDEP}] =dev-python/distro-1.8*[${PYTHON_USEDEP}]
 	=dev-python/furiosa-device-0.10*[${PYTHON_USEDEP}]
@@ -29,7 +45,6 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/mnist[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]

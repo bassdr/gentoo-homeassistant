@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/vsure-2.6.7[${PYTHON_USEDEP}]
+	~dev-python/vsure-2.6.7[${PYTHON_USEDEP}]
 "

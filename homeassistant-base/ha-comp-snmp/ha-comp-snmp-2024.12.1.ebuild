@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pysnmp-6.2.6[${PYTHON_USEDEP}]
+	~dev-python/pysnmp-6.2.6[${PYTHON_USEDEP}]
 "

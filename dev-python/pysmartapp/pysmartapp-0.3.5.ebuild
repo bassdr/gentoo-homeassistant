@@ -19,8 +19,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	httpsig (<2.0.0,>=1.3.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/httpsig-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/httpsig-1.3.0[${PYTHON_USEDEP}] <dev-python/httpsig-2.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/httpsig-1.3.0[${PYTHON_USEDEP}]"

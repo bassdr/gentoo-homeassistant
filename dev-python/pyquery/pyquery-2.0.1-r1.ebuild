@@ -17,7 +17,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	cssselect>=1.2.0
+	lxml>=2.1
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	requests; extra == "test"
+	webob; extra == "test"
+	webtest; extra == "test"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cssselect-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/lxml-2.1[${PYTHON_USEDEP}]

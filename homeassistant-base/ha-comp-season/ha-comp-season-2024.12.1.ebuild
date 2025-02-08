@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/ephem-4.1.6[${PYTHON_USEDEP}]
+	~dev-python/ephem-4.1.6[${PYTHON_USEDEP}]
 "

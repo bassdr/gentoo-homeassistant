@@ -22,6 +22,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyJWT
+	requests
+	websocket-client
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

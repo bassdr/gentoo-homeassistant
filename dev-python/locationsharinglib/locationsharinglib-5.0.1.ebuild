@@ -19,6 +19,12 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
+REQUIRES_DIST="
+	cachetools
+	coloredlogs
+	pytz
+	requests
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cachetools[${PYTHON_USEDEP}]
 	dev-python/coloredlogs[${PYTHON_USEDEP}]

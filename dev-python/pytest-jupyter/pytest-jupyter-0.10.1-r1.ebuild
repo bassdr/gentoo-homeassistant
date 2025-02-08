@@ -18,6 +18,22 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="client docs server"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	ipykernel>=6.14; extra == "client"
+	ipykernel>=6.14; extra == "server"
+	jupyter-client>=7.4.0; extra == "client"
+	jupyter-client>=7.4.0; extra == "server"
+	jupyter-core>=5.7
+	jupyter-server>=1.21; extra == "server"
+	myst-parser; extra == "docs"
+	nbformat>=5.3; extra == "client"
+	nbformat>=5.3; extra == "server"
+	pydata-sphinx-theme; extra == "docs"
+	pytest-timeout; extra == "test"
+	pytest>=7.0
+	sphinx; extra == "docs"
+	sphinxcontrib-spelling; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	client? ( >=dev-python/ipykernel-6.14[${PYTHON_USEDEP}] )
 	server? ( >=dev-python/ipykernel-6.14[${PYTHON_USEDEP}] )

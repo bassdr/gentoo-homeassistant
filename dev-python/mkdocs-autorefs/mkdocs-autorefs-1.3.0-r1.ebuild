@@ -16,7 +16,11 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	Markdown>=3.3
+	markupsafe>=2.0.1
+	mkdocs>=1.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/markdown-3.3[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}]

@@ -11,13 +11,16 @@ inherit distutils-r1 pypi
 
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/markdown_include/"
+  https://pypi.org/project/markdown-include/"
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	markdown (>=3.0)
+	pytest ; extra == 'tests'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/markdown-3.0[${PYTHON_USEDEP}]
 "

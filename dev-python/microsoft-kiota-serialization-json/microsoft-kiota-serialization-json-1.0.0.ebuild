@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,8 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	microsoft-kiota_abstractions >=1.0.0,<2.0.0
+	pendulum >=2.1.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/microsoft-kiota-abstractions-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/microsoft-kiota-abstractions-1.0.0[${PYTHON_USEDEP}] <dev-python/microsoft-kiota-abstractions-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pendulum-2.1.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

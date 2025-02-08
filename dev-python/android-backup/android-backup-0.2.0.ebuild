@@ -7,14 +7,13 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Unpack and repack android backups"
 HOMEPAGE="
-  https://pypi.org/project/android_backup/
+  https://pypi.org/project/android-backup/
 "
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

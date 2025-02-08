@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pyombi-0.1.10[${PYTHON_USEDEP}]
+	~dev-python/pyombi-0.1.10[${PYTHON_USEDEP}]
 "

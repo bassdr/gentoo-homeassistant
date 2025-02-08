@@ -22,14 +22,25 @@ PATCHES=(
 	"${FILESDIR}"/${P}-pytest6.patch
 )
 
-GENERATED_IUSE="all chardet genshi"
+GENERATED_IUSE="all chardet genshi lxml"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	chardet (>=2.2) ; extra == 'all'
+	chardet (>=2.2) ; extra == 'chardet'
+	genshi ; extra == 'all'
+	genshi ; extra == 'genshi'
+	lxml ; (platform_python_implementation == 'CPython') and extra == 'all'
+	lxml ; (platform_python_implementation == 'CPython') and extra == 'lxml'
+	six (>=1.9)
+	webencodings
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/chardet-2.2[${PYTHON_USEDEP}] )
 	chardet? ( >=dev-python/chardet-2.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/genshi[${PYTHON_USEDEP}] )
 	genshi? ( dev-python/genshi[${PYTHON_USEDEP}] )
-	dev-python/lxml[${PYTHON_USEDEP}]
+	all? ( dev-python/lxml[${PYTHON_USEDEP}] )
+	lxml? ( dev-python/lxml[${PYTHON_USEDEP}] )
 	>=dev-python/six-1.9[${PYTHON_USEDEP}]
 	dev-python/webencodings[${PYTHON_USEDEP}]
 "

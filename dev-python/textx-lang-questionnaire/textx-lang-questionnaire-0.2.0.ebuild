@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
@@ -16,6 +15,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	coverage ; extra == 'test'
+	coveralls ; extra == 'test'
+	flake8 ; extra == 'test'
+	pytest ; extra == 'test'
+	textX
+	tox ; extra == 'test'
+	twine ; extra == 'dev'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/textx[${PYTHON_USEDEP}]
 "

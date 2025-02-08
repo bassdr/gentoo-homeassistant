@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/broadlink-0.19.0[${PYTHON_USEDEP}]
+	~dev-python/broadlink-0.19.0[${PYTHON_USEDEP}]
 "

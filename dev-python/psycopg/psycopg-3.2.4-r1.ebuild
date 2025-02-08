@@ -20,7 +20,7 @@ SRC_URI="
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs pool"
+GENERATED_IUSE="binary c docs pool"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
 DEPEND="
@@ -31,14 +31,42 @@ DEPEND="
 		>=dev-db/postgresql-8.1:*
 	)
 "
+REQUIRES_DIST="
+	Sphinx>=5.0; extra == "docs"
+	anyio>=4.0; extra == "test"
+	ast-comments>=1.1.2; extra == "dev"
+	backports.zoneinfo>=0.2.0; python_version < "3.9"
+	black>=24.1.0; extra == "dev"
+	codespell>=2.2; extra == "dev"
+	dnspython>=2.1; extra == "dev"
+	flake8>=4.0; extra == "dev"
+	furo==2022.6.21; extra == "docs"
+	mypy>=1.14; extra == "dev"
+	mypy>=1.14; extra == "test"
+	pproxy>=2.7; extra == "test"
+	pre-commit>=4.0.1; extra == "dev"
+	psycopg-binary==3.2.4; implementation_name != "pypy" and extra == "binary"
+	psycopg-c==3.2.4; implementation_name != "pypy" and extra == "c"
+	psycopg-pool; extra == "pool"
+	pytest-cov>=3.0; extra == "test"
+	pytest-randomly>=3.5; extra == "test"
+	pytest>=6.2.5; extra == "test"
+	sphinx-autobuild>=2021.3.14; extra == "docs"
+	sphinx-autodoc-typehints>=1.12; extra == "docs"
+	types-setuptools>=57.4; extra == "dev"
+	typing-extensions>=4.6; python_version < "3.13"
+	tzdata; sys_platform == "win32"
+	wheel>=0.37; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/backports-zoneinfo-0.2.0[${PYTHON_USEDEP}]
-	docs? ( =dev-python/furo-2022.6.21[${PYTHON_USEDEP}] )
+	docs? ( ~dev-python/furo-2022.6.21[${PYTHON_USEDEP}] )
+	binary? ( ~dev-python/psycopg-binary-3.2.4[${PYTHON_USEDEP}] )
+	c? ( ~dev-python/psycopg-c-3.2.4[${PYTHON_USEDEP}] )
 	pool? ( dev-python/psycopg-pool[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autobuild-2021.3.14[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-autodoc-typehints-1.12[${PYTHON_USEDEP}] )
-	>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.6[${PYTHON_USEDEP}]' python3_12)
 "
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}

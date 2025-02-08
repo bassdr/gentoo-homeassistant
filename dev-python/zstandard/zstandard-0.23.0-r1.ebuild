@@ -29,6 +29,10 @@ IUSE="${GENERATED_IUSE}"
 DEPEND="
 	app-arch/zstd:=
 "
+REQUIRES_DIST="
+	cffi>=1.11; extra == "cffi"
+	cffi>=1.11; platform_python_implementation == "PyPy"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	cffi? ( >=dev-python/cffi-1.11[${PYTHON_USEDEP}] )
 "

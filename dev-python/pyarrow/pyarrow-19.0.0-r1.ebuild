@@ -35,7 +35,7 @@ IUSE="+parquet +snappy ssl"
 
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}
+RDEPEND="
 	~dev-libs/apache-arrow-${PV}[compute,dataset,json,parquet?,re2,snappy?,ssl?]
 	>=dev-python/numpy-1.16.6:=[${PYTHON_USEDEP}]
 "

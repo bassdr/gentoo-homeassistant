@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,6 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	alibabacloud_adb20211201>=1.0.0
+	alibabacloud_tea_openapi>=0.3.7
+	apache-airflow>=2.9.0
+	oss2>=2.14.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alibabacloud-adb20211201-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/alibabacloud-tea-openapi-0.3.7[${PYTHON_USEDEP}]

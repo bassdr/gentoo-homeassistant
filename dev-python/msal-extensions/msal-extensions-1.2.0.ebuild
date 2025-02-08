@@ -21,9 +21,13 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	msal<2,>=1.29
+	portalocker<3,>=1.4
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/msal-2[${PYTHON_USEDEP}]
-	<dev-python/portalocker-3[${PYTHON_USEDEP}]
+	>=dev-python/msal-1.29[${PYTHON_USEDEP}] <dev-python/msal-2[${PYTHON_USEDEP}]
+	>=dev-python/portalocker-1.4[${PYTHON_USEDEP}] <dev-python/portalocker-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/msal-1.29[${PYTHON_USEDEP}]

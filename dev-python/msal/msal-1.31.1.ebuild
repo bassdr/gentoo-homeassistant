@@ -24,11 +24,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	PyJWT[crypto]<3,>=1.0.0
+	cryptography<46,>=2.5
+	pymsalruntime<0.18,>=0.14; (python_version >= "3.6" and platform_system == "Windows") and extra == "broker"
+	pymsalruntime<0.18,>=0.17; (python_version >= "3.8" and platform_system == "Darwin") and extra == "broker"
+	requests<3,>=2.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/cryptography-46[${PYTHON_USEDEP}]
-	<dev-python/pyjwt-3[crypto,${PYTHON_USEDEP}]
-	<dev-python/pymsalruntime-0.18[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}] <dev-python/cryptography-46[${PYTHON_USEDEP}]
+	>=dev-python/pyjwt-1.0.0[crypto,${PYTHON_USEDEP}] <dev-python/pyjwt-3[crypto,${PYTHON_USEDEP}]
+	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]

@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -16,22 +15,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	absl-py>=0.4
+	grpcio>=1.48.2
+	markdown>=2.6.8
+	numpy>=1.12.0
+	packaging
+	protobuf!=4.24.0,>=3.19.6
+	setuptools>=41.0.0
+	six>1.9
+	tensorboard-data-server<0.8.0,>=0.7.0
+	werkzeug>=1.0.1
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-0.4[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-1.48.2[${PYTHON_USEDEP}]
 	>=dev-python/markdown-2.6.8[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.12.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	!=dev-python/protobuf-4.24.0[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-3.19.6[${PYTHON_USEDEP}] !~dev-python/protobuf-4.24.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-41.0.0[${PYTHON_USEDEP}]
 	>dev-python/six-1.9[${PYTHON_USEDEP}]
-	<dev-python/tensorboard-data-server-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/tensorboard-data-server-0.7.0[${PYTHON_USEDEP}] <dev-python/tensorboard-data-server-0.8.0[${PYTHON_USEDEP}]
 	>=dev-python/werkzeug-1.0.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

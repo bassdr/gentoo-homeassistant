@@ -23,6 +23,12 @@ KEYWORDS="amd64 arm64"
 # https://bugs.gentoo.org/931325
 RESTRICT="test"
 
+REQUIRES_DIST="
+	csscompressor (>=0.9.5)
+	htmlmin2 (>=0.1.13)
+	jsmin (>=3.0.1)
+	mkdocs (>=1.4.1)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/csscompressor-0.9.5[${PYTHON_USEDEP}]
 	>=dev-python/htmlmin2-0.1.13[${PYTHON_USEDEP}]

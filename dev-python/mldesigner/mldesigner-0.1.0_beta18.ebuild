@@ -20,22 +20,30 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	azure-ai-ml ; extra == 'pipeline'
+	azure-identity ; extra == 'pipeline'
+	jinja2 (==3.0.0) ; extra == 'pipeline'
+	omegaconf (<2.2,>=2.0.5) ; extra == 'pipeline'
+	promptflow (>=0.1.0b6) ; extra == 'promptflow'
+	promptflow-tools ; extra == 'promptflow'
+	pydash (>=5.1.2)
+	pyyaml (<7.0.0,>=5.1.0)
+	tqdm ; extra == 'pipeline'
+	typing-extensions (<5.0.0)
+"
 GENERATED_RDEPEND="${RDEPEND}
 	pipeline? ( dev-python/azure-ai-ml[${PYTHON_USEDEP}] )
 	pipeline? ( dev-python/azure-identity[${PYTHON_USEDEP}] )
-	pipeline? ( =dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] )
-	pipeline? ( <dev-python/omegaconf-2.2[${PYTHON_USEDEP}] )
+	pipeline? ( ~dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] )
+	pipeline? ( >=dev-python/omegaconf-2.0.5[${PYTHON_USEDEP}] <dev-python/omegaconf-2.2[${PYTHON_USEDEP}] )
 	promptflow? ( >=dev-python/promptflow-0.1.0_beta6[${PYTHON_USEDEP}] )
 	promptflow? ( dev-python/promptflow-tools[${PYTHON_USEDEP}] )
 	>=dev-python/pydash-5.1.2[${PYTHON_USEDEP}]
-	<dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.1.0[${PYTHON_USEDEP}] <dev-python/pyyaml-7.0.0[${PYTHON_USEDEP}]
 	pipeline? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 	<dev-python/typing-extensions-5.0.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

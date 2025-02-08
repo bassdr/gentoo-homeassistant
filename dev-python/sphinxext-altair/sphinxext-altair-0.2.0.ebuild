@@ -3,7 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -15,12 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	altair>=4.0.0
+	black<24; extra == 'dev'
+	docutils
+	hatch; extra == 'dev'
+	ipython; extra == 'dev'
+	jinja2
+	mypy; extra == 'dev'
+	pytest; extra == 'dev'
+	ruff; extra == 'dev'
+	sphinx
+	types-docutils; extra == 'dev'
+	typing-extensions>=4.0.1; python_version < '3.8'
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/altair-4.0.0[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.0.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

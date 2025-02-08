@@ -19,7 +19,13 @@ KEYWORDS="amd64 arm64"
 DEPEND="
 	x11-libs/libxcb
 "
-RDEPEND="
+REQUIRES_DIST="
+	cffi>=1.1.0; platform_python_implementation != "PyPy"
+"
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/cffi-1.1.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.1:=[${PYTHON_USEDEP}]
 	' 'python*')

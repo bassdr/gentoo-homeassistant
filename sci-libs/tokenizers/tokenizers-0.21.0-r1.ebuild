@@ -229,8 +229,21 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	black==22.3; extra == "testing"
+	datasets; extra == "testing"
+	huggingface-hub<1.0,>=0.16.4
+	numpy; extra == "testing"
+	pytest; extra == "testing"
+	requests; extra == "testing"
+	ruff; extra == "testing"
+	setuptools-rust; extra == "docs"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx; extra == "docs"
+	tokenizers[testing]; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND} $(python_gen_cond_dep '
-	<dev-python/huggingface-hub-1.0[${PYTHON_USEDEP}]
+	>=dev-python/huggingface-hub-0.16.4[${PYTHON_USEDEP}] <dev-python/huggingface-hub-1.0[${PYTHON_USEDEP}]
 	docs? ( dev-python/setuptools-rust[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
@@ -238,18 +251,19 @@ GENERATED_RDEPEND="${RDEPEND} $(python_gen_cond_dep '
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND} $(python_gen_cond_dep '
-	test? (
-		=dev-python/black-22.3[${PYTHON_USEDEP}]
+GENERATED_BDEPEND="${BDEPEND}
+	$(python_gen_cond_dep 'test? (
+		~dev-python/black-22.3[${PYTHON_USEDEP}]
 		dev-python/datasets[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/ruff[${PYTHON_USEDEP}]
 		sci-libs/tokenizers[testing,${PYTHON_USEDEP}]
-	)
-')"
-BDEPEND="${GENERATED_BDEPEND}
+	)')
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	$(python_gen_cond_dep '
 		dev-python/setuptools-rust[${PYTHON_USEDEP}]
 	')

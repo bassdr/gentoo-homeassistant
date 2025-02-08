@@ -16,14 +16,19 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
+REQUIRES_DIST="
+	appdirs (~=1.4.3)
+	backports.os (~=0.1) ; python_version < "3.0"
+	enum34 (~=1.1.6) ; python_version < "3.4"
+	scandir (~=1.5) ; (python_version < "3.5") and extra == 'scandir'
+	setuptools
+	six (~=1.10)
+	typing (~=3.6) ; python_version < "3.6"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] =dev-python/appdirs-1.4*[${PYTHON_USEDEP}]
-	>=dev-python/enum34-1.1.6[${PYTHON_USEDEP}] =dev-python/enum34-1.1*[${PYTHON_USEDEP}]
-	>=dev-python/scandir-1.5[${PYTHON_USEDEP}] =dev-python/scandir-1*[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/six-1.10[${PYTHON_USEDEP}] =dev-python/six-1*[${PYTHON_USEDEP}]
-	>=dev-python/typing-3.6[${PYTHON_USEDEP}] =dev-python/typing-3*[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}]

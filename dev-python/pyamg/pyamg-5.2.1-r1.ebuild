@@ -21,10 +21,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 DEPEND="
 	dev-python/pybind11[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
+"
+REQUIRES_DIST="
+	numpy
+	scipy>=1.11.0
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]

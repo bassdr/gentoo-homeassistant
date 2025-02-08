@@ -19,9 +19,13 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="grpc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	grpcio<2.0.0.dev0,>=1.44.0; extra == "grpc"
+	protobuf!=3.20.0,!=3.20.1,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0.dev0,>=3.20.2
+"
 GENERATED_RDEPEND="${RDEPEND}
-	grpc? ( <dev-python/grpcio-2.0.0_pre0[${PYTHON_USEDEP}] )
-	!=dev-python/protobuf-3.20.0[${PYTHON_USEDEP}]
+	grpc? ( >=dev-python/grpcio-1.44.0[${PYTHON_USEDEP}] <dev-python/grpcio-2.0.0_pre0[${PYTHON_USEDEP}] )
+	>=dev-python/protobuf-3.20.2[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre0[${PYTHON_USEDEP}] !~dev-python/protobuf-3.20.0[${PYTHON_USEDEP}] !~dev-python/protobuf-3.20.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.2[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.3[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.4[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.5[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/protobuf-6[${PYTHON_USEDEP}]

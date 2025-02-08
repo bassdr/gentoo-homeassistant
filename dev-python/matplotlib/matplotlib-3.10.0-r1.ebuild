@@ -36,6 +36,21 @@ DEPEND="
 "
 # internal copy of pycxx highly patched
 #	dev-python/pycxx
+REQUIRES_DIST="
+	contourpy>=1.0.1
+	cycler>=0.10
+	fonttools>=4.22.0
+	kiwisolver>=1.3.1
+	meson-python<0.17.0,>=0.13.1; extra == "dev"
+	numpy>=1.23
+	packaging>=20.0
+	pillow>=8
+	pybind11!=2.13.3,>=2.13.2; extra == "dev"
+	pyparsing>=2.3.1
+	python-dateutil>=2.7
+	setuptools>=64; extra == "dev"
+	setuptools_scm>=7; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/cycler-0.10[${PYTHON_USEDEP}]
@@ -124,8 +139,8 @@ EPYTEST_XDIST=1
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		<dev-python/meson-python-0.17.0[${PYTHON_USEDEP}]
-		!=dev-python/pybind11-2.13.3[${PYTHON_USEDEP}]
+		>=dev-python/meson-python-0.13.1[${PYTHON_USEDEP}] <dev-python/meson-python-0.17.0[${PYTHON_USEDEP}]
+		>=dev-python/pybind11-2.13.2[${PYTHON_USEDEP}] !~dev-python/pybind11-2.13.3[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-64[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
 	)

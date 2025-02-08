@@ -11,6 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/aprslib-0.7.2[${PYTHON_USEDEP}]
-	=sci-geosciences/geopy-2.3.0[${PYTHON_USEDEP}]
+	~dev-python/aprslib-0.7.2[${PYTHON_USEDEP}]
+	~sci-geosciences/geopy-2.3.0[${PYTHON_USEDEP}]
 "

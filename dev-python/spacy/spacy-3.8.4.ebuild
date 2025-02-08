@@ -17,57 +17,101 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	catalogue<2.1.0,>=2.0.6
+	cupy-cuda100<13.0.0,>=5.0.0b4; extra == "cuda100"
+	cupy-cuda101<13.0.0,>=5.0.0b4; extra == "cuda101"
+	cupy-cuda102<13.0.0,>=5.0.0b4; extra == "cuda102"
+	cupy-cuda110<13.0.0,>=5.0.0b4; extra == "cuda110"
+	cupy-cuda111<13.0.0,>=5.0.0b4; extra == "cuda111"
+	cupy-cuda112<13.0.0,>=5.0.0b4; extra == "cuda112"
+	cupy-cuda113<13.0.0,>=5.0.0b4; extra == "cuda113"
+	cupy-cuda114<13.0.0,>=5.0.0b4; extra == "cuda114"
+	cupy-cuda115<13.0.0,>=5.0.0b4; extra == "cuda115"
+	cupy-cuda116<13.0.0,>=5.0.0b4; extra == "cuda116"
+	cupy-cuda117<13.0.0,>=5.0.0b4; extra == "cuda117"
+	cupy-cuda11x<13.0.0,>=11.0.0; extra == "cuda11x"
+	cupy-cuda12x<13.0.0,>=11.5.0; extra == "cuda12x"
+	cupy-cuda80<13.0.0,>=5.0.0b4; extra == "cuda80"
+	cupy-cuda90<13.0.0,>=5.0.0b4; extra == "cuda90"
+	cupy-cuda91<13.0.0,>=5.0.0b4; extra == "cuda91"
+	cupy-cuda92<13.0.0,>=5.0.0b4; extra == "cuda92"
+	cupy-wheel<13.0.0,>=11.0.0; extra == "cuda-autodetect"
+	cupy<13.0.0,>=5.0.0b4; extra == "cuda"
+	cymem<2.1.0,>=2.0.2
+	jinja2
+	langcodes<4.0.0,>=3.2.0
+	murmurhash<1.1.0,>=0.28.0
+	natto-py>=0.9.0; extra == "ko"
+	numpy>=1.15.0; python_version < "3.9"
+	numpy>=1.19.0; python_version >= "3.9"
+	packaging>=20.0
+	preshed<3.1.0,>=3.0.2
+	pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4
+	pythainlp>=2.0; extra == "th"
+	requests<3.0.0,>=2.13.0
+	setuptools
+	spacy-legacy<3.1.0,>=3.0.11
+	spacy-loggers<2.0.0,>=1.0.0
+	spacy_lookups_data<1.1.0,>=1.0.3; extra == "lookups"
+	spacy_transformers<1.4.0,>=1.1.2; extra == "transformers"
+	srsly<3.0.0,>=2.4.3
+	sudachidict_core>=20211220; extra == "ja"
+	sudachipy!=0.6.1,>=0.5.2; extra == "ja"
+	thinc-apple-ops<2.0.0,>=1.0.0; extra == "apple"
+	thinc<8.4.0,>=8.3.4
+	tqdm<5.0.0,>=4.38.0
+	typer<1.0.0,>=0.3.0
+	wasabi<1.2.0,>=0.9.1
+	weasel<0.5.0,>=0.1.0
+"
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/catalogue-2.1.0[${PYTHON_USEDEP}]
-	cuda? ( <dev-python/cupy-13.0.0[${PYTHON_USEDEP}] )
-	cuda100? ( <dev-python/cupy-cuda100-13.0.0[${PYTHON_USEDEP}] )
-	cuda101? ( <dev-python/cupy-cuda101-13.0.0[${PYTHON_USEDEP}] )
-	cuda102? ( <dev-python/cupy-cuda102-13.0.0[${PYTHON_USEDEP}] )
-	cuda110? ( <dev-python/cupy-cuda110-13.0.0[${PYTHON_USEDEP}] )
-	cuda111? ( <dev-python/cupy-cuda111-13.0.0[${PYTHON_USEDEP}] )
-	cuda112? ( <dev-python/cupy-cuda112-13.0.0[${PYTHON_USEDEP}] )
-	cuda113? ( <dev-python/cupy-cuda113-13.0.0[${PYTHON_USEDEP}] )
-	cuda114? ( <dev-python/cupy-cuda114-13.0.0[${PYTHON_USEDEP}] )
-	cuda115? ( <dev-python/cupy-cuda115-13.0.0[${PYTHON_USEDEP}] )
-	cuda116? ( <dev-python/cupy-cuda116-13.0.0[${PYTHON_USEDEP}] )
-	cuda117? ( <dev-python/cupy-cuda117-13.0.0[${PYTHON_USEDEP}] )
-	cuda11x? ( <dev-python/cupy-cuda11x-13.0.0[${PYTHON_USEDEP}] )
-	cuda12x? ( <dev-python/cupy-cuda12x-13.0.0[${PYTHON_USEDEP}] )
-	cuda80? ( <dev-python/cupy-cuda80-13.0.0[${PYTHON_USEDEP}] )
-	cuda90? ( <dev-python/cupy-cuda90-13.0.0[${PYTHON_USEDEP}] )
-	cuda91? ( <dev-python/cupy-cuda91-13.0.0[${PYTHON_USEDEP}] )
-	cuda92? ( <dev-python/cupy-cuda92-13.0.0[${PYTHON_USEDEP}] )
-	cuda-autodetect? ( <dev-python/cupy-wheel-13.0.0[${PYTHON_USEDEP}] )
-	<dev-python/cymem-2.1.0[${PYTHON_USEDEP}]
+	>=dev-python/catalogue-2.0.6[${PYTHON_USEDEP}] <dev-python/catalogue-2.1.0[${PYTHON_USEDEP}]
+	cuda? ( >=dev-python/cupy-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-13.0.0[${PYTHON_USEDEP}] )
+	cuda100? ( >=dev-python/cupy-cuda100-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda100-13.0.0[${PYTHON_USEDEP}] )
+	cuda101? ( >=dev-python/cupy-cuda101-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda101-13.0.0[${PYTHON_USEDEP}] )
+	cuda102? ( >=dev-python/cupy-cuda102-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda102-13.0.0[${PYTHON_USEDEP}] )
+	cuda110? ( >=dev-python/cupy-cuda110-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda110-13.0.0[${PYTHON_USEDEP}] )
+	cuda111? ( >=dev-python/cupy-cuda111-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda111-13.0.0[${PYTHON_USEDEP}] )
+	cuda112? ( >=dev-python/cupy-cuda112-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda112-13.0.0[${PYTHON_USEDEP}] )
+	cuda113? ( >=dev-python/cupy-cuda113-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda113-13.0.0[${PYTHON_USEDEP}] )
+	cuda114? ( >=dev-python/cupy-cuda114-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda114-13.0.0[${PYTHON_USEDEP}] )
+	cuda115? ( >=dev-python/cupy-cuda115-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda115-13.0.0[${PYTHON_USEDEP}] )
+	cuda116? ( >=dev-python/cupy-cuda116-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda116-13.0.0[${PYTHON_USEDEP}] )
+	cuda117? ( >=dev-python/cupy-cuda117-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda117-13.0.0[${PYTHON_USEDEP}] )
+	cuda11x? ( >=dev-python/cupy-cuda11x-11.0.0[${PYTHON_USEDEP}] <dev-python/cupy-cuda11x-13.0.0[${PYTHON_USEDEP}] )
+	cuda12x? ( >=dev-python/cupy-cuda12x-11.5.0[${PYTHON_USEDEP}] <dev-python/cupy-cuda12x-13.0.0[${PYTHON_USEDEP}] )
+	cuda80? ( >=dev-python/cupy-cuda80-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda80-13.0.0[${PYTHON_USEDEP}] )
+	cuda90? ( >=dev-python/cupy-cuda90-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda90-13.0.0[${PYTHON_USEDEP}] )
+	cuda91? ( >=dev-python/cupy-cuda91-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda91-13.0.0[${PYTHON_USEDEP}] )
+	cuda92? ( >=dev-python/cupy-cuda92-5.0.0_beta4[${PYTHON_USEDEP}] <dev-python/cupy-cuda92-13.0.0[${PYTHON_USEDEP}] )
+	cuda-autodetect? ( >=dev-python/cupy-wheel-11.0.0[${PYTHON_USEDEP}] <dev-python/cupy-wheel-13.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/cymem-2.0.2[${PYTHON_USEDEP}] <dev-python/cymem-2.1.0[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
-	<dev-python/langcodes-4.0.0[${PYTHON_USEDEP}]
-	<dev-python/murmurhash-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/langcodes-3.2.0[${PYTHON_USEDEP}] <dev-python/langcodes-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/murmurhash-0.28.0[${PYTHON_USEDEP}] <dev-python/murmurhash-1.1.0[${PYTHON_USEDEP}]
 	ko? ( >=dev-python/natto-py-0.9.0[${PYTHON_USEDEP}] )
-	>=dev-python/numpy-1.15.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.19.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
-	<dev-python/preshed-3.1.0[${PYTHON_USEDEP}]
-	!=dev-python/pydantic-1.8[${PYTHON_USEDEP}]
+	>=dev-python/preshed-3.0.2[${PYTHON_USEDEP}] <dev-python/preshed-3.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.7.4[${PYTHON_USEDEP}] <dev-python/pydantic-3.0.0[${PYTHON_USEDEP}] !~dev-python/pydantic-1.8[${PYTHON_USEDEP}] !~dev-python/pydantic-1.8.1[${PYTHON_USEDEP}]
 	th? ( >=dev-python/pythainlp-2.0[${PYTHON_USEDEP}] )
-	<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.13.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	<dev-python/spacy-legacy-3.1.0[${PYTHON_USEDEP}]
-	<dev-python/spacy-loggers-2.0.0[${PYTHON_USEDEP}]
-	lookups? ( <dev-python/spacy-lookups-data-1.1.0[${PYTHON_USEDEP}] )
-	transformers? ( <dev-python/spacy-transformers-1.4.0[${PYTHON_USEDEP}] )
-	<dev-python/srsly-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/spacy-legacy-3.0.11[${PYTHON_USEDEP}] <dev-python/spacy-legacy-3.1.0[${PYTHON_USEDEP}]
+	>=dev-python/spacy-loggers-1.0.0[${PYTHON_USEDEP}] <dev-python/spacy-loggers-2.0.0[${PYTHON_USEDEP}]
+	lookups? ( >=dev-python/spacy-lookups-data-1.0.3[${PYTHON_USEDEP}] <dev-python/spacy-lookups-data-1.1.0[${PYTHON_USEDEP}] )
+	transformers? ( >=dev-python/spacy-transformers-1.1.2[${PYTHON_USEDEP}] <dev-python/spacy-transformers-1.4.0[${PYTHON_USEDEP}] )
+	>=dev-python/srsly-2.4.3[${PYTHON_USEDEP}] <dev-python/srsly-3.0.0[${PYTHON_USEDEP}]
 	ja? ( >=dev-python/sudachidict-core-20211220[${PYTHON_USEDEP}] )
-	ja? ( !=dev-python/sudachipy-0.6.1[${PYTHON_USEDEP}] )
-	<dev-python/thinc-8.4.0[${PYTHON_USEDEP}]
-	apple? ( <dev-python/thinc-apple-ops-2.0.0[${PYTHON_USEDEP}] )
-	<dev-python/tqdm-5.0.0[${PYTHON_USEDEP}]
-	<dev-python/typer-1.0.0[${PYTHON_USEDEP}]
-	<dev-python/wasabi-1.2.0[${PYTHON_USEDEP}]
-	<dev-python/weasel-0.5.0[${PYTHON_USEDEP}]
+	ja? ( >=dev-python/sudachipy-0.5.2[${PYTHON_USEDEP}] !~dev-python/sudachipy-0.6.1[${PYTHON_USEDEP}] )
+	>=dev-python/thinc-8.3.4[${PYTHON_USEDEP}] <dev-python/thinc-8.4.0[${PYTHON_USEDEP}]
+	apple? ( >=dev-python/thinc-apple-ops-1.0.0[${PYTHON_USEDEP}] <dev-python/thinc-apple-ops-2.0.0[${PYTHON_USEDEP}] )
+	>=dev-python/tqdm-4.38.0[${PYTHON_USEDEP}] <dev-python/tqdm-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/typer-0.3.0[${PYTHON_USEDEP}] <dev-python/typer-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/wasabi-0.9.1[${PYTHON_USEDEP}] <dev-python/wasabi-1.2.0[${PYTHON_USEDEP}]
+	>=dev-python/weasel-0.1.0[${PYTHON_USEDEP}] <dev-python/weasel-0.5.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"

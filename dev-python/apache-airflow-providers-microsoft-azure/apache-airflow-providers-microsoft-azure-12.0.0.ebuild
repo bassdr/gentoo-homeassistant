@@ -16,6 +16,39 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	adal>=1.2.7
+	adlfs>=2023.10.0
+	apache-airflow-providers-amazon; extra == "amazon"
+	apache-airflow-providers-common-compat; extra == "common-compat"
+	apache-airflow-providers-oracle; extra == "oracle"
+	apache-airflow-providers-sftp; extra == "sftp"
+	apache-airflow>=2.9.0
+	azure-batch>=8.0.0
+	azure-cosmos>=4.6.0
+	azure-datalake-store>=0.0.45
+	azure-identity>=1.3.1
+	azure-keyvault-secrets>=4.1.0
+	azure-kusto-data!=4.6.0,>=4.1.0
+	azure-mgmt-containerinstance>=10.1.0
+	azure-mgmt-containerregistry>=8.0.0
+	azure-mgmt-cosmosdb>=3.0.0
+	azure-mgmt-datafactory>=2.0.0
+	azure-mgmt-datalake-store>=0.5.0
+	azure-mgmt-resource>=2.2.0
+	azure-mgmt-storage>=16.0.0
+	azure-servicebus>=7.12.1
+	azure-storage-blob>=12.14.0
+	azure-storage-file-datalake>=12.9.1
+	azure-storage-file-share>=12.7.0
+	azure-synapse-artifacts>=0.17.0
+	azure-synapse-spark>=0.2.0
+	microsoft-kiota-abstractions<1.4.0
+	microsoft-kiota-http!=1.3.4,>=1.3.0
+	microsoft-kiota-serialization-json==1.0.0
+	microsoft-kiota-serialization-text==1.0.0
+	msgraph-core!=1.1.8,>=1.0.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/adal-1.2.7[${PYTHON_USEDEP}]
 	>=dev-python/adlfs-2023.10.0[${PYTHON_USEDEP}]
@@ -29,7 +62,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-datalake-store-0.0.45[${PYTHON_USEDEP}]
 	>=dev-python/azure-identity-1.3.1[${PYTHON_USEDEP}]
 	>=dev-python/azure-keyvault-secrets-4.1.0[${PYTHON_USEDEP}]
-	!=dev-python/azure-kusto-data-4.6.0[${PYTHON_USEDEP}]
+	>=dev-python/azure-kusto-data-4.1.0[${PYTHON_USEDEP}] !~dev-python/azure-kusto-data-4.6.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerinstance-10.1.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-containerregistry-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-mgmt-cosmosdb-3.0.0[${PYTHON_USEDEP}]
@@ -44,10 +77,10 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-synapse-artifacts-0.17.0[${PYTHON_USEDEP}]
 	>=dev-python/azure-synapse-spark-0.2.0[${PYTHON_USEDEP}]
 	<dev-python/microsoft-kiota-abstractions-1.4.0[${PYTHON_USEDEP}]
-	!=dev-python/microsoft-kiota-http-1.3.4[${PYTHON_USEDEP}]
-	=dev-python/microsoft-kiota-serialization-json-1.0.0[${PYTHON_USEDEP}]
-	=dev-python/microsoft-kiota-serialization-text-1.0.0[${PYTHON_USEDEP}]
-	!=dev-python/msgraph-core-1.1.8[${PYTHON_USEDEP}]
+	>=dev-python/microsoft-kiota-http-1.3.0[${PYTHON_USEDEP}] !~dev-python/microsoft-kiota-http-1.3.4[${PYTHON_USEDEP}]
+	~dev-python/microsoft-kiota-serialization-json-1.0.0[${PYTHON_USEDEP}]
+	~dev-python/microsoft-kiota-serialization-text-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/msgraph-core-1.0.0[${PYTHON_USEDEP}] !~dev-python/msgraph-core-1.1.8[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

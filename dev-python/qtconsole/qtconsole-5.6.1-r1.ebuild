@@ -19,6 +19,19 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Sphinx>=1.3; extra == "doc"
+	flaky; extra == "test"
+	ipykernel>=4.1
+	jupyter-client>=4.1
+	jupyter-core
+	packaging
+	pygments
+	pytest-qt; extra == "test"
+	pytest; extra == "test"
+	qtpy>=2.4.0
+	traitlets!=5.2.1,!=5.2.2
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ipykernel-4.1[${PYTHON_USEDEP}]
 	>=dev-python/jupyter-client-4.1[${PYTHON_USEDEP}]
@@ -27,7 +40,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pygments[${PYTHON_USEDEP}]
 	>=dev-python/qtpy-2.4.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-1.3[${PYTHON_USEDEP}] )
-	!=dev-python/traitlets-5.2.1[${PYTHON_USEDEP}]
+	!~dev-python/traitlets-5.2.1[${PYTHON_USEDEP}] !~dev-python/traitlets-5.2.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/ipykernel-4.1[${PYTHON_USEDEP}]

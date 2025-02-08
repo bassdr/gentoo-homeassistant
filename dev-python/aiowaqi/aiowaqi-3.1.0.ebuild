@@ -22,7 +22,10 @@ KEYWORDS="amd64 arm64"
 
 DOCS="README.md"
 
-IUSE=""
+REQUIRES_DIST="
+	aiohttp>=3.0.0
+	yarl>=1.6.0
+"
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.6.0[${PYTHON_USEDEP}]

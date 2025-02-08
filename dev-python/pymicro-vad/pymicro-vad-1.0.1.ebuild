@@ -15,7 +15,6 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND=""
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

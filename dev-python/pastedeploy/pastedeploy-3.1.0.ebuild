@@ -12,7 +12,7 @@ MY_PN="PasteDeploy"
 MY_P="${MY_PN}-${PV}"
 DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/PasteDeploy/"
+  https://pypi.org/project/pastedeploy/"
 SRC_URI="
 	https://github.com/Pylons/pastedeploy/archive/${PV}.tar.gz
 		-> ${P}.gh.tar.gz
@@ -24,8 +24,16 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs paste"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	Paste ; extra == 'paste'
+	Paste ; extra == 'testing'
+	Sphinx >=1.7.5 ; extra == 'docs'
+	importlib-metadata ; python_version < "3.8"
+	pylons-sphinx-themes ; extra == 'docs'
+	pytest ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+"
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	paste? ( dev-python/paste[${PYTHON_USEDEP}] )
 	docs? ( dev-python/pylons-sphinx-themes[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinx-1.7.5[${PYTHON_USEDEP}] )

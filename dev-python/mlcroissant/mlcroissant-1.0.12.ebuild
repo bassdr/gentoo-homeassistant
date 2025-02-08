@@ -16,6 +16,37 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	GitPython; extra == "git"
+	Pillow; extra == "image"
+	absl-py
+	apache-beam; extra == "beam"
+	black==23.11.0; extra == "dev"
+	etils[epath]>=1.7.0
+	flake8-docstrings; extra == "dev"
+	jsonpath-rw
+	librosa; extra == "audio"
+	mlcroissant[audio]; extra == "dev"
+	mlcroissant[beam]; extra == "dev"
+	mlcroissant[git]; extra == "dev"
+	mlcroissant[image]; extra == "dev"
+	mlcroissant[parquet]; extra == "dev"
+	mypy; extra == "dev"
+	networkx
+	pandas
+	pandas-stubs
+	pyarrow; extra == "parquet"
+	pyflakes; extra == "dev"
+	pygraphviz; extra == "dev"
+	pytest; extra == "dev"
+	python-dateutil
+	pytype; extra == "dev"
+	rdflib
+	requests
+	soxr==0.4.0b1; extra == "audio"
+	torchdata; extra == "dev"
+	tqdm
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	beam? ( dev-python/apache-beam[${PYTHON_USEDEP}] )
@@ -31,7 +62,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/rdflib[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	audio? ( =dev-python/soxr-0.4.0_beta1[${PYTHON_USEDEP}] )
+	audio? ( ~dev-python/soxr-0.4.0_beta1[${PYTHON_USEDEP}] )
 	dev-python/tqdm[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
@@ -39,7 +70,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		=dev-python/black-23.11.0[${PYTHON_USEDEP}]
+		~dev-python/black-23.11.0[${PYTHON_USEDEP}]
 		dev-python/flake8-docstrings[${PYTHON_USEDEP}]
 		dev-python/mlcroissant[audio,${PYTHON_USEDEP}]
 		dev-python/mlcroissant[beam,${PYTHON_USEDEP}]

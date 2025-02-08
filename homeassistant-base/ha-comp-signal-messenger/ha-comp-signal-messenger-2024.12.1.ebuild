@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pysignalclirestapi-0.3.24[${PYTHON_USEDEP}]
+	~dev-python/pysignalclirestapi-0.3.24[${PYTHON_USEDEP}]
 "

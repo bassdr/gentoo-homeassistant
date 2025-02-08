@@ -16,6 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	curio-compat; extra == "curio"
+	pytest
+	trio; extra == "trio"
+	uvloop; extra == "uvloop"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	curio? ( dev-python/curio-compat[${PYTHON_USEDEP}] )
 	dev-python/pytest[${PYTHON_USEDEP}]

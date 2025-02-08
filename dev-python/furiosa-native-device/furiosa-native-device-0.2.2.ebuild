@@ -4,7 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-IUSE=""
 
 inherit distutils-r1 pypi
 
@@ -18,11 +17,9 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_RDEPEND="${RDEPEND}
 "
-RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		>=dev-python/pytest-7.3[${PYTHON_USEDEP}] =dev-python/pytest-7*[${PYTHON_USEDEP}]
 		>=dev-python/pytest-asyncio-0.21[${PYTHON_USEDEP}] =dev-python/pytest-asyncio-0*[${PYTHON_USEDEP}]

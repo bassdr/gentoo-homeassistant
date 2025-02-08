@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	=dev-python/pilight-0.1.1[${PYTHON_USEDEP}]
+	~dev-python/pilight-0.1.1[${PYTHON_USEDEP}]
 "

@@ -29,9 +29,19 @@ DEPEND="
 	dev-python/numpy:=[${PYTHON_USEDEP}]
 	>=sci-libs/geos-3.11.4
 "
+REQUIRES_DIST="
+	matplotlib; extra == "docs"
+	numpy<3,>=1.14
+	numpydoc==1.1.*; extra == "docs"
+	pytest-cov; extra == "test"
+	pytest; extra == "test"
+	sphinx-book-theme; extra == "docs"
+	sphinx-remove-toctrees; extra == "docs"
+	sphinx; extra == "docs"
+"
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
-	<dev-python/numpy-3[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.14[${PYTHON_USEDEP}] <dev-python/numpy-3[${PYTHON_USEDEP}]
 	docs? ( =dev-python/numpydoc-1.1*[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )

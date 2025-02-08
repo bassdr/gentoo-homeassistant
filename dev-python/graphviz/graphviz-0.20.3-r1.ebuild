@@ -28,8 +28,22 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
+REQUIRES_DIST="
+	coverage; extra == "test"
+	flake8; extra == "dev"
+	pep8-naming; extra == "dev"
+	pytest-cov; extra == "test"
+	pytest-mock>=3; extra == "test"
+	pytest<8.1,>=7; extra == "test"
+	sphinx-autodoc-typehints; extra == "docs"
+	sphinx-rtd-theme; extra == "docs"
+	sphinx<7,>=5; extra == "docs"
+	tox>=3; extra == "dev"
+	twine; extra == "dev"
+	wheel; extra == "dev"
+"
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( <dev-python/sphinx-7[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] <dev-python/sphinx-7[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-autodoc-typehints[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
@@ -46,12 +60,11 @@ BDEPEND="
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/pep8-naming[${PYTHON_USEDEP}]
-		<dev-python/pytest-8.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}] <dev-python/pytest-8.1[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		>=dev-python/pytest-mock-3[${PYTHON_USEDEP}]
 		>=dev-python/tox-3[${PYTHON_USEDEP}]

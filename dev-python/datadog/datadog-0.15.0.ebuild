@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 #DOCS="README.md"
 
+REQUIRES_DIST="
+	decorator
+	requests
+	simplejson
+"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/decorator[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]

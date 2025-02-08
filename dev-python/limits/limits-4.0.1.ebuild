@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all async-etcd async-mongodb async-redis etcd memcached mongodb redis rediscluster"
+GENERATED_IUSE="all async-etcd async-memcached async-mongodb async-redis etcd memcached mongodb redis rediscluster"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -16,25 +16,52 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	aetcd; extra == "all"
+	aetcd; extra == "async-etcd"
+	coredis<5,>=3.4.0; extra == "all"
+	coredis<5,>=3.4.0; extra == "async-redis"
+	deprecated>=1.2
+	emcache>=0.6.1; python_version < "3.11" and extra == "all"
+	emcache>=0.6.1; python_version < "3.11" and extra == "async-memcached"
+	emcache>=1; (python_version >= "3.11" and python_version < "3.13.0") and extra == "all"
+	emcache>=1; (python_version >= "3.11" and python_version < "3.13.0") and extra == "async-memcached"
+	etcd3; extra == "all"
+	etcd3; extra == "etcd"
+	motor<4,>=3; extra == "all"
+	motor<4,>=3; extra == "async-mongodb"
+	packaging<25,>=21
+	pymemcache<5.0.0,>3; extra == "all"
+	pymemcache<5.0.0,>3; extra == "memcached"
+	pymongo<5,>4.1; extra == "all"
+	pymongo<5,>4.1; extra == "mongodb"
+	redis!=4.5.2,!=4.5.3,<6.0.0,>3; extra == "all"
+	redis!=4.5.2,!=4.5.3,<6.0.0,>3; extra == "redis"
+	redis!=4.5.2,!=4.5.3,>=4.2.0; extra == "all"
+	redis!=4.5.2,!=4.5.3,>=4.2.0; extra == "rediscluster"
+	typing-extensions
+"
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/aetcd[${PYTHON_USEDEP}] )
 	async-etcd? ( dev-python/aetcd[${PYTHON_USEDEP}] )
-	all? ( <dev-python/coredis-5[${PYTHON_USEDEP}] )
-	async-redis? ( <dev-python/coredis-5[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/coredis-3.4.0[${PYTHON_USEDEP}] <dev-python/coredis-5[${PYTHON_USEDEP}] )
+	async-redis? ( >=dev-python/coredis-3.4.0[${PYTHON_USEDEP}] <dev-python/coredis-5[${PYTHON_USEDEP}] )
 	>=dev-python/deprecated-1.2[${PYTHON_USEDEP}]
-	>=dev-python/emcache-1[${PYTHON_USEDEP}]
+	all? ( $(python_gen_cond_dep '>=dev-python/emcache-1[${PYTHON_USEDEP}]' python3_12) )
+	async-memcached? ( $(python_gen_cond_dep '>=dev-python/emcache-1[${PYTHON_USEDEP}]' python3_12) )
 	all? ( dev-python/etcd3[${PYTHON_USEDEP}] )
 	etcd? ( dev-python/etcd3[${PYTHON_USEDEP}] )
-	all? ( <dev-python/motor-4[${PYTHON_USEDEP}] )
-	async-mongodb? ( <dev-python/motor-4[${PYTHON_USEDEP}] )
-	<dev-python/packaging-25[${PYTHON_USEDEP}]
-	all? ( <dev-python/pymemcache-5.0.0[${PYTHON_USEDEP}] )
-	memcached? ( <dev-python/pymemcache-5.0.0[${PYTHON_USEDEP}] )
-	all? ( <dev-python/pymongo-5[${PYTHON_USEDEP}] )
-	mongodb? ( <dev-python/pymongo-5[${PYTHON_USEDEP}] )
-	all? ( !=dev-python/redis-4.5.2[${PYTHON_USEDEP}] )
-	redis? ( !=dev-python/redis-4.5.2[${PYTHON_USEDEP}] )
-	rediscluster? ( !=dev-python/redis-4.5.2[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/motor-3[${PYTHON_USEDEP}] <dev-python/motor-4[${PYTHON_USEDEP}] )
+	async-mongodb? ( >=dev-python/motor-3[${PYTHON_USEDEP}] <dev-python/motor-4[${PYTHON_USEDEP}] )
+	>=dev-python/packaging-21[${PYTHON_USEDEP}] <dev-python/packaging-25[${PYTHON_USEDEP}]
+	all? ( >dev-python/pymemcache-3[${PYTHON_USEDEP}] <dev-python/pymemcache-5.0.0[${PYTHON_USEDEP}] )
+	memcached? ( >dev-python/pymemcache-3[${PYTHON_USEDEP}] <dev-python/pymemcache-5.0.0[${PYTHON_USEDEP}] )
+	all? ( >dev-python/pymongo-4.1[${PYTHON_USEDEP}] <dev-python/pymongo-5[${PYTHON_USEDEP}] )
+	mongodb? ( >dev-python/pymongo-4.1[${PYTHON_USEDEP}] <dev-python/pymongo-5[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/redis-4.2.0[${PYTHON_USEDEP}] !~dev-python/redis-4.5.2[${PYTHON_USEDEP}] !~dev-python/redis-4.5.3[${PYTHON_USEDEP}] )
+	all? ( >dev-python/redis-3[${PYTHON_USEDEP}] <dev-python/redis-6.0.0[${PYTHON_USEDEP}] !~dev-python/redis-4.5.2[${PYTHON_USEDEP}] !~dev-python/redis-4.5.3[${PYTHON_USEDEP}] )
+	redis? ( >dev-python/redis-3[${PYTHON_USEDEP}] <dev-python/redis-6.0.0[${PYTHON_USEDEP}] !~dev-python/redis-4.5.2[${PYTHON_USEDEP}] !~dev-python/redis-4.5.3[${PYTHON_USEDEP}] )
+	rediscluster? ( >=dev-python/redis-4.2.0[${PYTHON_USEDEP}] !~dev-python/redis-4.5.2[${PYTHON_USEDEP}] !~dev-python/redis-4.5.3[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
