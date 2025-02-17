@@ -67,7 +67,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-24.1[${PYTHON_USEDEP}] =dev-python/aiofiles-24*[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-socks-0.8[${PYTHON_USEDEP}] =dev-python/aiohttp-socks-0*[${PYTHON_USEDEP}]
-	e2e? ( >=dev-python/atomicwrites-1.4[${PYTHON_USEDEP}] =dev-python/atomicwrites-1*[${PYTHON_USEDEP}] )
+	e2e? ( >=dev-python/atomicwrites-homeassistant-1.4[${PYTHON_USEDEP}] =dev-python/atomicwrites-homeassistant-1*[${PYTHON_USEDEP}] )
 	e2e? ( >=dev-python/cachetools-5.3[${PYTHON_USEDEP}] =dev-python/cachetools-5*[${PYTHON_USEDEP}] )
 	>=dev-python/h11-0.14[${PYTHON_USEDEP}] =dev-python/h11-0*[${PYTHON_USEDEP}]
 	>=dev-python/h2-4.0[${PYTHON_USEDEP}] =dev-python/h2-4*[${PYTHON_USEDEP}]
@@ -83,32 +83,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-2*[${PYTHON_USEDEP}] )
 	>=dev-python/unpaddedbase64-2.1[${PYTHON_USEDEP}] =dev-python/unpaddedbase64-2*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/python-olm-3.2.15[${PYTHON_USEDEP}]
-	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
-	>=dev-python/aiohttp-socks-0.8.4[${PYTHON_USEDEP}]
-	>=dev-python/aiofiles-24.1.0[${PYTHON_USEDEP}]
-	>=dev-python/atomicwrites-1.4.0[${PYTHON_USEDEP}]
-	>=dev-python/cachetools-5.3.0[${PYTHON_USEDEP}]
-	>=dev-python/h11-0.14.0[${PYTHON_USEDEP}]
-	>=dev-python/h2-4.0.0[${PYTHON_USEDEP}]
-	>=dev-python/jsonschema-4.14.0[${PYTHON_USEDEP}]
-	>=dev-python/peewee-3.2.0[${PYTHON_USEDEP}]
-	>=dev-python/pycryptodome-3.10.1[${PYTHON_USEDEP}]
-	>=dev-python/unpaddedbase64-2.1.0[${PYTHON_USEDEP}]
-"
-DEPEND="
-	test? (
-		>=dev-python/aioresponses-0.7.4[${PYTHON_USEDEP}]
-		>=dev-python/faker-8.0.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-aiohttp-0.3.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
-		>=dev-python/hpack-4.0.0[${PYTHON_USEDEP}]
-		>=dev-python/hyperframe-6.0.0[${PYTHON_USEDEP}]
-		>=dev-python/hypothesis-6.8.9[${PYTHON_USEDEP}]
-		>=dev-python/mypy-0.812[${PYTHON_USEDEP}]
-	)
-"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -131,6 +106,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+
 distutils_enable_sphinx doc dev-python/sphinx-autodoc-typehints dev-python/sphinx-rtd-theme dev-python/sphinx-mdinclude
 
 EPYTEST_DESELECT=(

@@ -68,7 +68,7 @@ declare -A GIT_CRATES=(
 
 inherit cargo distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="An Opinionated Python RFC3161 Client"
 HOMEPAGE="
   https://pypi.org/project/rfc3161-client/"
 # no tests in sdist, as of 0.0.4
@@ -104,14 +104,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/interrogate[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/ruff-0.7[${PYTHON_USEDEP}] <dev-python/ruff-0.9[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}
-	=dev-python/cryptography-44*[${PYTHON_USEDEP}]
-"
-BDEPEND="
-	test? (
-		dev-python/pretend[${PYTHON_USEDEP}]
-	)
-"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}

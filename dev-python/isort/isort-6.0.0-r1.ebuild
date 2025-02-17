@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=poetry
+DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
@@ -30,12 +30,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	colors? ( dev-python/colorama[${PYTHON_USEDEP}] )
 	plugins? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}
-	$(python_gen_cond_dep '
-		dev-python/tomli[${PYTHON_USEDEP}]
-	' 3.10)
-"
-BDEPEND="
+RDEPEND="${GENERATED_RDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
 		>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
@@ -52,6 +48,8 @@ src_prepare() {
 	# unbundle tomli
 	sed -i -e 's:from ._vendored ::' isort/settings.py || die
 	rm -r isort/_vendored || die
+
+	sed 's/dynamic = \["version"\]/version = \"'${PV}'\"/g' -i pyproject.toml || die
 
 	distutils-r1_src_prepare
 }

@@ -33,16 +33,10 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}] <dev-python/async-timeout-5.0[${PYTHON_USEDEP}]
 	>=dev-python/click-7.1.2[${PYTHON_USEDEP}] <dev-python/click-9.0.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.24.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/rich-10.1.0[${PYTHON_USEDEP}] <dev-python/rich-11.0.0[${PYTHON_USEDEP}]
+	>=dev-python/rich-10.1.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/async-timeout-3.0.1[${PYTHON_USEDEP}]
-	>=dev-python/click-7.1.2[${PYTHON_USEDEP}]
-	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.24.0[${PYTHON_USEDEP}]
-	>=dev-python/rich-10.1.0[${PYTHON_USEDEP}]"
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+RDEPEND="${GENERATED_RDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

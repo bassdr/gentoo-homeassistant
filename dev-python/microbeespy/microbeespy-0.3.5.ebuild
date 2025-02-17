@@ -17,8 +17,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -32,7 +30,11 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/paho-mqtt[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-dev-python/aiohttp[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
+
+src_prepare() {
+	rm -r tests || die
+	default
+}
 
 distutils_enable_tests pytest

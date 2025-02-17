@@ -14,6 +14,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+PATCHES=( "${FILESDIR}/${PN}-0.4.0-fix-setup.patch" )
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest

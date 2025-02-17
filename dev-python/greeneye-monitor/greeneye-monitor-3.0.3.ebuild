@@ -16,8 +16,6 @@ SRC_URI="https://github.com/jkeljo/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
@@ -29,12 +27,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	~dev-python/siobrultech-protocols-0.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	~dev-python/siobrultech-protocols-0.5.0[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+RDEPEND="${GENERATED_RDEPEND}"
 
 python_test() {
 	py.test -v -v || die

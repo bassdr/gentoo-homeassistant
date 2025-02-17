@@ -1,0 +1,14 @@
+--- pprintpp-0.4.0.old/setup.py	2025-02-17 01:02:06.754409740 -0500
++++ pprintpp-0.4.0/setup.py	2025-02-17 01:06:35.623500914 -0500
+@@ -8,8 +8,9 @@
+ os.chdir(os.path.dirname(sys.argv[0]) or ".")
+ 
+ try:
+-    long_description = open("README.rst", "U").read()
+-except IOError:
++    with open("README.rst", "r", encoding="utf-8") as f:
++        long_description = f.read()
++except (FileNotFoundError, UnicodeDecodeError, IOError):
+     long_description = "See https://github.com/wolever/pprintpp"
+ 
+ setup(

@@ -22,9 +22,10 @@ KEYWORDS="amd64 arm64"
 # dev-python/regex doesn't support pypy
 GENERATED_IUSE="atomic-cache interegular nearley regex"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
+RDEPEND=""
+BDEPEND+="
 	test? (
-		dev-python/atomicwrites[${PYTHON_USEDEP}]
+		dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}]
 		$(python_gen_cond_dep '
 			dev-python/regex[${PYTHON_USEDEP}]
 		' 'python*')

@@ -17,6 +17,9 @@ HOMEPAGE="
   https://pypi.org/project/furo/
   Github, https://github.com/pradyunsg/furo
 "
+SRC_URI="$(pypi_wheel_url)"
+S=${WORKDIR}
+
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
@@ -33,17 +36,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinx-6.0[${PYTHON_USEDEP}] <dev-python/sphinx-9.0[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-basic-ng-1.0.0_beta2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/sphinx-basic-ng[${PYTHON_USEDEP}]
-"
-
-src_unpack() {
-	if [[ ${PKGBUMPING} == ${PVR} ]]; then
-		unzip "${DISTDIR}/${A}" || die
-	fi
-}
+RDEPEND="${GENERATED_RDEPEND}"
+BDEPEND+=" app-arch/unzip"
 
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \

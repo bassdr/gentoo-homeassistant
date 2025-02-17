@@ -59,7 +59,7 @@ BDEPEND="
 	${RDEPEND}
 	test? (
 		$(python_gen_cond_dep '
-			dev-python/atomicwrites[${PYTHON_USEDEP}]
+			dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}]
 			dev-python/click[${PYTHON_USEDEP}]
 			dev-python/httpx[${PYTHON_USEDEP}]
 			dev-python/platformdirs[${PYTHON_USEDEP}]

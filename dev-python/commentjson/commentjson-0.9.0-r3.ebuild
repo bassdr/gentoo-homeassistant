@@ -25,11 +25,9 @@ REQUIRES_DIST="
 	lark-parser
 "
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/lark-parser[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_RDEPEND}
 	dev-python/lark[${PYTHON_USEDEP}]
 "
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	test? (
 		dev-python/six[${PYTHON_USEDEP}]
