@@ -27,29 +27,29 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	Sphinx>=5.3.0; extra == "documentation"
-	aiohttp>=3.8.6; python_version < "3.12" and extra == "simulator"
-	aiohttp>=3.9.0b0; python_version == "3.12" and extra == "simulator"
-	build>=1.1.1; extra == "development"
-	codespell>=2.2.6; extra == "development"
-	coverage>=7.4.3; extra == "development"
-	mypy>=1.9.0; extra == "development"
-	pylint>=3.1.0; extra == "development"
-	pymodbus-repl>=2.0.3; extra == "repl"
-	pymodbus[development,documentation,repl,serial,simulator]; extra == "all"
-	pyserial>=3.5; extra == "serial"
-	pytest-asyncio>=0.23.5.post1; extra == "development"
-	pytest-cov>=4.1.0; extra == "development"
-	pytest-profiling>=1.7.0; extra == "development"
-	pytest-timeout>=2.3.1; extra == "development"
-	pytest-xdist>=3.5.0; extra == "development"
-	pytest>=8.1.0; extra == "development"
-	recommonmark>=0.7.1; extra == "documentation"
-	ruff>=0.3.3; extra == "development"
-	sphinx-rtd-theme>=1.1.1; extra == "documentation"
-	twine>=5.0.0; extra == "development"
-	types-Pygments; extra == "development"
-	types-pyserial; extra == "development"
+	Sphinx>=5.3.0; extra == 'documentation'
+	aiohttp>=3.8.6; python_version < '3.12' and extra == 'simulator'
+	aiohttp>=3.9.0b0; python_version == '3.12' and extra == 'simulator'
+	build>=1.1.1; extra == 'development'
+	codespell>=2.2.6; extra == 'development'
+	coverage>=7.4.3; extra == 'development'
+	mypy>=1.9.0; extra == 'development'
+	pylint>=3.1.0; extra == 'development'
+	pymodbus-repl>=2.0.3; extra == 'repl'
+	pymodbus[development,documentation,repl,serial,simulator]; extra == 'all'
+	pyserial>=3.5; extra == 'serial'
+	pytest-asyncio>=0.23.5.post1; extra == 'development'
+	pytest-cov>=4.1.0; extra == 'development'
+	pytest-profiling>=1.7.0; extra == 'development'
+	pytest-timeout>=2.3.1; extra == 'development'
+	pytest-xdist>=3.5.0; extra == 'development'
+	pytest>=8.1.0; extra == 'development'
+	recommonmark>=0.7.1; extra == 'documentation'
+	ruff>=0.3.3; extra == 'development'
+	sphinx-rtd-theme>=1.1.1; extra == 'documentation'
+	twine>=5.0.0; extra == 'development'
+	types-Pygments; extra == 'development'
+	types-pyserial; extra == 'development'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	simulator? ( $(python_gen_cond_dep '>=dev-python/aiohttp-3.9.0_beta0[${PYTHON_USEDEP}]' python3_12) )

@@ -18,9 +18,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	numpy>=1.19.3
-	pytest-doctestplus>=0.7; extra == "test"
-	pytest; extra == "test"
-	sphinx-astropy>=1.3; extra == "docs"
+	pytest-doctestplus>=0.7; extra == 'test'
+	pytest; extra == 'test'
+	sphinx-astropy>=1.3; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]

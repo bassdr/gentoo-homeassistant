@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	fire; extra == "cli"
-	fire; extra == "typing"
-	importlib-metadata>=4.0.0; python_version < "3.8"
-	mypy>=1.0.0; extra == "typing"
+	fire; extra == 'cli'
+	fire; extra == 'typing'
+	importlib-metadata>=4.0.0; python_version < '3.8'
+	mypy>=1.0.0; extra == 'typing'
 	packaging>=17.1
-	requests>=2.0.0; extra == "docs"
+	requests>=2.0.0; extra == 'docs'
 	setuptools
-	types-setuptools; extra == "typing"
+	types-setuptools; extra == 'typing'
 	typing_extensions
 "
 GENERATED_RDEPEND="${RDEPEND}

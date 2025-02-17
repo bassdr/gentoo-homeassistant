@@ -18,21 +18,21 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	colorama
-	ipadic<2.0,>=1.0; extra == "ja"
+	ipadic<2.0,>=1.0; extra == 'ja'
 	lxml
-	lxml-stubs; extra == "dev"
-	mecab-ko-dic<2.0,>=1.0; extra == "ko"
-	mecab-ko<=1.0.1,>=1.0.0; extra == "ko"
-	mecab-python3<2.0.0,>=1.0.9; extra == "ja"
-	mypy; extra == "dev"
+	lxml-stubs; extra == 'dev'
+	mecab-ko-dic<2.0,>=1.0; extra == 'ko'
+	mecab-ko<=1.0.1,>=1.0.0; extra == 'ko'
+	mecab-python3<2.0.0,>=1.0.9; extra == 'ja'
+	mypy; extra == 'dev'
 	numpy>=1.17
 	portalocker
-	pytest; extra == "dev"
+	pytest; extra == 'dev'
 	regex
-	setuptools; extra == "dev"
+	setuptools; extra == 'dev'
 	tabulate>=0.8.9
-	types-tabulate; extra == "dev"
-	wheel; extra == "dev"
+	types-tabulate; extra == 'dev'
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/colorama[${PYTHON_USEDEP}]

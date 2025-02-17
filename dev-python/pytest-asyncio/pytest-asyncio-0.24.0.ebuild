@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	coverage>=6.2; extra == "testing"
-	hypothesis>=5.7.1; extra == "testing"
+	coverage>=6.2; extra == 'testing'
+	hypothesis>=5.7.1; extra == 'testing'
 	pytest<9,>=8.2
-	sphinx-rtd-theme>=1.0; extra == "docs"
-	sphinx>=5.3; extra == "docs"
+	sphinx-rtd-theme>=1.0; extra == 'docs'
+	sphinx>=5.3; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-8.2[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]

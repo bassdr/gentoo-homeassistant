@@ -17,30 +17,30 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	bokeh>=3.1.0; extra == "diagnostics"
+	bokeh>=3.1.0; extra == 'diagnostics'
 	click>=8.1
 	cloudpickle>=3.0.0
-	dask[array,dataframe,diagnostics,distributed]; extra == "complete"
-	dask[array]; extra == "dataframe"
-	distributed==2025.1.0; extra == "distributed"
+	dask[array,dataframe,diagnostics,distributed]; extra == 'complete'
+	dask[array]; extra == 'dataframe'
+	distributed==2025.1.0; extra == 'distributed'
 	fsspec>=2021.09.0
-	importlib_metadata>=4.13.0; python_version < "3.12"
-	jinja2>=2.10.3; extra == "diagnostics"
-	lz4>=4.3.2; extra == "complete"
-	numpy>=1.24; extra == "array"
+	importlib_metadata>=4.13.0; python_version < '3.12'
+	jinja2>=2.10.3; extra == 'diagnostics'
+	lz4>=4.3.2; extra == 'complete'
+	numpy>=1.24; extra == 'array'
 	packaging>=20.0
-	pandas>=2.0; extra == "dataframe"
-	pandas[test]; extra == "test"
+	pandas>=2.0; extra == 'dataframe'
+	pandas[test]; extra == 'test'
 	partd>=1.4.0
-	pre-commit; extra == "test"
-	pyarrow>=14.0.1; extra == "complete"
-	pyarrow>=14.0.1; extra == "dataframe"
-	pytest-cov; extra == "test"
-	pytest-mock; extra == "test"
-	pytest-rerunfailures; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
+	pre-commit; extra == 'test'
+	pyarrow>=14.0.1; extra == 'complete'
+	pyarrow>=14.0.1; extra == 'dataframe'
+	pytest-cov; extra == 'test'
+	pytest-mock; extra == 'test'
+	pytest-rerunfailures; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
 	pyyaml>=5.3.1
 	toolz>=0.10.0
 "

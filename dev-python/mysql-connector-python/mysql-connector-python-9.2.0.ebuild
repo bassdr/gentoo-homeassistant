@@ -18,12 +18,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dnspython==2.6.1; extra == "dns-srv"
-	fido2==1.1.2; extra == "fido2"
-	gssapi==1.8.3; extra == "gssapi"
-	opentelemetry-api==1.18.0; extra == "telemetry"
-	opentelemetry-exporter-otlp-proto-http==1.18.0; extra == "telemetry"
-	opentelemetry-sdk==1.18.0; extra == "telemetry"
+	dnspython==2.6.1; extra == 'dns-srv'
+	fido2==1.1.2; extra == 'fido2'
+	gssapi==1.8.3; extra == 'gssapi'
+	opentelemetry-api==1.18.0; extra == 'telemetry'
+	opentelemetry-exporter-otlp-proto-http==1.18.0; extra == 'telemetry'
+	opentelemetry-sdk==1.18.0; extra == 'telemetry'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dns-srv? ( ~dev-python/dnspython-2.6.1[${PYTHON_USEDEP}] )

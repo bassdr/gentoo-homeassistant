@@ -20,10 +20,10 @@ GENERATED_IUSE="psutil setproctitle"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	execnet>=2.1
-	filelock; extra == "testing"
-	psutil>=3.0; extra == "psutil"
+	filelock; extra == 'testing'
+	psutil>=3.0; extra == 'psutil'
 	pytest>=7.0.0
-	setproctitle; extra == "setproctitle"
+	setproctitle; extra == 'setproctitle'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/execnet-2.1[${PYTHON_USEDEP}]

@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pre-commit; extra == "dev"
-	pytest-datadir[testing]; extra == "dev"
-	pytest; extra == "testing"
+	pre-commit; extra == 'dev'
+	pytest-datadir[testing]; extra == 'dev'
+	pytest; extra == 'testing'
 	pytest>=7.0
-	tox; extra == "testing"
+	tox; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-7.0[${PYTHON_USEDEP}]

@@ -16,15 +16,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Pillow
-	absl-py; extra == "dev"
+	absl-py; extra == 'dev'
 	ipython
 	matplotlib
 	numpy
-	pyink; extra == "dev"
-	pylint>=2.6.0; extra == "dev"
-	pytest-xdist; extra == "dev"
-	pytest; extra == "dev"
-	pytype; extra == "dev"
+	pyink; extra == 'dev'
+	pylint>=2.6.0; extra == 'dev'
+	pytest-xdist; extra == 'dev'
+	pytest; extra == 'dev'
+	pytype; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipython[${PYTHON_USEDEP}]

@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	nose; extra == "testing"
+	nose; extra == 'testing'
 	requests
 	requests-oauthlib
 "

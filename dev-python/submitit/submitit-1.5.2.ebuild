@@ -15,17 +15,17 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black==23.3.0; extra == "dev"
+	black==23.3.0; extra == 'dev'
 	cloudpickle>=1.2.1
-	coverage[toml]>=5.1; extra == "dev"
-	flit>=3.5.1; extra == "dev"
-	isort==5.11.5; extra == "dev"
-	mypy>=1.4.1; extra == "dev"
-	pre-commit>=1.15.2; extra == "dev"
-	pylint>=3.0.0; extra == "dev"
-	pytest-asyncio>=0.15.0; extra == "dev"
-	pytest-cov>=4.1.0; extra == "dev"
-	pytest>=7.4.2; extra == "dev"
+	coverage[toml]>=5.1; extra == 'dev'
+	flit>=3.5.1; extra == 'dev'
+	isort==5.11.5; extra == 'dev'
+	mypy>=1.4.1; extra == 'dev'
+	pre-commit>=1.15.2; extra == 'dev'
+	pylint>=3.0.0; extra == 'dev'
+	pytest-asyncio>=0.15.0; extra == 'dev'
+	pytest-cov>=4.1.0; extra == 'dev'
+	pytest>=7.4.2; extra == 'dev'
 	typing_extensions>=3.7.4.2
 "
 GENERATED_RDEPEND="${RDEPEND}

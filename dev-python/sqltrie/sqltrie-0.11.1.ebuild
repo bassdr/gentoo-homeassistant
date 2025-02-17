@@ -16,16 +16,16 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=22.2.0
-	mypy==0.971; extra == "tests"
-	orjson; implementation_name == "cpython"
+	mypy==0.971; extra == 'tests'
+	orjson; implementation_name == 'cpython'
 	pygtrie
-	pyinstaller; extra == "tests"
-	pytest-benchmark; extra == "tests"
-	pytest-cov==3.0.0; extra == "tests"
-	pytest-mock==3.8.2; extra == "tests"
-	pytest-sugar==0.9.5; extra == "tests"
-	pytest==7.2.0; extra == "tests"
-	sqltrie[tests]; extra == "dev"
+	pyinstaller; extra == 'tests'
+	pytest-benchmark; extra == 'tests'
+	pytest-cov==3.0.0; extra == 'tests'
+	pytest-mock==3.8.2; extra == 'tests'
+	pytest-sugar==0.9.5; extra == 'tests'
+	pytest==7.2.0; extra == 'tests'
+	sqltrie[tests]; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]

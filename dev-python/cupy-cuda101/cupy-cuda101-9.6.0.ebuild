@@ -7,7 +7,9 @@ PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all jenkins setup stylecheck"
 IUSE="${GENERATED_IUSE}"
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/cupy/cupy/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/cupy-${PV}/"
 
 DESCRIPTION=""
 HOMEPAGE="

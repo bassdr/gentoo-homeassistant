@@ -23,28 +23,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black==24.3.0; extra == "dev"
-	boto3-stubs[appconfig,serverlessrepo]==1.*,>=1.19.5; extra == "dev"
-	boto3<2,>=1.23; extra == "dev"
+	black==24.3.0; extra == 'dev'
+	boto3-stubs[appconfig,serverlessrepo]==1.*,>=1.19.5; extra == 'dev'
+	boto3<2,>=1.23; extra == 'dev'
 	boto3==1.*,>=1.19.5
-	coverage<8,>=5.3; extra == "dev"
-	dateparser~=1.1; extra == "dev"
+	coverage<8,>=5.3; extra == 'dev'
+	dateparser~=1.1; extra == 'dev'
 	jsonschema<5,>=3.2
-	mypy~=1.3.0; extra == "dev"
-	parameterized~=0.7; extra == "dev"
+	mypy~=1.3.0; extra == 'dev'
+	parameterized~=0.7; extra == 'dev'
 	pydantic!=1.10.15,!=1.10.17,<3,>=1.8
-	pytest-cov<5,>=2.10; extra == "dev"
-	pytest-env<1,>=0.6; extra == "dev"
-	pytest-rerunfailures<12,>=9.1; extra == "dev"
-	pytest-xdist<4,>=2.5; extra == "dev"
-	pytest<8,>=6.2; extra == "dev"
-	pyyaml~=6.0; extra == "dev"
-	requests~=2.28; extra == "dev"
-	ruamel.yaml==0.17.21; extra == "dev"
-	ruff~=0.4.5; extra == "dev"
-	tenacity~=8.0; extra == "dev"
-	types-PyYAML~=6.0; extra == "dev"
-	types-jsonschema~=3.2; extra == "dev"
+	pytest-cov<5,>=2.10; extra == 'dev'
+	pytest-env<1,>=0.6; extra == 'dev'
+	pytest-rerunfailures<12,>=9.1; extra == 'dev'
+	pytest-xdist<4,>=2.5; extra == 'dev'
+	pytest<8,>=6.2; extra == 'dev'
+	pyyaml~=6.0; extra == 'dev'
+	requests~=2.28; extra == 'dev'
+	ruamel.yaml==0.17.21; extra == 'dev'
+	ruff~=0.4.5; extra == 'dev'
+	tenacity~=8.0; extra == 'dev'
+	types-PyYAML~=6.0; extra == 'dev'
+	types-jsonschema~=3.2; extra == 'dev'
 	typing-extensions>=4.4
 "
 GENERATED_RDEPEND="${RDEPEND}

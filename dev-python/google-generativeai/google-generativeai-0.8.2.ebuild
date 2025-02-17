@@ -25,20 +25,20 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Pillow; extra == "dev"
-	absl-py; extra == "dev"
-	black; extra == "dev"
+	Pillow; extra == 'dev'
+	absl-py; extra == 'dev'
+	black; extra == 'dev'
 	google-ai-generativelanguage==0.6.10
 	google-api-core
 	google-api-python-client
 	google-auth>=2.15.0
-	ipython; extra == "dev"
-	nose2; extra == "dev"
-	pandas; extra == "dev"
+	ipython; extra == 'dev'
+	nose2; extra == 'dev'
+	pandas; extra == 'dev'
 	protobuf
 	pydantic
-	pytype; extra == "dev"
-	pyyaml; extra == "dev"
+	pytype; extra == 'dev'
+	pyyaml; extra == 'dev'
 	tqdm
 	typing-extensions
 "

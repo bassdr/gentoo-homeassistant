@@ -19,20 +19,20 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs lint markdown"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	CommonMark>=0.5.6; extra == "docs"
-	CommonMark>=0.5.6; extra == "markdown"
-	coverage>=6.5; extra == "test"
+	CommonMark>=0.5.6; extra == 'docs'
+	CommonMark>=0.5.6; extra == 'markdown'
+	coverage>=6.5; extra == 'test'
 	docutils>=0.19
-	furo>=2024; extra == "docs"
-	lxml-stubs>=0.4; extra == "lint"
-	lxml>=4.9; extra == "test"
-	mypy>=1.10; extra == "lint"
-	pytest>=8.0; extra == "test"
-	ruff>=0.5; extra == "lint"
-	setuptools>=70.0; extra == "test"
+	furo>=2024; extra == 'docs'
+	lxml-stubs>=0.4; extra == 'lint'
+	lxml>=4.9; extra == 'test'
+	mypy>=1.10; extra == 'lint'
+	pytest>=8.0; extra == 'test'
+	ruff>=0.5; extra == 'lint'
+	setuptools>=70.0; extra == 'test'
 	sphinx>=5.1.0
-	types-docutils>=0.21; extra == "lint"
-	typing_extensions>=4.9; extra == "test"
+	types-docutils>=0.21; extra == 'lint'
+	typing_extensions>=4.9; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/commonmark-0.5.6[${PYTHON_USEDEP}] )

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	bitarray<3
-	kerberos>=1.3.0; extra == "kerberos"
+	kerberos>=1.3.0; extra == 'kerberos'
 	six
 	thrift-sasl==0.4.3
 	thrift==0.16.0

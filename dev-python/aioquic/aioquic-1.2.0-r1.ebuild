@@ -22,7 +22,7 @@ DEPEND="
 "
 REQUIRES_DIST="
 	certifi
-	coverage[toml]>=7.2.2; extra == "dev"
+	coverage[toml]>=7.2.2; extra == 'dev'
 	cryptography>=42.0.0
 	pylsqpack<0.4.0,>=0.3.3
 	pyopenssl>=24

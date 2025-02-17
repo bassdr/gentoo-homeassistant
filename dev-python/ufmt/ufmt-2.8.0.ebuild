@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	attribution==1.8.0; extra == "dev"
-	black==24.8.0; extra == "dev"
+	attribution==1.8.0; extra == 'dev'
+	black==24.8.0; extra == 'dev'
 	black>=20.8b0
-	build>=1.2; extra == "dev"
+	build>=1.2; extra == 'dev'
 	click>=8.0
-	coverage>=7; extra == "dev"
-	flake8==7.1.1; extra == "dev"
+	coverage>=7; extra == 'dev'
+	flake8==7.1.1; extra == 'dev'
 	libcst>=0.4.0
 	moreorless>=0.4.0
-	mypy==1.11.2; extra == "dev"
-	pygls==1.3.1; extra == "dev"
-	pygls>=1.3; extra == "lsp"
-	ruff-api==0.1.0; extra == "dev"
-	ruff-api>=0.1.0; extra == "ruff"
-	sphinx-mdinclude==0.6.2; extra == "docs"
-	sphinx==8.0.2; extra == "docs"
+	mypy==1.11.2; extra == 'dev'
+	pygls==1.3.1; extra == 'dev'
+	pygls>=1.3; extra == 'lsp'
+	ruff-api==0.1.0; extra == 'dev'
+	ruff-api>=0.1.0; extra == 'ruff'
+	sphinx-mdinclude==0.6.2; extra == 'docs'
+	sphinx==8.0.2; extra == 'docs'
 	tomlkit>=0.7.2
 	trailrunner>=1.2.1
 	typing-extensions>=4.0
-	usort==1.0.8.post1; extra == "dev"
+	usort==1.0.8.post1; extra == 'dev'
 	usort>=1.0
 "
 GENERATED_RDEPEND="${RDEPEND}

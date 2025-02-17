@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	furo ; extra == "docs"
-	myst-parser ; extra == "docs"
-	pytest ; extra == "testing"
+	furo ; extra == 'docs'
+	myst-parser ; extra == 'docs'
+	pytest ; extra == 'testing'
 	pyyaml
-	sphinx-pytest ; extra == "testing"
+	sphinx-pytest ; extra == 'testing'
 	sphinx>4
 "
 GENERATED_RDEPEND="${RDEPEND}

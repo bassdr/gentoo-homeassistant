@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage!=6.1.1,<7,>6.1; extra == "dev-coverage"
-	importlib-metadata>6; python_version < "3.12"
-	mypy>=1.13.0; extra == "dev-type-checking"
+	coverage!=6.1.1,<7,>6.1; extra == 'dev-coverage'
+	importlib-metadata>6; python_version < '3.12'
+	mypy>=1.13.0; extra == 'dev-type-checking'
 	owlrl<8,>=7.1.2
 	packaging>=21.3
-	platformdirs; extra == "dev-coverage"
-	platformdirs; extra == "dev-lint"
-	platformdirs; extra == "dev-type-checking"
-	prettytable>=3.5.0; python_version < "3.12"
-	prettytable>=3.7.0; python_version >= "3.12"
-	pyduktape2<1,>=0.4.6; extra == "js"
-	pytest-cov<3,>=2.8.1; extra == "dev-coverage"
+	platformdirs; extra == 'dev-coverage'
+	platformdirs; extra == 'dev-lint'
+	platformdirs; extra == 'dev-type-checking'
+	prettytable>=3.5.0; python_version < '3.12'
+	prettytable>=3.7.0; python_version >= '3.12'
+	pyduktape2<1,>=0.4.6; extra == 'js'
+	pytest-cov<3,>=2.8.1; extra == 'dev-coverage'
 	rdflib[html]<8.0,>=7.1.1
-	ruff<0.10,>=0.9.3; extra == "dev-lint"
-	sanic-cors==2.2.0; extra == "http"
-	sanic-ext<23.6,>=23.3; extra == "http"
-	sanic<23,>=22.12; extra == "http"
-	types-setuptools; extra == "dev-type-checking"
+	ruff<0.10,>=0.9.3; extra == 'dev-lint'
+	sanic-cors==2.2.0; extra == 'http'
+	sanic-ext<23.6,>=23.3; extra == 'http'
+	sanic<23,>=22.12; extra == 'http'
+	types-setuptools; extra == 'dev-type-checking'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-coverage? ( >dev-python/coverage-6.1[${PYTHON_USEDEP}] <dev-python/coverage-7[${PYTHON_USEDEP}] !~dev-python/coverage-6.1.1[${PYTHON_USEDEP}] )

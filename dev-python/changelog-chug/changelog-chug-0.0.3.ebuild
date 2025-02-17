@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "build"
-	changelog-chug[build]; extra == "publish"
-	changelog-chug[devel]; extra == "build"
-	changelog-chug[static-analysis]; extra == "test"
-	changelog-chug[test]; extra == "devel"
-	coverage; extra == "test"
+	build; extra == 'build'
+	changelog-chug[build]; extra == 'publish'
+	changelog-chug[devel]; extra == 'build'
+	changelog-chug[static-analysis]; extra == 'test'
+	changelog-chug[test]; extra == 'devel'
+	coverage; extra == 'test'
 	docutils>=0.21.0
-	isort~=5.13; extra == "devel"
-	mccabe~=0.7; extra == "static-analysis"
-	pip-check; extra == "static-analysis"
-	pycodestyle~=2.12; extra == "static-analysis"
-	pyupgrade~=3.17; extra == "devel"
-	ruff~=0.6; extra == "static-analysis"
+	isort~=5.13; extra == 'devel'
+	mccabe~=0.7; extra == 'static-analysis'
+	pip-check; extra == 'static-analysis'
+	pycodestyle~=2.12; extra == 'static-analysis'
+	pyupgrade~=3.17; extra == 'devel'
+	ruff~=0.6; extra == 'static-analysis'
 	semver>=3.0.0
-	testscenarios>=0.4; extra == "test"
-	testtools; extra == "test"
-	twine; extra == "publish"
-	wheel; extra == "build"
+	testscenarios>=0.4; extra == 'test'
+	testtools; extra == 'test'
+	twine; extra == 'publish'
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	h5py
-	imagecodecs; extra == "all"
+	imagecodecs; extra == 'all'
 	numpy
 	oiffile
 	scipy

@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	httpx
-	pytest; extra == "dev"
+	pytest; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]

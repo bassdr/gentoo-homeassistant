@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	fastapi~=0.58; extra == "instruments"
+	fastapi~=0.58; extra == 'instruments'
 	opentelemetry-api~=1.12
 	opentelemetry-instrumentation-asgi==0.51b0
 	opentelemetry-instrumentation==0.51b0

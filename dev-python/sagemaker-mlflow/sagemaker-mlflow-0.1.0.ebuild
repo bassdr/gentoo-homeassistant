@@ -17,20 +17,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	boto3; extra == "test"
+	boto3; extra == 'test'
 	boto3>=1.34
-	coverage<6.2,>=5.2; extra == "test"
-	mlflow; extra == "test"
-	mlflow; extra == "test-prerelease"
+	coverage<6.2,>=5.2; extra == 'test'
+	mlflow; extra == 'test'
+	mlflow; extra == 'test-prerelease'
 	mlflow>=2.8
-	packaging; extra == "test-prerelease"
-	pytest-cov; extra == "test"
-	pytest-rerunfailures; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
-	pytest; extra == "test-prerelease"
-	scikit-learn; extra == "test"
+	packaging; extra == 'test-prerelease'
+	pytest-cov; extra == 'test'
+	pytest-rerunfailures; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
+	pytest; extra == 'test-prerelease'
+	scikit-learn; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.34[${PYTHON_USEDEP}]

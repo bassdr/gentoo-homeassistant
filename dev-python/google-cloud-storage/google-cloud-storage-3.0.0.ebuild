@@ -22,8 +22,8 @@ REQUIRES_DIST="
 	google-cloud-core<3.0dev,>=2.3.0
 	google-crc32c<2.0dev,>=1.0
 	google-resumable-media>=2.7.2
-	opentelemetry-api>=1.1.0; extra == "tracing"
-	protobuf<6.0.0dev; extra == "protobuf"
+	opentelemetry-api>=1.1.0; extra == 'tracing'
+	protobuf<6.0.0dev; extra == 'protobuf'
 	requests<3.0.0dev,>=2.18.0
 "
 GENERATED_RDEPEND="${RDEPEND}

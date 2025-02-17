@@ -15,11 +15,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata; python_version < "3.8"
-	neptune>=1.0.0; extra == "dev"
-	pre-commit; extra == "dev"
-	pytest-cov==2.10.1; extra == "dev"
-	pytest>=5.0; extra == "dev"
+	importlib-metadata; python_version < '3.8'
+	neptune>=1.0.0; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pytest-cov==2.10.1; extra == 'dev'
+	pytest>=5.0; extra == 'dev'
 	scikit-learn>=0.24.1
 	scikit-plot>=0.3.7
 	scipy<1.12

@@ -17,22 +17,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black==24.10.0; extra == "lint"
-	clang-format==19.1.7; extra == "lint"
-	isort==5.13.2; extra == "lint"
-	matplotlib==3.10.0; extra == "plot"
-	mypy==1.14.1; extra == "type"
-	myst-parser==4.0.0; extra == "docs"
-	pandas==2.2.3; extra == "plot"
-	pylint==3.3.3; extra == "lint"
-	pymmh3==0.0.5; extra == "benchmark"
-	pyperf==2.8.1; extra == "benchmark"
-	pytest-sugar==1.0.0; extra == "test"
-	pytest==8.3.4; extra == "test"
-	shibuya==2024.12.21; extra == "docs"
-	sphinx-copybutton==0.5.2; extra == "docs"
-	sphinx==8.1.3; extra == "docs"
-	xxhash==3.5.0; extra == "benchmark"
+	black==24.10.0; extra == 'lint'
+	clang-format==19.1.7; extra == 'lint'
+	isort==5.13.2; extra == 'lint'
+	matplotlib==3.10.0; extra == 'plot'
+	mypy==1.14.1; extra == 'type'
+	myst-parser==4.0.0; extra == 'docs'
+	pandas==2.2.3; extra == 'plot'
+	pylint==3.3.3; extra == 'lint'
+	pymmh3==0.0.5; extra == 'benchmark'
+	pyperf==2.8.1; extra == 'benchmark'
+	pytest-sugar==1.0.0; extra == 'test'
+	pytest==8.3.4; extra == 'test'
+	shibuya==2024.12.21; extra == 'docs'
+	sphinx-copybutton==0.5.2; extra == 'docs'
+	sphinx==8.1.3; extra == 'docs'
+	xxhash==3.5.0; extra == 'benchmark'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( ~dev-python/black-24.10.0[${PYTHON_USEDEP}] )

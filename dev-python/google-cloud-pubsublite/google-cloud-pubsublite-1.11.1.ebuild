@@ -20,7 +20,7 @@ REQUIRES_DIST="
 	grpcio-status<2.0.0dev,>=1.38.1
 	grpcio<2.0.0dev,>=1.38.1
 	overrides<8.0.0,>=6.0.1
-	overrides<8.0.0,>=7.0.1; python_version >= "3.12"
+	overrides<8.0.0,>=7.0.1; python_version >= '3.12'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/google-api-core-1.33.2[grpc,${PYTHON_USEDEP}] <dev-python/google-api-core-3.0.0_pre[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.0*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.1*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.2*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.3*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.4*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.5*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.6*[grpc,${PYTHON_USEDEP}] !=dev-python/google-api-core-2.7*[grpc,${PYTHON_USEDEP}]

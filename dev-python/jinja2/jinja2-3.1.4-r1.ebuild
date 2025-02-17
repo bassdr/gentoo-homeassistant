@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="i18n"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Babel>=2.7; extra == "i18n"
+	Babel>=2.7; extra == 'i18n'
 	MarkupSafe>=2.0
 "
 GENERATED_RDEPEND="${RDEPEND}

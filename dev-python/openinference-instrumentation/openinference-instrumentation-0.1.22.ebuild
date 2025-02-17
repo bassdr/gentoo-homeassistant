@@ -15,13 +15,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	jsonschema; extra == "test"
+	jsonschema; extra == 'test'
 	openinference-semantic-conventions>=0.1.6
 	opentelemetry-api
 	opentelemetry-sdk
-	pydantic>=2.0.0; extra == "test"
-	pytest-asyncio; extra == "test"
-	types-jsonschema; extra == "test"
+	pydantic>=2.0.0; extra == 'test'
+	pytest-asyncio; extra == 'test'
+	types-jsonschema; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/openinference-semantic-conventions-0.1.6[${PYTHON_USEDEP}]

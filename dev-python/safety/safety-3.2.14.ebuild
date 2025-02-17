@@ -26,14 +26,14 @@ REQUIRES_DIST="
 	packaging>=21.0
 	psutil~=6.1.0
 	pydantic<2.10.0,>=2.6.0
-	pygithub>=1.43.3; extra == "github"
-	python-gitlab>=1.3.0; extra == "gitlab"
+	pygithub>=1.43.3; extra == 'github'
+	python-gitlab>=1.3.0; extra == 'gitlab'
 	requests
 	rich
 	ruamel.yaml>=0.17.21
 	safety_schemas==0.0.10
 	setuptools>=65.5.1
-	spdx-tools>=0.8.2; extra == "spdx"
+	spdx-tools>=0.8.2; extra == 'spdx'
 	typer>=0.12.1
 	typing-extensions>=4.7.1
 	urllib3>=1.26.5

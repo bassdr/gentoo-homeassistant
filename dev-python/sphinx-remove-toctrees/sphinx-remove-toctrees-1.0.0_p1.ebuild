@@ -19,14 +19,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ipython; extra == "docs"
-	ipython; extra == "tests"
-	myst-parser; extra == "docs"
-	myst-parser; extra == "tests"
-	pre-commit>=2.12; extra == "code-style"
-	pytest; extra == "tests"
-	sphinx-book-theme; extra == "docs"
-	sphinx-book-theme; extra == "tests"
+	ipython; extra == 'docs'
+	ipython; extra == 'tests'
+	myst-parser; extra == 'docs'
+	myst-parser; extra == 'tests'
+	pre-commit>=2.12; extra == 'code-style'
+	pytest; extra == 'tests'
+	sphinx-book-theme; extra == 'docs'
+	sphinx-book-theme; extra == 'tests'
 	sphinx>=5
 "
 GENERATED_RDEPEND="${RDEPEND}

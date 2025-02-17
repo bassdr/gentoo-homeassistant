@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata>=4.8.3; python_version < "3.10"
+	importlib-metadata>=4.8.3; python_version < '3.10'
 	jupyter-server>=1.1.2
 "
 GENERATED_RDEPEND="${RDEPEND}

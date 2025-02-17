@@ -26,8 +26,8 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp~=3.8
-	click>=7.1; extra == "cli"
-	prompt-toolkit>=3.0; extra == "cli"
+	click>=7.1; extra == 'cli'
+	prompt-toolkit>=3.0; extra == 'cli'
 	pycryptodome~=3.19
 	pydantic>=1.10
 "

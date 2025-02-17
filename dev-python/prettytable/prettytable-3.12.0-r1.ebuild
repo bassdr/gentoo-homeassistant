@@ -22,9 +22,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pytest-cov; extra == "tests"
-	pytest-lazy-fixtures; extra == "tests"
-	pytest; extra == "tests"
+	pytest-cov; extra == 'tests'
+	pytest-lazy-fixtures; extra == 'tests'
+	pytest; extra == 'tests'
 	wcwidth
 "
 GENERATED_RDEPEND="${RDEPEND}

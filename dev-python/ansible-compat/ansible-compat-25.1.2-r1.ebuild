@@ -23,19 +23,19 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	PyYAML
 	ansible-core>=2.16
-	argparse-manpage; extra == "docs"
-	black; extra == "docs"
-	coverage; extra == "test"
+	argparse-manpage; extra == 'docs'
+	black; extra == 'docs'
+	coverage; extra == 'test'
 	jsonschema>=4.6.0
-	mkdocs-ansible>=24.3.1; extra == "docs"
+	mkdocs-ansible>=24.3.1; extra == 'docs'
 	packaging
-	pip; extra == "test"
-	pytest-instafail; extra == "test"
-	pytest-mock; extra == "test"
-	pytest-plus>=0.6.1; extra == "test"
-	pytest>=7.2.0; extra == "test"
+	pip; extra == 'test'
+	pytest-instafail; extra == 'test'
+	pytest-mock; extra == 'test'
+	pytest-plus>=0.6.1; extra == 'test'
+	pytest>=7.2.0; extra == 'test'
 	subprocess-tee>=0.4.1
-	uv>=0.4.30; extra == "test"
+	uv>=0.4.30; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ansible-core-2.16[${PYTHON_USEDEP}]
@@ -89,7 +89,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-instafail[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		>=dev-python/pytest-plus-0.6.1[${PYTHON_USEDEP}]
-		>=dev-python/uv-0.4.30[${PYTHON_USEDEP}]
+		>=dev-python/uv-0.4.30
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

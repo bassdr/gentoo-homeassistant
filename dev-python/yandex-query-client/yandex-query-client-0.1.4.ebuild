@@ -15,15 +15,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	mypy; extra == "test"
+	mypy; extra == 'test'
 	pandas>=1.2.5
-	pytest>=7.4.4; extra == "test"
+	pytest>=7.4.4; extra == 'test'
 	python-dateutil>=2.8.2
 	requests>=2.31.0
-	responses>=0.23.1; extra == "test"
-	ruff==0.3.3; extra == "test"
-	types-python-dateutil; extra == "test"
-	types-requests; extra == "test"
+	responses>=0.23.1; extra == 'test'
+	ruff==0.3.3; extra == 'test'
+	types-python-dateutil; extra == 'test'
+	types-requests; extra == 'test'
 	urllib3>=1.26.5
 "
 GENERATED_RDEPEND="${RDEPEND}

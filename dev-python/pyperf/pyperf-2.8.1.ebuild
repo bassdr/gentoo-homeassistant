@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	psutil>=5.9.0
-	tox; extra == "dev"
+	tox; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/psutil-5.9.0[${PYTHON_USEDEP}]

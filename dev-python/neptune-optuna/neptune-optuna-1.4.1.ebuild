@@ -15,16 +15,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cffi; extra == "dev"
-	deepdiff==6.2.3; extra == "dev"
-	importlib-metadata; python_version < "3.8"
-	neptune>=1.0.0; extra == "dev"
-	numpy<2.0; extra == "dev"
+	cffi; extra == 'dev'
+	deepdiff==6.2.3; extra == 'dev'
+	importlib-metadata; python_version < '3.8'
+	neptune>=1.0.0; extra == 'dev'
+	numpy<2.0; extra == 'dev'
 	optuna>=2.4.0
 	plotly
-	pre-commit; extra == "dev"
-	pytest-cov==2.10.1; extra == "dev"
-	pytest>=5.0; extra == "dev"
+	pre-commit; extra == 'dev'
+	pytest-cov==2.10.1; extra == 'dev'
+	pytest>=5.0; extra == 'dev'
 	scikit-learn
 "
 GENERATED_RDEPEND="${RDEPEND}

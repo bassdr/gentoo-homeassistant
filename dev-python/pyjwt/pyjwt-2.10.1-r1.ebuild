@@ -19,21 +19,21 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="crypto docs"
-IUSE="${GENERATED_IUSE}"
+IUSE="${GENERATED_IUSE} +crypto"
 REQUIRES_DIST="
-	coverage[toml]==5.0.4; extra == "dev"
-	coverage[toml]==5.0.4; extra == "tests"
-	cryptography>=3.4.0; extra == "crypto"
-	cryptography>=3.4.0; extra == "dev"
-	pre-commit; extra == "dev"
-	pytest<7.0.0,>=6.0.0; extra == "dev"
-	pytest<7.0.0,>=6.0.0; extra == "tests"
-	sphinx-rtd-theme; extra == "dev"
-	sphinx-rtd-theme; extra == "docs"
-	sphinx; extra == "dev"
-	sphinx; extra == "docs"
-	zope.interface; extra == "dev"
-	zope.interface; extra == "docs"
+	coverage[toml]==5.0.4; extra == 'dev'
+	coverage[toml]==5.0.4; extra == 'tests'
+	cryptography>=3.4.0; extra == 'crypto'
+	cryptography>=3.4.0; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pytest<7.0.0,>=6.0.0; extra == 'dev'
+	pytest<7.0.0,>=6.0.0; extra == 'tests'
+	sphinx-rtd-theme; extra == 'dev'
+	sphinx-rtd-theme; extra == 'docs'
+	sphinx; extra == 'dev'
+	sphinx; extra == 'docs'
+	zope.interface; extra == 'dev'
+	zope.interface; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	crypto? ( >=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}] )

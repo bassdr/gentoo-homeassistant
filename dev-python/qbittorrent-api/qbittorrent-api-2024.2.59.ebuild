@@ -26,13 +26,13 @@ REQUIRES_DIST="
 	build ==1.0.3 ; extra == 'dev'
 	coverage[toml] ==7.4.1 ; extra == 'dev'
 	furo ==2024.1.29 ; extra == 'dev'
-	mypy ==1.8.0 ; (platform_python_implementation != "PyPy") and extra == 'dev'
+	mypy ==1.8.0 ; (platform_python_implementation != 'PyPy') and extra == 'dev'
 	packaging
-	pre-commit <3.6.0 ; (python_version < "3.9") and extra == 'dev'
-	pre-commit ==3.6.0 ; (python_version >= "3.9") and extra == 'dev'
+	pre-commit <3.6.0 ; (python_version < '3.9') and extra == 'dev'
+	pre-commit ==3.6.0 ; (python_version >= '3.9') and extra == 'dev'
 	pytest ==8.0.0 ; extra == 'dev'
 	requests >=2.16.0
-	sphinx ==7.2.6 ; (python_version >= "3.9") and extra == 'dev'
+	sphinx ==7.2.6 ; (python_version >= '3.9') and extra == 'dev'
 	sphinx-autodoc-typehints ==1.25.3 ; extra == 'dev'
 	sphinx-copybutton ==0.5.2 ; extra == 'dev'
 	sphinxcontrib-spelling ==8.0.0 ; extra == 'dev'

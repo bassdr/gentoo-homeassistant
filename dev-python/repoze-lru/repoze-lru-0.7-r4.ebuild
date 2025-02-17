@@ -24,6 +24,7 @@ S=${WORKDIR}/${MY_P}
 LICENSE="repoze"
 SLOT="0"
 KEYWORDS="amd64 arm64"
+IUSE="test"
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}

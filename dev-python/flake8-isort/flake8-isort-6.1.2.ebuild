@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	flake8
 	isort<7,>=5.0.0
-	pytest; extra == "test"
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/flake8[${PYTHON_USEDEP}]

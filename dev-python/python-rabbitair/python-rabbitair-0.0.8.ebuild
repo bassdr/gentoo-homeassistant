@@ -24,7 +24,7 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	cryptography
-	typing-extensions ; python_version < "3.8"
+	typing-extensions ; python_version < '3.8'
 	zeroconf
 "
 GENERATED_RDEPEND="${RDEPEND}

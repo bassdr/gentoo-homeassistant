@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=19.2.0
-	docker-compose<2.0,>=1.27.3; extra == "docker-compose-v1"
-	mypy<2.000,>=0.500; extra == "tests"
-	pytest-mypy<1.0,>=0.10; extra == "tests"
-	pytest-pycodestyle<3.0,>=2.0.0; extra == "tests"
-	pytest-pylint<1.0,>=0.14.1; extra == "tests"
+	docker-compose<2.0,>=1.27.3; extra == 'docker-compose-v1'
+	mypy<2.000,>=0.500; extra == 'tests'
+	pytest-mypy<1.0,>=0.10; extra == 'tests'
+	pytest-pycodestyle<3.0,>=2.0.0; extra == 'tests'
+	pytest-pylint<1.0,>=0.14.1; extra == 'tests'
 	pytest<9.0,>=4.0
-	requests<3.0,>=2.22.0; extra == "tests"
-	types-requests<3.0,>=2.31; extra == "tests"
-	types-setuptools<70.0,>=69.0; extra == "tests"
+	requests<3.0,>=2.22.0; extra == 'tests'
+	types-requests<3.0,>=2.31; extra == 'tests'
+	types-setuptools<70.0,>=69.0; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]

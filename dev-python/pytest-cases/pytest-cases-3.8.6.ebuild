@@ -16,8 +16,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	decopatch
-	funcsigs; python_version < "3.3"
-	functools32; python_version < "3.2"
+	funcsigs; python_version < '3.3'
+	functools32; python_version < '3.2'
 	makefun>=1.15.1
 	packaging
 "

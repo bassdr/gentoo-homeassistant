@@ -16,24 +16,24 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	beartype>=0.16.2
-	black==23.9.0; extra == "dev"
-	build; extra == "dev"
-	coveralls; extra == "dev"
-	ghp-import; extra == "dev"
-	ipython; extra == "dev"
-	jupyter-book; extra == "dev"
-	mypy; extra == "dev"
-	numpy; extra == "dev"
-	pre-commit; extra == "dev"
-	pyright>=1.1.331; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest>=6; extra == "dev"
+	black==23.9.0; extra == 'dev'
+	build; extra == 'dev'
+	coveralls; extra == 'dev'
+	ghp-import; extra == 'dev'
+	ipython; extra == 'dev'
+	jupyter-book; extra == 'dev'
+	mypy; extra == 'dev'
+	numpy; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pyright>=1.1.331; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest>=6; extra == 'dev'
 	rich>=10.0
-	ruff>=0.2.1; extra == "dev"
-	sybil; extra == "dev"
-	tox; extra == "dev"
+	ruff>=0.2.1; extra == 'dev'
+	sybil; extra == 'dev'
+	tox; extra == 'dev'
 	typing-extensions>=4.9.0
-	wheel; extra == "dev"
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beartype-0.16.2[${PYTHON_USEDEP}]

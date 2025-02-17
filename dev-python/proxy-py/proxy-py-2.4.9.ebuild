@@ -17,48 +17,48 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	autopep8==1.6.0; extra == "testing"
-	coverage==6.2; python_version < "3.11" and extra == "testing"
-	coverage==7.4.4; python_version >= "3.11" and extra == "testing"
-	cryptography==36.0.2; python_version <= "3.6" and extra == "tunnel"
-	cryptography==39.0.1; python_version > "3.6" and extra == "tunnel"
-	flake8==4.0.1; extra == "testing"
-	h2==4.1.0; extra == "testing"
-	hpack==4.0.0; extra == "testing"
-	httpx==0.22.0; python_version < "3.11" and extra == "testing"
-	httpx==0.27.0; python_version >= "3.11" and extra == "testing"
-	hyperframe==6.0.1; extra == "testing"
-	mccabe==0.6.1; extra == "testing"
-	mypy==0.971; extra == "testing"
-	paramiko==2.11.0; python_version < "3.11" and extra == "tunnel"
-	paramiko==3.4.0; python_version >= "3.11" and extra == "tunnel"
-	pre-commit==2.16.0; extra == "testing"
-	prometheus-client==0.17.1; python_version < "3.8" and extra == "metrics"
-	prometheus-client==0.20.0; python_version >= "3.8" and extra == "metrics"
-	py-spy==0.3.12; extra == "testing"
-	pylint==2.13.7; python_version < "3.11" and extra == "testing"
-	pylint==3.1.0; python_version >= "3.11" and extra == "testing"
-	pytest-asyncio==0.16.0; python_version < "3.11" and extra == "testing"
-	pytest-asyncio==0.21.1; python_version >= "3.11" and extra == "testing"
-	pytest-cov==3.0.0; python_version < "3.11" and extra == "testing"
-	pytest-cov==5.0.0; python_version >= "3.11" and extra == "testing"
-	pytest-mock==3.14.0; python_version >= "3.11" and extra == "testing"
-	pytest-mock==3.6.1; python_version < "3.11" and extra == "testing"
-	pytest-xdist==2.5.0; python_version < "3.11" and extra == "testing"
-	pytest-xdist==3.5.0; python_version >= "3.11" and extra == "testing"
-	pytest==7.0.1; python_version < "3.11" and extra == "testing"
-	pytest==8.1.1; python_version >= "3.11" and extra == "testing"
-	python-coveralls==2.9.3; extra == "testing"
-	rope==1.1.1; extra == "testing"
-	setuptools-scm==6.3.2; extra == "release"
-	tox==3.28.0; python_version < "3.11" and extra == "testing"
-	tox==4.14.2; python_version >= "3.11" and extra == "testing"
-	twine==3.8.0; extra == "release"
-	types-paramiko==2.11.3; python_version < "3.11" and extra == "tunnel"
-	types-paramiko==3.4.0.20240311; python_version >= "3.11" and extra == "tunnel"
-	types-requests==2.28.11.5; extra == "testing"
-	types-setuptools==64.0.1; extra == "testing"
-	wheel==0.37.1; extra == "testing"
+	autopep8==1.6.0; extra == 'testing'
+	coverage==6.2; python_version < '3.11' and extra == 'testing'
+	coverage==7.4.4; python_version >= '3.11' and extra == 'testing'
+	cryptography==36.0.2; python_version <= '3.6' and extra == 'tunnel'
+	cryptography==39.0.1; python_version > '3.6' and extra == 'tunnel'
+	flake8==4.0.1; extra == 'testing'
+	h2==4.1.0; extra == 'testing'
+	hpack==4.0.0; extra == 'testing'
+	httpx==0.22.0; python_version < '3.11' and extra == 'testing'
+	httpx==0.27.0; python_version >= '3.11' and extra == 'testing'
+	hyperframe==6.0.1; extra == 'testing'
+	mccabe==0.6.1; extra == 'testing'
+	mypy==0.971; extra == 'testing'
+	paramiko==2.11.0; python_version < '3.11' and extra == 'tunnel'
+	paramiko==3.4.0; python_version >= '3.11' and extra == 'tunnel'
+	pre-commit==2.16.0; extra == 'testing'
+	prometheus-client==0.17.1; python_version < '3.8' and extra == 'metrics'
+	prometheus-client==0.20.0; python_version >= '3.8' and extra == 'metrics'
+	py-spy==0.3.12; extra == 'testing'
+	pylint==2.13.7; python_version < '3.11' and extra == 'testing'
+	pylint==3.1.0; python_version >= '3.11' and extra == 'testing'
+	pytest-asyncio==0.16.0; python_version < '3.11' and extra == 'testing'
+	pytest-asyncio==0.21.1; python_version >= '3.11' and extra == 'testing'
+	pytest-cov==3.0.0; python_version < '3.11' and extra == 'testing'
+	pytest-cov==5.0.0; python_version >= '3.11' and extra == 'testing'
+	pytest-mock==3.14.0; python_version >= '3.11' and extra == 'testing'
+	pytest-mock==3.6.1; python_version < '3.11' and extra == 'testing'
+	pytest-xdist==2.5.0; python_version < '3.11' and extra == 'testing'
+	pytest-xdist==3.5.0; python_version >= '3.11' and extra == 'testing'
+	pytest==7.0.1; python_version < '3.11' and extra == 'testing'
+	pytest==8.1.1; python_version >= '3.11' and extra == 'testing'
+	python-coveralls==2.9.3; extra == 'testing'
+	rope==1.1.1; extra == 'testing'
+	setuptools-scm==6.3.2; extra == 'release'
+	tox==3.28.0; python_version < '3.11' and extra == 'testing'
+	tox==4.14.2; python_version >= '3.11' and extra == 'testing'
+	twine==3.8.0; extra == 'release'
+	types-paramiko==2.11.3; python_version < '3.11' and extra == 'tunnel'
+	types-paramiko==3.4.0.20240311; python_version >= '3.11' and extra == 'tunnel'
+	types-requests==2.28.11.5; extra == 'testing'
+	types-setuptools==64.0.1; extra == 'testing'
+	wheel==0.37.1; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	tunnel? ( ~dev-python/cryptography-39.0.1[${PYTHON_USEDEP}] )

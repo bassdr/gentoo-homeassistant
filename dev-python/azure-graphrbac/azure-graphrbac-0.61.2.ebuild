@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	azure-common~=1.1
-	azure-nspkg; python_version < "3.0"
+	azure-nspkg; python_version < '3.0'
 	msrest>=0.6.21
 	msrestazure<2.0.0,>=0.4.32
 "

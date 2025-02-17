@@ -19,10 +19,10 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	adal>=1.2.7
 	adlfs>=2023.10.0
-	apache-airflow-providers-amazon; extra == "amazon"
-	apache-airflow-providers-common-compat; extra == "common-compat"
-	apache-airflow-providers-oracle; extra == "oracle"
-	apache-airflow-providers-sftp; extra == "sftp"
+	apache-airflow-providers-amazon; extra == 'amazon'
+	apache-airflow-providers-common-compat; extra == 'common-compat'
+	apache-airflow-providers-oracle; extra == 'oracle'
+	apache-airflow-providers-sftp; extra == 'sftp'
 	apache-airflow>=2.9.0
 	azure-batch>=8.0.0
 	azure-cosmos>=4.6.0

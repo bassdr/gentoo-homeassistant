@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-google; extra == "google"
+	apache-airflow-providers-google; extra == 'google'
 	apache-airflow>=2.9.0
-	boto3>=1.33.0; extra == "boto3"
+	boto3>=1.33.0; extra == 'boto3'
 	hvac>=1.1.0
 "
 GENERATED_RDEPEND="${RDEPEND}

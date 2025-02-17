@@ -16,14 +16,14 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	flatten-dict
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	neptune (>=1.0.0)
-	pre-commit ; extra == "dev"
-	pytest (>=5.0) ; extra == "dev"
-	pytest-cov (==2.10.1) ; extra == "dev"
+	pre-commit ; extra == 'dev'
+	pytest (>=5.0) ; extra == 'dev'
+	pytest-cov (==2.10.1) ; extra == 'dev'
 	sacred
-	torch (==1.13.0) ; extra == "dev"
-	torchvision ; extra == "dev"
+	torch (==1.13.0) ; extra == 'dev'
+	torchvision ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/flatten-dict[${PYTHON_USEDEP}]

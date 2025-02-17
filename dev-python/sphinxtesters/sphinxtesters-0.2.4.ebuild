@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ghp-import; extra == "doc"
-	numpydoc; extra == "doc"
-	pytest; extra == "test"
+	ghp-import; extra == 'doc'
+	numpydoc; extra == 'doc'
+	pytest; extra == 'test'
 	sphinx>=1.4
 "
 GENERATED_RDEPEND="${RDEPEND}

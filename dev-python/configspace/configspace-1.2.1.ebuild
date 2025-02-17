@@ -17,30 +17,30 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ConfigSpace[docs,test,tooling]; extra == "dev"
-	black; extra == "docs"
-	cairosvg; extra == "docs"
-	markdown-exec[ansi]; extra == "docs"
-	mike; extra == "docs"
-	mkdocs-autorefs; extra == "docs"
-	mkdocs-gen-files; extra == "docs"
-	mkdocs-glightbox; extra == "docs"
-	mkdocs-literate-nav; extra == "docs"
-	mkdocs-material; extra == "docs"
-	mkdocs; extra == "docs"
-	mkdocstrings[python]; extra == "docs"
+	ConfigSpace[docs,test,tooling]; extra == 'dev'
+	black; extra == 'docs'
+	cairosvg; extra == 'docs'
+	markdown-exec[ansi]; extra == 'docs'
+	mike; extra == 'docs'
+	mkdocs-autorefs; extra == 'docs'
+	mkdocs-gen-files; extra == 'docs'
+	mkdocs-glightbox; extra == 'docs'
+	mkdocs-literate-nav; extra == 'docs'
+	mkdocs-material; extra == 'docs'
+	mkdocs; extra == 'docs'
+	mkdocstrings[python]; extra == 'docs'
 	more_itertools
-	mypy; extra == "tooling"
+	mypy; extra == 'tooling'
 	numpy
-	pillow; extra == "docs"
-	pre-commit; extra == "tooling"
+	pillow; extra == 'docs'
+	pre-commit; extra == 'tooling'
 	pyparsing
-	pytest-cov; extra == "test"
-	pytest>=7; extra == "test"
-	pytest_cases; extra == "test"
-	ruff; extra == "tooling"
+	pytest-cov; extra == 'test'
+	pytest>=7; extra == 'test'
+	pytest_cases; extra == 'test'
+	ruff; extra == 'tooling'
 	scipy
-	types-pyyaml; extra == "tooling"
+	types-pyyaml; extra == 'tooling'
 	typing_extensions
 "
 GENERATED_RDEPEND="${RDEPEND}

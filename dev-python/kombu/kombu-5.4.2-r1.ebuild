@@ -19,29 +19,29 @@ GENERATED_IUSE="azureservicebus azurestoragequeues confluentkafka consul mongodb
 IUSE="${GENERATED_IUSE} examples"
 
 REQUIRES_DIST="
-	PyYAML>=3.10; extra == "yaml"
+	PyYAML>=3.10; extra == 'yaml'
 	amqp<6.0.0,>=5.1.1
-	azure-identity>=1.12.0; extra == "azurestoragequeues"
-	azure-servicebus>=7.10.0; extra == "azureservicebus"
-	azure-storage-queue>=12.6.0; extra == "azurestoragequeues"
-	backports.zoneinfo[tzdata]>=0.2.1; python_version < "3.9"
-	boto3>=1.26.143; extra == "sqs"
-	confluent-kafka>=2.2.0; extra == "confluentkafka"
-	kazoo>=2.8.0; extra == "zookeeper"
-	librabbitmq>=2.0.0; python_version < "3.11" and extra == "librabbitmq"
-	msgpack==1.1.0; extra == "msgpack"
-	pycurl>=7.43.0.5; (sys_platform != "win32" and platform_python_implementation == "CPython") and extra == "sqs"
-	pymongo>=4.1.1; extra == "mongodb"
-	pyro4==4.82; extra == "pyro"
-	python-consul2==0.1.5; extra == "consul"
-	qpid-python>=0.26; extra == "qpid"
-	qpid-tools>=0.26; extra == "qpid"
-	redis!=4.5.5,!=5.0.2,>=4.5.2; extra == "redis"
-	softlayer-messaging>=1.0.3; extra == "slmq"
-	sqlalchemy<2.1,>=1.4.48; extra == "sqlalchemy"
-	typing-extensions==4.12.2; python_version < "3.10"
-	tzdata; python_version >= "3.9"
-	urllib3>=1.26.16; extra == "sqs"
+	azure-identity>=1.12.0; extra == 'azurestoragequeues'
+	azure-servicebus>=7.10.0; extra == 'azureservicebus'
+	azure-storage-queue>=12.6.0; extra == 'azurestoragequeues'
+	backports.zoneinfo[tzdata]>=0.2.1; python_version < '3.9'
+	boto3>=1.26.143; extra == 'sqs'
+	confluent-kafka>=2.2.0; extra == 'confluentkafka'
+	kazoo>=2.8.0; extra == 'zookeeper'
+	librabbitmq>=2.0.0; python_version < '3.11' and extra == 'librabbitmq'
+	msgpack==1.1.0; extra == 'msgpack'
+	pycurl>=7.43.0.5; (sys_platform != 'win32' and platform_python_implementation == 'CPython') and extra == 'sqs'
+	pymongo>=4.1.1; extra == 'mongodb'
+	pyro4==4.82; extra == 'pyro'
+	python-consul2==0.1.5; extra == 'consul'
+	qpid-python>=0.26; extra == 'qpid'
+	qpid-tools>=0.26; extra == 'qpid'
+	redis!=4.5.5,!=5.0.2,>=4.5.2; extra == 'redis'
+	softlayer-messaging>=1.0.3; extra == 'slmq'
+	sqlalchemy<2.1,>=1.4.48; extra == 'sqlalchemy'
+	typing-extensions==4.12.2; python_version < '3.10'
+	tzdata; python_version >= '3.9'
+	urllib3>=1.26.16; extra == 'sqs'
 	vine==5.1.0
 "
 GENERATED_RDEPEND="${RDEPEND}

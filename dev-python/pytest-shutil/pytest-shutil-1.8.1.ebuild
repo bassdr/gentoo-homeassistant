@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	execnet
-	importlib-metadata; python_version < "3.8"
+	importlib-metadata; python_version < '3.8'
 	pytest
 	six
 	termcolor

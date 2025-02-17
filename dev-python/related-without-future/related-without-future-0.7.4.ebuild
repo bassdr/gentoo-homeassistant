@@ -19,7 +19,7 @@ REQUIRES_DIST="
 	PyYAML
 	attrs >=19.3.0
 	python-dateutil
-	singledispatch ; python_version < "3.4"
+	singledispatch ; python_version < '3.4'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.3.0[${PYTHON_USEDEP}]

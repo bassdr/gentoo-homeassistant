@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	alembic>=1.12.0
-	eval-type-backport; python_full_version < "3.10"
-	fastnanoid>=0.4.1; extra == "nanoid"
+	eval-type-backport; python_full_version < '3.10'
+	fastnanoid>=0.4.1; extra == 'nanoid'
 	greenlet
-	rich-click; extra == "cli"
+	rich-click; extra == 'cli'
 	sqlalchemy>=2.0.20
 	typing-extensions>=4.0.0
-	uuid-utils>=0.6.1; extra == "uuid"
+	uuid-utils>=0.6.1; extra == 'uuid'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-1.12.0[${PYTHON_USEDEP}]

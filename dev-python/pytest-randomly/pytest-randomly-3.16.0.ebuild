@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata>=3.6; python_version < "3.10"
+	importlib-metadata>=3.6; python_version < '3.10'
 	pytest
 "
 GENERATED_RDEPEND="${RDEPEND}

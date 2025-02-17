@@ -18,36 +18,36 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	accelerate
-	bert-score; extra == "eval"
-	bitsandbytes; extra == "train"
+	bert-score; extra == 'eval'
+	bitsandbytes; extra == 'train'
 	dataclasses-json
-	datasets; extra == "data"
-	datasets; extra == "eval"
-	datasets; extra == "example"
-	datasets; extra == "train"
-	deepspeed; extra == "train"
-	evaluate; extra == "eval"
-	fschat; extra == "data"
-	jupyter; extra == "example"
-	nltk; extra == "eval"
+	datasets; extra == 'data'
+	datasets; extra == 'eval'
+	datasets; extra == 'example'
+	datasets; extra == 'train'
+	deepspeed; extra == 'train'
+	evaluate; extra == 'eval'
+	fschat; extra == 'data'
+	jupyter; extra == 'example'
+	nltk; extra == 'eval'
 	numpy
-	openai; extra == "data"
-	peft; extra == "data"
-	prettytable; extra == "eval"
+	openai; extra == 'data'
+	peft; extra == 'data'
+	prettytable; extra == 'eval'
 	protobuf
-	pycocoevalcap; extra == "eval"
-	rouge-score; extra == "eval"
-	sacrebleu; extra == "eval"
+	pycocoevalcap; extra == 'eval'
+	rouge-score; extra == 'eval'
+	sacrebleu; extra == 'eval'
 	safetensors
-	scikit-learn; extra == "eval"
-	scipy; extra == "eval"
-	scipy; extra == "example"
+	scikit-learn; extra == 'eval'
+	scipy; extra == 'eval'
+	scipy; extra == 'example'
 	sentencepiece
-	spacy; extra == "eval"
-	tabulate; extra == "eval"
+	spacy; extra == 'eval'
+	tabulate; extra == 'eval'
 	torch
 	transformers
-	wandb; extra == "train"
+	wandb; extra == 'train'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/accelerate[${PYTHON_USEDEP}]

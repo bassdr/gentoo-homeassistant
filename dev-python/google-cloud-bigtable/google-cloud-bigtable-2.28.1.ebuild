@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	google-auth!=2.24.0,!=2.25.0,<3.0.0dev,>=2.14.1
 	google-cloud-core<3.0.0dev,>=1.4.4
 	grpc-google-iam-v1<1.0.0dev,>=0.12.4
-	libcst>=0.2.5; extra == "libcst"
+	libcst>=0.2.5; extra == 'libcst'
 	proto-plus<2.0.0dev,>=1.22.3
 	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
 "

@@ -18,12 +18,12 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	pygments>=2.6.1
-	sphinx-jinja2-compat>=0.1.1; extra == "all"
-	sphinx-jinja2-compat>=0.1.1; extra == "sphinx"
-	sphinx-toolbox>=2.16.0; extra == "all"
-	sphinx-toolbox>=2.16.0; extra == "sphinx"
-	sphinx>=3.4.0; extra == "all"
-	sphinx>=3.4.0; extra == "sphinx"
+	sphinx-jinja2-compat>=0.1.1; extra == 'all'
+	sphinx-jinja2-compat>=0.1.1; extra == 'sphinx'
+	sphinx-toolbox>=2.16.0; extra == 'all'
+	sphinx-toolbox>=2.16.0; extra == 'sphinx'
+	sphinx>=3.4.0; extra == 'all'
+	sphinx>=3.4.0; extra == 'sphinx'
 	typing-extensions>=3.7.4.3
 "
 GENERATED_RDEPEND="${RDEPEND}

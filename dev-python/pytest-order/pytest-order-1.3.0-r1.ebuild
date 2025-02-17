@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pytest>=5.0; python_version < "3.10"
-	pytest>=6.2.4; python_version >= "3.10"
+	pytest>=5.0; python_version < '3.10'
+	pytest>=6.2.4; python_version >= '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]

@@ -21,37 +21,37 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	audioread>=2.1.9
 	decorator>=4.3.0
-	ipython>=7.0; extra == "docs"
+	ipython>=7.0; extra == 'docs'
 	joblib>=0.14
 	lazy-loader>=0.1
-	matplotlib>=3.5.0; extra == "display"
-	matplotlib>=3.5.0; extra == "docs"
-	matplotlib>=3.5.0; extra == "tests"
-	mir-eval>=0.5; extra == "docs"
+	matplotlib>=3.5.0; extra == 'display'
+	matplotlib>=3.5.0; extra == 'docs'
+	matplotlib>=3.5.0; extra == 'tests'
+	mir-eval>=0.5; extra == 'docs'
 	msgpack>=1.0
 	numba>=0.51.0
-	numba>=0.51; extra == "docs"
+	numba>=0.51; extra == 'docs'
 	numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3
-	numpydoc; extra == "docs"
-	packaging>=20.0; extra == "tests"
+	numpydoc; extra == 'docs'
+	packaging>=20.0; extra == 'tests'
 	pooch>=1.1
-	presets; extra == "docs"
-	pytest-cov; extra == "tests"
-	pytest-mpl; extra == "tests"
-	pytest; extra == "tests"
-	resampy>=0.2.2; extra == "tests"
-	samplerate; extra == "tests"
+	presets; extra == 'docs'
+	pytest-cov; extra == 'tests'
+	pytest-mpl; extra == 'tests'
+	pytest; extra == 'tests'
+	resampy>=0.2.2; extra == 'tests'
+	samplerate; extra == 'tests'
 	scikit-learn>=0.20.0
 	scipy>=1.2.0
 	soundfile>=0.12.1
 	soxr>=0.3.2
-	sphinx!=1.3.1; extra == "docs"
-	sphinx-copybutton>=0.5.2; extra == "docs"
-	sphinx-gallery>=0.7; extra == "docs"
-	sphinx-multiversion>=0.2.3; extra == "docs"
-	sphinx-rtd-theme>=1.2.0; extra == "docs"
-	sphinxcontrib-svg2pdfconverter; extra == "docs"
-	types-decorator; extra == "tests"
+	sphinx!=1.3.1; extra == 'docs'
+	sphinx-copybutton>=0.5.2; extra == 'docs'
+	sphinx-gallery>=0.7; extra == 'docs'
+	sphinx-multiversion>=0.2.3; extra == 'docs'
+	sphinx-rtd-theme>=1.2.0; extra == 'docs'
+	sphinxcontrib-svg2pdfconverter; extra == 'docs'
+	types-decorator; extra == 'tests'
 	typing-extensions>=4.1.1
 "
 GENERATED_RDEPEND="${RDEPEND}

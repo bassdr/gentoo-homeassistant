@@ -18,27 +18,27 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	datamodel-code-generator; extra == "test"
+	datamodel-code-generator; extra == 'test'
 	fastapi
 	furiosa-runtime==0.10.*
 	grpcio-tools
 	httpx
-	mypy-extensions; extra == "test"
-	mypy-protobuf; extra == "test"
-	mypy; extra == "test"
-	openvino; extra == "openvino"
+	mypy-extensions; extra == 'test'
+	mypy-protobuf; extra == 'test'
+	mypy; extra == 'test'
+	openvino; extra == 'openvino'
 	protobuf
 	pydantic-settings
-	pytest-asyncio~=0.17.2; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	pytest>=2.7.3; extra == "test"
-	requests; extra == "test"
-	ruff; extra == "test"
+	pytest-asyncio~=0.17.2; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	pytest>=2.7.3; extra == 'test'
+	requests; extra == 'test'
+	ruff; extra == 'test'
 	toml
 	typer
-	types-PyYAML; extra == "test"
-	types-protobuf; extra == "test"
+	types-PyYAML; extra == 'test'
+	types-protobuf; extra == 'test'
 	uvicorn
 "
 GENERATED_RDEPEND="${RDEPEND}

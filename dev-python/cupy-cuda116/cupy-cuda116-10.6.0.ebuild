@@ -7,7 +7,11 @@ PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="all stylecheck"
 IUSE="${GENERATED_IUSE}"
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+MY_PN=cupy
+MY_P=${MY_PN}-${PV}
+SRC_URI="https://github.com/cupy/${MY_PN}/archive/refs/tags/v${PV}.tar.gz -> ${MY_P}.gh.tar.gz"
+S="${WORKDIR}/${MY_P}/"
 
 DESCRIPTION=""
 HOMEPAGE="

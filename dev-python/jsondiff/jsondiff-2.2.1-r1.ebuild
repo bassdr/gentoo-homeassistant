@@ -21,11 +21,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "dev"
-	hypothesis; extra == "dev"
-	pytest; extra == "dev"
+	build; extra == 'dev'
+	hypothesis; extra == 'dev'
+	pytest; extra == 'dev'
 	pyyaml
-	setuptools-scm; extra == "dev"
+	setuptools-scm; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]

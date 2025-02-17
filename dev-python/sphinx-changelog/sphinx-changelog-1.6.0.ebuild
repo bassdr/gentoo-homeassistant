@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 	sphinx
-	sphinx-automodapi; extra == "docs"
-	sphinx; extra == "docs"
+	sphinx-automodapi; extra == 'docs'
+	sphinx; extra == 'docs'
 	towncrier==24.8.0
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -17,33 +17,33 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	adbc-driver-manager[dbapi]; extra == "adbc"
-	adbc-driver-sqlite[dbapi]; extra == "adbc"
-	altair>=5.4.0; extra == "plot"
-	cloudpickle; extra == "cloudpickle"
-	connectorx>=0.3.2; extra == "connectorx"
-	cudf-polars-cu12; extra == "gpu"
-	deltalake>=0.19.0; extra == "deltalake"
-	fastexcel>=0.9; extra == "calamine"
-	fsspec; extra == "fsspec"
-	gevent; extra == "async"
-	great-tables>=0.8.0; extra == "style"
-	matplotlib; extra == "graph"
-	numpy>=1.16.0; extra == "numpy"
-	openpyxl>=3.0.0; extra == "openpyxl"
-	pandas; extra == "pandas"
-	polars[adbc,connectorx,sqlalchemy]; extra == "database"
-	polars[async,cloudpickle,database,deltalake,excel,fsspec,graph,iceberg,numpy,pandas,plot,pyarrow,pydantic,style,timezone]; extra == "all"
-	polars[calamine,openpyxl,xlsx2csv,xlsxwriter]; extra == "excel"
-	polars[pandas]; extra == "sqlalchemy"
-	polars[pyarrow]; extra == "pandas"
-	pyarrow>=7.0.0; extra == "pyarrow"
-	pydantic; extra == "pydantic"
-	pyiceberg>=0.5.0; extra == "iceberg"
-	sqlalchemy; extra == "sqlalchemy"
-	tzdata; platform_system == "Windows" and extra == "timezone"
-	xlsx2csv>=0.8.0; extra == "xlsx2csv"
-	xlsxwriter; extra == "xlsxwriter"
+	adbc-driver-manager[dbapi]; extra == 'adbc'
+	adbc-driver-sqlite[dbapi]; extra == 'adbc'
+	altair>=5.4.0; extra == 'plot'
+	cloudpickle; extra == 'cloudpickle'
+	connectorx>=0.3.2; extra == 'connectorx'
+	cudf-polars-cu12; extra == 'gpu'
+	deltalake>=0.19.0; extra == 'deltalake'
+	fastexcel>=0.9; extra == 'calamine'
+	fsspec; extra == 'fsspec'
+	gevent; extra == 'async'
+	great-tables>=0.8.0; extra == 'style'
+	matplotlib; extra == 'graph'
+	numpy>=1.16.0; extra == 'numpy'
+	openpyxl>=3.0.0; extra == 'openpyxl'
+	pandas; extra == 'pandas'
+	polars[adbc,connectorx,sqlalchemy]; extra == 'database'
+	polars[async,cloudpickle,database,deltalake,excel,fsspec,graph,iceberg,numpy,pandas,plot,pyarrow,pydantic,style,timezone]; extra == 'all'
+	polars[calamine,openpyxl,xlsx2csv,xlsxwriter]; extra == 'excel'
+	polars[pandas]; extra == 'sqlalchemy'
+	polars[pyarrow]; extra == 'pandas'
+	pyarrow>=7.0.0; extra == 'pyarrow'
+	pydantic; extra == 'pydantic'
+	pyiceberg>=0.5.0; extra == 'iceberg'
+	sqlalchemy; extra == 'sqlalchemy'
+	tzdata; platform_system == 'Windows' and extra == 'timezone'
+	xlsx2csv>=0.8.0; extra == 'xlsx2csv'
+	xlsxwriter; extra == 'xlsxwriter'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	adbc? ( dev-python/adbc-driver-manager[dbapi,${PYTHON_USEDEP}] )

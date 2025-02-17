@@ -26,12 +26,12 @@ REQUIRES_DIST="
 	jaraco.packaging (>=9) ; extra == 'docs'
 	keyring
 	pytest (>=6) ; extra == 'testing'
-	pytest-black (>=0.3.7) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-black (>=0.3.7) ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	pytest-checkdocs (>=2.4) ; extra == 'testing'
 	pytest-cov ; extra == 'testing'
 	pytest-enabler (>=1.3) ; extra == 'testing'
-	pytest-flake8 ; (python_version < "3.12") and extra == 'testing'
-	pytest-mypy (>=0.9.1) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-flake8 ; (python_version < '3.12') and extra == 'testing'
+	pytest-mypy (>=0.9.1) ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	requests-toolbelt
 	rst.linker (>=1.9) ; extra == 'docs'
 	sphinx (>=3.5) ; extra == 'docs'

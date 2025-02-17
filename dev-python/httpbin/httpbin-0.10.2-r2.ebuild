@@ -24,10 +24,10 @@ REQUIRES_DIST="
 	flasgger
 	flask >=2.2.4
 	gevent ; extra == 'mainapp'
-	greenlet <3.0 ; python_version < "3.12"
-	greenlet >=3.0.0a1 ; python_version >= "3.12.0rc0"
+	greenlet <3.0 ; python_version < '3.12'
+	greenlet >=3.0.0a1 ; python_version >= '3.12.0rc0'
 	gunicorn ; extra == 'mainapp'
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	pytest ; extra == 'test'
 	six
 	tox ; extra == 'test'

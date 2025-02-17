@@ -23,8 +23,8 @@ REQUIRES_DIST="
 	langchain-core<1.0.0,>=0.3.34
 	langchain<1.0.0,>=0.3.18
 	langsmith<0.4,>=0.1.125
-	numpy<2,>=1.26.4; python_version < "3.12"
-	numpy<3,>=1.26.2; python_version >= "3.12"
+	numpy<2,>=1.26.4; python_version < '3.12'
+	numpy<3,>=1.26.2; python_version >= '3.12'
 	pydantic-settings<3.0.0,>=2.4.0
 	requests<3,>=2
 	tenacity!=8.4.0,<10,>=8.1.0

@@ -25,7 +25,7 @@ REQUIRES_DIST="
 	scipy>=0.10.0
 "
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/bs4-0.0.0.1[${PYTHON_USEDEP}]
+	>=dev-python/beautifulsoup4-0.0.0.1[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-1.5[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.0.0[${PYTHON_USEDEP}]

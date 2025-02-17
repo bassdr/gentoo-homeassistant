@@ -17,135 +17,135 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pillow>=9.4.0; extra == "dev"
-	Pillow>=9.4.0; extra == "tests"
-	Pillow>=9.4.0; extra == "tests-numpy2"
-	Pillow>=9.4.0; extra == "vision"
-	absl-py; extra == "dev"
-	absl-py; extra == "tests"
-	absl-py; extra == "tests-numpy2"
+	Pillow>=9.4.0; extra == 'dev'
+	Pillow>=9.4.0; extra == 'tests'
+	Pillow>=9.4.0; extra == 'tests-numpy2'
+	Pillow>=9.4.0; extra == 'vision'
+	absl-py; extra == 'dev'
+	absl-py; extra == 'tests'
+	absl-py; extra == 'tests-numpy2'
 	aiohttp
-	decorator; extra == "dev"
-	decorator; extra == "tests"
-	decorator; extra == "tests-numpy2"
-	decord==0.6.0; extra == "dev"
-	decord==0.6.0; extra == "tests"
-	decord==0.6.0; extra == "tests-numpy2"
+	decorator; extra == 'dev'
+	decorator; extra == 'tests'
+	decorator; extra == 'tests-numpy2'
+	decord==0.6.0; extra == 'dev'
+	decord==0.6.0; extra == 'tests'
+	decord==0.6.0; extra == 'tests-numpy2'
 	dill<0.3.9,>=0.3.0
-	elasticsearch<8.0.0,>=7.17.12; extra == "dev"
-	elasticsearch<8.0.0,>=7.17.12; extra == "tests"
-	elasticsearch<8.0.0,>=7.17.12; extra == "tests-numpy2"
-	faiss-cpu>=1.8.0.post1; extra == "dev"
-	faiss-cpu>=1.8.0.post1; extra == "tests"
+	elasticsearch<8.0.0,>=7.17.12; extra == 'dev'
+	elasticsearch<8.0.0,>=7.17.12; extra == 'tests'
+	elasticsearch<8.0.0,>=7.17.12; extra == 'tests-numpy2'
+	faiss-cpu>=1.8.0.post1; extra == 'dev'
+	faiss-cpu>=1.8.0.post1; extra == 'tests'
 	filelock
 	fsspec[http]<=2024.9.0,>=2023.1.0
 	huggingface-hub>=0.23.0
-	jax>=0.3.14; extra == "jax"
-	jax>=0.3.14; sys_platform != "win32" and extra == "dev"
-	jax>=0.3.14; sys_platform != "win32" and extra == "tests"
-	jax>=0.3.14; sys_platform != "win32" and extra == "tests_numpy2"
-	jaxlib>=0.3.14; extra == "jax"
-	jaxlib>=0.3.14; sys_platform != "win32" and extra == "dev"
-	jaxlib>=0.3.14; sys_platform != "win32" and extra == "tests"
-	jaxlib>=0.3.14; sys_platform != "win32" and extra == "tests_numpy2"
-	joblib<1.3.0; extra == "dev"
-	joblib<1.3.0; extra == "tests"
-	joblib<1.3.0; extra == "tests-numpy2"
-	joblibspark; extra == "dev"
-	joblibspark; extra == "tests"
-	joblibspark; extra == "tests-numpy2"
-	librosa; extra == "audio"
-	librosa; extra == "dev"
-	librosa; extra == "tests"
-	lz4; extra == "dev"
-	lz4; extra == "tests"
-	lz4; extra == "tests-numpy2"
-	moto[server]; extra == "dev"
-	moto[server]; extra == "tests"
-	moto[server]; extra == "tests-numpy2"
+	jax>=0.3.14; extra == 'jax'
+	jax>=0.3.14; sys_platform != 'win32' and extra == 'dev'
+	jax>=0.3.14; sys_platform != 'win32' and extra == 'tests'
+	jax>=0.3.14; sys_platform != 'win32' and extra == 'tests_numpy2'
+	jaxlib>=0.3.14; extra == 'jax'
+	jaxlib>=0.3.14; sys_platform != 'win32' and extra == 'dev'
+	jaxlib>=0.3.14; sys_platform != 'win32' and extra == 'tests'
+	jaxlib>=0.3.14; sys_platform != 'win32' and extra == 'tests_numpy2'
+	joblib<1.3.0; extra == 'dev'
+	joblib<1.3.0; extra == 'tests'
+	joblib<1.3.0; extra == 'tests-numpy2'
+	joblibspark; extra == 'dev'
+	joblibspark; extra == 'tests'
+	joblibspark; extra == 'tests-numpy2'
+	librosa; extra == 'audio'
+	librosa; extra == 'dev'
+	librosa; extra == 'tests'
+	lz4; extra == 'dev'
+	lz4; extra == 'tests'
+	lz4; extra == 'tests-numpy2'
+	moto[server]; extra == 'dev'
+	moto[server]; extra == 'tests'
+	moto[server]; extra == 'tests-numpy2'
 	multiprocess<0.70.17
 	numpy>=1.17
 	packaging
 	pandas
-	polars[timezone]>=0.20.0; extra == "dev"
-	polars[timezone]>=0.20.0; extra == "tests"
-	polars[timezone]>=0.20.0; extra == "tests-numpy2"
-	protobuf<4.0.0; extra == "dev"
-	protobuf<4.0.0; extra == "tests"
-	protobuf<4.0.0; extra == "tests-numpy2"
-	py7zr; extra == "dev"
-	py7zr; extra == "tests"
-	py7zr; extra == "tests-numpy2"
+	polars[timezone]>=0.20.0; extra == 'dev'
+	polars[timezone]>=0.20.0; extra == 'tests'
+	polars[timezone]>=0.20.0; extra == 'tests-numpy2'
+	protobuf<4.0.0; extra == 'dev'
+	protobuf<4.0.0; extra == 'tests'
+	protobuf<4.0.0; extra == 'tests-numpy2'
+	py7zr; extra == 'dev'
+	py7zr; extra == 'tests'
+	py7zr; extra == 'tests-numpy2'
 	pyarrow>=15.0.0
-	pyspark>=3.4; extra == "dev"
-	pyspark>=3.4; extra == "tests"
-	pyspark>=3.4; extra == "tests-numpy2"
-	pytest-datadir; extra == "dev"
-	pytest-datadir; extra == "tests"
-	pytest-datadir; extra == "tests-numpy2"
-	pytest-xdist; extra == "dev"
-	pytest-xdist; extra == "tests"
-	pytest-xdist; extra == "tests-numpy2"
-	pytest; extra == "dev"
-	pytest; extra == "tests"
-	pytest; extra == "tests-numpy2"
+	pyspark>=3.4; extra == 'dev'
+	pyspark>=3.4; extra == 'tests'
+	pyspark>=3.4; extra == 'tests-numpy2'
+	pytest-datadir; extra == 'dev'
+	pytest-datadir; extra == 'tests'
+	pytest-datadir; extra == 'tests-numpy2'
+	pytest-xdist; extra == 'dev'
+	pytest-xdist; extra == 'tests'
+	pytest-xdist; extra == 'tests-numpy2'
+	pytest; extra == 'dev'
+	pytest; extra == 'tests'
+	pytest; extra == 'tests-numpy2'
 	pyyaml>=5.1
-	rarfile>=4.0; extra == "dev"
-	rarfile>=4.0; extra == "tests"
-	rarfile>=4.0; extra == "tests-numpy2"
+	rarfile>=4.0; extra == 'dev'
+	rarfile>=4.0; extra == 'tests'
+	rarfile>=4.0; extra == 'tests-numpy2'
 	requests>=2.32.2
-	ruff>=0.3.0; extra == "dev"
-	ruff>=0.3.0; extra == "quality"
-	s3fs; extra == "dev"
-	s3fs; extra == "docs"
-	s3fs; extra == "s3"
-	s3fs>=2021.11.1; extra == "dev"
-	s3fs>=2021.11.1; extra == "tests"
-	s3fs>=2021.11.1; extra == "tests-numpy2"
-	soundfile>=0.12.1; extra == "audio"
-	soundfile>=0.12.1; extra == "dev"
-	soundfile>=0.12.1; extra == "tests"
-	soundfile>=0.12.1; extra == "tests-numpy2"
-	soxr>=0.4.0; python_version >= "3.9" and extra == "audio"
-	soxr>=0.4.0; python_version >= "3.9" and extra == "dev"
-	soxr>=0.4.0; python_version >= "3.9" and extra == "tests"
-	soxr>=0.4.0; python_version >= "3.9" and extra == "tests_numpy2"
-	sqlalchemy; extra == "dev"
-	sqlalchemy; extra == "tests"
-	sqlalchemy; extra == "tests-numpy2"
-	tensorflow==2.12.0; extra == "benchmarks"
-	tensorflow>=2.16.0; python_version >= "3.10" and extra == "dev"
-	tensorflow>=2.16.0; python_version >= "3.10" and extra == "tests"
-	tensorflow>=2.6.0; extra == "dev"
-	tensorflow>=2.6.0; extra == "docs"
-	tensorflow>=2.6.0; extra == "tensorflow"
-	tensorflow>=2.6.0; extra == "tensorflow-gpu"
-	tensorflow>=2.6.0; python_version < "3.10" and extra == "dev"
-	tensorflow>=2.6.0; python_version < "3.10" and extra == "tests"
-	tiktoken; extra == "dev"
-	tiktoken; extra == "tests"
-	tiktoken; extra == "tests-numpy2"
-	torch; extra == "dev"
-	torch; extra == "docs"
-	torch; extra == "torch"
-	torch==2.0.1; extra == "benchmarks"
-	torch>=2.0.0; extra == "dev"
-	torch>=2.0.0; extra == "tests"
-	torch>=2.0.0; extra == "tests-numpy2"
-	torchdata; extra == "dev"
-	torchdata; extra == "tests"
-	torchdata; extra == "tests-numpy2"
+	ruff>=0.3.0; extra == 'dev'
+	ruff>=0.3.0; extra == 'quality'
+	s3fs; extra == 'dev'
+	s3fs; extra == 'docs'
+	s3fs; extra == 's3'
+	s3fs>=2021.11.1; extra == 'dev'
+	s3fs>=2021.11.1; extra == 'tests'
+	s3fs>=2021.11.1; extra == 'tests-numpy2'
+	soundfile>=0.12.1; extra == 'audio'
+	soundfile>=0.12.1; extra == 'dev'
+	soundfile>=0.12.1; extra == 'tests'
+	soundfile>=0.12.1; extra == 'tests-numpy2'
+	soxr>=0.4.0; python_version >= '3.9' and extra == 'audio'
+	soxr>=0.4.0; python_version >= '3.9' and extra == 'dev'
+	soxr>=0.4.0; python_version >= '3.9' and extra == 'tests'
+	soxr>=0.4.0; python_version >= '3.9' and extra == 'tests_numpy2'
+	sqlalchemy; extra == 'dev'
+	sqlalchemy; extra == 'tests'
+	sqlalchemy; extra == 'tests-numpy2'
+	tensorflow==2.12.0; extra == 'benchmarks'
+	tensorflow>=2.16.0; python_version >= '3.10' and extra == 'dev'
+	tensorflow>=2.16.0; python_version >= '3.10' and extra == 'tests'
+	tensorflow>=2.6.0; extra == 'dev'
+	tensorflow>=2.6.0; extra == 'docs'
+	tensorflow>=2.6.0; extra == 'tensorflow'
+	tensorflow>=2.6.0; extra == 'tensorflow-gpu'
+	tensorflow>=2.6.0; python_version < '3.10' and extra == 'dev'
+	tensorflow>=2.6.0; python_version < '3.10' and extra == 'tests'
+	tiktoken; extra == 'dev'
+	tiktoken; extra == 'tests'
+	tiktoken; extra == 'tests-numpy2'
+	torch; extra == 'dev'
+	torch; extra == 'docs'
+	torch; extra == 'torch'
+	torch==2.0.1; extra == 'benchmarks'
+	torch>=2.0.0; extra == 'dev'
+	torch>=2.0.0; extra == 'tests'
+	torch>=2.0.0; extra == 'tests-numpy2'
+	torchdata; extra == 'dev'
+	torchdata; extra == 'tests'
+	torchdata; extra == 'tests-numpy2'
 	tqdm>=4.66.3
-	transformers; extra == "dev"
-	transformers; extra == "docs"
-	transformers==4.30.1; extra == "benchmarks"
-	transformers>=4.42.0; extra == "dev"
-	transformers>=4.42.0; extra == "tests"
-	transformers>=4.42.0; extra == "tests-numpy2"
+	transformers; extra == 'dev'
+	transformers; extra == 'docs'
+	transformers==4.30.1; extra == 'benchmarks'
+	transformers>=4.42.0; extra == 'dev'
+	transformers>=4.42.0; extra == 'tests'
+	transformers>=4.42.0; extra == 'tests-numpy2'
 	xxhash
-	zstandard; extra == "dev"
-	zstandard; extra == "tests"
-	zstandard; extra == "tests-numpy2"
+	zstandard; extra == 'dev'
+	zstandard; extra == 'tests'
+	zstandard; extra == 'tests-numpy2'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	tests-numpy2? ( dev-python/absl-py[${PYTHON_USEDEP}] )

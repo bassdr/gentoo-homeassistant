@@ -27,8 +27,8 @@ DOCS="README.md"
 REQUIRES_DIST="
 	aiohttp>=3.7.4
 	orjson>=3.9.0
-	pre-commit; extra == "test"
-	tox; extra == "test"
+	pre-commit; extra == 'test'
+	tox; extra == 'test'
 	urllib3>=1.26.18
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -17,12 +17,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	SQLAlchemy<3,>=1.4; extra == "optional"
-	aiodns>1.0; extra == "optional"
-	aiohttp<4,>=3.7.3; extra == "optional"
-	boto3<=2; extra == "optional"
-	websocket-client<2,>=1; extra == "optional"
-	websockets<15,>=9.1; extra == "optional"
+	SQLAlchemy<3,>=1.4; extra == 'optional'
+	aiodns>1.0; extra == 'optional'
+	aiohttp<4,>=3.7.3; extra == 'optional'
+	boto3<=2; extra == 'optional'
+	websocket-client<2,>=1; extra == 'optional'
+	websockets<15,>=9.1; extra == 'optional'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	optional? ( >dev-python/aiodns-1.0[${PYTHON_USEDEP}] )

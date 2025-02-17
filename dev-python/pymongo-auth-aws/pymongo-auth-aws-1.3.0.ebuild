@@ -17,9 +17,9 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	boto3
 	botocore
-	dnspython>=2.6.1; extra == "test"
-	pymongo; extra == "test"
-	pytest; extra == "test"
+	dnspython>=2.6.1; extra == 'test'
+	pymongo; extra == 'test'
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/boto3[${PYTHON_USEDEP}]

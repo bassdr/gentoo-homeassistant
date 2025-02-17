@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp; python_version >= "3.5.3"
+	aiohttp; python_version >= '3.5.3'
 	curlify>=2.1.0
 	pycountry>=19.8.18
 	requests>=2.3.0

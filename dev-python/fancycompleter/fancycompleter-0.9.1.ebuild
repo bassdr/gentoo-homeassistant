@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pyreadline ; platform_system == "Windows"
+	pyreadline ; platform_system == 'Windows'
 	pyrepl (>=0.8.2)
 "
 GENERATED_RDEPEND="${RDEPEND}

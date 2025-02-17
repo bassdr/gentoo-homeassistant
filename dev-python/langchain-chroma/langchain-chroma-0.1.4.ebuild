@@ -17,10 +17,10 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	chromadb!=0.5.4,!=0.5.5,<0.6.0,>=0.4.0
 	fastapi<1,>=0.95.2
-	langchain-core<0.3,>=0.1.40; python_version < "3.9"
-	langchain-core<0.4,>=0.1.40; python_version >= "3.9"
-	numpy<2,>=1; python_version < "3.12"
-	numpy<2.0.0,>=1.26.0; python_version >= "3.12"
+	langchain-core<0.3,>=0.1.40; python_version < '3.9'
+	langchain-core<0.4,>=0.1.40; python_version >= '3.9'
+	numpy<2,>=1; python_version < '3.12'
+	numpy<2.0.0,>=1.26.0; python_version >= '3.12'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/chromadb-0.4.0[${PYTHON_USEDEP}] <dev-python/chromadb-0.6.0[${PYTHON_USEDEP}] !~dev-python/chromadb-0.5.4[${PYTHON_USEDEP}] !~dev-python/chromadb-0.5.5[${PYTHON_USEDEP}]

@@ -17,18 +17,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cuda-python<13.0a0,<=12.6.0,>=12.0
-	fastavro>=0.22.9; extra == "test"
-	hypothesis; extra == "test"
+	fastavro>=0.22.9; extra == 'test'
+	hypothesis; extra == 'test'
 	libcudf-cu12==24.12.*
-	numpy<3.0a0,>=1.23; extra == "test"
+	numpy<3.0a0,>=1.23; extra == 'test'
 	nvtx>=0.2.1
 	packaging
-	pandas; extra == "test"
-	pyarrow!=17.0.0,<19.0.0a0,>=14.0.0; platform_machine == "aarch64"
-	pyarrow<19.0.0a0,>=14.0.0; platform_machine == "x86_64"
-	pytest-cov; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest<8; extra == "test"
+	pandas; extra == 'test'
+	pyarrow!=17.0.0,<19.0.0a0,>=14.0.0; platform_machine == 'aarch64'
+	pyarrow<19.0.0a0,>=14.0.0; platform_machine == 'x86_64'
+	pytest-cov; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest<8; extra == 'test'
 	rmm-cu12==24.12.*
 	typing_extensions>=4.0.0
 "

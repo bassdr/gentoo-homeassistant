@@ -20,7 +20,7 @@ REQUIRES_DIST="
 	rich-toolkit>=0.11.1
 	typer>=0.12.3
 	uvicorn[standard]>=0.15.0
-	uvicorn[standard]>=0.15.0; extra == "standard"
+	uvicorn[standard]>=0.15.0; extra == 'standard'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-toolkit-0.11.1[${PYTHON_USEDEP}]

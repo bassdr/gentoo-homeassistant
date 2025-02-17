@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4
 	srsly<3.0.0,>=2.4.0
-	typing-extensions<5.0.0,>=3.7.4.1; python_version < "3.8"
+	typing-extensions<5.0.0,>=3.7.4.1; python_version < '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pydantic-1.7.4[${PYTHON_USEDEP}] <dev-python/pydantic-3.0.0[${PYTHON_USEDEP}] !~dev-python/pydantic-1.8[${PYTHON_USEDEP}] !~dev-python/pydantic-1.8.1[${PYTHON_USEDEP}]

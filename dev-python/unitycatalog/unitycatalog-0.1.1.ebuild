@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	anyio<5,>=3.5.0
-	cached-property; python_version < "3.8"
+	cached-property; python_version < '3.8'
 	distro<2,>=1.7.0
 	httpx<1,>=0.23.0
 	pydantic<3,>=1.9.0

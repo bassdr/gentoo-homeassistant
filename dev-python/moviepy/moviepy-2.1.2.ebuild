@@ -20,28 +20,28 @@ GENERATED_IUSE="doc lint"
 IUSE="${GENERATED_IUSE} test"
 
 REQUIRES_DIST="
-	Sphinx==6.*; extra == "doc"
-	black>=23.7.0; extra == "lint"
-	coveralls<4.0,>=3.0; extra == "test"
+	Sphinx==6.*; extra == 'doc'
+	black>=23.7.0; extra == 'lint'
+	coveralls<4.0,>=3.0; extra == 'test'
 	decorator<6.0,>=4.0.2
-	flake8-absolute-import>=1.0; extra == "lint"
-	flake8-docstrings>=1.7.0; extra == "lint"
-	flake8-implicit-str-concat==0.4.0; extra == "lint"
-	flake8-rst-docstrings>=0.3; extra == "lint"
-	flake8>=6.0.0; extra == "lint"
+	flake8-absolute-import>=1.0; extra == 'lint'
+	flake8-docstrings>=1.7.0; extra == 'lint'
+	flake8-implicit-str-concat==0.4.0; extra == 'lint'
+	flake8-rst-docstrings>=0.3; extra == 'lint'
+	flake8>=6.0.0; extra == 'lint'
 	imageio<3.0,>=2.5
 	imageio_ffmpeg>=0.2.0
-	isort>=5.12; extra == "lint"
+	isort>=5.12; extra == 'lint'
 	numpy>=1.25.0
-	numpydoc<2.0; extra == "doc"
+	numpydoc<2.0; extra == 'doc'
 	pillow<11.0,>=9.2.0
-	pre-commit>=3.3; extra == "lint"
+	pre-commit>=3.3; extra == 'lint'
 	proglog<=1.0.0
-	pydata-sphinx-theme==0.13; extra == "doc"
-	pytest-cov<3.0,>=2.5.1; extra == "test"
-	pytest<7.0.0,>=3.0.0; extra == "test"
+	pydata-sphinx-theme==0.13; extra == 'doc'
+	pytest-cov<3.0,>=2.5.1; extra == 'test'
+	pytest<7.0.0,>=3.0.0; extra == 'test'
 	python-dotenv>=0.10
-	sphinx_design; extra == "doc"
+	sphinx_design; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( >=dev-python/black-23.7.0[${PYTHON_USEDEP}] )

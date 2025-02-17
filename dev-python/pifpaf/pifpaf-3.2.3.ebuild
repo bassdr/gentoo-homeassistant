@@ -21,14 +21,14 @@ REQUIRES_DIST="
 	daiquiri
 	fixtures
 	jinja2
-	mock; extra == "test"
+	mock; extra == 'test'
 	packaging
 	psutil
-	requests; extra == "test"
-	stestr; extra == "test"
-	testtools; extra == "test"
-	uwsgi; extra == "gnocchi"
-	xattr; sys_platform != "win32"
+	requests; extra == 'test'
+	stestr; extra == 'test'
+	testtools; extra == 'test'
+	uwsgi; extra == 'gnocchi'
+	xattr; sys_platform != 'win32'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]

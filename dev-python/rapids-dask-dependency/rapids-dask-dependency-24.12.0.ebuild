@@ -20,7 +20,7 @@ REQUIRES_DIST="
 	dask==2024.11.2
 	distributed==2024.11.2
 	pynvml<11.5.0a0,>=11.0.0
-	pytest; extra == "test"
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	~dev-python/dask-2024.11.2[${PYTHON_USEDEP}]

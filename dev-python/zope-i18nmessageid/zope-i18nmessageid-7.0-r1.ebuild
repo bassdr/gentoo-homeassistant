@@ -20,13 +20,13 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
-	coverage; extra == "test"
-	coverage; extra == "testing"
+	Sphinx; extra == 'docs'
+	coverage; extra == 'test'
+	coverage; extra == 'testing'
 	setuptools
-	sphinx-rtd-theme; extra == "docs"
-	zope.testrunner; extra == "test"
-	zope.testrunner; extra == "testing"
+	sphinx-rtd-theme; extra == 'docs'
+	zope.testrunner; extra == 'test'
+	zope.testrunner; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]

@@ -18,40 +18,40 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	beautifulsoup4; extra == "all"
-	beautifulsoup4; extra == "testing"
-	black; extra == "all"
-	black; extra == "code-style"
-	coverage; extra == "all"
-	coverage; extra == "testing"
-	defusedxml; extra == "all"
-	defusedxml; extra == "testing"
+	beautifulsoup4; extra == 'all'
+	beautifulsoup4; extra == 'testing'
+	black; extra == 'all'
+	black; extra == 'code-style'
+	coverage; extra == 'all'
+	coverage; extra == 'testing'
+	defusedxml; extra == 'all'
+	defusedxml; extra == 'testing'
 	docutils>=0.15
-	flake8; extra == "all"
-	flake8; extra == "code-style"
-	myst-parser; extra == "all"
-	myst-parser; extra == "rtd"
-	myst-parser; extra == "testing"
-	pre-commit; extra == "all"
-	pre-commit; extra == "code-style"
-	pytest-cov; extra == "all"
-	pytest-cov; extra == "testing"
-	pytest-regressions; extra == "all"
-	pytest-regressions; extra == "testing"
-	pytest~=7.1; extra == "all"
-	pytest~=7.1; extra == "testing"
+	flake8; extra == 'all'
+	flake8; extra == 'code-style'
+	myst-parser; extra == 'all'
+	myst-parser; extra == 'rtd'
+	myst-parser; extra == 'testing'
+	pre-commit; extra == 'all'
+	pre-commit; extra == 'code-style'
+	pytest-cov; extra == 'all'
+	pytest-cov; extra == 'testing'
+	pytest-regressions; extra == 'all'
+	pytest-regressions; extra == 'testing'
+	pytest~=7.1; extra == 'all'
+	pytest~=7.1; extra == 'testing'
 	sphinx
 	sphinx-book-theme
-	sphinx-book-theme; extra == "all"
-	sphinx-book-theme; extra == "rtd"
-	sphinx-togglebutton; extra == "all"
-	sphinx-togglebutton; extra == "rtd"
-	sphinx>=5.0; extra == "all"
-	sphinx>=5.0; extra == "rtd"
-	sphinxcontrib-bibtex; extra == "all"
-	sphinxcontrib-bibtex; extra == "rtd"
-	texsoup; extra == "all"
-	texsoup; extra == "testing"
+	sphinx-book-theme; extra == 'all'
+	sphinx-book-theme; extra == 'rtd'
+	sphinx-togglebutton; extra == 'all'
+	sphinx-togglebutton; extra == 'rtd'
+	sphinx>=5.0; extra == 'all'
+	sphinx>=5.0; extra == 'rtd'
+	sphinxcontrib-bibtex; extra == 'all'
+	sphinxcontrib-bibtex; extra == 'rtd'
+	texsoup; extra == 'all'
+	texsoup; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )

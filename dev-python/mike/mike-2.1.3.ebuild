@@ -15,12 +15,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage; extra == "dev"
-	coverage; extra == "test"
-	flake8-quotes; extra == "dev"
-	flake8-quotes; extra == "test"
-	flake8>=3.0; extra == "dev"
-	flake8>=3.0; extra == "test"
+	coverage; extra == 'dev'
+	coverage; extra == 'test'
+	flake8-quotes; extra == 'dev'
+	flake8-quotes; extra == 'test'
+	flake8>=3.0; extra == 'dev'
+	flake8>=3.0; extra == 'test'
 	importlib-metadata
 	importlib-resources
 	jinja2>=2.7
@@ -28,8 +28,8 @@ REQUIRES_DIST="
 	pyparsing>=3.0
 	pyyaml-env-tag
 	pyyaml>=5.1
-	shtab; extra == "dev"
-	shtab; extra == "test"
+	shtab; extra == 'dev'
+	shtab; extra == 'test'
 	verspec
 "
 GENERATED_RDEPEND="${RDEPEND}

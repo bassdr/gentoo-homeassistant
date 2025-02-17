@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	dask[array]>=2022.2.0
 	numpy
-	pytest; extra == "test"
+	pytest; extra == 'test'
 	sortedcontainers
 "
 GENERATED_RDEPEND="${RDEPEND}

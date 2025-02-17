@@ -31,11 +31,11 @@ REQUIRES_DIST="
 	jaraco.text >=1.3
 	keyring
 	pytest >=6 ; extra == 'testing'
-	pytest-black >=0.3.7 ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-black >=0.3.7 ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	pytest-checkdocs >=2.4 ; extra == 'testing'
 	pytest-cov ; extra == 'testing'
 	pytest-enabler >=2.2 ; extra == 'testing'
-	pytest-mypy >=0.9.1 ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-mypy >=0.9.1 ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	pytest-ruff ; extra == 'testing'
 	rst.linker >=1.9 ; extra == 'docs'
 	sphinx <7.2.5 ; extra == 'docs'

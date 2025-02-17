@@ -31,11 +31,11 @@ REQUIRES_DIST="
 	async-timeout>=3.0.0
 	asyncclick>=8.1.7.1
 	firebase-messaging>=0.4.0
-	myst-parser; extra == "docs"
+	myst-parser; extra == 'docs'
 	oauthlib<4,>=3.0.0
 	pytz>=2022.0
-	sphinx-rtd-theme~=1.3; extra == "docs"
-	sphinx<7.2.6; extra == "docs"
+	sphinx-rtd-theme~=1.3; extra == 'docs'
+	sphinx<7.2.6; extra == 'docs'
 	typing-extensions<5.0,>=4.12.2
 	websockets>=13.0.0
 "

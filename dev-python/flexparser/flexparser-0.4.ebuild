@@ -16,10 +16,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pytest-cov; extra == "test"
-	pytest-mpl; extra == "test"
-	pytest-subtests; extra == "test"
-	pytest; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest-mpl; extra == 'test'
+	pytest-subtests; extra == 'test'
+	pytest; extra == 'test'
 	typing-extensions
 "
 GENERATED_RDEPEND="${RDEPEND}

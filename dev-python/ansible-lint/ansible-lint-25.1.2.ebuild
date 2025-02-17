@@ -19,40 +19,40 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	ansible-compat>=25.1.2
 	ansible-core>=2.16.0
-	black; extra == "test"
+	black; extra == 'test'
 	black>=24.3.0
-	coverage-enable-subprocess; extra == "test"
-	coverage[toml]>=6.4.4; extra == "test"
+	coverage-enable-subprocess; extra == 'test'
+	coverage[toml]>=6.4.4; extra == 'test'
 	filelock>=3.8.2
 	importlib-metadata
-	jmespath; extra == "test"
+	jmespath; extra == 'test'
 	jsonschema>=4.10.0
-	license-expression>=30.3.0; extra == "test"
-	mkdocs-ansible>=24.12.0; extra == "docs"
-	mypy; extra == "test"
-	netaddr; extra == "test"
+	license-expression>=30.3.0; extra == 'test'
+	mkdocs-ansible>=24.12.0; extra == 'docs'
+	mypy; extra == 'test'
+	netaddr; extra == 'test'
 	packaging>=22.0
 	pathspec>=0.10.3
-	pip; extra == "test"
-	psutil; extra == "test"
-	pylint; extra == "test"
-	pytest-instafail>=0.5.0; extra == "test"
-	pytest-mock; extra == "test"
-	pytest-plus>=0.6; extra == "test"
-	pytest-xdist[psutil,setproctitle]>=2.1.0; extra == "test"
-	pytest>=7.2.2; extra == "test"
+	pip; extra == 'test'
+	psutil; extra == 'test'
+	pylint; extra == 'test'
+	pytest-instafail>=0.5.0; extra == 'test'
+	pytest-mock; extra == 'test'
+	pytest-plus>=0.6; extra == 'test'
+	pytest-xdist[psutil,setproctitle]>=2.1.0; extra == 'test'
+	pytest>=7.2.2; extra == 'test'
 	pyyaml>=6.0.2
 	referencing>=0.36.2
-	ruamel-yaml-clib; extra == "test"
+	ruamel-yaml-clib; extra == 'test'
 	ruamel.yaml!=0.18.7,!=0.18.8,>=0.18.5
-	ruamel.yaml>=0.17.31; extra == "test"
+	ruamel.yaml>=0.17.31; extra == 'test'
 	subprocess-tee>=0.4.1
-	tox>=4.0.0; extra == "test"
-	types-jsonschema; extra == "test"
-	types-pyyaml; extra == "test"
-	uv>=0.5.5; extra == "docs"
-	wcmatch>=8.1.2; python_version < "3.12"
-	wcmatch>=8.5.0; python_version >= "3.12"
+	tox>=4.0.0; extra == 'test'
+	types-jsonschema; extra == 'test'
+	types-pyyaml; extra == 'test'
+	uv>=0.5.5; extra == 'docs'
+	wcmatch>=8.1.2; python_version < '3.12'
+	wcmatch>=8.5.0; python_version >= '3.12'
 	yamllint>=1.34.0
 "
 GENERATED_RDEPEND="${RDEPEND}
@@ -69,7 +69,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/referencing-0.36.2[${PYTHON_USEDEP}]
 	>=dev-python/ruamel-yaml-0.18.5[${PYTHON_USEDEP}] !~dev-python/ruamel-yaml-0.18.7[${PYTHON_USEDEP}] !~dev-python/ruamel-yaml-0.18.8[${PYTHON_USEDEP}]
 	>=dev-python/subprocess-tee-0.4.1[${PYTHON_USEDEP}]
-	docs? ( >=dev-python/uv-0.5.5[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/uv-0.5.5 )
 	>=dev-python/wcmatch-8.5.0[${PYTHON_USEDEP}]
 	>=dev-python/yamllint-1.34.0[${PYTHON_USEDEP}]
 "

@@ -18,19 +18,19 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	BTrees
-	Sphinx; extra == "docs"
-	ZODB>=3.10; extra == "test"
-	ZODB>=3.10; extra == "zodb"
+	Sphinx; extra == 'docs'
+	ZODB>=3.10; extra == 'test'
+	ZODB>=3.10; extra == 'zodb'
 	persistent>=4.1.0
-	repoze.sphinx.autointerface; extra == "docs"
+	repoze.sphinx.autointerface; extra == 'docs'
 	setuptools
-	sphinx_rtd_theme; extra == "docs"
+	sphinx_rtd_theme; extra == 'docs'
 	zope.cachedescriptors
 	zope.component
-	zope.component[zcml]; extra == "test"
-	zope.component[zcml]; extra == "zcml"
-	zope.configuration; extra == "test"
-	zope.configuration; extra == "zcml"
+	zope.component[zcml]; extra == 'test'
+	zope.component[zcml]; extra == 'zcml'
+	zope.configuration; extra == 'test'
+	zope.configuration; extra == 'zcml'
 	zope.deferredimport
 	zope.dottedname
 	zope.event
@@ -43,11 +43,11 @@ REQUIRES_DIST="
 	zope.publisher
 	zope.schema
 	zope.security
-	zope.security[zcml]>=4.0.0a3; extra == "test"
-	zope.security[zcml]>=4.0.0a3; extra == "zcml"
+	zope.security[zcml]>=4.0.0a3; extra == 'test'
+	zope.security[zcml]>=4.0.0a3; extra == 'zcml'
 	zope.size
-	zope.testing; extra == "test"
-	zope.testrunner; extra == "test"
+	zope.testing; extra == 'test'
+	zope.testrunner; extra == 'test'
 	zope.traversing>=4.0.0a1
 "
 GENERATED_RDEPEND="${RDEPEND}

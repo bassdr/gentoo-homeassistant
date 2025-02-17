@@ -23,8 +23,8 @@ DEPEND="
 	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 "
 REQUIRES_DIST="
-	numpy>1.13.3; python_version < "3.12.0.rc1"
-	numpy>=1.26.0b1; python_version >= "3.12.0.rc1"
+	numpy>1.13.3; python_version < '3.12.0.rc1'
+	numpy>=1.26.0b1; python_version >= '3.12.0.rc1'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.26.0_beta1[${PYTHON_USEDEP}]

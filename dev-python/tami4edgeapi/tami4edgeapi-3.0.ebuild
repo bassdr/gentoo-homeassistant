@@ -16,8 +16,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -31,9 +29,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pypasser[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/PyPasser[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

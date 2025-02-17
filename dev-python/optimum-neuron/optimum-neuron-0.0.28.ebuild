@@ -17,55 +17,55 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	GitPython; extra == "tests"
+	GitPython; extra == 'tests'
 	accelerate==0.29.2
-	compel; extra == "tests"
-	controlnet-aux; extra == "tests"
-	datasets; extra == "tests"
-	diffusers<=0.30.3,>=0.28.0; extra == "diffusers"
-	diffusers<=0.30.3,>=0.28.0; extra == "tests"
+	compel; extra == 'tests'
+	controlnet-aux; extra == 'tests'
+	datasets; extra == 'tests'
+	diffusers<=0.30.3,>=0.28.0; extra == 'diffusers'
+	diffusers<=0.30.3,>=0.28.0; extra == 'tests'
 	huggingface-hub>=0.28.0
-	isort; extra == "quality"
-	libneuronxla==2.0.5347.0; extra == "neuronx"
-	librosa; extra == "tests"
-	mediapipe; extra == "tests"
-	neuron-cc[tensorflow]==1.22.0.0; extra == "neuron"
-	neuronx-cc==2.15.143.0; extra == "neuronx"
-	neuronx-distributed==0.9.0; extra == "neuronx"
-	neuronx-distributed==0.9.0; extra == "training"
+	isort; extra == 'quality'
+	libneuronxla==2.0.5347.0; extra == 'neuronx'
+	librosa; extra == 'tests'
+	mediapipe; extra == 'tests'
+	neuron-cc[tensorflow]==1.22.0.0; extra == 'neuron'
+	neuronx-cc==2.15.143.0; extra == 'neuronx'
+	neuronx-distributed==0.9.0; extra == 'neuronx'
+	neuronx-distributed==0.9.0; extra == 'training'
 	numpy<=1.25.2,>=1.22.2
-	numpy==1.22.3; extra == "neuron"
-	opencv-python-headless; extra == "tests"
+	numpy==1.22.3; extra == 'neuron'
+	opencv-python-headless; extra == 'tests'
 	optimum~=1.23.3
-	parameterized; extra == "tests"
-	peft==0.14.0; extra == "training"
-	peft>=0.14.0; extra == "diffusers"
-	peft>=0.14.0; extra == "tests"
-	protobuf; extra == "neuron"
+	parameterized; extra == 'tests'
+	peft==0.14.0; extra == 'training'
+	peft>=0.14.0; extra == 'diffusers'
+	peft>=0.14.0; extra == 'tests'
+	protobuf; extra == 'neuron'
 	protobuf<4,>=3.20.3
-	psutil; extra == "tests"
-	pytest<=8.0.0; extra == "tests"
-	rjieba; extra == "tests"
-	ruff; extra == "quality"
-	sacremoses; extra == "tests"
-	safetensors; extra == "tests"
-	sentence-transformers>=2.2.0; extra == "sentence-transformers"
-	sentence-transformers>=2.2.0; extra == "tests"
-	sentencepiece; extra == "tests"
-	soundfile; extra == "tests"
-	timm>=1.0.0; extra == "tests"
-	torch-neuron==1.13.1.2.9.74.0; extra == "neuron"
-	torch-neuronx==2.1.2.2.3.2; extra == "neuronx"
-	torch==1.13.1.*; extra == "neuron"
-	torch==2.1.2.*; extra == "neuronx"
-	torchvision; extra == "neuron"
-	torchvision==0.16.*; extra == "neuronx"
-	transformers-neuronx==0.12.313; extra == "neuronx"
+	psutil; extra == 'tests'
+	pytest<=8.0.0; extra == 'tests'
+	rjieba; extra == 'tests'
+	ruff; extra == 'quality'
+	sacremoses; extra == 'tests'
+	safetensors; extra == 'tests'
+	sentence-transformers>=2.2.0; extra == 'sentence-transformers'
+	sentence-transformers>=2.2.0; extra == 'tests'
+	sentencepiece; extra == 'tests'
+	soundfile; extra == 'tests'
+	timm>=1.0.0; extra == 'tests'
+	torch-neuron==1.13.1.2.9.74.0; extra == 'neuron'
+	torch-neuronx==2.1.2.2.3.2; extra == 'neuronx'
+	torch==1.13.1.*; extra == 'neuron'
+	torch==2.1.2.*; extra == 'neuronx'
+	torchvision; extra == 'neuron'
+	torchvision==0.16.*; extra == 'neuronx'
+	transformers-neuronx==0.12.313; extra == 'neuronx'
 	transformers~=4.48.1
-	trl==0.11.4; extra == "tests"
-	trl==0.11.4; extra == "training"
-	wheel; extra == "neuron"
-	wheel; extra == "neuronx"
+	trl==0.11.4; extra == 'tests'
+	trl==0.11.4; extra == 'training'
+	wheel; extra == 'neuron'
+	wheel; extra == 'neuronx'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	~dev-python/accelerate-0.29.2[${PYTHON_USEDEP}]

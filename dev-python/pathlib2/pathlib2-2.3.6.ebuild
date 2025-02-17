@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	scandir ; python_version<"3.5"
+	scandir ; python_version<'3.5'
 	six
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -20,18 +20,18 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	build>=1.0.0
 	click>=8
-	covdefaults; extra == "coverage"
-	flit_core<4,>=2; extra == "testing"
+	covdefaults; extra == 'coverage'
+	flit_core<4,>=2; extra == 'testing'
 	pip>=22.2
-	poetry_core>=1.0.0; extra == "testing"
+	poetry_core>=1.0.0; extra == 'testing'
 	pyproject_hooks
-	pytest-cov; extra == "coverage"
-	pytest-rerunfailures; extra == "testing"
-	pytest-xdist; extra == "testing"
-	pytest>=7.2.0; extra == "testing"
+	pytest-cov; extra == 'coverage'
+	pytest-rerunfailures; extra == 'testing'
+	pytest-xdist; extra == 'testing'
+	pytest>=7.2.0; extra == 'testing'
 	setuptools
-	tomli-w; extra == "testing"
-	tomli; python_version < "3.11"
+	tomli-w; extra == 'testing'
+	tomli; python_version < '3.11'
 	wheel
 "
 GENERATED_RDEPEND="${RDEPEND}

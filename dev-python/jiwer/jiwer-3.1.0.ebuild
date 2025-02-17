@@ -17,16 +17,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black>=24.8.0; extra == "dev"
+	black>=24.8.0; extra == 'dev'
 	click>=8.1.8
-	flake8>=5.0.4; extra == "dev"
-	mkdocs-gen-files>=0.5.0; extra == "docs"
-	mkdocs-literate-nav>=0.6.1; extra == "docs"
-	mkdocs-material>=9.5.50; extra == "docs"
-	mkdocs>=1.6.1; extra == "docs"
-	mkdocstrings[python]>=0.26.1; extra == "docs"
-	pytest-benchmark>=4.0.0; extra == "dev"
-	pytest>=8.3.4; extra == "dev"
+	flake8>=5.0.4; extra == 'dev'
+	mkdocs-gen-files>=0.5.0; extra == 'docs'
+	mkdocs-literate-nav>=0.6.1; extra == 'docs'
+	mkdocs-material>=9.5.50; extra == 'docs'
+	mkdocs>=1.6.1; extra == 'docs'
+	mkdocstrings[python]>=0.26.1; extra == 'docs'
+	pytest-benchmark>=4.0.0; extra == 'dev'
+	pytest>=8.3.4; extra == 'dev'
 	rapidfuzz>=3.9.7
 "
 GENERATED_RDEPEND="${RDEPEND}

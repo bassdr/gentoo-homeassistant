@@ -19,21 +19,21 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py<2.0.0,>=0.9
-	apache-beam[gcp]<3,>=2.47; python_version < "3.11"
-	apache-beam[gcp]<3,>=2.53; python_version >= "3.11"
-	ipython<8,>=7; extra == "all"
-	ipython<8,>=7; extra == "visualization"
+	apache-beam[gcp]<3,>=2.47; python_version < '3.11'
+	apache-beam[gcp]<3,>=2.53; python_version >= '3.11'
+	ipython<8,>=7; extra == 'all'
+	ipython<8,>=7; extra == 'visualization'
 	joblib>=1.2.0
 	numpy>=1.22.0
 	pandas<2,>=1.0
-	protobuf<5,>=3.20.3; python_version < "3.11"
-	protobuf<6,>=4.25.2; python_version >= "3.11"
+	protobuf<5,>=3.20.3; python_version < '3.11'
+	protobuf<6,>=4.25.2; python_version >= '3.11'
 	pyarrow<11,>=10
 	pyfarmhash<0.4,>=0.2.2
-	scikit-learn<2,>=1.0; extra == "all"
-	scikit-learn<2,>=1.0; extra == "mutual-information"
-	scipy<2,>=1.5; extra == "all"
-	scipy<2,>=1.5; extra == "mutual-information"
+	scikit-learn<2,>=1.0; extra == 'all'
+	scikit-learn<2,>=1.0; extra == 'mutual-information'
+	scipy<2,>=1.5; extra == 'all'
+	scipy<2,>=1.5; extra == 'mutual-information'
 	six<2,>=1.12
 	tensorflow-metadata<1.17,>=1.16.0
 	tensorflow<2.17,>=2.16

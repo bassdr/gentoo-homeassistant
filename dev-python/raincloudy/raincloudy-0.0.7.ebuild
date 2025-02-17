@@ -24,7 +24,7 @@ REQUIRES_DIST="
 	requests
 "
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/bs4[${PYTHON_USEDEP}]
+	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}

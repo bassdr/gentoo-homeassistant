@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-resources ; python_version < "3.9"
+	importlib-resources ; python_version < '3.9'
 	numba >=0.53
 	numpy >=1.17
 	numpydoc ; extra == 'docs'

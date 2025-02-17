@@ -20,9 +20,9 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PySocks (!=1.5.7,<2,>=1.5.6) ; extra == 'socks'
 	PyYAML (<6,>=3.10)
-	backports.ssl-match-hostname (<4,>=3.5) ; python_version < "3.5"
-	cached-property (<2,>=1.2.0) ; python_version < "3.8"
-	colorama (<1,>=0.4) ; sys_platform == "win32"
+	backports.ssl-match-hostname (<4,>=3.5) ; python_version < '3.5'
+	cached-property (<2,>=1.2.0) ; python_version < '3.8'
+	colorama (<1,>=0.4) ; sys_platform == 'win32'
 	ddt (<2,>=1.2.2) ; extra == 'tests'
 	distro (<2,>=1.5.0)
 	docker[ssh] (>=5)

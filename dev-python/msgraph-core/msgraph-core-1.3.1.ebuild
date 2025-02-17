@@ -15,16 +15,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	bumpver; extra == "dev"
+	bumpver; extra == 'dev'
 	httpx[http2]>=0.23.0
-	isort; extra == "dev"
+	isort; extra == 'dev'
 	microsoft-kiota-abstractions<2.0.0,>=1.8.0
 	microsoft-kiota-authentication-azure<2.0.0,>=1.8.0
 	microsoft-kiota-http<2.0.0,>=1.8.0
-	mypy; extra == "dev"
-	pylint; extra == "dev"
-	pytest; extra == "dev"
-	yapf; extra == "dev"
+	mypy; extra == 'dev'
+	pylint; extra == 'dev'
+	pytest; extra == 'dev'
+	yapf; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.23.0[http2,${PYTHON_USEDEP}]

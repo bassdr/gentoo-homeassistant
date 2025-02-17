@@ -17,22 +17,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cartopy; extra == "all"
-	contextily; extra == "all"
-	geodatasets; extra == "all"
-	geopandas; extra == "all"
-	geoviews; extra == "all"
-	h3[test]; extra == "all"
-	jupyter-book; extra == "all"
-	jupyterlab-geojson; extra == "all"
-	jupyterlab; extra == "all"
-	matplotlib; extra == "all"
-	numpy; extra == "numpy"
-	numpy; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
-	sphinx>=7.3.3; extra == "all"
+	cartopy; extra == 'all'
+	contextily; extra == 'all'
+	geodatasets; extra == 'all'
+	geopandas; extra == 'all'
+	geoviews; extra == 'all'
+	h3[test]; extra == 'all'
+	jupyter-book; extra == 'all'
+	jupyterlab-geojson; extra == 'all'
+	jupyterlab; extra == 'all'
+	matplotlib; extra == 'all'
+	numpy; extra == 'numpy'
+	numpy; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
+	sphinx>=7.3.3; extra == 'all'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/cartopy[${PYTHON_USEDEP}] )

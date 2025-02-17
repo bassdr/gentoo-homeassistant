@@ -21,45 +21,45 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	anyio>=3.1.0
 	argon2-cffi>=21.1
-	flaky; extra == "test"
-	ipykernel; extra == "docs"
-	ipykernel; extra == "test"
-	jinja2; extra == "docs"
+	flaky; extra == 'test'
+	ipykernel; extra == 'docs'
+	ipykernel; extra == 'test'
+	jinja2; extra == 'docs'
 	jinja2>=3.0.3
-	jupyter-client; extra == "docs"
+	jupyter-client; extra == 'docs'
 	jupyter-client>=7.4.4
 	jupyter-core!=5.0.*,>=4.12
 	jupyter-events>=0.11.0
 	jupyter-server-terminals>=0.4.4
-	myst-parser; extra == "docs"
+	myst-parser; extra == 'docs'
 	nbconvert>=6.4.4
-	nbformat; extra == "docs"
+	nbformat; extra == 'docs'
 	nbformat>=5.3.0
 	overrides>=5.0
 	packaging>=22.0
-	pre-commit; extra == "test"
-	prometheus-client; extra == "docs"
+	pre-commit; extra == 'test'
+	prometheus-client; extra == 'docs'
 	prometheus-client>=0.9
-	pydata-sphinx-theme; extra == "docs"
-	pytest-console-scripts; extra == "test"
-	pytest-jupyter[server]>=0.7; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest<9,>=7.0; extra == "test"
-	pywinpty>=2.0.1; os_name == "nt"
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-console-scripts; extra == 'test'
+	pytest-jupyter[server]>=0.7; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest<9,>=7.0; extra == 'test'
+	pywinpty>=2.0.1; os_name == 'nt'
 	pyzmq>=24
-	requests; extra == "test"
-	send2trash; extra == "docs"
+	requests; extra == 'test'
+	send2trash; extra == 'docs'
 	send2trash>=1.8.2
-	sphinx-autodoc-typehints; extra == "docs"
-	sphinxcontrib-github-alt; extra == "docs"
-	sphinxcontrib-openapi>=0.8.0; extra == "docs"
-	sphinxcontrib-spelling; extra == "docs"
-	sphinxemoji; extra == "docs"
+	sphinx-autodoc-typehints; extra == 'docs'
+	sphinxcontrib-github-alt; extra == 'docs'
+	sphinxcontrib-openapi>=0.8.0; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
+	sphinxemoji; extra == 'docs'
 	terminado>=0.8.3
-	tornado; extra == "docs"
+	tornado; extra == 'docs'
 	tornado>=6.2.0
 	traitlets>=5.6.0
-	typing-extensions; extra == "docs"
+	typing-extensions; extra == 'docs'
 	websocket-client>=1.7
 "
 GENERATED_RDEPEND="${RDEPEND}

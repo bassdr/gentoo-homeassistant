@@ -18,7 +18,7 @@ REQUIRES_DIST="
 	cython>=0.29.32
 	pycodestyle
 	tokenize-rt>=3.2.0
-	tomli; python_version < "3.11"
+	tomli; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cython-0.29.32[${PYTHON_USEDEP}]

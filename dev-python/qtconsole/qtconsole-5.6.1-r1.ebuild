@@ -20,15 +20,15 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Sphinx>=1.3; extra == "doc"
-	flaky; extra == "test"
+	Sphinx>=1.3; extra == 'doc'
+	flaky; extra == 'test'
 	ipykernel>=4.1
 	jupyter-client>=4.1
 	jupyter-core
 	packaging
 	pygments
-	pytest-qt; extra == "test"
-	pytest; extra == "test"
+	pytest-qt; extra == 'test'
+	pytest; extra == 'test'
 	qtpy>=2.4.0
 	traitlets!=5.2.1,!=5.2.2
 "

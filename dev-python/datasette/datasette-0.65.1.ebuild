@@ -22,17 +22,17 @@ REQUIRES_DIST="
 	aiofiles>=0.4
 	asgi-csrf>=0.9
 	asgiref>=3.2.10
-	beautifulsoup4>=4.8.1; extra == "test"
-	black==24.4.2; extra == "test"
-	blacken-docs; extra == "docs"
-	blacken-docs==1.12.1; extra == "test"
+	beautifulsoup4>=4.8.1; extra == 'test'
+	black==24.4.2; extra == 'test'
+	blacken-docs; extra == 'docs'
+	blacken-docs==1.12.1; extra == 'test'
 	click-default-group>=1.2.3
 	click>=7.1.1
-	codespell; extra == "docs"
-	cogapp>=3.3.0; extra == "test"
+	codespell; extra == 'docs'
+	cogapp>=3.3.0; extra == 'test'
 	flexcache>=0.3
 	flexparser>=0.3
-	furo==2024.8.6; extra == "docs"
+	furo==2024.8.6; extra == 'docs'
 	httpx>=0.20
 	hupper>=1.9
 	itsdangerous>=1.1
@@ -41,15 +41,15 @@ REQUIRES_DIST="
 	pip
 	platformdirs>=2.1.0
 	pluggy>=1.0
-	pytest-asyncio>=0.17; extra == "test"
-	pytest-timeout>=1.4.2; extra == "test"
-	pytest-xdist>=2.2.1; extra == "test"
-	pytest>=5.2.2; extra == "test"
-	rich; extra == "rich"
+	pytest-asyncio>=0.17; extra == 'test'
+	pytest-timeout>=1.4.2; extra == 'test'
+	pytest-xdist>=2.2.1; extra == 'test'
+	pytest>=5.2.2; extra == 'test'
+	rich; extra == 'rich'
 	setuptools
-	sphinx-autobuild; extra == "docs"
-	sphinx-copybutton; extra == "docs"
-	trustme>=0.7; extra == "test"
+	sphinx-autobuild; extra == 'docs'
+	sphinx-copybutton; extra == 'docs'
+	trustme>=0.7; extra == 'test'
 	typing_extensions>=4.0.0
 	uvicorn>=0.11
 "

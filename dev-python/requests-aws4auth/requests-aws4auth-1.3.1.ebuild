@@ -22,7 +22,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	httpx; extra == "httpx"
+	httpx; extra == 'httpx'
 	requests
 "
 GENERATED_RDEPEND="${RDEPEND}

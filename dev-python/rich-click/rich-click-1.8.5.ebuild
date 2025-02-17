@@ -18,24 +18,24 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	click>=7
-	importlib-metadata; python_version < "3.8"
-	markdown_include; extra == "docs"
-	mkdocs-glightbox; extra == "docs"
-	mkdocs-material-extensions; extra == "docs"
-	mkdocs-material[imaging]~=9.5.18; extra == "docs"
-	mkdocs-rss-plugin; extra == "docs"
-	mkdocs; extra == "docs"
-	mkdocstrings[python]; extra == "docs"
-	mypy; extra == "dev"
-	packaging; extra == "dev"
-	pre-commit; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
-	rich-codex; extra == "dev"
-	rich-codex; extra == "docs"
+	importlib-metadata; python_version < '3.8'
+	markdown_include; extra == 'docs'
+	mkdocs-glightbox; extra == 'docs'
+	mkdocs-material-extensions; extra == 'docs'
+	mkdocs-material[imaging]~=9.5.18; extra == 'docs'
+	mkdocs-rss-plugin; extra == 'docs'
+	mkdocs; extra == 'docs'
+	mkdocstrings[python]; extra == 'docs'
+	mypy; extra == 'dev'
+	packaging; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
+	rich-codex; extra == 'dev'
+	rich-codex; extra == 'docs'
 	rich>=10.7
-	ruff; extra == "dev"
-	types-setuptools; extra == "dev"
+	ruff; extra == 'dev'
+	types-setuptools; extra == 'dev'
 	typing_extensions>=4
 "
 GENERATED_RDEPEND="${RDEPEND}

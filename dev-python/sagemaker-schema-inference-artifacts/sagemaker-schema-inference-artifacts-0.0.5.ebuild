@@ -16,19 +16,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	awslogs==0.14.0; extra == "test"
-	black==24.3.0; extra == "test"
-	contextlib2==21.6.0; extra == "test"
-	coverage<6.2,>=5.2; extra == "test"
-	flake8==4.0.1; extra == "test"
+	awslogs==0.14.0; extra == 'test'
+	black==24.3.0; extra == 'test'
+	contextlib2==21.6.0; extra == 'test'
+	coverage<6.2,>=5.2; extra == 'test'
+	flake8==4.0.1; extra == 'test'
 	json5>=0.9.22
-	mock==4.0.3; extra == "test"
-	pytest-cov==3.0.0; extra == "test"
-	pytest-rerunfailures==10.2; extra == "test"
-	pytest-timeout==2.1.0; extra == "test"
-	pytest-xdist==2.4.0; extra == "test"
-	pytest==6.2.5; extra == "test"
-	tox==3.24.5; extra == "test"
+	mock==4.0.3; extra == 'test'
+	pytest-cov==3.0.0; extra == 'test'
+	pytest-rerunfailures==10.2; extra == 'test'
+	pytest-timeout==2.1.0; extra == 'test'
+	pytest-xdist==2.4.0; extra == 'test'
+	pytest==6.2.5; extra == 'test'
+	tox==3.24.5; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/json5-0.9.22[${PYTHON_USEDEP}]

@@ -18,9 +18,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py>=0.7.1
-	flax>=0.7.1; extra == "flax"
-	jax>=0.4.28; extra == "jax"
-	jaxlib>=0.4.28; extra == "jax"
+	flax>=0.7.1; extra == 'flax'
+	jax>=0.4.28; extra == 'jax'
+	jaxlib>=0.4.28; extra == 'jax'
 	jmp>=0.0.2
 	numpy>=1.18.0
 	tabulate>=0.8.9

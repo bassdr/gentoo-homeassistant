@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
@@ -28,28 +29,28 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	build; extra == "test"
-	cython>=3.0.3; extra == "test"
-	furo>=2023.5.20; extra == "docs"
-	meson>=0.63.3; python_version < "3.12"
-	meson>=1.2.3; python_version >= "3.12"
+	build; extra == 'test'
+	cython>=3.0.3; extra == 'test'
+	furo>=2023.5.20; extra == 'docs'
+	meson>=0.63.3; python_version < '3.12'
+	meson>=1.2.3; python_version >= '3.12'
 	packaging>=19.0
-	packaging>=23.1; extra == "test"
+	packaging>=23.1; extra == 'test'
 	pyproject-metadata>=0.7.1
-	pytest-cov[toml]; extra == "test"
-	pytest-mock; extra == "test"
-	pytest>=6.0; extra == "test"
-	sphinx-copybutton>=0.5.0; extra == "docs"
-	sphinx-design>=0.1.0; extra == "docs"
-	sphinxext-opengraph>=0.7.0; extra == "docs"
-	sphinx~=6.2; extra == "docs"
-	tomli>=1.0.0; python_version < "3.11"
-	typing-extensions>=3.7.4; python_version < "3.11" and extra == "test"
-	wheel; extra == "test"
+	pytest-cov[toml]; extra == 'test'
+	pytest-mock; extra == 'test'
+	pytest>=6.0; extra == 'test'
+	sphinx-copybutton>=0.5.0; extra == 'docs'
+	sphinx-design>=0.1.0; extra == 'docs'
+	sphinxext-opengraph>=0.7.0; extra == 'docs'
+	sphinx~=6.2; extra == 'docs'
+	tomli>=1.0.0; python_version < '3.11'
+	typing-extensions>=3.7.4; python_version < '3.11' and extra == 'test'
+	wheel; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2023.5.20[${PYTHON_USEDEP}] )
-	>=dev-python/meson-1.2.3[${PYTHON_USEDEP}]
+	>=dev-build/meson-1.2.3[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/pyproject-metadata-0.7.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-6.2[${PYTHON_USEDEP}] =dev-python/sphinx-6*[${PYTHON_USEDEP}] )
@@ -57,23 +58,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-design-0.1.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxext-opengraph-0.7.0[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/pyproject-metadata-0.7.1[${PYTHON_USEDEP}]
-	>=dev-build/meson-0.63.0
-	!kernel_Darwin? ( dev-util/patchelf )
-	$(python_gen_cond_dep '
-		>=dev-python/tomli-1.0.0[${PYTHON_USEDEP}]
-	' 3.10)
-"
-BDEPEND="
-	${RDEPEND}
-	>=dev-python/cython-0.29.34[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-vcs/git
-	)
-"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -87,7 +72,12 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/cython-3.0.3[${PYTHON_USEDEP}]
+	test? (
+		dev-vcs/git
+	)
+"
 
 src_test() {
 	# required by tests/test_sdist.py::test_reproducible

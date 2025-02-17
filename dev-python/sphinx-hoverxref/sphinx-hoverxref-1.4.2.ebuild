@@ -17,19 +17,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	sphinx-autoapi; extra == "doc"
-	sphinx-autobuild; extra == "doc"
-	sphinx-notfound-page; extra == "doc"
-	sphinx-prompt; extra == "doc"
-	sphinx-rtd-theme; extra == "doc"
-	sphinx-tabs; extra == "doc"
-	sphinx-version-warning; extra == "doc"
-	sphinx; extra == "doc"
+	sphinx-autoapi; extra == 'doc'
+	sphinx-autobuild; extra == 'doc'
+	sphinx-notfound-page; extra == 'doc'
+	sphinx-prompt; extra == 'doc'
+	sphinx-rtd-theme; extra == 'doc'
+	sphinx-tabs; extra == 'doc'
+	sphinx-version-warning; extra == 'doc'
+	sphinx; extra == 'doc'
 	sphinx>=5.0
-	sphinxcontrib-bibtex>=2.6.0; extra == "doc"
+	sphinxcontrib-bibtex>=2.6.0; extra == 'doc'
 	sphinxcontrib-jquery
-	sphinxemoji; extra == "doc"
-	tox; extra == "test"
+	sphinxemoji; extra == 'doc'
+	tox; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinx-5.0[${PYTHON_USEDEP}]

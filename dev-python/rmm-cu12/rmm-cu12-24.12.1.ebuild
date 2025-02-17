@@ -19,8 +19,8 @@ REQUIRES_DIST="
 	cuda-python<13.0a0,<=12.6.0,>=12.0
 	numba>=0.57
 	numpy<3.0a0,>=1.23
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cuda-python-12.0[${PYTHON_USEDEP}] <dev-python/cuda-python-13.0_alpha0[${PYTHON_USEDEP}] <=dev-python/cuda-python-12.6.0[${PYTHON_USEDEP}]

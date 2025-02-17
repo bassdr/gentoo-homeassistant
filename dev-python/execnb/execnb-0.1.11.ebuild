@@ -15,11 +15,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pillow; extra == "dev"
+	Pillow; extra == 'dev'
 	fastcore>=1.5.5
 	ipython
-	matplotlib; extra == "dev"
-	mistletoe; extra == "dev"
+	matplotlib; extra == 'dev'
+	mistletoe; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fastcore-1.5.5[${PYTHON_USEDEP}]

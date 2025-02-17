@@ -18,15 +18,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	promptflow-azure==1.17.2; extra == "all"
-	promptflow-azure==1.17.2; extra == "azure"
+	promptflow-azure==1.17.2; extra == 'all'
+	promptflow-azure==1.17.2; extra == 'azure'
 	promptflow-core==1.17.2
-	promptflow-core[azureml-serving]==1.17.2; extra == "azureml-serving"
-	promptflow-core[executor-service]==1.17.2; extra == "all"
-	promptflow-core[executor-service]==1.17.2; extra == "executor-service"
+	promptflow-core[azureml-serving]==1.17.2; extra == 'azureml-serving'
+	promptflow-core[executor-service]==1.17.2; extra == 'all'
+	promptflow-core[executor-service]==1.17.2; extra == 'executor-service'
 	promptflow-devkit==1.17.2
-	promptflow-devkit[all]==1.17.2; extra == "all"
-	promptflow-devkit[executable]==1.17.2; extra == "executable"
+	promptflow-devkit[all]==1.17.2; extra == 'all'
+	promptflow-devkit[executable]==1.17.2; extra == 'executable'
 	promptflow-tracing==1.17.2
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -2,7 +2,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit python-r1
+inherit python-single-r1
 
 DESCRIPTION="Home Assistant Meta-Package homeassistant.components.anthropic"
 LICENSE="Apache-2.0"
@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/anthropic-0.31.2[${PYTHON_USEDEP}]
+	~dev-python/anthropic-0.31.2[${PYTHON_SINGLE_USEDEP}]
 "

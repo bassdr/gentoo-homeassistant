@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-cncf-kubernetes>=7.4.0; extra == "cncf-kubernetes"
-	apache-airflow-providers-common-compat; extra == "common-compat"
+	apache-airflow-providers-cncf-kubernetes>=7.4.0; extra == 'cncf-kubernetes'
+	apache-airflow-providers-common-compat; extra == 'common-compat'
 	apache-airflow>=2.9.0
 	grpcio-status>=1.59.0
 	pyspark>=3.1.3

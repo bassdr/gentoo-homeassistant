@@ -18,16 +18,16 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	astroid>=2.7,<4
-	furo ; extra == "docs"
-	myst-parser ; extra == "docs"
-	pytest ; extra == "testing"
-	pytest-cov ; extra == "testing"
-	pytest-regressions ; extra == "testing"
-	sphinx>=4.0.0 ; extra == "docs"
-	sphinx>=4.0.0 ; extra == "sphinx"
-	sphinx>=4.0.0,<7 ; extra == "testing"
+	furo ; extra == 'docs'
+	myst-parser ; extra == 'docs'
+	pytest ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-regressions ; extra == 'testing'
+	sphinx>=4.0.0 ; extra == 'docs'
+	sphinx>=4.0.0 ; extra == 'sphinx'
+	sphinx>=4.0.0,<7 ; extra == 'testing'
 	tomli; python_version<'3.11'
-	typer[all] ; extra == "cli"
+	typer[all] ; extra == 'cli'
 	typing-extensions
 "
 GENERATED_RDEPEND="${RDEPEND}

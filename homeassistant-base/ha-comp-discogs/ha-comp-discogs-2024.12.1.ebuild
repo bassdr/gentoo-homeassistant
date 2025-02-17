@@ -11,5 +11,5 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
-	~dev-python/discogs-client-2.3.0[${PYTHON_USEDEP}]
+	dev-python/python3-discogs-client[${PYTHON_USEDEP}]
 "

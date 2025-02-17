@@ -23,7 +23,7 @@ IUSE="${GENERATED_IUSE} examples"
 
 REQUIRES_DIST="
 	cryptography (>=2.6,!=35,<44)
-	pyscard (>=1.9,<3) ; extra == "pcsc"
+	pyscard (>=1.9,<3) ; extra == 'pcsc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-2.6[${PYTHON_USEDEP}] <dev-python/cryptography-44[${PYTHON_USEDEP}] !~dev-python/cryptography-35[${PYTHON_USEDEP}]

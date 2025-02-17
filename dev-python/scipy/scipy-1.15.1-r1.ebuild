@@ -34,7 +34,7 @@ else
 		)"
 
 	if [[ ${PV} != *rc* ]] ; then
-KEYWORDS="amd64 arm64"
+		KEYWORDS="amd64 arm64"
 	fi
 fi
 
@@ -52,43 +52,43 @@ DEPEND="
 	>=virtual/lapack-3.8
 "
 REQUIRES_DIST="
-	Cython; extra == "test"
-	array-api-strict<2.1.1,>=2.0; extra == "test"
-	asv; extra == "test"
-	cython-lint>=0.12.2; extra == "dev"
-	doit>=0.36.0; extra == "dev"
-	gmpy2; extra == "test"
-	hypothesis>=6.30; extra == "test"
-	intersphinx_registry; extra == "doc"
-	jupyterlite-pyodide-kernel; extra == "doc"
-	jupyterlite-sphinx>=0.16.5; extra == "doc"
-	jupytext; extra == "doc"
-	matplotlib>=3.5; extra == "doc"
-	meson; extra == "test"
-	mpmath; extra == "test"
-	mypy==1.10.0; extra == "dev"
-	myst-nb; extra == "doc"
-	ninja; sys_platform != "emscripten" and extra == "test"
+	Cython; extra == 'test'
+	array-api-strict<2.1.1,>=2.0; extra == 'test'
+	asv; extra == 'test'
+	cython-lint>=0.12.2; extra == 'dev'
+	doit>=0.36.0; extra == 'dev'
+	gmpy2; extra == 'test'
+	hypothesis>=6.30; extra == 'test'
+	intersphinx_registry; extra == 'doc'
+	jupyterlite-pyodide-kernel; extra == 'doc'
+	jupyterlite-sphinx>=0.16.5; extra == 'doc'
+	jupytext; extra == 'doc'
+	matplotlib>=3.5; extra == 'doc'
+	meson; extra == 'test'
+	mpmath; extra == 'test'
+	mypy==1.10.0; extra == 'dev'
+	myst-nb; extra == 'doc'
+	ninja; sys_platform != 'emscripten' and extra == 'test'
 	numpy<2.5,>=1.23.5
-	numpydoc; extra == "doc"
-	pooch; extra == "doc"
-	pooch; extra == "test"
-	pycodestyle; extra == "dev"
-	pydata-sphinx-theme>=0.15.2; extra == "doc"
-	pydevtool; extra == "dev"
-	pytest-cov; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
-	rich-click; extra == "dev"
-	ruff>=0.0.292; extra == "dev"
-	scikit-umfpack; extra == "test"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design>=0.4.0; extra == "doc"
-	sphinx<8.0.0,>=5.0.0; extra == "doc"
-	threadpoolctl; extra == "test"
-	types-psutil; extra == "dev"
-	typing_extensions; extra == "dev"
+	numpydoc; extra == 'doc'
+	pooch; extra == 'doc'
+	pooch; extra == 'test'
+	pycodestyle; extra == 'dev'
+	pydata-sphinx-theme>=0.15.2; extra == 'doc'
+	pydevtool; extra == 'dev'
+	pytest-cov; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
+	rich-click; extra == 'dev'
+	ruff>=0.0.292; extra == 'dev'
+	scikit-umfpack; extra == 'test'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design>=0.4.0; extra == 'doc'
+	sphinx<8.0.0,>=5.0.0; extra == 'doc'
+	threadpoolctl; extra == 'test'
+	types-psutil; extra == 'dev'
+	typing_extensions; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/intersphinx-registry[${PYTHON_USEDEP}] )
@@ -108,6 +108,7 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
+	sci-libs/umfpack
 "
 BDEPEND="
 	dev-lang/swig

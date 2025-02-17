@@ -23,30 +23,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	coverage[toml]>=7.5
-	fields; extra == "testing"
-	hunter; extra == "testing"
-	process-tests; extra == "testing"
-	pytest-xdist; extra == "testing"
+	fields; extra == 'testing'
+	hunter; extra == 'testing'
+	process-tests; extra == 'testing'
+	pytest-xdist; extra == 'testing'
 	pytest>=4.6
-	virtualenv; extra == "testing"
+	virtualenv; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/coverage-7.5[toml,${PYTHON_USEDEP}]
+	>=dev-python/coverage-7.5[${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/py-1.4.22[${PYTHON_USEDEP}]
-	>=dev-python/pytest-3.6[${PYTHON_USEDEP}]
-	>=dev-python/coverage-6.4.4-r1[${PYTHON_USEDEP}]
-"
-BDEPEND="
-	test? (
-		dev-python/virtualenv[${PYTHON_USEDEP}]
-		dev-python/fields[${PYTHON_USEDEP}]
-		>=dev-python/process-tests-2.0.2[${PYTHON_USEDEP}]
-		dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	)
-"
+RDEPEND="${GENERATED_RDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-4.0.0-pytest-xdist-2.5.0.patch

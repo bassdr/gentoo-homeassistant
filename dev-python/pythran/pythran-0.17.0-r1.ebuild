@@ -26,21 +26,21 @@ GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	beniget~=0.4.0
-	cython; extra == "test"
+	cython; extra == 'test'
 	gast~=0.6.0
-	guzzle-sphinx-theme; extra == "doc"
-	ipython; extra == "test"
-	meson; extra == "test"
-	nbsphinx; extra == "doc"
-	nbval; extra == "test"
-	ninja; extra == "test"
+	guzzle-sphinx-theme; extra == 'doc'
+	ipython; extra == 'test'
+	meson; extra == 'test'
+	nbsphinx; extra == 'doc'
+	nbval; extra == 'test'
+	ninja; extra == 'test'
 	numpy
-	numpy; extra == "doc"
-	packaging; extra == "test"
+	numpy; extra == 'doc'
+	packaging; extra == 'test'
 	ply>=3.4
-	scipy; extra == "doc"
+	scipy; extra == 'doc'
 	setuptools
-	wheel; extra == "test"
+	wheel; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beniget-0.4.0[${PYTHON_USEDEP}] =dev-python/beniget-0.4*[${PYTHON_USEDEP}]
@@ -86,7 +86,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/cython[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
-		dev-python/meson[${PYTHON_USEDEP}]
+		dev-build/meson[${PYTHON_USEDEP}]
 		dev-python/nbval[${PYTHON_USEDEP}]
 		dev-python/ninja[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]

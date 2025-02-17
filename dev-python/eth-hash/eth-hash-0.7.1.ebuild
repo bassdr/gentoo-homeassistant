@@ -17,29 +17,29 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build>=0.9.0; extra == "dev"
-	bump_my_version>=0.19.0; extra == "dev"
-	ipython; extra == "dev"
-	mypy==1.10.0; extra == "dev"
-	pre-commit>=3.4.0; extra == "dev"
-	pycryptodome<4,>=3.6.6; extra == "pycryptodome"
-	pysha3<2.0.0,>=1.0.0; python_version < "3.9" and extra == "pysha3"
-	pytest-xdist>=2.4.0; extra == "dev"
-	pytest-xdist>=2.4.0; extra == "test"
-	pytest>=7.0.0; extra == "dev"
-	pytest>=7.0.0; extra == "test"
-	safe-pysha3>=1.0.0; python_version >= "3.9" and extra == "pysha3"
-	sphinx-autobuild>=2021.3.14; extra == "dev"
-	sphinx-autobuild>=2021.3.14; extra == "docs"
-	sphinx>=6.0.0; extra == "dev"
-	sphinx>=6.0.0; extra == "docs"
-	sphinx_rtd_theme>=1.0.0; extra == "dev"
-	sphinx_rtd_theme>=1.0.0; extra == "docs"
-	towncrier<25,>=24; extra == "dev"
-	towncrier<25,>=24; extra == "docs"
-	tox>=4.0.0; extra == "dev"
-	twine; extra == "dev"
-	wheel; extra == "dev"
+	build>=0.9.0; extra == 'dev'
+	bump_my_version>=0.19.0; extra == 'dev'
+	ipython; extra == 'dev'
+	mypy==1.10.0; extra == 'dev'
+	pre-commit>=3.4.0; extra == 'dev'
+	pycryptodome<4,>=3.6.6; extra == 'pycryptodome'
+	pysha3<2.0.0,>=1.0.0; python_version < '3.9' and extra == 'pysha3'
+	pytest-xdist>=2.4.0; extra == 'dev'
+	pytest-xdist>=2.4.0; extra == 'test'
+	pytest>=7.0.0; extra == 'dev'
+	pytest>=7.0.0; extra == 'test'
+	safe-pysha3>=1.0.0; python_version >= '3.9' and extra == 'pysha3'
+	sphinx-autobuild>=2021.3.14; extra == 'dev'
+	sphinx-autobuild>=2021.3.14; extra == 'docs'
+	sphinx>=6.0.0; extra == 'dev'
+	sphinx>=6.0.0; extra == 'docs'
+	sphinx_rtd_theme>=1.0.0; extra == 'dev'
+	sphinx_rtd_theme>=1.0.0; extra == 'docs'
+	towncrier<25,>=24; extra == 'dev'
+	towncrier<25,>=24; extra == 'docs'
+	tox>=4.0.0; extra == 'dev'
+	twine; extra == 'dev'
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	pycryptodome? ( >=dev-python/pycryptodome-3.6.6[${PYTHON_USEDEP}] <dev-python/pycryptodome-4[${PYTHON_USEDEP}] )

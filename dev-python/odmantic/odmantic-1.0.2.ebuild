@@ -17,37 +17,37 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	async-asgi-testclient~=1.4.11; extra == "test"
-	asyncmock~=0.4.2; extra == "test"
-	coverage[toml]~=6.2; extra == "test"
-	darglint~=1.8.1; extra == "test"
-	fastapi>=0.100.0; extra == "fastapi"
-	fastapi>=0.104.0; extra == "test"
-	httpx~=0.24.1; extra == "test"
-	inline-snapshot~=0.6.0; extra == "test"
-	ipython~=7.16.1; extra == "dev"
-	mkdocs-macros-plugin~=1.0.4; extra == "doc"
-	mkdocs-material~=9.5.2; extra == "doc"
-	mkdocstrings[python]~=0.24.0; extra == "doc"
+	async-asgi-testclient~=1.4.11; extra == 'test'
+	asyncmock~=0.4.2; extra == 'test'
+	coverage[toml]~=6.2; extra == 'test'
+	darglint~=1.8.1; extra == 'test'
+	fastapi>=0.100.0; extra == 'fastapi'
+	fastapi>=0.104.0; extra == 'test'
+	httpx~=0.24.1; extra == 'test'
+	inline-snapshot~=0.6.0; extra == 'test'
+	ipython~=7.16.1; extra == 'dev'
+	mkdocs-macros-plugin~=1.0.4; extra == 'doc'
+	mkdocs-material~=9.5.2; extra == 'doc'
+	mkdocstrings[python]~=0.24.0; extra == 'doc'
 	motor>=3.1.1
-	mypy~=1.4.1; extra == "lint"
+	mypy~=1.4.1; extra == 'lint'
 	pydantic>=2.5.2
-	pydocstyle[toml]~=6.3.0; extra == "doc"
+	pydocstyle[toml]~=6.3.0; extra == 'doc'
 	pymongo>=4.1.0
-	pytest-asyncio~=0.16.0; extra == "test"
-	pytest-benchmark~=4.0.0; extra == "test"
-	pytest-codspeed~=2.1.0; extra == "test"
-	pytest-sugar~=0.9.5; extra == "test"
-	pytest-xdist~=2.1.0; extra == "test"
-	pytest~=7.0; extra == "test"
-	pytz~=2023.3; extra == "test"
-	requests~=2.24; extra == "test"
-	ruff~=0.3.3; extra == "lint"
-	semver~=2.13.0; extra == "dev"
-	typer~=0.4.1; extra == "dev"
-	types-pytz~=2023.3.0.0; extra == "test"
-	typing-extensions>=4.2.0; python_version < "3.11"
-	uvicorn~=0.17.0; extra == "test"
+	pytest-asyncio~=0.16.0; extra == 'test'
+	pytest-benchmark~=4.0.0; extra == 'test'
+	pytest-codspeed~=2.1.0; extra == 'test'
+	pytest-sugar~=0.9.5; extra == 'test'
+	pytest-xdist~=2.1.0; extra == 'test'
+	pytest~=7.0; extra == 'test'
+	pytz~=2023.3; extra == 'test'
+	requests~=2.24; extra == 'test'
+	ruff~=0.3.3; extra == 'lint'
+	semver~=2.13.0; extra == 'dev'
+	typer~=0.4.1; extra == 'dev'
+	types-pytz~=2023.3.0.0; extra == 'test'
+	typing-extensions>=4.2.0; python_version < '3.11'
+	uvicorn~=0.17.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	fastapi? ( >=dev-python/fastapi-0.100.0[${PYTHON_USEDEP}] )

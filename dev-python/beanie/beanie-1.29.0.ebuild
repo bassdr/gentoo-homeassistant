@@ -17,39 +17,39 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Markdown>=3.3; extra == "doc"
-	Pygments>=2.8.0; extra == "doc"
-	asgi-lifespan>=1.0.1; extra == "test"
-	beanie-batteries-queue>=0.2; extra == "queue"
+	Markdown>=3.3; extra == 'doc'
+	Pygments>=2.8.0; extra == 'doc'
+	asgi-lifespan>=1.0.1; extra == 'test'
+	beanie-batteries-queue>=0.2; extra == 'queue'
 	click>=7
-	dnspython>=2.1.0; extra == "test"
-	fastapi>=0.100; extra == "test"
-	httpx>=0.23.0; extra == "test"
-	jinja2>=3.0.3; extra == "doc"
+	dnspython>=2.1.0; extra == 'test'
+	fastapi>=0.100; extra == 'test'
+	httpx>=0.23.0; extra == 'test'
+	jinja2>=3.0.3; extra == 'doc'
 	lazy-model==0.2.0
-	mkdocs-material>=9.0; extra == "doc"
-	mkdocs>=1.4; extra == "doc"
+	mkdocs-material>=9.0; extra == 'doc'
+	mkdocs>=1.4; extra == 'doc'
 	motor<4.0.0,>=2.5.0
-	motor[aws]<4.0.0,>=2.5.0; extra == "aws"
-	motor[encryption]<4.0.0,>=2.5.0; extra == "encryption"
-	motor[gssapi]<4.0.0,>=2.5.0; extra == "gssapi"
-	motor[ocsp]<4.0.0,>=2.5.0; extra == "ocsp"
-	motor[snappy]<4.0.0,>=2.5.0; extra == "snappy"
-	motor[zstd]<4.0.0,>=2.5.0; extra == "zstd"
-	pre-commit>=3.5.0; extra == "test"
-	pydantic-extra-types>=2; extra == "test"
-	pydantic-settings>=2; extra == "test"
+	motor[aws]<4.0.0,>=2.5.0; extra == 'aws'
+	motor[encryption]<4.0.0,>=2.5.0; extra == 'encryption'
+	motor[gssapi]<4.0.0,>=2.5.0; extra == 'gssapi'
+	motor[ocsp]<4.0.0,>=2.5.0; extra == 'ocsp'
+	motor[snappy]<4.0.0,>=2.5.0; extra == 'snappy'
+	motor[zstd]<4.0.0,>=2.5.0; extra == 'zstd'
+	pre-commit>=3.5.0; extra == 'test'
+	pydantic-extra-types>=2; extra == 'test'
+	pydantic-settings>=2; extra == 'test'
 	pydantic<3.0,>=1.10.18
-	pydantic[email]; extra == "test"
-	pydoc-markdown>=4.8; extra == "doc"
-	pyright>=0; extra == "test"
-	pytest-asyncio>=0.24.0; extra == "test"
-	pytest-cov>=5.0.0; extra == "test"
-	pytest>=8.3.3; extra == "test"
-	requests; extra == "ci"
+	pydantic[email]; extra == 'test'
+	pydoc-markdown>=4.8; extra == 'doc'
+	pyright>=0; extra == 'test'
+	pytest-asyncio>=0.24.0; extra == 'test'
+	pytest-cov>=5.0.0; extra == 'test'
+	pytest>=8.3.3; extra == 'test'
+	requests; extra == 'ci'
 	toml
-	toml; extra == "ci"
-	types-requests; extra == "ci"
+	toml; extra == 'ci'
+	types-requests; extra == 'ci'
 	typing-extensions>=4.7
 "
 GENERATED_RDEPEND="${RDEPEND}

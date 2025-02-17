@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	boto3>=1.26.0; extra == "all"
-	boto3>=1.26.0; extra == "aws-iam"
+	boto3>=1.26.0; extra == 'all'
+	boto3>=1.26.0; extra == 'aws-iam'
 	lakefs-sdk<2,>=1.47
 	pyyaml~=6.0.1
 "

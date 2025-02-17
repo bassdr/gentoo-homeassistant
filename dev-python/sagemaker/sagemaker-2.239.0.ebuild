@@ -17,109 +17,109 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	accelerate<=0.27.0,>=0.24.1; extra == "all"
-	accelerate<=0.27.0,>=0.24.1; extra == "huggingface"
-	accelerate<=0.27.0,>=0.24.1; extra == "test"
-	apache-airflow-providers-amazon==7.2.1; extra == "test"
-	apache-airflow==2.9.3; extra == "test"
+	accelerate<=0.27.0,>=0.24.1; extra == 'all'
+	accelerate<=0.27.0,>=0.24.1; extra == 'huggingface'
+	accelerate<=0.27.0,>=0.24.1; extra == 'test'
+	apache-airflow-providers-amazon==7.2.1; extra == 'test'
+	apache-airflow==2.9.3; extra == 'test'
 	attrs<24,>=23.1.0
-	attrs<24,>=23.1.0; extra == "test"
-	awslogs==0.14.0; extra == "test"
-	black==24.3.0; extra == "test"
+	attrs<24,>=23.1.0; extra == 'test'
+	awslogs==0.14.0; extra == 'test'
+	black==24.3.0; extra == 'test'
 	boto3<2.0,>=1.35.75
-	build[virtualenv]==1.2.1; extra == "test"
-	cloudpickle==2.2.1; extra == "test"
+	build[virtualenv]==1.2.1; extra == 'test'
+	cloudpickle==2.2.1; extra == 'test'
 	cloudpickle>=2.2.1
-	contextlib2==21.6.0; extra == "test"
-	coverage<6.2,>=5.2; extra == "test"
-	deepdiff>=8.0.0; extra == "test"
+	contextlib2==21.6.0; extra == 'test'
+	coverage<6.2,>=5.2; extra == 'test'
+	deepdiff>=8.0.0; extra == 'test'
 	docker
-	docker<8.0.0,>=5.0.2; extra == "all"
-	docker<8.0.0,>=5.0.2; extra == "local"
-	docker<8.0.0,>=5.0.2; extra == "test"
-	fabric==2.6.0; extra == "test"
+	docker<8.0.0,>=5.0.2; extra == 'all'
+	docker<8.0.0,>=5.0.2; extra == 'local'
+	docker<8.0.0,>=5.0.2; extra == 'test'
+	fabric==2.6.0; extra == 'test'
 	fastapi
-	fastapi==0.115.4; extra == "test"
-	fastapi>=0.111.0; extra == "all"
-	fastapi>=0.111.0; extra == "huggingface"
-	fastapi>=0.111.0; extra == "test"
-	flake8==4.0.1; extra == "test"
+	fastapi==0.115.4; extra == 'test'
+	fastapi>=0.111.0; extra == 'all'
+	fastapi>=0.111.0; extra == 'huggingface'
+	fastapi>=0.111.0; extra == 'test'
+	flake8==4.0.1; extra == 'test'
 	google-pasta
-	huggingface-hub==0.26.2; extra == "test"
+	huggingface-hub==0.26.2; extra == 'test'
 	importlib-metadata<7.0,>=1.4.0
-	jinja2==3.1.4; extra == "test"
-	jsonpickle<4.0.0; extra == "test"
+	jinja2==3.1.4; extra == 'test'
+	jsonpickle<4.0.0; extra == 'test'
 	jsonschema
-	mlflow<2.13,>=2.12.2; extra == "test"
-	mock==4.0.3; extra == "test"
-	nbformat<6,>=5.9; extra == "test"
-	nest-asyncio; extra == "all"
-	nest-asyncio; extra == "huggingface"
-	nest-asyncio; extra == "test"
+	mlflow<2.13,>=2.12.2; extra == 'test'
+	mock==4.0.3; extra == 'test'
+	nbformat<6,>=5.9; extra == 'test'
+	nest-asyncio; extra == 'all'
+	nest-asyncio; extra == 'huggingface'
+	nest-asyncio; extra == 'test'
 	numpy<2.0,>=1.9.0
-	numpy>=1.24.0; extra == "test"
+	numpy>=1.24.0; extra == 'test'
 	omegaconf<=2.3,>=2.2
-	onnx==1.17.0; extra == "test"
-	opentelemetry-proto==1.27.0; extra == "test"
+	onnx==1.17.0; extra == 'test'
+	opentelemetry-proto==1.27.0; extra == 'test'
 	packaging>=20.0
 	pandas
-	pandas==1.4.4; extra == "test"
+	pandas==1.4.4; extra == 'test'
 	pathos
-	pillow<=11,>=10.0.1; extra == "test"
+	pillow<=11,>=10.0.1; extra == 'test'
 	platformdirs
 	protobuf<6.0,>=3.12
-	protobuf==4.25.5; extra == "test"
+	protobuf==4.25.5; extra == 'test'
 	psutil
-	pyspark==3.3.2; extra == "all"
-	pyspark==3.3.2; extra == "feature-processor"
-	pyspark==3.3.2; extra == "test"
-	pytest-cov==3.0.0; extra == "test"
-	pytest-rerunfailures==10.2; extra == "test"
-	pytest-timeout==2.1.0; extra == "test"
-	pytest-xdist==2.4.0; extra == "test"
-	pytest==6.2.5; extra == "test"
-	pyvis==0.2.1; extra == "test"
-	pyyaml<7,>=5.4.1; extra == "all"
-	pyyaml<7,>=5.4.1; extra == "local"
-	pyyaml<7,>=5.4.1; extra == "test"
-	pyyaml==6.0; extra == "test"
+	pyspark==3.3.2; extra == 'all'
+	pyspark==3.3.2; extra == 'feature-processor'
+	pyspark==3.3.2; extra == 'test'
+	pytest-cov==3.0.0; extra == 'test'
+	pytest-rerunfailures==10.2; extra == 'test'
+	pytest-timeout==2.1.0; extra == 'test'
+	pytest-xdist==2.4.0; extra == 'test'
+	pytest==6.2.5; extra == 'test'
+	pyvis==0.2.1; extra == 'test'
+	pyyaml<7,>=5.4.1; extra == 'all'
+	pyyaml<7,>=5.4.1; extra == 'local'
+	pyyaml<7,>=5.4.1; extra == 'test'
+	pyyaml==6.0; extra == 'test'
 	pyyaml~=6.0
 	requests
-	requests==2.32.2; extra == "test"
+	requests==2.32.2; extra == 'test'
 	sagemaker-core<2.0.0,>=1.0.17
-	sagemaker-experiments==0.1.35; extra == "test"
-	sagemaker-feature-store-pyspark-3-3; extra == "all"
-	sagemaker-feature-store-pyspark-3-3; extra == "feature-processor"
-	sagemaker-feature-store-pyspark-3-3; extra == "test"
-	sagemaker-mlflow>=0.1.0; extra == "all"
-	sagemaker-mlflow>=0.1.0; extra == "sagemaker-mlflow"
-	sagemaker-mlflow>=0.1.0; extra == "test"
-	sagemaker-schema-inference-artifacts>=0.0.5; extra == "all"
-	sagemaker-schema-inference-artifacts>=0.0.5; extra == "huggingface"
-	sagemaker-schema-inference-artifacts>=0.0.5; extra == "test"
+	sagemaker-experiments==0.1.35; extra == 'test'
+	sagemaker-feature-store-pyspark-3-3; extra == 'all'
+	sagemaker-feature-store-pyspark-3-3; extra == 'feature-processor'
+	sagemaker-feature-store-pyspark-3-3; extra == 'test'
+	sagemaker-mlflow>=0.1.0; extra == 'all'
+	sagemaker-mlflow>=0.1.0; extra == 'sagemaker-mlflow'
+	sagemaker-mlflow>=0.1.0; extra == 'test'
+	sagemaker-schema-inference-artifacts>=0.0.5; extra == 'all'
+	sagemaker-schema-inference-artifacts>=0.0.5; extra == 'huggingface'
+	sagemaker-schema-inference-artifacts>=0.0.5; extra == 'test'
 	schema
-	schema==0.7.5; extra == "test"
-	scikit-learn==1.3.0; extra == "test"
-	scipy==1.10.1; extra == "all"
-	scipy==1.10.1; extra == "scipy"
-	scipy==1.10.1; extra == "test"
+	schema==0.7.5; extra == 'test'
+	scikit-learn==1.3.0; extra == 'test'
+	scipy==1.10.1; extra == 'all'
+	scipy==1.10.1; extra == 'scipy'
+	scipy==1.10.1; extra == 'test'
 	smdebug-rulesconfig==1.0.1
-	stopit==1.1.2; extra == "test"
+	stopit==1.1.2; extra == 'test'
 	tblib<4,>=1.7.0
-	tensorboard<=2.15.2,>=2.9.0; extra == "test"
-	tensorflow<=2.15.1,>=2.9.0; extra == "test"
-	tox==3.24.5; extra == "test"
+	tensorboard<=2.15.2,>=2.9.0; extra == 'test'
+	tensorflow<=2.15.1,>=2.9.0; extra == 'test'
+	tox==3.24.5; extra == 'test'
 	tqdm
-	tritonclient[http]<2.37.0; extra == "test"
+	tritonclient[http]<2.37.0; extra == 'test'
 	urllib3<3.0.0,>=1.26.8
-	urllib3<3.0.0,>=1.26.8; extra == "all"
-	urllib3<3.0.0,>=1.26.8; extra == "local"
-	urllib3<3.0.0,>=1.26.8; extra == "test"
+	urllib3<3.0.0,>=1.26.8; extra == 'all'
+	urllib3<3.0.0,>=1.26.8; extra == 'local'
+	urllib3<3.0.0,>=1.26.8; extra == 'test'
 	uvicorn
-	uvicorn>=0.30.1; extra == "all"
-	uvicorn>=0.30.1; extra == "huggingface"
-	uvicorn>=0.30.1; extra == "test"
-	xgboost<=1.7.6,>=1.6.2; extra == "test"
+	uvicorn>=0.30.1; extra == 'all'
+	uvicorn>=0.30.1; extra == 'huggingface'
+	uvicorn>=0.30.1; extra == 'test'
+	xgboost<=1.7.6,>=1.6.2; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/accelerate-0.24.1[${PYTHON_USEDEP}] <=dev-python/accelerate-0.27.0[${PYTHON_USEDEP}] )

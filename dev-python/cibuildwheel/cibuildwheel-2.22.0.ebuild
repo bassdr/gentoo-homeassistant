@@ -24,9 +24,9 @@ REQUIRES_DIST="
 	filelock
 	packaging>=20.9
 	platformdirs
-	tomli; python_version < "3.11"
-	typing-extensions>=4.1.0; python_version < "3.11"
-	uv; extra == "uv"
+	tomli; python_version < '3.11'
+	typing-extensions>=4.1.0; python_version < '3.11'
+	uv; extra == 'uv'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	!~dev-python/bashlex-0.13[${PYTHON_USEDEP}]
@@ -36,7 +36,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/filelock[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
 	dev-python/platformdirs[${PYTHON_USEDEP}]
-	uv? ( dev-python/uv[${PYTHON_USEDEP}] )
+	uv? ( dev-python/uv )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

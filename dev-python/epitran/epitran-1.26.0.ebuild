@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	regex
 	requests
 	setuptools
-	subprocess32; python_version < "3.0"
+	subprocess32; python_version < '3.0'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jamo[${PYTHON_USEDEP}]

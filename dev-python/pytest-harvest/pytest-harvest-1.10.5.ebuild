@@ -17,10 +17,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	decopatch
-	funcsigs ; python_version < "3.3"
+	funcsigs ; python_version < '3.3'
 	makefun >=1.5
 	packaging
-	pathlib2 ; python_version < "3.2"
+	pathlib2 ; python_version < '3.2'
 	six
 "
 GENERATED_RDEPEND="${RDEPEND}

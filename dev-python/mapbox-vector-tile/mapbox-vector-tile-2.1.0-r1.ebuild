@@ -22,7 +22,7 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	protobuf<6.0.0,>=5.26.1
 	pyclipper<2.0.0,>=1.3.0
-	pyproj<4.0.0,>=3.4.1; extra == "proj"
+	pyproj<4.0.0,>=3.4.1; extra == 'proj'
 	shapely<3.0.0,>=2.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

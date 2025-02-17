@@ -3,12 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-PYPI_NO_NORMALIZE=1
 
-inherit distutils-r1 pypi
-
-SRC_URI="$(pypi_sdist_url --no-normalize "embreex" "2.17.7.post6")"
-S="${WORKDIR}/embreex-2.17.7.post6"
+inherit distutils-r1
+MY_PV=2.17.7.post6
+MY_P=${PN}-${MY_PV}
+SRC_URI="https://github.com/trimesh/${PN}/archive/refs/tags/${MY_PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION=""
 HOMEPAGE="

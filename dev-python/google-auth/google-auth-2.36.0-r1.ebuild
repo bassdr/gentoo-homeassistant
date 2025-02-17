@@ -20,16 +20,16 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="aiohttp enterprise-cert pyopenssl reauth requests"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	aiohttp<4.0.0.dev0,>=3.6.2; extra == "aiohttp"
+	aiohttp<4.0.0.dev0,>=3.6.2; extra == 'aiohttp'
 	cachetools<6.0,>=2.0.0
-	cryptography; extra == "enterprise-cert"
-	cryptography>=38.0.3; extra == "pyopenssl"
+	cryptography; extra == 'enterprise-cert'
+	cryptography>=38.0.3; extra == 'pyopenssl'
 	pyasn1-modules>=0.2.1
-	pyopenssl; extra == "enterprise-cert"
-	pyopenssl>=20.0.0; extra == "pyopenssl"
-	pyu2f>=0.1.5; extra == "reauth"
-	requests<3.0.0.dev0,>=2.20.0; extra == "aiohttp"
-	requests<3.0.0.dev0,>=2.20.0; extra == "requests"
+	pyopenssl; extra == 'enterprise-cert'
+	pyopenssl>=20.0.0; extra == 'pyopenssl'
+	pyu2f>=0.1.5; extra == 'reauth'
+	requests<3.0.0.dev0,>=2.20.0; extra == 'aiohttp'
+	requests<3.0.0.dev0,>=2.20.0; extra == 'requests'
 	rsa<5,>=3.1.4
 "
 GENERATED_RDEPEND="${RDEPEND}

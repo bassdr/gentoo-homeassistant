@@ -22,7 +22,7 @@ REQUIRES_DIST="
 	jaxlib >=0.1.37
 	matplotlib
 	numpy
-	pickle5 ; python_version < "3.8"
+	pickle5 ; python_version < '3.8'
 	pyyaml
 "
 GENERATED_RDEPEND="${RDEPEND}

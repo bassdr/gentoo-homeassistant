@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	asgiref~=3.0
-	asgiref~=3.0; extra == "instruments"
+	asgiref~=3.0; extra == 'instruments'
 	opentelemetry-api~=1.12
 	opentelemetry-instrumentation==0.51b0
 	opentelemetry-semantic-conventions==0.51b0

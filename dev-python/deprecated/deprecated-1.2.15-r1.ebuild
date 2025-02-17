@@ -21,13 +21,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	PyTest-Cov; extra == "dev"
-	PyTest; extra == "dev"
-	bump2version<1; extra == "dev"
-	jinja2~=3.0.3; extra == "dev"
-	setuptools; python_version >= "3.12" and extra == "dev"
-	sphinx<2; extra == "dev"
-	tox; extra == "dev"
+	PyTest-Cov; extra == 'dev'
+	PyTest; extra == 'dev'
+	bump2version<1; extra == 'dev'
+	jinja2~=3.0.3; extra == 'dev'
+	setuptools; python_version >= '3.12' and extra == 'dev'
+	sphinx<2; extra == 'dev'
+	tox; extra == 'dev'
 	wrapt<2,>=1.10
 "
 GENERATED_RDEPEND="${RDEPEND}

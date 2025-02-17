@@ -26,20 +26,20 @@ GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Arpeggio>=2.0.0
-	click<9.0,>=7.0; extra == "cli"
-	click<9.0,>=7.0; extra == "dev"
-	click<9.0,>=7.0; extra == "test"
-	coverage; extra == "test"
-	coveralls; extra == "test"
-	flit; extra == "dev"
-	html5lib; extra == "test"
-	importlib-metadata; python_version < "3.10"
-	jinja2; extra == "test"
-	mike; extra == "dev"
-	pytest; extra == "test"
-	ruff; extra == "dev"
-	ruff; extra == "test"
-	textX-dev; extra == "dev"
+	click<9.0,>=7.0; extra == 'cli'
+	click<9.0,>=7.0; extra == 'dev'
+	click<9.0,>=7.0; extra == 'test'
+	coverage; extra == 'test'
+	coveralls; extra == 'test'
+	flit; extra == 'dev'
+	html5lib; extra == 'test'
+	importlib-metadata; python_version < '3.10'
+	jinja2; extra == 'test'
+	mike; extra == 'dev'
+	pytest; extra == 'test'
+	ruff; extra == 'dev'
+	ruff; extra == 'test'
+	textX-dev; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/arpeggio-2.0.0[${PYTHON_USEDEP}]

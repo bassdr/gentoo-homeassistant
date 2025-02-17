@@ -17,11 +17,11 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	bqplot>=0.11.6
 	ipywidgets<9,>=7.6
-	nbval>=0.10; extra == "test"
+	nbval>=0.10; extra == 'test'
 	pandas>=1.3.5
 	py2vega>=0.5
-	pytest-cov>=4.1; extra == "test"
-	pytest>=7.4; extra == "test"
+	pytest-cov>=4.1; extra == 'test'
+	pytest>=7.4; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bqplot-0.11.6[${PYTHON_USEDEP}]

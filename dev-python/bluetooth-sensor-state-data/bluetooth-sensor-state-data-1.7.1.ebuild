@@ -26,11 +26,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx<6.0,>=5.0; extra == "docs"
+	Sphinx<6.0,>=5.0; extra == 'docs'
 	home-assistant-bluetooth>=1.3.0
-	myst-parser<0.19,>=0.18; extra == "docs"
+	myst-parser<0.19,>=0.18; extra == 'docs'
 	sensor-state-data>=2.0
-	sphinx-rtd-theme<2.0,>=1.0; extra == "docs"
+	sphinx-rtd-theme<2.0,>=1.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/home-assistant-bluetooth-1.3.0[${PYTHON_USEDEP}]

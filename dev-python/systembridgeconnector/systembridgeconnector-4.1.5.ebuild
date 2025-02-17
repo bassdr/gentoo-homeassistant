@@ -19,8 +19,8 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	aiohttp>=3.8.5; python_version < "3.12"
-	aiohttp>=3.9.0b0; python_version >= "3.12"
+	aiohttp>=3.8.5; python_version < '3.12'
+	aiohttp>=3.9.0b0; python_version >= '3.12'
 	incremental>=24.7.2
 	packaging>=24.0
 	systembridgemodels>=4.2.4

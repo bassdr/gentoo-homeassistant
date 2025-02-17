@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	antlr4-python3-runtime (==4.9.*)
-	importlib-resources ; python_version < "3.9"
+	importlib-resources ; python_version < '3.9'
 	omegaconf (<2.4,>=2.2)
 	packaging
 "

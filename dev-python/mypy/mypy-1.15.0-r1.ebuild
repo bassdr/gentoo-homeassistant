@@ -25,13 +25,13 @@ IUSE="${GENERATED_IUSE} +native-extensions"
 
 # stubgen collides with this package: https://bugs.gentoo.org/585594
 REQUIRES_DIST="
-	lxml; extra == "reports"
+	lxml; extra == 'reports'
 	mypy_extensions>=1.0.0
-	orjson; extra == "faster-cache"
-	pip; extra == "install-types"
-	psutil>=4.0; extra == "dmypy"
-	setuptools>=50; extra == "mypyc"
-	tomli>=1.1.0; python_version < "3.11"
+	orjson; extra == 'faster-cache'
+	pip; extra == 'install-types'
+	psutil>=4.0; extra == 'dmypy'
+	setuptools>=50; extra == 'mypyc'
+	tomli>=1.1.0; python_version < '3.11'
 	typing_extensions>=4.6.0
 "
 GENERATED_RDEPEND="${RDEPEND}

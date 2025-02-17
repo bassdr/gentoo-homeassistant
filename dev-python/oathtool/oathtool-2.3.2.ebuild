@@ -24,20 +24,20 @@ DOCS="README.rst"
 
 REQUIRES_DIST="
 	autocommand
-	furo; extra == "doc"
-	importlib-resources; extra == "type"
-	importlib-resources; python_version < "3.9"
-	jaraco.packaging>=9.3; extra == "doc"
+	furo; extra == 'doc'
+	importlib-resources; extra == 'type'
+	importlib-resources; python_version < '3.9'
+	jaraco.packaging>=9.3; extra == 'doc'
 	path
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "check"
-	pytest-cov; extra == "cover"
-	pytest-enabler>=2.2; extra == "enabler"
-	pytest-mypy; extra == "type"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'check'
+	pytest-cov; extra == 'cover'
+	pytest-enabler>=2.2; extra == 'enabler'
+	pytest-mypy; extra == 'type'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'check'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]

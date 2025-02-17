@@ -17,28 +17,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	jax-cuda12-plugin==0.5.0; extra == "cuda12-local"
-	jax-cuda12-plugin[with_cuda]<=0.5.0,>=0.5.0; extra == "cuda"
-	jax-cuda12-plugin[with_cuda]<=0.5.0,>=0.5.0; extra == "cuda12"
-	jax-cuda12-plugin[with_cuda]<=0.5.0,>=0.5.0; extra == "cuda12-pip"
-	jax-rocm60-plugin<=0.5.0,>=0.5.0; extra == "rocm"
+	jax-cuda12-plugin==0.5.0; extra == 'cuda12-local'
+	jax-cuda12-plugin[with_cuda]<=0.5.0,>=0.5.0; extra == 'cuda'
+	jax-cuda12-plugin[with_cuda]<=0.5.0,>=0.5.0; extra == 'cuda12'
+	jax-cuda12-plugin[with_cuda]<=0.5.0,>=0.5.0; extra == 'cuda12-pip'
+	jax-rocm60-plugin<=0.5.0,>=0.5.0; extra == 'rocm'
 	jaxlib<=0.5.0,>=0.5.0
-	jaxlib<=0.5.0,>=0.5.0; extra == "tpu"
-	jaxlib==0.4.38; extra == "ci"
-	jaxlib==0.5.0; extra == "cuda"
-	jaxlib==0.5.0; extra == "cuda12"
-	jaxlib==0.5.0; extra == "cuda12-local"
-	jaxlib==0.5.0; extra == "cuda12-pip"
-	jaxlib==0.5.0; extra == "minimum-jaxlib"
-	jaxlib==0.5.0; extra == "rocm"
-	kubernetes; extra == "k8s"
-	libtpu-nightly==0.1.dev20241010+nightly.cleanup; extra == "tpu"
-	libtpu==0.0.8; extra == "tpu"
+	jaxlib<=0.5.0,>=0.5.0; extra == 'tpu'
+	jaxlib==0.4.38; extra == 'ci'
+	jaxlib==0.5.0; extra == 'cuda'
+	jaxlib==0.5.0; extra == 'cuda12'
+	jaxlib==0.5.0; extra == 'cuda12-local'
+	jaxlib==0.5.0; extra == 'cuda12-pip'
+	jaxlib==0.5.0; extra == 'minimum-jaxlib'
+	jaxlib==0.5.0; extra == 'rocm'
+	kubernetes; extra == 'k8s'
+	libtpu-nightly==0.1.dev20241010+nightly.cleanup; extra == 'tpu'
+	libtpu==0.0.8; extra == 'tpu'
 	ml_dtypes>=0.4.0
 	numpy>=1.25
-	numpy>=1.26.0; python_version >= "3.12"
+	numpy>=1.26.0; python_version >= '3.12'
 	opt_einsum
-	requests; extra == "tpu"
+	requests; extra == 'tpu'
 	scipy>=1.11.1
 "
 GENERATED_RDEPEND="${RDEPEND}

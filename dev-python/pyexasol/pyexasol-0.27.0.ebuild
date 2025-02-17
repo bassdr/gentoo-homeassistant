@@ -17,15 +17,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	numpy<2,>1.26.0; extra == "numpy"
-	orjson>=3.6; extra == "orjson"
+	numpy<2,>1.26.0; extra == 'numpy'
+	orjson>=3.6; extra == 'orjson'
 	packaging
-	pandas[numpy]<3,>=2; extra == "pandas"
-	pproxy; extra == "examples"
+	pandas[numpy]<3,>=2; extra == 'pandas'
+	pproxy; extra == 'examples'
 	pyopenssl
-	python-rapidjson; extra == "rapidjson"
+	python-rapidjson; extra == 'rapidjson'
 	rsa
-	ujson; extra == "ujson"
+	ujson; extra == 'ujson'
 	websocket-client>=1.0.1
 "
 GENERATED_RDEPEND="${RDEPEND}

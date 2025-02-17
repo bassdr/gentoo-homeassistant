@@ -18,18 +18,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	certifi>=2019.11.17
-	googleapis-common-protos>=1.53.0; extra == "grpc"
-	grpcio>=1.44.0; (python_version >= "3.8" and python_version < "3.11") and extra == "grpc"
-	grpcio>=1.59.0; (python_version >= "3.11" and python_version < "4.0") and extra == "grpc"
-	lz4>=3.1.3; extra == "grpc"
+	googleapis-common-protos>=1.53.0; extra == 'grpc'
+	grpcio>=1.44.0; (python_version >= '3.8' and python_version < '3.11') and extra == 'grpc'
+	grpcio>=1.59.0; (python_version >= '3.11' and python_version < '4.0') and extra == 'grpc'
+	lz4>=3.1.3; extra == 'grpc'
 	pinecone-plugin-inference<2.0.0,>=1.0.3
 	pinecone-plugin-interface<0.0.8,>=0.0.7
-	protobuf<5.0,>=4.25; extra == "grpc"
-	protoc-gen-openapiv2<0.0.2,>=0.0.1; extra == "grpc"
+	protobuf<5.0,>=4.25; extra == 'grpc'
+	protoc-gen-openapiv2<0.0.2,>=0.0.1; extra == 'grpc'
 	tqdm>=4.64.1
 	typing-extensions>=3.7.4
-	urllib3>=1.26.0; python_version >= "3.8" and python_version < "3.12"
-	urllib3>=1.26.5; python_version >= "3.12" and python_version < "4.0"
+	urllib3>=1.26.0; python_version >= '3.8' and python_version < '3.12'
+	urllib3>=1.26.5; python_version >= '3.12' and python_version < '4.0'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2019.11.17[${PYTHON_USEDEP}]

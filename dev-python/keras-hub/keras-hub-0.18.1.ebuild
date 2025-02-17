@@ -23,9 +23,9 @@ REQUIRES_DIST="
 	packaging
 	regex
 	rich
-	rouge-score; extra == "extras"
-	sentencepiece; extra == "extras"
-	tensorflow-text; platform_system != "Darwin"
+	rouge-score; extra == 'extras'
+	sentencepiece; extra == 'extras'
+	tensorflow-text; platform_system != 'Darwin'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]

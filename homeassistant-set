@@ -39,7 +39,7 @@ homeassistant-base/ha-comp-androidtv-remote
 homeassistant-base/ha-comp-anel-pwrctrl
 homeassistant-base/ha-comp-anova
 homeassistant-base/ha-comp-anthemav
-# homeassistant-base/ha-comp-anthropic
+homeassistant-base/ha-comp-anthropic
 homeassistant-base/ha-comp-aosmith
 homeassistant-base/ha-comp-apache-kafka
 homeassistant-base/ha-comp-apcupsd
@@ -57,17 +57,17 @@ homeassistant-base/ha-comp-arris-tg2492lg
 homeassistant-base/ha-comp-aruba
 homeassistant-base/ha-comp-arve
 homeassistant-base/ha-comp-aseko-pool-live
-# homeassistant-base/ha-comp-assist-pipeline
-# homeassistant-base/ha-comp-asuswrt
+homeassistant-base/ha-comp-assist-pipeline
+homeassistant-base/ha-comp-asuswrt
 homeassistant-base/ha-comp-atag
-# homeassistant-base/ha-comp-aten-pe
+homeassistant-base/ha-comp-aten-pe
 homeassistant-base/ha-comp-atome
 homeassistant-base/ha-comp-august
 homeassistant-base/ha-comp-aurora
 homeassistant-base/ha-comp-aurora-abb-powerone
 homeassistant-base/ha-comp-aussie-broadband
 homeassistant-base/ha-comp-autarco
-# homeassistant-base/ha-comp-avea
+homeassistant-base/ha-comp-avea
 # homeassistant-base/ha-comp-avion
 homeassistant-base/ha-comp-awair
 homeassistant-base/ha-comp-aws
@@ -78,11 +78,11 @@ homeassistant-base/ha-comp-azure-event-hub
 homeassistant-base/ha-comp-azure-service-bus
 homeassistant-base/ha-comp-backup
 homeassistant-base/ha-comp-baf
-# homeassistant-base/ha-comp-baidu
+homeassistant-base/ha-comp-baidu
 homeassistant-base/ha-comp-balboa
 homeassistant-base/ha-comp-bang-olufsen
 homeassistant-base/ha-comp-bbox
-# homeassistant-base/ha-comp-beewi-smartclim
+homeassistant-base/ha-comp-beewi-smartclim
 homeassistant-base/ha-comp-bitcoin
 homeassistant-base/ha-comp-bizkaibus
 homeassistant-base/ha-comp-blackbird
@@ -93,7 +93,7 @@ homeassistant-base/ha-comp-blue-current
 homeassistant-base/ha-comp-bluemaestro
 homeassistant-base/ha-comp-bluesound
 homeassistant-base/ha-comp-bluetooth
-homeassistant-base/ha-comp-bluetooth-tracker
+# homeassistant-base/ha-comp-bluetooth-tracker
 homeassistant-base/ha-comp-bmw-connected-drive
 homeassistant-base/ha-comp-bond
 homeassistant-base/ha-comp-bosch-shc
@@ -125,15 +125,15 @@ homeassistant-base/ha-comp-cloud
 homeassistant-base/ha-comp-cloudflare
 homeassistant-base/ha-comp-cmus
 homeassistant-base/ha-comp-co2signal
-# homeassistant-base/ha-comp-coinbase
+homeassistant-base/ha-comp-coinbase
 homeassistant-base/ha-comp-color-extractor
-# homeassistant-base/ha-comp-comelit
+homeassistant-base/ha-comp-comelit
 homeassistant-base/ha-comp-comfoconnect
 homeassistant-base/ha-comp-command-line
 homeassistant-base/ha-comp-compensation
 homeassistant-base/ha-comp-concord232
 homeassistant-base/ha-comp-control4
-# homeassistant-base/ha-comp-conversation
+homeassistant-base/ha-comp-conversation
 homeassistant-base/ha-comp-coolmaster
 homeassistant-base/ha-comp-cppm-tracker
 homeassistant-base/ha-comp-cpuspeed
@@ -143,25 +143,25 @@ homeassistant-base/ha-comp-daikin
 homeassistant-base/ha-comp-danfoss-air
 homeassistant-base/ha-comp-datadog
 homeassistant-base/ha-comp-deako
-# homeassistant-base/ha-comp-debugpy
+homeassistant-base/ha-comp-debugpy
 homeassistant-base/ha-comp-deconz
-# homeassistant-base/ha-comp-decora
-# homeassistant-base/ha-comp-decora-wifi
+homeassistant-base/ha-comp-decora
+homeassistant-base/ha-comp-decora-wifi
 homeassistant-base/ha-comp-delijn
 homeassistant-base/ha-comp-deluge
-# homeassistant-base/ha-comp-denonavr
+homeassistant-base/ha-comp-denonavr
 homeassistant-base/ha-comp-devialet
 homeassistant-base/ha-comp-devolo-home-control
 homeassistant-base/ha-comp-devolo-home-network
 homeassistant-base/ha-comp-dexcom
-# homeassistant-base/ha-comp-dhcp
+homeassistant-base/ha-comp-dhcp
 homeassistant-base/ha-comp-digital-ocean
 homeassistant-base/ha-comp-directv
 homeassistant-base/ha-comp-discogs
 homeassistant-base/ha-comp-discord
-# homeassistant-base/ha-comp-discovergy
-# homeassistant-base/ha-comp-dlib-face-detect
-# homeassistant-base/ha-comp-dlib-face-identify
+homeassistant-base/ha-comp-discovergy
+homeassistant-base/ha-comp-dlib-face-detect
+homeassistant-base/ha-comp-dlib-face-identify
 homeassistant-base/ha-comp-dlink
 homeassistant-base/ha-comp-dlna-dmr
 homeassistant-base/ha-comp-dlna-dms
@@ -180,8 +180,8 @@ homeassistant-base/ha-comp-dwd-weather-warnings
 homeassistant-base/ha-comp-dweet
 homeassistant-base/ha-comp-dynalite
 homeassistant-base/ha-comp-eafm
-# homeassistant-base/ha-comp-easyenergy
-# homeassistant-base/ha-comp-ebox
+homeassistant-base/ha-comp-easyenergy
+homeassistant-base/ha-comp-ebox
 homeassistant-base/ha-comp-ebusd
 homeassistant-base/ha-comp-ecoal-boiler
 homeassistant-base/ha-comp-ecobee
@@ -194,7 +194,7 @@ homeassistant-base/ha-comp-edimax
 homeassistant-base/ha-comp-edl21
 homeassistant-base/ha-comp-efergy
 homeassistant-base/ha-comp-egardia
-# homeassistant-base/ha-comp-electrasmart
+homeassistant-base/ha-comp-electrasmart
 homeassistant-base/ha-comp-electric-kiwi
 homeassistant-base/ha-comp-elevenlabs
 homeassistant-base/ha-comp-elgato
@@ -211,7 +211,7 @@ homeassistant-base/ha-comp-emulated-roku
 homeassistant-base/ha-comp-energenie-power-sockets
 homeassistant-base/ha-comp-energyzero
 homeassistant-base/ha-comp-enigma2
-# homeassistant-base/ha-comp-enocean
+homeassistant-base/ha-comp-enocean
 homeassistant-base/ha-comp-enphase-envoy
 homeassistant-base/ha-comp-entur-public-transport
 homeassistant-base/ha-comp-environment-canada
@@ -266,7 +266,7 @@ homeassistant-base/ha-comp-freedompro
 homeassistant-base/ha-comp-fritzbox
 # homeassistant-base/ha-comp-fritzbox-callmonitor
 homeassistant-base/ha-comp-fronius
-# homeassistant-base/ha-comp-frontend
+homeassistant-base/ha-comp-frontend
 homeassistant-base/ha-comp-frontier-silicon
 homeassistant-base/ha-comp-fujitsu-fglair
 homeassistant-base/ha-comp-fully-kiosk
@@ -276,7 +276,7 @@ homeassistant-base/ha-comp-garages-amsterdam
 homeassistant-base/ha-comp-gardena-bluetooth
 homeassistant-base/ha-comp-gc100
 homeassistant-base/ha-comp-gdacs
-# homeassistant-base/ha-comp-generic
+homeassistant-base/ha-comp-generic
 homeassistant-base/ha-comp-geniushub
 homeassistant-base/ha-comp-geo-json-events
 homeassistant-base/ha-comp-geo-rss-events
@@ -293,27 +293,27 @@ homeassistant-base/ha-comp-goalzero
 homeassistant-base/ha-comp-gogogate2
 homeassistant-base/ha-comp-goodwe
 homeassistant-base/ha-comp-google
-# homeassistant-base/ha-comp-google-assistant-sdk
+homeassistant-base/ha-comp-google-assistant-sdk
 homeassistant-base/ha-comp-google-cloud
 homeassistant-base/ha-comp-google-generative-ai-conversation
 homeassistant-base/ha-comp-google-mail
 homeassistant-base/ha-comp-google-maps
 homeassistant-base/ha-comp-google-photos
-# homeassistant-base/ha-comp-google-pubsub
+homeassistant-base/ha-comp-google-pubsub
 homeassistant-base/ha-comp-google-sheets
 homeassistant-base/ha-comp-google-tasks
-# homeassistant-base/ha-comp-google-translate
+homeassistant-base/ha-comp-google-translate
 homeassistant-base/ha-comp-google-travel-time
 homeassistant-base/ha-comp-govee-ble
 homeassistant-base/ha-comp-govee-light-local
 homeassistant-base/ha-comp-gpsd
 homeassistant-base/ha-comp-gree
-homeassistant-base/ha-comp-greeneye-monitor
+# homeassistant-base/ha-comp-greeneye-monitor
 homeassistant-base/ha-comp-greenwave
 homeassistant-base/ha-comp-growatt-server
 homeassistant-base/ha-comp-gstreamer
 homeassistant-base/ha-comp-gtfs
-# homeassistant-base/ha-comp-guardian
+homeassistant-base/ha-comp-guardian
 homeassistant-base/ha-comp-habitica
 homeassistant-base/ha-comp-hardware
 homeassistant-base/ha-comp-harman-kardon-avr
@@ -353,9 +353,9 @@ homeassistant-base/ha-comp-hydrawise
 homeassistant-base/ha-comp-hyperion
 homeassistant-base/ha-comp-ialarm
 homeassistant-base/ha-comp-iammeter
-homeassistant-base/ha-comp-iaqualink
+# homeassistant-base/ha-comp-iaqualink
 homeassistant-base/ha-comp-ibeacon
-# homeassistant-base/ha-comp-icloud
+homeassistant-base/ha-comp-icloud
 homeassistant-base/ha-comp-idasen-desk
 homeassistant-base/ha-comp-idteck-prox
 homeassistant-base/ha-comp-ifttt
@@ -377,7 +377,7 @@ homeassistant-base/ha-comp-iotty
 homeassistant-base/ha-comp-iperf3
 homeassistant-base/ha-comp-ipma
 homeassistant-base/ha-comp-ipp
-# homeassistant-base/ha-comp-iqvia
+homeassistant-base/ha-comp-iqvia
 homeassistant-base/ha-comp-irish-rail-transport
 # homeassistant-base/ha-comp-iron-os
 homeassistant-base/ha-comp-isal
@@ -401,8 +401,8 @@ homeassistant-base/ha-comp-keba
 homeassistant-base/ha-comp-keenetic-ndms2
 homeassistant-base/ha-comp-kef
 homeassistant-base/ha-comp-kegtron
-# homeassistant-base/ha-comp-keyboard
-# homeassistant-base/ha-comp-keyboard-remote
+homeassistant-base/ha-comp-keyboard
+homeassistant-base/ha-comp-keyboard-remote
 homeassistant-base/ha-comp-keymitt-ble
 homeassistant-base/ha-comp-kira
 homeassistant-base/ha-comp-kiwi
@@ -413,12 +413,12 @@ homeassistant-base/ha-comp-kodi
 homeassistant-base/ha-comp-konnected
 homeassistant-base/ha-comp-kostal-plenticore
 homeassistant-base/ha-comp-kraken
-# homeassistant-base/ha-comp-kulersky
+homeassistant-base/ha-comp-kulersky
 homeassistant-base/ha-comp-kwb
 homeassistant-base/ha-comp-lacrosse
 homeassistant-base/ha-comp-lacrosse-view
 # homeassistant-base/ha-comp-lamarzocco
-homeassistant-base/ha-comp-lametric
+# homeassistant-base/ha-comp-lametric
 homeassistant-base/ha-comp-landisgyr-heat-meter
 homeassistant-base/ha-comp-lastfm
 homeassistant-base/ha-comp-launch-library
@@ -432,7 +432,7 @@ homeassistant-base/ha-comp-lg-netcast
 homeassistant-base/ha-comp-lg-soundbar
 homeassistant-base/ha-comp-lg-thinq
 homeassistant-base/ha-comp-lidarr
-homeassistant-base/ha-comp-lifx
+# homeassistant-base/ha-comp-lifx
 homeassistant-base/ha-comp-lightwave
 homeassistant-base/ha-comp-limitlessled
 homeassistant-base/ha-comp-linear-garage-door
@@ -500,7 +500,7 @@ homeassistant-base/ha-comp-motionblinds-ble
 homeassistant-base/ha-comp-motioneye
 homeassistant-base/ha-comp-motionmount
 homeassistant-base/ha-comp-mpd
-# homeassistant-base/ha-comp-mqtt
+homeassistant-base/ha-comp-mqtt
 homeassistant-base/ha-comp-msteams
 homeassistant-base/ha-comp-mullvad
 # homeassistant-base/ha-comp-music-assistant
@@ -531,7 +531,7 @@ homeassistant-base/ha-comp-nextcloud
 homeassistant-base/ha-comp-nextdns
 homeassistant-base/ha-comp-nfandroidtv
 # homeassistant-base/ha-comp-nibe-heatpump
-homeassistant-base/ha-comp-nice-go
+# homeassistant-base/ha-comp-nice-go
 homeassistant-base/ha-comp-nightscout
 homeassistant-base/ha-comp-niko-home-control
 homeassistant-base/ha-comp-nilu
@@ -544,7 +544,7 @@ homeassistant-base/ha-comp-nobo-hub
 # homeassistant-base/ha-comp-nordpool
 homeassistant-base/ha-comp-norway-air
 homeassistant-base/ha-comp-notify-events
-# homeassistant-base/ha-comp-notion
+homeassistant-base/ha-comp-notion
 homeassistant-base/ha-comp-nsw-fuel-station
 homeassistant-base/ha-comp-nsw-rural-fire-service-feed
 homeassistant-base/ha-comp-nuheat
@@ -574,11 +574,11 @@ homeassistant-base/ha-comp-openerz
 homeassistant-base/ha-comp-openevse
 homeassistant-base/ha-comp-openexchangerates
 homeassistant-base/ha-comp-opengarage
-# homeassistant-base/ha-comp-openhome
+homeassistant-base/ha-comp-openhome
 homeassistant-base/ha-comp-opensensemap
 homeassistant-base/ha-comp-opensky
 homeassistant-base/ha-comp-opentherm-gw
-# homeassistant-base/ha-comp-openuv
+homeassistant-base/ha-comp-openuv
 homeassistant-base/ha-comp-openweathermap
 homeassistant-base/ha-comp-opnsense
 homeassistant-base/ha-comp-opower
@@ -597,7 +597,7 @@ homeassistant-base/ha-comp-owntracks
 homeassistant-base/ha-comp-p1-monitor
 homeassistant-base/ha-comp-palazzetti
 homeassistant-base/ha-comp-panasonic-bluray
-homeassistant-base/ha-comp-panasonic-viera
+# homeassistant-base/ha-comp-panasonic-viera
 homeassistant-base/ha-comp-pandora
 homeassistant-base/ha-comp-peco
 homeassistant-base/ha-comp-pegel-online
@@ -611,7 +611,7 @@ homeassistant-base/ha-comp-ping
 homeassistant-base/ha-comp-pjlink
 homeassistant-base/ha-comp-plaato
 homeassistant-base/ha-comp-plex
-homeassistant-base/ha-comp-plugwise
+# homeassistant-base/ha-comp-plugwise
 homeassistant-base/ha-comp-plum-lightpad
 homeassistant-base/ha-comp-pocketcasts
 homeassistant-base/ha-comp-point
@@ -629,13 +629,13 @@ homeassistant-base/ha-comp-prusalink
 homeassistant-base/ha-comp-ps4
 homeassistant-base/ha-comp-pulseaudio-loopback
 homeassistant-base/ha-comp-pure-energie
-homeassistant-base/ha-comp-purpleair
+# homeassistant-base/ha-comp-purpleair
 homeassistant-base/ha-comp-pushbullet
 homeassistant-base/ha-comp-pushover
 homeassistant-base/ha-comp-pvoutput
 homeassistant-base/ha-comp-pvpc-hourly-pricing
 homeassistant-base/ha-comp-pyload
-# homeassistant-base/ha-comp-python-script
+homeassistant-base/ha-comp-python-script
 homeassistant-base/ha-comp-qbittorrent
 homeassistant-base/ha-comp-qingping
 homeassistant-base/ha-comp-qld-bushfire
@@ -651,14 +651,14 @@ homeassistant-base/ha-comp-radarr
 homeassistant-base/ha-comp-radio-browser
 homeassistant-base/ha-comp-radiotherm
 homeassistant-base/ha-comp-rainbird
-# homeassistant-base/ha-comp-raincloud
+homeassistant-base/ha-comp-raincloud
 homeassistant-base/ha-comp-rainforest-eagle
 homeassistant-base/ha-comp-rainforest-raven
-# homeassistant-base/ha-comp-rainmachine
+homeassistant-base/ha-comp-rainmachine
 homeassistant-base/ha-comp-rapt-ble
 homeassistant-base/ha-comp-raspyrfm
 homeassistant-base/ha-comp-rdw
-# homeassistant-base/ha-comp-recollect-waste
+homeassistant-base/ha-comp-recollect-waste
 homeassistant-base/ha-comp-recorder
 homeassistant-base/ha-comp-recswitch
 # homeassistant-base/ha-comp-reddit
@@ -673,7 +673,7 @@ homeassistant-base/ha-comp-repetier
 # homeassistant-base/ha-comp-rest
 homeassistant-base/ha-comp-rflink
 homeassistant-base/ha-comp-rfxtrx
-# homeassistant-base/ha-comp-ridwell
+homeassistant-base/ha-comp-ridwell
 homeassistant-base/ha-comp-ring
 homeassistant-base/ha-comp-ripple
 homeassistant-base/ha-comp-risco
@@ -700,7 +700,7 @@ homeassistant-base/ha-comp-saj
 homeassistant-base/ha-comp-samsungtv
 homeassistant-base/ha-comp-sanix
 homeassistant-base/ha-comp-satel-integra
-homeassistant-base/ha-comp-schlage
+# homeassistant-base/ha-comp-schlage
 homeassistant-base/ha-comp-schluter
 homeassistant-base/ha-comp-scrape
 homeassistant-base/ha-comp-screenlogic
@@ -734,7 +734,7 @@ homeassistant-base/ha-comp-sinch
 homeassistant-base/ha-comp-sisyphus
 homeassistant-base/ha-comp-sky-hub
 # homeassistant-base/ha-comp-sky-remote
-# homeassistant-base/ha-comp-skybeacon
+homeassistant-base/ha-comp-skybeacon
 homeassistant-base/ha-comp-skybell
 homeassistant-base/ha-comp-slack
 homeassistant-base/ha-comp-sleepiq
@@ -748,7 +748,7 @@ homeassistant-base/ha-comp-smarttub
 homeassistant-base/ha-comp-smarty
 homeassistant-base/ha-comp-smhi
 homeassistant-base/ha-comp-smlight
-# homeassistant-base/ha-comp-sms
+homeassistant-base/ha-comp-sms
 homeassistant-base/ha-comp-snapcast
 homeassistant-base/ha-comp-snmp
 homeassistant-base/ha-comp-snooz
@@ -773,21 +773,21 @@ homeassistant-base/ha-comp-srp-energy
 homeassistant-base/ha-comp-ssdp
 homeassistant-base/ha-comp-starline
 homeassistant-base/ha-comp-starlingbank
-# homeassistant-base/ha-comp-starlink
-# homeassistant-base/ha-comp-startca
+homeassistant-base/ha-comp-starlink
+homeassistant-base/ha-comp-startca
 homeassistant-base/ha-comp-statsd
 homeassistant-base/ha-comp-steam-online
 homeassistant-base/ha-comp-steamist
 homeassistant-base/ha-comp-stiebel-eltron
 homeassistant-base/ha-comp-stookalert
 homeassistant-base/ha-comp-stookwijzer
-# homeassistant-base/ha-comp-stream
+homeassistant-base/ha-comp-stream
 homeassistant-base/ha-comp-streamlabswater
 homeassistant-base/ha-comp-subaru
 homeassistant-base/ha-comp-suez-water
 homeassistant-base/ha-comp-sunweg
 homeassistant-base/ha-comp-supla
-homeassistant-base/ha-comp-surepetcare
+# homeassistant-base/ha-comp-surepetcare
 homeassistant-base/ha-comp-swiss-hydrological-data
 homeassistant-base/ha-comp-swiss-public-transport
 homeassistant-base/ha-comp-switchbee
@@ -804,14 +804,14 @@ homeassistant-base/ha-comp-systemmonitor
 homeassistant-base/ha-comp-tado
 homeassistant-base/ha-comp-tailscale
 homeassistant-base/ha-comp-tailwind
-# homeassistant-base/ha-comp-tami4
+homeassistant-base/ha-comp-tami4
 homeassistant-base/ha-comp-tank-utility
 homeassistant-base/ha-comp-tankerkoenig
 homeassistant-base/ha-comp-tapsaff
 homeassistant-base/ha-comp-tasmota
 homeassistant-base/ha-comp-tautulli
 homeassistant-base/ha-comp-technove
-# homeassistant-base/ha-comp-ted5000
+homeassistant-base/ha-comp-ted5000
 homeassistant-base/ha-comp-tedee
 homeassistant-base/ha-comp-telegram-bot
 homeassistant-base/ha-comp-tellduslive
@@ -889,7 +889,7 @@ homeassistant-base/ha-comp-verisure
 homeassistant-base/ha-comp-versasense
 homeassistant-base/ha-comp-version
 homeassistant-base/ha-comp-vesync
-# homeassistant-base/ha-comp-vicare
+homeassistant-base/ha-comp-vicare
 homeassistant-base/ha-comp-vilfo
 homeassistant-base/ha-comp-vivotek
 homeassistant-base/ha-comp-vizio
@@ -912,7 +912,7 @@ homeassistant-base/ha-comp-watttime
 homeassistant-base/ha-comp-waze-travel-time
 homeassistant-base/ha-comp-weatherflow
 homeassistant-base/ha-comp-weatherflow-cloud
-# homeassistant-base/ha-comp-weatherkit
+homeassistant-base/ha-comp-weatherkit
 homeassistant-base/ha-comp-webmin
 homeassistant-base/ha-comp-webostv
 homeassistant-base/ha-comp-weheat
@@ -926,7 +926,7 @@ homeassistant-base/ha-comp-withings
 homeassistant-base/ha-comp-wiz
 homeassistant-base/ha-comp-wled
 homeassistant-base/ha-comp-wmspro
-# homeassistant-base/ha-comp-wolflink
+homeassistant-base/ha-comp-wolflink
 homeassistant-base/ha-comp-workday
 homeassistant-base/ha-comp-ws66i
 homeassistant-base/ha-comp-wyoming
@@ -956,7 +956,7 @@ homeassistant-base/ha-comp-zamg
 homeassistant-base/ha-comp-zengge
 homeassistant-base/ha-comp-zeroconf
 homeassistant-base/ha-comp-zerproc
-# homeassistant-base/ha-comp-zestimate
+homeassistant-base/ha-comp-zestimate
 homeassistant-base/ha-comp-zeversolar
 homeassistant-base/ha-comp-zha
 homeassistant-base/ha-comp-zhong-hong
@@ -964,5 +964,5 @@ homeassistant-base/ha-comp-ziggo-mediabox-xl
 homeassistant-base/ha-comp-zoneminder
 homeassistant-base/ha-comp-zwave-js
 homeassistant-base/ha-comp-zwave-me
-# homeassistant-base/ha-core
+homeassistant-base/ha-core
 homeassistant-base/ha-scripts-check-config

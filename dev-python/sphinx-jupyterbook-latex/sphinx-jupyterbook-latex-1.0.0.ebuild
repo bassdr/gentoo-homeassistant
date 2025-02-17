@@ -17,22 +17,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage>=6.0 ; extra == "testing"
-	myst-nb>=1.0.0 ; extra == "myst"
-	myst-nb>=1.0.0 ; extra == "testing"
-	myst-parser ; extra == "rtd"
+	coverage>=6.0 ; extra == 'testing'
+	myst-nb>=1.0.0 ; extra == 'myst'
+	myst-nb>=1.0.0 ; extra == 'testing'
+	myst-parser ; extra == 'rtd'
 	packaging
-	pre-commit~=2.12 ; extra == "code_style"
-	pytest-cov>=3 ; extra == "testing"
-	pytest-regressions ; extra == "testing"
-	pytest>=7.1 ; extra == "testing"
-	sphinx-book-theme ; extra == "rtd"
-	sphinx-design ; extra == "rtd"
-	sphinx-external-toc>=1.0.0 ; extra == "testing"
-	sphinx-jupyterbook-latex ; extra == "rtd"
+	pre-commit~=2.12 ; extra == 'code_style'
+	pytest-cov>=3 ; extra == 'testing'
+	pytest-regressions ; extra == 'testing'
+	pytest>=7.1 ; extra == 'testing'
+	sphinx-book-theme ; extra == 'rtd'
+	sphinx-design ; extra == 'rtd'
+	sphinx-external-toc>=1.0.0 ; extra == 'testing'
+	sphinx-jupyterbook-latex ; extra == 'rtd'
 	sphinx>=5
-	sphinxcontrib-bibtex>=2.6.0 ; extra == "testing"
-	texsoup ; extra == "testing"
+	sphinxcontrib-bibtex>=2.6.0 ; extra == 'testing'
+	texsoup ; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	myst? ( >=dev-python/myst-nb-1.0.0[${PYTHON_USEDEP}] )

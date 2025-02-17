@@ -17,27 +17,27 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Jinja2; extra == "dev"
-	black>=23.1.0; extra == "dev"
-	flake8>=6.0.0; extra == "dev"
-	griffe==0.47.0; extra == "docs"
+	Jinja2; extra == 'dev'
+	black>=23.1.0; extra == 'dev'
+	flake8>=6.0.0; extra == 'dev'
+	griffe==0.47.0; extra == 'docs'
 	htmltools>=0.2.0
-	isort>=5.11.2; extra == "dev"
-	jupyter; extra == "docs"
-	libsass; extra == "dev"
-	matplotlib; extra == "dev"
+	isort>=5.11.2; extra == 'dev'
+	jupyter; extra == 'docs'
+	libsass; extra == 'dev'
+	matplotlib; extra == 'dev'
 	packaging>=20.9
-	pandas; extra == "dev"
-	plum-dispatch; extra == "docs"
-	pre-commit>=2.15.0; extra == "dev"
-	pyright>=1.1.301; extra == "dev"
-	pytest>=6.2.4; extra == "test"
-	quartodoc==0.7.5; extra == "docs"
+	pandas; extra == 'dev'
+	plum-dispatch; extra == 'docs'
+	pre-commit>=2.15.0; extra == 'dev'
+	pyright>=1.1.301; extra == 'dev'
+	pytest>=6.2.4; extra == 'test'
+	quartodoc==0.7.5; extra == 'docs'
 	shiny>=1.2.0
-	shinylive; extra == "docs"
-	tinycss2; extra == "dev"
+	shinylive; extra == 'docs'
+	tinycss2; extra == 'dev'
 	typing-extensions>=3.10.0.0
-	wheel; extra == "dev"
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( ~dev-python/griffe-0.47.0[${PYTHON_USEDEP}] )

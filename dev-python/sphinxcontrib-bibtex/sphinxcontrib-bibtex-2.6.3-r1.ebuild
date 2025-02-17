@@ -19,12 +19,12 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	Sphinx>=3.5
 	docutils!=0.18.*,!=0.19.*,>=0.8
-	importlib-metadata>=3.6; python_version < "3.10"
+	importlib-metadata>=3.6; python_version < '3.10'
 	pybtex-docutils>=1.0.0
 	pybtex>=0.24
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	setuptools; python_version >= "3.12"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	setuptools; python_version >= '3.12'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.8[${PYTHON_USEDEP}] !=dev-python/docutils-0.18*[${PYTHON_USEDEP}] !=dev-python/docutils-0.19*[${PYTHON_USEDEP}]

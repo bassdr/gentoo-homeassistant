@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-openlineage; extra == "openlineage"
-	apache-airflow-providers-standard; extra == "standard"
+	apache-airflow-providers-openlineage; extra == 'openlineage'
+	apache-airflow-providers-standard; extra == 'standard'
 	apache-airflow>=2.9.0
 "
 GENERATED_RDEPEND="${RDEPEND}

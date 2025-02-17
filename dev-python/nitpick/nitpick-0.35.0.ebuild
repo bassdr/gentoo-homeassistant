@@ -26,11 +26,11 @@ REQUIRES_DIST="
 	dpath
 	flake8 (>=3.0.0)
 	flatten-dict
-	freezegun ; extra == "test"
+	freezegun ; extra == 'test'
 	furl
 	gitignore_parser
 	identify
-	importlib-resources ; python_version >= "3.8" and python_version < "3.9"
+	importlib-resources ; python_version >= '3.8' and python_version < '3.9'
 	jmespath
 	loguru
 	marshmallow (>=3.0.0b10)
@@ -38,24 +38,24 @@ REQUIRES_DIST="
 	more-itertools
 	packaging
 	pluggy
-	pylint ; extra == "lint"
-	pytest ; extra == "test"
-	pytest-cov ; extra == "test"
-	pytest-datadir ; extra == "test"
-	pytest-socket ; extra == "test"
-	pytest-testmon ; extra == "test"
-	pytest-watch ; extra == "test"
+	pylint ; extra == 'lint'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-datadir ; extra == 'test'
+	pytest-socket ; extra == 'test'
+	pytest-testmon ; extra == 'test'
+	pytest-watch ; extra == 'test'
 	python-slugify
 	requests
 	requests-cache (>=1.0.0)
-	responses ; extra == "test"
+	responses ; extra == 'test'
 	ruamel.yaml
 	sortedcontainers
-	sphinx ; extra == "doc"
-	sphinx-gitref ; extra == "doc"
-	sphinx_rtd_theme ; extra == "doc"
-	sphobjinv ; extra == "doc"
-	testfixtures ; extra == "test"
+	sphinx ; extra == 'doc'
+	sphinx-gitref ; extra == 'doc'
+	sphinx_rtd_theme ; extra == 'doc'
+	sphobjinv ; extra == 'doc'
+	testfixtures ; extra == 'test'
 	toml
 	tomlkit (>=0.8.0)
 "

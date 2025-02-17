@@ -19,16 +19,16 @@ REQUIRES_DIST="
 	aiofiles
 	aiohttp~=3.8.3
 	multipledispatch
-	mypy; extra == "test"
+	mypy; extra == 'test'
 	packaging
-	pytest-aiohttp; extra == "test"
-	pytest-asyncio~=0.17.2; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
+	pytest-aiohttp; extra == 'test'
+	pytest-asyncio~=0.17.2; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
 	tqdm
-	types-aiofiles; extra == "test"
-	types-tqdm; extra == "test"
+	types-aiofiles; extra == 'test'
+	types-tqdm; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]

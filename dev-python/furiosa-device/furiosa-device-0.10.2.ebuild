@@ -18,10 +18,10 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	furiosa-common==0.10.*
 	furiosa-native-device==0.2.*
-	mypy; extra == "test"
-	pytest-asyncio~=0.17.2; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
+	mypy; extra == 'test'
+	pytest-asyncio~=0.17.2; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/furiosa-common-0.10*[${PYTHON_USEDEP}]

@@ -19,13 +19,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs optional"
-IUSE="${GENERATED_IUSE} examples"
+IUSE="${GENERATED_IUSE} examples test"
 
-BDEPEND="
-	test? (
-		dev-python/python-socks[${PYTHON_USEDEP}]
-	)
-"
+RDEPEND=""
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
@@ -33,7 +29,12 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/websockets[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/python-socks[${PYTHON_USEDEP}]
+	)
+"
+
 
 python_install_all() {
 	if use examples; then

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-resources (>=5.8,<7.0) ; python_version < "3.9"
+	importlib-resources (>=5.8,<7.0) ; python_version < '3.9'
 	jsonschema (>=4.18.0,<5.0.0)
 	jsonschema-path (>=0.3.1,<0.4.0)
 	lazy-object-proxy (>=1.7.1,<2.0.0)

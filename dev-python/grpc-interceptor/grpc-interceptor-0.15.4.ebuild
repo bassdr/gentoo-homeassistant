@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	grpcio (>=1.49.1,<2.0.0)
-	protobuf (>=4.21.9); extra == "testing"
+	protobuf (>=4.21.9); extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}] <dev-python/grpcio-2.0.0[${PYTHON_USEDEP}]

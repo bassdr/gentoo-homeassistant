@@ -15,9 +15,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata (>=2.0.0,<5.0.0) ; python_version < "3.8"
+	importlib-metadata (>=2.0.0,<5.0.0) ; python_version < '3.8'
 	snowballstemmer (>=2.2.0)
-	tomli (>=1.2.3) ; (python_version < "3.11") and (extra == "toml")
+	tomli (>=1.2.3) ; (python_version < '3.11') and (extra == 'toml')
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/snowballstemmer-2.2.0[${PYTHON_USEDEP}]

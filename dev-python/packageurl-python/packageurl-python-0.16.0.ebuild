@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "lint"
-	isort; extra == "lint"
-	mypy; extra == "lint"
-	pytest; extra == "test"
-	setuptools; extra == "build"
-	sqlalchemy>=2.0.0; extra == "sqlalchemy"
-	wheel; extra == "build"
+	black; extra == 'lint'
+	isort; extra == 'lint'
+	mypy; extra == 'lint'
+	pytest; extra == 'test'
+	setuptools; extra == 'build'
+	sqlalchemy>=2.0.0; extra == 'sqlalchemy'
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/black[${PYTHON_USEDEP}] )

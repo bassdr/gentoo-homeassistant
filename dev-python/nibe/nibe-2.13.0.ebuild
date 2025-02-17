@@ -25,11 +25,11 @@ DOCS="README.md"
 REQUIRES_DIST="
 	async-modbus>=0.2.0
 	async-timeout>=4.0.0
-	asyncclick>=8.1.3.4; extra == "cli"
+	asyncclick>=8.1.3.4; extra == 'cli'
 	construct<3.0.0,>=2.10.0
 	exceptiongroup>=1.0.0
-	pandas>=1.0.5; extra == "convert"
-	python-slugify>=4.0.0; extra == "convert"
+	pandas>=1.0.5; extra == 'convert'
+	python-slugify>=4.0.0; extra == 'convert'
 	tenacity>=8.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

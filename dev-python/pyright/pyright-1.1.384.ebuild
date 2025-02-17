@@ -18,10 +18,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	nodeenv>=1.6.0
-	nodejs-wheel-binaries; extra == "all"
-	nodejs-wheel-binaries; extra == "nodejs"
-	twine>=3.4.1; extra == "all"
-	twine>=3.4.1; extra == "dev"
+	nodejs-wheel-binaries; extra == 'all'
+	nodejs-wheel-binaries; extra == 'nodejs'
+	twine>=3.4.1; extra == 'all'
+	twine>=3.4.1; extra == 'dev'
 	typing-extensions>=4.1
 "
 GENERATED_RDEPEND="${RDEPEND}

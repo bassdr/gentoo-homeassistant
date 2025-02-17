@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	anthropic[vertexai]<1,>=0.35.0; extra == "anthropic"
+	anthropic[vertexai]<1,>=0.35.0; extra == 'anthropic'
 	google-cloud-aiplatform<2.0.0,>=1.76.0
 	google-cloud-storage<3.0.0,>=2.18.0
 	httpx-sse<0.5.0,>=0.4.0
 	httpx<0.29.0,>=0.28.0
 	langchain-core<0.4,>=0.3.31
-	langchain-mistralai<1,>=0.2.0; extra == "mistral"
+	langchain-mistralai<1,>=0.2.0; extra == 'mistral'
 	pydantic<3.0,>=2.9
 "
 GENERATED_RDEPEND="${RDEPEND}

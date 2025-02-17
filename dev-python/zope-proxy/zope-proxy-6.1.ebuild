@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
-	repoze.sphinx.autointerface; extra == "docs"
+	Sphinx; extra == 'docs'
+	repoze.sphinx.autointerface; extra == 'docs'
 	setuptools
-	sphinx-rtd-theme; extra == "docs"
+	sphinx-rtd-theme; extra == 'docs'
 	zope.interface
-	zope.security; extra == "test"
-	zope.testrunner; extra == "test"
+	zope.security; extra == 'test'
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )

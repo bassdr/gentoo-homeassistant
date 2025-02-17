@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Pillow
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	matplotlib (>=1.4.0)
 	numpy
 "

@@ -19,23 +19,23 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	arviz-base==0.3.0
 	arviz-stats[xarray]==0.3.0
-	bokeh; extra == "bokeh"
-	h5netcdf; extra == "doc"
-	h5netcdf; extra == "test"
-	hypothesis; extra == "test"
-	jupyter-sphinx; extra == "doc"
-	matplotlib; extra == "matplotlib"
-	myst-nb; extra == "doc"
-	myst-parser[linkify]; extra == "doc"
-	numpydoc; extra == "doc"
-	plotly>5; extra == "plotly"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	sphinx-book-theme; extra == "doc"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design; extra == "doc"
-	sphinx<8,>=5; extra == "doc"
-	webcolors; extra == "plotly"
+	bokeh; extra == 'bokeh'
+	h5netcdf; extra == 'doc'
+	h5netcdf; extra == 'test'
+	hypothesis; extra == 'test'
+	jupyter-sphinx; extra == 'doc'
+	matplotlib; extra == 'matplotlib'
+	myst-nb; extra == 'doc'
+	myst-parser[linkify]; extra == 'doc'
+	numpydoc; extra == 'doc'
+	plotly>5; extra == 'plotly'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	sphinx-book-theme; extra == 'doc'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design; extra == 'doc'
+	sphinx<8,>=5; extra == 'doc'
+	webcolors; extra == 'plotly'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	~dev-python/arviz-base-0.3.0[${PYTHON_USEDEP}]

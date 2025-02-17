@@ -26,20 +26,20 @@ DOCS="README.rst"
 REQUIRES_DIST="
 	BeautifulSoup4
 	autocommand
-	cherrypy; extra == "stats-server"
-	cherrypy; extra == "test"
-	fabric; extra == "test"
+	cherrypy; extra == 'stats-server'
+	cherrypy; extra == 'test'
+	fabric; extra == 'test'
 	feedparser
-	furo; extra == "doc"
+	furo; extra == 'doc'
 	icmplib
-	ifconfig-parser; sys_platform == "darwin"
-	importlib-resources; extra == "test"
+	ifconfig-parser; sys_platform == 'darwin'
+	importlib-resources; extra == 'test'
 	jaraco.collections
 	jaraco.email
-	jaraco.fabric; extra == "test"
+	jaraco.fabric; extra == 'test'
 	jaraco.functools
 	jaraco.logging
-	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.packaging>=9.3; extra == 'doc'
 	jaraco.text
 	jsonpickle!=3.0.0
 	keyring>=0.6
@@ -47,23 +47,23 @@ REQUIRES_DIST="
 	more-itertools
 	path>=16.6
 	pathvalidate
-	pyparsing; extra == "test"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-enabler>=2.2; extra == "test"
-	pytest-mypy; extra == "test"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
+	pyparsing; extra == 'test'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-enabler>=2.2; extra == 'test'
+	pytest-mypy; extra == 'test'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'test'
 	python-dateutil
-	pywin32; sys_platform == "win32" and python_version < "3.12"
+	pywin32; sys_platform == 'win32' and python_version < '3.12'
 	requests
-	requests-mock; extra == "test"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
-	svg.charts; extra == "stats-server"
-	types-python-dateutil; extra == "test"
-	types-requests; extra == "test"
+	requests-mock; extra == 'test'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
+	svg.charts; extra == 'stats-server'
+	types-python-dateutil; extra == 'test'
+	types-requests; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]

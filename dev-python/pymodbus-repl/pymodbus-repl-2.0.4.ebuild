@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp>=3.8.6; python_version < "3.12"
-	aiohttp>=3.9.0b0; python_version == "3.12"
+	aiohttp>=3.8.6; python_version < '3.12'
+	aiohttp>=3.9.0b0; python_version == '3.12'
 	prompt-toolkit<4.0.0,>=3.0.43
 	pygments<3.0.0,>=2.17.2
 	tabulate<0.10.0,>=0.9.0

@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	flask>=1.0; extra == "instruments"
+	flask>=1.0; extra == 'instruments'
 	opentelemetry-api~=1.12
 	opentelemetry-instrumentation-wsgi==0.51b0
 	opentelemetry-instrumentation==0.51b0

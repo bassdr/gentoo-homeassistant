@@ -17,18 +17,18 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cachey; extra == "all"
-	dask; extra == "all"
-	netCDF4; extra == "test"
-	numba; extra == "all"
-	numbagg; extra == "all"
+	cachey; extra == 'all'
+	dask; extra == 'all'
+	netCDF4; extra == 'test'
+	numba; extra == 'all'
+	numbagg; extra == 'all'
 	numpy>=1.22
 	numpy_groupies>=0.9.19
 	packaging>=21.3
 	pandas>=1.5
 	scipy>=1.9
 	toolz
-	xarray; extra == "all"
+	xarray; extra == 'all'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/cachey[${PYTHON_USEDEP}] )

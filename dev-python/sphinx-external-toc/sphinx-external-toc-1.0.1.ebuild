@@ -18,14 +18,14 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	click>=7.1
-	coverage ; extra == "testing"
-	myst-parser>=1.0.0 ; extra == "rtd"
-	pre-commit>=2.12 ; extra == "code_style"
-	pytest-cov ; extra == "testing"
-	pytest-regressions ; extra == "testing"
-	pytest>=7.1 ; extra == "testing"
+	coverage ; extra == 'testing'
+	myst-parser>=1.0.0 ; extra == 'rtd'
+	pre-commit>=2.12 ; extra == 'code_style'
+	pytest-cov ; extra == 'testing'
+	pytest-regressions ; extra == 'testing'
+	pytest>=7.1 ; extra == 'testing'
 	pyyaml
-	sphinx-book-theme>=1.0.0 ; extra == "rtd"
+	sphinx-book-theme>=1.0.0 ; extra == 'rtd'
 	sphinx>=5
 "
 GENERATED_RDEPEND="${RDEPEND}

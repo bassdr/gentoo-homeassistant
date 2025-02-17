@@ -33,11 +33,11 @@ DEPEND="
 	>=dev-libs/libxslt-1.1.38
 "
 REQUIRES_DIST="
-	BeautifulSoup4; extra == "htmlsoup"
-	Cython>=3.0.11; extra == "source"
-	cssselect>=0.7; extra == "cssselect"
-	html5lib; extra == "html5"
-	lxml-html-clean; extra == "html-clean"
+	BeautifulSoup4; extra == 'htmlsoup'
+	Cython>=3.0.11; extra == 'source'
+	cssselect>=0.7; extra == 'cssselect'
+	html5lib; extra == 'html5'
+	lxml-html-clean; extra == 'html-clean'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	htmlsoup? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )

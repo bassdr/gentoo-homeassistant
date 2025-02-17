@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	gdown>=4.7.3; extra == "gdown"
+	gdown>=4.7.3; extra == 'gdown'
 	numpy
 	pillow!=8.3.*,>=5.3.0
-	scipy; extra == "scipy"
+	scipy; extra == 'scipy'
 	torch==2.6.0
 "
 GENERATED_RDEPEND="${RDEPEND}

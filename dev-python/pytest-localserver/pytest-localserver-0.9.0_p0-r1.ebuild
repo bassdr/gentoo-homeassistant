@@ -21,7 +21,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="smtp"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	aiosmtpd; extra == "smtp"
+	aiosmtpd; extra == 'smtp'
 	werkzeug>=0.10
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -16,23 +16,23 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	PyJWT
-	black>=22.3.0; extra == "dev"
-	flake8>=4.0.1; extra == "dev"
+	black>=22.3.0; extra == 'dev'
+	flake8>=4.0.1; extra == 'dev'
 	importlib_metadata>=4.7.1
-	isort>=5.10.1; extra == "dev"
-	mock; extra == "dev"
-	mypy>=0.942; extra == "dev"
+	isort>=5.10.1; extra == 'dev'
+	mock; extra == 'dev'
+	mypy>=0.942; extra == 'dev'
 	packaging>=23.1
-	pre-commit>=2.17.0; extra == "dev"
-	pytest-cov>=3.0.0; extra == "dev"
-	pytest>=7.1.1; extra == "dev"
+	pre-commit>=2.17.0; extra == 'dev'
+	pytest-cov>=3.0.0; extra == 'dev'
+	pytest>=7.1.1; extra == 'dev'
 	requests
 	requests_toolbelt
 	setuptools>=42
-	sphinx; extra == "dev"
-	sphinx_rtd_theme; extra == "dev"
-	types-requests; extra == "dev"
-	types-setuptools; extra == "dev"
+	sphinx; extra == 'dev'
+	sphinx_rtd_theme; extra == 'dev'
+	types-requests; extra == 'dev'
+	types-setuptools; extra == 'dev'
 	urllib3>=1.26.0
 "
 GENERATED_RDEPEND="${RDEPEND}

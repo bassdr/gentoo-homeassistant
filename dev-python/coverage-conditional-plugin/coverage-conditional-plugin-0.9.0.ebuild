@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	coverage (>=7,<8)
-	importlib_metadata ; python_version < "3.10"
+	importlib_metadata ; python_version < '3.10'
 	packaging (>=20.4)
 "
 GENERATED_RDEPEND="${RDEPEND}

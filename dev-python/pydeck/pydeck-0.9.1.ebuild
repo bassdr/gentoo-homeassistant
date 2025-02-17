@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ipykernel>=5.1.2; python_version >= "3.4" and extra == "jupyter"
-	ipython>=5.8.0; python_version < "3.4" and extra == "jupyter"
-	ipywidgets<8,>=7; extra == "jupyter"
+	ipykernel>=5.1.2; python_version >= '3.4' and extra == 'jupyter'
+	ipython>=5.8.0; python_version < '3.4' and extra == 'jupyter'
+	ipywidgets<8,>=7; extra == 'jupyter'
 	jinja2>=2.10.1
 	numpy>=1.16.4
-	pydeck-carto; extra == "carto"
-	traitlets>=4.3.2; extra == "jupyter"
+	pydeck-carto; extra == 'carto'
+	traitlets>=4.3.2; extra == 'jupyter'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	jupyter? ( >=dev-python/ipykernel-5.1.2[${PYTHON_USEDEP}] )

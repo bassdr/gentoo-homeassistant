@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	cffi<2,>=1.15.1
 	h3>4
-	numba<1,>=0.56; python_version < "3.12" and extra == "numba"
-	numba<1,>=0.59; python_version >= "3.12" and extra == "numba"
-	numpy<3,>=1.21; python_version < "3.9"
-	numpy<3,>=1.23; python_version >= "3.9"
-	pytz>=2022.7.1; extra == "pytz"
+	numba<1,>=0.56; python_version < '3.12' and extra == 'numba'
+	numba<1,>=0.59; python_version >= '3.12' and extra == 'numba'
+	numpy<3,>=1.21; python_version < '3.9'
+	numpy<3,>=1.23; python_version >= '3.9'
+	pytz>=2022.7.1; extra == 'pytz'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.15.1[${PYTHON_USEDEP}] <dev-python/cffi-2[${PYTHON_USEDEP}]

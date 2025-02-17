@@ -26,12 +26,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx (>=5.0,<6.0) ; extra == "docs"
+	Sphinx (>=5.0,<6.0) ; extra == 'docs'
 	aiooui (>=0.1.1)
 	home-assistant-bluetooth (>=1.3.0)
 	mac-vendor-lookup (>=0.1.11)
-	myst-parser (>=0.18,<0.19) ; extra == "docs"
-	sphinx-rtd-theme (>=1.0,<2.0) ; extra == "docs"
+	myst-parser (>=0.18,<0.19) ; extra == 'docs'
+	sphinx-rtd-theme (>=1.0,<2.0) ; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiooui-0.1.1[${PYTHON_USEDEP}]

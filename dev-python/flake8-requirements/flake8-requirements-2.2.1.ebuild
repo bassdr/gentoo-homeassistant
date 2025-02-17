@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Flake8-pyproject; extra == "pyproject"
+	Flake8-pyproject; extra == 'pyproject'
 	flake8>=4.0.0
 	setuptools>=10.0.0
-	tomli>=1.2.1; python_version < "3.11"
+	tomli>=1.2.1; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flake8-4.0.0[${PYTHON_USEDEP}]

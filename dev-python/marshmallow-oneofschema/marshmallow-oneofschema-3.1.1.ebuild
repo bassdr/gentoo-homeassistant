@@ -15,11 +15,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	marshmallow-oneofschema[tests] ; extra == "dev"
+	marshmallow-oneofschema[tests] ; extra == 'dev'
 	marshmallow>=3.0.0,<4.0.0
-	pre-commit~=3.5 ; extra == "dev"
-	pytest ; extra == "tests"
-	tox ; extra == "dev"
+	pre-commit~=3.5 ; extra == 'dev'
+	pytest ; extra == 'tests'
+	tox ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/marshmallow-3.0.0[${PYTHON_USEDEP}] <dev-python/marshmallow-4.0.0[${PYTHON_USEDEP}]

@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib_metadata>=4.6; python_version < "3.10"
+	importlib_metadata>=4.6; python_version < '3.10'
 	packaging>=22.0
 	setuptools>=42.0.0
 "

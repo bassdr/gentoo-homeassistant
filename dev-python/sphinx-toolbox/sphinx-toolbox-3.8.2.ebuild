@@ -21,15 +21,15 @@ REQUIRES_DIST="
 	autodocsumm>=0.2.0
 	beautifulsoup4>=4.9.1
 	cachecontrol[filecache]>=0.13.0
-	coincidence>=0.4.3; extra == "all"
-	coincidence>=0.4.3; extra == "testing"
+	coincidence>=0.4.3; extra == 'all'
+	coincidence>=0.4.3; extra == 'testing'
 	dict2css>=0.2.3
 	docutils>=0.16
 	domdf-python-tools>=2.9.0
 	filelock>=3.8.0
 	html5lib>=1.1
-	pygments<=2.13.0,>=2.7.4; extra == "all"
-	pygments<=2.13.0,>=2.7.4; extra == "testing"
+	pygments<=2.13.0,>=2.7.4; extra == 'all'
+	pygments<=2.13.0,>=2.7.4; extra == 'testing'
 	ruamel.yaml>=0.16.12
 	sphinx-autodoc-typehints>=1.11.1
 	sphinx-jinja2-compat>=0.1.0
@@ -38,7 +38,7 @@ REQUIRES_DIST="
 	sphinx>=3.2.0
 	tabulate>=0.8.7
 	typing-extensions!=3.10.0.1,>=3.7.4.3
-	typing-inspect>=0.6.0; python_version < "3.8"
+	typing-inspect>=0.6.0; python_version < '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apeye-0.4.0[${PYTHON_USEDEP}]

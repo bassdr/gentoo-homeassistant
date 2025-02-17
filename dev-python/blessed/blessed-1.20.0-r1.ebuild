@@ -17,9 +17,9 @@ LICENSE="MIT"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	backports.functools-lru-cache (>=1.2.1) ; python_version < "3.2"
-	jinxed (>=1.1.0) ; platform_system == "Windows"
-	ordereddict (==1.1) ; python_version < "2.7"
+	backports.functools-lru-cache (>=1.2.1) ; python_version < '3.2'
+	jinxed (>=1.1.0) ; platform_system == 'Windows'
+	ordereddict (==1.1) ; python_version < '2.7'
 	six (>=1.9.0)
 	wcwidth (>=0.1.4)
 "

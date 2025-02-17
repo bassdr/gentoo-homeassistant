@@ -15,14 +15,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	click; python_version >= "3.6"
-	click<8.0; python_version < "3.6"
+	click; python_version >= '3.6'
+	click<8.0; python_version < '3.6'
 	colorama>=0.4
-	enum34; python_version < "3.4"
+	enum34; python_version < '3.4'
 	lexid
-	pathlib2; python_version < "3.4"
+	pathlib2; python_version < '3.4'
 	toml
-	typing; python_version < "3.5"
+	typing; python_version < '3.5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]

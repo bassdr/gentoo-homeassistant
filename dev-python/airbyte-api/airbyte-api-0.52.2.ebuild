@@ -24,7 +24,7 @@ REQUIRES_DIST="
 	marshmallow>=3.19.0
 	mypy-extensions>=1.0.0
 	packaging>=23.1
-	pylint==3.1.0; extra == "dev"
+	pylint==3.1.0; extra == 'dev'
 	python-dateutil>=2.8.2
 	requests>=2.31.0
 	six>=1.16.0

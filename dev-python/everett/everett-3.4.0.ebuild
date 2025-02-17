@@ -17,21 +17,21 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	PyYAML; extra == "yaml"
-	Sphinx==7.2.6; extra == "dev"
-	build; extra == "dev"
-	cogapp; extra == "dev"
-	configobj; extra == "ini"
-	mypy; extra == "dev"
-	pytest; extra == "dev"
-	ruff; extra == "dev"
-	sphinx-rtd-theme; extra == "dev"
-	sphinx; extra == "sphinx"
-	tox-gh-actions; extra == "dev"
-	tox-uv; extra == "dev"
-	tox; extra == "dev"
-	twine; extra == "dev"
-	types-PyYAML; extra == "dev"
+	PyYAML; extra == 'yaml'
+	Sphinx==7.2.6; extra == 'dev'
+	build; extra == 'dev'
+	cogapp; extra == 'dev'
+	configobj; extra == 'ini'
+	mypy; extra == 'dev'
+	pytest; extra == 'dev'
+	ruff; extra == 'dev'
+	sphinx-rtd-theme; extra == 'dev'
+	sphinx; extra == 'sphinx'
+	tox-gh-actions; extra == 'dev'
+	tox-uv; extra == 'dev'
+	tox; extra == 'dev'
+	twine; extra == 'dev'
+	types-PyYAML; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	ini? ( dev-python/configobj[${PYTHON_USEDEP}] )

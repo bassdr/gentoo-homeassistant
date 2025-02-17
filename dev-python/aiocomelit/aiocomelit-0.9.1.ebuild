@@ -18,8 +18,6 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -33,10 +31,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/colorlog[${PYTHON_USEDEP}]
 	dev-python/pint[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/colorlog[${PYTHON_USEDEP}]
-	dev-python/Pint[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

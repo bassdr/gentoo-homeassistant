@@ -26,11 +26,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="asyncio-client client docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	aiohttp>=3.4; extra == "asyncio-client"
-	requests>=2.21.0; extra == "client"
+	aiohttp>=3.4; extra == 'asyncio-client'
+	requests>=2.21.0; extra == 'client'
 	simple-websocket>=0.10.0
-	sphinx; extra == "docs"
-	websocket-client>=0.54.0; extra == "client"
+	sphinx; extra == 'docs'
+	websocket-client>=0.54.0; extra == 'client'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )

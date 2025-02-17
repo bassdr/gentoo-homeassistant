@@ -22,15 +22,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	hypothesis; extra == "tests"
-	pillow; extra == "dev"
-	pkginfo>=1.10; extra == "dev"
-	playwright; extra == "dev"
-	pre-commit; extra == "dev"
+	hypothesis; extra == 'tests'
+	pillow; extra == 'dev'
+	pkginfo>=1.10; extra == 'dev'
+	playwright; extra == 'dev'
+	pre-commit; extra == 'dev'
 	pygments>=1.5
-	pytest; extra == "tests"
-	setuptools; extra == "dev"
-	twine>=5.0; extra == "dev"
+	pytest; extra == 'tests'
+	setuptools; extra == 'dev'
+	twine>=5.0; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pygments-1.5[${PYTHON_USEDEP}]

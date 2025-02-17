@@ -21,8 +21,8 @@ GENERATED_IUSE="scripts"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Pillow (>=3.2.0); extra == 'scripts'
-	enum34 (>=1.1.6); python_version=="2.7"
-	pathlib (>=1.0.1); python_version=="2.7"
+	enum34 (>=1.1.6); python_version=='2.7'
+	pathlib (>=1.0.1); python_version=='2.7'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	scripts? ( >=dev-python/pillow-3.2.0[${PYTHON_USEDEP}] )

@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	flake8==7.0.0
-	tomli; python_version < "3.11"
+	tomli; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	~dev-python/flake8-7.0.0[${PYTHON_USEDEP}]

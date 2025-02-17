@@ -15,9 +15,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	clarabel>=0.5.1; extra == "test"
-	ecos>=2.0.10; extra == "test"
-	scs>=3.0.0; extra == "test"
+	clarabel>=0.5.1; extra == 'test'
+	ecos>=2.0.10; extra == 'test'
+	scs>=3.0.0; extra == 'test'
 	threadpoolctl>=1.1
 "
 GENERATED_RDEPEND="${RDEPEND}

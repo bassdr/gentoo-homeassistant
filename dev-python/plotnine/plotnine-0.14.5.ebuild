@@ -17,37 +17,37 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	adjustText>=1.2.0; extra == "extra"
-	build; extra == "build"
-	click; extra == "doc"
-	geopandas>=1.0.0; extra == "extra"
-	ipython; extra == "typing"
-	jupyter; extra == "doc"
+	adjustText>=1.2.0; extra == 'extra'
+	build; extra == 'build'
+	click; extra == 'doc'
+	geopandas>=1.0.0; extra == 'extra'
+	ipython; extra == 'typing'
+	jupyter; extra == 'doc'
 	matplotlib>=3.8.0
 	mizani~=0.13.0
-	nbsphinx; extra == "doc"
+	nbsphinx; extra == 'doc'
 	numpy>=1.23.5
-	numpydoc>=0.9.1; extra == "doc"
-	pandas-stubs; extra == "typing"
+	numpydoc>=0.9.1; extra == 'doc'
+	pandas-stubs; extra == 'typing'
 	pandas>=2.2.0
-	plotnine[build]; extra == "all"
-	plotnine[dev]; extra == "all"
-	plotnine[doc]; extra == "all"
-	plotnine[extra]; extra == "all"
-	plotnine[lint]; extra == "all"
-	plotnine[test]; extra == "all"
-	plotnine[typing]; extra == "dev"
-	pre-commit; extra == "dev"
-	pyright==1.1.391; extra == "typing"
-	pytest-cov>=4.0.0; extra == "test"
-	quartodoc>=0.7.2; extra == "doc"
-	ruff; extra == "lint"
-	scikit-learn>1.2.0; extra == "extra"
-	scikit-misc>=0.5.1; extra == "extra"
+	plotnine[build]; extra == 'all'
+	plotnine[dev]; extra == 'all'
+	plotnine[doc]; extra == 'all'
+	plotnine[extra]; extra == 'all'
+	plotnine[lint]; extra == 'all'
+	plotnine[test]; extra == 'all'
+	plotnine[typing]; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pyright==1.1.391; extra == 'typing'
+	pytest-cov>=4.0.0; extra == 'test'
+	quartodoc>=0.7.2; extra == 'doc'
+	ruff; extra == 'lint'
+	scikit-learn>1.2.0; extra == 'extra'
+	scikit-misc>=0.5.1; extra == 'extra'
 	scipy>=1.8.0
 	statsmodels>=0.14.0
-	twine; extra == "dev"
-	wheel; extra == "build"
+	twine; extra == 'dev'
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	extra? ( >=dev-python/adjusttext-1.2.0[${PYTHON_USEDEP}] )

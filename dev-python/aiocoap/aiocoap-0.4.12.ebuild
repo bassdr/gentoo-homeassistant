@@ -26,27 +26,27 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	DTLSSocket>=0.1.18; extra == "all"
-	DTLSSocket>=0.1.18; extra == "tinydtls"
-	cbor-diag; extra == "all"
-	cbor-diag; extra == "prettyprint"
-	cbor2; extra == "all"
-	cbor2; extra == "oscore"
-	cbor2; extra == "prettyprint"
-	cryptography>=2.5; extra == "all"
-	cryptography>=2.5; extra == "oscore"
-	filelock; extra == "all"
-	filelock; extra == "oscore"
-	ge25519; extra == "all"
-	ge25519; extra == "oscore"
-	lakers-python==0.4.1; extra == "all"
-	lakers-python==0.4.1; extra == "oscore"
-	pygments; extra == "all"
-	pygments>=2.1; extra == "prettyprint"
-	sphinx-argparse; extra == "docs"
-	sphinx>=5; extra == "docs"
-	websockets<14,>=13; extra == "all"
-	websockets<14,>=13; extra == "ws"
+	DTLSSocket>=0.1.18; extra == 'all'
+	DTLSSocket>=0.1.18; extra == 'tinydtls'
+	cbor-diag; extra == 'all'
+	cbor-diag; extra == 'prettyprint'
+	cbor2; extra == 'all'
+	cbor2; extra == 'oscore'
+	cbor2; extra == 'prettyprint'
+	cryptography>=2.5; extra == 'all'
+	cryptography>=2.5; extra == 'oscore'
+	filelock; extra == 'all'
+	filelock; extra == 'oscore'
+	ge25519; extra == 'all'
+	ge25519; extra == 'oscore'
+	lakers-python==0.4.1; extra == 'all'
+	lakers-python==0.4.1; extra == 'oscore'
+	pygments; extra == 'all'
+	pygments>=2.1; extra == 'prettyprint'
+	sphinx-argparse; extra == 'docs'
+	sphinx>=5; extra == 'docs'
+	websockets<14,>=13; extra == 'all'
+	websockets<14,>=13; extra == 'ws'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/cbor-diag[${PYTHON_USEDEP}] )

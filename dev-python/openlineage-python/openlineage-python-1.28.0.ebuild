@@ -18,22 +18,22 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=20.0
-	aws-msk-iam-sasl-signer-python>=1.0.1; extra == "msk-iam"
-	beautifulsoup4>=4.12.0; extra == "docs"
-	confluent-kafka>=2.1.1; extra == "kafka"
-	confluent-kafka>=2.1.1; extra == "msk-iam"
-	covdefaults>=2.3; extra == "test"
+	aws-msk-iam-sasl-signer-python>=1.0.1; extra == 'msk-iam'
+	beautifulsoup4>=4.12.0; extra == 'docs'
+	confluent-kafka>=2.1.1; extra == 'kafka'
+	confluent-kafka>=2.1.1; extra == 'msk-iam'
+	covdefaults>=2.3; extra == 'test'
 	packaging>=21.0
-	pydata-sphinx-theme>=0.13; extra == "docs"
-	pytest-cov>=4.1; extra == "test"
-	pytest-mock>=3.10; extra == "test"
-	pytest>=7.3.1; extra == "test"
+	pydata-sphinx-theme>=0.13; extra == 'docs'
+	pytest-cov>=4.1; extra == 'test'
+	pytest-mock>=3.10; extra == 'test'
+	pytest>=7.3.1; extra == 'test'
 	python-dateutil>=2.8.2
 	pyyaml>=5.4
-	pyyaml>=5.4; extra == "test"
+	pyyaml>=5.4; extra == 'test'
 	requests>=2.20.0
-	sphinx-autodoc-typehints>=2.0.0; extra == "docs"
-	sphinx>=7.0; extra == "docs"
+	sphinx-autodoc-typehints>=2.0.0; extra == 'docs'
+	sphinx>=7.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-20.0[${PYTHON_USEDEP}]

@@ -19,8 +19,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Sphinx (<3.0,>=1.7) ; extra == 'sphinx'
-	black ; (python_version >= "3.6") and extra == 'dev'
-	black ; (python_version >= "3.6") and extra == 'test'
+	black ; (python_version >= '3.6') and extra == 'dev'
+	black ; (python_version >= '3.6') and extra == 'test'
 	bumpversion ; extra == 'dev'
 	bumpversion ; extra == 'test'
 	check-manifest ; extra == 'dev'

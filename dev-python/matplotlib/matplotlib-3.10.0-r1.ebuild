@@ -41,15 +41,15 @@ REQUIRES_DIST="
 	cycler>=0.10
 	fonttools>=4.22.0
 	kiwisolver>=1.3.1
-	meson-python<0.17.0,>=0.13.1; extra == "dev"
+	meson-python<0.17.0,>=0.13.1; extra == 'dev'
 	numpy>=1.23
 	packaging>=20.0
 	pillow>=8
-	pybind11!=2.13.3,>=2.13.2; extra == "dev"
+	pybind11!=2.13.3,>=2.13.2; extra == 'dev'
 	pyparsing>=2.3.1
 	python-dateutil>=2.7
-	setuptools>=64; extra == "dev"
-	setuptools_scm>=7; extra == "dev"
+	setuptools>=64; extra == 'dev'
+	setuptools_scm>=7; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]

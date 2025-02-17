@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	arviz-base==0.3.0; extra == "xarray"
-	h5netcdf; extra == "test"
-	jupyter-sphinx; extra == "doc"
-	myst-nb; extra == "doc"
-	myst-parser[linkify]; extra == "doc"
-	netcdf4; extra == "doc"
-	numba; extra == "numba"
-	numba; extra == "xarray"
+	arviz-base==0.3.0; extra == 'xarray'
+	h5netcdf; extra == 'test'
+	jupyter-sphinx; extra == 'doc'
+	myst-nb; extra == 'doc'
+	myst-parser[linkify]; extra == 'doc'
+	netcdf4; extra == 'doc'
+	numba; extra == 'numba'
+	numba; extra == 'xarray'
 	numpy>=1.24
-	numpydoc; extra == "doc"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	numpydoc; extra == 'doc'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 	scipy>=1.10
-	sphinx-book-theme; extra == "doc"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design; extra == "doc"
-	sphinx>=5; extra == "doc"
-	sphinx_autosummary_accessors; extra == "doc"
-	xarray-einstats; extra == "xarray"
-	xarray_einstats[einops]; extra == "numba"
+	sphinx-book-theme; extra == 'doc'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design; extra == 'doc'
+	sphinx>=5; extra == 'doc'
+	sphinx_autosummary_accessors; extra == 'doc'
+	xarray-einstats; extra == 'xarray'
+	xarray_einstats[einops]; extra == 'numba'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	xarray? ( ~dev-python/arviz-base-0.3.0[${PYTHON_USEDEP}] )

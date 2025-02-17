@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pre-commit<5.0,>=3.6; extra == "dev"
-	pytest; extra == "tests"
+	pre-commit<5.0,>=3.6; extra == 'dev'
+	pytest; extra == 'tests'
 	sphinx
-	sphinx-issues[tests]; extra == "dev"
-	tox; extra == "dev"
+	sphinx-issues[tests]; extra == 'dev'
+	tox; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/sphinx[${PYTHON_USEDEP}]

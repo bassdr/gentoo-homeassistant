@@ -9,9 +9,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="Backport of pathlib-compatible object wrapper for zip files"
 HOMEPAGE="
-  https://pypi.org/project/zipp/"
+  https://pypi.org/project/zipp/
+"
 
 LICENSE="MIT"
 SLOT="0"

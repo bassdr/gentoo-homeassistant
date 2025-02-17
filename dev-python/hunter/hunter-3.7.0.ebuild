@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	manhole>=1.5; platform_system != "Windows"
+	manhole>=1.5; platform_system != 'Windows'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/manhole-1.5[${PYTHON_USEDEP}]

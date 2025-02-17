@@ -19,7 +19,7 @@ GENERATED_IUSE="ansi"
 IUSE="${GENERATED_IUSE} ansi"
 
 REQUIRES_DIST="
-	pygments-ansi-color; extra == "ansi"
+	pygments-ansi-color; extra == 'ansi'
 	pymdown-extensions>=9
 "
 GENERATED_RDEPEND="${RDEPEND}

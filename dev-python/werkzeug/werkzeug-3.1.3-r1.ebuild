@@ -26,7 +26,7 @@ GENERATED_IUSE="watchdog"
 IUSE="${GENERATED_IUSE} test-rust"
 REQUIRES_DIST="
 	MarkupSafe>=2.1.1
-	watchdog>=2.3; extra == "watchdog"
+	watchdog>=2.3; extra == 'watchdog'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/markupsafe-2.1.1[${PYTHON_USEDEP}]

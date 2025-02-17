@@ -17,28 +17,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pillow>=9; platform_python_implementation != "PyPy" and extra == "test"
-	Sphinx>=7.0.0; extra == "doc"
-	cairocffi>=1.2.0; extra == "cairo"
-	cairocffi>=1.2.0; extra == "plotting"
-	cairocffi>=1.2.0; extra == "test"
-	cairocffi>=1.2.0; extra == "test-musl"
-	matplotlib>=3.6.0; platform_python_implementation != "PyPy" and extra == "matplotlib"
-	matplotlib>=3.6.0; platform_python_implementation != "PyPy" and extra == "test"
-	networkx>=2.5; extra == "test"
-	networkx>=2.5; extra == "test-musl"
-	numpy>=1.19.0; platform_python_implementation != "PyPy" and extra == "test"
-	pandas>=1.1.0; platform_python_implementation != "PyPy" and extra == "test"
-	plotly>=5.3.0; extra == "plotly"
-	plotly>=5.3.0; extra == "test"
-	pydoctor>=23.4.0; extra == "doc"
-	pytest-timeout>=2.1.0; extra == "test"
-	pytest-timeout>=2.1.0; extra == "test-musl"
-	pytest>=7.0.1; extra == "test"
-	pytest>=7.0.1; extra == "test-musl"
-	scipy>=1.5.0; platform_python_implementation != "PyPy" and extra == "test"
-	sphinx-gallery>=0.14.0; extra == "doc"
-	sphinx-rtd-theme>=1.3.0; extra == "doc"
+	Pillow>=9; platform_python_implementation != 'PyPy' and extra == 'test'
+	Sphinx>=7.0.0; extra == 'doc'
+	cairocffi>=1.2.0; extra == 'cairo'
+	cairocffi>=1.2.0; extra == 'plotting'
+	cairocffi>=1.2.0; extra == 'test'
+	cairocffi>=1.2.0; extra == 'test-musl'
+	matplotlib>=3.6.0; platform_python_implementation != 'PyPy' and extra == 'matplotlib'
+	matplotlib>=3.6.0; platform_python_implementation != 'PyPy' and extra == 'test'
+	networkx>=2.5; extra == 'test'
+	networkx>=2.5; extra == 'test-musl'
+	numpy>=1.19.0; platform_python_implementation != 'PyPy' and extra == 'test'
+	pandas>=1.1.0; platform_python_implementation != 'PyPy' and extra == 'test'
+	plotly>=5.3.0; extra == 'plotly'
+	plotly>=5.3.0; extra == 'test'
+	pydoctor>=23.4.0; extra == 'doc'
+	pytest-timeout>=2.1.0; extra == 'test'
+	pytest-timeout>=2.1.0; extra == 'test-musl'
+	pytest>=7.0.1; extra == 'test'
+	pytest>=7.0.1; extra == 'test-musl'
+	scipy>=1.5.0; platform_python_implementation != 'PyPy' and extra == 'test'
+	sphinx-gallery>=0.14.0; extra == 'doc'
+	sphinx-rtd-theme>=1.3.0; extra == 'doc'
 	texttable>=1.6.2
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cffi>=1.17.0; extra == "test"
-	click; extra == "bin"
-	django; extra == "examples"
-	flaky; extra == "test"
-	furo==2024.7.18; extra == "docs"
-	greenlet>=3; extra == "test"
-	ipython; extra == "test"
-	litestar; extra == "examples"
-	myst-parser==3.0.1; extra == "docs"
-	nox; extra == "bin"
-	numpy; extra == "examples"
-	pytest-asyncio==0.23.8; extra == "test"
-	pytest; extra == "test"
-	sphinx-autobuild==2024.4.16; extra == "docs"
-	sphinx==7.4.7; extra == "docs"
-	sphinxcontrib-programoutput==0.17; extra == "docs"
-	trio; extra == "test"
-	typing_extensions; extra == "types"
+	cffi>=1.17.0; extra == 'test'
+	click; extra == 'bin'
+	django; extra == 'examples'
+	flaky; extra == 'test'
+	furo==2024.7.18; extra == 'docs'
+	greenlet>=3; extra == 'test'
+	ipython; extra == 'test'
+	litestar; extra == 'examples'
+	myst-parser==3.0.1; extra == 'docs'
+	nox; extra == 'bin'
+	numpy; extra == 'examples'
+	pytest-asyncio==0.23.8; extra == 'test'
+	pytest; extra == 'test'
+	sphinx-autobuild==2024.4.16; extra == 'docs'
+	sphinx==7.4.7; extra == 'docs'
+	sphinxcontrib-programoutput==0.17; extra == 'docs'
+	trio; extra == 'test'
+	typing_extensions; extra == 'types'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	bin? ( dev-python/click[${PYTHON_USEDEP}] )

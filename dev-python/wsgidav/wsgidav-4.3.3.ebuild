@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	PyYAML
 	defusedxml
 	json5
-	python-pam; extra == "pam"
+	python-pam; extra == 'pam'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/defusedxml[${PYTHON_USEDEP}]

@@ -17,22 +17,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp; extra == "test"
+	aiohttp; extra == 'test'
 	attrs>=19.2.0
-	boto3>=1.3.1; extra == "s3"
+	boto3>=1.3.1; extra == 's3'
 	certifi
 	click-plugins>=1.0
 	click~=8.0
 	cligj>=0.5
-	fiona[calc,s3,test]; extra == "all"
-	fiona[s3]; extra == "test"
-	fsspec; extra == "test"
-	importlib-metadata; python_version < "3.10"
-	pyparsing; extra == "calc"
-	pytest-cov; extra == "test"
-	pytest>=7; extra == "test"
-	pytz; extra == "test"
-	shapely; extra == "calc"
+	fiona[calc,s3,test]; extra == 'all'
+	fiona[s3]; extra == 'test'
+	fsspec; extra == 'test'
+	importlib-metadata; python_version < '3.10'
+	pyparsing; extra == 'calc'
+	pytest-cov; extra == 'test'
+	pytest>=7; extra == 'test'
+	pytz; extra == 'test'
+	shapely; extra == 'calc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]

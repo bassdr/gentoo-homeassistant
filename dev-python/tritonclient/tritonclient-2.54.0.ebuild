@@ -18,26 +18,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp<4.0.0,>=3.8.1; extra == "all"
-	aiohttp<4.0.0,>=3.8.1; extra == "http"
-	cuda-python; extra == "all"
-	cuda-python; extra == "cuda"
-	geventhttpclient>=2.3.3; extra == "all"
-	geventhttpclient>=2.3.3; extra == "http"
-	grpcio<1.68,>=1.63.0; extra == "all"
-	grpcio<1.68,>=1.63.0; extra == "grpc"
+	aiohttp<4.0.0,>=3.8.1; extra == 'all'
+	aiohttp<4.0.0,>=3.8.1; extra == 'http'
+	cuda-python; extra == 'all'
+	cuda-python; extra == 'cuda'
+	geventhttpclient>=2.3.3; extra == 'all'
+	geventhttpclient>=2.3.3; extra == 'http'
+	grpcio<1.68,>=1.63.0; extra == 'all'
+	grpcio<1.68,>=1.63.0; extra == 'grpc'
 	numpy<2,>=1.19.1
-	numpy<2,>=1.19.1; extra == "all"
-	numpy<2,>=1.19.1; extra == "grpc"
-	numpy<2,>=1.19.1; extra == "http"
-	packaging>=14.1; extra == "all"
-	packaging>=14.1; extra == "grpc"
-	protobuf<6.0dev,>=5.26.1; extra == "all"
-	protobuf<6.0dev,>=5.26.1; extra == "grpc"
+	numpy<2,>=1.19.1; extra == 'all'
+	numpy<2,>=1.19.1; extra == 'grpc'
+	numpy<2,>=1.19.1; extra == 'http'
+	packaging>=14.1; extra == 'all'
+	packaging>=14.1; extra == 'grpc'
+	protobuf<6.0dev,>=5.26.1; extra == 'all'
+	protobuf<6.0dev,>=5.26.1; extra == 'grpc'
 	python-rapidjson>=0.9.1
-	python-rapidjson>=0.9.1; extra == "all"
-	python-rapidjson>=0.9.1; extra == "grpc"
-	python-rapidjson>=0.9.1; extra == "http"
+	python-rapidjson>=0.9.1; extra == 'all'
+	python-rapidjson>=0.9.1; extra == 'grpc'
+	python-rapidjson>=0.9.1; extra == 'http'
 	urllib3>=2.0.7
 "
 GENERATED_RDEPEND="${RDEPEND}

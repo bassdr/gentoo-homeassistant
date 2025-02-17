@@ -20,23 +20,23 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cssutils>=0.9.8a3
-	furo; extra == "docs"
-	importlib-resources; python_version < "3.7"
-	jaraco.packaging>=9.3; extra == "docs"
+	furo; extra == 'docs'
+	importlib-resources; python_version < '3.7'
+	jaraco.packaging>=9.3; extra == 'docs'
 	lxml>=2.0
 	more-itertools>=6
-	pytest!=8.1.1,>=6; extra == "testing"
-	pytest-checkdocs>=2.4; extra == "testing"
-	pytest-cov; extra == "testing"
-	pytest-enabler>=2.2; extra == "testing"
-	pytest-mypy; extra == "testing"
-	pytest-ruff>=0.2.1; extra == "testing"
+	pytest!=8.1.1,>=6; extra == 'testing'
+	pytest-checkdocs>=2.4; extra == 'testing'
+	pytest-cov; extra == 'testing'
+	pytest-enabler>=2.2; extra == 'testing'
+	pytest-mypy; extra == 'testing'
+	pytest-ruff>=0.2.1; extra == 'testing'
 	python-dateutil>=2.0
-	rst.linker>=1.9; extra == "docs"
-	sphinx-lint; extra == "docs"
-	sphinx>=3.5; extra == "docs"
+	rst.linker>=1.9; extra == 'docs'
+	sphinx-lint; extra == 'docs'
+	sphinx>=3.5; extra == 'docs'
 	tempora>=1.3
-	types-python-dateutil; extra == "testing"
+	types-python-dateutil; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cssutils-0.9.8_alpha3[${PYTHON_USEDEP}]

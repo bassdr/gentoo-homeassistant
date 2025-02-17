@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cairosvg>=2.6.0
-	coverage; extra == "test"
+	coverage; extra == 'test'
 	linkchecker>=10.3.0
 	markdown-exec>=1.3.0
 	markdown-include>=0.8.1
@@ -32,7 +32,7 @@ REQUIRES_DIST="
 	mkdocstrings>=0.21.2
 	pillow>=9.4.0
 	pymdown-extensions>=9.9.2
-	pytest; extra == "test"
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cairosvg-2.6.0[${PYTHON_USEDEP}]

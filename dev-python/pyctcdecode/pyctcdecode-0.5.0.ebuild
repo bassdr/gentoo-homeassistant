@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	flake8 ; extra == 'dev'
 	huggingface-hub ; extra == 'dev'
 	hypothesis (<7,>=6.14)
-	importlib-metadata (<5) ; python_version == "3.7"
+	importlib-metadata (<5) ; python_version == '3.7'
 	isort (<6,>=5.0.0) ; extra == 'dev'
 	jupyter ; extra == 'dev'
 	mypy ; extra == 'dev'

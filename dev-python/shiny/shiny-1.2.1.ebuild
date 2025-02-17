@@ -17,98 +17,98 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Flake8-pyproject>=1.2.3; extra == "dev"
-	aiohttp; extra == "dev"
-	anthropic; extra == "dev"
+	Flake8-pyproject>=1.2.3; extra == 'dev'
+	aiohttp; extra == 'dev'
+	anthropic; extra == 'dev'
 	appdirs>=1.4.4
 	asgiref>=3.5.2
-	astropy; extra == "test"
-	beautifulsoup4; extra == "dev"
-	black>=24.0; extra == "dev"
-	bokeh; extra == "test"
-	brand-yml>=0.1.0; extra == "dev"
-	brand-yml>=0.1.0; extra == "theme"
-	click>=8.1.4; platform_system != "Emscripten"
-	coverage; extra == "test"
-	dask[dataframe]; extra == "test"
-	duckdb; extra == "test"
-	faicons; extra == "test"
-	flake8-bugbear>=23.2.13; extra == "dev"
-	flake8>=6.0.0; extra == "dev"
-	folium; extra == "test"
-	geodatasets; extra == "test"
-	geopandas; extra == "test"
-	google-generativeai; python_version >= "3.9" and extra == "dev"
-	great-tables; extra == "test"
-	griffe>=1.3.2; extra == "doc"
-	holoviews; extra == "test"
+	astropy; extra == 'test'
+	beautifulsoup4; extra == 'dev'
+	black>=24.0; extra == 'dev'
+	bokeh; extra == 'test'
+	brand-yml>=0.1.0; extra == 'dev'
+	brand-yml>=0.1.0; extra == 'theme'
+	click>=8.1.4; platform_system != 'Emscripten'
+	coverage; extra == 'test'
+	dask[dataframe]; extra == 'test'
+	duckdb; extra == 'test'
+	faicons; extra == 'test'
+	flake8-bugbear>=23.2.13; extra == 'dev'
+	flake8>=6.0.0; extra == 'dev'
+	folium; extra == 'test'
+	geodatasets; extra == 'test'
+	geopandas; extra == 'test'
+	google-generativeai; python_version >= '3.9' and extra == 'dev'
+	great-tables; extra == 'test'
+	griffe>=1.3.2; extra == 'doc'
+	holoviews; extra == 'test'
 	htmltools>=0.6.0
-	ipyleaflet; extra == "test"
-	isort>=5.10.1; extra == "dev"
-	jupyter-client<8.0.0; extra == "doc"
-	jupyter; extra == "doc"
-	langchain-core; extra == "dev"
-	libsass>=0.23.0; extra == "dev"
-	libsass>=0.23.0; extra == "theme"
+	ipyleaflet; extra == 'test'
+	isort>=5.10.1; extra == 'dev'
+	jupyter-client<8.0.0; extra == 'doc'
+	jupyter; extra == 'doc'
+	langchain-core; extra == 'dev'
+	libsass>=0.23.0; extra == 'dev'
+	libsass>=0.23.0; extra == 'theme'
 	linkify-it-py>=1.0
 	markdown-it-py>=1.1.0
-	matplotlib; extra == "dev"
+	matplotlib; extra == 'dev'
 	mdit-py-plugins>=0.3.0
-	missingno; extra == "test"
-	modin[all]; extra == "test"
+	missingno; extra == 'test'
+	modin[all]; extra == 'test'
 	narwhals>=1.10.0
-	numpy; extra == "dev"
-	ollama; extra == "dev"
-	openai; extra == "dev"
+	numpy; extra == 'dev'
+	ollama; extra == 'dev'
+	openai; extra == 'dev'
 	orjson>=3.10.7
 	packaging>=20.9
-	palmerpenguins; extra == "test"
-	pandas-stubs; extra == "dev"
-	pandas; extra == "dev"
-	playwright>=1.43.0; extra == "test"
-	plotly; extra == "test"
-	plotnine; extra == "test"
-	polars; extra == "dev"
-	polars; extra == "test"
-	pre-commit>=2.15.0; extra == "dev"
-	prompt-toolkit; platform_system != "Emscripten"
-	psutil; extra == "test"
-	pyarrow-stubs; extra == "test"
-	pyarrow; extra == "test"
-	pydantic>=2.7.4; extra == "doc"
-	pyright>=1.1.383; extra == "dev"
-	pytest-asyncio>=0.17.2; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-playwright>=0.3.0; extra == "test"
-	pytest-rerunfailures; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest>=6.2.4; extra == "test"
-	python-dotenv; extra == "dev"
+	palmerpenguins; extra == 'test'
+	pandas-stubs; extra == 'dev'
+	pandas; extra == 'dev'
+	playwright>=1.43.0; extra == 'test'
+	plotly; extra == 'test'
+	plotnine; extra == 'test'
+	polars; extra == 'dev'
+	polars; extra == 'test'
+	pre-commit>=2.15.0; extra == 'dev'
+	prompt-toolkit; platform_system != 'Emscripten'
+	psutil; extra == 'test'
+	pyarrow-stubs; extra == 'test'
+	pyarrow; extra == 'test'
+	pydantic>=2.7.4; extra == 'doc'
+	pyright>=1.1.383; extra == 'dev'
+	pytest-asyncio>=0.17.2; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-playwright>=0.3.0; extra == 'test'
+	pytest-rerunfailures; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest>=6.2.4; extra == 'test'
+	python-dotenv; extra == 'dev'
 	python-multipart
-	python-multipart>=0.0.7; platform_system != "Emscripten"
-	quartodoc>=0.8.1; extra == "doc"
-	questionary>=2.0.0; platform_system != "Emscripten"
-	ridgeplot; extra == "test"
-	rsconnect-python; extra == "test"
-	scikit-learn; extra == "test"
-	seaborn; extra == "test"
-	setuptools; python_version >= "3.12"
-	shinylive; extra == "doc"
-	shinyswatch>=0.7.0; extra == "dev"
-	shinywidgets; extra == "test"
+	python-multipart>=0.0.7; platform_system != 'Emscripten'
+	quartodoc>=0.8.1; extra == 'doc'
+	questionary>=2.0.0; platform_system != 'Emscripten'
+	ridgeplot; extra == 'test'
+	rsconnect-python; extra == 'test'
+	scikit-learn; extra == 'test'
+	seaborn; extra == 'test'
+	setuptools; python_version >= '3.12'
+	shinylive; extra == 'doc'
+	shinyswatch>=0.7.0; extra == 'dev'
+	shinywidgets; extra == 'test'
 	starlette
-	suntime; extra == "test"
-	syrupy>=4.7.1; extra == "test"
-	tabulate; extra == "doc"
-	timezonefinder; platform_system != "Windows" and extra == "test"
-	tokenizers; extra == "dev"
+	suntime; extra == 'test'
+	syrupy>=4.7.1; extra == 'test'
+	tabulate; extra == 'doc'
+	timezonefinder; platform_system != 'Windows' and extra == 'test'
+	tokenizers; extra == 'dev'
 	typing-extensions>=4.10.0
-	uvicorn>=0.16.0; platform_system != "Emscripten"
-	watchfiles>=0.18.0; platform_system != "Emscripten"
+	uvicorn>=0.16.0; platform_system != 'Emscripten'
+	watchfiles>=0.18.0; platform_system != 'Emscripten'
 	websockets>=13.0
-	wheel; extra == "dev"
-	xarray; extra == "test"
+	wheel; extra == 'dev'
+	xarray; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]

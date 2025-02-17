@@ -32,10 +32,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/python-dateutil-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/xmltodict-0.13.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]
-	>=dev-python/haversine-2.8.1[${PYTHON_USEDEP}]
-	>=dev-python/xmltodict-0.14.1[${PYTHON_USEDEP}]
-	>=dev-python/python-dateutil-2.9.0[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

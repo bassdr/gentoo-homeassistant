@@ -36,7 +36,7 @@ REQUIRES_DIST="
 	packaging>=24.2
 	pathspec>=0.10.1
 	pluggy>=1.0.0
-	tomli>=1.2.2; python_version < "3.11"
+	tomli>=1.2.2; python_version < '3.11'
 	trove-classifiers
 "
 GENERATED_RDEPEND="${RDEPEND}

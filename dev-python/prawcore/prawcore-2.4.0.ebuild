@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=flit
 inherit distutils-r1 pypi
 
 DESCRIPTION="\"Low-level communication layer for PRAW 4+."
@@ -24,16 +24,16 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	betamax >=0.8, <0.9 ; extra == "test"
-	coveralls ; extra == "ci"
-	packaging ; extra == "dev"
-	prawcore[lint] ; extra == "dev"
-	prawcore[test] ; extra == "dev"
-	pre-commit ; extra == "lint"
-	pytest >=2.7.3 ; extra == "test"
+	betamax >=0.8, <0.9 ; extra == 'test'
+	coveralls ; extra == 'ci'
+	packaging ; extra == 'dev'
+	prawcore[lint] ; extra == 'dev'
+	prawcore[test] ; extra == 'dev'
+	pre-commit ; extra == 'lint'
+	pytest >=2.7.3 ; extra == 'test'
 	requests >=2.6.0, <3.0
-	ruff >=0.0.291 ; extra == "lint"
-	urllib3 ==1.26.*, <2 ; extra == "test"
+	ruff >=0.0.291 ; extra == 'lint'
+	urllib3 ==1.26.*, <2 ; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	ci? ( dev-python/coveralls[${PYTHON_USEDEP}] )
@@ -41,12 +41,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	lint? ( >=dev-python/ruff-0.0.291[${PYTHON_USEDEP}] )
 	lint? ( dev-vcs/pre-commit[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/requests-2.6.0[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+RDEPEND="${GENERATED_RDEPEND}"
 
 python_test() {
 	py.test -v -v || die

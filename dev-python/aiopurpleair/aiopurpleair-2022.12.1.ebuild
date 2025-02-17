@@ -18,8 +18,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -29,11 +27,9 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-1.10.2[${PYTHON_USEDEP}] <dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-1.10.2[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-1.10.2[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

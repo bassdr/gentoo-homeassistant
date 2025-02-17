@@ -22,13 +22,13 @@ RESTRICT="!test? ( test )"
 REQUIRED_USE="pandas? ( aio )"
 
 REQUIRES_DIST="
-	aiohttp<4,>=3.8.0; extra == "aio"
-	asgiref<4,>=3.2.3; extra == "aio"
+	aiohttp<4,>=3.8.0; extra == 'aio'
+	asgiref<4,>=3.2.3; extra == 'aio'
 	azure-core<2,>=1.11.0
 	azure-identity<2,>=1.5.0
 	ijson~=3.1
 	msal<2,>=1.9.0
-	pandas; extra == "pandas"
+	pandas; extra == 'pandas'
 	python-dateutil>=2.8.0
 	requests>=2.13.0
 "

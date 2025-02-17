@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	aiohttp ; python_version >= "3.7"
+	aiohttp ; python_version >= '3.7'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

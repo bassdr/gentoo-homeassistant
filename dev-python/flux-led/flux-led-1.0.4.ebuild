@@ -67,8 +67,8 @@ REQUIRES_DIST="
 	tox >=3.15.2 ; extra == 'dev'
 	twine >=3.1.1 ; extra == 'all'
 	twine >=3.1.1 ; extra == 'dev'
-	typing-extensions ; (python_version < "3.8") and extra == 'all'
-	typing-extensions ; python_version < "3.8"
+	typing-extensions ; (python_version < '3.8') and extra == 'all'
+	typing-extensions ; python_version < '3.8'
 	webcolors
 	webcolors ; extra == 'all'
 	wheel >=0.34.2 ; extra == 'all'

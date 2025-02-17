@@ -22,7 +22,7 @@ REQUIRES_DIST="
 	pydantic>=2.0.0
 	rstr>=3.2.0
 	smart-open[http]>=6.3.0
-	typer>=0.7.0; extra == "cli"
+	typer>=0.7.0; extra == 'cli'
 	typing-extensions>=4.9.0
 "
 GENERATED_RDEPEND="${RDEPEND}

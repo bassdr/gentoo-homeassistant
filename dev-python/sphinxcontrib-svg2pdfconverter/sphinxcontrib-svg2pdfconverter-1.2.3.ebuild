@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Sphinx>=1.6.3
-	cairosvg>=1.0; extra == "cairosvg"
+	cairosvg>=1.0; extra == 'cairosvg'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	cairosvg? ( >=dev-python/cairosvg-1.0[${PYTHON_USEDEP}] )

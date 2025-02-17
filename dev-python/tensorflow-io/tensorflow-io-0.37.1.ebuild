@@ -18,12 +18,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	tensorflow-aarch64<2.17.0,>=2.16.0; extra == "tensorflow-aarch64"
-	tensorflow-cpu<2.17.0,>=2.16.0; extra == "tensorflow-cpu"
-	tensorflow-gpu<2.17.0,>=2.16.0; extra == "tensorflow-gpu"
+	tensorflow-aarch64<2.17.0,>=2.16.0; extra == 'tensorflow-aarch64'
+	tensorflow-cpu<2.17.0,>=2.16.0; extra == 'tensorflow-cpu'
+	tensorflow-gpu<2.17.0,>=2.16.0; extra == 'tensorflow-gpu'
 	tensorflow-io-gcs-filesystem==0.37.1
-	tensorflow-rocm<2.17.0,>=2.16.0; extra == "tensorflow-rocm"
-	tensorflow<2.17.0,>=2.16.0; extra == "tensorflow"
+	tensorflow-rocm<2.17.0,>=2.16.0; extra == 'tensorflow-rocm'
+	tensorflow<2.17.0,>=2.16.0; extra == 'tensorflow'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	tensorflow? ( >=dev-python/tensorflow-2.16.0[${PYTHON_USEDEP}] <dev-python/tensorflow-2.17.0[${PYTHON_USEDEP}] )

@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	jupyter; extra == "examples"
+	jupyter; extra == 'examples'
 	matplotlib
 	numpy
-	tox; extra == "ci"
+	tox; extra == 'ci'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/jupyter[${PYTHON_USEDEP}] )

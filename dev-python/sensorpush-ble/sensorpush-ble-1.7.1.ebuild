@@ -26,12 +26,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx<6.0,>=5.0; extra == "docs"
+	Sphinx<6.0,>=5.0; extra == 'docs'
 	bluetooth-data-tools>=1.19.0
 	bluetooth-sensor-state-data>=1.6.1
-	myst-parser<0.19,>=0.18; extra == "docs"
+	myst-parser<0.19,>=0.18; extra == 'docs'
 	sensor-state-data>=2.0.2
-	sphinx-rtd-theme<2.0,>=1.0; extra == "docs"
+	sphinx-rtd-theme<2.0,>=1.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bluetooth-data-tools-1.19.0[${PYTHON_USEDEP}]

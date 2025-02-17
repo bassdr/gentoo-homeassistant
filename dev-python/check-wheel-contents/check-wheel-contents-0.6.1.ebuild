@@ -16,11 +16,11 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=18.1
-	backports-cached-property; python_version < "3.8"
+	backports-cached-property; python_version < '3.8'
 	click>=7.0
 	packaging
 	pydantic~=2.0
-	tomli<3.0,>=1.2; python_version < "3.11"
+	tomli<3.0,>=1.2; python_version < '3.11'
 	wheel-filename~=1.1
 "
 GENERATED_RDEPEND="${RDEPEND}

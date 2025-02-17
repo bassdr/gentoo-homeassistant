@@ -20,27 +20,27 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	databricks-sdk>=0.29.0
 	googleapis-common-protos>=1.56.4
-	googleapis-common-protos>=1.56.4; extra == "connect"
+	googleapis-common-protos>=1.56.4; extra == 'connect'
 	grpcio-status>=1.59.3
-	grpcio-status>=1.59.3; extra == "connect"
+	grpcio-status>=1.59.3; extra == 'connect'
 	grpcio>=1.59.3
-	grpcio>=1.59.3; extra == "connect"
+	grpcio>=1.59.3; extra == 'connect'
 	numpy<2,>=1.15
-	numpy<2,>=1.15; extra == "connect"
-	numpy<2,>=1.15; extra == "ml"
-	numpy<2,>=1.15; extra == "mllib"
-	numpy<2,>=1.15; extra == "pandas-on-spark"
-	numpy<2,>=1.15; extra == "sql"
+	numpy<2,>=1.15; extra == 'connect'
+	numpy<2,>=1.15; extra == 'ml'
+	numpy<2,>=1.15; extra == 'mllib'
+	numpy<2,>=1.15; extra == 'pandas-on-spark'
+	numpy<2,>=1.15; extra == 'sql'
 	packaging>=23.2
 	pandas>=1.0.5
-	pandas>=1.0.5; extra == "connect"
-	pandas>=1.0.5; extra == "pandas-on-spark"
-	pandas>=1.0.5; extra == "sql"
+	pandas>=1.0.5; extra == 'connect'
+	pandas>=1.0.5; extra == 'pandas-on-spark'
+	pandas>=1.0.5; extra == 'sql'
 	py4j==0.10.9.7
 	pyarrow>=4.0.0
-	pyarrow>=4.0.0; extra == "connect"
-	pyarrow>=4.0.0; extra == "pandas-on-spark"
-	pyarrow>=4.0.0; extra == "sql"
+	pyarrow>=4.0.0; extra == 'connect'
+	pyarrow>=4.0.0; extra == 'pandas-on-spark'
+	pyarrow>=4.0.0; extra == 'sql'
 	setuptools>=68.0.0
 	six
 "

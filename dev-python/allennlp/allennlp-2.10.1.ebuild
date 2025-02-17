@@ -26,7 +26,7 @@ REQUIRES_DIST="
 	coverage[toml] (>=6.4) ; extra == 'dev'
 	databind-json (<=1.5.3) ; extra == 'dev'
 	databind.core (<=1.5.3) ; extra == 'dev'
-	dataclasses ; python_version < "3.7"
+	dataclasses ; python_version < '3.7'
 	dill (>=0.3.4)
 	docspec (<1.2.0,>1.0.1) ; extra == 'dev'
 	docspec-python (<1.2.0,>1.0.1) ; extra == 'dev'
@@ -36,7 +36,7 @@ REQUIRES_DIST="
 	flaky (>=3.7.0) ; extra == 'dev'
 	h5py (>=3.6.0)
 	huggingface-hub (>=0.0.16)
-	jsonnet (>=0.10.0) ; sys_platform != "win32"
+	jsonnet (>=0.10.0) ; sys_platform != 'win32'
 	lmdb (>=1.2.1)
 	markdown-include (==0.6.0) ; extra == 'dev'
 	matplotlib (>=2.2.3) ; extra == 'dev'

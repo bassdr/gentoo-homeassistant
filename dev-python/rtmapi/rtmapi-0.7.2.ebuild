@@ -28,7 +28,7 @@ BDEPEND="
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 
-PATCHES=( "${FILESDIR}/RtmAPI-0.7.2-2to3.patch" )
+PATCHES=( "${FILESDIR}/${PN}-0.7.2-2to3.patch" )
 
 python_test() {
 	py.test -v -v || die

@@ -21,7 +21,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="benchmark build docs examples install maintenance"
-IUSE="${GENERATED_IUSE} examples"
+IUSE="${GENERATED_IUSE} examples +build"
 
 DEPEND="
 	virtual/blas:=
@@ -29,62 +29,62 @@ DEPEND="
 	>=dev-python/numpy-1.19.5:=[${PYTHON_USEDEP}]
 "
 REQUIRES_DIST="
-	Pillow>=7.1.2; extra == "docs"
-	black>=24.3.0; extra == "tests"
-	conda-lock==2.5.6; extra == "maintenance"
-	cython>=3.0.10; extra == "build"
+	Pillow>=7.1.2; extra == 'docs'
+	black>=24.3.0; extra == 'tests'
+	conda-lock==2.5.6; extra == 'maintenance'
+	cython>=3.0.10; extra == 'build'
 	joblib>=1.2.0
-	joblib>=1.2.0; extra == "install"
-	matplotlib>=3.3.4; extra == "benchmark"
-	matplotlib>=3.3.4; extra == "docs"
-	matplotlib>=3.3.4; extra == "examples"
-	matplotlib>=3.3.4; extra == "tests"
-	memory_profiler>=0.57.0; extra == "benchmark"
-	memory_profiler>=0.57.0; extra == "docs"
-	meson-python>=0.16.0; extra == "build"
-	mypy>=1.9; extra == "tests"
+	joblib>=1.2.0; extra == 'install'
+	matplotlib>=3.3.4; extra == 'benchmark'
+	matplotlib>=3.3.4; extra == 'docs'
+	matplotlib>=3.3.4; extra == 'examples'
+	matplotlib>=3.3.4; extra == 'tests'
+	memory_profiler>=0.57.0; extra == 'benchmark'
+	memory_profiler>=0.57.0; extra == 'docs'
+	meson-python>=0.16.0; extra == 'build'
+	mypy>=1.9; extra == 'tests'
 	numpy>=1.19.5
-	numpy>=1.19.5; extra == "build"
-	numpy>=1.19.5; extra == "install"
-	numpydoc>=1.2.0; extra == "docs"
-	numpydoc>=1.2.0; extra == "tests"
-	pandas>=1.1.5; extra == "benchmark"
-	pandas>=1.1.5; extra == "docs"
-	pandas>=1.1.5; extra == "examples"
-	pandas>=1.1.5; extra == "tests"
-	plotly>=5.14.0; extra == "docs"
-	plotly>=5.14.0; extra == "examples"
-	polars>=0.20.30; extra == "docs"
-	polars>=0.20.30; extra == "tests"
-	pooch>=1.6.0; extra == "docs"
-	pooch>=1.6.0; extra == "examples"
-	pooch>=1.6.0; extra == "tests"
-	pyamg>=4.0.0; extra == "tests"
-	pyarrow>=12.0.0; extra == "tests"
-	pydata-sphinx-theme>=0.15.3; extra == "docs"
-	pytest-cov>=2.9.0; extra == "tests"
-	pytest>=7.1.2; extra == "tests"
-	ruff>=0.5.1; extra == "tests"
-	scikit-image>=0.17.2; extra == "docs"
-	scikit-image>=0.17.2; extra == "examples"
-	scikit-image>=0.17.2; extra == "tests"
+	numpy>=1.19.5; extra == 'build'
+	numpy>=1.19.5; extra == 'install'
+	numpydoc>=1.2.0; extra == 'docs'
+	numpydoc>=1.2.0; extra == 'tests'
+	pandas>=1.1.5; extra == 'benchmark'
+	pandas>=1.1.5; extra == 'docs'
+	pandas>=1.1.5; extra == 'examples'
+	pandas>=1.1.5; extra == 'tests'
+	plotly>=5.14.0; extra == 'docs'
+	plotly>=5.14.0; extra == 'examples'
+	polars>=0.20.30; extra == 'docs'
+	polars>=0.20.30; extra == 'tests'
+	pooch>=1.6.0; extra == 'docs'
+	pooch>=1.6.0; extra == 'examples'
+	pooch>=1.6.0; extra == 'tests'
+	pyamg>=4.0.0; extra == 'tests'
+	pyarrow>=12.0.0; extra == 'tests'
+	pydata-sphinx-theme>=0.15.3; extra == 'docs'
+	pytest-cov>=2.9.0; extra == 'tests'
+	pytest>=7.1.2; extra == 'tests'
+	ruff>=0.5.1; extra == 'tests'
+	scikit-image>=0.17.2; extra == 'docs'
+	scikit-image>=0.17.2; extra == 'examples'
+	scikit-image>=0.17.2; extra == 'tests'
 	scipy>=1.6.0
-	scipy>=1.6.0; extra == "build"
-	scipy>=1.6.0; extra == "install"
-	seaborn>=0.9.0; extra == "docs"
-	seaborn>=0.9.0; extra == "examples"
-	sphinx-copybutton>=0.5.2; extra == "docs"
-	sphinx-design>=0.5.0; extra == "docs"
-	sphinx-design>=0.6.0; extra == "docs"
-	sphinx-gallery>=0.17.1; extra == "docs"
-	sphinx-prompt>=1.4.0; extra == "docs"
-	sphinx-remove-toctrees>=1.0.0.post1; extra == "docs"
-	sphinx>=7.3.7; extra == "docs"
-	sphinxcontrib-sass>=0.3.4; extra == "docs"
-	sphinxext-opengraph>=0.9.1; extra == "docs"
+	scipy>=1.6.0; extra == 'build'
+	scipy>=1.6.0; extra == 'install'
+	seaborn>=0.9.0; extra == 'docs'
+	seaborn>=0.9.0; extra == 'examples'
+	sphinx-copybutton>=0.5.2; extra == 'docs'
+	sphinx-design>=0.5.0; extra == 'docs'
+	sphinx-design>=0.6.0; extra == 'docs'
+	sphinx-gallery>=0.17.1; extra == 'docs'
+	sphinx-prompt>=1.4.0; extra == 'docs'
+	sphinx-remove-toctrees>=1.0.0.post1; extra == 'docs'
+	sphinx>=7.3.7; extra == 'docs'
+	sphinxcontrib-sass>=0.3.4; extra == 'docs'
+	sphinxext-opengraph>=0.9.1; extra == 'docs'
 	threadpoolctl>=3.1.0
-	threadpoolctl>=3.1.0; extra == "install"
-	towncrier>=24.8.0; extra == "docs"
+	threadpoolctl>=3.1.0; extra == 'install'
+	towncrier>=24.8.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	maintenance? ( ~dev-python/conda-lock-2.5.6[${PYTHON_USEDEP}] )

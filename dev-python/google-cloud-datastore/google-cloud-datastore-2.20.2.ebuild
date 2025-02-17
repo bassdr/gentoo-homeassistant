@@ -20,9 +20,9 @@ REQUIRES_DIST="
 	google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0dev,>=1.34.0
 	google-auth!=2.24.0,!=2.25.0,<3.0.0dev,>=2.14.1
 	google-cloud-core<3.0.0dev,>=1.4.0
-	libcst>=0.2.5; extra == "libcst"
+	libcst>=0.2.5; extra == 'libcst'
 	proto-plus<2.0.0dev,>=1.22.0
-	proto-plus<2.0.0dev,>=1.22.2; python_version >= "3.11"
+	proto-plus<2.0.0dev,>=1.22.2; python_version >= '3.11'
 	protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
 "
 GENERATED_RDEPEND="${RDEPEND}

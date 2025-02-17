@@ -19,26 +19,26 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="codegen doc lint"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	build; extra == "dev"
-	datamodel-code-generator>=0.25.2; extra == "codegen"
-	mypy>=1.0; extra == "lint"
-	pdoc<16.0,>=14.2; extra == "doc"
+	build; extra == 'dev'
+	datamodel-code-generator>=0.25.2; extra == 'codegen'
+	mypy>=1.0; extra == 'lint'
+	pdoc<16.0,>=14.2; extra == 'doc'
 	pydantic[email]<3,>=2
-	ruff<0.7.5; extra == "lint"
-	sigstore-rekor-types[codegen,doc,lint]; extra == "dev"
-	sigstore-rekor-types[lint]; extra == "codegen"
-	typing-extensions; python_version < "3.9"
+	ruff<0.7.5; extra == 'lint'
+	sigstore-rekor-types[codegen,doc,lint]; extra == 'dev'
+	sigstore-rekor-types[lint]; extra == 'codegen'
+	typing-extensions; python_version < '3.9'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	codegen? ( >=dev-python/datamodel-code-generator-0.25.2[${PYTHON_USEDEP}] )
 	lint? ( >=dev-python/mypy-1.0[${PYTHON_USEDEP}] )
 	doc? ( >=dev-python/pdoc-14.2[${PYTHON_USEDEP}] <dev-python/pdoc-16.0[${PYTHON_USEDEP}] )
-	>=dev-python/pydantic-2[email,${PYTHON_USEDEP}] <dev-python/pydantic-3[email,${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
 	lint? ( <dev-python/ruff-0.7.5[${PYTHON_USEDEP}] )
 	codegen? ( dev-python/sigstore-rekor-types[lint,${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/email-validator-2[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-2[${PYTHON_USEDEP}]
-"
+RDEPEND="${GENERATED_RDEPEND}"
+
+GENERATED_BDEPEND="${BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}"
 # GENERATED_BDEPEND could not be inserted in this ebuild

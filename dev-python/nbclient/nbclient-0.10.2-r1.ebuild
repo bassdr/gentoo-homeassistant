@@ -19,38 +19,38 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	autodoc-traits; extra == "docs"
-	flaky; extra == "docs"
-	flaky; extra == "test"
-	ipykernel>=6.19.3; extra == "docs"
-	ipykernel>=6.19.3; extra == "test"
-	ipython; extra == "docs"
-	ipython; extra == "test"
-	ipywidgets; extra == "docs"
-	ipywidgets; extra == "test"
+	autodoc-traits; extra == 'docs'
+	flaky; extra == 'docs'
+	flaky; extra == 'test'
+	ipykernel>=6.19.3; extra == 'docs'
+	ipykernel>=6.19.3; extra == 'test'
+	ipython; extra == 'docs'
+	ipython; extra == 'test'
+	ipywidgets; extra == 'docs'
+	ipywidgets; extra == 'test'
 	jupyter-client>=6.1.12
 	jupyter-core!=5.0.*,>=4.12
-	mock; extra == "docs"
-	moto; extra == "docs"
-	myst-parser; extra == "docs"
-	nbconvert>=7.1.0; extra == "docs"
-	nbconvert>=7.1.0; extra == "test"
+	mock; extra == 'docs'
+	moto; extra == 'docs'
+	myst-parser; extra == 'docs'
+	nbconvert>=7.1.0; extra == 'docs'
+	nbconvert>=7.1.0; extra == 'test'
 	nbformat>=5.1
-	pre-commit; extra == "dev"
-	pytest-asyncio; extra == "docs"
-	pytest-asyncio; extra == "test"
-	pytest-cov>=4.0; extra == "docs"
-	pytest-cov>=4.0; extra == "test"
-	pytest<8,>=7.0; extra == "docs"
-	pytest<8,>=7.0; extra == "test"
-	sphinx-book-theme; extra == "docs"
-	sphinx>=1.7; extra == "docs"
-	sphinxcontrib-spelling; extra == "docs"
-	testpath; extra == "docs"
-	testpath; extra == "test"
+	pre-commit; extra == 'dev'
+	pytest-asyncio; extra == 'docs'
+	pytest-asyncio; extra == 'test'
+	pytest-cov>=4.0; extra == 'docs'
+	pytest-cov>=4.0; extra == 'test'
+	pytest<8,>=7.0; extra == 'docs'
+	pytest<8,>=7.0; extra == 'test'
+	sphinx-book-theme; extra == 'docs'
+	sphinx>=1.7; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
+	testpath; extra == 'docs'
+	testpath; extra == 'test'
 	traitlets>=5.4
-	xmltodict; extra == "docs"
-	xmltodict; extra == "test"
+	xmltodict; extra == 'docs'
+	xmltodict; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/autodoc-traits[${PYTHON_USEDEP}] )

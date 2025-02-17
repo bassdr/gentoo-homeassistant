@@ -25,7 +25,7 @@ REQUIRES_DIST="
 	pylint ; extra == 'testing'
 	pytest (>=6)
 	sphinx ; extra == 'documentation'
-	typing-extensions ; python_version < "3.8"
+	typing-extensions ; python_version < '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	documentation? ( dev-python/pallets-sphinx-themes[${PYTHON_USEDEP}] )

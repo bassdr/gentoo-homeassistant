@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	mypy (>=0.981)
-	tomli (>=2.0.1,<3.0.0) ; python_version < "3.11"
+	tomli (>=2.0.1,<3.0.0) ; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mypy-0.981[${PYTHON_USEDEP}]

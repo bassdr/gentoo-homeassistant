@@ -17,19 +17,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	mock; extra == "development"
-	numpy; extra == "development"
-	pre-commit; extra == "development"
-	pytest-cov; extra == "development"
-	pytest-rerunfailures; extra == "development"
-	pytest-timeout; extra == "development"
-	pytest; extra == "development"
-	pytz; extra == "development"
-	setuptools; extra == "development"
+	mock; extra == 'development'
+	numpy; extra == 'development'
+	pre-commit; extra == 'development'
+	pytest-cov; extra == 'development'
+	pytest-rerunfailures; extra == 'development'
+	pytest-timeout; extra == 'development'
+	pytest; extra == 'development'
+	pytz; extra == 'development'
+	setuptools; extra == 'development'
 	snowflake-connector-python<4.0.0
-	snowflake-connector-python[pandas]; extra == "pandas"
+	snowflake-connector-python[pandas]; extra == 'pandas'
 	sqlalchemy>=1.4.19
-	syrupy==4.6.1; extra == "development"
+	syrupy==4.6.1; extra == 'development'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	development? ( dev-python/mock[${PYTHON_USEDEP}] )

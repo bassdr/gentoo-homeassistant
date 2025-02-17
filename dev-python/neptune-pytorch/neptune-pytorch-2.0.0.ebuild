@@ -15,14 +15,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata ; python_version < "3.8"
-	neptune (>=1.0.0) ; extra == "dev"
-	pre-commit ; extra == "dev"
-	pydot ; extra == "dev"
-	pytest (>=5.0) ; extra == "dev"
-	pytest-cov (==2.10.1) ; extra == "dev"
+	importlib-metadata ; python_version < '3.8'
+	neptune (>=1.0.0) ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pydot ; extra == 'dev'
+	pytest (>=5.0) ; extra == 'dev'
+	pytest-cov (==2.10.1) ; extra == 'dev'
 	torch (>1.8.0)
-	torchviz ; extra == "dev"
+	torchviz ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/torch-1.8.0[${PYTHON_USEDEP}]

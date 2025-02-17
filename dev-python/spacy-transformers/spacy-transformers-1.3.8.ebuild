@@ -17,20 +17,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cupy-cuda100>=5.0.0b4; extra == "cuda100"
-	cupy-cuda101>=5.0.0b4; extra == "cuda101"
-	cupy-cuda102>=5.0.0b4; extra == "cuda102"
-	cupy-cuda110>=5.0.0b4; extra == "cuda110"
-	cupy-cuda111>=5.0.0b4; extra == "cuda111"
-	cupy-cuda112>=5.0.0b4; extra == "cuda112"
-	cupy-cuda80>=5.0.0b4; extra == "cuda80"
-	cupy-cuda90>=5.0.0b4; extra == "cuda90"
-	cupy-cuda91>=5.0.0b4; extra == "cuda91"
-	cupy-cuda92>=5.0.0b4; extra == "cuda92"
-	cupy>=5.0.0b4; extra == "cuda"
-	dataclasses<1.0,>=0.6; python_version < "3.7"
-	numpy>=1.15.0; python_version < "3.9"
-	numpy>=1.19.0; python_version >= "3.9"
+	cupy-cuda100>=5.0.0b4; extra == 'cuda100'
+	cupy-cuda101>=5.0.0b4; extra == 'cuda101'
+	cupy-cuda102>=5.0.0b4; extra == 'cuda102'
+	cupy-cuda110>=5.0.0b4; extra == 'cuda110'
+	cupy-cuda111>=5.0.0b4; extra == 'cuda111'
+	cupy-cuda112>=5.0.0b4; extra == 'cuda112'
+	cupy-cuda80>=5.0.0b4; extra == 'cuda80'
+	cupy-cuda90>=5.0.0b4; extra == 'cuda90'
+	cupy-cuda91>=5.0.0b4; extra == 'cuda91'
+	cupy-cuda92>=5.0.0b4; extra == 'cuda92'
+	cupy>=5.0.0b4; extra == 'cuda'
+	dataclasses<1.0,>=0.6; python_version < '3.7'
+	numpy>=1.15.0; python_version < '3.9'
+	numpy>=1.19.0; python_version >= '3.9'
 	spacy-alignments<1.0.0,>=0.7.2
 	spacy<4.1.0,>=3.5.0
 	srsly<3.0.0,>=2.4.0

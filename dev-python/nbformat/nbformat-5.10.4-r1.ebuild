@@ -23,15 +23,15 @@ REQUIRES_DIST="
 	fastjsonschema>=2.15
 	jsonschema>=2.6
 	jupyter-core!=5.0.*,>=4.12
-	myst-parser; extra == "docs"
-	pep440; extra == "test"
-	pre-commit; extra == "test"
-	pydata-sphinx-theme; extra == "docs"
-	pytest; extra == "test"
-	sphinx; extra == "docs"
-	sphinxcontrib-github-alt; extra == "docs"
-	sphinxcontrib-spelling; extra == "docs"
-	testpath; extra == "test"
+	myst-parser; extra == 'docs'
+	pep440; extra == 'test'
+	pre-commit; extra == 'test'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest; extra == 'test'
+	sphinx; extra == 'docs'
+	sphinxcontrib-github-alt; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
+	testpath; extra == 'test'
 	traitlets>=5.1
 "
 GENERATED_RDEPEND="${RDEPEND}

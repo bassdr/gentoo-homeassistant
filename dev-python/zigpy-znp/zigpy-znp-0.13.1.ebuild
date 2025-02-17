@@ -25,11 +25,11 @@ REQUIRES_DIST="
 	async-timeout
 	coloredlogs
 	jsonschema
-	pytest-asyncio>=0.21.0; extra == "testing"
-	pytest-cov>=4.1.0; extra == "testing"
-	pytest-mock>=3.10.0; extra == "testing"
-	pytest-timeout>=2.1.0; extra == "testing"
-	pytest>=7.3.1; extra == "testing"
+	pytest-asyncio>=0.21.0; extra == 'testing'
+	pytest-cov>=4.1.0; extra == 'testing'
+	pytest-mock>=3.10.0; extra == 'testing'
+	pytest-timeout>=2.1.0; extra == 'testing'
+	pytest>=7.3.1; extra == 'testing'
 	voluptuous
 	zigpy>=0.70.0
 "

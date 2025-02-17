@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-cncf-kubernetes>=7.4.0; extra == "cncf-kubernetes"
+	apache-airflow-providers-cncf-kubernetes>=7.4.0; extra == 'cncf-kubernetes'
 	apache-airflow>=2.9.0
 	celery[redis]!=5.3.2,!=5.3.3,<6,>=5.3.0
 	flower>=1.0.0

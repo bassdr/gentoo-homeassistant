@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	matplotlib; extra == "all"
+	matplotlib; extra == 'all'
 	numpy
-	tifffile; extra == "all"
+	tifffile; extra == 'all'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )

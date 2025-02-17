@@ -17,20 +17,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	accelerate; extra == "examples"
-	datasets; extra == "examples"
-	diffusers; extra == "examples"
+	accelerate; extra == 'examples'
+	datasets; extra == 'examples'
+	diffusers; extra == 'examples'
 	huggingface_hub
 	ninja
 	numpy
-	pytest; extra == "dev"
-	ruff; extra == "dev"
+	pytest; extra == 'dev'
+	ruff; extra == 'dev'
 	safetensors
-	scipy; extra == "examples"
-	sentencepiece; extra == "examples"
+	scipy; extra == 'examples'
+	sentencepiece; extra == 'examples'
 	torch>=2.4.0
-	torchvision; extra == "examples"
-	transformers; extra == "examples"
+	torchvision; extra == 'examples'
+	transformers; extra == 'examples'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/accelerate[${PYTHON_USEDEP}] )

@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	google-api-core (<2.0.0,>=1.0.0) ; python_version < "3.6"
-	google-api-core (<3.0.0,>=1.0.0) ; python_version >= "3.6"
+	google-api-core (<2.0.0,>=1.0.0) ; python_version < '3.6'
+	google-api-core (<3.0.0,>=1.0.0) ; python_version >= '3.6'
 	opencensus-context (>=0.1.3)
 	six (~=1.16)
 "

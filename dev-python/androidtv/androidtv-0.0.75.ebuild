@@ -22,9 +22,9 @@ DOCS="README.rst"
 
 REQUIRES_DIST="
 	adb-shell>=0.4.0
-	adb-shell[usb]>=0.4.0; extra == "usb"
-	aiofiles>=0.4.0; extra == "async"
-	async_timeout>=3.0.0; extra == "async"
+	adb-shell[usb]>=0.4.0; extra == 'usb'
+	aiofiles>=0.4.0; extra == 'async'
+	async_timeout>=3.0.0; extra == 'async'
 	pure-python-adb>=0.3.0.dev0
 "
 GENERATED_RDEPEND="${RDEPEND}
@@ -34,16 +34,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/async-timeout-3.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/pure-python-adb-0.3.0_pre0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	async? ( >=dev-python/aiofiles-0.4.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10) )
-	>=dev-python/pure-python-adb-0.3.0[${PYTHON_USEDEP}]
-	>=dev-python/adb-shell-0.4.0[usb?,${PYTHON_USEDEP}]
-	>=dev-python/aiofiles-0.4.0[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+RDEPEND="${GENERATED_RDEPEND}"
 
 python_test() {
 	py.test -v -v || die

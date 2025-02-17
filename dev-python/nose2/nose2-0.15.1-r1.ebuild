@@ -19,10 +19,10 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="coverage-plugin"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	coverage; extra == "coverage-plugin"
-	sphinx-issues; extra == "dev"
-	sphinx-rtd-theme; extra == "dev"
-	sphinx; extra == "dev"
+	coverage; extra == 'coverage-plugin'
+	sphinx-issues; extra == 'dev'
+	sphinx-rtd-theme; extra == 'dev'
+	sphinx; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	coverage-plugin? ( dev-python/coverage[${PYTHON_USEDEP}] )

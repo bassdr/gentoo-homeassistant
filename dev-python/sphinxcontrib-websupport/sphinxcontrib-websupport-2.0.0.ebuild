@@ -22,13 +22,13 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Sphinx>=5
 	jinja2
-	mypy; extra == "lint"
-	pytest; extra == "test"
-	ruff==0.5.5; extra == "lint"
+	mypy; extra == 'lint'
+	pytest; extra == 'test'
+	ruff==0.5.5; extra == 'lint'
 	sphinxcontrib-serializinghtml
-	sqlalchemy; extra == "whoosh"
-	types-docutils; extra == "lint"
-	whoosh; extra == "whoosh"
+	sqlalchemy; extra == 'whoosh'
+	types-docutils; extra == 'lint'
+	whoosh; extra == 'whoosh'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jinja2[${PYTHON_USEDEP}]

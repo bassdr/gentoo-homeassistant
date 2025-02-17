@@ -17,32 +17,32 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cfgrib; extra == "dev"
-	cfgrib; extra == "grib2"
-	cftime; extra == "cftime"
-	cftime; extra == "dev"
-	dask; extra == "dev"
-	fastparquet>=2024.11.0; extra == "dev"
+	cfgrib; extra == 'dev'
+	cfgrib; extra == 'grib2'
+	cftime; extra == 'cftime'
+	cftime; extra == 'dev'
+	dask; extra == 'dev'
+	fastparquet>=2024.11.0; extra == 'dev'
 	fsspec
-	gcsfs; extra == "dev"
-	h5netcdf; extra == "dev"
-	h5py; extra == "dev"
-	h5py; extra == "hdf"
-	jinja2; extra == "dev"
-	mypy; extra == "dev"
-	netcdf4; extra == "dev"
+	gcsfs; extra == 'dev'
+	h5netcdf; extra == 'dev'
+	h5py; extra == 'dev'
+	h5py; extra == 'hdf'
+	jinja2; extra == 'dev'
+	mypy; extra == 'dev'
+	netcdf4; extra == 'dev'
 	numcodecs
 	numpy
-	pytest-subtests; extra == "dev"
-	pytest; extra == "dev"
-	s3fs; extra == "dev"
-	scipy; extra == "dev"
-	scipy; extra == "netcdf3"
-	types-ujson; extra == "dev"
+	pytest-subtests; extra == 'dev'
+	pytest; extra == 'dev'
+	s3fs; extra == 'dev'
+	scipy; extra == 'dev'
+	scipy; extra == 'netcdf3'
+	types-ujson; extra == 'dev'
 	ujson
-	xarray; extra == "fits"
-	xarray; extra == "hdf"
-	xarray>=2024.10.0; extra == "dev"
+	xarray; extra == 'fits'
+	xarray; extra == 'hdf'
+	xarray>=2024.10.0; extra == 'dev'
 	zarr>=3.0.1
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -16,8 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="ciso extra"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"
 
@@ -53,18 +52,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/six-1.10[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.15.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/Rx-3.0.1
-	>=dev-python/certifi-14.05.14
-	>=dev-python/six-1.10
-	>=dev-python/python-dateutil-2.5.3
-	>=dev-python/urllib3-1.15.1
-	>=dev-python/pytz-2019.1
-"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+RDEPEND="${GENERATED_RDEPEND}"
 
 src_prepare() {
 	sed -e "s;packages=find_packages();packages=find_packages(exclude=['tests', 'docs']);" \

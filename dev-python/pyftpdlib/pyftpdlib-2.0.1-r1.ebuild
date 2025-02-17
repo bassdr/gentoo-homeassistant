@@ -20,24 +20,24 @@ GENERATED_IUSE="ssl"
 IUSE="${GENERATED_IUSE} examples ssl"
 
 REQUIRES_DIST="
-	PyOpenSSL; extra == "ssl"
-	black; extra == "dev"
-	check-manifest; extra == "dev"
-	coverage; extra == "dev"
-	psutil; extra == "test"
-	pyasynchat; python_version >= "3.12"
-	pyasyncore; python_version >= "3.12"
-	pylint; extra == "dev"
-	pyopenssl; extra == "test"
-	pytest-cov; extra == "dev"
-	pytest-xdist; extra == "dev"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
-	rstcheck; extra == "dev"
-	ruff; extra == "dev"
-	setuptools; extra == "test"
-	toml-sort; extra == "dev"
-	twine; extra == "dev"
+	PyOpenSSL; extra == 'ssl'
+	black; extra == 'dev'
+	check-manifest; extra == 'dev'
+	coverage; extra == 'dev'
+	psutil; extra == 'test'
+	pyasynchat; python_version >= '3.12'
+	pyasyncore; python_version >= '3.12'
+	pylint; extra == 'dev'
+	pyopenssl; extra == 'test'
+	pytest-cov; extra == 'dev'
+	pytest-xdist; extra == 'dev'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
+	rstcheck; extra == 'dev'
+	ruff; extra == 'dev'
+	setuptools; extra == 'test'
+	toml-sort; extra == 'dev'
+	twine; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyasynchat[${PYTHON_USEDEP}]

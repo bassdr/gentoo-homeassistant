@@ -16,8 +16,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	polib
-	pytest-cov; extra == "tests"
-	pytest; extra == "tests"
+	pytest-cov; extra == 'tests'
+	pytest; extra == 'tests'
 	regex
 "
 GENERATED_RDEPEND="${RDEPEND}

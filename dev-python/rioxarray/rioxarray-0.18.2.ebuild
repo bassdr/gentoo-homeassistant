@@ -21,8 +21,8 @@ REQUIRES_DIST="
 	packaging
 	pyproj>=3.3
 	rasterio>=1.3.7
-	scipy; extra == "all"
-	scipy; extra == "interp"
+	scipy; extra == 'all'
+	scipy; extra == 'interp'
 	xarray>=2024.7.0
 "
 GENERATED_RDEPEND="${RDEPEND}

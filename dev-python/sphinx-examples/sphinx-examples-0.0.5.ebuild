@@ -18,12 +18,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	furo ; extra == "sphinx"
-	myst-parser ; extra == "sphinx"
-	sphinx-book-theme ; extra == "sphinx"
-	sphinx-copybutton ; extra == "sphinx"
+	furo ; extra == 'sphinx'
+	myst-parser ; extra == 'sphinx'
+	sphinx-book-theme ; extra == 'sphinx'
+	sphinx-copybutton ; extra == 'sphinx'
 	sphinx-design
-	sphinx-rtd-theme ; extra == "sphinx"
+	sphinx-rtd-theme ; extra == 'sphinx'
 	sphinx>4
 "
 GENERATED_RDEPEND="${RDEPEND}

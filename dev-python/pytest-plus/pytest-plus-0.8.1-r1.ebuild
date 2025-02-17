@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage>=7.0.0; extra == "test"
-	pytest-html; extra == "test"
+	coverage>=7.0.0; extra == 'test'
+	pytest-html; extra == 'test'
 	pytest>=7.4.2
 "
 GENERATED_RDEPEND="${RDEPEND}

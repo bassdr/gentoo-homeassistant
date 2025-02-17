@@ -29,13 +29,13 @@ REQUIRES_DIST="
 	pydeck<1,>=0.8.0b4
 	requests<3,>=2.27
 	rich<14,>=10.14.0
-	snowflake-connector-python>=3.3.0; python_version < "3.12" and extra == "snowflake"
-	snowflake-snowpark-python[modin]>=1.17.0; python_version < "3.12" and extra == "snowflake"
+	snowflake-connector-python>=3.3.0; python_version < '3.12' and extra == 'snowflake'
+	snowflake-snowpark-python[modin]>=1.17.0; python_version < '3.12' and extra == 'snowflake'
 	tenacity<10,>=8.1.0
 	toml<2,>=0.10.1
 	tornado<7,>=6.0.3
 	typing-extensions<5,>=4.4.0
-	watchdog<7,>=2.1.5; platform_system != "Darwin"
+	watchdog<7,>=2.1.5; platform_system != 'Darwin'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/altair-4.0[${PYTHON_USEDEP}] <dev-python/altair-6[${PYTHON_USEDEP}]

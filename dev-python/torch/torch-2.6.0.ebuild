@@ -22,24 +22,24 @@ REQUIRES_DIST="
 	fsspec
 	jinja2
 	networkx
-	nvidia-cublas-cu12==12.4.5.8; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cuda-cupti-cu12==12.4.127; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cuda-nvrtc-cu12==12.4.127; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cuda-runtime-cu12==12.4.127; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cudnn-cu12==9.1.0.70; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cufft-cu12==11.2.1.3; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-curand-cu12==10.3.5.147; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cusolver-cu12==11.6.1.9; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cusparse-cu12==12.3.1.170; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-cusparselt-cu12==0.6.2; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-nccl-cu12==2.21.5; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-nvjitlink-cu12==12.4.127; platform_system == "Linux" and platform_machine == "x86_64"
-	nvidia-nvtx-cu12==12.4.127; platform_system == "Linux" and platform_machine == "x86_64"
-	opt-einsum>=3.3; extra == "opt-einsum"
-	optree>=0.13.0; extra == "optree"
-	setuptools; python_version >= "3.12"
-	sympy==1.13.1; python_version >= "3.9"
-	triton==3.2.0; platform_system == "Linux" and platform_machine == "x86_64"
+	nvidia-cublas-cu12==12.4.5.8; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cuda-cupti-cu12==12.4.127; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cuda-nvrtc-cu12==12.4.127; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cuda-runtime-cu12==12.4.127; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cudnn-cu12==9.1.0.70; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cufft-cu12==11.2.1.3; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-curand-cu12==10.3.5.147; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cusolver-cu12==11.6.1.9; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cusparse-cu12==12.3.1.170; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-cusparselt-cu12==0.6.2; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-nccl-cu12==2.21.5; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-nvjitlink-cu12==12.4.127; platform_system == 'Linux' and platform_machine == 'x86_64'
+	nvidia-nvtx-cu12==12.4.127; platform_system == 'Linux' and platform_machine == 'x86_64'
+	opt-einsum>=3.3; extra == 'opt-einsum'
+	optree>=0.13.0; extra == 'optree'
+	setuptools; python_version >= '3.12'
+	sympy==1.13.1; python_version >= '3.9'
+	triton==3.2.0; platform_system == 'Linux' and platform_machine == 'x86_64'
 	typing-extensions>=4.10.0
 "
 GENERATED_RDEPEND="${RDEPEND}

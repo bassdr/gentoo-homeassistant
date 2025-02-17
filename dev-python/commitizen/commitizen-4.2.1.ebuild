@@ -19,14 +19,14 @@ REQUIRES_DIST="
 	charset-normalizer<4,>=2.1.0
 	colorama<1.0,>=0.4.1
 	decli<1.0,>=0.6.0
-	importlib_metadata<9,>=8.0.0; python_version < "3.10"
+	importlib_metadata<9,>=8.0.0; python_version < '3.10'
 	jinja2>=2.10.3
 	packaging>=19
 	pyyaml>=3.08
 	questionary<3.0,>=2.0
 	termcolor<3,>=1.1
 	tomlkit<1.0.0,>=0.5.3
-	typing-extensions<5.0.0,>=4.0.1; python_version < "3.11"
+	typing-extensions<5.0.0,>=4.0.1; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/argcomplete-1.12.1[${PYTHON_USEDEP}] <dev-python/argcomplete-3.6[${PYTHON_USEDEP}]

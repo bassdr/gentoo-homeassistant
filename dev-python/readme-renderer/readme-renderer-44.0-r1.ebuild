@@ -20,7 +20,7 @@ GENERATED_IUSE="md"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Pygments>=2.5.1
-	cmarkgfm>=0.8.0; extra == "md"
+	cmarkgfm>=0.8.0; extra == 'md'
 	docutils>=0.21.2
 	nh3>=0.2.14
 "

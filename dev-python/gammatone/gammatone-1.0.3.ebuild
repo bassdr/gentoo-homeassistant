@@ -16,9 +16,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	matplotlib
-	mock; extra == "test"
+	mock; extra == 'test'
 	numpy
-	pytest; extra == "test"
+	pytest; extra == 'test'
 	scipy
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -19,19 +19,19 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	Jinja2>=3.0.0
 	PyYAML>=5.1
-	a2wsgi>=1.7; extra == "flask"
+	a2wsgi>=1.7; extra == 'flask'
 	asgiref>=3.4
-	flask[async]>=2.2; extra == "flask"
+	flask[async]>=2.2; extra == 'flask'
 	httpx>=0.23
 	inflection>=0.3.1
-	jsf>=0.10.0; extra == "mock"
+	jsf>=0.10.0; extra == 'mock'
 	jsonschema>=4.17.3
 	python-multipart>=0.0.15
 	requests>=2.27
 	starlette>=0.35
-	swagger-ui-bundle>=1.1.0; extra == "swagger-ui"
+	swagger-ui-bundle>=1.1.0; extra == 'swagger-ui'
 	typing-extensions>=4.6.1
-	uvicorn[standard]>=0.17.6; extra == "uvicorn"
+	uvicorn[standard]>=0.17.6; extra == 'uvicorn'
 	werkzeug>=2.2.1
 "
 GENERATED_RDEPEND="${RDEPEND}

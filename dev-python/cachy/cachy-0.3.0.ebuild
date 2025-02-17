@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	msgpack-python (>=0.5,<0.6); extra == "msgpack"
-	python-memcached (>=1.59,<2.0); extra == "memcached"
-	redis (>=3.3.6,<4.0.0); extra == "redis"
+	msgpack-python (>=0.5,<0.6); extra == 'msgpack'
+	python-memcached (>=1.59,<2.0); extra == 'memcached'
+	redis (>=3.3.6,<4.0.0); extra == 'redis'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	msgpack? ( >=dev-python/msgpack-python-0.5[${PYTHON_USEDEP}] <dev-python/msgpack-python-0.6[${PYTHON_USEDEP}] )

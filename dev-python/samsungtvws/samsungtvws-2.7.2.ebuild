@@ -22,12 +22,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	aiohttp>=3.8.1; extra == "async"
-	cryptography>=35.0.0; extra == "encrypted"
-	py3rijndael>=0.3.3; extra == "encrypted"
+	aiohttp>=3.8.1; extra == 'async'
+	cryptography>=35.0.0; extra == 'encrypted'
+	py3rijndael>=0.3.3; extra == 'encrypted'
 	requests>=2.21.0
 	websocket-client>=0.57.0
-	websockets>=13; extra == "async"
+	websockets>=13; extra == 'async'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/aiohttp-3.8.1[${PYTHON_USEDEP}] )

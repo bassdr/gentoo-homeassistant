@@ -23,7 +23,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	async-timeout>=3.0.0; python_version < "3.11"
+	async-timeout>=3.0.0; python_version < '3.11'
 	ifaddr>=0.1.7
 "
 GENERATED_RDEPEND="${RDEPEND}

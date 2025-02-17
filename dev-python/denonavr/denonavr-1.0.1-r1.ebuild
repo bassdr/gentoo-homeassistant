@@ -22,22 +22,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	async-timeout>=4.0.2; python_version < "3.11"
+	async-timeout>=4.0.2; python_version < '3.11'
 	asyncstdlib>=3.10.2
 	attrs>=21.2.0
 	defusedxml>=0.7.1
-	flake8-docstrings; extra == "testing"
-	flake8; extra == "testing"
+	flake8-docstrings; extra == 'testing'
+	flake8; extra == 'testing'
 	ftfy>=6.1.1
 	httpx>=0.23.1
 	netifaces>=0.11.0
-	pydocstyle; extra == "testing"
-	pylint; extra == "testing"
-	pytest-asyncio; extra == "testing"
-	pytest-cov; extra == "testing"
-	pytest-httpx; extra == "testing"
-	pytest-timeout; extra == "testing"
-	pytest; extra == "testing"
+	pydocstyle; extra == 'testing'
+	pylint; extra == 'testing'
+	pytest-asyncio; extra == 'testing'
+	pytest-cov; extra == 'testing'
+	pytest-httpx; extra == 'testing'
+	pytest-timeout; extra == 'testing'
+	pytest; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asyncstdlib-3.10.2[${PYTHON_USEDEP}]
@@ -47,24 +47,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.23.1[${PYTHON_USEDEP}]
 	>=dev-python/netifaces-0.11.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/asyncstdlib-3.10.2[${PYTHON_USEDEP}]
-	>=dev-python/attrs-21.2.0[${PYTHON_USEDEP}]
-	>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
-	>=dev-python/ftfy-6.1.1[${PYTHON_USEDEP}]
-	>=dev-python/httpx-0.23.1[${PYTHON_USEDEP}]
-	>=dev-python/netifaces-0.11.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/async-timeout-4.0.2[${PYTHON_USEDEP}]
-	' 3.{8..10})
-"
-BDEPEND="
-	test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-httpx[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}

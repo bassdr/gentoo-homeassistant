@@ -8,7 +8,7 @@ IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1
 PARENT_PN="cuda-python"
-MY_PN="${PN/-/_}
+MY_PN="${PN/-/_}"
 SRC_URI="https://github.com/NVIDIA/${PARENT_PN}/archive/refs/tags/v${PV}.tar.gz -> ${PARENT_PN}-${PV}.gh.tar.gz"
 S="${WORKDIR}/${PARENT_PN}/${MY_PN}"
 
@@ -21,9 +21,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	nvidia-cuda-nvrtc-cu12; extra == "all"
-	nvidia-nvjitlink-cu12>=12.3; extra == "all"
-	pywin32; sys_platform == "win32"
+	nvidia-cuda-nvrtc-cu12; extra == 'all'
+	nvidia-nvjitlink-cu12>=12.3; extra == 'all'
+	pywin32; sys_platform == 'win32'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/nvidia-cuda-nvrtc-cu12[${PYTHON_USEDEP}] )

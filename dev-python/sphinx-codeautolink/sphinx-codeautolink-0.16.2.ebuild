@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	beautifulsoup4>=4.8.1
-	ipython!=8.7.0; extra == "ipython"
+	ipython!=8.7.0; extra == 'ipython'
 	sphinx>=3.2.0
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -18,48 +18,48 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	GitPython>=2.0.0
-	Pillow; extra == "dev"
-	Pint<0.17.0,>=0.16.0; extra == "dev"
-	Pint<0.17.0,>=0.16.0; extra == "orchestrate"
+	Pillow; extra == 'dev'
+	Pint<0.17.0,>=0.16.0; extra == 'dev'
+	Pint<0.17.0,>=0.16.0; extra == 'orchestrate'
 	PyYAML<7,>=5
 	backoff<2.0.0,>=1.10.0
-	boto3<2.0.0,>=1.16.34; extra == "dev"
-	boto3<2.0.0,>=1.16.34; extra == "orchestrate"
-	certifi>=2022.12.7; extra == "dev"
-	certifi>=2022.12.7; extra == "orchestrate"
+	boto3<2.0.0,>=1.16.34; extra == 'dev'
+	boto3<2.0.0,>=1.16.34; extra == 'orchestrate'
+	certifi>=2022.12.7; extra == 'dev'
+	certifi>=2022.12.7; extra == 'orchestrate'
 	click>=8.0.0
-	docker<5.0.0,>=4.4.0; extra == "dev"
-	docker<5.0.0,>=4.4.0; extra == "orchestrate"
-	hyperopt>=0.2.7; extra == "dev"
-	hyperopt>=0.2.7; extra == "hyperopt"
-	kubernetes<13.0.0,>=12.0.1; extra == "dev"
-	kubernetes<13.0.0,>=12.0.1; extra == "orchestrate"
-	matplotlib>=3.3.4; extra == "dev"
-	mock>=3.0.5; extra == "dev"
-	nose==1.3.7; extra == "dev"
-	notebook; extra == "dev"
-	numpy<2.0.0,>=1.15.0; extra == "dev"
-	numpy>=1.15.0; extra == "dev"
-	numpy>=1.15.0; extra == "xgboost"
+	docker<5.0.0,>=4.4.0; extra == 'dev'
+	docker<5.0.0,>=4.4.0; extra == 'orchestrate'
+	hyperopt>=0.2.7; extra == 'dev'
+	hyperopt>=0.2.7; extra == 'hyperopt'
+	kubernetes<13.0.0,>=12.0.1; extra == 'dev'
+	kubernetes<13.0.0,>=12.0.1; extra == 'orchestrate'
+	matplotlib>=3.3.4; extra == 'dev'
+	mock>=3.0.5; extra == 'dev'
+	nose==1.3.7; extra == 'dev'
+	notebook; extra == 'dev'
+	numpy<2.0.0,>=1.15.0; extra == 'dev'
+	numpy>=1.15.0; extra == 'dev'
+	numpy>=1.15.0; extra == 'xgboost'
 	packaging>=21.3
-	pre-commit<3,>=2.5.2; extra == "dev"
-	pyOpenSSL>=20.0.0; extra == "dev"
-	pyOpenSSL>=20.0.0; extra == "orchestrate"
-	pylint==2.9.6; extra == "dev"
-	pymongo<4,>=3.12.3; extra == "dev"
+	pre-commit<3,>=2.5.2; extra == 'dev'
+	pyOpenSSL>=20.0.0; extra == 'dev'
+	pyOpenSSL>=20.0.0; extra == 'orchestrate'
+	pylint==2.9.6; extra == 'dev'
+	pymongo<4,>=3.12.3; extra == 'dev'
 	pypng>=0.0.20
-	pyspark; extra == "dev"
-	pytest>=7.2.1; extra == "dev"
+	pyspark; extra == 'dev'
+	pytest>=7.2.1; extra == 'dev'
 	requests<3.0.0,>=2.25.0
-	scikit-learn>=0.23.2; extra == "dev"
-	setuptools>=47.3.1; extra == "dev"
-	sigoptlite>=0.1.1; extra == "dev"
-	sigoptlite>=0.1.1; extra == "lite"
-	twine<4.0.0,>=3.2.0; extra == "dev"
+	scikit-learn>=0.23.2; extra == 'dev'
+	setuptools>=47.3.1; extra == 'dev'
+	sigoptlite>=0.1.1; extra == 'dev'
+	sigoptlite>=0.1.1; extra == 'lite'
+	twine<4.0.0,>=3.2.0; extra == 'dev'
 	urllib3<2.0.0,>=1.26.5
-	vulture==2.7; extra == "dev"
-	xgboost>=1.3.1; extra == "dev"
-	xgboost>=1.3.1; extra == "xgboost"
+	vulture==2.7; extra == 'dev'
+	xgboost>=1.3.1; extra == 'dev'
+	xgboost>=1.3.1; extra == 'xgboost'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/backoff-1.10.0[${PYTHON_USEDEP}] <dev-python/backoff-2.0.0[${PYTHON_USEDEP}]

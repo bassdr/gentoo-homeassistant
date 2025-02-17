@@ -25,22 +25,22 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	aiohttp==3.10.3; extra == "requirements"
+	aiohttp==3.10.3; extra == 'requirements'
 	aiohttp>3.9
-	aioresponses==0.7.6; extra == "requirements-test"
-	mypy==1.11.1; extra == "requirements-test"
-	orjson==3.10.7; extra == "requirements"
+	aioresponses==0.7.6; extra == 'requirements-test'
+	mypy==1.11.1; extra == 'requirements-test'
+	orjson==3.10.7; extra == 'requirements'
 	orjson>3.9
-	pre-commit==3.8.0; extra == "requirements-dev"
-	pytest-aiohttp==1.0.5; extra == "requirements-test"
-	pytest-asyncio==0.23.8; extra == "requirements-test"
-	pytest-cov==5.0.0; extra == "requirements-test"
-	pytest==8.3.2; extra == "requirements-test"
-	ruff==0.5.7; extra == "requirements-test"
-	segno==1.6.1; extra == "requirements"
+	pre-commit==3.8.0; extra == 'requirements-dev'
+	pytest-aiohttp==1.0.5; extra == 'requirements-test'
+	pytest-asyncio==0.23.8; extra == 'requirements-test'
+	pytest-cov==5.0.0; extra == 'requirements-test'
+	pytest==8.3.2; extra == 'requirements-test'
+	ruff==0.5.7; extra == 'requirements-test'
+	segno==1.6.1; extra == 'requirements'
 	segno>=1.5.2
-	trustme==1.1.0; extra == "requirements-test"
-	types-orjson==3.6.2; extra == "requirements-test"
+	trustme==1.1.0; extra == 'requirements-test'
+	types-orjson==3.6.2; extra == 'requirements-test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/aiohttp-3.9[${PYTHON_USEDEP}]

@@ -33,7 +33,7 @@ REQUIRES_DIST="
 	pretend ; extra == 'test'
 	pytest ; extra == 'test'
 	sphinx ; extra == 'docs'
-	typing-extensions ; python_version < "3.10"
+	typing-extensions ; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/arpeggio-1.7[${PYTHON_USEDEP}]

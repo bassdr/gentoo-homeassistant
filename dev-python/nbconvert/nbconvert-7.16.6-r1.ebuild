@@ -22,45 +22,45 @@ REQUIRES_DIST="
 	beautifulsoup4
 	bleach[css]!=5.0.0
 	defusedxml
-	flaky; extra == "all"
-	flaky; extra == "test"
-	importlib-metadata>=3.6; python_version < "3.10"
-	ipykernel; extra == "all"
-	ipykernel; extra == "docs"
-	ipykernel; extra == "test"
-	ipython; extra == "all"
-	ipython; extra == "docs"
-	ipywidgets>=7.5; extra == "all"
-	ipywidgets>=7.5; extra == "test"
+	flaky; extra == 'all'
+	flaky; extra == 'test'
+	importlib-metadata>=3.6; python_version < '3.10'
+	ipykernel; extra == 'all'
+	ipykernel; extra == 'docs'
+	ipykernel; extra == 'test'
+	ipython; extra == 'all'
+	ipython; extra == 'docs'
+	ipywidgets>=7.5; extra == 'all'
+	ipywidgets>=7.5; extra == 'test'
 	jinja2>=3.0
 	jupyter-core>=4.7
 	jupyterlab-pygments
 	markupsafe>=2.0
 	mistune<4,>=2.0.3
-	myst-parser; extra == "all"
-	myst-parser; extra == "docs"
+	myst-parser; extra == 'all'
+	myst-parser; extra == 'docs'
 	nbclient>=0.5.0
 	nbformat>=5.7
-	nbsphinx>=0.2.12; extra == "all"
-	nbsphinx>=0.2.12; extra == "docs"
+	nbsphinx>=0.2.12; extra == 'all'
+	nbsphinx>=0.2.12; extra == 'docs'
 	packaging
 	pandocfilters>=1.4.1
-	playwright; extra == "all"
-	playwright; extra == "webpdf"
-	pydata-sphinx-theme; extra == "all"
-	pydata-sphinx-theme; extra == "docs"
+	playwright; extra == 'all'
+	playwright; extra == 'webpdf'
+	pydata-sphinx-theme; extra == 'all'
+	pydata-sphinx-theme; extra == 'docs'
 	pygments>=2.4.1
-	pyqtwebengine>=5.15; extra == "all"
-	pyqtwebengine>=5.15; extra == "qtpdf"
-	pyqtwebengine>=5.15; extra == "qtpng"
-	pytest>=7; extra == "all"
-	pytest>=7; extra == "test"
-	sphinx==5.0.2; extra == "all"
-	sphinx==5.0.2; extra == "docs"
-	sphinxcontrib-spelling; extra == "all"
-	sphinxcontrib-spelling; extra == "docs"
-	tornado>=6.1; extra == "all"
-	tornado>=6.1; extra == "serve"
+	pyqtwebengine>=5.15; extra == 'all'
+	pyqtwebengine>=5.15; extra == 'qtpdf'
+	pyqtwebengine>=5.15; extra == 'qtpng'
+	pytest>=7; extra == 'all'
+	pytest>=7; extra == 'test'
+	sphinx==5.0.2; extra == 'all'
+	sphinx==5.0.2; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'all'
+	sphinxcontrib-spelling; extra == 'docs'
+	tornado>=6.1; extra == 'all'
+	tornado>=6.1; extra == 'serve'
 	traitlets>=5.1
 "
 GENERATED_RDEPEND="${RDEPEND}

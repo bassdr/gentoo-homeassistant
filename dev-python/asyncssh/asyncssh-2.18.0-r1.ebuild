@@ -25,14 +25,14 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	bcrypt>=3.1.3; extra == "bcrypt"
+	bcrypt>=3.1.3; extra == 'bcrypt'
 	cryptography>=39.0
-	fido2>=0.9.2; extra == "fido2"
-	gssapi>=1.2.0; extra == "gssapi"
-	libnacl>=1.4.2; extra == "libnacl"
-	pyOpenSSL>=23.0.0; extra == "pyopenssl"
-	python-pkcs11>=0.7.0; extra == "pkcs11"
-	pywin32>=227; extra == "pywin32"
+	fido2>=0.9.2; extra == 'fido2'
+	gssapi>=1.2.0; extra == 'gssapi'
+	libnacl>=1.4.2; extra == 'libnacl'
+	pyOpenSSL>=23.0.0; extra == 'pyopenssl'
+	python-pkcs11>=0.7.0; extra == 'pkcs11'
+	pywin32>=227; extra == 'pywin32'
 	typing-extensions>=4.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

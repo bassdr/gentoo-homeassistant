@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	graphviz
-	ipython; extra == "widget"
-	ipywidgets<9.0,>=7.0; extra == "widget"
+	ipython; extra == 'widget'
+	ipywidgets<9.0,>=7.0; extra == 'widget'
 	matplotlib
 	numpy<2.0,>=1.16.0
 	pandas>=0.24
 	plotly
 	scipy
 	six
-	traitlets; extra == "widget"
+	traitlets; extra == 'widget'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/graphviz[${PYTHON_USEDEP}]

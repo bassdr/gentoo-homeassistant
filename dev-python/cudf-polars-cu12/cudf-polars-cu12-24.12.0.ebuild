@@ -7,7 +7,12 @@ PYPI_NO_NORMALIZE=1
 GENERATED_IUSE="experimental"
 IUSE="${GENERATED_IUSE}"
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+MY_PN=cudf
+MY_PV=$(printf '%02d.%02d.%02d' ${PV//./ })
+MY_P=${MY_PN}-${MY_PV}
+SRC_URI="https://github.com/rapidsai/${MY_PN}/archive/refs/tags/v${MY_PV}.tar.gz -> ${MY_P}.gh.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -18,13 +23,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	numpy<3.0a0,>=1.23; extra == "test"
+	numpy<3.0a0,>=1.23; extra == 'test'
 	polars<1.15,>=1.11
 	pylibcudf-cu12==24.12.*
-	pytest-cov; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest<8; extra == "test"
-	rapids-dask-dependency==24.12.*; extra == "experimental"
+	pytest-cov; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest<8; extra == 'test'
+	rapids-dask-dependency==24.12.*; extra == 'experimental'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/polars-1.11[${PYTHON_USEDEP}] <dev-python/polars-1.15[${PYTHON_USEDEP}]

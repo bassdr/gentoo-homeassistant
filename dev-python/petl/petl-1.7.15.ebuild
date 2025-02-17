@@ -17,25 +17,25 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	SQLAlchemy<2.0,>=1.3.6; extra == "db"
-	aiohttp>=3.6.2; extra == "http"
-	bcolz>=1.2.1; extra == "bcolz"
-	cython>=0.29.13; extra == "hdf5"
-	fastavro>=0.24.0; extra == "avro"
-	fsspec>=0.7.4; extra == "remote"
-	intervaltree>=3.0.2; extra == "interval"
-	lxml>=4.4.0; extra == "xpath"
-	numexpr>=2.6.9; extra == "hdf5"
-	numpy>=1.16.4; extra == "hdf5"
-	numpy>=1.16.4; extra == "numpy"
-	openpyxl>=2.6.2; extra == "xlsx"
-	pandas>=0.24.2; extra == "pandas"
-	requests; extra == "http"
-	smbprotocol>=1.0.1; extra == "smb"
-	tables>=3.5.2; extra == "hdf5"
-	whoosh; extra == "whoosh"
-	xlrd>=2.0.1; extra == "xls"
-	xlwt>=1.3.0; extra == "xls"
+	SQLAlchemy<2.0,>=1.3.6; extra == 'db'
+	aiohttp>=3.6.2; extra == 'http'
+	bcolz>=1.2.1; extra == 'bcolz'
+	cython>=0.29.13; extra == 'hdf5'
+	fastavro>=0.24.0; extra == 'avro'
+	fsspec>=0.7.4; extra == 'remote'
+	intervaltree>=3.0.2; extra == 'interval'
+	lxml>=4.4.0; extra == 'xpath'
+	numexpr>=2.6.9; extra == 'hdf5'
+	numpy>=1.16.4; extra == 'hdf5'
+	numpy>=1.16.4; extra == 'numpy'
+	openpyxl>=2.6.2; extra == 'xlsx'
+	pandas>=0.24.2; extra == 'pandas'
+	requests; extra == 'http'
+	smbprotocol>=1.0.1; extra == 'smb'
+	tables>=3.5.2; extra == 'hdf5'
+	whoosh; extra == 'whoosh'
+	xlrd>=2.0.1; extra == 'xls'
+	xlwt>=1.3.0; extra == 'xls'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	http? ( >=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}] )

@@ -21,9 +21,9 @@ REQUIRES_DIST="
 	etils[epath]
 	glfw
 	numpy
-	pillow; extra == "usd"
+	pillow; extra == 'usd'
 	pyopengl
-	usd-core; extra == "usd"
+	usd-core; extra == 'usd'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]

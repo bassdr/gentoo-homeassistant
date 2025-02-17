@@ -19,15 +19,15 @@ GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE} test-rust"
 
 REQUIRES_DIST="
-	furo; extra == "docs"
-	importlib-metadata; python_version < "3.8"
+	furo; extra == 'docs'
+	importlib-metadata; python_version < '3.8'
 	jaraco.functools
-	jaraco.packaging>=3.2; extra == "docs"
+	jaraco.packaging>=3.2; extra == 'docs'
 	more-itertools>=2.6
-	python-dateutil; extra == "docs"
-	sphinx-tabs>=1.1.0; extra == "docs"
-	sphinx>=1.8.2; extra == "docs"
-	sphinxcontrib-apidoc>=0.3.0; extra == "docs"
+	python-dateutil; extra == 'docs'
+	sphinx-tabs>=1.1.0; extra == 'docs'
+	sphinx>=1.8.2; extra == 'docs'
+	sphinxcontrib-apidoc>=0.3.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )

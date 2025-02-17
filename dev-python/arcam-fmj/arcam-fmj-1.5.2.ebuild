@@ -21,15 +21,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	aiohttp; extra == "tests"
+	aiohttp; extra == 'tests'
 	attrs>18.1
-	coveralls; extra == "tests"
-	defusedxml; extra == "tests"
-	pytest-aiohttp>=1.0.0; extra == "tests"
-	pytest-asyncio==0.21.2; extra == "tests"
-	pytest-cov>=3.0.0; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest>3.6.4; extra == "tests"
+	coveralls; extra == 'tests'
+	defusedxml; extra == 'tests'
+	pytest-aiohttp>=1.0.0; extra == 'tests'
+	pytest-asyncio==0.21.2; extra == 'tests'
+	pytest-cov>=3.0.0; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest>3.6.4; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/attrs-18.1[${PYTHON_USEDEP}]

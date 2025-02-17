@@ -16,8 +16,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	apache-airflow>=2.9.0
-	pandas<2.2,>=1.5.3; python_version < "3.9"
-	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	pandas<2.2,>=1.5.3; python_version < '3.9'
+	pandas<2.2,>=2.1.2; python_version >= '3.9'
 	simple-salesforce>=1.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

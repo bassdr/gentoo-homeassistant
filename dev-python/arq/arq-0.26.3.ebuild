@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	click>=8.0
 	redis[hiredis]<6,>=4.2.0
-	watchfiles>=0.16; extra == "watch"
+	watchfiles>=0.16; extra == 'watch'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]

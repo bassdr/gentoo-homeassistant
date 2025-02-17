@@ -29,11 +29,11 @@ REQUIRES_DIST="
 	aiohttp>=3.9.3
 	cryptography>=2.5
 	http-ece~=1.1.0
-	myst-parser; extra == "docs"
+	myst-parser; extra == 'docs'
 	protobuf<6,>=4.24.3
-	sphinx-autodoc-typehints~=1.24; extra == "docs"
-	sphinx-rtd-theme~=1.3; extra == "docs"
-	sphinx==7.1.2; extra == "docs"
+	sphinx-autodoc-typehints~=1.24; extra == 'docs'
+	sphinx-rtd-theme~=1.3; extra == 'docs'
+	sphinx==7.1.2; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]

@@ -17,16 +17,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pytest-httpbin; extra == "dev"
-	pytest-httpbin; extra == "tests"
-	pytest-mock; extra == "dev"
-	pytest-mock; extra == "tests"
+	pytest-httpbin; extra == 'dev'
+	pytest-httpbin; extra == 'tests'
+	pytest-mock; extra == 'dev'
+	pytest-mock; extra == 'tests'
 	pytest>=3.5.0
-	requests; extra == "dev"
-	requests; extra == "tests"
+	requests; extra == 'dev'
+	requests; extra == 'tests'
 	vcrpy>=2.0.1
-	werkzeug==3.0.3; extra == "dev"
-	werkzeug==3.0.3; extra == "tests"
+	werkzeug==3.0.3; extra == 'dev'
+	werkzeug==3.0.3; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-3.5.0[${PYTHON_USEDEP}]

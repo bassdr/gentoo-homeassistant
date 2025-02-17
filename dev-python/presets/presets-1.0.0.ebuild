@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage; extra == "tests"
-	numpydoc; extra == "docs"
-	pytest-cov; extra == "tests"
-	pytest; extra == "tests"
+	coverage; extra == 'tests'
+	numpydoc; extra == 'docs'
+	pytest-cov; extra == 'tests'
+	pytest; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )

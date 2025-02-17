@@ -19,14 +19,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build ; extra == "cli"
-	click ; extra == "cli"
+	build ; extra == 'cli'
+	click ; extra == 'cli'
 	nodeenv
 	packaging
 	pyproject-metadata
 	rich
 	setuptools
-	sphinx-autobuild ; extra == "cli"
+	sphinx-autobuild ; extra == 'cli'
 	tomli ; python_version < '3.11'
 	typing_extensions ; python_version <= '3.7'
 "

@@ -20,7 +20,7 @@ REQUIRES_DIST="
 	allennlp ; extra == 'elmo'
 	dill
 	nltk
-	numpy (<1.21.5) ; python_version < "3.8"
+	numpy (<1.21.5) ; python_version < '3.8'
 	stanza
 	torch (>=1.7.1)
 	transformers (>=4.0.0)

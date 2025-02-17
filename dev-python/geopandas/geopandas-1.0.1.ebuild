@@ -17,27 +17,27 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	GeoAlchemy2; extra == "all"
-	SQLAlchemy>=1.3; extra == "all"
-	black; extra == "dev"
-	codecov; extra == "dev"
-	folium; extra == "all"
-	geopy; extra == "all"
-	mapclassify; extra == "all"
-	matplotlib>=3.5.0; extra == "all"
+	GeoAlchemy2; extra == 'all'
+	SQLAlchemy>=1.3; extra == 'all'
+	black; extra == 'dev'
+	codecov; extra == 'dev'
+	folium; extra == 'all'
+	geopy; extra == 'all'
+	mapclassify; extra == 'all'
+	matplotlib>=3.5.0; extra == 'all'
 	numpy>=1.22
 	packaging
 	pandas>=1.4.0
-	pre-commit; extra == "dev"
-	psycopg-binary>=3.1.0; extra == "all"
-	pyarrow>=8.0.0; extra == "all"
+	pre-commit; extra == 'dev'
+	psycopg-binary>=3.1.0; extra == 'all'
+	pyarrow>=8.0.0; extra == 'all'
 	pyogrio>=0.7.2
 	pyproj>=3.3.0
-	pytest-cov; extra == "dev"
-	pytest-xdist; extra == "dev"
-	pytest>=3.1.0; extra == "dev"
+	pytest-cov; extra == 'dev'
+	pytest-xdist; extra == 'dev'
+	pytest>=3.1.0; extra == 'dev'
 	shapely>=2.0.0
-	xyzservices; extra == "all"
+	xyzservices; extra == 'all'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/folium[${PYTHON_USEDEP}] )

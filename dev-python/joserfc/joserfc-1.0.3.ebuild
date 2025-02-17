@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cryptography
-	pycryptodome; extra == "drafts"
+	pycryptodome; extra == 'drafts'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]

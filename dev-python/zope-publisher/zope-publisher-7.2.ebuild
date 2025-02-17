@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
+	Sphinx; extra == 'docs'
 	multipart>=1.1.0
-	repoze.sphinx.autointerface; extra == "docs"
+	repoze.sphinx.autointerface; extra == 'docs'
 	setuptools
-	sphinx_rtd_theme; extra == "docs"
+	sphinx_rtd_theme; extra == 'docs'
 	zope.browser
 	zope.component
 	zope.configuration
@@ -33,8 +33,8 @@ REQUIRES_DIST="
 	zope.location
 	zope.proxy
 	zope.security>=4.0.0
-	zope.testing; extra == "test"
-	zope.testrunner; extra == "test"
+	zope.testing; extra == 'test'
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/multipart-1.1.0[${PYTHON_USEDEP}]

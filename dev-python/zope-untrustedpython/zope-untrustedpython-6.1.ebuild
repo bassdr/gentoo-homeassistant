@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	RestrictedPython>=4
-	Sphinx; extra == "docs"
+	Sphinx; extra == 'docs'
 	setuptools
 	zope.security
 "

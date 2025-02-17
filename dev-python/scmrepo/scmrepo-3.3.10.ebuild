@@ -16,31 +16,31 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiohttp-retry>=2.5.0
-	aioresponses<0.8,>=0.7; extra == "tests"
+	aioresponses<0.8,>=0.7; extra == 'tests'
 	asyncssh<3,>=2.13.1
 	dulwich>=0.22.1
 	fsspec[tqdm]>=2024.2.0
 	funcy>=1.14
 	gitpython>3
-	mypy==1.14.1; extra == "dev"
-	paramiko<4,>=3.4.0; extra == "tests"
+	mypy==1.14.1; extra == 'dev'
+	paramiko<4,>=3.4.0; extra == 'tests'
 	pathspec>=0.9.0
-	proxy.py; extra == "tests"
+	proxy.py; extra == 'tests'
 	pygit2>=1.14.0
 	pygtrie>=2.3.2
-	pytest-asyncio<1,>=0.23.2; extra == "tests"
-	pytest-cov>=4.1.0; extra == "tests"
-	pytest-docker<4,>=1; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest-sugar; extra == "tests"
-	pytest-test-utils<0.2,>=0.1.0; extra == "tests"
-	pytest<9,>=7; extra == "tests"
-	scmrepo[tests]; extra == "dev"
+	pytest-asyncio<1,>=0.23.2; extra == 'tests'
+	pytest-cov>=4.1.0; extra == 'tests'
+	pytest-docker<4,>=1; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest-sugar; extra == 'tests'
+	pytest-test-utils<0.2,>=0.1.0; extra == 'tests'
+	pytest<9,>=7; extra == 'tests'
+	scmrepo[tests]; extra == 'dev'
 	tqdm
-	types-certifi; extra == "dev"
-	types-mock; extra == "dev"
-	types-paramiko; extra == "dev"
-	types-tqdm; extra == "dev"
+	types-certifi; extra == 'dev'
+	types-mock; extra == 'dev'
+	types-paramiko; extra == 'dev'
+	types-tqdm; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-retry-2.5.0[${PYTHON_USEDEP}]

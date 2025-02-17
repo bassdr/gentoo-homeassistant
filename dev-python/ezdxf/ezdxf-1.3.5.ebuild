@@ -18,34 +18,34 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Cython; extra == "dev"
-	Cython; extra == "dev5"
-	Pillow; extra == "dev"
-	Pillow; extra == "dev5"
-	Pillow; extra == "draw"
-	Pillow; extra == "draw5"
-	PyMuPDF>=1.20.0; extra == "dev"
-	PyMuPDF>=1.20.0; extra == "dev5"
-	PyMuPDF>=1.20.0; extra == "draw"
-	PyMuPDF>=1.20.0; extra == "draw5"
-	PyQt5; extra == "dev5"
-	PyQt5; extra == "draw5"
-	PySide6; extra == "dev"
-	PySide6; extra == "draw"
+	Cython; extra == 'dev'
+	Cython; extra == 'dev5'
+	Pillow; extra == 'dev'
+	Pillow; extra == 'dev5'
+	Pillow; extra == 'draw'
+	Pillow; extra == 'draw5'
+	PyMuPDF>=1.20.0; extra == 'dev'
+	PyMuPDF>=1.20.0; extra == 'dev5'
+	PyMuPDF>=1.20.0; extra == 'draw'
+	PyMuPDF>=1.20.0; extra == 'draw5'
+	PyQt5; extra == 'dev5'
+	PyQt5; extra == 'draw5'
+	PySide6; extra == 'dev'
+	PySide6; extra == 'draw'
 	fonttools
-	matplotlib; extra == "dev"
-	matplotlib; extra == "dev5"
-	matplotlib; extra == "draw"
-	matplotlib; extra == "draw5"
+	matplotlib; extra == 'dev'
+	matplotlib; extra == 'dev5'
+	matplotlib; extra == 'draw'
+	matplotlib; extra == 'draw5'
 	numpy
 	pyparsing>=2.0.1
-	pytest; extra == "dev"
-	pytest; extra == "dev5"
-	setuptools; extra == "dev"
-	setuptools; extra == "dev5"
+	pytest; extra == 'dev'
+	pytest; extra == 'dev5'
+	setuptools; extra == 'dev'
+	setuptools; extra == 'dev5'
 	typing_extensions>=4.6.0
-	wheel; extra == "dev"
-	wheel; extra == "dev5"
+	wheel; extra == 'dev'
+	wheel; extra == 'dev5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev5? ( dev-python/cython[${PYTHON_USEDEP}] )

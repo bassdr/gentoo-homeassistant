@@ -16,14 +16,14 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	beanie>=1.23.4
-	dnspython>=2.1.0 ; extra == "test"
-	flake8>=3 ; extra == "test"
-	pre-commit>=2.3.0 ; extra == "test"
-	pydantic-settings>=2.0 ; extra == "test"
-	pyright>=0 ; extra == "test"
-	pytest-asyncio>=0.21.0 ; extra == "test"
-	pytest-cov>=2.8.1 ; extra == "test"
-	pytest>=6.0.0 ; extra == "test"
+	dnspython>=2.1.0 ; extra == 'test'
+	flake8>=3 ; extra == 'test'
+	pre-commit>=2.3.0 ; extra == 'test'
+	pydantic-settings>=2.0 ; extra == 'test'
+	pyright>=0 ; extra == 'test'
+	pytest-asyncio>=0.21.0 ; extra == 'test'
+	pytest-cov>=2.8.1 ; extra == 'test'
+	pytest>=6.0.0 ; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beanie-1.23.4[${PYTHON_USEDEP}]

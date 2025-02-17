@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	mypy-extensions
 	six
-	typing (>=3.5.3); python_version < "3.5"
+	typing (>=3.5.3); python_version < '3.5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/mypy-extensions[${PYTHON_USEDEP}]

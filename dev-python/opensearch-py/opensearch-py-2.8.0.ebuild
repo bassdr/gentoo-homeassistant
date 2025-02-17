@@ -27,32 +27,32 @@ RESTRICT="test"
 
 REQUIRES_DIST="
 	Events
-	aiohttp<4,>=3.9.4; extra == "async"
-	aiohttp<4,>=3.9.4; extra == "docs"
-	black>=24.3.0; extra == "develop"
-	botocore; extra == "develop"
+	aiohttp<4,>=3.9.4; extra == 'async'
+	aiohttp<4,>=3.9.4; extra == 'docs'
+	black>=24.3.0; extra == 'develop'
+	botocore; extra == 'develop'
 	certifi>=2024.07.04
-	coverage<8.0.0; extra == "develop"
-	jinja2; extra == "develop"
-	myst_parser; extra == "develop"
-	myst_parser; extra == "docs"
-	pytest-cov; extra == "develop"
-	pytest-mock<4.0.0; extra == "develop"
-	pytest>=3.0.0; extra == "develop"
+	coverage<8.0.0; extra == 'develop'
+	jinja2; extra == 'develop'
+	myst_parser; extra == 'develop'
+	myst_parser; extra == 'docs'
+	pytest-cov; extra == 'develop'
+	pytest-mock<4.0.0; extra == 'develop'
+	pytest>=3.0.0; extra == 'develop'
 	python-dateutil
-	pytz; extra == "develop"
-	pyyaml; extra == "develop"
-	requests<3.0.0,>=2.0.0; extra == "develop"
+	pytz; extra == 'develop'
+	pyyaml; extra == 'develop'
+	requests<3.0.0,>=2.0.0; extra == 'develop'
 	requests<3.0.0,>=2.32.0
-	requests_kerberos; extra == "kerberos"
-	sphinx; extra == "develop"
-	sphinx; extra == "docs"
-	sphinx_copybutton; extra == "develop"
-	sphinx_copybutton; extra == "docs"
-	sphinx_rtd_theme; extra == "develop"
-	sphinx_rtd_theme; extra == "docs"
-	urllib3!=2.2.0,!=2.2.1,<3,>=1.26.19; python_version >= "3.10"
-	urllib3<1.27,>=1.26.19; python_version < "3.10"
+	requests_kerberos; extra == 'kerberos'
+	sphinx; extra == 'develop'
+	sphinx; extra == 'docs'
+	sphinx_copybutton; extra == 'develop'
+	sphinx_copybutton; extra == 'docs'
+	sphinx_rtd_theme; extra == 'develop'
+	sphinx_rtd_theme; extra == 'docs'
+	urllib3!=2.2.0,!=2.2.1,<3,>=1.26.19; python_version >= '3.10'
+	urllib3<1.27,>=1.26.19; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/aiohttp-3.9.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}] )

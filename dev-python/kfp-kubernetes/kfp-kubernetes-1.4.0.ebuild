@@ -16,16 +16,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	docformatter==1.4; extra == "dev"
-	isort==5.10.1; extra == "dev"
+	docformatter==1.4; extra == 'dev'
+	isort==5.10.1; extra == 'dev'
 	kfp<3,>=2.6.0
-	mypy==0.941; extra == "dev"
-	pre-commit==2.19.0; extra == "dev"
+	mypy==0.941; extra == 'dev'
+	pre-commit==2.19.0; extra == 'dev'
 	protobuf<5,>=4.21.1
-	pycln==2.1.1; extra == "dev"
-	pytest-xdist==2.5.0; extra == "dev"
-	pytest==7.1.2; extra == "dev"
-	yapf==0.32.0; extra == "dev"
+	pycln==2.1.1; extra == 'dev'
+	pytest-xdist==2.5.0; extra == 'dev'
+	pytest==7.1.2; extra == 'dev'
+	yapf==0.32.0; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/kfp-2.6.0[${PYTHON_USEDEP}] <dev-python/kfp-3[${PYTHON_USEDEP}]

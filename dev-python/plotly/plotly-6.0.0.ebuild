@@ -29,7 +29,7 @@ GENERATED_IUSE="express"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	narwhals>=1.15.1
-	numpy; extra == "express"
+	numpy; extra == 'express'
 	packaging
 "
 GENERATED_RDEPEND="${RDEPEND}

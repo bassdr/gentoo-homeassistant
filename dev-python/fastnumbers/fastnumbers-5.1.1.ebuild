@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	PyICU>=1.0.0; extra == "icu"
-	fastnumbers>=2.0.0; extra == "fast"
+	PyICU>=1.0.0; extra == 'icu'
+	fastnumbers>=2.0.0; extra == 'fast'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	fast? ( >=dev-python/fastnumbers-2.0.0[${PYTHON_USEDEP}] )

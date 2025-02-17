@@ -15,18 +15,18 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dulwich!=0.20.33,>=0.20.6; python_version >= "3.0"
+	dulwich!=0.20.33,>=0.20.6; python_version >= '3.0'
 	everett[ini]<3.2.0,>=1.0.1
-	importlib-metadata; python_version < "3.8"
+	importlib-metadata; python_version < '3.8'
 	jsonschema!=3.1.0,>=2.6.0
 	psutil>=5.6.3
 	python-box<7.0.0
 	requests-toolbelt>=0.8.0
 	requests>=2.18.4
-	rich>=13.3.2; python_version >= "3.7.0"
+	rich>=13.3.2; python_version >= '3.7.0'
 	semantic-version>=2.8.0
 	sentry-sdk>=1.1.0
-	setuptools; python_version >= "3.12"
+	setuptools; python_version >= '3.12'
 	simplejson
 	urllib3>=1.21.1
 	wrapt>=1.11.2

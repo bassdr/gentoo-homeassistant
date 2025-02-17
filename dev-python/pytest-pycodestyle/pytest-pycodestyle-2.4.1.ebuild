@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	py
 	pycodestyle
-	pytest-isort; extra == "tests"
+	pytest-isort; extra == 'tests'
 	pytest>=7.0
 "
 GENERATED_RDEPEND="${RDEPEND}

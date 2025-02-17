@@ -17,47 +17,47 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	datasets; extra == "huggingface"
-	dpath; extra == "tests"
+	datasets; extra == 'huggingface'
+	dpath; extra == 'tests'
 	dvc-render<2,>=1.0.0
 	dvc-studio-client<1,>=0.20
 	dvc>=3.48.4
-	dvclive[all,tests]; extra == "dev"
-	dvclive[fastai,huggingface,image,lgbm,lightning,markdown,mmcv,optuna,plots,tf,xgb]; extra == "all"
-	dvclive[image,markdown,plots]; extra == "tests"
-	fastai; extra == "fastai"
+	dvclive[all,tests]; extra == 'dev'
+	dvclive[fastai,huggingface,image,lgbm,lightning,markdown,mmcv,optuna,plots,tf,xgb]; extra == 'all'
+	dvclive[image,markdown,plots]; extra == 'tests'
+	fastai; extra == 'fastai'
 	funcy
 	gto
-	ipython; extra == "tests"
-	jsonargparse[signatures]>=4.26.1; extra == "lightning"
-	lightgbm; extra == "lgbm"
-	lightning>=2.0; extra == "lightning"
-	matplotlib; extra == "markdown"
-	mmcv; extra == "mmcv"
-	mypy==1.14.1; extra == "dev"
-	numpy; extra == "image"
-	numpy; extra == "plots"
-	optuna; extra == "optuna"
-	pandas; extra == "plots"
-	pillow; extra == "image"
+	ipython; extra == 'tests'
+	jsonargparse[signatures]>=4.26.1; extra == 'lightning'
+	lightgbm; extra == 'lgbm'
+	lightning>=2.0; extra == 'lightning'
+	matplotlib; extra == 'markdown'
+	mmcv; extra == 'mmcv'
+	mypy==1.14.1; extra == 'dev'
+	numpy; extra == 'image'
+	numpy; extra == 'plots'
+	optuna; extra == 'optuna'
+	pandas; extra == 'plots'
+	pillow; extra == 'image'
 	psutil
 	pynvml
-	pytest-cov<7.0,>=3.0.0; extra == "tests"
-	pytest-mock<4.0,>=3.8.2; extra == "tests"
-	pytest-sugar<2.0,>=0.9.6; extra == "tests"
-	pytest<9.0,>=7.2.0; extra == "tests"
-	pytest_voluptuous; extra == "tests"
+	pytest-cov<7.0,>=3.0.0; extra == 'tests'
+	pytest-mock<4.0,>=3.8.2; extra == 'tests'
+	pytest-sugar<2.0,>=0.9.6; extra == 'tests'
+	pytest<9.0,>=7.2.0; extra == 'tests'
+	pytest_voluptuous; extra == 'tests'
 	ruamel.yaml
-	scikit-learn; extra == "plots"
-	scikit-learn; extra == "sklearn"
+	scikit-learn; extra == 'plots'
+	scikit-learn; extra == 'sklearn'
 	scmrepo<4,>=3
-	tensorflow; extra == "tf"
-	tf-keras; extra == "tests"
-	torch; extra == "lightning"
-	transformers; extra == "huggingface"
-	transformers[torch]; extra == "tests"
-	types-PyYAML; extra == "dev"
-	xgboost; extra == "xgb"
+	tensorflow; extra == 'tf'
+	tf-keras; extra == 'tests'
+	torch; extra == 'lightning'
+	transformers; extra == 'huggingface'
+	transformers[torch]; extra == 'tests'
+	types-PyYAML; extra == 'dev'
+	xgboost; extra == 'xgb'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	huggingface? ( dev-python/datasets[${PYTHON_USEDEP}] )

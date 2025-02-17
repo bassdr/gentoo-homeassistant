@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	email-validator; extra == "email"
+	email-validator; extra == 'email'
 	flask
 	itsdangerous
 	wtforms

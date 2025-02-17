@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	build>=0.7.0
 	check-manifest>=0.28
-	colorama; platform_system == "Windows"
+	colorama; platform_system == 'Windows'
 	devpi-common<5,>=4dev
 	iniconfig
 	pkginfo>=1.10.0
 	platformdirs
 	pluggy<2.0,>=0.6.0
-	tomli; python_version < "3.11"
+	tomli; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-0.7.0[${PYTHON_USEDEP}]

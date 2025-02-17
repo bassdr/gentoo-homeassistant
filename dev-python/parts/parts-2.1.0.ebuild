@@ -17,19 +17,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build~=0.10; extra == "publish"
-	coveralls~=4.0; extra == "coveralls"
-	pylint~=2.17.0; python_version < "3.12" and extra == "lint"
-	pylint~=3.2.0; python_version >= "3.12" and extra == "lint"
-	pytest-cov~=4.1; python_version < "3.12" and extra == "test"
-	pytest-cov~=5.0; python_version >= "3.12" and extra == "test"
-	pytest~=7.4; python_version < "3.12" and extra == "test"
-	pytest~=8.2; python_version >= "3.12" and extra == "test"
-	sphinx-autodoc-typehints~=1.23.0; extra == "docs"
-	sphinx-rtd-theme~=2.0.0; extra == "docs"
-	sphinx~=5.0; extra == "docs"
-	toml~=0.10.2; extra == "docs"
-	twine~=4.0; extra == "publish"
+	build~=0.10; extra == 'publish'
+	coveralls~=4.0; extra == 'coveralls'
+	pylint~=2.17.0; python_version < '3.12' and extra == 'lint'
+	pylint~=3.2.0; python_version >= '3.12' and extra == 'lint'
+	pytest-cov~=4.1; python_version < '3.12' and extra == 'test'
+	pytest-cov~=5.0; python_version >= '3.12' and extra == 'test'
+	pytest~=7.4; python_version < '3.12' and extra == 'test'
+	pytest~=8.2; python_version >= '3.12' and extra == 'test'
+	sphinx-autodoc-typehints~=1.23.0; extra == 'docs'
+	sphinx-rtd-theme~=2.0.0; extra == 'docs'
+	sphinx~=5.0; extra == 'docs'
+	toml~=0.10.2; extra == 'docs'
+	twine~=4.0; extra == 'publish'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	publish? ( >=dev-python/build-0.10[${PYTHON_USEDEP}] =dev-python/build-0*[${PYTHON_USEDEP}] )

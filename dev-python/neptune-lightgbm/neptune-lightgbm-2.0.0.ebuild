@@ -16,13 +16,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	graphviz
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	lightgbm
 	matplotlib
-	neptune (>=1.0.0) ; extra == "dev"
-	pre-commit ; extra == "dev"
-	pytest (>=5.0) ; extra == "dev"
-	pytest-cov (==2.10.1) ; extra == "dev"
+	neptune (>=1.0.0) ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pytest (>=5.0) ; extra == 'dev'
+	pytest-cov (==2.10.1) ; extra == 'dev'
 	scikit-plot
 "
 GENERATED_RDEPEND="${RDEPEND}

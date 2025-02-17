@@ -27,7 +27,7 @@ GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	botocore<1.35.0,>=1.34.131
-	botocore[crt]<2.0a0,>=1.21.0; extra == "crt"
+	botocore[crt]<2.0a0,>=1.21.0; extra == 'crt'
 	jmespath<2.0.0,>=0.7.1
 	s3transfer<0.11.0,>=0.10.0
 "

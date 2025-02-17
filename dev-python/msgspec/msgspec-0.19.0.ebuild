@@ -17,37 +17,37 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	attrs; extra == "dev"
-	attrs; extra == "test"
-	coverage; extra == "dev"
-	eval-type-backport; python_version < "3.10" and extra == "dev"
-	eval-type-backport; python_version < "3.10" and extra == "test"
-	furo; extra == "dev"
-	furo; extra == "doc"
-	ipython; extra == "dev"
-	ipython; extra == "doc"
-	msgpack; extra == "dev"
-	msgpack; extra == "test"
-	mypy; extra == "dev"
-	pre-commit; extra == "dev"
-	pyright; extra == "dev"
-	pytest; extra == "dev"
-	pytest; extra == "test"
-	pyyaml; extra == "dev"
-	pyyaml; extra == "test"
-	pyyaml; extra == "yaml"
-	sphinx-copybutton; extra == "dev"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design; extra == "dev"
-	sphinx-design; extra == "doc"
-	sphinx; extra == "dev"
-	sphinx; extra == "doc"
-	tomli; python_version < "3.11" and extra == "dev"
-	tomli; python_version < "3.11" and extra == "test"
-	tomli; python_version < "3.11" and extra == "toml"
-	tomli_w; extra == "dev"
-	tomli_w; extra == "test"
-	tomli_w; extra == "toml"
+	attrs; extra == 'dev'
+	attrs; extra == 'test'
+	coverage; extra == 'dev'
+	eval-type-backport; python_version < '3.10' and extra == 'dev'
+	eval-type-backport; python_version < '3.10' and extra == 'test'
+	furo; extra == 'dev'
+	furo; extra == 'doc'
+	ipython; extra == 'dev'
+	ipython; extra == 'doc'
+	msgpack; extra == 'dev'
+	msgpack; extra == 'test'
+	mypy; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pyright; extra == 'dev'
+	pytest; extra == 'dev'
+	pytest; extra == 'test'
+	pyyaml; extra == 'dev'
+	pyyaml; extra == 'test'
+	pyyaml; extra == 'yaml'
+	sphinx-copybutton; extra == 'dev'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design; extra == 'dev'
+	sphinx-design; extra == 'doc'
+	sphinx; extra == 'dev'
+	sphinx; extra == 'doc'
+	tomli; python_version < '3.11' and extra == 'dev'
+	tomli; python_version < '3.11' and extra == 'test'
+	tomli; python_version < '3.11' and extra == 'toml'
+	tomli_w; extra == 'dev'
+	tomli_w; extra == 'test'
+	tomli_w; extra == 'toml'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )

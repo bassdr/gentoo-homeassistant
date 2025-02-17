@@ -19,8 +19,6 @@ MY_P=${P/_beta/b}
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -38,13 +36,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/orjson-3.10[${PYTHON_USEDEP}] =dev-python/orjson-3*[${PYTHON_USEDEP}]
 	>=dev-python/webrtc-models-0.1[${PYTHON_USEDEP}] =dev-python/webrtc-models-0*[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/awesomeversion[${PYTHON_USEDEP}]
-	dev-python/mashumaro[${PYTHON_USEDEP}]
-	dev-python/orjson[${PYTHON_USEDEP}]
-	~dev-python/webrtc-models-0.1.0[${PYTHON_USEDEP}]"
-BDEPEND="
+RDEPEND="${GENERATED_RDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/aioresponses[${PYTHON_USEDEP}]
 		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]

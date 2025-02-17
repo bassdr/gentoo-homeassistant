@@ -17,8 +17,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	requests (<3,>2.2)
-	sphinx (<2.0,>=1.8.5) ; python_version < "3.0"
-	sphinx (>=2.0) ; python_version >= "3.0"
+	sphinx (<2.0,>=1.8.5) ; python_version < '3.0'
+	sphinx (>=2.0) ; python_version >= '3.0'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/requests-2.2[${PYTHON_USEDEP}] <dev-python/requests-3[${PYTHON_USEDEP}]

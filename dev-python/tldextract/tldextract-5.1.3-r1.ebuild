@@ -21,23 +21,23 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="release"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	build; extra == "release"
+	build; extra == 'release'
 	filelock>=3.0.8
 	idna
-	mypy; extra == "testing"
-	pytest-gitignore; extra == "testing"
-	pytest-mock; extra == "testing"
-	pytest; extra == "testing"
+	mypy; extra == 'testing'
+	pytest-gitignore; extra == 'testing'
+	pytest-mock; extra == 'testing'
+	pytest; extra == 'testing'
 	requests-file>=1.4
 	requests>=2.1.0
-	responses; extra == "testing"
-	ruff; extra == "testing"
-	syrupy; extra == "testing"
-	tox-uv; extra == "testing"
-	tox; extra == "testing"
-	twine; extra == "release"
-	types-filelock; extra == "testing"
-	types-requests; extra == "testing"
+	responses; extra == 'testing'
+	ruff; extra == 'testing'
+	syrupy; extra == 'testing'
+	tox-uv; extra == 'testing'
+	tox; extra == 'testing'
+	twine; extra == 'release'
+	types-filelock; extra == 'testing'
+	types-requests; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	release? ( dev-python/build[${PYTHON_USEDEP}] )

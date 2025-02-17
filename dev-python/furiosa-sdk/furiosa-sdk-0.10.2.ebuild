@@ -19,27 +19,27 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	furiosa-cli==0.10.*
-	furiosa-cli==0.10.*; extra == "cli"
-	furiosa-cli==0.10.*; extra == "full"
-	furiosa-device==0.10.*; extra == "device"
-	furiosa-device==0.10.*; extra == "full"
-	furiosa-litmus==0.10.*; extra == "full"
-	furiosa-litmus==0.10.*; extra == "litmus"
-	furiosa-optimizer==0.10.*; extra == "full"
-	furiosa-optimizer==0.10.*; extra == "quantizer"
-	furiosa-quantizer==0.10.*; extra == "full"
-	furiosa-quantizer==0.10.*; extra == "quantizer"
+	furiosa-cli==0.10.*; extra == 'cli'
+	furiosa-cli==0.10.*; extra == 'full'
+	furiosa-device==0.10.*; extra == 'device'
+	furiosa-device==0.10.*; extra == 'full'
+	furiosa-litmus==0.10.*; extra == 'full'
+	furiosa-litmus==0.10.*; extra == 'litmus'
+	furiosa-optimizer==0.10.*; extra == 'full'
+	furiosa-optimizer==0.10.*; extra == 'quantizer'
+	furiosa-quantizer==0.10.*; extra == 'full'
+	furiosa-quantizer==0.10.*; extra == 'quantizer'
 	furiosa-runtime==0.10.*
-	furiosa-server==0.10.*; extra == "full"
-	furiosa-server==0.10.*; extra == "server"
-	furiosa-serving==0.10.*; extra == "full"
-	furiosa-serving==0.10.*; extra == "serving"
+	furiosa-server==0.10.*; extra == 'full'
+	furiosa-server==0.10.*; extra == 'server'
+	furiosa-serving==0.10.*; extra == 'full'
+	furiosa-serving==0.10.*; extra == 'serving'
 	furiosa-tools==0.10.*
-	furiosa-tools==0.10.*; extra == "full"
-	furiosa-tools==0.10.*; extra == "tool"
-	mypy; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
+	furiosa-tools==0.10.*; extra == 'full'
+	furiosa-tools==0.10.*; extra == 'tool'
+	mypy; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/furiosa-cli-0.10*[${PYTHON_USEDEP}]

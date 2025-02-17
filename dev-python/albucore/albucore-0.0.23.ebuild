@@ -19,7 +19,7 @@ REQUIRES_DIST="
 	opencv-python-headless>=4.9.0.80
 	simsimd>=5.9.2
 	stringzilla>=3.10.4
-	typing-extensions>=4.9.0; python_version < "3.10"
+	typing-extensions>=4.9.0; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.24.4[${PYTHON_USEDEP}]

@@ -18,74 +18,74 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=22.2.0
-	boto3>=1.9; extra == "aws"
+	boto3>=1.9; extra == 'aws'
 	chardet>=3.0
-	datasette>=0.64.2; extra == "datasette"
-	duckdb-engine>=0.7; extra == "duckdb"
-	duckdb>=0.8; extra == "duckdb"
-	ezodf>=0.3; extra == "ods"
-	fastparquet>=0.8; extra == "parquet"
-	frictionless-ckan-mapper>=1.0; extra == "ckan"
-	google-api-python-client>=1.12.1; extra == "bigquery"
-	hatch; extra == "dev"
-	httpx; extra == "dev"
+	datasette>=0.64.2; extra == 'datasette'
+	duckdb-engine>=0.7; extra == 'duckdb'
+	duckdb>=0.8; extra == 'duckdb'
+	ezodf>=0.3; extra == 'ods'
+	fastparquet>=0.8; extra == 'parquet'
+	frictionless-ckan-mapper>=1.0; extra == 'ckan'
+	google-api-python-client>=1.12.1; extra == 'bigquery'
+	hatch; extra == 'dev'
+	httpx; extra == 'dev'
 	humanize>=4.2
-	ijson>=3.0; extra == "json"
-	ipython; extra == "dev"
+	ijson>=3.0; extra == 'json'
+	ipython; extra == 'dev'
 	isodate>=0.6
 	jinja2>=3.0
-	jsonlines>=1.2; extra == "json"
+	jsonlines>=1.2; extra == 'json'
 	jsonschema>=4.20
-	livemark; extra == "dev"
-	lxml>=4.0; extra == "ods"
+	livemark; extra == 'dev'
+	lxml>=4.0; extra == 'ods'
 	marko>=1.0
-	moto; extra == "dev"
-	neovim; extra == "dev"
-	oauth2client; extra == "dev"
-	openpyxl>=3.0; extra == "excel"
-	pandas>=1.0; extra == "pandas"
+	moto; extra == 'dev'
+	neovim; extra == 'dev'
+	oauth2client; extra == 'dev'
+	openpyxl>=3.0; extra == 'excel'
+	pandas>=1.0; extra == 'pandas'
 	petl>=1.6
-	psycopg2>=2.9; extra == "postgresql"
-	psycopg>=3.0; extra == "postgresql"
-	pyarrow>=14.0; extra == "pandas"
+	psycopg2>=2.9; extra == 'postgresql'
+	psycopg>=3.0; extra == 'postgresql'
+	pyarrow>=14.0; extra == 'pandas'
 	pydantic>=2.0
-	pygithub>=1.50; extra == "github"
-	pygsheets>=2.0; extra == "gsheets"
-	pymysql>=1.0; extra == "mysql"
-	pyquery>=1.4; extra == "html"
-	pyright==1.1.317; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest-dotenv; extra == "dev"
-	pytest-lazy-fixtures; extra == "dev"
-	pytest-mock; extra == "dev"
-	pytest-timeout; extra == "dev"
-	pytest-vcr; extra == "dev"
-	pytest; extra == "dev"
+	pygithub>=1.50; extra == 'github'
+	pygsheets>=2.0; extra == 'gsheets'
+	pymysql>=1.0; extra == 'mysql'
+	pyquery>=1.4; extra == 'html'
+	pyright==1.1.317; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest-dotenv; extra == 'dev'
+	pytest-lazy-fixtures; extra == 'dev'
+	pytest-mock; extra == 'dev'
+	pytest-timeout; extra == 'dev'
+	pytest-vcr; extra == 'dev'
+	pytest; extra == 'dev'
 	python-dateutil>=2.8
 	python-slugify>=1.2
 	pyyaml>=5.3
-	pyzenodo3>=1.0; extra == "zenodo"
-	requests-mock; extra == "dev"
+	pyzenodo3>=1.0; extra == 'zenodo'
+	requests-mock; extra == 'dev'
 	requests>=2.10
 	rfc3986>=1.4
-	ruff; extra == "dev"
-	savreaderwriter>=3.0; extra == "spss"
+	ruff; extra == 'dev'
+	savreaderwriter>=3.0; extra == 'spss'
 	simpleeval>=0.9.11
-	sqlalchemy>=1.4; extra == "duckdb"
-	sqlalchemy>=1.4; extra == "mysql"
-	sqlalchemy>=1.4; extra == "postgresql"
-	sqlalchemy>=1.4; extra == "sql"
+	sqlalchemy>=1.4; extra == 'duckdb'
+	sqlalchemy>=1.4; extra == 'mysql'
+	sqlalchemy>=1.4; extra == 'postgresql'
+	sqlalchemy>=1.4; extra == 'sql'
 	stringcase>=1.2
-	tableschema-to-template>=0.0; extra == "excel"
+	tableschema-to-template>=0.0; extra == 'excel'
 	tabulate>=0.8.10
-	tatsu>=5.8.3; extra == "wkt"
+	tatsu>=5.8.3; extra == 'wkt'
 	typer>=0.12
 	typing-extensions>=4.3
 	validators>=0.18
-	visidata>=2.10; extra == "visidata"
-	xlrd>=1.2; extra == "excel"
-	xlwt>=1.2; extra == "excel"
-	yattag; extra == "dev"
+	visidata>=2.10; extra == 'visidata'
+	xlrd>=1.2; extra == 'excel'
+	xlwt>=1.2; extra == 'excel'
+	yattag; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]

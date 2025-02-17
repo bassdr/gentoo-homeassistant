@@ -18,9 +18,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	docstring-parser<1.0,>=0.15
-	pyyaml<7.0.0,>=6.0.1; extra == "yaml"
-	tomli-w<2.0.0,>=1.0.0; extra == "toml"
-	tomli<3.0.0,>=2.0.1; extra == "toml"
+	pyyaml<7.0.0,>=6.0.1; extra == 'yaml'
+	tomli-w<2.0.0,>=1.0.0; extra == 'toml'
+	tomli<3.0.0,>=2.0.1; extra == 'toml'
 	typing-extensions>=4.5.0
 "
 GENERATED_RDEPEND="${RDEPEND}

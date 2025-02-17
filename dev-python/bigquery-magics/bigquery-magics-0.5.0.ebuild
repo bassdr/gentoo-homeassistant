@@ -17,16 +17,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	bigframes>=1.17.0; extra == "all"
-	bigframes>=1.17.0; extra == "bigframes"
+	bigframes>=1.17.0; extra == 'all'
+	bigframes>=1.17.0; extra == 'bigframes'
 	db-dtypes<2.0.0dev,>=0.3.0
-	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == "all"
-	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == "bqstorage"
+	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == 'all'
+	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == 'bqstorage'
 	google-cloud-bigquery<4.0.0dev,>=3.13.0
-	grpcio<2.0dev,>=1.47.0; extra == "all"
-	grpcio<2.0dev,>=1.47.0; extra == "bqstorage"
-	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "all"
-	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "bqstorage"
+	grpcio<2.0dev,>=1.47.0; extra == 'all'
+	grpcio<2.0dev,>=1.47.0; extra == 'bqstorage'
+	grpcio<2.0dev,>=1.49.1; python_version >= '3.11' and extra == 'all'
+	grpcio<2.0dev,>=1.49.1; python_version >= '3.11' and extra == 'bqstorage'
 	ipykernel>=5.5.6
 	ipython>=7.23.1
 	ipywidgets>=7.7.1

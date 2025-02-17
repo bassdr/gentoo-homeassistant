@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	numba; extra == "dev"
-	numba; extra == "fast"
+	numba; extra == 'dev'
+	numba; extra == 'fast'
 	numpy
-	pandas; extra == "dev"
-	pytest; extra == "dev"
+	pandas; extra == 'dev'
+	pytest; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	fast? ( dev-python/numba[${PYTHON_USEDEP}] )

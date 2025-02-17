@@ -15,9 +15,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	hypothesis; extra == "test"
-	pytest; extra == "test"
-	readme-renderer; extra == "test"
+	hypothesis; extra == 'test'
+	pytest; extra == 'test'
+	readme-renderer; extra == 'test'
 	setuptools
 "
 GENERATED_RDEPEND="${RDEPEND}

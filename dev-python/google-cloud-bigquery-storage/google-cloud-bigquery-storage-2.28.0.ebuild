@@ -17,16 +17,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	fastavro>=0.21.2; extra == "fastavro"
+	fastavro>=0.21.2; extra == 'fastavro'
 	google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0dev,>=1.34.0
 	google-auth<3.0.0dev,>=2.14.1
-	importlib-metadata>=1.0.0; python_version < "3.8" and extra == "pandas"
-	pandas>=0.21.1; extra == "pandas"
+	importlib-metadata>=1.0.0; python_version < '3.8' and extra == 'pandas'
+	pandas>=0.21.1; extra == 'pandas'
 	proto-plus<2.0.0dev,>=1.22.0
-	proto-plus<2.0.0dev,>=1.22.2; python_version >= "3.11"
-	proto-plus<2.0.0dev,>=1.25.0; python_version >= "3.13"
+	proto-plus<2.0.0dev,>=1.22.2; python_version >= '3.11'
+	proto-plus<2.0.0dev,>=1.25.0; python_version >= '3.13'
 	protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
-	pyarrow>=0.15.0; extra == "pyarrow"
+	pyarrow>=0.15.0; extra == 'pyarrow'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	fastavro? ( >=dev-python/fastavro-0.21.2[${PYTHON_USEDEP}] )

@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	fvcore<0.1.6,>=0.1.5; extra == "all"
-	fvcore<0.1.6,>=0.1.5; extra == "dev"
+	fvcore<0.1.6,>=0.1.5; extra == 'all'
+	fvcore<0.1.6,>=0.1.5; extra == 'dev'
 	packaging
 	torch>=2.0.0
 "

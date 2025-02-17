@@ -17,127 +17,127 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	PyHive>=0.6.5; extra == "hive"
-	PyMySQL>=1.1.1; extra == "mysql"
-	adr-tools-python==1.0.3; extra == "test"
+	PyHive>=0.6.5; extra == 'hive'
+	PyMySQL>=1.1.1; extra == 'mysql'
+	adr-tools-python==1.0.3; extra == 'test'
 	altair<5.0.0,>=4.2.1
-	azure-identity>=1.10.0; extra == "azure"
-	azure-identity>=1.10.0; extra == "azure-secrets"
-	azure-keyvault-secrets>=4.0.0; extra == "azure"
-	azure-keyvault-secrets>=4.0.0; extra == "azure-secrets"
-	azure-storage-blob>=12.5.0; extra == "azure"
-	azure-storage-blob>=12.5.0; extra == "azure-secrets"
-	boto3>=1.17.106; extra == "aws-secrets"
-	boto3>=1.17.106; extra == "s3"
-	boto3>=1.17.106; extra == "test"
-	clickhouse-sqlalchemy>=0.2.2; python_version < "3.12" and extra == "clickhouse"
-	clickhouse-sqlalchemy>=0.3.0; python_version >= "3.12" and extra == "clickhouse"
-	coverage[toml]>=7.5.1; extra == "test"
+	azure-identity>=1.10.0; extra == 'azure'
+	azure-identity>=1.10.0; extra == 'azure-secrets'
+	azure-keyvault-secrets>=4.0.0; extra == 'azure'
+	azure-keyvault-secrets>=4.0.0; extra == 'azure-secrets'
+	azure-storage-blob>=12.5.0; extra == 'azure'
+	azure-storage-blob>=12.5.0; extra == 'azure-secrets'
+	boto3>=1.17.106; extra == 'aws-secrets'
+	boto3>=1.17.106; extra == 's3'
+	boto3>=1.17.106; extra == 'test'
+	clickhouse-sqlalchemy>=0.2.2; python_version < '3.12' and extra == 'clickhouse'
+	clickhouse-sqlalchemy>=0.3.0; python_version >= '3.12' and extra == 'clickhouse'
+	coverage[toml]>=7.5.1; extra == 'test'
 	cryptography>=3.2
-	databricks-sqlalchemy>=1.0.0; extra == "databricks"
-	docstring-parser==0.16; extra == "test"
-	feather-format>=0.4.1; extra == "arrow"
-	feather-format>=0.4.1; extra == "test"
-	flaky>=3.7.0; extra == "test"
-	flask>=1.0.0; extra == "test"
-	freezegun>=0.3.15; extra == "test"
-	gcsfs>=0.5.1; extra == "bigquery"
-	gcsfs>=0.5.1; extra == "gcp"
-	google-cloud-bigquery-storage>=2.20.0; extra == "bigquery"
-	google-cloud-bigquery-storage>=2.20.0; extra == "gcp"
-	google-cloud-bigquery>=3.3.6; extra == "bigquery"
-	google-cloud-bigquery>=3.3.6; extra == "gcp"
-	google-cloud-secret-manager>=1.0.0; extra == "bigquery"
-	google-cloud-secret-manager>=1.0.0; extra == "gcp"
-	google-cloud-storage>=1.28.0; python_version < "3.11" and extra == "bigquery"
-	google-cloud-storage>=1.28.0; python_version < "3.11" and extra == "gcp"
-	google-cloud-storage>=2.10.0; python_version >= "3.11" and extra == "bigquery"
-	google-cloud-storage>=2.10.0; python_version >= "3.11" and extra == "gcp"
-	googleapis-common-protos>=1.56.4; extra == "spark-connect"
-	grpcio-status>=1.48.1; extra == "spark-connect"
-	grpcio>=1.48.1; extra == "spark-connect"
-	invoke>=2.0.0; extra == "test"
+	databricks-sqlalchemy>=1.0.0; extra == 'databricks'
+	docstring-parser==0.16; extra == 'test'
+	feather-format>=0.4.1; extra == 'arrow'
+	feather-format>=0.4.1; extra == 'test'
+	flaky>=3.7.0; extra == 'test'
+	flask>=1.0.0; extra == 'test'
+	freezegun>=0.3.15; extra == 'test'
+	gcsfs>=0.5.1; extra == 'bigquery'
+	gcsfs>=0.5.1; extra == 'gcp'
+	google-cloud-bigquery-storage>=2.20.0; extra == 'bigquery'
+	google-cloud-bigquery-storage>=2.20.0; extra == 'gcp'
+	google-cloud-bigquery>=3.3.6; extra == 'bigquery'
+	google-cloud-bigquery>=3.3.6; extra == 'gcp'
+	google-cloud-secret-manager>=1.0.0; extra == 'bigquery'
+	google-cloud-secret-manager>=1.0.0; extra == 'gcp'
+	google-cloud-storage>=1.28.0; python_version < '3.11' and extra == 'bigquery'
+	google-cloud-storage>=1.28.0; python_version < '3.11' and extra == 'gcp'
+	google-cloud-storage>=2.10.0; python_version >= '3.11' and extra == 'bigquery'
+	google-cloud-storage>=2.10.0; python_version >= '3.11' and extra == 'gcp'
+	googleapis-common-protos>=1.56.4; extra == 'spark-connect'
+	grpcio-status>=1.48.1; extra == 'spark-connect'
+	grpcio>=1.48.1; extra == 'spark-connect'
+	invoke>=2.0.0; extra == 'test'
 	jinja2>=2.10
 	jsonschema>=2.5.1
 	marshmallow<4.0.0,>=3.7.1
 	mistune>=0.8.4
-	moto[s3,sns]<5.0,>=4.2.13; extra == "test"
-	mypy==1.13.0; extra == "test"
-	numpy>=1.21.6; python_version == "3.9"
-	numpy>=1.22.4; python_version >= "3.10"
-	numpy>=1.26.0; python_version >= "3.12"
-	openpyxl>=3.0.7; extra == "excel"
-	orjson>=3.9.7; extra == "cloud"
+	moto[s3,sns]<5.0,>=4.2.13; extra == 'test'
+	mypy==1.13.0; extra == 'test'
+	numpy>=1.21.6; python_version == '3.9'
+	numpy>=1.22.4; python_version >= '3.10'
+	numpy>=1.26.0; python_version >= '3.12'
+	openpyxl>=3.0.7; extra == 'excel'
+	orjson>=3.9.7; extra == 'cloud'
 	packaging
-	pact-python>=2.0.1; extra == "test"
-	pandas<2.2,>=1.1.3; python_version == "3.9"
-	pandas<2.2,>=1.3.0; python_version >= "3.10"
-	pandas<2.2.0; python_version >= "3.9" and extra == "snowflake"
-	pandas<2.2; python_version >= "3.12"
+	pact-python>=2.0.1; extra == 'test'
+	pandas<2.2,>=1.1.3; python_version == '3.9'
+	pandas<2.2,>=1.3.0; python_version >= '3.10'
+	pandas<2.2.0; python_version >= '3.9' and extra == 'snowflake'
+	pandas<2.2; python_version >= '3.12'
 	posthog<4,>3
-	pre-commit>=2.21.0; extra == "test"
-	psycopg2-binary>=2.7.6; extra == "postgresql"
-	psycopg2-binary>=2.7.6; extra == "redshift"
-	pyarrow; extra == "arrow"
-	pyarrow; extra == "test"
-	pyathena[sqlalchemy]<3,>=2.0.0; extra == "athena"
+	pre-commit>=2.21.0; extra == 'test'
+	psycopg2-binary>=2.7.6; extra == 'postgresql'
+	psycopg2-binary>=2.7.6; extra == 'redshift'
+	pyarrow; extra == 'arrow'
+	pyarrow; extra == 'test'
+	pyathena[sqlalchemy]<3,>=2.0.0; extra == 'athena'
 	pydantic>=1.10.7
-	pyfakefs>=4.5.1; extra == "test"
-	pyodbc>=4.0.30; extra == "dremio"
-	pyodbc>=4.0.30; extra == "mssql"
+	pyfakefs>=4.5.1; extra == 'test'
+	pyodbc>=4.0.30; extra == 'dremio'
+	pyodbc>=4.0.30; extra == 'mssql'
 	pyparsing>=2.4
-	pypd==1.1.0; extra == "pagerduty"
-	pyspark>=2.3.2; extra == "spark"
-	pytest-benchmark>=3.4.1; extra == "test"
-	pytest-cov>=5.0.0; extra == "test"
-	pytest-icdiff>=0.9.0; extra == "test"
-	pytest-mock>=3.14.0; extra == "test"
-	pytest-order>=1.2.1; extra == "test"
-	pytest-random-order>=1.1.1; extra == "test"
-	pytest-timeout>=2.3.1; extra == "test"
-	pytest-xdist>=3.6.1; extra == "test"
-	pytest>=8.2.1; extra == "test"
+	pypd==1.1.0; extra == 'pagerduty'
+	pyspark>=2.3.2; extra == 'spark'
+	pytest-benchmark>=3.4.1; extra == 'test'
+	pytest-cov>=5.0.0; extra == 'test'
+	pytest-icdiff>=0.9.0; extra == 'test'
+	pytest-mock>=3.14.0; extra == 'test'
+	pytest-order>=1.2.1; extra == 'test'
+	pytest-random-order>=1.1.1; extra == 'test'
+	pytest-timeout>=2.3.1; extra == 'test'
+	pytest-xdist>=3.6.1; extra == 'test'
+	pytest>=8.2.1; extra == 'test'
 	python-dateutil>=2.8.1
 	requests>=2.20
-	requirements-parser>=0.9.0; extra == "test"
-	responses!=0.25.5,>=0.23.1; extra == "test"
+	requirements-parser>=0.9.0; extra == 'test'
+	responses!=0.25.5,>=0.23.1; extra == 'test'
 	ruamel.yaml>=0.16
-	ruff==0.7.2; extra == "test"
+	ruff==0.7.2; extra == 'test'
 	scipy>=1.6.0
-	setuptools>=70.0.0; extra == "test"
-	snowflake-connector-python>2.9.0; python_version >= "3.11" and extra == "snowflake"
-	snowflake-connector-python>=2.5.0; python_version < "3.11" and extra == "snowflake"
-	snowflake-sqlalchemy!=1.7.0,>=1.2.3; extra == "snowflake"
-	sqlalchemy-bigquery>=1.3.0; extra == "bigquery"
-	sqlalchemy-bigquery>=1.3.0; extra == "gcp"
-	sqlalchemy-dremio==1.2.1; extra == "dremio"
-	sqlalchemy-redshift>=0.8.8; extra == "redshift"
-	sqlalchemy-vertica-python>=0.5.10; extra == "vertica"
-	sqlalchemy<2.0.0; extra == "bigquery"
-	sqlalchemy<2.0.0; extra == "clickhouse"
-	sqlalchemy<2.0.0; extra == "gcp"
-	sqlalchemy<2.0.0; extra == "redshift"
-	sqlalchemy<2.0.0; extra == "teradata"
-	sqlalchemy>=1.4.0; extra == "athena"
-	sqlalchemy>=1.4.0; extra == "databricks"
-	sqlalchemy>=1.4.0; extra == "dremio"
-	sqlalchemy>=1.4.0; extra == "hive"
-	sqlalchemy>=1.4.0; extra == "mssql"
-	sqlalchemy>=1.4.0; extra == "mysql"
-	sqlalchemy>=1.4.0; extra == "postgresql"
-	sqlalchemy>=1.4.0; extra == "snowflake"
-	sqlalchemy>=1.4.0; extra == "test"
-	sqlalchemy>=1.4.0; extra == "trino"
-	sqlalchemy>=1.4.0; extra == "vertica"
-	teradatasqlalchemy==17.0.0.5; extra == "teradata"
-	thrift-sasl>=0.4.3; extra == "hive"
-	thrift>=0.16.0; extra == "hive"
-	tomli>=2.0.1; extra == "test"
+	setuptools>=70.0.0; extra == 'test'
+	snowflake-connector-python>2.9.0; python_version >= '3.11' and extra == 'snowflake'
+	snowflake-connector-python>=2.5.0; python_version < '3.11' and extra == 'snowflake'
+	snowflake-sqlalchemy!=1.7.0,>=1.2.3; extra == 'snowflake'
+	sqlalchemy-bigquery>=1.3.0; extra == 'bigquery'
+	sqlalchemy-bigquery>=1.3.0; extra == 'gcp'
+	sqlalchemy-dremio==1.2.1; extra == 'dremio'
+	sqlalchemy-redshift>=0.8.8; extra == 'redshift'
+	sqlalchemy-vertica-python>=0.5.10; extra == 'vertica'
+	sqlalchemy<2.0.0; extra == 'bigquery'
+	sqlalchemy<2.0.0; extra == 'clickhouse'
+	sqlalchemy<2.0.0; extra == 'gcp'
+	sqlalchemy<2.0.0; extra == 'redshift'
+	sqlalchemy<2.0.0; extra == 'teradata'
+	sqlalchemy>=1.4.0; extra == 'athena'
+	sqlalchemy>=1.4.0; extra == 'databricks'
+	sqlalchemy>=1.4.0; extra == 'dremio'
+	sqlalchemy>=1.4.0; extra == 'hive'
+	sqlalchemy>=1.4.0; extra == 'mssql'
+	sqlalchemy>=1.4.0; extra == 'mysql'
+	sqlalchemy>=1.4.0; extra == 'postgresql'
+	sqlalchemy>=1.4.0; extra == 'snowflake'
+	sqlalchemy>=1.4.0; extra == 'test'
+	sqlalchemy>=1.4.0; extra == 'trino'
+	sqlalchemy>=1.4.0; extra == 'vertica'
+	teradatasqlalchemy==17.0.0.5; extra == 'teradata'
+	thrift-sasl>=0.4.3; extra == 'hive'
+	thrift>=0.16.0; extra == 'hive'
+	tomli>=2.0.1; extra == 'test'
 	tqdm>=4.59.0
-	trino!=0.316.0,>=0.310.0; extra == "trino"
+	trino!=0.316.0,>=0.310.0; extra == 'trino'
 	typing-extensions>=4.1.0
 	tzlocal>=1.2
-	xlrd<2.0.0,>=1.1.0; extra == "excel"
+	xlrd<2.0.0,>=1.1.0; extra == 'excel'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/altair-4.2.1[${PYTHON_USEDEP}] <dev-python/altair-5.0.0[${PYTHON_USEDEP}]

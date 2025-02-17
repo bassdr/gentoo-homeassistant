@@ -22,26 +22,26 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="check cover doc enabler perf type"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	flufl.flake8; extra == "test"
-	furo; extra == "doc"
-	importlib_resources>=1.3; python_version < "3.9" and extra == "test"
-	ipython; extra == "perf"
-	jaraco.packaging>=9.3; extra == "doc"
-	jaraco.test>=5.4; extra == "test"
-	jaraco.tidelift>=1.4; extra == "doc"
-	packaging; extra == "test"
-	pyfakefs; extra == "test"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "check"
-	pytest-cov; extra == "cover"
-	pytest-enabler>=2.2; extra == "enabler"
-	pytest-mypy; extra == "type"
-	pytest-perf>=0.9.2; extra == "test"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
-	typing-extensions>=3.6.4; python_version < "3.8"
+	flufl.flake8; extra == 'test'
+	furo; extra == 'doc'
+	importlib_resources>=1.3; python_version < '3.9' and extra == 'test'
+	ipython; extra == 'perf'
+	jaraco.packaging>=9.3; extra == 'doc'
+	jaraco.test>=5.4; extra == 'test'
+	jaraco.tidelift>=1.4; extra == 'doc'
+	packaging; extra == 'test'
+	pyfakefs; extra == 'test'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'check'
+	pytest-cov; extra == 'cover'
+	pytest-enabler>=2.2; extra == 'enabler'
+	pytest-mypy; extra == 'type'
+	pytest-perf>=0.9.2; extra == 'test'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'check'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
+	typing-extensions>=3.6.4; python_version < '3.8'
 	zipp>=3.20
 "
 GENERATED_RDEPEND="${RDEPEND}

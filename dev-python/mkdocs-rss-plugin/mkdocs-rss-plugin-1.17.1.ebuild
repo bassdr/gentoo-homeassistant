@@ -18,28 +18,28 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	GitPython<3.2,>=3.1.43
-	black; extra == "dev"
+	black; extra == 'dev'
 	cachecontrol[filecache]<1,>=0.14
-	feedparser<6.1,>=6.0.11; extra == "test"
-	flake8-bugbear>=24.10; extra == "dev"
-	flake8-builtins>=2.5; extra == "dev"
-	flake8-eradicate>=1.5; extra == "dev"
-	flake8-isort>=6.1.1; extra == "dev"
-	flake8<8,>=7.1; extra == "dev"
-	jsonfeed-util<2,>=1.1.2; extra == "test"
-	mkdocs-git-committers-plugin-2<2.5,>=2.4.1; extra == "doc"
-	mkdocs-git-revision-date-localized-plugin<1.4,>=1.3; extra == "doc"
-	mkdocs-material[imaging]<10,>=9.5.47; extra == "doc"
-	mkdocs-material[imaging]>=9.5.47; extra == "test"
-	mkdocs-minify-plugin<0.9,>=0.8; extra == "doc"
+	feedparser<6.1,>=6.0.11; extra == 'test'
+	flake8-bugbear>=24.10; extra == 'dev'
+	flake8-builtins>=2.5; extra == 'dev'
+	flake8-eradicate>=1.5; extra == 'dev'
+	flake8-isort>=6.1.1; extra == 'dev'
+	flake8<8,>=7.1; extra == 'dev'
+	jsonfeed-util<2,>=1.1.2; extra == 'test'
+	mkdocs-git-committers-plugin-2<2.5,>=2.4.1; extra == 'doc'
+	mkdocs-git-revision-date-localized-plugin<1.4,>=1.3; extra == 'doc'
+	mkdocs-material[imaging]<10,>=9.5.47; extra == 'doc'
+	mkdocs-material[imaging]>=9.5.47; extra == 'test'
+	mkdocs-minify-plugin<0.9,>=0.8; extra == 'doc'
 	mkdocs<2,>=1.6.1
-	mkdocstrings[python]<1,>=0.27; extra == "doc"
-	pre-commit<4,>=3.7; extra == "dev"
-	pytest-cov<7,>=6; extra == "test"
+	mkdocstrings[python]<1,>=0.27; extra == 'doc'
+	pre-commit<4,>=3.7; extra == 'dev'
+	pytest-cov<7,>=6; extra == 'test'
 	requests<3,>=2.31
-	termynal<0.13,>=0.12.2; extra == "doc"
-	tzdata==2024.*; python_version >= "3.9" and sys_platform == "win32"
-	validator-collection<1.6,>=1.5; extra == "test"
+	termynal<0.13,>=0.12.2; extra == 'doc'
+	tzdata==2024.*; python_version >= '3.9' and sys_platform == 'win32'
+	validator-collection<1.6,>=1.5; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachecontrol-0.14[filecache,${PYTHON_USEDEP}] <dev-python/cachecontrol-1[filecache,${PYTHON_USEDEP}]

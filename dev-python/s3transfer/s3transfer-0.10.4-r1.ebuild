@@ -21,11 +21,11 @@ GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	botocore<2.0a.0,>=1.33.2
-	botocore[crt]<2.0a.0,>=1.33.2; extra == "crt"
+	botocore[crt]<2.0a.0,>=1.33.2; extra == 'crt'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/botocore-1.33.2[${PYTHON_USEDEP}] <dev-python/botocore-2.0a.0[${PYTHON_USEDEP}]
-	crt? ( >=dev-python/botocore-1.33.2[crt,${PYTHON_USEDEP}] <dev-python/botocore-2.0a.0[crt,${PYTHON_USEDEP}] )
+	>=dev-python/botocore-1.33.2[${PYTHON_USEDEP}] <dev-python/botocore-2.0_alpha0[${PYTHON_USEDEP}]
+	crt? ( >=dev-python/botocore-1.33.2[crt,${PYTHON_USEDEP}] <dev-python/botocore-2.0_alpha0[crt,${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/botocore-2[${PYTHON_USEDEP}]

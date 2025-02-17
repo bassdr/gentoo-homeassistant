@@ -21,14 +21,14 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	docutils
 	flit_core >=3.7.1
-	pygments-github-lexers ; extra == "doc"
-	pytest-cov ; extra == "test"
-	pytest>=2.7.3 ; extra == "test"
+	pygments-github-lexers ; extra == 'doc'
+	pytest-cov ; extra == 'test'
+	pytest>=2.7.3 ; extra == 'test'
 	requests
-	responses ; extra == "test"
-	sphinx ; extra == "doc"
-	sphinxcontrib_github_alt ; extra == "doc"
-	testpath ; extra == "test"
+	responses ; extra == 'test'
+	sphinx ; extra == 'doc'
+	sphinxcontrib_github_alt ; extra == 'doc'
+	testpath ; extra == 'test'
 	tomli
 	tomli-w
 "

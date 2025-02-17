@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	attrs; extra == "attrs"
+	attrs; extra == 'attrs'
 	pydantic-core
 	pydantic>=2
 	pygraphviz
 	sortedcontainers-pydantic
 	typenames>=1.3
 	typer
-	typing-extensions>4; python_version < "3.12"
+	typing-extensions>4; python_version < '3.12'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	attrs? ( dev-python/attrs[${PYTHON_USEDEP}] )

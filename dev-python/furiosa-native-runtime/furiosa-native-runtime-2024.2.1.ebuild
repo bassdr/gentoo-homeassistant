@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyYAML
 	furiosa-native-compiler==2024.2.0
-	mnist; extra == "test"
+	mnist; extra == 'test'
 	numpy~=1.24
-	onnxruntime~=1.15.1; extra == "test"
+	onnxruntime~=1.15.1; extra == 'test'
 	pandas~=2.0.3
 	pyarrow~=12.0
-	pytest-asyncio~=0.21; extra == "test"
-	pytest~=7.3; extra == "test"
+	pytest-asyncio~=0.21; extra == 'test'
+	pytest~=7.3; extra == 'test'
 	requests==2.29.0
 	torch==2.4.1
 	transformers==4.44.2

@@ -17,15 +17,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
-	cffi; platform_python_implementation == "CPython"
-	cffi>=1.17.0rc1; platform_python_implementation == "CPython" and python_version >= "3.13a0"
-	manuel; extra == "test"
-	repoze.sphinx.autointerface; extra == "docs"
-	sphinx-rtd-theme; extra == "docs"
+	Sphinx; extra == 'docs'
+	cffi; platform_python_implementation == 'CPython'
+	cffi>=1.17.0rc1; platform_python_implementation == 'CPython' and python_version >= '3.13a0'
+	manuel; extra == 'test'
+	repoze.sphinx.autointerface; extra == 'docs'
+	sphinx-rtd-theme; extra == 'docs'
 	zope.deferredimport
 	zope.interface
-	zope.testrunner; extra == "test"
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep '>=dev-python/cffi-1.17.0_rc1[${PYTHON_USEDEP}]' python3_13{,t})

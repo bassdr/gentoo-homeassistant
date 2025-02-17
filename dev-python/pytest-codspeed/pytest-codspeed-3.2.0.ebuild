@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cffi>=1.17.1
-	importlib-metadata>=8.5.0; python_version < "3.10"
-	mypy~=1.11.2; extra == "lint"
-	pytest-benchmark~=5.0.0; extra == "compat"
-	pytest-cov~=4.0.0; extra == "test"
-	pytest-xdist~=3.6.1; extra == "compat"
+	importlib-metadata>=8.5.0; python_version < '3.10'
+	mypy~=1.11.2; extra == 'lint'
+	pytest-benchmark~=5.0.0; extra == 'compat'
+	pytest-cov~=4.0.0; extra == 'test'
+	pytest-xdist~=3.6.1; extra == 'compat'
 	pytest>=3.8
-	pytest~=7.0; extra == "test"
+	pytest~=7.0; extra == 'test'
 	rich>=13.8.1
-	ruff~=0.6.5; extra == "lint"
+	ruff~=0.6.5; extra == 'lint'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.17.1[${PYTHON_USEDEP}]

@@ -26,7 +26,7 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp>=3.0.0
-	async-timeout==4.0.3; python_version < "3.11"
+	async-timeout==4.0.3; python_version < '3.11'
 	awesomeversion>=21.10.1
 	backoff>=2.2.0
 	deepmerge>=1.1.0

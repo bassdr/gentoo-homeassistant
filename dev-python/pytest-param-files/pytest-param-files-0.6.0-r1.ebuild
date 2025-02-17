@@ -24,7 +24,7 @@ GENERATED_IUSE="codecov"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	pytest
-	pytest-cov ; extra == "codecov"
+	pytest-cov ; extra == 'codecov'
 	ruamel.yaml>=0.15
 "
 GENERATED_RDEPEND="${RDEPEND}

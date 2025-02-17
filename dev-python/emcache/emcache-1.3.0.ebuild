@@ -5,7 +5,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/emcache/${PN}/archive/refs/tags/v${PV}0.tar.gz -> ${P}.gh.tar.gz"
 
 DESCRIPTION=""
 HOMEPAGE="

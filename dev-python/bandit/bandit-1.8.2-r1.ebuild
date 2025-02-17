@@ -19,23 +19,23 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="baseline sarif yaml"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	GitPython>=3.1.30; extra == "baseline"
-	PyYAML; extra == "yaml"
+	GitPython>=3.1.30; extra == 'baseline'
+	PyYAML; extra == 'yaml'
 	PyYAML>=5.3.1
-	beautifulsoup4>=4.8.0; extra == "test"
-	colorama>=0.3.9; platform_system == "Windows"
-	coverage>=4.5.4; extra == "test"
-	fixtures>=3.0.0; extra == "test"
-	flake8>=4.0.0; extra == "test"
-	jschema-to-python>=1.2.3; extra == "sarif"
-	pylint==1.9.4; extra == "test"
+	beautifulsoup4>=4.8.0; extra == 'test'
+	colorama>=0.3.9; platform_system == 'Windows'
+	coverage>=4.5.4; extra == 'test'
+	fixtures>=3.0.0; extra == 'test'
+	flake8>=4.0.0; extra == 'test'
+	jschema-to-python>=1.2.3; extra == 'sarif'
+	pylint==1.9.4; extra == 'test'
 	rich
-	sarif-om>=1.0.4; extra == "sarif"
-	stestr>=2.5.0; extra == "test"
+	sarif-om>=1.0.4; extra == 'sarif'
+	stestr>=2.5.0; extra == 'test'
 	stevedore>=1.20.0
-	testscenarios>=0.5.0; extra == "test"
-	testtools>=2.3.0; extra == "test"
-	tomli>=1.1.0; python_version < "3.11" and extra == "toml"
+	testscenarios>=0.5.0; extra == 'test'
+	testtools>=2.3.0; extra == 'test'
+	tomli>=1.1.0; python_version < '3.11' and extra == 'toml'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	baseline? ( >=dev-python/gitpython-3.1.30[${PYTHON_USEDEP}] )

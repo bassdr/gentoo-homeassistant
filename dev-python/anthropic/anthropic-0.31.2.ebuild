@@ -4,6 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 
@@ -18,18 +19,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="bedrock vertex"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.md"
 
 REQUIRES_DIST="
 	anyio<5,>=3.5.0
-	boto3>=1.28.57; extra == "bedrock"
-	botocore>=1.31.57; extra == "bedrock"
-	cached-property; python_version < "3.8"
+	boto3>=1.28.57; extra == 'bedrock'
+	botocore>=1.31.57; extra == 'bedrock'
+	cached-property; python_version < '3.8'
 	distro<2,>=1.7.0
-	google-auth<3,>=2; extra == "vertex"
+	google-auth<3,>=2; extra == 'vertex'
 	httpx<1,>=0.23.0
 	jiter<1,>=0.4.0
 	pydantic<3,>=1.9.0
@@ -37,7 +37,7 @@ REQUIRES_DIST="
 	tokenizers>=0.13.0
 	typing-extensions<5,>=4.7
 "
-GENERATED_RDEPEND="${RDEPEND}
+GENERATED_RDEPEND="${RDEPEND} $(python_gen_cond_dep '
 	>=dev-python/anyio-3.5.0[${PYTHON_USEDEP}] <dev-python/anyio-5[${PYTHON_USEDEP}]
 	bedrock? ( >=dev-python/boto3-1.28.57[${PYTHON_USEDEP}] )
 	bedrock? ( >=dev-python/botocore-1.31.57[${PYTHON_USEDEP}] )
@@ -48,17 +48,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.7[${PYTHON_USEDEP}] <dev-python/typing-extensions-5[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.13.0[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	dev-python/anyio[${PYTHON_USEDEP}]
-	dev-python/distro[${PYTHON_USEDEP}]
-	dev-python/sniffio[${PYTHON_USEDEP}]
-	sci-libs/tokenizers[${PYTHON_USEDEP}]
-	"
-	# WIP: dev-python/jiter[${PYTHON_USEDEP}]
+	>=sci-libs/tokenizers-0.13.0[${PYTHON_SINGLE_USEDEP}]
+')"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

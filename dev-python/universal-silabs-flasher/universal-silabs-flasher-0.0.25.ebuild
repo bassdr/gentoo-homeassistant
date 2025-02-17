@@ -23,19 +23,19 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp
-	async-timeout; python_version < "3.11"
+	async-timeout; python_version < '3.11'
 	bellows>=0.42.0
 	click>=8.0.0
 	coloredlogs
 	crc
-	gpiod; platform_system == "Linux"
+	gpiod; platform_system == 'Linux'
 	pyserial-asyncio-fast
-	pytest-asyncio>=0.21.0; extra == "testing"
-	pytest-cov>=4.1.0; extra == "testing"
-	pytest-github-actions-annotate-failures; extra == "testing"
-	pytest-mock>=3.10.0; extra == "testing"
-	pytest-timeout>=2.1.0; extra == "testing"
-	pytest>=7.3.1; extra == "testing"
+	pytest-asyncio>=0.21.0; extra == 'testing'
+	pytest-cov>=4.1.0; extra == 'testing'
+	pytest-github-actions-annotate-failures; extra == 'testing'
+	pytest-mock>=3.10.0; extra == 'testing'
+	pytest-timeout>=2.1.0; extra == 'testing'
+	pytest>=7.3.1; extra == 'testing'
 	typing-extensions
 	zigpy>=0.70.0
 "

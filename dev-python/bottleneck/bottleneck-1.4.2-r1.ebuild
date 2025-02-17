@@ -24,10 +24,10 @@ DEPEND="
 	>=dev-python/numpy-1.9.1:=[${PYTHON_USEDEP}]
 "
 REQUIRES_DIST="
-	gitpython; extra == "doc"
+	gitpython; extra == 'doc'
 	numpy
-	numpydoc; extra == "doc"
-	sphinx; extra == "doc"
+	numpydoc; extra == 'doc'
+	sphinx; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/gitpython[${PYTHON_USEDEP}] )

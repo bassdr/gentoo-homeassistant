@@ -20,37 +20,37 @@ REQUIRES_DIST="
 	blis<1.1.0,>=1.0.0
 	catalogue<2.1.0,>=2.0.4
 	confection<1.0.0,>=0.0.1
-	cupy-cuda100>=5.0.0b4; extra == "cuda100"
-	cupy-cuda101>=5.0.0b4; extra == "cuda101"
-	cupy-cuda102>=5.0.0b4; extra == "cuda102"
-	cupy-cuda110>=5.0.0b4; extra == "cuda110"
-	cupy-cuda111>=5.0.0b4; extra == "cuda111"
-	cupy-cuda112>=5.0.0b4; extra == "cuda112"
-	cupy-cuda113>=5.0.0b4; extra == "cuda113"
-	cupy-cuda114>=5.0.0b4; extra == "cuda114"
-	cupy-cuda115>=5.0.0b4; extra == "cuda115"
-	cupy-cuda116>=5.0.0b4; extra == "cuda116"
-	cupy-cuda117>=5.0.0b4; extra == "cuda117"
-	cupy-cuda11x>=11.0.0; extra == "cuda11x"
-	cupy-cuda12x>=11.5.0; extra == "cuda12x"
-	cupy-cuda80>=5.0.0b4; extra == "cuda80"
-	cupy-cuda90>=5.0.0b4; extra == "cuda90"
-	cupy-cuda91>=5.0.0b4; extra == "cuda91"
-	cupy-cuda92>=5.0.0b4; extra == "cuda92"
-	cupy-wheel>=11.0.0; extra == "cuda-autodetect"
-	cupy>=5.0.0b4; extra == "cuda"
+	cupy-cuda100>=5.0.0b4; extra == 'cuda100'
+	cupy-cuda101>=5.0.0b4; extra == 'cuda101'
+	cupy-cuda102>=5.0.0b4; extra == 'cuda102'
+	cupy-cuda110>=5.0.0b4; extra == 'cuda110'
+	cupy-cuda111>=5.0.0b4; extra == 'cuda111'
+	cupy-cuda112>=5.0.0b4; extra == 'cuda112'
+	cupy-cuda113>=5.0.0b4; extra == 'cuda113'
+	cupy-cuda114>=5.0.0b4; extra == 'cuda114'
+	cupy-cuda115>=5.0.0b4; extra == 'cuda115'
+	cupy-cuda116>=5.0.0b4; extra == 'cuda116'
+	cupy-cuda117>=5.0.0b4; extra == 'cuda117'
+	cupy-cuda11x>=11.0.0; extra == 'cuda11x'
+	cupy-cuda12x>=11.5.0; extra == 'cuda12x'
+	cupy-cuda80>=5.0.0b4; extra == 'cuda80'
+	cupy-cuda90>=5.0.0b4; extra == 'cuda90'
+	cupy-cuda91>=5.0.0b4; extra == 'cuda91'
+	cupy-cuda92>=5.0.0b4; extra == 'cuda92'
+	cupy-wheel>=11.0.0; extra == 'cuda-autodetect'
+	cupy>=5.0.0b4; extra == 'cuda'
 	cymem<2.1.0,>=2.0.2
-	ml-datasets<0.3.0,>=0.2.0; extra == "datasets"
+	ml-datasets<0.3.0,>=0.2.0; extra == 'datasets'
 	murmurhash<1.1.0,>=1.0.2
-	mxnet<1.6.0,>=1.5.1; extra == "mxnet"
+	mxnet<1.6.0,>=1.5.1; extra == 'mxnet'
 	numpy<3.0.0,>=2.0.0
 	packaging>=20.0
 	preshed<3.1.0,>=3.0.2
 	pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4
 	setuptools
 	srsly<3.0.0,>=2.4.0
-	tensorflow<2.6.0,>=2.0.0; extra == "tensorflow"
-	torch>=1.6.0; extra == "torch"
+	tensorflow<2.6.0,>=2.0.0; extra == 'tensorflow'
+	torch>=1.6.0; extra == 'torch'
 	wasabi<1.2.0,>=0.8.1
 "
 GENERATED_RDEPEND="${RDEPEND}

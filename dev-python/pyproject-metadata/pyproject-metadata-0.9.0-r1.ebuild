@@ -22,17 +22,17 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	exceptiongroup; extra == "test" and python_version < "3.11"
-	furo>=2023.9.10; extra == "docs"
-	myst-parser; extra == "docs"
+	exceptiongroup; extra == 'test' and python_version < '3.11'
+	furo>=2023.9.10; extra == 'docs'
+	myst-parser; extra == 'docs'
 	packaging>=19.0
-	pytest-cov[toml]>=2; extra == "test"
-	pytest>=6.2.4; extra == "test"
-	sphinx-autodoc-typehints; extra == "docs"
-	sphinx-autodoc-typehints>=1.10.0; extra == "docs"
-	sphinx>=7.0; extra == "docs"
-	tomli>=1.0.0; extra == "test" and python_version < "3.11"
-	typing_extensions; python_version < "3.8"
+	pytest-cov[toml]>=2; extra == 'test'
+	pytest>=6.2.4; extra == 'test'
+	sphinx-autodoc-typehints; extra == 'docs'
+	sphinx-autodoc-typehints>=1.10.0; extra == 'docs'
+	sphinx>=7.0; extra == 'docs'
+	tomli>=1.0.0; extra == 'test' and python_version < '3.11'
+	typing_extensions; python_version < '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/furo-2023.9.10[${PYTHON_USEDEP}] )

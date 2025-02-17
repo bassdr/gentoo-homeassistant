@@ -25,37 +25,37 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="async docs orjson pyarrow requests vectorstore-mmr"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	aiohttp; extra == "dev"
-	aiohttp<4,>=3; extra == "async"
-	black; extra == "dev"
-	build; extra == "dev"
-	coverage; extra == "dev"
+	aiohttp; extra == 'dev'
+	aiohttp<4,>=3; extra == 'async'
+	black; extra == 'dev'
+	build; extra == 'dev'
+	coverage; extra == 'dev'
 	elastic-transport<9,>=8.15.1
-	isort; extra == "dev"
-	jinja2; extra == "dev"
-	mapbox-vector-tile; extra == "dev"
-	nox; extra == "dev"
-	numpy; extra == "dev"
-	numpy>=1; extra == "vectorstore-mmr"
-	orjson; extra == "dev"
-	orjson>=3; extra == "orjson"
-	pandas; extra == "dev"
-	pyarrow; extra == "dev"
-	pyarrow>=1; extra == "pyarrow"
-	pytest-asyncio; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
-	python-dateutil; extra == "dev"
-	pyyaml>=5.4; extra == "dev"
-	requests!=2.32.2,<3.0.0,>=2.4.0; extra == "requests"
-	requests<3,>=2; extra == "dev"
-	simsimd; extra == "dev"
-	simsimd>=3; extra == "vectorstore-mmr"
-	sphinx-autodoc-typehints; extra == "docs"
-	sphinx-rtd-theme>=2.0; extra == "docs"
-	sphinx; extra == "docs"
-	twine; extra == "dev"
-	unasync; extra == "dev"
+	isort; extra == 'dev'
+	jinja2; extra == 'dev'
+	mapbox-vector-tile; extra == 'dev'
+	nox; extra == 'dev'
+	numpy; extra == 'dev'
+	numpy>=1; extra == 'vectorstore-mmr'
+	orjson; extra == 'dev'
+	orjson>=3; extra == 'orjson'
+	pandas; extra == 'dev'
+	pyarrow; extra == 'dev'
+	pyarrow>=1; extra == 'pyarrow'
+	pytest-asyncio; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
+	python-dateutil; extra == 'dev'
+	pyyaml>=5.4; extra == 'dev'
+	requests!=2.32.2,<3.0.0,>=2.4.0; extra == 'requests'
+	requests<3,>=2; extra == 'dev'
+	simsimd; extra == 'dev'
+	simsimd>=3; extra == 'vectorstore-mmr'
+	sphinx-autodoc-typehints; extra == 'docs'
+	sphinx-rtd-theme>=2.0; extra == 'docs'
+	sphinx; extra == 'docs'
+	twine; extra == 'dev'
+	unasync; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/aiohttp-3[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}] )

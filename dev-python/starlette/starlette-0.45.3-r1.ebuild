@@ -27,12 +27,12 @@ GENERATED_IUSE="full"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	anyio<5,>=3.6.2
-	httpx<0.29.0,>=0.27.0; extra == "full"
-	itsdangerous; extra == "full"
-	jinja2; extra == "full"
-	python-multipart>=0.0.18; extra == "full"
-	pyyaml; extra == "full"
-	typing-extensions>=3.10.0; python_version < "3.10"
+	httpx<0.29.0,>=0.27.0; extra == 'full'
+	itsdangerous; extra == 'full'
+	jinja2; extra == 'full'
+	python-multipart>=0.0.18; extra == 'full'
+	pyyaml; extra == 'full'
+	typing-extensions>=3.10.0; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/anyio-3.6.2[${PYTHON_USEDEP}] <dev-python/anyio-5[${PYTHON_USEDEP}]

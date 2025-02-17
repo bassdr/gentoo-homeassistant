@@ -22,15 +22,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	black>=20.8b1; extra == "test"
-	flake8>=3.8.3; extra == "test"
-	mypy-extensions>=0.4.3; extra == "test"
-	mypy>=0.812; extra == "test"
-	pytest-asyncio>=0.14.0; extra == "test"
-	pytest>=5.4.3; extra == "test"
+	black>=20.8b1; extra == 'test'
+	flake8>=3.8.3; extra == 'test'
+	mypy-extensions>=0.4.3; extra == 'test'
+	mypy>=0.812; extra == 'test'
+	pytest-asyncio>=0.14.0; extra == 'test'
+	pytest>=5.4.3; extra == 'test'
 	setuptools
-	typed-ast>=1.4.3; extra == "test"
-	typing-extensions>=3.10.0.0; extra == "test"
+	typed-ast>=1.4.3; extra == 'test'
+	typing-extensions>=3.10.0.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]

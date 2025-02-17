@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiomysql>=0.2.0
-	apache-airflow-providers-amazon; extra == "amazon"
+	apache-airflow-providers-amazon; extra == 'amazon'
 	apache-airflow-providers-common-sql>=1.20.0
-	apache-airflow-providers-openlineage; extra == "openlineage"
-	apache-airflow-providers-presto; extra == "presto"
-	apache-airflow-providers-trino; extra == "trino"
-	apache-airflow-providers-vertica; extra == "vertica"
+	apache-airflow-providers-openlineage; extra == 'openlineage'
+	apache-airflow-providers-presto; extra == 'presto'
+	apache-airflow-providers-trino; extra == 'trino'
+	apache-airflow-providers-vertica; extra == 'vertica'
 	apache-airflow>=2.9.0
 	mysql-connector-python>=8.0.29
-	mysqlclient>=1.4.0; sys_platform != "darwin"
+	mysqlclient>=1.4.0; sys_platform != 'darwin'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiomysql-0.2.0[${PYTHON_USEDEP}]

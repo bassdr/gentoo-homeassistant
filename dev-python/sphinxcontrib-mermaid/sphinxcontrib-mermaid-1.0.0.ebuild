@@ -15,13 +15,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	defusedxml; extra == "test"
-	myst-parser; extra == "test"
-	pytest; extra == "test"
+	defusedxml; extra == 'test'
+	myst-parser; extra == 'test'
+	pytest; extra == 'test'
 	pyyaml
-	ruff; extra == "test"
+	ruff; extra == 'test'
 	sphinx
-	sphinx; extra == "test"
+	sphinx; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]

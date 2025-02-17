@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	numpy
-	pytest; extra == "test"
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]

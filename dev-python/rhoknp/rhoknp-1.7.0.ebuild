@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	PyYAML (>=6.0,<7.0) ; extra == "cli"
-	fastapi (>=0.92.0) ; extra == "cli"
-	jinja2 (>=3.1,<4.0) ; extra == "cli"
-	pygments (>=2.16,<3.0) ; extra == "cli"
-	rich (>=12.6) ; extra == "cli"
-	typer (>=0.7) ; extra == "cli"
-	typing-extensions (>=4.4) ; python_version < "3.12"
-	uvicorn (>=0.21.0) ; extra == "cli"
+	PyYAML (>=6.0,<7.0) ; extra == 'cli'
+	fastapi (>=0.92.0) ; extra == 'cli'
+	jinja2 (>=3.1,<4.0) ; extra == 'cli'
+	pygments (>=2.16,<3.0) ; extra == 'cli'
+	rich (>=12.6) ; extra == 'cli'
+	typer (>=0.7) ; extra == 'cli'
+	typing-extensions (>=4.4) ; python_version < '3.12'
+	uvicorn (>=0.21.0) ; extra == 'cli'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/fastapi-0.92.0[${PYTHON_USEDEP}] )

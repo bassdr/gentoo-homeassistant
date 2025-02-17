@@ -18,18 +18,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	click>=7.1.2
-	coincidence>=0.1.0; extra == "all"
-	coincidence>=0.1.0; extra == "testing"
-	colorama>=0.4.3; python_version < "3.10" and platform_system == "Windows"
+	coincidence>=0.1.0; extra == 'all'
+	coincidence>=0.1.0; extra == 'testing'
+	colorama>=0.4.3; python_version < '3.10' and platform_system == 'Windows'
 	deprecation-alias>=0.1.1
 	domdf-python-tools>=3.8.0
 	mistletoe>=0.7.2
-	psutil>=5.8.0; extra == "all"
-	psutil>=5.8.0; extra == "terminals"
-	pytest-regressions>=2.0.2; extra == "all"
-	pytest-regressions>=2.0.2; extra == "testing"
-	pytest>=6.0.0; extra == "all"
-	pytest>=6.0.0; extra == "testing"
+	psutil>=5.8.0; extra == 'all'
+	psutil>=5.8.0; extra == 'terminals'
+	pytest-regressions>=2.0.2; extra == 'all'
+	pytest-regressions>=2.0.2; extra == 'testing'
+	pytest>=6.0.0; extra == 'all'
+	pytest>=6.0.0; extra == 'testing'
 	typing-extensions!=3.10.0.1,>=3.10.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

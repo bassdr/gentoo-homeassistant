@@ -26,14 +26,14 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx (>=5.0,<6.0) ; extra == "docs"
+	Sphinx (>=5.0,<6.0) ; extra == 'docs'
 	bleak (>=0.19.2)
 	bleak-retry-connector (>=2.13.0)
 	bluetooth-data-tools (>=0.1.2)
 	bluetooth-sensor-state-data (>=1.6.0)
 	home-assistant-bluetooth (>=1.6.0)
-	myst-parser (>=0.18,<0.19) ; extra == "docs"
-	sphinx-rtd-theme (>=1.0,<2.0) ; extra == "docs"
+	myst-parser (>=0.18,<0.19) ; extra == 'docs'
+	sphinx-rtd-theme (>=1.0,<2.0) ; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.19.2[${PYTHON_USEDEP}]

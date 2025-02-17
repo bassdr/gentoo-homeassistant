@@ -18,22 +18,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	bitsandbytes[test]; extra == "dev"
-	build<2,>=1.0.0; extra == "dev"
-	einops~=0.8.0; extra == "test"
-	hf-doc-builder==0.5.0; extra == "docs"
-	lion-pytorch==0.2.3; extra == "test"
-	matplotlib; extra == "benchmark"
+	bitsandbytes[test]; extra == 'dev'
+	build<2,>=1.0.0; extra == 'dev'
+	einops~=0.8.0; extra == 'test'
+	hf-doc-builder==0.5.0; extra == 'docs'
+	lion-pytorch==0.2.3; extra == 'test'
+	matplotlib; extra == 'benchmark'
 	numpy>=1.17
-	pandas; extra == "benchmark"
-	pre-commit<4,>=3.5.0; extra == "dev"
-	pytest~=8.3; extra == "test"
-	ruff==0.6.9; extra == "dev"
-	scipy<2,>=1.10.1; python_version < "3.9" and extra == "test"
-	scipy<2,>=1.11.4; python_version >= "3.9" and extra == "test"
+	pandas; extra == 'benchmark'
+	pre-commit<4,>=3.5.0; extra == 'dev'
+	pytest~=8.3; extra == 'test'
+	ruff==0.6.9; extra == 'dev'
+	scipy<2,>=1.10.1; python_version < '3.9' and extra == 'test'
+	scipy<2,>=1.11.4; python_version >= '3.9' and extra == 'test'
 	torch<3,>=2.0
-	transformers<5,>=4.30.1; extra == "test"
-	wheel<1,>=0.42; extra == "dev"
+	transformers<5,>=4.30.1; extra == 'test'
+	wheel<1,>=0.42; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( ~dev-python/hf-doc-builder-0.5.0[${PYTHON_USEDEP}] )

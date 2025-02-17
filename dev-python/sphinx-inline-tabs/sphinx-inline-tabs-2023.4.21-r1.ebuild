@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	furo ; extra == "doc"
-	myst-parser ; extra == "doc"
-	pytest ; extra == "test"
-	pytest-cov ; extra == "test"
-	pytest-xdist ; extra == "test"
+	furo ; extra == 'doc'
+	myst-parser ; extra == 'doc'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-xdist ; extra == 'test'
 	sphinx >= 3
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -21,11 +21,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
 	requests>=2.20.0
-	tox; extra == "dev"
-	yaml; extra == "dev"
+	tox; extra == 'dev'
+	yaml; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]

@@ -19,27 +19,27 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc etcd gevent mongodb redis rethinkdb sqlalchemy tornado twisted zookeeper"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	APScheduler[etcd,mongodb,redis,rethinkdb,sqlalchemy,tornado,zookeeper]; extra == "test"
-	PySide6; (platform_python_implementation == "CPython" and python_version < "3.14") and extra == "test"
-	anyio>=4.5.2; extra == "test"
-	backports.zoneinfo; python_version < "3.9"
-	etcd3; extra == "etcd"
-	gevent; extra == "gevent"
-	gevent; python_version < "3.14" and extra == "test"
-	kazoo; extra == "zookeeper"
-	packaging; extra == "doc"
-	protobuf<=3.21.0; extra == "etcd"
-	pymongo>=3.0; extra == "mongodb"
-	pytest; extra == "test"
-	pytz; extra == "test"
-	redis>=3.0; extra == "redis"
-	rethinkdb>=2.4.0; extra == "rethinkdb"
-	sphinx-rtd-theme>=1.3.0; extra == "doc"
-	sphinx; extra == "doc"
-	sqlalchemy>=1.4; extra == "sqlalchemy"
-	tornado>=4.3; extra == "tornado"
-	twisted; extra == "twisted"
-	twisted; python_version < "3.14" and extra == "test"
+	APScheduler[etcd,mongodb,redis,rethinkdb,sqlalchemy,tornado,zookeeper]; extra == 'test'
+	PySide6; (platform_python_implementation == 'CPython' and python_version < '3.14') and extra == 'test'
+	anyio>=4.5.2; extra == 'test'
+	backports.zoneinfo; python_version < '3.9'
+	etcd3; extra == 'etcd'
+	gevent; extra == 'gevent'
+	gevent; python_version < '3.14' and extra == 'test'
+	kazoo; extra == 'zookeeper'
+	packaging; extra == 'doc'
+	protobuf<=3.21.0; extra == 'etcd'
+	pymongo>=3.0; extra == 'mongodb'
+	pytest; extra == 'test'
+	pytz; extra == 'test'
+	redis>=3.0; extra == 'redis'
+	rethinkdb>=2.4.0; extra == 'rethinkdb'
+	sphinx-rtd-theme>=1.3.0; extra == 'doc'
+	sphinx; extra == 'doc'
+	sqlalchemy>=1.4; extra == 'sqlalchemy'
+	tornado>=4.3; extra == 'tornado'
+	twisted; extra == 'twisted'
+	twisted; python_version < '3.14' and extra == 'test'
 	tzlocal>=3.0
 "
 GENERATED_RDEPEND="${RDEPEND}

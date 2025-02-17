@@ -18,32 +18,32 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage-conditional-plugin>=0.5; extra == "testing"
-	coverage[toml]>=6.0; extra == "testing"
+	coverage-conditional-plugin>=0.5; extra == 'testing'
+	coverage[toml]>=6.0; extra == 'testing'
 	docutils>=0.7
-	importlib-metadata>=1.6; python_version <= "3.8"
-	m2r2>=0.3.2; extra == "docs"
-	mypy>=1.0; extra == "type-check"
+	importlib-metadata>=1.6; python_version <= '3.8'
+	m2r2>=0.3.2; extra == 'docs'
+	mypy>=1.0; extra == 'type-check'
 	pydantic>=2
-	pytest-cov>=3.0; extra == "testing"
-	pytest-mock>=3.7; extra == "testing"
-	pytest-randomly>=3.0; extra == "testing"
-	pytest-sugar>=0.9.5; extra == "testing"
-	pytest>=7.2; extra == "testing"
-	pyyaml>=6.0.0; extra == "yaml"
-	rstcheck-core[docs,sphinx,testing,toml,type-check,yaml]; extra == "dev"
-	sphinx!=7.2.5,>=5.0; extra == "docs"
-	sphinx-autobuild>=2021.3.14; extra == "docs"
-	sphinx-autodoc-typehints>=1.15; extra == "docs"
-	sphinx-rtd-theme>=1.2; extra == "docs"
-	sphinx>=5.0; extra == "sphinx"
-	sphinxcontrib-apidoc>=0.3; extra == "docs"
-	sphinxcontrib-spelling>=7.3; extra == "docs"
-	tomli>=2.0; python_version <= "3.10" and extra == "toml"
-	tox>=3.15; extra == "dev"
-	types-PyYAML>=6.0.0; extra == "type-check"
-	types-docutils>=0.18; extra == "type-check"
-	typing-extensions>=3.7.4; python_version <= "3.8"
+	pytest-cov>=3.0; extra == 'testing'
+	pytest-mock>=3.7; extra == 'testing'
+	pytest-randomly>=3.0; extra == 'testing'
+	pytest-sugar>=0.9.5; extra == 'testing'
+	pytest>=7.2; extra == 'testing'
+	pyyaml>=6.0.0; extra == 'yaml'
+	rstcheck-core[docs,sphinx,testing,toml,type-check,yaml]; extra == 'dev'
+	sphinx!=7.2.5,>=5.0; extra == 'docs'
+	sphinx-autobuild>=2021.3.14; extra == 'docs'
+	sphinx-autodoc-typehints>=1.15; extra == 'docs'
+	sphinx-rtd-theme>=1.2; extra == 'docs'
+	sphinx>=5.0; extra == 'sphinx'
+	sphinxcontrib-apidoc>=0.3; extra == 'docs'
+	sphinxcontrib-spelling>=7.3; extra == 'docs'
+	tomli>=2.0; python_version <= '3.10' and extra == 'toml'
+	tox>=3.15; extra == 'dev'
+	types-PyYAML>=6.0.0; extra == 'type-check'
+	types-docutils>=0.18; extra == 'type-check'
+	typing-extensions>=3.7.4; python_version <= '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.7[${PYTHON_USEDEP}]

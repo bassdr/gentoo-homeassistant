@@ -15,24 +15,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coveralls<5,>=3.3; extra == "dev"
-	coveralls<5,>=3.3; extra == "test"
+	coveralls<5,>=3.3; extra == 'dev'
+	coveralls<5,>=3.3; extra == 'test'
 	graphql-core<3.3,>=3.1
 	graphql-relay<3.3,>=3.1
-	mypy<2,>=1.10; extra == "dev"
-	pytest-asyncio<2,>=0.16; extra == "dev"
-	pytest-asyncio<2,>=0.16; extra == "test"
-	pytest-benchmark<5,>=4; extra == "dev"
-	pytest-benchmark<5,>=4; extra == "test"
-	pytest-cov<6,>=5; extra == "dev"
-	pytest-cov<6,>=5; extra == "test"
-	pytest-mock<4,>=3; extra == "dev"
-	pytest-mock<4,>=3; extra == "test"
-	pytest<9,>=8; extra == "dev"
-	pytest<9,>=8; extra == "test"
+	mypy<2,>=1.10; extra == 'dev'
+	pytest-asyncio<2,>=0.16; extra == 'dev'
+	pytest-asyncio<2,>=0.16; extra == 'test'
+	pytest-benchmark<5,>=4; extra == 'dev'
+	pytest-benchmark<5,>=4; extra == 'test'
+	pytest-cov<6,>=5; extra == 'dev'
+	pytest-cov<6,>=5; extra == 'test'
+	pytest-mock<4,>=3; extra == 'dev'
+	pytest-mock<4,>=3; extra == 'test'
+	pytest<9,>=8; extra == 'dev'
+	pytest<9,>=8; extra == 'test'
 	python-dateutil<3,>=2.7.0
-	ruff==0.5.0; extra == "dev"
-	types-python-dateutil<3,>=2.8.1; extra == "dev"
+	ruff==0.5.0; extra == 'dev'
+	types-python-dateutil<3,>=2.8.1; extra == 'dev'
 	typing-extensions<5,>=4.7.1
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -18,82 +18,82 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiofiles>=0.6.0
-	aioquic; extra == "http3"
-	autodocsumm>=0.2.11; extra == "all"
-	autodocsumm>=0.2.11; extra == "docs"
-	bandit; extra == "all"
-	bandit; extra == "dev"
-	bandit; extra == "test"
-	beautifulsoup4; extra == "all"
-	beautifulsoup4; extra == "dev"
-	beautifulsoup4; extra == "test"
-	chardet==3.*; extra == "all"
-	chardet==3.*; extra == "dev"
-	chardet==3.*; extra == "test"
-	coverage; extra == "all"
-	coverage; extra == "dev"
-	coverage; extra == "test"
-	cryptography; extra == "all"
-	cryptography; extra == "dev"
-	docutils; extra == "all"
-	docutils; extra == "dev"
-	docutils; extra == "docs"
-	docutils; extra == "test"
-	enum-tools[sphinx]; extra == "all"
-	enum-tools[sphinx]; extra == "docs"
+	aioquic; extra == 'http3'
+	autodocsumm>=0.2.11; extra == 'all'
+	autodocsumm>=0.2.11; extra == 'docs'
+	bandit; extra == 'all'
+	bandit; extra == 'dev'
+	bandit; extra == 'test'
+	beautifulsoup4; extra == 'all'
+	beautifulsoup4; extra == 'dev'
+	beautifulsoup4; extra == 'test'
+	chardet==3.*; extra == 'all'
+	chardet==3.*; extra == 'dev'
+	chardet==3.*; extra == 'test'
+	coverage; extra == 'all'
+	coverage; extra == 'dev'
+	coverage; extra == 'test'
+	cryptography; extra == 'all'
+	cryptography; extra == 'dev'
+	docutils; extra == 'all'
+	docutils; extra == 'dev'
+	docutils; extra == 'docs'
+	docutils; extra == 'test'
+	enum-tools[sphinx]; extra == 'all'
+	enum-tools[sphinx]; extra == 'docs'
 	html5tagger>=1.2.1
 	httptools>=0.0.10
-	m2r2; extra == "all"
-	m2r2; extra == "docs"
-	mistune<2.0.0; extra == "all"
-	mistune<2.0.0; extra == "docs"
+	m2r2; extra == 'all'
+	m2r2; extra == 'docs'
+	mistune<2.0.0; extra == 'all'
+	mistune<2.0.0; extra == 'docs'
 	multidict<7.0,>=5.0
-	mypy; extra == "all"
-	mypy; extra == "dev"
-	mypy; extra == "test"
-	pygments; extra == "all"
-	pygments; extra == "dev"
-	pygments; extra == "docs"
-	pygments; extra == "test"
-	pytest-benchmark; extra == "all"
-	pytest-benchmark; extra == "dev"
-	pytest-benchmark; extra == "test"
-	pytest-sanic; extra == "all"
-	pytest-sanic; extra == "dev"
-	pytest-sanic; extra == "test"
-	pytest>=8.2.2; extra == "all"
-	pytest>=8.2.2; extra == "dev"
-	pytest>=8.2.2; extra == "test"
-	ruff; extra == "all"
-	ruff; extra == "dev"
-	ruff; extra == "test"
-	sanic-ext; extra == "ext"
+	mypy; extra == 'all'
+	mypy; extra == 'dev'
+	mypy; extra == 'test'
+	pygments; extra == 'all'
+	pygments; extra == 'dev'
+	pygments; extra == 'docs'
+	pygments; extra == 'test'
+	pytest-benchmark; extra == 'all'
+	pytest-benchmark; extra == 'dev'
+	pytest-benchmark; extra == 'test'
+	pytest-sanic; extra == 'all'
+	pytest-sanic; extra == 'dev'
+	pytest-sanic; extra == 'test'
+	pytest>=8.2.2; extra == 'all'
+	pytest>=8.2.2; extra == 'dev'
+	pytest>=8.2.2; extra == 'test'
+	ruff; extra == 'all'
+	ruff; extra == 'dev'
+	ruff; extra == 'test'
+	sanic-ext; extra == 'ext'
 	sanic-routing>=23.12.0
-	sanic-testing>=23.6.0; extra == "all"
-	sanic-testing>=23.6.0; extra == "dev"
-	sanic-testing>=23.6.0; extra == "test"
+	sanic-testing>=23.6.0; extra == 'all'
+	sanic-testing>=23.6.0; extra == 'dev'
+	sanic-testing>=23.6.0; extra == 'test'
 	setuptools>=70.1.0
-	slotscheck<1,>=0.8.0; extra == "all"
-	slotscheck<1,>=0.8.0; extra == "dev"
-	slotscheck<1,>=0.8.0; extra == "test"
-	sphinx>=2.1.2; extra == "all"
-	sphinx>=2.1.2; extra == "docs"
-	sphinx_rtd_theme>=0.4.3; extra == "all"
-	sphinx_rtd_theme>=0.4.3; extra == "docs"
-	towncrier; extra == "all"
-	towncrier; extra == "dev"
-	tox; extra == "all"
-	tox; extra == "dev"
+	slotscheck<1,>=0.8.0; extra == 'all'
+	slotscheck<1,>=0.8.0; extra == 'dev'
+	slotscheck<1,>=0.8.0; extra == 'test'
+	sphinx>=2.1.2; extra == 'all'
+	sphinx>=2.1.2; extra == 'docs'
+	sphinx_rtd_theme>=0.4.3; extra == 'all'
+	sphinx_rtd_theme>=0.4.3; extra == 'docs'
+	towncrier; extra == 'all'
+	towncrier; extra == 'dev'
+	tox; extra == 'all'
+	tox; extra == 'dev'
 	tracerite>=1.0.0
-	types-ujson; (sys_platform != "win32" and implementation_name == "cpython") and extra == "all"
-	types-ujson; (sys_platform != "win32" and implementation_name == "cpython") and extra == "dev"
-	types-ujson; (sys_platform != "win32" and implementation_name == "cpython") and extra == "test"
+	types-ujson; (sys_platform != 'win32' and implementation_name == 'cpython') and extra == 'all'
+	types-ujson; (sys_platform != 'win32' and implementation_name == 'cpython') and extra == 'dev'
+	types-ujson; (sys_platform != 'win32' and implementation_name == 'cpython') and extra == 'test'
 	typing-extensions>=4.4.0
-	ujson>=1.35; sys_platform != "win32" and implementation_name == "cpython"
-	uvicorn; extra == "all"
-	uvicorn; extra == "dev"
-	uvicorn; extra == "test"
-	uvloop>=0.15.0; sys_platform != "win32" and implementation_name == "cpython"
+	ujson>=1.35; sys_platform != 'win32' and implementation_name == 'cpython'
+	uvicorn; extra == 'all'
+	uvicorn; extra == 'dev'
+	uvicorn; extra == 'test'
+	uvloop>=0.15.0; sys_platform != 'win32' and implementation_name == 'cpython'
 	websockets>=10.0
 "
 GENERATED_RDEPEND="${RDEPEND}

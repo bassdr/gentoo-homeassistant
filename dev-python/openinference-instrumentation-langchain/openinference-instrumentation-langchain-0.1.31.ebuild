@@ -17,25 +17,25 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	langchain-community==0.3.15; extra == "test"
-	langchain-core==0.2.43; extra == "type-check"
-	langchain-core==0.3.31; extra == "test"
-	langchain-core>=0.2.43; extra == "instruments"
-	langchain-google-vertexai==2.0.12; extra == "test"
-	langchain-openai==0.2.14; extra == "test"
-	langchain==0.3.15; extra == "test"
-	langsmith; extra == "test"
+	langchain-community==0.3.15; extra == 'test'
+	langchain-core==0.2.43; extra == 'type-check'
+	langchain-core==0.3.31; extra == 'test'
+	langchain-core>=0.2.43; extra == 'instruments'
+	langchain-google-vertexai==2.0.12; extra == 'test'
+	langchain-openai==0.2.14; extra == 'test'
+	langchain==0.3.15; extra == 'test'
+	langsmith; extra == 'test'
 	openinference-instrumentation>=0.1.17
 	openinference-semantic-conventions>=0.1.9
 	opentelemetry-api
 	opentelemetry-instrumentation
-	opentelemetry-sdk; extra == "test"
+	opentelemetry-sdk; extra == 'test'
 	opentelemetry-semantic-conventions
-	portpicker; extra == "test"
-	pytest-recording; extra == "test"
-	respx; extra == "test"
-	starlette; extra == "test"
-	uvicorn; extra == "test"
+	portpicker; extra == 'test'
+	pytest-recording; extra == 'test'
+	respx; extra == 'test'
+	starlette; extra == 'test'
+	uvicorn; extra == 'test'
 	wrapt
 "
 GENERATED_RDEPEND="${RDEPEND}

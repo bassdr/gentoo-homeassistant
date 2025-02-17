@@ -16,8 +16,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -31,11 +29,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/loguru[${PYTHON_USEDEP}]
 	dev-python/unasync[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/unasync[${PYTHON_USEDEP}]
-	dev-python/loguru[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

@@ -17,22 +17,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "dev"
-	bumpver; extra == "dev"
-	coveralls; extra == "dev"
-	flake8; extra == "dev"
-	isort; extra == "dev"
-	mypy; extra == "dev"
-	myst_parser; extra == "docs"
-	pip-tools; extra == "dev"
-	pylint; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
-	pyyaml; extra == "dev"
-	sphinx-markdown-builder>=0.6.0; extra == "docs"
-	sphinx-rtd-theme; extra == "docs"
-	sphinx; extra == "docs"
-	sphinx_rtd_dark_mode; extra == "docs"
+	black; extra == 'dev'
+	bumpver; extra == 'dev'
+	coveralls; extra == 'dev'
+	flake8; extra == 'dev'
+	isort; extra == 'dev'
+	mypy; extra == 'dev'
+	myst_parser; extra == 'docs'
+	pip-tools; extra == 'dev'
+	pylint; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
+	pyyaml; extra == 'dev'
+	sphinx-markdown-builder>=0.6.0; extra == 'docs'
+	sphinx-rtd-theme; extra == 'docs'
+	sphinx; extra == 'docs'
+	sphinx_rtd_dark_mode; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )

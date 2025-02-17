@@ -17,16 +17,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	html5lib; extra == "test"
-	numpy; extra == "supported"
-	pytest; extra == "test"
-	python-graphblas; extra == "supported"
-	scipy; extra == "supported"
-	scipy; extra == "test"
-	sparse; extra == "supported"
+	html5lib; extra == 'test'
+	numpy; extra == 'supported'
+	pytest; extra == 'test'
+	python-graphblas; extra == 'supported'
+	scipy; extra == 'supported'
+	scipy; extra == 'test'
+	sparse; extra == 'supported'
 	tabulate
-	tensorflow; extra == "supported"
-	torch>=2.0.0; extra == "supported"
+	tensorflow; extra == 'supported'
+	torch>=2.0.0; extra == 'supported'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	supported? ( dev-python/numpy[${PYTHON_USEDEP}] )

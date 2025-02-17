@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	blobfile>=2; extra == "blobfile"
+	blobfile>=2; extra == 'blobfile'
 	regex>=2022.1.18
 	requests>=2.26.0
 "

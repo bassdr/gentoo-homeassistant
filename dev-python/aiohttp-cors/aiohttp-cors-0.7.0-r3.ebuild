@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiohttp (>=1.1)
-	typing; python_version < "3.5"
+	typing; python_version < '3.5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-1.1[${PYTHON_USEDEP}]

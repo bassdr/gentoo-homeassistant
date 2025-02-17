@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	JPype1 (<=0.7.1) ; python_version <= "2.7" and platform_python_implementation != "Jython"
-	JPype1 ; python_version > "2.7" and platform_python_implementation != "Jython"
+	JPype1 (<=0.7.1) ; python_version <= '2.7' and platform_python_implementation != 'Jython'
+	JPype1 ; python_version > '2.7' and platform_python_implementation != 'Jython'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/jpype1[${PYTHON_USEDEP}]

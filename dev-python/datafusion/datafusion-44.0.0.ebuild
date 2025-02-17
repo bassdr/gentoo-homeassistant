@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	pyarrow>=11.0.0
-	typing-extensions; python_version < "3.13"
+	typing-extensions; python_version < '3.13'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyarrow-11.0.0[${PYTHON_USEDEP}]

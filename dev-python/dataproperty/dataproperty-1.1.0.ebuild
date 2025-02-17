@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	loguru<1,>=0.4.1; extra == "logging"
+	loguru<1,>=0.4.1; extra == 'logging'
 	mbstrdecoder<2,>=1.0.0
-	pytest-md-report>=0.6.2; extra == "test"
-	pytest>=6.0.1; extra == "test"
-	tcolorpy>=0.1.2; extra == "test"
+	pytest-md-report>=0.6.2; extra == 'test'
+	pytest>=6.0.1; extra == 'test'
+	tcolorpy>=0.1.2; extra == 'test'
 	typepy[datetime]<2,>=1.3.2
 "
 GENERATED_RDEPEND="${RDEPEND}

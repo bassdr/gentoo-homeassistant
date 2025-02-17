@@ -28,7 +28,7 @@ REQUIRES_DIST="
 	pytest-checkdocs >=2.4 ; extra == 'testing'
 	pytest-cov ; extra == 'testing'
 	pytest-enabler >=2.2 ; extra == 'testing'
-	pytest-mypy ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-mypy ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	pytest-ruff >=0.2.1 ; extra == 'testing'
 	rst.linker >=1.9 ; extra == 'docs'
 	sphinx <7.2.5 ; extra == 'docs'

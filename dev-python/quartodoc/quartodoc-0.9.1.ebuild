@@ -20,18 +20,18 @@ REQUIRES_DIST="
 	griffe>=0.33
 	importlib-metadata>=5.1.0
 	importlib-resources>=5.10.2
-	jupyterlab; extra == "dev"
-	jupytext; extra == "dev"
-	plum-dispatch<2.0.0; python_version < "3.10"
-	plum-dispatch>2.0.0; python_version >= "3.10"
-	pre-commit; extra == "dev"
+	jupyterlab; extra == 'dev'
+	jupytext; extra == 'dev'
+	plum-dispatch<2.0.0; python_version < '3.10'
+	plum-dispatch>2.0.0; python_version >= '3.10'
+	pre-commit; extra == 'dev'
 	pydantic
-	pytest-cov; extra == "dev"
-	pytest<8.0.0; extra == "dev"
+	pytest-cov; extra == 'dev'
+	pytest<8.0.0; extra == 'dev'
 	pyyaml
 	requests
 	sphobjinv>=2.3.1
-	syrupy; extra == "dev"
+	syrupy; extra == 'dev'
 	tabulate>=0.9.0
 	typing-extensions>=4.4.0
 	watchdog>=3.0.0

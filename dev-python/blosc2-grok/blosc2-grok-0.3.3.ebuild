@@ -6,7 +6,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 GENERATED_IUSE="h5py-test"
 IUSE="${GENERATED_IUSE}"
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+MY_PN="blosc2_grok"
+SRC_URI="https://github.com/Blosc/${MY_PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -18,7 +21,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	blosc2
-	pytest; extra == "h5py-test"
+	pytest; extra == 'h5py-test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/blosc2[${PYTHON_USEDEP}]

@@ -19,46 +19,46 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	catalogue<2.1.0,>=2.0.6
-	cupy-cuda100<13.0.0,>=5.0.0b4; extra == "cuda100"
-	cupy-cuda101<13.0.0,>=5.0.0b4; extra == "cuda101"
-	cupy-cuda102<13.0.0,>=5.0.0b4; extra == "cuda102"
-	cupy-cuda110<13.0.0,>=5.0.0b4; extra == "cuda110"
-	cupy-cuda111<13.0.0,>=5.0.0b4; extra == "cuda111"
-	cupy-cuda112<13.0.0,>=5.0.0b4; extra == "cuda112"
-	cupy-cuda113<13.0.0,>=5.0.0b4; extra == "cuda113"
-	cupy-cuda114<13.0.0,>=5.0.0b4; extra == "cuda114"
-	cupy-cuda115<13.0.0,>=5.0.0b4; extra == "cuda115"
-	cupy-cuda116<13.0.0,>=5.0.0b4; extra == "cuda116"
-	cupy-cuda117<13.0.0,>=5.0.0b4; extra == "cuda117"
-	cupy-cuda11x<13.0.0,>=11.0.0; extra == "cuda11x"
-	cupy-cuda12x<13.0.0,>=11.5.0; extra == "cuda12x"
-	cupy-cuda80<13.0.0,>=5.0.0b4; extra == "cuda80"
-	cupy-cuda90<13.0.0,>=5.0.0b4; extra == "cuda90"
-	cupy-cuda91<13.0.0,>=5.0.0b4; extra == "cuda91"
-	cupy-cuda92<13.0.0,>=5.0.0b4; extra == "cuda92"
-	cupy-wheel<13.0.0,>=11.0.0; extra == "cuda-autodetect"
-	cupy<13.0.0,>=5.0.0b4; extra == "cuda"
+	cupy-cuda100<13.0.0,>=5.0.0b4; extra == 'cuda100'
+	cupy-cuda101<13.0.0,>=5.0.0b4; extra == 'cuda101'
+	cupy-cuda102<13.0.0,>=5.0.0b4; extra == 'cuda102'
+	cupy-cuda110<13.0.0,>=5.0.0b4; extra == 'cuda110'
+	cupy-cuda111<13.0.0,>=5.0.0b4; extra == 'cuda111'
+	cupy-cuda112<13.0.0,>=5.0.0b4; extra == 'cuda112'
+	cupy-cuda113<13.0.0,>=5.0.0b4; extra == 'cuda113'
+	cupy-cuda114<13.0.0,>=5.0.0b4; extra == 'cuda114'
+	cupy-cuda115<13.0.0,>=5.0.0b4; extra == 'cuda115'
+	cupy-cuda116<13.0.0,>=5.0.0b4; extra == 'cuda116'
+	cupy-cuda117<13.0.0,>=5.0.0b4; extra == 'cuda117'
+	cupy-cuda11x<13.0.0,>=11.0.0; extra == 'cuda11x'
+	cupy-cuda12x<13.0.0,>=11.5.0; extra == 'cuda12x'
+	cupy-cuda80<13.0.0,>=5.0.0b4; extra == 'cuda80'
+	cupy-cuda90<13.0.0,>=5.0.0b4; extra == 'cuda90'
+	cupy-cuda91<13.0.0,>=5.0.0b4; extra == 'cuda91'
+	cupy-cuda92<13.0.0,>=5.0.0b4; extra == 'cuda92'
+	cupy-wheel<13.0.0,>=11.0.0; extra == 'cuda-autodetect'
+	cupy<13.0.0,>=5.0.0b4; extra == 'cuda'
 	cymem<2.1.0,>=2.0.2
 	jinja2
 	langcodes<4.0.0,>=3.2.0
 	murmurhash<1.1.0,>=0.28.0
-	natto-py>=0.9.0; extra == "ko"
-	numpy>=1.15.0; python_version < "3.9"
-	numpy>=1.19.0; python_version >= "3.9"
+	natto-py>=0.9.0; extra == 'ko'
+	numpy>=1.15.0; python_version < '3.9'
+	numpy>=1.19.0; python_version >= '3.9'
 	packaging>=20.0
 	preshed<3.1.0,>=3.0.2
 	pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4
-	pythainlp>=2.0; extra == "th"
+	pythainlp>=2.0; extra == 'th'
 	requests<3.0.0,>=2.13.0
 	setuptools
 	spacy-legacy<3.1.0,>=3.0.11
 	spacy-loggers<2.0.0,>=1.0.0
-	spacy_lookups_data<1.1.0,>=1.0.3; extra == "lookups"
-	spacy_transformers<1.4.0,>=1.1.2; extra == "transformers"
+	spacy_lookups_data<1.1.0,>=1.0.3; extra == 'lookups'
+	spacy_transformers<1.4.0,>=1.1.2; extra == 'transformers'
 	srsly<3.0.0,>=2.4.3
-	sudachidict_core>=20211220; extra == "ja"
-	sudachipy!=0.6.1,>=0.5.2; extra == "ja"
-	thinc-apple-ops<2.0.0,>=1.0.0; extra == "apple"
+	sudachidict_core>=20211220; extra == 'ja'
+	sudachipy!=0.6.1,>=0.5.2; extra == 'ja'
+	thinc-apple-ops<2.0.0,>=1.0.0; extra == 'apple'
 	thinc<8.4.0,>=8.3.4
 	tqdm<5.0.0,>=4.38.0
 	typer<1.0.0,>=0.3.0

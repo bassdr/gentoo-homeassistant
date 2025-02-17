@@ -18,38 +18,38 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py>=0.7.1
-	absl-py>=1.0.0; extra == "dp-accounting"
-	attrs>=21.4.0; extra == "dp-accounting"
+	absl-py>=1.0.0; extra == 'dp-accounting'
+	attrs>=21.4.0; extra == 'dp-accounting'
 	chex>=0.1.87
-	dm-tree>=0.1.7; extra == "test"
-	dp_accounting>=0.4; extra == "examples"
+	dm-tree>=0.1.7; extra == 'test'
+	dp_accounting>=0.4; extra == 'examples'
 	etils[epy]
-	flax; extra == "docs"
-	flax; extra == "examples"
-	flax>=0.5.3; extra == "test"
-	ipython>=8.8.0; extra == "docs"
-	ipywidgets; extra == "examples"
+	flax; extra == 'docs'
+	flax; extra == 'examples'
+	flax>=0.5.3; extra == 'test'
+	ipython>=8.8.0; extra == 'docs'
+	ipywidgets; extra == 'examples'
 	jax>=0.4.27
 	jaxlib>=0.4.27
-	matplotlib>=3.5.0; extra == "docs"
-	mpmath>=1.2.1; extra == "dp-accounting"
-	myst-nb>=1.0.0; extra == "docs"
+	matplotlib>=3.5.0; extra == 'docs'
+	mpmath>=1.2.1; extra == 'dp-accounting'
+	myst-nb>=1.0.0; extra == 'docs'
 	numpy>=1.18.0
-	numpy>=1.21.4; extra == "dp-accounting"
-	scikit-learn; extra == "test"
-	scipy>=1.7.1; extra == "dp-accounting"
-	scipy>=1.7.1; extra == "test"
-	sphinx-autodoc-typehints; extra == "docs"
-	sphinx-book-theme>=1.0.1; extra == "docs"
-	sphinx-collections>=0.0.1; extra == "docs"
-	sphinx-gallery>=0.14.0; extra == "docs"
-	sphinx>=6.0.0; extra == "docs"
-	sphinx_contributors; extra == "docs"
-	sphinxcontrib-katex; extra == "docs"
-	tensorflow-datasets>=4.2.0; extra == "docs"
-	tensorflow-datasets>=4.2.0; extra == "examples"
-	tensorflow>=2.4.0; extra == "docs"
-	tensorflow>=2.4.0; extra == "examples"
+	numpy>=1.21.4; extra == 'dp-accounting'
+	scikit-learn; extra == 'test'
+	scipy>=1.7.1; extra == 'dp-accounting'
+	scipy>=1.7.1; extra == 'test'
+	sphinx-autodoc-typehints; extra == 'docs'
+	sphinx-book-theme>=1.0.1; extra == 'docs'
+	sphinx-collections>=0.0.1; extra == 'docs'
+	sphinx-gallery>=0.14.0; extra == 'docs'
+	sphinx>=6.0.0; extra == 'docs'
+	sphinx_contributors; extra == 'docs'
+	sphinxcontrib-katex; extra == 'docs'
+	tensorflow-datasets>=4.2.0; extra == 'docs'
+	tensorflow-datasets>=4.2.0; extra == 'examples'
+	tensorflow>=2.4.0; extra == 'docs'
+	tensorflow>=2.4.0; extra == 'examples'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-0.7.1[${PYTHON_USEDEP}]

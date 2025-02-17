@@ -24,19 +24,19 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	bandit; extra == "lint"
-	build; extra == "dev"
-	bump>=1.3.2; extra == "dev"
-	coverage[toml]; extra == "test"
-	id[lint,test]; extra == "dev"
-	interrogate; extra == "lint"
-	mypy; extra == "lint"
-	pretend; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	bandit; extra == 'lint'
+	build; extra == 'dev'
+	bump>=1.3.2; extra == 'dev'
+	coverage[toml]; extra == 'test'
+	id[lint,test]; extra == 'dev'
+	interrogate; extra == 'lint'
+	mypy; extra == 'lint'
+	pretend; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 	requests
-	ruff<0.8.2; extra == "lint"
-	types-requests; extra == "lint"
+	ruff<0.8.2; extra == 'lint'
+	types-requests; extra == 'lint'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/bandit[${PYTHON_USEDEP}] )

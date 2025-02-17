@@ -19,7 +19,7 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	docopt; extra == "console"
+	docopt; extra == 'console'
 	requests
 	requests_oauthlib
 "

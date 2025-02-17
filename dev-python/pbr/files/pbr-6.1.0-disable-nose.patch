@@ -1,0 +1,37 @@
+diff '--color=auto' -ur pbr-6.1.0.old/pbr/packaging.py pbr-6.1.0/pbr/packaging.py
+--- pbr-6.1.0.old/pbr/packaging.py	2025-02-16 13:10:33.021896458 -0500
++++ pbr-6.1.0/pbr/packaging.py	2025-02-16 13:12:19.669520738 -0500
+@@ -301,32 +301,8 @@
+     return testr_command.have_testr
+ 
+ 
+-try:
+-    from nose import commands
+-
+-    class NoseTest(commands.nosetests):
+-        """Fallback test runner if testr is a no-go."""
+-
+-        command_name = 'test'
+-        description = 'DEPRECATED: Run unit tests using nose'
+-
+-        def run(self):
+-            warnings.warn('nose integration in pbr is deprecated. Please use '
+-                          'the native nose setuptools configuration or call '
+-                          'nose directly',
+-                          DeprecationWarning)
+-
+-            # Can't use super - base class old-style class
+-            commands.nosetests.run(self)
+-
+-    _have_nose = True
+-
+-except ImportError:
+-    _have_nose = False
+-
+-
+ def have_nose():
+-    return _have_nose
++    return False
+ 
+ 
+ _wsgi_text = """#PBR Generated from %(group)r

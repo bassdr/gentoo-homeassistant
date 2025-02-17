@@ -25,12 +25,12 @@ DEPEND="
 	sci-libs/netcdf:=[blosc(-)=,bzip2(-)=,hdf5,mpi=,szip=,zstd(-)=]
 "
 REQUIRES_DIST="
-	Cython; extra == "tests"
+	Cython; extra == 'tests'
 	certifi
 	cftime
 	numpy
-	packaging; extra == "tests"
-	pytest; extra == "tests"
+	packaging; extra == 'tests'
+	pytest; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]

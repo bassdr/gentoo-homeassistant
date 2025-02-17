@@ -26,31 +26,31 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="benchmarking code_style compare linkify plugins profiling rtd"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	commonmark~=0.9 ; extra == "compare"
-	coverage ; extra == "testing"
-	gprof2dot ; extra == "profiling"
-	jupyter_sphinx ; extra == "rtd"
-	linkify-it-py>=1,<3 ; extra == "linkify"
-	markdown~=3.4 ; extra == "compare"
-	mdit-py-plugins ; extra == "plugins"
-	mdit-py-plugins ; extra == "rtd"
+	commonmark~=0.9 ; extra == 'compare'
+	coverage ; extra == 'testing'
+	gprof2dot ; extra == 'profiling'
+	jupyter_sphinx ; extra == 'rtd'
+	linkify-it-py>=1,<3 ; extra == 'linkify'
+	markdown~=3.4 ; extra == 'compare'
+	mdit-py-plugins ; extra == 'plugins'
+	mdit-py-plugins ; extra == 'rtd'
 	mdurl~=0.1
-	mistletoe~=1.0 ; extra == "compare"
-	mistune~=2.0 ; extra == "compare"
-	myst-parser ; extra == "rtd"
-	panflute~=2.3 ; extra == "compare"
-	pre-commit~=3.0 ; extra == "code_style"
-	psutil ; extra == "benchmarking"
-	pytest ; extra == "benchmarking"
-	pytest ; extra == "testing"
-	pytest-benchmark ; extra == "benchmarking"
-	pytest-cov ; extra == "testing"
-	pytest-regressions ; extra == "testing"
-	pyyaml ; extra == "rtd"
-	sphinx ; extra == "rtd"
-	sphinx-copybutton ; extra == "rtd"
-	sphinx-design ; extra == "rtd"
-	sphinx_book_theme ; extra == "rtd"
+	mistletoe~=1.0 ; extra == 'compare'
+	mistune~=2.0 ; extra == 'compare'
+	myst-parser ; extra == 'rtd'
+	panflute~=2.3 ; extra == 'compare'
+	pre-commit~=3.0 ; extra == 'code_style'
+	psutil ; extra == 'benchmarking'
+	pytest ; extra == 'benchmarking'
+	pytest ; extra == 'testing'
+	pytest-benchmark ; extra == 'benchmarking'
+	pytest-cov ; extra == 'testing'
+	pytest-regressions ; extra == 'testing'
+	pyyaml ; extra == 'rtd'
+	sphinx ; extra == 'rtd'
+	sphinx-copybutton ; extra == 'rtd'
+	sphinx-design ; extra == 'rtd'
+	sphinx_book_theme ; extra == 'rtd'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	compare? ( >=dev-python/commonmark-0.9[${PYTHON_USEDEP}] =dev-python/commonmark-0*[${PYTHON_USEDEP}] )

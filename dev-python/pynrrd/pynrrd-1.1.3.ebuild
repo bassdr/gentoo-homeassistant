@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "dev"
+	build; extra == 'dev'
 	numpy>=1.21
-	pre-commit; extra == "dev"
-	pytest; extra == "dev"
+	pre-commit; extra == 'dev'
+	pytest; extra == 'dev'
 	typing_extensions
 "
 GENERATED_RDEPEND="${RDEPEND}

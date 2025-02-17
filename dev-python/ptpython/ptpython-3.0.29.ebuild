@@ -18,9 +18,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	appdirs
-	black; extra == "all"
-	importlib-metadata; python_version < "3.8"
-	ipython; extra == "ptipython"
+	black; extra == 'all'
+	importlib-metadata; python_version < '3.8'
+	ipython; extra == 'ptipython'
 	jedi>=0.16.0
 	prompt-toolkit<3.1.0,>=3.0.43
 	pygments

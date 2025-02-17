@@ -19,31 +19,31 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	attrs
 	click
-	click-log; extra == "cli"
-	coverage; extra == "testing"
+	click-log; extra == 'cli'
+	coverage; extra == 'testing'
 	importlib-metadata
-	ipykernel; extra == "rtd"
-	ipykernel; extra == "testing"
-	jupytext; extra == "rtd"
-	jupytext; extra == "testing"
-	matplotlib; extra == "testing"
-	myst-nb; extra == "rtd"
+	ipykernel; extra == 'rtd'
+	ipykernel; extra == 'testing'
+	jupytext; extra == 'rtd'
+	jupytext; extra == 'testing'
+	matplotlib; extra == 'testing'
+	myst-nb; extra == 'rtd'
 	nbclient>=0.2
-	nbdime; extra == "rtd"
-	nbdime; extra == "testing"
+	nbdime; extra == 'rtd'
+	nbdime; extra == 'testing'
 	nbformat
-	nbformat>=5.1; extra == "testing"
-	numpy; extra == "testing"
-	pandas; extra == "testing"
-	pre-commit>=2.12; extra == "code-style"
-	pytest-cov; extra == "testing"
-	pytest-regressions; extra == "testing"
-	pytest>=6; extra == "testing"
+	nbformat>=5.1; extra == 'testing'
+	numpy; extra == 'testing'
+	pandas; extra == 'testing'
+	pre-commit>=2.12; extra == 'code-style'
+	pytest-cov; extra == 'testing'
+	pytest-regressions; extra == 'testing'
+	pytest>=6; extra == 'testing'
 	pyyaml
-	sphinx-book-theme; extra == "rtd"
-	sphinx-copybutton; extra == "rtd"
+	sphinx-book-theme; extra == 'rtd'
+	sphinx-copybutton; extra == 'rtd'
 	sqlalchemy<3,>=1.3.12
-	sympy; extra == "testing"
+	sympy; extra == 'testing'
 	tabulate
 "
 GENERATED_RDEPEND="${RDEPEND}

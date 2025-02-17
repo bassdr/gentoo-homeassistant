@@ -17,28 +17,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "build"
-	mizani[build]; extra == "all"
-	mizani[dev]; extra == "all"
-	mizani[doc]; extra == "all"
-	mizani[lint]; extra == "all"
-	mizani[test]; extra == "all"
-	mizani[typing]; extra == "dev"
-	mock; extra == "rtd"
-	notebook; extra == "dev"
+	build; extra == 'build'
+	mizani[build]; extra == 'all'
+	mizani[dev]; extra == 'all'
+	mizani[doc]; extra == 'all'
+	mizani[lint]; extra == 'all'
+	mizani[test]; extra == 'all'
+	mizani[typing]; extra == 'dev'
+	mock; extra == 'rtd'
+	notebook; extra == 'dev'
 	numpy>=1.23.5
-	numpydoc>=1.7.0; extra == "doc"
-	pandas-stubs; extra == "typing"
+	numpydoc>=1.7.0; extra == 'doc'
+	pandas-stubs; extra == 'typing'
 	pandas>=2.2.0
-	pre-commit; extra == "dev"
-	pyright==1.1.390; extra == "typing"
-	pytest-cov>=4.0.0; extra == "test"
-	ruff; extra == "lint"
+	pre-commit; extra == 'dev'
+	pyright==1.1.390; extra == 'typing'
+	pytest-cov>=4.0.0; extra == 'test'
+	ruff; extra == 'lint'
 	scipy>=1.8.0
-	sphinx>=7.2.0; extra == "doc"
-	twine; extra == "dev"
-	tzdata; platform_system == "Windows" or platform_system == "Emscripten"
-	wheel; extra == "build"
+	sphinx>=7.2.0; extra == 'doc'
+	twine; extra == 'dev'
+	tzdata; platform_system == 'Windows' or platform_system == 'Emscripten'
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )

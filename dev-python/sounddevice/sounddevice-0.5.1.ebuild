@@ -20,7 +20,7 @@ GENERATED_IUSE="numpy"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	CFFI>=1.0
-	NumPy; extra == "numpy"
+	NumPy; extra == 'numpy'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.0[${PYTHON_USEDEP}]

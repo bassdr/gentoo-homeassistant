@@ -14,8 +14,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -27,15 +25,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/asyncssh[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="
-	dev-python/setuptools-markdown[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest-runner[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)"
 
 python_test() {
 	py.test -v -v || die
@@ -47,4 +36,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/check-manifest[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	)"
+# dev-python/setuptools-markdown[${PYTHON_USEDEP}]
+

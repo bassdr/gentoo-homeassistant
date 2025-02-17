@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	pytest; extra == "testing"
+	pytest; extra == 'testing'
 	zigpy>=0.70.0
 "
 GENERATED_RDEPEND="${RDEPEND}

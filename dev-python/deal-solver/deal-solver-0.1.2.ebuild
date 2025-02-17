@@ -18,17 +18,17 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	astroid
-	flake8 ; extra == "lint"
-	flake8-bugbear ; extra == "lint"
-	flake8-commas ; extra == "lint"
-	flake8-quotes ; extra == "lint"
-	hypothesis ; extra == "test"
-	isort ; extra == "lint"
-	mypy>=0.910 ; extra == "lint"
-	pytest ; extra == "test"
-	pytest-cov ; extra == "test"
-	pytest-xdist ; extra == "test"
-	unify ; extra == "lint"
+	flake8 ; extra == 'lint'
+	flake8-bugbear ; extra == 'lint'
+	flake8-commas ; extra == 'lint'
+	flake8-quotes ; extra == 'lint'
+	hypothesis ; extra == 'test'
+	isort ; extra == 'lint'
+	mypy>=0.910 ; extra == 'lint'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-xdist ; extra == 'test'
+	unify ; extra == 'lint'
 	z3-solver
 "
 GENERATED_RDEPEND="${RDEPEND}

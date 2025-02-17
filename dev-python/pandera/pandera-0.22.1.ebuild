@@ -17,45 +17,45 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "all"
-	black; extra == "io"
-	dask[dataframe]; extra == "all"
-	dask[dataframe]; extra == "dask"
-	dask[dataframe]; extra == "modin"
-	dask[dataframe]; extra == "modin-dask"
-	fastapi; extra == "all"
-	fastapi; extra == "fastapi"
-	frictionless<=4.40.8; extra == "all"
-	frictionless<=4.40.8; extra == "io"
-	geopandas; extra == "all"
-	geopandas; extra == "geopandas"
-	hypothesis>=6.92.7; extra == "all"
-	hypothesis>=6.92.7; extra == "strategies"
-	modin; extra == "all"
-	modin; extra == "modin"
-	modin; extra == "modin-dask"
-	modin; extra == "modin-ray"
+	black; extra == 'all'
+	black; extra == 'io'
+	dask[dataframe]; extra == 'all'
+	dask[dataframe]; extra == 'dask'
+	dask[dataframe]; extra == 'modin'
+	dask[dataframe]; extra == 'modin-dask'
+	fastapi; extra == 'all'
+	fastapi; extra == 'fastapi'
+	frictionless<=4.40.8; extra == 'all'
+	frictionless<=4.40.8; extra == 'io'
+	geopandas; extra == 'all'
+	geopandas; extra == 'geopandas'
+	hypothesis>=6.92.7; extra == 'all'
+	hypothesis>=6.92.7; extra == 'strategies'
+	modin; extra == 'all'
+	modin; extra == 'modin'
+	modin; extra == 'modin-dask'
+	modin; extra == 'modin-ray'
 	numpy>=1.19.0
 	packaging>=20.0
-	pandas-stubs; extra == "all"
-	pandas-stubs; extra == "mypy"
+	pandas-stubs; extra == 'all'
+	pandas-stubs; extra == 'mypy'
 	pandas>=1.2.0
-	polars>=0.20.0; extra == "all"
-	polars>=0.20.0; extra == "polars"
+	polars>=0.20.0; extra == 'all'
+	polars>=0.20.0; extra == 'polars'
 	pydantic
-	pyspark[connect]>=3.2.0; extra == "all"
-	pyspark[connect]>=3.2.0; extra == "pyspark"
-	pyyaml>=5.1; extra == "all"
-	pyyaml>=5.1; extra == "io"
-	ray; extra == "all"
-	ray; extra == "modin"
-	ray; extra == "modin-ray"
-	scipy; extra == "all"
-	scipy; extra == "hypotheses"
-	shapely; extra == "all"
-	shapely; extra == "geopandas"
+	pyspark[connect]>=3.2.0; extra == 'all'
+	pyspark[connect]>=3.2.0; extra == 'pyspark'
+	pyyaml>=5.1; extra == 'all'
+	pyyaml>=5.1; extra == 'io'
+	ray; extra == 'all'
+	ray; extra == 'modin'
+	ray; extra == 'modin-ray'
+	scipy; extra == 'all'
+	scipy; extra == 'hypotheses'
+	shapely; extra == 'all'
+	shapely; extra == 'geopandas'
 	typeguard
-	typing_extensions>=3.7.4.3; python_version < "3.8"
+	typing_extensions>=3.7.4.3; python_version < '3.8'
 	typing_inspect>=0.6.0
 "
 GENERATED_RDEPEND="${RDEPEND}

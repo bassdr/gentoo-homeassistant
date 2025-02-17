@@ -23,12 +23,12 @@ REQUIRES_DIST="
 	azure-storage-blob>=12.10.0
 	azure-storage-file-datalake>=12.2.0
 	azure-storage-file-share
-	azureml-dataprep-rslex>=2.22.0; extra == "mount"
+	azureml-dataprep-rslex>=2.22.0; extra == 'mount'
 	colorama
 	isodate
 	jsonschema>=4.0.0
 	marshmallow>=3.5
-	mldesigner; extra == "designer"
+	mldesigner; extra == 'designer'
 	msrest>=0.6.18
 	opencensus-ext-azure
 	opencensus-ext-logging

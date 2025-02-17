@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	blosc2-grok>=0.2.2; python_version >= "3.9" and extra == "test"
-	blosc2>=2.5.1; python_version >= "3.9" and extra == "test"
+	blosc2-grok>=0.2.2; python_version >= '3.9' and extra == 'test'
+	blosc2>=2.5.1; python_version >= '3.9' and extra == 'test'
 	h5py>=3.0.0
-	ipython; extra == "doc"
-	nbsphinx; extra == "doc"
-	sphinx-rtd-theme; extra == "doc"
-	sphinx; extra == "doc"
+	ipython; extra == 'doc'
+	nbsphinx; extra == 'doc'
+	sphinx-rtd-theme; extra == 'doc'
+	sphinx; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/h5py-3.0.0[${PYTHON_USEDEP}]

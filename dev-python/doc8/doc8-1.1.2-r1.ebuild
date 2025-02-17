@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	docutils<=0.21.2,>=0.19
 	restructuredtext-lint>=0.7
 	stevedore
-	tomli; python_version < "3.11"
+	tomli; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/docutils-0.19[${PYTHON_USEDEP}] <=dev-python/docutils-0.21.2[${PYTHON_USEDEP}]

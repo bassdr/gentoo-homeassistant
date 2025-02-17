@@ -26,13 +26,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx<8,>=5; extra == "docs"
+	Sphinx<8,>=5; extra == 'docs'
 	aiooui>=0.1.1
-	async-timeout>=3.0.0; python_version < "3.11"
+	async-timeout>=3.0.0; python_version < '3.11'
 	bleak>=0.21.1
 	dbus-fast>=1.21.0
-	myst-parser<3.1,>=0.18; extra == "docs"
-	sphinx-rtd-theme<4,>=1; extra == "docs"
+	myst-parser<3.1,>=0.18; extra == 'docs'
+	sphinx-rtd-theme<4,>=1; extra == 'docs'
 	uart-devices>=0.1.0
 	usb-devices>=0.4.5
 "

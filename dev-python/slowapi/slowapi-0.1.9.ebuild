@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	limits (>=2.3)
-	redis (>=3.4.1,<4.0.0) ; extra == "redis"
+	redis (>=3.4.1,<4.0.0) ; extra == 'redis'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/limits-2.3[${PYTHON_USEDEP}]

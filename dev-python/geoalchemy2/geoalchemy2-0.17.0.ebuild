@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	SQLAlchemy>=1.4
-	Shapely>=1.7; extra == "shapely"
+	Shapely>=1.7; extra == 'shapely'
 	packaging
 "
 GENERATED_RDEPEND="${RDEPEND}

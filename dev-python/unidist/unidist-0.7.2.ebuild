@@ -18,21 +18,21 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cloudpickle
-	dask[complete]>=2.22.0; extra == "all"
-	dask[complete]>=2.22.0; extra == "dask"
-	distributed>=2.22.0; extra == "all"
-	distributed>=2.22.0; extra == "dask"
-	mpi4py>=3.0.3; extra == "all"
-	mpi4py>=3.0.3; extra == "mpi"
-	msgpack>=1.0.0; extra == "all"
-	msgpack>=1.0.0; extra == "mpi"
+	dask[complete]>=2.22.0; extra == 'all'
+	dask[complete]>=2.22.0; extra == 'dask'
+	distributed>=2.22.0; extra == 'all'
+	distributed>=2.22.0; extra == 'dask'
+	mpi4py>=3.0.3; extra == 'all'
+	mpi4py>=3.0.3; extra == 'mpi'
+	msgpack>=1.0.0; extra == 'all'
+	msgpack>=1.0.0; extra == 'mpi'
 	packaging
-	psutil; extra == "all"
-	psutil; extra == "mpi"
-	pydantic<2; extra == "all"
-	pydantic<2; extra == "ray"
-	ray[default]>=1.13.0; extra == "all"
-	ray[default]>=1.13.0; extra == "ray"
+	psutil; extra == 'all'
+	psutil; extra == 'mpi'
+	pydantic<2; extra == 'all'
+	pydantic<2; extra == 'ray'
+	ray[default]>=1.13.0; extra == 'all'
+	ray[default]>=1.13.0; extra == 'ray'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cloudpickle[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	colorama==0.4.*
 	docstring-parser>=0.12
-	typing-inspect>=0.6.0; python_version < "3.8"
+	typing-inspect>=0.6.0; python_version < '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/colorama-0.4*[${PYTHON_USEDEP}]

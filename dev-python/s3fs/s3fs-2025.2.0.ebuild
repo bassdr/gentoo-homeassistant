@@ -18,8 +18,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiobotocore<3.0.0,>=2.5.4
-	aiobotocore[awscli]<3.0.0,>=2.5.4; extra == "awscli"
-	aiobotocore[boto3]<3.0.0,>=2.5.4; extra == "boto3"
+	aiobotocore[awscli]<3.0.0,>=2.5.4; extra == 'awscli'
+	aiobotocore[boto3]<3.0.0,>=2.5.4; extra == 'boto3'
 	aiohttp!=4.0.0a0,!=4.0.0a1
 	fsspec==2025.2.0.*
 "

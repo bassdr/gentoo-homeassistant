@@ -15,30 +15,30 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Faker; extra == "test"
-	PyYAML>=5.1; extra == "test"
-	brotli; extra == "test"
-	dnslib; extra == "test"
-	dpkt; extra == "test"
-	fecfile; extra == "test"
-	h5py; extra == "test"
+	Faker; extra == 'test'
+	PyYAML>=5.1; extra == 'test'
+	brotli; extra == 'test'
+	dnslib; extra == 'test'
+	dpkt; extra == 'test'
+	fecfile; extra == 'test'
+	h5py; extra == 'test'
 	importlib-metadata>=3.6
-	importlib-resources; python_version < "3.9"
-	lxml; extra == "test"
-	msgpack; extra == "test"
-	odfpy; extra == "test"
-	openpyxl; extra == "test"
-	pandas>=1.5.3; extra == "test"
-	pyarrow; extra == "test"
-	pyconll; extra == "test"
-	pypng; extra == "test"
-	pytest; extra == "test"
+	importlib-resources; python_version < '3.9'
+	lxml; extra == 'test'
+	msgpack; extra == 'test'
+	odfpy; extra == 'test'
+	openpyxl; extra == 'test'
+	pandas>=1.5.3; extra == 'test'
+	pyarrow; extra == 'test'
+	pyconll; extra == 'test'
+	pypng; extra == 'test'
+	pytest; extra == 'test'
 	python-dateutil
-	tabulate; extra == "test"
-	tomli; extra == "test"
-	wcwidth; extra == "test"
-	windows-curses!=2.3.1; platform_system == "Windows"
-	xport>=3.0; extra == "test"
+	tabulate; extra == 'test'
+	tomli; extra == 'test'
+	wcwidth; extra == 'test'
+	windows-curses!=2.3.1; platform_system == 'Windows'
+	xport>=3.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
@@ -49,7 +49,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		dev-python/brotli[${PYTHON_USEDEP}]
+		app-arch/brotli[python,${PYTHON_USEDEP}]
 		dev-python/dnslib[${PYTHON_USEDEP}]
 		dev-python/dpkt[${PYTHON_USEDEP}]
 		dev-python/faker[${PYTHON_USEDEP}]

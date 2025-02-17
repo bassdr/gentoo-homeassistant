@@ -17,29 +17,29 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cffi>=1.17.1; platform_python_implementation == "CPython" and extra == "recommended"
-	cffi>=1.17.1; platform_python_implementation == "CPython" and extra == "test"
-	cffi>=1.17.1; platform_python_implementation == "CPython" and sys_platform == "win32"
-	coverage>=5.0; sys_platform != "win32" and extra == "test"
-	dnspython<2.0,>=1.16.0; python_version < "3.10" and extra == "dnspython"
-	dnspython<2.0,>=1.16.0; python_version < "3.10" and extra == "recommended"
-	dnspython<2.0,>=1.16.0; python_version < "3.10" and extra == "test"
-	furo; extra == "docs"
-	greenlet>=3.1.1; platform_python_implementation == "CPython"
-	idna; python_version < "3.10" and extra == "dnspython"
-	idna; python_version < "3.10" and extra == "recommended"
-	idna; python_version < "3.10" and extra == "test"
-	objgraph; extra == "test"
-	psutil>=5.7.0; (sys_platform != "win32" or platform_python_implementation == "CPython") and extra == "monitor"
-	psutil>=5.7.0; (sys_platform != "win32" or platform_python_implementation == "CPython") and extra == "recommended"
-	psutil>=5.7.0; (sys_platform != "win32" or platform_python_implementation == "CPython") and extra == "test"
-	repoze.sphinx.autointerface; extra == "docs"
-	requests; extra == "test"
-	sphinx; extra == "docs"
-	sphinxcontrib-programoutput; extra == "docs"
+	cffi>=1.17.1; platform_python_implementation == 'CPython' and extra == 'recommended'
+	cffi>=1.17.1; platform_python_implementation == 'CPython' and extra == 'test'
+	cffi>=1.17.1; platform_python_implementation == 'CPython' and sys_platform == 'win32'
+	coverage>=5.0; sys_platform != 'win32' and extra == 'test'
+	dnspython<2.0,>=1.16.0; python_version < '3.10' and extra == 'dnspython'
+	dnspython<2.0,>=1.16.0; python_version < '3.10' and extra == 'recommended'
+	dnspython<2.0,>=1.16.0; python_version < '3.10' and extra == 'test'
+	furo; extra == 'docs'
+	greenlet>=3.1.1; platform_python_implementation == 'CPython'
+	idna; python_version < '3.10' and extra == 'dnspython'
+	idna; python_version < '3.10' and extra == 'recommended'
+	idna; python_version < '3.10' and extra == 'test'
+	objgraph; extra == 'test'
+	psutil>=5.7.0; (sys_platform != 'win32' or platform_python_implementation == 'CPython') and extra == 'monitor'
+	psutil>=5.7.0; (sys_platform != 'win32' or platform_python_implementation == 'CPython') and extra == 'recommended'
+	psutil>=5.7.0; (sys_platform != 'win32' or platform_python_implementation == 'CPython') and extra == 'test'
+	repoze.sphinx.autointerface; extra == 'docs'
+	requests; extra == 'test'
+	sphinx; extra == 'docs'
+	sphinxcontrib-programoutput; extra == 'docs'
 	zope.event
 	zope.interface
-	zope.schema; extra == "docs"
+	zope.schema; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	recommended? ( >=dev-python/cffi-1.17.1[${PYTHON_USEDEP}] )

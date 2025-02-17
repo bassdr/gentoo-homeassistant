@@ -52,7 +52,7 @@ RDEPEND="
 	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}] <dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 	~dev-python/ulid-transform-1.0.2[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}] <dev-python/urllib3-2[${PYTHON_USEDEP}]
-	~dev-python/uv-0.5.6[${PYTHON_USEDEP}]
+	~dev-python/uv-0.5.6
 	~dev-python/voluptuous-0.15.2[${PYTHON_USEDEP}]
 	~dev-python/voluptuous-openapi-0.0.5[${PYTHON_USEDEP}]
 	~dev-python/voluptuous-serialize-2.6.0[${PYTHON_USEDEP}]

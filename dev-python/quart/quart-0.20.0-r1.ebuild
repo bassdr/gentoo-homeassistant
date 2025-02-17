@@ -29,12 +29,12 @@ REQUIRES_DIST="
 	click>=8.0
 	flask>=3.0
 	hypercorn>=0.11.2
-	importlib-metadata; python_version < "3.10"
+	importlib-metadata; python_version < '3.10'
 	itsdangerous
 	jinja2
 	markupsafe
-	python-dotenv; extra == "dotenv"
-	typing-extensions; python_version < "3.10"
+	python-dotenv; extra == 'dotenv'
+	typing-extensions; python_version < '3.10'
 	werkzeug>=3.0
 "
 GENERATED_RDEPEND="${RDEPEND}

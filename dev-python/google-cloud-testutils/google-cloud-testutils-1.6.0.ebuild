@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	click>=7.0.0
 	google-auth>=0.4.0
-	importlib_metadata>=1.0.0; python_version < "3.8"
+	importlib_metadata>=1.0.0; python_version < '3.8'
 	packaging>=19.0
 "
 GENERATED_RDEPEND="${RDEPEND}

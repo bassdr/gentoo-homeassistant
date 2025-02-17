@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	azure-storage-blob>=12; extra == "azure"
-	azure-storage-file-datalake>=12; extra == "azure"
-	boto3>=1.34.0; extra == "s3"
-	cloudpathlib[azure]; extra == "all"
-	cloudpathlib[gs]; extra == "all"
-	cloudpathlib[s3]; extra == "all"
-	google-cloud-storage; extra == "gs"
-	typing_extensions>4; python_version < "3.11"
+	azure-storage-blob>=12; extra == 'azure'
+	azure-storage-file-datalake>=12; extra == 'azure'
+	boto3>=1.34.0; extra == 's3'
+	cloudpathlib[azure]; extra == 'all'
+	cloudpathlib[gs]; extra == 'all'
+	cloudpathlib[s3]; extra == 'all'
+	google-cloud-storage; extra == 'gs'
+	typing_extensions>4; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	azure? ( >=dev-python/azure-storage-blob-12[${PYTHON_USEDEP}] )

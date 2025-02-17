@@ -34,13 +34,13 @@ DEPEND="
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	sphinx-book-theme; extra == "docs"
-	sphinx~=7.3; extra == "docs"
-	tree-sitter-html; extra == "tests"
-	tree-sitter-javascript; extra == "tests"
-	tree-sitter-json; extra == "tests"
-	tree-sitter-python; extra == "tests"
-	tree-sitter-rust; extra == "tests"
+	sphinx-book-theme; extra == 'docs'
+	sphinx~=7.3; extra == 'docs'
+	tree-sitter-html; extra == 'tests'
+	tree-sitter-javascript; extra == 'tests'
+	tree-sitter-json; extra == 'tests'
+	tree-sitter-python; extra == 'tests'
+	tree-sitter-rust; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-7.3[${PYTHON_USEDEP}] =dev-python/sphinx-7*[${PYTHON_USEDEP}] )

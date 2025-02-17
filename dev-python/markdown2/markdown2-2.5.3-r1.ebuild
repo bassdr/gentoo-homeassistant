@@ -19,12 +19,12 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all code-syntax-highlighting latex wavedrom"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	latex2mathml; python_version >= "3.8.1" and extra == "all"
-	latex2mathml; python_version >= "3.8.1" and extra == "latex"
-	pygments>=2.7.3; extra == "all"
-	pygments>=2.7.3; extra == "code-syntax-highlighting"
-	wavedrom; extra == "all"
-	wavedrom; extra == "wavedrom"
+	latex2mathml; python_version >= '3.8.1' and extra == 'all'
+	latex2mathml; python_version >= '3.8.1' and extra == 'latex'
+	pygments>=2.7.3; extra == 'all'
+	pygments>=2.7.3; extra == 'code-syntax-highlighting'
+	wavedrom; extra == 'all'
+	wavedrom; extra == 'wavedrom'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/latex2mathml[${PYTHON_USEDEP}] )

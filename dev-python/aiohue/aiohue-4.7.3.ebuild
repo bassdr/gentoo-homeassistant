@@ -24,18 +24,18 @@ REQUIRES_DIST="
 	aiohttp
 	asyncio-throttle
 	awesomeversion
-	codespell==2.3.0; extra == "test"
-	mypy==1.11.1; extra == "test"
-	pre-commit-hooks==4.6.0; extra == "test"
-	pre-commit==3.8.0; extra == "test"
-	pylint==3.2.6; extra == "test"
-	pytest-aiohttp==1.0.5; extra == "test"
-	pytest-asyncio==0.23.8; extra == "test"
-	pytest-cov==5.0.0; extra == "test"
-	pytest==8.3.2; extra == "test"
-	ruff==0.6.1; extra == "test"
-	safety==3.2.5; extra == "test"
-	tomli==2.0.1; extra == "test"
+	codespell==2.3.0; extra == 'test'
+	mypy==1.11.1; extra == 'test'
+	pre-commit-hooks==4.6.0; extra == 'test'
+	pre-commit==3.8.0; extra == 'test'
+	pylint==3.2.6; extra == 'test'
+	pytest-aiohttp==1.0.5; extra == 'test'
+	pytest-asyncio==0.23.8; extra == 'test'
+	pytest-cov==5.0.0; extra == 'test'
+	pytest==8.3.2; extra == 'test'
+	ruff==0.6.1; extra == 'test'
+	safety==3.2.5; extra == 'test'
+	tomli==2.0.1; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

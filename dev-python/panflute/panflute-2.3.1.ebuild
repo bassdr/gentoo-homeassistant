@@ -17,20 +17,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pygments; extra == "pypi"
+	Pygments; extra == 'pypi'
 	click<9,>=6
-	configparser; extra == "dev"
-	coverage; extra == "dev"
-	docutils; extra == "pypi"
-	flake8; extra == "dev"
-	pandocfilters; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
+	configparser; extra == 'dev'
+	coverage; extra == 'dev'
+	docutils; extra == 'pypi'
+	flake8; extra == 'dev'
+	pandocfilters; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
 	pyyaml<7,>=3
-	requests; extra == "dev"
-	twine; extra == "pypi"
-	wheel; extra == "pypi"
-	yamlloader<2,>=1; extra == "extras"
+	requests; extra == 'dev'
+	twine; extra == 'pypi'
+	wheel; extra == 'pypi'
+	yamlloader<2,>=1; extra == 'extras'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-6[${PYTHON_USEDEP}] <dev-python/click-9[${PYTHON_USEDEP}]

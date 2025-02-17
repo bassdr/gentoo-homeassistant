@@ -18,16 +18,16 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	PyYAML<7.0,>=6.0
-	black<25.0.0,>=24.3.0; extra == "codegen"
+	black<25.0.0,>=24.3.0; extra == 'codegen'
 	boto3<2.0.0,>=1.35.75
 	importlib-metadata<7.0,>=1.4.0
 	jsonschema<5.0.0
 	mock<5.0,>4.0
-	pandas<3.0.0,>=2.0.0; extra == "codegen"
+	pandas<3.0.0,>=2.0.0; extra == 'codegen'
 	platformdirs<5.0.0,>=4.0.0
 	pydantic<3.0.0,>=2.0.0
-	pylint<4.0.0,>=3.0.0; extra == "codegen"
-	pytest<9.0.0,>=8.0.0; extra == "codegen"
+	pylint<4.0.0,>=3.0.0; extra == 'codegen'
+	pytest<9.0.0,>=8.0.0; extra == 'codegen'
 	rich<14.0.0,>=13.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

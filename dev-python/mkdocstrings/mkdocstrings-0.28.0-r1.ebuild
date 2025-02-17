@@ -22,15 +22,15 @@ REQUIRES_DIST="
 	Jinja2>=2.11.1
 	Markdown>=3.6
 	MarkupSafe>=1.1
-	importlib-metadata>=4.6; python_version < "3.10"
+	importlib-metadata>=4.6; python_version < '3.10'
 	mkdocs-autorefs>=1.3
 	mkdocs-get-deps>=0.2
 	mkdocs>=1.4
-	mkdocstrings-crystal>=0.3.4; extra == "crystal"
-	mkdocstrings-python-legacy>=0.2.1; extra == "python-legacy"
-	mkdocstrings-python>=0.5.2; extra == "python"
+	mkdocstrings-crystal>=0.3.4; extra == 'crystal'
+	mkdocstrings-python-legacy>=0.2.1; extra == 'python-legacy'
+	mkdocstrings-python>=0.5.2; extra == 'python'
 	pymdown-extensions>=6.3
-	typing-extensions>=4.1; python_version < "3.10"
+	typing-extensions>=4.1; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]

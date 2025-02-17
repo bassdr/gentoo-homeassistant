@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="parser"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	pyhcl<0.5.0,>=0.4.4; extra == "parser"
+	pyhcl<0.5.0,>=0.4.4; extra == 'parser'
 	requests<3.0.0,>=2.27.1
 "
 GENERATED_RDEPEND="${RDEPEND}

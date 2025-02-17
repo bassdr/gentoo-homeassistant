@@ -15,15 +15,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "dev"
-	build; extra == "dev"
-	commitizen; extra == "dev"
+	black; extra == 'dev'
+	build; extra == 'dev'
+	commitizen; extra == 'dev'
 	dnspython>=1.15.0
 	greenlet>=1.0
-	isort; extra == "dev"
-	pip-tools; extra == "dev"
-	pre-commit; extra == "dev"
-	twine; extra == "dev"
+	isort; extra == 'dev'
+	pip-tools; extra == 'dev'
+	pre-commit; extra == 'dev'
+	twine; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dnspython-1.15.0[${PYTHON_USEDEP}]

@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	appdirs
-	black; extra == "black"
-	clang-format; extra == "clang-format"
-	jsonschema; extra == "jsonschema-validation"
-	libclang; extra == "cpp"
+	black; extra == 'black'
+	clang-format; extra == 'clang-format'
+	jsonschema; extra == 'jsonschema-validation'
+	libclang; extra == 'cpp'
 	markupsafe
 	pydantic-extra-types
 	pydantic>=2.4
-	pymdown-extensions; extra == "keys"
-	pyyaml; extra == "json"
+	pymdown-extensions; extra == 'keys'
+	pyyaml; extra == 'json'
 	requests
 	sphinx>=4.5
 	typing-extensions

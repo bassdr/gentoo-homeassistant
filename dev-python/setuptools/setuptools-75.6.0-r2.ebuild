@@ -29,59 +29,59 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	build[virtualenv]>=1.0.3; extra == "test"
-	filelock>=3.4.0; extra == "test"
-	furo; extra == "doc"
-	importlib_metadata>=6; python_version < "3.10" and extra == "core"
-	importlib_metadata>=7.0.2; python_version < "3.10" and extra == "type"
-	ini2toml[lite]>=0.14; extra == "test"
-	jaraco.collections; extra == "core"
-	jaraco.develop>=7.21; (python_version >= "3.9" and sys_platform != "cygwin") and extra == "test"
-	jaraco.develop>=7.21; sys_platform != "cygwin" and extra == "type"
-	jaraco.envs>=2.2; extra == "test"
-	jaraco.functools>=4; extra == "core"
-	jaraco.packaging>=9.3; extra == "doc"
-	jaraco.path>=3.2.0; extra == "test"
-	jaraco.test>=5.5; extra == "test"
-	jaraco.text>=3.7; extra == "core"
-	jaraco.tidelift>=1.4; extra == "doc"
-	more_itertools; extra == "core"
-	more_itertools>=8.8; extra == "core"
-	mypy<1.14,>=1.12; extra == "type"
-	packaging; extra == "core"
-	packaging>=24.2; extra == "core"
-	packaging>=24.2; extra == "test"
-	pip>=19.1; extra == "test"
-	platformdirs>=4.2.2; extra == "core"
-	pygments-github-lexers==0.0.5; extra == "doc"
-	pyproject-hooks!=1.1; extra == "doc"
-	pyproject-hooks!=1.1; extra == "test"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "check"
-	pytest-cov; extra == "cover"
-	pytest-enabler>=2.2; extra == "enabler"
-	pytest-home>=0.5; extra == "test"
-	pytest-mypy; extra == "type"
-	pytest-perf; sys_platform != "cygwin" and extra == "test"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
-	pytest-subprocess; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest-xdist>=3; extra == "test"
-	rst.linker>=1.9; extra == "doc"
-	ruff>=0.7.0; sys_platform != "cygwin" and extra == "check"
-	sphinx-favicon; extra == "doc"
-	sphinx-inline-tabs; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx-notfound-page<2,>=1; extra == "doc"
-	sphinx-reredirects; extra == "doc"
-	sphinx>=3.5; extra == "doc"
-	sphinxcontrib-towncrier; extra == "doc"
-	tomli-w>=1.0.0; extra == "test"
-	tomli>=2.0.1; python_version < "3.11" and extra == "core"
-	towncrier<24.7; extra == "doc"
-	virtualenv>=13.0.0; extra == "test"
-	wheel>=0.43.0; extra == "core"
-	wheel>=0.44.0; extra == "test"
+	build[virtualenv]>=1.0.3; extra == 'test'
+	filelock>=3.4.0; extra == 'test'
+	furo; extra == 'doc'
+	importlib_metadata>=6; python_version < '3.10' and extra == 'core'
+	importlib_metadata>=7.0.2; python_version < '3.10' and extra == 'type'
+	ini2toml[lite]>=0.14; extra == 'test'
+	jaraco.collections; extra == 'core'
+	jaraco.develop>=7.21; (python_version >= '3.9' and sys_platform != 'cygwin') and extra == 'test'
+	jaraco.develop>=7.21; sys_platform != 'cygwin' and extra == 'type'
+	jaraco.envs>=2.2; extra == 'test'
+	jaraco.functools>=4; extra == 'core'
+	jaraco.packaging>=9.3; extra == 'doc'
+	jaraco.path>=3.2.0; extra == 'test'
+	jaraco.test>=5.5; extra == 'test'
+	jaraco.text>=3.7; extra == 'core'
+	jaraco.tidelift>=1.4; extra == 'doc'
+	more_itertools; extra == 'core'
+	more_itertools>=8.8; extra == 'core'
+	mypy<1.14,>=1.12; extra == 'type'
+	packaging; extra == 'core'
+	packaging>=24.2; extra == 'core'
+	packaging>=24.2; extra == 'test'
+	pip>=19.1; extra == 'test'
+	platformdirs>=4.2.2; extra == 'core'
+	pygments-github-lexers==0.0.5; extra == 'doc'
+	pyproject-hooks!=1.1; extra == 'doc'
+	pyproject-hooks!=1.1; extra == 'test'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'check'
+	pytest-cov; extra == 'cover'
+	pytest-enabler>=2.2; extra == 'enabler'
+	pytest-home>=0.5; extra == 'test'
+	pytest-mypy; extra == 'type'
+	pytest-perf; sys_platform != 'cygwin' and extra == 'test'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'check'
+	pytest-subprocess; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest-xdist>=3; extra == 'test'
+	rst.linker>=1.9; extra == 'doc'
+	ruff>=0.7.0; sys_platform != 'cygwin' and extra == 'check'
+	sphinx-favicon; extra == 'doc'
+	sphinx-inline-tabs; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx-notfound-page<2,>=1; extra == 'doc'
+	sphinx-reredirects; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
+	sphinxcontrib-towncrier; extra == 'doc'
+	tomli-w>=1.0.0; extra == 'test'
+	tomli>=2.0.1; python_version < '3.11' and extra == 'core'
+	towncrier<24.7; extra == 'doc'
+	virtualenv>=13.0.0; extra == 'test'
+	wheel>=0.43.0; extra == 'core'
+	wheel>=0.44.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )

@@ -30,11 +30,11 @@ IUSE="${GENERATED_IUSE} doc sqlite test"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	argon2-cffi>=19.1.0; extra == "argon2"
+	argon2-cffi>=19.1.0; extra == 'argon2'
 	asgiref<4,>=3.8.1
-	bcrypt; extra == "bcrypt"
+	bcrypt; extra == 'bcrypt'
 	sqlparse>=0.3.1
-	tzdata; sys_platform == "win32"
+	tzdata; sys_platform == 'win32'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	argon2? ( >=dev-python/argon2-cffi-19.1.0[${PYTHON_USEDEP}] )

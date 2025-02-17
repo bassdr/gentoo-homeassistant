@@ -17,29 +17,29 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	check-manifest; extra == "dev"
-	coverage; extra == "test"
-	datasets; extra == "datasets"
+	check-manifest; extra == 'dev'
+	coverage; extra == 'test'
+	datasets; extra == 'datasets'
 	emoji
-	ipython; extra == "visualization"
-	jieba; extra == "tokenizers"
+	ipython; extra == 'visualization'
+	jieba; extra == 'tokenizers'
 	networkx
 	numpy
-	peft>=0.6.1; extra == "transformers"
+	peft>=0.6.1; extra == 'transformers'
 	protobuf>=3.15.0
-	pytest; extra == "test"
-	pythainlp; extra == "tokenizers"
-	python-crfsuite; extra == "tokenizers"
+	pytest; extra == 'test'
+	pythainlp; extra == 'tokenizers'
+	python-crfsuite; extra == 'tokenizers'
 	requests
-	spacy; extra == "tokenizers"
-	spacy; extra == "visualization"
-	streamlit; extra == "visualization"
-	sudachidict_core; extra == "tokenizers"
-	sudachipy; extra == "tokenizers"
-	tomli; python_version < "3.11"
+	spacy; extra == 'tokenizers'
+	spacy; extra == 'visualization'
+	streamlit; extra == 'visualization'
+	sudachidict_core; extra == 'tokenizers'
+	sudachipy; extra == 'tokenizers'
+	tomli; python_version < '3.11'
 	torch>=1.3.0
 	tqdm
-	transformers>=3.0.0; extra == "transformers"
+	transformers>=3.0.0; extra == 'transformers'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	datasets? ( dev-python/datasets[${PYTHON_USEDEP}] )

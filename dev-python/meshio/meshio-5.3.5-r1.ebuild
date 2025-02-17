@@ -20,7 +20,7 @@ IUSE="${GENERATED_IUSE} hdf5 netcdf"
 
 REQUIRES_DIST="
 	h5py ; extra == 'all'
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	netCDF4 ; extra == 'all'
 	numpy >=1.20.0
 	rich

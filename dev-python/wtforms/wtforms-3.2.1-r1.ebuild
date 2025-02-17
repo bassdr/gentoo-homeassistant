@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="email"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	email-validator; extra == "email"
+	email-validator; extra == 'email'
 	markupsafe
 "
 GENERATED_RDEPEND="${RDEPEND}

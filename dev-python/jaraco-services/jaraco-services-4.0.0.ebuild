@@ -17,20 +17,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	furo; extra == "docs"
+	furo; extra == 'docs'
 	jaraco.classes
-	jaraco.packaging>=9.3; extra == "docs"
+	jaraco.packaging>=9.3; extra == 'docs'
 	path
 	portend
-	pytest!=8.1.*,>=6; extra == "testing"
-	pytest-checkdocs>=2.4; extra == "testing"
-	pytest-cov; extra == "testing"
-	pytest-enabler>=2.2; extra == "testing"
-	pytest-mypy; extra == "testing"
-	pytest-ruff>=0.2.1; extra == "testing"
-	rst.linker>=1.9; extra == "docs"
-	sphinx-lint; extra == "docs"
-	sphinx>=3.5; extra == "docs"
+	pytest!=8.1.*,>=6; extra == 'testing'
+	pytest-checkdocs>=2.4; extra == 'testing'
+	pytest-cov; extra == 'testing'
+	pytest-enabler>=2.2; extra == 'testing'
+	pytest-mypy; extra == 'testing'
+	pytest-ruff>=0.2.1; extra == 'testing'
+	rst.linker>=1.9; extra == 'docs'
+	sphinx-lint; extra == 'docs'
+	sphinx>=3.5; extra == 'docs'
 	tempora
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="fixture"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	fixtures; extra == "fixture"
+	fixtures; extra == 'fixture'
 	requests<3,>=2.22
 "
 GENERATED_RDEPEND="${RDEPEND}

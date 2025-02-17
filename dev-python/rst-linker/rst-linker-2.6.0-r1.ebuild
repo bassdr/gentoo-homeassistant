@@ -19,21 +19,21 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	furo; extra == "docs"
+	furo; extra == 'docs'
 	jaraco.context
-	jaraco.packaging>=9.3; extra == "docs"
+	jaraco.packaging>=9.3; extra == 'docs'
 	jaraco.vcs>=2.1
-	path; extra == "testing"
-	pytest-checkdocs>=2.4; extra == "testing"
-	pytest-cov; extra == "testing"
-	pytest-enabler>=2.2; extra == "testing"
-	pytest-mypy; platform_python_implementation != "PyPy" and extra == "testing"
-	pytest-ruff>=0.2.1; extra == "testing"
-	pytest-subprocess; extra == "testing"
-	pytest>=6; extra == "testing"
-	rst.linker>=1.9; extra == "docs"
-	sphinx-lint; extra == "docs"
-	sphinx>=3.5; extra == "docs"
+	path; extra == 'testing'
+	pytest-checkdocs>=2.4; extra == 'testing'
+	pytest-cov; extra == 'testing'
+	pytest-enabler>=2.2; extra == 'testing'
+	pytest-mypy; platform_python_implementation != 'PyPy' and extra == 'testing'
+	pytest-ruff>=0.2.1; extra == 'testing'
+	pytest-subprocess; extra == 'testing'
+	pytest>=6; extra == 'testing'
+	rst.linker>=1.9; extra == 'docs'
+	sphinx-lint; extra == 'docs'
+	sphinx>=3.5; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )

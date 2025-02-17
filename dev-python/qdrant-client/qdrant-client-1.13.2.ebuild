@@ -17,15 +17,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	fastembed-gpu==0.5.1; extra == "fastembed-gpu"
-	fastembed==0.5.1; extra == "fastembed"
+	fastembed-gpu==0.5.1; extra == 'fastembed-gpu'
+	fastembed==0.5.1; extra == 'fastembed'
 	grpcio-tools>=1.41.0
 	grpcio>=1.41.0
 	httpx[http2]>=0.20.0
-	numpy<2.1.0,>=1.21; python_version < "3.10"
-	numpy>=1.21; python_version >= "3.10" and python_version < "3.12"
-	numpy>=1.26; python_version >= "3.12" and python_version < "3.13"
-	numpy>=2.1.0; python_version >= "3.13"
+	numpy<2.1.0,>=1.21; python_version < '3.10'
+	numpy>=1.21; python_version >= '3.10' and python_version < '3.12'
+	numpy>=1.26; python_version >= '3.12' and python_version < '3.13'
+	numpy>=2.1.0; python_version >= '3.13'
 	portalocker<3.0.0,>=2.7.0
 	pydantic>=1.10.8
 	urllib3<3,>=1.26.14

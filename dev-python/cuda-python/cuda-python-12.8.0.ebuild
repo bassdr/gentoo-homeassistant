@@ -8,7 +8,7 @@ IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1
 PARENT_PN="cuda-python"
-MY_PN="${PN/-/_}
+MY_PN="${PN/-/_}"
 SRC_URI="https://github.com/NVIDIA/${PARENT_PN}/archive/refs/tags/v${PV}.tar.gz -> ${PARENT_PN}-${PV}.gh.tar.gz"
 S="${WORKDIR}/${PARENT_PN}/${MY_PN}"
 
@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cuda-bindings[all]~=12.8.0; extra == "all"
+	cuda-bindings[all]~=12.8.0; extra == 'all'
 	cuda-bindings~=12.8.0
 "
 GENERATED_RDEPEND="${RDEPEND}

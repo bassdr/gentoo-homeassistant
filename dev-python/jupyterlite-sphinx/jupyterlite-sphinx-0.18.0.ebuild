@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	docutils
-	hatch; extra == "dev"
+	hatch; extra == 'dev'
 	jupyter-server
 	jupyterlab-server
 	jupyterlite-core<0.6,>=0.2
-	jupyterlite-xeus<4,>=0.1.8; extra == "docs"
+	jupyterlite-xeus<4,>=0.1.8; extra == 'docs'
 	jupytext
-	myst-parser; extra == "docs"
+	myst-parser; extra == 'docs'
 	nbformat
-	pydata-sphinx-theme; extra == "docs"
+	pydata-sphinx-theme; extra == 'docs'
 	sphinx>=4
 "
 GENERATED_RDEPEND="${RDEPEND}

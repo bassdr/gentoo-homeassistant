@@ -19,24 +19,24 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	attrs>=18.1.0
 	bibtexparser>=2.0.0b4
-	build; extra == "dev"
+	build; extra == 'dev'
 	colorlog
-	flake8; extra == "dev"
+	flake8; extra == 'dev'
 	lxml
 	markdown
 	markupsafe
 	pylatexenc
-	pytest-cov; extra == "test"
-	pytest-mock; extra == "test"
-	pytest>=5; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest-mock; extra == 'test'
+	pytest>=5; extra == 'test'
 	python-dateutil
-	sphinx-autodoc-typehints; extra == "docs"
-	sphinx-rtd-theme; extra == "docs"
-	sphinx<7; extra == "docs"
+	sphinx-autodoc-typehints; extra == 'docs'
+	sphinx-rtd-theme; extra == 'docs'
+	sphinx<7; extra == 'docs'
 	tabulate>=0.7.7
-	tox; extra == "test"
-	twine; extra == "dev"
-	wheel; extra == "dev"
+	tox; extra == 'test'
+	twine; extra == 'dev'
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-18.1.0[${PYTHON_USEDEP}]

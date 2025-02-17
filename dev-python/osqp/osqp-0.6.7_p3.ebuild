@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	numpy>=1.7
 	qdldl
-	scipy!=1.12.0; extra == "dev"
+	scipy!=1.12.0; extra == 'dev'
 	scipy>=0.13.2
 "
 GENERATED_RDEPEND="${RDEPEND}

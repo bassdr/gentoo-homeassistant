@@ -20,24 +20,24 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="build devel dist static-analysis"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	build; extra == "build"
-	changelog-chug; extra == "build"
-	coverage; extra == "test"
-	docutils; extra == "build"
-	isort~=5.13; extra == "static-analysis"
+	build; extra == 'build'
+	changelog-chug; extra == 'build'
+	coverage; extra == 'test'
+	docutils; extra == 'build'
+	isort~=5.13; extra == 'static-analysis'
 	lockfile>=0.10
-	pip-check; extra == "static-analysis"
-	pycodestyle~=2.12; extra == "static-analysis"
-	pydocstyle~=6.3; extra == "static-analysis"
-	python-daemon[build,static-analysis]; extra == "test"
-	python-daemon[build]; extra == "dist"
-	python-daemon[dist,test]; extra == "devel"
-	python-daemon[doc]; extra == "build"
-	pyupgrade~=3.17; extra == "static-analysis"
-	testscenarios>=0.4; extra == "test"
-	testtools; extra == "test"
-	twine; extra == "dist"
-	wheel; extra == "build"
+	pip-check; extra == 'static-analysis'
+	pycodestyle~=2.12; extra == 'static-analysis'
+	pydocstyle~=6.3; extra == 'static-analysis'
+	python-daemon[build,static-analysis]; extra == 'test'
+	python-daemon[build]; extra == 'dist'
+	python-daemon[dist,test]; extra == 'devel'
+	python-daemon[doc]; extra == 'build'
+	pyupgrade~=3.17; extra == 'static-analysis'
+	testscenarios>=0.4; extra == 'test'
+	testtools; extra == 'test'
+	twine; extra == 'dist'
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )

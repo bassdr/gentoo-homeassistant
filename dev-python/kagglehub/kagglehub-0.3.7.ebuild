@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	datasets; extra == "hf-datasets"
+	datasets; extra == 'hf-datasets'
 	model-signing
 	packaging
-	pandas; extra == "hf-datasets"
-	pandas; extra == "pandas-datasets"
+	pandas; extra == 'hf-datasets'
+	pandas; extra == 'pandas-datasets'
 	requests
 	tqdm
 "

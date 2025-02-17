@@ -19,23 +19,23 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	cssselect; extra == "test"
-	furo; extra == "doc"
-	importlib-resources; python_version < "3.9" and extra == "test"
-	jaraco.packaging>=9.3; extra == "doc"
-	jaraco.test>=5.1; extra == "test"
-	jaraco.tidelift>=1.4; extra == "doc"
-	lxml; python_version < "3.11" and extra == "test"
+	cssselect; extra == 'test'
+	furo; extra == 'doc'
+	importlib-resources; python_version < '3.9' and extra == 'test'
+	jaraco.packaging>=9.3; extra == 'doc'
+	jaraco.test>=5.1; extra == 'test'
+	jaraco.tidelift>=1.4; extra == 'doc'
+	lxml; python_version < '3.11' and extra == 'test'
 	more-itertools
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-enabler>=2.2; extra == "test"
-	pytest-mypy; extra == "test"
-	pytest-ruff>=0.2.1; extra == "test"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-enabler>=2.2; extra == 'test'
+	pytest-mypy; extra == 'test'
+	pytest-ruff>=0.2.1; extra == 'test'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )

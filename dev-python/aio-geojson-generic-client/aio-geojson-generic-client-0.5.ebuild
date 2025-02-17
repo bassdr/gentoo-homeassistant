@@ -26,14 +26,14 @@ DOCS="README.md"
 REQUIRES_DIST="
 	aio-geojson-client>=0.21
 	aiohttp<4,>=3.7.4
-	aioresponses; extra == "tests"
-	coverage; extra == "tests"
+	aioresponses; extra == 'tests'
+	coverage; extra == 'tests'
 	geojson>=3.1.0
-	mock; extra == "tests"
-	pytest-asyncio; extra == "tests"
-	pytest-cov; extra == "tests"
-	pytest-timeout; extra == "tests"
-	pytest-xdist; extra == "tests"
+	mock; extra == 'tests'
+	pytest-asyncio; extra == 'tests'
+	pytest-cov; extra == 'tests'
+	pytest-timeout; extra == 'tests'
+	pytest-xdist; extra == 'tests'
 	pytz>=2019.01
 "
 GENERATED_RDEPEND="${RDEPEND}

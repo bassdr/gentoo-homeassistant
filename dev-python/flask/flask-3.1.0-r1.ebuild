@@ -34,12 +34,12 @@ IUSE="${GENERATED_IUSE} examples"
 REQUIRES_DIST="
 	Jinja2>=3.1.2
 	Werkzeug>=3.1
-	asgiref>=3.2; extra == "async"
+	asgiref>=3.2; extra == 'async'
 	blinker>=1.9
 	click>=8.1.3
-	importlib-metadata>=3.6; python_version < "3.10"
+	importlib-metadata>=3.6; python_version < '3.10'
 	itsdangerous>=2.2
-	python-dotenv; extra == "dotenv"
+	python-dotenv; extra == 'dotenv'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	async? ( >=dev-python/asgiref-3.2[${PYTHON_USEDEP}] )

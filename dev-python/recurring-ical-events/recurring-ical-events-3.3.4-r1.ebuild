@@ -24,12 +24,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	backports.zoneinfo; python_version == "3.7" or python_version == "3.8"
+	backports.zoneinfo; python_version == '3.7' or python_version == '3.8'
 	icalendar<7.0.0,>=5.0.0
 	python-dateutil<3.0.0,>=2.8.1
-	tzdata; python_version >= "3.7"
-	x-wr-timezone<3.0.0,>=1.0.0; python_version >= "3.9"
-	x-wr-timezone==0.*; python_version <= "3.8"
+	tzdata; python_version >= '3.7'
+	x-wr-timezone<3.0.0,>=1.0.0; python_version >= '3.9'
+	x-wr-timezone==0.*; python_version <= '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/icalendar-5.0.0[${PYTHON_USEDEP}] <dev-python/icalendar-7.0.0[${PYTHON_USEDEP}]

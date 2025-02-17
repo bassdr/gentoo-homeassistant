@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyYAML~=6.0
 	fsspec>=2021.04.0
-	typing-extensions; python_version < "3.11"
+	typing-extensions; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fsspec-2021.04.0[${PYTHON_USEDEP}]

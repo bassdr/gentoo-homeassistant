@@ -21,23 +21,23 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	appdirs; extra == "test"
-	furo; extra == "doc"
-	jaraco.packaging>=9.3; extra == "doc"
-	jaraco.tidelift>=1.4; extra == "doc"
-	more-itertools; extra == "test"
-	packaging; extra == "test"
-	pygments; extra == "test"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-enabler>=2.2; extra == "test"
-	pytest-mypy; extra == "test"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
-	pywin32; (platform_system == "Windows" and python_version < "3.12") and extra == "test"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
+	appdirs; extra == 'test'
+	furo; extra == 'doc'
+	jaraco.packaging>=9.3; extra == 'doc'
+	jaraco.tidelift>=1.4; extra == 'doc'
+	more-itertools; extra == 'test'
+	packaging; extra == 'test'
+	pygments; extra == 'test'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-enabler>=2.2; extra == 'test'
+	pytest-mypy; extra == 'test'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'test'
+	pywin32; (platform_system == 'Windows' and python_version < '3.12') and extra == 'test'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )

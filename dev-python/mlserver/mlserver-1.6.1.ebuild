@@ -39,7 +39,7 @@ REQUIRES_DIST="
 	starlette-exporter
 	tritonclient[http]>=2.42
 	uvicorn
-	uvloop; (sys_platform != "win32" and sys_platform != "cygwin") and platform_python_implementation != "PyPy"
+	uvloop; (sys_platform != 'win32' and sys_platform != 'cygwin') and platform_python_implementation != 'PyPy'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiofiles[${PYTHON_USEDEP}]

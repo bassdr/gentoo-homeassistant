@@ -23,7 +23,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	aiohttp[speedups]<4.0.0,>=3.9.5; extra == "aiohttp"
+	aiohttp[speedups]<4.0.0,>=3.9.5; extra == 'aiohttp'
 	mashumaro<4.0.0,>=3.13.1
 "
 GENERATED_RDEPEND="${RDEPEND}

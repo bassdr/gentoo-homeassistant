@@ -16,9 +16,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	nvidia-ml-py<13.0.0a0,>=12.0.0
-	pytest-cov; extra == "test"
-	pytest-runner; extra == "test"
-	pytest>=3.6; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest-runner; extra == 'test'
+	pytest>=3.6; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/nvidia-ml-py-12.0.0[${PYTHON_USEDEP}] <dev-python/nvidia-ml-py-13.0.0_alpha0[${PYTHON_USEDEP}]

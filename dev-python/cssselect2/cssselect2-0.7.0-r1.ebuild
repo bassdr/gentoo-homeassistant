@@ -19,11 +19,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	flake8 ; extra == "test"
-	isort ; extra == "test"
-	pytest ; extra == "test"
-	sphinx ; extra == "doc"
-	sphinx_rtd_theme ; extra == "doc"
+	flake8 ; extra == 'test'
+	isort ; extra == 'test'
+	pytest ; extra == 'test'
+	sphinx ; extra == 'doc'
+	sphinx_rtd_theme ; extra == 'doc'
 	tinycss2
 	webencodings
 "

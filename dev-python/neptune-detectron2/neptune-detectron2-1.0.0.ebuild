@@ -16,17 +16,17 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	fvcore (<0.1.5.post20221220)
-	importlib-metadata ; python_version < "3.8"
-	neptune (>=1.0.0) ; extra == "dev"
+	importlib-metadata ; python_version < '3.8'
+	neptune (>=1.0.0) ; extra == 'dev'
 	numpy (<1.24.0)
-	pre-commit ; extra == "dev"
-	pytest (>=5.0) ; extra == "dev"
-	pytest-cov (==2.10.1) ; extra == "dev"
-	torch (>=1.13.0,<2.0.0) ; extra == "dev"
-	torchvision (>=0.14.0,<0.15.0) ; extra == "dev"
+	pre-commit ; extra == 'dev'
+	pytest (>=5.0) ; extra == 'dev'
+	pytest-cov (==2.10.1) ; extra == 'dev'
+	torch (>=1.13.0,<2.0.0) ; extra == 'dev'
+	torchvision (>=0.14.0,<0.15.0) ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/fvcore-0.1.5_p20221220[${PYTHON_USEDEP}]
+	<dev-python/fvcore-0.1.5_p0221220[${PYTHON_USEDEP}]
 	<dev-python/numpy-1.24.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

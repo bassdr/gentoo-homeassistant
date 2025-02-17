@@ -18,31 +18,31 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Babel>=2.13.1
-	Pillow>=10.2.0; extra == "extra"
+	Pillow>=10.2.0; extra == 'extra'
 	commonmark>=0.9.1
 	css-inline>=0.14.1
 	faicons>=0.2.2
-	great_tables[dev-no-pandas]; extra == "dev"
-	great_tables[dev]; extra == "all"
-	great_tables[extra]; extra == "all"
-	griffe==0.38.1; extra == "dev-no-pandas"
+	great_tables[dev-no-pandas]; extra == 'dev'
+	great_tables[dev]; extra == 'all'
+	great_tables[extra]; extra == 'all'
+	griffe==0.38.1; extra == 'dev-no-pandas'
 	htmltools>=0.4.1
 	importlib-metadata
 	importlib-resources
-	jupyter; extra == "dev-no-pandas"
+	jupyter; extra == 'dev-no-pandas'
 	numpy>=1.22.4
-	pandas; extra == "dev"
-	polars; extra == "dev-no-pandas"
-	pre-commit==2.15.0; extra == "dev-no-pandas"
-	pyarrow; extra == "dev-no-pandas"
-	pyright>=1.1.244; extra == "dev-no-pandas"
-	pytest-cov; extra == "dev-no-pandas"
-	pytest>=3; extra == "dev-no-pandas"
-	quartodoc>=0.8.1; python_version >= "3.9" and extra == "dev-no-pandas"
-	ruff==0.8.0; extra == "dev-no-pandas"
-	selenium>=4.18.1; extra == "extra"
-	shiny; extra == "dev-no-pandas"
-	syrupy; extra == "dev-no-pandas"
+	pandas; extra == 'dev'
+	polars; extra == 'dev-no-pandas'
+	pre-commit==2.15.0; extra == 'dev-no-pandas'
+	pyarrow; extra == 'dev-no-pandas'
+	pyright>=1.1.244; extra == 'dev-no-pandas'
+	pytest-cov; extra == 'dev-no-pandas'
+	pytest>=3; extra == 'dev-no-pandas'
+	quartodoc>=0.8.1; python_version >= '3.9' and extra == 'dev-no-pandas'
+	ruff==0.8.0; extra == 'dev-no-pandas'
+	selenium>=4.18.1; extra == 'extra'
+	shiny; extra == 'dev-no-pandas'
+	syrupy; extra == 'dev-no-pandas'
 	typing_extensions>=3.10.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	adal>=1.0.2; extra == "adal"
+	adal>=1.0.2; extra == 'adal'
 	certifi>=14.05.14
 	durationpy>=0.7
 	google-auth>=1.0.1

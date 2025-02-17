@@ -17,12 +17,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	changelist==0.5; extra == "dev"
+	changelist==0.5; extra == 'dev'
 	click
-	colorama; platform_system == "Windows"
+	colorama; platform_system == 'Windows'
 	importlib-metadata>=7
-	pre-commit==4.0.1; extra == "lint"
-	tomli; python_version < "3.11"
+	pre-commit==4.0.1; extra == 'lint'
+	tomli; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]

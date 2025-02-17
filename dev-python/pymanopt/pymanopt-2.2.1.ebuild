@@ -17,37 +17,37 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	autograd>=1.2; extra == "autograd"
-	black[jupyter]==22.3.0; extra == "dev"
-	build==0.8.0; extra == "ci"
-	docutils==0.16; extra == "docs"
-	flake8-bugbear==22.12.6; extra == "dev"
-	flake8-docstrings==1.6.0; extra == "dev"
-	flake8-import-order==0.18.2; extra == "dev"
-	flake8-pyproject==1.2.2; extra == "dev"
-	flake8==5.0.4; extra == "dev"
-	ipykernel==6.4.2; extra == "docs"
-	isort==5.11.5; extra == "dev"
-	jax>=0.2.0; extra == "jax"
-	jaxlib; extra == "jax"
-	matplotlib; extra == "dev"
-	myst-parser==0.16.1; extra == "docs"
-	nbsphinx==0.8.7; extra == "docs"
+	autograd>=1.2; extra == 'autograd'
+	black[jupyter]==22.3.0; extra == 'dev'
+	build==0.8.0; extra == 'ci'
+	docutils==0.16; extra == 'docs'
+	flake8-bugbear==22.12.6; extra == 'dev'
+	flake8-docstrings==1.6.0; extra == 'dev'
+	flake8-import-order==0.18.2; extra == 'dev'
+	flake8-pyproject==1.2.2; extra == 'dev'
+	flake8==5.0.4; extra == 'dev'
+	ipykernel==6.4.2; extra == 'docs'
+	isort==5.11.5; extra == 'dev'
+	jax>=0.2.0; extra == 'jax'
+	jaxlib; extra == 'jax'
+	matplotlib; extra == 'dev'
+	myst-parser==0.16.1; extra == 'docs'
+	nbsphinx==0.8.7; extra == 'docs'
 	numpy>=1.16.0
-	pip==22.3.1; extra == "ci"
-	pre-commit; extra == "dev"
-	pymanopt[autograd,jax,tensorflow,torch]; extra == "backends"
-	pymanopt[backends,dev]; extra == "all"
-	pytest-cov==4.0.0; extra == "dev"
-	pytest==7.2.0; extra == "dev"
+	pip==22.3.1; extra == 'ci'
+	pre-commit; extra == 'dev'
+	pymanopt[autograd,jax,tensorflow,torch]; extra == 'backends'
+	pymanopt[backends,dev]; extra == 'all'
+	pytest-cov==4.0.0; extra == 'dev'
+	pytest==7.2.0; extra == 'dev'
 	scipy!=1.10.*,!=1.11.*,!=1.12.*,>=1.0
-	setuptools==66.1.0; extra == "ci"
-	sphinx-rtd-theme==1.0.0; extra == "docs"
-	sphinx==4.2.0; extra == "docs"
-	sphinxcontrib-katex==0.8.6; extra == "docs"
-	tensorflow>=2.0.0; extra == "tensorflow"
-	torch>=1.0.0; extra == "torch"
-	wheel==0.38.4; extra == "ci"
+	setuptools==66.1.0; extra == 'ci'
+	sphinx-rtd-theme==1.0.0; extra == 'docs'
+	sphinx==4.2.0; extra == 'docs'
+	sphinxcontrib-katex==0.8.6; extra == 'docs'
+	tensorflow>=2.0.0; extra == 'tensorflow'
+	torch>=1.0.0; extra == 'torch'
+	wheel==0.38.4; extra == 'ci'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	autograd? ( >=dev-python/autograd-1.2[${PYTHON_USEDEP}] )

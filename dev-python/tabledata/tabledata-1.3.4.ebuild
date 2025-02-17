@@ -18,9 +18,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	DataProperty<2,>=1.0.1
-	loguru<1,>=0.4.1; extra == "logging"
-	pytablewriter>=0.46; extra == "test"
-	pytest; extra == "test"
+	loguru<1,>=0.4.1; extra == 'logging'
+	pytablewriter>=0.46; extra == 'test'
+	pytest; extra == 'test'
 	typepy<2,>=1.2.0
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -26,15 +26,15 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="speedups"
-IUSE="${GENERATED_IUSE} +native-extensions test-rust"
+IUSE="${GENERATED_IUSE} +native-extensions +speedups test-rust"
 REQUIRES_DIST="
-	Brotli; platform_python_implementation == "CPython" and extra == "speedups"
-	aiodns>=3.2.0; (sys_platform == "linux" or sys_platform == "darwin") and extra == "speedups"
+	Brotli; platform_python_implementation == 'CPython' and extra == 'speedups'
+	aiodns>=3.2.0; (sys_platform == 'linux' or sys_platform == 'darwin') and extra == 'speedups'
 	aiohappyeyeballs>=2.3.0
 	aiosignal>=1.1.2
-	async-timeout<6.0,>=4.0; python_version < "3.11"
+	async-timeout<6.0,>=4.0; python_version < '3.11'
 	attrs>=17.3.0
-	brotlicffi; platform_python_implementation != "CPython" and extra == "speedups"
+	brotlicffi; platform_python_implementation != 'CPython' and extra == 'speedups'
 	frozenlist>=1.1.1
 	multidict<7.0,>=4.5
 	propcache>=0.2.0
@@ -45,27 +45,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/aiosignal-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/attrs-17.3.0[${PYTHON_USEDEP}]
-	speedups? ( dev-python/brotli[${PYTHON_USEDEP}] )
+	speedups? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
 	>=dev-python/frozenlist-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-4.5[${PYTHON_USEDEP}] <dev-python/multidict-7.0[${PYTHON_USEDEP}]
 	>=dev-python/propcache-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.17.0[${PYTHON_USEDEP}] <dev-python/yarl-2.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/aiodns-3.2.0[${PYTHON_USEDEP}]
-	>=dev-python/aiohappyeyeballs-2.3.0[${PYTHON_USEDEP}]
-	>=dev-python/aiosignal-1.1.2[${PYTHON_USEDEP}]
-	>=dev-python/attrs-17.3.0[${PYTHON_USEDEP}]
-	dev-python/brotlicffi[${PYTHON_USEDEP}]
-	>=dev-python/frozenlist-1.1.1[${PYTHON_USEDEP}]
-	>=dev-python/multidict-4.5.0[${PYTHON_USEDEP}]
-	>=dev-python/propcache-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/yarl-1.17.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		<dev-python/async-timeout-6[${PYTHON_USEDEP}]
-		>=dev-python/async-timeout-4.0[${PYTHON_USEDEP}]
-	' 3.10)
-"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	native-extensions? (
 		dev-python/cython[${PYTHON_USEDEP}]

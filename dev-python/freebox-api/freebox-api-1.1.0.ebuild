@@ -25,7 +25,7 @@ DOCS="README.rst"
 
 REQUIRES_DIST="
 	aiohttp (>=3,<4)
-	importlib-metadata (>=3.3,<5.0) ; python_version < "3.8"
+	importlib-metadata (>=3.3,<5.0) ; python_version < '3.8'
 	urllib3 (>=1.26.6,<2.0.0)
 "
 GENERATED_RDEPEND="${RDEPEND}

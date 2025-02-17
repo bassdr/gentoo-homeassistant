@@ -17,23 +17,23 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	boto3; extra == "tests"
-	datasets; extra == "tests"
-	duckdb; extra == "tests"
-	ml-dtypes; extra == "tests"
+	boto3; extra == 'tests'
+	datasets; extra == 'tests'
+	duckdb; extra == 'tests'
+	ml-dtypes; extra == 'tests'
 	numpy>=1.22
-	pandas; extra == "tests"
-	pillow; extra == "tests"
-	polars[pandas,pyarrow]; extra == "tests"
+	pandas; extra == 'tests'
+	pillow; extra == 'tests'
+	polars[pandas,pyarrow]; extra == 'tests'
 	pyarrow>=14
-	pyright; extra == "dev"
-	pytest-benchmark; extra == "benchmarks"
-	pytest; extra == "tests"
-	ray[data]<2.38; python_full_version < "3.12" and extra == "ray"
-	ruff==0.4.1; extra == "dev"
-	tensorflow; extra == "tests"
-	torch; extra == "torch"
-	tqdm; extra == "tests"
+	pyright; extra == 'dev'
+	pytest-benchmark; extra == 'benchmarks'
+	pytest; extra == 'tests'
+	ray[data]<2.38; python_full_version < '3.12' and extra == 'ray'
+	ruff==0.4.1; extra == 'dev'
+	tensorflow; extra == 'tests'
+	torch; extra == 'torch'
+	tqdm; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.22[${PYTHON_USEDEP}]

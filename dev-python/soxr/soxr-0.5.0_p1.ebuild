@@ -19,12 +19,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	linkify-it-py; extra == "docs"
-	myst-parser; extra == "docs"
+	linkify-it-py; extra == 'docs'
+	myst-parser; extra == 'docs'
 	numpy
-	pytest; extra == "test"
-	sphinx-book-theme; extra == "docs"
-	sphinx; extra == "docs"
+	pytest; extra == 'test'
+	sphinx-book-theme; extra == 'docs'
+	sphinx; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/linkify-it-py[${PYTHON_USEDEP}] )

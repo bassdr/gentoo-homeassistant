@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-resources; python_version < "3.10"
+	importlib-resources; python_version < '3.10'
 	numpy>=1
 	plotly>=5.20
 	statsmodels!=0.14.2,>=0.12

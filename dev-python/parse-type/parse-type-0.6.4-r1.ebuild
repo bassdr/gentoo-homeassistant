@@ -18,30 +18,30 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="develop docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Sphinx>=1.6; extra == "docs"
-	build>=0.5.1; extra == "develop"
-	coverage>=4.4; extra == "develop"
-	enum34; python_version < "3.4"
-	parse>=1.13.1; python_version <= "2.7"
-	parse>=1.18.0; python_version >= "3.0"
-	pylint; extra == "develop"
-	pytest-cov; extra == "develop"
-	pytest-html>=1.19.0; extra == "develop"
-	pytest-html>=1.19.0; extra == "testing"
-	pytest<5.0; python_version < "3.0" and extra == "develop"
-	pytest<5.0; python_version < "3.0" and extra == "testing"
-	pytest>=5.0; python_version >= "3.0" and extra == "develop"
-	pytest>=5.0; python_version >= "3.0" and extra == "testing"
-	ruff; python_version >= "3.7" and extra == "develop"
-	setuptools-scm; extra == "develop"
-	setuptools; extra == "develop"
+	Sphinx>=1.6; extra == 'docs'
+	build>=0.5.1; extra == 'develop'
+	coverage>=4.4; extra == 'develop'
+	enum34; python_version < '3.4'
+	parse>=1.13.1; python_version <= '2.7'
+	parse>=1.18.0; python_version >= '3.0'
+	pylint; extra == 'develop'
+	pytest-cov; extra == 'develop'
+	pytest-html>=1.19.0; extra == 'develop'
+	pytest-html>=1.19.0; extra == 'testing'
+	pytest<5.0; python_version < '3.0' and extra == 'develop'
+	pytest<5.0; python_version < '3.0' and extra == 'testing'
+	pytest>=5.0; python_version >= '3.0' and extra == 'develop'
+	pytest>=5.0; python_version >= '3.0' and extra == 'testing'
+	ruff; python_version >= '3.7' and extra == 'develop'
+	setuptools-scm; extra == 'develop'
+	setuptools; extra == 'develop'
 	six>=1.15
-	sphinx-bootstrap-theme>=0.6.0; extra == "docs"
-	tox<4.0,>=2.8; extra == "develop"
-	twine>=1.13.0; extra == "develop"
-	virtualenv<20.22.0; python_version <= "3.6" and extra == "develop"
-	virtualenv>=20.0.0; python_version > "3.6" and extra == "develop"
-	wheel; extra == "develop"
+	sphinx-bootstrap-theme>=0.6.0; extra == 'docs'
+	tox<4.0,>=2.8; extra == 'develop'
+	twine>=1.13.0; extra == 'develop'
+	virtualenv<20.22.0; python_version <= '3.6' and extra == 'develop'
+	virtualenv>=20.0.0; python_version > '3.6' and extra == 'develop'
+	wheel; extra == 'develop'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( >=dev-python/build-0.5.1[${PYTHON_USEDEP}] )

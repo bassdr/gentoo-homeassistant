@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	beautifulsoup4
-	furo; extra == "docs"
+	furo; extra == 'docs'
 	jinja2
-	myst-parser; extra == "docs"
-	pytest-regressions; extra == "testing"
-	pytest; extra == "testing"
+	myst-parser; extra == 'docs'
+	pytest-regressions; extra == 'testing'
+	pytest; extra == 'testing'
 	requests
-	sphinx-pytest; extra == "testing"
+	sphinx-pytest; extra == 'testing'
 	sphinx>4
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -25,7 +25,7 @@ DEPEND="
 	dev-libs/libxml2:=
 "
 REQUIRES_DIST="
-	beautifulsoup4; extra == "soup"
+	beautifulsoup4; extra == 'soup'
 	chardet
 	lxml>=3.8.0
 "

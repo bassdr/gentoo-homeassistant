@@ -16,11 +16,11 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	boto3
-	importlib-metadata ; python_version < "3.8"
-	neptune (>=1.0.0) ; extra == "dev"
-	pre-commit ; extra == "dev"
-	pytest (>=5.0) ; extra == "dev"
-	pytest-cov (==2.10.1) ; extra == "dev"
+	importlib-metadata ; python_version < '3.8'
+	neptune (>=1.0.0) ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pytest (>=5.0) ; extra == 'dev'
+	pytest-cov (==2.10.1) ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/boto3[${PYTHON_USEDEP}]

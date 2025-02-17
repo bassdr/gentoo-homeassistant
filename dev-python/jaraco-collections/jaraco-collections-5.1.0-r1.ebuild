@@ -21,19 +21,19 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="check cover doc enabler type"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	furo; extra == "doc"
-	jaraco.packaging>=9.3; extra == "doc"
+	furo; extra == 'doc'
+	jaraco.packaging>=9.3; extra == 'doc'
 	jaraco.text
-	jaraco.tidelift>=1.4; extra == "doc"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "check"
-	pytest-cov; extra == "cover"
-	pytest-enabler>=2.2; extra == "enabler"
-	pytest-mypy; extra == "type"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
+	jaraco.tidelift>=1.4; extra == 'doc'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'check'
+	pytest-cov; extra == 'cover'
+	pytest-enabler>=2.2; extra == 'enabler'
+	pytest-mypy; extra == 'type'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'check'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )

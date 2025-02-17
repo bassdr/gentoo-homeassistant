@@ -17,23 +17,23 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pygments; extra == "dev"
-	build; extra == "dev"
-	chardet; extra == "dev"
-	chardet; extra == "hard-encoding-detection"
-	chardet>=5.1.0; extra == "types"
-	mypy; extra == "types"
-	pre-commit; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest-cov; extra == "types"
-	pytest-dependency; extra == "dev"
-	pytest-dependency; extra == "types"
-	pytest; extra == "dev"
-	pytest; extra == "types"
-	ruff; extra == "dev"
-	tomli; extra == "dev"
-	tomli; python_version < "3.11" and extra == "toml"
-	twine; extra == "dev"
+	Pygments; extra == 'dev'
+	build; extra == 'dev'
+	chardet; extra == 'dev'
+	chardet; extra == 'hard-encoding-detection'
+	chardet>=5.1.0; extra == 'types'
+	mypy; extra == 'types'
+	pre-commit; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest-cov; extra == 'types'
+	pytest-dependency; extra == 'dev'
+	pytest-dependency; extra == 'types'
+	pytest; extra == 'dev'
+	pytest; extra == 'types'
+	ruff; extra == 'dev'
+	tomli; extra == 'dev'
+	tomli; python_version < '3.11' and extra == 'toml'
+	twine; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	hard-encoding-detection? ( dev-python/chardet[${PYTHON_USEDEP}] )

@@ -18,57 +18,57 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Flask<3.1,>=1.0.4
-	PyYAML>=5.4.1; extra == "dev"
+	PyYAML>=5.4.1; extra == 'dev'
 	Werkzeug<3.1
-	beautifulsoup4>=4.8.2; extra == "testing"
-	black==22.3.0; extra == "ci"
-	celery[redis]>=5.1.2; extra == "celery"
-	coloredlogs>=15.0.1; extra == "dev"
-	cryptography; extra == "testing"
+	beautifulsoup4>=4.8.2; extra == 'testing'
+	black==22.3.0; extra == 'ci'
+	celery[redis]>=5.1.2; extra == 'celery'
+	coloredlogs>=15.0.1; extra == 'dev'
+	cryptography; extra == 'testing'
 	dash-core-components==2.0.0
-	dash-dangerously-set-inner-html; extra == "ci"
-	dash-flow-example==0.0.5; extra == "ci"
+	dash-dangerously-set-inner-html; extra == 'ci'
+	dash-flow-example==0.0.5; extra == 'ci'
 	dash-html-components==2.0.0
 	dash-table==5.0.0
-	dash-testing-stub>=0.0.2; extra == "testing"
-	diskcache>=5.2.1; extra == "diskcache"
-	fire>=0.4.0; extra == "dev"
-	flake8==7.0.0; extra == "ci"
-	flaky==3.8.1; extra == "ci"
-	flask-compress; extra == "compress"
-	flask-talisman==1.0.0; extra == "ci"
+	dash-testing-stub>=0.0.2; extra == 'testing'
+	diskcache>=5.2.1; extra == 'diskcache'
+	fire>=0.4.0; extra == 'dev'
+	flake8==7.0.0; extra == 'ci'
+	flaky==3.8.1; extra == 'ci'
+	flask-compress; extra == 'compress'
+	flask-talisman==1.0.0; extra == 'ci'
 	importlib-metadata
-	jupyterlab<4.0.0; extra == "ci"
-	lxml>=4.6.2; extra == "testing"
-	mimesis<=11.1.0; extra == "ci"
-	mock==4.0.3; extra == "ci"
-	multiprocess>=0.70.12; extra == "diskcache"
-	multiprocess>=0.70.12; extra == "testing"
+	jupyterlab<4.0.0; extra == 'ci'
+	lxml>=4.6.2; extra == 'testing'
+	mimesis<=11.1.0; extra == 'ci'
+	mock==4.0.3; extra == 'ci'
+	multiprocess>=0.70.12; extra == 'diskcache'
+	multiprocess>=0.70.12; extra == 'testing'
 	nest-asyncio
-	numpy<=1.26.3; extra == "ci"
-	openpyxl; extra == "ci"
-	orjson==3.10.3; extra == "ci"
-	pandas>=1.4.0; extra == "ci"
-	percy>=2.0.2; extra == "testing"
+	numpy<=1.26.3; extra == 'ci'
+	openpyxl; extra == 'ci'
+	orjson==3.10.3; extra == 'ci'
+	pandas>=1.4.0; extra == 'ci'
+	percy>=2.0.2; extra == 'testing'
 	plotly>=5.0.0
-	psutil>=5.8.0; extra == "diskcache"
-	psutil>=5.8.0; extra == "testing"
-	pyarrow; extra == "ci"
-	pylint==3.0.3; extra == "ci"
-	pytest-mock; extra == "ci"
-	pytest-rerunfailures; extra == "ci"
-	pytest-sugar==0.9.6; extra == "ci"
-	pytest>=6.0.2; extra == "testing"
-	pyzmq==25.1.2; extra == "ci"
-	redis>=3.5.3; extra == "celery"
+	psutil>=5.8.0; extra == 'diskcache'
+	psutil>=5.8.0; extra == 'testing'
+	pyarrow; extra == 'ci'
+	pylint==3.0.3; extra == 'ci'
+	pytest-mock; extra == 'ci'
+	pytest-rerunfailures; extra == 'ci'
+	pytest-sugar==0.9.6; extra == 'ci'
+	pytest>=6.0.2; extra == 'testing'
+	pyzmq==25.1.2; extra == 'ci'
+	redis>=3.5.3; extra == 'celery'
 	requests
-	requests[security]>=2.21.0; extra == "testing"
+	requests[security]>=2.21.0; extra == 'testing'
 	retrying
-	selenium<=4.2.0,>=3.141.0; extra == "testing"
+	selenium<=4.2.0,>=3.141.0; extra == 'testing'
 	setuptools
 	typing-extensions>=4.1.1
-	waitress>=1.4.4; extra == "testing"
-	xlrd>=2.0.1; extra == "ci"
+	waitress>=1.4.4; extra == 'testing'
+	xlrd>=2.0.1; extra == 'ci'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	ci? ( ~dev-python/black-22.3.0[${PYTHON_USEDEP}] )

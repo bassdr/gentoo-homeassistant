@@ -25,7 +25,7 @@ DOCS="README.rst"
 
 REQUIRES_DIST="
 	requests
-	websocket-client>=1.3.3; extra == "alert"
+	websocket-client>=1.3.3; extra == 'alert'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]

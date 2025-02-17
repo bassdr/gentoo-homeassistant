@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyYAML
 	six (>=1.5)
-	urllib3 (<2) ; python_version < "3.10"
+	urllib3 (<2) ; python_version < '3.10'
 	wrapt
 	yarl
 "

@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	covdefaults>=2.3; extra == "testing"
-	coverage>=7.6.1; extra == "testing"
-	pytest-mock>=3.14; extra == "testing"
+	covdefaults>=2.3; extra == 'testing'
+	coverage>=7.6.1; extra == 'testing'
+	pytest-mock>=3.14; extra == 'testing'
 	pytest>=8.3.3
-	tomli>=2.0.1; python_version < "3.11"
+	tomli>=2.0.1; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]

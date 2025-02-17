@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	audioop-lts; python_version >= "3.13"
-	standard-chunk; python_version >= "3.13"
+	audioop-lts; python_version >= '3.13'
+	standard-chunk; python_version >= '3.13'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	$(python_gen_cond_dep 'dev-python/audioop-lts[${PYTHON_USEDEP}]' python3_13{,t})

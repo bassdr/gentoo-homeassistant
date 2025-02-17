@@ -22,7 +22,7 @@ REQUIRES_DIST="
 	jmespath
 	oauthlib
 	requests
-	requests-kerberos; extra == "kerberos"
+	requests-kerberos; extra == 'kerberos'
 	requests_oauthlib
 	six
 "

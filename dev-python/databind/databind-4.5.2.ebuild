@@ -18,7 +18,7 @@ REQUIRES_DIST="
 	Deprecated<2.0.0,>=1.2.12
 	nr-date<3.0.0,>=2.0.0
 	nr-stream<2.0.0,>=1.0.0
-	setuptools>=40.8.0; python_version < "3.10"
+	setuptools>=40.8.0; python_version < '3.10'
 	typeapi<3,>=2.0.1
 	typing-extensions<5,>=3.10.0
 "

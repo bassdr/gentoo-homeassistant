@@ -24,16 +24,16 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs readme"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Faker>=1.0.8; extra == "test"
-	Sphinx>=2.4; extra == "docs"
-	allpairspy>=2; extra == "test"
-	click>=6.2; extra == "test"
-	path<17,>=13; extra == "readme"
-	pytest-md-report>=0.6.2; extra == "test"
-	pytest>=6.0.1; extra == "test"
-	readmemaker>=1.1.0; extra == "readme"
-	sphinx-rtd-theme>=1.2.2; extra == "docs"
-	urllib3<2; extra == "docs"
+	Faker>=1.0.8; extra == 'test'
+	Sphinx>=2.4; extra == 'docs'
+	allpairspy>=2; extra == 'test'
+	click>=6.2; extra == 'test'
+	path<17,>=13; extra == 'readme'
+	pytest-md-report>=0.6.2; extra == 'test'
+	pytest>=6.0.1; extra == 'test'
+	readmemaker>=1.1.0; extra == 'readme'
+	sphinx-rtd-theme>=1.2.2; extra == 'docs'
+	urllib3<2; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	readme? ( >=dev-python/path-13[${PYTHON_USEDEP}] <dev-python/path-17[${PYTHON_USEDEP}] )

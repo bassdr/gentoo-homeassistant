@@ -18,41 +18,41 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py>=1.4.0
-	flax>=0.8.2; extra == "docs"
-	flax>=0.8.2; extra == "extras"
-	flax>=0.8.2; extra == "notebook"
-	ipython; extra == "dev"
-	ipython; extra == "docs"
-	ipython; extra == "extras"
-	ipython; extra == "notebook"
-	ipython>=8.8.0; extra == "docs"
+	flax>=0.8.2; extra == 'docs'
+	flax>=0.8.2; extra == 'extras'
+	flax>=0.8.2; extra == 'notebook'
+	ipython; extra == 'dev'
+	ipython; extra == 'docs'
+	ipython; extra == 'extras'
+	ipython; extra == 'notebook'
+	ipython>=8.8.0; extra == 'docs'
 	jax>=0.4.23
-	jax[cpu]>=0.4.23; extra == "docs"
-	jupyter; extra == "dev"
-	matplotlib>=3.5.0; extra == "docs"
-	myst-nb>=1.0.0; extra == "docs"
-	myst-parser>=3.0.1; extra == "docs"
+	jax[cpu]>=0.4.23; extra == 'docs'
+	jupyter; extra == 'dev'
+	matplotlib>=3.5.0; extra == 'docs'
+	myst-nb>=1.0.0; extra == 'docs'
+	myst-parser>=3.0.1; extra == 'docs'
 	numpy>=1.25.2
-	optax; extra == "docs"
-	optax; extra == "extras"
-	optax; extra == "notebook"
-	orbax-checkpoint; extra == "notebook"
+	optax; extra == 'docs'
+	optax; extra == 'extras'
+	optax; extra == 'notebook'
+	orbax-checkpoint; extra == 'notebook'
 	ordered_set>=4.1.0
-	packaging==24.1; extra == "docs"
-	palettable; extra == "notebook"
-	pyink>=24.3.0; extra == "dev"
-	pylint>=2.6.0; extra == "dev"
-	pytest>=8.2.2; extra == "dev"
-	pytype; extra == "dev"
-	setuptools; extra == "docs"
-	sphinx-book-theme>=1.0.1; extra == "docs"
-	sphinx-collections>=0.0.1; extra == "docs"
-	sphinx-hoverxref; extra == "docs"
-	sphinx<7.3.0,>=6.0.0; extra == "docs"
-	sphinx_contributors; extra == "docs"
-	sphinxcontrib-katex; extra == "docs"
-	torch; extra == "extras"
-	transformers>=4.41.2; extra == "extras"
+	packaging==24.1; extra == 'docs'
+	palettable; extra == 'notebook'
+	pyink>=24.3.0; extra == 'dev'
+	pylint>=2.6.0; extra == 'dev'
+	pytest>=8.2.2; extra == 'dev'
+	pytype; extra == 'dev'
+	setuptools; extra == 'docs'
+	sphinx-book-theme>=1.0.1; extra == 'docs'
+	sphinx-collections>=0.0.1; extra == 'docs'
+	sphinx-hoverxref; extra == 'docs'
+	sphinx<7.3.0,>=6.0.0; extra == 'docs'
+	sphinx_contributors; extra == 'docs'
+	sphinxcontrib-katex; extra == 'docs'
+	torch; extra == 'extras'
+	transformers>=4.41.2; extra == 'extras'
 	treescope>=0.1.3
 	typing_extensions>=4.2
 "

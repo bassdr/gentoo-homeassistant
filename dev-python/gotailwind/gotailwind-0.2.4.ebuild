@@ -31,7 +31,7 @@ REQUIRES_DIST="
 	backoff>=2.2.1
 	mashumaro>=3.10
 	orjson>=3.9.8
-	typer[all]>=0.9; extra == "cli"
+	typer[all]>=0.9; extra == 'cli'
 	yarl>=1.6.0
 	zeroconf>=0.126.0
 "

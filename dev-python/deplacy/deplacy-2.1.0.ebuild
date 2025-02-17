@@ -5,7 +5,11 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+MY_PV=d295ca8e794f64074d42e426657803b9210c5e4f
+MY_P=${PN}-${MY_PV}
+SRC_URI="https://github.com/KoichiYasuoka/${PN}/archive/${MY_PV}.zip -> ${P}.gh.tar.gz"
+S="${WORKDIR}/${MY_P}/"
 
 DESCRIPTION=""
 HOMEPAGE="

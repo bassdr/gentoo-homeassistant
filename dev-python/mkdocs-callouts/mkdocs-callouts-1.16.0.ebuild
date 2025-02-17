@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	mkdocs>=1
-	pytest; extra == "tests"
+	pytest; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mkdocs-1[${PYTHON_USEDEP}]

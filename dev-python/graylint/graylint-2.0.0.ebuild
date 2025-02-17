@@ -17,28 +17,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pygments>=2.4.0; extra == "color"
-	Pygments>=2.4.0; extra == "test"
-	click>=8.0.0; extra == "test"
-	cryptography>=3.3.2; extra == "test"
-	darkgray-dev-tools~=0.1.1; extra == "release"
+	Pygments>=2.4.0; extra == 'color'
+	Pygments>=2.4.0; extra == 'test'
+	click>=8.0.0; extra == 'test'
+	cryptography>=3.3.2; extra == 'test'
+	darkgray-dev-tools~=0.1.1; extra == 'release'
 	darkgraylib~=2.0.0
-	defusedxml>=0.7.1; extra == "test"
-	mypy>=0.990; extra == "test"
-	pathspec; extra == "test"
-	pip-requirements-parser; extra == "test"
-	pydocstyle; extra == "test"
-	pylint; extra == "test"
-	pytest-kwparametrize>=0.0.3; extra == "test"
-	pytest>=6.2.0; extra == "test"
-	requests-cache>=0.7; extra == "test"
-	ruamel.yaml>=0.17.21; extra == "test"
-	ruff>=0.0.292; extra == "test"
-	twine>=2.0.0; extra == "test"
-	types-requests>=2.27.9; extra == "test"
-	types-toml>=0.10.4; extra == "test"
-	urllib3>=1.25.9; extra == "test"
-	wheel>=0.21.0; extra == "test"
+	defusedxml>=0.7.1; extra == 'test'
+	mypy>=0.990; extra == 'test'
+	pathspec; extra == 'test'
+	pip-requirements-parser; extra == 'test'
+	pydocstyle; extra == 'test'
+	pylint; extra == 'test'
+	pytest-kwparametrize>=0.0.3; extra == 'test'
+	pytest>=6.2.0; extra == 'test'
+	requests-cache>=0.7; extra == 'test'
+	ruamel.yaml>=0.17.21; extra == 'test'
+	ruff>=0.0.292; extra == 'test'
+	twine>=2.0.0; extra == 'test'
+	types-requests>=2.27.9; extra == 'test'
+	types-toml>=0.10.4; extra == 'test'
+	urllib3>=1.25.9; extra == 'test'
+	wheel>=0.21.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	release? ( >=dev-python/darkgray-dev-tools-0.1.1[${PYTHON_USEDEP}] =dev-python/darkgray-dev-tools-0.1*[${PYTHON_USEDEP}] )

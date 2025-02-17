@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata >=4 ; python_version < "3.8"
+	importlib-metadata >=4 ; python_version < '3.8'
 	sphinx
 	towncrier >=19.2
 "

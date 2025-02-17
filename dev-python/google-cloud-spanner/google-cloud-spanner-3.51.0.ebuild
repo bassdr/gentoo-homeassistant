@@ -21,12 +21,12 @@ REQUIRES_DIST="
 	google-cloud-core<3.0dev,>=1.4.4
 	grpc-google-iam-v1<1.0.0dev,>=0.12.4
 	grpc-interceptor>=0.15.4
-	libcst>=0.2.5; extra == "libcst"
-	opentelemetry-api>=1.22.0; extra == "tracing"
-	opentelemetry-sdk>=1.22.0; extra == "tracing"
-	opentelemetry-semantic-conventions>=0.43b0; extra == "tracing"
+	libcst>=0.2.5; extra == 'libcst'
+	opentelemetry-api>=1.22.0; extra == 'tracing'
+	opentelemetry-sdk>=1.22.0; extra == 'tracing'
+	opentelemetry-semantic-conventions>=0.43b0; extra == 'tracing'
 	proto-plus<2.0.0dev,>=1.22.0
-	proto-plus<2.0.0dev,>=1.22.2; python_version >= "3.11"
+	proto-plus<2.0.0dev,>=1.22.2; python_version >= '3.11'
 	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
 	sqlparse>=0.4.4
 "

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-common-compat; extra == "common-compat"
+	apache-airflow-providers-common-compat; extra == 'common-compat'
 	apache-airflow>=2.9.0
 	docker>=7.1.0
 	python-dotenv>=0.21.0

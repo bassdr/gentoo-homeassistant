@@ -19,26 +19,26 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all experimental full lite"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	configupdater<4,>=3.0.1; extra == "all"
-	configupdater<4,>=3.0.1; extra == "full"
-	importlib-metadata; python_version < "3.8" and extra == "full"
-	importlib-metadata; python_version < "3.8" and extra == "lite"
-	isort; extra == "testing"
+	configupdater<4,>=3.0.1; extra == 'all'
+	configupdater<4,>=3.0.1; extra == 'full'
+	importlib-metadata; python_version < '3.8' and extra == 'full'
+	importlib-metadata; python_version < '3.8' and extra == 'lite'
+	isort; extra == 'testing'
 	packaging>=20.7
-	pyproject-fmt<2,>=0.4.0; python_version >= "3.7" and extra == "experimental"
-	pytest-cov; extra == "testing"
-	pytest-randomly; extra == "testing"
-	pytest-xdist; extra == "testing"
-	pytest; extra == "testing"
-	setuptools; extra == "testing"
+	pyproject-fmt<2,>=0.4.0; python_version >= '3.7' and extra == 'experimental'
+	pytest-cov; extra == 'testing'
+	pytest-randomly; extra == 'testing'
+	pytest-xdist; extra == 'testing'
+	pytest; extra == 'testing'
+	setuptools; extra == 'testing'
 	setuptools>=59.6
-	tomli-w<2,>=0.4.0; extra == "all"
-	tomli-w<2,>=0.4.0; extra == "lite"
-	tomli; extra == "testing"
-	tomlkit<2,>=0.10.0; extra == "all"
-	tomlkit<2,>=0.10.0; extra == "full"
-	typing-extensions; python_version < "3.8" and extra == "typechecking"
-	validate-pyproject<2,>=0.6; extra == "testing"
+	tomli-w<2,>=0.4.0; extra == 'all'
+	tomli-w<2,>=0.4.0; extra == 'lite'
+	tomli; extra == 'testing'
+	tomlkit<2,>=0.10.0; extra == 'all'
+	tomlkit<2,>=0.10.0; extra == 'full'
+	typing-extensions; python_version < '3.8' and extra == 'typechecking'
+	validate-pyproject<2,>=0.6; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/configupdater-3.0.1[${PYTHON_USEDEP}] <dev-python/configupdater-4[${PYTHON_USEDEP}] )

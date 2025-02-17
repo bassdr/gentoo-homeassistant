@@ -18,7 +18,7 @@ REQUIRES_DIST="
 	google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0dev,>=1.34.1
 	google-auth!=2.24.0,!=2.25.0,<3.0.0dev,>=2.14.1
 	proto-plus<2.0.0dev,>=1.22.3
-	proto-plus<2.0.0dev,>=1.25.0; python_version >= "3.13"
+	proto-plus<2.0.0dev,>=1.25.0; python_version >= '3.13'
 	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
 "
 GENERATED_RDEPEND="${RDEPEND}

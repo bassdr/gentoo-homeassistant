@@ -24,8 +24,8 @@ DOCS="README.rst"
 REQUIRES_DIST="
 	aiohttp<4.0.0,>=3.9.2
 	aioitertools<1.0.0,>=0.5.1
-	awscli<1.33.14,>=1.32.70; extra == "awscli"
-	boto3<1.34.132,>=1.34.70; extra == "boto3"
+	awscli<1.33.14,>=1.32.70; extra == 'awscli'
+	boto3<1.34.132,>=1.34.70; extra == 'boto3'
 	botocore<1.34.132,>=1.34.70
 	wrapt<2.0.0,>=1.10.10
 "

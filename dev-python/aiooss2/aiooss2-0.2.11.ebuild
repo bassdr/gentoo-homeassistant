@@ -16,22 +16,22 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiohttp<4,>=3.9.1
-	mypy==0.971; extra == "dev"
-	mypy==0.971; extra == "tests"
-	nox==2024.3.2; extra == "dev"
+	mypy==0.971; extra == 'dev'
+	mypy==0.971; extra == 'tests'
+	nox==2024.3.2; extra == 'dev'
 	oss2==2.18.4
-	pylint-pytest==1.1.7; extra == "dev"
-	pylint-pytest==1.1.7; extra == "tests"
-	pylint==2.15.0; extra == "dev"
-	pylint==2.15.0; extra == "tests"
-	pytest-cov==3.0.0; extra == "dev"
-	pytest-cov==3.0.0; extra == "tests"
-	pytest-mock==3.8.2; extra == "dev"
-	pytest-mock==3.8.2; extra == "tests"
-	pytest-sugar==0.9.5; extra == "dev"
-	pytest-sugar==0.9.5; extra == "tests"
-	pytest==7.2.0; extra == "dev"
-	pytest==7.2.0; extra == "tests"
+	pylint-pytest==1.1.7; extra == 'dev'
+	pylint-pytest==1.1.7; extra == 'tests'
+	pylint==2.15.0; extra == 'dev'
+	pylint==2.15.0; extra == 'tests'
+	pytest-cov==3.0.0; extra == 'dev'
+	pytest-cov==3.0.0; extra == 'tests'
+	pytest-mock==3.8.2; extra == 'dev'
+	pytest-mock==3.8.2; extra == 'tests'
+	pytest-sugar==0.9.5; extra == 'dev'
+	pytest-sugar==0.9.5; extra == 'tests'
+	pytest==7.2.0; extra == 'dev'
+	pytest==7.2.0; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]

@@ -20,8 +20,8 @@ REQUIRES_DIST="
 	jsonschema (>=3.2.0)
 	numpy (>=1.15)
 	pydantic (>=1.8.2)
-	scikit-learn (>=0.24.2) ; python_version == "3.6"
-	scikit-learn (>=1.0) ; python_version > "3.6"
+	scikit-learn (>=0.24.2) ; python_version == '3.6'
+	scikit-learn (>=1.0) ; python_version > '3.6'
 	scipy (>=1.5.4)
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata>=4.8.1; python_version < "3.8"
+	importlib-metadata>=4.8.1; python_version < '3.8'
 	joblib>=0.11
 	llvmlite>=0.30
 	numba>=0.51.2

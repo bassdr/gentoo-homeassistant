@@ -15,15 +15,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black>=24.8.0; extra == "dev"
-	hypothesis>=6.111.0; extra == "dev"
+	black>=24.8.0; extra == 'dev'
+	hypothesis>=6.111.0; extra == 'dev'
 	matplotlib>=3.6.0
 	numpy>=1.23.0
 	pandas>=1.4.2
-	pre-commit>=3.8.0; extra == "dev"
+	pre-commit>=3.8.0; extra == 'dev'
 	psutil>=5.9.1
-	pytest-enabler>=3.1.1; extra == "dev"
-	pytest>=8.3.2; extra == "dev"
+	pytest-enabler>=3.1.1; extra == 'dev'
+	pytest>=8.3.2; extra == 'dev'
 	scikit-learn>=0.24.2
 	scipy>=1.7.1
 	seaborn>=0.12.0

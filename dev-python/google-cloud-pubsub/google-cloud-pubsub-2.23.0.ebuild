@@ -27,9 +27,9 @@ REQUIRES_DIST="
 	grpc-google-iam-v1<1.0.0dev,>=0.12.4
 	grpcio-status>=1.33.2
 	grpcio<2.0dev,>=1.51.3
-	libcst>=0.3.10; extra == "libcst"
+	libcst>=0.3.10; extra == 'libcst'
 	proto-plus<2.0.0dev,>=1.22.0
-	proto-plus<2.0.0dev,>=1.22.2; python_version >= "3.11"
+	proto-plus<2.0.0dev,>=1.22.2; python_version >= '3.11'
 	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
 "
 GENERATED_RDEPEND="${RDEPEND}

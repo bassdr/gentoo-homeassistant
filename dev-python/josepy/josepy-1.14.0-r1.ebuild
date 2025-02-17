@@ -22,8 +22,8 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	cryptography (>=1.5)
 	pyopenssl (>=0.13)
-	sphinx (>=4.3.0) ; extra == "docs"
-	sphinx-rtd-theme (>=1.0) ; extra == "docs"
+	sphinx (>=4.3.0) ; extra == 'docs'
+	sphinx-rtd-theme (>=1.0) ; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-1.5[${PYTHON_USEDEP}]

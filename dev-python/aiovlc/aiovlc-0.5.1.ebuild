@@ -19,8 +19,6 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -32,12 +30,11 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/rich-10[${PYTHON_USEDEP}]
 	>=dev-python/typer-0.12.0[all,${PYTHON_USEDEP}] <dev-python/typer-0.13.0[all,${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/typer[${PYTHON_USEDEP}]"
-BDEPEND="
+RDEPEND="${GENERATED_RDEPEND}"
+
+distutils_enable_tests pytest
+BDEPEND+="
 	test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)"
-
-distutils_enable_tests pytest

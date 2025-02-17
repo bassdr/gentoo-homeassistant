@@ -15,16 +15,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	codecov; extra == "test"
-	coveralls; extra == "test"
-	nbval; extra == "test"
+	codecov; extra == 'test'
+	coveralls; extra == 'test'
+	nbval; extra == 'test'
 	pandas>=2.2
 	pint>=0.24
-	pyarrow; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-mpl; extra == "test"
-	pytest-subtests; extra == "test"
-	pytest; extra == "test"
+	pyarrow; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-mpl; extra == 'test'
+	pytest-subtests; extra == 'test'
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-2.2[${PYTHON_USEDEP}]

@@ -20,7 +20,7 @@ REQUIRES_DIST="
 	Flask<4.0,>=2.0
 	PyJWT<3.0,>=2.0
 	Werkzeug>=0.14
-	cryptography>=3.3.1; extra == "asymmetric-crypto"
+	cryptography>=3.3.1; extra == 'asymmetric-crypto'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	asymmetric-crypto? ( >=dev-python/cryptography-3.3.1[${PYTHON_USEDEP}] )

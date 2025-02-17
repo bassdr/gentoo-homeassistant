@@ -18,67 +18,67 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py>=1.0.0
-	ale-py; extra == "all"
-	ale-py; extra == "benchmarks"
+	ale-py; extra == 'all'
+	ale-py; extra == 'benchmarks'
 	attrs>=23.1.0
-	chex>=0.1.87; extra == "all"
-	chex>=0.1.87; extra == "jax"
-	coverage<=6.4.2,>=4.5; extra == "all"
-	coverage<=6.4.2,>=4.5; extra == "test"
-	cvxopt; extra == "algorithms"
-	cvxopt; extra == "all"
-	cvxpy; extra == "algorithms"
-	cvxpy; extra == "all"
-	diversipy==0.9; extra == "all"
-	diversipy==0.9; extra == "benchmarks"
-	equinox==0.11.7; extra == "all"
-	equinox==0.11.7; extra == "jax"
-	evojax; extra == "algorithms"
-	evojax; extra == "all"
-	flax>=0.10.0; extra == "all"
-	flax>=0.10.0; extra == "jax"
+	chex>=0.1.87; extra == 'all'
+	chex>=0.1.87; extra == 'jax'
+	coverage<=6.4.2,>=4.5; extra == 'all'
+	coverage<=6.4.2,>=4.5; extra == 'test'
+	cvxopt; extra == 'algorithms'
+	cvxopt; extra == 'all'
+	cvxpy; extra == 'algorithms'
+	cvxpy; extra == 'all'
+	diversipy==0.9; extra == 'all'
+	diversipy==0.9; extra == 'benchmarks'
+	equinox==0.11.7; extra == 'all'
+	equinox==0.11.7; extra == 'jax'
+	evojax; extra == 'algorithms'
+	evojax; extra == 'all'
+	flax>=0.10.0; extra == 'all'
+	flax>=0.10.0; extra == 'jax'
 	googleapis-common-protos>=1.56.4
 	grpcio>=1.49.0
-	jax>=0.4.34; extra == "all"
-	jax>=0.4.34; extra == "jax"
-	jaxlib>=0.4.34; extra == "all"
-	jaxlib>=0.4.34; extra == "jax"
-	jaxopt>=0.8.3; extra == "all"
-	jaxopt>=0.8.3; extra == "jax"
-	jaxtyping>=0.2.34; extra == "all"
-	jaxtyping>=0.2.34; extra == "jax"
-	lightgbm; extra == "algorithms"
-	lightgbm; extra == "all"
-	matplotlib; extra == "all"
-	matplotlib; extra == "benchmarks"
-	mock<=4.0.3,>=3.0; extra == "all"
-	mock<=4.0.3,>=3.0; extra == "test"
-	nats_bench; extra == "all"
-	nats_bench; extra == "benchmarks"
+	jax>=0.4.34; extra == 'all'
+	jax>=0.4.34; extra == 'jax'
+	jaxlib>=0.4.34; extra == 'all'
+	jaxlib>=0.4.34; extra == 'jax'
+	jaxopt>=0.8.3; extra == 'all'
+	jaxopt>=0.8.3; extra == 'jax'
+	jaxtyping>=0.2.34; extra == 'all'
+	jaxtyping>=0.2.34; extra == 'jax'
+	lightgbm; extra == 'algorithms'
+	lightgbm; extra == 'all'
+	matplotlib; extra == 'all'
+	matplotlib; extra == 'benchmarks'
+	mock<=4.0.3,>=3.0; extra == 'all'
+	mock<=4.0.3,>=3.0; extra == 'test'
+	nats_bench; extra == 'all'
+	nats_bench; extra == 'benchmarks'
 	numpy>=1.21.5
-	optax>=0.2.3; extra == "all"
-	optax>=0.2.3; extra == "jax"
-	optproblems==1.3; extra == "all"
-	optproblems==1.3; extra == "benchmarks"
-	pandas; extra == "all"
-	pandas; extra == "benchmarks"
+	optax>=0.2.3; extra == 'all'
+	optax>=0.2.3; extra == 'jax'
+	optproblems==1.3; extra == 'all'
+	optproblems==1.3; extra == 'benchmarks'
+	pandas; extra == 'all'
+	pandas; extra == 'benchmarks'
 	portpicker>=1.3.1
 	protobuf>=3.6
-	pytest; extra == "all"
-	pytest; extra == "test"
-	ray[default]; extra == "all"
-	ray[default]; extra == "benchmarks"
-	scikit-learn; extra == "algorithms"
-	scikit-learn; extra == "all"
+	pytest; extra == 'all'
+	pytest; extra == 'test'
+	ray[default]; extra == 'all'
+	ray[default]; extra == 'benchmarks'
+	scikit-learn; extra == 'algorithms'
+	scikit-learn; extra == 'all'
 	sqlalchemy>=1.4
-	tensorflow>=2.9.1; extra == "all"
-	tensorflow>=2.9.1; extra == "tf"
-	tfp-nightly[jax]; extra == "all"
-	tfp-nightly[jax]; extra == "jax"
-	typeguard<=2.13.3; extra == "all"
-	typeguard<=2.13.3; extra == "jax"
-	xgboost; extra == "all"
-	xgboost; extra == "benchmarks"
+	tensorflow>=2.9.1; extra == 'all'
+	tensorflow>=2.9.1; extra == 'tf'
+	tfp-nightly[jax]; extra == 'all'
+	tfp-nightly[jax]; extra == 'jax'
+	typeguard<=2.13.3; extra == 'all'
+	typeguard<=2.13.3; extra == 'jax'
+	xgboost; extra == 'all'
+	xgboost; extra == 'benchmarks'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-1.0.0[${PYTHON_USEDEP}]

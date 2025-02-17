@@ -22,8 +22,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	python-dateutil>=2.5.0; python_version < "3.10"
-	python-dateutil>=2.7.0; python_version >= "3.10"
+	python-dateutil>=2.5.0; python_version < '3.10'
+	python-dateutil>=2.7.0; python_version >= '3.10'
 	pytz
 	six
 "

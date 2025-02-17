@@ -15,32 +15,32 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx<8.0,>=6.0; extra == "dev"
-	beaker-py<2.0,>=1.13.2; extra == "dev"
-	black<25.0,>=23.1.0; extra == "dev"
+	Sphinx<8.0,>=6.0; extra == 'dev'
+	beaker-py<2.0,>=1.13.2; extra == 'dev'
+	black<25.0,>=23.1.0; extra == 'dev'
 	boto3<2.0,>=1.0
-	build; extra == "dev"
+	build; extra == 'dev'
 	filelock<4.0,>=3.4
-	flaky; extra == "dev"
-	furo==2024.1.29; extra == "dev"
+	flaky; extra == 'dev'
+	furo==2024.1.29; extra == 'dev'
 	google-cloud-storage<3.0,>=1.32.0
 	huggingface-hub<0.28.0,>=0.8.1
-	isort<6.0,>=5.12.0; extra == "dev"
-	mypy<2.0,>=1.6.0; extra == "dev"
-	myst-parser<3.0,>=1.0.0; extra == "dev"
-	packaging; extra == "dev"
-	pytest; extra == "dev"
+	isort<6.0,>=5.12.0; extra == 'dev'
+	mypy<2.0,>=1.6.0; extra == 'dev'
+	myst-parser<3.0,>=1.0.0; extra == 'dev'
+	packaging; extra == 'dev'
+	pytest; extra == 'dev'
 	requests
-	responses==0.21.0; extra == "dev"
+	responses==0.21.0; extra == 'dev'
 	rich<14.0,>=12.1
-	ruff; extra == "dev"
-	setuptools; extra == "dev"
-	sphinx-autobuild==2021.3.14; extra == "dev"
-	sphinx-autodoc-typehints; extra == "dev"
-	sphinx-copybutton==0.5.2; extra == "dev"
-	twine>=1.11.0; extra == "dev"
-	types-requests; extra == "dev"
-	wheel; extra == "dev"
+	ruff; extra == 'dev'
+	setuptools; extra == 'dev'
+	sphinx-autobuild==2021.3.14; extra == 'dev'
+	sphinx-autodoc-typehints; extra == 'dev'
+	sphinx-copybutton==0.5.2; extra == 'dev'
+	twine>=1.11.0; extra == 'dev'
+	types-requests; extra == 'dev'
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.0[${PYTHON_USEDEP}] <dev-python/boto3-2.0[${PYTHON_USEDEP}]

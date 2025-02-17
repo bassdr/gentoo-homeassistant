@@ -27,16 +27,16 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx (>=4.1.2,<5.0.0); extra == "docs"
-	furo (>=2021.8.17-beta.43,<2022.0.0); extra == "docs"
-	myst-parser (>=0.15.1,<0.16.0); extra == "docs"
+	Sphinx (>=4.1.2,<5.0.0); extra == 'docs'
+	furo (>=2021.8.17-beta.43,<2022.0.0); extra == 'docs'
+	myst-parser (>=0.15.1,<0.16.0); extra == 'docs'
 	pfzy (>=0.3.1,<0.4.0)
 	prompt-toolkit (>=3.0.1,<4.0.0)
-	sphinx-autobuild (>=2021.3.14,<2022.0.0); extra == "docs"
-	sphinx-copybutton (>=0.4.0,<0.5.0); extra == "docs"
+	sphinx-autobuild (>=2021.3.14,<2022.0.0); extra == 'docs'
+	sphinx-copybutton (>=0.4.0,<0.5.0); extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( >=dev-python/furo-2021.8.17_beta.43[${PYTHON_USEDEP}] <dev-python/furo-2022.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/furo-2021.8.17_beta43[${PYTHON_USEDEP}] <dev-python/furo-2022.0.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-0.15.1[${PYTHON_USEDEP}] <dev-python/myst-parser-0.16.0[${PYTHON_USEDEP}] )
 	>=dev-python/pfzy-0.3.1[${PYTHON_USEDEP}] <dev-python/pfzy-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/prompt-toolkit-3.0.1[${PYTHON_USEDEP}] <dev-python/prompt-toolkit-4.0.0[${PYTHON_USEDEP}]

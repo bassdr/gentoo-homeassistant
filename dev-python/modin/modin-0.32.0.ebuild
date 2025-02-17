@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dask>=2.22.0; extra == "all"
-	dask>=2.22.0; extra == "dask"
-	dataframe-api-compat>=0.2.7; extra == "all"
-	dataframe-api-compat>=0.2.7; extra == "consortium-standard"
-	distributed>=2.22.0; extra == "all"
-	distributed>=2.22.0; extra == "dask"
+	dask>=2.22.0; extra == 'all'
+	dask>=2.22.0; extra == 'dask'
+	dataframe-api-compat>=0.2.7; extra == 'all'
+	dataframe-api-compat>=0.2.7; extra == 'consortium-standard'
+	distributed>=2.22.0; extra == 'all'
+	distributed>=2.22.0; extra == 'dask'
 	fsspec>=2022.11.0
-	modin-spreadsheet>=0.1.0; extra == "all"
-	modin-spreadsheet>=0.1.0; extra == "spreadsheet"
+	modin-spreadsheet>=0.1.0; extra == 'all'
+	modin-spreadsheet>=0.1.0; extra == 'spreadsheet'
 	numpy>=1.22.4
 	packaging>=21.0
 	pandas<2.3,>=2.2
 	psutil>=5.8.0
-	pyarrow>=10.0.1; extra == "all"
-	pyarrow>=10.0.1; extra == "ray"
-	ray!=2.5.0,>=2.1.0; extra == "all"
-	ray!=2.5.0,>=2.1.0; extra == "ray"
-	unidist[mpi]>=0.2.1; extra == "mpi"
+	pyarrow>=10.0.1; extra == 'all'
+	pyarrow>=10.0.1; extra == 'ray'
+	ray!=2.5.0,>=2.1.0; extra == 'all'
+	ray!=2.5.0,>=2.1.0; extra == 'ray'
+	unidist[mpi]>=0.2.1; extra == 'mpi'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/dask-2.22.0[${PYTHON_USEDEP}] )

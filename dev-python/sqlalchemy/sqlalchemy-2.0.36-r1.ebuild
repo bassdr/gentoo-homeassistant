@@ -24,38 +24,38 @@ GENERATED_IUSE="aiomysql aioodbc aiosqlite asyncio asyncmy mariadb-connector mss
 IUSE="${GENERATED_IUSE} examples +sqlite test"
 
 REQUIRES_DIST="
-	aiomysql>=0.2.0; extra == "aiomysql"
-	aioodbc; extra == "aioodbc"
-	aiosqlite; extra == "aiosqlite"
-	asyncmy!=0.2.4,!=0.2.6,>=0.2.3; extra == "asyncmy"
-	asyncpg; extra == "postgresql-asyncpg"
-	cx_oracle>=8; extra == "oracle"
-	greenlet!=0.4.17; extra == "aiomysql"
-	greenlet!=0.4.17; extra == "aioodbc"
-	greenlet!=0.4.17; extra == "aiosqlite"
-	greenlet!=0.4.17; extra == "asyncio"
-	greenlet!=0.4.17; extra == "asyncmy"
-	greenlet!=0.4.17; extra == "postgresql-asyncpg"
-	greenlet!=0.4.17; python_version < "3.13" and (platform_machine == "aarch64" or (platform_machine == "ppc64le" or (platform_machine == "x86_64" or (platform_machine == "amd64" or (platform_machine == "AMD64" or (platform_machine == "win32" or platform_machine == "WIN32"))))))
-	importlib-metadata; python_version < "3.8"
-	mariadb!=1.1.10,!=1.1.2,!=1.1.5,>=1.0.1; extra == "mariadb-connector"
-	mypy>=0.910; extra == "mypy"
-	mysql-connector-python; extra == "mysql-connector"
-	mysqlclient>=1.4.0; extra == "mysql"
-	oracledb>=1.0.1; extra == "oracle-oracledb"
-	pg8000>=1.29.1; extra == "postgresql-pg8000"
-	psycopg2-binary; extra == "postgresql-psycopg2binary"
-	psycopg2>=2.7; extra == "postgresql"
-	psycopg2cffi; extra == "postgresql-psycopg2cffi"
-	psycopg>=3.0.7; extra == "postgresql-psycopg"
-	psycopg[binary]>=3.0.7; extra == "postgresql-psycopgbinary"
-	pymssql; extra == "mssql-pymssql"
-	pymysql; extra == "pymysql"
-	pyodbc; extra == "mssql"
-	pyodbc; extra == "mssql-pyodbc"
-	sqlcipher3_binary; extra == "sqlcipher"
+	aiomysql>=0.2.0; extra == 'aiomysql'
+	aioodbc; extra == 'aioodbc'
+	aiosqlite; extra == 'aiosqlite'
+	asyncmy!=0.2.4,!=0.2.6,>=0.2.3; extra == 'asyncmy'
+	asyncpg; extra == 'postgresql-asyncpg'
+	cx_oracle>=8; extra == 'oracle'
+	greenlet!=0.4.17; extra == 'aiomysql'
+	greenlet!=0.4.17; extra == 'aioodbc'
+	greenlet!=0.4.17; extra == 'aiosqlite'
+	greenlet!=0.4.17; extra == 'asyncio'
+	greenlet!=0.4.17; extra == 'asyncmy'
+	greenlet!=0.4.17; extra == 'postgresql-asyncpg'
+	greenlet!=0.4.17; python_version < '3.13' and (platform_machine == 'aarch64' or (platform_machine == 'ppc64le' or (platform_machine == 'x86_64' or (platform_machine == 'amd64' or (platform_machine == 'AMD64' or (platform_machine == 'win32' or platform_machine == 'WIN32'))))))
+	importlib-metadata; python_version < '3.8'
+	mariadb!=1.1.10,!=1.1.2,!=1.1.5,>=1.0.1; extra == 'mariadb-connector'
+	mypy>=0.910; extra == 'mypy'
+	mysql-connector-python; extra == 'mysql-connector'
+	mysqlclient>=1.4.0; extra == 'mysql'
+	oracledb>=1.0.1; extra == 'oracle-oracledb'
+	pg8000>=1.29.1; extra == 'postgresql-pg8000'
+	psycopg2-binary; extra == 'postgresql-psycopg2binary'
+	psycopg2>=2.7; extra == 'postgresql'
+	psycopg2cffi; extra == 'postgresql-psycopg2cffi'
+	psycopg>=3.0.7; extra == 'postgresql-psycopg'
+	psycopg[binary]>=3.0.7; extra == 'postgresql-psycopgbinary'
+	pymssql; extra == 'mssql-pymssql'
+	pymysql; extra == 'pymysql'
+	pyodbc; extra == 'mssql'
+	pyodbc; extra == 'mssql-pyodbc'
+	sqlcipher3_binary; extra == 'sqlcipher'
 	typing-extensions>=4.6.0
-	typing_extensions!=3.10.0.1; extra == "aiosqlite"
+	typing_extensions!=3.10.0.1; extra == 'aiosqlite'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	aiomysql? ( >=dev-python/aiomysql-0.2.0[${PYTHON_USEDEP}] )

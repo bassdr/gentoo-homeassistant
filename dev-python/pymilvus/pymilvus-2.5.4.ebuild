@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	azure-storage-blob; extra == "bulk-writer"
-	black; extra == "dev"
-	grpcio-testing==1.62.2; extra == "dev"
-	grpcio-tools==1.62.2; extra == "dev"
+	azure-storage-blob; extra == 'bulk-writer'
+	black; extra == 'dev'
+	grpcio-testing==1.62.2; extra == 'dev'
+	grpcio-tools==1.62.2; extra == 'dev'
 	grpcio<=1.67.1,>=1.49.1
-	grpcio==1.62.2; extra == "dev"
-	milvus-lite>=2.4.0; sys_platform != "win32"
-	milvus-model>=0.1.0; extra == "model"
-	minio>=7.0.0; extra == "bulk-writer"
-	numpy<1.25.0; python_version <= "3.8"
+	grpcio==1.62.2; extra == 'dev'
+	milvus-lite>=2.4.0; sys_platform != 'win32'
+	milvus-model>=0.1.0; extra == 'model'
+	minio>=7.0.0; extra == 'bulk-writer'
+	numpy<1.25.0; python_version <= '3.8'
 	pandas>=1.2.4
 	protobuf>=3.20.0
-	pyarrow>=12.0.0; extra == "bulk-writer"
-	pytest-cov>=2.8.1; extra == "dev"
-	pytest-timeout>=1.3.4; extra == "dev"
-	pytest>=5.3.4; extra == "dev"
+	pyarrow>=12.0.0; extra == 'bulk-writer'
+	pytest-cov>=2.8.1; extra == 'dev'
+	pytest-timeout>=1.3.4; extra == 'dev'
+	pytest>=5.3.4; extra == 'dev'
 	python-dotenv<2.0.0,>=1.0.1
-	requests; extra == "bulk-writer"
-	ruff>0.4.0; extra == "dev"
-	setuptools<70.1; python_version <= "3.8"
+	requests; extra == 'bulk-writer'
+	ruff>0.4.0; extra == 'dev'
+	setuptools<70.1; python_version <= '3.8'
 	setuptools>69
 	ujson>=2.0.0
 "

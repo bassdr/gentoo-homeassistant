@@ -17,19 +17,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dask[array]; extra == "tests"
-	matrepr; extra == "all"
+	dask[array]; extra == 'tests'
+	matrepr; extra == 'all'
 	numba>=0.49
 	numpy>=1.17
-	pre-commit; extra == "tests"
-	pytest-cov; extra == "tests"
-	pytest>=3.5; extra == "tests"
+	pre-commit; extra == 'tests'
+	pytest-cov; extra == 'tests'
+	pytest>=3.5; extra == 'tests'
 	scipy>=0.19
-	sparse[docs,tox]; extra == "all"
-	sparse[tests]; extra == "tox"
-	sphinx; extra == "docs"
-	sphinx_rtd_theme; extra == "docs"
-	tox; extra == "tox"
+	sparse[docs,tox]; extra == 'all'
+	sparse[tests]; extra == 'tox'
+	sphinx; extra == 'docs'
+	sphinx_rtd_theme; extra == 'docs'
+	tox; extra == 'tox'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/matrepr[${PYTHON_USEDEP}] )

@@ -26,12 +26,12 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx (>=5.0,<6.0) ; extra == "docs"
+	Sphinx (>=5.0,<6.0) ; extra == 'docs'
 	async-timeout (>=4.0.1)
 	bleak (>=0.19.0)
 	bleak-retry-connector (>=2.3.0)
-	myst-parser (>=0.18,<0.19) ; extra == "docs"
-	sphinx-rtd-theme (>=1.0,<2.0) ; extra == "docs"
+	myst-parser (>=0.18,<0.19) ; extra == 'docs'
+	sphinx-rtd-theme (>=1.0,<2.0) ; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/async-timeout-4.0.1[${PYTHON_USEDEP}]

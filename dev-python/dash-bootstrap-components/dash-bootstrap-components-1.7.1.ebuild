@@ -18,8 +18,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	dash>=2.0.0
-	numpy>=2.0.2; extra == "pandas"
-	pandas>=2.2.3; extra == "pandas"
+	numpy>=2.0.2; extra == 'pandas'
+	pandas>=2.2.3; extra == 'pandas'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/dash-2.0.0[${PYTHON_USEDEP}]

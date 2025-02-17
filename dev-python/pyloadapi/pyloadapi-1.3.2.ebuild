@@ -25,7 +25,7 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp~=3.9
-	click; extra == "cli"
+	click; extra == 'cli'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9[${PYTHON_USEDEP}] =dev-python/aiohttp-3*[${PYTHON_USEDEP}]

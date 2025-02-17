@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Faker>=1.0.2; extra == "test"
+	Faker>=1.0.2; extra == 'test'
 	chardet<6,>=3.0.4
-	pytest-md-report>=0.6.2; extra == "test"
-	pytest>=6.0.1; extra == "test"
+	pytest-md-report>=0.6.2; extra == 'test'
+	pytest>=6.0.1; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/chardet-3.0.4[${PYTHON_USEDEP}] <dev-python/chardet-6[${PYTHON_USEDEP}]

@@ -19,22 +19,22 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="aiohttp django falcon fastapi flask requests starlette"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	aiohttp>=3.0; extra == "aiohttp"
-	aioitertools<0.12.0,>=0.11.0; extra == "starlette"
-	django>=3.0; extra == "django"
-	falcon>=3.0; extra == "falcon"
-	fastapi<0.113,>=0.111; extra == "fastapi"
-	flask; extra == "flask"
+	aiohttp>=3.0; extra == 'aiohttp'
+	aioitertools<0.12.0,>=0.11.0; extra == 'starlette'
+	django>=3.0; extra == 'django'
+	falcon>=3.0; extra == 'falcon'
+	fastapi<0.113,>=0.111; extra == 'fastapi'
+	flask; extra == 'flask'
 	isodate
 	jsonschema-path<0.4.0,>=0.3.1
 	jsonschema<5.0.0,>=4.18.0
 	more-itertools
-	multidict<7.0.0,>=6.0.4; extra == "aiohttp"
+	multidict<7.0.0,>=6.0.4; extra == 'aiohttp'
 	openapi-schema-validator<0.7.0,>=0.6.0
 	openapi-spec-validator<0.8.0,>=0.7.1
 	parse
-	requests; extra == "requests"
-	starlette<0.39.0,>=0.26.1; extra == "starlette"
+	requests; extra == 'requests'
+	starlette<0.39.0,>=0.26.1; extra == 'starlette'
 	werkzeug
 "
 GENERATED_RDEPEND="${RDEPEND}

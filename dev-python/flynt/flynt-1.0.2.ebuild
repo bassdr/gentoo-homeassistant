@@ -16,12 +16,12 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	astor
-	build; extra == "dev"
-	pre-commit; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
-	tomli>=1.1.0; python_version < "3.11"
-	twine; extra == "dev"
+	build; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
+	tomli>=1.1.0; python_version < '3.11'
+	twine; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/astor[${PYTHON_USEDEP}]

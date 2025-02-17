@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="tool"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	click>=6.0.0; extra == "tool"
+	click>=6.0.0; extra == 'tool'
 	google-auth>=2.15.0
 	requests-oauthlib>=0.7.0
 "

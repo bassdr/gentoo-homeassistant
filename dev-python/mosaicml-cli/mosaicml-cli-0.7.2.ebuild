@@ -20,84 +20,84 @@ REQUIRES_DIST="
 	argcomplete>=2.0.0
 	arrow>=1.2.2
 	backoff>=2.2.1
-	build>=0.10.0; extra == "all"
-	build>=0.10.0; extra == "dev"
-	docutils>=0.17.0; extra == "all"
-	docutils>=0.17.0; extra == "sphinx"
-	furo==2022.9.29; extra == "all"
-	furo==2022.9.29; extra == "sphinx"
+	build>=0.10.0; extra == 'all'
+	build>=0.10.0; extra == 'dev'
+	docutils>=0.17.0; extra == 'all'
+	docutils>=0.17.0; extra == 'sphinx'
+	furo==2022.9.29; extra == 'all'
+	furo==2022.9.29; extra == 'sphinx'
 	gql[websockets]>=3.4.0
-	isort>=5.9.3; extra == "all"
-	isort>=5.9.3; extra == "dev"
-	myst-parser>=0.16.1; extra == "all"
-	myst-parser>=0.16.1; extra == "sphinx"
-	pre-commit>=2.17.0; extra == "all"
-	pre-commit>=2.17.0; extra == "dev"
+	isort>=5.9.3; extra == 'all'
+	isort>=5.9.3; extra == 'dev'
+	myst-parser>=0.16.1; extra == 'all'
+	myst-parser>=0.16.1; extra == 'sphinx'
+	pre-commit>=2.17.0; extra == 'all'
+	pre-commit>=2.17.0; extra == 'dev'
 	prompt_toolkit>=3.0.29
 	protobuf>=3.20.0
-	pylint>=2.12.2; extra == "all"
-	pylint>=2.12.2; extra == "dev"
-	pyright==1.1.256; extra == "all"
-	pyright==1.1.256; extra == "dev"
-	pytest-cov>=4.0.0; extra == "all"
-	pytest-cov>=4.0.0; extra == "dev"
-	pytest-mock>=3.7.0; extra == "all"
-	pytest-mock>=3.7.0; extra == "dev"
-	pytest>=6.2.5; extra == "all"
-	pytest>=6.2.5; extra == "dev"
+	pylint>=2.12.2; extra == 'all'
+	pylint>=2.12.2; extra == 'dev'
+	pyright==1.1.256; extra == 'all'
+	pyright==1.1.256; extra == 'dev'
+	pytest-cov>=4.0.0; extra == 'all'
+	pytest-cov>=4.0.0; extra == 'dev'
+	pytest-mock>=3.7.0; extra == 'all'
+	pytest-mock>=3.7.0; extra == 'dev'
+	pytest>=6.2.5; extra == 'all'
+	pytest>=6.2.5; extra == 'dev'
 	pyyaml>=5.4.1
 	questionary>=1.10.0
-	radon>=5.1.0; extra == "all"
-	radon>=5.1.0; extra == "dev"
+	radon>=5.1.0; extra == 'all'
+	radon>=5.1.0; extra == 'dev'
 	requests<3,>=2.26.0
 	rich>=12.6.0
 	ruamel.yaml>=0.17.21
-	sphinx-argparse==0.4.0; extra == "all"
-	sphinx-argparse==0.4.0; extra == "sphinx"
-	sphinx-copybutton==0.5.2; extra == "all"
-	sphinx-copybutton==0.5.2; extra == "sphinx"
-	sphinx-design; extra == "all"
-	sphinx-design; extra == "sphinx"
-	sphinx-markdown-tables==0.0.17; extra == "all"
-	sphinx-markdown-tables==0.0.17; extra == "sphinx"
-	sphinx-panels==0.6.0; extra == "all"
-	sphinx-panels==0.6.0; extra == "sphinx"
-	sphinx-rtd-theme==1.0.0; extra == "all"
-	sphinx-rtd-theme==1.0.0; extra == "sphinx"
-	sphinx==4.4.0; extra == "all"
-	sphinx==4.4.0; extra == "sphinx"
-	sphinx_external_toc==0.3.0; extra == "all"
-	sphinx_external_toc==0.3.0; extra == "sphinx"
-	sphinxcontrib-applehelp==1.0.2; extra == "all"
-	sphinxcontrib-applehelp==1.0.2; extra == "sphinx"
-	sphinxcontrib-devhelp==1.0.2; extra == "all"
-	sphinxcontrib-devhelp==1.0.2; extra == "sphinx"
-	sphinxcontrib-htmlhelp==2.0.0; extra == "all"
-	sphinxcontrib-htmlhelp==2.0.0; extra == "sphinx"
-	sphinxcontrib-images>=0.9.4; extra == "all"
-	sphinxcontrib-images>=0.9.4; extra == "sphinx"
-	sphinxcontrib-jsmath>=1.0.1; extra == "all"
-	sphinxcontrib-jsmath>=1.0.1; extra == "sphinx"
-	sphinxcontrib-katex==0.9.4; extra == "all"
-	sphinxcontrib-katex==0.9.4; extra == "sphinx"
-	sphinxcontrib-qthelp==1.0.3; extra == "all"
-	sphinxcontrib-qthelp==1.0.3; extra == "sphinx"
-	sphinxcontrib-serializinghtml==1.1.5; extra == "all"
-	sphinxcontrib-serializinghtml==1.1.5; extra == "sphinx"
-	sphinxemoji==0.2.0; extra == "all"
-	sphinxemoji==0.2.0; extra == "sphinx"
-	sphinxext-opengraph==0.8.2; extra == "all"
-	sphinxext-opengraph==0.8.2; extra == "sphinx"
+	sphinx-argparse==0.4.0; extra == 'all'
+	sphinx-argparse==0.4.0; extra == 'sphinx'
+	sphinx-copybutton==0.5.2; extra == 'all'
+	sphinx-copybutton==0.5.2; extra == 'sphinx'
+	sphinx-design; extra == 'all'
+	sphinx-design; extra == 'sphinx'
+	sphinx-markdown-tables==0.0.17; extra == 'all'
+	sphinx-markdown-tables==0.0.17; extra == 'sphinx'
+	sphinx-panels==0.6.0; extra == 'all'
+	sphinx-panels==0.6.0; extra == 'sphinx'
+	sphinx-rtd-theme==1.0.0; extra == 'all'
+	sphinx-rtd-theme==1.0.0; extra == 'sphinx'
+	sphinx==4.4.0; extra == 'all'
+	sphinx==4.4.0; extra == 'sphinx'
+	sphinx_external_toc==0.3.0; extra == 'all'
+	sphinx_external_toc==0.3.0; extra == 'sphinx'
+	sphinxcontrib-applehelp==1.0.2; extra == 'all'
+	sphinxcontrib-applehelp==1.0.2; extra == 'sphinx'
+	sphinxcontrib-devhelp==1.0.2; extra == 'all'
+	sphinxcontrib-devhelp==1.0.2; extra == 'sphinx'
+	sphinxcontrib-htmlhelp==2.0.0; extra == 'all'
+	sphinxcontrib-htmlhelp==2.0.0; extra == 'sphinx'
+	sphinxcontrib-images>=0.9.4; extra == 'all'
+	sphinxcontrib-images>=0.9.4; extra == 'sphinx'
+	sphinxcontrib-jsmath>=1.0.1; extra == 'all'
+	sphinxcontrib-jsmath>=1.0.1; extra == 'sphinx'
+	sphinxcontrib-katex==0.9.4; extra == 'all'
+	sphinxcontrib-katex==0.9.4; extra == 'sphinx'
+	sphinxcontrib-qthelp==1.0.3; extra == 'all'
+	sphinxcontrib-qthelp==1.0.3; extra == 'sphinx'
+	sphinxcontrib-serializinghtml==1.1.5; extra == 'all'
+	sphinxcontrib-serializinghtml==1.1.5; extra == 'sphinx'
+	sphinxemoji==0.2.0; extra == 'all'
+	sphinxemoji==0.2.0; extra == 'sphinx'
+	sphinxext-opengraph==0.8.2; extra == 'all'
+	sphinxext-opengraph==0.8.2; extra == 'sphinx'
 	termcolor>=1.1.0
-	toml>=0.10.2; extra == "all"
-	toml>=0.10.2; extra == "dev"
-	twine>=4.0.2; extra == "all"
-	twine>=4.0.2; extra == "dev"
+	toml>=0.10.2; extra == 'all'
+	toml>=0.10.2; extra == 'dev'
+	twine>=4.0.2; extra == 'all'
+	twine>=4.0.2; extra == 'dev'
 	typing_extensions>=4.0.1
 	urllib3>=1.23
 	validators>=0.20.0
-	yapf>=0.33.0; extra == "all"
-	yapf>=0.33.0; extra == "dev"
+	yapf>=0.33.0; extra == 'all'
+	yapf>=0.33.0; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/argcomplete-2.0.0[${PYTHON_USEDEP}]

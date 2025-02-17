@@ -15,13 +15,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "dev"
+	black; extra == 'dev'
 	networkx
 	platformdirs
-	pre-commit; extra == "dev"
+	pre-commit; extra == 'dev'
 	pyyaml
 	requests
-	ruff==0.0.262; extra == "dev"
+	ruff==0.0.262; extra == 'dev'
 	typer
 "
 GENERATED_RDEPEND="${RDEPEND}

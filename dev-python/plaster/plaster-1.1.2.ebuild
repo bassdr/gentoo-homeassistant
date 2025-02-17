@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Sphinx ; extra == 'docs'
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	pylons-sphinx-themes ; extra == 'docs'
 	pytest ; extra == 'testing'
 	pytest-cov ; extra == 'testing'

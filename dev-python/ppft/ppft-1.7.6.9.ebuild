@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dill>=0.3.9; extra == "dill"
+	dill>=0.3.9; extra == 'dill'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dill? ( >=dev-python/dill-0.3.9[${PYTHON_USEDEP}] )

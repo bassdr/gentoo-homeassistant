@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cryptography>=35.0; extra == "cle"
+	cryptography>=35.0; extra == 'cle'
 	geomet<0.3,>=0.1
-	gremlinpython==3.4.6; extra == "graph"
+	gremlinpython==3.4.6; extra == 'graph'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	cle? ( >=dev-python/cryptography-35.0[${PYTHON_USEDEP}] )

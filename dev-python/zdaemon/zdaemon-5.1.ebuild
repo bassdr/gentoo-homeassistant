@@ -16,12 +16,12 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	ZConfig
-	manuel; extra == "test"
-	mock; extra == "test"
+	manuel; extra == 'test'
+	mock; extra == 'test'
 	setuptools
-	zc.customdoctests; extra == "test"
-	zope.testing; extra == "test"
-	zope.testrunner; extra == "test"
+	zc.customdoctests; extra == 'test'
+	zope.testing; extra == 'test'
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]

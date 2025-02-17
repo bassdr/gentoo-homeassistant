@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	matplotlib; extra == "all"
+	matplotlib; extra == 'all'
 	numpy
 	tifffile
 "

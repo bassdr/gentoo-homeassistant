@@ -20,8 +20,8 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="gmpy gmpy2"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	gmpy2; extra == "gmpy2"
-	gmpy; extra == "gmpy"
+	gmpy2; extra == 'gmpy2'
+	gmpy; extra == 'gmpy'
 	six>=1.9.0
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	attrs>=20.1.0; python_version >= "3.7"
-	cattrs>=1.3; python_version >= "3.7"
+	attrs>=20.1.0; python_version >= '3.7'
+	cattrs>=1.3; python_version >= '3.7'
 	requests>=2.22
 	typing-extensions>=4.1.1
 "

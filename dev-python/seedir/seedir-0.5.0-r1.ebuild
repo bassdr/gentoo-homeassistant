@@ -23,7 +23,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="emoji"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	emoji; extra == "emoji"
+	emoji; extra == 'emoji'
 	natsort
 "
 GENERATED_RDEPEND="${RDEPEND}

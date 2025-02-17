@@ -20,23 +20,23 @@ REQUIRES_DIST="
 	asdf-standard>=1.1.0
 	asdf-transform-schemas>=0.3
 	attrs>=22.2.0
-	fsspec[http]>=2022.8.2; extra == "tests"
-	furo; extra == "docs"
-	graphviz; extra == "docs"
-	importlib-metadata>=4.11.4; python_version <= "3.11"
+	fsspec[http]>=2022.8.2; extra == 'tests'
+	furo; extra == 'docs'
+	graphviz; extra == 'docs'
+	importlib-metadata>=4.11.4; python_version <= '3.11'
 	jmespath>=0.6.2
-	lz4>=0.10; extra == "all"
-	lz4>=0.10; extra == "tests"
+	lz4>=0.10; extra == 'all'
+	lz4>=0.10; extra == 'tests'
 	numpy>=1.22
 	packaging>=19
-	psutil; extra == "tests"
-	pytest-remotedata; extra == "tests"
-	pytest>=8; extra == "tests"
+	psutil; extra == 'tests'
+	pytest-remotedata; extra == 'tests'
+	pytest>=8; extra == 'tests'
 	pyyaml>=5.4.1
 	semantic_version>=2.8
-	sphinx-asdf>=0.2.2; extra == "docs"
-	sphinx-inline-tabs; extra == "docs"
-	tomli; python_version < "3.11" and extra == "docs"
+	sphinx-asdf>=0.2.2; extra == 'docs'
+	sphinx-inline-tabs; extra == 'docs'
+	tomli; python_version < '3.11' and extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asdf-standard-1.1.0[${PYTHON_USEDEP}]

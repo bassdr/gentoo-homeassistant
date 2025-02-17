@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dataclasses (>=0.7,<0.8); python_version == "3.6"
+	dataclasses (>=0.7,<0.8); python_version == '3.6'
 	libcst (>=0.3.10,<0.5.0)
 	pathspec (>=0.9.0,<0.10.0)
 	pyyaml (>=5.3.1,<7.0.0)

@@ -75,27 +75,27 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs docstest nox pep8test sdist ssh test-randomorder"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	bcrypt>=3.1.5; extra == "ssh"
-	build; extra == "sdist"
-	certifi; extra == "test"
-	cffi>=1.12; platform_python_implementation != "PyPy"
-	check-sdist; extra == "pep8test"
-	click; extra == "pep8test"
-	cryptography-vectors==43.0.1; extra == "test"
-	mypy; extra == "pep8test"
-	nox; extra == "nox"
-	pretend; extra == "test"
-	pyenchant>=1.6.11; extra == "docstest"
-	pytest-benchmark; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-randomly; extra == "test-randomorder"
-	pytest-xdist; extra == "test"
-	pytest>=6.2.0; extra == "test"
-	readme-renderer; extra == "docstest"
-	ruff; extra == "pep8test"
-	sphinx-rtd-theme>=1.1.1; extra == "docs"
-	sphinx>=5.3.0; extra == "docs"
-	sphinxcontrib-spelling>=4.0.1; extra == "docstest"
+	bcrypt>=3.1.5; extra == 'ssh'
+	build; extra == 'sdist'
+	certifi; extra == 'test'
+	cffi>=1.12; platform_python_implementation != 'PyPy'
+	check-sdist; extra == 'pep8test'
+	click; extra == 'pep8test'
+	cryptography-vectors==43.0.1; extra == 'test'
+	mypy; extra == 'pep8test'
+	nox; extra == 'nox'
+	pretend; extra == 'test'
+	pyenchant>=1.6.11; extra == 'docstest'
+	pytest-benchmark; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-randomly; extra == 'test-randomorder'
+	pytest-xdist; extra == 'test'
+	pytest>=6.2.0; extra == 'test'
+	readme-renderer; extra == 'docstest'
+	ruff; extra == 'pep8test'
+	sphinx-rtd-theme>=1.1.1; extra == 'docs'
+	sphinx>=5.3.0; extra == 'docs'
+	sphinxcontrib-spelling>=4.0.1; extra == 'docstest'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	ssh? ( >=dev-python/bcrypt-3.1.5[${PYTHON_USEDEP}] )

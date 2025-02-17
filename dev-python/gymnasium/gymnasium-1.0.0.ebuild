@@ -17,45 +17,45 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ale-py>=0.9; extra == "all"
-	ale-py>=0.9; extra == "atari"
-	box2d-py==2.3.5; extra == "all"
-	box2d-py==2.3.5; extra == "box2d"
+	ale-py>=0.9; extra == 'all'
+	ale-py>=0.9; extra == 'atari'
+	box2d-py==2.3.5; extra == 'all'
+	box2d-py==2.3.5; extra == 'box2d'
 	cloudpickle>=1.2.0
-	cython<3; extra == "all"
-	cython<3; extra == "mujoco-py"
-	dill>=0.3.7; extra == "testing"
+	cython<3; extra == 'all'
+	cython<3; extra == 'mujoco-py'
+	dill>=0.3.7; extra == 'testing'
 	farama-notifications>=0.0.1
-	flax>=0.5.0; extra == "all"
-	flax>=0.5.0; extra == "jax"
-	imageio>=2.14.1; extra == "all"
-	imageio>=2.14.1; extra == "mujoco"
-	importlib-metadata>=4.8.0; python_version < "3.10"
-	jax>=0.4.0; extra == "all"
-	jax>=0.4.0; extra == "jax"
-	jaxlib>=0.4.0; extra == "all"
-	jaxlib>=0.4.0; extra == "jax"
-	matplotlib>=3.0; extra == "all"
-	matplotlib>=3.0; extra == "other"
-	moviepy>=1.0.0; extra == "all"
-	moviepy>=1.0.0; extra == "other"
-	mujoco-py<2.2,>=2.1; extra == "all"
-	mujoco-py<2.2,>=2.1; extra == "mujoco-py"
-	mujoco>=2.1.5; extra == "all"
-	mujoco>=2.1.5; extra == "mujoco"
+	flax>=0.5.0; extra == 'all'
+	flax>=0.5.0; extra == 'jax'
+	imageio>=2.14.1; extra == 'all'
+	imageio>=2.14.1; extra == 'mujoco'
+	importlib-metadata>=4.8.0; python_version < '3.10'
+	jax>=0.4.0; extra == 'all'
+	jax>=0.4.0; extra == 'jax'
+	jaxlib>=0.4.0; extra == 'all'
+	jaxlib>=0.4.0; extra == 'jax'
+	matplotlib>=3.0; extra == 'all'
+	matplotlib>=3.0; extra == 'other'
+	moviepy>=1.0.0; extra == 'all'
+	moviepy>=1.0.0; extra == 'other'
+	mujoco-py<2.2,>=2.1; extra == 'all'
+	mujoco-py<2.2,>=2.1; extra == 'mujoco-py'
+	mujoco>=2.1.5; extra == 'all'
+	mujoco>=2.1.5; extra == 'mujoco'
 	numpy>=1.21.0
-	opencv-python>=3.0; extra == "all"
-	opencv-python>=3.0; extra == "other"
-	pygame>=2.1.3; extra == "all"
-	pygame>=2.1.3; extra == "box2d"
-	pygame>=2.1.3; extra == "classic-control"
-	pygame>=2.1.3; extra == "toy-text"
-	pytest==7.1.3; extra == "testing"
-	scipy>=1.7.3; extra == "testing"
-	swig==4.*; extra == "all"
-	swig==4.*; extra == "box2d"
-	torch>=1.0.0; extra == "all"
-	torch>=1.0.0; extra == "torch"
+	opencv-python>=3.0; extra == 'all'
+	opencv-python>=3.0; extra == 'other'
+	pygame>=2.1.3; extra == 'all'
+	pygame>=2.1.3; extra == 'box2d'
+	pygame>=2.1.3; extra == 'classic-control'
+	pygame>=2.1.3; extra == 'toy-text'
+	pytest==7.1.3; extra == 'testing'
+	scipy>=1.7.3; extra == 'testing'
+	swig==4.*; extra == 'all'
+	swig==4.*; extra == 'box2d'
+	torch>=1.0.0; extra == 'all'
+	torch>=1.0.0; extra == 'torch'
 	typing-extensions>=4.3.0
 "
 GENERATED_RDEPEND="${RDEPEND}

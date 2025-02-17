@@ -34,14 +34,14 @@ REQUIRES_DIST="
 	croniter (>=1)
 	cryptography (>=35)
 	defusedxml (>=0,<1)
-	importlib_metadata (>=1,<2); python_version <= "3.7"
+	importlib_metadata (>=1,<2); python_version <= '3.7'
 	micloud
 	netifaces (>=0,<1)
 	pytz
-	sphinx (>=4.2); extra == "docs"
-	sphinx_click; extra == "docs"
-	sphinx_rtd_theme (>=0,<1); extra == "docs"
-	sphinxcontrib-apidoc (>=0,<1); extra == "docs"
+	sphinx (>=4.2); extra == 'docs'
+	sphinx_click; extra == 'docs'
+	sphinx_rtd_theme (>=0,<1); extra == 'docs'
+	sphinxcontrib-apidoc (>=0,<1); extra == 'docs'
 	tqdm (>=4,<5)
 	zeroconf (>=0,<1)
 "

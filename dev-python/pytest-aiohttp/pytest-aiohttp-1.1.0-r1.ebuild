@@ -18,8 +18,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiohttp>=3.11.0b0
-	coverage==6.2; extra == "testing"
-	mypy==1.12.1; extra == "testing"
+	coverage==6.2; extra == 'testing'
+	mypy==1.12.1; extra == 'testing'
 	pytest-asyncio>=0.17.2
 	pytest>=6.1.0
 "

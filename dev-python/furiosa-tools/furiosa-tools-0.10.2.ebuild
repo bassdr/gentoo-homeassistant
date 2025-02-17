@@ -17,11 +17,11 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	furiosa-common==0.10.*
-	mnist; extra == "test"
-	mypy; extra == "test"
-	pytest; extra == "test"
+	mnist; extra == 'test'
+	mypy; extra == 'test'
+	pytest; extra == 'test'
 	pyyaml~=6.0.0
-	ruff; extra == "test"
+	ruff; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/furiosa-common-0.10*[${PYTHON_USEDEP}]

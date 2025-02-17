@@ -12,13 +12,13 @@ DESCRIPTION="Provides a python api to interact with a Hikvision camera event str
 HOMEPAGE="
   https://pypi.org/project/pyhik/
 "
-SRC_URI="https://github.com/mezz64/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
+MY_PN=pyHik
+SRC_URI="https://github.com/mezz64/${MY_PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 

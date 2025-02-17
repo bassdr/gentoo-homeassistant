@@ -19,14 +19,14 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
-	repoze.sphinx.autointerface; extra == "docs"
+	Sphinx; extra == 'docs'
+	repoze.sphinx.autointerface; extra == 'docs'
 	setuptools
 	zope.i18nmessageid
 	zope.interface
 	zope.schema>=4.9
-	zope.testing; extra == "test"
-	zope.testrunner; extra == "test"
+	zope.testing; extra == 'test'
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/repoze-sphinx-autointerface[${PYTHON_USEDEP}] )

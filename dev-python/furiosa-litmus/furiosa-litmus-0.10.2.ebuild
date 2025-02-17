@@ -22,15 +22,15 @@ REQUIRES_DIST="
 	furiosa-quantizer==0.10.*
 	furiosa-runtime==0.10.*
 	furiosa-tools==0.10.*
-	mnist; extra == "test"
-	mypy; extra == "test"
+	mnist; extra == 'test'
+	mypy; extra == 'test'
 	psutil~=5.9.4
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
-	types-PyYAML; extra == "test"
-	types-protobuf; extra == "test"
-	types-psutil; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
+	types-PyYAML; extra == 'test'
+	types-protobuf; extra == 'test'
+	types-psutil; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/distro-1.8.0[${PYTHON_USEDEP}] =dev-python/distro-1.8*[${PYTHON_USEDEP}]

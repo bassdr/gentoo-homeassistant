@@ -17,20 +17,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	check-manifest; extra == "check"
-	coverage[toml]>=5.2; extra == "test"
-	flake8-black; extra == "check"
-	flake8-colors; extra == "check"
-	flake8-isort; extra == "check"
-	flake8-pyi; extra == "check"
-	flake8-typing-imports; extra == "check"
-	flake8<5; extra == "check"
-	hypothesis; extra == "test"
-	mypy>=1.10.0; extra == "check"
-	pygments; extra == "check"
-	pytest-cov; extra == "test"
-	pytest>=6.0; extra == "test"
-	readme-renderer; extra == "check"
+	check-manifest; extra == 'check'
+	coverage[toml]>=5.2; extra == 'test'
+	flake8-black; extra == 'check'
+	flake8-colors; extra == 'check'
+	flake8-isort; extra == 'check'
+	flake8-pyi; extra == 'check'
+	flake8-typing-imports; extra == 'check'
+	flake8<5; extra == 'check'
+	hypothesis; extra == 'test'
+	mypy>=1.10.0; extra == 'check'
+	pygments; extra == 'check'
+	pytest-cov; extra == 'test'
+	pytest>=6.0; extra == 'test'
+	readme-renderer; extra == 'check'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	check? ( dev-python/check-manifest[${PYTHON_USEDEP}] )

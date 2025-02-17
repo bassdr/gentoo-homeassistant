@@ -18,14 +18,14 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	docutils>=0.20.1
-	flaky; extra == "test"
+	flaky; extra == 'test'
 	html5lib>=1.1
 	nbconvert>=7.1
 	nbformat>=5.1
-	pre-commit; extra == "test"
+	pre-commit; extra == 'test'
 	pytest<9,>=7.0
-	requests-cache>=0.9.7; extra == "cache"
-	requests-cache>=0.9.7; extra == "test"
+	requests-cache>=0.9.7; extra == 'cache'
+	requests-cache>=0.9.7; extra == 'test'
 	requests>=2.22
 "
 GENERATED_RDEPEND="${RDEPEND}

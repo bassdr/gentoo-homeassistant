@@ -24,7 +24,7 @@ GENERATED_IUSE="all compression docs execnet jinja redis sqlalchemy zmq"
 IUSE="${GENERATED_IUSE}"
 BDEPEND="
 	test? (
-		app-arch/brotli[${PYTHON_USEDEP},python]
+		app-arch/brotli[python,${PYTHON_USEDEP}]
 		>=dev-python/execnet-1.0.9[${PYTHON_USEDEP}]
 		dev-python/jinja2[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]

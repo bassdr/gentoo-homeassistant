@@ -22,7 +22,7 @@ REQUIRES_DIST="
 	numpy
 	packaging
 	pandas>=1.5.0
-	python-lzo; extra == "lzo"
+	python-lzo; extra == 'lzo'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cramjam-2.3[${PYTHON_USEDEP}]

@@ -15,16 +15,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black ; extra == "dev"
-	coverage[toml] ; extra == "test"
-	dataclasses;python_version=="3.6"
+	black ; extra == 'dev'
+	coverage[toml] ; extra == 'test'
+	dataclasses;python_version=='3.6'
 	flake8
-	mypy ; extra == "dev"
-	pytest ; extra == "test"
-	pytest-coverage ; extra == "test"
-	pytest-sugar ; extra == "test"
-	tox ; extra == "dev"
-	types-dataclasses ; extra == "test"
+	mypy ; extra == 'dev'
+	pytest ; extra == 'test'
+	pytest-coverage ; extra == 'test'
+	pytest-sugar ; extra == 'test'
+	tox ; extra == 'dev'
+	types-dataclasses ; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/flake8[${PYTHON_USEDEP}]

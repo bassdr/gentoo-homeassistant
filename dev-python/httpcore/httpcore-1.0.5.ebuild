@@ -27,12 +27,12 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="asyncio http2 socks trio"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	anyio<5.0,>=4.0; extra == "asyncio"
+	anyio<5.0,>=4.0; extra == 'asyncio'
 	certifi
 	h11<0.15,>=0.13
-	h2<5,>=3; extra == "http2"
-	socksio==1.*; extra == "socks"
-	trio<0.26.0,>=0.22.0; extra == "trio"
+	h2<5,>=3; extra == 'http2'
+	socksio==1.*; extra == 'socks'
+	trio<0.26.0,>=0.22.0; extra == 'trio'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	asyncio? ( >=dev-python/anyio-4.0[${PYTHON_USEDEP}] <dev-python/anyio-5.0[${PYTHON_USEDEP}] )

@@ -25,21 +25,21 @@ PATCHES=(
 )
 
 REQUIRES_DIST="
-	beautifulsoup4; extra == "dev"
-	black==24.3.0; extra == "dev"
+	beautifulsoup4; extra == 'dev'
+	black==24.3.0; extra == 'dev'
 	certifi
-	flake8<4,>=3.3; extra == "dev"
-	flaky; extra == "tests"
-	invoke; extra == "dev"
-	mock; extra == "tests"
+	flake8<4,>=3.3; extra == 'dev'
+	flaky; extra == 'tests'
+	invoke; extra == 'dev'
+	mock; extra == 'tests'
 	packaging>=22
-	parver; extra == "dev"
-	pytest-timeout; extra == "tests"
-	pytest-xdist; extra == "tests"
-	pytest>=5; extra == "tests"
+	parver; extra == 'dev'
+	pytest-timeout; extra == 'tests'
+	pytest-xdist; extra == 'tests'
+	pytest>=5; extra == 'tests'
 	setuptools>=67
-	sphinx; extra == "dev"
-	towncrier; extra == "dev"
+	sphinx; extra == 'dev'
+	towncrier; extra == 'dev'
 	virtualenv>=20.24.2
 "
 GENERATED_RDEPEND="${RDEPEND}

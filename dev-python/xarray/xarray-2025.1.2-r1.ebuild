@@ -19,43 +19,43 @@ GENERATED_IUSE="accel complete etc io parallel viz"
 IUSE="${GENERATED_IUSE} big-endian"
 
 REQUIRES_DIST="
-	bottleneck; extra == "accel"
-	cartopy; extra == "viz"
-	cftime; extra == "io"
-	dask[complete]; extra == "parallel"
-	flox; extra == "accel"
-	fsspec; extra == "io"
-	h5netcdf; extra == "io"
-	hypothesis; extra == "dev"
-	jinja2; extra == "dev"
-	matplotlib; extra == "viz"
-	mypy; extra == "dev"
-	nc-time-axis; extra == "viz"
-	netCDF4; extra == "io"
-	numba>=0.54; extra == "accel"
-	numbagg; extra == "accel"
+	bottleneck; extra == 'accel'
+	cartopy; extra == 'viz'
+	cftime; extra == 'io'
+	dask[complete]; extra == 'parallel'
+	flox; extra == 'accel'
+	fsspec; extra == 'io'
+	h5netcdf; extra == 'io'
+	hypothesis; extra == 'dev'
+	jinja2; extra == 'dev'
+	matplotlib; extra == 'viz'
+	mypy; extra == 'dev'
+	nc-time-axis; extra == 'viz'
+	netCDF4; extra == 'io'
+	numba>=0.54; extra == 'accel'
+	numbagg; extra == 'accel'
 	numpy>=1.24
-	opt_einsum; extra == "accel"
+	opt_einsum; extra == 'accel'
 	packaging>=23.2
 	pandas>=2.1
-	pooch; extra == "io"
-	pre-commit; extra == "dev"
-	pydap; python_version < "3.10" and extra == "io"
-	pytest-cov; extra == "dev"
-	pytest-env; extra == "dev"
-	pytest-timeout; extra == "dev"
-	pytest-xdist; extra == "dev"
-	pytest; extra == "dev"
-	ruff>=0.8.0; extra == "dev"
-	scipy; extra == "accel"
-	scipy; extra == "io"
-	seaborn; extra == "viz"
-	sparse; extra == "etc"
-	sphinx; extra == "dev"
-	sphinx_autosummary_accessors; extra == "dev"
-	xarray[accel,etc,io,parallel,viz]; extra == "complete"
-	xarray[complete]; extra == "dev"
-	zarr; extra == "io"
+	pooch; extra == 'io'
+	pre-commit; extra == 'dev'
+	pydap; python_version < '3.10' and extra == 'io'
+	pytest-cov; extra == 'dev'
+	pytest-env; extra == 'dev'
+	pytest-timeout; extra == 'dev'
+	pytest-xdist; extra == 'dev'
+	pytest; extra == 'dev'
+	ruff>=0.8.0; extra == 'dev'
+	scipy; extra == 'accel'
+	scipy; extra == 'io'
+	seaborn; extra == 'viz'
+	sparse; extra == 'etc'
+	sphinx; extra == 'dev'
+	sphinx_autosummary_accessors; extra == 'dev'
+	xarray[accel,etc,io,parallel,viz]; extra == 'complete'
+	xarray[complete]; extra == 'dev'
+	zarr; extra == 'io'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	accel? ( dev-python/bottleneck[${PYTHON_USEDEP}] )

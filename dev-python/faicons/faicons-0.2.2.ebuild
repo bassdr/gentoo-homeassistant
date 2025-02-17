@@ -16,8 +16,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	black >=23.1.0 ; extra == 'dev'
-	flake8 ==3.9.2 ; (python_version <= "3.7") and extra == 'dev'
-	flake8 >=6.0.0 ; (python_version > "3.7") and extra == 'dev'
+	flake8 ==3.9.2 ; (python_version <= '3.7') and extra == 'dev'
+	flake8 >=6.0.0 ; (python_version > '3.7') and extra == 'dev'
 	htmltools >=0.1.4.9002
 	pytest >=6.2.4 ; extra == 'test'
 	wheel ; extra == 'dev'

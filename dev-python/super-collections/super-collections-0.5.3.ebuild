@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	hjson
-	pytest>=7.0; extra == "test"
+	pytest>=7.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/hjson[${PYTHON_USEDEP}]

@@ -28,8 +28,8 @@ REQUIRES_DIST="
 	keras >=3.0.0
 	libclang >=13.0.0
 	ml-dtypes ~=0.3.1
-	numpy <2.0.0,>=1.23.5 ; python_version <= "3.11"
-	numpy <2.0.0,>=1.26.0 ; python_version >= "3.12"
+	numpy <2.0.0,>=1.23.5 ; python_version <= '3.11'
+	numpy <2.0.0,>=1.26.0 ; python_version >= '3.12'
 	nvidia-cublas-cu12 ==12.3.4.1 ; extra == 'and-cuda'
 	nvidia-cuda-cupti-cu12 ==12.3.101 ; extra == 'and-cuda'
 	nvidia-cuda-nvcc-cu12 ==12.3.107 ; extra == 'and-cuda'
@@ -49,7 +49,7 @@ REQUIRES_DIST="
 	setuptools
 	six >=1.12.0
 	tensorboard <2.17,>=2.16
-	tensorflow-io-gcs-filesystem >=0.23.1 ; python_version < "3.12"
+	tensorflow-io-gcs-filesystem >=0.23.1 ; python_version < '3.12'
 	termcolor >=1.1.0
 	typing-extensions >=3.6.6
 	wrapt >=1.11.0

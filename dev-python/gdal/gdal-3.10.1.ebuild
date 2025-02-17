@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	numpy>1.0.0; extra == "numpy"
+	numpy>1.0.0; extra == 'numpy'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	numpy? ( >dev-python/numpy-1.0.0[${PYTHON_USEDEP}] )

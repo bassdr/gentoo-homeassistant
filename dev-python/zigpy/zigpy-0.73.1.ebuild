@@ -24,24 +24,24 @@ DOCS="README.md"
 REQUIRES_DIST="
 	aiohttp
 	aiosqlite>=0.20.0
-	async-timeout; python_version < "3.11"
-	asynctest; extra == "testing"
+	async-timeout; python_version < '3.11'
+	asynctest; extra == 'testing'
 	attrs
-	coverage[toml]; extra == "testing"
-	coveralls; extra == "testing"
+	coverage[toml]; extra == 'testing'
+	coveralls; extra == 'testing'
 	crccheck
 	cryptography
-	freezegun; extra == "testing"
+	freezegun; extra == 'testing'
 	frozendict
 	jsonschema
-	pyserial-asyncio!=0.5; platform_system == "Windows"
-	pyserial-asyncio; platform_system != "Windows"
-	pysqlite3-binary; (platform_system == "Linux" and python_version < "3.12") and extra == "testing"
-	pytest-asyncio; extra == "testing"
-	pytest-cov; extra == "testing"
-	pytest-timeout; extra == "testing"
-	pytest; extra == "testing"
-	tomli; extra == "testing"
+	pyserial-asyncio!=0.5; platform_system == 'Windows'
+	pyserial-asyncio; platform_system != 'Windows'
+	pysqlite3-binary; (platform_system == 'Linux' and python_version < '3.12') and extra == 'testing'
+	pytest-asyncio; extra == 'testing'
+	pytest-cov; extra == 'testing'
+	pytest-timeout; extra == 'testing'
+	pytest; extra == 'testing'
+	tomli; extra == 'testing'
 	typing_extensions
 	voluptuous
 "

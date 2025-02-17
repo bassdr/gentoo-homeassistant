@@ -22,7 +22,7 @@ REQUIRES_DIST="
 	cleo<3.0.0,>=2.1.0
 	dulwich<0.23.0,>=0.22.6
 	fastjsonschema<3.0.0,>=2.18.0
-	importlib-metadata>=4.4; python_version < "3.10"
+	importlib-metadata>=4.4; python_version < '3.10'
 	installer<0.8.0,>=0.7.0
 	keyring<26.0.0,>=25.1.0
 	packaging>=24.0
@@ -33,11 +33,11 @@ REQUIRES_DIST="
 	requests-toolbelt<2.0.0,>=1.0.0
 	requests<3.0,>=2.26
 	shellingham<2.0,>=1.5
-	tomli<3.0.0,>=2.0.1; python_version < "3.11"
+	tomli<3.0.0,>=2.0.1; python_version < '3.11'
 	tomlkit<1.0.0,>=0.11.4
 	trove-classifiers>=2022.5.19
 	virtualenv<21.0.0,>=20.26.6
-	xattr<2.0.0,>=1.0.0; sys_platform == "darwin"
+	xattr<2.0.0,>=1.0.0; sys_platform == 'darwin'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-1.2.1[${PYTHON_USEDEP}] <dev-python/build-2.0.0[${PYTHON_USEDEP}]

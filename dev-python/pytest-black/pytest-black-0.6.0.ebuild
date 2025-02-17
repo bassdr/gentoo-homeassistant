@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; python_version >= "3.6"
+	black; python_version >= '3.6'
 	pytest>=7.0.0
 	toml
 "

@@ -25,33 +25,33 @@ DOCS="README.rst"
 REQUIRES_DIST="
 	bx-py-utils
 	colorlog>=3.0.1
-	furo; extra == "doc"
+	furo; extra == 'doc'
 	importlib-resources>=5.10
 	jaraco.classes
 	jaraco.collections
-	jaraco.collections>=4.1; extra == "test"
+	jaraco.collections>=4.1; extra == 'test'
 	jaraco.context
 	jaraco.functools>=3.6
 	jaraco.itertools
 	jaraco.net>=9
-	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.packaging>=9.3; extra == 'doc'
 	keyring
 	lomond>=0.3.3
 	more-itertools
 	platformdirs
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "check"
-	pytest-cov; extra == "cover"
-	pytest-enabler>=2.2; extra == "enabler"
-	pytest-mypy; extra == "type"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
-	requests-mock; extra == "test"
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'check'
+	pytest-cov; extra == 'cover'
+	pytest-enabler>=2.2; extra == 'enabler'
+	pytest-mypy; extra == 'type'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'check'
+	requests-mock; extra == 'test'
 	requests-toolbelt
 	requests>=2.12.4
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
-	types-requests; extra == "type"
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
+	types-requests; extra == 'type'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bx-py-utils[${PYTHON_USEDEP}]

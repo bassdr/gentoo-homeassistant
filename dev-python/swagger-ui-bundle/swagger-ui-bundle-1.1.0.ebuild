@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Jinja2 (>=3.0.0,<4.0.0)
-	importlib_resources (>=5.7.1,<6.0.0) ; python_version < "3.9"
+	importlib_resources (>=5.7.1,<6.0.0) ; python_version < '3.9'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}] <dev-python/jinja2-4.0.0[${PYTHON_USEDEP}]

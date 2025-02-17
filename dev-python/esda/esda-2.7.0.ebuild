@@ -17,33 +17,33 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	codecov; extra == "tests"
-	folium; extra == "tests"
+	codecov; extra == 'tests'
+	folium; extra == 'tests'
 	geopandas>=0.12
 	libpysal>=4.12
-	mapclassify; extra == "tests"
-	matplotlib-scalebar; extra == "notebooks"
-	matplotlib; extra == "plus"
-	nbsphinx; extra == "docs"
-	numba>=0.57; extra == "plus"
+	mapclassify; extra == 'tests'
+	matplotlib-scalebar; extra == 'notebooks'
+	matplotlib; extra == 'plus'
+	nbsphinx; extra == 'docs'
+	numba>=0.57; extra == 'plus'
 	numpy>=1.24
-	numpydoc; extra == "docs"
+	numpydoc; extra == 'docs'
 	pandas>1.5
-	pandoc; extra == "docs"
-	pre-commit; extra == "dev"
-	pytest-cov; extra == "tests"
-	pytest-xdist; extra == "tests"
-	pytest; extra == "tests"
-	rtree>=1.0; extra == "plus"
-	ruff; extra == "dev"
+	pandoc; extra == 'docs'
+	pre-commit; extra == 'dev'
+	pytest-cov; extra == 'tests'
+	pytest-xdist; extra == 'tests'
+	pytest; extra == 'tests'
+	rtree>=1.0; extra == 'plus'
+	ruff; extra == 'dev'
 	scikit-learn>=1.2
 	scipy>=1.9
-	seaborn; extra == "plus"
+	seaborn; extra == 'plus'
 	shapely>=2.0
-	sphinx; extra == "docs"
-	sphinx_bootstrap_theme; extra == "docs"
-	sphinxcontrib-bibtex; extra == "docs"
-	watermark; extra == "notebooks"
+	sphinx; extra == 'docs'
+	sphinx_bootstrap_theme; extra == 'docs'
+	sphinxcontrib-bibtex; extra == 'docs'
+	watermark; extra == 'notebooks'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/geopandas-0.12[${PYTHON_USEDEP}]

@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	enum34 ; python_version < "3.4"
-	funcsigs ; python_version < "3.3"
+	enum34 ; python_version < '3.4'
+	funcsigs ; python_version < '3.3'
 	makefun (>=1.5.0)
 "
 GENERATED_RDEPEND="${RDEPEND}

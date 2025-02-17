@@ -16,10 +16,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	mypy; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
+	mypy; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
 	torch==2.4.1
 "
 GENERATED_RDEPEND="${RDEPEND}

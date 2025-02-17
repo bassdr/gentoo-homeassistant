@@ -17,28 +17,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	alabaster>=1.0.0; extra == "dev"
-	alabaster>=1.0.0; extra == "docs"
-	defusedxml>=0.8.0rc2; extra == "dev"
-	defusedxml>=0.8.0rc2; extra == "tests"
+	alabaster>=1.0.0; extra == 'dev'
+	alabaster>=1.0.0; extra == 'docs'
+	defusedxml>=0.8.0rc2; extra == 'dev'
+	defusedxml>=0.8.0rc2; extra == 'tests'
 	docutils>=0.18
 	feedgen>=0.9.0
 	invoke>=1.6.0
-	ipython>=7.30.0; extra == "all"
-	ipython>=7.30.0; extra == "dev"
-	ipython>=7.30.0; extra == "notebook"
-	myst-parser>=0.17.0; extra == "all"
-	myst-parser>=0.17.0; extra == "dev"
-	myst-parser>=0.17.0; extra == "markdown"
-	nbsphinx>=0.8.0; extra == "all"
-	nbsphinx>=0.8.0; extra == "dev"
-	nbsphinx>=0.8.0; extra == "notebook"
+	ipython>=7.30.0; extra == 'all'
+	ipython>=7.30.0; extra == 'dev'
+	ipython>=7.30.0; extra == 'notebook'
+	myst-parser>=0.17.0; extra == 'all'
+	myst-parser>=0.17.0; extra == 'dev'
+	myst-parser>=0.17.0; extra == 'markdown'
+	nbsphinx>=0.8.0; extra == 'all'
+	nbsphinx>=0.8.0; extra == 'dev'
+	nbsphinx>=0.8.0; extra == 'notebook'
 	packaging>=19.0
-	pytest; extra == "dev"
-	pytest; extra == "tests"
+	pytest; extra == 'dev'
+	pytest; extra == 'tests'
 	python-dateutil>=2.8.2
-	sphinx-automodapi; extra == "dev"
-	sphinx-automodapi; extra == "docs"
+	sphinx-automodapi; extra == 'dev'
+	sphinx-automodapi; extra == 'docs'
 	sphinx>=6.2.0
 	watchdog>=2.1.0
 "

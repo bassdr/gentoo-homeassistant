@@ -25,40 +25,40 @@ GENERATED_IUSE="all graphite interpolatable lxml pathops plot repacker symfont u
 IUSE="${GENERATED_IUSE} +native-extensions"
 
 REQUIRES_DIST="
-	brotli>=1.0.1; platform_python_implementation == "CPython" and extra == "all"
-	brotli>=1.0.1; platform_python_implementation == "CPython" and extra == "woff"
-	brotlicffi>=0.8.0; platform_python_implementation != "CPython" and extra == "all"
-	brotlicffi>=0.8.0; platform_python_implementation != "CPython" and extra == "woff"
-	fs<3,>=2.2.0; extra == "all"
-	fs<3,>=2.2.0; extra == "ufo"
-	lxml>=4.0; extra == "all"
-	lxml>=4.0; extra == "lxml"
-	lz4>=1.7.4.2; extra == "all"
-	lz4>=1.7.4.2; extra == "graphite"
-	matplotlib; extra == "all"
-	matplotlib; extra == "plot"
-	munkres; platform_python_implementation == "PyPy" and extra == "all"
-	munkres; platform_python_implementation == "PyPy" and extra == "interpolatable"
-	pycairo; extra == "all"
-	pycairo; extra == "interpolatable"
-	scipy; platform_python_implementation != "PyPy" and extra == "all"
-	scipy; platform_python_implementation != "PyPy" and extra == "interpolatable"
-	skia-pathops>=0.5.0; extra == "all"
-	skia-pathops>=0.5.0; extra == "pathops"
-	sympy; extra == "all"
-	sympy; extra == "symfont"
-	uharfbuzz>=0.23.0; extra == "all"
-	uharfbuzz>=0.23.0; extra == "repacker"
-	unicodedata2>=15.1.0; python_version <= "3.12" and extra == "all"
-	unicodedata2>=15.1.0; python_version <= "3.12" and extra == "unicode"
-	xattr; sys_platform == "darwin" and extra == "all"
-	xattr; sys_platform == "darwin" and extra == "type1"
-	zopfli>=0.1.4; extra == "all"
-	zopfli>=0.1.4; extra == "woff"
+	brotli>=1.0.1; platform_python_implementation == 'CPython' and extra == 'all'
+	brotli>=1.0.1; platform_python_implementation == 'CPython' and extra == 'woff'
+	brotlicffi>=0.8.0; platform_python_implementation != 'CPython' and extra == 'all'
+	brotlicffi>=0.8.0; platform_python_implementation != 'CPython' and extra == 'woff'
+	fs<3,>=2.2.0; extra == 'all'
+	fs<3,>=2.2.0; extra == 'ufo'
+	lxml>=4.0; extra == 'all'
+	lxml>=4.0; extra == 'lxml'
+	lz4>=1.7.4.2; extra == 'all'
+	lz4>=1.7.4.2; extra == 'graphite'
+	matplotlib; extra == 'all'
+	matplotlib; extra == 'plot'
+	munkres; platform_python_implementation == 'PyPy' and extra == 'all'
+	munkres; platform_python_implementation == 'PyPy' and extra == 'interpolatable'
+	pycairo; extra == 'all'
+	pycairo; extra == 'interpolatable'
+	scipy; platform_python_implementation != 'PyPy' and extra == 'all'
+	scipy; platform_python_implementation != 'PyPy' and extra == 'interpolatable'
+	skia-pathops>=0.5.0; extra == 'all'
+	skia-pathops>=0.5.0; extra == 'pathops'
+	sympy; extra == 'all'
+	sympy; extra == 'symfont'
+	uharfbuzz>=0.23.0; extra == 'all'
+	uharfbuzz>=0.23.0; extra == 'repacker'
+	unicodedata2>=15.1.0; python_version <= '3.12' and extra == 'all'
+	unicodedata2>=15.1.0; python_version <= '3.12' and extra == 'unicode'
+	xattr; sys_platform == 'darwin' and extra == 'all'
+	xattr; sys_platform == 'darwin' and extra == 'type1'
+	zopfli>=0.1.4; extra == 'all'
+	zopfli>=0.1.4; extra == 'woff'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	all? ( >=dev-python/brotli-1.0.1[${PYTHON_USEDEP}] )
-	woff? ( >=dev-python/brotli-1.0.1[${PYTHON_USEDEP}] )
+	all? ( >=app-arch/brotli-1.0.1[python,${PYTHON_USEDEP}] )
+	woff? ( >=app-arch/brotli-1.0.1[python,${PYTHON_USEDEP}] )
 	all? ( >=dev-python/fs-2.2.0[${PYTHON_USEDEP}] <dev-python/fs-3[${PYTHON_USEDEP}] )
 	ufo? ( >=dev-python/fs-2.2.0[${PYTHON_USEDEP}] <dev-python/fs-3[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/lxml-4.0[${PYTHON_USEDEP}] )

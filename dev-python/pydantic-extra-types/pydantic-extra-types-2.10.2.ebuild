@@ -17,23 +17,23 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pendulum<4.0.0,>=3.0.0; extra == "all"
-	pendulum<4.0.0,>=3.0.0; extra == "pendulum"
-	phonenumbers<9,>=8; extra == "all"
-	phonenumbers<9,>=8; extra == "phonenumbers"
-	pycountry>=23; extra == "all"
-	pycountry>=23; extra == "pycountry"
+	pendulum<4.0.0,>=3.0.0; extra == 'all'
+	pendulum<4.0.0,>=3.0.0; extra == 'pendulum'
+	phonenumbers<9,>=8; extra == 'all'
+	phonenumbers<9,>=8; extra == 'phonenumbers'
+	pycountry>=23; extra == 'all'
+	pycountry>=23; extra == 'pycountry'
 	pydantic>=2.5.2
-	python-ulid<2,>=1; python_version < "3.9" and extra == "all"
-	python-ulid<2,>=1; python_version < "3.9" and extra == "python-ulid"
-	python-ulid<4,>=1; python_version >= "3.9" and extra == "all"
-	python-ulid<4,>=1; python_version >= "3.9" and extra == "python-ulid"
-	pytz>=2024.1; extra == "all"
-	semver>=3.0.2; extra == "all"
-	semver>=3.0.2; extra == "semver"
-	semver~=3.0.2; extra == "all"
+	python-ulid<2,>=1; python_version < '3.9' and extra == 'all'
+	python-ulid<2,>=1; python_version < '3.9' and extra == 'python-ulid'
+	python-ulid<4,>=1; python_version >= '3.9' and extra == 'all'
+	python-ulid<4,>=1; python_version >= '3.9' and extra == 'python-ulid'
+	pytz>=2024.1; extra == 'all'
+	semver>=3.0.2; extra == 'all'
+	semver>=3.0.2; extra == 'semver'
+	semver~=3.0.2; extra == 'all'
 	typing-extensions
-	tzdata>=2024.1; extra == "all"
+	tzdata>=2024.1; extra == 'all'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/pendulum-3.0.0[${PYTHON_USEDEP}] <dev-python/pendulum-4.0.0[${PYTHON_USEDEP}] )

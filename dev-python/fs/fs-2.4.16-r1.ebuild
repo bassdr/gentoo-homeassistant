@@ -18,12 +18,12 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	appdirs (~=1.4.3)
-	backports.os (~=0.1) ; python_version < "3.0"
-	enum34 (~=1.1.6) ; python_version < "3.4"
-	scandir (~=1.5) ; (python_version < "3.5") and extra == 'scandir'
+	backports.os (~=0.1) ; python_version < '3.0'
+	enum34 (~=1.1.6) ; python_version < '3.4'
+	scandir (~=1.5) ; (python_version < '3.5') and extra == 'scandir'
 	setuptools
 	six (~=1.10)
-	typing (~=3.6) ; python_version < "3.6"
+	typing (~=3.6) ; python_version < '3.6'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/appdirs-1.4.3[${PYTHON_USEDEP}] =dev-python/appdirs-1.4*[${PYTHON_USEDEP}]

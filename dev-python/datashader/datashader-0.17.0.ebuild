@@ -23,7 +23,7 @@ REQUIRES_DIST="
 	pandas
 	param
 	pyct
-	pytest; extra == "tests"
+	pytest; extra == 'tests'
 	requests
 	scipy
 	toolz

@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	markdown>=3
-	mkdocs>=1.4; extra == "mkdocs"
+	mkdocs>=1.4; extra == 'mkdocs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/markdown-3[${PYTHON_USEDEP}]

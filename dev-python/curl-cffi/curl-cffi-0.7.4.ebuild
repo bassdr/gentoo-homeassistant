@@ -21,35 +21,35 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	certifi>=2024.2.2
 	cffi>=1.12.0
-	charset-normalizer<4.0,>=3.3.2; extra == "dev"
-	charset-normalizer<4.0,>=3.3.2; extra == "test"
-	cibuildwheel; extra == "build"
-	coverage<7.0,>=6.4.1; extra == "dev"
-	cryptography<43.0,>=42.0.5; extra == "dev"
-	cryptography<43.0,>=42.0.5; extra == "test"
-	fastapi<1.0,==0.110.0; extra == "test"
-	httpx==0.23.1; extra == "dev"
-	httpx==0.23.1; extra == "test"
-	mypy<2.0,>=1.9.0; extra == "dev"
-	proxy.py<3.0,>=2.4.3; extra == "test"
-	pytest-asyncio<1.0,>=0.23.6; extra == "dev"
-	pytest-asyncio<1.0,>=0.23.6; extra == "test"
-	pytest-trio<1.0,>=0.8.0; extra == "dev"
-	pytest-trio<1.0,>=0.8.0; extra == "test"
-	pytest<9.0,>=8.1.1; extra == "dev"
-	pytest<9.0,>=8.1.1; extra == "test"
-	python-multipart<1.0,>=0.0.9; extra == "test"
-	ruff<1.0,>=0.3.5; extra == "dev"
-	trio<1.0,>=0.25.0; extra == "dev"
-	trio<1.0,>=0.25.0; extra == "test"
-	trustme<2.0,>=1.1.0; extra == "dev"
-	trustme<2.0,>=1.1.0; extra == "test"
+	charset-normalizer<4.0,>=3.3.2; extra == 'dev'
+	charset-normalizer<4.0,>=3.3.2; extra == 'test'
+	cibuildwheel; extra == 'build'
+	coverage<7.0,>=6.4.1; extra == 'dev'
+	cryptography<43.0,>=42.0.5; extra == 'dev'
+	cryptography<43.0,>=42.0.5; extra == 'test'
+	fastapi<1.0,==0.110.0; extra == 'test'
+	httpx==0.23.1; extra == 'dev'
+	httpx==0.23.1; extra == 'test'
+	mypy<2.0,>=1.9.0; extra == 'dev'
+	proxy.py<3.0,>=2.4.3; extra == 'test'
+	pytest-asyncio<1.0,>=0.23.6; extra == 'dev'
+	pytest-asyncio<1.0,>=0.23.6; extra == 'test'
+	pytest-trio<1.0,>=0.8.0; extra == 'dev'
+	pytest-trio<1.0,>=0.8.0; extra == 'test'
+	pytest<9.0,>=8.1.1; extra == 'dev'
+	pytest<9.0,>=8.1.1; extra == 'test'
+	python-multipart<1.0,>=0.0.9; extra == 'test'
+	ruff<1.0,>=0.3.5; extra == 'dev'
+	trio<1.0,>=0.25.0; extra == 'dev'
+	trio<1.0,>=0.25.0; extra == 'test'
+	trustme<2.0,>=1.1.0; extra == 'dev'
+	trustme<2.0,>=1.1.0; extra == 'test'
 	typing-extensions
-	uvicorn<1.0,>=0.29.0; extra == "dev"
-	uvicorn<1.0,>=0.29.0; extra == "test"
-	websockets<13.0,>=12.0; extra == "dev"
-	websockets<13.0,>=12.0; extra == "test"
-	wheel; extra == "build"
+	uvicorn<1.0,>=0.29.0; extra == 'dev'
+	uvicorn<1.0,>=0.29.0; extra == 'test'
+	websockets<13.0,>=12.0; extra == 'dev'
+	websockets<13.0,>=12.0; extra == 'test'
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/certifi-2024.2.2[${PYTHON_USEDEP}]

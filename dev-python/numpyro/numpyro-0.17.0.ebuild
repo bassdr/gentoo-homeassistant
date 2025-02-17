@@ -17,46 +17,46 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	arviz; extra == "examples"
-	dm-haiku; extra == "dev"
-	flax; extra == "dev"
-	funsor>=0.4.1; extra == "dev"
-	graphviz; extra == "dev"
-	importlib-metadata<5.0; extra == "test"
-	ipython; extra == "doc"
+	arviz; extra == 'examples'
+	dm-haiku; extra == 'dev'
+	flax; extra == 'dev'
+	funsor>=0.4.1; extra == 'dev'
+	graphviz; extra == 'dev'
+	importlib-metadata<5.0; extra == 'test'
+	ipython; extra == 'doc'
 	jax>=0.4.25
-	jax[cpu]>=0.4.25; extra == "cpu"
-	jax[cuda]>=0.4.25; extra == "cuda"
-	jax[tpu]>=0.4.25; extra == "tpu"
+	jax[cpu]>=0.4.25; extra == 'cpu'
+	jax[cuda]>=0.4.25; extra == 'cuda'
+	jax[tpu]>=0.4.25; extra == 'tpu'
 	jaxlib>=0.4.25
-	jaxns==2.6.3; extra == "dev"
-	jupyter; extra == "examples"
-	matplotlib; extra == "dev"
-	matplotlib; extra == "examples"
+	jaxns==2.6.3; extra == 'dev'
+	jupyter; extra == 'examples'
+	matplotlib; extra == 'dev'
+	matplotlib; extra == 'examples'
 	multipledispatch
-	mypy>=1.13; extra == "test"
-	nbsphinx>=0.8.9; extra == "doc"
+	mypy>=1.13; extra == 'test'
+	nbsphinx>=0.8.9; extra == 'doc'
 	numpy
-	optax>=0.0.6; extra == "dev"
-	pandas; extra == "examples"
-	pylab-sdk; extra == "dev"
-	pyro-api>=0.1.1; extra == "test"
-	pytest-cov; extra == "dev"
-	pytest>=4.1; extra == "test"
-	pyyaml; extra == "dev"
-	readthedocs-sphinx-search>=0.3.2; extra == "doc"
-	requests; extra == "dev"
-	ruff>=0.1.8; extra == "test"
-	scikit-learn; extra == "examples"
-	scikit-learn; extra == "test"
-	scipy>=1.9; extra == "test"
-	seaborn; extra == "examples"
-	sphinx-gallery; extra == "doc"
-	sphinx>=5; extra == "doc"
-	sphinx_rtd_theme; extra == "doc"
-	tensorflow_probability>=0.18.0; extra == "dev"
+	optax>=0.0.6; extra == 'dev'
+	pandas; extra == 'examples'
+	pylab-sdk; extra == 'dev'
+	pyro-api>=0.1.1; extra == 'test'
+	pytest-cov; extra == 'dev'
+	pytest>=4.1; extra == 'test'
+	pyyaml; extra == 'dev'
+	readthedocs-sphinx-search>=0.3.2; extra == 'doc'
+	requests; extra == 'dev'
+	ruff>=0.1.8; extra == 'test'
+	scikit-learn; extra == 'examples'
+	scikit-learn; extra == 'test'
+	scipy>=1.9; extra == 'test'
+	seaborn; extra == 'examples'
+	sphinx-gallery; extra == 'doc'
+	sphinx>=5; extra == 'doc'
+	sphinx_rtd_theme; extra == 'doc'
+	tensorflow_probability>=0.18.0; extra == 'dev'
 	tqdm
-	wordcloud; extra == "examples"
+	wordcloud; extra == 'examples'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/arviz[${PYTHON_USEDEP}] )

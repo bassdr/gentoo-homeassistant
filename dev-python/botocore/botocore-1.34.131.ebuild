@@ -24,11 +24,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="crt"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	awscrt==0.20.11; extra == "crt"
+	awscrt==0.20.11; extra == 'crt'
 	jmespath<2.0.0,>=0.7.1
 	python-dateutil<3.0.0,>=2.1
-	urllib3!=2.2.0,<3,>=1.25.4; python_version >= "3.10"
-	urllib3<1.27,>=1.25.4; python_version < "3.10"
+	urllib3!=2.2.0,<3,>=1.25.4; python_version >= '3.10'
+	urllib3<1.27,>=1.25.4; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	crt? ( ~dev-python/awscrt-0.20.11[${PYTHON_USEDEP}] )

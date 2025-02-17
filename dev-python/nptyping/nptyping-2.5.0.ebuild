@@ -19,10 +19,10 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	autoflake ; extra == 'dev'
 	autoflake ; extra == 'qa'
-	beartype (<0.10.0) ; (python_version < "3.10") and extra == 'dev'
-	beartype (<0.10.0) ; (python_version < "3.10") and extra == 'qa'
-	beartype (>=0.10.0) ; (python_version >= "3.10") and extra == 'dev'
-	beartype (>=0.10.0) ; (python_version >= "3.10") and extra == 'qa'
+	beartype (<0.10.0) ; (python_version < '3.10') and extra == 'dev'
+	beartype (<0.10.0) ; (python_version < '3.10') and extra == 'qa'
+	beartype (>=0.10.0) ; (python_version >= '3.10') and extra == 'dev'
+	beartype (>=0.10.0) ; (python_version >= '3.10') and extra == 'qa'
 	black ; extra == 'dev'
 	black ; extra == 'qa'
 	codecov (>=2.1.0) ; extra == 'dev'
@@ -37,14 +37,14 @@ REQUIRES_DIST="
 	isort ; extra == 'qa'
 	mypy ; extra == 'dev'
 	mypy ; extra == 'qa'
-	numpy (<2.0.0,>=1.20.0) ; python_version >= "3.8"
-	numpy (==1.21.5) ; python_version < "3.8"
+	numpy (<2.0.0,>=1.20.0) ; python_version >= '3.8'
+	numpy (==1.21.5) ; python_version < '3.8'
 	pandas ; extra == 'complete'
 	pandas ; extra == 'dev'
 	pandas ; extra == 'pandas'
-	pandas-stubs-fork ; (python_version >= "3.8") and extra == 'complete'
-	pandas-stubs-fork ; (python_version >= "3.8") and extra == 'dev'
-	pandas-stubs-fork ; (python_version >= "3.8") and extra == 'pandas'
+	pandas-stubs-fork ; (python_version >= '3.8') and extra == 'complete'
+	pandas-stubs-fork ; (python_version >= '3.8') and extra == 'dev'
+	pandas-stubs-fork ; (python_version >= '3.8') and extra == 'pandas'
 	pip-tools (>=6.5.0) ; extra == 'build'
 	pip-tools (>=6.5.0) ; extra == 'dev'
 	pylint ; extra == 'dev'
@@ -55,7 +55,7 @@ REQUIRES_DIST="
 	setuptools ; extra == 'qa'
 	typeguard ; extra == 'dev'
 	typeguard ; extra == 'qa'
-	typing-extensions (<5.0.0,>=4.0.0) ; python_version < "3.10"
+	typing-extensions (<5.0.0,>=4.0.0) ; python_version < '3.10'
 	wheel ; extra == 'dev'
 	wheel ; extra == 'qa'
 "

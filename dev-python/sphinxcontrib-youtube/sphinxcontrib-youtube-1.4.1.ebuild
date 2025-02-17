@@ -18,15 +18,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Sphinx>=6.1
-	beautifulsoup4 ; extra == "test"
-	nox ; extra == "dev"
-	pydata-sphinx-theme ; extra == "doc"
-	pytest ; extra == "test"
-	pytest-cov ; extra == "test"
-	pytest-regressions ; extra == "test"
+	beautifulsoup4 ; extra == 'test'
+	nox ; extra == 'dev'
+	pydata-sphinx-theme ; extra == 'doc'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	pytest-regressions ; extra == 'test'
 	requests
-	sphinx-copybutton ; extra == "doc"
-	sphinx-design ; extra == "doc"
+	sphinx-copybutton ; extra == 'doc'
+	sphinx-design ; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )

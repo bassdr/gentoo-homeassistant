@@ -17,28 +17,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	arviz-base[h5netcdf]; extra == "preview"
-	arviz-plots; extra == "preview"
-	arviz-stats[xarray]; extra == "preview"
-	bokeh>=3; extra == "all"
-	contourpy; extra == "all"
-	dask[distributed]; extra == "all"
-	dm-tree>=0.1.8; extra == "all"
+	arviz-base[h5netcdf]; extra == 'preview'
+	arviz-plots; extra == 'preview'
+	arviz-stats[xarray]; extra == 'preview'
+	bokeh>=3; extra == 'all'
+	contourpy; extra == 'all'
+	dask[distributed]; extra == 'all'
+	dm-tree>=0.1.8; extra == 'all'
 	h5netcdf>=1.0.2
 	matplotlib>=3.5
-	netcdf4; extra == "all"
-	numba; extra == "all"
+	netcdf4; extra == 'all'
+	numba; extra == 'all'
 	numpy>=1.23.0
 	packaging
 	pandas>=1.5.0
 	scipy>=1.9.0
 	setuptools>=60.0.0
 	typing-extensions>=4.1.0
-	ujson; extra == "all"
-	xarray-datatree; extra == "all"
+	ujson; extra == 'all'
+	xarray-datatree; extra == 'all'
 	xarray-einstats>=0.3
 	xarray>=2022.6.0
-	zarr<3,>=2.5.0; extra == "all"
+	zarr<3,>=2.5.0; extra == 'all'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	preview? ( dev-python/arviz-base[h5netcdf,${PYTHON_USEDEP}] )

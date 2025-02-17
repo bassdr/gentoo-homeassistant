@@ -16,16 +16,16 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs
-	black; extra == "dev"
-	flake8; extra == "dev"
-	freezegun; extra == "dev"
-	mypy; extra == "dev"
-	pre-commit; extra == "dev"
+	black; extra == 'dev'
+	flake8; extra == 'dev'
+	freezegun; extra == 'dev'
+	mypy; extra == 'dev'
+	pre-commit; extra == 'dev'
 	pytest>=7.0
-	reorder-python-imports; extra == "dev"
+	reorder-python-imports; extra == 'dev'
 	rich
-	tox; extra == "dev"
-	types-attrs; extra == "dev"
+	tox; extra == 'dev'
+	types-attrs; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]

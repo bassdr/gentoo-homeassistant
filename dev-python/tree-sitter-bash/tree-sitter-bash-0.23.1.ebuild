@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	tree-sitter~=0.21; extra == "core"
+	tree-sitter~=0.21; extra == 'core'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	core? ( >=dev-python/tree-sitter-0.21[${PYTHON_USEDEP}] =dev-python/tree-sitter-0*[${PYTHON_USEDEP}] )

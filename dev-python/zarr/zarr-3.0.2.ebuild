@@ -17,42 +17,42 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	botocore; extra == "test"
-	coverage; extra == "test"
-	cupy-cuda12x; extra == "gpu"
+	botocore; extra == 'test'
+	coverage; extra == 'test'
+	cupy-cuda12x; extra == 'gpu'
 	donfig>=0.8
-	fsspec>=2023.10.0; extra == "remote"
-	fsspec>=2023.10.0; extra == "test"
-	hypothesis; extra == "test"
-	moto[s3,server]; extra == "test"
-	mypy; extra == "test"
+	fsspec>=2023.10.0; extra == 'remote'
+	fsspec>=2023.10.0; extra == 'test'
+	hypothesis; extra == 'test'
+	moto[s3,server]; extra == 'test'
+	mypy; extra == 'test'
 	numcodecs[crc32c]>=0.14
-	numcodecs[msgpack]; extra == "docs"
+	numcodecs[msgpack]; extra == 'docs'
 	numpy>=1.25
-	numpydoc; extra == "docs"
+	numpydoc; extra == 'docs'
 	packaging>=22.0
-	pydata-sphinx-theme; extra == "docs"
-	pytest-accept; extra == "test"
-	pytest-asyncio; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	requests; extra == "test"
-	rich; extra == "docs"
-	rich; extra == "optional"
-	rich; extra == "test"
-	s3fs; extra == "docs"
-	s3fs; extra == "test"
-	sphinx-autoapi==3.4.0; extra == "docs"
-	sphinx-autobuild>=2021.3.14; extra == "docs"
-	sphinx-copybutton; extra == "docs"
-	sphinx-design; extra == "docs"
-	sphinx-issues; extra == "docs"
-	sphinx-reredirects; extra == "docs"
-	sphinx==8.1.3; extra == "docs"
-	towncrier; extra == "docs"
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-accept; extra == 'test'
+	pytest-asyncio; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	requests; extra == 'test'
+	rich; extra == 'docs'
+	rich; extra == 'optional'
+	rich; extra == 'test'
+	s3fs; extra == 'docs'
+	s3fs; extra == 'test'
+	sphinx-autoapi==3.4.0; extra == 'docs'
+	sphinx-autobuild>=2021.3.14; extra == 'docs'
+	sphinx-copybutton; extra == 'docs'
+	sphinx-design; extra == 'docs'
+	sphinx-issues; extra == 'docs'
+	sphinx-reredirects; extra == 'docs'
+	sphinx==8.1.3; extra == 'docs'
+	towncrier; extra == 'docs'
 	typing-extensions>=4.9
-	universal-pathlib; extra == "optional"
-	universal-pathlib; extra == "test"
+	universal-pathlib; extra == 'optional'
+	universal-pathlib; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	gpu? ( dev-python/cupy-cuda12x[${PYTHON_USEDEP}] )

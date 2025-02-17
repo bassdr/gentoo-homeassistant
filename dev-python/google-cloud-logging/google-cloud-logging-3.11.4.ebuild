@@ -23,8 +23,8 @@ REQUIRES_DIST="
 	grpc-google-iam-v1<1.0.0dev,>=0.12.4
 	opentelemetry-api>=1.9.0
 	proto-plus<2.0.0dev,>=1.22.0
-	proto-plus<2.0.0dev,>=1.22.2; python_version >= "3.11"
-	proto-plus<2.0.0dev,>=1.25.0; python_version >= "3.13"
+	proto-plus<2.0.0dev,>=1.22.2; python_version >= '3.11'
+	proto-plus<2.0.0dev,>=1.25.0; python_version >= '3.13'
 	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
 "
 GENERATED_RDEPEND="${RDEPEND}

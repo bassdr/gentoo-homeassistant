@@ -16,30 +16,30 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	entrypoints
-	freezegun; extra == "tests"
+	freezegun; extra == 'tests'
 	funcy
-	gto[tests]; extra == "dev"
-	mypy==1.13.0; extra == "dev"
+	gto[tests]; extra == 'dev'
+	mypy==1.13.0; extra == 'dev'
 	pydantic!=2.0.0,<3,>=1.9.0
-	pygit2; extra == "tests"
-	pylint==3.3.2; extra == "dev"
-	pytest-cov; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest-test-utils; extra == "tests"
-	pytest; extra == "tests"
+	pygit2; extra == 'tests'
+	pylint==3.3.2; extra == 'dev'
+	pytest-cov; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest-test-utils; extra == 'tests'
+	pytest; extra == 'tests'
 	rich
 	ruamel.yaml
 	scmrepo<4,>=3
 	semver>=2.13.0
 	tabulate>=0.8.10
 	typer>=0.4.1
-	types-PyYAML; extra == "dev"
-	types-filelock; extra == "dev"
-	types-freezegun; extra == "dev"
-	types-requests; extra == "dev"
-	types-setuptools; extra == "dev"
-	types-six; extra == "dev"
-	types-tabulate; extra == "dev"
+	types-PyYAML; extra == 'dev'
+	types-filelock; extra == 'dev'
+	types-freezegun; extra == 'dev'
+	types-requests; extra == 'dev'
+	types-setuptools; extra == 'dev'
+	types-six; extra == 'dev'
+	types-tabulate; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/entrypoints[${PYTHON_USEDEP}]

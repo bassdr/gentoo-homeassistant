@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
-	coverage; extra == "testing"
-	repoze.sphinx.autointerface; extra == "docs"
+	Sphinx; extra == 'docs'
+	coverage; extra == 'testing'
+	repoze.sphinx.autointerface; extra == 'docs'
 	zope.interface
 "
 GENERATED_RDEPEND="${RDEPEND}

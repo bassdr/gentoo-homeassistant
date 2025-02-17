@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	jinja2>=2.10
 	markupsafe>=1
-	standard-imghdr==3.10.14; python_version >= "3.13"
+	standard-imghdr==3.10.14; python_version >= '3.13'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/jinja2-2.10[${PYTHON_USEDEP}]

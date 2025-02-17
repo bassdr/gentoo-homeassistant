@@ -15,15 +15,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	covdefaults>=2.3; extra == "testing"
+	covdefaults>=2.3; extra == 'testing'
 	pre-commit>=3.8
-	pytest-cov>=5; extra == "testing"
-	pytest-mock>=3.14; extra == "testing"
-	pytest>=8.3.2; extra == "testing"
+	pytest-cov>=5; extra == 'testing'
+	pytest-mock>=3.14; extra == 'testing'
+	pytest>=8.3.2; extra == 'testing'
 	uv>=0.4.7
 "
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/uv-0.4.7[${PYTHON_USEDEP}]
+	>=dev-python/uv-0.4.7
 	>=dev-vcs/pre-commit-3.8[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

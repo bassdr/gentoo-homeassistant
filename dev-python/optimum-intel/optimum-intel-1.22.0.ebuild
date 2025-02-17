@@ -18,47 +18,47 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pillow; extra == "tests"
-	accelerate; extra == "ipex"
-	accelerate; extra == "neural-compressor"
-	accelerate; extra == "tests"
-	black~=23.1; extra == "quality"
+	Pillow; extra == 'tests'
+	accelerate; extra == 'ipex'
+	accelerate; extra == 'neural-compressor'
+	accelerate; extra == 'tests'
+	black~=23.1; extra == 'quality'
 	datasets>=1.4.0
-	datasets[audio]>=1.4.0; extra == "tests"
-	diffusers; extra == "diffusers"
-	diffusers; extra == "tests"
-	einops; extra == "tests"
-	evaluate; extra == "tests"
-	intel-extension-for-pytorch>=2.4; extra == "ipex"
-	invisible-watermark>=0.2.0; extra == "tests"
-	langchain-huggingface; extra == "tests"
-	neural-compressor[pt]>3.0; extra == "neural-compressor"
-	nncf>=2.14.0; extra == "nncf"
-	nncf>=2.14.0; extra == "openvino"
+	datasets[audio]>=1.4.0; extra == 'tests'
+	diffusers; extra == 'diffusers'
+	diffusers; extra == 'tests'
+	einops; extra == 'tests'
+	evaluate; extra == 'tests'
+	intel-extension-for-pytorch>=2.4; extra == 'ipex'
+	invisible-watermark>=0.2.0; extra == 'tests'
+	langchain-huggingface; extra == 'tests'
+	neural-compressor[pt]>3.0; extra == 'neural-compressor'
+	nncf>=2.14.0; extra == 'nncf'
+	nncf>=2.14.0; extra == 'openvino'
 	onnx
-	open-clip-torch>=2.26.1; extra == "tests"
-	openvino-tokenizers>=2024.5.0; extra == "openvino"
-	openvino>=2024.5.0; extra == "openvino"
+	open-clip-torch>=2.26.1; extra == 'tests'
+	openvino-tokenizers>=2024.5.0; extra == 'openvino'
+	openvino>=2024.5.0; extra == 'openvino'
 	optimum~=1.24
-	parameterized; extra == "tests"
-	peft; extra == "tests"
-	py-cpuinfo; extra == "tests"
-	pytest<8.0.0,>=7.2.0; extra == "tests"
-	rjieba; extra == "tests"
-	ruff==0.4.4; extra == "quality"
-	sacremoses; extra == "tests"
+	parameterized; extra == 'tests'
+	peft; extra == 'tests'
+	py-cpuinfo; extra == 'tests'
+	pytest<8.0.0,>=7.2.0; extra == 'tests'
+	rjieba; extra == 'tests'
+	ruff==0.4.4; extra == 'quality'
+	sacremoses; extra == 'tests'
 	scipy
-	sentence-transformers; extra == "tests"
+	sentence-transformers; extra == 'tests'
 	sentencepiece
 	setuptools
-	tbb; extra == "tests"
-	tiktoken; extra == "tests"
-	timm; extra == "tests"
+	tbb; extra == 'tests'
+	tiktoken; extra == 'tests'
+	timm; extra == 'tests'
 	torch>=1.11
-	torchaudio; extra == "tests"
-	transformers-stream-generator; extra == "tests"
-	transformers<4.46; extra == "neural-compressor"
-	transformers<4.48,>4.46; extra == "ipex"
+	torchaudio; extra == 'tests'
+	transformers-stream-generator; extra == 'tests'
+	transformers<4.46; extra == 'neural-compressor'
+	transformers<4.48,>4.46; extra == 'ipex'
 	transformers<4.49,>=4.36
 "
 GENERATED_RDEPEND="${RDEPEND}

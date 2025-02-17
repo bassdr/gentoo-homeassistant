@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata>=1.6.0; python_version < "3.8"
+	importlib-metadata>=1.6.0; python_version < '3.8'
 	packaging>=20.9
 "
 GENERATED_RDEPEND="${RDEPEND}

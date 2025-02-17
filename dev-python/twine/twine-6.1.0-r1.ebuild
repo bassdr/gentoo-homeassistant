@@ -24,9 +24,9 @@ GENERATED_IUSE="keyring"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	id
-	importlib-metadata>=3.6; python_version < "3.10"
-	keyring>=15.1; extra == "keyring"
-	keyring>=15.1; platform_machine != "ppc64le" and platform_machine != "s390x"
+	importlib-metadata>=3.6; python_version < '3.10'
+	keyring>=15.1; extra == 'keyring'
+	keyring>=15.1; platform_machine != 'ppc64le' and platform_machine != 's390x'
 	packaging>=24.0
 	readme-renderer>=35.0
 	requests-toolbelt!=0.9.0,>=0.8.0

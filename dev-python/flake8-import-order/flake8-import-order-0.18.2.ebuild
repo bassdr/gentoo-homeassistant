@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	enum34 ; python_version <= "2.7"
+	enum34 ; python_version <= '2.7'
 	pycodestyle
 	setuptools
 "

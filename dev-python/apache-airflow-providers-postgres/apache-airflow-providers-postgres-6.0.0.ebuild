@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-amazon>=2.6.0; extra == "amazon"
+	apache-airflow-providers-amazon>=2.6.0; extra == 'amazon'
 	apache-airflow-providers-common-sql>=1.20.0
-	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow-providers-openlineage; extra == 'openlineage'
 	apache-airflow>=2.9.0
 	asyncpg>=0.30.0
 	psycopg2-binary>=2.9.4

@@ -27,8 +27,8 @@ REQUIRES_DIST="
 	iso4217
 	pyserial-asyncio-fast
 	pyserial>=2.5
-	pytest-asyncio; extra == "test"
-	pytest; extra == "test"
+	pytest-asyncio; extra == 'test'
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/iso4217[${PYTHON_USEDEP}]

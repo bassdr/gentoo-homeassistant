@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	pydantic-core
 	pydantic>=2
-	pytest>=6; extra == "tests"
+	pytest>=6; extra == 'tests'
 	sortedcontainers
 "
 GENERATED_RDEPEND="${RDEPEND}

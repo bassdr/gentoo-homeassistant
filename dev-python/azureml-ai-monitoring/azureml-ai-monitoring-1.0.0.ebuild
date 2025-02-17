@@ -18,16 +18,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	numpy; extra == "test"
-	pandas; extra == "test"
+	numpy; extra == 'test'
+	pandas; extra == 'test'
 	pandas>=1.5.2
-	pip~=20.3; extra == "setup"
-	pytest-cov; extra == "test"
-	pytest-subtests; extra == "test"
-	pytest-xdist; extra == "test"
+	pip~=20.3; extra == 'setup'
+	pytest-cov; extra == 'test'
+	pytest-subtests; extra == 'test'
+	pytest-xdist; extra == 'test'
 	requests>=2.28.1
-	setuptools>=40.4.3; extra == "setup"
-	wheel; extra == "setup"
+	setuptools>=40.4.3; extra == 'setup'
+	wheel; extra == 'setup'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-1.5.2[${PYTHON_USEDEP}]

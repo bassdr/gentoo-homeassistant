@@ -21,14 +21,14 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	dj-database-url; extra == "database"
-	dj-database-url; extra == "testing"
-	dj-email-url; extra == "email"
-	dj-email-url; extra == "testing"
-	dj-search-url; extra == "search"
-	dj-search-url; extra == "testing"
-	django-cache-url; extra == "cache"
-	django-cache-url>=1.0.0; extra == "testing"
+	dj-database-url; extra == 'database'
+	dj-database-url; extra == 'testing'
+	dj-email-url; extra == 'email'
+	dj-email-url; extra == 'testing'
+	dj-search-url; extra == 'search'
+	dj-search-url; extra == 'testing'
+	django-cache-url; extra == 'cache'
+	django-cache-url>=1.0.0; extra == 'testing'
 	django>=3.2
 "
 GENERATED_RDEPEND="${RDEPEND}

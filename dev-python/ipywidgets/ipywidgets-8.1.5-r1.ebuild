@@ -19,13 +19,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	comm>=0.1.3
-	ipykernel; extra == "test"
+	ipykernel; extra == 'test'
 	ipython>=6.1.0
-	jsonschema; extra == "test"
+	jsonschema; extra == 'test'
 	jupyterlab-widgets~=3.0.12
-	pytest-cov; extra == "test"
-	pytest>=3.6.0; extra == "test"
-	pytz; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest>=3.6.0; extra == 'test'
+	pytz; extra == 'test'
 	traitlets>=4.3.1
 	widgetsnbextension~=4.0.12
 "

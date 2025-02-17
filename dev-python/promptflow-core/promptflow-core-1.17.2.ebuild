@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	azure-ai-ml<2.0.0,>=1.14.0; extra == "azureml-serving"
-	azure-identity<2.0.0,>=1.12.0; extra == "azureml-serving"
-	azureml-ai-monitoring<1.0.0,>=0.1.0b3; extra == "azureml-serving"
+	azure-ai-ml<2.0.0,>=1.14.0; extra == 'azureml-serving'
+	azure-identity<2.0.0,>=1.12.0; extra == 'azureml-serving'
+	azureml-ai-monitoring<1.0.0,>=0.1.0b3; extra == 'azureml-serving'
 	docstring_parser
 	fastapi<1.0.0,>=0.109.0
 	filetype>=1.2.0

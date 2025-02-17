@@ -19,43 +19,43 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	Jinja2>=2.11.3
 	PyYAML>=5.1
-	ansi2html>=1.8.0; extra == "test"
+	ansi2html>=1.8.0; extra == 'test'
 	ansible-compat>=25.1.0
 	ansible-core>=2.15.0
-	ansible-lint>=6.12.1; extra == "test"
-	black; extra == "test"
+	ansible-lint>=6.12.1; extra == 'test'
+	black; extra == 'test'
 	click-help-colors
 	click<9,>=8.0
-	coverage[toml]; extra == "test"
-	docker>=7.1.0; extra == "test"
+	coverage[toml]; extra == 'test'
+	docker>=7.1.0; extra == 'test'
 	enrich>=1.2.7
-	filelock>=3.9.0; extra == "test"
+	filelock>=3.9.0; extra == 'test'
 	jsonschema>=4.9.1
-	linkchecker>=10.4.0; extra == "docs"
-	mkdocs-ansible>=24.3.0; extra == "docs"
-	mypy; extra == "test"
+	linkchecker>=10.4.0; extra == 'docs'
+	mkdocs-ansible>=24.3.0; extra == 'docs'
+	mypy; extra == 'test'
 	packaging
-	pexpect<5,>=4.9.0; extra == "test"
-	pip-tools; extra == "test"
-	pipdeptree>=2.4.0; extra == "docs"
+	pexpect<5,>=4.9.0; extra == 'test'
+	pip-tools; extra == 'test'
+	pipdeptree>=2.4.0; extra == 'docs'
 	pluggy<2.0,>=0.7.1
-	pre-commit; extra == "test"
-	pydoclint; extra == "test"
-	pylint; extra == "test"
-	pytest-instafail; extra == "test"
-	pytest-mock>=3.10.0; extra == "test"
-	pytest-plus>=0.7.0; extra == "test"
-	pytest-testinfra>=8.1.0; extra == "testinfra"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
-	requests!=2.32.0; extra == "test"
+	pre-commit; extra == 'test'
+	pydoclint; extra == 'test'
+	pylint; extra == 'test'
+	pytest-instafail; extra == 'test'
+	pytest-mock>=3.10.0; extra == 'test'
+	pytest-plus>=0.7.0; extra == 'test'
+	pytest-testinfra>=8.1.0; extra == 'testinfra'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
+	requests!=2.32.0; extra == 'test'
 	rich>=9.5.1
-	ruff; extra == "test"
-	toml-sort; extra == "test"
-	tox; extra == "test"
-	types-jsonschema; extra == "test"
-	types-pexpect; extra == "test"
-	types-pyyaml; extra == "test"
+	ruff; extra == 'test'
+	toml-sort; extra == 'test'
+	tox; extra == 'test'
+	types-jsonschema; extra == 'test'
+	types-pexpect; extra == 'test'
+	types-pyyaml; extra == 'test'
 	wcmatch>=8.1.2
 "
 GENERATED_RDEPEND="${RDEPEND}

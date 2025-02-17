@@ -19,9 +19,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	django>=1.10; extra == "instruments"
+	django>=1.10; extra == 'instruments'
 	opentelemetry-api~=1.12
-	opentelemetry-instrumentation-asgi==0.51b0; extra == "asgi"
+	opentelemetry-instrumentation-asgi==0.51b0; extra == 'asgi'
 	opentelemetry-instrumentation-wsgi==0.51b0
 	opentelemetry-instrumentation==0.51b0
 	opentelemetry-semantic-conventions==0.51b0

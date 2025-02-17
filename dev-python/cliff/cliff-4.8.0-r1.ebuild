@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	PyYAML>=3.12
 	autopage>=0.4.0
 	cmd2>=1.0.0
-	importlib-metadata>=4.4; python_version < "3.10"
+	importlib-metadata>=4.4; python_version < '3.10'
 	stevedore>=2.0.1
 "
 GENERATED_RDEPEND="${RDEPEND}

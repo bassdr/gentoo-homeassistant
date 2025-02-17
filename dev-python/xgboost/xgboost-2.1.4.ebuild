@@ -17,19 +17,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cloudpickle; extra == "pyspark"
-	dask; extra == "dask"
-	datatable; extra == "datatable"
-	distributed; extra == "dask"
-	graphviz; extra == "plotting"
-	matplotlib; extra == "plotting"
+	cloudpickle; extra == 'pyspark'
+	dask; extra == 'dask'
+	datatable; extra == 'datatable'
+	distributed; extra == 'dask'
+	graphviz; extra == 'plotting'
+	matplotlib; extra == 'plotting'
 	numpy
-	nvidia-nccl-cu12; platform_system == "Linux" and platform_machine != "aarch64"
-	pandas; extra == "dask"
-	pandas>=1.2; extra == "pandas"
-	pyspark; extra == "pyspark"
-	scikit-learn; extra == "pyspark"
-	scikit-learn; extra == "scikit-learn"
+	nvidia-nccl-cu12; platform_system == 'Linux' and platform_machine != 'aarch64'
+	pandas; extra == 'dask'
+	pandas>=1.2; extra == 'pandas'
+	pyspark; extra == 'pyspark'
+	scikit-learn; extra == 'pyspark'
+	scikit-learn; extra == 'scikit-learn'
 	scipy
 "
 GENERATED_RDEPEND="${RDEPEND}

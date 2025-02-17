@@ -23,24 +23,24 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	aiohttp; extra == "events-asyncio"
+	aiohttp; extra == 'events-asyncio'
 	appdirs
-	black>=22.12.0; python_version >= "3.7" and extra == "testing"
-	coveralls; extra == "testing"
-	flake8; extra == "testing"
-	graphviz; extra == "testing"
+	black>=22.12.0; python_version >= '3.7' and extra == 'testing'
+	coveralls; extra == 'testing'
+	flake8; extra == 'testing'
+	graphviz; extra == 'testing'
 	ifaddr
-	importlib-metadata<5; python_version == "3.7" and extra == "testing"
+	importlib-metadata<5; python_version == '3.7' and extra == 'testing'
 	lxml
-	pylint; extra == "testing"
-	pytest-cov<2.6.0; extra == "testing"
-	pytest>=2.5; extra == "testing"
+	pylint; extra == 'testing'
+	pytest-cov<2.6.0; extra == 'testing'
+	pytest>=2.5; extra == 'testing'
 	requests
-	requests-mock; extra == "testing"
-	sphinx-rtd-theme; extra == "testing"
-	sphinx==4.5.0; extra == "testing"
-	twine; extra == "testing"
-	wheel; extra == "testing"
+	requests-mock; extra == 'testing'
+	sphinx-rtd-theme; extra == 'testing'
+	sphinx==4.5.0; extra == 'testing'
+	twine; extra == 'testing'
+	wheel; extra == 'testing'
 	xmltodict
 "
 GENERATED_RDEPEND="${RDEPEND}

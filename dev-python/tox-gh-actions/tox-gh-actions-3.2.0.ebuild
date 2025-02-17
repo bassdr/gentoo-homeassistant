@@ -16,10 +16,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black ; (platform_python_implementation == "CPython") and extra == 'testing'
+	black ; (platform_python_implementation == 'CPython') and extra == 'testing'
 	devpi-process ; extra == 'testing'
-	flake8 <7,>=6 ; (python_version >= "3.8") and extra == 'testing'
-	mypy ; (platform_python_implementation == "CPython") and extra == 'testing'
+	flake8 <7,>=6 ; (python_version >= '3.8') and extra == 'testing'
+	mypy ; (platform_python_implementation == 'CPython') and extra == 'testing'
 	pytest <8,>=7 ; extra == 'testing'
 	pytest-cov <4,>=3 ; extra == 'testing'
 	pytest-mock <4,>=3 ; extra == 'testing'

@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	bitshuffle; extra == "test"
-	blosc2; extra == "test"
-	blosc; extra == "test"
-	czifile; extra == "test"
-	lz4; extra == "test"
-	matplotlib; extra == "all"
-	numcodecs; extra == "all"
-	numcodecs; extra == "test"
+	bitshuffle; extra == 'test'
+	blosc2; extra == 'test'
+	blosc; extra == 'test'
+	czifile; extra == 'test'
+	lz4; extra == 'test'
+	matplotlib; extra == 'all'
+	numcodecs; extra == 'all'
+	numcodecs; extra == 'test'
 	numpy
-	pyliblzfse; extra == "test"
-	pytest; extra == "test"
-	python-lzf; extra == "test"
-	python-snappy; extra == "test"
-	tifffile; extra == "all"
-	tifffile; extra == "test"
-	zarr<3; extra == "test"
-	zopflipy; extra == "test"
-	zstd; extra == "test"
+	pyliblzfse; extra == 'test'
+	pytest; extra == 'test'
+	python-lzf; extra == 'test'
+	python-snappy; extra == 'test'
+	tifffile; extra == 'all'
+	tifffile; extra == 'test'
+	zarr<3; extra == 'test'
+	zopflipy; extra == 'test'
+	zstd; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )

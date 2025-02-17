@@ -20,12 +20,12 @@ GENERATED_IUSE="black dirty-equals"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	asttokens>=2.0.5
-	black>=23.3.0; extra == "black"
-	click>=8.1.4; extra == "black"
-	dirty-equals>=0.9.0; extra == "dirty-equals"
+	black>=23.3.0; extra == 'black'
+	click>=8.1.4; extra == 'black'
+	dirty-equals>=0.9.0; extra == 'dirty-equals'
 	executing>=2.2.0
 	rich>=13.7.1
-	tomli>=2.0.0; python_version < "3.11"
+	tomli>=2.0.0; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/asttokens-2.0.5[${PYTHON_USEDEP}]

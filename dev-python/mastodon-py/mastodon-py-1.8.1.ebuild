@@ -38,8 +38,8 @@ REQUIRES_DIST="
 	pytest-runner ; extra == 'test'
 	pytest-vcr ; extra == 'test'
 	python-dateutil
-	python-magic ; platform_system != "Windows"
-	python-magic-bin ; platform_system == "Windows"
+	python-magic ; platform_system != 'Windows'
+	python-magic-bin ; platform_system == 'Windows'
 	pytz ; extra == 'test'
 	requests (>=2.4.2)
 	requests-mock ; extra == 'test'

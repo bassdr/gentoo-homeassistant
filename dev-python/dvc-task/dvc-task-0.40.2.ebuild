@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	celery-types; python_version > "3.9" and extra == "dev"
-	celery-types==0.15.0; python_version < "3.9" and extra == "dev"
+	celery-types; python_version > '3.9' and extra == 'dev'
+	celery-types==0.15.0; python_version < '3.9' and extra == 'dev'
 	celery<6,>=5.3.0
-	dvc-task[docs,tests]; extra == "dev"
+	dvc-task[docs,tests]; extra == 'dev'
 	funcy>=1.17
 	kombu<6,>=5.3.0
-	mkdocs-gen-files<1,>=0.5.0; extra == "docs"
-	mkdocs-material<10,>=9.3.1; extra == "docs"
-	mkdocs-section-index<1,>=0.3.6; extra == "docs"
-	mkdocs<2,>=1.5.2; extra == "docs"
-	mkdocstrings-python<2,>=1.6.3; extra == "docs"
-	mypy==1.11.2; extra == "dev"
-	pytest-celery<1; extra == "tests"
-	pytest-cov>=4.1.0; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest-rerunfailures; extra == "tests"
-	pytest-sugar; extra == "tests"
-	pytest-test-utils>=0.0.6; extra == "tests"
-	pytest<9,>=7; extra == "tests"
-	pywin32>=225; sys_platform == "win32"
+	mkdocs-gen-files<1,>=0.5.0; extra == 'docs'
+	mkdocs-material<10,>=9.3.1; extra == 'docs'
+	mkdocs-section-index<1,>=0.3.6; extra == 'docs'
+	mkdocs<2,>=1.5.2; extra == 'docs'
+	mkdocstrings-python<2,>=1.6.3; extra == 'docs'
+	mypy==1.11.2; extra == 'dev'
+	pytest-celery<1; extra == 'tests'
+	pytest-cov>=4.1.0; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest-rerunfailures; extra == 'tests'
+	pytest-sugar; extra == 'tests'
+	pytest-test-utils>=0.0.6; extra == 'tests'
+	pytest<9,>=7; extra == 'tests'
+	pywin32>=225; sys_platform == 'win32'
 	shortuuid>=1.0.8
 "
 GENERATED_RDEPEND="${RDEPEND}

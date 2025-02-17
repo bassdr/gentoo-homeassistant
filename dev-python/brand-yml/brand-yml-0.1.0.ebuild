@@ -18,18 +18,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	eval-type-backport>=0.2.0
-	griffe>=1; extra == "docs"
+	griffe>=1; extra == 'docs'
 	htmltools>=0.2.0
-	ipykernel; extra == "docs"
-	nbclient; extra == "docs"
-	nbformat; extra == "docs"
+	ipykernel; extra == 'docs'
+	nbclient; extra == 'docs'
+	nbformat; extra == 'docs'
 	pydantic>=2
-	pyright>=1.1.251; extra == "test"
-	pytest>=8; extra == "test"
-	pyyaml; extra == "docs"
-	quartodoc>=0.7; extra == "docs"
+	pyright>=1.1.251; extra == 'test'
+	pytest>=8; extra == 'test'
+	pyyaml; extra == 'docs'
+	quartodoc>=0.7; extra == 'docs'
 	ruamel-yaml>=0.18.0
-	syrupy>=4; extra == "test"
+	syrupy>=4; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/eval-type-backport-0.2.0[${PYTHON_USEDEP}]

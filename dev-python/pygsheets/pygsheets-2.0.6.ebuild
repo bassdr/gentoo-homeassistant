@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	enum34 (>=1.1.6) ; python_version < "3.4"
+	enum34 (>=1.1.6) ; python_version < '3.4'
 	google-api-python-client (>=2.50.0)
 	google-auth-oauthlib (>=0.7.1)
 	pandas (>=0.14.0) ; extra == 'pandas'

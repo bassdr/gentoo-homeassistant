@@ -20,26 +20,26 @@ REQUIRES_DIST="
 	PyYAML>=5.3
 	SQLAlchemy<3,>=1.4
 	aiohttp<4.0.0,>=3.8.3
-	async-timeout<5.0.0,>=4.0.0; python_version < "3.11"
-	langchain-anthropic; extra == "anthropic"
-	langchain-aws; extra == "aws"
-	langchain-cohere; extra == "cohere"
-	langchain-community; extra == "community"
+	async-timeout<5.0.0,>=4.0.0; python_version < '3.11'
+	langchain-anthropic; extra == 'anthropic'
+	langchain-aws; extra == 'aws'
+	langchain-cohere; extra == 'cohere'
+	langchain-community; extra == 'community'
 	langchain-core<1.0.0,>=0.3.34
-	langchain-deepseek; extra == "deepseek"
-	langchain-fireworks; extra == "fireworks"
-	langchain-google-genai; extra == "google-genai"
-	langchain-google-vertexai; extra == "google-vertexai"
-	langchain-groq; extra == "groq"
-	langchain-huggingface; extra == "huggingface"
-	langchain-mistralai; extra == "mistralai"
-	langchain-ollama; extra == "ollama"
-	langchain-openai; extra == "openai"
+	langchain-deepseek; extra == 'deepseek'
+	langchain-fireworks; extra == 'fireworks'
+	langchain-google-genai; extra == 'google-genai'
+	langchain-google-vertexai; extra == 'google-vertexai'
+	langchain-groq; extra == 'groq'
+	langchain-huggingface; extra == 'huggingface'
+	langchain-mistralai; extra == 'mistralai'
+	langchain-ollama; extra == 'ollama'
+	langchain-openai; extra == 'openai'
 	langchain-text-splitters<1.0.0,>=0.3.6
-	langchain-together; extra == "together"
+	langchain-together; extra == 'together'
 	langsmith<0.4,>=0.1.17
-	numpy<2,>=1.26.4; python_version < "3.12"
-	numpy<3,>=1.26.2; python_version >= "3.12"
+	numpy<2,>=1.26.4; python_version < '3.12'
+	numpy<3,>=1.26.2; python_version >= '3.12'
 	pydantic<3.0.0,>=2.7.4
 	requests<3,>=2
 	tenacity!=8.4.0,<10,>=8.1.0

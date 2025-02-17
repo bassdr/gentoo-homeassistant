@@ -21,7 +21,7 @@ IUSE="${GENERATED_IUSE} examples"
 
 REQUIRES_DIST="
 	numpy<3,>=1.23
-	scipy>=1.9; extra == "optional"
+	scipy>=1.9; extra == 'optional'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}] <dev-python/numpy-3[${PYTHON_USEDEP}]

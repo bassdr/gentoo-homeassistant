@@ -15,23 +15,23 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	altair; extra == "dev"
+	altair; extra == 'dev'
 	anywidget
-	black>=23.1.0; extra == "dev"
-	bokeh; extra == "dev"
-	flake8==3.9.2; python_version <= "3.7" and extra == "dev"
-	flake8>=6.0.0; python_version > "3.7" and extra == "dev"
+	black>=23.1.0; extra == 'dev'
+	bokeh; extra == 'dev'
+	flake8==3.9.2; python_version <= '3.7' and extra == 'dev'
+	flake8>=6.0.0; python_version > '3.7' and extra == 'dev'
 	ipywidgets>=7.6.5
-	isort>=5.11.2; extra == "dev"
-	jupyter_bokeh; extra == "dev"
+	isort>=5.11.2; extra == 'dev'
+	jupyter_bokeh; extra == 'dev'
 	jupyter_core
-	plotly; extra == "dev"
-	pydeck; extra == "dev"
-	pyright>=1.1.284; extra == "dev"
-	pytest>=6.2.4; extra == "test"
+	plotly; extra == 'dev'
+	pydeck; extra == 'dev'
+	pyright>=1.1.284; extra == 'dev'
+	pytest>=6.2.4; extra == 'test'
 	python-dateutil>=2.8.2
 	shiny>=0.6.1.9005
-	wheel; extra == "dev"
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/anywidget[${PYTHON_USEDEP}]

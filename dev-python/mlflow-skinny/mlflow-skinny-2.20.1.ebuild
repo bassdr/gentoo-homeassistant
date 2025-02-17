@@ -17,56 +17,56 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp<4; extra == "gateway"
-	aiohttp<4; extra == "genai"
-	aliyunstoreplugin; extra == "aliyun-oss"
-	azure-storage-file-datalake>12; extra == "databricks"
-	azureml-core>=1.2.0; extra == "extras"
-	boto3; extra == "extras"
-	boto3<2,>=1.28.56; extra == "gateway"
-	boto3<2,>=1.28.56; extra == "genai"
-	boto3>1; extra == "databricks"
-	botocore; extra == "databricks"
-	botocore; extra == "extras"
+	aiohttp<4; extra == 'gateway'
+	aiohttp<4; extra == 'genai'
+	aliyunstoreplugin; extra == 'aliyun-oss'
+	azure-storage-file-datalake>12; extra == 'databricks'
+	azureml-core>=1.2.0; extra == 'extras'
+	boto3; extra == 'extras'
+	boto3<2,>=1.28.56; extra == 'gateway'
+	boto3<2,>=1.28.56; extra == 'genai'
+	boto3>1; extra == 'databricks'
+	botocore; extra == 'databricks'
+	botocore; extra == 'extras'
 	cachetools<6,>=5.0.0
 	click<9,>=7.0
 	cloudpickle<4
 	databricks-sdk<1,>=0.20.0
-	fastapi<1; extra == "gateway"
-	fastapi<1; extra == "genai"
+	fastapi<1; extra == 'gateway'
+	fastapi<1; extra == 'genai'
 	gitpython<4,>=3.1.9
-	google-cloud-storage>=1.30.0; extra == "databricks"
-	google-cloud-storage>=1.30.0; extra == "extras"
+	google-cloud-storage>=1.30.0; extra == 'databricks'
+	google-cloud-storage>=1.30.0; extra == 'extras'
 	importlib_metadata!=4.7.0,<9,>=3.7.0
-	kubernetes; extra == "extras"
-	langchain<=0.3.14,>=0.1.0; extra == "langchain"
-	mlflow-dbstore; extra == "sqlserver"
-	mlflow-jfrog-plugin; extra == "jfrog"
-	mlflow-xethub; extra == "xethub"
-	mlserver!=1.3.1,>=1.2.0; extra == "mlserver"
-	mlserver-mlflow!=1.3.1,>=1.2.0; extra == "mlserver"
+	kubernetes; extra == 'extras'
+	langchain<=0.3.14,>=0.1.0; extra == 'langchain'
+	mlflow-dbstore; extra == 'sqlserver'
+	mlflow-jfrog-plugin; extra == 'jfrog'
+	mlflow-xethub; extra == 'xethub'
+	mlserver!=1.3.1,>=1.2.0; extra == 'mlserver'
+	mlserver-mlflow!=1.3.1,>=1.2.0; extra == 'mlserver'
 	opentelemetry-api<3,>=1.9.0
 	opentelemetry-sdk<3,>=1.9.0
 	packaging<25
-	prometheus-flask-exporter; extra == "extras"
+	prometheus-flask-exporter; extra == 'extras'
 	protobuf<6,>=3.12.0
-	pyarrow; extra == "extras"
+	pyarrow; extra == 'extras'
 	pydantic<3,>=1.0
-	pysftp; extra == "extras"
+	pysftp; extra == 'extras'
 	pyyaml<7,>=5.1
-	requests-auth-aws-sigv4; extra == "extras"
+	requests-auth-aws-sigv4; extra == 'extras'
 	requests<3,>=2.17.3
-	slowapi<1,>=0.1.9; extra == "gateway"
-	slowapi<1,>=0.1.9; extra == "genai"
+	slowapi<1,>=0.1.9; extra == 'gateway'
+	slowapi<1,>=0.1.9; extra == 'genai'
 	sqlparse<1,>=0.4.0
-	tiktoken<1; extra == "gateway"
-	tiktoken<1; extra == "genai"
+	tiktoken<1; extra == 'gateway'
+	tiktoken<1; extra == 'genai'
 	typing-extensions<5,>=4.0.0
-	uvicorn[standard]<1; extra == "gateway"
-	uvicorn[standard]<1; extra == "genai"
-	virtualenv; extra == "extras"
-	watchfiles<2; extra == "gateway"
-	watchfiles<2; extra == "genai"
+	uvicorn[standard]<1; extra == 'gateway'
+	uvicorn[standard]<1; extra == 'genai'
+	virtualenv; extra == 'extras'
+	watchfiles<2; extra == 'gateway'
+	watchfiles<2; extra == 'genai'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	gateway? ( <dev-python/aiohttp-4[${PYTHON_USEDEP}] )

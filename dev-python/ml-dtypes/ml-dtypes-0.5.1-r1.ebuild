@@ -30,16 +30,16 @@ DEPEND="
 	>=dev-python/numpy-1.21:=[${PYTHON_USEDEP}]
 "
 REQUIRES_DIST="
-	absl-py; extra == "dev"
+	absl-py; extra == 'dev'
 	numpy>=1.21
-	numpy>=1.21.2; python_version >= "3.10"
-	numpy>=1.23.3; python_version >= "3.11"
-	numpy>=1.26.0; python_version >= "3.12"
-	numpy>=2.1.0; python_version >= "3.13"
-	pyink; extra == "dev"
-	pylint>=2.6.0; extra == "dev"
-	pytest-xdist; extra == "dev"
-	pytest; extra == "dev"
+	numpy>=1.21.2; python_version >= '3.10'
+	numpy>=1.23.3; python_version >= '3.11'
+	numpy>=1.26.0; python_version >= '3.12'
+	numpy>=2.1.0; python_version >= '3.13'
+	pyink; extra == 'dev'
+	pylint>=2.6.0; extra == 'dev'
+	pytest-xdist; extra == 'dev'
+	pytest; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.21.2[${PYTHON_USEDEP}]

@@ -24,7 +24,7 @@ GENERATED_IUSE="code_style live-dev themes"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	docutils
-	importlib-resources (~=3.0.0) ; python_version < "3.7"
+	importlib-resources (~=3.0.0) ; python_version < '3.7'
 	myst-parser (~=0.12.9) ; extra == 'themes'
 	pre-commit (~=2.7.0) ; extra == 'code_style'
 	pydata-sphinx-theme (~=0.4.0) ; extra == 'themes'

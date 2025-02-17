@@ -19,60 +19,60 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Babel>=1.3; extra == "babel"
-	Babel>=1.3; extra == "test-all"
-	Jinja2>=2.3; extra == "test"
-	Jinja2>=2.3; extra == "test-all"
-	Pygments>=1.2; extra == "test"
-	Pygments>=1.2; extra == "test-all"
+	Babel>=1.3; extra == 'babel'
+	Babel>=1.3; extra == 'test-all'
+	Jinja2>=2.3; extra == 'test'
+	Jinja2>=2.3; extra == 'test-all'
+	Pygments>=1.2; extra == 'test'
+	Pygments>=1.2; extra == 'test-all'
 	SQLAlchemy>=1.3
-	arrow>=0.3.4; extra == "arrow"
-	arrow>=0.3.4; extra == "test-all"
-	backports.zoneinfo; python_version < "3.9" and extra == "test"
-	backports.zoneinfo; python_version < "3.9" and extra == "test_all"
-	colour>=0.0.4; extra == "color"
-	colour>=0.0.4; extra == "test-all"
-	cryptography>=0.6; extra == "encrypted"
-	cryptography>=0.6; extra == "test-all"
-	docutils>=0.10; extra == "test"
-	docutils>=0.10; extra == "test-all"
-	flake8>=2.4.0; extra == "test"
-	flake8>=2.4.0; extra == "test-all"
-	flexmock>=0.9.7; extra == "test"
-	flexmock>=0.9.7; extra == "test-all"
-	furl>=0.4.1; extra == "test-all"
-	furl>=0.4.1; extra == "url"
-	importlib-metadata; python_version < "3.8"
-	intervals>=0.7.1; extra == "intervals"
-	intervals>=0.7.1; extra == "test-all"
-	isort>=4.2.2; extra == "test"
-	isort>=4.2.2; extra == "test-all"
-	passlib<2.0,>=1.6; extra == "password"
-	passlib<2.0,>=1.6; extra == "test-all"
-	pendulum>=2.0.5; extra == "pendulum"
-	pendulum>=2.0.5; extra == "test-all"
-	pg8000>=1.12.4; extra == "test"
-	pg8000>=1.12.4; extra == "test-all"
-	phonenumbers>=5.9.2; extra == "phone"
-	phonenumbers>=5.9.2; extra == "test-all"
-	psycopg2>=2.5.1; extra == "test"
-	psycopg2>=2.5.1; extra == "test-all"
-	psycopg2cffi>=2.8.1; extra == "test"
-	psycopg2cffi>=2.8.1; extra == "test-all"
-	psycopg>=3.1.8; extra == "test"
-	psycopg>=3.1.8; extra == "test-all"
-	pymysql; extra == "test"
-	pymysql; extra == "test-all"
-	pyodbc; extra == "test"
-	pyodbc; extra == "test-all"
-	pytest==7.4.4; extra == "test"
-	pytest==7.4.4; extra == "test-all"
-	python-dateutil; extra == "test-all"
-	python-dateutil; extra == "timezone"
-	python-dateutil>=2.6; extra == "test"
-	python-dateutil>=2.6; extra == "test-all"
-	pytz>=2014.2; extra == "test"
-	pytz>=2014.2; extra == "test-all"
+	arrow>=0.3.4; extra == 'arrow'
+	arrow>=0.3.4; extra == 'test-all'
+	backports.zoneinfo; python_version < '3.9' and extra == 'test'
+	backports.zoneinfo; python_version < '3.9' and extra == 'test_all'
+	colour>=0.0.4; extra == 'color'
+	colour>=0.0.4; extra == 'test-all'
+	cryptography>=0.6; extra == 'encrypted'
+	cryptography>=0.6; extra == 'test-all'
+	docutils>=0.10; extra == 'test'
+	docutils>=0.10; extra == 'test-all'
+	flake8>=2.4.0; extra == 'test'
+	flake8>=2.4.0; extra == 'test-all'
+	flexmock>=0.9.7; extra == 'test'
+	flexmock>=0.9.7; extra == 'test-all'
+	furl>=0.4.1; extra == 'test-all'
+	furl>=0.4.1; extra == 'url'
+	importlib-metadata; python_version < '3.8'
+	intervals>=0.7.1; extra == 'intervals'
+	intervals>=0.7.1; extra == 'test-all'
+	isort>=4.2.2; extra == 'test'
+	isort>=4.2.2; extra == 'test-all'
+	passlib<2.0,>=1.6; extra == 'password'
+	passlib<2.0,>=1.6; extra == 'test-all'
+	pendulum>=2.0.5; extra == 'pendulum'
+	pendulum>=2.0.5; extra == 'test-all'
+	pg8000>=1.12.4; extra == 'test'
+	pg8000>=1.12.4; extra == 'test-all'
+	phonenumbers>=5.9.2; extra == 'phone'
+	phonenumbers>=5.9.2; extra == 'test-all'
+	psycopg2>=2.5.1; extra == 'test'
+	psycopg2>=2.5.1; extra == 'test-all'
+	psycopg2cffi>=2.8.1; extra == 'test'
+	psycopg2cffi>=2.8.1; extra == 'test-all'
+	psycopg>=3.1.8; extra == 'test'
+	psycopg>=3.1.8; extra == 'test-all'
+	pymysql; extra == 'test'
+	pymysql; extra == 'test-all'
+	pyodbc; extra == 'test'
+	pyodbc; extra == 'test-all'
+	pytest==7.4.4; extra == 'test'
+	pytest==7.4.4; extra == 'test-all'
+	python-dateutil; extra == 'test-all'
+	python-dateutil; extra == 'timezone'
+	python-dateutil>=2.6; extra == 'test'
+	python-dateutil>=2.6; extra == 'test-all'
+	pytz>=2014.2; extra == 'test'
+	pytz>=2014.2; extra == 'test-all'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	arrow? ( >=dev-python/arrow-0.3.4[${PYTHON_USEDEP}] )

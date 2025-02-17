@@ -24,15 +24,15 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	attrs; extra == "examples"
-	bson; extra == "examples"
-	docstring-parser; extra == "examples"
-	graphql-core>=3.0.0; extra == "examples"
-	graphql-core>=3.0.0; extra == "graphql"
-	orjson; extra == "examples"
-	pydantic; extra == "examples"
-	pytest; extra == "examples"
-	sqlalchemy; extra == "examples"
+	attrs; extra == 'examples'
+	bson; extra == 'examples'
+	docstring-parser; extra == 'examples'
+	graphql-core>=3.0.0; extra == 'examples'
+	graphql-core>=3.0.0; extra == 'graphql'
+	orjson; extra == 'examples'
+	pydantic; extra == 'examples'
+	pytest; extra == 'examples'
+	sqlalchemy; extra == 'examples'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/attrs[${PYTHON_USEDEP}] )

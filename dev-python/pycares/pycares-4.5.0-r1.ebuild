@@ -33,7 +33,7 @@ BDEPEND="
 "
 REQUIRES_DIST="
 	cffi>=1.5.0
-	idna>=2.1; extra == "idna"
+	idna>=2.1; extra == 'idna'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.5.0[${PYTHON_USEDEP}]

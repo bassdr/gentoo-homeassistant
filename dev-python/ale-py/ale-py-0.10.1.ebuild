@@ -15,12 +15,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	gymnasium>=1.0.0a1; extra == "test"
-	importlib-metadata>=4.10.0; python_version < "3.10"
-	importlib-resources; python_version < "3.9"
+	gymnasium>=1.0.0a1; extra == 'test'
+	importlib-metadata>=4.10.0; python_version < '3.10'
+	importlib-resources; python_version < '3.9'
 	numpy>1.20
-	pytest>=7.0; extra == "test"
-	typing-extensions; python_version < "3.11"
+	pytest>=7.0; extra == 'test'
+	typing-extensions; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/numpy-1.20[${PYTHON_USEDEP}]

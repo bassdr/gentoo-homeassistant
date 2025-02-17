@@ -22,23 +22,23 @@ GENERATED_IUSE="rst-generator"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	PyYAML>=5.1
-	coverage>=4.0; extra == "test"
+	coverage>=4.0; extra == 'test'
 	debtcollector>=1.2.0
-	fixtures>=3.0.0; extra == "test"
-	mypy>=0.720; extra == "test"
+	fixtures>=3.0.0; extra == 'test'
+	mypy>=0.720; extra == 'test'
 	netaddr>=0.7.18
 	oslo.i18n>=3.15.3
-	oslo.log>=3.36.0; extra == "test"
-	oslotest>=3.2.0; extra == "test"
-	requests-mock>=1.5.0; extra == "test"
+	oslo.log>=3.36.0; extra == 'test'
+	oslotest>=3.2.0; extra == 'test'
+	requests-mock>=1.5.0; extra == 'test'
 	requests>=2.18.0
 	rfc3986>=1.2.0
-	rst2txt>=1.1.0; extra == "rst-generator"
-	sphinx>=1.8.0; extra == "rst-generator"
-	stestr>=2.1.0; extra == "test"
+	rst2txt>=1.1.0; extra == 'rst-generator'
+	sphinx>=1.8.0; extra == 'rst-generator'
+	stestr>=2.1.0; extra == 'test'
 	stevedore>=1.20.0
-	testscenarios>=0.4; extra == "test"
-	testtools>=2.2.0; extra == "test"
+	testscenarios>=0.4; extra == 'test'
+	testtools>=2.2.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/debtcollector-1.2.0[${PYTHON_USEDEP}]

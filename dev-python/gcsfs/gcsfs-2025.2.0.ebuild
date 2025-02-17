@@ -18,10 +18,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiohttp!=4.0.0a0,!=4.0.0a1
-	crcmod; extra == "crc"
+	crcmod; extra == 'crc'
 	decorator>4.1.2
 	fsspec==2025.2.0
-	fusepy; extra == "gcsfuse"
+	fusepy; extra == 'gcsfuse'
 	google-auth-oauthlib
 	google-auth>=1.2
 	google-cloud-storage

@@ -22,8 +22,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	httpbin
-	pytest; extra == "test"
-	requests; extra == "test"
+	pytest; extra == 'test'
+	requests; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/httpbin[${PYTHON_USEDEP}]

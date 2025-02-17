@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	backports.zoneinfo (>=0.2.1) ; python_version < "3.9"
-	importlib-resources (>=5.9.0) ; python_version < "3.9"
+	backports.zoneinfo (>=0.2.1) ; python_version < '3.9'
+	importlib-resources (>=5.9.0) ; python_version < '3.9'
 	python-dateutil (>=2.6)
-	time-machine (>=2.6.0) ; (implementation_name != "pypy") and (extra == "test")
+	time-machine (>=2.6.0) ; (implementation_name != 'pypy') and (extra == 'test')
 	tzdata (>=2020.1)
 "
 GENERATED_RDEPEND="${RDEPEND}

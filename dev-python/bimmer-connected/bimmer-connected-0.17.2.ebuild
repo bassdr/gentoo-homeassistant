@@ -26,7 +26,7 @@ DOCS="README.rst"
 
 REQUIRES_DIST="
 	Pillow
-	Pillow; extra == "china"
+	Pillow; extra == 'china'
 	httpx
 	pycryptodome>=3.4
 	pyjwt>=2.1.0

@@ -21,13 +21,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	cryptography; python_version == "2.7"
-	cryptography; python_version >= "3.4"
-	pycryptodomex; python_version < "2.7"
-	pycryptodomex; python_version == "3.0"
-	pycryptodomex; python_version == "3.1"
-	pycryptodomex; python_version == "3.2"
-	pycryptodomex; python_version == "3.3"
+	cryptography; python_version == '2.7'
+	cryptography; python_version >= '3.4'
+	pycryptodomex; python_version < '2.7'
+	pycryptodomex; python_version == '3.0'
+	pycryptodomex; python_version == '3.1'
+	pycryptodomex; python_version == '3.2'
+	pycryptodomex; python_version == '3.3'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cryptography[${PYTHON_USEDEP}]

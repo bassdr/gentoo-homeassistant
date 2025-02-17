@@ -18,13 +18,13 @@ REQUIRES_DIST="
 	huggingface-hub<1.0,>=0.20
 	loguru<0.8.0,>=0.7.2
 	mmh3<5.0.0,>=4.1.0
-	numpy<2.1.0,>=1.21; python_version < "3.10"
-	numpy>=1.21; python_version >= "3.10" and python_version < "3.12"
-	numpy>=1.26; python_version >= "3.12" and python_version < "3.13"
-	numpy>=2.1.0; python_version >= "3.13"
-	onnxruntime!=1.20.0,>=1.17.0; python_version >= "3.10" and python_version < "3.13"
-	onnxruntime<1.20.0,>=1.17.0; python_version < "3.10"
-	onnxruntime>1.20.0; python_version >= "3.13"
+	numpy<2.1.0,>=1.21; python_version < '3.10'
+	numpy>=1.21; python_version >= '3.10' and python_version < '3.12'
+	numpy>=1.26; python_version >= '3.12' and python_version < '3.13'
+	numpy>=2.1.0; python_version >= '3.13'
+	onnxruntime!=1.20.0,>=1.17.0; python_version >= '3.10' and python_version < '3.13'
+	onnxruntime<1.20.0,>=1.17.0; python_version < '3.10'
+	onnxruntime>1.20.0; python_version >= '3.13'
 	pillow<11.0.0,>=10.3.0
 	py-rust-stemmers<0.2.0,>=0.1.0
 	requests<3.0,>=2.31

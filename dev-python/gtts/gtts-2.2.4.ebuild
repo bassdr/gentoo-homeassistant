@@ -11,14 +11,15 @@ DESCRIPTION="gTTS (Google Text-to-Speech), a Python library and CLI tool to inte
 HOMEPAGE="
   https://pypi.org/project/gtts/
 "
-SRC_URI="https://github.com/pndurette/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+MY_PN="gTTS"
+SRC_URI="https://github.com/pndurette/${MY_PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.md"
 

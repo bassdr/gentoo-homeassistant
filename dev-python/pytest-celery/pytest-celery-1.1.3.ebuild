@@ -17,31 +17,31 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	boto3; extra == "all" or extra == "sqs"
-	botocore; extra == "all" or extra == "sqs"
+	boto3; extra == 'all' or extra == 'sqs'
+	botocore; extra == 'all' or extra == 'sqs'
 	celery
 	debugpy<2.0.0,>=1.8.5
 	docker<8.0.0,>=7.1.0
 	psutil>=6.0.0
-	pycurl; (sys_platform != "win32" and platform_python_implementation == "CPython") and (extra == "all" or extra == "sqs")
+	pycurl; (sys_platform != 'win32' and platform_python_implementation == 'CPython') and (extra == 'all' or extra == 'sqs')
 	pytest-docker-tools>=3.1.3
-	python-memcached; extra == "all" or extra == "memcached"
-	redis; extra == "all" or extra == "redis"
+	python-memcached; extra == 'all' or extra == 'memcached'
+	redis; extra == 'all' or extra == 'redis'
 	setuptools>=75.1.0
 	tenacity>=9.0.0
-	urllib3; extra == "all" or extra == "sqs"
+	urllib3; extra == 'all' or extra == 'sqs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/boto3[${PYTHON_USEDEP}] ) sqs? ( dev-python/boto3[${PYTHON_USEDEP}] )
-	sqs? ( dev-python/botocore[${PYTHON_USEDEP}] ) all? ( dev-python/botocore[${PYTHON_USEDEP}] )
+	all? ( dev-python/botocore[${PYTHON_USEDEP}] ) sqs? ( dev-python/botocore[${PYTHON_USEDEP}] )
 	dev-python/celery[${PYTHON_USEDEP}]
 	>=dev-python/debugpy-1.8.5[${PYTHON_USEDEP}] <dev-python/debugpy-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/docker-7.1.0[${PYTHON_USEDEP}] <dev-python/docker-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/psutil-6.0.0[${PYTHON_USEDEP}]
-	all? ( dev-python/pycurl[${PYTHON_USEDEP}] ) sqs? ( dev-python/pycurl[${PYTHON_USEDEP}] )
+	sqs? ( dev-python/pycurl[${PYTHON_USEDEP}] ) all? ( dev-python/pycurl[${PYTHON_USEDEP}] )
 	>=dev-python/pytest-docker-tools-3.1.3[${PYTHON_USEDEP}]
 	all? ( dev-python/python-memcached[${PYTHON_USEDEP}] ) memcached? ( dev-python/python-memcached[${PYTHON_USEDEP}] )
-	redis? ( dev-python/redis[${PYTHON_USEDEP}] ) all? ( dev-python/redis[${PYTHON_USEDEP}] )
+	all? ( dev-python/redis[${PYTHON_USEDEP}] ) redis? ( dev-python/redis[${PYTHON_USEDEP}] )
 	>=dev-python/setuptools-75.1.0[${PYTHON_USEDEP}]
 	>=dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
 	sqs? ( dev-python/urllib3[${PYTHON_USEDEP}] ) all? ( dev-python/urllib3[${PYTHON_USEDEP}] )

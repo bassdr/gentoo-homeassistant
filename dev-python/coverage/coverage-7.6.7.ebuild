@@ -27,12 +27,8 @@ KEYWORDS="amd64 arm64"
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/tomli[${PYTHON_USEDEP}]
 "
-RDEPEND="
-	$(python_gen_cond_dep '
-		dev-python/tomli[${PYTHON_USEDEP}]
-	' 3.10)
-"
-BDEPEND="
+RDEPEND="${GENERATED_RDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/flaky[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]

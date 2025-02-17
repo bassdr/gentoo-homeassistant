@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-google; extra == "google"
+	apache-airflow-providers-google; extra == 'google'
 	apache-airflow>=2.9.0
 	smbprotocol>=1.5.0
 "

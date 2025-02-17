@@ -22,7 +22,7 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Jinja2
 	Pillow
-	importlib-resources ; python_version < "3.8"
+	importlib-resources ; python_version < '3.8'
 	matplotlib
 	matplotlib ==3.6 ; extra == 'docs'
 	mpl-sphinx-theme >=3.6.0.dev0 ; extra == 'docs'

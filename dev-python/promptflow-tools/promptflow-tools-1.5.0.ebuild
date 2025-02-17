@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	azure-mgmt-cognitiveservices==13.5.0; extra == "azure"
+	azure-mgmt-cognitiveservices==13.5.0; extra == 'azure'
 	google-search-results==2.4.1
 	openai>=1.0.0
 	promptflow>=1.6.0

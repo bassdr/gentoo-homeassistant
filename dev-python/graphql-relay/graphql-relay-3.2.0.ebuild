@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	graphql-core (<3.3,>=3.2)
-	typing-extensions (<5,>=4.1) ; python_version < "3.8"
+	typing-extensions (<5,>=4.1) ; python_version < '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/graphql-core-3.2[${PYTHON_USEDEP}] <dev-python/graphql-core-3.3[${PYTHON_USEDEP}]

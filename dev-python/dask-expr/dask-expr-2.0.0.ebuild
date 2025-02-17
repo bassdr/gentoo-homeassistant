@@ -14,7 +14,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-IUSE=""
 REQUIRES_DIST="
 	dask>=2025.1.0
 "

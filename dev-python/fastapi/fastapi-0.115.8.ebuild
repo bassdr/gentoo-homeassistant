@@ -17,27 +17,27 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	email-validator>=2.0.0; extra == "all"
-	email-validator>=2.0.0; extra == "standard"
-	fastapi-cli[standard]>=0.0.5; extra == "all"
-	fastapi-cli[standard]>=0.0.5; extra == "standard"
-	httpx>=0.23.0; extra == "all"
-	httpx>=0.23.0; extra == "standard"
-	itsdangerous>=1.1.0; extra == "all"
-	jinja2>=3.1.5; extra == "all"
-	jinja2>=3.1.5; extra == "standard"
-	orjson>=3.2.1; extra == "all"
+	email-validator>=2.0.0; extra == 'all'
+	email-validator>=2.0.0; extra == 'standard'
+	fastapi-cli[standard]>=0.0.5; extra == 'all'
+	fastapi-cli[standard]>=0.0.5; extra == 'standard'
+	httpx>=0.23.0; extra == 'all'
+	httpx>=0.23.0; extra == 'standard'
+	itsdangerous>=1.1.0; extra == 'all'
+	jinja2>=3.1.5; extra == 'all'
+	jinja2>=3.1.5; extra == 'standard'
+	orjson>=3.2.1; extra == 'all'
 	pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4
-	pydantic-extra-types>=2.0.0; extra == "all"
-	pydantic-settings>=2.0.0; extra == "all"
-	python-multipart>=0.0.18; extra == "all"
-	python-multipart>=0.0.18; extra == "standard"
-	pyyaml>=5.3.1; extra == "all"
+	pydantic-extra-types>=2.0.0; extra == 'all'
+	pydantic-settings>=2.0.0; extra == 'all'
+	python-multipart>=0.0.18; extra == 'all'
+	python-multipart>=0.0.18; extra == 'standard'
+	pyyaml>=5.3.1; extra == 'all'
 	starlette<0.46.0,>=0.40.0
 	typing-extensions>=4.8.0
-	ujson!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0,>=4.0.1; extra == "all"
-	uvicorn[standard]>=0.12.0; extra == "all"
-	uvicorn[standard]>=0.12.0; extra == "standard"
+	ujson!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0,>=4.0.1; extra == 'all'
+	uvicorn[standard]>=0.12.0; extra == 'all'
+	uvicorn[standard]>=0.12.0; extra == 'standard'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/email-validator-2.0.0[${PYTHON_USEDEP}] )

@@ -27,24 +27,24 @@ RESTRICT="test"
 GENERATED_IUSE="develop"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	aiohttp; extra == "develop"
+	aiohttp; extra == 'develop'
 	certifi
-	furo; extra == "develop"
-	httpcore<1.0.6; extra == "develop"
-	httpx; extra == "develop"
-	opentelemetry-api; extra == "develop"
-	opentelemetry-sdk; extra == "develop"
-	orjson; extra == "develop"
-	pytest-asyncio; extra == "develop"
-	pytest-cov; extra == "develop"
-	pytest-httpserver; extra == "develop"
-	pytest-mock; extra == "develop"
-	pytest; extra == "develop"
-	requests; extra == "develop"
-	respx; extra == "develop"
-	sphinx-autodoc-typehints; extra == "develop"
-	sphinx>2; extra == "develop"
-	trustme; extra == "develop"
+	furo; extra == 'develop'
+	httpcore<1.0.6; extra == 'develop'
+	httpx; extra == 'develop'
+	opentelemetry-api; extra == 'develop'
+	opentelemetry-sdk; extra == 'develop'
+	orjson; extra == 'develop'
+	pytest-asyncio; extra == 'develop'
+	pytest-cov; extra == 'develop'
+	pytest-httpserver; extra == 'develop'
+	pytest-mock; extra == 'develop'
+	pytest; extra == 'develop'
+	requests; extra == 'develop'
+	respx; extra == 'develop'
+	sphinx-autodoc-typehints; extra == 'develop'
+	sphinx>2; extra == 'develop'
+	trustme; extra == 'develop'
 	urllib3<3,>=1.26.2
 "
 GENERATED_RDEPEND="${RDEPEND}

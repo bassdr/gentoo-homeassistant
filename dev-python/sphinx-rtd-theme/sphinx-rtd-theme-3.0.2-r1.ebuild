@@ -21,13 +21,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	bump2version; extra == "dev"
+	bump2version; extra == 'dev'
 	docutils<0.22,>0.18
 	sphinx<9,>=6
 	sphinxcontrib-jquery<5,>=4
-	transifex-client; extra == "dev"
-	twine; extra == "dev"
-	wheel; extra == "dev"
+	transifex-client; extra == 'dev'
+	twine; extra == 'dev'
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/docutils-0.18[${PYTHON_USEDEP}] <dev-python/docutils-0.22[${PYTHON_USEDEP}]

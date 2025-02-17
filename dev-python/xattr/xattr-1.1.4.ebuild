@@ -16,7 +16,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cffi>=1.16.0
-	pytest; extra == "test"
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.16.0[${PYTHON_USEDEP}]

@@ -9,9 +9,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1
 
 MY_P=abseil-py-${PV}
-DESCRIPTION=""
+DESCRIPTION="Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
 HOMEPAGE="
-  https://pypi.org/project/absl-py/"
+  https://pypi.org/project/absl-py/
+"
 SRC_URI="
 	https://github.com/abseil/abseil-py/archive/v${PV}.tar.gz
 		-> ${MY_P}.gh.tar.gz

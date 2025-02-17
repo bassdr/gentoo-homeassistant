@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage; extra == "test"
-	cython; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	setuptools; python_version >= "3.12" and extra == "test"
-	sphinx-rtd-theme; extra == "rtd"
-	sphinx<7; extra == "rtd"
+	coverage; extra == 'test'
+	cython; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	setuptools; python_version >= '3.12' and extra == 'test'
+	sphinx-rtd-theme; extra == 'rtd'
+	sphinx<7; extra == 'rtd'
 	sphinx>=4
 "
 GENERATED_RDEPEND="${RDEPEND}

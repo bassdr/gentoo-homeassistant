@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	argcomplete>=3.2.3
 	azure-monitor-opentelemetry-exporter<2.0.0,>=1.0.0b21
-	bs4; extra == "executable"
+	bs4; extra == 'executable'
 	colorama<0.5.0,>=0.4.6
 	cryptography>=42.0.4
 	filelock<4.0.0,>=3.4.0
@@ -34,14 +34,14 @@ REQUIRES_DIST="
 	pandas<3.0.0,>=1.5.3
 	pillow<11.1.0,>=10.1.0
 	promptflow-core<2.0.0,>=1.17.2
-	pyarrow<15.0.0,>=14.0.1; extra == "executable" or extra == "pyarrow"
+	pyarrow<15.0.0,>=14.0.1; extra == 'executable' or extra == 'pyarrow'
 	pydash<8.0.0,>=6.0.0
-	pyinstaller>=5.13.2; extra == "executable"
+	pyinstaller>=5.13.2; extra == 'executable'
 	python-dotenv<2.0.0,>=1.0.0
-	pywin32; sys_platform == "win32"
+	pywin32; sys_platform == 'win32'
 	sqlalchemy<3.0.0,>=1.4.48
-	streamlit-quill<0.1.0; extra == "executable"
-	streamlit>=1.26.0; extra == "executable"
+	streamlit-quill<0.1.0; extra == 'executable'
+	streamlit>=1.26.0; extra == 'executable'
 	strictyaml<2.0.0,>=1.5.0
 	tabulate<1.0.0,>=0.9.0
 	waitress<4.0.0,>=3.0.0
@@ -49,7 +49,7 @@ REQUIRES_DIST="
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/argcomplete-3.2.3[${PYTHON_USEDEP}]
 	>=dev-python/azure-monitor-opentelemetry-exporter-1.0.0_beta21[${PYTHON_USEDEP}] <dev-python/azure-monitor-opentelemetry-exporter-2.0.0[${PYTHON_USEDEP}]
-	executable? ( dev-python/bs4[${PYTHON_USEDEP}] )
+	executable? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
 	>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}] <dev-python/colorama-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-42.0.4[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.4.0[${PYTHON_USEDEP}] <dev-python/filelock-4.0.0[${PYTHON_USEDEP}]

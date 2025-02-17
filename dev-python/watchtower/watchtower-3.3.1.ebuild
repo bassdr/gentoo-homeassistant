@@ -16,12 +16,12 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	boto3<2,>=1.9.253
-	build; extra == "tests"
-	coverage; extra == "tests"
-	mypy; extra == "tests"
-	pyyaml; extra == "tests"
-	ruff; extra == "tests"
-	wheel; extra == "tests"
+	build; extra == 'tests'
+	coverage; extra == 'tests'
+	mypy; extra == 'tests'
+	pyyaml; extra == 'tests'
+	ruff; extra == 'tests'
+	wheel; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.9.253[${PYTHON_USEDEP}] <dev-python/boto3-2[${PYTHON_USEDEP}]

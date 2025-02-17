@@ -23,8 +23,8 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
+IUSE="+mqtt socat systemd"
 
-# external deps
 REQUIRES_DIST="
 	Jinja2==3.1.4
 	Pillow==11.0.0
@@ -41,7 +41,7 @@ REQUIRES_DIST="
 	async-interrupt==1.2.0
 	atomicwrites-homeassistant==1.4.1
 	attrs==24.2.0
-	audioop-lts==0.2.1; python_version >= "3.13"
+	audioop-lts==0.2.1; python_version >= '3.13'
 	awesomeversion==24.6.0
 	bcrypt==4.2.0
 	certifi>=2021.5.30
@@ -61,8 +61,8 @@ REQUIRES_DIST="
 	python-slugify==8.0.4
 	requests==2.32.3
 	securetar==2024.11.0
-	standard-aifc==3.13.0; python_version >= "3.13"
-	standard-telnetlib==3.13.0; python_version >= "3.13"
+	standard-aifc==3.13.0; python_version >= '3.13'
+	standard-telnetlib==3.13.0; python_version >= '3.13'
 	typing-extensions<5.0,>=4.12.2
 	ulid-transform==1.0.2
 	urllib3<2,>=1.26.5
@@ -114,21 +114,21 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}] <dev-python/typing-extensions-5.0[${PYTHON_USEDEP}]
 	~dev-python/ulid-transform-1.0.2[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}] <dev-python/urllib3-2[${PYTHON_USEDEP}]
-	~dev-python/uv-0.5.6[${PYTHON_USEDEP}]
+	~dev-python/uv-0.5.6
 	~dev-python/voluptuous-0.15.2[${PYTHON_USEDEP}]
 	~dev-python/voluptuous-openapi-0.0.5[${PYTHON_USEDEP}]
 	~dev-python/voluptuous-serialize-2.6.0[${PYTHON_USEDEP}]
 	~dev-python/webrtc-models-0.3.0[${PYTHON_USEDEP}]
 	~dev-python/yarl-1.18.3[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND} ${PYTHON_DEPS}
+RDEPEND="${GENERATED_RDEPEND}
 	acct-group/${PN} acct-user/${PN}
 	app-admin/logrotate
 	dev-db/sqlite
 	dev-libs/libfastjson
-	dev-libs/xerces-c"
-# make sure no conflicting main Ebuild is installed
-RDEPEND="${RDEPEND}
+	dev-libs/xerces-c
+	mqtt? ( homeassistant-base/ha-comp-mqtt app-misc/mosquitto )
+	socat? ( net-misc/socat )
 	!app-misc/homeassistant
 	!app-misc/homeassistant-min
 	!app-misc/homeassistant-full"
@@ -184,9 +184,10 @@ DOC_CONTENTS="
 The HA interface listens on port 8123
 hass configuration is in: /etc/${PN}
 daemon command line arguments are configured in: /etc/conf.d/${PN}
-logging is to: /var/log/${PN}/{server,errors,stdout}.log
+logging to: /var/log/${PN}/{server,errors,stdout}.log
 The sqlite db is by default in: /etc/${PN}
-support at https://git.edevau.net/onkelbeh/HomeAssistantRepository
+For support, see https://github.com/bassdr/gentoo-homeassistant
+Most ebuilds were taken from https://git.edevau.net/onkelbeh/HomeAssistantRepository
 "
 
 DOCS="README.rst"
@@ -218,5 +219,3 @@ python_install_all() {
 pkg_postinst() {
 	readme.gentoo_print_elog
 }
-
-

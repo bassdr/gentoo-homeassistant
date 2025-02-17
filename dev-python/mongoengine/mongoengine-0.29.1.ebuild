@@ -15,12 +15,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pillow>=7.0.0; extra == "test"
-	blinker; extra == "test"
-	coverage; extra == "test"
+	Pillow>=7.0.0; extra == 'test'
+	blinker; extra == 'test'
+	coverage; extra == 'test'
 	pymongo<5.0,>=3.4
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pymongo-3.4[${PYTHON_USEDEP}] <dev-python/pymongo-5.0[${PYTHON_USEDEP}]

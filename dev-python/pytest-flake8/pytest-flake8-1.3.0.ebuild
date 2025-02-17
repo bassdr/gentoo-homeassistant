@@ -18,18 +18,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	flake8>=4.0
-	furo; extra == "doc"
-	jaraco.packaging>=9.3; extra == "doc"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "check"
-	pytest-cov; extra == "cover"
-	pytest-enabler>=2.2; extra == "enabler"
-	pytest-mypy; extra == "type"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "check"
+	furo; extra == 'doc'
+	jaraco.packaging>=9.3; extra == 'doc'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'check'
+	pytest-cov; extra == 'cover'
+	pytest-enabler>=2.2; extra == 'enabler'
+	pytest-mypy; extra == 'type'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'check'
 	pytest>=7.0
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flake8-4.0[${PYTHON_USEDEP}]

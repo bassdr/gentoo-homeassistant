@@ -16,16 +16,16 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cffi<2,>=1.12.0
-	cffi<2,>=1.12.0; extra == "test"
-	cryptography>=2; extra == "test"
+	cffi<2,>=1.12.0; extra == 'test'
+	cryptography>=2; extra == 'test'
 	cryptography>=40
 	httpx>=0.25.0
 	packaging>=21.0
-	pymongo[aws]>=4; extra == "test"
-	pytest>=7.0; extra == "test"
-	respx; extra == "test"
-	setuptools; extra == "test"
-	unasync; extra == "test"
+	pymongo[aws]>=4; extra == 'test'
+	pytest>=7.0; extra == 'test'
+	respx; extra == 'test'
+	setuptools; extra == 'test'
+	unasync; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}] <dev-python/cffi-2[${PYTHON_USEDEP}]

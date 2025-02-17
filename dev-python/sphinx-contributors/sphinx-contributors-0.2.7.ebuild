@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	furo ; extra == "doc"
-	pre-commit ; extra == "test"
-	pytest ; extra == "test"
+	furo ; extra == 'doc'
+	pre-commit ; extra == 'test'
+	pytest ; extra == 'test'
 	sphinx >= 3
 "
 GENERATED_RDEPEND="${RDEPEND}

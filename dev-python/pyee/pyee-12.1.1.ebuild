@@ -15,28 +15,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "dev"
-	build; extra == "dev"
-	flake8-black; extra == "dev"
-	flake8; extra == "dev"
-	isort; extra == "dev"
-	jupyter-console; extra == "dev"
-	mkdocs-include-markdown-plugin; extra == "dev"
-	mkdocs; extra == "dev"
-	mkdocstrings[python]; extra == "dev"
-	pytest-asyncio; python_version >= "3.4" and extra == "dev"
-	pytest-trio; python_version >= "3.7" and extra == "dev"
-	pytest; extra == "dev"
-	sphinx; extra == "dev"
-	toml; extra == "dev"
-	tox; extra == "dev"
-	trio-typing; python_version > "3.6" and extra == "dev"
-	trio; extra == "dev"
-	trio; python_version > "3.6" and extra == "dev"
-	twine; extra == "dev"
-	twisted; extra == "dev"
+	black; extra == 'dev'
+	build; extra == 'dev'
+	flake8-black; extra == 'dev'
+	flake8; extra == 'dev'
+	isort; extra == 'dev'
+	jupyter-console; extra == 'dev'
+	mkdocs-include-markdown-plugin; extra == 'dev'
+	mkdocs; extra == 'dev'
+	mkdocstrings[python]; extra == 'dev'
+	pytest-asyncio; python_version >= '3.4' and extra == 'dev'
+	pytest-trio; python_version >= '3.7' and extra == 'dev'
+	pytest; extra == 'dev'
+	sphinx; extra == 'dev'
+	toml; extra == 'dev'
+	tox; extra == 'dev'
+	trio-typing; python_version > '3.6' and extra == 'dev'
+	trio; extra == 'dev'
+	trio; python_version > '3.6' and extra == 'dev'
+	twine; extra == 'dev'
+	twisted; extra == 'dev'
 	typing-extensions
-	validate-pyproject[all]; extra == "dev"
+	validate-pyproject[all]; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]

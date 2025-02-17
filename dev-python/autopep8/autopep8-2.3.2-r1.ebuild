@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	pycodestyle>=2.12.0
-	tomli; python_version < "3.11"
+	tomli; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pycodestyle-2.12.0[${PYTHON_USEDEP}]

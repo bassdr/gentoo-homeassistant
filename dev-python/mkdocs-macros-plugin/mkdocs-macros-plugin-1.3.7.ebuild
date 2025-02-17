@@ -17,11 +17,11 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	hjson
 	jinja2
-	mkdocs-d2-plugin; extra == "test"
-	mkdocs-include-markdown-plugin; extra == "test"
-	mkdocs-macros-test; extra == "test"
-	mkdocs-material>=6.2; extra == "test"
-	mkdocs-test; extra == "test"
+	mkdocs-d2-plugin; extra == 'test'
+	mkdocs-include-markdown-plugin; extra == 'test'
+	mkdocs-macros-test; extra == 'test'
+	mkdocs-material>=6.2; extra == 'test'
+	mkdocs-test; extra == 'test'
 	mkdocs>=0.17
 	packaging
 	pathspec

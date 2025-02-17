@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	certifi
-	cython; extra == "dev"
-	geopandas; extra == "geopandas"
+	cython; extra == 'dev'
+	geopandas; extra == 'geopandas'
 	numpy
 	packaging
-	pytest-benchmark; extra == "benchmark"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	pytest-benchmark; extra == 'benchmark'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]

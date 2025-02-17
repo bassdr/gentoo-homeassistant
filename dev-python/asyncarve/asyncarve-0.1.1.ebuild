@@ -22,11 +22,11 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp>=3.9.3
-	aresponses; extra == "dev"
+	aresponses; extra == 'dev'
 	mashumaro>=3.12
 	orjson>=2.0.1
-	pytest; extra == "dev"
-	twine; extra == "dev"
+	pytest; extra == 'dev'
+	twine; extra == 'dev'
 	yarl>=1.9.4
 "
 GENERATED_RDEPEND="${RDEPEND}

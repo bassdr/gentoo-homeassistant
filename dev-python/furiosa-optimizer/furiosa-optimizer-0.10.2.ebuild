@@ -17,15 +17,15 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	furiosa-common==0.10.*
-	mypy; extra == "test"
+	mypy; extra == 'test'
 	numpy~=1.24
 	onnx-simplifier~=0.4.33
 	onnxoptimizer==0.3.13
 	onnxruntime~=1.15.1
 	onnx~=1.14.0
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/furiosa-common-0.10*[${PYTHON_USEDEP}]

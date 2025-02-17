@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	mock; python_version=="2.7"
+	mock; python_version=='2.7'
 	numpy
 "
 GENERATED_RDEPEND="${RDEPEND}

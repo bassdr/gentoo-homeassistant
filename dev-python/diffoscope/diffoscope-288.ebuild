@@ -17,21 +17,21 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	androguard; extra == "comparators"
-	argcomplete; extra == "cmdline"
-	binwalk; extra == "comparators"
-	defusedxml; extra == "comparators"
-	distro; extra == "distro-detection"
-	guestfs; extra == "comparators"
-	jsondiff; extra == "comparators"
+	androguard; extra == 'comparators'
+	argcomplete; extra == 'cmdline'
+	binwalk; extra == 'comparators'
+	defusedxml; extra == 'comparators'
+	distro; extra == 'distro-detection'
+	guestfs; extra == 'comparators'
+	jsondiff; extra == 'comparators'
 	libarchive-c
-	progressbar; extra == "cmdline"
-	pypdf; extra == "comparators"
-	python-debian; extra == "comparators"
+	progressbar; extra == 'cmdline'
+	pypdf; extra == 'comparators'
+	python-debian; extra == 'comparators'
 	python-magic
-	pyxattr; extra == "comparators"
-	rpm-python; extra == "comparators"
-	tlsh; extra == "comparators"
+	pyxattr; extra == 'comparators'
+	rpm-python; extra == 'comparators'
+	tlsh; extra == 'comparators'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	comparators? ( dev-python/androguard[${PYTHON_USEDEP}] )

@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	asyncssh<3,>=2.11.0
-	asyncssh[bcrypt]; extra == "bcrypt"
-	asyncssh[fido2]; extra == "fido2"
-	asyncssh[gssapi]; extra == "gssapi"
-	asyncssh[libnacl]; extra == "libnacl"
-	asyncssh[pyopenssl]; extra == "pyopenssl"
-	asyncssh[python-pkcs11]; extra == "pkcs11"
-	asyncssh[pywin32]; extra == "pywin32"
+	asyncssh[bcrypt]; extra == 'bcrypt'
+	asyncssh[fido2]; extra == 'fido2'
+	asyncssh[gssapi]; extra == 'gssapi'
+	asyncssh[libnacl]; extra == 'libnacl'
+	asyncssh[pyopenssl]; extra == 'pyopenssl'
+	asyncssh[python-pkcs11]; extra == 'pkcs11'
+	asyncssh[pywin32]; extra == 'pywin32'
 	fsspec>=2021.8.1
 "
 GENERATED_RDEPEND="${RDEPEND}

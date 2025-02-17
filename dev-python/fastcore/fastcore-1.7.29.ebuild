@@ -15,16 +15,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	llms-txt; extra == "dev"
-	matplotlib; extra == "dev"
-	nbclassic; extra == "dev"
-	nbdev>=0.2.39; extra == "dev"
-	numpy; extra == "dev"
+	llms-txt; extra == 'dev'
+	matplotlib; extra == 'dev'
+	nbclassic; extra == 'dev'
+	nbdev>=0.2.39; extra == 'dev'
+	numpy; extra == 'dev'
 	packaging
-	pandas; extra == "dev"
-	pillow; extra == "dev"
-	pysymbol_llm; extra == "dev"
-	torch; extra == "dev"
+	pandas; extra == 'dev'
+	pillow; extra == 'dev'
+	pysymbol_llm; extra == 'dev'
+	torch; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]

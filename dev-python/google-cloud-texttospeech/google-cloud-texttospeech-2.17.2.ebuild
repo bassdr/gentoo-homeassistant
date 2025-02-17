@@ -16,8 +16,6 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
@@ -33,10 +31,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/proto-plus-1.22.3[${PYTHON_USEDEP}] <dev-python/proto-plus-2.0.0_pre[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-3.20.2[${PYTHON_USEDEP}] <dev-python/protobuf-6.0.0_pre[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.0[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.1[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.2[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.3[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.4[${PYTHON_USEDEP}] !~dev-python/protobuf-4.21.5[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/google-api-core-1.34.1[${PYTHON_USEDEP}]
-	>=dev-python/proto-plus-1.22.0[${PYTHON_USEDEP}]
-	>=dev-python/protobuf-3.19.5[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 

@@ -25,7 +25,7 @@ IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	cryptography
 	pyspnego (>=0.5.0)
-	pyspnego[kerberos] ; (sys_platform!="win32") and extra == 'kerberos'
+	pyspnego[kerberos] ; (sys_platform!='win32') and extra == 'kerberos'
 	requests (>=2.0.0)
 "
 GENERATED_RDEPEND="${RDEPEND}

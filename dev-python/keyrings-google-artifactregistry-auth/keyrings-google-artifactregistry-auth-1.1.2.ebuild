@@ -23,11 +23,11 @@ REQUIRES_DIST="
 	keyring
 	pluggy
 	pytest (!=3.7.3,>=3.5) ; extra == 'testing'
-	pytest-black (>=0.3.7) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-black (>=0.3.7) ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	pytest-checkdocs (>=1.2.3) ; extra == 'testing'
 	pytest-cov ; extra == 'testing'
 	pytest-flake8 ; extra == 'testing'
-	pytest-mypy ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-mypy ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	requests
 	tox ; extra == 'tox'
 "

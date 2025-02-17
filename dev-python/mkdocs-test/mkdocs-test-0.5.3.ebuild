@@ -18,8 +18,8 @@ REQUIRES_DIST="
 	beautifulsoup4
 	markdown
 	pandas
-	pytest>=7.0; extra == "test"
-	toml-cli; extra == "test"
+	pytest>=7.0; extra == 'test'
+	toml-cli; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]

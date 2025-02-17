@@ -20,34 +20,34 @@ GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	autocommand
-	flit-core; extra == "test"
-	furo; extra == "doc"
-	importlib-resources; python_version < "3.9"
+	flit-core; extra == 'test'
+	furo; extra == 'doc'
+	importlib-resources; python_version < '3.9'
 	jaraco.context
 	jaraco.env
 	jaraco.functools>=3.7
-	jaraco.packaging>=9.3; extra == "doc"
-	jaraco.path; extra == "test"
-	jaraco.test>=5.3; extra == "test"
+	jaraco.packaging>=9.3; extra == 'doc'
+	jaraco.path; extra == 'test'
+	jaraco.test>=5.3; extra == 'test'
 	jaraco.text
-	jaraco.tidelift>=1.4; extra == "doc"
+	jaraco.tidelift>=1.4; extra == 'doc'
 	more-itertools>=8.3
-	nbformat; extra == "test"
+	nbformat; extra == 'test'
 	packaging
 	path>=15.1
 	pip>=19.3
 	platformdirs
-	pygments; extra == "test"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-enabler>=2.2; extra == "test"
-	pytest-mypy; extra == "test"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
-	tomli; python_version < "3.11"
+	pygments; extra == 'test'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-enabler>=2.2; extra == 'test'
+	pytest-mypy; extra == 'test'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'test'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
+	tomli; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]

@@ -16,11 +16,11 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	beartype>=0.19.0
-	black; extra == "dev"
-	mypy; extra == "dev"
+	black; extra == 'dev'
+	mypy; extra == 'dev'
 	pytest
-	pytest-cov; extra == "dev"
-	tox; extra == "dev"
+	pytest-cov; extra == 'dev'
+	tox; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/beartype-0.19.0[${PYTHON_USEDEP}]

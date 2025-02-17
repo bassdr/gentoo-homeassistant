@@ -18,22 +18,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dvc-render[docs,tests]; extra == "dev"
-	dvc-render[markdown,table]; extra == "tests"
-	dvc-render[table]; extra == "markdown"
-	flatten-dict<1,>=0.4.1; extra == "table"
-	matplotlib; extra == "markdown"
-	mkdocs-gen-files<1,>=0.5.0; extra == "docs"
-	mkdocs-material<10,>=9.3.1; extra == "docs"
-	mkdocs-section-index<1,>=0.3.6; extra == "docs"
-	mkdocs<2,>=1.5.2; extra == "docs"
-	mkdocstrings-python<2,>=1.6.3; extra == "docs"
-	mypy==1.9.0; extra == "dev"
-	pytest-cov>=4.1.0; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest-sugar; extra == "tests"
-	pytest<9,>=7; extra == "tests"
-	tabulate>=0.8.7; extra == "table"
+	dvc-render[docs,tests]; extra == 'dev'
+	dvc-render[markdown,table]; extra == 'tests'
+	dvc-render[table]; extra == 'markdown'
+	flatten-dict<1,>=0.4.1; extra == 'table'
+	matplotlib; extra == 'markdown'
+	mkdocs-gen-files<1,>=0.5.0; extra == 'docs'
+	mkdocs-material<10,>=9.3.1; extra == 'docs'
+	mkdocs-section-index<1,>=0.3.6; extra == 'docs'
+	mkdocs<2,>=1.5.2; extra == 'docs'
+	mkdocstrings-python<2,>=1.6.3; extra == 'docs'
+	mypy==1.9.0; extra == 'dev'
+	pytest-cov>=4.1.0; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest-sugar; extra == 'tests'
+	pytest<9,>=7; extra == 'tests'
+	tabulate>=0.8.7; extra == 'table'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	markdown? ( dev-python/dvc-render[table,${PYTHON_USEDEP}] )

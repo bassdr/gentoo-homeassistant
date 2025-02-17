@@ -22,8 +22,8 @@ RESTRICT="!test? ( test )"
 REQUIRES_DIST="
 	getmac
 	requests
-	responses; extra == "dev"
-	responses; extra == "test"
+	responses; extra == 'dev'
+	responses; extra == 'test'
 	semver
 "
 GENERATED_RDEPEND="${RDEPEND}

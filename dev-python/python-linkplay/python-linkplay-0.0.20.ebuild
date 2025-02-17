@@ -27,15 +27,15 @@ REQUIRES_DIST="
 	async-timeout>=4.0.3
 	async-upnp-client>=0.36.2
 	deprecated>=1.2.14
-	mypy>=1.3.0; extra == "testing"
-	pre-commit>=3.8.0; extra == "testing"
-	pytest-asyncio>=0.23.3; extra == "testing"
-	pytest-cov>=4.1.0; extra == "testing"
-	pytest-mock>=3.10.0; extra == "testing"
-	pytest>=7.3.1; extra == "testing"
-	ruff>=0.5.4; extra == "testing"
-	tox>=4.6.0; extra == "testing"
-	typing-extensions>=4.6.3; extra == "testing"
+	mypy>=1.3.0; extra == 'testing'
+	pre-commit>=3.8.0; extra == 'testing'
+	pytest-asyncio>=0.23.3; extra == 'testing'
+	pytest-cov>=4.1.0; extra == 'testing'
+	pytest-mock>=3.10.0; extra == 'testing'
+	pytest>=7.3.1; extra == 'testing'
+	ruff>=0.5.4; extra == 'testing'
+	tox>=4.6.0; extra == 'testing'
+	typing-extensions>=4.6.3; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiofiles-23.1.0[${PYTHON_USEDEP}]

@@ -24,7 +24,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	backports.zoneinfo; python_version < "3.9"
+	backports.zoneinfo; python_version < '3.9'
 	django>=4.2
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -18,37 +18,37 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	agate<1.10,>=1.7.0
-	black<24.0,>=23.3; extra == "lint"
-	check-wheel-contents; extra == "build"
+	black<24.0,>=23.3; extra == 'lint'
+	check-wheel-contents; extra == 'build'
 	colorama<0.5,>=0.3.9
 	deepdiff<8.0,>=7.0
-	flake8-docstrings; extra == "lint"
-	flake8-pyproject; extra == "lint"
-	flake8; extra == "lint"
-	hypothesis<7.0,>=6.87; extra == "test"
+	flake8-docstrings; extra == 'lint'
+	flake8-pyproject; extra == 'lint'
+	flake8; extra == 'lint'
+	hypothesis<7.0,>=6.87; extra == 'test'
 	isodate<0.7,>=0.6
 	jinja2<4,>=3.1.3
 	jsonschema<5.0,>=4.0
 	mashumaro[msgpack]<4.0,>=3.9
-	mypy<2.0,>=1.3; extra == "lint"
+	mypy<2.0,>=1.3; extra == 'lint'
 	pathspec<0.13,>=0.9
 	protobuf<6.0,>=5.0
-	pytest-cov<5.0,>=4.1; extra == "test"
-	pytest-mock; extra == "test"
-	pytest-xdist<4.0,>=3.2; extra == "test"
-	pytest<8.0,>=7.3; extra == "lint"
-	pytest<8.0,>=7.3; extra == "test"
+	pytest-cov<5.0,>=4.1; extra == 'test'
+	pytest-mock; extra == 'test'
+	pytest-xdist<4.0,>=3.2; extra == 'test'
+	pytest<8.0,>=7.3; extra == 'lint'
+	pytest<8.0,>=7.3; extra == 'test'
 	python-dateutil<3.0,>=2.0
 	requests<3.0.0
-	twine; extra == "build"
-	types-jinja2<3.0,>=2.11; extra == "lint"
-	types-jsonschema<5.0,>=4.17; extra == "lint"
-	types-protobuf<6.0,>=5.0; extra == "lint"
-	types-python-dateutil<3.0,>=2.8; extra == "lint"
-	types-pyyaml<7.0,>=6.0; extra == "lint"
-	types-requests; extra == "lint"
+	twine; extra == 'build'
+	types-jinja2<3.0,>=2.11; extra == 'lint'
+	types-jsonschema<5.0,>=4.17; extra == 'lint'
+	types-protobuf<6.0,>=5.0; extra == 'lint'
+	types-python-dateutil<3.0,>=2.8; extra == 'lint'
+	types-pyyaml<7.0,>=6.0; extra == 'lint'
+	types-requests; extra == 'lint'
 	typing-extensions<5.0,>=4.4
-	wheel; extra == "build"
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/agate-1.7.0[${PYTHON_USEDEP}] <dev-python/agate-1.10[${PYTHON_USEDEP}]

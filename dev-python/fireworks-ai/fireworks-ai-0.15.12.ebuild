@@ -18,18 +18,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Pillow
-	fastapi; extra == "flumina"
-	gitignore-parser; extra == "flumina"
+	fastapi; extra == 'flumina'
+	gitignore-parser; extra == 'flumina'
 	httpx
 	httpx-ws
 	httpx_sse
-	openapi-spec-validator; extra == "flumina"
-	prance; extra == "flumina"
+	openapi-spec-validator; extra == 'flumina'
+	prance; extra == 'flumina'
 	pydantic
-	safetensors; extra == "flumina"
-	tabulate; extra == "flumina"
-	torch; extra == "flumina"
-	tqdm; extra == "flumina"
+	safetensors; extra == 'flumina'
+	tabulate; extra == 'flumina'
+	torch; extra == 'flumina'
+	tqdm; extra == 'flumina'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	flumina? ( dev-python/fastapi[${PYTHON_USEDEP}] )

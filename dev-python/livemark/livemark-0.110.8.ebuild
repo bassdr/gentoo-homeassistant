@@ -16,26 +16,26 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=22.0
-	black; extra == "dev"
+	black; extra == 'dev'
 	cached-property>=1.5
 	deepmerge>=0.3
 	docstring-parser>=0.10
 	frictionless[excel,json]>=4.0
 	gitpython>=3.1
 	giturlparse>=0.10
-	ipython; extra == "dev"
+	ipython; extra == 'dev'
 	jinja2>=3.0
 	jsonschema>=2.5
 	livereload>=2.6
 	marko==1.*
-	mypy; extra == "dev"
-	pyflakes==2.4.0; extra == "dev"
-	pylama; extra == "dev"
+	mypy; extra == 'dev'
+	pyflakes==2.4.0; extra == 'dev'
+	pylama; extra == 'dev'
 	pyquery==1.*
-	pytest-cov; extra == "dev"
-	pytest-only; extra == "dev"
-	pytest-vcr; extra == "dev"
-	pytest; extra == "dev"
+	pytest-cov; extra == 'dev'
+	pytest-only; extra == 'dev'
+	pytest-vcr; extra == 'dev'
+	pytest; extra == 'dev'
 	pyyaml>=5.3
 	typer>=0.12
 "

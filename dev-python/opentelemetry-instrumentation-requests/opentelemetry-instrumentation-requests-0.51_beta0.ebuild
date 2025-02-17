@@ -23,7 +23,7 @@ REQUIRES_DIST="
 	opentelemetry-instrumentation==0.51b0
 	opentelemetry-semantic-conventions==0.51b0
 	opentelemetry-util-http==0.51b0
-	requests~=2.0; extra == "instruments"
+	requests~=2.0; extra == 'instruments'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/opentelemetry-api-1.12[${PYTHON_USEDEP}] =dev-python/opentelemetry-api-1*[${PYTHON_USEDEP}]

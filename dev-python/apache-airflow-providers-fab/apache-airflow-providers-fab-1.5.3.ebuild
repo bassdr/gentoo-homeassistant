@@ -24,7 +24,7 @@ REQUIRES_DIST="
 	flask<2.3,>=2.2
 	google-re2>=1.0
 	jmespath>=0.7.0
-	kerberos>=1.3.0; extra == "kerberos"
+	kerberos>=1.3.0; extra == 'kerberos'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]

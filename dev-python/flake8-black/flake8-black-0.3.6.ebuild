@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	black (>=22.1.0)
 	build ; extra == 'develop'
 	flake8 (>=3)
-	tomli ; python_version < "3.11"
+	tomli ; python_version < '3.11'
 	twine ; extra == 'develop'
 "
 GENERATED_RDEPEND="${RDEPEND}

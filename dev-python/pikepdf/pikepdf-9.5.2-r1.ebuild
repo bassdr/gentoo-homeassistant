@@ -27,33 +27,33 @@ DEPEND="
 REQUIRES_DIST="
 	Deprecated
 	Pillow>=10.0.1
-	Sphinx>=3; extra == "docs"
-	attrs>=20.2.0; extra == "test"
-	coverage[toml]; extra == "test"
-	hypothesis>=6.36; extra == "test"
-	lxml-stubs; extra == "mypy"
+	Sphinx>=3; extra == 'docs'
+	attrs>=20.2.0; extra == 'test'
+	coverage[toml]; extra == 'test'
+	hypothesis>=6.36; extra == 'test'
+	lxml-stubs; extra == 'mypy'
 	lxml>=4.8
-	numpy>=1.21.0; (platform_machine == "x86_64" and platform_python_implementation == "CPython") and extra == "test"
+	numpy>=1.21.0; (platform_machine == 'x86_64' and platform_python_implementation == 'CPython') and extra == 'test'
 	packaging
-	pre-commit; extra == "dev"
-	psutil>=5.9; os_name != "nt" and extra == "test"
-	pybind11; extra == "test"
-	pytest-cov>=3.0.0; extra == "test"
-	pytest-timeout>=2.1.0; extra == "test"
-	pytest-xdist>=2.5.0; extra == "test"
-	pytest>=6.2.5; extra == "test"
-	python-dateutil>=2.8.1; extra == "test"
-	python-xmp-toolkit>=2.0.1; (os_name != "nt" and platform_machine == "x86_64") and extra == "test"
-	sphinx-autoapi; extra == "docs"
-	sphinx-design; extra == "docs"
-	sphinx-issues; extra == "docs"
-	sphinx-rtd-theme; extra == "docs"
-	tomli; python_version < "3.11" and extra == "docs"
-	tomli; python_version < "3.11" and extra == "test"
-	typer; extra == "dev"
-	types-Pillow; extra == "mypy"
-	types-requests; extra == "mypy"
-	types-setuptools; extra == "mypy"
+	pre-commit; extra == 'dev'
+	psutil>=5.9; os_name != 'nt' and extra == 'test'
+	pybind11; extra == 'test'
+	pytest-cov>=3.0.0; extra == 'test'
+	pytest-timeout>=2.1.0; extra == 'test'
+	pytest-xdist>=2.5.0; extra == 'test'
+	pytest>=6.2.5; extra == 'test'
+	python-dateutil>=2.8.1; extra == 'test'
+	python-xmp-toolkit>=2.0.1; (os_name != 'nt' and platform_machine == 'x86_64') and extra == 'test'
+	sphinx-autoapi; extra == 'docs'
+	sphinx-design; extra == 'docs'
+	sphinx-issues; extra == 'docs'
+	sphinx-rtd-theme; extra == 'docs'
+	tomli; python_version < '3.11' and extra == 'docs'
+	tomli; python_version < '3.11' and extra == 'test'
+	typer; extra == 'dev'
+	types-Pillow; extra == 'mypy'
+	types-requests; extra == 'mypy'
+	types-setuptools; extra == 'mypy'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/deprecated[${PYTHON_USEDEP}]

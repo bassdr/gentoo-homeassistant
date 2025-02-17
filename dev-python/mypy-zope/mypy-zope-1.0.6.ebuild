@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	lxml; extra == "test"
+	lxml; extra == 'test'
 	mypy<1.12.0,>=1.0.0
-	pytest-cov; extra == "test"
-	pytest>=4.6; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest>=4.6; extra == 'test'
 	zope.interface
 	zope.schema
 "

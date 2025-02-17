@@ -20,24 +20,24 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Sphinx>=4.0
-	coverage<8,>=7; extra == "test"
-	defusedxml>=0.7.1; extra == "test"
-	erdantic<2.0; extra == "erdantic"
-	importlib-metadata>1; python_version <= "3.8"
-	mypy<2.0,>=1.9; extra == "type-checking"
-	myst-parser<4.0.0,>=3.0.0; extra == "docs"
-	pip-audit<3.0.0,>=2.7.2; extra == "security"
+	coverage<8,>=7; extra == 'test'
+	defusedxml>=0.7.1; extra == 'test'
+	erdantic<2.0; extra == 'erdantic'
+	importlib-metadata>1; python_version <= '3.8'
+	mypy<2.0,>=1.9; extra == 'type-checking'
+	myst-parser<4.0.0,>=3.0.0; extra == 'docs'
+	pip-audit<3.0.0,>=2.7.2; extra == 'security'
 	pydantic-settings<3.0.0,>=2.0
 	pydantic<3.0.0,>=2.0
-	pytest-sugar<2.0.0,>=1.0.0; extra == "test"
-	pytest<9.0.0,>=8.0.0; extra == "test"
-	ruff<0.5.0,>=0.4.0; extra == "linting"
-	sphinx-copybutton<0.6.0,>=0.5.0; extra == "docs"
-	sphinx-rtd-theme<3.0.0,>=2.0.0; extra == "docs"
-	sphinx-tabs<4,>=3; extra == "docs"
-	sphinxcontrib-mermaid<0.10.0,>=0.9.0; extra == "docs"
-	types-docutils<0.21,>=0.20; extra == "type-checking"
-	typing-extensions<5.0,>=4.11; python_version <= "3.9" and extra == "type-checking"
+	pytest-sugar<2.0.0,>=1.0.0; extra == 'test'
+	pytest<9.0.0,>=8.0.0; extra == 'test'
+	ruff<0.5.0,>=0.4.0; extra == 'linting'
+	sphinx-copybutton<0.6.0,>=0.5.0; extra == 'docs'
+	sphinx-rtd-theme<3.0.0,>=2.0.0; extra == 'docs'
+	sphinx-tabs<4,>=3; extra == 'docs'
+	sphinxcontrib-mermaid<0.10.0,>=0.9.0; extra == 'docs'
+	types-docutils<0.21,>=0.20; extra == 'type-checking'
+	typing-extensions<5.0,>=4.11; python_version <= '3.9' and extra == 'type-checking'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	erdantic? ( <dev-python/erdantic-2.0[${PYTHON_USEDEP}] )

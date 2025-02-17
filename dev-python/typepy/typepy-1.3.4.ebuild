@@ -18,14 +18,14 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	mbstrdecoder<2,>=1.0.0
-	packaging; extra == "datetime"
-	packaging; extra == "test"
-	pytest>=6.0.1; extra == "test"
-	python-dateutil<3.0.0,>=2.8.0; extra == "datetime"
-	python-dateutil<3.0.0,>=2.8.0; extra == "test"
-	pytz>=2018.9; extra == "datetime"
-	pytz>=2018.9; extra == "test"
-	tcolorpy; extra == "test"
+	packaging; extra == 'datetime'
+	packaging; extra == 'test'
+	pytest>=6.0.1; extra == 'test'
+	python-dateutil<3.0.0,>=2.8.0; extra == 'datetime'
+	python-dateutil<3.0.0,>=2.8.0; extra == 'test'
+	pytz>=2018.9; extra == 'datetime'
+	pytz>=2018.9; extra == 'test'
+	tcolorpy; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mbstrdecoder-1.0.0[${PYTHON_USEDEP}] <dev-python/mbstrdecoder-2[${PYTHON_USEDEP}]

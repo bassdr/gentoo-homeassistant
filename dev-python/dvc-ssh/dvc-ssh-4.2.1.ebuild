@@ -18,16 +18,16 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	dvc
-	dvc-ssh[tests]; extra == "dev"
-	dvc[testing]; extra == "tests"
-	mypy==1.14.1; extra == "dev"
-	pytest-cov>=4.1.0; extra == "tests"
-	pytest-docker<4,>=1; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest-xdist>=3.2; extra == "tests"
-	pytest<9,>=7; extra == "tests"
+	dvc-ssh[tests]; extra == 'dev'
+	dvc[testing]; extra == 'tests'
+	mypy==1.14.1; extra == 'dev'
+	pytest-cov>=4.1.0; extra == 'tests'
+	pytest-docker<4,>=1; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest-xdist>=3.2; extra == 'tests'
+	pytest<9,>=7; extra == 'tests'
 	sshfs[bcrypt]>=2023.4.1
-	sshfs[gssapi]>=2021.11.2; extra == "gssapi"
+	sshfs[gssapi]>=2021.11.2; extra == 'gssapi'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/dvc[${PYTHON_USEDEP}]

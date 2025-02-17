@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx>=5.0.2; extra == "docs"
+	Sphinx>=5.0.2; extra == 'docs'
 	attrs
-	black; extra == "testing"
+	black; extra == 'testing'
 	boolean.py>=3.5
 	certifi
 	click
-	doc8>=0.11.2; extra == "docs"
-	isort; extra == "testing"
+	doc8>=0.11.2; extra == 'docs'
+	isort; extra == 'testing'
 	jinja2
 	license-expression>=0.94
 	openpyxl
 	packageurl-python>=0.9.0
-	pytest!=7.0.0,>=6; extra == "testing"
-	pytest-xdist>=2; extra == "testing"
+	pytest!=7.0.0,>=6; extra == 'testing'
+	pytest-xdist>=2; extra == 'testing'
 	saneyaml
-	sphinx-reredirects>=0.1.2; extra == "docs"
-	sphinx-rtd-theme>=1.0.0; extra == "docs"
-	twine; extra == "testing"
+	sphinx-reredirects>=0.1.2; extra == 'docs'
+	sphinx-rtd-theme>=1.0.0; extra == 'docs'
+	twine; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/attrs[${PYTHON_USEDEP}]

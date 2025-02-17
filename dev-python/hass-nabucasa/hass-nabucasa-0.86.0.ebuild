@@ -27,24 +27,24 @@ REQUIRES_DIST="
 	atomicwrites-homeassistant==1.4.1
 	attrs>=19.3
 	ciso8601>=2.3.0
-	codespell==2.3.0; extra == "test"
+	codespell==2.3.0; extra == 'test'
 	cryptography>=42.0.0
-	mypy==1.13.0; extra == "test"
-	pre-commit-hooks==5.0.0; extra == "test"
-	pre-commit==4.0.1; extra == "test"
+	mypy==1.13.0; extra == 'test'
+	pre-commit-hooks==5.0.0; extra == 'test'
+	pre-commit==4.0.1; extra == 'test'
 	pycognito==2024.5.1
-	pylint==3.3.2; extra == "test"
-	pytest-aiohttp==1.0.5; extra == "test"
-	pytest-timeout==2.3.1; extra == "test"
-	pytest==8.3.4; extra == "test"
-	ruff==0.8.1; extra == "test"
+	pylint==3.3.2; extra == 'test'
+	pytest-aiohttp==1.0.5; extra == 'test'
+	pytest-timeout==2.3.1; extra == 'test'
+	pytest==8.3.4; extra == 'test'
+	ruff==0.8.1; extra == 'test'
 	snitun==0.39.1
-	syrupy==4.8.0; extra == "test"
-	tomli==2.2.1; extra == "test"
-	types_atomicwrites==1.4.5.1; extra == "test"
-	types_pyOpenSSL==24.1.0.20240722; extra == "test"
+	syrupy==4.8.0; extra == 'test'
+	tomli==2.2.1; extra == 'test'
+	types_atomicwrites==1.4.5.1; extra == 'test'
+	types_pyOpenSSL==24.1.0.20240722; extra == 'test'
 	webrtc-models<1.0.0
-	xmltodict==0.14.2; extra == "test"
+	xmltodict==0.14.2; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	~app-crypt/acme-3.0.1[${PYTHON_USEDEP}]

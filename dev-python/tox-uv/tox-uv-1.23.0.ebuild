@@ -17,13 +17,13 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	packaging>=24.2
 	tox<5,>=4.24.1
-	typing-extensions>=4.12.2; python_version < "3.10"
+	typing-extensions>=4.12.2; python_version < '3.10'
 	uv<1,>=0.5.27
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
 	>=dev-python/tox-4.24.1[${PYTHON_USEDEP}] <dev-python/tox-5[${PYTHON_USEDEP}]
-	>=dev-python/uv-0.5.27[${PYTHON_USEDEP}] <dev-python/uv-1[${PYTHON_USEDEP}]
+	>=dev-python/uv-0.5.27 <dev-python/uv-1
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

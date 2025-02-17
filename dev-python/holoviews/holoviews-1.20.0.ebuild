@@ -19,16 +19,16 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	bokeh>=3.1
 	colorcet
-	matplotlib>=3; extra == "recommended"
+	matplotlib>=3; extra == 'recommended'
 	numpy>=1.21
 	packaging
 	pandas>=1.3
 	panel>=1.0
 	param<3.0,>=2.0
-	plotly>=4.0; extra == "recommended"
-	pytest-asyncio; extra == "tests"
-	pytest-rerunfailures; extra == "tests"
-	pytest; extra == "tests"
+	plotly>=4.0; extra == 'recommended'
+	pytest-asyncio; extra == 'tests'
+	pytest-rerunfailures; extra == 'tests'
+	pytest; extra == 'tests'
 	pyviz-comms>=2.1
 "
 GENERATED_RDEPEND="${RDEPEND}

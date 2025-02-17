@@ -19,17 +19,17 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	PasteDeploy; extra == "tests"
-	Sphinx>=3.0.0; extra == "docs"
-	WSGIProxy2; extra == "tests"
+	PasteDeploy; extra == 'tests'
+	Sphinx>=3.0.0; extra == 'docs'
+	WSGIProxy2; extra == 'tests'
 	WebOb>=1.2
 	beautifulsoup4
-	coverage; extra == "tests"
-	docutils; extra == "docs"
-	pylons-sphinx-themes>=1.0.8; extra == "docs"
-	pyquery; extra == "tests"
-	pytest-cov; extra == "tests"
-	pytest; extra == "tests"
+	coverage; extra == 'tests'
+	docutils; extra == 'docs'
+	pylons-sphinx-themes>=1.0.8; extra == 'docs'
+	pyquery; extra == 'tests'
+	pytest-cov; extra == 'tests'
+	pytest; extra == 'tests'
 	waitress>=3.0.2
 "
 GENERATED_RDEPEND="${RDEPEND}

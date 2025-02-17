@@ -18,15 +18,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="retry"
-IUSE="${GENERATED_IUSE} +retry test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE} +retry"
 
 DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp
 	metar
-	tenacity; extra == "retry"
+	tenacity; extra == 'retry'
 	yarl
 "
 GENERATED_RDEPEND="${RDEPEND}
@@ -35,10 +34,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	retry? ( dev-python/tenacity[${PYTHON_USEDEP}] )
 	dev-python/yarl[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/python-metar[${PYTHON_USEDEP}]
-	retry? ( dev-python/tenacity[${PYTHON_USEDEP}] )
-"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

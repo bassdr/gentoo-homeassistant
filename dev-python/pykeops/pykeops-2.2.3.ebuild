@@ -17,29 +17,29 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	breathe; extra == "full"
-	faiss; extra == "full"
-	gpytorch; extra == "full"
-	h5py; extra == "full"
-	imageio; extra == "full"
-	jax; extra == "full"
-	jaxlib; extra == "full"
+	breathe; extra == 'full'
+	faiss; extra == 'full'
+	gpytorch; extra == 'full'
+	h5py; extra == 'full'
+	imageio; extra == 'full'
+	jax; extra == 'full'
+	jaxlib; extra == 'full'
 	keopscore==2.2.3
-	matplotlib; extra == "full"
-	multiprocess; extra == "full"
+	matplotlib; extra == 'full'
+	multiprocess; extra == 'full'
 	numpy
-	numpy; extra == "test"
+	numpy; extra == 'test'
 	pybind11
-	pytest; extra == "test"
-	recommonmark; extra == "full"
-	scikit-learn; extra == "full"
-	sphinx-gallery; extra == "full"
-	sphinx-prompt; extra == "full"
-	sphinx; extra == "full"
-	sphinx_rtd_theme; extra == "full"
-	sphinxcontrib-httpdomain; extra == "full"
-	torch; extra == "full"
-	torch; extra == "test"
+	pytest; extra == 'test'
+	recommonmark; extra == 'full'
+	scikit-learn; extra == 'full'
+	sphinx-gallery; extra == 'full'
+	sphinx-prompt; extra == 'full'
+	sphinx; extra == 'full'
+	sphinx_rtd_theme; extra == 'full'
+	sphinxcontrib-httpdomain; extra == 'full'
+	torch; extra == 'full'
+	torch; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	full? ( dev-python/breathe[${PYTHON_USEDEP}] )

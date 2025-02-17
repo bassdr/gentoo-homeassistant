@@ -36,11 +36,4 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyserial-asyncio-0.5[${PYTHON_USEDEP}]
 	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/PyPubSub[${PYTHON_USEDEP}]
-	dev-python/aiofiles[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	>=dev-python/pyserial-asyncio-0.5[${PYTHON_USEDEP}]
-	dev-python/pyserial[${PYTHON_USEDEP}]
-	dev-python/voluptuous[${PYTHON_USEDEP}]
-"
+RDEPEND="${GENERATED_RDEPEND}"

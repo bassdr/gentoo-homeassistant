@@ -26,13 +26,13 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	Sphinx<6.0,>=5.0; extra == "docs"
-	async-timeout>=3.0.0; python_version < "3.11"
+	Sphinx<6.0,>=5.0; extra == 'docs'
+	async-timeout>=3.0.0; python_version < '3.11'
 	bleak-retry-connector>=2.3.0
 	bleak>=0.19.0
 	flux-led>=0.28.32
-	myst-parser<0.19,>=0.18; extra == "docs"
-	sphinx-rtd-theme<2.0,>=1.0; extra == "docs"
+	myst-parser<0.19,>=0.18; extra == 'docs'
+	sphinx-rtd-theme<2.0,>=1.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.19.0[${PYTHON_USEDEP}]

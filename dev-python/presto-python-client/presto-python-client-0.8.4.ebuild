@@ -23,7 +23,7 @@ REQUIRES_DIST="
 	google-auth ; extra == 'google_auth'
 	google-auth ; extra == 'tests'
 	httpretty ; extra == 'tests'
-	ipaddress ; python_version=="2.7"
+	ipaddress ; python_version=='2.7'
 	pytest ; extra == 'tests'
 	pytest-runner ; extra == 'tests'
 	requests
@@ -31,7 +31,7 @@ REQUIRES_DIST="
 	requests-kerberos ; extra == 'kerberos'
 	requests-kerberos ; extra == 'tests'
 	six
-	typing ; python_version=="2.7"
+	typing ; python_version=='2.7'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]

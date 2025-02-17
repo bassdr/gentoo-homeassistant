@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	cattrs>=23.1.2
 	lsprotocol==2023.0.1
-	websockets>=11.0.3; extra == "ws"
+	websockets>=11.0.3; extra == 'ws'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cattrs-23.1.2[${PYTHON_USEDEP}]

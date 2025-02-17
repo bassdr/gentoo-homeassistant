@@ -24,17 +24,17 @@ DEPEND="
 	>=dev-libs/libuv-1.11.0:=
 "
 REQUIRES_DIST="
-	Cython~=3.0; extra == "dev"
-	Sphinx~=4.1.2; extra == "docs"
-	aiohttp>=3.10.5; extra == "test"
-	flake8~=5.0; extra == "test"
-	mypy>=0.800; extra == "test"
-	psutil; extra == "test"
-	pyOpenSSL~=23.0.0; extra == "test"
-	pycodestyle~=2.9.0; extra == "test"
-	setuptools>=60; extra == "dev"
-	sphinx-rtd-theme~=0.5.2; extra == "docs"
-	sphinxcontrib-asyncio~=0.3.0; extra == "docs"
+	Cython~=3.0; extra == 'dev'
+	Sphinx~=4.1.2; extra == 'docs'
+	aiohttp>=3.10.5; extra == 'test'
+	flake8~=5.0; extra == 'test'
+	mypy>=0.800; extra == 'test'
+	psutil; extra == 'test'
+	pyOpenSSL~=23.0.0; extra == 'test'
+	pycodestyle~=2.9.0; extra == 'test'
+	setuptools>=60; extra == 'dev'
+	sphinx-rtd-theme~=0.5.2; extra == 'docs'
+	sphinxcontrib-asyncio~=0.3.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-4.1.2[${PYTHON_USEDEP}] =dev-python/sphinx-4.1*[${PYTHON_USEDEP}] )

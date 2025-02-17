@@ -17,30 +17,30 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "tests"
-	boto3; extra == "tests"
-	httpretty<1.1; extra == "tests"
-	isort; extra == "tests"
-	keyring; extra == "external-authentication-token-cache"
-	keyring; extra == "tests"
-	krb5==0.5.1; extra == "gssapi"
-	krb5==0.5.1; extra == "tests"
+	black; extra == 'tests'
+	boto3; extra == 'tests'
+	httpretty<1.1; extra == 'tests'
+	isort; extra == 'tests'
+	keyring; extra == 'external-authentication-token-cache'
+	keyring; extra == 'tests'
+	krb5==0.5.1; extra == 'gssapi'
+	krb5==0.5.1; extra == 'tests'
 	lz4
-	pre-commit; extra == "tests"
-	pytest-runner; extra == "tests"
-	pytest; extra == "tests"
+	pre-commit; extra == 'tests'
+	pytest-runner; extra == 'tests'
+	pytest; extra == 'tests'
 	python-dateutil
 	pytz
 	requests>=2.31.0
-	requests_gssapi; extra == "gssapi"
-	requests_gssapi; extra == "tests"
-	requests_kerberos; extra == "all"
-	requests_kerberos; extra == "kerberos"
-	requests_kerberos; extra == "tests"
-	sqlalchemy>=1.3; extra == "all"
-	sqlalchemy>=1.3; extra == "sqlalchemy"
-	sqlalchemy>=1.3; extra == "tests"
-	testcontainers; extra == "tests"
+	requests_gssapi; extra == 'gssapi'
+	requests_gssapi; extra == 'tests'
+	requests_kerberos; extra == 'all'
+	requests_kerberos; extra == 'kerberos'
+	requests_kerberos; extra == 'tests'
+	sqlalchemy>=1.3; extra == 'all'
+	sqlalchemy>=1.3; extra == 'sqlalchemy'
+	sqlalchemy>=1.3; extra == 'tests'
+	testcontainers; extra == 'tests'
 	tzlocal
 	zstandard
 "

@@ -17,8 +17,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	numpy
-	pytest; extra == "tests"
-	trimesh; extra == "tests"
+	pytest; extra == 'tests'
+	trimesh; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]

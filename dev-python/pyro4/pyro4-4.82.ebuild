@@ -18,8 +18,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	selectors34 ; python_version<'3.4'
-	serpent (<1.30,>=1.27) ; python_version < "3.2"
-	serpent (>=1.27) ; python_version >= "3.2"
+	serpent (<1.30,>=1.27) ; python_version < '3.2'
+	serpent (>=1.27) ; python_version >= '3.2'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/serpent-1.27[${PYTHON_USEDEP}]

@@ -28,8 +28,8 @@ REQUIRES_DIST="
 	arrow>=1.2
 	cryptography>=43.0.0
 	pyotp>=2.0
-	pytest<8,>=7; extra == "dev"
-	python-dotenv<2,>=1; extra == "dev"
+	pytest<8,>=7; extra == 'dev'
+	python-dotenv<2,>=1; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}]

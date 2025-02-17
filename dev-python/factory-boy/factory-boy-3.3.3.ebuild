@@ -17,22 +17,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Django; extra == "dev"
+	Django; extra == 'dev'
 	Faker>=0.7.0
-	Pillow; extra == "dev"
-	SQLAlchemy; extra == "dev"
-	Sphinx; extra == "doc"
-	coverage; extra == "dev"
-	flake8; extra == "dev"
-	isort; extra == "dev"
-	mongoengine; extra == "dev"
-	mongomock; extra == "dev"
-	mypy; extra == "dev"
-	sphinx-rtd-theme; extra == "doc"
-	sphinxcontrib-spelling; extra == "doc"
-	tox; extra == "dev"
-	wheel>=0.32.0; extra == "dev"
-	zest.releaser[recommended]; extra == "dev"
+	Pillow; extra == 'dev'
+	SQLAlchemy; extra == 'dev'
+	Sphinx; extra == 'doc'
+	coverage; extra == 'dev'
+	flake8; extra == 'dev'
+	isort; extra == 'dev'
+	mongoengine; extra == 'dev'
+	mongomock; extra == 'dev'
+	mypy; extra == 'dev'
+	sphinx-rtd-theme; extra == 'doc'
+	sphinxcontrib-spelling; extra == 'doc'
+	tox; extra == 'dev'
+	wheel>=0.32.0; extra == 'dev'
+	zest.releaser[recommended]; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/faker-0.7.0[${PYTHON_USEDEP}]

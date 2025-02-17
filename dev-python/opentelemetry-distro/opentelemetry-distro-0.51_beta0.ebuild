@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	opentelemetry-api~=1.12
-	opentelemetry-exporter-otlp==1.30.0; extra == "otlp"
+	opentelemetry-exporter-otlp==1.30.0; extra == 'otlp'
 	opentelemetry-instrumentation==0.51b0
 	opentelemetry-sdk~=1.13
 "

@@ -17,17 +17,17 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage; extra == "testing"
-	eventlet!=0.36.0,>=0.24.1; extra == "eventlet"
-	eventlet; extra == "testing"
-	gevent; extra == "testing"
-	gevent>=1.4.0; extra == "gevent"
-	importlib-metadata; python_version < "3.8"
+	coverage; extra == 'testing'
+	eventlet!=0.36.0,>=0.24.1; extra == 'eventlet'
+	eventlet; extra == 'testing'
+	gevent; extra == 'testing'
+	gevent>=1.4.0; extra == 'gevent'
+	importlib-metadata; python_version < '3.8'
 	packaging
-	pytest-cov; extra == "testing"
-	pytest; extra == "testing"
-	setproctitle; extra == "setproctitle"
-	tornado>=0.2; extra == "tornado"
+	pytest-cov; extra == 'testing'
+	pytest; extra == 'testing'
+	setproctitle; extra == 'setproctitle'
+	tornado>=0.2; extra == 'tornado'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	eventlet? ( >=dev-python/eventlet-0.24.1[${PYTHON_USEDEP}] !~dev-python/eventlet-0.36.0[${PYTHON_USEDEP}] )

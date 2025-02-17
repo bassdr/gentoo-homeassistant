@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aws-cdk-lib<3.0,>2.0; extra == "cdkv2"
-	aws_cdk.aws-s3-assets<2.0,>=1.85.0; extra == "cdk"
-	aws_cdk.aws_iam<2.0,>=1.85.0; extra == "cdk"
-	aws_cdk.cloudformation-include<2.0,>=1.85.0; extra == "cdk"
-	aws_cdk.core<2.0,>=1.85.0; extra == "cdk"
+	aws-cdk-lib<3.0,>2.0; extra == 'cdkv2'
+	aws_cdk.aws-s3-assets<2.0,>=1.85.0; extra == 'cdk'
+	aws_cdk.aws_iam<2.0,>=1.85.0; extra == 'cdk'
+	aws_cdk.cloudformation-include<2.0,>=1.85.0; extra == 'cdk'
+	aws_cdk.core<2.0,>=1.85.0; extra == 'cdk'
 	botocore<2.0.0,>=1.14.0
 	click<9.0,>=7
 	inquirer<4.0.0,>=3.0.0
@@ -30,8 +30,8 @@ REQUIRES_DIST="
 	pyyaml<7.0.0,>=5.3.1
 	setuptools
 	six<2.0.0,>=1.10.0
-	typing-extensions<5.0.0,>=4.0.0; python_version < "3.8"
-	watchdog==2.3.1; extra == "event-file-poller"
+	typing-extensions<5.0.0,>=4.0.0; python_version < '3.8'
+	watchdog==2.3.1; extra == 'event-file-poller'
 	wheel
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -19,9 +19,9 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	exceptiongroup>=1.1.0; python_version < "3.11"
+	exceptiongroup>=1.1.0; python_version < '3.11'
 	hypercorn[trio]>=0.12.0
-	pydata_sphinx_theme; extra == "docs"
+	pydata_sphinx_theme; extra == 'docs'
 	quart>=0.19
 	trio>=0.19.0
 "

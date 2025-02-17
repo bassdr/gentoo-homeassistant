@@ -17,48 +17,48 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	alabaster; extra == "rtd"
-	altair; extra == "rtd"
-	beautifulsoup4; extra == "testing"
-	bokeh; extra == "rtd"
-	coconut>=1.4.3; extra == "rtd"
-	coverage>=6.4; extra == "testing"
+	alabaster; extra == 'rtd'
+	altair; extra == 'rtd'
+	beautifulsoup4; extra == 'testing'
+	bokeh; extra == 'rtd'
+	coconut>=1.4.3; extra == 'rtd'
+	coverage>=6.4; extra == 'testing'
 	importlib_metadata
 	ipykernel
-	ipykernel>=5.5; extra == "rtd"
-	ipykernel>=5.5; extra == "testing"
+	ipykernel>=5.5; extra == 'rtd'
+	ipykernel>=5.5; extra == 'testing'
 	ipython
-	ipython!=8.1.0; extra == "testing"
-	ipywidgets; extra == "rtd"
-	ipywidgets>=8; extra == "testing"
+	ipython!=8.1.0; extra == 'testing'
+	ipywidgets; extra == 'rtd'
+	ipywidgets>=8; extra == 'testing'
 	jupyter-cache>=0.5
-	jupytext>=1.11.2; extra == "rtd"
-	jupytext>=1.11.2; extra == "testing"
-	matplotlib; extra == "rtd"
-	matplotlib==3.7.*; extra == "testing"
+	jupytext>=1.11.2; extra == 'rtd'
+	jupytext>=1.11.2; extra == 'testing'
+	matplotlib; extra == 'rtd'
+	matplotlib==3.7.*; extra == 'testing'
 	myst-parser>=1.0.0
 	nbclient
-	nbdime; extra == "testing"
+	nbdime; extra == 'testing'
 	nbformat>=5.0
-	numpy; extra == "rtd"
-	numpy; extra == "testing"
-	pandas; extra == "rtd"
-	pandas; extra == "testing"
-	plotly; extra == "rtd"
-	pre-commit; extra == "code-style"
-	pyarrow; extra == "testing"
-	pytest-cov>=3; extra == "testing"
-	pytest-param-files; extra == "testing"
-	pytest-regressions; extra == "testing"
-	pytest; extra == "testing"
+	numpy; extra == 'rtd'
+	numpy; extra == 'testing'
+	pandas; extra == 'rtd'
+	pandas; extra == 'testing'
+	plotly; extra == 'rtd'
+	pre-commit; extra == 'code-style'
+	pyarrow; extra == 'testing'
+	pytest-cov>=3; extra == 'testing'
+	pytest-param-files; extra == 'testing'
+	pytest-regressions; extra == 'testing'
+	pytest; extra == 'testing'
 	pyyaml
-	sphinx-book-theme>=0.3; extra == "rtd"
-	sphinx-copybutton; extra == "rtd"
-	sphinx-design; extra == "rtd"
+	sphinx-book-theme>=0.3; extra == 'rtd'
+	sphinx-copybutton; extra == 'rtd'
+	sphinx-design; extra == 'rtd'
 	sphinx>=5
-	sphinxcontrib-bibtex; extra == "rtd"
-	sympy; extra == "rtd"
-	sympy>=1.10.1; extra == "testing"
+	sphinxcontrib-bibtex; extra == 'rtd'
+	sympy; extra == 'rtd'
+	sympy>=1.10.1; extra == 'testing'
 	typing-extensions
 "
 GENERATED_RDEPEND="${RDEPEND}

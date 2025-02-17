@@ -28,11 +28,11 @@ REQUIRES_DIST="
 	async-timeout>=3.0.1
 	attrs>=18.2.0
 	cryptography>=2.5
-	pylint==3.1.0; extra == "lint"
-	pytest-aiohttp==1.0.5; extra == "test"
-	pytest-timeout==2.3.1; extra == "test"
-	pytest==8.2.0; extra == "test"
-	ruff==0.4.2; extra == "lint"
+	pylint==3.1.0; extra == 'lint'
+	pytest-aiohttp==1.0.5; extra == 'test'
+	pytest-timeout==2.3.1; extra == 'test'
+	pytest==8.2.0; extra == 'test'
+	ruff==0.4.2; extra == 'lint'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.9.3[${PYTHON_USEDEP}]

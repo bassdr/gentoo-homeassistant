@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage-conditional-plugin>=0.5; extra == "testing"
-	coverage[toml]>=6.0; extra == "testing"
-	mypy>=1.0; extra == "type-check"
-	myst-parser>=3; extra == "docs"
-	pytest-cov>=3.0; extra == "testing"
-	pytest-randomly>=3.0; extra == "testing"
-	pytest-sugar>=0.9.5; extra == "testing"
-	pytest>=7.2; extra == "testing"
+	coverage-conditional-plugin>=0.5; extra == 'testing'
+	coverage[toml]>=6.0; extra == 'testing'
+	mypy>=1.0; extra == 'type-check'
+	myst-parser>=3; extra == 'docs'
+	pytest-cov>=3.0; extra == 'testing'
+	pytest-randomly>=3.0; extra == 'testing'
+	pytest-sugar>=0.9.5; extra == 'testing'
+	pytest>=7.2; extra == 'testing'
 	rstcheck-core>=1.1
-	rstcheck[docs,sphinx,testing,toml,type-check]; extra == "dev"
-	sphinx-autobuild>=2021.3.14; extra == "docs"
-	sphinx-click>=4.0.3; extra == "docs"
-	sphinx-rtd-theme>=1.2; extra == "docs"
-	sphinx>=5.0; extra == "docs"
-	sphinx>=5.0; extra == "sphinx"
-	sphinxcontrib-spelling>=7.3; extra == "docs"
-	tomli>=2.0; python_version <= "3.10" and extra == "toml"
-	tox>=3.15; extra == "dev"
+	rstcheck[docs,sphinx,testing,toml,type-check]; extra == 'dev'
+	sphinx-autobuild>=2021.3.14; extra == 'docs'
+	sphinx-click>=4.0.3; extra == 'docs'
+	sphinx-rtd-theme>=1.2; extra == 'docs'
+	sphinx>=5.0; extra == 'docs'
+	sphinx>=5.0; extra == 'sphinx'
+	sphinxcontrib-spelling>=7.3; extra == 'docs'
+	tomli>=2.0; python_version <= '3.10' and extra == 'toml'
+	tox>=3.15; extra == 'dev'
 	typer>=0.12.0
 "
 GENERATED_RDEPEND="${RDEPEND}

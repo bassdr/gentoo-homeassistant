@@ -18,40 +18,40 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	bleach
-	bokeh-fastapi>=0.1.1; extra == "fastapi"
+	bokeh-fastapi>=0.1.1; extra == 'fastapi'
 	bokeh<3.7.0,>=3.5.0
-	fastapi[standard]; extra == "fastapi"
-	holoviews>=1.18.0; extra == "recommended"
-	jupyterlab; extra == "recommended"
+	fastapi[standard]; extra == 'fastapi'
+	holoviews>=1.18.0; extra == 'recommended'
+	jupyterlab; extra == 'recommended'
 	linkify-it-py
 	markdown
 	markdown-it-py
-	matplotlib; extra == "recommended"
+	matplotlib; extra == 'recommended'
 	mdit-py-plugins
-	mypy; extra == "mypy"
+	mypy; extra == 'mypy'
 	packaging
-	pandas-stubs; extra == "mypy"
+	pandas-stubs; extra == 'mypy'
 	pandas>=1.2
 	param<3.0,>=2.1.0
-	pillow; extra == "recommended"
-	plotly; extra == "recommended"
-	psutil; extra == "tests"
-	pytest-asyncio; extra == "tests"
-	pytest-rerunfailures; extra == "tests"
-	pytest-xdist; extra == "tests"
-	pytest; extra == "tests"
+	pillow; extra == 'recommended'
+	plotly; extra == 'recommended'
+	psutil; extra == 'tests'
+	pytest-asyncio; extra == 'tests'
+	pytest-rerunfailures; extra == 'tests'
+	pytest-xdist; extra == 'tests'
+	pytest; extra == 'tests'
 	pyviz-comms>=2.0.0
 	requests
 	tqdm
-	types-bleach; extra == "mypy"
-	types-croniter; extra == "mypy"
-	types-markdown; extra == "mypy"
-	types-psutil; extra == "mypy"
-	types-requests; extra == "mypy"
-	types-tqdm; extra == "mypy"
+	types-bleach; extra == 'mypy'
+	types-croniter; extra == 'mypy'
+	types-markdown; extra == 'mypy'
+	types-psutil; extra == 'mypy'
+	types-requests; extra == 'mypy'
+	types-tqdm; extra == 'mypy'
 	typing-extensions
-	typing-extensions; extra == "mypy"
-	watchfiles; extra == "dev"
+	typing-extensions; extra == 'mypy'
+	watchfiles; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/bleach[${PYTHON_USEDEP}]

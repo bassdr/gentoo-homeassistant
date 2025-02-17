@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	Pillow
 	absl-py
-	dataclasses; python_version < "3.7"
+	dataclasses; python_version < '3.7'
 	dm_env
 	etils
 	flask
@@ -37,11 +37,11 @@ REQUIRES_DIST="
 	numpy
 	optax
 	orbax-checkpoint
-	pytest; extra == "develop"
+	pytest; extra == 'develop'
 	pytinyrenderer
 	scipy
 	tensorboardX
-	transforms3d; extra == "develop"
+	transforms3d; extra == 'develop'
 	trimesh
 	typing-extensions
 "

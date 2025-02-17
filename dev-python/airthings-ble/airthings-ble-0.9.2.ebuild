@@ -25,7 +25,7 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	async-interrupt>=1.1.1
-	async-timeout>=4.0.1; python_version < "3.11"
+	async-timeout>=4.0.1; python_version < '3.11'
 	bleak-retry-connector>=1.8.0
 	bleak>=0.15.1
 "

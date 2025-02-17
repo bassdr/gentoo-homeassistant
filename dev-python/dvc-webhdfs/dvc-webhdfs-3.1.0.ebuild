@@ -40,7 +40,7 @@ REQUIRES_DIST="
 	pytest-lazy-fixture ==0.6.3 ; extra == 'tests'
 	pytest-mock ==3.6.1 ; extra == 'tests'
 	pytest-xdist ==2.4.0 ; extra == 'tests'
-	pywin32 >=225 ; (sys_platform == "win32") and extra == 'tests'
+	pywin32 >=225 ; (sys_platform == 'win32') and extra == 'tests'
 	requests-kerberos ==0.13.0 ; extra == 'kerberos'
 	types-requests ==2.25.11 ; extra == 'tests'
 	types-tabulate ==0.8.3 ; extra == 'tests'

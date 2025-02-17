@@ -24,7 +24,7 @@ REQUIRES_DIST="
 	pytest ; extra == 'test'
 	pytest-benchmark ; extra == 'test'
 	pytest-cov ; extra == 'test'
-	regex ; python_version < "3"
+	regex ; python_version < '3'
 	sphinx ; extra == 'dev'
 	sphinx-rtd-theme ; extra == 'dev'
 	sphinx-tabs ; extra == 'dev'

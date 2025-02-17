@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	mypy ; extra == 'typing'
 	pycryptodome
 	pydocstyle ; extra == 'testing'

@@ -20,39 +20,39 @@ GENERATED_IUSE="development pandas secure-local-storage"
 IUSE="${GENERATED_IUSE} +secure-local-storage pandas"
 
 REQUIRES_DIST="
-	Cython; extra == "development"
+	Cython; extra == 'development'
 	asn1crypto<2.0.0,>0.24.0
 	certifi>=2017.4.17
 	cffi<2.0.0,>=1.9
 	charset_normalizer<4,>=2
-	coverage; extra == "development"
+	coverage; extra == 'development'
 	cryptography>=3.1.0
 	filelock<4,>=3.5
 	idna<4,>=2.5
-	importlib-metadata; python_version < "3.8"
-	keyring<26.0.0,>=23.1.0; extra == "secure-local-storage"
-	more-itertools; extra == "development"
-	numpy<1.27.0; extra == "development"
+	importlib-metadata; python_version < '3.8'
+	keyring<26.0.0,>=23.1.0; extra == 'secure-local-storage'
+	more-itertools; extra == 'development'
+	numpy<1.27.0; extra == 'development'
 	packaging
-	pandas<3.0.0,>=1.0.0; extra == "pandas"
-	pendulum!=2.1.1; extra == "development"
-	pexpect; extra == "development"
+	pandas<3.0.0,>=1.0.0; extra == 'pandas'
+	pendulum!=2.1.1; extra == 'development'
+	pexpect; extra == 'development'
 	platformdirs<5.0.0,>=2.6.0
 	pyOpenSSL<25.0.0,>=22.0.0
-	pyarrow; extra == "pandas"
+	pyarrow; extra == 'pandas'
 	pyjwt<3.0.0
-	pytest-cov; extra == "development"
-	pytest-rerunfailures; extra == "development"
-	pytest-timeout; extra == "development"
-	pytest-xdist; extra == "development"
-	pytest<7.5.0; extra == "development"
+	pytest-cov; extra == 'development'
+	pytest-rerunfailures; extra == 'development'
+	pytest-timeout; extra == 'development'
+	pytest-xdist; extra == 'development'
+	pytest<7.5.0; extra == 'development'
 	pytz
-	pytzdata; extra == "development"
+	pytzdata; extra == 'development'
 	requests<3.0.0
 	sortedcontainers>=2.4.0
 	tomlkit
 	typing_extensions<5,>=4.3
-	urllib3<2.0.0,>=1.21.1; python_version < "3.10"
+	urllib3<2.0.0,>=1.21.1; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/asn1crypto-0.24.0[${PYTHON_USEDEP}] <dev-python/asn1crypto-2.0.0[${PYTHON_USEDEP}]

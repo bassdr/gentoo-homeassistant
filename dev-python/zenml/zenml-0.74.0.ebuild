@@ -17,104 +17,104 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Jinja2; extra == "server"
-	adlfs>=2021.10.0; extra == "adlfs"
+	Jinja2; extra == 'server'
+	adlfs>=2021.10.0; extra == 'adlfs'
 	alembic<1.9.0,>=1.8.1
-	aws-profile-manager>=0.5.0; extra == "connectors-aws"
-	azure-ai-ml==1.23.1; extra == "azureml"
-	azure-identity>=1.4.0; extra == "secrets-azure" or extra == "connectors-azure"
-	azure-keyvault-secrets>=4.0.0; extra == "secrets-azure"
-	azure-mgmt-containerregistry>=10.0.0; extra == "connectors-azure"
-	azure-mgmt-containerservice>=20.0.0; extra == "connectors-azure"
-	azure-mgmt-resource>=21.0.0; extra == "connectors-azure"
-	azure-mgmt-storage>=20.0.0; extra == "connectors-azure"
-	azure-storage-blob>=12.0.0; extra == "connectors-azure"
-	bandit<2.0.0,>=1.7.5; extra == "dev"
+	aws-profile-manager>=0.5.0; extra == 'connectors-aws'
+	azure-ai-ml==1.23.1; extra == 'azureml'
+	azure-identity>=1.4.0; extra == 'secrets-azure' or extra == 'connectors-azure'
+	azure-keyvault-secrets>=4.0.0; extra == 'secrets-azure'
+	azure-mgmt-containerregistry>=10.0.0; extra == 'connectors-azure'
+	azure-mgmt-containerservice>=20.0.0; extra == 'connectors-azure'
+	azure-mgmt-resource>=21.0.0; extra == 'connectors-azure'
+	azure-mgmt-storage>=20.0.0; extra == 'connectors-azure'
+	azure-storage-blob>=12.0.0; extra == 'connectors-azure'
+	bandit<2.0.0,>=1.7.5; extra == 'dev'
 	bcrypt==4.0.1
-	boto3>=1.16.0; extra == "secrets-aws" or extra == "connectors-aws"
+	boto3>=1.16.0; extra == 'secrets-aws' or extra == 'connectors-aws'
 	click<8.1.4,>=8.0.1
 	cloudpickle<3,>=2.0.0
-	copier>=8.1.0; extra == "templates"
-	coverage[toml]<6.0,>=5.5; extra == "dev"
-	darglint<2.0.0,>=1.8.1; extra == "dev"
+	copier>=8.1.0; extra == 'templates'
+	coverage[toml]<6.0,>=5.5; extra == 'dev'
+	darglint<2.0.0,>=1.8.1; extra == 'dev'
 	distro<2.0.0,>=1.6.0
 	docker<7.2.0,>=7.1.0
-	fastapi<=0.110,>=0.100; extra == "server"
-	gcsfs>=2022.11.0; extra == "gcsfs"
+	fastapi<=0.110,>=0.100; extra == 'server'
+	gcsfs>=2022.11.0; extra == 'gcsfs'
 	gitpython<4.0.0,>=3.1.18
-	google-cloud-aiplatform>=1.34.0; extra == "vertex"
-	google-cloud-artifact-registry>=1.11.3; extra == "connectors-gcp"
-	google-cloud-container>=2.21.0; extra == "connectors-gcp"
-	google-cloud-secret-manager>=2.12.5; extra == "secrets-gcp"
-	google-cloud-storage>=2.9.0; extra == "connectors-gcp"
-	hvac>=0.11.2; extra == "secrets-hashicorp"
-	hypothesis<7.0.0,>=6.43.1; extra == "dev"
-	importlib_metadata<=7.0.0; python_version < "3.10"
-	ipinfo>=4.4.3; extra == "server"
-	itsdangerous<2.3.0,>=2.2.0; extra == "server"
-	jinja2-time<0.3.0,>=0.2.0; extra == "templates"
-	kfp>=2.6.0; extra == "vertex"
-	kubernetes>=18.20.0; extra == "connectors-kubernetes" or extra == "connectors-aws" or extra == "connectors-gcp" or extra == "connectors-azure"
-	maison<2.0; extra == "dev"
-	mike<2.0.0,>=1.1.2; extra == "dev"
-	mkdocs-awesome-pages-plugin<3.0.0,>=2.6.1; extra == "dev"
-	mkdocs-material<9.0.0,>=8.1.7; extra == "dev"
-	mkdocs<2.0.0,>=1.2.3; extra == "dev"
-	mkdocstrings<0.18.0,>=0.17.0; extra == "dev"
-	mypy==1.7.1; extra == "dev"
-	orjson<3.11.0,>=3.10.0; extra == "server"
+	google-cloud-aiplatform>=1.34.0; extra == 'vertex'
+	google-cloud-artifact-registry>=1.11.3; extra == 'connectors-gcp'
+	google-cloud-container>=2.21.0; extra == 'connectors-gcp'
+	google-cloud-secret-manager>=2.12.5; extra == 'secrets-gcp'
+	google-cloud-storage>=2.9.0; extra == 'connectors-gcp'
+	hvac>=0.11.2; extra == 'secrets-hashicorp'
+	hypothesis<7.0.0,>=6.43.1; extra == 'dev'
+	importlib_metadata<=7.0.0; python_version < '3.10'
+	ipinfo>=4.4.3; extra == 'server'
+	itsdangerous<2.3.0,>=2.2.0; extra == 'server'
+	jinja2-time<0.3.0,>=0.2.0; extra == 'templates'
+	kfp>=2.6.0; extra == 'vertex'
+	kubernetes>=18.20.0; extra == 'connectors-kubernetes' or extra == 'connectors-aws' or extra == 'connectors-gcp' or extra == 'connectors-azure'
+	maison<2.0; extra == 'dev'
+	mike<2.0.0,>=1.1.2; extra == 'dev'
+	mkdocs-awesome-pages-plugin<3.0.0,>=2.6.1; extra == 'dev'
+	mkdocs-material<9.0.0,>=8.1.7; extra == 'dev'
+	mkdocs<2.0.0,>=1.2.3; extra == 'dev'
+	mkdocstrings<0.18.0,>=0.17.0; extra == 'dev'
+	mypy==1.7.1; extra == 'dev'
+	orjson<3.11.0,>=3.10.0; extra == 'server'
 	packaging>=24.1
 	passlib[bcrypt]<1.8.0,>=1.7.4
 	psutil>=5.0.0
 	pydantic-settings
 	pydantic<2.9,>=2.8
-	pyjwt[crypto]==2.7.*; extra == "server"
-	pyment<0.4.0,>=0.3.3; extra == "dev"
+	pyjwt[crypto]==2.7.*; extra == 'server'
+	pyment<0.4.0,>=0.3.3; extra == 'dev'
 	pymysql<1.2.0,>=1.1.1
-	pytest-clarity<2.0.0,>=1.0.1; extra == "dev"
-	pytest-instafail>=0.5.0; extra == "dev"
-	pytest-mock<4.0.0,>=3.6.1; extra == "dev"
-	pytest-randomly<4.0.0,>=3.10.1; extra == "dev"
-	pytest-rerunfailures>=13.0; extra == "dev"
-	pytest-split<0.9.0,>=0.8.1; extra == "dev"
-	pytest<8.0.0,>=7.4.0; extra == "dev"
+	pytest-clarity<2.0.0,>=1.0.1; extra == 'dev'
+	pytest-instafail>=0.5.0; extra == 'dev'
+	pytest-mock<4.0.0,>=3.6.1; extra == 'dev'
+	pytest-randomly<4.0.0,>=3.10.1; extra == 'dev'
+	pytest-rerunfailures>=13.0; extra == 'dev'
+	pytest-split<0.9.0,>=0.8.1; extra == 'dev'
+	pytest<8.0.0,>=7.4.0; extra == 'dev'
 	python-dateutil<3.0.0,>=2.8.1
-	python-multipart<0.1.0,>=0.0.9; extra == "server"
-	pyyaml-include<2.0; extra == "templates"
+	python-multipart<0.1.0,>=0.0.9; extra == 'server'
+	pyyaml-include<2.0; extra == 'templates'
 	pyyaml>=6.0.1
-	requests<3.0.0,>=2.27.11; extra == "connectors-azure"
+	requests<3.0.0,>=2.27.11; extra == 'connectors-azure'
 	rich[jupyter]>=12.0.0
-	ruff>=0.1.7; extra == "templates" or extra == "dev"
-	s3fs>=2022.11.0; extra == "s3fs"
-	sagemaker>=2.199.0; extra == "sagemaker"
-	secure<0.4.0,>=0.3.0; extra == "server"
+	ruff>=0.1.7; extra == 'templates' or extra == 'dev'
+	s3fs>=2022.11.0; extra == 's3fs'
+	sagemaker>=2.199.0; extra == 'sagemaker'
+	secure<0.4.0,>=0.3.0; extra == 'server'
 	setuptools
 	sqlalchemy<3.0.0,>=2.0.0
 	sqlalchemy_utils
 	sqlmodel==0.0.18
-	tldextract<5.2.0,>=5.1.0; extra == "server"
-	tox<4.0.0,>=3.24.3; extra == "dev"
-	types-Markdown<4.0.0,>=3.3.6; extra == "dev"
-	types-Pillow<10.0.0,>=9.2.1; extra == "dev"
-	types-PyMySQL<2.0.0,>=1.0.4; extra == "dev"
-	types-PyYAML<7.0.0,>=6.0.0; extra == "dev"
-	types-certifi<2022.0.0.0,>=2021.10.8.0; extra == "dev"
-	types-croniter<2.0.0,>=1.0.2; extra == "dev"
-	types-futures<4.0.0,>=3.3.1; extra == "dev"
-	types-paramiko>=3.4.0; extra == "dev"
-	types-passlib<2.0.0,>=1.7.7; extra == "dev"
-	types-protobuf<4.0.0,>=3.18.0; extra == "dev"
-	types-psutil<6.0.0,>=5.8.13; extra == "dev"
-	types-python-dateutil<3.0.0,>=2.8.2; extra == "dev"
-	types-python-slugify<6.0.0,>=5.0.2; extra == "dev"
-	types-redis<5.0.0,>=4.1.19; extra == "dev"
-	types-requests<3.0.0,>=2.27.11; extra == "dev"
-	types-setuptools<58.0.0,>=57.4.2; extra == "dev"
-	types-six<2.0.0,>=1.16.2; extra == "dev"
-	types-termcolor<2.0.0,>=1.1.2; extra == "dev"
-	typing-extensions>=3.7.4; extra == "dev"
-	uvicorn[standard]>=0.17.5; extra == "server"
-	yamlfix<2.0.0,>=1.16.0; extra == "dev"
+	tldextract<5.2.0,>=5.1.0; extra == 'server'
+	tox<4.0.0,>=3.24.3; extra == 'dev'
+	types-Markdown<4.0.0,>=3.3.6; extra == 'dev'
+	types-Pillow<10.0.0,>=9.2.1; extra == 'dev'
+	types-PyMySQL<2.0.0,>=1.0.4; extra == 'dev'
+	types-PyYAML<7.0.0,>=6.0.0; extra == 'dev'
+	types-certifi<2022.0.0.0,>=2021.10.8.0; extra == 'dev'
+	types-croniter<2.0.0,>=1.0.2; extra == 'dev'
+	types-futures<4.0.0,>=3.3.1; extra == 'dev'
+	types-paramiko>=3.4.0; extra == 'dev'
+	types-passlib<2.0.0,>=1.7.7; extra == 'dev'
+	types-protobuf<4.0.0,>=3.18.0; extra == 'dev'
+	types-psutil<6.0.0,>=5.8.13; extra == 'dev'
+	types-python-dateutil<3.0.0,>=2.8.2; extra == 'dev'
+	types-python-slugify<6.0.0,>=5.0.2; extra == 'dev'
+	types-redis<5.0.0,>=4.1.19; extra == 'dev'
+	types-requests<3.0.0,>=2.27.11; extra == 'dev'
+	types-setuptools<58.0.0,>=57.4.2; extra == 'dev'
+	types-six<2.0.0,>=1.16.2; extra == 'dev'
+	types-termcolor<2.0.0,>=1.1.2; extra == 'dev'
+	typing-extensions>=3.7.4; extra == 'dev'
+	uvicorn[standard]>=0.17.5; extra == 'server'
+	yamlfix<2.0.0,>=1.16.0; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	adlfs? ( >=dev-python/adlfs-2021.10.0[${PYTHON_USEDEP}] )
@@ -149,7 +149,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	server? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	templates? ( >=dev-python/jinja2-time-0.2.0[${PYTHON_USEDEP}] <dev-python/jinja2-time-0.3.0[${PYTHON_USEDEP}] )
 	vertex? ( >=dev-python/kfp-2.6.0[${PYTHON_USEDEP}] )
-	connectors-gcp? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-azure? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-kubernetes? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-aws? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] )
+	connectors-gcp? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-azure? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-aws? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-kubernetes? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] )
 	server? ( >=dev-python/orjson-3.10.0[${PYTHON_USEDEP}] <dev-python/orjson-3.11.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.7.4[bcrypt,${PYTHON_USEDEP}] <dev-python/passlib-1.8.0[bcrypt,${PYTHON_USEDEP}]
@@ -198,7 +198,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-randomly-3.10.1[${PYTHON_USEDEP}] <dev-python/pytest-randomly-4.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-rerunfailures-13.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-split-0.8.1[${PYTHON_USEDEP}] <dev-python/pytest-split-0.9.0[${PYTHON_USEDEP}]
-		>=dev-python/ruff-0.1.7[${PYTHON_USEDEP}] templates? ( >=dev-python/ruff-0.1.7[${PYTHON_USEDEP}] )
+		templates? ( >=dev-python/ruff-0.1.7[${PYTHON_USEDEP}] ) >=dev-python/ruff-0.1.7[${PYTHON_USEDEP}]
 		>=dev-python/tox-3.24.3[${PYTHON_USEDEP}] <dev-python/tox-4.0.0[${PYTHON_USEDEP}]
 		>=dev-python/types-certifi-2021.10.8.0[${PYTHON_USEDEP}] <dev-python/types-certifi-2022.0.0.0[${PYTHON_USEDEP}]
 		>=dev-python/types-croniter-1.0.2[${PYTHON_USEDEP}] <dev-python/types-croniter-2.0.0[${PYTHON_USEDEP}]

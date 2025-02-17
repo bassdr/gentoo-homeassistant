@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	importlib-metadata>=1.4
 	ipython>=6.0
-	py3nvml>=0.2; extra == "gpu"
+	py3nvml>=0.2; extra == 'gpu'
 	setuptools
 "
 GENERATED_RDEPEND="${RDEPEND}

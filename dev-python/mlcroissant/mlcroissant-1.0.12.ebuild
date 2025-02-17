@@ -17,34 +17,34 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	GitPython; extra == "git"
-	Pillow; extra == "image"
+	GitPython; extra == 'git'
+	Pillow; extra == 'image'
 	absl-py
-	apache-beam; extra == "beam"
-	black==23.11.0; extra == "dev"
+	apache-beam; extra == 'beam'
+	black==23.11.0; extra == 'dev'
 	etils[epath]>=1.7.0
-	flake8-docstrings; extra == "dev"
+	flake8-docstrings; extra == 'dev'
 	jsonpath-rw
-	librosa; extra == "audio"
-	mlcroissant[audio]; extra == "dev"
-	mlcroissant[beam]; extra == "dev"
-	mlcroissant[git]; extra == "dev"
-	mlcroissant[image]; extra == "dev"
-	mlcroissant[parquet]; extra == "dev"
-	mypy; extra == "dev"
+	librosa; extra == 'audio'
+	mlcroissant[audio]; extra == 'dev'
+	mlcroissant[beam]; extra == 'dev'
+	mlcroissant[git]; extra == 'dev'
+	mlcroissant[image]; extra == 'dev'
+	mlcroissant[parquet]; extra == 'dev'
+	mypy; extra == 'dev'
 	networkx
 	pandas
 	pandas-stubs
-	pyarrow; extra == "parquet"
-	pyflakes; extra == "dev"
-	pygraphviz; extra == "dev"
-	pytest; extra == "dev"
+	pyarrow; extra == 'parquet'
+	pyflakes; extra == 'dev'
+	pygraphviz; extra == 'dev'
+	pytest; extra == 'dev'
 	python-dateutil
-	pytype; extra == "dev"
+	pytype; extra == 'dev'
 	rdflib
 	requests
-	soxr==0.4.0b1; extra == "audio"
-	torchdata; extra == "dev"
+	soxr==0.4.0b1; extra == 'audio'
+	torchdata; extra == 'dev'
 	tqdm
 "
 GENERATED_RDEPEND="${RDEPEND}

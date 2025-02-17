@@ -20,7 +20,7 @@ REQUIRES_DIST="
 	apache-airflow-providers-common-sql>=1.20.0
 	apache-airflow>=2.9.0
 	impyla<1.0,>=0.18.0
-	kerberos>=1.3.0; extra == "kerberos"
+	kerberos>=1.3.0; extra == 'kerberos'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]

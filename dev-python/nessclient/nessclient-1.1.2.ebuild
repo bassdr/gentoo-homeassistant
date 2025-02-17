@@ -22,8 +22,8 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	click; extra == "cli"
-	dataclasses; python_version < "3.7"
+	click; extra == 'cli'
+	dataclasses; python_version < '3.7'
 	justbackoff
 	pyserial-asyncio
 "

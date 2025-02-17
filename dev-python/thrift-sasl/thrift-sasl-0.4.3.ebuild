@@ -17,8 +17,8 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	pure-sasl (>=0.6.2)
 	six (>=1.13.0)
-	thrift (>=0.10.0) ; python_version >= "3.0"
-	thrift (>=0.9.3) ; python_version < "3.0"
+	thrift (>=0.10.0) ; python_version >= '3.0'
+	thrift (>=0.9.3) ; python_version < '3.0'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pure-sasl-0.6.2[${PYTHON_USEDEP}]

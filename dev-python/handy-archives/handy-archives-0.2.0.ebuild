@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coincidence>=0.2.0 ; extra == "all"
-	coincidence>=0.2.0 ; extra == "testing"
-	pytest>=6.0.0 ; extra == "all"
-	pytest>=6.0.0 ; extra == "testing"
+	coincidence>=0.2.0 ; extra == 'all'
+	coincidence>=0.2.0 ; extra == 'testing'
+	pytest>=6.0.0 ; extra == 'all'
+	pytest>=6.0.0 ; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/coincidence-0.2.0[${PYTHON_USEDEP}] )

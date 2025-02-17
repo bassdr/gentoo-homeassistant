@@ -26,33 +26,33 @@ DEPEND="
 	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 "
 REQUIRES_DIST="
-	colorama; extra == "develop"
-	cython<4,>=3.0.10; extra == "develop"
-	cython>=3.0.10; extra == "build"
-	cython>=3.0.10; extra == "develop"
-	flake8; extra == "develop"
-	ipykernel; extra == "docs"
-	isort; extra == "develop"
-	joblib; extra == "develop"
-	jupyter-client; extra == "docs"
-	matplotlib; extra == "docs"
-	matplotlib>=3; extra == "develop"
-	nbconvert; extra == "docs"
-	nbformat; extra == "docs"
+	colorama; extra == 'develop'
+	cython<4,>=3.0.10; extra == 'develop'
+	cython>=3.0.10; extra == 'build'
+	cython>=3.0.10; extra == 'develop'
+	flake8; extra == 'develop'
+	ipykernel; extra == 'docs'
+	isort; extra == 'develop'
+	joblib; extra == 'develop'
+	jupyter-client; extra == 'docs'
+	matplotlib; extra == 'docs'
+	matplotlib>=3; extra == 'develop'
+	nbconvert; extra == 'docs'
+	nbformat; extra == 'docs'
 	numpy<3,>=1.22.3
-	numpydoc; extra == "docs"
+	numpydoc; extra == 'docs'
 	packaging>=21.3
 	pandas!=2.1.0,>=1.4
-	pandas-datareader; extra == "docs"
+	pandas-datareader; extra == 'docs'
 	patsy>=0.5.6
-	pytest-cov; extra == "develop"
-	pytest-randomly; extra == "develop"
-	pytest-xdist; extra == "develop"
-	pytest<8,>=7.3.0; extra == "develop"
-	pywinpty; os_name == "nt" and extra == "develop"
+	pytest-cov; extra == 'develop'
+	pytest-randomly; extra == 'develop'
+	pytest-xdist; extra == 'develop'
+	pytest<8,>=7.3.0; extra == 'develop'
+	pywinpty; os_name == 'nt' and extra == 'develop'
 	scipy!=1.9.2,>=1.8
-	setuptools-scm[toml]~=8.0; extra == "develop"
-	sphinx; extra == "docs"
+	setuptools-scm[toml]~=8.0; extra == 'develop'
+	sphinx; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/colorama[${PYTHON_USEDEP}] )

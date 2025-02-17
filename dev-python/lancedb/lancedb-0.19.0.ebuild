@@ -17,50 +17,50 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	adlfs>=2024.2.0; extra == "azure"
-	aiohttp; extra == "tests"
-	awscli>=1.29.57; extra == "embeddings"
-	boto3; extra == "tests"
-	boto3>=1.28.57; extra == "embeddings"
-	botocore>=1.31.57; extra == "embeddings"
-	cohere; extra == "embeddings"
+	adlfs>=2024.2.0; extra == 'azure'
+	aiohttp; extra == 'tests'
+	awscli>=1.29.57; extra == 'embeddings'
+	boto3; extra == 'tests'
+	boto3>=1.28.57; extra == 'embeddings'
+	botocore>=1.31.57; extra == 'embeddings'
+	cohere; extra == 'embeddings'
 	deprecation
-	duckdb; extra == "tests"
-	google-generativeai; extra == "embeddings"
-	huggingface-hub; extra == "embeddings"
-	ibm-watsonx-ai>=1.1.2; extra == "embeddings"
-	instructorembedding; extra == "embeddings"
-	mkdocs-jupyter; extra == "docs"
-	mkdocs-material; extra == "docs"
-	mkdocs; extra == "docs"
-	mkdocstrings[python]; extra == "docs"
-	ollama; extra == "embeddings"
-	open-clip-torch; extra == "embeddings"
-	open-clip; extra == "clip"
-	openai>=1.6.1; extra == "embeddings"
+	duckdb; extra == 'tests'
+	google-generativeai; extra == 'embeddings'
+	huggingface-hub; extra == 'embeddings'
+	ibm-watsonx-ai>=1.1.2; extra == 'embeddings'
+	instructorembedding; extra == 'embeddings'
+	mkdocs-jupyter; extra == 'docs'
+	mkdocs-material; extra == 'docs'
+	mkdocs; extra == 'docs'
+	mkdocstrings[python]; extra == 'docs'
+	ollama; extra == 'embeddings'
+	open-clip-torch; extra == 'embeddings'
+	open-clip; extra == 'clip'
+	openai>=1.6.1; extra == 'embeddings'
 	overrides>=0.7
 	packaging
-	pandas>=1.4; extra == "tests"
-	pillow; extra == "clip"
-	pillow; extra == "embeddings"
-	polars<=1.3.0,>=0.19; extra == "tests"
-	pre-commit; extra == "dev"
-	pyarrow-stubs; extra == "tests"
+	pandas>=1.4; extra == 'tests'
+	pillow; extra == 'clip'
+	pillow; extra == 'embeddings'
+	polars<=1.3.0,>=0.19; extra == 'tests'
+	pre-commit; extra == 'dev'
+	pyarrow-stubs; extra == 'tests'
 	pydantic>=1.10
 	pylance==0.23.0
-	pyright; extra == "dev"
-	pytest-asyncio; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest; extra == "tests"
-	pytz; extra == "tests"
-	requests>=2.31.0; extra == "embeddings"
-	ruff; extra == "dev"
-	sentence-transformers; extra == "embeddings"
-	tantivy; extra == "tests"
-	torch; extra == "clip"
-	torch; extra == "embeddings"
+	pyright; extra == 'dev'
+	pytest-asyncio; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest; extra == 'tests'
+	pytz; extra == 'tests'
+	requests>=2.31.0; extra == 'embeddings'
+	ruff; extra == 'dev'
+	sentence-transformers; extra == 'embeddings'
+	tantivy; extra == 'tests'
+	torch; extra == 'clip'
+	torch; extra == 'embeddings'
 	tqdm>=4.27.0
-	typing-extensions>=4.0.0; python_full_version < "3.11" and extra == "dev"
+	typing-extensions>=4.0.0; python_full_version < '3.11' and extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	azure? ( >=dev-python/adlfs-2024.2.0[${PYTHON_USEDEP}] )

@@ -23,35 +23,35 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "developer"
+	black; extra == 'developer'
 	click
 	cupy-cuda12x>=12.0.0
-	imagecodecs>=2021.6.8; platform_machine == "x86_64" and extra == "test"
-	ipython; extra == "docs"
-	isort; extra == "developer"
+	imagecodecs>=2021.6.8; platform_machine == 'x86_64' and extra == 'test'
+	ipython; extra == 'docs'
+	isort; extra == 'developer'
 	lazy_loader>=0.1
-	matplotlib; extra == "test"
-	nbsphinx; extra == "docs"
+	matplotlib; extra == 'test'
+	nbsphinx; extra == 'docs'
 	numpy<3.0a0,>=1.23.4
-	numpydoc>=1.5; extra == "docs"
-	numpydoc>=1.5; extra == "test"
-	opencv-python-headless>=4.6; extra == "test"
-	openslide-python>=1.3.0; platform_machine == "x86_64" and extra == "test"
-	pooch>=1.6.0; extra == "test"
-	pre-commit; extra == "developer"
-	psutil>=5.8.0; extra == "test"
-	pydata-sphinx-theme; extra == "docs"
-	pytest-cov>=2.12.1; extra == "test"
-	pytest-lazy-fixtures>=1.0.0; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest<8.0.0a0,>=6.2.4; extra == "test"
-	pywavelets>=1.0; extra == "test"
-	recommonmark; extra == "docs"
-	ruff; extra == "developer"
+	numpydoc>=1.5; extra == 'docs'
+	numpydoc>=1.5; extra == 'test'
+	opencv-python-headless>=4.6; extra == 'test'
+	openslide-python>=1.3.0; platform_machine == 'x86_64' and extra == 'test'
+	pooch>=1.6.0; extra == 'test'
+	pre-commit; extra == 'developer'
+	psutil>=5.8.0; extra == 'test'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-cov>=2.12.1; extra == 'test'
+	pytest-lazy-fixtures>=1.0.0; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest<8.0.0a0,>=6.2.4; extra == 'test'
+	pywavelets>=1.0; extra == 'test'
+	recommonmark; extra == 'docs'
+	ruff; extra == 'developer'
 	scikit-image<0.25.0a0,>=0.19.0
 	scipy>=1.6.0
-	sphinx<6; extra == "docs"
-	tifffile>=2022.7.28; extra == "test"
+	sphinx<6; extra == 'docs'
+	tifffile>=2022.7.28; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	developer? ( dev-python/black[${PYTHON_USEDEP}] )

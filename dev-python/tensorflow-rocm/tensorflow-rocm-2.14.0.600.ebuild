@@ -45,9 +45,9 @@ REQUIRES_DIST="
 	setuptools
 	six (>=1.12.0)
 	tensorboard (<2.15,>=2.14)
-	tensorflow-cpu-aws (==2.14.0.600) ; platform_system == "Linux" and (platform_machine == "arm64" or platform_machine == "aarch64")
+	tensorflow-cpu-aws (==2.14.0.600) ; platform_system == 'Linux' and (platform_machine == 'arm64' or platform_machine == 'aarch64')
 	tensorflow-estimator (<2.15,>=2.14.0)
-	tensorflow-intel (==2.14.0.600) ; platform_system == "Windows"
+	tensorflow-intel (==2.14.0.600) ; platform_system == 'Windows'
 	tensorflow-io-gcs-filesystem (>=0.23.1)
 	tensorrt (==8.5.3.1) ; extra == 'and-cuda'
 	termcolor (>=1.1.0)

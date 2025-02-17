@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiobotocore>=2.15.2; extra == "recipes"
+	aiobotocore>=2.15.2; extra == 'recipes'
 	async_timeout<6,>4
-	asyncache>=0.3.1; extra == "recipes"
+	asyncache>=0.3.1; extra == 'recipes'
 	deprecated>=1.2
 	packaging<25,>=21
 	pympler<2,>1

@@ -18,53 +18,53 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiohttp
-	ase; extra == "full"
-	captum<0.7.0; extra == "full"
+	ase; extra == 'full'
+	captum<0.7.0; extra == 'full'
 	fsspec
-	graphviz; extra == "full"
-	h5py; extra == "full"
-	huggingface_hub; extra == "modelhub"
-	ipython; extra == "dev"
+	graphviz; extra == 'full'
+	h5py; extra == 'full'
+	huggingface_hub; extra == 'modelhub'
+	ipython; extra == 'dev'
 	jinja2
-	matplotlib-inline; extra == "dev"
-	matplotlib; extra == "benchmark"
-	matplotlib; extra == "full"
-	networkx; extra == "benchmark"
-	networkx; extra == "full"
-	numba<0.60.0; extra == "full"
+	matplotlib-inline; extra == 'dev'
+	matplotlib; extra == 'benchmark'
+	matplotlib; extra == 'full'
+	networkx; extra == 'benchmark'
+	networkx; extra == 'full'
+	numba<0.60.0; extra == 'full'
 	numpy
-	onnx; extra == "test"
-	onnxruntime; extra == "test"
-	opt_einsum; extra == "full"
-	pandas; extra == "benchmark"
-	pandas; extra == "full"
-	pgmpy; extra == "full"
-	pre-commit; extra == "dev"
-	protobuf<4.21; extra == "benchmark"
-	protobuf<4.21; extra == "graphgym"
+	onnx; extra == 'test'
+	onnxruntime; extra == 'test'
+	opt_einsum; extra == 'full'
+	pandas; extra == 'benchmark'
+	pandas; extra == 'full'
+	pgmpy; extra == 'full'
+	pre-commit; extra == 'dev'
+	protobuf<4.21; extra == 'benchmark'
+	protobuf<4.21; extra == 'graphgym'
 	psutil>=5.8.0
-	pynndescent; extra == "full"
+	pynndescent; extra == 'full'
 	pyparsing
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	pytorch-lightning<2.3.0; extra == "graphgym"
-	pytorch-memlab; extra == "full"
-	rdflib; extra == "full"
-	rdkit; extra == "full"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	pytorch-lightning<2.3.0; extra == 'graphgym'
+	pytorch-memlab; extra == 'full'
+	rdflib; extra == 'full'
+	rdkit; extra == 'full'
 	requests
-	scikit-image; extra == "full"
-	scikit-learn; extra == "full"
-	scipy; extra == "full"
-	statsmodels; extra == "full"
-	sympy; extra == "full"
-	tabulate; extra == "full"
-	torch_geometric[graphgym,modelhub]; extra == "full"
-	torch_geometric[test]; extra == "dev"
-	torchmetrics; extra == "full"
+	scikit-image; extra == 'full'
+	scikit-learn; extra == 'full'
+	scipy; extra == 'full'
+	statsmodels; extra == 'full'
+	sympy; extra == 'full'
+	tabulate; extra == 'full'
+	torch_geometric[graphgym,modelhub]; extra == 'full'
+	torch_geometric[test]; extra == 'dev'
+	torchmetrics; extra == 'full'
 	tqdm
-	trimesh; extra == "full"
-	wandb; extra == "benchmark"
-	yacs; extra == "graphgym"
+	trimesh; extra == 'full'
+	wandb; extra == 'benchmark'
+	yacs; extra == 'graphgym'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

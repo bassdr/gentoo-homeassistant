@@ -19,9 +19,9 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	alembic
 	google-cloud-spanner>=3.12.0
-	opentelemetry-api>=1.1.0; extra == "tracing"
-	opentelemetry-instrumentation>=0.20b0; extra == "tracing"
-	opentelemetry-sdk>=1.1.0; extra == "tracing"
+	opentelemetry-api>=1.1.0; extra == 'tracing'
+	opentelemetry-instrumentation>=0.20b0; extra == 'tracing'
+	opentelemetry-sdk>=1.1.0; extra == 'tracing'
 	sqlalchemy>=1.1.13
 "
 GENERATED_RDEPEND="${RDEPEND}

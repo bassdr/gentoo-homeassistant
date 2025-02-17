@@ -18,26 +18,26 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	CacheControl[filecache]>=0.13.0
-	build; extra == "dev"
-	coverage[toml]!=7.3.3,~=7.0; extra == "test"
+	build; extra == 'dev'
+	coverage[toml]!=7.3.3,~=7.0; extra == 'test'
 	cyclonedx-python-lib<9,>=5
-	interrogate~=1.6; extra == "lint"
-	mypy; extra == "lint"
+	interrogate~=1.6; extra == 'lint'
+	mypy; extra == 'lint'
 	packaging>=23.0.0
-	pdoc; extra == "doc"
+	pdoc; extra == 'doc'
 	pip-api>=0.0.28
-	pip-audit[doc,lint,test]; extra == "dev"
+	pip-audit[doc,lint,test]; extra == 'dev'
 	pip-requirements-parser>=32.0.0
 	platformdirs>=4.2.0
-	pretend; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	pretend; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 	requests>=2.31.0
 	rich>=12.4
-	ruff~=0.9; extra == "lint"
+	ruff~=0.9; extra == 'lint'
 	toml>=0.10
-	types-requests; extra == "lint"
-	types-toml; extra == "lint"
+	types-requests; extra == 'lint'
+	types-toml; extra == 'lint'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cachecontrol-0.13.0[filecache,${PYTHON_USEDEP}]

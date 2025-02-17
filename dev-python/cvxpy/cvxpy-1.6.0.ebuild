@@ -17,37 +17,37 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Mosek; extra == "mosek"
-	PySCIPOpt; extra == "scip"
+	Mosek; extra == 'mosek'
+	PySCIPOpt; extra == 'scip'
 	clarabel>=0.5.0
-	cvxopt; extra == "cvxopt"
-	cvxopt; extra == "glpk"
-	cvxopt; extra == "glpk-mi"
-	cylp>=0.91.5; extra == "cbc"
-	daqp; extra == "daqp"
-	diffcp; extra == "diffcp"
-	ecos; extra == "ecos"
-	ecos; extra == "ecos-bb"
-	gurobipy; extra == "gurobi"
-	highspy; extra == "highs"
-	hypothesis; extra == "testing"
+	cvxopt; extra == 'cvxopt'
+	cvxopt; extra == 'glpk'
+	cvxopt; extra == 'glpk-mi'
+	cylp>=0.91.5; extra == 'cbc'
+	daqp; extra == 'daqp'
+	diffcp; extra == 'diffcp'
+	ecos; extra == 'ecos'
+	ecos; extra == 'ecos-bb'
+	gurobipy; extra == 'gurobi'
+	highspy; extra == 'highs'
+	hypothesis; extra == 'testing'
 	numpy>=1.20
-	ortools<9.10,>=9.7; extra == "glop"
-	ortools<9.10,>=9.7; extra == "pdlp"
+	ortools<9.10,>=9.7; extra == 'glop'
+	ortools<9.10,>=9.7; extra == 'pdlp'
 	osqp>=0.6.2
-	piqp; extra == "piqp"
-	proxsuite; extra == "proxqp"
-	pytest; extra == "testing"
-	scipy; extra == "scipy"
+	piqp; extra == 'piqp'
+	proxsuite; extra == 'proxqp'
+	pytest; extra == 'testing'
+	scipy; extra == 'scipy'
 	scipy>=1.1.0
 	scs>=3.2.4.post1
-	setuptools>65.5.1; extra == "scs"
-	sphinx-design; extra == "doc"
-	sphinx-immaterial>=0.11.7; extra == "doc"
-	sphinx-inline-tabs; extra == "doc"
-	sphinx; extra == "doc"
-	sphinxcontrib.jquery; extra == "doc"
-	xpress; extra == "xpress"
+	setuptools>65.5.1; extra == 'scs'
+	sphinx-design; extra == 'doc'
+	sphinx-immaterial>=0.11.7; extra == 'doc'
+	sphinx-inline-tabs; extra == 'doc'
+	sphinx; extra == 'doc'
+	sphinxcontrib.jquery; extra == 'doc'
+	xpress; extra == 'xpress'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/clarabel-0.5.0[${PYTHON_USEDEP}]

@@ -19,22 +19,22 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="awskms azurekms crypto gcpkms hsm pyspx sigstore vault"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	asn1crypto; extra == "hsm"
-	azure-identity; extra == "azurekms"
-	azure-keyvault-keys; extra == "azurekms"
-	boto3; extra == "awskms"
-	botocore; extra == "awskms"
-	cryptography>=40.0.0; extra == "awskms"
-	cryptography>=40.0.0; extra == "azurekms"
-	cryptography>=40.0.0; extra == "crypto"
-	cryptography>=40.0.0; extra == "gcpkms"
-	cryptography>=40.0.0; extra == "hsm"
-	cryptography>=40.0.0; extra == "vault"
-	google-cloud-kms; extra == "gcpkms"
-	hvac; extra == "vault"
-	pykcs11; extra == "hsm"
-	pyspx>=0.5.0; extra == "pyspx"
-	sigstore~=3.0; extra == "sigstore"
+	asn1crypto; extra == 'hsm'
+	azure-identity; extra == 'azurekms'
+	azure-keyvault-keys; extra == 'azurekms'
+	boto3; extra == 'awskms'
+	botocore; extra == 'awskms'
+	cryptography>=40.0.0; extra == 'awskms'
+	cryptography>=40.0.0; extra == 'azurekms'
+	cryptography>=40.0.0; extra == 'crypto'
+	cryptography>=40.0.0; extra == 'gcpkms'
+	cryptography>=40.0.0; extra == 'hsm'
+	cryptography>=40.0.0; extra == 'vault'
+	google-cloud-kms; extra == 'gcpkms'
+	hvac; extra == 'vault'
+	pykcs11; extra == 'hsm'
+	pyspx>=0.5.0; extra == 'pyspx'
+	sigstore~=3.0; extra == 'sigstore'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	hsm? ( dev-python/asn1crypto[${PYTHON_USEDEP}] )

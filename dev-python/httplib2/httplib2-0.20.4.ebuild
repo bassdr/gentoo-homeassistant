@@ -22,8 +22,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pyparsing (!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2) ; python_version > "3.0"
-	pyparsing (<3,>=2.4.2) ; python_version < "3.0"
+	pyparsing (!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2) ; python_version > '3.0'
+	pyparsing (<3,>=2.4.2) ; python_version < '3.0'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyparsing-2.4.2[${PYTHON_USEDEP}] <dev-python/pyparsing-4[${PYTHON_USEDEP}] !~dev-python/pyparsing-3.0.0[${PYTHON_USEDEP}] !~dev-python/pyparsing-3.0.1[${PYTHON_USEDEP}] !~dev-python/pyparsing-3.0.2[${PYTHON_USEDEP}] !~dev-python/pyparsing-3.0.3[${PYTHON_USEDEP}]

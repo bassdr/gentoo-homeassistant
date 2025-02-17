@@ -16,8 +16,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	fastcore>=1.7.2
-	jsonref; extra == "dev"
-	matplotlib; extra == "dev"
+	jsonref; extra == 'dev'
+	matplotlib; extra == 'dev'
 	packaging
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -23,10 +23,10 @@ REQUIRES_DIST="
 	ml-collections
 	numpy
 	packaging
-	pytest; extra == "test"
-	tensorflow-datasets; extra == "test"
-	tensorflow; extra == "test"
-	torch>=2.0.0; extra == "test"
+	pytest; extra == 'test'
+	tensorflow-datasets; extra == 'test'
+	tensorflow; extra == 'test'
+	torch>=2.0.0; extra == 'test'
 	typing-extensions
 	wrapt
 "

@@ -17,10 +17,10 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyYAML
 	absl-py
-	pyink; extra == "dev"
-	pylint>=2.6.0; extra == "dev"
-	pytest-xdist; extra == "dev"
-	pytest; extra == "dev"
+	pyink; extra == 'dev'
+	pylint>=2.6.0; extra == 'dev'
+	pytest-xdist; extra == 'dev'
+	pytest; extra == 'dev'
 	six
 "
 GENERATED_RDEPEND="${RDEPEND}

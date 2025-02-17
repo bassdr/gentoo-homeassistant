@@ -19,9 +19,9 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
+	Sphinx; extra == 'docs'
 	setuptools
-	zope.testrunner; extra == "test"
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]

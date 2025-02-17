@@ -22,9 +22,9 @@ DOCS="README.rst"
 
 REQUIRES_DIST="
 	bleak>=0.19
-	pytest-cov; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest>3.6.4; extra == "tests"
+	pytest-cov; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest>3.6.4; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.19[${PYTHON_USEDEP}]

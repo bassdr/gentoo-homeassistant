@@ -23,34 +23,34 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all codecs plot xml zarr"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	cmapfile; extra == "test"
-	czifile; extra == "test"
-	dask; extra == "test"
-	defusedxml; extra == "all"
-	defusedxml; extra == "test"
-	defusedxml; extra == "xml"
-	fsspec; extra == "all"
-	fsspec; extra == "test"
-	fsspec; extra == "zarr"
-	imagecodecs; extra == "test"
-	imagecodecs>=2024.12.30; extra == "all"
-	imagecodecs>=2024.12.30; extra == "codecs"
-	lfdfiles; extra == "test"
-	lxml; extra == "all"
-	lxml; extra == "test"
-	lxml; extra == "xml"
-	matplotlib; extra == "all"
-	matplotlib; extra == "plot"
-	ndtiff; extra == "test"
+	cmapfile; extra == 'test'
+	czifile; extra == 'test'
+	dask; extra == 'test'
+	defusedxml; extra == 'all'
+	defusedxml; extra == 'test'
+	defusedxml; extra == 'xml'
+	fsspec; extra == 'all'
+	fsspec; extra == 'test'
+	fsspec; extra == 'zarr'
+	imagecodecs; extra == 'test'
+	imagecodecs>=2024.12.30; extra == 'all'
+	imagecodecs>=2024.12.30; extra == 'codecs'
+	lfdfiles; extra == 'test'
+	lxml; extra == 'all'
+	lxml; extra == 'test'
+	lxml; extra == 'xml'
+	matplotlib; extra == 'all'
+	matplotlib; extra == 'plot'
+	ndtiff; extra == 'test'
 	numpy
-	oiffile; extra == "test"
-	psdtags; extra == "test"
-	pytest; extra == "test"
-	roifile; extra == "test"
-	xarray; extra == "test"
-	zarr<3; extra == "all"
-	zarr<3; extra == "test"
-	zarr<3; extra == "zarr"
+	oiffile; extra == 'test'
+	psdtags; extra == 'test'
+	pytest; extra == 'test'
+	roifile; extra == 'test'
+	xarray; extra == 'test'
+	zarr<3; extra == 'all'
+	zarr<3; extra == 'test'
+	zarr<3; extra == 'zarr'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/defusedxml[${PYTHON_USEDEP}] )

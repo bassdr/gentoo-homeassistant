@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	click
-	pytest ; extra == "test"
+	pytest ; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]

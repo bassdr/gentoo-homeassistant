@@ -17,130 +17,130 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx<8.0,>=7.0.0; extra == "docs"
-	azure-core<2,>=1.7.0; extra == "azure"
-	azure-identity<2,>=1.12.0; extra == "azure"
-	azure-storage-blob<13,>=12.3.2; extra == "azure"
-	boto3<2,>=1.9; extra == "aws"
-	cachetools<6,>=3.1.0; extra == "gcp"
-	chromedriver-binary<118,>=117; extra == "interactive-test"
+	Sphinx<8.0,>=7.0.0; extra == 'docs'
+	azure-core<2,>=1.7.0; extra == 'azure'
+	azure-identity<2,>=1.12.0; extra == 'azure'
+	azure-storage-blob<13,>=12.3.2; extra == 'azure'
+	boto3<2,>=1.9; extra == 'aws'
+	cachetools<6,>=3.1.0; extra == 'gcp'
+	chromedriver-binary<118,>=117; extra == 'interactive-test'
 	cloudpickle~=2.2.1
 	crcmod<2.0,>=1.7
-	cryptography>=41.0.2; extra == "test"
-	dask>=2024.4.2; extra == "dask"
-	datatable; extra == "ml-test"
-	datatable; extra == "p312-ml-test"
+	cryptography>=41.0.2; extra == 'test'
+	dask>=2024.4.2; extra == 'dask'
+	datatable; extra == 'ml-test'
+	datatable; extra == 'p312-ml-test'
 	dill<0.3.2,>=0.3.1.1
-	distributed>=2024.4.2; extra == "dask"
-	docstring-parser<1.0,>=0.15; extra == "docs"
-	docstring-parser<1.0,>=0.15; extra == "test"
-	docstring-parser<1.0,>=0.15; extra == "yaml"
-	docutils>=0.18.1; extra == "docs"
-	embeddings; extra == "ml-test"
-	embeddings; extra == "p312-ml-test"
-	facets-overview<2,>=1.1.0; extra == "interactive"
+	distributed>=2024.4.2; extra == 'dask'
+	docstring-parser<1.0,>=0.15; extra == 'docs'
+	docstring-parser<1.0,>=0.15; extra == 'test'
+	docstring-parser<1.0,>=0.15; extra == 'yaml'
+	docutils>=0.18.1; extra == 'docs'
+	embeddings; extra == 'ml-test'
+	embeddings; extra == 'p312-ml-test'
+	facets-overview<2,>=1.1.0; extra == 'interactive'
 	fastavro<2,>=0.23.6
 	fasteners<1.0,>=0.3
-	freezegun>=0.3.12; extra == "test"
-	google-api-core<3,>=2.0.0; extra == "gcp"
-	google-apitools<0.5.32,>=0.5.31; extra == "gcp"
-	google-auth-httplib2<0.3.0,>=0.1.0; extra == "gcp"
-	google-auth<3,>=1.18.0; extra == "gcp"
-	google-cloud-aiplatform<2.0,>=1.26.0; extra == "gcp"
-	google-cloud-bigquery-storage<3,>=2.6.3; extra == "gcp"
-	google-cloud-bigquery<4,>=2.0.0; extra == "gcp"
-	google-cloud-bigtable<3,>=2.19.0; extra == "gcp"
-	google-cloud-core<3,>=2.0.0; extra == "gcp"
-	google-cloud-dataproc<6,>=5.0.0; extra == "interactive"
-	google-cloud-datastore<3,>=2.0.0; extra == "gcp"
-	google-cloud-dlp<4,>=3.0.0; extra == "gcp"
-	google-cloud-language<3,>=2.0; extra == "gcp"
-	google-cloud-pubsub<3,>=2.1.0; extra == "gcp"
-	google-cloud-pubsublite<2,>=1.2.0; extra == "gcp"
-	google-cloud-recommendations-ai<0.11.0,>=0.1.0; extra == "gcp"
-	google-cloud-spanner<4,>=3.0.0; extra == "gcp"
-	google-cloud-storage<3,>=2.18.2; extra == "gcp"
-	google-cloud-videointelligence<3,>=2.0; extra == "gcp"
-	google-cloud-vision<4,>=2; extra == "gcp"
+	freezegun>=0.3.12; extra == 'test'
+	google-api-core<3,>=2.0.0; extra == 'gcp'
+	google-apitools<0.5.32,>=0.5.31; extra == 'gcp'
+	google-auth-httplib2<0.3.0,>=0.1.0; extra == 'gcp'
+	google-auth<3,>=1.18.0; extra == 'gcp'
+	google-cloud-aiplatform<2.0,>=1.26.0; extra == 'gcp'
+	google-cloud-bigquery-storage<3,>=2.6.3; extra == 'gcp'
+	google-cloud-bigquery<4,>=2.0.0; extra == 'gcp'
+	google-cloud-bigtable<3,>=2.19.0; extra == 'gcp'
+	google-cloud-core<3,>=2.0.0; extra == 'gcp'
+	google-cloud-dataproc<6,>=5.0.0; extra == 'interactive'
+	google-cloud-datastore<3,>=2.0.0; extra == 'gcp'
+	google-cloud-dlp<4,>=3.0.0; extra == 'gcp'
+	google-cloud-language<3,>=2.0; extra == 'gcp'
+	google-cloud-pubsub<3,>=2.1.0; extra == 'gcp'
+	google-cloud-pubsublite<2,>=1.2.0; extra == 'gcp'
+	google-cloud-recommendations-ai<0.11.0,>=0.1.0; extra == 'gcp'
+	google-cloud-spanner<4,>=3.0.0; extra == 'gcp'
+	google-cloud-storage<3,>=2.18.2; extra == 'gcp'
+	google-cloud-videointelligence<3,>=2.0; extra == 'gcp'
+	google-cloud-vision<4,>=2; extra == 'gcp'
 	grpcio!=1.48.0,!=1.59.*,!=1.60.*,!=1.61.*,!=1.62.0,!=1.62.1,<1.66.0,<2,>=1.33.1
 	hdfs<3.0.0,>=2.1.0
 	httplib2<0.23.0,>=0.8
-	hypothesis<7.0.0,>5.0.0; extra == "test"
-	ipykernel<7,>=6; extra == "interactive"
-	ipython<9,>=8; extra == "interactive"
-	ipywidgets<9,>=8; extra == "interactive"
-	jinja2<3.2,>=3.0; extra == "docs"
-	jinja2<3.2,>=3.0; extra == "test"
-	jinja2<3.2,>=3.0; extra == "yaml"
-	joblib>=1.0.1; extra == "test"
-	js2py<1,>=0.74; python_version < "3.12" and extra == "yaml"
+	hypothesis<7.0.0,>5.0.0; extra == 'test'
+	ipykernel<7,>=6; extra == 'interactive'
+	ipython<9,>=8; extra == 'interactive'
+	ipywidgets<9,>=8; extra == 'interactive'
+	jinja2<3.2,>=3.0; extra == 'docs'
+	jinja2<3.2,>=3.0; extra == 'test'
+	jinja2<3.2,>=3.0; extra == 'yaml'
+	joblib>=1.0.1; extra == 'test'
+	js2py<1,>=0.74; python_version < '3.12' and extra == 'yaml'
 	jsonpickle<4.0.0,>=3.0.0
 	jsonschema<5.0.0,>=4.0.0
-	jupyter-client!=6.1.13,<8.2.1,>=6.1.11; extra == "interactive"
-	keyrings.google-artifactregistry-auth; extra == "gcp"
-	mock<6.0.0,>=1.0.1; extra == "test"
-	nbconvert<8,>=6.2.0; extra == "interactive"
-	nbformat<6,>=5.0.5; extra == "interactive"
-	needle<1,>=0.5.0; extra == "interactive-test"
+	jupyter-client!=6.1.13,<8.2.1,>=6.1.11; extra == 'interactive'
+	keyrings.google-artifactregistry-auth; extra == 'gcp'
+	mock<6.0.0,>=1.0.1; extra == 'test'
+	nbconvert<8,>=6.2.0; extra == 'interactive'
+	nbformat<6,>=5.0.5; extra == 'interactive'
+	needle<1,>=0.5.0; extra == 'interactive-test'
 	numpy<2.3.0,>=1.14.3
 	objsize<0.8.0,>=0.6.1
-	onnxruntime; extra == "ml-test"
-	onnxruntime; extra == "p312-ml-test"
-	openai; extra == "docs"
+	onnxruntime; extra == 'ml-test'
+	onnxruntime; extra == 'p312-ml-test'
+	openai; extra == 'docs'
 	orjson<4,>=3.9.7
 	packaging>=22.0
-	pandas!=1.5.0,!=1.5.1,<2.3,>=1.4.3; extra == "dataframe"
-	pandas!=1.5.0,!=1.5.1,<2.3,>=1.4.3; extra == "interactive"
-	pandas!=1.5.0,!=1.5.1,<2.3,>=1.4.3; extra == "yaml"
-	pandas<2.2.0; extra == "docs"
-	pandas<2.2.0; extra == "test"
-	parameterized<0.10.0,>=0.7.1; extra == "test"
-	pillow; extra == "ml-test"
-	pillow; extra == "p312-ml-test"
-	pillow<10,>=7.1.1; extra == "interactive-test"
+	pandas!=1.5.0,!=1.5.1,<2.3,>=1.4.3; extra == 'dataframe'
+	pandas!=1.5.0,!=1.5.1,<2.3,>=1.4.3; extra == 'interactive'
+	pandas!=1.5.0,!=1.5.1,<2.3,>=1.4.3; extra == 'yaml'
+	pandas<2.2.0; extra == 'docs'
+	pandas<2.2.0; extra == 'test'
+	parameterized<0.10.0,>=0.7.1; extra == 'test'
+	pillow; extra == 'ml-test'
+	pillow; extra == 'p312-ml-test'
+	pillow<10,>=7.1.1; extra == 'interactive-test'
 	proto-plus<2,>=1.7.1
 	protobuf!=4.0.*,!=4.21.*,!=4.22.0,!=4.23.*,!=4.24.*,<6.0.0.dev0,>=3.20.3
-	psycopg2-binary!=2.9.10,<3.0.0,>=2.8.5; extra == "test"
+	psycopg2-binary!=2.9.10,<3.0.0,>=2.8.5; extra == 'test'
 	pyarrow-hotfix<1
 	pyarrow<17.0.0,>=3.0.0
 	pydot<2,>=1.2.0
-	pyhamcrest!=1.10.0,<3.0.0,>=1.9; extra == "test"
+	pyhamcrest!=1.10.0,<3.0.0,>=1.9; extra == 'test'
 	pymongo<5.0.0,>=3.8.0
-	pytest-timeout<3,>=2.1.0; extra == "test"
-	pytest-xdist<4,>=2.5.0; extra == "test"
-	pytest<8.0,>=7.1.2; extra == "test"
+	pytest-timeout<3,>=2.1.0; extra == 'test'
+	pytest-xdist<4,>=2.5.0; extra == 'test'
+	pytest<8.0,>=7.1.2; extra == 'test'
 	python-dateutil<3,>=2.8.0
 	pytz>=2018.3
 	pyyaml<7.0.0,>=3.12
 	redis<6,>=5.0.0
 	regex>=2020.6.8
 	requests<3.0.0,>=2.24.0
-	requests_mock<2.0,>=1.7; extra == "test"
-	scikit-learn>=0.20.0; extra == "test"
-	sentence-transformers; extra == "ml-test"
-	sentence-transformers; extra == "p312-ml-test"
-	setuptools; extra == "test"
-	skl2onnx; extra == "ml-test"
-	skl2onnx; extra == "p312-ml-test"
+	requests_mock<2.0,>=1.7; extra == 'test'
+	scikit-learn>=0.20.0; extra == 'test'
+	sentence-transformers; extra == 'ml-test'
+	sentence-transformers; extra == 'p312-ml-test'
+	setuptools; extra == 'test'
+	skl2onnx; extra == 'ml-test'
+	skl2onnx; extra == 'p312-ml-test'
 	sortedcontainers>=2.4.0
-	sqlalchemy<3.0,>=1.3; extra == "test"
-	tenacity<9,>=8.0.0; extra == "test"
-	tensorflow-hub; extra == "ml-test"
-	tensorflow-hub; extra == "p312-ml-test"
-	tensorflow-transform; extra == "ml-test"
-	tensorflow; extra == "ml-test"
-	tensorflow; extra == "p312-ml-test"
-	testcontainers[mysql]<4.0.0,>=3.0.3; extra == "test"
-	tf2onnx; extra == "ml-test"
-	tf2onnx; extra == "p312-ml-test"
-	timeloop<2,>=1.0.2; extra == "interactive"
-	torch; extra == "ml-test"
-	torch; extra == "p312-ml-test"
-	transformers; extra == "ml-test"
-	transformers; extra == "p312-ml-test"
+	sqlalchemy<3.0,>=1.3; extra == 'test'
+	tenacity<9,>=8.0.0; extra == 'test'
+	tensorflow-hub; extra == 'ml-test'
+	tensorflow-hub; extra == 'p312-ml-test'
+	tensorflow-transform; extra == 'ml-test'
+	tensorflow; extra == 'ml-test'
+	tensorflow; extra == 'p312-ml-test'
+	testcontainers[mysql]<4.0.0,>=3.0.3; extra == 'test'
+	tf2onnx; extra == 'ml-test'
+	tf2onnx; extra == 'p312-ml-test'
+	timeloop<2,>=1.0.2; extra == 'interactive'
+	torch; extra == 'ml-test'
+	torch; extra == 'p312-ml-test'
+	transformers; extra == 'ml-test'
+	transformers; extra == 'p312-ml-test'
 	typing-extensions>=3.7.0
-	urllib3<2,>=1.21.1; extra == "interactive-test"
-	virtualenv-clone<1.0,>=0.5; extra == "yaml"
+	urllib3<2,>=1.21.1; extra == 'interactive-test'
+	virtualenv-clone<1.0,>=0.5; extra == 'yaml'
 	zstandard<1,>=0.18.0
 "
 GENERATED_RDEPEND="${RDEPEND}

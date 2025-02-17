@@ -18,26 +18,26 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	PyOpenSSL>=23.0.0
-	apache-airflow-providers-amazon>=2.6.0; extra == "amazon"
-	apache-airflow-providers-apache-beam; extra == "apache-beam"
-	apache-airflow-providers-apache-cassandra; extra == "apache-cassandra"
-	apache-airflow-providers-cncf-kubernetes>=10.1.0; extra == "cncf-kubernetes"
+	apache-airflow-providers-amazon>=2.6.0; extra == 'amazon'
+	apache-airflow-providers-apache-beam; extra == 'apache-beam'
+	apache-airflow-providers-apache-cassandra; extra == 'apache-cassandra'
+	apache-airflow-providers-cncf-kubernetes>=10.1.0; extra == 'cncf-kubernetes'
 	apache-airflow-providers-common-compat>=1.3.0
 	apache-airflow-providers-common-sql>=1.20.0
-	apache-airflow-providers-facebook>=2.2.0; extra == "facebook"
-	apache-airflow-providers-microsoft-azure; extra == "microsoft-azure"
-	apache-airflow-providers-microsoft-mssql; extra == "microsoft-mssql"
-	apache-airflow-providers-mysql; extra == "mysql"
-	apache-airflow-providers-openlineage; extra == "openlineage"
-	apache-airflow-providers-oracle>=3.1.0; extra == "oracle"
-	apache-airflow-providers-postgres; extra == "postgres"
-	apache-airflow-providers-presto; extra == "presto"
-	apache-airflow-providers-salesforce; extra == "salesforce"
-	apache-airflow-providers-sftp; extra == "sftp"
-	apache-airflow-providers-ssh; extra == "ssh"
-	apache-airflow-providers-trino; extra == "trino"
+	apache-airflow-providers-facebook>=2.2.0; extra == 'facebook'
+	apache-airflow-providers-microsoft-azure; extra == 'microsoft-azure'
+	apache-airflow-providers-microsoft-mssql; extra == 'microsoft-mssql'
+	apache-airflow-providers-mysql; extra == 'mysql'
+	apache-airflow-providers-openlineage; extra == 'openlineage'
+	apache-airflow-providers-oracle>=3.1.0; extra == 'oracle'
+	apache-airflow-providers-postgres; extra == 'postgres'
+	apache-airflow-providers-presto; extra == 'presto'
+	apache-airflow-providers-salesforce; extra == 'salesforce'
+	apache-airflow-providers-sftp; extra == 'sftp'
+	apache-airflow-providers-ssh; extra == 'ssh'
+	apache-airflow-providers-trino; extra == 'trino'
 	apache-airflow>=2.9.0
-	apache-beam[gcp]; extra == "apache-beam"
+	apache-beam[gcp]; extra == 'apache-beam'
 	asgiref>=3.5.2
 	dill>=0.2.3
 	gcloud-aio-auth>=5.2.0
@@ -94,9 +94,9 @@ REQUIRES_DIST="
 	json-merge-patch>=0.2
 	looker-sdk!=24.18.0,>=22.4.0
 	pandas-gbq>=0.7.0
-	pandas<2.2,>=1.5.3; python_version < "3.9"
-	pandas<2.2,>=2.1.2; python_version >= "3.9"
-	plyvel>=1.5.1; extra == "leveldb"
+	pandas<2.2,>=1.5.3; python_version < '3.9'
+	pandas<2.2,>=2.1.2; python_version >= '3.9'
+	plyvel>=1.5.1; extra == 'leveldb'
 	proto-plus>=1.19.6
 	pyarrow>=14.0.1
 	python-slugify>=7.0.0

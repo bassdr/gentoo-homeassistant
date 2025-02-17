@@ -17,12 +17,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	duckdb; extra == "test"
-	pandas; extra == "dbapi"
-	pandas; extra == "test"
-	pyarrow>=8.0.0; extra == "dbapi"
-	pyarrow>=8.0.0; extra == "test"
-	pytest; extra == "test"
+	duckdb; extra == 'test'
+	pandas; extra == 'dbapi'
+	pandas; extra == 'test'
+	pyarrow>=8.0.0; extra == 'dbapi'
+	pyarrow>=8.0.0; extra == 'test'
+	pytest; extra == 'test'
 	typing-extensions
 "
 GENERATED_RDEPEND="${RDEPEND}

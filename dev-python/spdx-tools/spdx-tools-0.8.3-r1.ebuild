@@ -21,25 +21,25 @@ GENERATED_IUSE="code-style development graph-generation"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	beartype
-	black; extra == "code-style"
-	black; extra == "development"
+	black; extra == 'code-style'
+	black; extra == 'development'
 	click
-	flake8; extra == "code-style"
-	flake8; extra == "development"
-	isort; extra == "code-style"
-	isort; extra == "development"
+	flake8; extra == 'code-style'
+	flake8; extra == 'development'
+	isort; extra == 'code-style'
+	isort; extra == 'development'
 	license-expression
-	networkx; extra == "development"
-	networkx; extra == "graph-generation"
+	networkx; extra == 'development'
+	networkx; extra == 'graph-generation'
 	ply
-	pygraphviz; extra == "graph-generation"
-	pyshacl; extra == "test"
-	pytest; extra == "development"
-	pytest; extra == "test"
+	pygraphviz; extra == 'graph-generation'
+	pyshacl; extra == 'test'
+	pytest; extra == 'development'
+	pytest; extra == 'test'
 	pyyaml
 	rdflib
 	semantic-version
-	tzdata; extra == "test"
+	tzdata; extra == 'test'
 	uritools
 	xmltodict
 "

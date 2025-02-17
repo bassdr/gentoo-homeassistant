@@ -27,7 +27,7 @@ REQUIRES_DIST="
 	blinker (>=1.1); extra == 'tests'
 	bottle; extra == 'tests'
 	celery (>=2.5); extra == 'tests'
-	contextlib2; python_version<"3.2"
+	contextlib2; python_version<'3.2'
 	coverage (<4); extra == 'tests'
 	exam (>=0.5.2); extra == 'tests'
 	flake8 (==3.5.0); extra == 'tests'

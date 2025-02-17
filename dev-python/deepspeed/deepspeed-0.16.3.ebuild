@@ -17,111 +17,111 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	accelerate; extra == "all"
-	accelerate; extra == "dev"
-	autodoc_pydantic>=2.0.0; extra == "all"
-	autodoc_pydantic>=2.0.0; extra == "readthedocs"
-	clang-format==18.1.3; extra == "all"
-	clang-format==18.1.3; extra == "dev"
-	comet_ml>=3.41.0; extra == "all"
-	comet_ml>=3.41.0; extra == "dev"
-	deepspeed-kernels; sys_platform == "linux" and extra == "all"
-	deepspeed-kernels; sys_platform == "linux" and extra == "dev"
-	diffusers>=0.25.0; extra == "all"
-	diffusers>=0.25.0; extra == "sd"
-	docutils<0.18; extra == "all"
-	docutils<0.18; extra == "dev"
-	docutils<0.18; extra == "readthedocs"
+	accelerate; extra == 'all'
+	accelerate; extra == 'dev'
+	autodoc_pydantic>=2.0.0; extra == 'all'
+	autodoc_pydantic>=2.0.0; extra == 'readthedocs'
+	clang-format==18.1.3; extra == 'all'
+	clang-format==18.1.3; extra == 'dev'
+	comet_ml>=3.41.0; extra == 'all'
+	comet_ml>=3.41.0; extra == 'dev'
+	deepspeed-kernels; sys_platform == 'linux' and extra == 'all'
+	deepspeed-kernels; sys_platform == 'linux' and extra == 'dev'
+	diffusers>=0.25.0; extra == 'all'
+	diffusers>=0.25.0; extra == 'sd'
+	docutils<0.18; extra == 'all'
+	docutils<0.18; extra == 'dev'
+	docutils<0.18; extra == 'readthedocs'
 	einops
-	future; extra == "all"
-	future; extra == "dev"
-	google; extra == "all"
-	google; extra == "inf"
+	future; extra == 'all'
+	future; extra == 'dev'
+	google; extra == 'all'
+	google; extra == 'inf'
 	hjson
-	hjson; extra == "all"
-	hjson; extra == "autotuning-ml"
-	hjson; extra == "readthedocs"
-	importlib-metadata>=4; extra == "all"
-	importlib-metadata>=4; extra == "dev"
-	lm-eval==0.3.0; extra == "all"
-	lm-eval==0.3.0; extra == "inf"
-	mpi4py; extra == "1bit-mpi"
-	mpi4py; extra == "all"
+	hjson; extra == 'all'
+	hjson; extra == 'autotuning-ml'
+	hjson; extra == 'readthedocs'
+	importlib-metadata>=4; extra == 'all'
+	importlib-metadata>=4; extra == 'dev'
+	lm-eval==0.3.0; extra == 'all'
+	lm-eval==0.3.0; extra == 'inf'
+	mpi4py; extra == '1bit-mpi'
+	mpi4py; extra == 'all'
 	msgpack
-	mup; extra == "all"
-	mup; extra == "dev"
-	neural-compressor==2.1.0; extra == "all"
-	neural-compressor==2.1.0; extra == "sparse"
+	mup; extra == 'all'
+	mup; extra == 'dev'
+	neural-compressor==2.1.0; extra == 'all'
+	neural-compressor==2.1.0; extra == 'sparse'
 	ninja
 	numpy
-	packaging; extra == "all"
-	packaging; extra == "readthedocs"
+	packaging; extra == 'all'
+	packaging; extra == 'readthedocs'
 	packaging>=20.0
-	pre-commit>=3.2.0; extra == "all"
-	pre-commit>=3.2.0; extra == "dev"
-	protobuf; extra == "all"
-	protobuf; extra == "inf"
+	pre-commit>=3.2.0; extra == 'all'
+	pre-commit>=3.2.0; extra == 'dev'
+	protobuf; extra == 'all'
+	protobuf; extra == 'inf'
 	psutil
-	psutil; extra == "all"
-	psutil; extra == "readthedocs"
+	psutil; extra == 'all'
+	psutil; extra == 'readthedocs'
 	py-cpuinfo
-	py-cpuinfo; extra == "all"
-	py-cpuinfo; extra == "readthedocs"
+	py-cpuinfo; extra == 'all'
+	py-cpuinfo; extra == 'readthedocs'
 	pydantic>=2.0.0
-	pydantic>=2.0.0; extra == "all"
-	pydantic>=2.0.0; extra == "readthedocs"
-	pytest-forked; extra == "all"
-	pytest-forked; extra == "dev"
-	pytest-randomly; extra == "all"
-	pytest-randomly; extra == "dev"
-	pytest-xdist; extra == "all"
-	pytest-xdist; extra == "dev"
-	pytest>=7.2.0; extra == "all"
-	pytest>=7.2.0; extra == "dev"
-	qtorch; extra == "all"
-	qtorch; extra == "inf"
-	qtorch==0.3.0; extra == "all"
-	qtorch==0.3.0; extra == "dev"
-	recommonmark; extra == "all"
-	recommonmark; extra == "dev"
-	recommonmark; extra == "readthedocs"
-	safetensors; extra == "all"
-	safetensors; extra == "inf"
-	sentencepiece; extra == "all"
-	sentencepiece; extra == "inf"
-	sphinx-rtd-theme; extra == "all"
-	sphinx-rtd-theme; extra == "dev"
-	sphinx; extra == "all"
-	sphinx; extra == "dev"
-	sphinx_rtd_theme; extra == "all"
-	sphinx_rtd_theme; extra == "readthedocs"
-	tabulate; extra == "all"
-	tabulate; extra == "autotuning"
-	tabulate; extra == "autotuning-ml"
-	tensorboard; extra == "all"
-	tensorboard; extra == "dev"
+	pydantic>=2.0.0; extra == 'all'
+	pydantic>=2.0.0; extra == 'readthedocs'
+	pytest-forked; extra == 'all'
+	pytest-forked; extra == 'dev'
+	pytest-randomly; extra == 'all'
+	pytest-randomly; extra == 'dev'
+	pytest-xdist; extra == 'all'
+	pytest-xdist; extra == 'dev'
+	pytest>=7.2.0; extra == 'all'
+	pytest>=7.2.0; extra == 'dev'
+	qtorch; extra == 'all'
+	qtorch; extra == 'inf'
+	qtorch==0.3.0; extra == 'all'
+	qtorch==0.3.0; extra == 'dev'
+	recommonmark; extra == 'all'
+	recommonmark; extra == 'dev'
+	recommonmark; extra == 'readthedocs'
+	safetensors; extra == 'all'
+	safetensors; extra == 'inf'
+	sentencepiece; extra == 'all'
+	sentencepiece; extra == 'inf'
+	sphinx-rtd-theme; extra == 'all'
+	sphinx-rtd-theme; extra == 'dev'
+	sphinx; extra == 'all'
+	sphinx; extra == 'dev'
+	sphinx_rtd_theme; extra == 'all'
+	sphinx_rtd_theme; extra == 'readthedocs'
+	tabulate; extra == 'all'
+	tabulate; extra == 'autotuning'
+	tabulate; extra == 'autotuning-ml'
+	tensorboard; extra == 'all'
+	tensorboard; extra == 'dev'
 	torch
-	torch; extra == "all"
-	torch; extra == "readthedocs"
-	torchvision; extra == "all"
-	torchvision; extra == "dev"
+	torch; extra == 'all'
+	torch; extra == 'readthedocs'
+	torchvision; extra == 'all'
+	torchvision; extra == 'dev'
 	tqdm
-	tqdm; extra == "all"
-	tqdm; extra == "readthedocs"
-	transformers>=4.32.1; extra == "all"
-	transformers>=4.32.1; extra == "inf"
-	transformers>=4.39.0; extra == "all"
-	transformers>=4.39.0; extra == "dev"
-	triton==1.0.0; extra == "all"
-	triton==1.0.0; extra == "sparse-attn"
-	triton==2.1.0; extra == "all"
-	triton==2.1.0; extra == "triton"
-	triton>=2.1.0; extra == "all"
-	triton>=2.1.0; extra == "sd"
-	wandb; extra == "all"
-	wandb; extra == "dev"
-	xgboost; extra == "all"
-	xgboost; extra == "autotuning-ml"
+	tqdm; extra == 'all'
+	tqdm; extra == 'readthedocs'
+	transformers>=4.32.1; extra == 'all'
+	transformers>=4.32.1; extra == 'inf'
+	transformers>=4.39.0; extra == 'all'
+	transformers>=4.39.0; extra == 'dev'
+	triton==1.0.0; extra == 'all'
+	triton==1.0.0; extra == 'sparse-attn'
+	triton==2.1.0; extra == 'all'
+	triton==2.1.0; extra == 'triton'
+	triton>=2.1.0; extra == 'all'
+	triton>=2.1.0; extra == 'sd'
+	wandb; extra == 'all'
+	wandb; extra == 'dev'
+	xgboost; extra == 'all'
+	xgboost; extra == 'autotuning-ml'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/accelerate[${PYTHON_USEDEP}] )

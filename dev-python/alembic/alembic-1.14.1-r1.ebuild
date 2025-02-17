@@ -21,11 +21,11 @@ IUSE="${GENERATED_IUSE} doc"
 REQUIRES_DIST="
 	Mako
 	SQLAlchemy>=1.3.0
-	backports.zoneinfo; python_version < "3.9" and extra == "tz"
-	importlib-metadata; python_version < "3.9"
-	importlib-resources; python_version < "3.9"
+	backports.zoneinfo; python_version < '3.9' and extra == 'tz'
+	importlib-metadata; python_version < '3.9'
+	importlib-resources; python_version < '3.9'
 	typing-extensions>=4
-	tzdata; extra == "tz"
+	tzdata; extra == 'tz'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/mako[${PYTHON_USEDEP}]

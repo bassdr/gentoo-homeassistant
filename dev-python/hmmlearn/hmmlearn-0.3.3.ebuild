@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	matplotlib; extra == "docs"
+	matplotlib; extra == 'docs'
 	numpy>=1.10
-	pydata-sphinx-theme; extra == "docs"
-	pytest; extra == "tests"
+	pydata-sphinx-theme; extra == 'docs'
+	pytest; extra == 'tests'
 	scikit-learn!=0.22.0,>=0.16
 	scipy>=0.19
-	sphinx-gallery; extra == "docs"
-	sphinx>=2.0; extra == "docs"
+	sphinx-gallery; extra == 'docs'
+	sphinx>=2.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )

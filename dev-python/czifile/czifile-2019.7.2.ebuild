@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	imagecodecs (>=2019.5.22) ; platform_system == "Windows"
+	imagecodecs (>=2019.5.22) ; platform_system == 'Windows'
 	numpy (>=1.11.3)
 	tifffile (>=2019.7.2)
 "

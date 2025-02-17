@@ -19,32 +19,32 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	autocommand
 	dnspython
-	furo; extra == "doc"
-	importlib-resources; python_version < "3.9"
+	furo; extra == 'doc'
+	importlib-resources; python_version < '3.9'
 	jaraco.collections
 	jaraco.compat>=4.1
 	jaraco.functools
 	jaraco.mongodb
-	jaraco.packaging>=9.3; extra == "doc"
+	jaraco.packaging>=9.3; extra == 'doc'
 	keyring
 	lxml>=4.2.6
-	mockproc; extra == "test"
+	mockproc; extra == 'test'
 	pymongo
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-enabler>=2.2; extra == "test"
-	pytest-mypy; extra == "test"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-enabler>=2.2; extra == 'test'
+	pytest-mypy; extra == 'test'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'test'
 	python-dateutil
 	requests
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
 	splinter[selenium]
 	tempora>=5.7
-	types-python-dateutil; extra == "test"
-	types-requests; extra == "test"
+	types-python-dateutil; extra == 'test'
+	types-requests; extra == 'test'
 	victor-smart-kill
 "
 GENERATED_RDEPEND="${RDEPEND}

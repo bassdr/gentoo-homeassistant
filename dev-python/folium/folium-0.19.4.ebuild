@@ -18,7 +18,7 @@ REQUIRES_DIST="
 	branca>=0.6.0
 	jinja2>=2.9
 	numpy
-	pytest; extra == "testing"
+	pytest; extra == 'testing'
 	requests
 	xyzservices
 "

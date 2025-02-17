@@ -23,7 +23,7 @@ REQUIRES_DIST="
 	httpx
 	itsdangerous>=0.24
 	lazy
-	legacy-cgi; python_version >= "3.13"
+	legacy-cgi; python_version >= '3.13'
 	passlib[argon2]
 	platformdirs
 	pluggy<2.0,>=0.6.0

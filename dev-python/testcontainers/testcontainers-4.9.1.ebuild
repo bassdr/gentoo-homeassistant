@@ -17,58 +17,58 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	azure-cosmos; extra == "cosmosdb"
-	azure-storage-blob<13.0,>=12.19; extra == "azurite"
-	bcrypt; extra == "registry"
-	boto3; extra == "aws" or extra == "localstack"
-	cassandra-driver==3.29.1; extra == "scylla"
-	chromadb-client; extra == "chroma"
-	clickhouse-driver; extra == "clickhouse"
-	cryptography; extra == "mailpit" or extra == "sftp"
+	azure-cosmos; extra == 'cosmosdb'
+	azure-storage-blob<13.0,>=12.19; extra == 'azurite'
+	bcrypt; extra == 'registry'
+	boto3; extra == 'aws' or extra == 'localstack'
+	cassandra-driver==3.29.1; extra == 'scylla'
+	chromadb-client; extra == 'chroma'
+	clickhouse-driver; extra == 'clickhouse'
+	cryptography; extra == 'mailpit' or extra == 'sftp'
 	docker
-	google-cloud-datastore>=2; extra == "google"
-	google-cloud-pubsub>=2; extra == "google"
-	httpx; extra == "aws" or extra == "generic" or extra == "test-module-import"
-	ibm_db_sa; extra == "db2"
-	influxdb-client; extra == "influxdb"
-	influxdb; extra == "influxdb"
-	kubernetes; extra == "k3s"
-	minio; extra == "minio"
-	nats-py; extra == "nats"
-	neo4j; extra == "neo4j"
-	opensearch-py; extra == "opensearch"
-	oracledb; extra == "oracle" or extra == "oracle-free"
-	pika; extra == "rabbitmq"
-	pymongo; extra == "mongodb"
-	pymssql; extra == "mssql"
-	pymysql[rsa]; extra == "mysql"
-	python-arango<8.0,>=7.8; extra == "arangodb"
+	google-cloud-datastore>=2; extra == 'google'
+	google-cloud-pubsub>=2; extra == 'google'
+	httpx; extra == 'aws' or extra == 'generic' or extra == 'test-module-import'
+	ibm_db_sa; extra == 'db2'
+	influxdb-client; extra == 'influxdb'
+	influxdb; extra == 'influxdb'
+	kubernetes; extra == 'k3s'
+	minio; extra == 'minio'
+	nats-py; extra == 'nats'
+	neo4j; extra == 'neo4j'
+	opensearch-py; extra == 'opensearch'
+	oracledb; extra == 'oracle' or extra == 'oracle-free'
+	pika; extra == 'rabbitmq'
+	pymongo; extra == 'mongodb'
+	pymssql; extra == 'mssql'
+	pymysql[rsa]; extra == 'mysql'
+	python-arango<8.0,>=7.8; extra == 'arangodb'
 	python-dotenv
-	python-keycloak; extra == "keycloak"
-	pyyaml; extra == "k3s"
-	qdrant-client; extra == "qdrant"
-	redis; extra == "generic" or extra == "redis"
-	selenium; extra == "selenium"
-	sqlalchemy; extra == "db2" or extra == "mssql" or extra == "mysql" or extra == "oracle" or extra == "oracle-free"
-	trino; extra == "trino"
+	python-keycloak; extra == 'keycloak'
+	pyyaml; extra == 'k3s'
+	qdrant-client; extra == 'qdrant'
+	redis; extra == 'generic' or extra == 'redis'
+	selenium; extra == 'selenium'
+	sqlalchemy; extra == 'db2' or extra == 'mssql' or extra == 'mysql' or extra == 'oracle' or extra == 'oracle-free'
+	trino; extra == 'trino'
 	typing-extensions
 	urllib3
-	weaviate-client<5.0.0,>=4.5.4; extra == "weaviate"
+	weaviate-client<5.0.0,>=4.5.4; extra == 'weaviate'
 	wrapt
 "
 GENERATED_RDEPEND="${RDEPEND}
 	cosmosdb? ( dev-python/azure-cosmos[${PYTHON_USEDEP}] )
 	azurite? ( >=dev-python/azure-storage-blob-12.19[${PYTHON_USEDEP}] <dev-python/azure-storage-blob-13.0[${PYTHON_USEDEP}] )
 	registry? ( dev-python/bcrypt[${PYTHON_USEDEP}] )
-	localstack? ( dev-python/boto3[${PYTHON_USEDEP}] ) aws? ( dev-python/boto3[${PYTHON_USEDEP}] )
+	aws? ( dev-python/boto3[${PYTHON_USEDEP}] ) localstack? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	scylla? ( ~dev-python/cassandra-driver-3.29.1[${PYTHON_USEDEP}] )
 	chroma? ( dev-python/chromadb-client[${PYTHON_USEDEP}] )
 	clickhouse? ( dev-python/clickhouse-driver[${PYTHON_USEDEP}] )
-	sftp? ( dev-python/cryptography[${PYTHON_USEDEP}] ) mailpit? ( dev-python/cryptography[${PYTHON_USEDEP}] )
+	mailpit? ( dev-python/cryptography[${PYTHON_USEDEP}] ) sftp? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	dev-python/docker[${PYTHON_USEDEP}]
 	google? ( >=dev-python/google-cloud-datastore-2[${PYTHON_USEDEP}] )
 	google? ( >=dev-python/google-cloud-pubsub-2[${PYTHON_USEDEP}] )
-	generic? ( dev-python/httpx[${PYTHON_USEDEP}] ) aws? ( dev-python/httpx[${PYTHON_USEDEP}] ) test-module-import? ( dev-python/httpx[${PYTHON_USEDEP}] )
+	test-module-import? ( dev-python/httpx[${PYTHON_USEDEP}] ) aws? ( dev-python/httpx[${PYTHON_USEDEP}] ) generic? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	db2? ( dev-python/ibm-db-sa[${PYTHON_USEDEP}] )
 	influxdb? ( dev-python/influxdb[${PYTHON_USEDEP}] )
 	influxdb? ( dev-python/influxdb-client[${PYTHON_USEDEP}] )
@@ -89,7 +89,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	qdrant? ( dev-python/qdrant-client[${PYTHON_USEDEP}] )
 	generic? ( dev-python/redis[${PYTHON_USEDEP}] ) redis? ( dev-python/redis[${PYTHON_USEDEP}] )
 	selenium? ( dev-python/selenium[${PYTHON_USEDEP}] )
-	mssql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) oracle-free? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) db2? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) oracle? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) mysql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
+	mysql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) mssql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) oracle-free? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) oracle? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) db2? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
 	trino? ( dev-python/trino[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]

@@ -19,7 +19,7 @@ REQUIRES_DIST="
 	jax>=0.4.27
 	jaxlib>=0.4.27
 	numpy>=1.24.1
-	setuptools; python_version >= "3.12"
+	setuptools; python_version >= '3.12'
 	toolz>=0.9.0
 	typing_extensions>=4.2.0
 "

@@ -17,10 +17,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py<3.0.0,>=0.9
-	googleapis-common-protos<2,>=1.52.0; python_version >= "3.11"
-	googleapis-common-protos<2,>=1.56.4; python_version >= "3.11"
-	protobuf<4.21,>=3.20.3; python_version < "3.11"
-	protobuf<6.0.0dev,>=4.25.2; python_version >= "3.11"
+	googleapis-common-protos<2,>=1.52.0; python_version >= '3.11'
+	googleapis-common-protos<2,>=1.56.4; python_version >= '3.11'
+	protobuf<4.21,>=3.20.3; python_version < '3.11'
+	protobuf<6.0.0dev,>=4.25.2; python_version >= '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/absl-py-0.9[${PYTHON_USEDEP}] <dev-python/absl-py-3.0.0[${PYTHON_USEDEP}]

@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cmake>=3.31.2; extra == "build"
-	git-archive-all; extra == "build"
-	packaging>=24.2; extra == "build"
-	tomli>=2.1.0; python_full_version < "3.11"
-	wheel>=0.45.1; extra == "build"
+	cmake>=3.31.2; extra == 'build'
+	git-archive-all; extra == 'build'
+	packaging>=24.2; extra == 'build'
+	tomli>=2.1.0; python_full_version < '3.11'
+	wheel>=0.45.1; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( >=dev-python/cmake-3.31.2[${PYTHON_USEDEP}] )

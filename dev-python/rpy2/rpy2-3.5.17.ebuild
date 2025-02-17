@@ -21,42 +21,42 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="all doc numpy pandas test-minimal types"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	backports.zoneinfo; python_version < "3.9"
+	backports.zoneinfo; python_version < '3.9'
 	cffi>=1.15.1
-	coverage; extra == "test-minimal"
-	ipykernel; extra == "doc"
-	ipython; extra == "all"
-	ipython; extra == "test"
+	coverage; extra == 'test-minimal'
+	ipykernel; extra == 'doc'
+	ipython; extra == 'all'
+	ipython; extra == 'test'
 	jinja2
-	jupytext; extra == "doc"
-	multipledispatch; extra == "doc"
-	mypy; extra == "types"
-	nbconvert; extra == "doc"
-	numpy; extra == "doc"
-	numpy<1.26; python_version < "3.9" and extra == "all"
-	numpy<1.26; python_version < "3.9" and extra == "numpy"
-	numpy<1.26; python_version < "3.9" and extra == "pandas"
-	numpy<1.26; python_version < "3.9" and extra == "test"
-	numpy>=1.26; python_version >= "3.9" and extra == "all"
-	numpy>=1.26; python_version >= "3.9" and extra == "numpy"
-	numpy>=1.26; python_version >= "3.9" and extra == "pandas"
-	numpy>=1.26; python_version >= "3.9" and extra == "test"
-	packaging; platform_system == "Windows"
-	pandas; extra == "doc"
-	pandas; python_version < "3.10" and extra == "all"
-	pandas; python_version < "3.10" and extra == "pandas"
-	pandas; python_version < "3.10" and extra == "test"
-	pandas>=1.3.5; python_version >= "3.10" and extra == "all"
-	pandas>=1.3.5; python_version >= "3.10" and extra == "pandas"
-	pandas>=1.3.5; python_version >= "3.10" and extra == "test"
-	pygraphviz; extra == "doc"
-	pytest-cov; extra == "test-minimal"
-	pytest; extra == "all"
-	pytest; extra == "test"
-	pytest>=8; extra == "test-minimal"
-	sphinx; extra == "doc"
-	types-tzlocal; extra == "types"
-	typing-extensions; python_version < "3.8"
+	jupytext; extra == 'doc'
+	multipledispatch; extra == 'doc'
+	mypy; extra == 'types'
+	nbconvert; extra == 'doc'
+	numpy; extra == 'doc'
+	numpy<1.26; python_version < '3.9' and extra == 'all'
+	numpy<1.26; python_version < '3.9' and extra == 'numpy'
+	numpy<1.26; python_version < '3.9' and extra == 'pandas'
+	numpy<1.26; python_version < '3.9' and extra == 'test'
+	numpy>=1.26; python_version >= '3.9' and extra == 'all'
+	numpy>=1.26; python_version >= '3.9' and extra == 'numpy'
+	numpy>=1.26; python_version >= '3.9' and extra == 'pandas'
+	numpy>=1.26; python_version >= '3.9' and extra == 'test'
+	packaging; platform_system == 'Windows'
+	pandas; extra == 'doc'
+	pandas; python_version < '3.10' and extra == 'all'
+	pandas; python_version < '3.10' and extra == 'pandas'
+	pandas; python_version < '3.10' and extra == 'test'
+	pandas>=1.3.5; python_version >= '3.10' and extra == 'all'
+	pandas>=1.3.5; python_version >= '3.10' and extra == 'pandas'
+	pandas>=1.3.5; python_version >= '3.10' and extra == 'test'
+	pygraphviz; extra == 'doc'
+	pytest-cov; extra == 'test-minimal'
+	pytest; extra == 'all'
+	pytest; extra == 'test'
+	pytest>=8; extra == 'test-minimal'
+	sphinx; extra == 'doc'
+	types-tzlocal; extra == 'types'
+	typing-extensions; python_version < '3.8'
 	tzlocal
 "
 GENERATED_RDEPEND="${RDEPEND}

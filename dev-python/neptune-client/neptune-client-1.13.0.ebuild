@@ -24,37 +24,37 @@ REQUIRES_DIST="
 	bravado<12.0.0,>=11.0.0
 	click>=7.0
 	future>=0.17.1
-	importlib-metadata; python_version < "3.8"
-	kedro-neptune; python_version < "3.11" and extra == "kedro"
-	mosaicml; extra == "mosaicml"
-	neptune-airflow; extra == "airflow"
-	neptune-aws; extra == "aws"
-	neptune-detectron2; python_version >= "3.8" and extra == "detectron2"
-	neptune-fastai; extra == "fastai"
-	neptune-lightgbm; extra == "lightgbm"
-	neptune-mlflow; extra == "mlflow"
-	neptune-optuna; extra == "optuna"
-	neptune-prophet; extra == "prophet"
-	neptune-pytorch; extra == "pytorch"
-	neptune-sacred; extra == "sacred"
-	neptune-sklearn; extra == "sklearn"
-	neptune-tensorboard; extra == "tensorboard"
-	neptune-tensorflow-keras; extra == "tensorflow-keras"
-	neptune-xgboost; extra == "xgboost"
+	importlib-metadata; python_version < '3.8'
+	kedro-neptune; python_version < '3.11' and extra == 'kedro'
+	mosaicml; extra == 'mosaicml'
+	neptune-airflow; extra == 'airflow'
+	neptune-aws; extra == 'aws'
+	neptune-detectron2; python_version >= '3.8' and extra == 'detectron2'
+	neptune-fastai; extra == 'fastai'
+	neptune-lightgbm; extra == 'lightgbm'
+	neptune-mlflow; extra == 'mlflow'
+	neptune-optuna; extra == 'optuna'
+	neptune-prophet; extra == 'prophet'
+	neptune-pytorch; extra == 'pytorch'
+	neptune-sacred; extra == 'sacred'
+	neptune-sklearn; extra == 'sklearn'
+	neptune-tensorboard; extra == 'tensorboard'
+	neptune-tensorflow-keras; extra == 'tensorflow-keras'
+	neptune-xgboost; extra == 'xgboost'
 	oauthlib>=2.1.0
 	packaging
 	pandas
 	psutil
-	pytorch-lightning; extra == "pytorch-lightning"
+	pytorch-lightning; extra == 'pytorch-lightning'
 	requests-oauthlib>=1.0.0
 	requests>=2.20.0
 	six>=1.12.0
 	swagger-spec-validator>=2.7.4
-	transformers; extra == "transformers"
+	transformers; extra == 'transformers'
 	typing-extensions>=3.10.0
 	urllib3
 	websocket-client!=1.0.0,>=0.35.0
-	zenml; extra == "zenml"
+	zenml; extra == 'zenml'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/boto3-1.28.0[${PYTHON_USEDEP}]

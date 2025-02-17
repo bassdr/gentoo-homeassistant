@@ -19,11 +19,11 @@ GENERATED_IUSE="credssp kerberos"
 IUSE="${GENERATED_IUSE} kerberos"
 
 REQUIRES_DIST="
-	pykerberos<2.0.0,>=1.2.1; sys_platform != "win32" and extra == "kerberos"
-	requests-credssp>=1.0.0; extra == "credssp"
+	pykerberos<2.0.0,>=1.2.1; sys_platform != 'win32' and extra == 'kerberos'
+	requests-credssp>=1.0.0; extra == 'credssp'
 	requests-ntlm>=1.1.0
 	requests>=2.9.1
-	winkerberos>=0.5.0; sys_platform == "win32" and extra == "kerberos"
+	winkerberos>=0.5.0; sys_platform == 'win32' and extra == 'kerberos'
 	xmltodict
 "
 GENERATED_RDEPEND="${RDEPEND}

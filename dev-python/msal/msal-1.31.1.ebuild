@@ -27,8 +27,8 @@ DOCS="README.md"
 REQUIRES_DIST="
 	PyJWT[crypto]<3,>=1.0.0
 	cryptography<46,>=2.5
-	pymsalruntime<0.18,>=0.14; (python_version >= "3.6" and platform_system == "Windows") and extra == "broker"
-	pymsalruntime<0.18,>=0.17; (python_version >= "3.8" and platform_system == "Darwin") and extra == "broker"
+	pymsalruntime<0.18,>=0.14; (python_version >= '3.6' and platform_system == 'Windows') and extra == 'broker'
+	pymsalruntime<0.18,>=0.17; (python_version >= '3.8' and platform_system == 'Darwin') and extra == 'broker'
 	requests<3,>=2.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

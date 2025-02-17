@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	apache-airflow-providers-common-sql; extra == "common-sql"
+	apache-airflow-providers-common-sql; extra == 'common-sql'
 	apache-airflow-providers-postgres>=5.7.1
 	apache-airflow>=2.9.0
 	pgvector!=0.3.0

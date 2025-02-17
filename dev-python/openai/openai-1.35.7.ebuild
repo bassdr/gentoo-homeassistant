@@ -25,12 +25,12 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	anyio<5,>=3.5.0
-	cached-property; python_version < "3.8"
+	cached-property; python_version < '3.8'
 	distro<2,>=1.7.0
 	httpx<1,>=0.23.0
-	numpy>=1; extra == "datalib"
-	pandas-stubs>=1.1.0.11; extra == "datalib"
-	pandas>=1.2.3; extra == "datalib"
+	numpy>=1; extra == 'datalib'
+	pandas-stubs>=1.1.0.11; extra == 'datalib'
+	pandas>=1.2.3; extra == 'datalib'
 	pydantic<3,>=1.9.0
 	sniffio
 	tqdm>4

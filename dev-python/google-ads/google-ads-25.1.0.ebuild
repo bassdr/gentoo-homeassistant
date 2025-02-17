@@ -21,7 +21,7 @@ REQUIRES_DIST="
 	googleapis-common-protos<2.0.0,>=1.56.3
 	grpcio-status<2.0.0,>=1.59.0
 	grpcio<2.0.0,>=1.59.0
-	nox<2022.6,>=2020.12.31; extra == "tests"
+	nox<2022.6,>=2020.12.31; extra == 'tests'
 	proto-plus<2.0.0,>=1.22.3
 	protobuf<6.0.0,>=4.25.0
 "

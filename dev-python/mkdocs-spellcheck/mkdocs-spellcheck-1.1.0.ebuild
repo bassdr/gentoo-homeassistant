@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	codespell>=2.2.2; extra == "codespell"
-	importlib-resources>=6.4; python_version < "3.9" and extra == "symspellpy"
-	mkdocs-spellcheck[codespell,symspellpy]; extra == "all"
-	symspellpy>=6.7.6; extra == "symspellpy"
+	codespell>=2.2.2; extra == 'codespell'
+	importlib-resources>=6.4; python_version < '3.9' and extra == 'symspellpy'
+	mkdocs-spellcheck[codespell,symspellpy]; extra == 'all'
+	symspellpy>=6.7.6; extra == 'symspellpy'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	codespell? ( >=dev-python/codespell-2.2.2[${PYTHON_USEDEP}] )

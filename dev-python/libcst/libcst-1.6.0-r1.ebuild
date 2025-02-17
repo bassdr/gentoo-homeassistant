@@ -137,27 +137,27 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx>=5.1.1; extra == "dev"
-	black==24.8.0; extra == "dev"
-	build>=0.10.0; extra == "dev"
-	coverage[toml]>=4.5.4; extra == "dev"
-	fixit==2.1.0; extra == "dev"
-	flake8==7.1.1; extra == "dev"
-	hypothesis>=4.36.0; extra == "dev"
-	hypothesmith>=0.0.4; extra == "dev"
-	jinja2==3.1.5; extra == "dev"
-	jupyter>=1.0.0; extra == "dev"
-	maturin<1.8,>=1.7.0; extra == "dev"
-	nbsphinx>=0.4.2; extra == "dev"
-	prompt-toolkit>=2.0.9; extra == "dev"
-	pyre-check==0.9.18; platform_system != "Windows" and extra == "dev"
+	Sphinx>=5.1.1; extra == 'dev'
+	black==24.8.0; extra == 'dev'
+	build>=0.10.0; extra == 'dev'
+	coverage[toml]>=4.5.4; extra == 'dev'
+	fixit==2.1.0; extra == 'dev'
+	flake8==7.1.1; extra == 'dev'
+	hypothesis>=4.36.0; extra == 'dev'
+	hypothesmith>=0.0.4; extra == 'dev'
+	jinja2==3.1.5; extra == 'dev'
+	jupyter>=1.0.0; extra == 'dev'
+	maturin<1.8,>=1.7.0; extra == 'dev'
+	nbsphinx>=0.4.2; extra == 'dev'
+	prompt-toolkit>=2.0.9; extra == 'dev'
+	pyre-check==0.9.18; platform_system != 'Windows' and extra == 'dev'
 	pyyaml>=5.2
-	setuptools-rust>=1.5.2; extra == "dev"
-	setuptools_scm>=6.0.1; extra == "dev"
-	slotscheck>=0.7.1; extra == "dev"
-	sphinx-rtd-theme>=0.4.3; extra == "dev"
-	ufmt==2.8.0; extra == "dev"
-	usort==1.0.8.post1; extra == "dev"
+	setuptools-rust>=1.5.2; extra == 'dev'
+	setuptools_scm>=6.0.1; extra == 'dev'
+	slotscheck>=0.7.1; extra == 'dev'
+	sphinx-rtd-theme>=0.4.3; extra == 'dev'
+	ufmt==2.8.0; extra == 'dev'
+	usort==1.0.8.post1; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyyaml-5.2[${PYTHON_USEDEP}]

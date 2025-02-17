@@ -19,10 +19,10 @@ REQUIRES_DIST="
 	click>=8.0.0
 	gql>=3.0.0
 	keyring
-	pre-commit-uv; extra == "dev"
-	pre-commit; extra == "dev"
+	pre-commit-uv; extra == 'dev'
+	pre-commit; extra == 'dev'
 	pyproject-parser
-	pytest; extra == "dev"
+	pytest; extra == 'dev'
 	requests_cache>=0.7
 	ruamel.yaml>=0.15.78
 	setuptools>=61

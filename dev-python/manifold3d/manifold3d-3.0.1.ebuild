@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	numpy; python_version < "3.12"
-	numpy>=1.26.0b1; python_version >= "3.12"
+	numpy; python_version < '3.12'
+	numpy>=1.26.0b1; python_version >= '3.12'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/numpy-1.26.0_beta1[${PYTHON_USEDEP}]

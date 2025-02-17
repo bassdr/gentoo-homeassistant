@@ -20,7 +20,7 @@ REQUIRES_DIST="
 	build>=1.0.3
 	chroma-hnswlib==0.7.6
 	fastapi>=0.95.2
-	graphlib_backport>=1.0.3; python_version < "3.9"
+	graphlib_backport>=1.0.3; python_version < '3.9'
 	grpcio>=1.58.0
 	httpx>=0.27.0
 	importlib-resources

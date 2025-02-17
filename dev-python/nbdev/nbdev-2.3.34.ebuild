@@ -18,22 +18,22 @@ REQUIRES_DIST="
 	PyYAML
 	asttokens
 	astunparse
-	black; extra == "dev"
+	black; extra == 'dev'
 	execnb>=0.1.4
 	fastcore>=1.5.27
 	ghapi>=1.0.3
-	ipywidgets; extra == "dev"
-	llms-txt; extra == "dev"
-	matplotlib; extra == "dev"
-	nbclassic; extra == "dev"
-	nbdev-numpy; extra == "dev"
-	nbdev-stdlib; extra == "dev"
+	ipywidgets; extra == 'dev'
+	llms-txt; extra == 'dev'
+	matplotlib; extra == 'dev'
+	nbclassic; extra == 'dev'
+	nbdev-numpy; extra == 'dev'
+	nbdev-stdlib; extra == 'dev'
 	packaging
-	pandas; extra == "dev"
-	pysymbol-llm; extra == "dev"
+	pandas; extra == 'dev'
+	pysymbol-llm; extra == 'dev'
 	setuptools
-	sphinx; extra == "dev"
-	svg.py; extra == "dev"
+	sphinx; extra == 'dev'
+	svg.py; extra == 'dev'
 	watchdog
 "
 GENERATED_RDEPEND="${RDEPEND}

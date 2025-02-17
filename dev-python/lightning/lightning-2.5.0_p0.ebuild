@@ -20,208 +20,208 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	PyYAML<8.0,>=5.4
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "all"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "dev"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "extra"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "fabric-all"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "fabric-dev"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "fabric-strategies"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "pytorch-all"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "pytorch-dev"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "pytorch-extra"
-	bitsandbytes<1.0,>=0.42.0; sys_platform == "darwin" and extra == "strategies"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "all"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "dev"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "extra"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "fabric-all"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "fabric-dev"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "fabric-strategies"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "pytorch-all"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "pytorch-dev"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "pytorch-extra"
-	bitsandbytes<1.0,>=0.44.0; (sys_platform == "linux" or sys_platform == "win32") and extra == "strategies"
-	click==8.1.7; extra == "dev"
-	click==8.1.7; extra == "fabric-dev"
-	click==8.1.7; extra == "fabric-test"
-	click==8.1.7; extra == "test"
-	cloudpickle<3.0,>=1.3; extra == "dev"
-	cloudpickle<3.0,>=1.3; extra == "pytorch-dev"
-	cloudpickle<3.0,>=1.3; extra == "pytorch-test"
-	cloudpickle<3.0,>=1.3; extra == "test"
-	coverage==7.3.1; extra == "dev"
-	coverage==7.3.1; extra == "fabric-dev"
-	coverage==7.3.1; extra == "fabric-test"
-	coverage==7.3.1; extra == "pytorch-dev"
-	coverage==7.3.1; extra == "pytorch-test"
-	coverage==7.3.1; extra == "test"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "all"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "dev"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "fabric-all"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "fabric-dev"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "fabric-strategies"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "pytorch-all"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "pytorch-dev"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "pytorch-strategies"
-	deepspeed<=0.9.3,>=0.8.2; (platform_system != "Windows" and platform_system != "Darwin") and extra == "strategies"
-	fastapi; extra == "dev"
-	fastapi; extra == "pytorch-dev"
-	fastapi; extra == "pytorch-test"
-	fastapi; extra == "test"
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'all'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'dev'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'extra'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'fabric-all'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'fabric-dev'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'fabric-strategies'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'pytorch-all'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'pytorch-dev'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'pytorch-extra'
+	bitsandbytes<1.0,>=0.42.0; sys_platform == 'darwin' and extra == 'strategies'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'all'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'dev'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'extra'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'fabric-all'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'fabric-dev'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'fabric-strategies'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'pytorch-all'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'pytorch-dev'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'pytorch-extra'
+	bitsandbytes<1.0,>=0.44.0; (sys_platform == 'linux' or sys_platform == 'win32') and extra == 'strategies'
+	click==8.1.7; extra == 'dev'
+	click==8.1.7; extra == 'fabric-dev'
+	click==8.1.7; extra == 'fabric-test'
+	click==8.1.7; extra == 'test'
+	cloudpickle<3.0,>=1.3; extra == 'dev'
+	cloudpickle<3.0,>=1.3; extra == 'pytorch-dev'
+	cloudpickle<3.0,>=1.3; extra == 'pytorch-test'
+	cloudpickle<3.0,>=1.3; extra == 'test'
+	coverage==7.3.1; extra == 'dev'
+	coverage==7.3.1; extra == 'fabric-dev'
+	coverage==7.3.1; extra == 'fabric-test'
+	coverage==7.3.1; extra == 'pytorch-dev'
+	coverage==7.3.1; extra == 'pytorch-test'
+	coverage==7.3.1; extra == 'test'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'all'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'dev'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'fabric-all'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'fabric-dev'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'fabric-strategies'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'pytorch-all'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'pytorch-dev'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'pytorch-strategies'
+	deepspeed<=0.9.3,>=0.8.2; (platform_system != 'Windows' and platform_system != 'Darwin') and extra == 'strategies'
+	fastapi; extra == 'dev'
+	fastapi; extra == 'pytorch-dev'
+	fastapi; extra == 'pytorch-test'
+	fastapi; extra == 'test'
 	fsspec[http]<2026.0,>=2022.5.0
-	hydra-core<2.0,>=1.2.0; extra == "all"
-	hydra-core<2.0,>=1.2.0; extra == "dev"
-	hydra-core<2.0,>=1.2.0; extra == "extra"
-	hydra-core<2.0,>=1.2.0; extra == "pytorch-all"
-	hydra-core<2.0,>=1.2.0; extra == "pytorch-dev"
-	hydra-core<2.0,>=1.2.0; extra == "pytorch-extra"
-	ipython[all]<9.0; extra == "all"
-	ipython[all]<9.0; extra == "dev"
-	ipython[all]<9.0; extra == "examples"
-	ipython[all]<9.0; extra == "pytorch-all"
-	ipython[all]<9.0; extra == "pytorch-dev"
-	ipython[all]<9.0; extra == "pytorch-examples"
-	jsonargparse[signatures]<5.0,>=4.27.7; extra == "all"
-	jsonargparse[signatures]<5.0,>=4.27.7; extra == "dev"
-	jsonargparse[signatures]<5.0,>=4.27.7; extra == "extra"
-	jsonargparse[signatures]<5.0,>=4.27.7; extra == "pytorch-all"
-	jsonargparse[signatures]<5.0,>=4.27.7; extra == "pytorch-dev"
-	jsonargparse[signatures]<5.0,>=4.27.7; extra == "pytorch-extra"
-	lightning-utilities<1.0,>=0.8.0; extra == "all"
-	lightning-utilities<1.0,>=0.8.0; extra == "dev"
-	lightning-utilities<1.0,>=0.8.0; extra == "examples"
-	lightning-utilities<1.0,>=0.8.0; extra == "fabric-all"
-	lightning-utilities<1.0,>=0.8.0; extra == "fabric-dev"
-	lightning-utilities<1.0,>=0.8.0; extra == "fabric-examples"
-	lightning-utilities<1.0,>=0.8.0; extra == "pytorch-all"
-	lightning-utilities<1.0,>=0.8.0; extra == "pytorch-dev"
-	lightning-utilities<1.0,>=0.8.0; extra == "pytorch-examples"
+	hydra-core<2.0,>=1.2.0; extra == 'all'
+	hydra-core<2.0,>=1.2.0; extra == 'dev'
+	hydra-core<2.0,>=1.2.0; extra == 'extra'
+	hydra-core<2.0,>=1.2.0; extra == 'pytorch-all'
+	hydra-core<2.0,>=1.2.0; extra == 'pytorch-dev'
+	hydra-core<2.0,>=1.2.0; extra == 'pytorch-extra'
+	ipython[all]<9.0; extra == 'all'
+	ipython[all]<9.0; extra == 'dev'
+	ipython[all]<9.0; extra == 'examples'
+	ipython[all]<9.0; extra == 'pytorch-all'
+	ipython[all]<9.0; extra == 'pytorch-dev'
+	ipython[all]<9.0; extra == 'pytorch-examples'
+	jsonargparse[signatures]<5.0,>=4.27.7; extra == 'all'
+	jsonargparse[signatures]<5.0,>=4.27.7; extra == 'dev'
+	jsonargparse[signatures]<5.0,>=4.27.7; extra == 'extra'
+	jsonargparse[signatures]<5.0,>=4.27.7; extra == 'pytorch-all'
+	jsonargparse[signatures]<5.0,>=4.27.7; extra == 'pytorch-dev'
+	jsonargparse[signatures]<5.0,>=4.27.7; extra == 'pytorch-extra'
+	lightning-utilities<1.0,>=0.8.0; extra == 'all'
+	lightning-utilities<1.0,>=0.8.0; extra == 'dev'
+	lightning-utilities<1.0,>=0.8.0; extra == 'examples'
+	lightning-utilities<1.0,>=0.8.0; extra == 'fabric-all'
+	lightning-utilities<1.0,>=0.8.0; extra == 'fabric-dev'
+	lightning-utilities<1.0,>=0.8.0; extra == 'fabric-examples'
+	lightning-utilities<1.0,>=0.8.0; extra == 'pytorch-all'
+	lightning-utilities<1.0,>=0.8.0; extra == 'pytorch-dev'
+	lightning-utilities<1.0,>=0.8.0; extra == 'pytorch-examples'
 	lightning-utilities<2.0,>=0.10.0
-	litdata<1.0,>=0.2.0rc; extra == "data"
-	matplotlib<4.0,>3.1; extra == "all"
-	matplotlib<4.0,>3.1; extra == "dev"
-	matplotlib<4.0,>3.1; extra == "extra"
-	matplotlib<4.0,>3.1; extra == "pytorch-all"
-	matplotlib<4.0,>3.1; extra == "pytorch-dev"
-	matplotlib<4.0,>3.1; extra == "pytorch-extra"
-	numpy<2.0,>=1.17.2; extra == "dev"
-	numpy<2.0,>=1.17.2; extra == "fabric-dev"
-	numpy<2.0,>=1.17.2; extra == "fabric-test"
-	numpy<2.0,>=1.17.2; extra == "pytorch-dev"
-	numpy<2.0,>=1.17.2; extra == "pytorch-test"
-	numpy<2.0,>=1.17.2; extra == "test"
-	omegaconf<3.0,>=2.2.3; extra == "all"
-	omegaconf<3.0,>=2.2.3; extra == "dev"
-	omegaconf<3.0,>=2.2.3; extra == "extra"
-	omegaconf<3.0,>=2.2.3; extra == "pytorch-all"
-	omegaconf<3.0,>=2.2.3; extra == "pytorch-dev"
-	omegaconf<3.0,>=2.2.3; extra == "pytorch-extra"
-	onnx<2.0,>=1.12.0; extra == "dev"
-	onnx<2.0,>=1.12.0; extra == "pytorch-dev"
-	onnx<2.0,>=1.12.0; extra == "pytorch-test"
-	onnx<2.0,>=1.12.0; extra == "test"
-	onnxruntime<2.0,>=1.12.0; extra == "dev"
-	onnxruntime<2.0,>=1.12.0; extra == "pytorch-dev"
-	onnxruntime<2.0,>=1.12.0; extra == "pytorch-test"
-	onnxruntime<2.0,>=1.12.0; extra == "test"
+	litdata<1.0,>=0.2.0rc; extra == 'data'
+	matplotlib<4.0,>3.1; extra == 'all'
+	matplotlib<4.0,>3.1; extra == 'dev'
+	matplotlib<4.0,>3.1; extra == 'extra'
+	matplotlib<4.0,>3.1; extra == 'pytorch-all'
+	matplotlib<4.0,>3.1; extra == 'pytorch-dev'
+	matplotlib<4.0,>3.1; extra == 'pytorch-extra'
+	numpy<2.0,>=1.17.2; extra == 'dev'
+	numpy<2.0,>=1.17.2; extra == 'fabric-dev'
+	numpy<2.0,>=1.17.2; extra == 'fabric-test'
+	numpy<2.0,>=1.17.2; extra == 'pytorch-dev'
+	numpy<2.0,>=1.17.2; extra == 'pytorch-test'
+	numpy<2.0,>=1.17.2; extra == 'test'
+	omegaconf<3.0,>=2.2.3; extra == 'all'
+	omegaconf<3.0,>=2.2.3; extra == 'dev'
+	omegaconf<3.0,>=2.2.3; extra == 'extra'
+	omegaconf<3.0,>=2.2.3; extra == 'pytorch-all'
+	omegaconf<3.0,>=2.2.3; extra == 'pytorch-dev'
+	omegaconf<3.0,>=2.2.3; extra == 'pytorch-extra'
+	onnx<2.0,>=1.12.0; extra == 'dev'
+	onnx<2.0,>=1.12.0; extra == 'pytorch-dev'
+	onnx<2.0,>=1.12.0; extra == 'pytorch-test'
+	onnx<2.0,>=1.12.0; extra == 'test'
+	onnxruntime<2.0,>=1.12.0; extra == 'dev'
+	onnxruntime<2.0,>=1.12.0; extra == 'pytorch-dev'
+	onnxruntime<2.0,>=1.12.0; extra == 'pytorch-test'
+	onnxruntime<2.0,>=1.12.0; extra == 'test'
 	packaging<25.0,>=20.0
-	pandas<3.0,>1.0; extra == "dev"
-	pandas<3.0,>1.0; extra == "pytorch-dev"
-	pandas<3.0,>1.0; extra == "pytorch-test"
-	pandas<3.0,>1.0; extra == "test"
-	psutil<6.0; extra == "dev"
-	psutil<6.0; extra == "pytorch-dev"
-	psutil<6.0; extra == "pytorch-test"
-	psutil<6.0; extra == "test"
-	pytest-cov==4.1.0; extra == "dev"
-	pytest-cov==4.1.0; extra == "fabric-dev"
-	pytest-cov==4.1.0; extra == "fabric-test"
-	pytest-cov==4.1.0; extra == "pytorch-dev"
-	pytest-cov==4.1.0; extra == "pytorch-test"
-	pytest-cov==4.1.0; extra == "test"
-	pytest-random-order==1.1.0; extra == "dev"
-	pytest-random-order==1.1.0; extra == "fabric-dev"
-	pytest-random-order==1.1.0; extra == "fabric-test"
-	pytest-random-order==1.1.0; extra == "pytorch-dev"
-	pytest-random-order==1.1.0; extra == "pytorch-test"
-	pytest-random-order==1.1.0; extra == "test"
-	pytest-rerunfailures==12.0; extra == "dev"
-	pytest-rerunfailures==12.0; extra == "fabric-dev"
-	pytest-rerunfailures==12.0; extra == "fabric-test"
-	pytest-rerunfailures==12.0; extra == "pytorch-dev"
-	pytest-rerunfailures==12.0; extra == "pytorch-test"
-	pytest-rerunfailures==12.0; extra == "test"
-	pytest-timeout==2.1.0; extra == "dev"
-	pytest-timeout==2.1.0; extra == "fabric-dev"
-	pytest-timeout==2.1.0; extra == "fabric-test"
-	pytest-timeout==2.1.0; extra == "pytorch-dev"
-	pytest-timeout==2.1.0; extra == "pytorch-test"
-	pytest-timeout==2.1.0; extra == "test"
-	pytest==7.4.0; extra == "dev"
-	pytest==7.4.0; extra == "fabric-dev"
-	pytest==7.4.0; extra == "fabric-test"
-	pytest==7.4.0; extra == "pytorch-dev"
-	pytest==7.4.0; extra == "pytorch-test"
-	pytest==7.4.0; extra == "test"
+	pandas<3.0,>1.0; extra == 'dev'
+	pandas<3.0,>1.0; extra == 'pytorch-dev'
+	pandas<3.0,>1.0; extra == 'pytorch-test'
+	pandas<3.0,>1.0; extra == 'test'
+	psutil<6.0; extra == 'dev'
+	psutil<6.0; extra == 'pytorch-dev'
+	psutil<6.0; extra == 'pytorch-test'
+	psutil<6.0; extra == 'test'
+	pytest-cov==4.1.0; extra == 'dev'
+	pytest-cov==4.1.0; extra == 'fabric-dev'
+	pytest-cov==4.1.0; extra == 'fabric-test'
+	pytest-cov==4.1.0; extra == 'pytorch-dev'
+	pytest-cov==4.1.0; extra == 'pytorch-test'
+	pytest-cov==4.1.0; extra == 'test'
+	pytest-random-order==1.1.0; extra == 'dev'
+	pytest-random-order==1.1.0; extra == 'fabric-dev'
+	pytest-random-order==1.1.0; extra == 'fabric-test'
+	pytest-random-order==1.1.0; extra == 'pytorch-dev'
+	pytest-random-order==1.1.0; extra == 'pytorch-test'
+	pytest-random-order==1.1.0; extra == 'test'
+	pytest-rerunfailures==12.0; extra == 'dev'
+	pytest-rerunfailures==12.0; extra == 'fabric-dev'
+	pytest-rerunfailures==12.0; extra == 'fabric-test'
+	pytest-rerunfailures==12.0; extra == 'pytorch-dev'
+	pytest-rerunfailures==12.0; extra == 'pytorch-test'
+	pytest-rerunfailures==12.0; extra == 'test'
+	pytest-timeout==2.1.0; extra == 'dev'
+	pytest-timeout==2.1.0; extra == 'fabric-dev'
+	pytest-timeout==2.1.0; extra == 'fabric-test'
+	pytest-timeout==2.1.0; extra == 'pytorch-dev'
+	pytest-timeout==2.1.0; extra == 'pytorch-test'
+	pytest-timeout==2.1.0; extra == 'test'
+	pytest==7.4.0; extra == 'dev'
+	pytest==7.4.0; extra == 'fabric-dev'
+	pytest==7.4.0; extra == 'fabric-test'
+	pytest==7.4.0; extra == 'pytorch-dev'
+	pytest==7.4.0; extra == 'pytorch-test'
+	pytest==7.4.0; extra == 'test'
 	pytorch-lightning
-	requests<3.0; extra == "all"
-	requests<3.0; extra == "dev"
-	requests<3.0; extra == "examples"
-	requests<3.0; extra == "pytorch-all"
-	requests<3.0; extra == "pytorch-dev"
-	requests<3.0; extra == "pytorch-examples"
-	rich<14.0,>=12.3.0; extra == "all"
-	rich<14.0,>=12.3.0; extra == "dev"
-	rich<14.0,>=12.3.0; extra == "extra"
-	rich<14.0,>=12.3.0; extra == "pytorch-all"
-	rich<14.0,>=12.3.0; extra == "pytorch-dev"
-	rich<14.0,>=12.3.0; extra == "pytorch-extra"
-	scikit-learn<2.0,>0.22.1; extra == "dev"
-	scikit-learn<2.0,>0.22.1; extra == "pytorch-dev"
-	scikit-learn<2.0,>0.22.1; extra == "pytorch-test"
-	scikit-learn<2.0,>0.22.1; extra == "test"
-	tensorboard<3.0,>=2.9.1; extra == "dev"
-	tensorboard<3.0,>=2.9.1; extra == "pytorch-dev"
-	tensorboard<3.0,>=2.9.1; extra == "pytorch-test"
-	tensorboard<3.0,>=2.9.1; extra == "test"
-	tensorboardX<3.0,>=2.2; extra == "all"
-	tensorboardX<3.0,>=2.2; extra == "dev"
-	tensorboardX<3.0,>=2.2; extra == "extra"
-	tensorboardX<3.0,>=2.2; extra == "fabric-dev"
-	tensorboardX<3.0,>=2.2; extra == "fabric-test"
-	tensorboardX<3.0,>=2.2; extra == "pytorch-all"
-	tensorboardX<3.0,>=2.2; extra == "pytorch-dev"
-	tensorboardX<3.0,>=2.2; extra == "pytorch-extra"
-	tensorboardX<3.0,>=2.2; extra == "test"
+	requests<3.0; extra == 'all'
+	requests<3.0; extra == 'dev'
+	requests<3.0; extra == 'examples'
+	requests<3.0; extra == 'pytorch-all'
+	requests<3.0; extra == 'pytorch-dev'
+	requests<3.0; extra == 'pytorch-examples'
+	rich<14.0,>=12.3.0; extra == 'all'
+	rich<14.0,>=12.3.0; extra == 'dev'
+	rich<14.0,>=12.3.0; extra == 'extra'
+	rich<14.0,>=12.3.0; extra == 'pytorch-all'
+	rich<14.0,>=12.3.0; extra == 'pytorch-dev'
+	rich<14.0,>=12.3.0; extra == 'pytorch-extra'
+	scikit-learn<2.0,>0.22.1; extra == 'dev'
+	scikit-learn<2.0,>0.22.1; extra == 'pytorch-dev'
+	scikit-learn<2.0,>0.22.1; extra == 'pytorch-test'
+	scikit-learn<2.0,>0.22.1; extra == 'test'
+	tensorboard<3.0,>=2.9.1; extra == 'dev'
+	tensorboard<3.0,>=2.9.1; extra == 'pytorch-dev'
+	tensorboard<3.0,>=2.9.1; extra == 'pytorch-test'
+	tensorboard<3.0,>=2.9.1; extra == 'test'
+	tensorboardX<3.0,>=2.2; extra == 'all'
+	tensorboardX<3.0,>=2.2; extra == 'dev'
+	tensorboardX<3.0,>=2.2; extra == 'extra'
+	tensorboardX<3.0,>=2.2; extra == 'fabric-dev'
+	tensorboardX<3.0,>=2.2; extra == 'fabric-test'
+	tensorboardX<3.0,>=2.2; extra == 'pytorch-all'
+	tensorboardX<3.0,>=2.2; extra == 'pytorch-dev'
+	tensorboardX<3.0,>=2.2; extra == 'pytorch-extra'
+	tensorboardX<3.0,>=2.2; extra == 'test'
 	torch<4.0,>=2.1.0
-	torchmetrics<2.0,>=0.10.0; extra == "all"
-	torchmetrics<2.0,>=0.10.0; extra == "dev"
-	torchmetrics<2.0,>=0.10.0; extra == "examples"
-	torchmetrics<2.0,>=0.10.0; extra == "fabric-all"
-	torchmetrics<2.0,>=0.10.0; extra == "fabric-dev"
-	torchmetrics<2.0,>=0.10.0; extra == "fabric-examples"
-	torchmetrics<2.0,>=0.10.0; extra == "pytorch-all"
-	torchmetrics<2.0,>=0.10.0; extra == "pytorch-dev"
-	torchmetrics<2.0,>=0.10.0; extra == "pytorch-examples"
-	torchmetrics<2.0,>=0.7.0; extra == "dev"
-	torchmetrics<2.0,>=0.7.0; extra == "fabric-dev"
-	torchmetrics<2.0,>=0.7.0; extra == "fabric-test"
-	torchmetrics<2.0,>=0.7.0; extra == "test"
+	torchmetrics<2.0,>=0.10.0; extra == 'all'
+	torchmetrics<2.0,>=0.10.0; extra == 'dev'
+	torchmetrics<2.0,>=0.10.0; extra == 'examples'
+	torchmetrics<2.0,>=0.10.0; extra == 'fabric-all'
+	torchmetrics<2.0,>=0.10.0; extra == 'fabric-dev'
+	torchmetrics<2.0,>=0.10.0; extra == 'fabric-examples'
+	torchmetrics<2.0,>=0.10.0; extra == 'pytorch-all'
+	torchmetrics<2.0,>=0.10.0; extra == 'pytorch-dev'
+	torchmetrics<2.0,>=0.10.0; extra == 'pytorch-examples'
+	torchmetrics<2.0,>=0.7.0; extra == 'dev'
+	torchmetrics<2.0,>=0.7.0; extra == 'fabric-dev'
+	torchmetrics<2.0,>=0.7.0; extra == 'fabric-test'
+	torchmetrics<2.0,>=0.7.0; extra == 'test'
 	torchmetrics<3.0,>=0.7.0
-	torchvision<1.0,>=0.16.0; extra == "all"
-	torchvision<1.0,>=0.16.0; extra == "dev"
-	torchvision<1.0,>=0.16.0; extra == "examples"
-	torchvision<1.0,>=0.16.0; extra == "fabric-all"
-	torchvision<1.0,>=0.16.0; extra == "fabric-dev"
-	torchvision<1.0,>=0.16.0; extra == "fabric-examples"
-	torchvision<1.0,>=0.16.0; extra == "pytorch-all"
-	torchvision<1.0,>=0.16.0; extra == "pytorch-dev"
-	torchvision<1.0,>=0.16.0; extra == "pytorch-examples"
+	torchvision<1.0,>=0.16.0; extra == 'all'
+	torchvision<1.0,>=0.16.0; extra == 'dev'
+	torchvision<1.0,>=0.16.0; extra == 'examples'
+	torchvision<1.0,>=0.16.0; extra == 'fabric-all'
+	torchvision<1.0,>=0.16.0; extra == 'fabric-dev'
+	torchvision<1.0,>=0.16.0; extra == 'fabric-examples'
+	torchvision<1.0,>=0.16.0; extra == 'pytorch-all'
+	torchvision<1.0,>=0.16.0; extra == 'pytorch-dev'
+	torchvision<1.0,>=0.16.0; extra == 'pytorch-examples'
 	tqdm<6.0,>=4.57.0
 	typing-extensions<6.0,>=4.4.0
-	uvicorn; extra == "dev"
-	uvicorn; extra == "pytorch-dev"
-	uvicorn; extra == "pytorch-test"
-	uvicorn; extra == "test"
+	uvicorn; extra == 'dev'
+	uvicorn; extra == 'pytorch-dev'
+	uvicorn; extra == 'pytorch-test'
+	uvicorn; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/bitsandbytes-0.44.0[${PYTHON_USEDEP}] <dev-python/bitsandbytes-1.0[${PYTHON_USEDEP}] )

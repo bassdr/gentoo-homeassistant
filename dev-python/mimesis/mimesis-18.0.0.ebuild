@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	factory-boy<4.0.0,>=3.3.0; extra == "factory"
-	pytest<8.0,>=7.2; extra == "pytest"
+	factory-boy<4.0.0,>=3.3.0; extra == 'factory'
+	pytest<8.0,>=7.2; extra == 'pytest'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	factory? ( >=dev-python/factory-boy-3.3.0[${PYTHON_USEDEP}] <dev-python/factory-boy-4.0.0[${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	lxml
 	mypy
-	pytest ; extra == "test"
+	pytest ; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]

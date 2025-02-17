@@ -27,13 +27,13 @@ DEPEND="
 	dev-libs/gmp:0=
 "
 REQUIRES_DIST="
-	cython; extra == "tests"
-	hypothesis; extra == "tests"
-	mpmath; extra == "tests"
-	pytest; extra == "tests"
-	setuptools; extra == "tests"
-	sphinx-rtd-theme>=1; extra == "docs"
-	sphinx>=4; extra == "docs"
+	cython; extra == 'tests'
+	hypothesis; extra == 'tests'
+	mpmath; extra == 'tests'
+	pytest; extra == 'tests'
+	setuptools; extra == 'tests'
+	sphinx-rtd-theme>=1; extra == 'docs'
+	sphinx>=4; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-4[${PYTHON_USEDEP}] )

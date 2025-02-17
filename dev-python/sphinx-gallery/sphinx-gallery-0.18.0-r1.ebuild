@@ -19,31 +19,31 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="animations jupyterlite parallel recommender show-api-usage show-memory"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	absl-py; extra == "dev"
-	graphviz; extra == "dev"
-	graphviz; extra == "show-api-usage"
-	intersphinx-registry; extra == "dev"
-	ipython; extra == "dev"
-	joblib; extra == "dev"
-	joblib; extra == "parallel"
-	jupyterlite-sphinx; extra == "dev"
-	jupyterlite-sphinx; extra == "jupyterlite"
-	lxml; extra == "dev"
-	matplotlib; extra == "dev"
-	memory-profiler; extra == "show-memory"
-	numpy; extra == "dev"
-	numpy; extra == "recommender"
-	packaging; extra == "dev"
+	absl-py; extra == 'dev'
+	graphviz; extra == 'dev'
+	graphviz; extra == 'show-api-usage'
+	intersphinx-registry; extra == 'dev'
+	ipython; extra == 'dev'
+	joblib; extra == 'dev'
+	joblib; extra == 'parallel'
+	jupyterlite-sphinx; extra == 'dev'
+	jupyterlite-sphinx; extra == 'jupyterlite'
+	lxml; extra == 'dev'
+	matplotlib; extra == 'dev'
+	memory-profiler; extra == 'show-memory'
+	numpy; extra == 'dev'
+	numpy; extra == 'recommender'
+	packaging; extra == 'dev'
 	pillow
-	plotly; extra == "dev"
-	pydata-sphinx-theme; extra == "dev"
-	pytest-coverage; extra == "dev"
-	pytest; extra == "dev"
-	seaborn; extra == "dev"
+	plotly; extra == 'dev'
+	pydata-sphinx-theme; extra == 'dev'
+	pytest-coverage; extra == 'dev'
+	pytest; extra == 'dev'
+	seaborn; extra == 'dev'
 	sphinx>=5
-	sphinxcontrib-video; extra == "animations"
-	sphinxcontrib-video; extra == "dev"
-	statsmodels; extra == "dev"
+	sphinxcontrib-video; extra == 'animations'
+	sphinxcontrib-video; extra == 'dev'
+	statsmodels; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	show-api-usage? ( dev-python/graphviz[${PYTHON_USEDEP}] )

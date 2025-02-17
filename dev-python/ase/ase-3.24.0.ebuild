@@ -19,13 +19,13 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	matplotlib>=3.3.4
 	numpy>=1.19.5
-	pillow; extra == "docs"
-	pytest-xdist>=2.1.0; extra == "test"
-	pytest>=7.0.0; extra == "test"
+	pillow; extra == 'docs'
+	pytest-xdist>=2.1.0; extra == 'test'
+	pytest>=7.0.0; extra == 'test'
 	scipy>=1.6.0
-	spglib>=1.9; extra == "spglib"
-	sphinx; extra == "docs"
-	sphinx_rtd_theme; extra == "docs"
+	spglib>=1.9; extra == 'spglib'
+	sphinx; extra == 'docs'
+	sphinx_rtd_theme; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}]

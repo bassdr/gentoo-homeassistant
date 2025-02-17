@@ -19,26 +19,26 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	bokeh>=3.6.0
 	cartopy>=0.18.0
-	datashader; extra == "recommended"
-	geopandas; extra == "recommended"
+	datashader; extra == 'recommended'
+	geopandas; extra == 'recommended'
 	holoviews>=1.16.0
-	matplotlib>2.2; extra == "recommended"
-	netcdf4; extra == "recommended"
+	matplotlib>2.2; extra == 'recommended'
+	netcdf4; extra == 'recommended'
 	numpy
 	packaging
-	pandas; extra == "recommended"
+	pandas; extra == 'recommended'
 	panel>=1.0.0
 	param<3.0,>=1.9.3
-	pooch; extra == "recommended"
-	psutil; extra == "tests"
-	pyct; extra == "recommended"
+	pooch; extra == 'recommended'
+	psutil; extra == 'tests'
+	pyct; extra == 'recommended'
 	pyproj
-	pytest-xdist; extra == "tests"
-	pytest; extra == "tests"
-	scipy; extra == "recommended"
+	pytest-xdist; extra == 'tests'
+	pytest; extra == 'tests'
+	scipy; extra == 'recommended'
 	shapely
-	shapely; extra == "recommended"
-	xarray; extra == "recommended"
+	shapely; extra == 'recommended'
+	xarray; extra == 'recommended'
 	xyzservices
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ciso8601; extra == "ciso8601"
+	ciso8601; extra == 'ciso8601'
 	fs
 	fsspec>=2022.5.0
 	numpy

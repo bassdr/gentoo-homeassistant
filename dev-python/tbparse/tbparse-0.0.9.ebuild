@@ -15,21 +15,21 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	flake8; extra == "testing"
-	mypy; extra == "testing"
-	nbsphinx; extra == "testing"
+	flake8; extra == 'testing'
+	mypy; extra == 'testing'
+	nbsphinx; extra == 'testing'
 	pandas>=1.3.0
-	pylint; extra == "testing"
-	pytest-cov; extra == "testing"
-	pytest; extra == "testing"
-	seaborn; extra == "testing"
-	soundfile; extra == "testing"
-	sphinx-rtd-theme; extra == "testing"
-	sphinx-tabs; extra == "testing"
-	sphinx; extra == "testing"
+	pylint; extra == 'testing'
+	pytest-cov; extra == 'testing'
+	pytest; extra == 'testing'
+	seaborn; extra == 'testing'
+	soundfile; extra == 'testing'
+	sphinx-rtd-theme; extra == 'testing'
+	sphinx-tabs; extra == 'testing'
+	sphinx; extra == 'testing'
 	tensorboard>=2.12.0
-	tensorboardX==2.6; extra == "testing"
-	torch; extra == "testing"
+	tensorboardX==2.6; extra == 'testing'
+	torch; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pandas-1.3.0[${PYTHON_USEDEP}]

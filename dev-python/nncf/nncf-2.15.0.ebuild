@@ -19,8 +19,8 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	jsonschema>=3.2.0
 	jstyleson>=0.0.2
-	kaleido>=0.2.1; extra == "plots"
-	matplotlib<3.6,>=3.3.4; extra == "plots"
+	kaleido>=0.2.1; extra == 'plots'
+	matplotlib<3.6,>=3.3.4; extra == 'plots'
 	natsort>=7.1.0
 	networkx<=3.3,>=2.6
 	ninja<1.12,>=1.10.0.post2
@@ -28,8 +28,8 @@ REQUIRES_DIST="
 	openvino-telemetry>=2023.2.0
 	packaging>=20.0
 	pandas<2.3,>=1.1.5
-	pillow>=9.0.0; extra == "plots"
-	plotly-express>=0.4.1; extra == "plots"
+	pillow>=9.0.0; extra == 'plots'
+	plotly-express>=0.4.1; extra == 'plots'
 	psutil
 	py-cpuinfo>=9.0.0
 	pydot<3.0.0,>=1.4.1

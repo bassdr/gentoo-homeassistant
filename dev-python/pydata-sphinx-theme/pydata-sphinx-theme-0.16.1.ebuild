@@ -20,51 +20,51 @@ GENERATED_IUSE="a11y doc i18n"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Babel
-	Babel; extra == "i18n"
-	ablog>=0.11.8; extra == "doc"
+	Babel; extra == 'i18n'
+	ablog>=0.11.8; extra == 'doc'
 	accessible-pygments
 	beautifulsoup4
-	colorama; extra == "doc"
+	colorama; extra == 'doc'
 	docutils!=0.17.0
-	graphviz; extra == "doc"
-	ipykernel; extra == "doc"
-	ipyleaflet; extra == "doc"
-	ipywidgets; extra == "doc"
-	jinja2; extra == "i18n"
-	jupyter_sphinx; extra == "doc"
-	jupyterlite-sphinx; extra == "doc"
-	linkify-it-py; extra == "doc"
-	matplotlib; extra == "doc"
-	myst-parser; extra == "doc"
-	nbsphinx; extra == "doc"
-	numpy; extra == "doc"
-	numpydoc; extra == "doc"
-	pandas; extra == "doc"
-	pandoc; extra == "dev"
-	plotly; extra == "doc"
-	pre-commit; extra == "dev"
-	pydata-sphinx-theme[doc,test]; extra == "dev"
+	graphviz; extra == 'doc'
+	ipykernel; extra == 'doc'
+	ipyleaflet; extra == 'doc'
+	ipywidgets; extra == 'doc'
+	jinja2; extra == 'i18n'
+	jupyter_sphinx; extra == 'doc'
+	jupyterlite-sphinx; extra == 'doc'
+	linkify-it-py; extra == 'doc'
+	matplotlib; extra == 'doc'
+	myst-parser; extra == 'doc'
+	nbsphinx; extra == 'doc'
+	numpy; extra == 'doc'
+	numpydoc; extra == 'doc'
+	pandas; extra == 'doc'
+	pandoc; extra == 'dev'
+	plotly; extra == 'doc'
+	pre-commit; extra == 'dev'
+	pydata-sphinx-theme[doc,test]; extra == 'dev'
 	pygments>=2.7
-	pytest-cov; extra == "test"
-	pytest-playwright; extra == "a11y"
-	pytest-regressions; extra == "test"
-	pytest; extra == "test"
-	pyyaml; extra == "dev"
-	rich; extra == "doc"
-	sphinx-autoapi>=3.0.0; extra == "doc"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design; extra == "doc"
-	sphinx-favicon>=1.0.1; extra == "doc"
-	sphinx-sitemap; extra == "doc"
-	sphinx-theme-builder[cli]; extra == "dev"
-	sphinx-togglebutton; extra == "doc"
+	pytest-cov; extra == 'test'
+	pytest-playwright; extra == 'a11y'
+	pytest-regressions; extra == 'test'
+	pytest; extra == 'test'
+	pyyaml; extra == 'dev'
+	rich; extra == 'doc'
+	sphinx-autoapi>=3.0.0; extra == 'doc'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design; extra == 'doc'
+	sphinx-favicon>=1.0.1; extra == 'doc'
+	sphinx-sitemap; extra == 'doc'
+	sphinx-theme-builder[cli]; extra == 'dev'
+	sphinx-togglebutton; extra == 'doc'
 	sphinx>=6.1
-	sphinx[test]; extra == "test"
-	sphinxcontrib-youtube>=1.4.1; extra == "doc"
-	sphinxext-rediraffe; extra == "doc"
-	tox; extra == "dev"
+	sphinx[test]; extra == 'test'
+	sphinxcontrib-youtube>=1.4.1; extra == 'doc'
+	sphinxext-rediraffe; extra == 'doc'
+	tox; extra == 'dev'
 	typing-extensions
-	xarray; extra == "doc"
+	xarray; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( >=dev-python/ablog-0.11.8[${PYTHON_USEDEP}] )

@@ -17,27 +17,27 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	azure-storage-blob==12.20.0; extra == "devel"
-	delta-spark; extra == "pyspark"
-	lakefs==0.8.0; extra == "lakefs"
-	mypy==1.10.1; extra == "devel"
-	numpy==1.26.4; extra == "pyspark"
-	packaging>=20; extra == "devel"
-	pandas; extra == "pandas"
-	pip>=24.0; extra == "devel"
-	polars==1.17.1; extra == "polars"
+	azure-storage-blob==12.20.0; extra == 'devel'
+	delta-spark; extra == 'pyspark'
+	lakefs==0.8.0; extra == 'lakefs'
+	mypy==1.10.1; extra == 'devel'
+	numpy==1.26.4; extra == 'pyspark'
+	packaging>=20; extra == 'devel'
+	pandas; extra == 'pandas'
+	pip>=24.0; extra == 'devel'
+	polars==1.17.1; extra == 'polars'
 	pyarrow>=16
-	pyspark; extra == "pyspark"
-	pytest-benchmark; extra == "devel"
-	pytest-cov; extra == "devel"
-	pytest-mock; extra == "devel"
-	pytest-timeout; extra == "devel"
-	pytest; extra == "devel"
-	ruff==0.5.2; extra == "devel"
-	sphinx-rtd-theme; extra == "devel"
-	sphinx<=4.5; extra == "devel"
-	toml; extra == "devel"
-	wheel; extra == "devel"
+	pyspark; extra == 'pyspark'
+	pytest-benchmark; extra == 'devel'
+	pytest-cov; extra == 'devel'
+	pytest-mock; extra == 'devel'
+	pytest-timeout; extra == 'devel'
+	pytest; extra == 'devel'
+	ruff==0.5.2; extra == 'devel'
+	sphinx-rtd-theme; extra == 'devel'
+	sphinx<=4.5; extra == 'devel'
+	toml; extra == 'devel'
+	wheel; extra == 'devel'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	devel? ( ~dev-python/azure-storage-blob-12.20.0[${PYTHON_USEDEP}] )

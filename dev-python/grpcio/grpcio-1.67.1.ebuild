@@ -39,7 +39,7 @@ DEPEND="
 	sys-libs/zlib:=
 "
 REQUIRES_DIST="
-	grpcio-tools>=1.67.1; extra == "protobuf"
+	grpcio-tools>=1.67.1; extra == 'protobuf'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	protobuf? ( >=dev-python/grpcio-tools-1.67.1[${PYTHON_USEDEP}] )

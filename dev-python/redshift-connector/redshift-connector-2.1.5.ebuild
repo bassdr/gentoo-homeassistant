@@ -23,9 +23,9 @@ REQUIRES_DIST="
 	boto3<2.0.0,>=1.9.201
 	botocore<2.0.0,>=1.12.201
 	lxml>=4.6.5
-	numpy; extra == "full"
+	numpy; extra == 'full'
 	packaging
-	pandas; extra == "full"
+	pandas; extra == 'full'
 	pytz>=2020.1
 	requests<3.0.0,>=2.23.0
 	scramp<1.5.0,>=1.2.0

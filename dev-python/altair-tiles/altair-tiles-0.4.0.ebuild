@@ -18,19 +18,19 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	altair
-	geopandas; extra == "dev"
-	ghp-import; extra == "dev"
-	hatch; extra == "dev"
-	ipykernel; extra == "dev"
-	ipython; extra == "dev"
-	jupyter-book; extra == "doc"
+	geopandas; extra == 'dev'
+	ghp-import; extra == 'dev'
+	hatch; extra == 'dev'
+	ipykernel; extra == 'dev'
+	ipython; extra == 'dev'
+	jupyter-book; extra == 'doc'
 	mercantile
-	mypy; extra == "dev"
-	pytest; extra == "dev"
-	ruff>=0.1.4; extra == "dev"
-	vega-datasets; extra == "dev"
-	vl-convert-python; extra == "dev"
-	vl-convert-python; extra == "doc"
+	mypy; extra == 'dev'
+	pytest; extra == 'dev'
+	ruff>=0.1.4; extra == 'dev'
+	vega-datasets; extra == 'dev'
+	vl-convert-python; extra == 'dev'
+	vl-convert-python; extra == 'doc'
 	xyzservices
 "
 GENERATED_RDEPEND="${RDEPEND}

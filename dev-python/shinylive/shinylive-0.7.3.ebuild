@@ -16,19 +16,19 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	appdirs>=1.4.4
-	black>=22.3.0; extra == "dev"
+	black>=22.3.0; extra == 'dev'
 	chevron>=0.14.0
 	click>=8.1.7
-	flake8-bugbear>=22.6.22; extra == "dev"
-	flake8>=3.9.2; extra == "dev"
-	isort>=5.11.2; extra == "dev"
+	flake8-bugbear>=22.6.22; extra == 'dev'
+	flake8>=3.9.2; extra == 'dev'
+	isort>=5.11.2; extra == 'dev'
 	lzstring>=1.0.4
-	pyright>=1.1.284; extra == "dev"
-	pytest>=6.2.4; extra == "test"
-	setuptools; python_version >= "3.12"
+	pyright>=1.1.284; extra == 'dev'
+	pytest>=6.2.4; extra == 'test'
+	setuptools; python_version >= '3.12'
 	shiny
 	typing-extensions>=4.0.1
-	wheel; extra == "dev"
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]

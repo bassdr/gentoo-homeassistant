@@ -24,7 +24,7 @@ DOCS="README.md"
 REQUIRES_DIST="
 	PyJWT<3.0.0,>=2.7.0
 	aiohttp<4.0.0,>=3.8.1
-	backports.zoneinfo<0.3.0,>=0.2.1; python_version < "3.9"
+	backports.zoneinfo<0.3.0,>=0.2.1; python_version < '3.9'
 	deepdiff<7.0.0,>=6.2.1
 "
 GENERATED_RDEPEND="${RDEPEND}

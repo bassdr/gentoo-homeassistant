@@ -20,26 +20,26 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="cli docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	click; extra == "cli"
-	click; extra == "test"
+	click; extra == 'cli'
+	click; extra == 'test'
 	jsonschema[format-nongpl]>=4.18.0
-	jupyterlite-sphinx; extra == "docs"
-	myst-parser; extra == "docs"
+	jupyterlite-sphinx; extra == 'docs'
+	myst-parser; extra == 'docs'
 	packaging
-	pre-commit; extra == "test"
-	pydata-sphinx-theme>=0.16; extra == "docs"
-	pytest-asyncio>=0.19.0; extra == "test"
-	pytest-console-scripts; extra == "test"
-	pytest>=7.0; extra == "test"
+	pre-commit; extra == 'test'
+	pydata-sphinx-theme>=0.16; extra == 'docs'
+	pytest-asyncio>=0.19.0; extra == 'test'
+	pytest-console-scripts; extra == 'test'
+	pytest>=7.0; extra == 'test'
 	python-json-logger>=2.0.4
 	pyyaml>=5.3
 	referencing
 	rfc3339-validator
 	rfc3986-validator>=0.1.1
-	rich; extra == "cli"
-	rich; extra == "test"
-	sphinx>=8; extra == "docs"
-	sphinxcontrib-spelling; extra == "docs"
+	rich; extra == 'cli'
+	rich; extra == 'test'
+	sphinx>=8; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
 	traitlets>=5.3
 "
 GENERATED_RDEPEND="${RDEPEND}

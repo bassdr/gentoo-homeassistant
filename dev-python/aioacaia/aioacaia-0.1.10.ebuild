@@ -20,12 +20,12 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	bleak>=0.20.2
-	covdefaults==2.3.0; extra == "dev"
-	coverage==7.6.7; extra == "dev"
-	pytest-asyncio==0.24.0; extra == "dev"
-	pytest-cov==6.0.0; extra == "dev"
-	pytest==8.3.3; extra == "dev"
-	syrupy==4.7.2; extra == "dev"
+	covdefaults==2.3.0; extra == 'dev'
+	coverage==7.6.7; extra == 'dev'
+	pytest-asyncio==0.24.0; extra == 'dev'
+	pytest-cov==6.0.0; extra == 'dev'
+	pytest==8.3.3; extra == 'dev'
+	syrupy==4.7.2; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bleak-0.20.2[${PYTHON_USEDEP}]

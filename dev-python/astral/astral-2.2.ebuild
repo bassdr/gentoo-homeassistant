@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.rst"
 
 REQUIRES_DIST="
-	dataclasses ; python_version == "3.6"
+	dataclasses ; python_version == '3.6'
 	pytz
 "
 GENERATED_RDEPEND="${RDEPEND}

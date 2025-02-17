@@ -17,88 +17,88 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	clearml; extra == "clearml"
-	clearml>=1.10.0rc0; extra == "all"
-	cucim-cu12; (python_version >= "3.9" and python_version <= "3.10") and extra == "all"
-	cucim-cu12; extra == "cucim"
-	einops; extra == "all"
-	einops; extra == "einops"
-	fire; extra == "all"
-	fire; extra == "fire"
-	gdown>=4.7.3; extra == "all"
-	gdown>=4.7.3; extra == "gdown"
-	h5py; extra == "all"
-	h5py; extra == "h5py"
-	huggingface-hub; extra == "all"
-	huggingface-hub; extra == "huggingface-hub"
-	imagecodecs; extra == "all"
-	imagecodecs; extra == "imagecodecs"
-	itk>=5.2; extra == "all"
-	itk>=5.2; extra == "itk"
-	jsonschema; extra == "all"
-	jsonschema; extra == "jsonschema"
-	lmdb; extra == "all"
-	lmdb; extra == "lmdb"
-	lpips==0.1.4; extra == "all"
-	lpips==0.1.4; extra == "lpips"
-	matplotlib>=3.6.3; extra == "all"
-	matplotlib>=3.6.3; extra == "matplotlib"
-	mlflow>=2.12.2; extra == "all"
-	mlflow>=2.12.2; extra == "mlflow"
-	nibabel; extra == "all"
-	nibabel; extra == "nibabel"
-	ninja; extra == "all"
-	ninja; extra == "ninja"
-	nni; extra == "all"
-	nni; extra == "nni"
+	clearml; extra == 'clearml'
+	clearml>=1.10.0rc0; extra == 'all'
+	cucim-cu12; (python_version >= '3.9' and python_version <= '3.10') and extra == 'all'
+	cucim-cu12; extra == 'cucim'
+	einops; extra == 'all'
+	einops; extra == 'einops'
+	fire; extra == 'all'
+	fire; extra == 'fire'
+	gdown>=4.7.3; extra == 'all'
+	gdown>=4.7.3; extra == 'gdown'
+	h5py; extra == 'all'
+	h5py; extra == 'h5py'
+	huggingface-hub; extra == 'all'
+	huggingface-hub; extra == 'huggingface-hub'
+	imagecodecs; extra == 'all'
+	imagecodecs; extra == 'imagecodecs'
+	itk>=5.2; extra == 'all'
+	itk>=5.2; extra == 'itk'
+	jsonschema; extra == 'all'
+	jsonschema; extra == 'jsonschema'
+	lmdb; extra == 'all'
+	lmdb; extra == 'lmdb'
+	lpips==0.1.4; extra == 'all'
+	lpips==0.1.4; extra == 'lpips'
+	matplotlib>=3.6.3; extra == 'all'
+	matplotlib>=3.6.3; extra == 'matplotlib'
+	mlflow>=2.12.2; extra == 'all'
+	mlflow>=2.12.2; extra == 'mlflow'
+	nibabel; extra == 'all'
+	nibabel; extra == 'nibabel'
+	ninja; extra == 'all'
+	ninja; extra == 'ninja'
+	nni; extra == 'all'
+	nni; extra == 'nni'
 	numpy<2.0,>=1.24
-	nvidia-ml-py; extra == "all"
-	nvidia-ml-py; extra == "pynvml"
-	onnx>=1.13.0; extra == "all"
-	onnx>=1.13.0; extra == "onnx"
-	onnxruntime; python_version <= "3.10" and extra == "all"
-	onnxruntime; python_version <= "3.10" and extra == "onnx"
-	openslide-python; extra == "all"
-	openslide-python; extra == "openslide"
-	optuna; extra == "all"
-	optuna; extra == "optuna"
-	packaging; extra == "packaging"
-	pandas; extra == "all"
-	pandas; extra == "pandas"
-	pillow!=8.3.0; extra == "pillow"
-	pillow; extra == "all"
-	polygraphy; extra == "polygraphy"
-	psutil; extra == "all"
-	psutil; extra == "psutil"
-	pyamg>=5.0.0; extra == "all"
-	pyamg>=5.0.0; extra == "pyamg"
-	pydicom; extra == "all"
-	pydicom; extra == "pydicom"
-	pynrrd; extra == "all"
-	pynrrd; extra == "pynrrd"
-	pytorch-ignite==0.4.11; extra == "all"
-	pytorch-ignite==0.4.11; extra == "ignite"
-	pyyaml; extra == "all"
-	pyyaml; extra == "pyyaml"
-	scikit-image>=0.14.2; extra == "all"
-	scikit-image>=0.14.2; extra == "skimage"
-	scipy>=1.12.0; python_version >= "3.9" and extra == "all"
-	scipy>=1.12.0; python_version >= "3.9" and extra == "scipy"
-	tensorboard; extra == "all"
-	tensorboard; extra == "tensorboard"
-	tensorboardX; extra == "all"
-	tensorboardX; extra == "tensorboardx"
-	tifffile; extra == "all"
-	tifffile; extra == "tifffile"
+	nvidia-ml-py; extra == 'all'
+	nvidia-ml-py; extra == 'pynvml'
+	onnx>=1.13.0; extra == 'all'
+	onnx>=1.13.0; extra == 'onnx'
+	onnxruntime; python_version <= '3.10' and extra == 'all'
+	onnxruntime; python_version <= '3.10' and extra == 'onnx'
+	openslide-python; extra == 'all'
+	openslide-python; extra == 'openslide'
+	optuna; extra == 'all'
+	optuna; extra == 'optuna'
+	packaging; extra == 'packaging'
+	pandas; extra == 'all'
+	pandas; extra == 'pandas'
+	pillow!=8.3.0; extra == 'pillow'
+	pillow; extra == 'all'
+	polygraphy; extra == 'polygraphy'
+	psutil; extra == 'all'
+	psutil; extra == 'psutil'
+	pyamg>=5.0.0; extra == 'all'
+	pyamg>=5.0.0; extra == 'pyamg'
+	pydicom; extra == 'all'
+	pydicom; extra == 'pydicom'
+	pynrrd; extra == 'all'
+	pynrrd; extra == 'pynrrd'
+	pytorch-ignite==0.4.11; extra == 'all'
+	pytorch-ignite==0.4.11; extra == 'ignite'
+	pyyaml; extra == 'all'
+	pyyaml; extra == 'pyyaml'
+	scikit-image>=0.14.2; extra == 'all'
+	scikit-image>=0.14.2; extra == 'skimage'
+	scipy>=1.12.0; python_version >= '3.9' and extra == 'all'
+	scipy>=1.12.0; python_version >= '3.9' and extra == 'scipy'
+	tensorboard; extra == 'all'
+	tensorboard; extra == 'tensorboard'
+	tensorboardX; extra == 'all'
+	tensorboardX; extra == 'tensorboardx'
+	tifffile; extra == 'all'
+	tifffile; extra == 'tifffile'
 	torch>=1.9
-	torchvision; extra == "all"
-	torchvision; extra == "torchvision"
-	tqdm>=4.47.0; extra == "all"
-	tqdm>=4.47.0; extra == "tqdm"
-	transformers<4.41.0,>=4.36.0; python_version <= "3.10" and extra == "all"
-	transformers<4.41.0,>=4.36.0; python_version <= "3.10" and extra == "transformers"
-	zarr; extra == "all"
-	zarr; extra == "zarr"
+	torchvision; extra == 'all'
+	torchvision; extra == 'torchvision'
+	tqdm>=4.47.0; extra == 'all'
+	tqdm>=4.47.0; extra == 'tqdm'
+	transformers<4.41.0,>=4.36.0; python_version <= '3.10' and extra == 'all'
+	transformers<4.41.0,>=4.36.0; python_version <= '3.10' and extra == 'transformers'
+	zarr; extra == 'all'
+	zarr; extra == 'zarr'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/clearml-1.10.0_rc0[${PYTHON_USEDEP}] )

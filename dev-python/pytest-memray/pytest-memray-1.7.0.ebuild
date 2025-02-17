@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	anyio>=4.4.0; extra == "test"
-	black==22.12; extra == "lint"
-	covdefaults>=2.2.2; extra == "test"
-	coverage>=7.0.5; extra == "test"
-	flaky>=3.7; extra == "test"
-	furo>=2022.12.7; extra == "docs"
-	isort==5.11.4; extra == "lint"
+	anyio>=4.4.0; extra == 'test'
+	black==22.12; extra == 'lint'
+	covdefaults>=2.2.2; extra == 'test'
+	coverage>=7.0.5; extra == 'test'
+	flaky>=3.7; extra == 'test'
+	furo>=2022.12.7; extra == 'docs'
+	isort==5.11.4; extra == 'lint'
 	memray>=1.12
-	mypy==0.991; extra == "lint"
-	pytest-xdist>=3.1; extra == "test"
+	mypy==0.991; extra == 'lint'
+	pytest-xdist>=3.1; extra == 'test'
 	pytest>=7.2
-	pytest>=7.2; extra == "test"
-	ruff==0.0.272; extra == "lint"
-	sphinx-argparse>=0.4; extra == "docs"
-	sphinx-inline-tabs>=2022.1.2b11; extra == "docs"
-	sphinx>=6.1.3; extra == "docs"
-	sphinxcontrib-programoutput>=0.17; extra == "docs"
-	towncrier>=22.12; extra == "docs"
+	pytest>=7.2; extra == 'test'
+	ruff==0.0.272; extra == 'lint'
+	sphinx-argparse>=0.4; extra == 'docs'
+	sphinx-inline-tabs>=2022.1.2b11; extra == 'docs'
+	sphinx>=6.1.3; extra == 'docs'
+	sphinxcontrib-programoutput>=0.17; extra == 'docs'
+	towncrier>=22.12; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	lint? ( ~dev-python/black-22.12[${PYTHON_USEDEP}] )

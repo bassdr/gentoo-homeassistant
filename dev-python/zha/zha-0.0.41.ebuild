@@ -25,7 +25,7 @@ REQUIRES_DIST="
 	bellows==0.42.2
 	pyserial-asyncio-fast
 	pyserial==3.5
-	pytest; extra == "testing"
+	pytest; extra == 'testing'
 	zha-quirks==0.0.125
 	zigpy-deconz==0.24.1
 	zigpy-xbee==0.21.0

@@ -20,8 +20,8 @@ IUSE="${GENERATED_IUSE} test emoji +aio"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	aiohttp; extra == "aio"
-	emoji; extra == "emoji"
+	aiohttp; extra == 'aio'
+	emoji; extra == 'emoji'
 	plumbum
 	requests
 	setuptools

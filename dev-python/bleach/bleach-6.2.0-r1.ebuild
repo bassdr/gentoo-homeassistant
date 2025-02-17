@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="css"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	tinycss2<1.5,>=1.1.0; extra == "css"
+	tinycss2<1.5,>=1.1.0; extra == 'css'
 	webencodings
 "
 GENERATED_RDEPEND="${RDEPEND}

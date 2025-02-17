@@ -17,17 +17,17 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	beautifulsoup4; extra == "test"
-	defusedxml; extra == "test"
-	mypy; extra == "dev"
-	nox; extra == "dev"
-	pre-commit; extra == "dev"
-	pydata-sphinx-theme; extra == "doc"
-	pytest-cov; extra == "test"
-	pytest-regressions; extra == "test"
-	pytest; extra == "test"
+	beautifulsoup4; extra == 'test'
+	defusedxml; extra == 'test'
+	mypy; extra == 'dev'
+	nox; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pydata-sphinx-theme; extra == 'doc'
+	pytest-cov; extra == 'test'
+	pytest-regressions; extra == 'test'
+	pytest; extra == 'test'
 	sphinx
-	sphinx-design; extra == "doc"
+	sphinx-design; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )

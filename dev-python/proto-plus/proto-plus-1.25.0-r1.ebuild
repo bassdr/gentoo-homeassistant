@@ -24,7 +24,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	google-api-core>=1.31.5; extra == "testing"
+	google-api-core>=1.31.5; extra == 'testing'
 	protobuf<6.0.0dev,>=3.19.0
 "
 GENERATED_RDEPEND="${RDEPEND}

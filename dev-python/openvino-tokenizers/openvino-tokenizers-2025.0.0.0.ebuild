@@ -17,23 +17,23 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	atheris; extra == "fuzzing"
-	bandit; extra == "dev"
-	openvino_tokenizers[dev,transformers]; extra == "all"
-	openvino_tokenizers[torch,transformers]; extra == "dev"
-	openvino_tokenizers[transformers]; extra == "benchmark"
-	openvino_tokenizers[transformers]; extra == "fuzzing"
+	atheris; extra == 'fuzzing'
+	bandit; extra == 'dev'
+	openvino_tokenizers[dev,transformers]; extra == 'all'
+	openvino_tokenizers[torch,transformers]; extra == 'dev'
+	openvino_tokenizers[transformers]; extra == 'benchmark'
+	openvino_tokenizers[transformers]; extra == 'fuzzing'
 	openvino~=2025.0.0.dev
-	pandas; extra == "benchmark"
-	pandas; extra == "dev"
-	pytest; extra == "dev"
-	pytest_harvest; extra == "dev"
-	ruff; extra == "dev"
-	seaborn; extra == "benchmark"
-	tiktoken; extra == "transformers"
-	torch; extra == "torch"
-	tqdm; extra == "benchmark"
-	transformers[sentencepiece]>=4.36.0; extra == "transformers"
+	pandas; extra == 'benchmark'
+	pandas; extra == 'dev'
+	pytest; extra == 'dev'
+	pytest_harvest; extra == 'dev'
+	ruff; extra == 'dev'
+	seaborn; extra == 'benchmark'
+	tiktoken; extra == 'transformers'
+	torch; extra == 'torch'
+	tqdm; extra == 'benchmark'
+	transformers[sentencepiece]>=4.36.0; extra == 'transformers'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	fuzzing? ( dev-python/atheris[${PYTHON_USEDEP}] )

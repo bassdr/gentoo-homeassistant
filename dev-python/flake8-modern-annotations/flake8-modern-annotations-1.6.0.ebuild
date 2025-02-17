@@ -35,7 +35,7 @@ REQUIRES_DIST="
 	flake8-requirements ; extra == 'dev'
 	flake8-typechecking-import ; extra == 'dev'
 	flake8-use-fstring ; extra == 'dev'
-	importlib-metadata <5.0.0,>=4.0.0 ; python_version < "3.8.0"
+	importlib-metadata <5.0.0,>=4.0.0 ; python_version < '3.8.0'
 	mypy ; extra == 'dev'
 	pep8-naming ; extra == 'dev'
 	typing-extensions >=3.7.4.2

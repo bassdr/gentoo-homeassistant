@@ -17,56 +17,56 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp[speedups]~=3.0; extra == "devel"
-	aiohttp[speedups]~=3.0; extra == "devel-test"
+	aiohttp[speedups]~=3.0; extra == 'devel'
+	aiohttp[speedups]~=3.0; extra == 'devel-test'
 	cffi~=1.0
 	click~=8.0
-	coverage[toml]~=7.0; extra == "devel"
-	coverage[toml]~=7.0; extra == "devel-test"
+	coverage[toml]~=7.0; extra == 'devel'
+	coverage[toml]~=7.0; extra == 'devel-test'
 	fastapi~=0.0
-	flask[async]~=3.0; extra == "devel"
-	flask[async]~=3.0; extra == "devel-test"
-	httpx~=0.0; extra == "devel"
-	httpx~=0.0; extra == "devel-test"
-	mkdocs-gen-files~=0.5; extra == "devel"
-	mkdocs-gen-files~=0.5; extra == "devel-docs"
-	mkdocs-literate-nav~=0.6; extra == "devel"
-	mkdocs-literate-nav~=0.6; extra == "devel-docs"
-	mkdocs-material[imaging]~=9.4; extra == "devel"
-	mkdocs-material[imaging]~=9.4; extra == "devel-docs"
-	mkdocs-section-index~=0.3; extra == "devel"
-	mkdocs-section-index~=0.3; extra == "devel-docs"
-	mkdocstrings[python]~=0.23; extra == "devel"
-	mkdocstrings[python]~=0.23; extra == "devel-docs"
-	mkdocs~=1.5; extra == "devel"
-	mkdocs~=1.5; extra == "devel-docs"
-	mock~=5.0; extra == "devel"
-	mock~=5.0; extra == "devel-test"
-	mypy==1.14.1; extra == "devel"
-	mypy==1.14.1; extra == "devel-types"
+	flask[async]~=3.0; extra == 'devel'
+	flask[async]~=3.0; extra == 'devel-test'
+	httpx~=0.0; extra == 'devel'
+	httpx~=0.0; extra == 'devel-test'
+	mkdocs-gen-files~=0.5; extra == 'devel'
+	mkdocs-gen-files~=0.5; extra == 'devel-docs'
+	mkdocs-literate-nav~=0.6; extra == 'devel'
+	mkdocs-literate-nav~=0.6; extra == 'devel-docs'
+	mkdocs-material[imaging]~=9.4; extra == 'devel'
+	mkdocs-material[imaging]~=9.4; extra == 'devel-docs'
+	mkdocs-section-index~=0.3; extra == 'devel'
+	mkdocs-section-index~=0.3; extra == 'devel-docs'
+	mkdocstrings[python]~=0.23; extra == 'devel'
+	mkdocstrings[python]~=0.23; extra == 'devel-docs'
+	mkdocs~=1.5; extra == 'devel'
+	mkdocs~=1.5; extra == 'devel-docs'
+	mock~=5.0; extra == 'devel'
+	mock~=5.0; extra == 'devel-test'
+	mypy==1.14.1; extra == 'devel'
+	mypy==1.14.1; extra == 'devel-types'
 	psutil~=6.0
-	pytest-asyncio~=0.0; extra == "devel"
-	pytest-asyncio~=0.0; extra == "devel-test"
-	pytest-bdd~=8.0; extra == "devel"
-	pytest-bdd~=8.0; extra == "devel-test"
-	pytest-cov~=6.0; extra == "devel"
-	pytest-cov~=6.0; extra == "devel-test"
-	pytest-rerunfailures~=15.0; extra == "devel"
-	pytest-rerunfailures~=15.0; extra == "devel-test"
-	pytest-xdist~=3.0; extra == "devel"
-	pytest-xdist~=3.0; extra == "devel-test"
-	pytest~=8.0; extra == "devel"
-	pytest~=8.0; extra == "devel-test"
+	pytest-asyncio~=0.0; extra == 'devel'
+	pytest-asyncio~=0.0; extra == 'devel-test'
+	pytest-bdd~=8.0; extra == 'devel'
+	pytest-bdd~=8.0; extra == 'devel-test'
+	pytest-cov~=6.0; extra == 'devel'
+	pytest-cov~=6.0; extra == 'devel-test'
+	pytest-rerunfailures~=15.0; extra == 'devel'
+	pytest-rerunfailures~=15.0; extra == 'devel-test'
+	pytest-xdist~=3.0; extra == 'devel'
+	pytest-xdist~=3.0; extra == 'devel-test'
+	pytest~=8.0; extra == 'devel'
+	pytest~=8.0; extra == 'devel-test'
 	requests~=2.0
-	ruff==0.9.2; extra == "devel"
+	ruff==0.9.2; extra == 'devel'
 	six~=1.0
-	testcontainers~=4.0; extra == "devel"
-	testcontainers~=4.0; extra == "devel-test"
-	types-cffi~=1.0; extra == "devel"
-	types-cffi~=1.0; extra == "devel-types"
-	types-requests~=2.0; extra == "devel"
-	types-requests~=2.0; extra == "devel-types"
-	typing-extensions~=4.0; python_version < "3.10"
+	testcontainers~=4.0; extra == 'devel'
+	testcontainers~=4.0; extra == 'devel-test'
+	types-cffi~=1.0; extra == 'devel'
+	types-cffi~=1.0; extra == 'devel-types'
+	types-requests~=2.0; extra == 'devel'
+	types-requests~=2.0; extra == 'devel-types'
+	typing-extensions~=4.0; python_version < '3.10'
 	uvicorn~=0.0
 	yarl~=1.0
 "

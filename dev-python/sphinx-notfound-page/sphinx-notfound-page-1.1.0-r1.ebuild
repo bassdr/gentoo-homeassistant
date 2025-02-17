@@ -23,12 +23,12 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="doc"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	sphinx-autoapi; extra == "doc"
-	sphinx-rtd-theme; extra == "doc"
-	sphinx-tabs; extra == "doc"
+	sphinx-autoapi; extra == 'doc'
+	sphinx-rtd-theme; extra == 'doc'
+	sphinx-tabs; extra == 'doc'
 	sphinx>=5
-	sphinxemoji; extra == "doc"
-	tox; extra == "test"
+	sphinxemoji; extra == 'doc'
+	tox; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]

@@ -17,8 +17,8 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	apache-airflow-providers-common-sql>=1.20.0
 	apache-airflow>=2.9.0
-	pandas<2.2,>=1.5.3; python_version < "3.9"
-	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	pandas<2.2,>=1.5.3; python_version < '3.9'
+	pandas<2.2,>=2.1.2; python_version >= '3.9'
 	pyexasol>=0.5.1
 "
 GENERATED_RDEPEND="${RDEPEND}

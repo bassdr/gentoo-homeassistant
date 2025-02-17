@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	absl-py; extra == "tests"
-	pytest; extra == "tests"
-	tensorflow-cpu<2.19,>=2.18.0; extra == "tensorflow-cpu"
-	tensorflow-datasets>=3.2.0; extra == "tests"
+	absl-py; extra == 'tests'
+	pytest; extra == 'tests'
+	tensorflow-cpu<2.19,>=2.18.0; extra == 'tensorflow-cpu'
+	tensorflow-datasets>=3.2.0; extra == 'tests'
 	tensorflow<2.19,>=2.18.0
 "
 GENERATED_RDEPEND="${RDEPEND}

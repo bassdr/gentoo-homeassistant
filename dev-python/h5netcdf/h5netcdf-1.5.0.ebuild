@@ -16,9 +16,9 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	h5py
-	netCDF4; extra == "test"
+	netCDF4; extra == 'test'
 	packaging
-	pytest; extra == "test"
+	pytest; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/h5py[${PYTHON_USEDEP}]

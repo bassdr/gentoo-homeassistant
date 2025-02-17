@@ -19,13 +19,13 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	apache-airflow-providers-common-compat>=1.1.0
 	apache-airflow-providers-common-sql>=1.20.0
-	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow-providers-openlineage; extra == 'openlineage'
 	apache-airflow>=2.9.0
-	pandas<2.2,>=1.5.3; python_version < "3.9"
-	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	pandas<2.2,>=1.5.3; python_version < '3.9'
+	pandas<2.2,>=2.1.2; python_version >= '3.9'
 	pyarrow>=14.0.1
 	snowflake-connector-python>=3.7.1
-	snowflake-snowpark-python>=1.17.0; python_version < "3.12"
+	snowflake-snowpark-python>=1.17.0; python_version < '3.12'
 	snowflake-sqlalchemy>=1.4.0
 "
 GENERATED_RDEPEND="${RDEPEND}

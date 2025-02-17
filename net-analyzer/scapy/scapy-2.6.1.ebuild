@@ -27,6 +27,8 @@ GENERATED_IUSE="all cli doc"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
+RDEPEND=""
+
 BDEPEND="
 	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
@@ -49,10 +51,6 @@ Scapy has optional support for the following packages:
 
 	See also ""${EPREFIX}/usr/share/doc/${PF}/installation.rst""
 "
-
-PATCHES=(
-	"${FILESDIR}"/${PN}-2.5.0-no-install-tests.patch
-)
 
 src_prepare() {
 	if ! [[ -f ${PN}/VERSION ]]; then

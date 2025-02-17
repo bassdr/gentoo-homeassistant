@@ -18,20 +18,20 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	cmdstanpy>=1.0.4
-	dask[dataframe]; extra == "parallel"
-	distributed; extra == "parallel"
+	dask[dataframe]; extra == 'parallel'
+	distributed; extra == 'parallel'
 	holidays<1,>=0.25
 	importlib-resources
-	jupyterlab; extra == "dev"
+	jupyterlab; extra == 'dev'
 	matplotlib>=2.0.0
-	nbconvert; extra == "dev"
+	nbconvert; extra == 'dev'
 	numpy>=1.15.4
 	pandas>=1.0.4
-	plotly; extra == "dev"
-	pytest; extra == "dev"
-	setuptools>=64; extra == "dev"
+	plotly; extra == 'dev'
+	pytest; extra == 'dev'
+	setuptools>=64; extra == 'dev'
 	tqdm>=4.36.1
-	wheel; extra == "dev"
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cmdstanpy-1.0.4[${PYTHON_USEDEP}]

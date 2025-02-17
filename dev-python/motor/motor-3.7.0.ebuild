@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp; extra == "docs"
-	aiohttp>=3.8.7; extra == "test"
-	cffi>=1.17.0rc1; python_version == "3.13" and extra == "test"
-	furo==2024.8.6; extra == "docs"
-	mockupdb; extra == "test"
+	aiohttp; extra == 'docs'
+	aiohttp>=3.8.7; extra == 'test'
+	cffi>=1.17.0rc1; python_version == '3.13' and extra == 'test'
+	furo==2024.8.6; extra == 'docs'
+	mockupdb; extra == 'test'
 	pymongo<5.0,>=4.9
-	pymongo[aws]<5,>=4.5; extra == "aws"
-	pymongo[encryption]<5,>=4.5; extra == "encryption"
-	pymongo[encryption]<5,>=4.5; extra == "test"
-	pymongo[gssapi]<5,>=4.5; extra == "gssapi"
-	pymongo[ocsp]<5,>=4.5; extra == "ocsp"
-	pymongo[snappy]<5,>=4.5; extra == "snappy"
-	pymongo[zstd]<5,>=4.5; extra == "zstd"
-	pytest-asyncio; extra == "test"
-	pytest>=7; extra == "test"
-	readthedocs-sphinx-search~=0.3; extra == "docs"
-	sphinx-rtd-theme<3,>=2; extra == "docs"
-	sphinx<8,>=5.3; extra == "docs"
-	tornado; extra == "docs"
-	tornado>=5; extra == "test"
+	pymongo[aws]<5,>=4.5; extra == 'aws'
+	pymongo[encryption]<5,>=4.5; extra == 'encryption'
+	pymongo[encryption]<5,>=4.5; extra == 'test'
+	pymongo[gssapi]<5,>=4.5; extra == 'gssapi'
+	pymongo[ocsp]<5,>=4.5; extra == 'ocsp'
+	pymongo[snappy]<5,>=4.5; extra == 'snappy'
+	pymongo[zstd]<5,>=4.5; extra == 'zstd'
+	pytest-asyncio; extra == 'test'
+	pytest>=7; extra == 'test'
+	readthedocs-sphinx-search~=0.3; extra == 'docs'
+	sphinx-rtd-theme<3,>=2; extra == 'docs'
+	sphinx<8,>=5.3; extra == 'docs'
+	tornado; extra == 'docs'
+	tornado>=5; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/aiohttp[${PYTHON_USEDEP}] )

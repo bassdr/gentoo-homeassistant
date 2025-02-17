@@ -18,28 +18,28 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=21.3.0
-	blake3>=0.3.1; extra == "dev"
+	blake3>=0.3.1; extra == 'dev'
 	dictdiffer>=0.8.1
 	diskcache>=5.2.1
-	dvc-data[all]; extra == "dev"
-	dvc-data[cli]; extra == "all"
-	dvc-data[tests]; extra == "dev"
+	dvc-data[all]; extra == 'dev'
+	dvc-data[cli]; extra == 'all'
+	dvc-data[tests]; extra == 'dev'
 	dvc-objects<6,>=4.0.1
 	fsspec>=2024.2.0
-	funcy>=1.14; python_version < "3.12"
-	mypy==1.14.1; extra == "dev"
-	orjson<4,>=3; implementation_name == "cpython"
+	funcy>=1.14; python_version < '3.12'
+	mypy==1.14.1; extra == 'dev'
+	orjson<4,>=3; implementation_name == 'cpython'
 	pygtrie>=2.3.2
-	pytest-benchmark>=4; extra == "tests"
-	pytest-cov>=4.1.0; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest-servers==0.5.9; extra == "tests"
-	pytest-sugar; extra == "tests"
-	pytest<9,>=7; extra == "tests"
+	pytest-benchmark>=4; extra == 'tests'
+	pytest-cov>=4.1.0; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest-servers==0.5.9; extra == 'tests'
+	pytest-sugar; extra == 'tests'
+	pytest<9,>=7; extra == 'tests'
 	sqltrie<1,>=0.11.0
 	tqdm<5,>=4.63.1
-	typer-slim>=0.12; extra == "cli"
-	types-tqdm; extra == "dev"
+	typer-slim>=0.12; extra == 'cli'
+	types-tqdm; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-21.3.0[${PYTHON_USEDEP}]

@@ -2,16 +2,29 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_EXT=1
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 GENERATED_IUSE="beam"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1
-SRC_URI="https://github.com/google/array_record/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-DESCRIPTION=""
+MY_PN=array_record
+
+if [[ "${PV}" = "0.6.0" ]] ; then
+	MY_PV=64637c599d04593621481aeec9899331c5af85b8
+	SRC_URI="https://github.com/google/${MY_PN}/archive/${MY_PV}.tar.gz -> ${P}.gh.tar.gz"
+else
+	MY_PV=${PV}
+	SRC_URI="https://github.com/google/${MY_PN}/archive/refs/tags/v${MY_PV}.tar.gz -> ${P}.gh.tar.gz"
+fi
+
+S="${WORKDIR}/${MY_PN}-${MY_PV}/"
+
+DESCRIPTION="A file format that achieves a new frontier of IO efficiency"
 HOMEPAGE="
-  https://pypi.org/project/array-record/"
+  https://pypi.org/project/array-record/
+"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -19,10 +32,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py
-	apache-beam[gcp]>=2.50.0; extra == "beam"
+	apache-beam[gcp]>=2.50.0; extra == 'beam'
 	etils[epath]
-	google-cloud-storage>=2.11.0; extra == "beam"
-	tensorflow>=2.14.0; extra == "beam"
+	google-cloud-storage>=2.11.0; extra == 'beam'
+	tensorflow>=2.14.0; extra == 'beam'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]

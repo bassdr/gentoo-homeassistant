@@ -18,13 +18,11 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	betterproto==2.0.0b6
-	build; extra == "dev"
+	build; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	~dev-python/betterproto-2.0.0_beta6[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	~dev-python/betterproto-2.0.0_beta7[${PYTHON_USEDEP}]
-	=dev-python/pydantic-2*[${PYTHON_USEDEP}]
-"
-# GENERATED_BDEPEND could not be inserted in this ebuild
+RDEPEND="${GENERATED_RDEPEND}"
+GENERATED_BDEPEND="${BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}"

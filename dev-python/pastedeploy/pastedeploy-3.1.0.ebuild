@@ -28,7 +28,7 @@ REQUIRES_DIST="
 	Paste ; extra == 'paste'
 	Paste ; extra == 'testing'
 	Sphinx >=1.7.5 ; extra == 'docs'
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	pylons-sphinx-themes ; extra == 'docs'
 	pytest ; extra == 'testing'
 	pytest-cov ; extra == 'testing'

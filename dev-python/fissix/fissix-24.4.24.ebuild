@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	appdirs>=1.4.4
-	attribution==1.7.1; extra == "dev"
-	black==24.4.0; extra == "dev"
-	flit==3.9.0; extra == "dev"
-	isort==5.8.0; extra == "dev"
-	pytest==8.1.1; extra == "dev"
-	sphinx-mdinclude==0.6.0; extra == "docs"
-	sphinx==7.3.7; extra == "docs"
+	attribution==1.7.1; extra == 'dev'
+	black==24.4.0; extra == 'dev'
+	flit==3.9.0; extra == 'dev'
+	isort==5.8.0; extra == 'dev'
+	pytest==8.1.1; extra == 'dev'
+	sphinx-mdinclude==0.6.0; extra == 'docs'
+	sphinx==7.3.7; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]

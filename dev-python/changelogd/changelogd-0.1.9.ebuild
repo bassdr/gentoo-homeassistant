@@ -19,17 +19,17 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	Click>=8.1.7
 	Jinja2>=3.1.3
-	bump2version==1.0.1; extra == "dev"
-	flake8==7.0.0; extra == "dev"
-	mypy==1.9.0; extra == "dev"
-	nox==2024.3.2; extra == "dev"
-	pyfakefs==5.4; extra == "test"
-	pytest-subprocess; extra == "test"
-	pytest>=5; extra == "test"
+	bump2version==1.0.1; extra == 'dev'
+	flake8==7.0.0; extra == 'dev'
+	mypy==1.9.0; extra == 'dev'
+	nox==2024.3.2; extra == 'dev'
+	pyfakefs==5.4; extra == 'test'
+	pytest-subprocess; extra == 'test'
+	pytest>=5; extra == 'test'
 	ruamel.yaml>=0.18.6
-	sphinx; extra == "docs"
+	sphinx; extra == 'docs'
 	toml>=0.10.2
-	wheel==0.43.0; extra == "dev"
+	wheel==0.43.0; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/click-8.1.7[${PYTHON_USEDEP}]

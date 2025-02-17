@@ -16,10 +16,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	apache-airflow>=2.9.0
-	hdfs[avro,dataframe,kerberos]>=2.5.4; python_version < "3.12"
-	hdfs[avro,dataframe,kerberos]>=2.7.3; python_version >= "3.12"
-	pandas<2.2,>=1.5.3; python_version < "3.9"
-	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	hdfs[avro,dataframe,kerberos]>=2.5.4; python_version < '3.12'
+	hdfs[avro,dataframe,kerberos]>=2.7.3; python_version >= '3.12'
+	pandas<2.2,>=1.5.3; python_version < '3.9'
+	pandas<2.2,>=2.1.2; python_version >= '3.9'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/apache-airflow-2.9.0[${PYTHON_USEDEP}]

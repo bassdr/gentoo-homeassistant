@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	covdefaults>=2.3; extra == "testing"
-	defusedxml>=0.7.1; extra == "testing"
-	pytest-cov>=5; extra == "testing"
-	pytest>=8.3.2; extra == "testing"
+	covdefaults>=2.3; extra == 'testing'
+	defusedxml>=0.7.1; extra == 'testing'
+	pytest-cov>=5; extra == 'testing'
+	pytest>=8.3.2; extra == 'testing'
 	sphinx>=8.0.2
 "
 GENERATED_RDEPEND="${RDEPEND}

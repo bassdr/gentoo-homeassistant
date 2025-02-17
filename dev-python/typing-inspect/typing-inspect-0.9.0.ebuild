@@ -22,7 +22,7 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	mypy-extensions (>=0.3.0)
-	typing (>=3.7.4) ; python_version < "3.5"
+	typing (>=3.7.4) ; python_version < '3.5'
 	typing-extensions (>=3.7.4)
 "
 GENERATED_RDEPEND="${RDEPEND}

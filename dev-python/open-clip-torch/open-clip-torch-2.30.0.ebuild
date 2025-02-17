@@ -17,23 +17,23 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	fsspec; extra == "training"
+	fsspec; extra == 'training'
 	ftfy
 	huggingface-hub
-	open_clip_torch[training]; extra == "test"
-	pandas; extra == "training"
-	pytest-split; extra == "test"
-	pytest; extra == "test"
+	open_clip_torch[training]; extra == 'test'
+	pandas; extra == 'training'
+	pytest-split; extra == 'test'
+	pytest; extra == 'test'
 	regex
 	safetensors
 	timm
-	timm>=1.0.10; extra == "training"
+	timm>=1.0.10; extra == 'training'
 	torch>=1.9.0
-	torch>=2.0; extra == "training"
+	torch>=2.0; extra == 'training'
 	torchvision
 	tqdm
-	transformers[sentencepiece]; extra == "training"
-	webdataset<=0.2.86,>=0.2.5; extra == "training"
+	transformers[sentencepiece]; extra == 'training'
+	webdataset<=0.2.86,>=0.2.5; extra == 'training'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	training? ( dev-python/fsspec[${PYTHON_USEDEP}] )

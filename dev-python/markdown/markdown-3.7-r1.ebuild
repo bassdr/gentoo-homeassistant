@@ -22,14 +22,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
-IUSE="${GENERATED_IUSE} doc"
-BDEPEND="
-	test? (
-		dev-python/pygments[${PYTHON_USEDEP}]
-		dev-python/pytidylib[${PYTHON_USEDEP}]
-		dev-python/pyyaml[${PYTHON_USEDEP}]
-	)
-"
+IUSE="${GENERATED_IUSE} doc test"
+
+RDEPEND=""
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
@@ -38,7 +33,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pygments[${PYTHON_USEDEP}]
+		dev-python/pytidylib[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+	)
+"
 
 python_install_all() {
 	use doc && dodoc -r docs/

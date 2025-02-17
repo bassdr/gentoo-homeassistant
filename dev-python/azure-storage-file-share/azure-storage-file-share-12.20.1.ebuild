@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	azure-core>=1.30.0
-	azure-core[aio]>=1.30.0; extra == "aio"
+	azure-core[aio]>=1.30.0; extra == 'aio'
 	cryptography>=2.1.4
 	isodate>=0.6.1
 	typing-extensions>=4.6.0

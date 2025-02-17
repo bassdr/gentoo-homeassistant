@@ -25,7 +25,7 @@ GENERATED_IUSE="docs jinja2"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	mercurial >5.7 ; extra == 'docs'
-	ruamel.yaml.clib >=0.2.7 ; platform_python_implementation=="CPython" and python_version<"3.13"
+	ruamel.yaml.clib >=0.2.7 ; platform_python_implementation=='CPython' and python_version<'3.13'
 	ruamel.yaml.jinja2 >=0.2 ; extra == 'jinja2'
 	ryd ; extra == 'docs'
 "

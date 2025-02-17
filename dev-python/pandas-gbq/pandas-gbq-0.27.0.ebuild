@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Shapely>=1.8.4; extra == "geopandas"
+	Shapely>=1.8.4; extra == 'geopandas'
 	db-dtypes<2.0.0,>=1.0.4
-	geopandas>=0.9.0; extra == "geopandas"
+	geopandas>=0.9.0; extra == 'geopandas'
 	google-api-core<3.0.0dev,>=2.10.2
 	google-auth-oauthlib>=0.7.0
 	google-auth>=2.13.0
-	google-cloud-bigquery-storage<3.0.0dev,>=2.16.2; extra == "bqstorage"
+	google-cloud-bigquery-storage<3.0.0dev,>=2.16.2; extra == 'bqstorage'
 	google-cloud-bigquery<4.0.0dev,>=3.4.2
 	numpy>=1.18.1
 	packaging>=22.0.0
@@ -31,7 +31,7 @@ REQUIRES_DIST="
 	pyarrow>=4.0.0
 	pydata-google-auth>=1.5.0
 	setuptools
-	tqdm>=4.23.0; extra == "tqdm"
+	tqdm>=4.23.0; extra == 'tqdm'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/db-dtypes-1.0.4[${PYTHON_USEDEP}] <dev-python/db-dtypes-2.0.0[${PYTHON_USEDEP}]

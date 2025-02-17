@@ -23,7 +23,7 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	mypy ; extra == 'test'
 	pytest ; extra == 'test'
 	pytest-cov ; extra == 'test'

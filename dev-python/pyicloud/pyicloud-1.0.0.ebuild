@@ -36,12 +36,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.24.0[${PYTHON_USEDEP}]
 	>=dev-python/tzlocal-4.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/requests-2.24[${PYTHON_USEDEP}]
-	>=dev-python/keyring-21.4.0[${PYTHON_USEDEP}]
-	>=dev-python/keyrings_alt-3.5.2[${PYTHON_USEDEP}]
-	>=dev-python/click-7.1.2[${PYTHON_USEDEP}]
-	>=dev-python/tzlocal-4.0[${PYTHON_USEDEP}]
-	>=dev-python/certifi-2020.6.20[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

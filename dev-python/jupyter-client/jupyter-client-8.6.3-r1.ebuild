@@ -20,26 +20,26 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	coverage; extra == "test"
-	importlib-metadata>=4.8.3; python_version < "3.10"
-	ipykernel; extra == "docs"
-	ipykernel>=6.14; extra == "test"
+	coverage; extra == 'test'
+	importlib-metadata>=4.8.3; python_version < '3.10'
+	ipykernel; extra == 'docs'
+	ipykernel>=6.14; extra == 'test'
 	jupyter-core!=5.0.*,>=4.12
-	mypy; extra == "test"
-	myst-parser; extra == "docs"
-	paramiko; sys_platform == "win32" and extra == "test"
-	pre-commit; extra == "test"
-	pydata-sphinx-theme; extra == "docs"
-	pytest-cov; extra == "test"
-	pytest-jupyter[client]>=0.4.1; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest<8.2.0; extra == "test"
+	mypy; extra == 'test'
+	myst-parser; extra == 'docs'
+	paramiko; sys_platform == 'win32' and extra == 'test'
+	pre-commit; extra == 'test'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-cov; extra == 'test'
+	pytest-jupyter[client]>=0.4.1; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest<8.2.0; extra == 'test'
 	python-dateutil>=2.8.2
 	pyzmq>=23.0
-	sphinx-autodoc-typehints; extra == "docs"
-	sphinx>=4; extra == "docs"
-	sphinxcontrib-github-alt; extra == "docs"
-	sphinxcontrib-spelling; extra == "docs"
+	sphinx-autodoc-typehints; extra == 'docs'
+	sphinx>=4; extra == 'docs'
+	sphinxcontrib-github-alt; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
 	tornado>=6.2
 	traitlets>=5.3
 "

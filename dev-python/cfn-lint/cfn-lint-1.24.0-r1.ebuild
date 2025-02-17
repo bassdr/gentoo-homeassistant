@@ -20,18 +20,18 @@ GENERATED_IUSE="full graph junit sarif"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	aws-sam-translator>=1.94.0
-	jschema_to_python~=1.2.3; extra == "full"
-	jschema_to_python~=1.2.3; extra == "sarif"
+	jschema_to_python~=1.2.3; extra == 'full'
+	jschema_to_python~=1.2.3; extra == 'sarif'
 	jsonpatch
-	junit-xml~=1.9; extra == "full"
-	junit-xml~=1.9; extra == "junit"
+	junit-xml~=1.9; extra == 'full'
+	junit-xml~=1.9; extra == 'junit'
 	networkx<4,>=2.4
-	pydot; extra == "full"
-	pydot; extra == "graph"
+	pydot; extra == 'full'
+	pydot; extra == 'graph'
 	pyyaml>5.4
 	regex
-	sarif-om~=1.0.4; extra == "full"
-	sarif-om~=1.0.4; extra == "sarif"
+	sarif-om~=1.0.4; extra == 'full'
+	sarif-om~=1.0.4; extra == 'sarif'
 	sympy>=1.0.0
 	typing_extensions
 "

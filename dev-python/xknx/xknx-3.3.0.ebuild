@@ -23,10 +23,10 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	async-timeout>=4.0.0; python_version < "3.11"
+	async-timeout>=4.0.0; python_version < '3.11'
 	cryptography>=35.0.0
 	ifaddr>=0.1.7
-	typing-extensions; python_version < "3.11"
+	typing-extensions; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-35.0.0[${PYTHON_USEDEP}]

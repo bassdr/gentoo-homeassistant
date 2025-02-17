@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyYAML >=3.12
 	deepmerge >=0.1
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	jsonschema >=2.5.1
 	picobox >=2.2
 	sphinx >=2.0

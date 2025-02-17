@@ -20,20 +20,20 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	BTrees>=4.2.0
-	Sphinx<7; extra == "docs"
+	Sphinx<7; extra == 'docs'
 	ZConfig
-	ZODB; extra == "docs"
-	j1m.sphinxautozconfig; extra == "docs"
-	manuel; extra == "test"
+	ZODB; extra == 'docs'
+	j1m.sphinxautozconfig; extra == 'docs'
+	manuel; extra == 'test'
 	persistent>=4.4.0
-	sphinx-rtd-theme; extra == "docs"
-	sphinxcontrib-zopeext; extra == "docs"
+	sphinx-rtd-theme; extra == 'docs'
+	sphinxcontrib-zopeext; extra == 'docs'
 	transaction>=2.4
 	zc.lockfile
 	zodbpickle>=1.0.1
 	zope.interface
-	zope.testing; extra == "test"
-	zope.testrunner>=4.4.6; extra == "test"
+	zope.testing; extra == 'test'
+	zope.testrunner>=4.4.6; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/btrees-4.2.0[${PYTHON_USEDEP}]

@@ -25,7 +25,7 @@ DOCS="README.rst"
 REQUIRES_DIST="
 	pytz (>=2020.4)
 	requests (>=2.25.1,<3.0.0)
-	typing-extensions (>=3.8.18,<5.0.0) ; python_version >= "3.8" and python_version < "3.12"
+	typing-extensions (>=3.8.18,<5.0.0) ; python_version >= '3.8' and python_version < '3.12'
 	urllib3 (>=1.26.18,<2.0.0)
 "
 GENERATED_RDEPEND="${RDEPEND}

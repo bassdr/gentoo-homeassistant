@@ -18,10 +18,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	packaging
-	pytest; extra == "tests"
-	readthedocs-sphinx-ext; extra == "docs"
-	sphinx-rtd-theme; extra == "docs"
-	sphinx; extra == "docs"
+	pytest; extra == 'tests'
+	readthedocs-sphinx-ext; extra == 'docs'
+	sphinx-rtd-theme; extra == 'docs'
+	sphinx; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]

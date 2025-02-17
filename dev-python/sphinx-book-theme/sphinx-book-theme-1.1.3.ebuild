@@ -17,36 +17,36 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ablog; extra == "doc"
-	beautifulsoup4; extra == "test"
-	coverage; extra == "test"
-	defusedxml; extra == "test"
-	folium; extra == "doc"
-	ipywidgets; extra == "doc"
-	matplotlib; extra == "doc"
-	myst-nb; extra == "doc"
-	myst-nb; extra == "test"
-	nbclient; extra == "doc"
-	numpy; extra == "doc"
-	numpydoc; extra == "doc"
-	pandas; extra == "doc"
-	plotly; extra == "doc"
-	pre-commit; extra == "code-style"
+	ablog; extra == 'doc'
+	beautifulsoup4; extra == 'test'
+	coverage; extra == 'test'
+	defusedxml; extra == 'test'
+	folium; extra == 'doc'
+	ipywidgets; extra == 'doc'
+	matplotlib; extra == 'doc'
+	myst-nb; extra == 'doc'
+	myst-nb; extra == 'test'
+	nbclient; extra == 'doc'
+	numpy; extra == 'doc'
+	numpydoc; extra == 'doc'
+	pandas; extra == 'doc'
+	plotly; extra == 'doc'
+	pre-commit; extra == 'code-style'
 	pydata-sphinx-theme>=0.15.2
-	pytest-cov; extra == "test"
-	pytest-regressions; extra == "test"
-	pytest; extra == "test"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design; extra == "doc"
-	sphinx-examples; extra == "doc"
-	sphinx-tabs; extra == "doc"
-	sphinx-thebe; extra == "doc"
-	sphinx-togglebutton; extra == "doc"
+	pytest-cov; extra == 'test'
+	pytest-regressions; extra == 'test'
+	pytest; extra == 'test'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design; extra == 'doc'
+	sphinx-examples; extra == 'doc'
+	sphinx-tabs; extra == 'doc'
+	sphinx-thebe; extra == 'doc'
+	sphinx-togglebutton; extra == 'doc'
 	sphinx>=5
-	sphinx_thebe; extra == "test"
-	sphinxcontrib-bibtex; extra == "doc"
-	sphinxcontrib-youtube; extra == "doc"
-	sphinxext-opengraph; extra == "doc"
+	sphinx_thebe; extra == 'test'
+	sphinxcontrib-bibtex; extra == 'doc'
+	sphinxcontrib-youtube; extra == 'doc'
+	sphinxext-opengraph; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/ablog[${PYTHON_USEDEP}] )

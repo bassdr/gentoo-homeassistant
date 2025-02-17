@@ -34,7 +34,7 @@ REQUIRES_DIST="
 	pytest-mock ==3.6.1 ; extra == 'tests'
 	pytest-servers[azure] >=0.3.0 ; extra == 'tests'
 	pytest-xdist ==2.4.0 ; extra == 'tests'
-	pywin32 >=225 ; (sys_platform == "win32") and extra == 'tests'
+	pywin32 >=225 ; (sys_platform == 'win32') and extra == 'tests'
 	types-requests ==2.25.11 ; extra == 'tests'
 	types-tabulate ==0.8.3 ; extra == 'tests'
 	types-toml ==0.10.1 ; extra == 'tests'

@@ -27,12 +27,12 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	PyRIC>=0.1.6.3
-	Sphinx<6.0,>=5.0; extra == "docs"
-	async-timeout>=3.0.0; python_version < "3.11"
+	Sphinx<6.0,>=5.0; extra == 'docs'
+	async-timeout>=3.0.0; python_version < '3.11'
 	bluetooth-adapters>=0.16.0
 	btsocket>=0.2.0
-	myst-parser<0.19,>=0.18; extra == "docs"
-	sphinx-rtd-theme<2.0,>=1.0; extra == "docs"
+	myst-parser<0.19,>=0.18; extra == 'docs'
+	sphinx-rtd-theme<2.0,>=1.0; extra == 'docs'
 	usb-devices>=0.4.1
 "
 GENERATED_RDEPEND="${RDEPEND}

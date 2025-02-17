@@ -22,8 +22,8 @@ REQUIRES_DIST="
 	httpx
 	numpy>=1.13
 	opt-einsum==3.3.0
-	protobuf<=3.20.2,>=3.1.0; platform_system == "Windows"
-	protobuf>=3.20.2; platform_system != "Windows"
+	protobuf<=3.20.2,>=3.1.0; platform_system == 'Windows'
+	protobuf>=3.20.2; platform_system != 'Windows'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/astor[${PYTHON_USEDEP}]

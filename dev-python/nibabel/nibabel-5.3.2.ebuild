@@ -17,36 +17,36 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage>=7.2; extra == "test"
-	h5py; extra == "all"
-	h5py; extra == "minc2"
-	importlib-resources>=5.12; python_version < "3.12"
-	matplotlib>=3.5; extra == "doc"
+	coverage>=7.2; extra == 'test'
+	h5py; extra == 'all'
+	h5py; extra == 'minc2'
+	importlib-resources>=5.12; python_version < '3.12'
+	matplotlib>=3.5; extra == 'doc'
 	numpy>=1.22
-	numpydoc; extra == "doc"
+	numpydoc; extra == 'doc'
 	packaging>=20
-	pillow; extra == "all"
-	pillow; extra == "dicomfs"
-	pydicom>=2.3; extra == "all"
-	pydicom>=2.3; extra == "dicom"
-	pydicom>=2.3; extra == "dicomfs"
-	pytest-cov; extra == "test"
-	pytest-doctestplus; extra == "test"
-	pytest-httpserver; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
-	pyzstd>=0.14.3; extra == "all"
-	pyzstd>=0.14.3; extra == "zstd"
-	scipy; extra == "all"
-	scipy; extra == "spm"
-	sphinx; extra == "doc"
-	texext; extra == "doc"
-	tomli; python_version < "3.11" and extra == "doc"
-	tox; extra == "dev"
-	tox; extra == "doctest"
-	tox; extra == "style"
-	tox; extra == "typing"
-	typing-extensions>=4.6; python_version < "3.13"
+	pillow; extra == 'all'
+	pillow; extra == 'dicomfs'
+	pydicom>=2.3; extra == 'all'
+	pydicom>=2.3; extra == 'dicom'
+	pydicom>=2.3; extra == 'dicomfs'
+	pytest-cov; extra == 'test'
+	pytest-doctestplus; extra == 'test'
+	pytest-httpserver; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
+	pyzstd>=0.14.3; extra == 'all'
+	pyzstd>=0.14.3; extra == 'zstd'
+	scipy; extra == 'all'
+	scipy; extra == 'spm'
+	sphinx; extra == 'doc'
+	texext; extra == 'doc'
+	tomli; python_version < '3.11' and extra == 'doc'
+	tox; extra == 'dev'
+	tox; extra == 'doctest'
+	tox; extra == 'style'
+	tox; extra == 'typing'
+	typing-extensions>=4.6; python_version < '3.13'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/h5py[${PYTHON_USEDEP}] )

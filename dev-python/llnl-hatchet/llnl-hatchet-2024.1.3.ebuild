@@ -22,8 +22,8 @@ REQUIRES_DIST="
 	numpy<2.0.0
 	pandas
 	pydot
-	textX<3.0.0; python_version < "3.6"
-	textX>=3.0.0; python_version >= "3.6"
+	textX<3.0.0; python_version < '3.6'
+	textX>=3.0.0; python_version >= '3.6'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/caliper-reader[${PYTHON_USEDEP}]

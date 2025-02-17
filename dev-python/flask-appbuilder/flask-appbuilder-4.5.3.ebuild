@@ -19,12 +19,12 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Authlib<2.0.0,>=0.14; extra == "oauth"
+	Authlib<2.0.0,>=0.14; extra == 'oauth'
 	Flask-Babel<3,>=1
 	Flask-JWT-Extended<5.0.0,>=4.0.0
 	Flask-Limiter<4,>3
 	Flask-Login<0.7,>=0.3
-	Flask-OpenID<2,>=1.2.5; extra == "openid"
+	Flask-OpenID<2,>=1.2.5; extra == 'openid'
 	Flask-SQLAlchemy<3,>=2.4
 	Flask-WTF<2,>=0.14.2
 	Flask<3.0.0,>=2
@@ -35,8 +35,8 @@ REQUIRES_DIST="
 	click<9,>=8
 	colorama<1,>=0.3.9
 	email-validator>=1.0.5
-	flask-talisman<2.0,>=1.0.0; extra == "talisman"
-	jmespath>=0.9.5; extra == "jmespath"
+	flask-talisman<2.0,>=1.0.0; extra == 'talisman'
+	jmespath>=0.9.5; extra == 'jmespath'
 	jsonschema<5,>=3
 	marshmallow-sqlalchemy<0.29.0,>=0.22.0
 	marshmallow<4,>=3.18.0

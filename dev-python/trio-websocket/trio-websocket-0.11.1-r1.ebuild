@@ -24,7 +24,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	exceptiongroup ; python_version < "3.11"
+	exceptiongroup ; python_version < '3.11'
 	trio >=0.11
 	wsproto >=0.14
 "

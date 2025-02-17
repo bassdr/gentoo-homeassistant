@@ -17,13 +17,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	absl-py<2.0.0,>=0.9
-	apache-beam[gcp]<3,>=2.47; python_version < "3.11"
-	apache-beam[gcp]<3,>=2.53; python_version >= "3.11"
+	apache-beam[gcp]<3,>=2.47; python_version < '3.11'
+	apache-beam[gcp]<3,>=2.53; python_version >= '3.11'
 	google-api-python-client<2,>=1.7.11
 	numpy>=1.22.0
 	pandas<2,>=1.0
-	protobuf<5,>=3.20.3; python_version < "3.11"
-	protobuf<6,>=4.25.2; python_version >= "3.11"
+	protobuf<5,>=3.20.3; python_version < '3.11'
+	protobuf<6,>=4.25.2; python_version >= '3.11'
 	pyarrow<11,>=10
 	tensorflow-metadata<1.17.0,>=1.16.0
 	tensorflow-serving-api<3,>=2.13.0

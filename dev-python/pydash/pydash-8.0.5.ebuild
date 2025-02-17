@@ -15,21 +15,21 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "dev"
-	coverage; extra == "dev"
-	furo; extra == "dev"
-	invoke; extra == "dev"
-	mypy; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest-mypy-testing; extra == "dev"
-	pytest; extra == "dev"
-	ruff; extra == "dev"
-	sphinx-autodoc-typehints; extra == "dev"
-	sphinx; extra == "dev"
-	tox; extra == "dev"
-	twine; extra == "dev"
+	build; extra == 'dev'
+	coverage; extra == 'dev'
+	furo; extra == 'dev'
+	invoke; extra == 'dev'
+	mypy; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest-mypy-testing; extra == 'dev'
+	pytest; extra == 'dev'
+	ruff; extra == 'dev'
+	sphinx-autodoc-typehints; extra == 'dev'
+	sphinx; extra == 'dev'
+	tox; extra == 'dev'
+	twine; extra == 'dev'
 	typing-extensions!=4.6.0,>3.10
-	wheel; extra == "dev"
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/typing-extensions-3.10[${PYTHON_USEDEP}] !~dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]

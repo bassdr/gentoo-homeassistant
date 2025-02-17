@@ -27,11 +27,11 @@ REQUIRES_DIST="
 	jaraco.packaging (>=9.3) ; extra == 'docs'
 	more-itertools (>=4.0.0)
 	pytest (>=6) ; extra == 'testing'
-	pytest-black (>=0.3.7) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-black (>=0.3.7) ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	pytest-checkdocs (>=2.4) ; extra == 'testing'
 	pytest-cov ; extra == 'testing'
 	pytest-enabler (>=2.2) ; extra == 'testing'
-	pytest-mypy (>=0.9.1) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+	pytest-mypy (>=0.9.1) ; (platform_python_implementation != 'PyPy') and extra == 'testing'
 	pytest-ruff ; extra == 'testing'
 	rst.linker (>=1.9) ; extra == 'docs'
 	sphinx (>=3.5) ; extra == 'docs'

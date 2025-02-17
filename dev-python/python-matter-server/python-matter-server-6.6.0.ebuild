@@ -23,32 +23,32 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp
-	aiohttp==3.10.8; extra == "server"
-	aioresponses==0.7.6; extra == "test"
+	aiohttp==3.10.8; extra == 'server'
+	aioresponses==0.7.6; extra == 'test'
 	aiorun
-	aiorun==2024.8.1; extra == "server"
+	aiorun==2024.8.1; extra == 'server'
 	async-timeout
-	async-timeout==4.0.3; extra == "server"
-	codespell==2.3.0; extra == "test"
+	async-timeout==4.0.3; extra == 'server'
+	codespell==2.3.0; extra == 'test'
 	coloredlogs
-	coloredlogs==15.0.1; extra == "server"
-	cryptography==43.0.1; extra == "server"
+	coloredlogs==15.0.1; extra == 'server'
+	cryptography==43.0.1; extra == 'server'
 	home-assistant-chip-clusters==2024.9.0
-	home-assistant-chip-core==2024.9.0; extra == "server"
-	isort==5.13.2; extra == "test"
-	mypy==1.11.2; extra == "test"
+	home-assistant-chip-core==2024.9.0; extra == 'server'
+	isort==5.13.2; extra == 'test'
+	mypy==1.11.2; extra == 'test'
 	orjson
-	orjson==3.10.7; extra == "server"
-	pre-commit-hooks==4.6.0; extra == "test"
-	pre-commit==3.8.0; extra == "test"
-	pylint==3.3.1; extra == "test"
-	pytest-aiohttp==1.0.5; extra == "test"
-	pytest-asyncio==0.24.0; extra == "test"
-	pytest-cov==5.0.0; extra == "test"
-	pytest==8.3.3; extra == "test"
-	ruff==0.6.8; extra == "test"
-	tomli==2.0.1; extra == "test"
-	zeroconf==0.135.0; extra == "server"
+	orjson==3.10.7; extra == 'server'
+	pre-commit-hooks==4.6.0; extra == 'test'
+	pre-commit==3.8.0; extra == 'test'
+	pylint==3.3.1; extra == 'test'
+	pytest-aiohttp==1.0.5; extra == 'test'
+	pytest-asyncio==0.24.0; extra == 'test'
+	pytest-cov==5.0.0; extra == 'test'
+	pytest==8.3.3; extra == 'test'
+	ruff==0.6.8; extra == 'test'
+	tomli==2.0.1; extra == 'test'
+	zeroconf==0.135.0; extra == 'server'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

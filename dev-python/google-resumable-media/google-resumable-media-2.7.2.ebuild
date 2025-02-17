@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	aiohttp<4.0.0dev,>=3.6.2; extra == "aiohttp"
-	google-auth<2.0dev,>=1.22.0; extra == "aiohttp"
+	aiohttp<4.0.0dev,>=3.6.2; extra == 'aiohttp'
+	google-auth<2.0dev,>=1.22.0; extra == 'aiohttp'
 	google-crc32c<2.0dev,>=1.0
-	requests<3.0.0dev,>=2.18.0; extra == "requests"
+	requests<3.0.0dev,>=2.18.0; extra == 'requests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( >=dev-python/aiohttp-3.6.2[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0_pre[${PYTHON_USEDEP}] )

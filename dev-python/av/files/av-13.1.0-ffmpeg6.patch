@@ -1,0 +1,41 @@
+diff '--color=auto' -ur av-13.1.0.old/include/libavformat/avformat.pxd av-13.1.0/include/libavformat/avformat.pxd
+--- av-13.1.0.old/include/libavformat/avformat.pxd	2025-02-16 18:27:55.216837668 -0500
++++ av-13.1.0/include/libavformat/avformat.pxd	2025-02-16 18:56:45.939151546 -0500
+@@ -79,7 +79,7 @@
+         int write_flag,
+         void *opaque,
+         int(*read_packet)(void *opaque, uint8_t *buf, int buf_size),
+-        int(*write_packet)(void *opaque, const uint8_t *buf, int buf_size),
++        int(*write_packet)(void *opaque, uint8_t *buf, int buf_size),
+         int64_t(*seek)(void *opaque, int64_t offset, int whence)
+     )
+ 
+diff '--color=auto' -ur av-13.1.0.old/av/container/pyio.pxd av-13.1.0/av/container/pyio.pxd
+--- av-13.1.0.old/av/container/pyio.pxd	2025-02-16 19:11:31.083845108 -0500
++++ av-13.1.0/av/container/pyio.pxd	2025-02-16 19:28:06.746201460 -0500
+@@ -3,7 +3,7 @@
+ 
+ 
+ cdef int pyio_read(void *opaque, uint8_t *buf, int buf_size) noexcept nogil
+-cdef int pyio_write(void *opaque, const uint8_t *buf, int buf_size) noexcept nogil
++cdef int pyio_write(void *opaque, uint8_t *buf, int buf_size) noexcept nogil
+ cdef int64_t pyio_seek(void *opaque, int64_t offset, int whence) noexcept nogil
+ cdef int pyio_close_gil(lib.AVIOContext *pb)
+ cdef int pyio_close_custom_gil(lib.AVIOContext *pb)
+diff '--color=auto' -ur av-13.1.0.old/av/container/pyio.pyx av-13.1.0/av/container/pyio.pyx
+--- av-13.1.0.old/av/container/pyio.pyx	2025-02-16 19:11:31.083845108 -0500
++++ av-13.1.0/av/container/pyio.pyx	2025-02-16 19:26:50.235508571 -0500
+@@ -93,11 +93,11 @@
+         return stash_exception()
+ 
+ 
+-cdef int pyio_write(void *opaque, const uint8_t *buf, int buf_size) noexcept nogil:
++cdef int pyio_write(void *opaque, uint8_t *buf, int buf_size) noexcept nogil:
+     with gil:
+         return pyio_write_gil(opaque, buf, buf_size)
+ 
+-cdef int pyio_write_gil(void *opaque, const uint8_t *buf, int buf_size) noexcept:
++cdef int pyio_write_gil(void *opaque, uint8_t *buf, int buf_size) noexcept:
+     cdef PyIOFile self
+     cdef bytes bytes_to_write
+     cdef int bytes_written

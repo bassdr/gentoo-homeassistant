@@ -17,14 +17,14 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	aiobotocore[boto3]>=2.5.0
 	dvc
-	dvc-s3[tests]; extra == "dev"
-	dvc[testing]; extra == "tests"
+	dvc-s3[tests]; extra == 'dev'
+	dvc[testing]; extra == 'tests'
 	flatten-dict<1,>=0.4.1
-	mypy==1.9.0; extra == "dev"
-	pytest-cov>=4.1.0; extra == "tests"
-	pytest-servers[s3]>=0.4.0; extra == "tests"
-	pytest-xdist>=3.2; extra == "tests"
-	pytest<9,>=7; extra == "tests"
+	mypy==1.9.0; extra == 'dev'
+	pytest-cov>=4.1.0; extra == 'tests'
+	pytest-servers[s3]>=0.4.0; extra == 'tests'
+	pytest-xdist>=3.2; extra == 'tests'
+	pytest<9,>=7; extra == 'tests'
 	s3fs>=2023.6.0
 "
 GENERATED_RDEPEND="${RDEPEND}

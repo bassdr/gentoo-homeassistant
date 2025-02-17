@@ -17,16 +17,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	coverage!=4.4,>=4.0; extra == "test"
-	ddt>=1.2.1; extra == "test"
-	eventlet!=0.18.3,!=0.20.1,>=0.18.2; extra == "test"
-	fixtures>=3.0.0; extra == "test"
-	flake8-docstrings==1.7.0; extra == "pep257"
+	coverage!=4.4,>=4.0; extra == 'test'
+	ddt>=1.2.1; extra == 'test'
+	eventlet!=0.18.3,!=0.20.1,>=0.18.2; extra == 'test'
+	fixtures>=3.0.0; extra == 'test'
+	flake8-docstrings==1.7.0; extra == 'pep257'
 	flake8~=7.1.1
-	python-subunit>=1.0.0; extra == "test"
-	stestr>=2.0.0; extra == "test"
-	testscenarios>=0.4; extra == "test"
-	testtools>=2.2.0; extra == "test"
+	python-subunit>=1.0.0; extra == 'test'
+	stestr>=2.0.0; extra == 'test'
+	testscenarios>=0.4; extra == 'test'
+	testtools>=2.2.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flake8-7.1.1[${PYTHON_USEDEP}] =dev-python/flake8-7.1*[${PYTHON_USEDEP}]

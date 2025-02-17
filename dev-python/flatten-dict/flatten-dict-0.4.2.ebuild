@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata; python_version < "3.8"
-	pathlib2 (>=2.3,<3.0); python_version < "3.4"
+	importlib-metadata; python_version < '3.8'
+	pathlib2 (>=2.3,<3.0); python_version < '3.4'
 	six (>=1.12,<2.0)
 "
 GENERATED_RDEPEND="${RDEPEND}

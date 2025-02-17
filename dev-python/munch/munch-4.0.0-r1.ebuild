@@ -19,12 +19,8 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="yaml"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	dev-python/pbr[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
-	)
-"
+
+RDEPEND=""
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -35,7 +31,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/pbr[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
+	)
+"
+
 
 PATCHES=(
 	# https://github.com/Infinidat/munch/pull/104

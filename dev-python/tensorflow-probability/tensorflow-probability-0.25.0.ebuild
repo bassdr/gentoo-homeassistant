@@ -24,13 +24,13 @@ REQUIRES_DIST="
 	decorator
 	dm-tree
 	gast>=0.3.2
-	jax; extra == "jax"
-	jaxlib; extra == "jax"
+	jax; extra == 'jax'
+	jaxlib; extra == 'jax'
 	numpy>=1.13.3
 	six>=1.10.0
-	tensorflow-datasets>=2.2.0; extra == "tfds"
-	tensorflow>=2.16; extra == "tf"
-	tf-keras>=2.16; extra == "tf"
+	tensorflow-datasets>=2.2.0; extra == 'tfds'
+	tensorflow>=2.16; extra == 'tf'
+	tf-keras>=2.16; extra == 'tf'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/absl-py[${PYTHON_USEDEP}]

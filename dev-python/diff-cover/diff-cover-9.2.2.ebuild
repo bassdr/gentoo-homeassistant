@@ -21,8 +21,8 @@ REQUIRES_DIST="
 	Pygments<3.0.0,>=2.9.0
 	chardet>=3.0.0
 	pluggy<2,>=0.13.1
-	setuptools>=17.0.0; python_version < "3.8"
-	tomli>=1.2.1; extra == "toml"
+	setuptools>=17.0.0; python_version < '3.8'
+	tomli>=1.2.1; extra == 'toml'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/chardet-3.0.0[${PYTHON_USEDEP}]

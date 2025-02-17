@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	CairoSVG >=2.5.2 ; extra == 'cairo'
 	GitPython
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	jsonschema
 	levenshtein >=0.18.1
 	pre-commit ; extra == 'dev'

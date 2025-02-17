@@ -17,55 +17,55 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Pillow; extra == "dev"
-	Pillow; extra == "test"
+	Pillow; extra == 'dev'
+	Pillow; extra == 'test'
 	accelerate
-	bitsandbytes<=0.41.1; extra == "dev"
-	bitsandbytes<=0.41.1; extra == "quantization"
+	bitsandbytes<=0.41.1; extra == 'dev'
+	bitsandbytes<=0.41.1; extra == 'quantization'
 	datasets
-	deepspeed; extra == "benchmark"
-	deepspeed; extra == "dev"
-	deepspeed>=0.14.4; extra == "deepspeed"
-	deepspeed>=0.14.4; extra == "dev"
-	diffusers>=0.18.0; extra == "dev"
-	diffusers>=0.18.0; extra == "diffusers"
-	ghapi; extra == "benchmark"
-	ghapi; extra == "dev"
-	huggingface-hub>=0.22.2; extra == "dev"
-	huggingface-hub>=0.22.2; extra == "llm-judge"
-	liger-kernel>=0.2.1; extra == "dev"
-	liger-kernel>=0.2.1; extra == "liger"
-	llm-blender>=0.0.2; extra == "dev"
-	llm-blender>=0.0.2; extra == "llm-judge"
-	llm-blender>=0.0.2; extra == "test"
-	numpy<2; platform_system == "Windows"
-	numpy>=1.18.2; platform_system != "Windows"
-	openai>=1.23.2; extra == "dev"
-	openai>=1.23.2; extra == "llm-judge"
-	openrlbenchmark==0.2.1a5; extra == "benchmark"
-	openrlbenchmark==0.2.1a5; extra == "dev"
-	parameterized; extra == "dev"
-	parameterized; extra == "test"
-	peft>=0.8.0; extra == "dev"
-	peft>=0.8.0; extra == "peft"
-	peft>=0.8.0; extra == "test"
-	pytest-cov; extra == "dev"
-	pytest-cov; extra == "test"
-	pytest-rerunfailures; extra == "dev"
-	pytest-rerunfailures; extra == "test"
-	pytest-xdist; extra == "dev"
-	pytest-xdist; extra == "test"
-	pytest; extra == "dev"
-	pytest; extra == "test"
-	requests; extra == "benchmark"
-	requests; extra == "dev"
-	scikit-learn; extra == "dev"
-	scikit-learn; extra == "test"
+	deepspeed; extra == 'benchmark'
+	deepspeed; extra == 'dev'
+	deepspeed>=0.14.4; extra == 'deepspeed'
+	deepspeed>=0.14.4; extra == 'dev'
+	diffusers>=0.18.0; extra == 'dev'
+	diffusers>=0.18.0; extra == 'diffusers'
+	ghapi; extra == 'benchmark'
+	ghapi; extra == 'dev'
+	huggingface-hub>=0.22.2; extra == 'dev'
+	huggingface-hub>=0.22.2; extra == 'llm-judge'
+	liger-kernel>=0.2.1; extra == 'dev'
+	liger-kernel>=0.2.1; extra == 'liger'
+	llm-blender>=0.0.2; extra == 'dev'
+	llm-blender>=0.0.2; extra == 'llm-judge'
+	llm-blender>=0.0.2; extra == 'test'
+	numpy<2; platform_system == 'Windows'
+	numpy>=1.18.2; platform_system != 'Windows'
+	openai>=1.23.2; extra == 'dev'
+	openai>=1.23.2; extra == 'llm-judge'
+	openrlbenchmark==0.2.1a5; extra == 'benchmark'
+	openrlbenchmark==0.2.1a5; extra == 'dev'
+	parameterized; extra == 'dev'
+	parameterized; extra == 'test'
+	peft>=0.8.0; extra == 'dev'
+	peft>=0.8.0; extra == 'peft'
+	peft>=0.8.0; extra == 'test'
+	pytest-cov; extra == 'dev'
+	pytest-cov; extra == 'test'
+	pytest-rerunfailures; extra == 'dev'
+	pytest-rerunfailures; extra == 'test'
+	pytest-xdist; extra == 'dev'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'dev'
+	pytest; extra == 'test'
+	requests; extra == 'benchmark'
+	requests; extra == 'dev'
+	scikit-learn; extra == 'dev'
+	scikit-learn; extra == 'test'
 	torch>=1.4.0
 	transformers>=4.40.0
 	tyro>=0.5.11
-	wandb; extra == "benchmark"
-	wandb; extra == "dev"
+	wandb; extra == 'benchmark'
+	wandb; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/accelerate[${PYTHON_USEDEP}]

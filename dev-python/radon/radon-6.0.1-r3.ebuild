@@ -19,8 +19,8 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="toml"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	colorama (==0.4.1) ; python_version <= "3.4"
-	colorama (>=0.4.1) ; python_version > "3.4"
+	colorama (==0.4.1) ; python_version <= '3.4'
+	colorama (>=0.4.1) ; python_version > '3.4'
 	mando (<0.8,>=0.6)
 	tomli (>=2.0.1) ; extra == 'toml'
 "

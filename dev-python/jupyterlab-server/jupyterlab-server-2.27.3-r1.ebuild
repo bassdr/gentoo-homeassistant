@@ -19,38 +19,38 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs openapi"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	autodoc-traits; extra == "docs"
+	autodoc-traits; extra == 'docs'
 	babel>=2.10
-	hatch; extra == "test"
-	importlib-metadata>=4.8.3; python_version < "3.10"
-	ipykernel; extra == "test"
-	jinja2<3.2.0; extra == "docs"
+	hatch; extra == 'test'
+	importlib-metadata>=4.8.3; python_version < '3.10'
+	ipykernel; extra == 'test'
+	jinja2<3.2.0; extra == 'docs'
 	jinja2>=3.0.3
 	json5>=0.9.0
 	jsonschema>=4.18.0
 	jupyter-server<3,>=1.21
-	mistune<4; extra == "docs"
-	myst-parser; extra == "docs"
-	openapi-core~=0.18.0; extra == "openapi"
-	openapi-core~=0.18.0; extra == "test"
-	openapi-spec-validator<0.8.0,>=0.6.0; extra == "test"
+	mistune<4; extra == 'docs'
+	myst-parser; extra == 'docs'
+	openapi-core~=0.18.0; extra == 'openapi'
+	openapi-core~=0.18.0; extra == 'test'
+	openapi-spec-validator<0.8.0,>=0.6.0; extra == 'test'
 	packaging>=21.3
-	pydata-sphinx-theme; extra == "docs"
-	pytest-console-scripts; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-jupyter[server]>=0.6.2; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest<8,>=7.0; extra == "test"
-	requests-mock; extra == "test"
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-console-scripts; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-jupyter[server]>=0.6.2; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest<8,>=7.0; extra == 'test'
+	requests-mock; extra == 'test'
 	requests>=2.31
-	ruamel-yaml; extra == "openapi"
-	ruamel-yaml; extra == "test"
-	sphinx-copybutton; extra == "docs"
-	sphinx; extra == "docs"
-	sphinxcontrib-openapi>0.8; extra == "docs"
-	sphinxcontrib-spelling; extra == "test"
-	strict-rfc3339; extra == "test"
-	werkzeug; extra == "test"
+	ruamel-yaml; extra == 'openapi'
+	ruamel-yaml; extra == 'test'
+	sphinx-copybutton; extra == 'docs'
+	sphinx; extra == 'docs'
+	sphinxcontrib-openapi>0.8; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'test'
+	strict-rfc3339; extra == 'test'
+	werkzeug; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/autodoc-traits[${PYTHON_USEDEP}] )

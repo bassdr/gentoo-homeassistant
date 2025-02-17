@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	aiohttp<4,>=3.6
 	discord.py<3,>=2
-	mock; extra == "test"
+	mock; extra == 'test'
 	pathvalidate<4,>=2.5.2
 	pytest!=6.0.0,<9,>=3.3.2
 	pytest-md-report<1,>=0.6.1

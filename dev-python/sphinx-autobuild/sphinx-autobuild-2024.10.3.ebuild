@@ -16,8 +16,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	colorama>=0.4.6
-	httpx; extra == "test"
-	pytest>=6; extra == "test"
+	httpx; extra == 'test'
+	pytest>=6; extra == 'test'
 	sphinx
 	starlette>=0.35
 	uvicorn>=0.25

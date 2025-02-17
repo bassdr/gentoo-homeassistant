@@ -30,7 +30,7 @@ REQUIRES_DIST="
 	dacite<2.0.0,>=1.8.0
 	paho-mqtt<2.0.0,>=1.6.1
 	pycryptodome<4.0,>=3.18
-	pycryptodomex<4.0,>=3.18; sys_platform == "darwin"
+	pycryptodomex<4.0,>=3.18; sys_platform == 'darwin'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8.2[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0.0[${PYTHON_USEDEP}]

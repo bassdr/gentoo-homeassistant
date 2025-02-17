@@ -20,11 +20,11 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="ansible paramiko salt winrm"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	ansible; extra == "ansible"
-	paramiko; extra == "paramiko"
+	ansible; extra == 'ansible'
+	paramiko; extra == 'paramiko'
 	pytest>=6
-	pywinrm; extra == "winrm"
-	salt; extra == "salt"
+	pywinrm; extra == 'winrm'
+	salt; extra == 'salt'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	ansible? ( dev-python/ansible[${PYTHON_USEDEP}] )

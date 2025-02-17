@@ -15,15 +15,15 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black==24.8; extra == "test"
-	build; extra == "test"
+	black==24.8; extra == 'test'
+	build; extra == 'test'
 	defusedxml>=0.7.1
-	mypy==1.4; extra == "test"
+	mypy==1.4; extra == 'test'
 	packaging>=23.1
-	pytest-cov; extra == "test"
-	pytest-subtests; extra == "test"
-	pytest>=7.0; extra == "test"
-	requests-mock<2.0,>=1.0; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest-subtests; extra == 'test'
+	pytest>=7.0; extra == 'test'
+	requests-mock<2.0,>=1.0; extra == 'test'
 	requests>=2.32
 	typing_extensions>=4.0
 	urllib3<3,>=2.2.2

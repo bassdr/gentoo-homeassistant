@@ -20,7 +20,7 @@ GENERATED_IUSE="extra"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	markdown>=3.6
-	pygments>=2.19.1; extra == "extra"
+	pygments>=2.19.1; extra == 'extra'
 	pyyaml
 "
 GENERATED_RDEPEND="${RDEPEND}

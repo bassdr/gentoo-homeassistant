@@ -21,22 +21,22 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	BeautifulSoup4
 	SoupSieve>=1.9.0
-	Sphinx; extra == "docs"
+	Sphinx; extra == 'docs'
 	WSGIProxy2
 	WebTest>=2.0.30
-	legacy-cgi; python_version > "3.12"
-	mock; extra == "test"
+	legacy-cgi; python_version > '3.12'
+	mock; extra == 'test'
 	pytz
-	repoze.sphinx.autointerface; extra == "docs"
+	repoze.sphinx.autointerface; extra == 'docs'
 	setuptools
-	sphinx-rtd-theme; extra == "docs"
-	zope.app.wsgi; extra == "docs"
+	sphinx-rtd-theme; extra == 'docs'
+	zope.app.wsgi; extra == 'docs'
 	zope.cachedescriptors
 	zope.interface
 	zope.schema
-	zope.testbrowser[test]; extra == "test-bbb"
-	zope.testing; extra == "test"
-	zope.testrunner; extra == "test"
+	zope.testbrowser[test]; extra == 'test-bbb'
+	zope.testing; extra == 'test'
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]

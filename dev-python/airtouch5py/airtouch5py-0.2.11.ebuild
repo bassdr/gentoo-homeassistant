@@ -28,8 +28,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bitarray-2.8.0[${PYTHON_USEDEP}] <dev-python/bitarray-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/crc-4.3.0[${PYTHON_USEDEP}] <dev-python/crc-5.0.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/bitarray[${PYTHON_USEDEP}]
-	dev-python/crc[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest

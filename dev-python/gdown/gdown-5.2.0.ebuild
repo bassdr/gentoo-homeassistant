@@ -16,17 +16,17 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	beautifulsoup4
-	build; extra == "test"
+	build; extra == 'test'
 	filelock
-	mypy; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
+	mypy; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
 	requests[socks]
-	ruff; extra == "test"
+	ruff; extra == 'test'
 	tqdm
-	twine; extra == "test"
-	types-requests; extra == "test"
-	types-setuptools; extra == "test"
+	twine; extra == 'test'
+	types-requests; extra == 'test'
+	types-setuptools; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]

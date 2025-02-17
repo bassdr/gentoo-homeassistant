@@ -19,20 +19,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Werkzeug>=3.0.6; extra == "dev"
-	black<25.0.0,>=24.3.0; extra == "dev"
-	build>=0.7.0; extra == "dev"
-	docutils<=0.20.1; extra == "dev"
-	greenlet<=2.0.2; python_version < "3.12" and extra == "dev"
-	greenlet>=3.0.0; python_version >= "3.12.0rc0" and extra == "dev"
-	isort>=5.11.4; extra == "dev"
-	pyflakes>=2.2.0; extra == "dev"
-	pytest-cov>=3.0.0; extra == "dev"
-	pytest-httpbin>=2.0.0; extra == "dev"
-	pytest>=6.2.5; extra == "dev"
-	readme-renderer[rst]>=26.0; extra == "dev"
+	Werkzeug>=3.0.6; extra == 'dev'
+	black<25.0.0,>=24.3.0; extra == 'dev'
+	build>=0.7.0; extra == 'dev'
+	docutils<=0.20.1; extra == 'dev'
+	greenlet<=2.0.2; python_version < '3.12' and extra == 'dev'
+	greenlet>=3.0.0; python_version >= '3.12.0rc0' and extra == 'dev'
+	isort>=5.11.4; extra == 'dev'
+	pyflakes>=2.2.0; extra == 'dev'
+	pytest-cov>=3.0.0; extra == 'dev'
+	pytest-httpbin>=2.0.0; extra == 'dev'
+	pytest>=6.2.5; extra == 'dev'
+	readme-renderer[rst]>=26.0; extra == 'dev'
 	requests>=1.2.0
-	twine>=3.4.2; extra == "dev"
+	twine>=3.4.2; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-1.2.0[${PYTHON_USEDEP}]

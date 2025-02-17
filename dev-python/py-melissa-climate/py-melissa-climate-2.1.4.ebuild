@@ -32,21 +32,15 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/requests-futures[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/requests-futures[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]"
-BDEPEND="
-	dev-python/setuptools-markdown[${PYTHON_USEDEP}]
-	dev-python/pypandoc[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+RDEPEND="${GENERATED_RDEPEND}"
+
 src_prepare() {
 	eapply "${FILESDIR}"/fix-setup-py.patch
 	eapply_user
 }
+
 distutils_enable_tests unittest
+
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/check-manifest[${PYTHON_USEDEP}]

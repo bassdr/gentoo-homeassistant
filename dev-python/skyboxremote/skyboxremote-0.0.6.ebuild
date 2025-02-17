@@ -20,24 +20,24 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="spark"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	bandit[toml]==1.7.5; extra == "test"
-	black==23.3.0; extra == "test"
-	check-manifest==0.49; extra == "test"
-	flake8-bugbear==23.5.9; extra == "test"
-	flake8-docstrings; extra == "test"
-	flake8-formatter_junit_xml; extra == "test"
-	flake8-pyproject; extra == "test"
-	flake8; extra == "test"
-	pre-commit==3.3.1; extra == "test"
-	pylint==2.17.4; extra == "test"
-	pylint_junit; extra == "test"
-	pyspark>=3.0.0; extra == "spark"
-	pytest-cov==4.0.0; extra == "test"
-	pytest-github-actions-annotate-failures; extra == "test"
-	pytest-mock<3.10.1; extra == "test"
-	pytest-runner; extra == "test"
-	pytest==7.3.1; extra == "test"
-	shellcheck-py==0.9.0.2; extra == "test"
+	bandit[toml]==1.7.5; extra == 'test'
+	black==23.3.0; extra == 'test'
+	check-manifest==0.49; extra == 'test'
+	flake8-bugbear==23.5.9; extra == 'test'
+	flake8-docstrings; extra == 'test'
+	flake8-formatter_junit_xml; extra == 'test'
+	flake8-pyproject; extra == 'test'
+	flake8; extra == 'test'
+	pre-commit==3.3.1; extra == 'test'
+	pylint==2.17.4; extra == 'test'
+	pylint_junit; extra == 'test'
+	pyspark>=3.0.0; extra == 'spark'
+	pytest-cov==4.0.0; extra == 'test'
+	pytest-github-actions-annotate-failures; extra == 'test'
+	pytest-mock<3.10.1; extra == 'test'
+	pytest-runner; extra == 'test'
+	pytest==7.3.1; extra == 'test'
+	shellcheck-py==0.9.0.2; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	spark? ( >=dev-python/pyspark-3.0.0[${PYTHON_USEDEP}] )

@@ -21,16 +21,16 @@ REQUIRES_DIST="
 	cffi~=1.14
 	furiosa-common==0.10.*
 	furiosa-native-runtime==0.10.*
-	mnist; extra == "test"
-	mypy; extra == "test"
+	mnist; extra == 'test'
+	mypy; extra == 'test'
 	numpy~=1.24
-	onnxruntime~=1.15.1; extra == "test"
-	package-extras; extra == "legacy"
+	onnxruntime~=1.15.1; extra == 'test'
+	package-extras; extra == 'legacy'
 	pandas~=2.0.3
 	pydantic
-	pytest; extra == "test"
-	ruff; extra == "test"
-	types-PyYAML; extra == "test"
+	pytest; extra == 'test'
+	ruff; extra == 'test'
+	types-PyYAML; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.14[${PYTHON_USEDEP}] =dev-python/cffi-1*[${PYTHON_USEDEP}]

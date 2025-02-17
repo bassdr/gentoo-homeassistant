@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	protobuf (<4.21.0,>=3.0.0) ; python_version < "3.7"
-	protobuf (>=3.0.0) ; python_version >= "3.7"
+	protobuf (<4.21.0,>=3.0.0) ; python_version < '3.7'
+	protobuf (>=3.0.0) ; python_version >= '3.7'
 	six
-	typing ; python_version < "3.5"
+	typing ; python_version < '3.5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/protobuf-3.0.0[${PYTHON_USEDEP}]

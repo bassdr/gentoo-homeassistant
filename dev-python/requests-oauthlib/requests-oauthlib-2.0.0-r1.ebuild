@@ -25,7 +25,7 @@ GENERATED_IUSE="rsa"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	oauthlib>=3.0.0
-	oauthlib[signedtoken]>=3.0.0; extra == "rsa"
+	oauthlib[signedtoken]>=3.0.0; extra == 'rsa'
 	requests>=2.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

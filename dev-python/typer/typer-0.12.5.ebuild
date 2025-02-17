@@ -20,7 +20,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+IUSE="test +all" # all does nothing but was defined for 0.12.0. Define it to let others dependend on it.
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"

@@ -20,19 +20,19 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	build>=1.0.0
-	check-manifest; extra == "recommended"
+	check-manifest; extra == 'recommended'
 	colorama
-	pep440; extra == "recommended"
-	pyroma; extra == "recommended"
+	pep440; extra == 'recommended'
+	pyroma; extra == 'recommended'
 	readme_renderer[md]>=40
 	requests
 	setuptools>=61.0.0
-	tomli; python_version < "3.11"
+	tomli; python_version < '3.11'
 	twine>=1.6.0
-	wheel; extra == "recommended"
-	wheel; extra == "test"
-	zope.testing; extra == "test"
-	zope.testrunner; extra == "test"
+	wheel; extra == 'recommended'
+	wheel; extra == 'test'
+	zope.testing; extra == 'test'
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-1.0.0[${PYTHON_USEDEP}]

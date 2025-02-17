@@ -32,8 +32,8 @@ REQUIRES_DIST="
 	hyperopt ==0.1.2 ; extra == 'all'
 	hyperopt ==0.1.2 ; extra == 'anneal'
 	json-tricks >=3.15.5
-	numpy ; python_version >= "3.8"
-	numpy <1.22 ; python_version < "3.8"
+	numpy ; python_version >= '3.8'
+	numpy <1.22 ; python_version < '3.8'
 	nvidia-ml-py
 	packaging
 	pandas
@@ -46,8 +46,8 @@ REQUIRES_DIST="
 	responses
 	schema
 	scikit-learn >=0.24.1
-	scipy ; python_version >= "3.8"
-	scipy <1.8 ; python_version < "3.8"
+	scipy ; python_version >= '3.8'
+	scipy <1.8 ; python_version < '3.8'
 	smac4nni ; extra == 'all'
 	smac4nni ; extra == 'smac'
 	statsmodels >=0.12.0 ; extra == 'all'

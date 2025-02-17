@@ -17,19 +17,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Sphinx; extra == "docs"
-	bcrypt; extra == "bcrypt"
-	bcrypt; extra == "test"
-	repoze.sphinx.autointerface; extra == "docs"
+	Sphinx; extra == 'docs'
+	bcrypt; extra == 'bcrypt'
+	bcrypt; extra == 'test'
+	repoze.sphinx.autointerface; extra == 'docs'
 	setuptools
 	zope.component
 	zope.configuration
 	zope.interface
-	zope.schema; extra == "test"
-	zope.schema; extra == "vocabulary"
-	zope.security; extra == "test"
-	zope.testing; extra == "test"
-	zope.testrunner; extra == "test"
+	zope.schema; extra == 'test'
+	zope.schema; extra == 'vocabulary'
+	zope.security; extra == 'test'
+	zope.testing; extra == 'test'
+	zope.testrunner; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	bcrypt? ( dev-python/bcrypt[${PYTHON_USEDEP}] )

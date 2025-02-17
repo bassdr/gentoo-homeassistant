@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 GENERATED_IUSE="all build doc lint"
-IUSE="${GENERATED_IUSE}"
+IUSE="${GENERATED_IUSE} +build"
 
 inherit distutils-r1 pypi
 
@@ -17,29 +17,29 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "build"
-	cython; extra == "build"
-	meson-python; extra == "build"
-	meson; extra == "build"
-	ninja; extra == "build"
+	build; extra == 'build'
+	cython; extra == 'build'
+	meson-python; extra == 'build'
+	meson; extra == 'build'
+	ninja; extra == 'build'
 	numpy>=1.23.5
-	numpydoc; extra == "doc"
-	pytest-cov; extra == "test"
-	ruff; extra == "lint"
-	scikit-misc[build]; extra == "all"
-	scikit-misc[dev]; extra == "all"
-	scikit-misc[doc]; extra == "all"
-	scikit-misc[lint]; extra == "all"
-	scikit-misc[test]; extra == "all"
-	sphinx; extra == "doc"
-	spin; extra == "build"
-	twine; extra == "dev"
-	wheel; extra == "dev"
+	numpydoc; extra == 'doc'
+	pytest-cov; extra == 'test'
+	ruff; extra == 'lint'
+	scikit-misc[build]; extra == 'all'
+	scikit-misc[dev]; extra == 'all'
+	scikit-misc[doc]; extra == 'all'
+	scikit-misc[lint]; extra == 'all'
+	scikit-misc[test]; extra == 'all'
+	sphinx; extra == 'doc'
+	spin; extra == 'build'
+	twine; extra == 'dev'
+	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	build? ( dev-python/cython[${PYTHON_USEDEP}] )
-	build? ( dev-python/meson[${PYTHON_USEDEP}] )
+	build? ( dev-build/meson[${PYTHON_USEDEP}] )
 	build? ( dev-python/meson-python[${PYTHON_USEDEP}] )
 	build? ( dev-python/ninja[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]

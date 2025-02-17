@@ -18,90 +18,90 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	bokeh>=3.1
-	bokeh_sampledata; python_version >= "3.10" and extra == "examples"
-	bokeh_sampledata; python_version >= "3.10" and extra == "tests-core"
-	cartopy; extra == "geo"
-	colorcet>=0.0.1a1; extra == "hvdev"
+	bokeh_sampledata; python_version >= '3.10' and extra == 'examples'
+	bokeh_sampledata; python_version >= '3.10' and extra == 'tests-core'
+	cartopy; extra == 'geo'
+	colorcet>=0.0.1a1; extra == 'hvdev'
 	colorcet>=2
-	dask; extra == "tests"
-	dask[dataframe]; extra == "tests-core"
-	dask[dataframe]>=2021.3.0; extra == "examples"
-	datashader>=0.0.1a1; extra == "hvdev"
-	datashader>=0.6.5; extra == "examples"
-	duckdb; extra == "examples"
-	duckdb; extra == "tests"
-	fiona; extra == "geo"
-	fugue-sql-antlr>=0.2.0; extra == "fugue-sql"
-	fugue[sql]; extra == "examples"
-	fugue[sql]; extra == "tests"
-	geodatasets>=2023.12.0; extra == "examples"
-	geopandas; extra == "geo"
-	geoviews>=0.0.1a1; extra == "hvdev-geo"
-	geoviews>=1.9.0; extra == "geo"
-	holoviews>=0.0.1a1; extra == "hvdev"
+	dask; extra == 'tests'
+	dask[dataframe]; extra == 'tests-core'
+	dask[dataframe]>=2021.3.0; extra == 'examples'
+	datashader>=0.0.1a1; extra == 'hvdev'
+	datashader>=0.6.5; extra == 'examples'
+	duckdb; extra == 'examples'
+	duckdb; extra == 'tests'
+	fiona; extra == 'geo'
+	fugue-sql-antlr>=0.2.0; extra == 'fugue-sql'
+	fugue[sql]; extra == 'examples'
+	fugue[sql]; extra == 'tests'
+	geodatasets>=2023.12.0; extra == 'examples'
+	geopandas; extra == 'geo'
+	geoviews>=0.0.1a1; extra == 'hvdev-geo'
+	geoviews>=1.9.0; extra == 'geo'
+	holoviews>=0.0.1a1; extra == 'hvdev'
 	holoviews>=1.19.0
-	hvplot[examples]; extra == "doc"
-	hvplot[examples]; extra == "examples-tests"
-	hvplot[fugue-sql]; extra == "examples"
-	hvplot[fugue-sql]; extra == "tests"
-	hvplot[tests-core]; extra == "tests"
-	hvplot[tests-nb]; extra == "examples-tests"
-	ibis-framework[duckdb]; extra == "examples"
-	ibis-framework[duckdb]; extra == "tests"
-	intake-parquet>=0.2.3; extra == "examples"
-	intake-xarray<2,>=0.5.0; extra == "examples"
-	intake<2.0.0,>=0.6.5; extra == "examples"
-	ipywidgets; extra == "examples"
-	ipywidgets; extra == "tests-core"
-	jinja2; extra == "fugue-sql"
-	matplotlib; extra == "examples"
-	matplotlib; extra == "tests-core"
-	nbsite>=0.8.6; extra == "doc"
-	nbval; extra == "tests-nb"
-	networkx>=2.6.3; extra == "examples"
-	notebook>=5.4; extra == "examples"
-	numba>=0.51.0; extra == "examples"
+	hvplot[examples]; extra == 'doc'
+	hvplot[examples]; extra == 'examples-tests'
+	hvplot[fugue-sql]; extra == 'examples'
+	hvplot[fugue-sql]; extra == 'tests'
+	hvplot[tests-core]; extra == 'tests'
+	hvplot[tests-nb]; extra == 'examples-tests'
+	ibis-framework[duckdb]; extra == 'examples'
+	ibis-framework[duckdb]; extra == 'tests'
+	intake-parquet>=0.2.3; extra == 'examples'
+	intake-xarray<2,>=0.5.0; extra == 'examples'
+	intake<2.0.0,>=0.6.5; extra == 'examples'
+	ipywidgets; extra == 'examples'
+	ipywidgets; extra == 'tests-core'
+	jinja2; extra == 'fugue-sql'
+	matplotlib; extra == 'examples'
+	matplotlib; extra == 'tests-core'
+	nbsite>=0.8.6; extra == 'doc'
+	nbval; extra == 'tests-nb'
+	networkx>=2.6.3; extra == 'examples'
+	notebook>=5.4; extra == 'examples'
+	numba>=0.51.0; extra == 'examples'
 	numpy>=1.21
 	packaging
 	pandas>=1.3
-	panel>=0.0.1a1; extra == "hvdev"
+	panel>=0.0.1a1; extra == 'hvdev'
 	panel>=1.0
 	param<3.0,>=1.12.0
-	param>=0.0.1a1; extra == "hvdev"
-	parameterized; extra == "tests-core"
-	pillow>=8.2.0; extra == "examples"
-	plotly; extra == "examples"
-	plotly; extra == "tests-core"
-	polars; extra == "examples"
-	polars; extra == "tests"
-	pooch; extra == "tests-core"
-	pooch>=1.6.0; extra == "examples"
-	pre-commit; extra == "tests-core"
-	psutil; extra == "tests-core"
-	pygraphviz; extra == "graphviz"
-	pyproj; extra == "geo"
-	pytest-cov; extra == "tests-core"
-	pytest-xdist; extra == "tests-nb"
-	pytest; extra == "tests-core"
-	pyviz_comms>=0.0.1a1; extra == "hvdev"
-	qpd>=0.4.4; extra == "fugue-sql"
-	rasterio; extra == "geo"
-	rioxarray; extra == "geo"
-	ruff; extra == "tests-core"
-	s3fs>=2022.1.0; extra == "examples"
-	scikit-image>=0.17.2; extra == "examples"
-	scipy; extra == "tests-core"
-	scipy>=1.5.3; extra == "examples"
-	selenium>=3.141.0; extra == "examples"
-	setuptools_scm>=6; extra == "dev-extras"
-	spatialpandas; extra == "tests"
-	spatialpandas>=0.4.3; extra == "geo"
-	sphinxext-rediraffe; extra == "doc"
-	sqlglot; extra == "fugue-sql"
-	streamz>=0.3.0; extra == "examples"
-	xarray; extra == "tests-core"
-	xarray>=0.18.2; extra == "examples"
-	xyzservices>=2022.9.0; extra == "examples"
+	param>=0.0.1a1; extra == 'hvdev'
+	parameterized; extra == 'tests-core'
+	pillow>=8.2.0; extra == 'examples'
+	plotly; extra == 'examples'
+	plotly; extra == 'tests-core'
+	polars; extra == 'examples'
+	polars; extra == 'tests'
+	pooch; extra == 'tests-core'
+	pooch>=1.6.0; extra == 'examples'
+	pre-commit; extra == 'tests-core'
+	psutil; extra == 'tests-core'
+	pygraphviz; extra == 'graphviz'
+	pyproj; extra == 'geo'
+	pytest-cov; extra == 'tests-core'
+	pytest-xdist; extra == 'tests-nb'
+	pytest; extra == 'tests-core'
+	pyviz_comms>=0.0.1a1; extra == 'hvdev'
+	qpd>=0.4.4; extra == 'fugue-sql'
+	rasterio; extra == 'geo'
+	rioxarray; extra == 'geo'
+	ruff; extra == 'tests-core'
+	s3fs>=2022.1.0; extra == 'examples'
+	scikit-image>=0.17.2; extra == 'examples'
+	scipy; extra == 'tests-core'
+	scipy>=1.5.3; extra == 'examples'
+	selenium>=3.141.0; extra == 'examples'
+	setuptools_scm>=6; extra == 'dev-extras'
+	spatialpandas; extra == 'tests'
+	spatialpandas>=0.4.3; extra == 'geo'
+	sphinxext-rediraffe; extra == 'doc'
+	sqlglot; extra == 'fugue-sql'
+	streamz>=0.3.0; extra == 'examples'
+	xarray; extra == 'tests-core'
+	xarray>=0.18.2; extra == 'examples'
+	xyzservices>=2022.9.0; extra == 'examples'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/bokeh-3.1[${PYTHON_USEDEP}]

@@ -17,8 +17,8 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	boto3>=1.35.74
 	langchain-core<0.4.0,>=0.3.27
-	numpy<2,>=1; python_version < "3.12"
-	numpy<3,>=1.26.0; python_version >= "3.12"
+	numpy<2,>=1; python_version < '3.12'
+	numpy<3,>=1.26.0; python_version >= '3.12'
 	pydantic<3,>=2
 "
 GENERATED_RDEPEND="${RDEPEND}

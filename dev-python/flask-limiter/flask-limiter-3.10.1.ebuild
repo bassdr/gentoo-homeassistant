@@ -19,9 +19,9 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	Flask>=2
 	limits>=3.13
-	limits[memcached]; extra == "memcached"
-	limits[mongodb]; extra == "mongodb"
-	limits[redis]; extra == "redis"
+	limits[memcached]; extra == 'memcached'
+	limits[mongodb]; extra == 'mongodb'
+	limits[redis]; extra == 'redis'
 	ordered-set<5,>4
 	rich<14,>=12
 	typing-extensions>=4

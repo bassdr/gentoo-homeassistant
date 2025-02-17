@@ -16,14 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="qr"
-IUSE="${GENERATED_IUSE} test +qr"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE} +qr"
 
-DOCS="README.rst"
+DOCS="README.md"
 
 REQUIRES_DIST="
 	requests>=2.22.0
-	segno>=1.4.1; extra == "qr"
+	segno>=1.4.1; extra == 'qr'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.22.0[${PYTHON_USEDEP}]

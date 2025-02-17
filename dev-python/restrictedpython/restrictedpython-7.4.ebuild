@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
+MY_PN="RestrictedPython"
 MY_PV1=${PV/_beta/b}
 MY_PV=${MY_PV1/_alpha/a}
 
@@ -16,22 +17,18 @@ HOMEPAGE="
   Source, https://github.com/zopefoundation/RestrictedPython
   Tracker, https://github.com/zopefoundation/RestrictedPython/issues
 "
-SRC_URI="https://github.com/zopefoundation/${PN}/archive/refs/tags/${MY_PV}.tar.gz -> ${P}.gh.tar.gz"
-S=${WORKDIR}/${PN}-${MY_PV}
+SRC_URI="https://github.com/zopefoundation/${MY_PN}/archive/refs/tags/${MY_PV}.tar.gz -> ${P}.gh.tar.gz"
+S=${WORKDIR}/${MY_PN}-${MY_PV}
 
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"
 
-DEPEND="
-	test? (
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-	)"
+RDEPEND=""
 
 PYTHON_MODULES="${PN}"
 

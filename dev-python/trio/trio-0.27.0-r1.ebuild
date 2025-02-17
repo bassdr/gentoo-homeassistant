@@ -26,8 +26,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	attrs>=23.2.0
-	cffi>=1.14; os_name == "nt" and implementation_name != "pypy"
-	exceptiongroup; python_version < "3.11"
+	cffi>=1.14; os_name == 'nt' and implementation_name != 'pypy'
+	exceptiongroup; python_version < '3.11'
 	idna
 	outcome
 	sniffio>=1.3.0

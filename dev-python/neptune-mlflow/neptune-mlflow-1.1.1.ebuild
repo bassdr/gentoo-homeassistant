@@ -15,13 +15,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	mlflow (>=1.24.0)
-	neptune (>=1.0.0) ; extra == "dev"
-	pre-commit ; extra == "dev"
-	pytest (>=5.0) ; extra == "dev"
-	pytest-cov (==2.10.1) ; extra == "dev"
-	tensorflow (>2.0.0) ; extra == "dev"
+	neptune (>=1.0.0) ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pytest (>=5.0) ; extra == 'dev'
+	pytest-cov (==2.10.1) ; extra == 'dev'
+	tensorflow (>2.0.0) ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mlflow-1.24.0[${PYTHON_USEDEP}]

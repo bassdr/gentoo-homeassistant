@@ -20,7 +20,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	jaraco.packaging (>=3.2) ; extra == 'docs'
 	pytest (!=3.7.3,>=3.5) ; extra == 'testing'
-	pytest-black ; python_version >= "3.6"
+	pytest-black ; python_version >= '3.6'
 	pytest-checkdocs ; extra == 'testing'
 	pytest-flake8 ; extra == 'testing'
 	rst.linker (>=1.9) ; extra == 'docs'

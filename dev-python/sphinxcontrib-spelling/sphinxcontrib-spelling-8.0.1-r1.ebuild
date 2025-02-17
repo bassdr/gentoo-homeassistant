@@ -19,9 +19,9 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyEnchant>=3.1.1
 	Sphinx>=3.0.0
-	coverage!=4.4,>=4.0; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	coverage!=4.4,>=4.0; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 	requests>=2.32.3
 "
 GENERATED_RDEPEND="${RDEPEND}

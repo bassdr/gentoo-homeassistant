@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="material"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	mkdocs-material>=9.2.5; extra == "material"
+	mkdocs-material>=9.2.5; extra == 'material'
 	mkdocs>=1.5.2
 "
 GENERATED_RDEPEND="${RDEPEND}

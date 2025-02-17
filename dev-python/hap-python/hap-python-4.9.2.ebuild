@@ -26,12 +26,12 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	async-timeout
-	base36; extra == "qrcode"
+	base36; extra == 'qrcode'
 	chacha20poly1305-reuseable
 	cryptography
 	h11
 	orjson>=3.7.2
-	pyqrcode; extra == "qrcode"
+	pyqrcode; extra == 'qrcode'
 	zeroconf>=0.36.2
 "
 GENERATED_RDEPEND="${RDEPEND}

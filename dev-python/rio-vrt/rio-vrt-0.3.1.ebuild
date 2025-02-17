@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	beautifulsoup4; extra == "test"
-	commitizen; extra == "dev"
-	lxml; extra == "test"
-	mypy; extra == "dev"
-	natsort; extra == "test"
-	nox; extra == "dev"
-	pre-commit; extra == "dev"
-	pydata-sphinx-theme; extra == "doc"
-	pytest-cov; extra == "test"
-	pytest-deadfixtures; extra == "test"
-	pytest-regressions; extra == "test"
-	pytest-sugar; extra == "test"
-	pytest; extra == "test"
+	beautifulsoup4; extra == 'test'
+	commitizen; extra == 'dev'
+	lxml; extra == 'test'
+	mypy; extra == 'dev'
+	natsort; extra == 'test'
+	nox; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pydata-sphinx-theme; extra == 'doc'
+	pytest-cov; extra == 'test'
+	pytest-deadfixtures; extra == 'test'
+	pytest-regressions; extra == 'test'
+	pytest-sugar; extra == 'test'
+	pytest; extra == 'test'
 	rasterio
-	sphinx-btn; extra == "doc"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design; extra == "doc"
-	sphinx-icon; extra == "doc"
-	sphinx; extra == "doc"
-	xmlschema; extra == "test"
+	sphinx-btn; extra == 'doc'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design; extra == 'doc'
+	sphinx-icon; extra == 'doc'
+	sphinx; extra == 'doc'
+	xmlschema; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )

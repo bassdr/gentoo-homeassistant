@@ -28,39 +28,39 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="build curl-cffi default pyinstaller secretstorage static-analysis"
-IUSE="${GENERATED_IUSE}"
+IUSE="${GENERATED_IUSE} +build +default"
 REQUIRES_DIST="
-	autopep8~=2.0; extra == "dev"
-	autopep8~=2.0; extra == "static-analysis"
-	brotli; implementation_name == "cpython" and extra == "default"
-	brotlicffi; implementation_name != "cpython" and extra == "default"
-	build; extra == "build"
-	certifi; extra == "default"
-	cffi; extra == "secretstorage"
-	curl-cffi!=0.6.*,<0.7.2,>=0.5.10; (os_name != "nt" and implementation_name == "cpython") and extra == "curl-cffi"
-	curl-cffi==0.5.10; (os_name == "nt" and implementation_name == "cpython") and extra == "curl-cffi"
-	hatchling; extra == "build"
-	mutagen; extra == "default"
-	pip; extra == "build"
-	pre-commit; extra == "dev"
-	pycryptodomex; extra == "default"
-	pyinstaller>=6.11.1; extra == "pyinstaller"
-	pytest-rerunfailures~=14.0; extra == "dev"
-	pytest-rerunfailures~=14.0; extra == "test"
-	pytest~=8.1; extra == "dev"
-	pytest~=8.1; extra == "test"
-	requests<3,>=2.32.2; extra == "default"
-	ruff~=0.8.0; extra == "dev"
-	ruff~=0.8.0; extra == "static-analysis"
-	secretstorage; extra == "secretstorage"
-	setuptools>=71.0.2; extra == "build"
-	urllib3<3,>=1.26.17; extra == "default"
-	websockets>=13.0; extra == "default"
-	wheel; extra == "build"
+	autopep8~=2.0; extra == 'dev'
+	autopep8~=2.0; extra == 'static-analysis'
+	brotli; implementation_name == 'cpython' and extra == 'default'
+	brotlicffi; implementation_name != 'cpython' and extra == 'default'
+	build; extra == 'build'
+	certifi; extra == 'default'
+	cffi; extra == 'secretstorage'
+	curl-cffi!=0.6.*,<0.7.2,>=0.5.10; (os_name != 'nt' and implementation_name == 'cpython') and extra == 'curl-cffi'
+	curl-cffi==0.5.10; (os_name == 'nt' and implementation_name == 'cpython') and extra == 'curl-cffi'
+	hatchling; extra == 'build'
+	mutagen; extra == 'default'
+	pip; extra == 'build'
+	pre-commit; extra == 'dev'
+	pycryptodomex; extra == 'default'
+	pyinstaller>=6.11.1; extra == 'pyinstaller'
+	pytest-rerunfailures~=14.0; extra == 'dev'
+	pytest-rerunfailures~=14.0; extra == 'test'
+	pytest~=8.1; extra == 'dev'
+	pytest~=8.1; extra == 'test'
+	requests<3,>=2.32.2; extra == 'default'
+	ruff~=0.8.0; extra == 'dev'
+	ruff~=0.8.0; extra == 'static-analysis'
+	secretstorage; extra == 'secretstorage'
+	setuptools>=71.0.2; extra == 'build'
+	urllib3<3,>=1.26.17; extra == 'default'
+	websockets>=13.0; extra == 'default'
+	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	static-analysis? ( >=dev-python/autopep8-2.0[${PYTHON_USEDEP}] =dev-python/autopep8-2*[${PYTHON_USEDEP}] )
-	default? ( dev-python/brotli[${PYTHON_USEDEP}] )
+	default? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
 	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	default? ( dev-python/certifi[${PYTHON_USEDEP}] )
 	secretstorage? ( dev-python/cffi[${PYTHON_USEDEP}] )

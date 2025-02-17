@@ -10,15 +10,13 @@ DESCRIPTION="Python API wrapper for Rocket.Chat"
 HOMEPAGE="
   https://pypi.org/project/rocketchat-api/
 "
-MY_PN=${PN/-/_}
+MY_PN="rocketchat_API"
 SRC_URI="https://github.com/jadolg/${MY_PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
 	requests
@@ -26,12 +24,7 @@ REQUIRES_DIST="
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-dev-python/requests[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+RDEPEND="${GENERATED_RDEPEND}"
 
 src_prepare() {
 	echo "Workaround" >> README.md || die

@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	apache-airflow-providers-common-sql>=1.20.0
-	apache-airflow-providers-google; extra == "google"
-	apache-airflow-providers-openlineage; extra == "openlineage"
+	apache-airflow-providers-google; extra == 'google'
+	apache-airflow-providers-openlineage; extra == 'openlineage'
 	apache-airflow>=2.9.0
-	pandas<2.2,>=1.5.3; python_version < "3.9"
-	pandas<2.2,>=2.1.2; python_version >= "3.9"
+	pandas<2.2,>=1.5.3; python_version < '3.9'
+	pandas<2.2,>=2.1.2; python_version >= '3.9'
 	trino>=0.318.0
 "
 GENERATED_RDEPEND="${RDEPEND}

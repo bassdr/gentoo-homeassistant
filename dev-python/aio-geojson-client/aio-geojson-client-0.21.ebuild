@@ -25,15 +25,15 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp<4,>=3.7.4
-	aioresponses; extra == "tests"
-	coverage; extra == "tests"
+	aioresponses; extra == 'tests'
+	coverage; extra == 'tests'
 	geojson>=3.1.0
 	haversine>=2.8.1
-	mock; extra == "tests"
-	pytest-asyncio; extra == "tests"
-	pytest-cov; extra == "tests"
-	pytest-timeout; extra == "tests"
-	pytest-xdist; extra == "tests"
+	mock; extra == 'tests'
+	pytest-asyncio; extra == 'tests'
+	pytest-cov; extra == 'tests'
+	pytest-timeout; extra == 'tests'
+	pytest-xdist; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}] <dev-python/aiohttp-4[${PYTHON_USEDEP}]

@@ -18,18 +18,18 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Pillow
-	accelerate>=0.20.3; extra == "dev"
-	accelerate>=0.20.3; extra == "train"
-	datasets; extra == "dev"
-	datasets; extra == "train"
+	accelerate>=0.20.3; extra == 'dev'
+	accelerate>=0.20.3; extra == 'train'
+	datasets; extra == 'dev'
+	datasets; extra == 'train'
 	huggingface-hub>=0.20.0
-	optimum-intel[openvino]>=1.20.0; extra == "openvino"
-	optimum[onnxruntime-gpu]>=1.23.1; extra == "onnx-gpu"
-	optimum[onnxruntime]>=1.23.1; extra == "onnx"
-	peft; extra == "dev"
-	pre-commit; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
+	optimum-intel[openvino]>=1.20.0; extra == 'openvino'
+	optimum[onnxruntime-gpu]>=1.23.1; extra == 'onnx-gpu'
+	optimum[onnxruntime]>=1.23.1; extra == 'onnx'
+	peft; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
 	scikit-learn
 	scipy
 	torch>=1.11.0

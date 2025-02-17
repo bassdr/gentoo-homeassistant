@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	importlib-metadata ; python_version < "3.8"
+	importlib-metadata ; python_version < '3.8'
 	pre-commit ; extra == 'dev'
 	pytest ; extra == 'test'
 	pytest-cov ; extra == 'test'

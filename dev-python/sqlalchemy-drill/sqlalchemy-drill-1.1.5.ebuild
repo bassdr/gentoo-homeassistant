@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	JPype1; extra == "jdbc"
-	JayDeBeApi; extra == "jdbc"
+	JPype1; extra == 'jdbc'
+	JayDeBeApi; extra == 'jdbc'
 	ijson
-	pyodbc; extra == "odbc"
+	pyodbc; extra == 'odbc'
 	requests
 	sqlalchemy
 "

@@ -17,72 +17,72 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	bitsandbytes; extra == "dev"
-	bitsandbytes; extra == "test-dev"
-	bitsandbytes; extra == "testing"
-	black~=23.1; extra == "dev"
-	black~=23.1; extra == "quality"
-	comet-ml; extra == "test-trackers"
-	datasets; extra == "dev"
-	datasets; extra == "test-dev"
-	datasets; extra == "testing"
-	deepspeed; extra == "deepspeed"
-	diffusers; extra == "dev"
-	diffusers; extra == "test-dev"
-	diffusers; extra == "testing"
-	dvclive; extra == "test-trackers"
-	evaluate; extra == "dev"
-	evaluate; extra == "test-dev"
-	evaluate; extra == "testing"
-	hf-doc-builder>=0.3.0; extra == "dev"
-	hf-doc-builder>=0.3.0; extra == "quality"
+	bitsandbytes; extra == 'dev'
+	bitsandbytes; extra == 'test-dev'
+	bitsandbytes; extra == 'testing'
+	black~=23.1; extra == 'dev'
+	black~=23.1; extra == 'quality'
+	comet-ml; extra == 'test-trackers'
+	datasets; extra == 'dev'
+	datasets; extra == 'test-dev'
+	datasets; extra == 'testing'
+	deepspeed; extra == 'deepspeed'
+	diffusers; extra == 'dev'
+	diffusers; extra == 'test-dev'
+	diffusers; extra == 'testing'
+	dvclive; extra == 'test-trackers'
+	evaluate; extra == 'dev'
+	evaluate; extra == 'test-dev'
+	evaluate; extra == 'testing'
+	hf-doc-builder>=0.3.0; extra == 'dev'
+	hf-doc-builder>=0.3.0; extra == 'quality'
 	huggingface-hub>=0.21.0
 	numpy<3.0.0,>=1.17
 	packaging>=20.0
-	parameterized; extra == "dev"
-	parameterized; extra == "test-prod"
-	parameterized; extra == "testing"
+	parameterized; extra == 'dev'
+	parameterized; extra == 'test-prod'
+	parameterized; extra == 'testing'
 	psutil
-	pytest-subtests; extra == "dev"
-	pytest-subtests; extra == "test-prod"
-	pytest-subtests; extra == "testing"
-	pytest-xdist; extra == "dev"
-	pytest-xdist; extra == "test-prod"
-	pytest-xdist; extra == "testing"
-	pytest<=8.0.0,>=7.2.0; extra == "dev"
-	pytest<=8.0.0,>=7.2.0; extra == "test-prod"
-	pytest<=8.0.0,>=7.2.0; extra == "testing"
+	pytest-subtests; extra == 'dev'
+	pytest-subtests; extra == 'test-prod'
+	pytest-subtests; extra == 'testing'
+	pytest-xdist; extra == 'dev'
+	pytest-xdist; extra == 'test-prod'
+	pytest-xdist; extra == 'testing'
+	pytest<=8.0.0,>=7.2.0; extra == 'dev'
+	pytest<=8.0.0,>=7.2.0; extra == 'test-prod'
+	pytest<=8.0.0,>=7.2.0; extra == 'testing'
 	pyyaml
-	rich; extra == "dev"
-	rich; extra == "rich"
-	ruff~=0.6.4; extra == "dev"
-	ruff~=0.6.4; extra == "quality"
+	rich; extra == 'dev'
+	rich; extra == 'rich'
+	ruff~=0.6.4; extra == 'dev'
+	ruff~=0.6.4; extra == 'quality'
 	safetensors>=0.4.3
-	sagemaker; extra == "sagemaker"
-	scikit-learn; extra == "dev"
-	scikit-learn; extra == "test-dev"
-	scikit-learn; extra == "testing"
-	scipy; extra == "dev"
-	scipy; extra == "test-dev"
-	scipy; extra == "testing"
-	tensorboard; extra == "test-trackers"
-	timm; extra == "dev"
-	timm; extra == "test-dev"
-	timm; extra == "testing"
+	sagemaker; extra == 'sagemaker'
+	scikit-learn; extra == 'dev'
+	scikit-learn; extra == 'test-dev'
+	scikit-learn; extra == 'testing'
+	scipy; extra == 'dev'
+	scipy; extra == 'test-dev'
+	scipy; extra == 'testing'
+	tensorboard; extra == 'test-trackers'
+	timm; extra == 'dev'
+	timm; extra == 'test-dev'
+	timm; extra == 'testing'
 	torch>=2.0.0
-	torchdata>=0.8.0; extra == "dev"
-	torchdata>=0.8.0; extra == "test-dev"
-	torchdata>=0.8.0; extra == "testing"
-	torchpippy>=0.2.0; extra == "dev"
-	torchpippy>=0.2.0; extra == "test-dev"
-	torchpippy>=0.2.0; extra == "testing"
-	tqdm; extra == "dev"
-	tqdm; extra == "test-dev"
-	tqdm; extra == "testing"
-	transformers; extra == "dev"
-	transformers; extra == "test-dev"
-	transformers; extra == "testing"
-	wandb; extra == "test-trackers"
+	torchdata>=0.8.0; extra == 'dev'
+	torchdata>=0.8.0; extra == 'test-dev'
+	torchdata>=0.8.0; extra == 'testing'
+	torchpippy>=0.2.0; extra == 'dev'
+	torchpippy>=0.2.0; extra == 'test-dev'
+	torchpippy>=0.2.0; extra == 'testing'
+	tqdm; extra == 'dev'
+	tqdm; extra == 'test-dev'
+	tqdm; extra == 'testing'
+	transformers; extra == 'dev'
+	transformers; extra == 'test-dev'
+	transformers; extra == 'testing'
+	wandb; extra == 'test-trackers'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	test-dev? ( dev-python/bitsandbytes[${PYTHON_USEDEP}] )

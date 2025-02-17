@@ -17,21 +17,21 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	flake8; extra == "all"
-	flake8; extra == "tests"
-	jupyterlab~=4.0; extra == "all"
-	jupyterlab~=4.0; extra == "build"
-	keyring; extra == "all"
-	keyring; extra == "build"
+	flake8; extra == 'all'
+	flake8; extra == 'tests'
+	jupyterlab~=4.0; extra == 'all'
+	jupyterlab~=4.0; extra == 'build'
+	keyring; extra == 'all'
+	keyring; extra == 'build'
 	param
-	pytest; extra == "all"
-	pytest; extra == "tests"
-	rfc3986; extra == "all"
-	rfc3986; extra == "build"
-	setuptools>=40.8.0; extra == "all"
-	setuptools>=40.8.0; extra == "build"
-	twine; extra == "all"
-	twine; extra == "build"
+	pytest; extra == 'all'
+	pytest; extra == 'tests'
+	rfc3986; extra == 'all'
+	rfc3986; extra == 'build'
+	setuptools>=40.8.0; extra == 'all'
+	setuptools>=40.8.0; extra == 'build'
+	twine; extra == 'all'
+	twine; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/flake8[${PYTHON_USEDEP}] )

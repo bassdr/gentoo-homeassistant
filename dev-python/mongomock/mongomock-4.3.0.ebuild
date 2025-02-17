@@ -18,8 +18,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	packaging
-	pyexecjs; extra == "pyexecjs"
-	pymongo; extra == "pymongo"
+	pyexecjs; extra == 'pyexecjs'
+	pymongo; extra == 'pymongo'
 	pytz
 	sentinels
 "

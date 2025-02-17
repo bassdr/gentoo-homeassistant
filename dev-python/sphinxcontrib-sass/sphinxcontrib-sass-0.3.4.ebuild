@@ -17,10 +17,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Sphinx
-	black >=22.3.0,<23 ; extra == "test"
-	flake8 >=3.8.4,<4 ; extra == "test"
+	black >=22.3.0,<23 ; extra == 'test'
+	flake8 >=3.8.4,<4 ; extra == 'test'
 	libsass
-	pytest >=6.2.2,<7 ; extra == "test"
+	pytest >=6.2.2,<7 ; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/libsass[${PYTHON_USEDEP}]

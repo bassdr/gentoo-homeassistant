@@ -32,8 +32,8 @@ DEPEND="
 	media-libs/libjpeg-turbo:=
 "
 REQUIRES_DIST="
-	numpy; python_version >= "3.0" and python_version < "3.12"
-	numpy<1.17; python_version <= "2.7"
+	numpy; python_version >= '3.0' and python_version < '3.12'
+	numpy<1.17; python_version <= '2.7'
 	six
 "
 GENERATED_RDEPEND="${RDEPEND}

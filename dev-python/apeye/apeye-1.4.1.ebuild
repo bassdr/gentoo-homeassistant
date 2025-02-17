@@ -18,11 +18,11 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	apeye-core>=1.0.0b2
-	cachecontrol[filecache]>=0.12.6 ; extra == "all"
-	cachecontrol[filecache]>=0.12.6 ; extra == "limiter"
+	cachecontrol[filecache]>=0.12.6 ; extra == 'all'
+	cachecontrol[filecache]>=0.12.6 ; extra == 'limiter'
 	domdf-python-tools>=2.6.0
-	lockfile>=0.12.2 ; extra == "all"
-	lockfile>=0.12.2 ; extra == "limiter"
+	lockfile>=0.12.2 ; extra == 'all'
+	lockfile>=0.12.2 ; extra == 'limiter'
 	platformdirs>=2.3.0
 	requests>=2.24.0
 "

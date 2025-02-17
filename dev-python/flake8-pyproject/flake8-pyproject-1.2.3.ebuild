@@ -18,10 +18,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Flake8 >= 5
-	TOMLi < 2; python_version < "3.7"
-	TOMLi; python_version < "3.11"
-	pyTest ; extra == "dev"
-	pyTest-cov ; extra == "dev"
+	TOMLi < 2; python_version < '3.7'
+	TOMLi; python_version < '3.11'
+	pyTest ; extra == 'dev'
+	pyTest-cov ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/flake8-5[${PYTHON_USEDEP}]

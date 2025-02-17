@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	numpy; extra == "matrixapi"
-	scipy; extra == "matrixapi"
+	numpy; extra == 'matrixapi'
+	scipy; extra == 'matrixapi'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	matrixapi? ( dev-python/numpy[${PYTHON_USEDEP}] )

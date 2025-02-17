@@ -25,18 +25,18 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs ssh websockets"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	coverage==7.2.7; extra == "dev"
-	myst-parser==0.18.0; extra == "docs"
-	paramiko>=2.4.3; extra == "ssh"
-	pytest-cov==4.1.0; extra == "dev"
-	pytest-timeout==2.1.0; extra == "dev"
-	pytest==7.4.2; extra == "dev"
-	pywin32>=304; sys_platform == "win32"
+	coverage==7.2.7; extra == 'dev'
+	myst-parser==0.18.0; extra == 'docs'
+	paramiko>=2.4.3; extra == 'ssh'
+	pytest-cov==4.1.0; extra == 'dev'
+	pytest-timeout==2.1.0; extra == 'dev'
+	pytest==7.4.2; extra == 'dev'
+	pywin32>=304; sys_platform == 'win32'
 	requests>=2.26.0
-	ruff==0.1.8; extra == "dev"
-	sphinx==5.1.1; extra == "docs"
+	ruff==0.1.8; extra == 'dev'
+	sphinx==5.1.1; extra == 'docs'
 	urllib3>=1.26.0
-	websocket-client>=1.3.0; extra == "websockets"
+	websocket-client>=1.3.0; extra == 'websockets'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( ~dev-python/myst-parser-0.18.0[${PYTHON_USEDEP}] )

@@ -89,15 +89,15 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="lint"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	coverage[toml]; extra == "test"
+	coverage[toml]; extra == 'test'
 	cryptography<45,>=43
-	interrogate; extra == "lint"
-	maturin<2.0,>=1.7; extra == "dev"
-	pretend; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	rfc3161-client[doc,lint,test]; extra == "dev"
-	ruff<0.9,>=0.7; extra == "lint"
+	interrogate; extra == 'lint'
+	maturin<2.0,>=1.7; extra == 'dev'
+	pretend; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	rfc3161-client[doc,lint,test]; extra == 'dev'
+	ruff<0.9,>=0.7; extra == 'lint'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cryptography-43[${PYTHON_USEDEP}] <dev-python/cryptography-45[${PYTHON_USEDEP}]

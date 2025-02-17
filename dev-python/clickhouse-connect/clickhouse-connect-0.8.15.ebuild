@@ -19,13 +19,13 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	certifi
 	lz4
-	numpy; extra == "numpy"
-	orjson; extra == "orjson"
-	pandas; extra == "pandas"
-	pyarrow; extra == "arrow"
+	numpy; extra == 'numpy'
+	orjson; extra == 'orjson'
+	pandas; extra == 'pandas'
+	pyarrow; extra == 'arrow'
 	pytz
-	sqlalchemy<2.0,>1.3.21; extra == "sqlalchemy"
-	tzlocal>=4.0; extra == "tzlocal"
+	sqlalchemy<2.0,>1.3.21; extra == 'sqlalchemy'
+	tzlocal>=4.0; extra == 'tzlocal'
 	urllib3>=1.26
 	zstandard
 "

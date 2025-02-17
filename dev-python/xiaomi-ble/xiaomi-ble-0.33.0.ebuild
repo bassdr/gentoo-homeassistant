@@ -25,7 +25,7 @@ DOCS="README.md"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	Sphinx<6.0,>=5.0; extra == "docs"
+	Sphinx<6.0,>=5.0; extra == 'docs'
 	aiohttp>=3.10.0
 	bleak-retry-connector>=2.13.0
 	bleak>=0.19.5
@@ -33,11 +33,11 @@ REQUIRES_DIST="
 	bluetooth-sensor-state-data>=1.6.0
 	cryptography>=40.0.0
 	home-assistant-bluetooth>=1.9.2
-	myst-parser<0.19,>=0.18; extra == "docs"
+	myst-parser<0.19,>=0.18; extra == 'docs'
 	orjson>=3.9.0
 	pycryptodomex>=3.19.1
 	sensor-state-data>=2.17.1
-	sphinx-rtd-theme<2.0,>=1.0; extra == "docs"
+	sphinx-rtd-theme<2.0,>=1.0; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]

@@ -4,13 +4,12 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_TESTED=( python3_{10..13} )
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
 inherit distutils-r1 pypi
 
-DESCRIPTION="Python Build Reasonableness"
+DESCRIPTION="Inject some useful and sensible default behaviors into setuptools"
 HOMEPAGE="
   https://pypi.org/project/pbr/
   Bug Tracker, https://bugs.launchpad.net/pbr/
@@ -46,6 +45,8 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
+
+PATCHES=( "${FILESDIR}/${PN}-6.1.0-disable-nose.patch" )
 
 python_prepare_all() {
 	# TODO: investigate

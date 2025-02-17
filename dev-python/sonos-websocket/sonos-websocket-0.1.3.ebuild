@@ -24,7 +24,7 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	aiohttp
-	async-timeout ; python_version < "3.11"
+	async-timeout ; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]

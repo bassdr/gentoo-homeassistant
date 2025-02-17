@@ -18,19 +18,19 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	build>=1.2
-	importlib-resources; python_version < "3.9"
+	importlib-resources; python_version < '3.9'
 	pathspec
-	pyproject-hooks!=1.1.0; extra == "test"
-	pytest-cov>=3; extra == "test"
-	pytest>=6; extra == "test"
-	tomli; python_version < "3.11"
-	uv; extra == "uv"
-	validate-pyproject>=0.16; extra == "test"
+	pyproject-hooks!=1.1.0; extra == 'test'
+	pytest-cov>=3; extra == 'test'
+	pytest>=6; extra == 'test'
+	tomli; python_version < '3.11'
+	uv; extra == 'uv'
+	validate-pyproject>=0.16; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/build-1.2[${PYTHON_USEDEP}]
 	dev-python/pathspec[${PYTHON_USEDEP}]
-	uv? ( dev-python/uv[${PYTHON_USEDEP}] )
+	uv? ( dev-python/uv )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -20,18 +20,18 @@ IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	chardet; extra == "dev"
-	chardet; extra == "tests"
-	parameterized; extra == "dev"
-	parameterized; extra == "tests"
+	chardet; extra == 'dev'
+	chardet; extra == 'tests'
+	parameterized; extra == 'dev'
+	parameterized; extra == 'tests'
 	pyparsing>=3.0.9
-	pytest-cov; extra == "tests"
-	pytest-xdist[psutil]; extra == "tests"
-	pytest; extra == "tests"
-	ruff; extra == "dev"
-	ruff; extra == "tests"
-	tox; extra == "tests"
-	zest.releaser[recommended]; extra == "release"
+	pytest-cov; extra == 'tests'
+	pytest-xdist[psutil]; extra == 'tests'
+	pytest; extra == 'tests'
+	ruff; extra == 'dev'
+	ruff; extra == 'tests'
+	tox; extra == 'tests'
+	zest.releaser[recommended]; extra == 'release'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyparsing-3.0.9[${PYTHON_USEDEP}]

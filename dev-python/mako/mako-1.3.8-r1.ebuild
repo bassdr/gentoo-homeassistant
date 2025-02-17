@@ -22,10 +22,10 @@ GENERATED_IUSE="babel lingua"
 IUSE="${GENERATED_IUSE} doc"
 
 REQUIRES_DIST="
-	Babel; extra == "babel"
+	Babel; extra == 'babel'
 	MarkupSafe>=0.9.2
-	lingua; extra == "lingua"
-	pytest; extra == "testing"
+	lingua; extra == 'lingua'
+	pytest; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	babel? ( dev-python/babel[${PYTHON_USEDEP}] )

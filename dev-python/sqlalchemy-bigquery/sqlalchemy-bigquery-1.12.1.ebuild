@@ -17,28 +17,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	GeoAlchemy2; extra == "all"
-	GeoAlchemy2; extra == "geography"
-	alembic; extra == "alembic"
-	alembic; extra == "all"
+	GeoAlchemy2; extra == 'all'
+	GeoAlchemy2; extra == 'geography'
+	alembic; extra == 'alembic'
+	alembic; extra == 'all'
 	google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5
 	google-auth<3.0.0dev,>=1.25.0
-	google-cloud-bigquery-storage<3.0.0dev,>=2.0.0; extra == "all"
-	google-cloud-bigquery-storage<3.0.0dev,>=2.0.0; extra == "bqstorage"
+	google-cloud-bigquery-storage<3.0.0dev,>=2.0.0; extra == 'all'
+	google-cloud-bigquery-storage<3.0.0dev,>=2.0.0; extra == 'bqstorage'
 	google-cloud-bigquery<4.0.0dev,>=3.3.6
-	grpcio<2.0dev,>=1.47.0; extra == "all"
-	grpcio<2.0dev,>=1.47.0; extra == "bqstorage"
-	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "all"
-	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "bqstorage"
+	grpcio<2.0dev,>=1.47.0; extra == 'all'
+	grpcio<2.0dev,>=1.47.0; extra == 'bqstorage'
+	grpcio<2.0dev,>=1.49.1; python_version >= '3.11' and extra == 'all'
+	grpcio<2.0dev,>=1.49.1; python_version >= '3.11' and extra == 'bqstorage'
 	packaging
-	packaging; extra == "all"
-	packaging; extra == "tests"
-	pyarrow>=3.0.0; extra == "all"
-	pyarrow>=3.0.0; extra == "bqstorage"
-	pytz; extra == "all"
-	pytz; extra == "tests"
-	shapely; extra == "all"
-	shapely; extra == "geography"
+	packaging; extra == 'all'
+	packaging; extra == 'tests'
+	pyarrow>=3.0.0; extra == 'all'
+	pyarrow>=3.0.0; extra == 'bqstorage'
+	pytz; extra == 'all'
+	pytz; extra == 'tests'
+	shapely; extra == 'all'
+	shapely; extra == 'geography'
 	sqlalchemy<3.0.0dev,>=1.4.16
 "
 GENERATED_RDEPEND="${RDEPEND}

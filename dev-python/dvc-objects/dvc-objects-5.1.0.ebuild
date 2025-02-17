@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	dvc-objects[tests] ; extra == 'dev'
 	fsspec >=2024.2.0
-	funcy >=1.14 ; python_version < "3.12"
+	funcy >=1.14 ; python_version < '3.12'
 	mypy ==1.8.0 ; extra == 'dev'
 	pytest <8,>=7 ; extra == 'tests'
 	pytest-asyncio <1,>=0.23.2 ; extra == 'tests'

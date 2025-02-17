@@ -17,33 +17,33 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	Shapely<3.0.0dev,>=1.8.4; extra == "geopandas"
-	bigquery-magics>=0.1.0; extra == "ipython"
-	db-dtypes<2.0.0dev,>=0.3.0; extra == "pandas"
-	geopandas<2.0dev,>=0.9.0; extra == "geopandas"
+	Shapely<3.0.0dev,>=1.8.4; extra == 'geopandas'
+	bigquery-magics>=0.1.0; extra == 'ipython'
+	db-dtypes<2.0.0dev,>=0.3.0; extra == 'pandas'
+	geopandas<2.0dev,>=0.9.0; extra == 'geopandas'
 	google-api-core[grpc]<3.0.0dev,>=2.11.1
 	google-auth<3.0.0dev,>=2.14.1
-	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == "bqstorage"
-	google-cloud-bigquery[bigquery_v2,bqstorage,geopandas,ipython,ipywidgets,opentelemetry,pandas,tqdm]; extra == "all"
+	google-cloud-bigquery-storage<3.0.0dev,>=2.6.0; extra == 'bqstorage'
+	google-cloud-bigquery[bigquery_v2,bqstorage,geopandas,ipython,ipywidgets,opentelemetry,pandas,tqdm]; extra == 'all'
 	google-cloud-core<3.0.0dev,>=2.4.1
 	google-resumable-media<3.0dev,>=2.0.0
-	grpcio<2.0dev,>=1.47.0; extra == "bqstorage"
-	grpcio<2.0dev,>=1.49.1; python_version >= "3.11" and extra == "bqstorage"
-	importlib-metadata>=1.0.0; python_version < "3.8" and extra == "pandas"
-	ipykernel>=6.0.0; extra == "ipywidgets"
-	ipywidgets>=7.7.0; extra == "ipywidgets"
-	opentelemetry-api>=1.1.0; extra == "opentelemetry"
-	opentelemetry-instrumentation>=0.20b0; extra == "opentelemetry"
-	opentelemetry-sdk>=1.1.0; extra == "opentelemetry"
+	grpcio<2.0dev,>=1.47.0; extra == 'bqstorage'
+	grpcio<2.0dev,>=1.49.1; python_version >= '3.11' and extra == 'bqstorage'
+	importlib-metadata>=1.0.0; python_version < '3.8' and extra == 'pandas'
+	ipykernel>=6.0.0; extra == 'ipywidgets'
+	ipywidgets>=7.7.0; extra == 'ipywidgets'
+	opentelemetry-api>=1.1.0; extra == 'opentelemetry'
+	opentelemetry-instrumentation>=0.20b0; extra == 'opentelemetry'
+	opentelemetry-sdk>=1.1.0; extra == 'opentelemetry'
 	packaging>=20.0.0
-	pandas>=1.1.0; extra == "pandas"
-	proto-plus<2.0.0dev,>=1.22.3; extra == "bigquery-v2"
-	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2; extra == "bigquery-v2"
-	pyarrow>=3.0.0; extra == "bqstorage"
-	pyarrow>=3.0.0; extra == "pandas"
+	pandas>=1.1.0; extra == 'pandas'
+	proto-plus<2.0.0dev,>=1.22.3; extra == 'bigquery-v2'
+	protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2; extra == 'bigquery-v2'
+	pyarrow>=3.0.0; extra == 'bqstorage'
+	pyarrow>=3.0.0; extra == 'pandas'
 	python-dateutil<3.0dev,>=2.7.3
 	requests<3.0.0dev,>=2.21.0
-	tqdm<5.0.0dev,>=4.7.4; extra == "tqdm"
+	tqdm<5.0.0dev,>=4.7.4; extra == 'tqdm'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	ipython? ( >=dev-python/bigquery-magics-0.1.0[${PYTHON_USEDEP}] )

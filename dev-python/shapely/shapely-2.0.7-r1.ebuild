@@ -30,14 +30,14 @@ DEPEND="
 	>=sci-libs/geos-3.11.4
 "
 REQUIRES_DIST="
-	matplotlib; extra == "docs"
+	matplotlib; extra == 'docs'
 	numpy<3,>=1.14
-	numpydoc==1.1.*; extra == "docs"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	sphinx-book-theme; extra == "docs"
-	sphinx-remove-toctrees; extra == "docs"
-	sphinx; extra == "docs"
+	numpydoc==1.1.*; extra == 'docs'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	sphinx-book-theme; extra == 'docs'
+	sphinx-remove-toctrees; extra == 'docs'
+	sphinx; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/matplotlib[${PYTHON_USEDEP}] )

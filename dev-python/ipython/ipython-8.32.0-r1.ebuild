@@ -21,52 +21,52 @@ IUSE="${GENERATED_IUSE} examples notebook nbconvert qt5 +smp test"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
-	black; extra == "black"
-	colorama; sys_platform == "win32"
-	curio; extra == "test-extra"
+	black; extra == 'black'
+	colorama; sys_platform == 'win32'
+	curio; extra == 'test-extra'
 	decorator
-	docrepr; extra == "doc"
-	exceptiongroup; extra == "doc"
-	exceptiongroup; python_version < "3.11"
-	intersphinx_registry; extra == "doc"
-	ipykernel; extra == "doc"
-	ipykernel; extra == "kernel"
-	ipyparallel; extra == "parallel"
-	ipython[black,doc,kernel,matplotlib,nbconvert,nbformat,notebook,parallel,qtconsole]; extra == "all"
-	ipython[test,test_extra]; extra == "all"
-	ipython[test]; extra == "doc"
-	ipython[test]; extra == "test-extra"
-	ipywidgets; extra == "notebook"
+	docrepr; extra == 'doc'
+	exceptiongroup; extra == 'doc'
+	exceptiongroup; python_version < '3.11'
+	intersphinx_registry; extra == 'doc'
+	ipykernel; extra == 'doc'
+	ipykernel; extra == 'kernel'
+	ipyparallel; extra == 'parallel'
+	ipython[black,doc,kernel,matplotlib,nbconvert,nbformat,notebook,parallel,qtconsole]; extra == 'all'
+	ipython[test,test_extra]; extra == 'all'
+	ipython[test]; extra == 'doc'
+	ipython[test]; extra == 'test-extra'
+	ipywidgets; extra == 'notebook'
 	jedi>=0.16
-	matplotlib!=3.2.0; extra == "test-extra"
+	matplotlib!=3.2.0; extra == 'test-extra'
 	matplotlib-inline
-	matplotlib; extra == "doc"
-	matplotlib; extra == "matplotlib"
-	nbconvert; extra == "nbconvert"
-	nbformat; extra == "nbformat"
-	nbformat; extra == "test-extra"
-	notebook; extra == "notebook"
-	numpy>=1.23; extra == "test-extra"
-	packaging; extra == "test"
-	pandas; extra == "test-extra"
-	pexpect>4.3; sys_platform != "win32" and sys_platform != "emscripten"
-	pickleshare; extra == "test"
+	matplotlib; extra == 'doc'
+	matplotlib; extra == 'matplotlib'
+	nbconvert; extra == 'nbconvert'
+	nbformat; extra == 'nbformat'
+	nbformat; extra == 'test-extra'
+	notebook; extra == 'notebook'
+	numpy>=1.23; extra == 'test-extra'
+	packaging; extra == 'test'
+	pandas; extra == 'test-extra'
+	pexpect>4.3; sys_platform != 'win32' and sys_platform != 'emscripten'
+	pickleshare; extra == 'test'
 	prompt_toolkit<3.1.0,>=3.0.41
 	pygments>=2.4.0
-	pytest-asyncio<0.22; extra == "test"
-	pytest; extra == "test"
-	qtconsole; extra == "qtconsole"
-	setuptools>=18.5; extra == "doc"
-	sphinx-rtd-theme; extra == "doc"
-	sphinx>=1.3; extra == "doc"
-	sphinxcontrib-jquery; extra == "doc"
+	pytest-asyncio<0.22; extra == 'test'
+	pytest; extra == 'test'
+	qtconsole; extra == 'qtconsole'
+	setuptools>=18.5; extra == 'doc'
+	sphinx-rtd-theme; extra == 'doc'
+	sphinx>=1.3; extra == 'doc'
+	sphinxcontrib-jquery; extra == 'doc'
 	stack_data
-	testpath; extra == "test"
-	tomli; python_version < "3.11" and extra == "doc"
+	testpath; extra == 'test'
+	tomli; python_version < '3.11' and extra == 'doc'
 	traitlets>=5.13.0
-	trio; extra == "test-extra"
-	typing_extensions; extra == "doc"
-	typing_extensions>=4.6; python_version < "3.12"
+	trio; extra == 'test-extra'
+	typing_extensions; extra == 'doc'
+	typing_extensions>=4.6; python_version < '3.12'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	black? ( dev-python/black[${PYTHON_USEDEP}] )

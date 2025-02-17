@@ -20,28 +20,28 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	hatch; extra == "dev"
-	importlib-resources>=5.0; python_version < "3.10" and extra == "test"
-	ipykernel; extra == "test"
+	hatch; extra == 'dev'
+	importlib-resources>=5.0; python_version < '3.10' and extra == 'test'
+	ipykernel; extra == 'test'
 	jupyter-server<3,>=2.4.0
-	jupyter-server[test]<3,>=2.4.0; extra == "test"
+	jupyter-server[test]<3,>=2.4.0; extra == 'test'
 	jupyterlab-server<3,>=2.27.1
-	jupyterlab-server[test]<3,>=2.27.1; extra == "test"
+	jupyterlab-server[test]<3,>=2.27.1; extra == 'test'
 	jupyterlab<4.4,>=4.3.4
-	myst-parser; extra == "docs"
-	nbsphinx; extra == "docs"
-	nbval; extra == "test"
+	myst-parser; extra == 'docs'
+	nbsphinx; extra == 'docs'
+	nbval; extra == 'test'
 	notebook-shim<0.3,>=0.2
-	pre-commit; extra == "dev"
-	pydata-sphinx-theme; extra == "docs"
-	pytest-console-scripts; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest-tornasync; extra == "test"
-	pytest>=7.0; extra == "test"
-	requests; extra == "test"
-	sphinx>=1.3.6; extra == "docs"
-	sphinxcontrib-github-alt; extra == "docs"
-	sphinxcontrib-spelling; extra == "docs"
+	pre-commit; extra == 'dev'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-console-scripts; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest-tornasync; extra == 'test'
+	pytest>=7.0; extra == 'test'
+	requests; extra == 'test'
+	sphinx>=1.3.6; extra == 'docs'
+	sphinxcontrib-github-alt; extra == 'docs'
+	sphinxcontrib-spelling; extra == 'docs'
 	tornado>=6.2.0
 "
 GENERATED_RDEPEND="${RDEPEND}

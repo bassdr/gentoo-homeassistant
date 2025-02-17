@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	paramiko
-	selectors2 ; python_version < "3.4"
+	selectors2 ; python_version < '3.4'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/paramiko[${PYTHON_USEDEP}]

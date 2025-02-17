@@ -18,22 +18,22 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	Jinja2>=2.11.0
-	aiosqlite>=0.16.0; extra == "all"
-	aiosqlite>=0.16.0; extra == "sqlite"
-	asyncpg>=0.30.0; extra == "all"
-	asyncpg>=0.30.0; extra == "postgres"
+	aiosqlite>=0.16.0; extra == 'all'
+	aiosqlite>=0.16.0; extra == 'sqlite'
+	asyncpg>=0.30.0; extra == 'all'
+	asyncpg>=0.30.0; extra == 'postgres'
 	black
 	colorama>=0.4.0
 	inflection>=0.5.1
-	ipython; extra == "all"
-	ipython; extra == "playground"
-	orjson>=3.5.1; extra == "all"
-	orjson>=3.5.1; extra == "orjson"
+	ipython; extra == 'all'
+	ipython; extra == 'playground'
+	orjson>=3.5.1; extra == 'all'
+	orjson>=3.5.1; extra == 'orjson'
 	pydantic[email]==2.*
 	targ>=0.3.7
 	typing-extensions>=4.3.0
-	uvloop>=0.12.0; sys_platform != "win32" and extra == "all"
-	uvloop>=0.12.0; sys_platform != "win32" and extra == "uvloop"
+	uvloop>=0.12.0; sys_platform != 'win32' and extra == 'all'
+	uvloop>=0.12.0; sys_platform != 'win32' and extra == 'uvloop'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/aiosqlite-0.16.0[${PYTHON_USEDEP}] )

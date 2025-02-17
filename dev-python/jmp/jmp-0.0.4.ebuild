@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	dataclasses (>=0.7) ; python_version < "3.7"
+	dataclasses (>=0.7) ; python_version < '3.7'
 	jax (>=0.2.20) ; extra == 'jax'
 	jaxlib (>=0.1.71) ; extra == 'jax'
 	numpy (>=1.19.5)

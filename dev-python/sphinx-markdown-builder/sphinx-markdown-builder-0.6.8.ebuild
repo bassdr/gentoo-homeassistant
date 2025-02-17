@@ -15,20 +15,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black; extra == "dev"
-	bumpver; extra == "dev"
-	coveralls; extra == "dev"
+	black; extra == 'dev'
+	bumpver; extra == 'dev'
+	coveralls; extra == 'dev'
 	docutils
-	flake8; extra == "dev"
-	isort; extra == "dev"
-	pip-tools; extra == "dev"
-	pylint; extra == "dev"
-	pytest-cov; extra == "dev"
-	pytest; extra == "dev"
+	flake8; extra == 'dev'
+	isort; extra == 'dev'
+	pip-tools; extra == 'dev'
+	pylint; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
 	sphinx>=5.1.0
-	sphinx>=5.3.0; extra == "dev"
-	sphinxcontrib-plantuml; extra == "dev"
-	sphinxcontrib.httpdomain; extra == "dev"
+	sphinx>=5.3.0; extra == 'dev'
+	sphinxcontrib-plantuml; extra == 'dev'
+	sphinxcontrib.httpdomain; extra == 'dev'
 	tabulate
 "
 GENERATED_RDEPEND="${RDEPEND}

@@ -26,9 +26,9 @@ REQUIRES_DIST="
 	aiohttp<4.0,>=3.8
 	async-timeout<5,>=4
 	backoff<3
-	securesystemslib<1; extra == "deprecated-verify"
-	setuptools>=60.0.0; extra == "deprecated-verify"
-	sigstore<2; extra == "deprecated-verify"
+	securesystemslib<1; extra == 'deprecated-verify'
+	setuptools>=60.0.0; extra == 'deprecated-verify'
+	sigstore<2; extra == 'deprecated-verify'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}] <dev-python/aiohttp-4.0[${PYTHON_USEDEP}]

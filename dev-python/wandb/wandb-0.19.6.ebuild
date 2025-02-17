@@ -17,72 +17,72 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	awscli; extra == "launch"
-	azure-containerregistry; extra == "launch"
-	azure-identity; extra == "azure"
-	azure-identity; extra == "launch"
-	azure-storage-blob; extra == "azure"
-	azure-storage-blob; extra == "launch"
-	bokeh; extra == "media"
-	boto3; extra == "aws"
-	boto3; extra == "launch"
-	botocore>=1.5.76; extra == "aws"
-	botocore>=1.5.76; extra == "launch"
-	chardet; extra == "launch"
+	awscli; extra == 'launch'
+	azure-containerregistry; extra == 'launch'
+	azure-identity; extra == 'azure'
+	azure-identity; extra == 'launch'
+	azure-storage-blob; extra == 'azure'
+	azure-storage-blob; extra == 'launch'
+	bokeh; extra == 'media'
+	boto3; extra == 'aws'
+	boto3; extra == 'launch'
+	botocore>=1.5.76; extra == 'aws'
+	botocore>=1.5.76; extra == 'launch'
+	chardet; extra == 'launch'
 	click!=8.0.0,>=7.1
-	cloudpickle; extra == "models"
+	cloudpickle; extra == 'models'
 	docker-pycreds>=0.4.0
-	eval-type-backport; python_version < "3.10"
-	filelock; extra == "importers"
+	eval-type-backport; python_version < '3.10'
+	filelock; extra == 'importers'
 	gitpython!=3.1.29,>=1.0.0
-	google-auth; extra == "launch"
-	google-cloud-aiplatform; extra == "launch"
-	google-cloud-artifact-registry; extra == "launch"
-	google-cloud-compute; extra == "launch"
-	google-cloud-storage; extra == "gcp"
-	google-cloud-storage; extra == "kubeflow"
-	google-cloud-storage; extra == "launch"
-	imageio; extra == "media"
-	iso8601; extra == "launch"
-	jsonschema; extra == "launch"
-	kubernetes-asyncio; extra == "launch"
-	kubernetes; extra == "kubeflow"
-	kubernetes; extra == "launch"
-	minio; extra == "kubeflow"
-	mlflow; extra == "importers"
-	moviepy; extra == "media"
-	nbconvert; extra == "launch"
-	nbformat; extra == "launch"
-	numpy; extra == "media"
-	optuna; extra == "launch"
-	orjson; extra == "perf"
-	pillow; extra == "media"
+	google-auth; extra == 'launch'
+	google-cloud-aiplatform; extra == 'launch'
+	google-cloud-artifact-registry; extra == 'launch'
+	google-cloud-compute; extra == 'launch'
+	google-cloud-storage; extra == 'gcp'
+	google-cloud-storage; extra == 'kubeflow'
+	google-cloud-storage; extra == 'launch'
+	imageio; extra == 'media'
+	iso8601; extra == 'launch'
+	jsonschema; extra == 'launch'
+	kubernetes-asyncio; extra == 'launch'
+	kubernetes; extra == 'kubeflow'
+	kubernetes; extra == 'launch'
+	minio; extra == 'kubeflow'
+	mlflow; extra == 'importers'
+	moviepy; extra == 'media'
+	nbconvert; extra == 'launch'
+	nbformat; extra == 'launch'
+	numpy; extra == 'media'
+	optuna; extra == 'launch'
+	orjson; extra == 'perf'
+	pillow; extra == 'media'
 	platformdirs
-	plotly>=5.18.0; extra == "media"
-	polars<=1.2.1; extra == "importers"
-	protobuf!=4.21.0,!=5.28.0,<6,>=3.12.0; python_version < "3.9" and sys_platform == "linux"
-	protobuf!=4.21.0,!=5.28.0,<6,>=3.15.0; python_version == "3.9" and sys_platform == "linux"
-	protobuf!=4.21.0,!=5.28.0,<6,>=3.19.0; python_version > "3.9" and sys_platform == "linux"
-	protobuf!=4.21.0,!=5.28.0,<6,>=3.19.0; sys_platform != "linux"
+	plotly>=5.18.0; extra == 'media'
+	polars<=1.2.1; extra == 'importers'
+	protobuf!=4.21.0,!=5.28.0,<6,>=3.12.0; python_version < '3.9' and sys_platform == 'linux'
+	protobuf!=4.21.0,!=5.28.0,<6,>=3.15.0; python_version == '3.9' and sys_platform == 'linux'
+	protobuf!=4.21.0,!=5.28.0,<6,>=3.19.0; python_version > '3.9' and sys_platform == 'linux'
+	protobuf!=4.21.0,!=5.28.0,<6,>=3.19.0; sys_platform != 'linux'
 	psutil>=5.0.0
-	pydantic; extra == "launch"
+	pydantic; extra == 'launch'
 	pydantic<3,>=2.6
 	pyyaml
-	pyyaml>=6.0.0; extra == "launch"
-	rdkit; extra == "media"
+	pyyaml>=6.0.0; extra == 'launch'
+	rdkit; extra == 'media'
 	requests<3,>=2.0.0
-	rich; extra == "importers"
+	rich; extra == 'importers'
 	sentry-sdk>=2.0.0
 	setproctitle
 	setuptools
-	sh; extra == "kubeflow"
-	soundfile; extra == "media"
-	sweeps>=0.2.0; extra == "sweeps"
-	tenacity; extra == "importers"
-	tomli; extra == "launch"
-	typing-extensions; extra == "launch"
-	typing-extensions<5,>=4.4; python_version < "3.12"
-	wandb-workspaces; extra == "workspaces"
+	sh; extra == 'kubeflow'
+	soundfile; extra == 'media'
+	sweeps>=0.2.0; extra == 'sweeps'
+	tenacity; extra == 'importers'
+	tomli; extra == 'launch'
+	typing-extensions; extra == 'launch'
+	typing-extensions<5,>=4.4; python_version < '3.12'
+	wandb-workspaces; extra == 'workspaces'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	launch? ( dev-python/awscli[${PYTHON_USEDEP}] )

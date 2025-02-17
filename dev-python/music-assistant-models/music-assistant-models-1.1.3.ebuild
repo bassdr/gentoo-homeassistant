@@ -21,17 +21,17 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	codespell==2.3.0; extra == "test"
-	isort==5.13.2; extra == "test"
+	codespell==2.3.0; extra == 'test'
+	isort==5.13.2; extra == 'test'
 	mashumaro>=3.14
-	mypy==1.13.0; extra == "test"
+	mypy==1.13.0; extra == 'test'
 	orjson>=3.9
-	pre-commit-hooks==5.0.0; extra == "test"
-	pre-commit==4.0.1; extra == "test"
-	pytest-cov==6.0.0; extra == "test"
-	pytest==8.3.3; extra == "test"
-	ruff==0.7.4; extra == "test"
-	tomli==2.1.0; extra == "test"
+	pre-commit-hooks==5.0.0; extra == 'test'
+	pre-commit==4.0.1; extra == 'test'
+	pytest-cov==6.0.0; extra == 'test'
+	pytest==8.3.3; extra == 'test'
+	ruff==0.7.4; extra == 'test'
+	tomli==2.1.0; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/mashumaro-3.14[${PYTHON_USEDEP}]

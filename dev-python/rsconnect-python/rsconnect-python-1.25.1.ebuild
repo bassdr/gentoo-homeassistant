@@ -16,24 +16,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	black==24.3.0; extra == "test"
+	black==24.3.0; extra == 'test'
 	click>=8.0.0
-	coverage; extra == "test"
-	flake8-pyproject; extra == "test"
-	flake8; extra == "test"
-	httpretty; extra == "test"
-	ipykernel; extra == "test"
-	nbconvert; extra == "test"
+	coverage; extra == 'test'
+	flake8-pyproject; extra == 'test'
+	flake8; extra == 'test'
+	httpretty; extra == 'test'
+	ipykernel; extra == 'test'
+	nbconvert; extra == 'test'
 	pip>=10.0.0
 	pyjwt>=2.4.0
-	pyright; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
+	pyright; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
 	semver<4.0.0,>=2.0.0
-	setuptools-scm[toml]>=3.4; extra == "test"
-	setuptools>=61; extra == "test"
-	twine; extra == "test"
-	types-Flask; extra == "test"
+	setuptools-scm[toml]>=3.4; extra == 'test'
+	setuptools>=61; extra == 'test'
+	twine; extra == 'test'
+	types-Flask; extra == 'test'
 	typing-extensions>=4.8.0
 "
 GENERATED_RDEPEND="${RDEPEND}

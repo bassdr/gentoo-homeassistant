@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	pytest
-	six; extra == "tests"
+	six; extra == 'tests'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]

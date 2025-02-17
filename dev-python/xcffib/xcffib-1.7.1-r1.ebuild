@@ -20,7 +20,7 @@ DEPEND="
 	x11-libs/libxcb
 "
 REQUIRES_DIST="
-	cffi>=1.1.0; platform_python_implementation != "PyPy"
+	cffi>=1.1.0; platform_python_implementation != 'PyPy'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/cffi-1.1.0[${PYTHON_USEDEP}]

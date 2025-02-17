@@ -33,33 +33,33 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	GitPython
-	GitPython; extra == "all"
-	GitPython; extra == "base"
+	GitPython; extra == 'all'
+	GitPython; extra == 'base'
 	babel>=2.7.0
-	babel>=2.7.0; extra == "all"
-	babel>=2.7.0; extra == "base"
-	click; extra == "all"
-	click; extra == "dev"
-	codecov; extra == "all"
-	codecov; extra == "dev"
-	mkdocs-gen-files; extra == "all"
-	mkdocs-gen-files; extra == "dev"
-	mkdocs-git-authors-plugin; extra == "all"
-	mkdocs-git-authors-plugin; extra == "dev"
-	mkdocs-material; extra == "all"
-	mkdocs-material; extra == "dev"
-	mkdocs-static-i18n; extra == "all"
-	mkdocs-static-i18n; extra == "dev"
+	babel>=2.7.0; extra == 'all'
+	babel>=2.7.0; extra == 'base'
+	click; extra == 'all'
+	click; extra == 'dev'
+	codecov; extra == 'all'
+	codecov; extra == 'dev'
+	mkdocs-gen-files; extra == 'all'
+	mkdocs-gen-files; extra == 'dev'
+	mkdocs-git-authors-plugin; extra == 'all'
+	mkdocs-git-authors-plugin; extra == 'dev'
+	mkdocs-material; extra == 'all'
+	mkdocs-material; extra == 'dev'
+	mkdocs-static-i18n; extra == 'all'
+	mkdocs-static-i18n; extra == 'dev'
 	mkdocs>=1.0
-	mkdocs>=1.0; extra == "all"
-	mkdocs>=1.0; extra == "base"
-	pytest-cov; extra == "all"
-	pytest-cov; extra == "dev"
-	pytest; extra == "all"
-	pytest; extra == "dev"
+	mkdocs>=1.0; extra == 'all'
+	mkdocs>=1.0; extra == 'base'
+	pytest-cov; extra == 'all'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'all'
+	pytest; extra == 'dev'
 	pytz
-	pytz; extra == "all"
-	pytz; extra == "base"
+	pytz; extra == 'all'
+	pytz; extra == 'base'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/babel-2.7.0[${PYTHON_USEDEP}]

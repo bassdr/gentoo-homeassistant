@@ -17,113 +17,113 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	AliPCS-Py<1,>=0.8; extra == "alipan"
-	AliPCS-Py<1,>=0.8; extra == "all"
+	AliPCS-Py<1,>=0.8; extra == 'alipan'
+	AliPCS-Py<1,>=0.8; extra == 'all'
 	Brotli>=1.0.9
-	GitPython==3.1.42; extra == "all"
-	GitPython==3.1.42; extra == "docs"
-	PyYAML<7,>=6.0; extra == "all"
-	PyYAML<7,>=6.0; extra == "simulator"
-	altair<6,>=5.1.1; extra == "all"
-	altair<6,>=5.1.1; extra == "simulator"
+	GitPython==3.1.42; extra == 'all'
+	GitPython==3.1.42; extra == 'docs'
+	PyYAML<7,>=6.0; extra == 'all'
+	PyYAML<7,>=6.0; extra == 'simulator'
+	altair<6,>=5.1.1; extra == 'all'
+	altair<6,>=5.1.1; extra == 'simulator'
 	azure-identity>=1.13.0
 	azure-storage-blob<13,>=12.0.0
 	azure-storage-file-datalake<13,>=12.11.0
 	boto3<2,>=1.21.45
 	catalogue<3,>=2
-	databricks-sdk==0.29.0; extra == "all"
-	databricks-sdk==0.29.0; extra == "databricks"
-	datasets<4,>=2.4.0; extra == "all"
-	datasets<4,>=2.4.0; extra == "dev"
-	docformatter>=1.4; extra == "all"
-	docformatter>=1.4; extra == "dev"
-	docutils==0.17.1; extra == "all"
-	docutils==0.17.1; extra == "docs"
-	fastapi==0.115.6; extra == "all"
-	fastapi==0.115.6; extra == "dev"
-	furo==2022.9.29; extra == "all"
-	furo==2022.9.29; extra == "docs"
+	databricks-sdk==0.29.0; extra == 'all'
+	databricks-sdk==0.29.0; extra == 'databricks'
+	datasets<4,>=2.4.0; extra == 'all'
+	datasets<4,>=2.4.0; extra == 'dev'
+	docformatter>=1.4; extra == 'all'
+	docformatter>=1.4; extra == 'dev'
+	docutils==0.17.1; extra == 'all'
+	docutils==0.17.1; extra == 'docs'
+	fastapi==0.115.6; extra == 'all'
+	fastapi==0.115.6; extra == 'dev'
+	furo==2022.9.29; extra == 'all'
+	furo==2022.9.29; extra == 'docs'
 	google-cloud-storage<2.11.0,>=2.9.0
-	huggingface_hub<0.28,>=0.23.4; extra == "all"
-	huggingface_hub<0.28,>=0.23.4; extra == "hf"
-	humanize<5,>=4.7.0; extra == "all"
-	humanize<5,>=4.7.0; extra == "simulator"
-	jupyter==1.1.1; extra == "all"
-	jupyter==1.1.1; extra == "dev"
+	huggingface_hub<0.28,>=0.23.4; extra == 'all'
+	huggingface_hub<0.28,>=0.23.4; extra == 'hf'
+	humanize<5,>=4.7.0; extra == 'all'
+	humanize<5,>=4.7.0; extra == 'simulator'
+	jupyter==1.1.1; extra == 'all'
+	jupyter==1.1.1; extra == 'dev'
 	matplotlib<4,>=3.5.2
-	mosaicml-cli<0.8,>=0.5.25; extra == "all"
-	mosaicml-cli<0.8,>=0.5.25; extra == "testing"
-	moto<6,>=4.0; extra == "all"
-	moto<6,>=4.0; extra == "dev"
-	myst-parser==0.16.1; extra == "all"
-	myst-parser==0.16.1; extra == "docs"
-	nbsphinx==0.9.1; extra == "all"
-	nbsphinx==0.9.1; extra == "docs"
+	mosaicml-cli<0.8,>=0.5.25; extra == 'all'
+	mosaicml-cli<0.8,>=0.5.25; extra == 'testing'
+	moto<6,>=4.0; extra == 'all'
+	moto<6,>=4.0; extra == 'dev'
+	myst-parser==0.16.1; extra == 'all'
+	myst-parser==0.16.1; extra == 'docs'
+	nbsphinx==0.9.1; extra == 'all'
+	nbsphinx==0.9.1; extra == 'docs'
 	numpy<2.2.0,>=1.21.5
 	oci<3,>=2.88
-	omegaconf<3,>=2.3.0; extra == "all"
-	omegaconf<3,>=2.3.0; extra == "simulator"
-	pandas<3,>=2.0.3; extra == "all"
-	pandas<3,>=2.0.3; extra == "simulator"
-	pandoc==2.3; extra == "all"
-	pandoc==2.3; extra == "docs"
+	omegaconf<3,>=2.3.0; extra == 'all'
+	omegaconf<3,>=2.3.0; extra == 'simulator'
+	pandas<3,>=2.0.3; extra == 'all'
+	pandas<3,>=2.0.3; extra == 'simulator'
+	pandoc==2.3; extra == 'all'
+	pandoc==2.3; extra == 'docs'
 	paramiko<4,>=2.11.0
-	pre-commit<4,>=2.18.1; extra == "all"
-	pre-commit<4,>=2.18.1; extra == "dev"
-	pyarrow>14.0.0; extra == "all"
-	pyarrow>14.0.0; extra == "dev"
-	pydantic==2.10.5; extra == "all"
-	pydantic==2.10.5; extra == "dev"
-	pypandoc==1.13; extra == "all"
-	pypandoc==1.13; extra == "docs"
-	pyspark<4,>=3; extra == "all"
-	pyspark<4,>=3; extra == "spark"
-	pytest-cov<7,>=4; extra == "all"
-	pytest-cov<7,>=4; extra == "dev"
-	pytest-split==0.10.0; extra == "all"
-	pytest-split==0.10.0; extra == "dev"
-	pytest==8.3.4; extra == "all"
-	pytest==8.3.4; extra == "dev"
-	pytest_codeblocks==0.17.0; extra == "all"
-	pytest_codeblocks==0.17.0; extra == "dev"
+	pre-commit<4,>=2.18.1; extra == 'all'
+	pre-commit<4,>=2.18.1; extra == 'dev'
+	pyarrow>14.0.0; extra == 'all'
+	pyarrow>14.0.0; extra == 'dev'
+	pydantic==2.10.5; extra == 'all'
+	pydantic==2.10.5; extra == 'dev'
+	pypandoc==1.13; extra == 'all'
+	pypandoc==1.13; extra == 'docs'
+	pyspark<4,>=3; extra == 'all'
+	pyspark<4,>=3; extra == 'spark'
+	pytest-cov<7,>=4; extra == 'all'
+	pytest-cov<7,>=4; extra == 'dev'
+	pytest-split==0.10.0; extra == 'all'
+	pytest-split==0.10.0; extra == 'dev'
+	pytest==8.3.4; extra == 'all'
+	pytest==8.3.4; extra == 'dev'
+	pytest_codeblocks==0.17.0; extra == 'all'
+	pytest_codeblocks==0.17.0; extra == 'dev'
 	python-snappy<1,>=0.6.1
-	sortedcollections<3,>=2.1.0; extra == "all"
-	sortedcollections<3,>=2.1.0; extra == "simulator"
-	sphinx-argparse==0.4.0; extra == "all"
-	sphinx-argparse==0.4.0; extra == "docs"
-	sphinx-copybutton==0.5.2; extra == "all"
-	sphinx-copybutton==0.5.2; extra == "docs"
-	sphinx-tabs==3.4.5; extra == "all"
-	sphinx-tabs==3.4.5; extra == "docs"
-	sphinx==4.4.0; extra == "all"
-	sphinx==4.4.0; extra == "docs"
-	sphinxcontrib-applehelp==1.0.0; extra == "all"
-	sphinxcontrib-applehelp==1.0.0; extra == "docs"
-	sphinxcontrib-devhelp==1.0.0; extra == "all"
-	sphinxcontrib-devhelp==1.0.0; extra == "docs"
-	sphinxcontrib-htmlhelp==2.0.0; extra == "all"
-	sphinxcontrib-htmlhelp==2.0.0; extra == "docs"
-	sphinxcontrib-qthelp==1.0.0; extra == "all"
-	sphinxcontrib-qthelp==1.0.0; extra == "docs"
-	sphinxcontrib-serializinghtml==1.1.5; extra == "all"
-	sphinxcontrib-serializinghtml==1.1.5; extra == "docs"
-	sphinxcontrib.katex==0.9.6; extra == "all"
-	sphinxcontrib.katex==0.9.6; extra == "docs"
-	streamlit<2,>=1.26.0; extra == "all"
-	streamlit<2,>=1.26.0; extra == "simulator"
-	toml==0.10.2; extra == "all"
-	toml==0.10.2; extra == "dev"
+	sortedcollections<3,>=2.1.0; extra == 'all'
+	sortedcollections<3,>=2.1.0; extra == 'simulator'
+	sphinx-argparse==0.4.0; extra == 'all'
+	sphinx-argparse==0.4.0; extra == 'docs'
+	sphinx-copybutton==0.5.2; extra == 'all'
+	sphinx-copybutton==0.5.2; extra == 'docs'
+	sphinx-tabs==3.4.5; extra == 'all'
+	sphinx-tabs==3.4.5; extra == 'docs'
+	sphinx==4.4.0; extra == 'all'
+	sphinx==4.4.0; extra == 'docs'
+	sphinxcontrib-applehelp==1.0.0; extra == 'all'
+	sphinxcontrib-applehelp==1.0.0; extra == 'docs'
+	sphinxcontrib-devhelp==1.0.0; extra == 'all'
+	sphinxcontrib-devhelp==1.0.0; extra == 'docs'
+	sphinxcontrib-htmlhelp==2.0.0; extra == 'all'
+	sphinxcontrib-htmlhelp==2.0.0; extra == 'docs'
+	sphinxcontrib-qthelp==1.0.0; extra == 'all'
+	sphinxcontrib-qthelp==1.0.0; extra == 'docs'
+	sphinxcontrib-serializinghtml==1.1.5; extra == 'all'
+	sphinxcontrib-serializinghtml==1.1.5; extra == 'docs'
+	sphinxcontrib.katex==0.9.6; extra == 'all'
+	sphinxcontrib.katex==0.9.6; extra == 'docs'
+	streamlit<2,>=1.26.0; extra == 'all'
+	streamlit<2,>=1.26.0; extra == 'simulator'
+	toml==0.10.2; extra == 'all'
+	toml==0.10.2; extra == 'dev'
 	torch<3,>=1.10
 	torchvision>=0.10
 	tqdm<5,>=4.64.0
 	transformers<5,>=4.21.3
-	uvicorn==0.34.0; extra == "all"
-	uvicorn==0.34.0; extra == "dev"
-	wandb<1,>=0.15.5; extra == "all"
-	wandb<1,>=0.15.5; extra == "simulator"
+	uvicorn==0.34.0; extra == 'all'
+	uvicorn==0.34.0; extra == 'dev'
+	wandb<1,>=0.15.5; extra == 'all'
+	wandb<1,>=0.15.5; extra == 'simulator'
 	xxhash<4,>=3.0.0
-	yamllint==1.35.1; extra == "all"
-	yamllint==1.35.1; extra == "dev"
+	yamllint==1.35.1; extra == 'all'
+	yamllint==1.35.1; extra == 'dev'
 	zstd<2,>=1.5.2.5
 "
 GENERATED_RDEPEND="${RDEPEND}
@@ -135,7 +135,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-storage-blob-12.0.0[${PYTHON_USEDEP}] <dev-python/azure-storage-blob-13[${PYTHON_USEDEP}]
 	>=dev-python/azure-storage-file-datalake-12.11.0[${PYTHON_USEDEP}] <dev-python/azure-storage-file-datalake-13[${PYTHON_USEDEP}]
 	>=dev-python/boto3-1.21.45[${PYTHON_USEDEP}] <dev-python/boto3-2[${PYTHON_USEDEP}]
-	>=dev-python/brotli-1.0.9[${PYTHON_USEDEP}]
+	>=app-arch/brotli-1.0.9[python,${PYTHON_USEDEP}]
 	>=dev-python/catalogue-2[${PYTHON_USEDEP}] <dev-python/catalogue-3[${PYTHON_USEDEP}]
 	all? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
 	databricks? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )

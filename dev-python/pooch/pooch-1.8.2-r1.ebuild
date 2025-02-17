@@ -20,11 +20,11 @@ GENERATED_IUSE="progress sftp xxhash"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	packaging>=20.0
-	paramiko>=2.7.0; extra == "sftp"
+	paramiko>=2.7.0; extra == 'sftp'
 	platformdirs>=2.5.0
 	requests>=2.19.0
-	tqdm<5.0.0,>=4.41.0; extra == "progress"
-	xxhash>=1.4.3; extra == "xxhash"
+	tqdm<5.0.0,>=4.41.0; extra == 'progress'
+	xxhash>=1.4.3; extra == 'xxhash'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]

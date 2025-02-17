@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	pytest; extra == "test"
+	pytest; extra == 'test'
 	sphinx>=4
 	traitlets>=4
 "

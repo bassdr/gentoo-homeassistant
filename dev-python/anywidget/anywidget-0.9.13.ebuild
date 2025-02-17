@@ -15,19 +15,19 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	comm>=0.1.0; extra == "dev"
-	importlib-metadata; python_version < "3.8"
-	ipython<8.13; python_version < "3.9" and extra == "test"
+	comm>=0.1.0; extra == 'dev'
+	importlib-metadata; python_version < '3.8'
+	ipython<8.13; python_version < '3.9' and extra == 'test'
 	ipywidgets>=7.6.0
-	msgspec; python_version > "3.7" and extra == "test"
-	mypy==1.10.0; python_version > "3.7" and extra == "test"
+	msgspec; python_version > '3.7' and extra == 'test'
+	mypy==1.10.0; python_version > '3.7' and extra == 'test'
 	psygnal>=0.8.1
-	pydantic; extra == "test"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	ruff; extra == "test"
+	pydantic; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
 	typing-extensions>=4.2.0
-	watchfiles>=0.18.0; extra == "dev"
+	watchfiles>=0.18.0; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/ipywidgets-7.6.0[${PYTHON_USEDEP}]

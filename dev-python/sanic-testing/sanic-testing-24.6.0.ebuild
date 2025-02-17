@@ -16,10 +16,10 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	httpx>=0.18
-	pytest-asyncio; extra == "dev"
-	pytest; extra == "dev"
-	sanic>=22.12; extra == "dev"
-	setuptools; python_version > "3.11" and extra == "dev"
+	pytest-asyncio; extra == 'dev'
+	pytest; extra == 'dev'
+	sanic>=22.12; extra == 'dev'
+	setuptools; python_version > '3.11' and extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-0.18[${PYTHON_USEDEP}]

@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	boto3; extra == "aws"
-	connectorx; extra == "sql"
-	deltalake; extra == "deltalake"
+	boto3; extra == 'aws'
+	connectorx; extra == 'sql'
+	deltalake; extra == 'deltalake'
 	fsspec
-	getdaft[aws,azure,deltalake,gcp,iceberg,numpy,pandas,ray,sql,unity]; extra == "all"
-	lancedb; extra == "lance"
-	numpy; extra == "numpy"
-	packaging; extra == "iceberg"
-	packaging; extra == "ray"
-	pandas; extra == "pandas"
+	getdaft[aws,azure,deltalake,gcp,iceberg,numpy,pandas,ray,sql,unity]; extra == 'all'
+	lancedb; extra == 'lance'
+	numpy; extra == 'numpy'
+	packaging; extra == 'iceberg'
+	packaging; extra == 'ray'
+	pandas; extra == 'pandas'
 	pyarrow>=8.0.0
-	pyarrow>=8.0.0; extra == "hudi"
-	pyiceberg>=0.4.0; extra == "iceberg"
-	ray[client,data]>=2.0.0; platform_system != "Windows" and extra == "ray"
-	ray[client,data]>=2.10.0; platform_system == "Windows" and extra == "ray"
-	sqlalchemy; extra == "sql"
-	sqlglot; extra == "sql"
+	pyarrow>=8.0.0; extra == 'hudi'
+	pyiceberg>=0.4.0; extra == 'iceberg'
+	ray[client,data]>=2.0.0; platform_system != 'Windows' and extra == 'ray'
+	ray[client,data]>=2.10.0; platform_system == 'Windows' and extra == 'ray'
+	sqlalchemy; extra == 'sql'
+	sqlglot; extra == 'sql'
 	tqdm
-	typing-extensions>=4.0.0; python_version < "3.10"
-	unitycatalog; extra == "unity"
+	typing-extensions>=4.0.0; python_version < '3.10'
+	unitycatalog; extra == 'unity'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	aws? ( dev-python/boto3[${PYTHON_USEDEP}] )

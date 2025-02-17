@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	bokeh==3.*
-	flake8; extra == "tests"
+	flake8; extra == 'tests'
 	ipywidgets==8.*
-	jupyter-bokeh[build]; extra == "all"
-	jupyter-bokeh[tests]; extra == "all"
-	jupyterlab~=4.0; extra == "build"
-	pytest; extra == "tests"
-	setuptools>=40.8.0; extra == "build"
+	jupyter-bokeh[build]; extra == 'all'
+	jupyter-bokeh[tests]; extra == 'all'
+	jupyterlab~=4.0; extra == 'build'
+	pytest; extra == 'tests'
+	setuptools>=40.8.0; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/bokeh-3*[${PYTHON_USEDEP}]

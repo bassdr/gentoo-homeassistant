@@ -18,8 +18,8 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	httpx==0.28.*
-	pytest-asyncio==0.24.*; extra == "testing"
-	pytest-cov==6.*; extra == "testing"
+	pytest-asyncio==0.24.*; extra == 'testing'
+	pytest-cov==6.*; extra == 'testing'
 	pytest==8.*
 "
 GENERATED_RDEPEND="${RDEPEND}

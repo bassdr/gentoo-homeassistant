@@ -30,7 +30,7 @@ REQUIRES_DIST="
 	simplejson
 	six
 	typing-extensions
-	typing; python_version<"3.5"
+	typing; python_version<'3.5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	integration-tests? ( dev-python/bottle[${PYTHON_USEDEP}] )

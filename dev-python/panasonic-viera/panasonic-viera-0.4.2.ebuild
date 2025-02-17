@@ -15,8 +15,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
 	aiohttp<4.0.0,>=3.9.5
@@ -28,13 +26,11 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pycryptodome-3.20.0[${PYTHON_USEDEP}] <dev-python/pycryptodome-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/xmltodict-0.13.0[${PYTHON_USEDEP}] <dev-python/xmltodict-0.14.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/pycryptodome[${PYTHON_USEDEP}]
-	dev-python/xmltodict[${PYTHON_USEDEP}]"
-BDEPEND="
+RDEPEND="${GENERATED_RDEPEND}"
+
+distutils_enable_tests pytest
+
+BDEPEND+="
 	test? (
 		dev-python/ruff[${PYTHON_USEDEP}]
 	)"
-
-distutils_enable_tests pytest

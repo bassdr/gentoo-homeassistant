@@ -19,7 +19,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	coverage[toml]!=6.0.*,!=6.1,!=6.1.1,<8.0,>=5.0
 	docopt<0.7.0,>=0.6.1
-	pyyaml<7.0,>=3.10; extra == "yaml"
+	pyyaml<7.0,>=3.10; extra == 'yaml'
 	requests<3.0.0,>=1.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

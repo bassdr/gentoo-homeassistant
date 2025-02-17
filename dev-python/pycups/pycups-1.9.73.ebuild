@@ -7,7 +7,8 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/OpenPrinting/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 DESCRIPTION=""
 HOMEPAGE="

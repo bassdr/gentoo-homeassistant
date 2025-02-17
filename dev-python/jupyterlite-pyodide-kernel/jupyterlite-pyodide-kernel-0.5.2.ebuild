@@ -17,24 +17,24 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "dev"
-	hatch; extra == "dev"
-	ipywidgets<9,>=8.1.3; extra == "docs"
-	jupyter-server-mathjax; extra == "docs"
-	jupyterlab-language-pack-fr-fr; extra == "docs"
-	jupyterlab-language-pack-zh-cn; extra == "docs"
-	jupyterlab<4.4.0a0,>=4.3.3; extra == "dev"
+	build; extra == 'dev'
+	hatch; extra == 'dev'
+	ipywidgets<9,>=8.1.3; extra == 'docs'
+	jupyter-server-mathjax; extra == 'docs'
+	jupyterlab-language-pack-fr-fr; extra == 'docs'
+	jupyterlab-language-pack-zh-cn; extra == 'docs'
+	jupyterlab<4.4.0a0,>=4.3.3; extra == 'dev'
 	jupyterlite-core<0.6.0,>=0.5.0
-	libarchive-c; extra == "docs"
-	myst-parser; extra == "docs"
+	libarchive-c; extra == 'docs'
+	myst-parser; extra == 'docs'
 	pkginfo
-	pydata-sphinx-theme; extra == "docs"
-	pytest-console-scripts>=1.4.0; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-html; extra == "test"
-	pytest; extra == "test"
-	ruff>=0.3.0; extra == "lint"
-	sphinx-copybutton; extra == "docs"
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-console-scripts>=1.4.0; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-html; extra == 'test'
+	pytest; extra == 'test'
+	ruff>=0.3.0; extra == 'lint'
+	sphinx-copybutton; extra == 'docs'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/ipywidgets-8.1.3[${PYTHON_USEDEP}] <dev-python/ipywidgets-9[${PYTHON_USEDEP}] )

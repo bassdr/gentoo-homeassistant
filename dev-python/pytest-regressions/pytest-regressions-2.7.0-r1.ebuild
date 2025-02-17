@@ -19,24 +19,24 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="dataframe image num"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	matplotlib; extra == "dev"
-	mypy; extra == "dev"
-	numpy; extra == "dataframe"
-	numpy; extra == "dev"
-	numpy; extra == "image"
-	numpy; extra == "num"
-	pandas; extra == "dataframe"
-	pandas; extra == "dev"
-	pandas; extra == "num"
-	pillow; extra == "dev"
-	pillow; extra == "image"
-	pre-commit; extra == "dev"
-	pyarrow; extra == "dev"
+	matplotlib; extra == 'dev'
+	mypy; extra == 'dev'
+	numpy; extra == 'dataframe'
+	numpy; extra == 'dev'
+	numpy; extra == 'image'
+	numpy; extra == 'num'
+	pandas; extra == 'dataframe'
+	pandas; extra == 'dev'
+	pandas; extra == 'num'
+	pillow; extra == 'dev'
+	pillow; extra == 'image'
+	pre-commit; extra == 'dev'
+	pyarrow; extra == 'dev'
 	pytest-datadir>=1.2.0
 	pytest>=6.2.0
 	pyyaml
-	restructuredtext-lint; extra == "dev"
-	tox; extra == "dev"
+	restructuredtext-lint; extra == 'dev'
+	tox; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dataframe? ( dev-python/numpy[${PYTHON_USEDEP}] )

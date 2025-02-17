@@ -6,7 +6,6 @@ EAPI=8
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
-
 DESCRIPTION="Pythonic bindings for FFmpeg's libraries."
 HOMEPAGE="
   https://pypi.org/project/av/
@@ -18,18 +17,14 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
 RDEPEND="!dev-python/ha-av
-	media-video/ffmpeg
+	<media-video/ffmpeg-7
 	dev-python/ha-ffmpeg[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+
+PATCHES=( "${FILESDIR}/${PN}-13.1.0-ffmpeg6.patch" )
 
 python_test() {
 	py.test -v -v || die

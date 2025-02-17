@@ -17,30 +17,30 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	ansi2html; extra == "test"
-	diffoscope; sys_platform == "linux" and extra == "test"
+	ansi2html; extra == 'test'
+	diffoscope; sys_platform == 'linux' and extra == 'test'
 	doit<1,>=0.34
-	importlib-metadata>=3.6; python_version < "3.10"
-	jsonschema>=3; extra == "all"
-	jsonschema[format-nongpl]>=3; extra == "check"
+	importlib-metadata>=3.6; python_version < '3.10'
+	jsonschema>=3; extra == 'all'
+	jsonschema[format-nongpl]>=3; extra == 'check'
 	jupyter-core>=4.7
-	jupyter-server; extra == "all"
-	jupyter-server; extra == "contents"
-	jupyterlab-server<3,>=2.8.1; extra == "all"
-	jupyterlab-server<3,>=2.8.1; extra == "translation"
-	jupyterlab<4.4,>=4.3.4; extra == "all"
-	jupyterlab<4.4,>=4.3.4; extra == "lab"
-	libarchive-c>=4.0; extra == "all"
-	libarchive-c>=4.0; extra == "libarchive"
-	notebook<7.4,>=7.3.2; extra == "all"
-	notebook<7.4,>=7.3.2; extra == "lab"
-	pkginfo; extra == "all"
-	pytest-console-scripts; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-html; extra == "test"
-	pytest-xdist; extra == "test"
-	tornado>=6.1; extra == "all"
-	tornado>=6.1; extra == "serve"
+	jupyter-server; extra == 'all'
+	jupyter-server; extra == 'contents'
+	jupyterlab-server<3,>=2.8.1; extra == 'all'
+	jupyterlab-server<3,>=2.8.1; extra == 'translation'
+	jupyterlab<4.4,>=4.3.4; extra == 'all'
+	jupyterlab<4.4,>=4.3.4; extra == 'lab'
+	libarchive-c>=4.0; extra == 'all'
+	libarchive-c>=4.0; extra == 'libarchive'
+	notebook<7.4,>=7.3.2; extra == 'all'
+	notebook<7.4,>=7.3.2; extra == 'lab'
+	pkginfo; extra == 'all'
+	pytest-console-scripts; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-html; extra == 'test'
+	pytest-xdist; extra == 'test'
+	tornado>=6.1; extra == 'all'
+	tornado>=6.1; extra == 'serve'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/doit-0.34[${PYTHON_USEDEP}] <dev-python/doit-1[${PYTHON_USEDEP}]

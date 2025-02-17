@@ -18,19 +18,19 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	dulwich
-	dvc-studio-client[docs,tests]; extra == "dev"
-	mkdocs-gen-files<1,>=0.5.0; extra == "docs"
-	mkdocs-material<10,>=9.3.1; extra == "docs"
-	mkdocs-section-index<1,>=0.3.6; extra == "docs"
-	mkdocs<2,>=1.5.2; extra == "docs"
-	mkdocstrings-python<2,>=1.6.3; extra == "docs"
-	mypy==1.10.1; extra == "dev"
-	pytest-cov>=4.1.0; extra == "tests"
-	pytest-mock; extra == "tests"
-	pytest-sugar; extra == "tests"
-	pytest<9,>=7; extra == "tests"
+	dvc-studio-client[docs,tests]; extra == 'dev'
+	mkdocs-gen-files<1,>=0.5.0; extra == 'docs'
+	mkdocs-material<10,>=9.3.1; extra == 'docs'
+	mkdocs-section-index<1,>=0.3.6; extra == 'docs'
+	mkdocs<2,>=1.5.2; extra == 'docs'
+	mkdocstrings-python<2,>=1.6.3; extra == 'docs'
+	mypy==1.10.1; extra == 'dev'
+	pytest-cov>=4.1.0; extra == 'tests'
+	pytest-mock; extra == 'tests'
+	pytest-sugar; extra == 'tests'
+	pytest<9,>=7; extra == 'tests'
 	requests
-	types-requests; extra == "dev"
+	types-requests; extra == 'dev'
 	voluptuous
 "
 GENERATED_RDEPEND="${RDEPEND}

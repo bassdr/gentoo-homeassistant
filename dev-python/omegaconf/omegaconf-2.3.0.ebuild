@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyYAML (>=5.1.0)
 	antlr4-python3-runtime (==4.9.*)
-	dataclasses ; python_version == "3.6"
+	dataclasses ; python_version == '3.6'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	=dev-python/antlr4-python3-runtime-4.9*[${PYTHON_USEDEP}]

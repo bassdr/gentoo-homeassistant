@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
 	platformdirs>=3.5.1
-	tomli>=2.0.1; python_version < "3.11"
+	tomli>=2.0.1; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/platformdirs-3.5.1[${PYTHON_USEDEP}]

@@ -19,26 +19,26 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs json-logging"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
-	coverage; extra == "test"
+	coverage; extra == 'test'
 	ipykernel
 	ipython-genutils
-	json-logging; extra == "json-logging"
-	myst-parser; extra == "docs"
-	nbsphinx; extra == "docs"
-	nbval; extra == "test"
+	json-logging; extra == 'json-logging'
+	myst-parser; extra == 'docs'
+	nbsphinx; extra == 'docs'
+	nbval; extra == 'test'
 	nest-asyncio>=1.5
 	notebook-shim>=0.2.3
-	pytest-cov; extra == "test"
-	pytest-jupyter; extra == "test"
-	pytest-playwright; extra == "test"
-	pytest-tornasync; extra == "test"
-	pytest; extra == "test"
-	requests-unixsocket; sys_platform != "win32" and extra == "test"
-	requests; extra == "test"
-	sphinx-rtd-theme; extra == "docs"
-	sphinx; extra == "docs"
-	sphinxcontrib-github-alt; extra == "docs"
-	testpath; extra == "test"
+	pytest-cov; extra == 'test'
+	pytest-jupyter; extra == 'test'
+	pytest-playwright; extra == 'test'
+	pytest-tornasync; extra == 'test'
+	pytest; extra == 'test'
+	requests-unixsocket; sys_platform != 'win32' and extra == 'test'
+	requests; extra == 'test'
+	sphinx-rtd-theme; extra == 'docs'
+	sphinx; extra == 'docs'
+	sphinxcontrib-github-alt; extra == 'docs'
+	testpath; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/ipykernel[${PYTHON_USEDEP}]

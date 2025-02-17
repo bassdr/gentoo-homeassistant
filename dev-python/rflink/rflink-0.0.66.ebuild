@@ -26,7 +26,7 @@ REQUIRES_DIST="
 	docopt
 	pyserial
 	pyserial-asyncio
-	typing ; python_version < "3.5"
+	typing ; python_version < '3.5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/async-timeout[${PYTHON_USEDEP}]

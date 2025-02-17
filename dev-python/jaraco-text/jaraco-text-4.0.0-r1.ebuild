@@ -22,24 +22,24 @@ GENERATED_IUSE="doc inflect"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	autocommand
-	furo; extra == "doc"
-	importlib-resources; python_version < "3.9"
-	inflect; extra == "inflect"
+	furo; extra == 'doc'
+	importlib-resources; python_version < '3.9'
+	inflect; extra == 'inflect'
 	jaraco.context>=4.1
 	jaraco.functools
-	jaraco.packaging>=9.3; extra == "doc"
-	jaraco.tidelift>=1.4; extra == "doc"
+	jaraco.packaging>=9.3; extra == 'doc'
+	jaraco.tidelift>=1.4; extra == 'doc'
 	more-itertools
-	pathlib2; python_version < "3.10" and extra == "test"
-	pytest!=8.1.*,>=6; extra == "test"
-	pytest-checkdocs>=2.4; extra == "test"
-	pytest-cov; extra == "test"
-	pytest-enabler>=2.2; extra == "test"
-	pytest-mypy; extra == "test"
-	pytest-ruff>=0.2.1; sys_platform != "cygwin" and extra == "test"
-	rst.linker>=1.9; extra == "doc"
-	sphinx-lint; extra == "doc"
-	sphinx>=3.5; extra == "doc"
+	pathlib2; python_version < '3.10' and extra == 'test'
+	pytest!=8.1.*,>=6; extra == 'test'
+	pytest-checkdocs>=2.4; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-enabler>=2.2; extra == 'test'
+	pytest-mypy; extra == 'test'
+	pytest-ruff>=0.2.1; sys_platform != 'cygwin' and extra == 'test'
+	rst.linker>=1.9; extra == 'doc'
+	sphinx-lint; extra == 'doc'
+	sphinx>=3.5; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/autocommand[${PYTHON_USEDEP}]

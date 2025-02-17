@@ -18,10 +18,10 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	Sphinx (>=3.0)
 	Sphinx (>=3.2.0) ; extra == 'test'
-	dataclasses ; (python_version == "3.6") and extra == 'test'
+	dataclasses ; (python_version == '3.6') and extra == 'test'
 	pytest (>=3.1.0) ; extra == 'test'
 	sphobjinv (>=2.0) ; extra == 'test'
-	typed-ast (>=1.4.0) ; (python_version < "3.8") and extra == 'type_comments'
+	typed-ast (>=1.4.0) ; (python_version < '3.8') and extra == 'type_comments'
 	typing-extensions (>=3.5) ; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}

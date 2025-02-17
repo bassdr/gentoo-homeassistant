@@ -17,37 +17,37 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	asv-bench-memray; extra == "plugs"
+	asv-bench-memray; extra == 'plugs'
 	asv-runner>=v0.2.1
 	build
-	colorama; platform_system == "Windows"
-	feedparser; extra == "test"
-	filelock; extra == "test"
-	flaky; extra == "test"
-	isort>=5.11.5; extra == "dev"
+	colorama; platform_system == 'Windows'
+	feedparser; extra == 'test'
+	filelock; extra == 'test'
+	flaky; extra == 'test'
+	isort>=5.11.5; extra == 'dev'
 	json5
-	numpy; extra == "test"
-	packaging; extra == "virtualenv"
-	pympler; platform_python_implementation != "PyPy"
-	pytest-rerunfailures; extra == "test"
-	pytest-rerunfailures>=10.0; extra == "test"
-	pytest-timeout; extra == "test"
-	pytest-xdist; extra == "test"
-	pytest; extra == "test"
-	python-hglib; extra == "hg"
-	python-hglib; platform_system != "Windows" and extra == "test"
-	pyyaml; platform_python_implementation != "PyPy"
-	rpy2; (platform_system != "Windows" and platform_python_implementation != "PyPy") and extra == "test"
-	ruff; extra == "dev"
-	scipy; platform_python_implementation != "PyPy" and extra == "test"
-	selenium; extra == "test"
-	sphinx-bootstrap-theme; extra == "doc"
-	sphinx; extra == "doc"
+	numpy; extra == 'test'
+	packaging; extra == 'virtualenv'
+	pympler; platform_python_implementation != 'PyPy'
+	pytest-rerunfailures; extra == 'test'
+	pytest-rerunfailures>=10.0; extra == 'test'
+	pytest-timeout; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
+	python-hglib; extra == 'hg'
+	python-hglib; platform_system != 'Windows' and extra == 'test'
+	pyyaml; platform_python_implementation != 'PyPy'
+	rpy2; (platform_system != 'Windows' and platform_python_implementation != 'PyPy') and extra == 'test'
+	ruff; extra == 'dev'
+	scipy; platform_python_implementation != 'PyPy' and extra == 'test'
+	selenium; extra == 'test'
+	sphinx-bootstrap-theme; extra == 'doc'
+	sphinx; extra == 'doc'
 	tabulate
-	tomli; python_version < "3.11"
+	tomli; python_version < '3.11'
 	virtualenv
-	virtualenv; extra == "test"
-	virtualenv; extra == "virtualenv"
+	virtualenv; extra == 'test'
+	virtualenv; extra == 'virtualenv'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	plugs? ( dev-python/asv-bench-memray[${PYTHON_USEDEP}] )

@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	astor>=0.1
 	flake8>=3.7
-	importlib-metadata>=0.9; python_version < "3.8"
+	importlib-metadata>=0.9; python_version < '3.8'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/astor-0.1[${PYTHON_USEDEP}]

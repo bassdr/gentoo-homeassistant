@@ -18,13 +18,13 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	aiohttp
-	aiohttp_openmetrics; extra == "prometheus"
+	aiohttp_openmetrics; extra == 'prometheus'
 	defusedxml
 	dulwich>=0.21.6
 	icalendar>=5.0.4
 	jinja2
 	multidict
-	systemd_python; extra == "systemd"
+	systemd_python; extra == 'systemd'
 	vobject
 "
 GENERATED_RDEPEND="${RDEPEND}

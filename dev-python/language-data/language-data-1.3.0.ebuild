@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	build; extra == "build"
+	build; extra == 'build'
 	marisa-trie>=1.1.0
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	twine; extra == "build"
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	twine; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	build? ( dev-python/build[${PYTHON_USEDEP}] )

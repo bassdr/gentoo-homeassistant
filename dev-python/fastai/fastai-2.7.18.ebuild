@@ -15,43 +15,43 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	accelerate>=0.21; extra == "dev"
-	albumentations; extra == "dev"
-	captum>=0.4.1; extra == "dev"
-	catalyst; extra == "dev"
-	comet-ml; extra == "dev"
+	accelerate>=0.21; extra == 'dev'
+	albumentations; extra == 'dev'
+	captum>=0.4.1; extra == 'dev'
+	catalyst; extra == 'dev'
+	comet-ml; extra == 'dev'
 	fastcore<1.8,>=1.5.29
 	fastdownload<2,>=0.0.5
 	fastprogress>=0.2.4
-	flask-compress; extra == "dev"
-	flask; extra == "dev"
-	ipykernel; extra == "dev"
-	ipywidgets; extra == "dev"
-	kornia; extra == "dev"
-	lightning; extra == "dev"
+	flask-compress; extra == 'dev'
+	flask; extra == 'dev'
+	ipykernel; extra == 'dev'
+	ipywidgets; extra == 'dev'
+	kornia; extra == 'dev'
+	lightning; extra == 'dev'
 	matplotlib
-	ninja; extra == "dev"
-	opencv-python; extra == "dev"
+	ninja; extra == 'dev'
+	opencv-python; extra == 'dev'
 	packaging
 	pandas
 	pillow>=9.0.0
 	pip
-	pyarrow; extra == "dev"
-	pydicom; extra == "dev"
-	pytorch-ignite; extra == "dev"
+	pyarrow; extra == 'dev'
+	pydicom; extra == 'dev'
+	pytorch-ignite; extra == 'dev'
 	pyyaml
 	requests
-	scikit-image; extra == "dev"
+	scikit-image; extra == 'dev'
 	scikit-learn
 	scipy
-	sentencepiece; extra == "dev"
+	sentencepiece; extra == 'dev'
 	spacy<4
-	tensorboard; extra == "dev"
-	timm>=0.9; extra == "dev"
+	tensorboard; extra == 'dev'
+	timm>=0.9; extra == 'dev'
 	torch<2.6,>=1.10
 	torchvision>=0.11
-	transformers; extra == "dev"
-	wandb; extra == "dev"
+	transformers; extra == 'dev'
+	wandb; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/fastcore-1.5.29[${PYTHON_USEDEP}] <dev-python/fastcore-1.8[${PYTHON_USEDEP}]

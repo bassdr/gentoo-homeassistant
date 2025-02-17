@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	configparser (~=3.2) ; python_version < "3"
+	configparser (~=3.2) ; python_version < '3'
 	fs (~=2.2)
 	pysmb (!=1.1.26,!=1.1.29,<=1.2.9.1,>=1.1.22)
 	setuptools (>=38.3.0)

@@ -24,16 +24,16 @@ IUSE="${GENERATED_IUSE} test-rust"
 
 REQUIRES_DIST="
 	attrs>=23.1.0
-	cbor2>=5.4.6; extra == "cbor2"
-	exceptiongroup>=1.1.1; python_version < "3.11"
-	msgpack>=1.0.5; extra == "msgpack"
-	msgspec>=0.18.5; implementation_name == "cpython" and extra == "msgspec"
-	orjson>=3.9.2; implementation_name == "cpython" and extra == "orjson"
-	pymongo>=4.4.0; extra == "bson"
-	pyyaml>=6.0; extra == "pyyaml"
-	tomlkit>=0.11.8; extra == "tomlkit"
-	typing-extensions!=4.6.3,>=4.1.0; python_version < "3.11"
-	ujson>=5.7.0; extra == "ujson"
+	cbor2>=5.4.6; extra == 'cbor2'
+	exceptiongroup>=1.1.1; python_version < '3.11'
+	msgpack>=1.0.5; extra == 'msgpack'
+	msgspec>=0.18.5; implementation_name == 'cpython' and extra == 'msgspec'
+	orjson>=3.9.2; implementation_name == 'cpython' and extra == 'orjson'
+	pymongo>=4.4.0; extra == 'bson'
+	pyyaml>=6.0; extra == 'pyyaml'
+	tomlkit>=0.11.8; extra == 'tomlkit'
+	typing-extensions!=4.6.3,>=4.1.0; python_version < '3.11'
+	ujson>=5.7.0; extra == 'ujson'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-23.1.0[${PYTHON_USEDEP}]

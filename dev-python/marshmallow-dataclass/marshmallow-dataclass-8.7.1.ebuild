@@ -23,16 +23,16 @@ DOCS="README.md"
 
 REQUIRES_DIST="
 	marshmallow>=3.18.0
-	pre-commit~=2.17; extra == "dev"
-	pre-commit~=2.17; extra == "lint"
-	pytest-mypy-plugins>=1.2.0; implementation_name != "pypy" and extra == "dev"
-	pytest-mypy-plugins>=1.2.0; implementation_name != "pypy" and extra == "tests"
-	pytest>=5.4; extra == "dev"
-	pytest>=5.4; extra == "tests"
-	sphinx; extra == "dev"
-	sphinx; extra == "docs"
+	pre-commit~=2.17; extra == 'dev'
+	pre-commit~=2.17; extra == 'lint'
+	pytest-mypy-plugins>=1.2.0; implementation_name != 'pypy' and extra == 'dev'
+	pytest-mypy-plugins>=1.2.0; implementation_name != 'pypy' and extra == 'tests'
+	pytest>=5.4; extra == 'dev'
+	pytest>=5.4; extra == 'tests'
+	sphinx; extra == 'dev'
+	sphinx; extra == 'docs'
 	typeguard<5,>=4.0
-	typing-extensions>=4.2.0; python_version < "3.11"
+	typing-extensions>=4.2.0; python_version < '3.11'
 	typing-inspect>=0.9.0
 "
 GENERATED_RDEPEND="${RDEPEND}

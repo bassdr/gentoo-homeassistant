@@ -19,20 +19,20 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	PyYAML<7,>=5.3
 	click<9,>=8.0.0
-	docker; extra == "all"
+	docker; extra == 'all'
 	docstring-parser<1,>=0.7.3
 	google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5
 	google-auth<3,>=1.6.1
 	google-cloud-storage<3,>=2.2.1
-	kfp-kubernetes<2; extra == "all"
-	kfp-kubernetes<2; extra == "kubernetes"
+	kfp-kubernetes<2; extra == 'all'
+	kfp-kubernetes<2; extra == 'kubernetes'
 	kfp-pipeline-spec==0.6.0
 	kfp-server-api<2.4.0,>=2.1.0
 	kubernetes<31,>=8.0.0
 	protobuf<5,>=4.21.1
 	requests-toolbelt<1,>=0.8.0
 	tabulate<1,>=0.8.6
-	typing-extensions<5,>=3.7.4; python_version < "3.9"
+	typing-extensions<5,>=3.7.4; python_version < '3.9'
 	urllib3<2.0.0
 "
 GENERATED_RDEPEND="${RDEPEND}

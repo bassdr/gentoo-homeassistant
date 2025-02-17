@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	GitPython; extra == "tests"
+	GitPython; extra == 'tests'
 	accelerate<0.34.0,>=0.33.0
-	datasets; extra == "tests"
+	datasets; extra == 'tests'
 	diffusers<0.32.0,>=0.31.0
-	hf_doc_builder; extra == "quality"
+	hf_doc_builder; extra == 'quality'
 	huggingface_hub>=0.24.7
 	optimum
-	optuna; extra == "tests"
-	parameterized; extra == "tests"
-	peft; extra == "tests"
-	psutil; extra == "tests"
-	pytest<8.0.0; extra == "tests"
-	ruff; extra == "quality"
-	safetensors; extra == "tests"
-	scipy; extra == "tests"
+	optuna; extra == 'tests'
+	parameterized; extra == 'tests'
+	peft; extra == 'tests'
+	psutil; extra == 'tests'
+	pytest<8.0.0; extra == 'tests'
+	ruff; extra == 'quality'
+	safetensors; extra == 'tests'
+	scipy; extra == 'tests'
 	sentence-transformers==3.2.1
-	sentencepiece; extra == "tests"
-	timm; extra == "tests"
+	sentencepiece; extra == 'tests'
+	timm; extra == 'tests'
 	torch
-	torchsde; extra == "tests"
+	torchsde; extra == 'tests'
 	transformers<4.46.0,>=4.45.2
 "
 GENERATED_RDEPEND="${RDEPEND}

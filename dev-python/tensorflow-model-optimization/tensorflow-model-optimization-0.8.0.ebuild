@@ -18,7 +18,7 @@ KEYWORDS="amd64 arm64"
 REQUIRES_DIST="
 	absl-py ~=1.2
 	dm-tree ~=0.1.1
-	enum34 ~=1.1 ; python_version < "3.4"
+	enum34 ~=1.1 ; python_version < '3.4'
 	numpy ~=1.23
 	six ~=1.14
 "

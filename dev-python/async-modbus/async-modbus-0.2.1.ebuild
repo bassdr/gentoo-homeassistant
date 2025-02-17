@@ -19,8 +19,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="numpy"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.md"
 
@@ -37,13 +36,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	numpy? ( >=dev-python/numpy-1.1[${PYTHON_USEDEP}] )
 	>=dev-python/umodbus-1.0.4[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/connio-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/uModbus-1.0.4[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+RDEPEND="${GENERATED_RDEPEND}"
 
 python_test() {
 	py.test -v -v || die

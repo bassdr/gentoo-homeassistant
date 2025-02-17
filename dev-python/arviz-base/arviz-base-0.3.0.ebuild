@@ -17,26 +17,26 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	cloudpickle; extra == "ci"
-	h5netcdf; extra == "h5netcdf"
-	jupyter-sphinx; extra == "doc"
-	myst-nb; extra == "doc"
-	myst-parser[linkify]; extra == "doc"
-	netcdf4; extra == "doc"
-	netcdf4; extra == "netcdf4"
+	cloudpickle; extra == 'ci'
+	h5netcdf; extra == 'h5netcdf'
+	jupyter-sphinx; extra == 'doc'
+	myst-nb; extra == 'doc'
+	myst-parser[linkify]; extra == 'doc'
+	netcdf4; extra == 'doc'
+	netcdf4; extra == 'netcdf4'
 	numpy>=1.24
-	numpydoc; extra == "doc"
-	pre-commit; extra == "ci"
-	pytest-cov; extra == "test"
-	pytest; extra == "test"
-	sphinx-book-theme; extra == "doc"
-	sphinx-copybutton; extra == "doc"
-	sphinx-design; extra == "doc"
-	sphinx>=5; extra == "doc"
+	numpydoc; extra == 'doc'
+	pre-commit; extra == 'ci'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	sphinx-book-theme; extra == 'doc'
+	sphinx-copybutton; extra == 'doc'
+	sphinx-design; extra == 'doc'
+	sphinx>=5; extra == 'doc'
 	typing-extensions>=3.10
 	xarray-datatree<0.0.15
 	xarray<2024.9.1,>=2022.6.0
-	zarr; extra == "zarr"
+	zarr; extra == 'zarr'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	ci? ( dev-python/cloudpickle[${PYTHON_USEDEP}] )

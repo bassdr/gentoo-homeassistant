@@ -69,9 +69,9 @@ REQUIRES_DIST="
 	starlette >=0.19.1 ; extra == 'starlette'
 	starlite >=1.48 ; extra == 'starlite'
 	tornado >=5 ; extra == 'tornado'
-	urllib3 >=1.25.7 ; python_version <= "3.4"
-	urllib3 >=1.26.11 ; python_version >= "3.6"
-	urllib3 >=1.26.9 ; python_version == "3.5"
+	urllib3 >=1.25.7 ; python_version <= '3.4'
+	urllib3 >=1.26.11 ; python_version >= '3.6'
+	urllib3 >=1.26.9 ; python_version == '3.5'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	aiohttp? ( >=dev-python/aiohttp-3.5[${PYTHON_USEDEP}] )

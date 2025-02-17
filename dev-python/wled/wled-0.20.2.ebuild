@@ -32,9 +32,9 @@ REQUIRES_DIST="
 	cachetools>=4.0.0
 	mashumaro<4.0,>=3.13
 	orjson>=3.9.8
-	typer[all]<0.13.0,>=0.12.3; extra == "cli"
+	typer[all]<0.13.0,>=0.12.3; extra == 'cli'
 	yarl>=1.6.0
-	zeroconf[all]<0.133.0,>=0.132.2; extra == "cli"
+	zeroconf[all]<0.133.0,>=0.132.2; extra == 'cli'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/aiohttp-3.0.0[${PYTHON_USEDEP}]

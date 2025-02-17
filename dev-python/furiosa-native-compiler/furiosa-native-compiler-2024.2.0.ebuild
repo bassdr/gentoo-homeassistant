@@ -17,12 +17,12 @@ KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
 	furiosa-torch-ext==2024.2.0
-	pytest-asyncio~=0.21; extra == "test"
-	pytest~=7.3; extra == "test"
+	pytest-asyncio~=0.21; extra == 'test'
+	pytest~=7.3; extra == 'test'
 	pyyaml==6.0.1
-	requests==2.29.0; extra == "test"
+	requests==2.29.0; extra == 'test'
 	torch==2.4.1
-	transformers==4.44.2; extra == "test"
+	transformers==4.44.2; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	~dev-python/furiosa-torch-ext-2024.2.0[${PYTHON_USEDEP}]

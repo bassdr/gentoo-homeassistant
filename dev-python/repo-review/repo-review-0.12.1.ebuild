@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	click>=8; extra == "cli"
+	click>=8; extra == 'cli'
 	markdown-it-py
 	pyyaml
-	rich-click; extra == "cli"
-	rich>=12.2; extra == "cli"
-	tomli; python_version < "3.11"
-	typing-extensions; python_version < "3.11"
+	rich-click; extra == 'cli'
+	rich>=12.2; extra == 'cli'
+	tomli; python_version < '3.11'
+	typing-extensions; python_version < '3.11'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/click-8[${PYTHON_USEDEP}] )

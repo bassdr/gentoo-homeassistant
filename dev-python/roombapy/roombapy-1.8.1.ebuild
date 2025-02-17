@@ -23,11 +23,11 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 REQUIRES_DIST="
-	click<9.0,>=8.1; extra == "cli"
+	click<9.0,>=8.1; extra == 'cli'
 	mashumaro<4.0,>=3.12
 	orjson>=3.9.13
 	paho-mqtt<1.7.0,>=1.6.1
-	tabulate<0.10,>=0.9; extra == "cli"
+	tabulate<0.10,>=0.9; extra == 'cli'
 "
 GENERATED_RDEPEND="${RDEPEND}
 	cli? ( >=dev-python/click-8.1[${PYTHON_USEDEP}] <dev-python/click-9.0[${PYTHON_USEDEP}] )

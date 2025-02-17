@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 REQUIRES_DIST="
-	defusedxml; extra == "test"
-	pytest; extra == "test"
+	defusedxml; extra == 'test'
+	pytest; extra == 'test'
 	sphinx>=2
 "
 GENERATED_RDEPEND="${RDEPEND}

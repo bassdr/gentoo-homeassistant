@@ -23,12 +23,12 @@ GENERATED_IUSE="berkeleydb html lxml networkx orjson"
 IUSE="${GENERATED_IUSE} examples sqlite"
 
 REQUIRES_DIST="
-	berkeleydb<19.0.0,>=18.1.0; extra == "berkeleydb"
-	html5rdf<2,>=1.2; extra == "html"
-	isodate<1.0.0,>=0.7.2; python_version < "3.11"
-	lxml<6.0,>=4.3; extra == "lxml"
-	networkx<4,>=2; extra == "networkx"
-	orjson<4,>=3.9.14; extra == "orjson"
+	berkeleydb<19.0.0,>=18.1.0; extra == 'berkeleydb'
+	html5rdf<2,>=1.2; extra == 'html'
+	isodate<1.0.0,>=0.7.2; python_version < '3.11'
+	lxml<6.0,>=4.3; extra == 'lxml'
+	networkx<4,>=2; extra == 'networkx'
+	orjson<4,>=3.9.14; extra == 'orjson'
 	pyparsing<4,>=2.1.0
 "
 GENERATED_RDEPEND="${RDEPEND}
