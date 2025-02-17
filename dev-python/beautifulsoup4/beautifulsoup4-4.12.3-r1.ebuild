@@ -38,9 +38,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>dev-python/soupsieve-1.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/soupsieve-1.3[${PYTHON_USEDEP}]
-	dev-python/html5lib[${PYTHON_USEDEP}]
-	dev-python/lxml[${PYTHON_USEDEP}]
+	!dev-python/bs4
 "
 # bs4 prefers cchardet > chardet > charset-normalizer
 # however, charset-normalizer causes test failures, so force the other two

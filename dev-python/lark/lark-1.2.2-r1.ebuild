@@ -22,7 +22,7 @@ KEYWORDS="amd64 arm64"
 # dev-python/regex doesn't support pypy
 GENERATED_IUSE="atomic-cache interegular nearley regex"
 IUSE="${GENERATED_IUSE}"
-RDEPEND=""
+RDEPEND="!dev-python/lark-parser"
 BDEPEND+="
 	test? (
 		dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}]
