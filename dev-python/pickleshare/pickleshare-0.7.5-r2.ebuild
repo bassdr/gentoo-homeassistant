@@ -15,9 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-	dev-python/pathlib2[${PYTHON_USEDEP}]
-"
 RDEPEND="
 	>=dev-python/path-6.2[${PYTHON_USEDEP}]
 "

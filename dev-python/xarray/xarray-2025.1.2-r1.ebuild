@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="accel complete etc io parallel viz"
+GENERATED_IUSE="accel complete etc io parallel test viz"
 IUSE="${GENERATED_IUSE} big-endian"
 
 REQUIRES_DIST="
@@ -88,23 +88,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-23.2[${PYTHON_USEDEP}]
 "
 # note: most of the test dependencies are optional
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/bottleneck[${PYTHON_USEDEP}]
-		dev-python/cftime[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
-		!riscv? ( !x86? (
-			dev-python/netcdf4[bzip2,szip,${PYTHON_USEDEP}]
-		) )
-		dev-python/toolz[${PYTHON_USEDEP}]
-		!hppa? ( >=dev-python/scipy-1.4[${PYTHON_USEDEP}] )
-	)
-"
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/hypothesis[${PYTHON_USEDEP}]
@@ -122,7 +105,23 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/bottleneck[${PYTHON_USEDEP}]
+		dev-python/cftime[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		!riscv? ( !x86? (
+			dev-python/netcdf4[bzip2,szip,${PYTHON_USEDEP}]
+		) )
+		dev-python/toolz[${PYTHON_USEDEP}]
+		!hppa? ( >=dev-python/scipy-1.4[${PYTHON_USEDEP}] )
+	)
+"
+
+EPYTEST_XDIST=1
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

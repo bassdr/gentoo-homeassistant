@@ -48,7 +48,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/tomli-w-1.0[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.11.1[${PYTHON_USEDEP}]
 	>=dev-python/userpath-1.7[${PYTHON_USEDEP}] =dev-python/userpath-1*[${PYTHON_USEDEP}]
-	>=dev-python/uv-0.1.35[${PYTHON_USEDEP}]
+	>=dev-python/uv-0.1.35
 	>=dev-python/virtualenv-20.26.6[${PYTHON_USEDEP}]
 	<dev-python/zstandard-1[${PYTHON_USEDEP}]
 "

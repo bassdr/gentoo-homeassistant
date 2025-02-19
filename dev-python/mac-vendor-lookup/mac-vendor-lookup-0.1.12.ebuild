@@ -38,7 +38,13 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/aiofiles[${PYTHON_USEDEP}]"
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
@@ -53,10 +59,3 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/coverage[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

@@ -5,6 +5,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+GENERATED_IUSE="qa test"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1
 
@@ -19,6 +21,20 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
+
+REQUIRES_DIST="
+	docopt; extra == 'testing'
+	flake8==5.0.4; extra == 'qa'
+	mypy==0.971; extra == 'qa'
+	pytest; extra == 'testing'
+	types-setuptools==67.2.0.1; extra == 'qa'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	qa? ( ~dev-python/flake8-5.0.4[${PYTHON_USEDEP}] )
+	qa? ( ~dev-python/mypy-0.971[${PYTHON_USEDEP}] )
+	qa? ( ~dev-python/types-setuptools-67.2.0.1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_sphinx docs
 distutils_enable_tests pytest
@@ -37,6 +53,3 @@ EPYTEST_DESELECT=(
 	# but it is not actually a test and thus fails
 	parso/python/token.py::parso.python.token.PythonTokenTypes
 )
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

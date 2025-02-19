@@ -16,7 +16,7 @@ LICENSE="BSD MIT GPL-3 Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs docs-screenshots upgrade-extension"
+GENERATED_IUSE="docs docs-screenshots test upgrade-extension"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	altair==5.4.1; extra == 'docs-screenshots'
@@ -137,7 +137,27 @@ RDEPEND="${GENERATED_RDEPEND}
 	net-libs/nodejs[npm]
 "
 
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[${PYTHON_USEDEP}]
+		dev-python/bump2version[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/hatch[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-check-links-0.7[${PYTHON_USEDEP}]
+		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/pytest-jupyter-0.5.3[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/requests-cache[${PYTHON_USEDEP}]
+		~dev-python/ruff-0.6.9[${PYTHON_USEDEP}]
+		dev-python/virtualenv[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/hatch-jupyter-builder[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
@@ -168,27 +188,6 @@ EPYTEST_IGNORE=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/build[${PYTHON_USEDEP}]
-		dev-python/bump2version[${PYTHON_USEDEP}]
-		dev-python/coverage[${PYTHON_USEDEP}]
-		dev-python/hatch[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-check-links-0.7[${PYTHON_USEDEP}]
-		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		>=dev-python/pytest-jupyter-0.5.3[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-		dev-python/requests-cache[${PYTHON_USEDEP}]
-		~dev-python/ruff-0.6.9[${PYTHON_USEDEP}]
-		dev-python/virtualenv[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 # TODO: package sphinx_copybutton
 #distutils_enable_sphinx docs/source dev-python/sphinx-rtd-theme dev-python/myst-parser
 

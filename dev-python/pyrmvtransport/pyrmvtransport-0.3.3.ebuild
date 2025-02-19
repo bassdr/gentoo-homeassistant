@@ -52,16 +52,6 @@ RDEPEND="${GENERATED_RDEPEND}
 dev-python/async-timeout[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/httpx[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/asynctest[${PYTHON_USEDEP}]
@@ -82,4 +72,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

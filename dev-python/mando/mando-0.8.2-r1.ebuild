@@ -22,6 +22,14 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="restructuredtext"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	rst2ansi; extra == 'restructuredtext'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	restructuredtext? ( dev-python/rst2ansi[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_sphinx docs
 distutils_enable_tests pytest
 
@@ -33,5 +41,3 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

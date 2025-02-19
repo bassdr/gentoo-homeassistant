@@ -18,7 +18,7 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 
 DOCS="README.md"
@@ -53,17 +53,6 @@ RDEPEND="${GENERATED_RDEPEND}
 dev-python/six[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -74,4 +63,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/testfixtures[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

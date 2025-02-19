@@ -16,6 +16,10 @@ KEYWORDS="amd64 arm64"
 
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	pyfakefs; extra == 'test'
+	pytest; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pyfakefs[${PYTHON_USEDEP}]

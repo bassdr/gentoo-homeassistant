@@ -25,7 +25,7 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="crypto cryptodome docs full image"
+GENERATED_IUSE="crypto cryptodome docs full image test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Pillow>=8.0.0; extra == 'full'
@@ -62,15 +62,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
-	test? (
-		dev-python/cryptography[${PYTHON_USEDEP}]
-		>=dev-python/pillow-8.0.0[jpeg,jpeg2k,tiff,zlib,${PYTHON_USEDEP}]
-		dev-python/pyyaml[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
@@ -84,7 +75,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		<dev-vcs/pre-commit-2.18.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/cryptography[${PYTHON_USEDEP}]
+		>=dev-python/pillow-8.0.0[jpeg,jpeg2k,tiff,zlib,${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_unpack() {
 	default

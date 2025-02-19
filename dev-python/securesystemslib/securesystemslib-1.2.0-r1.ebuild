@@ -8,9 +8,13 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="A library that provides cryptographic and general-purpose routines for Secure Systems Lab projects at NYU"
 HOMEPAGE="
-  https://pypi.org/project/securesystemslib/"
+  https://pypi.org/project/securesystemslib/
+  Homepage, https://github.com/secure-systems-lab/securesystemslib
+  Source, https://github.com/secure-systems-lab/securesystemslib
+  Issues, https://github.com/secure-systems-lab/securesystemslib/issues
+"
 
 LICENSE="MIT"
 SLOT="0"

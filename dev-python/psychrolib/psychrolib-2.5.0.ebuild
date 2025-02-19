@@ -21,17 +21,16 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}
 	app-arch/unzip
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	app-arch/unzip
-"
-BDEPEND="${GENERATED_BDEPEND}"
 test() {
 	py.test -v -v || die
 }

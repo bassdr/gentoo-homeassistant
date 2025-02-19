@@ -17,17 +17,23 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="trio"
+GENERATED_IUSE="test trio"
 IUSE="${GENERATED_IUSE} examples"
 
-BDEPEND="
-	test? (
-		dev-python/async-timeout[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.7.1[${PYTHON_USEDEP}]
-		dev-python/testpath[${PYTHON_USEDEP}]
-		sys-apps/dbus
-	)
+REQUIRES_DIST="
+	async-timeout ; extra == 'test'
+	async_generator ; extra == 'trio' and ( python_version == '3.6')
+	pytest ; extra == 'test'
+	pytest-asyncio >=0.17 ; extra == 'test'
+	pytest-trio ; extra == 'test'
+	testpath ; extra == 'test'
+	trio ; extra == 'test'
+	trio ; extra == 'trio'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	trio? ( dev-python/trio[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -41,6 +47,11 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
+	test? (
+		sys-apps/dbus
+	)
+"
 
 distutils_enable_sphinx docs \
 	dev-python/sphinx-rtd-theme
@@ -71,5 +82,3 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

@@ -16,7 +16,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	cssselect; extra == 'test'
@@ -49,18 +49,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/more-itertools[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/cssselect[${PYTHON_USEDEP}]
-		>=dev-python/jaraco-test-5.1[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep '
-			dev-python/lxml[${PYTHON_USEDEP}]
-		' 3.10)
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/cssselect[${PYTHON_USEDEP}]
@@ -73,7 +61,18 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/cssselect[${PYTHON_USEDEP}]
+		>=dev-python/jaraco-test-5.1[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '
+			dev-python/lxml[${PYTHON_USEDEP}]
+		' 3.10)
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

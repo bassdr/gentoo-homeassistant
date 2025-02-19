@@ -8,9 +8,14 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 optfeature pypi
 
-DESCRIPTION=""
+DESCRIPTION="The uncompromising code formatter."
 HOMEPAGE="
-  https://pypi.org/project/black/"
+  https://pypi.org/project/black/
+  Documentation, https://black.readthedocs.io/
+  Changelog, https://github.com/psf/black/blob/main/CHANGES.md
+  Repository, https://github.com/psf/black
+  Issues, https://github.com/psf/black/issues
+"
 
 LICENSE="MIT"
 SLOT="0"

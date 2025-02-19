@@ -14,10 +14,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	build; extra == 'dev'
+	mypy; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]

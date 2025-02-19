@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="benchmark labextension nbext retroextension serverextension"
+GENERATED_IUSE="benchmark labextension nbext retroextension serverextension test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	asv; extra == 'benchmark'
@@ -78,7 +78,16 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	>=dev-python/tornado-6.1[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/ipython[test,${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/flit-core[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
@@ -90,16 +99,6 @@ BDEPEND="
 # TODO: package myst_parser
 # distutils_enable_sphinx docs/source
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/ipython[test,${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/testpath[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	export IPP_DISABLE_JS=1

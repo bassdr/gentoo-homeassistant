@@ -16,7 +16,7 @@ LICENSE="BSD-with-disclosure"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="a11y doc i18n"
+GENERATED_IUSE="a11y doc i18n test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Babel
@@ -113,14 +113,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/sphinx-6.1[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	)
-"
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pandoc[${PYTHON_USEDEP}]
@@ -135,7 +127,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	)
+"
+
+EPYTEST_XDIST=1
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# pygments version mismatch?

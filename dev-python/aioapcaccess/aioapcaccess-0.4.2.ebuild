@@ -20,7 +20,20 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-BDEPEND="
+REQUIRES_DIST="
+	pytest >=6.0 ; extra == 'dev'
+	pytest-asyncio >=0.17 ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.17[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
@@ -30,5 +43,3 @@ BDEPEND="
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" "${DISTDIR}/${P}-py3-none-any.whl"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 2024.1.0)"
-S="${WORKDIR}/${PN}-2024.1.0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-2024.1.0"
 
 DESCRIPTION="A Python3, asyncio-based API for interacting with Ridwell waste recycling"
 HOMEPAGE="

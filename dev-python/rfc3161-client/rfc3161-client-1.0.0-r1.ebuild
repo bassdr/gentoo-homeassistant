@@ -68,9 +68,14 @@ declare -A GIT_CRATES=(
 
 inherit cargo distutils-r1
 
-DESCRIPTION="An Opinionated Python RFC3161 Client"
+DESCRIPTION=""
 HOMEPAGE="
-  https://pypi.org/project/rfc3161-client/"
+  https://pypi.org/project/rfc3161-client/
+  Homepage, https://pypi.org/project/rfc3161-client
+  Documentation, https://trailofbits.github.io/rfc3161-client/
+  Issues, https://github.com/trailofbits/rfc3161-client/issues
+  Source, https://github.com/trailofbits/rfc3161-client
+"
 # no tests in sdist, as of 0.0.4
 SRC_URI="
 	https://github.com/trailofbits/rfc3161-client/archive/v${PV}.tar.gz
@@ -86,7 +91,7 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint"
+GENERATED_IUSE="lint test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage[toml]; extra == 'test'

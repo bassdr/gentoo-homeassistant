@@ -17,7 +17,7 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="build publish"
+GENERATED_IUSE="publish test"
 IUSE="${GENERATED_IUSE} examples"
 
 REQUIRES_DIST="
@@ -28,7 +28,6 @@ REQUIRES_DIST="
 	twine (==4.0.2) ; extra == 'publish'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	build? ( ~dev-python/build-0.10.0[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
 	publish? ( ~dev-python/twine-4.0.2[${PYTHON_USEDEP}] )
 "
@@ -36,7 +35,14 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyopenssl[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	~dev-python/build-0.10.0[${PYTHON_USEDEP}]
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		>=dev-python/cryptography-2.6.1[${PYTHON_USEDEP}]
 		dev-python/requests-mock[${PYTHON_USEDEP}]
@@ -44,13 +50,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/requests-mock[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	local PATCHES=(

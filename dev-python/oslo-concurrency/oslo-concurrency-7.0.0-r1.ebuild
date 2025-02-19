@@ -18,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="eventlet"
+GENERATED_IUSE="eventlet test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage>=4.0; extra == 'test'
@@ -48,15 +48,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/oslo-utils-3.33.0[${PYTHON_USEDEP}]
 	>=dev-python/fasteners-0.7.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
-		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-4.0[${PYTHON_USEDEP}]
@@ -66,7 +57,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/stestr-2.0.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/pbr-2.1.0[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest
 
 src_prepare() {
 	# fails, then hangs

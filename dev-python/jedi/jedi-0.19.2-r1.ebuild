@@ -28,7 +28,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs qa"
+GENERATED_IUSE="docs qa test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Django; extra == 'testing'

@@ -41,7 +41,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.17.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
 "
-BDEPEND="test? (
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/nose[${PYTHON_USEDEP}]
+		dev-python/nose-cov[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND} test? (
 		dev-db/influxdb
 		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
@@ -58,12 +66,3 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/mock[${PYTHON_USEDEP}]
-		dev-python/nose[${PYTHON_USEDEP}]
-		dev-python/nose-cov[${PYTHON_USEDEP}]
-		dev-python/requests-mock[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

@@ -63,15 +63,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typing-extensions-4.4[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/mock[${PYTHON_USEDEP}]
-		dev-python/parameterized[${PYTHON_USEDEP}]
-		dev-python/pytest-xdist[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/black-24.3.0[${PYTHON_USEDEP}]
@@ -95,7 +86,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/types-pyyaml-6.0[${PYTHON_USEDEP}] =dev-python/types-pyyaml-6*[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_prepare_all() {
 	# so much noise...

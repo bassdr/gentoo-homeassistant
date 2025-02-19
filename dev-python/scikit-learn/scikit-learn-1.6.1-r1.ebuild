@@ -20,7 +20,7 @@ SRC_URI="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="benchmark build docs examples install maintenance"
+GENERATED_IUSE="benchmark docs examples install maintenance test"
 IUSE="${GENERATED_IUSE} examples +build"
 
 DEPEND="
@@ -88,7 +88,6 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	maintenance? ( ~dev-python/conda-lock-2.5.6[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
 	>=dev-python/joblib-1.2.0[${PYTHON_USEDEP}]
 	install? ( >=dev-python/joblib-1.2.0[${PYTHON_USEDEP}] )
 	benchmark? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] )
@@ -96,9 +95,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	examples? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] )
 	benchmark? ( >=dev-python/memory-profiler-0.57.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/memory-profiler-0.57.0[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/meson-python-0.16.0[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.19.5[${PYTHON_USEDEP}]
-	build? ( >=dev-python/numpy-1.19.5[${PYTHON_USEDEP}] )
 	install? ( >=dev-python/numpy-1.19.5[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/numpydoc-1.2.0[${PYTHON_USEDEP}] )
 	benchmark? ( >=dev-python/pandas-1.1.5[${PYTHON_USEDEP}] )
@@ -114,7 +111,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/scikit-image-0.17.2[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/scikit-image-0.17.2[${PYTHON_USEDEP}] )
 	>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]
-	build? ( >=dev-python/scipy-1.6.0[${PYTHON_USEDEP}] )
 	install? ( >=dev-python/scipy-1.6.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/seaborn-0.9.0[${PYTHON_USEDEP}] )
 	examples? ( >=dev-python/seaborn-0.9.0[${PYTHON_USEDEP}] )
@@ -137,14 +133,11 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/threadpoolctl-3.1.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/pythran-0.14.0[${PYTHON_USEDEP}]
-	>=dev-python/cython-3.0.10[${PYTHON_USEDEP}]
-"
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	>=dev-python/cython-3.0.10[${PYTHON_USEDEP}]
+	>=dev-python/meson-python-0.16.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.19.5[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/black-24.3.0[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}]
@@ -161,7 +154,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/scikit-image-0.17.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/pythran-0.14.0[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.0.10[${PYTHON_USEDEP}]
+"
+
+EPYTEST_XDIST=1
+distutils_enable_tests pytest
 
 # For some reason this wants to use urllib to fetch things from the internet
 # distutils_enable_sphinx doc \

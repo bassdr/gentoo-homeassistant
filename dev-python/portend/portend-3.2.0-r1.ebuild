@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	furo ; extra == 'docs'
@@ -44,11 +44,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/tempora-1.8[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6[${PYTHON_USEDEP}]
@@ -60,4 +55,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-ruff[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

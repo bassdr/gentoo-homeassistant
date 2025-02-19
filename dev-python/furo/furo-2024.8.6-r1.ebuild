@@ -17,9 +17,6 @@ HOMEPAGE="
   https://pypi.org/project/furo/
   Github, https://github.com/pradyunsg/furo
 "
-SRC_URI="$(pypi_wheel_url)"
-S=${WORKDIR}
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"

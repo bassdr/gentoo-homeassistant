@@ -18,7 +18,25 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="argon2 bcrypt build_docs totp"
 IUSE="${GENERATED_IUSE} doc test-rust"
 
-BDEPEND="
+REQUIRES_DIST="
+	argon2-cffi (>=18.2.0) ; extra == 'argon2'
+	bcrypt (>=3.1.0) ; extra == 'bcrypt'
+	cloud-sptheme (>=1.10.1) ; extra == 'build_docs'
+	cryptography ; extra == 'totp'
+	sphinx (>=1.6) ; extra == 'build_docs'
+	sphinxcontrib-fulltoc (>=1.2.0) ; extra == 'build_docs'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	argon2? ( >=dev-python/argon2-cffi-18.2.0[${PYTHON_USEDEP}] )
+	bcrypt? ( >=dev-python/bcrypt-3.1.0[${PYTHON_USEDEP}] )
+	build_docs? ( >=dev-python/cloud-sptheme-1.10.1[${PYTHON_USEDEP}] )
+	totp? ( dev-python/cryptography[${PYTHON_USEDEP}] )
+	build_docs? ( >=dev-python/sphinx-1.6[${PYTHON_USEDEP}] )
+	build_docs? ( >=dev-python/sphinxcontrib-fulltoc-1.2.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+BDEPEND+="
 	test? (
 		dev-python/scrypt[${PYTHON_USEDEP}]
 		test-rust? (
@@ -68,5 +86,3 @@ pkg_postinst() {
 	optfeature "scrypt support" dev-python/scrypt
 	optfeature "Time-based One-Time Password (TOTP) support" dev-python/cryptography
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

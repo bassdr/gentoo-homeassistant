@@ -36,16 +36,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-20.8_beta1[${PYTHON_USEDEP}]
@@ -58,4 +48,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/typing-extensions-3.10.0.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

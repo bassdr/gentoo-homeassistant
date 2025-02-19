@@ -29,11 +29,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -42,4 +37,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

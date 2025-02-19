@@ -18,7 +18,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 

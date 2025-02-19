@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="graphviz"
+GENERATED_IUSE="graphviz test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	covdefaults>=2.3; extra == 'test'
@@ -39,17 +39,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
 	>=dev-python/pip-23.1.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
-	test? (
-		dev-python/graphviz[${PYTHON_USEDEP}]
-		>=dev-python/pytest-console-scripts-1.4.1[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		<dev-python/virtualenv-21[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
@@ -61,7 +50,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/virtualenv-20.26.4[${PYTHON_USEDEP}] <dev-python/virtualenv-21[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+	test? (
+		dev-python/graphviz[${PYTHON_USEDEP}]
+		>=dev-python/pytest-console-scripts-1.4.1[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		<dev-python/virtualenv-21[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	distutils-r1_src_prepare

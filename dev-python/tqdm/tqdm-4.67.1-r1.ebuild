@@ -20,16 +20,28 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="discord notebook slack telegram"
+GENERATED_IUSE="discord notebook slack telegram test"
 IUSE="${GENERATED_IUSE} examples"
 
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/pytest-asyncio-0.24[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	colorama; platform_system == 'Windows'
+	ipywidgets>=6; extra == 'notebook'
+	nbval; extra == 'dev'
+	pytest-asyncio>=0.24; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest-timeout; extra == 'dev'
+	pytest>=6; extra == 'dev'
+	requests; extra == 'discord'
+	requests; extra == 'telegram'
+	slack-sdk; extra == 'slack'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	notebook? ( >=dev-python/ipywidgets-6[${PYTHON_USEDEP}] )
+	discord? ( dev-python/requests[${PYTHON_USEDEP}] )
+	telegram? ( dev-python/requests[${PYTHON_USEDEP}] )
+	slack? ( dev-python/slack-sdk[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -57,5 +69,3 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

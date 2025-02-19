@@ -24,7 +24,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="check core cover doc enabler type"
+GENERATED_IUSE="check core cover doc enabler test type"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -132,7 +132,32 @@ RDEPEND="${GENERATED_RDEPEND}
 	!=dev-libs/gobject-introspection-1.78.1-r0
 	!=dev-libs/gobject-introspection-1.80.1-r1
 "
-BDEPEND="
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/build-1.0.3[virtualenv,${PYTHON_USEDEP}]
+		>=dev-python/filelock-3.4.0[${PYTHON_USEDEP}]
+		>=dev-python/ini2toml-0.14[lite,${PYTHON_USEDEP}]
+		>=dev-python/jaraco-develop-7.21[${PYTHON_USEDEP}]
+		>=dev-python/jaraco-envs-2.2[${PYTHON_USEDEP}]
+		>=dev-python/jaraco-path-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/jaraco-test-5.5[${PYTHON_USEDEP}]
+		>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
+		>=dev-python/pip-19.1[${PYTHON_USEDEP}]
+		!~dev-python/pyproject-hooks-1.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-home-0.5[${PYTHON_USEDEP}]
+		dev-python/pytest-perf[${PYTHON_USEDEP}]
+		dev-python/pytest-subprocess[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-3[${PYTHON_USEDEP}]
+		>=dev-python/tomli-w-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/virtualenv-13.0.0[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.44.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	${RDEPEND}
 	test? (
 		$(python_gen_cond_dep '
@@ -219,5 +244,3 @@ python_test() {
 	epytest -o tmp_path_retention_policy=all \
 		-m "not uses_network" setuptools
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

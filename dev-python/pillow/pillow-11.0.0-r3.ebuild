@@ -34,7 +34,7 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="HPND"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs fpx mic xmp"
+GENERATED_IUSE="docs fpx mic test xmp"
 IUSE="${GENERATED_IUSE} examples imagequant +jpeg jpeg2k lcms test tiff tk truetype webp xcb zlib"
 REQUIRED_USE="test? ( jpeg jpeg2k lcms tiff truetype )"
 RESTRICT="!test? ( test )"
@@ -87,7 +87,21 @@ RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	dev-python/olefile[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/check-manifest[${PYTHON_USEDEP}]
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/defusedxml[${PYTHON_USEDEP}]
+		dev-python/markdown2[${PYTHON_USEDEP}]
+		dev-python/olefile[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pyroma[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/wheel[${PYTHON_USEDEP}]
 	virtual/pkgconfig
@@ -104,21 +118,6 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/check-manifest[${PYTHON_USEDEP}]
-		dev-python/coverage[${PYTHON_USEDEP}]
-		dev-python/defusedxml[${PYTHON_USEDEP}]
-		dev-python/markdown2[${PYTHON_USEDEP}]
-		dev-python/olefile[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
-		dev-python/pyroma[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 PATCHES=(
 	# https://github.com/python-pillow/pillow/pull/7634

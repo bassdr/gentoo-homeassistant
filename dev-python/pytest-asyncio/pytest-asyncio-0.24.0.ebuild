@@ -8,15 +8,21 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="Pytest support for asyncio"
 HOMEPAGE="
-  https://pypi.org/project/pytest-asyncio/"
+  https://pypi.org/project/pytest-asyncio/
+  Bug Tracker, https://github.com/pytest-dev/pytest-asyncio/issues
+  Changelog, https://pytest-asyncio.readthedocs.io/en/latest/reference/changelog.html
+  Documentation, https://pytest-asyncio.readthedocs.io
+  Homepage, https://github.com/pytest-dev/pytest-asyncio
+  Source Code, https://github.com/pytest-dev/pytest-asyncio
+"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage>=6.2; extra == 'testing'
@@ -33,7 +39,13 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-8.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-6.2[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-5.7.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/hypothesis-5.7.1[${PYTHON_USEDEP}]
@@ -42,13 +54,6 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/coverage-6.2[${PYTHON_USEDEP}]
-		>=dev-python/hypothesis-5.7.1[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

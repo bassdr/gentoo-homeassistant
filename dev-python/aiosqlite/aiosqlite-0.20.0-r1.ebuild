@@ -17,7 +17,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -43,16 +43,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/attribution-1.7.0[${PYTHON_USEDEP}]
@@ -66,4 +56,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

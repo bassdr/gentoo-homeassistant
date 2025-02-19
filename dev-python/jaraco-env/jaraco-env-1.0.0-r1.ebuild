@@ -18,11 +18,31 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+
+REQUIRES_DIST="
+	furo ; extra == 'docs'
+	jaraco.packaging (>=9) ; extra == 'docs'
+	pytest (>=6) ; extra == 'testing'
+	pytest-black (>=0.3.7) ; (platform_python_implementation != 'PyPy') and extra == 'testing'
+	pytest-checkdocs (>=2.4) ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-enabler (>=1.3) ; extra == 'testing'
+	pytest-mypy (>=0.9.1) ; (platform_python_implementation != 'PyPy') and extra == 'testing'
+	pytest-ruff ; extra == 'testing'
+	rst.linker (>=1.9) ; extra == 'docs'
+	sphinx (>=3.5) ; extra == 'docs'
+	sphinx-lint ; extra == 'docs'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/jaraco-packaging-9[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -37,5 +57,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

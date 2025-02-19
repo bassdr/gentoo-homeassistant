@@ -36,15 +36,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-3.5.0[${PYTHON_USEDEP}]
 	>=dev-python/vcrpy-2.0.1[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/pytest-httpbin[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest-httpbin[${PYTHON_USEDEP}]
@@ -53,7 +44,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		~dev-python/werkzeug-3.0.3[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-httpbin[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test () {
 	local EPYTEST_DESELECT=(

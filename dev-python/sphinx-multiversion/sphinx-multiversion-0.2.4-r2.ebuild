@@ -24,7 +24,13 @@ DEPEND="
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
 
+REQUIRES_DIST="
+	sphinx (>=2.1)
+"
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/sphinx-2.1[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/alabaster
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

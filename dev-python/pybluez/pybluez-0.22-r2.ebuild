@@ -22,7 +22,11 @@ RESTRICT="!test? ( test )"
 PATCHES=("${FILESDIR}/${PV}_py311.patch")
 
 RDEPEND="net-wireless/bluez[experimental]"
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	app-arch/unzip
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	app-arch/unzip
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -31,5 +35,3 @@ BDEPEND="
 python_test() {
 	py.test -v -v || die
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

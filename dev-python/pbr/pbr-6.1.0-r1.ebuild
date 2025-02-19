@@ -9,7 +9,7 @@ PYTHON_REQ_USE="threads(+)"
 
 inherit distutils-r1 pypi
 
-DESCRIPTION="Inject some useful and sensible default behaviors into setuptools"
+DESCRIPTION="Python Build Reasonableness"
 HOMEPAGE="
   https://pypi.org/project/pbr/
   Bug Tracker, https://bugs.launchpad.net/pbr/

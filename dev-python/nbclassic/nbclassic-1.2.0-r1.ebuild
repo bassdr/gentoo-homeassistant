@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs json-logging"
+GENERATED_IUSE="docs json-logging test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage; extra == 'test'
@@ -59,21 +59,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/notebook-shim-0.2.3[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	test? (
-		dev-python/nbval[${PYTHON_USEDEP}]
-		dev-python/pytest-jupyter[${PYTHON_USEDEP}]
-		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-		dev-python/requests-unixsocket[${PYTHON_USEDEP}]
-		dev-python/testpath[${PYTHON_USEDEP}]
-	)
-	doc? (
-		virtual/pandoc
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -88,7 +73,21 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/testpath[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/nbval[${PYTHON_USEDEP}]
+		dev-python/pytest-jupyter[${PYTHON_USEDEP}]
+		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/requests-unixsocket[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+	)
+	doc? (
+		virtual/pandoc
+	)
+"
+
+distutils_enable_tests pytest
 distutils_enable_sphinx docs/source \
 	dev-python/pydata-sphinx-theme \
 	dev-python/nbsphinx \

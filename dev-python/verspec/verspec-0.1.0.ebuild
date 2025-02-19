@@ -14,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	coverage ; extra == 'test'
+	flake8 (>=3.7) ; extra == 'test'
+	mypy ; extra == 'test'
+	pretend ; extra == 'test'
+	pytest ; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]

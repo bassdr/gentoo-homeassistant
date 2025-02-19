@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all setup"
+GENERATED_IUSE="all setup test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -102,19 +102,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/webcolors[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10)"
-BDEPEND="
-	test? (
-		dev-python/pytest-runner[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
@@ -137,4 +124,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/wheel-0.34.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

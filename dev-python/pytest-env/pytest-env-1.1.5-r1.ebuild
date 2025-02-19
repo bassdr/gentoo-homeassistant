@@ -32,14 +32,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
-	>=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
@@ -47,7 +39,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	distutils-r1_src_prepare

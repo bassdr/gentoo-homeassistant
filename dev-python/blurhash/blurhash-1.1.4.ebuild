@@ -20,6 +20,11 @@ RESTRICT="!test? ( test )"
 
 DOCS="blurhash"
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	Pillow; extra == 'test'
+	numpy; extra == 'test'
+	pytest; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/numpy[${PYTHON_USEDEP}]

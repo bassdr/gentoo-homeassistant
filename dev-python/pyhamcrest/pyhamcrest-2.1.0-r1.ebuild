@@ -25,10 +25,43 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs tests-numpy"
+GENERATED_IUSE="docs test tests-numpy"
 IUSE="${GENERATED_IUSE} examples"
 
-BDEPEND="
+REQUIRES_DIST="
+	alabaster~=0.7; extra == 'docs'
+	black; extra == 'dev'
+	coverage[toml]; extra == 'tests'
+	dataclasses; python_version < '3.7' and extra == 'tests'
+	doc2dash; extra == 'dev'
+	flake8; extra == 'dev'
+	mypy!=0.940; platform_python_implementation != 'PyPy' and extra == 'tests'
+	numpy; extra == 'tests-numpy'
+	pyhamcrest[docs,tests]; extra == 'dev'
+	pyhamcrest[tests]; extra == 'tests-numpy'
+	pytest-mypy-plugins; platform_python_implementation != 'PyPy' and extra == 'tests'
+	pytest-mypy; extra == 'dev'
+	pytest-sugar; extra == 'tests'
+	pytest-xdist; extra == 'tests'
+	pytest>=5.0; extra == 'tests'
+	pyyaml; extra == 'tests'
+	sphinx~=4.0; extra == 'docs'
+	towncrier; extra == 'dev'
+	tox-asdf; extra == 'dev'
+	tox; extra == 'dev'
+	twine; extra == 'dev'
+	types-dataclasses; python_version < '3.7' and extra == 'tests'
+	types-mock; extra == 'tests'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/alabaster-0.7[${PYTHON_USEDEP}] =dev-python/alabaster-0*[${PYTHON_USEDEP}] )
+	tests-numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )
+	tests-numpy? ( dev-python/pyhamcrest[tests,${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-4.0[${PYTHON_USEDEP}] =dev-python/sphinx-4*[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+BDEPEND+="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
 
@@ -64,5 +97,3 @@ python_install_all() {
 	use examples && dodoc -r examples
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

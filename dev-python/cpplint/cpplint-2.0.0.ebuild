@@ -14,10 +14,25 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	flake8>=4.0.1; extra == 'dev'
+	parameterized; extra == 'dev'
+	parameterized; extra == 'test'
+	pylint>=2.11.0; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest-cov; extra == 'test'
+	pytest-timeout; extra == 'dev'
+	pytest-timeout; extra == 'test'
+	pytest; extra == 'dev'
+	pytest; extra == 'test'
+	setuptools; extra == 'dev'
+	testfixtures; extra == 'dev'
+	testfixtures; extra == 'test'
+	tox<5.0.0; extra == 'dev'
+	tox<5.0.0; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/flake8-4.0.1[${PYTHON_USEDEP}]

@@ -26,13 +26,12 @@ KEYWORDS="amd64 arm64"
 
 
 # RDEPEND in BDEPEND for import_cldr.py usage, bug #852158
-BDEPEND="
-	app-arch/unzip
-	${RDEPEND}
+REQUIRES_DIST="
+	freezegun~=1.0; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest>=6.0; extra == 'dev'
+	pytz>=2015.7; python_version < '3.9'
 "
-
-distutils_enable_sphinx docs
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/freezegun-1.0[${PYTHON_USEDEP}] =dev-python/freezegun-1*[${PYTHON_USEDEP}]
@@ -40,7 +39,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	app-arch/unzip
+	${RDEPEND}
+"
+
+distutils_enable_sphinx docs
+distutils_enable_tests pytest
 GENERATED_BDEPEND+=" ${BDEPEND}
 	test? (
 		>=dev-python/freezegun-1.0[${PYTHON_USEDEP}] =dev-python/freezegun-1*[${PYTHON_USEDEP}]

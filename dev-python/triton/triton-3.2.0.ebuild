@@ -4,7 +4,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="build tutorials"
+GENERATED_IUSE="test tutorials"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -32,8 +32,6 @@ REQUIRES_DIST="
 	tabulate; extra == 'tutorials'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	build? ( >=dev-python/cmake-3.20[${PYTHON_USEDEP}] )
-	build? ( dev-python/lit[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	tutorials? ( dev-python/tabulate[${PYTHON_USEDEP}] )
@@ -42,6 +40,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	>=dev-python/cmake-3.20[${PYTHON_USEDEP}]
+	dev-python/lit[${PYTHON_USEDEP}]
 	test? (
 		dev-python/autopep8[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]

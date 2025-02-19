@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="|| ( MIT ISC )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="mainapp"
+GENERATED_IUSE="mainapp test"
 IUSE="${GENERATED_IUSE} test-rust"
 
 REQUIRES_DIST="
@@ -53,7 +53,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/six[${PYTHON_USEDEP}]
 	>=dev-python/werkzeug-2.2.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		test-rust? (
 			dev-python/flasgger[${PYTHON_USEDEP}]
@@ -62,13 +68,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/tox[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	local PATCHES=(

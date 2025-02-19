@@ -23,11 +23,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	black; extra == 'dev'
+	build; extra == 'dev'
+	mypy; extra == 'dev'
+	pytest; extra == 'dev'
+	pyupgrade; extra == 'dev'
+	twine; extra == 'dev'
+	typing-extensions; python_version <= '3.9'
+	validate-pyproject[all]; extra == 'dev'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
@@ -39,6 +44,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/validate-pyproject[all,${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}

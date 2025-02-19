@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 1.0.0a0)"
-S="${WORKDIR}/${PN}-1.0.0a0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-1.0.0a0"
 
 MY_PV=${PV/_alpha/a}
 DESCRIPTION="A Python client for Fixer.io"

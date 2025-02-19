@@ -22,7 +22,19 @@ KEYWORDS="amd64 arm64"
 # dev-python/regex doesn't support pypy
 GENERATED_IUSE="atomic-cache interegular nearley regex"
 IUSE="${GENERATED_IUSE}"
-RDEPEND="!dev-python/lark-parser"
+REQUIRES_DIST="
+	atomicwrites; extra == 'atomic-cache'
+	interegular<0.4.0,>=0.3.1; extra == 'interegular'
+	js2py; extra == 'nearley'
+	regex; extra == 'regex'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	atomic-cache? ( dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}] )
+	interegular? ( >=dev-python/interegular-0.3.1[${PYTHON_USEDEP}] <dev-python/interegular-0.4.0[${PYTHON_USEDEP}] )
+	nearley? ( dev-python/js2py[${PYTHON_USEDEP}] )
+	regex? ( dev-python/regex[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND} !dev-python/lark-parser"
 BDEPEND+="
 	test? (
 		dev-python/atomicwrites-homeassistant[${PYTHON_USEDEP}]
@@ -42,5 +54,3 @@ python_test() {
 
 	epytest
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

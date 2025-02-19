@@ -16,7 +16,7 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Sphinx; extra == 'docs'
@@ -42,7 +42,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/zope-schema-4.9[${PYTHON_USEDEP}]
 	!dev-python/namespace-zope
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/manuel[${PYTHON_USEDEP}]
 		dev-python/zope-testing[${PYTHON_USEDEP}]
@@ -50,13 +56,6 @@ BDEPEND="
 "
 
 distutils_enable_tests unittest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/zope-testing[${PYTHON_USEDEP}]
-		dev-python/zope-testrunner[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# strip rdep specific to namespaces

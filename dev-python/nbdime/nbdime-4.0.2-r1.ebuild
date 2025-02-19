@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	colorama
@@ -67,19 +67,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/tornado[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/jsonschema[${PYTHON_USEDEP}]
-		dev-python/notebook[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/tabulate[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_sphinx docs/source \
-	dev-python/recommonmark \
-	dev-python/sphinx-rtd-theme
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/jsonschema[${PYTHON_USEDEP}]
@@ -94,7 +81,19 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/tabulate[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/jsonschema[${PYTHON_USEDEP}]
+		dev-python/notebook[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/tabulate[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_sphinx docs/source \
+	dev-python/recommonmark \
+	dev-python/sphinx-rtd-theme
+distutils_enable_tests pytest
 
 src_test() {
 	# user.email and user.name are not configured in the sandbox

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="bcrypt docs vocabulary"
+GENERATED_IUSE="bcrypt docs test vocabulary"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

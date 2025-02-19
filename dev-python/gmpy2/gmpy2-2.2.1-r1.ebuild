@@ -19,7 +19,7 @@ LICENSE="LGPL-3+"
 SLOT="2"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 DEPEND="
 	>=dev-libs/mpc-1.0.2:=
@@ -42,14 +42,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
-BDEPEND="
-	test? (
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-		dev-python/mpmath[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/cython[${PYTHON_USEDEP}]
@@ -59,7 +51,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/setuptools[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/mpmath[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	rm -rf gmpy2 || die

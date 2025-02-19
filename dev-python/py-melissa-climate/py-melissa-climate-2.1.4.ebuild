@@ -40,7 +40,6 @@ src_prepare() {
 }
 
 distutils_enable_tests unittest
-
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/check-manifest[${PYTHON_USEDEP}]
@@ -49,3 +48,4 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+

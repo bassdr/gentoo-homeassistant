@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="aflw2k3d beir ble-wind-field c4 c4-wsrs cats-vs-dogs colorectal-histology common-voice duke-ultrasound eurosat groove gtzan huggingface imagenet2012-corrupted librispeech lsun matplotlib nsynth ogbg-molpcba pet-finder qm9 robonet smartwatch-gestures svhn tensorflow tensorflow-data-validation tests-all tf-nightly the300w-lp wake-vision wider-face wiki-dialog wikipedia wsc273 youtube-vis"
+GENERATED_IUSE="aflw2k3d beir ble-wind-field c4 c4-wsrs cats-vs-dogs colorectal-histology common-voice duke-ultrasound eurosat groove gtzan huggingface imagenet2012-corrupted librispeech lsun matplotlib nsynth ogbg-molpcba pet-finder qm9 robonet smartwatch-gestures svhn tensorflow tensorflow-data-validation test tests-all tf-nightly the300w-lp wake-vision wider-face wiki-dialog wikipedia wsc273 youtube-vis"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

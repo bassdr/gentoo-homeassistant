@@ -16,7 +16,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="events-asyncio"
+GENERATED_IUSE="events-asyncio test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -57,13 +57,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/xmltodict[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/requests-mock[${PYTHON_USEDEP}]
-	)"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-22.12.0[${PYTHON_USEDEP}]
@@ -80,4 +73,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+	)"
+
+distutils_enable_tests pytest

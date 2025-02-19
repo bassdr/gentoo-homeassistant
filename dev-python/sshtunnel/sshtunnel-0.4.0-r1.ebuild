@@ -17,7 +17,7 @@ KEYWORDS="amd64 arm64"
 
 RESTRICT="test"
 
-GENERATED_IUSE="build_sphinx"
+GENERATED_IUSE="build_sphinx test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	check-manifest ; extra == 'dev'
@@ -32,4 +32,10 @@ GENERATED_RDEPEND="${RDEPEND}
 	build_sphinx? ( dev-python/sphinxcontrib-napoleon[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND} dev-python/paramiko[${PYTHON_USEDEP}]"
-# GENERATED_BDEPEND could not be inserted in this ebuild
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/check-manifest[${PYTHON_USEDEP}]
+		>=dev-python/tox-1.8.1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"

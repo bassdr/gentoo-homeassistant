@@ -31,7 +31,7 @@ REQUIRES_DIST="
 	virtualenv; extra == 'testing'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/coverage-7.5[${PYTHON_USEDEP}]
+	>=dev-python/coverage-7.5[toml,${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

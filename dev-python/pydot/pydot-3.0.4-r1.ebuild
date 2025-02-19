@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="release"
+GENERATED_IUSE="release test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -41,14 +41,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyparsing-3.0.9[${PYTHON_USEDEP}]
 	media-gfx/graphviz
 "
-BDEPEND="
-	test? (
-		dev-python/chardet[${PYTHON_USEDEP}]
-		dev-python/parameterized[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/chardet[${PYTHON_USEDEP}]
@@ -60,4 +52,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/tox[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/chardet[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest

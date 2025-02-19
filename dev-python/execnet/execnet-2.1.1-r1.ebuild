@@ -16,12 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	hatch; extra == 'testing'
+	pre-commit; extra == 'testing'
+	pytest; extra == 'testing'
+	tox; extra == 'testing'
 "
-
-distutils_enable_sphinx doc
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/hatch[${PYTHON_USEDEP}]
@@ -30,7 +30,12 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+"
+
+distutils_enable_sphinx doc
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=()

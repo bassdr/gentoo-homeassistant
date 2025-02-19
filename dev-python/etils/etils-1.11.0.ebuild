@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all array-types docs eapp ecolab edc enp epath epath-gcs epath-s3 epy etqdm etree etree-dm etree-jax etree-tf lazy-imports"
+GENERATED_IUSE="all array-types docs eapp ecolab edc enp epath epath-gcs epath-s3 epy etqdm etree etree-dm etree-jax etree-tf lazy-imports test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

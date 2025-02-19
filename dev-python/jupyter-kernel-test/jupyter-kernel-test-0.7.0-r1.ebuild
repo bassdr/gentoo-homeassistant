@@ -30,17 +30,16 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jupyter-client-6.1.13[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/ipykernel[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/ipykernel[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest

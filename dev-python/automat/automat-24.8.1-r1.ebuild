@@ -21,12 +21,16 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="visualize"
 IUSE="${GENERATED_IUSE} examples"
 
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/twisted[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	Twisted>=16.1.1; extra == 'visualize'
+	graphviz>0.5.1; extra == 'visualize'
+	typing-extensions; python_version < '3.10'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	visualize? ( >dev-python/graphviz-0.5.1[${PYTHON_USEDEP}] )
+	visualize? ( >=dev-python/twisted-16.1.1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 
@@ -42,11 +46,15 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 }
+BDEPEND+="
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/twisted[${PYTHON_USEDEP}]
+	)
+"
 
 pkg_postinst() {
 	einfo "For additional visualization functionality install both these optional dependencies"
 	einfo "    >=dev-python/twisted-16.1.1"
 	einfo "    media-gfx/graphviz[python]"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

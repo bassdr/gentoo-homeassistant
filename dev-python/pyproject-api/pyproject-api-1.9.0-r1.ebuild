@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	covdefaults>=2.3; extra == 'testing'
@@ -40,16 +40,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
 	' 3.{9..10})
 "
-BDEPEND="
-	>=dev-python/hatch-vcs-0.3.0[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/pytest-mock-3.11.1[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-68.1.2[${PYTHON_USEDEP}]
-		>=dev-python/wheel-0.40.2[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
@@ -59,7 +49,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/setuptools-75.8[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/hatch-vcs-0.3.0[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/pytest-mock-3.11.1[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-68.1.2[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.40.2[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# hardcodes assumptions specific to setuptools-70.1.0

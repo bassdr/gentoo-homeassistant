@@ -17,7 +17,7 @@ LICENSE="PSF-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="completion docs"
+GENERATED_IUSE="completion docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	SecretStorage (>=3.2) ; sys_platform == 'linux'
@@ -62,14 +62,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]
 	' 3.10 3.11)
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pyfakefs[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		<dev-python/flake8-5[${PYTHON_USEDEP}]
@@ -81,7 +73,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-mypy-0.9.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/pyfakefs[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

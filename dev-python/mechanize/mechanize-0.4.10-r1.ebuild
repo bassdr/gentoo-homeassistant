@@ -16,9 +16,8 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="binarytest fast"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+GENERATED_IUSE="binarytest fast test"
+IUSE="${GENERATED_IUSE}"
 
 REQUIRES_DIST="
 	html5-parser; extra == 'binarytest'
@@ -39,14 +38,16 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/html5lib-0.999999999[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
 	test? (
-		${RDEPEND}
+		dev-python/html5lib[${PYTHON_USEDEP}]
+		dev-python/service-identity[${PYTHON_USEDEP}]
+		dev-python/six[${PYTHON_USEDEP}]
+		dev-python/twisted[${PYTHON_USEDEP}]
 	)
 "
+BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	"${EPYTHON}" run_tests.py -v || die
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

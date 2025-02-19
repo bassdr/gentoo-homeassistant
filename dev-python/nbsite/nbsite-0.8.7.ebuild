@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="build gallery refman"
+GENERATED_IUSE="gallery refman test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -56,14 +56,12 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/notebook[${PYTHON_USEDEP}]
 	>=dev-python/param-1.7.0[${PYTHON_USEDEP}]
-	build? ( >=dev-python/param-1.6.1[${PYTHON_USEDEP}] )
 	gallery? ( dev-python/phantomjs[${PYTHON_USEDEP}] )
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/portalocker[${PYTHON_USEDEP}]
 	>=dev-python/pydata-sphinx-theme-0.15[${PYTHON_USEDEP}] <dev-python/pydata-sphinx-theme-0.16[${PYTHON_USEDEP}]
 	dev-python/pyviz-comms[${PYTHON_USEDEP}]
 	gallery? ( dev-python/selenium[${PYTHON_USEDEP}] )
-	build? ( dev-python/setuptools[${PYTHON_USEDEP}] )
 	>=dev-python/sphinx-7[${PYTHON_USEDEP}]
 	dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
 	dev-python/sphinx-design[${PYTHON_USEDEP}]
@@ -73,6 +71,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	>=dev-python/param-1.6.1[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
 		>=dev-python/pytest-3.9.1[${PYTHON_USEDEP}]

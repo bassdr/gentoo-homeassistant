@@ -43,13 +43,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyusb-1.1.0[${PYTHON_USEDEP}]
 	dev-python/gpiozero[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/async-timeout[${PYTHON_USEDEP}]' python3_10)"
-BDEPEND="
-	test? (
-		dev-python/mock[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-7.1.2[${PYTHON_USEDEP}]
@@ -59,7 +52,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	)"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	# remove dynamic-versioning

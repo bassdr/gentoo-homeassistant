@@ -25,15 +25,23 @@ DEPEND="
 	>=dev-cpp/rapidfuzz-cpp-3.2.0
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
-BDEPEND="
+
+REQUIRES_DIST="
+	numpy; extra == 'all'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	all? ( dev-python/numpy[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+EPYTEST_XDIST=1
+distutils_enable_tests pytest
+BDEPEND+="
 	>=dev-python/cython-3[${PYTHON_USEDEP}]
 	test? (
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 	)
 "
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
 
 src_prepare() {
 	# sterilize build flags
@@ -56,5 +64,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

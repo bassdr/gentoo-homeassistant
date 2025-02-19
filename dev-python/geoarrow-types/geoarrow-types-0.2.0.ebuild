@@ -14,10 +14,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	pyarrow; extra == 'test'
+	pytest; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pyarrow[${PYTHON_USEDEP}]

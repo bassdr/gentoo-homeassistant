@@ -17,10 +17,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="yaml"
+GENERATED_IUSE="test yaml"
 IUSE="${GENERATED_IUSE}"
 
-RDEPEND=""
+REQUIRES_DIST="
+	PyYAML (>=5.1.0) ; extra == 'yaml'
+	astroid (>=2.0) ; extra == 'testing'
+	coverage ; extra == 'testing'
+	importlib-metadata (>=1.7.0) ; (python_version<'3.8')
+	pylint (~=2.3.1) ; extra == 'testing'
+	pytest ; extra == 'testing'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	yaml? ( >=dev-python/pyyaml-5.1.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -31,7 +42,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	dev-python/pbr[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
@@ -43,5 +55,3 @@ PATCHES=(
 	# https://github.com/Infinidat/munch/pull/104
 	"${FILESDIR}/${P}-py313.patch"
 )
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

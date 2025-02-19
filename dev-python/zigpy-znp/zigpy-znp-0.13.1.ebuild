@@ -48,7 +48,16 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyserial-asyncio[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
@@ -64,15 +73,5 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-7.3.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-cov-4.1.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-mock-3.10.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 # TODO: Make symlinks for zigpy_znp/tools and add TOOLS.md and docs/*.pdf , but only it is in github package

@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 2.2)"
-S="${WORKDIR}/${PN}-2.2"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-2.2"
 
 DESCRIPTION="Provides an API for requesting information from an Openhome device"
 HOMEPAGE="

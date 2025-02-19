@@ -24,7 +24,7 @@ SRC_URI="
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="dnssec doh doq idna trio wmi"
+GENERATED_IUSE="dnssec doh doq idna test trio wmi"
 IUSE="${GENERATED_IUSE} dnssec examples"
 
 REQUIRES_DIST="
@@ -67,14 +67,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/idna-2.1[${PYTHON_USEDEP}]
 "
 # note: skipping DoH test deps because they require Internet anyway
-BDEPEND="
-	test? (
-		>=dev-python/cryptography-41[${PYTHON_USEDEP}]
-		>=dev-python/quart-trio-0.11.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-23.1.0[${PYTHON_USEDEP}]
@@ -92,7 +84,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/wheel-0.42.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/cryptography-41[${PYTHON_USEDEP}]
+		>=dev-python/quart-trio-0.11.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

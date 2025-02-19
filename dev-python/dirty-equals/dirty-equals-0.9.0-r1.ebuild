@@ -5,6 +5,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+GENERATED_IUSE="pydantic"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1
 
@@ -20,7 +22,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
+REQUIRES_DIST="
+	pydantic>=2.4.2; extra == 'pydantic'
+	pytz>=2021.3; python_version < '3.9'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	pydantic? ( >=dev-python/pydantic-2.4.2[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+distutils_enable_tests pytest
+
+BDEPEND+="
 	test? (
 		dev-python/packaging[${PYTHON_USEDEP}]
 		>=dev-python/pydantic-2.4.2[${PYTHON_USEDEP}]
@@ -28,8 +41,6 @@ BDEPEND="
 		>=dev-python/pytz-2021.3[${PYTHON_USEDEP}]
 	)
 "
-
-distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_IGNORE=(
@@ -46,6 +57,3 @@ python_test() {
 	local -x TZ=UTC
 	epytest "${args[@]}"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

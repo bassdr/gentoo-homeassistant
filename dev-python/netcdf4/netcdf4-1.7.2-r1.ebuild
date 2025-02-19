@@ -24,6 +24,7 @@ DEPEND="
 	sci-libs/hdf5:=
 	sci-libs/netcdf:=[blosc(-)=,bzip2(-)=,hdf5,mpi=,szip=,zstd(-)=]
 "
+
 REQUIRES_DIST="
 	Cython; extra == 'tests'
 	certifi
@@ -42,7 +43,16 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/cftime[${PYTHON_USEDEP}]
 "
-BDEPEND="
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cython[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	dev-python/cython[${PYTHON_USEDEP}]
 	test? (
 		${RDEPEND}
@@ -61,5 +71,3 @@ pkg_postinst() {
 	optfeature "HDF4 support" sci-libs/hdf "sci-libs/netcdf[hdf]"
 	optfeature "OPeNDAP support" net-misc/curl "sci-libs/netcdf[dap]"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

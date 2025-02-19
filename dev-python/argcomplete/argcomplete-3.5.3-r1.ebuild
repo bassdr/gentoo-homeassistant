@@ -24,7 +24,13 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-BDEPEND=""
+REQUIRES_DIST="
+	coverage; extra == 'test'
+	mypy; extra == 'test'
+	pexpect; extra == 'test'
+	ruff; extra == 'test'
+	wheel; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]

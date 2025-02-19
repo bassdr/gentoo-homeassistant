@@ -15,13 +15,28 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs rel"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+GENERATED_IUSE="docs rel test"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	bumpversion; extra == 'dev'
+	bumpversion; extra == 'rel'
+	coverage; extra == 'dev'
+	coverage; extra == 'test'
+	pycodestyle; extra == 'dev'
+	pycodestyle; extra == 'test'
+	pygments; extra == 'dev'
+	pygments; extra == 'docs'
+	sphinx-rtd-theme; extra == 'dev'
+	sphinx-rtd-theme; extra == 'docs'
+	sphinx; extra == 'dev'
+	sphinx; extra == 'docs'
+	twine; extra == 'dev'
+	twine; extra == 'rel'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/bumpversion[${PYTHON_USEDEP}]
@@ -34,5 +49,11 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
+GENERATED_RDEPEND="${RDEPEND}
+	rel? ( dev-python/bumpversion[${PYTHON_USEDEP}] )
+	docs? ( dev-python/pygments[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	rel? ( dev-python/twine[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"

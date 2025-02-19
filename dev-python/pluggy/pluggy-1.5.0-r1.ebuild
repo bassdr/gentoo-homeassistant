@@ -17,11 +17,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	pre-commit; extra == 'dev'
+	pytest-benchmark; extra == 'testing'
+	pytest; extra == 'testing'
+	tox; extra == 'dev'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -30,4 +31,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

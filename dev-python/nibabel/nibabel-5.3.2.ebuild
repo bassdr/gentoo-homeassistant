@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all dicom dicomfs doc doctest minc2 spm style typing zstd"
+GENERATED_IUSE="all dicom dicomfs doc doctest minc2 spm style test typing zstd"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

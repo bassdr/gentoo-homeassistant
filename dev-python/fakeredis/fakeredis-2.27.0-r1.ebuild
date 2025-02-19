@@ -30,7 +30,7 @@ REQUIRES_DIST="
 GENERATED_RDEPEND="${RDEPEND}
 	json? ( >=dev-python/jsonpath-ng-1.6[${PYTHON_USEDEP}] <dev-python/jsonpath-ng-2.0[${PYTHON_USEDEP}] )
 	lua? ( >=dev-python/lupa-2.1[${PYTHON_USEDEP}] <dev-python/lupa-3.0[${PYTHON_USEDEP}] )
-	bf? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] ) probabilistic? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] ) cf? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] )
+	cf? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] ) bf? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] ) probabilistic? ( >=dev-python/pyprobables-0.6[${PYTHON_USEDEP}] <dev-python/pyprobables-0.7[${PYTHON_USEDEP}] )
 	>=dev-python/redis-4.3[${PYTHON_USEDEP}]
 	>=dev-python/sortedcontainers-2[${PYTHON_USEDEP}] <dev-python/sortedcontainers-3[${PYTHON_USEDEP}]
 "

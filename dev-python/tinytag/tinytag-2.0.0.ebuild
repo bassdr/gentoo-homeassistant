@@ -15,11 +15,16 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	coverage; extra == 'tests'
+	mypy; extra == 'tests'
+	pycodestyle; extra == 'tests'
+	pylint; extra == 'tests'
+	pytest; extra == 'tests'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="component copy docs test-component test-minimal zcml"
+GENERATED_IUSE="component copy docs test test-component test-minimal zcml"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

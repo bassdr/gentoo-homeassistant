@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	jinja2; extra == 'docs'
@@ -57,7 +57,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/terminado[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/jupyter-server-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-jupyter-0.5.3[server,${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/jupyter-server[${PYTHON_USEDEP}]
 		dev-python/pytest-jupyter[${PYTHON_USEDEP}]
@@ -72,15 +80,6 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/jupyter-server-2.0.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-jupyter-0.5.3[server,${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_install_all() {
 	distutils-r1_python_install_all

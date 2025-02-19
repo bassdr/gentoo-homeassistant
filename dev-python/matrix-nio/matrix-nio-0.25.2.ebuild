@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm64"
 PROPERTIES="test_network"
 RESTRICT="test !test? ( test )"
 
-GENERATED_IUSE="docs e2e"
+GENERATED_IUSE="docs e2e test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	aiofiles~=24.1

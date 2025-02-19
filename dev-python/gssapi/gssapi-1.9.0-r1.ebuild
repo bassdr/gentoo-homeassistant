@@ -9,9 +9,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="Python GSSAPI Wrapper"
 HOMEPAGE="
-  https://pypi.org/project/gssapi/"
+  https://pypi.org/project/gssapi/
+"
 SRC_URI="
 	https://github.com/pythongssapi/python-gssapi/releases/download/v${PV}/python-${P}.tar.gz
 		-> ${P}.gh.tar.gz

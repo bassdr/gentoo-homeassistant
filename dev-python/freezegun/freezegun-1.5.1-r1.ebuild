@@ -8,9 +8,14 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="Let your Python tests travel through time"
 HOMEPAGE="
-  https://pypi.org/project/freezegun/"
+  https://pypi.org/project/freezegun/
+  Bug Tracker, https://github.com/spulec/freezegun/issues
+  Changes, https://github.com/spulec/freezegun/blob/master/CHANGELOG
+  Documentation, https://github.com/spulec/freezegun/blob/master/README.rst
+  Source Code, https://github.com/spulec/freezegun
+"
 
 LICENSE="Apache-2.0"
 SLOT="0"

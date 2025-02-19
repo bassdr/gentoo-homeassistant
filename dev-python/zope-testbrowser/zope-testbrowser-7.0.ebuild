@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="docs test-bbb"
+GENERATED_IUSE="docs test test-bbb"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_NO_NORMALIZE=1

@@ -17,7 +17,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="doc stats-server"
+GENERATED_IUSE="doc stats-server test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -107,23 +107,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pathvalidate[${PYTHON_USEDEP}]
 	dev-python/jsonpickle[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
-
-python_install() {
-        distutils-r1_python_install
-        # remove tests folder in sitedir
-        # https://bugs.gentoo.org/834522
-        rm -r "${D}$(python_get_sitedir)"/tests || die
-}
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/cherrypy[${PYTHON_USEDEP}]
@@ -142,4 +125,20 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/types-requests[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)"
+
+python_install() {
+        distutils-r1_python_install
+        # remove tests folder in sitedir
+        # https://bugs.gentoo.org/834522
+        rm -r "${D}$(python_get_sitedir)"/tests || die
+}
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

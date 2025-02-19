@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # jsonschema[format-nongpl] deps are always on in our ebuild
-GENERATED_IUSE="cli docs"
+GENERATED_IUSE="cli docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	click; extra == 'cli'
@@ -66,7 +66,17 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/referencing[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5.3[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/click[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
+		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/click[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
@@ -78,14 +88,3 @@ BDEPEND="
 # TODO: package jupyterlite-sphinx
 # distutils_enable_sphinx docs
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/click[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.19.0[${PYTHON_USEDEP}]
-		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
-		dev-python/rich[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

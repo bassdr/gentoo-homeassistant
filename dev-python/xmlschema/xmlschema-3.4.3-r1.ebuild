@@ -16,7 +16,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="codegen docs"
+GENERATED_IUSE="codegen docs test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -53,7 +53,22 @@ RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/elementpath-5[${PYTHON_USEDEP}]
 	>=dev-python/elementpath-4.4.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/coverage[${PYTHON_USEDEP}]
+		>=dev-python/elementpath-4.4.0[${PYTHON_USEDEP}] <dev-python/elementpath-5.0.0[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/lxml[${PYTHON_USEDEP}]
+		dev-python/lxml-stubs[${PYTHON_USEDEP}]
+		dev-python/memory-profiler[${PYTHON_USEDEP}]
+		dev-python/mypy[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+		dev-python/tox[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		${RDEPEND}
 		dev-python/jinja2[${PYTHON_USEDEP}]
@@ -64,5 +79,3 @@ BDEPEND="
 python_test() {
 	"${EPYTHON}" tests/test_all.py -v || die "Tests fail with ${EPYTHON}"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

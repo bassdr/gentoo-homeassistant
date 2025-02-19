@@ -18,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="rst-generator"
+GENERATED_IUSE="rst-generator test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	PyYAML>=5.1
@@ -61,19 +61,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.18.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-		>=dev-python/oslo-log-3.36.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
-		>=dev-python/requests-mock-1.5.0[${PYTHON_USEDEP}]
-		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
-		>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-4.0[${PYTHON_USEDEP}]
@@ -87,7 +74,19 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/oslo-log-3.36.0[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/requests-mock-1.5.0[${PYTHON_USEDEP}]
+		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
+		>=dev-python/testtools-2.2.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest
 
 src_prepare() {
 	# broken by some dep upgrade

@@ -18,10 +18,25 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs optional"
+GENERATED_IUSE="docs optional test"
 IUSE="${GENERATED_IUSE} examples test"
 
-RDEPEND=""
+REQUIRES_DIST="
+	Sphinx>=6.0; extra == 'docs'
+	myst-parser>=2.0.0; extra == 'docs'
+	python-socks; extra == 'optional'
+	sphinx-rtd-theme>=1.1.0; extra == 'docs'
+	websockets; extra == 'test'
+	wsaccel; extra == 'optional'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/myst-parser-2.0.0[${PYTHON_USEDEP}] )
+	optional? ( dev-python/python-socks[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.1.0[${PYTHON_USEDEP}] )
+	optional? ( dev-python/wsaccel[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
@@ -29,7 +44,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/websockets[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/python-socks[${PYTHON_USEDEP}]
 	)
@@ -43,5 +59,3 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

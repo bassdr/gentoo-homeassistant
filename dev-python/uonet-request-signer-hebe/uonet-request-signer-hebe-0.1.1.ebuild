@@ -29,7 +29,12 @@ GENERATED_RDEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyopenssl[${PYTHON_USEDEP}]"
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
@@ -39,9 +44,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

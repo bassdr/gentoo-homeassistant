@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	fastjsonschema>=2.15
@@ -51,7 +51,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jupyter-core-5.1[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5.1[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pep440[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/hatch-nodejs-version[${PYTHON_USEDEP}]
 	test? (
 		dev-python/testpath[${PYTHON_USEDEP}]
@@ -64,15 +72,6 @@ distutils_enable_sphinx docs \
 	dev-python/sphinxcontrib-github-alt \
 	dev-python/sphinxcontrib-spelling
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pep440[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/testpath[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_IGNORE=(
 	# requires pep440 package, which is not really relevant for us

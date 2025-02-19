@@ -36,7 +36,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/grpcio-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/grpcio-reflection-1.7.3[${PYTHON_USEDEP}]
 	>=dev-python/protobuf-4.22.0[${PYTHON_USEDEP}]"
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-grpc[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
@@ -46,10 +52,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-grpc[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

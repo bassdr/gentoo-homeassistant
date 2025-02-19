@@ -18,7 +18,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="fixtures systemd"
+GENERATED_IUSE="fixtures systemd test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage>=4.5.1; extra == 'test'
@@ -57,16 +57,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/oslo-serialization-1.25.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.7.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/pbr-3.1.1[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/testtools-2.3.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-3.3.0[${PYTHON_USEDEP}]
-		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-4.5.1[${PYTHON_USEDEP}]
@@ -77,7 +67,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/testtools-2.3.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/pbr-3.1.1[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/testtools-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-3.0.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest
 distutils_enable_sphinx doc/source \
 	dev-python/openstackdocstheme \
 	dev-python/oslo-config

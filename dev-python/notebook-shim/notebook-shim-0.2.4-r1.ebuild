@@ -31,14 +31,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jupyter-server-1.8[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	test? (
-		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
-		dev-python/pytest-jupyter[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -47,7 +39,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
+		dev-python/pytest-jupyter[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

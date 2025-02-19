@@ -6,9 +6,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="nose extends unittest to make testing easier"
 HOMEPAGE="
-  https://pypi.org/project/nose/"
+  https://pypi.org/project/nose/
+"
 
 LICENSE=""
 SLOT="0"

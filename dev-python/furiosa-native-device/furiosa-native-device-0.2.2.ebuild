@@ -15,10 +15,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	pytest ~=7.3 ; extra == 'test'
+	pytest-asyncio ~=0.21 ; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-7.3[${PYTHON_USEDEP}] =dev-python/pytest-7*[${PYTHON_USEDEP}]

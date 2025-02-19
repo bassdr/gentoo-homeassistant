@@ -31,14 +31,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/rich[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/mock-3.0.5[${PYTHON_USEDEP}]
@@ -49,7 +41,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-xdist-1.29.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# known breakage in dev-python/rich

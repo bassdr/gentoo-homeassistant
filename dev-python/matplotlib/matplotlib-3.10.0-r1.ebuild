@@ -112,7 +112,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	)
 "
 
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/meson-python-0.13.1[${PYTHON_USEDEP}] <dev-python/meson-python-0.17.0[${PYTHON_USEDEP}]
+		>=dev-python/pybind11-2.13.2[${PYTHON_USEDEP}] !~dev-python/pybind11-2.13.3[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-64[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	${RDEPEND}
 	dev-python/pybind11[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
@@ -137,15 +145,6 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/meson-python-0.13.1[${PYTHON_USEDEP}] <dev-python/meson-python-0.17.0[${PYTHON_USEDEP}]
-		>=dev-python/pybind11-2.13.2[${PYTHON_USEDEP}] !~dev-python/pybind11-2.13.3[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-64[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_unpack() {
 	# do not unpack freetype

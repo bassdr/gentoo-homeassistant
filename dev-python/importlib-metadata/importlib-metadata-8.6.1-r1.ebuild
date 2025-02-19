@@ -19,7 +19,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="check cover doc enabler perf type"
+GENERATED_IUSE="check cover doc enabler perf test type"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	flufl.flake8; extra == 'test'
@@ -62,15 +62,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/zipp-3.20[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
-		dev-python/pyfakefs[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flufl-flake8[${PYTHON_USEDEP}]
@@ -81,7 +72,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-perf-0.9.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/jaraco-test-5.4[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pyfakefs[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest
 
 src_configure() {
 	grep -q 'build-backend = "setuptools' pyproject.toml ||

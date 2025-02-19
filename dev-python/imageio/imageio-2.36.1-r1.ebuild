@@ -27,7 +27,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all-plugins all-plugins-pypy build docs ffmpeg fits full gdal itk linting pillow-heif pyav rawpy tifffile"
+GENERATED_IUSE="all-plugins all-plugins-pypy docs ffmpeg fits full gdal itk linting pillow-heif pyav rawpy test tifffile"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	astropy; extra == 'all-plugins'
@@ -138,7 +138,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	all-plugins? ( dev-python/tifffile[${PYTHON_USEDEP}] )
 	full? ( dev-python/tifffile[${PYTHON_USEDEP}] )
 	tifffile? ( dev-python/tifffile[${PYTHON_USEDEP}] )
-	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 	full? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
@@ -146,7 +145,17 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pillow-8.3.2[${PYTHON_USEDEP}]
 	media-libs/freeimage
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	dev-python/wheel[${PYTHON_USEDEP}]
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+		dev-python/flake8[${PYTHON_USEDEP}]
+		dev-python/fsspec[github,${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		>=dev-python/imageio-ffmpeg-0.4.9-r1[${PYTHON_USEDEP}]
 		dev-python/psutil[${PYTHON_USEDEP}]
@@ -159,16 +168,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/black[${PYTHON_USEDEP}]
-		dev-python/flake8[${PYTHON_USEDEP}]
-		dev-python/fsspec[github,${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	local PATCHES=(

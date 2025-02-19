@@ -21,6 +21,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	pytest>=6; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6[${PYTHON_USEDEP}]

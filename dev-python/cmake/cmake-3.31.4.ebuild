@@ -14,11 +14,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/importlib-metadata-1.4[${PYTHON_USEDEP}]
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	coverage>=4.2; extra == 'test'
+	importlib_metadata>=1.4; python_version < '3.8'
+	pytest-cov>=2.4.0; extra == 'test'
+	pytest>=3.0.3; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-4.2[${PYTHON_USEDEP}]

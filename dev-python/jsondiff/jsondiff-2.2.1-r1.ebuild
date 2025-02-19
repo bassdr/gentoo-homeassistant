@@ -33,14 +33,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
@@ -49,7 +41,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_prepare_all() {
 	distutils-r1_python_prepare_all

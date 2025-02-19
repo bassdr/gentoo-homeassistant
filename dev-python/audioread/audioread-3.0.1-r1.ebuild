@@ -18,8 +18,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="ffmpeg gstreamer mad"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 RDEPEND="
 	ffmpeg? (
 		media-video/ffmpeg
@@ -33,16 +31,18 @@ RDEPEND="
 		dev-python/pymad[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="
+REQUIRES_DIST="
+	tox ; extra == 'test'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/tox[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pymad[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/tox[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

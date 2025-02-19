@@ -3,12 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all data examples extra fabric-all fabric-dev fabric-examples fabric-strategies fabric-test pytorch-all pytorch-dev pytorch-examples pytorch-extra pytorch-strategies pytorch-test strategies"
+GENERATED_IUSE="all data examples extra fabric-all fabric-dev fabric-examples fabric-strategies fabric-test pytorch-all pytorch-dev pytorch-examples pytorch-extra pytorch-strategies pytorch-test strategies test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 2.5.0.post0)"
-S="${WORKDIR}/${PN}-2.5.0.post0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-2.5.0.post0"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -276,7 +276,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	pytorch-all? ( >=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}] <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
 	pytorch-dev? ( >=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}] <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
 	pytorch-examples? ( >=dev-python/lightning-utilities-0.8.0[${PYTHON_USEDEP}] <dev-python/lightning-utilities-1.0[${PYTHON_USEDEP}] )
-	data? ( >=dev-python/litdata-0.2.0rc[${PYTHON_USEDEP}] <dev-python/litdata-1.0[${PYTHON_USEDEP}] )
+	data? ( >=dev-python/litdata-0.2.0_rc[${PYTHON_USEDEP}] <dev-python/litdata-1.0[${PYTHON_USEDEP}] )
 	all? ( >dev-python/matplotlib-3.1[${PYTHON_USEDEP}] <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
 	extra? ( >dev-python/matplotlib-3.1[${PYTHON_USEDEP}] <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )
 	pytorch-all? ( >dev-python/matplotlib-3.1[${PYTHON_USEDEP}] <dev-python/matplotlib-4.0[${PYTHON_USEDEP}] )

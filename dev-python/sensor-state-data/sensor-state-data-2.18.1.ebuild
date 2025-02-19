@@ -20,11 +20,20 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.md"
 
+REQUIRES_DIST="
+	Sphinx<6.0,>=5.0; extra == 'docs'
+	myst-parser<0.19,>=0.18; extra == 'docs'
+	sphinx-rtd-theme<2.0,>=1.0; extra == 'docs'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/myst-parser-0.18[${PYTHON_USEDEP}] <dev-python/myst-parser-0.19[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5.0[${PYTHON_USEDEP}] <dev-python/sphinx-6.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0[${PYTHON_USEDEP}] <dev-python/sphinx-rtd-theme-2.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

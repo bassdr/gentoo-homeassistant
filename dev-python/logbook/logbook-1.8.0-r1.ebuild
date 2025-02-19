@@ -20,19 +20,36 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all compression docs execnet jinja redis sqlalchemy zmq"
+GENERATED_IUSE="all compression docs execnet jinja redis sqlalchemy test zmq"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	test? (
-		app-arch/brotli[python,${PYTHON_USEDEP}]
-		>=dev-python/execnet-1.0.9[${PYTHON_USEDEP}]
-		dev-python/jinja2[${PYTHON_USEDEP}]
-		dev-python/pip[${PYTHON_USEDEP}]
-		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-		dev-python/pyzmq[${PYTHON_USEDEP}]
-		>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	Jinja2; extra == 'jinja'
+	Logbook[compression,execnet,jinja,nteventlog,redis,sqlalchemy,zmq]; extra == 'all'
+	Logbook[test]; extra == 'dev'
+	Sphinx>=5; extra == 'docs'
+	brotli; extra == 'compression'
+	execnet>=1.0.9; extra == 'execnet'
+	pytest-rerunfailures; extra == 'test'
+	pytest>=6; extra == 'test'
+	pywin32; platform_system == 'Windows' and extra == 'nteventlog'
+	pyzmq; extra == 'zmq'
+	redis; extra == 'redis'
+	sqlalchemy>=1.4; extra == 'sqlalchemy'
+	tox>=4; extra == 'dev'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	compression? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
+	execnet? ( >=dev-python/execnet-1.0.9[${PYTHON_USEDEP}] )
+	jinja? ( dev-python/jinja2[${PYTHON_USEDEP}] )
+	all? ( dev-python/logbook[compression,execnet,jinja,nteventlog,redis,sqlalchemy,zmq,${PYTHON_USEDEP}] )
+	zmq? ( dev-python/pyzmq[${PYTHON_USEDEP}] )
+	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
+	sqlalchemy? ( >=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
@@ -43,6 +60,17 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
+	test? (
+		app-arch/brotli[python,${PYTHON_USEDEP}]
+		>=dev-python/execnet-1.0.9[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/pip[${PYTHON_USEDEP}]
+		dev-python/pyzmq[${PYTHON_USEDEP}]
+		>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]
+	)
+"
+
 distutils_enable_sphinx docs
 
 python_configure_all() {
@@ -58,5 +86,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -p rerunfailures
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

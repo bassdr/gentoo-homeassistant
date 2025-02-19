@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs lint markdown"
+GENERATED_IUSE="docs lint markdown test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	CommonMark>=0.5.6; extra == 'docs'
@@ -50,13 +50,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/sphinx-5.1.0[${PYTHON_USEDEP}]
 	>=dev-python/commonmark-0.5.6[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/lxml[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-6.5[${PYTHON_USEDEP}]
@@ -66,4 +59,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/lxml[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

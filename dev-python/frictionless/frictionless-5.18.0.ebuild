@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="aws bigquery ckan datasette duckdb excel github gsheets html json mysql ods pandas parquet postgresql spss sql visidata wkt zenodo"
+GENERATED_IUSE="aws bigquery ckan datasette duckdb excel github gsheets html json mysql ods pandas parquet postgresql spss sql test visidata wkt zenodo"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

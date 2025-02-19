@@ -17,6 +17,10 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	pytest (>=6.0.1) ; extra == 'test'
+	pytest-md-report (>=0.3) ; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]

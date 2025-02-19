@@ -19,7 +19,19 @@ KEYWORDS="amd64 arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-BDEPEND="
+REQUIRES_DIST="
+	flake8 (==3.7.8) ; extra == 'test'
+	future (>=0.14.0) ; python_version < '3'
+	hypothesis (==3.55.3) ; extra == 'test'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		~dev-python/flake8-3.7.8[${PYTHON_USEDEP}]
+		~dev-python/hypothesis-3.55.3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	test? (
 		>=dev-python/hypothesis-3.7.1[${PYTHON_USEDEP}]
 	)
@@ -41,5 +53,3 @@ pkg_postinst() {
 	ewarn "/usr/bin/cmark has been renamed to /usr/bin/cmark.py due file"
 	ewarn "collision with app-text/cmark (see bug #627034)"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

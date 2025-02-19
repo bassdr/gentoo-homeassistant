@@ -17,7 +17,7 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="lint"
+GENERATED_IUSE="lint test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 

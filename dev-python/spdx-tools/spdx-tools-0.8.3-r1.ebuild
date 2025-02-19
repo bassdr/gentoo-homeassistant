@@ -17,7 +17,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="code-style development graph-generation"
+GENERATED_IUSE="code-style development graph-generation test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	beartype

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all dev-all docs ipython jupyter recommended test-all typing"
+GENERATED_IUSE="all dev-all docs ipython jupyter recommended test test-all typing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

@@ -21,10 +21,31 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE} doc test"
 
-RDEPEND=""
+REQUIRES_DIST="
+	coverage; extra == 'testing'
+	importlib-metadata>=4.4; python_version < '3.10'
+	mdx-gh-links>=0.2; extra == 'docs'
+	mkdocs-gen-files; extra == 'docs'
+	mkdocs-literate-nav; extra == 'docs'
+	mkdocs-nature>=0.6; extra == 'docs'
+	mkdocs-section-index; extra == 'docs'
+	mkdocs>=1.5; extra == 'docs'
+	mkdocstrings[python]; extra == 'docs'
+	pyyaml; extra == 'testing'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/mdx-gh-links-0.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-1.5[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocs-gen-files[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocs-literate-nav[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/mkdocs-nature-0.6[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocs-section-index[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocstrings[python,${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
@@ -33,7 +54,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/pygments[${PYTHON_USEDEP}]
 		dev-python/pytidylib[${PYTHON_USEDEP}]
@@ -46,5 +68,3 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

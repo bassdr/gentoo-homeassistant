@@ -14,10 +14,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	black==22.6.0; extra == 'dev'
+	flake8; extra == 'dev'
+	mypy; extra == 'dev'
+	pytest; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/black-22.6.0[${PYTHON_USEDEP}]

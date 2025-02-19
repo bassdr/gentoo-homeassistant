@@ -16,11 +16,29 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	>=dev-python/setuptools-scm-7.0.0[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	importlib-metadata; python_version < '3.8'
+	mkdocs-material-extensions; extra == 'docs'
+	mkdocs-material; extra == 'docs'
+	mkdocs; extra == 'docs'
+	mkdocstrings-python; extra == 'docs'
+	mkdocstrings; extra == 'docs'
+	pymdown-extensions; extra == 'docs'
+	pytest-cov; extra == 'test'
+	pytest; extra == 'test'
+	typing-extensions; python_version < '3.8'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/mkdocs[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocs-material[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocs-material-extensions[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocstrings[${PYTHON_USEDEP}] )
+	docs? ( dev-python/mkdocstrings-python[${PYTHON_USEDEP}] )
+	docs? ( dev-python/pymdown-extensions[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -30,5 +48,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

@@ -16,18 +16,21 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	pytest-cov; extra == 'tests'
+	pytest; extra == 'tests'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	distutils-r1_src_prepare

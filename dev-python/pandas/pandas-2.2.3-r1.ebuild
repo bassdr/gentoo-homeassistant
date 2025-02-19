@@ -23,7 +23,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all aws clipboard compression computation consortium-standard excel feather fss gcp hdf5 html mysql output-formatting parquet performance plot postgresql pyarrow spss sql-other xml"
+GENERATED_IUSE="all aws clipboard compression computation consortium-standard excel feather fss gcp hdf5 html mysql output-formatting parquet performance plot postgresql pyarrow spss sql-other test xml"
 IUSE="${GENERATED_IUSE} big-endian full-support minimal test X"
 RESTRICT="!test? ( test )"
 
@@ -72,26 +72,6 @@ COMMON_DEPEND="
 	${DEPEND}
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2020.1[${PYTHON_USEDEP}]
-"
-BDEPEND="
-	${COMMON_DEPEND}
-	>=dev-build/meson-1.2.1
-	>=dev-python/cython-3.0.5[${PYTHON_USEDEP}]
-	>=dev-python/versioneer-0.28[${PYTHON_USEDEP}]
-	test? (
-		${VIRTUALX_DEPEND}
-		${RECOMMENDED_DEPEND}
-		${OPTIONAL_DEPEND}
-		dev-libs/apache-arrow[brotli,parquet,snappy]
-		>=dev-python/beautifulsoup4-4.11.1[${PYTHON_USEDEP}]
-		>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
-		>=dev-python/openpyxl-3.0.10[${PYTHON_USEDEP}]
-		>=dev-python/pyarrow-10.0.1[parquet,${PYTHON_USEDEP}]
-		>=dev-python/pymysql-1.0.2[${PYTHON_USEDEP}]
-		>=dev-python/xlsxwriter-3.0.3[${PYTHON_USEDEP}]
-		x11-misc/xclip
-		x11-misc/xsel
-	)
 "
 REQUIRES_DIST="
 	PyQt5>=5.15.9; extra == 'all'
@@ -179,6 +159,33 @@ REQUIRES_DIST="
 	xlsxwriter>=3.0.5; extra == 'excel'
 	zstandard>=0.19.0; extra == 'all'
 	zstandard>=0.19.0; extra == 'compression'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.3.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
+	${COMMON_DEPEND}
+	>=dev-build/meson-1.2.1
+	>=dev-python/cython-3.0.5[${PYTHON_USEDEP}]
+	>=dev-python/versioneer-0.28[${PYTHON_USEDEP}]
+	test? (
+		${VIRTUALX_DEPEND}
+		${RECOMMENDED_DEPEND}
+		${OPTIONAL_DEPEND}
+		dev-libs/apache-arrow[brotli,parquet,snappy]
+		>=dev-python/beautifulsoup4-4.11.1[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
+		>=dev-python/openpyxl-3.0.10[${PYTHON_USEDEP}]
+		>=dev-python/pyarrow-10.0.1[parquet,${PYTHON_USEDEP}]
+		>=dev-python/pymysql-1.0.2[${PYTHON_USEDEP}]
+		>=dev-python/xlsxwriter-3.0.3[${PYTHON_USEDEP}]
+		x11-misc/xclip
+		x11-misc/xsel
+	)
 "
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( >=dev-python/adbc-driver-postgresql-0.8.0[${PYTHON_USEDEP}] )
@@ -271,14 +278,6 @@ RDEPEND="${GENERATED_RDEPEND}
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/hypothesis-6.46.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.3.2[${PYTHON_USEDEP}]
-		>=dev-python/pytest-xdist-2.2.0[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	virtx distutils-r1_src_test

@@ -22,7 +22,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="cli"
+GENERATED_IUSE="cli test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Arpeggio>=2.0.0
@@ -48,14 +48,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/arpeggio-2.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/click[${PYTHON_USEDEP}]
-		dev-python/html5lib[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/click-7.0[${PYTHON_USEDEP}] <dev-python/click-9.0[${PYTHON_USEDEP}]
@@ -70,7 +62,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/textx-dev[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/click[${PYTHON_USEDEP}]
+		dev-python/html5lib[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	cp -a "${BUILD_DIR}"/{install,test} || die

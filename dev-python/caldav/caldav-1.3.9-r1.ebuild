@@ -47,13 +47,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/vobject[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/tzlocal[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -63,4 +56,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/xandikos[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/tzlocal[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

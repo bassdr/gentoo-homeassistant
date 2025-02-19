@@ -41,7 +41,7 @@ REQUIRES_DIST="
 	typing-extensions>=3.10.0; python_version < '3.10'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/astroid-3.3.8[${PYTHON_USEDEP}] <=dev-python/astroid-3.4.0-de0[${PYTHON_USEDEP}]
+	>=dev-python/astroid-3.3.8[${PYTHON_USEDEP}] <=dev-python/astroid-3.4.0_pre0[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.3.7[${PYTHON_USEDEP}]
 	testutils? ( >dev-python/gitpython-3[${PYTHON_USEDEP}] )

@@ -35,14 +35,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/httpx[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
-	test? (
-		dev-python/flaky[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flaky[${PYTHON_USEDEP}]
@@ -52,4 +44,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

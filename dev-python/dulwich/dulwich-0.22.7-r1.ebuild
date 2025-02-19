@@ -50,7 +50,7 @@ LICENSE+=" )"
 
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="fastimport https paramiko pgp"
+GENERATED_IUSE="fastimport https paramiko pgp test"
 IUSE="${GENERATED_IUSE} doc examples +native-extensions test"
 RESTRICT="!test? ( test )"
 
@@ -73,7 +73,15 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/urllib3-1.25[${PYTHON_USEDEP}]
 "
-BDEPEND="
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		~dev-python/mypy-1.13.0[${PYTHON_USEDEP}]
+		~dev-python/ruff-0.8.3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	native-extensions? (
 		${RUST_DEPEND}
 		dev-python/setuptools-rust[${PYTHON_USEDEP}]
@@ -128,5 +136,3 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

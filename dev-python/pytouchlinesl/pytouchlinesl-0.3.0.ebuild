@@ -34,12 +34,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pydantic[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="
-	test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -47,4 +41,9 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/ruff[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	)"
+
+distutils_enable_tests pytest

@@ -26,7 +26,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	build; extra == 'test'
@@ -49,8 +49,8 @@ REQUIRES_DIST="
 	wheel; extra == 'test'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	docs? ( >=dev-python/furo-2023.5.20[${PYTHON_USEDEP}] )
 	>=dev-build/meson-1.2.3[${PYTHON_USEDEP}]
+	docs? ( >=dev-python/furo-2023.5.20[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/pyproject-metadata-0.7.1[${PYTHON_USEDEP}]
 	docs? ( >=dev-python/sphinx-6.2[${PYTHON_USEDEP}] =dev-python/sphinx-6*[${PYTHON_USEDEP}] )
@@ -72,7 +72,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	>=dev-python/cython-3.0.3[${PYTHON_USEDEP}]
 	test? (
 		dev-vcs/git

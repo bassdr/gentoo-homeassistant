@@ -18,11 +18,34 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="twisted"
-IUSE="${GENERATED_IUSE} test"
+GENERATED_IUSE="test twisted"
+IUSE="${GENERATED_IUSE}"
 RESTRICT="!test? ( test )"
 
-BDEPEND="
+REQUIRES_DIST="
+	fixtures; extra == 'twisted'
+	ruff==0.4.8; extra == 'dev'
+	setuptools; python_version >= '3.12'
+	testresources; extra == 'test'
+	testscenarios; extra == 'test'
+	twisted; extra == 'twisted'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	twisted? ( dev-python/fixtures[${PYTHON_USEDEP}] )
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	twisted? ( dev-python/twisted[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		~dev-python/ruff-0.4.8[${PYTHON_USEDEP}]
+		dev-python/testresources[${PYTHON_USEDEP}]
+		dev-python/testscenarios[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/fixtures-2.0.0[${PYTHON_USEDEP}]
@@ -47,7 +70,3 @@ python_test() {
 	"${EPYTHON}" -m testtools.run test_suite.test_suite ||
 		die "tests failed under ${EPYTHON}"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

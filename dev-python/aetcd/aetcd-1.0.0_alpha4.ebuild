@@ -3,12 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 1.0.0a4)"
-S="${WORKDIR}/${PN}-1.0.0a4"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-1.0.0a4"
 
 DESCRIPTION=""
 HOMEPAGE="

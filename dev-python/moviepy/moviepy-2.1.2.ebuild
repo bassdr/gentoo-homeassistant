@@ -16,7 +16,7 @@ SRC_URI="https://github.com/Zulko/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="doc lint"
+GENERATED_IUSE="doc lint test"
 IUSE="${GENERATED_IUSE} test"
 
 REQUIRES_DIST="

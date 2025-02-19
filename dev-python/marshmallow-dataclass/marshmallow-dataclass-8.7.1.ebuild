@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs lint"
+GENERATED_IUSE="docs lint test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -46,7 +46,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/marshmallow-3.13.0[${PYTHON_USEDEP}]
 	<dev-python/marshmallow-4.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-inspect-0.7.1[${PYTHON_USEDEP}]"
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-5.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mypy-plugins-1.2.0[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		>=dev-vcs/pre-commit-2.17[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
@@ -56,12 +64,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-5.4[${PYTHON_USEDEP}]
-		>=dev-python/pytest-mypy-plugins-1.2.0[${PYTHON_USEDEP}]
-		dev-python/sphinx[${PYTHON_USEDEP}]
-		>=dev-vcs/pre-commit-2.17[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

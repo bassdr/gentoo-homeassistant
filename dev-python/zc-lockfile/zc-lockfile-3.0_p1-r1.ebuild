@@ -19,7 +19,21 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
+REQUIRES_DIST="
+	setuptools
+	zope.testing ; extra == 'test'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/zope-testing[${PYTHON_USEDEP}]
 	)
@@ -28,12 +42,6 @@ BDEPEND="
 DOCS=( CHANGES.rst README.rst )
 
 distutils_enable_tests unittest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/zope-testing[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	# rdep is only needed for namespace
@@ -49,5 +57,3 @@ python_prepare_all() {
 python_test() {
 	"${EPYTHON}" -m unittest zc.lockfile.tests -v || die
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

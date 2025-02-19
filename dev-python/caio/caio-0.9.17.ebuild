@@ -18,17 +18,25 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="develop"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"
 
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+REQUIRES_DIST="
+	aiomisc-pytest; extra == 'develop'
+	pytest-cov; extra == 'develop'
+	pytest; extra == 'develop'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	develop? ( dev-python/aiomisc-pytest[${PYTHON_USEDEP}] )
+	develop? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 src_prepare() {
-	cp $S/README.md $S/README.rst
+	# TODO: WTF?
+	cp ${S}/README.md ${S}/README.rst
 	default
 }
 python_test() {
@@ -36,5 +44,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

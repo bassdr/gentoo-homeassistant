@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=poetry
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 2023.9.0)"
-S="${WORKDIR}/${PN}-2023.9.0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-2023.9.0"
 
 DESCRIPTION="A Python 3, asyncio-based library for the ReCollect Waste API"
 HOMEPAGE="

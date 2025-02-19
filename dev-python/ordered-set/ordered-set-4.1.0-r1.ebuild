@@ -21,6 +21,11 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	mypy ; extra == 'dev'
+	pytest ; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]

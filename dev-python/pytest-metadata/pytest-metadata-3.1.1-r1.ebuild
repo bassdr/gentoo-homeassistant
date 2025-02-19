@@ -29,11 +29,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-22.1.0[${PYTHON_USEDEP}]
@@ -42,4 +37,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-vcs/pre-commit-2.17.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

@@ -20,7 +20,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all all-strict colors colors-strict docs docs-strict jupyter jupyter-strict optional optional-strict tests-binary tests-binary-strict tests-strict"
+GENERATED_IUSE="all all-strict colors colors-strict docs docs-strict jupyter jupyter-strict optional optional-strict test tests-binary tests-binary-strict tests-strict"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	IPython==7.23.1; extra == 'all-strict'
@@ -284,20 +284,19 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytest[${PYTHON_USEDEP}]
 "
 # dev-python/nbformat-5.1.{0..2} did not install package data
-BDEPEND="
-	test? (
-		>=dev-python/nbformat-5.1.2-r1[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/nbformat-5.1.2-r1[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 #distutils_enable_sphinx docs/source \
 #	dev-python/autoapi \
 #	dev-python/sphinx-rtd-theme

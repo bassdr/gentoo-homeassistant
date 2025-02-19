@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="sql"
+GENERATED_IUSE="sql test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -61,7 +61,19 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/tomlkit-0.11.6[${PYTHON_USEDEP}]
 	>=dev-python/voluptuous-0.8.9[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/black-22.0[${PYTHON_USEDEP}] =dev-python/black-22*[${PYTHON_USEDEP}]
+		>=dev-python/coverage-4.0[${PYTHON_USEDEP}]
+		>=dev-python/ddt-1.0.1[${PYTHON_USEDEP}]
+		>=dev-python/doc8-0.8.0[${PYTHON_USEDEP}]
+		>=dev-python/hacking-3.1.0[${PYTHON_USEDEP}] <dev-python/hacking-3.2.0[${PYTHON_USEDEP}]
+		dev-python/iso8601[${PYTHON_USEDEP}]
+		>dev-python/sphinx-2.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	>=dev-python/pbr-2.0.0[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/ddt-1.0.1[${PYTHON_USEDEP}]
@@ -74,5 +86,3 @@ python_test() {
 	stestr run --concurrency "${EPYTEST_JOBS:-$(makeopts_jobs)}" ||
 		die "Tests failed with ${EPYTHON}"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

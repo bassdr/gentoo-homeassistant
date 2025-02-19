@@ -16,7 +16,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
+REQUIRES_DIST="
+	jinja2 ; extra == 'dev'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/jinja2[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
 	)
@@ -29,9 +37,3 @@ PATCHES=(
 )
 
 distutils_enable_tests unittest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/jinja2[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

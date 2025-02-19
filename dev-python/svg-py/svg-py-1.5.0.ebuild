@@ -19,6 +19,11 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 DOCS="README.md"
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	isort; extra == 'dev'
+	mypy; extra == 'dev'
+	pytest; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/isort[${PYTHON_USEDEP}]

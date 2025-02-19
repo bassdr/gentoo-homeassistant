@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	pluggy >=1.1
@@ -38,7 +38,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/qtpy[gui,testlib,widgets(+),${PYTHON_USEDEP}]
 	>=dev-python/pluggy-1.1[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/tox[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		|| (
 			dev-python/pyqt6[gui,testlib,widgets,${PYTHON_USEDEP}]
@@ -52,13 +58,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/tox[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 src_test() {

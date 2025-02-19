@@ -17,15 +17,26 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	test? (
-		dev-python/zope-testing[${PYTHON_USEDEP}]
-	)
-"
 
-distutils_enable_tests unittest
+REQUIRES_DIST="
+	Sphinx; extra == 'docs'
+	coverage; extra == 'testing'
+	setuptools
+	sphinx-rtd-theme; extra == 'docs'
+	zope.testing; extra == 'test'
+	zope.testing; extra == 'testing'
+	zope.testrunner; extra == 'test'
+	zope.testrunner; extra == 'testing'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -33,7 +44,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/zope-testrunner[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest
 
 src_prepare() {
 	# strip rdep specific to namespaces
@@ -49,5 +66,3 @@ python_compile() {
 python_test() {
 	eunittest -s "${BUILD_DIR}/install$(python_get_sitedir)/zope/hookable/tests"
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

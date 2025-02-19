@@ -22,16 +22,36 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs ssh"
+GENERATED_IUSE="docs ssh test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
-	test? (
-		dev-python/psutil[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	coverage[toml]; extra == 'dev'
+	coverage[toml]; extra == 'test'
+	importlib-resources; python_version < '3.9'
+	paramiko; extra == 'dev'
+	paramiko; extra == 'ssh'
+	paramiko; extra == 'test'
+	psutil; extra == 'dev'
+	psutil; extra == 'test'
+	pytest-cov; extra == 'dev'
+	pytest-cov; extra == 'test'
+	pytest-mock; extra == 'dev'
+	pytest-mock; extra == 'test'
+	pytest-timeout; extra == 'dev'
+	pytest-timeout; extra == 'test'
+	pytest>=6.0; extra == 'dev'
+	pytest>=6.0; extra == 'test'
+	pywin32; platform_system == 'Windows' and platform_python_implementation != 'PyPy'
+	sphinx-rtd-theme>=1.0.0; extra == 'docs'
+	sphinx>=4.0.0; extra == 'docs'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	ssh? ( dev-python/paramiko[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-rtd-theme-1.0.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -46,6 +66,10 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+"
+
 
 python_test() {
 	local EPYTEST_DESELECT=(
@@ -72,5 +96,3 @@ pkg_postinst() {
 	optfeature "colored output in jupyter" dev-python/ipython
 	optfeature "images on the command line" dev-python/pillow
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

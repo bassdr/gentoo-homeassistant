@@ -14,10 +14,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	mypy; extra == 'tests'
+	pytest-xdist; extra == 'tests'
+	pytest>=7.0; extra == 'tests'
+	requests; extra == 'tests'
+	types-requests; extra == 'tests'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/mypy[${PYTHON_USEDEP}]

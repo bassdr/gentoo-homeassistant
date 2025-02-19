@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 0.10.0.post1)"
-S="${WORKDIR}/${PN}-0.10.0.post1"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-0.10.0.post1"
 
 DESCRIPTION="Python OWFS client library (owserver protocol)"
 HOMEPAGE="

@@ -16,6 +16,31 @@ KEYWORDS="amd64 arm64"
 
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	bitsandbytes; extra == 'dev'
+	blobfile; extra == 'dev'
+	diskcache; extra == 'dev'
+	expecttest; extra == 'dev'
+	fire; extra == 'dev'
+	hypothesis; extra == 'dev'
+	importlib-metadata; extra == 'dev'
+	lm-eval; extra == 'dev'
+	matplotlib; extra == 'dev'
+	ninja; extra == 'dev'
+	packaging; extra == 'dev'
+	pandas; extra == 'dev'
+	parameterized; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pycocotools; extra == 'dev'
+	pytest==7.4.0; extra == 'dev'
+	ruff==0.6.8; extra == 'dev'
+	sentencepiece; extra == 'dev'
+	tabulate; extra == 'dev'
+	tiktoken; extra == 'dev'
+	tqdm; extra == 'dev'
+	transformers; extra == 'dev'
+	unittest-xml-reporting; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/bitsandbytes[${PYTHON_USEDEP}]

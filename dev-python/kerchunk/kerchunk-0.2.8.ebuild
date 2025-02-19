@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="cftime fits grib2 hdf netcdf3"
+GENERATED_IUSE="cftime fits grib2 hdf netcdf3 test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

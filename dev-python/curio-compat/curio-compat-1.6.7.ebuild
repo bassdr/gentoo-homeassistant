@@ -14,10 +14,16 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	Sphinx; extra == 'test'
+	bump2version; extra == 'test'
+	mypy; extra == 'test'
+	pre-commit; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/bump2version[${PYTHON_USEDEP}]

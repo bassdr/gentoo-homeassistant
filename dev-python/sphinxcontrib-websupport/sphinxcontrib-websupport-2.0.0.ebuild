@@ -17,7 +17,7 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint whoosh"
+GENERATED_IUSE="lint test whoosh"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Sphinx>=5
@@ -49,7 +49,12 @@ PDEPEND="
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]
 "
 # there are additional optional test deps on sqlalchemy and whoosh
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		${PDEPEND}
 		$(python_gen_cond_dep '
@@ -60,9 +65,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

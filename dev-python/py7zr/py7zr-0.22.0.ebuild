@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="check debug docs test-compat"
+GENERATED_IUSE="check debug docs test test-compat"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -59,8 +59,8 @@ REQUIRES_DIST="
 	types-psutil; extra == 'check'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	check? ( >=dev-python/black-23.1.0[${PYTHON_USEDEP}] )
 	>=app-arch/brotli-1.1.0[python,${PYTHON_USEDEP}]
+	check? ( >=dev-python/black-23.1.0[${PYTHON_USEDEP}] )
 	check? ( dev-python/check-manifest[${PYTHON_USEDEP}] )
 	docs? ( dev-python/docutils[${PYTHON_USEDEP}] )
 	check? ( <dev-python/flake8-8[${PYTHON_USEDEP}] )

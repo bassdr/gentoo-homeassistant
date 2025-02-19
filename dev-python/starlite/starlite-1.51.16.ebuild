@@ -43,15 +43,15 @@ REQUIRES_DIST="
 	typing-extensions
 "
 GENERATED_RDEPEND="${RDEPEND}
+	brotli? ( app-arch/brotli[python,${PYTHON_USEDEP}] ) full? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
 	full? ( dev-python/aiomcache[${PYTHON_USEDEP}] ) memcached? ( dev-python/aiomcache[${PYTHON_USEDEP}] )
 	>=dev-python/anyio-3[${PYTHON_USEDEP}] <dev-python/anyio-4[${PYTHON_USEDEP}]
-	brotli? ( app-arch/brotli[python,${PYTHON_USEDEP}] ) full? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
-	full? ( dev-python/click[${PYTHON_USEDEP}] ) cli? ( dev-python/click[${PYTHON_USEDEP}] ) standard? ( dev-python/click[${PYTHON_USEDEP}] )
-	full? ( dev-python/cryptography[${PYTHON_USEDEP}] ) jwt? ( dev-python/cryptography[${PYTHON_USEDEP}] ) cryptography? ( dev-python/cryptography[${PYTHON_USEDEP}] )
+	standard? ( dev-python/click[${PYTHON_USEDEP}] ) cli? ( dev-python/click[${PYTHON_USEDEP}] ) full? ( dev-python/click[${PYTHON_USEDEP}] )
+	jwt? ( dev-python/cryptography[${PYTHON_USEDEP}] ) cryptography? ( dev-python/cryptography[${PYTHON_USEDEP}] ) full? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	dev-python/fast-query-parsers[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.22[${PYTHON_USEDEP}]
-	standard? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] ) jinja? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] ) full? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
-	standard? ( dev-python/jsbeautifier[${PYTHON_USEDEP}] ) cli? ( dev-python/jsbeautifier[${PYTHON_USEDEP}] )
+	jinja? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] ) full? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] ) standard? ( >=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}] )
+	cli? ( dev-python/jsbeautifier[${PYTHON_USEDEP}] ) standard? ( dev-python/jsbeautifier[${PYTHON_USEDEP}] )
 	>=dev-python/mako-1.2.4[${PYTHON_USEDEP}]
 	>=dev-python/msgspec-0.11.0[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.2[${PYTHON_USEDEP}]
@@ -60,7 +60,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	<dev-python/pydantic-2[${PYTHON_USEDEP}]
 	dev-python/pydantic-factories[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-openapi-schema-1.5.0[${PYTHON_USEDEP}]
-	jwt? ( dev-python/python-jose[${PYTHON_USEDEP}] ) full? ( dev-python/python-jose[${PYTHON_USEDEP}] )
+	full? ( dev-python/python-jose[${PYTHON_USEDEP}] ) jwt? ( dev-python/python-jose[${PYTHON_USEDEP}] )
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	full? ( dev-python/redis[hiredis,${PYTHON_USEDEP}] ) redis? ( dev-python/redis[hiredis,${PYTHON_USEDEP}] )
 	cli? ( >=dev-python/rich-13.0.0[${PYTHON_USEDEP}] ) full? ( >=dev-python/rich-13.0.0[${PYTHON_USEDEP}] ) standard? ( >=dev-python/rich-13.0.0[${PYTHON_USEDEP}] )

@@ -20,7 +20,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="django lint"
+GENERATED_IUSE="django lint test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	dj-database-url ; extra == 'dev'
@@ -64,20 +64,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		dev-python/typing-extensions[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
-	test? (
-		$(python_gen_cond_dep '
-			dev-python/backports-strenum[${PYTHON_USEDEP}]
-		' 3.10)
-		dev-python/django-cache-url[${PYTHON_USEDEP}]
-		dev-python/dj-database-url[${PYTHON_USEDEP}]
-		dev-python/dj-email-url[${PYTHON_USEDEP}]
-	)
-"
-
-DOCS=( CHANGELOG.md CONTRIBUTING.md README.md  )
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/dj-database-url[${PYTHON_USEDEP}]
@@ -91,4 +77,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-vcs/pre-commit-2.4[${PYTHON_USEDEP}] =dev-vcs/pre-commit-2*[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		$(python_gen_cond_dep '
+			dev-python/backports-strenum[${PYTHON_USEDEP}]
+		' 3.10)
+		dev-python/django-cache-url[${PYTHON_USEDEP}]
+		dev-python/dj-database-url[${PYTHON_USEDEP}]
+		dev-python/dj-email-url[${PYTHON_USEDEP}]
+	)
+"
+
+DOCS=( CHANGELOG.md CONTRIBUTING.md README.md  )
+
+distutils_enable_tests pytest

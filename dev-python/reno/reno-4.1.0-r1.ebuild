@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="sphinx"
+GENERATED_IUSE="sphinx test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	PyYAML (>=5.3.1)
@@ -48,16 +48,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/docutils-0.11[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-2.1.1[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/pbr[${PYTHON_USEDEP}]
-	test? (
-		dev-python/fixtures[${PYTHON_USEDEP}]
-		>=dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
-	)
-"
-
-# The doc needs to be built from a git repository
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-4.0[${PYTHON_USEDEP}] !~dev-python/coverage-4.4[${PYTHON_USEDEP}]
@@ -68,7 +58,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/pbr[${PYTHON_USEDEP}]
+	test? (
+		dev-python/fixtures[${PYTHON_USEDEP}]
+		>=dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
+	)
+"
+
+# The doc needs to be built from a git repository
+distutils_enable_tests unittest
 
 python_prepare_all() {
 	# Some tests need to be run from a git repository

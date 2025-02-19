@@ -23,13 +23,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	test? (
-		dev-python/pillow[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	Pillow ; extra == 'test'
+	black ; extra == 'test'
+	check-manifest ; extra == 'test'
+	flake8 ; extra == 'test'
+	pyroma ; extra == 'test'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
+	zest.releaser[recommended] ; extra == 'test'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
@@ -42,7 +45,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/zest-releaser[recommended,${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pillow[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# broken with new pillow version (also potentially super-fragile)

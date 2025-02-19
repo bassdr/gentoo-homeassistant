@@ -3,12 +3,12 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all deepspeed examples extra strategies"
+GENERATED_IUSE="all deepspeed examples extra strategies test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 2.5.0.post0)"
-S="${WORKDIR}/${PN}-2.5.0.post0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-2.5.0.post0"
 
 DESCRIPTION=""
 HOMEPAGE="

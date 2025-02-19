@@ -18,7 +18,7 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs mintests persistentregistry security zcml"
+GENERATED_IUSE="docs mintests persistentregistry security test zcml"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Sphinx ; extra == 'docs'
@@ -72,15 +72,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/zope-interface-5.3.0[${PYTHON_USEDEP}]
 	!dev-python/namespace-zope
 "
-BDEPEND="
-	test? (
-		dev-python/zope-configuration[${PYTHON_USEDEP}]
-		dev-python/zope-i18nmessageid[${PYTHON_USEDEP}]
-		dev-python/zope-testing[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/persistent[${PYTHON_USEDEP}]
@@ -93,7 +84,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/zope-testrunner[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/zope-configuration[${PYTHON_USEDEP}]
+		dev-python/zope-i18nmessageid[${PYTHON_USEDEP}]
+		dev-python/zope-testing[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests unittest
 
 src_prepare() {
 	# strip rdep specific to namespaces

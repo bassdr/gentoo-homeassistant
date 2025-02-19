@@ -21,17 +21,17 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	coveralls ; extra == 'dev'
+	dataclasses ; python_version < '3.7'
+	mypy ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pylint ; extra == 'dev'
+	pytest (>=5) ; extra == 'dev'
+	pytest-benchmark ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
@@ -44,4 +44,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

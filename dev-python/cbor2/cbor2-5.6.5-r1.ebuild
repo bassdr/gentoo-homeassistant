@@ -21,16 +21,28 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="benchmarks doc"
+GENERATED_IUSE="benchmarks doc test"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-BDEPEND="
-	>=dev-python/setuptools-61[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-scm-6.4[${PYTHON_USEDEP}]
-	test? (
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	Sphinx>=7; extra == 'doc'
+	coverage>=7; extra == 'test'
+	hypothesis; extra == 'test'
+	packaging; extra == 'doc'
+	pytest-benchmark==4.0.0; extra == 'benchmarks'
+	pytest; extra == 'test'
+	sphinx-autodoc-typehints>=1.2.0; extra == 'doc'
+	sphinx-rtd-theme>=1.3.0; extra == 'doc'
+	typing-extensions; python_version < '3.12' and extra == 'doc'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	doc? ( dev-python/packaging[${PYTHON_USEDEP}] )
+	benchmarks? ( ~dev-python/pytest-benchmark-4.0.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-7[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-autodoc-typehints-1.2.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -41,6 +53,10 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
+	>=dev-python/setuptools-61[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-6.4[${PYTHON_USEDEP}]
+"
 
 python_prepare_all() {
 	# remove pytest-cov dep
@@ -56,5 +72,3 @@ python_compile() {
 	fi
 	distutils-r1_python_compile
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

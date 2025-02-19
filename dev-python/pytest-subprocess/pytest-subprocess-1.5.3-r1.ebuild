@@ -20,7 +20,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Pygments>=2.0; extra == 'test'
@@ -50,17 +50,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-4.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/anyio[${PYTHON_USEDEP}]
-		>=dev-python/docutils-0.12[${PYTHON_USEDEP}]
-		>=dev-python/pygments-2.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.15.1[${PYTHON_USEDEP}]
-		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/anyio[${PYTHON_USEDEP}]
@@ -74,7 +63,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/anyio[${PYTHON_USEDEP}]
+		>=dev-python/docutils-0.12[${PYTHON_USEDEP}]
+		>=dev-python/pygments-2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.15.1[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

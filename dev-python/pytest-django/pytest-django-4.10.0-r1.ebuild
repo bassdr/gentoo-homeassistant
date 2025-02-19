@@ -20,7 +20,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Django; extra == 'testing'
@@ -37,7 +37,13 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/django[${PYTHON_USEDEP}]
+		>=dev-python/django-configurations-2.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	>=dev-python/setuptools-scm-1.11.1[${PYTHON_USEDEP}]
 	test? (
 		dev-python/django[${PYTHON_USEDEP}]
@@ -49,13 +55,6 @@ BDEPEND="
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/django[${PYTHON_USEDEP}]
-		>=dev-python/django-configurations-2.0[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local -x DJANGO_SETTINGS_MODULE

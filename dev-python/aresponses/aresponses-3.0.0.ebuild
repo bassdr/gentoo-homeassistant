@@ -6,9 +6,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="Asyncio response mocking. Similar to the responses library used for 'requests'"
 HOMEPAGE="
-  https://pypi.org/project/aresponses/"
+  https://pypi.org/project/aresponses/
+"
 
 LICENSE=""
 SLOT="0"

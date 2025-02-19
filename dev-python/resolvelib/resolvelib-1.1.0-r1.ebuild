@@ -22,13 +22,28 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint release"
+GENERATED_IUSE="lint release test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	test? (
-		dev-python/packaging[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	build; extra == 'release'
+	mypy; extra == 'lint'
+	packaging; extra == 'test'
+	pytest; extra == 'test'
+	ruff; extra == 'lint'
+	towncrier; extra == 'release'
+	twine; extra == 'release'
+	types-requests; extra == 'lint'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	release? ( dev-python/build[${PYTHON_USEDEP}] )
+	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
+	release? ( dev-python/towncrier[${PYTHON_USEDEP}] )
+	release? ( dev-python/twine[${PYTHON_USEDEP}] )
+	lint? ( dev-python/types-requests[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -38,5 +53,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

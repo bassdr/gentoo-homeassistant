@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all"
+GENERATED_IUSE="all test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -115,14 +115,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]
 	>=dev-python/pyroute2-0.7.3[${PYTHON_USEDEP}]
 	dev-python/cached-ipaddress[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest-runner[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-19.10_beta0[${PYTHON_USEDEP}]
@@ -144,4 +136,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/wheel-0.34.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	)"
+
+distutils_enable_tests pytest

@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs openapi"
+GENERATED_IUSE="docs openapi test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	autodoc-traits; extra == 'docs'
@@ -82,22 +82,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/jupyter-server-3[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	test? (
-		dev-python/ipykernel[${PYTHON_USEDEP}]
-		dev-python/jupyter-server[${PYTHON_USEDEP}]
-		>=dev-python/openapi-core-0.18[${PYTHON_USEDEP}]
-		>=dev-python/openapi-spec-validator-0.6[${PYTHON_USEDEP}]
-		dev-python/pytest-jupyter[${PYTHON_USEDEP}]
-		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/requests-mock[${PYTHON_USEDEP}]
-		dev-python/ruamel-yaml[${PYTHON_USEDEP}]
-		dev-python/strict-rfc3339[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/hatch[${PYTHON_USEDEP}]
@@ -116,7 +100,22 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/werkzeug[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/jupyter-server[${PYTHON_USEDEP}]
+		>=dev-python/openapi-core-0.18[${PYTHON_USEDEP}]
+		>=dev-python/openapi-spec-validator-0.6[${PYTHON_USEDEP}]
+		dev-python/pytest-jupyter[${PYTHON_USEDEP}]
+		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/ruamel-yaml[${PYTHON_USEDEP}]
+		dev-python/strict-rfc3339[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 # TODO: package autodoc_traits
 #distutils_enable_sphinx docs/source dev-python/pydata-sphinx-theme dev-python/myst-parser
 

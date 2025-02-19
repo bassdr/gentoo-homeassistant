@@ -8,6 +8,14 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
+REQUIRES_DIST="
+	tqdm
+"
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/tqdm[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/proglog/"
@@ -20,5 +28,3 @@ KEYWORDS="amd64 arm64"
 S="${WORKDIR}/${PN^}-${PV}"
 
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

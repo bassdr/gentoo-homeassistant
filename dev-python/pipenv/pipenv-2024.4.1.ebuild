@@ -71,16 +71,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/tomlkit[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	${RDEPEND}
-	test? (
-		dev-python/flaky[${PYTHON_USEDEP}]
-		dev-python/mock[${PYTHON_USEDEP}]
-		dev-python/pytz[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
@@ -97,7 +87,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/towncrier[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	${RDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 # IMPORTANT: The following sed command patches the vendor direcotry
 # in the pipenv source. Attempts to simply bump the version of the

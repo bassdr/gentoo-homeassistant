@@ -18,7 +18,7 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all doc numpy pandas test-minimal types"
+GENERATED_IUSE="all doc numpy pandas test test-minimal types"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	backports.zoneinfo; python_version < '3.9'
@@ -91,7 +91,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/tzlocal[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/ipython[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
+		>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		${RDEPEND}
 		dev-python/ipython[${PYTHON_USEDEP}]
@@ -101,15 +109,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/ipython[${PYTHON_USEDEP}]
-		>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
-		>=dev-python/pandas-1.3.5[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 pkg_postinst() {
 	optfeature "ipython integration" dev-python/ipython

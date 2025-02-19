@@ -64,11 +64,11 @@ GENERATED_RDEPEND="${RDEPEND}
 	scylla? ( ~dev-python/cassandra-driver-3.29.1[${PYTHON_USEDEP}] )
 	chroma? ( dev-python/chromadb-client[${PYTHON_USEDEP}] )
 	clickhouse? ( dev-python/clickhouse-driver[${PYTHON_USEDEP}] )
-	mailpit? ( dev-python/cryptography[${PYTHON_USEDEP}] ) sftp? ( dev-python/cryptography[${PYTHON_USEDEP}] )
+	sftp? ( dev-python/cryptography[${PYTHON_USEDEP}] ) mailpit? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	dev-python/docker[${PYTHON_USEDEP}]
 	google? ( >=dev-python/google-cloud-datastore-2[${PYTHON_USEDEP}] )
 	google? ( >=dev-python/google-cloud-pubsub-2[${PYTHON_USEDEP}] )
-	test-module-import? ( dev-python/httpx[${PYTHON_USEDEP}] ) aws? ( dev-python/httpx[${PYTHON_USEDEP}] ) generic? ( dev-python/httpx[${PYTHON_USEDEP}] )
+	aws? ( dev-python/httpx[${PYTHON_USEDEP}] ) generic? ( dev-python/httpx[${PYTHON_USEDEP}] ) test-module-import? ( dev-python/httpx[${PYTHON_USEDEP}] )
 	db2? ( dev-python/ibm-db-sa[${PYTHON_USEDEP}] )
 	influxdb? ( dev-python/influxdb[${PYTHON_USEDEP}] )
 	influxdb? ( dev-python/influxdb-client[${PYTHON_USEDEP}] )
@@ -77,7 +77,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	nats? ( dev-python/nats-py[${PYTHON_USEDEP}] )
 	neo4j? ( dev-python/neo4j[${PYTHON_USEDEP}] )
 	opensearch? ( dev-python/opensearch-py[${PYTHON_USEDEP}] )
-	oracle? ( dev-python/oracledb[${PYTHON_USEDEP}] ) oracle-free? ( dev-python/oracledb[${PYTHON_USEDEP}] )
+	oracle-free? ( dev-python/oracledb[${PYTHON_USEDEP}] ) oracle? ( dev-python/oracledb[${PYTHON_USEDEP}] )
 	rabbitmq? ( dev-python/pika[${PYTHON_USEDEP}] )
 	mongodb? ( dev-python/pymongo[${PYTHON_USEDEP}] )
 	mssql? ( dev-python/pymssql[${PYTHON_USEDEP}] )
@@ -89,7 +89,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	qdrant? ( dev-python/qdrant-client[${PYTHON_USEDEP}] )
 	generic? ( dev-python/redis[${PYTHON_USEDEP}] ) redis? ( dev-python/redis[${PYTHON_USEDEP}] )
 	selenium? ( dev-python/selenium[${PYTHON_USEDEP}] )
-	mysql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) mssql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) oracle-free? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) oracle? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) db2? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
+	oracle-free? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) mysql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) mssql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) db2? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] ) oracle? ( dev-python/sqlalchemy[${PYTHON_USEDEP}] )
 	trino? ( dev-python/trino[${PYTHON_USEDEP}] )
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]

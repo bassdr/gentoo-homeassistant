@@ -24,7 +24,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs idna mypy"
+GENERATED_IUSE="docs idna mypy test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	attrs>=19.1.0
@@ -70,15 +70,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/hatch-fancy-pypi-readme[${PYTHON_USEDEP}]
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/pyopenssl-17.1.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-5.0.2[toml,${PYTHON_USEDEP}]
@@ -89,4 +80,12 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/types-pyopenssl[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/hatch-fancy-pypi-readme[${PYTHON_USEDEP}]
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/pyopenssl-17.1.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="check cover doc enabler type"
+GENERATED_IUSE="check cover doc enabler test type"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	furo; extra == 'doc'
@@ -57,15 +57,14 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typeguard-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/more-itertools-8.5.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/setuptools-scm-3.4.1[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pygments[${PYTHON_USEDEP}]
 		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/setuptools-scm-3.4.1[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

@@ -48,7 +48,7 @@ GENERATED_RDEPEND="${RDEPEND} $(python_gen_cond_dep '
 	>=dev-python/pydantic-1.9.0[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
 	dev-python/sniffio[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.7[${PYTHON_USEDEP}] <dev-python/typing-extensions-5[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.13.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/tokenizers-0.13.0[${PYTHON_USEDEP}]
 ')"
 RDEPEND="${GENERATED_RDEPEND}"
 

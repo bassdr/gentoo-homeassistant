@@ -22,10 +22,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-RDEPEND="
+RDEPEND+="
 	dev-python/pydevd[${PYTHON_USEDEP}]
 "
-BDEPEND="
+
+distutils_enable_tests pytest
+BDEPEND+="
 	test? (
 		dev-python/psutil[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
@@ -33,8 +35,6 @@ BDEPEND="
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	)
 "
-
-distutils_enable_tests pytest
 
 python_prepare_all() {
 	# Unbundle dev-python/pydevd
@@ -77,4 +77,3 @@ python_test() {
 	epytest -p timeout -p xdist -n "$(makeopts_jobs)" --dist=worksteal \
 		-k "not attach_pid"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild

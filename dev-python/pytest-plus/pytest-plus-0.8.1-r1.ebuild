@@ -27,15 +27,14 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-7.4.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/setuptools-scm-7.0.5[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-7.0.0[${PYTHON_USEDEP}]
 		dev-python/pytest-html[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/setuptools-scm-7.0.5[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

@@ -24,15 +24,26 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs redis"
+GENERATED_IUSE="docs redis test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	test? (
-		dev-python/redis[${PYTHON_USEDEP}]
-		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-		>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	pytest-cov>=2.8.1; extra == 'tests'
+	pytest-mypy>=0.8.0; extra == 'tests'
+	pytest-timeout>=2.1.0; extra == 'tests'
+	pytest>=5.4.1; extra == 'tests'
+	pywin32>=226; platform_system == 'Windows'
+	redis; extra == 'redis'
+	redis; extra == 'tests'
+	sphinx>=1.7.1; extra == 'docs'
+	sphinx>=6.0.0; extra == 'tests'
+	types-redis; extra == 'tests'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	redis? ( dev-python/redis[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-1.7.1[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -58,5 +69,3 @@ src_prepare() {
 pkg_postinst() {
 	optfeature "redis support" dev-python/redis
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

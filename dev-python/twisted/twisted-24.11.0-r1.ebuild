@@ -28,7 +28,7 @@ SRC_URI+="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all-non-platform conch dev-release gtk-platform http2 macos-platform mypy osx-platform serial tls windows-platform"
+GENERATED_IUSE="all-non-platform conch dev-release gtk-platform http2 macos-platform mypy osx-platform serial test tls windows-platform"
 IUSE="${GENERATED_IUSE} conch http2 serial ssl test"
 RESTRICT="!test? ( test )"
 
@@ -336,7 +336,23 @@ IDEPEND="
 	>=dev-python/constantly-15.1[${PYTHON_USEDEP}]
 	>=dev-python/zope-interface-5[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/coverage-7.5[${PYTHON_USEDEP}] =dev-python/coverage-7*[${PYTHON_USEDEP}]
+		>=dev-python/cython-test-exception-raiser-1.0.2[${PYTHON_USEDEP}] <dev-python/cython-test-exception-raiser-2[${PYTHON_USEDEP}]
+		>=dev-python/httpx-0.27[http2,${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.56[${PYTHON_USEDEP}]
+		>=dev-python/pydoctor-23.9.0[${PYTHON_USEDEP}] =dev-python/pydoctor-23.9*[${PYTHON_USEDEP}]
+		>=dev-python/pyflakes-2.2[${PYTHON_USEDEP}] =dev-python/pyflakes-2*[${PYTHON_USEDEP}]
+		>=dev-python/pyhamcrest-2[${PYTHON_USEDEP}]
+		>=dev-python/python-subunit-1.4[${PYTHON_USEDEP}] =dev-python/python-subunit-1*[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-6[${PYTHON_USEDEP}] <dev-python/sphinx-7[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-rtd-theme-1.3[${PYTHON_USEDEP}] =dev-python/sphinx-rtd-theme-1*[${PYTHON_USEDEP}]
+		>=dev-python/towncrier-23.6[${PYTHON_USEDEP}] =dev-python/towncrier-23*[${PYTHON_USEDEP}]
+		>=dev-python/twistedchecker-0.7.4[${PYTHON_USEDEP}] =dev-python/twistedchecker-0*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	>=dev-python/hatch-fancy-pypi-readme-22.5.0[${PYTHON_USEDEP}]
 	>=dev-python/incremental-22.10.0[${PYTHON_USEDEP}]
 	test? (
@@ -435,5 +451,3 @@ pkg_postrm() {
 		python_foreach_impl python_postrm
 	fi
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

@@ -17,9 +17,22 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
+
+REQUIRES_DIST="
+	pytest; extra == 'test'
+	reno; extra == 'doc'
+	sphinx; extra == 'doc'
+	tornado>=4.5; extra == 'test'
+	typeguard; extra == 'test'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	doc? ( dev-python/reno[${PYTHON_USEDEP}] )
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+BDEPEND+="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/tornado-6.4-r1[${PYTHON_USEDEP}]
@@ -46,5 +59,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

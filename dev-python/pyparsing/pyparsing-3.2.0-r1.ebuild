@@ -21,6 +21,16 @@ KEYWORDS="amd64 arm64"
 GENERATED_IUSE="diagrams"
 IUSE="${GENERATED_IUSE} examples"
 
+REQUIRES_DIST="
+	jinja2; extra == 'diagrams'
+	railroad-diagrams; extra == 'diagrams'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	diagrams? ( dev-python/jinja2[${PYTHON_USEDEP}] )
+	diagrams? ( dev-python/railroad-diagrams[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
 
 python_test() {
@@ -57,5 +67,3 @@ python_install_all() {
 	fi
 	distutils-r1_python_install_all
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

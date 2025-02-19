@@ -21,7 +21,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	covdefaults>=2.3; extra == 'test'
@@ -70,7 +70,23 @@ RDEPEND="${GENERATED_RDEPEND}
 "
 # coverage is used somehow magically in virtualenv, maybe it actually
 # tests something useful
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
+		>=dev-python/coverage-7.2.7[${PYTHON_USEDEP}]
+		>=dev-python/coverage-enable-subprocess-1[${PYTHON_USEDEP}]
+		>=dev-python/flaky-3.7[${PYTHON_USEDEP}]
+		>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-env-0.8.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.11.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-randomly-3.12[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-68[${PYTHON_USEDEP}]
+		>=dev-python/time-machine-2.10[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -92,23 +108,6 @@ BDEPEND="
 
 EPYTEST_TIMEOUT=180
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
-		>=dev-python/coverage-7.2.7[${PYTHON_USEDEP}]
-		>=dev-python/coverage-enable-subprocess-1[${PYTHON_USEDEP}]
-		>=dev-python/flaky-3.7[${PYTHON_USEDEP}]
-		>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.4[${PYTHON_USEDEP}]
-		>=dev-python/pytest-env-0.8.2[${PYTHON_USEDEP}]
-		>=dev-python/pytest-mock-3.11.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-randomly-3.12[${PYTHON_USEDEP}]
-		>=dev-python/pytest-timeout-2.1[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-68[${PYTHON_USEDEP}]
-		>=dev-python/time-machine-2.10[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	local PATCHES=(

@@ -14,10 +14,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	sudachidict_core; extra == 'tests'
+	tokenizers; extra == 'tests'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/sudachidict-core[${PYTHON_USEDEP}]

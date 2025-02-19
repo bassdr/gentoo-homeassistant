@@ -24,16 +24,35 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	test? (
-		>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
-		>=dev-python/freezegun-1.5.0[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	Sphinx==8.1.3; extra == 'dev' and python_version >= '3.11'
+	aiocontextvars>=0.2.0; python_version < '3.7'
+	build==1.2.2; extra == 'dev' and python_version >= '3.11'
+	colorama==0.4.5; extra == 'dev' and python_version < '3.8'
+	colorama==0.4.6; extra == 'dev' and python_version >= '3.8'
+	colorama>=0.3.4; sys_platform == 'win32'
+	exceptiongroup==1.1.3; extra == 'dev' and (python_version >= '3.7' and python_version < '3.11')
+	freezegun==1.1.0; extra == 'dev' and python_version < '3.8'
+	freezegun==1.5.0; extra == 'dev' and python_version >= '3.8'
+	mypy==v0.910; extra == 'dev' and python_version < '3.6'
+	mypy==v0.971; extra == 'dev' and (python_version >= '3.6' and python_version < '3.7')
+	mypy==v1.13.0; extra == 'dev' and python_version >= '3.8'
+	mypy==v1.4.1; extra == 'dev' and (python_version >= '3.7' and python_version < '3.8')
+	myst-parser==4.0.0; extra == 'dev' and python_version >= '3.11'
+	pre-commit==4.0.1; extra == 'dev' and python_version >= '3.9'
+	pytest-cov==2.12.1; extra == 'dev' and python_version < '3.8'
+	pytest-cov==5.0.0; extra == 'dev' and (python_version >= '3.8' and python_version < '3.9')
+	pytest-cov==6.0.0; extra == 'dev' and python_version >= '3.9'
+	pytest-mypy-plugins==1.9.3; extra == 'dev' and (python_version >= '3.6' and python_version < '3.8')
+	pytest-mypy-plugins==3.1.0; extra == 'dev' and python_version >= '3.8'
+	pytest==6.1.2; extra == 'dev' and python_version < '3.8'
+	pytest==8.3.2; extra == 'dev' and python_version >= '3.8'
+	sphinx-rtd-theme==3.0.2; extra == 'dev' and python_version >= '3.11'
+	tox==3.27.1; extra == 'dev' and python_version < '3.8'
+	tox==4.23.2; extra == 'dev' and python_version >= '3.8'
+	twine==6.0.1; extra == 'dev' and python_version >= '3.11'
+	win32-setctime>=1.0.0; sys_platform == 'win32'
 "
-
-# filesystem buffering tests may fail
-# on tmpfs with 64k PAGESZ, but pass fine on ext4
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/build-1.2.2[${PYTHON_USEDEP}]
@@ -51,7 +70,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		~dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
+		>=dev-python/freezegun-1.5.0[${PYTHON_USEDEP}]
+	)
+"
+
+# filesystem buffering tests may fail
+# on tmpfs with 64k PAGESZ, but pass fine on ext4
+distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
 	# mypy

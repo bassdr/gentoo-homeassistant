@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all build doc lint"
+GENERATED_IUSE="all doc lint test"
 IUSE="${GENERATED_IUSE} +build"
 
 inherit distutils-r1 pypi
@@ -37,11 +37,6 @@ REQUIRES_DIST="
 	wheel; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	build? ( dev-python/build[${PYTHON_USEDEP}] )
-	build? ( dev-python/cython[${PYTHON_USEDEP}] )
-	build? ( dev-build/meson[${PYTHON_USEDEP}] )
-	build? ( dev-python/meson-python[${PYTHON_USEDEP}] )
-	build? ( dev-python/ninja[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]
 	doc? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
@@ -51,12 +46,17 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/scikit-misc[lint,${PYTHON_USEDEP}] )
 	all? ( dev-python/scikit-misc[test,${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	build? ( dev-python/spin[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	dev-build/meson[${PYTHON_USEDEP}]
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/cython[${PYTHON_USEDEP}]
+	dev-python/meson-python[${PYTHON_USEDEP}]
+	dev-python/ninja[${PYTHON_USEDEP}]
+	dev-python/spin[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/twine[${PYTHON_USEDEP}]

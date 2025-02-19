@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 4.6.2.post1)"
-S="${WORKDIR}/${PN}-4.6.2.post1"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-4.6.2.post1"
 
 DESCRIPTION="High level compatibility layer for multiple asynchronous event loop implementations"
 HOMEPAGE="
@@ -23,7 +23,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc trio"
+GENERATED_IUSE="doc test trio"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Sphinx~=7.4; extra == 'doc'
@@ -66,7 +66,21 @@ RDEPEND="${GENERATED_RDEPEND}
 "
 # On amd64, let's get more test coverage by dragging in uvloop, but let's
 # not bother on other arches where uvloop may not be supported.
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/anyio[trio,${PYTHON_USEDEP}]
+		>=dev-python/coverage-7[toml,${PYTHON_USEDEP}]
+		>=dev-python/exceptiongroup-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-4.0[${PYTHON_USEDEP}]
+		>=dev-python/psutil-5.9[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.6.1[${PYTHON_USEDEP}]
+		dev-python/trustme[${PYTHON_USEDEP}]
+		>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]
+		>=dev-python/uvloop-0.21.0_beta1[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	>=dev-python/setuptools-scm-6.4[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/exceptiongroup-1.2.0[${PYTHON_USEDEP}]
@@ -86,21 +100,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/anyio[trio,${PYTHON_USEDEP}]
-		>=dev-python/coverage-7[toml,${PYTHON_USEDEP}]
-		>=dev-python/exceptiongroup-1.2.0[${PYTHON_USEDEP}]
-		>=dev-python/hypothesis-4.0[${PYTHON_USEDEP}]
-		>=dev-python/psutil-5.9[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-mock-3.6.1[${PYTHON_USEDEP}]
-		dev-python/trustme[${PYTHON_USEDEP}]
-		>=dev-python/truststore-0.9.1[${PYTHON_USEDEP}]
-		>=dev-python/uvloop-0.21.0_beta1[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs \
 	'>=dev-python/sphinx-rtd-theme-1.2.2' \
 	dev-python/sphinxcontrib-jquery \

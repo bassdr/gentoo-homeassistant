@@ -20,11 +20,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	flake8 ; extra == 'testing'
+	importlib-metadata ; python_version < '3.8'
+	pytest ; extra == 'testing'
+	pytest-cov ; extra == 'testing'
+	pytest-randomly ; extra == 'testing'
+	pytest-xdist ; extra == 'testing'
+	sphinx ; extra == 'testing'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -35,7 +39,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 

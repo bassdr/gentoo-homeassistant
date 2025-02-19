@@ -40,17 +40,6 @@ GENERATED_RDEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/ifaddr[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-	yeelight/tests.py || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -62,4 +51,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+	yeelight/tests.py || die
+}
+
+distutils_enable_tests pytest

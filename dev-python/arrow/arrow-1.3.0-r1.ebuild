@@ -20,7 +20,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	dateparser==1.* ; extra == 'test'
@@ -51,15 +51,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/python-dateutil-2.7.0[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	test? (
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-python/pytz[${PYTHON_USEDEP}]
-		dev-python/simplejson[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		=dev-python/dateparser-1*[${PYTHON_USEDEP}]
@@ -71,7 +62,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+		dev-python/simplejson[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	sed -i -e '/addopts/d' tox.ini || die

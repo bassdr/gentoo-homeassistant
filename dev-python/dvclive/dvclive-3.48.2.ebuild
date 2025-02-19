@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all fastai huggingface image lgbm lightning markdown mmcv optuna plots sklearn tf xgb"
+GENERATED_IUSE="all fastai huggingface image lgbm lightning markdown mmcv optuna plots sklearn test tf xgb"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

@@ -80,6 +80,7 @@ CRATES="
 DISTUTILS_USE_PEP517=maturin
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi cargo
+
 SRC_URI+=" ${CARGO_CRATE_URIS}"
 
 DESCRIPTION="Fast iterable JSON parser."

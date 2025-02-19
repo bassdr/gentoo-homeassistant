@@ -8,7 +8,7 @@ DISTUTILS_USE_PEP517=poetry
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 2022.7.0)"
-S="${WORKDIR}/${PN}-2022.7.0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-2022.7.0"
 
 DESCRIPTION="A Python3 library for Elexa Guardian water valves and sensors"
 HOMEPAGE="

@@ -9,9 +9,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="pytest plugin to abort hanging tests"
 HOMEPAGE="
-  https://pypi.org/project/pytest-timeout/"
+  https://pypi.org/project/pytest-timeout/
+"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,6 +20,13 @@ KEYWORDS="amd64 arm64"
 
 # do not rdepend on pytest, it won't be used without it anyway
 # pytest-cov used to test compatibility
+REQUIRES_DIST="
+	pytest >=7.0.0
+"
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
@@ -43,5 +51,3 @@ python_test() {
 
 	epytest
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

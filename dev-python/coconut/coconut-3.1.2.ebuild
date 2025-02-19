@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all docs ipython jupyter jupyterlab jupytext kernel mypy numpy pyright watch xonsh"
+GENERATED_IUSE="all docs ipython jupyter jupyterlab jupytext kernel mypy numpy pyright test watch xonsh"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

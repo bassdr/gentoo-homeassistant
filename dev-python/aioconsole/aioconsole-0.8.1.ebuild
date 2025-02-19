@@ -21,7 +21,23 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
 
-BDEPEND="
+REQUIRES_DIST="
+	pytest-asyncio; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest-repeat; extra == 'dev'
+	pytest; extra == 'dev'
+	uvloop; (platform_python_implementation != 'PyPy' and sys_platform != 'win32') and extra == 'dev'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-repeat[${PYTHON_USEDEP}]
+		dev-python/uvloop[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
@@ -34,13 +50,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/pytest-repeat[${PYTHON_USEDEP}]
-		dev-python/uvloop[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

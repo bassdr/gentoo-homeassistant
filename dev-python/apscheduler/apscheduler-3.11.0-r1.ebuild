@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc etcd gevent mongodb redis rethinkdb sqlalchemy tornado twisted zookeeper"
+GENERATED_IUSE="doc etcd gevent mongodb redis rethinkdb sqlalchemy test tornado twisted zookeeper"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	APScheduler[etcd,mongodb,redis,rethinkdb,sqlalchemy,tornado,zookeeper]; extra == 'test'
@@ -61,17 +61,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/tzlocal-4[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/anyio-4.5.2[${PYTHON_USEDEP}]
-		dev-python/pytz[${PYTHON_USEDEP}]
-		>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]
-		dev-python/tornado[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/anyio-4.5.2[${PYTHON_USEDEP}]
@@ -83,7 +72,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/twisted[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/anyio-4.5.2[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+		>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]
+		dev-python/tornado[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 PATCHES=(
 	# disable test fixtures using external servers (mongodb, redis...)

@@ -36,7 +36,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/check-manifest[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	test? (
 		dev-python/pytest-runner[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

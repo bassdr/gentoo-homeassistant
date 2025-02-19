@@ -5,8 +5,18 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+GENERATED_IUSE="extension-test"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
+
+REQUIRES_DIST="
+	gssapi; extra == 'extension-test'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	extension-test? ( dev-python/gssapi[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -15,6 +25,3 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

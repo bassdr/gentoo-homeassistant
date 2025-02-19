@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	anyio>=3.1.0
@@ -117,7 +117,19 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/traitlets-5.6.0[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-1.7[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
+		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
+		>=dev-python/pytest-jupyter-0.7[server,${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/hatch-jupyter-builder[${PYTHON_USEDEP}]
 	test? (
 		dev-python/ipykernel[${PYTHON_USEDEP}]
@@ -132,19 +144,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/flaky[${PYTHON_USEDEP}]
-		dev-python/ipykernel[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.0[${PYTHON_USEDEP}] <dev-python/pytest-9[${PYTHON_USEDEP}]
-		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
-		>=dev-python/pytest-jupyter-0.7[server,${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

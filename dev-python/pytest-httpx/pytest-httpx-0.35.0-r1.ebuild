@@ -30,7 +30,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	=dev-python/httpx-0.28*[${PYTHON_USEDEP}]
 	=dev-python/pytest-8*[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		=dev-python/pytest-asyncio-0.24*[${PYTHON_USEDEP}]
+		=dev-python/pytest-cov-6*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
@@ -38,10 +44,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		=dev-python/pytest-asyncio-0.24*[${PYTHON_USEDEP}]
-		=dev-python/pytest-cov-6*[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

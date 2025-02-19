@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs json memcached-session routes-dispatcher ssl xcgi"
+GENERATED_IUSE="docs json memcached-session routes-dispatcher ssl test xcgi"
 IUSE="${GENERATED_IUSE} ssl test"
 
 REQUIRES_DIST="
@@ -75,7 +75,20 @@ RDEPEND="${GENERATED_RDEPEND}
 		dev-python/pyopenssl[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/objgraph[${PYTHON_USEDEP}]
+		dev-python/path-py[${PYTHON_USEDEP}]
+		>=dev-python/pytest-5.3.5[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-forked[${PYTHON_USEDEP}]
+		>=dev-python/pytest-services-2[${PYTHON_USEDEP}]
+		dev-python/pytest-sugar[${PYTHON_USEDEP}]
+		dev-python/requests-toolbelt[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/routes[${PYTHON_USEDEP}]
@@ -92,20 +105,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/objgraph[${PYTHON_USEDEP}]
-		dev-python/path-py[${PYTHON_USEDEP}]
-		>=dev-python/pytest-5.3.5[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/pytest-forked[${PYTHON_USEDEP}]
-		>=dev-python/pytest-services-2[${PYTHON_USEDEP}]
-		dev-python/pytest-sugar[${PYTHON_USEDEP}]
-		dev-python/requests-toolbelt[${PYTHON_USEDEP}]
-		dev-python/setuptools[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	sed -i -e '/cov/d' pytest.ini || die

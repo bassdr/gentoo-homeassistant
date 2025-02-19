@@ -14,10 +14,17 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	attribution==1.8.0; extra == 'dev'
+	flake8==7.1.1; extra == 'dev'
+	maturin==1.7.4; extra == 'dev'
+	mypy==1.13.0; extra == 'dev'
+	pytest==8.3.3; extra == 'dev'
+	ufmt==2.7.3; extra == 'dev'
+	usort==1.0.8.post1; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/attribution-1.8.0[${PYTHON_USEDEP}]

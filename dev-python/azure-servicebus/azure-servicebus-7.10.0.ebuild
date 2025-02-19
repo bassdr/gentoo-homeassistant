@@ -26,11 +26,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="app-arch/unzip"
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	app-arch/unzip
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND} app-arch/unzip"
+EPYTEST_XDIST=1
+distutils_enable_tests pytest

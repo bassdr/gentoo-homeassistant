@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="adlfs azureml connectors-aws connectors-azure connectors-gcp connectors-kubernetes gcsfs s3fs sagemaker secrets-aws secrets-azure secrets-gcp secrets-hashicorp server templates vertex"
+GENERATED_IUSE="adlfs azureml connectors-aws connectors-azure connectors-gcp connectors-kubernetes gcsfs s3fs sagemaker secrets-aws secrets-azure secrets-gcp secrets-hashicorp server templates test vertex"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -121,7 +121,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/alembic-1.8.1[${PYTHON_USEDEP}] <dev-python/alembic-1.9.0[${PYTHON_USEDEP}]
 	connectors-aws? ( >=dev-python/aws-profile-manager-0.5.0[${PYTHON_USEDEP}] )
 	azureml? ( ~dev-python/azure-ai-ml-1.23.1[${PYTHON_USEDEP}] )
-	secrets-azure? ( >=dev-python/azure-identity-1.4.0[${PYTHON_USEDEP}] ) connectors-azure? ( >=dev-python/azure-identity-1.4.0[${PYTHON_USEDEP}] )
+	connectors-azure? ( >=dev-python/azure-identity-1.4.0[${PYTHON_USEDEP}] ) secrets-azure? ( >=dev-python/azure-identity-1.4.0[${PYTHON_USEDEP}] )
 	secrets-azure? ( >=dev-python/azure-keyvault-secrets-4.0.0[${PYTHON_USEDEP}] )
 	connectors-azure? ( >=dev-python/azure-mgmt-containerregistry-10.0.0[${PYTHON_USEDEP}] )
 	connectors-azure? ( >=dev-python/azure-mgmt-containerservice-20.0.0[${PYTHON_USEDEP}] )
@@ -129,7 +129,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	connectors-azure? ( >=dev-python/azure-mgmt-storage-20.0.0[${PYTHON_USEDEP}] )
 	connectors-azure? ( >=dev-python/azure-storage-blob-12.0.0[${PYTHON_USEDEP}] )
 	~dev-python/bcrypt-4.0.1[${PYTHON_USEDEP}]
-	connectors-aws? ( >=dev-python/boto3-1.16.0[${PYTHON_USEDEP}] ) secrets-aws? ( >=dev-python/boto3-1.16.0[${PYTHON_USEDEP}] )
+	secrets-aws? ( >=dev-python/boto3-1.16.0[${PYTHON_USEDEP}] ) connectors-aws? ( >=dev-python/boto3-1.16.0[${PYTHON_USEDEP}] )
 	>=dev-python/click-8.0.1[${PYTHON_USEDEP}] <dev-python/click-8.1.4[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-2.0.0[${PYTHON_USEDEP}] <dev-python/cloudpickle-3[${PYTHON_USEDEP}]
 	templates? ( >=dev-python/copier-8.1.0[${PYTHON_USEDEP}] )
@@ -149,7 +149,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	server? ( dev-python/jinja2[${PYTHON_USEDEP}] )
 	templates? ( >=dev-python/jinja2-time-0.2.0[${PYTHON_USEDEP}] <dev-python/jinja2-time-0.3.0[${PYTHON_USEDEP}] )
 	vertex? ( >=dev-python/kfp-2.6.0[${PYTHON_USEDEP}] )
-	connectors-gcp? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-azure? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-aws? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-kubernetes? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] )
+	connectors-gcp? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-azure? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-kubernetes? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] ) connectors-aws? ( >=dev-python/kubernetes-18.20.0[${PYTHON_USEDEP}] )
 	server? ( >=dev-python/orjson-3.10.0[${PYTHON_USEDEP}] <dev-python/orjson-3.11.0[${PYTHON_USEDEP}] )
 	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.7.4[bcrypt,${PYTHON_USEDEP}] <dev-python/passlib-1.8.0[bcrypt,${PYTHON_USEDEP}]
@@ -198,7 +198,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-randomly-3.10.1[${PYTHON_USEDEP}] <dev-python/pytest-randomly-4.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-rerunfailures-13.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-split-0.8.1[${PYTHON_USEDEP}] <dev-python/pytest-split-0.9.0[${PYTHON_USEDEP}]
-		templates? ( >=dev-python/ruff-0.1.7[${PYTHON_USEDEP}] ) >=dev-python/ruff-0.1.7[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.1.7[${PYTHON_USEDEP}] templates? ( >=dev-python/ruff-0.1.7[${PYTHON_USEDEP}] )
 		>=dev-python/tox-3.24.3[${PYTHON_USEDEP}] <dev-python/tox-4.0.0[${PYTHON_USEDEP}]
 		>=dev-python/types-certifi-2021.10.8.0[${PYTHON_USEDEP}] <dev-python/types-certifi-2022.0.0.0[${PYTHON_USEDEP}]
 		>=dev-python/types-croniter-1.0.2[${PYTHON_USEDEP}] <dev-python/types-croniter-2.0.0[${PYTHON_USEDEP}]

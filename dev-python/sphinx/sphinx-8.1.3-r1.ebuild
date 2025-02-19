@@ -29,7 +29,7 @@ S=${WORKDIR}/${MY_P}
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs lint"
+GENERATED_IUSE="docs lint test"
 IUSE="${GENERATED_IUSE} doc latex"
 
 REQUIRES_DIST="
@@ -129,7 +129,16 @@ RDEPEND="${GENERATED_RDEPEND}
 		app-text/dvipng
 	)
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/cython-3.0[${PYTHON_USEDEP}]
+		>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.0[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-70.0[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	doc? (
 		dev-python/sphinxcontrib-websupport[${PYTHON_USEDEP}]
 		media-gfx/graphviz
@@ -153,16 +162,6 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/cython-3.0[${PYTHON_USEDEP}]
-		>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-8.0[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-70.0[${PYTHON_USEDEP}]
-		>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	# disable internet access

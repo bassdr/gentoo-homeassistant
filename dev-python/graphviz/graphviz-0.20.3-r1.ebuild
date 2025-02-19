@@ -26,7 +26,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage; extra == 'test'
@@ -50,15 +50,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	media-gfx/graphviz
 "
-BDEPEND="
-	test? (
-		>=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-mock-1.8[${PYTHON_USEDEP}]
-		media-gfx/graphviz[gts,pdf]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -72,7 +63,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-1.8[${PYTHON_USEDEP}]
+		media-gfx/graphviz[gts,pdf]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	sed -e 's:license_file:license_files:' \

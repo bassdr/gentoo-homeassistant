@@ -39,7 +39,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pybtex-docutils-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-3.5[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/numpydoc[${PYTHON_USEDEP}]
 		dev-python/sphinx-autoapi[${PYTHON_USEDEP}]
@@ -53,13 +59,6 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx doc
 
 python_compile() {

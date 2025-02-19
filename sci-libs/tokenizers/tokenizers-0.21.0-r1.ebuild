@@ -301,7 +301,7 @@ CRATES="
 
 inherit cargo distutils-r1
 
-DESCRIPTION="Implementation of today's most used tokenizers"
+DESCRIPTION=""
 HOMEPAGE="
   https://pypi.org/project/tokenizers/
   Homepage, https://github.com/huggingface/tokenizers
@@ -322,7 +322,7 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	black==22.3; extra == 'testing'
@@ -346,18 +346,22 @@ GENERATED_RDEPEND="${RDEPEND} $(python_gen_cond_dep '
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
-
 GENERATED_BDEPEND="${BDEPEND}
-	$(python_gen_cond_dep 'test? (
+	$(python_gen_cond_dep '
+	test? (
 		~dev-python/black-22.3[${PYTHON_USEDEP}]
 		dev-python/datasets[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/ruff[${PYTHON_USEDEP}]
-	)')
+		sci-libs/tokenizers[testing,${PYTHON_USEDEP}]
+	)
+	')
 "
-BDEPEND="${GENERATED_BDEPEND}
+BDEPEND="${GENERATED_BDEPEND}"
+
+BDEPEND+="
 	$(python_gen_cond_dep '
 		dev-python/setuptools-rust[${PYTHON_USEDEP}]
 	')

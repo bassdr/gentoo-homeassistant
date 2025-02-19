@@ -28,7 +28,12 @@ GENERATED_RDEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.18.4[${PYTHON_USEDEP}]"
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/unittest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/aiounittest[${PYTHON_USEDEP}]
@@ -39,9 +44,3 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/unittest[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

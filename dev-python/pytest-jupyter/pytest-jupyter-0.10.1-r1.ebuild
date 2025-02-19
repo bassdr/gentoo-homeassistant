@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="client docs server"
+GENERATED_IUSE="client docs server test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	ipykernel>=6.14; extra == 'client'
@@ -57,16 +57,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/nbformat-5.3[${PYTHON_USEDEP}]
 	>=dev-python/pytest-7[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

@@ -24,7 +24,18 @@ S=${WORKDIR}/${MY_P}
 LICENSE="repoze"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
+GENERATED_IUSE="docs test"
+IUSE="${GENERATED_IUSE} test"
+
+REQUIRES_DIST="
+	Sphinx; extra == 'docs'
+	coverage; extra == 'testing'
+	nose; extra == 'testing'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests unittest
 GENERATED_BDEPEND="${BDEPEND}
@@ -40,6 +51,3 @@ python_compile() {
 	find "${BUILD_DIR}" -name '*.pth' -delete || die
 }
 
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

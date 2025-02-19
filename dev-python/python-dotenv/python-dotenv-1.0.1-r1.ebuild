@@ -19,17 +19,25 @@ KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="cli"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
+
+REQUIRES_DIST="
+	click >=5.0 ; extra == 'cli'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	cli? ( >=dev-python/click-5.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+DOCS=( CHANGELOG.md README.md )
+
+distutils_enable_tests pytest
+BDEPEND+="
 	test? (
 		>=dev-python/click-5[${PYTHON_USEDEP}]
 		>=dev-python/sh-2[${PYTHON_USEDEP}]
 		!mips? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	)
 "
-
-DOCS=( CHANGELOG.md README.md )
-
-distutils_enable_tests pytest
 
 python_install() {
 	distutils-r1_python_install
@@ -42,5 +50,3 @@ src_install() {
 	# Avoid collision with dev-ruby/dotenv (bug #798648)
 	mv "${ED}"/usr/bin/{,python-}dotenv || die
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

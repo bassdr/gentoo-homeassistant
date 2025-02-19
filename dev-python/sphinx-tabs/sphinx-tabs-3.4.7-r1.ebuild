@@ -20,7 +20,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="code-style"
+GENERATED_IUSE="code-style test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	bs4; extra == 'testing'
@@ -47,15 +47,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	test? (
-		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-		dev-python/pygments[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
@@ -67,7 +58,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/rinohtype[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+		dev-python/pygments[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 EPYTEST_DESELECT=(

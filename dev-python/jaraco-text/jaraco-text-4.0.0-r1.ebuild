@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc inflect"
+GENERATED_IUSE="doc inflect test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	autocommand

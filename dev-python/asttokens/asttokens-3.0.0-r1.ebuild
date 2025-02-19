@@ -20,14 +20,20 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="astroid"
+GENERATED_IUSE="astroid test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/astroid[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	astroid<4,>=2; extra == 'astroid'
+	astroid<4,>=2; extra == 'test'
+	pytest-cov; extra == 'test'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	astroid? ( >=dev-python/astroid-2[${PYTHON_USEDEP}] <dev-python/astroid-4[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -41,5 +47,3 @@ GENERATED_BDEPEND="${BDEPEND}
 BDEPEND="${GENERATED_BDEPEND}"
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

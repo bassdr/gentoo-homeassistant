@@ -16,7 +16,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="all black doc kernel matplotlib nbconvert nbformat notebook parallel qtconsole test-extra"
+GENERATED_IUSE="all black doc kernel matplotlib nbconvert nbformat notebook parallel qtconsole test test-extra"
 IUSE="${GENERATED_IUSE} examples notebook nbconvert qt5 +smp test"
 RESTRICT="!test? ( test )"
 
@@ -125,7 +125,16 @@ RDEPEND="${GENERATED_RDEPEND}
 	' 3.10 3.11)
 "
 
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pickleshare[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		<dev-python/pytest-asyncio-0.22[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		app-text/dvipng[truetype]
@@ -143,16 +152,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/packaging[${PYTHON_USEDEP}]
-		dev-python/pickleshare[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		<dev-python/pytest-asyncio-0.22[${PYTHON_USEDEP}]
-		dev-python/testpath[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 RDEPEND+="
 	nbconvert? (

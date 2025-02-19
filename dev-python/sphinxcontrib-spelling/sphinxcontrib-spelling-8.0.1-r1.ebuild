@@ -34,14 +34,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-3.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/pbr[${PYTHON_USEDEP}]
-	test? (
-		app-dicts/myspell-en
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-4.0[${PYTHON_USEDEP}] !~dev-python/coverage-4.4[${PYTHON_USEDEP}]
@@ -49,7 +41,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/pbr[${PYTHON_USEDEP}]
+	test? (
+		app-dicts/myspell-en
+	)
+"
+
+distutils_enable_tests pytest
 
 python_compile() {
 	distutils-r1_python_compile

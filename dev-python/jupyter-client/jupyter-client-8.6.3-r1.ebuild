@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage; extra == 'test'
@@ -67,17 +67,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/importlib-metadata-4.8.3[${PYTHON_USEDEP}]
 	' 3.{8,9})
 "
-BDEPEND="
-	test? (
-		>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.18[${PYTHON_USEDEP}]
-		>=dev-python/pytest-jupyter-0.4.1[${PYTHON_USEDEP}]
-		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -90,7 +79,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/ipykernel-6.14[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.18[${PYTHON_USEDEP}]
+		>=dev-python/pytest-jupyter-0.4.1[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

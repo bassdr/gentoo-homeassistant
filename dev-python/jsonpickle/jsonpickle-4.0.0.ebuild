@@ -24,20 +24,53 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="cov docs packaging"
+GENERATED_IUSE="cov docs packaging test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/feedparser[${PYTHON_USEDEP}]
-		dev-python/gmpy2[${PYTHON_USEDEP}]
-		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/simplejson[${PYTHON_USEDEP}]
-		dev-python/sqlalchemy[${PYTHON_USEDEP}]
-		dev-python/ujson[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	PyYAML; extra == 'testing'
+	atheris~=2.3.0; python_version < '3.12' and extra == 'testing'
+	black; extra == 'dev'
+	bson; extra == 'testing'
+	build; extra == 'packaging'
+	ecdsa; extra == 'testing'
+	feedparser; extra == 'testing'
+	furo; extra == 'docs'
+	gmpy2; extra == 'testing'
+	numpy; extra == 'testing'
+	pandas; extra == 'testing'
+	pymongo; extra == 'testing'
+	pytest!=8.1.*,>=6.0; extra == 'testing'
+	pytest-benchmark; extra == 'testing'
+	pytest-benchmark[histogram]; extra == 'testing'
+	pytest-checkdocs>=1.2.3; extra == 'testing'
+	pytest-cov; extra == 'cov'
+	pytest-enabler>=1.0.1; extra == 'testing'
+	pytest-ruff>=0.2.1; extra == 'testing'
+	pyupgrade; extra == 'dev'
+	rst.linker>=1.9; extra == 'docs'
+	scikit-learn; extra == 'testing'
+	scipy; python_version <= '3.10' and extra == 'testing'
+	scipy>=1.9.3; python_version > '3.10' and extra == 'testing'
+	setuptools-scm[toml]>=6.0; extra == 'packaging'
+	setuptools>=61.2; extra == 'packaging'
+	simplejson; extra == 'testing'
+	sphinx>=3.5; extra == 'docs'
+	sqlalchemy; extra == 'testing'
+	twine; extra == 'packaging'
+	ujson; extra == 'testing'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	packaging? ( dev-python/build[${PYTHON_USEDEP}] )
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	cov? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/rst-linker-1.9[${PYTHON_USEDEP}] )
+	packaging? ( >=dev-python/setuptools-61.2[${PYTHON_USEDEP}] )
+	packaging? ( >=dev-python/setuptools-scm-6.0[toml,${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-3.5[${PYTHON_USEDEP}] )
+	packaging? ( dev-python/twine[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -95,5 +128,3 @@ pkg_postinst() {
 	optfeature "encoding pandas objects" dev-python/pandas
 	optfeature "fast JSON backend" dev-python/simplejson
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

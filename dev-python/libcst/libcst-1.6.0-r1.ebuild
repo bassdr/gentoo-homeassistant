@@ -165,16 +165,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pyyaml-5.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-rust[${PYTHON_USEDEP}]
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/black[${PYTHON_USEDEP}]
-	)
-"
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/black-24.8.0[${PYTHON_USEDEP}]
@@ -199,7 +189,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		~dev-python/usort-1.0.8_p1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-rust[${PYTHON_USEDEP}]
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/black[${PYTHON_USEDEP}]
+	)
+"
+
+EPYTEST_XDIST=1
+distutils_enable_tests pytest
 
 QA_FLAGS_IGNORED="usr/lib/py.*/site-packages/libcst/native.*"
 

@@ -52,7 +52,7 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/attrs-21.2[${PYTHON_USEDEP}]
-	all? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] ) dynamodb? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] )
+	dynamodb? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] ) all? ( >=dev-python/boto3-1.15[${PYTHON_USEDEP}] )
 	dynamodb? ( >=dev-python/botocore-1.18[${PYTHON_USEDEP}] ) all? ( >=dev-python/botocore-1.18[${PYTHON_USEDEP}] )
 	bson? ( >=dev-python/bson-0.5[${PYTHON_USEDEP}] )
 	>=dev-python/cattrs-22.2[${PYTHON_USEDEP}]
@@ -61,7 +61,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/linkify-it-py-2.0[${PYTHON_USEDEP}] <dev-python/linkify-it-py-3.0[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/myst-parser-1.0[${PYTHON_USEDEP}] <dev-python/myst-parser-2.0[${PYTHON_USEDEP}] )
 	>=dev-python/platformdirs-2.5[${PYTHON_USEDEP}]
-	all? ( >=dev-python/pymongo-3[${PYTHON_USEDEP}] ) mongodb? ( >=dev-python/pymongo-3[${PYTHON_USEDEP}] )
+	mongodb? ( >=dev-python/pymongo-3[${PYTHON_USEDEP}] ) all? ( >=dev-python/pymongo-3[${PYTHON_USEDEP}] )
 	yaml? ( >=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] ) all? ( >=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/redis-3[${PYTHON_USEDEP}] ) redis? ( >=dev-python/redis-3[${PYTHON_USEDEP}] )
 	>=dev-python/requests-2.22[${PYTHON_USEDEP}]
@@ -73,7 +73,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( >=dev-python/sphinx-notfound-page-0.8[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxcontrib-apidoc-0.3[${PYTHON_USEDEP}] )
 	docs? ( >=dev-python/sphinxext-opengraph-0.9[${PYTHON_USEDEP}] )
-	json? ( >=dev-python/ujson-5.4[${PYTHON_USEDEP}] ) all? ( >=dev-python/ujson-5.4[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/ujson-5.4[${PYTHON_USEDEP}] ) json? ( >=dev-python/ujson-5.4[${PYTHON_USEDEP}] )
 	>=dev-python/url-normalize-1.4[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.25.5[${PYTHON_USEDEP}]
 "

@@ -114,9 +114,13 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit cargo distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="Thin Python bindings to de/compression algorithms in Rust"
 HOMEPAGE="
-  https://pypi.org/project/cramjam/"
+  https://pypi.org/project/cramjam/
+  homepage, https://github.com/milesgranger/pyrus-cramjam
+  documentation, https://docs.rs/cramjam/latest/cramjam
+  repository, https://github.com/milesgranger/pyrus-cramjam
+"
 SRC_URI+="
 	${CARGO_CRATE_URIS}
 "
@@ -139,19 +143,17 @@ DEPEND="
 	dev-libs/c-blosc2:=
 	dev-libs/isa-l:=
 "
-GENERATED_RDEPEND="${RDEPEND}
-"
 RDEPEND="
 	${DEPEND}
 "
-BDEPEND="
-	test? (
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-		dev-python/numpy[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	black==22.3.0; extra == 'dev'
+	hypothesis; extra == 'dev'
+	numpy; extra == 'dev'
+	pytest-benchmark; extra == 'dev'
+	pytest-xdist; extra == 'dev'
+	pytest>=5.30; extra == 'dev'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/black-22.3.0[${PYTHON_USEDEP}]
@@ -162,7 +164,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 QA_FLAGS_IGNORED="usr/lib/py.*/site-packages/cramjam/cramjam.*.so"
 

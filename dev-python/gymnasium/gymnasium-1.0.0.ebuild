@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all atari box2d classic-control jax mujoco mujoco-py other torch toy-text"
+GENERATED_IUSE="all atari box2d classic-control jax mujoco mujoco-py other test torch toy-text"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

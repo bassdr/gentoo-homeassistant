@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="crc32c docs msgpack pcodec test-extras zfpy"
+GENERATED_IUSE="crc32c docs msgpack pcodec test test-extras zfpy"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

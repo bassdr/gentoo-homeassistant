@@ -16,13 +16,19 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 RDEPEND="
 	>=dev-python/python-dateutil-2.7.3[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests unittest
+REQUIRES_DIST="
+	black; extra == 'dev'
+	coverage; extra == 'dev'
+	isort; extra == 'dev'
+	pre-commit; extra == 'dev'
+	pyenchant; extra == 'dev'
+	pylint; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]

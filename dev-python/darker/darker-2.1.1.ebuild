@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="color flynt isort release"
+GENERATED_IUSE="color flynt isort release test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

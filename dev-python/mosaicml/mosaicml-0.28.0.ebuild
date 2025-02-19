@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all coco comet-ml databricks gcs libcloud mlflow mlperf neptune nlp oci onnx pandas peft sentencepiece slack streaming system-metrics-monitor tensorboard wandb"
+GENERATED_IUSE="all coco comet-ml databricks gcs libcloud mlflow mlperf neptune nlp oci onnx pandas peft sentencepiece slack streaming system-metrics-monitor tensorboard test wandb"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

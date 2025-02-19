@@ -14,8 +14,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/typing-extensions-5.0.0[${PYTHON_USEDEP}]
-"
 
 distutils_enable_tests pytest

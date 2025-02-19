@@ -50,7 +50,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	symengine? ( dev-python/symengine[${PYTHON_USEDEP}] )
 	texmacs? ( app-office/texmacs )
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/hypothesis-6.70.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.1.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 	)
@@ -58,13 +64,6 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/hypothesis-6.70.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.1.0[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	virtx distutils-r1_src_test

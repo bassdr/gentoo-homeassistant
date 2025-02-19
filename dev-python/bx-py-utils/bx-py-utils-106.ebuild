@@ -23,6 +23,28 @@ RESTRICT="!test? ( test )"
 DOCS="README.md"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	EditorConfig; extra == 'dev'
+	beautifulsoup4; extra == 'dev'
+	boto3; extra == 'dev'
+	build; extra == 'dev'
+	coverage; extra == 'dev'
+	darker[color,flynt,isort]; extra == 'dev'
+	flake8-bugbear; extra == 'dev'
+	flake8; extra == 'dev'
+	freezegun; extra == 'dev'
+	lxml; extra == 'dev'
+	manageprojects; extra == 'dev'
+	openpyxl; extra == 'dev'
+	packaging; extra == 'dev'
+	pdoc; extra == 'dev'
+	requests-mock; extra == 'dev'
+	safety; extra == 'dev'
+	tblib; extra == 'dev'
+	tox>=4.4.4; extra == 'dev'
+	twine; extra == 'dev'
+	typeguard; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]

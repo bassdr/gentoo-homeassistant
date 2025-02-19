@@ -27,22 +27,22 @@ DEPEND="
 	net-libs/http-parser:=
 	net-libs/llhttp:=
 "
-GENERATED_RDEPEND="${RDEPEND}
-"
 RDEPEND="
 	${DEPEND}
 "
-BDEPEND="
-	dev-python/cython[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	Cython>=0.29.24; extra == 'test'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/cython-0.29.24[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/cython[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
 
 src_configure() {
 	cat > setup.cfg <<-EOF || die

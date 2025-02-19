@@ -10,9 +10,14 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1
 
 MY_P=${P/_p/.post}
-DESCRIPTION=""
+DESCRIPTION="A simple, correct Python build frontend"
 HOMEPAGE="
-  https://pypi.org/project/build/"
+  https://pypi.org/project/build/
+  changelog, https://build.pypa.io/en/stable/changelog.html
+  homepage, https://build.pypa.io
+  issues, https://github.com/pypa/build/issues
+  source, https://github.com/pypa/build
+"
 SRC_URI="
 	https://github.com/pypa/build/archive/${PV/_p/.post}.tar.gz
 		-> ${MY_P}.gh.tar.gz
@@ -22,7 +27,7 @@ S=${WORKDIR}/${MY_P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs typing uv virtualenv"
+GENERATED_IUSE="docs test typing uv virtualenv"
 IUSE="${GENERATED_IUSE} test-rust"
 
 REQUIRES_DIST="
@@ -79,7 +84,20 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/tomli-1.1.0[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[uv,virtualenv,${PYTHON_USEDEP}]
+		>=dev-python/filelock-3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-2.12[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-rerunfailures-9.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}]
+		>=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}]
+		>=dev-python/wheel-0.36.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		$(python_gen_cond_dep '
 			>=dev-python/filelock-3[${PYTHON_USEDEP}]
@@ -97,20 +115,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/build[uv,virtualenv,${PYTHON_USEDEP}]
-		>=dev-python/filelock-3[${PYTHON_USEDEP}]
-		>=dev-python/pytest-6.2.4[${PYTHON_USEDEP}]
-		>=dev-python/pytest-cov-2.12[${PYTHON_USEDEP}]
-		>=dev-python/pytest-mock-2[${PYTHON_USEDEP}]
-		>=dev-python/pytest-rerunfailures-9.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-xdist-1.34[${PYTHON_USEDEP}]
-		>=dev-python/setuptools-67.8.0[${PYTHON_USEDEP}]
-		>=dev-python/wheel-0.36.0[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	if ! has "${EPYTHON/./_}" "${PYTHON_TESTED[@]}"; then

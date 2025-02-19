@@ -7,7 +7,7 @@ DISTUTILS_USE_PEP517="setuptools"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 DOCS_BUILDER="mkdocs"
-GENERATED_IUSE="all base"
+GENERATED_IUSE="all base test"
 IUSE="${GENERATED_IUSE}"
 DOCS_DEPEND="
 	dev-python/regex
@@ -89,18 +89,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/mkdocs-1.0[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/click[${PYTHON_USEDEP}]
-		dev-python/mkdocs-material[${PYTHON_USEDEP}]
-		dev-python/mkdocs-static-i18n[${PYTHON_USEDEP}]
-		dev-vcs/git
-	)
-	doc? ( dev-vcs/git )
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/click[${PYTHON_USEDEP}]
@@ -113,7 +101,18 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/click[${PYTHON_USEDEP}]
+		dev-python/mkdocs-material[${PYTHON_USEDEP}]
+		dev-python/mkdocs-static-i18n[${PYTHON_USEDEP}]
+		dev-vcs/git
+	)
+	doc? ( dev-vcs/git )
+"
+
+distutils_enable_tests pytest
 
 python_prepare_all() {
 	# mkdocs-git-revision-date-localized-plugin's tests need git repo

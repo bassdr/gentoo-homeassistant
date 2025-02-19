@@ -18,6 +18,9 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	nose; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/nose[${PYTHON_USEDEP}]

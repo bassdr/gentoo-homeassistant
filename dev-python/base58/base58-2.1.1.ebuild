@@ -14,10 +14,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	PyHamcrest (>=2.0.2) ; extra == 'tests'
+	mypy ; extra == 'tests'
+	pytest (>=4.6) ; extra == 'tests'
+	pytest-benchmark ; extra == 'tests'
+	pytest-cov ; extra == 'tests'
+	pytest-flake8 ; extra == 'tests'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/mypy[${PYTHON_USEDEP}]

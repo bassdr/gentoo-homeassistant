@@ -17,7 +17,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -40,16 +40,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/sphinx2rst[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND} !dev-python/mt_940[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
-
-python_test() {
-	py.test -v -v || die
-}
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -60,4 +50,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)"
+
+python_test() {
+	py.test -v -v || die
+}
+
+distutils_enable_tests pytest

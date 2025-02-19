@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	furo; extra == 'doc'
@@ -64,14 +64,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/tempora[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/pytest-home[${PYTHON_USEDEP}]
-		dev-vcs/git
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pygments[${PYTHON_USEDEP}]
@@ -85,7 +77,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-home[${PYTHON_USEDEP}]
+		dev-vcs/git
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

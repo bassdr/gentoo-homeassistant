@@ -20,7 +20,7 @@ SRC_URI="
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="binary c docs pool"
+GENERATED_IUSE="binary c docs pool test"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
 DEPEND="
@@ -72,21 +72,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 	>=dev-python/typing-extensions-4.4[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	native-extensions? (
-		dev-python/cython[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep '
-			dev-python/tomli[${PYTHON_USEDEP}]
-		' 3.10)
-	)
-	test? (
-		>=dev-db/postgresql-8.1[server]
-		>=dev-python/anyio-4.0[${PYTHON_USEDEP}]
-		>=dev-python/dnspython-2.1[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/anyio-4.0[${PYTHON_USEDEP}]
@@ -105,7 +90,21 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-vcs/pre-commit-4.0.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	native-extensions? (
+		dev-python/cython[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '
+			dev-python/tomli[${PYTHON_USEDEP}]
+		' 3.10)
+	)
+	test? (
+		>=dev-db/postgresql-8.1[server]
+		>=dev-python/anyio-4.0[${PYTHON_USEDEP}]
+		>=dev-python/dnspython-2.1[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_compile() {
 	# -Werror=strict-aliasing

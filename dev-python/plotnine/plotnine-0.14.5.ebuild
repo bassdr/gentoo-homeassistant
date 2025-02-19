@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all build doc extra lint typing"
+GENERATED_IUSE="all doc extra lint test typing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -51,7 +51,6 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	extra? ( >=dev-python/adjusttext-1.2.0[${PYTHON_USEDEP}] )
-	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	doc? ( dev-python/click[${PYTHON_USEDEP}] )
 	extra? ( >=dev-python/geopandas-1.0.0[${PYTHON_USEDEP}] )
 	typing? ( dev-python/ipython[${PYTHON_USEDEP}] )
@@ -76,12 +75,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	extra? ( >=dev-python/scikit-misc-0.5.1[${PYTHON_USEDEP}] )
 	>=dev-python/scipy-1.8.0[${PYTHON_USEDEP}]
 	>=dev-python/statsmodels-0.14.0[${PYTHON_USEDEP}]
-	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
 	test? (
 		dev-python/plotnine[typing,${PYTHON_USEDEP}]
 		>=dev-python/pytest-cov-4.0.0[${PYTHON_USEDEP}]

@@ -16,20 +16,24 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="memcached msgpack redis"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"
 
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
+REQUIRES_DIST="
+	aiomcache>=0.5.2; extra == 'memcached'
+	msgpack>=0.5.5; extra == 'msgpack'
+	redis>=4.2.0; extra == 'redis'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	memcached? ( >=dev-python/aiomcache-0.5.2[${PYTHON_USEDEP}] )
+	msgpack? ( >=dev-python/msgpack-0.5.5[${PYTHON_USEDEP}] )
+	redis? ( >=dev-python/redis-4.2.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 python_test() {
 	py.test -v -v || die
 }
 
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

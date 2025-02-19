@@ -20,7 +20,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="code_style live-dev themes"
+GENERATED_IUSE="code_style live-dev test themes"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	docutils
@@ -51,7 +51,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] =dev-python/pytest-6.0*[${PYTHON_USEDEP}]
+		>=dev-python/pytest-regressions-2.0.1[${PYTHON_USEDEP}] =dev-python/pytest-regressions-2.0*[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 	)
@@ -63,13 +69,6 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}] =dev-python/pytest-6.0*[${PYTHON_USEDEP}]
-		>=dev-python/pytest-regressions-2.0.1[${PYTHON_USEDEP}] =dev-python/pytest-regressions-2.0*[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 src_prepare() {

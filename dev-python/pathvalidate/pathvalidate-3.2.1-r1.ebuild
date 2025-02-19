@@ -21,7 +21,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs readme"
+GENERATED_IUSE="docs readme test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Faker>=1.0.8; extra == 'test'
@@ -45,14 +45,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/allpairspy[${PYTHON_USEDEP}]
-		dev-python/tcolorpy[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/allpairspy-2[${PYTHON_USEDEP}]
@@ -62,4 +54,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/allpairspy[${PYTHON_USEDEP}]
+		dev-python/tcolorpy[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

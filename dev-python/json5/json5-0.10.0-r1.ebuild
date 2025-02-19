@@ -17,6 +17,16 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	build==1.2.2.post1; extra == 'dev'
+	coverage==7.5.3; extra == 'dev'
+	mypy==1.13.0; extra == 'dev'
+	pip==24.3.1; extra == 'dev'
+	pylint==3.2.3; extra == 'dev'
+	ruff==0.7.3; extra == 'dev'
+	twine==5.1.1; extra == 'dev'
+	uv==0.5.1; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/build-1.2.2_p1[${PYTHON_USEDEP}]

@@ -21,11 +21,11 @@ KEYWORDS="amd64 arm64"
 PDEPEND="
 	>=dev-python/sphinx-2.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? ( ${PDEPEND} )
+REQUIRES_DIST="
+	flake8 ; extra == 'test'
+	mypy ; extra == 'test'
+	pytest ; extra == 'test'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -33,7 +33,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? ( ${PDEPEND} )
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	# This is already fixed in upstream, remove it on next version bump,

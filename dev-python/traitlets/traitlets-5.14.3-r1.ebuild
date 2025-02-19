@@ -16,14 +16,26 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	test? (
-		>=dev-python/argcomplete-2.0[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	argcomplete>=3.0.3; extra == 'test'
+	mypy>=1.7.0; extra == 'test'
+	myst-parser; extra == 'docs'
+	pre-commit; extra == 'test'
+	pydata-sphinx-theme; extra == 'docs'
+	pytest-mock; extra == 'test'
+	pytest-mypy-testing; extra == 'test'
+	pytest<8.2,>=7.0; extra == 'test'
+	sphinx; extra == 'docs'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
+	docs? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_sphinx docs/source \
 	dev-python/myst-parser \
@@ -49,5 +61,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -p pytest_mock
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

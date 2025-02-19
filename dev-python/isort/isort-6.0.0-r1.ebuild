@@ -8,9 +8,11 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="A Python utility / library to sort Python imports."
 HOMEPAGE="
-  https://pypi.org/project/isort/"
+  https://pypi.org/project/isort/
+  Changelog, https://github.com/pycqa/isort/blob/main/CHANGELOG.md
+"
 SRC_URI="
 	https://github.com/PyCQA/isort/archive/${PV}.tar.gz
 		-> ${P}.gh.tar.gz

@@ -18,7 +18,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="release"
+GENERATED_IUSE="release test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	build; extra == 'release'
@@ -53,15 +53,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-file-1.4[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-python/responses[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/mypy[${PYTHON_USEDEP}]
@@ -77,7 +68,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/types-requests[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		dev-python/responses[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	EPYTEST_IGNORE=(

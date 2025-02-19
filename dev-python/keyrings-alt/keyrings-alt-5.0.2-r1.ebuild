@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	furo; extra == 'doc'
@@ -55,15 +55,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/jaraco-classes[${PYTHON_USEDEP}]
 	dev-python/jaraco-context[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/setuptools-scm-3.4.1[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/keyring-20[${PYTHON_USEDEP}]
-		dev-python/pycryptodome[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/keyring-20[${PYTHON_USEDEP}]
@@ -77,7 +68,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/setuptools-scm-3.4.1[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/keyring-20[${PYTHON_USEDEP}]
+		dev-python/pycryptodome[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	# oldschool namespaces

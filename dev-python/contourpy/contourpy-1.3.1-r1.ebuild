@@ -21,7 +21,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="bokeh docs mypy test-no-images"
+GENERATED_IUSE="bokeh docs mypy test test-no-images"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Pillow; extra == 'test'
@@ -63,7 +63,14 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/contourpy[test-no-images,${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	>=dev-python/pybind11-2.13.4[${PYTHON_USEDEP}]
 	test? (
 		dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -79,14 +86,6 @@ DISTUTILS_ARGS=(
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/contourpy[test-no-images,${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
-		dev-python/pillow[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_IGNORE=(

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="arrow babel color encrypted intervals password pendulum phone test-all timezone url"
+GENERATED_IUSE="arrow babel color encrypted intervals password pendulum phone test test-all timezone url"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_NO_NORMALIZE=1

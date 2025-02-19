@@ -17,20 +17,27 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
+
+REQUIRES_DIST="
+	PySocks
+	SpeechRecognition
+	pydub
+	requests
+	selenium
+"
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/pydub[${PYTHON_USEDEP}]
+	dev-python/pysocks[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/selenium[${PYTHON_USEDEP}]
+	dev-python/speechrecognition[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 DOCS="README.md"
-
-BDEPEND="
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)"
 
 python_test() {
 	py.test -v -v || die
 }
 
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

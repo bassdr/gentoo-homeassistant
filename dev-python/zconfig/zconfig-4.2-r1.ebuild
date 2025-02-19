@@ -16,9 +16,32 @@ LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
+
+REQUIRES_DIST="
+	docutils; extra == 'test'
+	manuel; extra == 'test'
+	sphinx-rtd-theme; extra == 'docs'
+	sphinxcontrib-programoutput; extra == 'docs'
+	zope.exceptions; extra == 'test'
+	zope.testrunner; extra == 'test'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxcontrib-programoutput[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/docutils[${PYTHON_USEDEP}]
+		dev-python/manuel[${PYTHON_USEDEP}]
+		dev-python/zope-exceptions[${PYTHON_USEDEP}]
+		dev-python/zope-testrunner[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/docutils[${PYTHON_USEDEP}]
 		dev-python/manuel[${PYTHON_USEDEP}]
@@ -30,20 +53,9 @@ BDEPEND="
 DOCS=( CHANGES.rst README.rst )
 
 distutils_enable_tests unittest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/docutils[${PYTHON_USEDEP}]
-		dev-python/manuel[${PYTHON_USEDEP}]
-		dev-python/zope-exceptions[${PYTHON_USEDEP}]
-		dev-python/zope-testrunner[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 distutils_enable_sphinx docs \
 	dev-python/sphinxcontrib-programoutput
 
 python_test() {
 	eunittest -s src/ZConfig/tests
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

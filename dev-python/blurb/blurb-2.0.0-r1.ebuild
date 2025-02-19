@@ -16,14 +16,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	test? (
-		dev-python/pyfakefs[${PYTHON_USEDEP}]
-		dev-python/time-machine[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	pyfakefs; extra == 'tests'
+	pytest-cov; extra == 'tests'
+	pytest; extra == 'tests'
+	time-machine; extra == 'tests'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pyfakefs[${PYTHON_USEDEP}]
@@ -32,4 +30,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/time-machine[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pyfakefs[${PYTHON_USEDEP}]
+		dev-python/time-machine[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

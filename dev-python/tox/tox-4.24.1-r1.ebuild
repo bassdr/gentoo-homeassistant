@@ -58,7 +58,14 @@ RDEPEND="${GENERATED_RDEPEND}
 	' 3.10)
 	dev-python/virtualenv[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/devpi-process-1.0.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
@@ -75,14 +82,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/devpi-process-1.0.2[${PYTHON_USEDEP}]
-		>=dev-python/pytest-8.3.3[${PYTHON_USEDEP}]
-		>=dev-python/pytest-mock-3.14[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# upstream lower bounds are meaningless

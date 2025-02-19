@@ -21,7 +21,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Sphinx>=7; extra == 'doc'
@@ -44,11 +44,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/typing-extensions-4.10.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/setuptools-scm-6.4[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/coverage-7[toml,${PYTHON_USEDEP}]
@@ -56,7 +51,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-7[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/setuptools-scm-6.4[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_IGNORE=(

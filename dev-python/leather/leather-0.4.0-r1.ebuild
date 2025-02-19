@@ -20,14 +20,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	test? (
-		>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
-		>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	cssselect >=0.9.1 ; extra == 'test'
+	lxml >=3.6.0 ; extra == 'test'
+	pytest ; extra == 'test'
+	pytest-cov ; extra == 'test'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
@@ -36,6 +34,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
+		>=dev-python/lxml-3.6.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 distutils_enable_sphinx docs \
 	dev-python/furo

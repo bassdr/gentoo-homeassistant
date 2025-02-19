@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	autodoc-traits; extra == 'docs'
@@ -81,22 +81,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/nbformat-5.0[${PYTHON_USEDEP}]
 	>=dev-python/traitlets-5.4[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/flaky[${PYTHON_USEDEP}]
-		dev-python/ipython[${PYTHON_USEDEP}]
-		>=dev-python/ipykernel-6.19.3[${PYTHON_USEDEP}]
-		dev-python/ipywidgets[${PYTHON_USEDEP}]
-		>=dev-python/nbconvert-7.1.0[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-		dev-python/testpath[${PYTHON_USEDEP}]
-		dev-python/xmltodict[${PYTHON_USEDEP}]
-	)
-"
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flaky[${PYTHON_USEDEP}]
@@ -112,7 +96,22 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		>=dev-python/ipykernel-6.19.3[${PYTHON_USEDEP}]
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
+		>=dev-python/nbconvert-7.1.0[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/testpath[${PYTHON_USEDEP}]
+		dev-python/xmltodict[${PYTHON_USEDEP}]
+	)
+"
+
+EPYTEST_XDIST=1
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

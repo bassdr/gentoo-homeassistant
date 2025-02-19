@@ -16,15 +16,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	>=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
+REQUIRES_DIST="
+	pytest-md-report>=0.6.2; extra == 'test'
+	pytest>=6.0.1; extra == 'test'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6.0.1[${PYTHON_USEDEP}]
 		>=dev-python/pytest-md-report-0.6.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

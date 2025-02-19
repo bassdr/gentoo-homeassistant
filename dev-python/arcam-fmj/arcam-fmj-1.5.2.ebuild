@@ -36,15 +36,6 @@ GENERATED_RDEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/attrs-18.1[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/asynctest[${PYTHON_USEDEP}]
-		dev-python/coveralls[${PYTHON_USEDEP}]
-		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-	)"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/aiohttp[${PYTHON_USEDEP}]
@@ -57,4 +48,12 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/asynctest[${PYTHON_USEDEP}]
+		dev-python/coveralls[${PYTHON_USEDEP}]
+		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)"
+
+distutils_enable_tests pytest

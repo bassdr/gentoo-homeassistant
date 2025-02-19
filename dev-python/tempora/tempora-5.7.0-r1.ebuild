@@ -19,7 +19,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	backports.zoneinfo; python_version < '3.9' and extra == 'test'
@@ -55,16 +55,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/jaraco-functools-1.20[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		$(python_gen_cond_dep '
-			dev-python/pytest-freezer[${PYTHON_USEDEP}]
-		' "${PYTHON_TESTED[@]}")
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
@@ -77,7 +67,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/types-python-dateutil[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		$(python_gen_cond_dep '
+			dev-python/pytest-freezer[${PYTHON_USEDEP}]
+		' "${PYTHON_TESTED[@]}")
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	if ! has "${EPYTHON/./_}" "${PYTHON_TESTED[@]}"; then

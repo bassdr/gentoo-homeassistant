@@ -8,9 +8,11 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="Pytest plugin providing a fixture interface for spulec/freezegun"
 HOMEPAGE="
-  https://pypi.org/project/pytest-freezer/"
+  https://pypi.org/project/pytest-freezer/
+  Homepage, https://github.com/pytest-dev/pytest-freezer
+"
 
 LICENSE="MIT"
 SLOT="0"

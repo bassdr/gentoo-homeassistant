@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs marshmallow yaml"
+GENERATED_IUSE="docs marshmallow test yaml"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	PyYAML>=3.10; extra == 'yaml'
@@ -48,14 +48,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/bottle[${PYTHON_USEDEP}]
-		>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/apispec[marshmallow,yaml,${PYTHON_USEDEP}]
@@ -66,7 +58,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-vcs/pre-commit-3.5[${PYTHON_USEDEP}] <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/bottle[${PYTHON_USEDEP}]
+		>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 distutils_enable_sphinx docs \
 	dev-python/sphinx-issues \
 	dev-python/sphinx-rtd-theme

@@ -8,9 +8,14 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="A secure updater framework for Python"
 HOMEPAGE="
-  https://pypi.org/project/tuf/"
+  https://pypi.org/project/tuf/
+  Documentation, https://theupdateframework.readthedocs.io/en/stable/
+  Homepage, https://www.updateframework.com
+  Issues, https://github.com/theupdateframework/python-tuf/issues
+  Source, https://github.com/theupdateframework/python-tuf
+"
 
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"

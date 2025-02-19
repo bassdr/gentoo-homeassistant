@@ -16,7 +16,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="ssl"
+GENERATED_IUSE="ssl test"
 IUSE="${GENERATED_IUSE} examples ssl"
 
 REQUIRES_DIST="
@@ -51,14 +51,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	' 3.12 3.13)
 	ssl? ( dev-python/pyopenssl[${PYTHON_USEDEP}] )
 "
-BDEPEND="
-	test? (
-		dev-python/psutil[${PYTHON_USEDEP}]
-		dev-python/pyopenssl[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
@@ -77,7 +69,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/twine[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/psutil[${PYTHON_USEDEP}]
+		dev-python/pyopenssl[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 python_test() {

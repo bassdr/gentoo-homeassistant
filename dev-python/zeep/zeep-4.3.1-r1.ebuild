@@ -19,7 +19,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="async docs xmlsec"
+GENERATED_IUSE="async docs test xmlsec"
 IUSE="${GENERATED_IUSE} +async"
 
 REQUIRES_DIST="
@@ -72,19 +72,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pytz[${PYTHON_USEDEP}]
 	async? ( >=dev-python/httpx-0.15.0[${PYTHON_USEDEP}] )
 "
-BDEPEND="
-	test? (
-		dev-python/freezegun[${PYTHON_USEDEP}]
-		>=dev-python/httpx-0.15.0[${PYTHON_USEDEP}]
-		dev-python/pretend[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-httpx[${PYTHON_USEDEP}]
-		dev-python/requests-mock[${PYTHON_USEDEP}]
-		dev-python/xmlsec[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/coverage-7.6.2[toml,${PYTHON_USEDEP}]
@@ -102,4 +89,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		~dev-python/requests-mock-1.12.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/freezegun[${PYTHON_USEDEP}]
+		>=dev-python/httpx-0.15.0[${PYTHON_USEDEP}]
+		dev-python/pretend[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-httpx[${PYTHON_USEDEP}]
+		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/xmlsec[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

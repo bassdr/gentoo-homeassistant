@@ -19,6 +19,10 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	check-manifest; extra == 'dev'
+	coverage; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/check-manifest[${PYTHON_USEDEP}]

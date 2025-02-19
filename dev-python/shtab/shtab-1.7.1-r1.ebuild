@@ -16,9 +16,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
-
-distutils_enable_tests pytest
+REQUIRES_DIST="
+	pytest >=6 ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+	pytest-timeout ; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-6[${PYTHON_USEDEP}]
@@ -26,7 +28,8 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND} dev-python/setuptools-scm[${PYTHON_USEDEP}]"
+distutils_enable_tests pytest
 
 python_test() {
 	# Disable pytest-cov

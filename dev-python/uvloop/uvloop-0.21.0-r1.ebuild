@@ -17,7 +17,7 @@ SRC_URI+=" https://dev.gentoo.org/~sam/distfiles/${CATEGORY}/${PN}/${PN}-0.19.0-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE} examples"
 
 DEPEND="
@@ -44,16 +44,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
-BDEPEND="
-	>=dev-python/cython-3.0[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
-		>=dev-python/pyopenssl-22.0.0[${PYTHON_USEDEP}]
-		dev-python/psutil[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
@@ -66,7 +56,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/setuptools-60[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/cython-3.0[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
+		>=dev-python/pyopenssl-22.0.0[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_prepare_all() {
 	rm -r vendor || die

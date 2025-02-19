@@ -17,12 +17,22 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 IUSE="doc"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 RDEPEND="
 	>=dev-python/pytoolconfig-1.2.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
+REQUIRES_DIST="
+	build ; extra == 'dev'
+	pytest ; extra == 'dev'
+	pytest-timeout ; extra == 'dev'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]
@@ -36,14 +46,6 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/build[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 EPYTEST_DESELECT=(
 	# our venv style confuses this comparison

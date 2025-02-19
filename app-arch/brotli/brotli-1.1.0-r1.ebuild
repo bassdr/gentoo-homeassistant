@@ -10,21 +10,18 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit cmake-multilib distutils-r1 flag-o-matic
 
-if [[ ${PV} == *9999* ]] ; then
-	EGIT_REPO_URI="https://github.com/google/${PN}.git"
-	inherit git-r3
-else
-	KEYWORDS="~alpha amd64 arm arm64 hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86 ~amd64-linux ~x86-linux ~x64-macos ~x64-solaris"
-	SRC_URI="
-		https://github.com/google/${PN}/archive/v${PV}.tar.gz
-			-> ${P}.tar.gz
-	"
-fi
+KEYWORDS="amd64 arm64"
+SRC_URI="
+	https://github.com/google/${PN}/archive/v${PV}.tar.gz
+		-> ${P}.tar.gz
+"
 
-DESCRIPTION="Generic-purpose lossless compression algorithm"
-HOMEPAGE="https://github.com/google/brotli/"
+DESCRIPTION="Python bindings for the Brotli compression library"
+HOMEPAGE="
+  https://pypi.org/project/brotli/
+"
 
-LICENSE="MIT python? ( Apache-2.0 )"
+LICENSE="MIT"
 SLOT="0/$(ver_cut 1)"
 IUSE="+python test"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"

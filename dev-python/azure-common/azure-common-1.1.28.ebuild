@@ -17,6 +17,9 @@ KEYWORDS="amd64 arm64"
 
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	azure-nspkg ; python_version<'3.0'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	app-arch/unzip
 "

@@ -10,9 +10,11 @@ inherit distutils-r1
 
 TAG=v.${PV/_beta/b}
 MY_P=python-betterproto-${TAG}
-DESCRIPTION=""
+DESCRIPTION="A better Protobuf / gRPC generator & library"
 HOMEPAGE="
-  https://pypi.org/project/betterproto/"
+  https://pypi.org/project/betterproto/
+  Repository, https://github.com/danielgtaylor/python-betterproto
+"
 # no tests in sdist, as of 2.0.0b7
 SRC_URI="
 	https://github.com/danielgtaylor/python-betterproto/archive/${TAG}.tar.gz

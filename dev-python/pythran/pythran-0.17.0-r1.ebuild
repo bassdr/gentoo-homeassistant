@@ -22,7 +22,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	beniget~=0.4.0
@@ -68,7 +68,18 @@ DEPEND="
 		dev-cpp/xsimd
 	)
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-build/meson[${PYTHON_USEDEP}]
+		dev-python/cython[${PYTHON_USEDEP}]
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/nbval[${PYTHON_USEDEP}]
+		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/ipython[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]
@@ -82,18 +93,6 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/cython[${PYTHON_USEDEP}]
-		dev-python/ipython[${PYTHON_USEDEP}]
-		dev-build/meson[${PYTHON_USEDEP}]
-		dev-python/nbval[${PYTHON_USEDEP}]
-		dev-python/ninja[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
-		dev-python/wheel[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	# vendored C++ headers -- use system copies

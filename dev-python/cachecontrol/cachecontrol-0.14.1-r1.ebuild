@@ -20,7 +20,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="filecache redis"
+GENERATED_IUSE="filecache redis test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	CacheControl[filecache,redis]; extra == 'dev'
@@ -53,14 +53,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/msgpack-0.5.2[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/cherrypy[${PYTHON_USEDEP}]
-		>=dev-python/filelock-3.8.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
@@ -79,4 +71,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/types-requests[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/cherrypy[${PYTHON_USEDEP}]
+		>=dev-python/filelock-3.8.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

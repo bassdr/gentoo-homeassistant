@@ -16,11 +16,8 @@ HOMEPAGE="
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
-
 
 src_prepare() {
 	sed -i "s/packages=find_packages()/packages=find_packages(exclude=['tests'])/g" -i setup.py || die
@@ -33,4 +30,5 @@ python_test() {
 }
 
 distutils_enable_tests pytest
-# GENERATED_BDEPEND could not be inserted in this ebuild
+
+# BDEPEND could not be inserted in this ebuild

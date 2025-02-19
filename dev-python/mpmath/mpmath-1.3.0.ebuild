@@ -16,9 +16,43 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="develop docs gmpy"
+GENERATED_IUSE="develop docs gmpy test"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
+
+REQUIRES_DIST="
+	codecov ; extra == 'develop'
+	gmpy2 (>=2.1.0a4) ; (platform_python_implementation != 'PyPy') and extra == 'gmpy'
+	pycodestyle ; extra == 'develop'
+	pytest (>=4.6) ; extra == 'develop'
+	pytest (>=4.6) ; extra == 'tests'
+	pytest-cov ; extra == 'develop'
+	sphinx ; extra == 'docs'
+	wheel ; extra == 'develop'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	develop? ( dev-python/codecov[${PYTHON_USEDEP}] )
+	gmpy? ( >=dev-python/gmpy2-2.1.0_alpha4[${PYTHON_USEDEP}] )
+	develop? ( dev-python/pycodestyle[${PYTHON_USEDEP}] )
+	develop? ( >=dev-python/pytest-4.6[${PYTHON_USEDEP}] )
+	develop? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	develop? ( dev-python/wheel[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.4.0_alpha2-before-numpy-2.patch
+)
+
+EPYTEST_XDIST=1
+distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/hypothesis[${PYTHON_USEDEP}]
@@ -38,19 +72,6 @@ BDEPEND="
 		)
 	)
 "
-
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.4.0_alpha2-before-numpy-2.patch
-)
-
-EPYTEST_XDIST=1
-distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(
@@ -81,5 +102,3 @@ pkg_postinst() {
 	optfeature "gmp support" dev-python/gmpy2
 	optfeature "matplotlib support" dev-python/matplotlib
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all docs es es8 excel from html logging pandas sqlite theme toml yaml"
+GENERATED_IUSE="all docs es es8 excel from html logging pandas sqlite test theme toml yaml"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

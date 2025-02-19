@@ -88,6 +88,8 @@ REQUIRES_DIST="
 	valkey[libvalkey]>=6.0.2; extra == 'valkey'
 "
 GENERATED_RDEPEND="${RDEPEND}
+	brotli? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
+	full? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
 	full? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
 	sqlalchemy? ( >=dev-python/advanced-alchemy-0.2.2[${PYTHON_USEDEP}] )
 	annotated-types? ( dev-python/annotated-types[${PYTHON_USEDEP}] )
@@ -95,8 +97,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/anyio-3[${PYTHON_USEDEP}]
 	attrs? ( dev-python/attrs[${PYTHON_USEDEP}] )
 	full? ( dev-python/attrs[${PYTHON_USEDEP}] )
-	brotli? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
-	full? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
 	dev-python/click[${PYTHON_USEDEP}]
 	cryptography? ( dev-python/cryptography[${PYTHON_USEDEP}] )
 	full? ( dev-python/cryptography[${PYTHON_USEDEP}] )

@@ -16,7 +16,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="build develop docs"
+GENERATED_IUSE="develop docs"
 IUSE="${GENERATED_IUSE} examples"
 
 # NB: upstream requires building with numpy-2 but supports 1.x
@@ -56,7 +56,6 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	develop? ( dev-python/colorama[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] <dev-python/cython-4[${PYTHON_USEDEP}] )
 	develop? ( >=dev-python/cython-3.0.10[${PYTHON_USEDEP}] )
 	develop? ( dev-python/flake8[${PYTHON_USEDEP}] )
@@ -89,7 +88,10 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/patsy-0.5.6[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	>=dev-python/cython-3.0.10[${PYTHON_USEDEP}]
+"
+BDEPEND="${GENERATED_BDEPEND}
 	${DEPEND}
 	>=dev-python/cython-3.0.10[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]

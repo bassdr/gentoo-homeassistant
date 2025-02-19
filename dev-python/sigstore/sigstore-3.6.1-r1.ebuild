@@ -9,9 +9,14 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1
 
 MY_P=sigstore-python-${PV}
-DESCRIPTION=""
+DESCRIPTION="A tool for signing Python package distributions"
 HOMEPAGE="
-  https://pypi.org/project/sigstore/"
+  https://pypi.org/project/sigstore/
+  Documentation, https://sigstore.github.io/sigstore-python/
+  Homepage, https://pypi.org/project/sigstore/
+  Issues, https://github.com/sigstore/sigstore-python/issues
+  Source, https://github.com/sigstore/sigstore-python
+"
 # no tests in sdist, as of 3.3.0
 SRC_URI="
 	https://github.com/sigstore/sigstore-python/archive/v${PV}.tar.gz
@@ -23,7 +28,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc lint"
+GENERATED_IUSE="doc lint test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	bandit; extra == 'lint'
@@ -71,7 +76,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/pyjwt-2.1[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-23.0.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/rfc3161-client-0.1.2[${PYTHON_USEDEP}]
+	>=dev-python/rfc3161-client-0.1.2[${PYTHON_USEDEP}] =dev-python/rfc3161-client-0.1*[${PYTHON_USEDEP}]
 	>=dev-python/rfc8785-0.1.2[${PYTHON_USEDEP}] =dev-python/rfc8785-0.1*[${PYTHON_USEDEP}]
 	>=dev-python/rich-13.0[${PYTHON_USEDEP}] =dev-python/rich-13*[${PYTHON_USEDEP}]
 	lint? ( <dev-python/ruff-0.8.4[${PYTHON_USEDEP}] )

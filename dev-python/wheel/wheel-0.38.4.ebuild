@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # please keep this ebuild at EAPI 8 -- sys-apps/portage dep
@@ -21,12 +21,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 RDEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-BDEPEND="
+REQUIRES_DIST="
+	pytest (>=3.0.0) ; extra == 'test'
+"
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-3.0.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/setuptools[${PYTHON_USEDEP}]
 	)
@@ -38,12 +44,6 @@ EPYTEST_DESELECT=(
 )
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-3.0.0[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

@@ -16,7 +16,7 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all experimental full lite"
+GENERATED_IUSE="all experimental full lite test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	configupdater<4,>=3.0.1; extra == 'all'
@@ -56,16 +56,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/setuptools-59.6[${PYTHON_USEDEP}]
 	>=dev-python/tomli-w-0.4.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/configupdater[${PYTHON_USEDEP}]
-		dev-python/tomli[${PYTHON_USEDEP}]
-		dev-python/tomlkit[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/isort[${PYTHON_USEDEP}]
@@ -78,7 +68,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/validate-pyproject-0.6[${PYTHON_USEDEP}] <dev-python/validate-pyproject-2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/configupdater[${PYTHON_USEDEP}]
+		dev-python/tomli[${PYTHON_USEDEP}]
+		dev-python/tomlkit[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	sed -i -e 's:--cov ini2toml --cov-report term-missing::' setup.cfg || die

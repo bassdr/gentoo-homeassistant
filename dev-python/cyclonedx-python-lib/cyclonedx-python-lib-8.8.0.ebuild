@@ -25,9 +25,9 @@ REQUIRES_DIST="
 	sortedcontainers<3.0.0,>=2.4.0
 "
 GENERATED_RDEPEND="${RDEPEND}
-	json-validation? ( >=dev-python/jsonschema-4.18[format,${PYTHON_USEDEP}] <dev-python/jsonschema-5.0[format,${PYTHON_USEDEP}] ) validation? ( >=dev-python/jsonschema-4.18[format,${PYTHON_USEDEP}] <dev-python/jsonschema-5.0[format,${PYTHON_USEDEP}] )
+	validation? ( >=dev-python/jsonschema-4.18[format,${PYTHON_USEDEP}] <dev-python/jsonschema-5.0[format,${PYTHON_USEDEP}] ) json-validation? ( >=dev-python/jsonschema-4.18[format,${PYTHON_USEDEP}] <dev-python/jsonschema-5.0[format,${PYTHON_USEDEP}] )
 	>=dev-python/license-expression-30[${PYTHON_USEDEP}] <dev-python/license-expression-31[${PYTHON_USEDEP}]
-	xml-validation? ( >=dev-python/lxml-4[${PYTHON_USEDEP}] <dev-python/lxml-6[${PYTHON_USEDEP}] ) validation? ( >=dev-python/lxml-4[${PYTHON_USEDEP}] <dev-python/lxml-6[${PYTHON_USEDEP}] )
+	validation? ( >=dev-python/lxml-4[${PYTHON_USEDEP}] <dev-python/lxml-6[${PYTHON_USEDEP}] ) xml-validation? ( >=dev-python/lxml-4[${PYTHON_USEDEP}] <dev-python/lxml-6[${PYTHON_USEDEP}] )
 	>=dev-python/packageurl-python-0.11[${PYTHON_USEDEP}] <dev-python/packageurl-python-2[${PYTHON_USEDEP}]
 	>=dev-python/py-serializable-1.1.1[${PYTHON_USEDEP}] <dev-python/py-serializable-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/sortedcontainers-2.4.0[${PYTHON_USEDEP}] <dev-python/sortedcontainers-3.0.0[${PYTHON_USEDEP}]

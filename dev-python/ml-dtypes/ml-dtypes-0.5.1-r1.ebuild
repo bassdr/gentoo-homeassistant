@@ -51,14 +51,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	${DEPEND}
 "
-BDEPEND="
-	dev-python/pybind11[${PYTHON_USEDEP}]
-	test? (
-		dev-python/absl-py[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/absl-py[${PYTHON_USEDEP}]
@@ -68,7 +60,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/pybind11[${PYTHON_USEDEP}]
+	test? (
+		dev-python/absl-py[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_prepare_all() {
 	rmdir third_party/eigen || die

@@ -22,25 +22,38 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint standalone"
+GENERATED_IUSE="lint standalone test"
 IUSE="${GENERATED_IUSE}"
 PDEPEND="
 	>=dev-python/sphinx-5[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		${PDEPEND}
-		dev-python/html5lib[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	Sphinx>=5; extra == 'standalone'
+	html5lib; extra == 'test'
+	mypy; extra == 'lint'
+	pytest; extra == 'test'
+	ruff==0.5.5; extra == 'lint'
+	types-docutils; extra == 'lint'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/html5lib[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		${PDEPEND}
+		dev-python/html5lib[${PYTHON_USEDEP}]
+	)
+"
+
+GENERATED_RDEPEND="${RDEPEND}
+	lint? ( dev-python/mypy[${PYTHON_USEDEP}] )
+	lint? ( ~dev-python/ruff-0.5.5[${PYTHON_USEDEP}] )
+	standalone? ( >=dev-python/sphinx-5[${PYTHON_USEDEP}] )
+	lint? ( dev-python/types-docutils[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+distutils_enable_tests pytest

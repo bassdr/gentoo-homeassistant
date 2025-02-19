@@ -17,7 +17,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="ci lint"
+GENERATED_IUSE="ci lint test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 

@@ -20,16 +20,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
-		dev-python/littleutils[${PYTHON_USEDEP}]
-		dev-python/rich[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	asttokens>=2.1.0; extra == 'tests'
+	coverage-enable-subprocess; extra == 'tests'
+	coverage; extra == 'tests'
+	ipython; extra == 'tests'
+	littleutils; extra == 'tests'
+	pytest; extra == 'tests'
+	rich; python_version >= '3.11' and extra == 'tests'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
@@ -41,7 +40,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/rich[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/asttokens-2.1.0[${PYTHON_USEDEP}]
+		dev-python/littleutils[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 

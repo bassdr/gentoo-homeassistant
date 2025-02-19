@@ -27,7 +27,7 @@ REQUIRES_DIST="
 	requests_toolbelt (>=0.8.0,<0.9.0) ; extra == 'demo'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	demo? ( >=dev-python/requests-2.21[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}] ) requests? ( >=dev-python/requests-2.21[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}] )
+	requests? ( >=dev-python/requests-2.21[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}] ) demo? ( >=dev-python/requests-2.21[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}] )
 	demo? ( >=dev-python/requests-toolbelt-0.8.0[${PYTHON_USEDEP}] <dev-python/requests-toolbelt-0.9.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND} dev-python/requests[${PYTHON_USEDEP}]

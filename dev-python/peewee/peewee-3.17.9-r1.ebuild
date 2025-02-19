@@ -10,9 +10,12 @@ PYTHON_REQ_USE="sqlite"
 
 inherit distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="a little orm"
 HOMEPAGE="
-  https://pypi.org/project/peewee/"
+  https://pypi.org/project/peewee/
+  Documentation, http://docs.peewee-orm.com
+  Source, https://github.com/coleifer/peewee
+"
 SRC_URI="
 	https://github.com/coleifer/peewee/archive/${PV}.tar.gz
 		-> ${P}.gh.tar.gz

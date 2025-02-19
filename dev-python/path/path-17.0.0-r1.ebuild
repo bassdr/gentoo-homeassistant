@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	appdirs; extra == 'test'
@@ -50,15 +50,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/appdirs[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? (
-		dev-python/more-itertools[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/appdirs[${PYTHON_USEDEP}]
@@ -73,7 +64,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? (
+		dev-python/more-itertools[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# unreliable, not really meaningful for end users

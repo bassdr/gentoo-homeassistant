@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="cov docs pyqt5 pyside6"
+GENERATED_IUSE="cov docs pyqt5 pyside6 test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	appnope; platform_system == 'Darwin'
@@ -100,7 +100,18 @@ RDEPEND="${GENERATED_RDEPEND}
 # bug #816486
 # pytest-8 runs a small subset of tests, we allow newer for 3.13
 # since a few tests are better than skipping entirely
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/ipyparallel[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.23.5[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	${RDEPEND}
 	test? (
 		dev-python/flaky[${PYTHON_USEDEP}]
@@ -114,18 +125,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/flaky[${PYTHON_USEDEP}]
-		dev-python/ipyparallel[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.23.5[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	# debugpy is actually optional

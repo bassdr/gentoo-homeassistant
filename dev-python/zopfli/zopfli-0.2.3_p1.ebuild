@@ -6,7 +6,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 0.2.3.post1)"
-S="${WORKDIR}/${PN}-0.2.3.post1"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-0.2.3.post1"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -16,10 +16,11 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	pytest; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

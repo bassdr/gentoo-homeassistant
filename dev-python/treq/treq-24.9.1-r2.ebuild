@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -50,7 +50,15 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/twisted-18.7.0[ssl(-),${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		~dev-python/httpbin-0.7.0[${PYTHON_USEDEP}]
+		dev-python/pep8[${PYTHON_USEDEP}]
+		dev-python/pyflakes[${PYTHON_USEDEP}]
+		~dev-python/werkzeug-2.0.3[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/incremental[${PYTHON_USEDEP}]
 	test? (
 		dev-python/httpbin[${PYTHON_USEDEP}]
@@ -74,5 +82,3 @@ src_prepare() {
 python_test() {
 	"${EPYTHON}" -m twisted.trial treq || die "Tests failed with ${EPYTHON}"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

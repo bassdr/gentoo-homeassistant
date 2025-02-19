@@ -16,6 +16,12 @@ KEYWORDS="amd64 arm64"
 
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	coverage; extra == 'testing'
+	pytest-randomly; extra == 'testing'
+	pytest-xdist; extra == 'testing'
+	pytest; extra == 'testing'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]

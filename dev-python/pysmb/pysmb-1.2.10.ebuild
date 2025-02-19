@@ -33,4 +33,4 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/pyasn1[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-# GENERATED_BDEPEND could not be inserted in this ebuild
+# BDEPEND could not be inserted in this ebuild

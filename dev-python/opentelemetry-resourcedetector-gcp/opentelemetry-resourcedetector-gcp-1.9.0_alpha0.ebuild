@@ -6,7 +6,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 1.9.0a0)"
-S="${WORKDIR}/${PN}-1.9.0a0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-1.9.0a0"
 
 DESCRIPTION=""
 HOMEPAGE="

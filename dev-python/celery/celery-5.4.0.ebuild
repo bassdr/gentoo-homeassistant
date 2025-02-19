@@ -68,12 +68,12 @@ REQUIRES_DIST="
 	zstandard==0.22.0; extra == 'zstd'
 "
 GENERATED_RDEPEND="${RDEPEND}
+	brotli? ( >=app-arch/brotli-1.0.0[python,${PYTHON_USEDEP}] )
 	azureblockblob? ( >=dev-python/azure-storage-blob-12.15.0[${PYTHON_USEDEP}] )
 	>=dev-python/billiard-4.2.0[${PYTHON_USEDEP}] <dev-python/billiard-5.0[${PYTHON_USEDEP}]
 	dynamodb? ( >=dev-python/boto3-1.26.143[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.26.143[${PYTHON_USEDEP}] )
 	sqs? ( >=dev-python/boto3-1.26.143[${PYTHON_USEDEP}] )
-	brotli? ( >=app-arch/brotli-1.0.0[python,${PYTHON_USEDEP}] )
 	cassandra? ( >=dev-python/cassandra-driver-3.25.0[${PYTHON_USEDEP}] <dev-python/cassandra-driver-4[${PYTHON_USEDEP}] )
 	>=dev-python/click-8.1.2[${PYTHON_USEDEP}] <dev-python/click-9.0[${PYTHON_USEDEP}]
 	>=dev-python/click-didyoumean-0.3.0[${PYTHON_USEDEP}]

@@ -46,13 +46,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/asyncio-throttle[${PYTHON_USEDEP}]
 	dev-python/awesomeversion[${PYTHON_USEDEP}]"
-BDEPEND="
-	test? (
-		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/codespell-2.3.0[${PYTHON_USEDEP}]
@@ -69,4 +62,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		~dev-vcs/pre-commit-3.8.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	)"
+
+distutils_enable_tests pytest

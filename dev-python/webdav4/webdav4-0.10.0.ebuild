@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all docs fsspec http2 qa"
+GENERATED_IUSE="all docs fsspec http2 qa test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

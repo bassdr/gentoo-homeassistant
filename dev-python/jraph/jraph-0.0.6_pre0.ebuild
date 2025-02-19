@@ -8,7 +8,7 @@ IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 0.0.6.dev0)"
-S="${WORKDIR}/${PN}-0.0.6.dev0"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-0.0.6.dev0"
 
 DESCRIPTION=""
 HOMEPAGE="

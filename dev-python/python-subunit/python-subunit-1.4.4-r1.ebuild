@@ -21,8 +21,8 @@ S=${WORKDIR}/${MY_P}
 LICENSE="Apache-2.0 BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
-IUSE="${GENERATED_IUSE} static-libs test"
+GENERATED_IUSE="docs test"
+IUSE="${GENERATED_IUSE} static-libs"
 RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
@@ -53,6 +53,15 @@ DEPEND="
 		dev-python/testscenarios[${PYTHON_USEDEP}]
 	)
 "
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/fixtures[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/testscenarios[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/subunit-1.4.0-werror.patch"
@@ -103,4 +112,3 @@ multilib_src_install_all() {
 	einstalldocs
 	find "${D}" -name '*.la' -delete || die
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild

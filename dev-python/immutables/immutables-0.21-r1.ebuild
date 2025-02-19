@@ -23,6 +23,12 @@ KEYWORDS="amd64 arm64"
 IUSE="+native-extensions"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	flake8~=5.0; extra == 'test'
+	mypy~=1.4; extra == 'test'
+	pycodestyle~=2.9; extra == 'test'
+	pytest~=7.4; extra == 'test'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/flake8-5.0[${PYTHON_USEDEP}] =dev-python/flake8-5*[${PYTHON_USEDEP}]

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="docs test-cov test-external test-functional test-integration test-ui"
+GENERATED_IUSE="docs test test-cov test-external test-functional test-integration test-ui"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

@@ -24,10 +24,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-	dev-python/tomli[${PYTHON_USEDEP}]
-"
-RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND+="
 	test? (
 		dev-python/flaky[${PYTHON_USEDEP}]

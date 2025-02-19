@@ -43,15 +43,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
-BDEPEND="dev-python/aiohttp[${PYTHON_USEDEP}]
-	dev-python/async-timeout[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/codespell-2.2.6[${PYTHON_USEDEP}]
@@ -68,4 +59,12 @@ GENERATED_BDEPEND="${BDEPEND}
 		~dev-vcs/pre-commit-3.6.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND} dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/async-timeout[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	test? (
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)"
+
+distutils_enable_tests pytest

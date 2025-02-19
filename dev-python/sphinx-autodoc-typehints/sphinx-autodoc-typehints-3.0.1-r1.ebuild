@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	covdefaults>=2.3; extra == 'testing'
@@ -39,15 +39,6 @@ RDEPEND="${GENERATED_RDEPEND}
 "
 # skipping optional test dep on dev-python/nptyping as that package
 # is horribly broken and on its way out
-BDEPEND="
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
-	test? (
-		>=dev-python/sphobjinv-2.3.1[${PYTHON_USEDEP}]
-		>=dev-python/typing-extensions-4.5[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/covdefaults-2.3[${PYTHON_USEDEP}]
@@ -60,7 +51,15 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/typing-extensions-4.12.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+	test? (
+		>=dev-python/sphobjinv-2.3.1[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-4.5[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

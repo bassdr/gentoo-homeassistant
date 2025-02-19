@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 # there's an optional dep on rich for cute logs
-GENERATED_IUSE="docs rich"
+GENERATED_IUSE="docs rich test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	build; extra == 'test'
@@ -59,7 +59,15 @@ RDEPEND="${GENERATED_RDEPEND}
 		dev-python/tomli[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/build[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
+		dev-python/wheel[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
@@ -69,15 +77,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/build[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/rich[${PYTHON_USEDEP}]
-		dev-python/wheel[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_test() {
 	local EPYTEST_DESELECT=(

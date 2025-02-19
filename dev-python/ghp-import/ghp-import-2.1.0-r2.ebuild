@@ -30,4 +30,3 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
 "
-# GENERATED_BDEPEND could not be inserted in this ebuild

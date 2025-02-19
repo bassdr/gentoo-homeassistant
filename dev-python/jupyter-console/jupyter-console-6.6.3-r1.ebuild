@@ -50,7 +50,14 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/traitlets-5.4[${PYTHON_USEDEP}]
 "
 # util-linux provides script(1)
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/pexpect[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/flaky[${PYTHON_USEDEP}]
 		dev-python/pexpect[${PYTHON_USEDEP}]
@@ -59,11 +66,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/flaky[${PYTHON_USEDEP}]
-		dev-python/pexpect[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"

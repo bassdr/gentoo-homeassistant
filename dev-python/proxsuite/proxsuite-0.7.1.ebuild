@@ -4,8 +4,6 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
-GENERATED_IUSE="build"
-IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -27,12 +25,15 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/cmeel[${PYTHON_USEDEP}]
-	build? ( dev-python/cmeel-eigen[${PYTHON_USEDEP}] )
-	build? ( dev-python/cmeel-simde[${PYTHON_USEDEP}] )
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
-	build? ( dev-python/typing-extensions[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
+GENERATED_BDEPEND="${BDEPEND}
+	dev-python/cmeel-eigen[${PYTHON_USEDEP}]
+	dev-python/cmeel-simde[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
+"
+BDEPEND="${GENERATED_BDEPEND}"

@@ -22,7 +22,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="developer doc"
+GENERATED_IUSE="developer doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	intersphinx-registry; extra == 'doc'
@@ -56,13 +56,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/tomli-1.1.0[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
-	test? (
-		>=dev-python/matplotlib-3.2.1[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -70,7 +63,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/matplotlib-3.2.1[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=(

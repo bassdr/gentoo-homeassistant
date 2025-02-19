@@ -20,20 +20,17 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 RDEPEND="
 	$(python_gen_cond_dep '
 		dev-python/typing-extensions[${PYTHON_USEDEP}]
 	' 3.{9..10})
 "
-BDEPEND="
-	test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	mypy>=0.800; extra == 'tests'
+	pytest-asyncio; extra == 'tests'
+	pytest; extra == 'tests'
+	typing-extensions>=4; python_version < '3.11'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/mypy-0.800[${PYTHON_USEDEP}]
@@ -41,4 +38,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

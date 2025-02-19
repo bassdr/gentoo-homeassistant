@@ -8,9 +8,15 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit cmake distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="Seamless operability between C++11 and Python"
 HOMEPAGE="
-  https://pypi.org/project/pybind11/"
+  https://pypi.org/project/pybind11/
+  Documentation, https://pybind11.readthedocs.io/
+  Bug Tracker, https://github.com/pybind/pybind11/issues
+  Discussions, https://github.com/pybind/pybind11/discussions
+  Changelog, https://pybind11.readthedocs.io/en/latest/changelog.html
+  Chat, https://gitter.im/pybind/Lobby
+"
 SRC_URI="
 	https://github.com/pybind/pybind11/archive/v${PV}.tar.gz
 		-> ${P}.gh.tar.gz

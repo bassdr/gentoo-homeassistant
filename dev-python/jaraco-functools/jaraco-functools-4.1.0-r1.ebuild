@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="check cover doc enabler type"
+GENERATED_IUSE="check cover doc enabler test type"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	furo; extra == 'doc'
@@ -53,20 +53,19 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/more-itertools-0.12.0-r1[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/jaraco-classes[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/jaraco-classes[${PYTHON_USEDEP}]
 		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/jaraco-classes[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_configure() {
 	grep -q 'build-backend = "setuptools' pyproject.toml ||

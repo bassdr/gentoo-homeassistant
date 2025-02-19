@@ -16,10 +16,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	Cython==3.0.10; extra == 'dev'
+	black==24.4.2; extra == 'dev'
+	coverage==7.5.3; extra == 'dev'
+	flake8==7.0.0; extra == 'dev'
+	isort==5.13.2; extra == 'dev'
+	pytest-asyncio==0.11.0; extra == 'dev'
+	pytest-mock==3.14.0; extra == 'dev'
+	pytest==8.2.2; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/black-24.4.2[${PYTHON_USEDEP}]

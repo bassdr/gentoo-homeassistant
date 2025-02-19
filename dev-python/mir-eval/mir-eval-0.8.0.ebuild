@@ -3,6 +3,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+GENERATED_IUSE="display docs test"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -14,6 +16,29 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	decorator
+	matplotlib>=3.3.0; extra == 'display'
+	matplotlib>=3.3.0; extra == 'docs'
+	matplotlib>=3.3.0; extra == 'tests'
+	numpy>=1.15.4
+	numpydoc; extra == 'docs'
+	pytest-cov; extra == 'tests'
+	pytest-mpl; extra == 'tests'
+	pytest; extra == 'tests'
+	scipy>=1.4.0
+	sphinx_rtd_theme; extra == 'docs'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	dev-python/decorator[${PYTHON_USEDEP}]
+	display? ( >=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}] )
+	>=dev-python/numpy-1.15.4[${PYTHON_USEDEP}]
+	docs? ( dev-python/numpydoc[${PYTHON_USEDEP}] )
+	>=dev-python/scipy-1.4.0[${PYTHON_USEDEP}]
+	docs? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -25,6 +50,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

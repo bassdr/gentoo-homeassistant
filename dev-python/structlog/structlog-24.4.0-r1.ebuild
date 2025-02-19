@@ -24,17 +24,49 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs typing"
+GENERATED_IUSE="docs test typing"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	dev-python/hatch-fancy-pypi-readme[${PYTHON_USEDEP}]
-	dev-python/hatch-vcs[${PYTHON_USEDEP}]
-	test? (
-		dev-python/freezegun[${PYTHON_USEDEP}]
-		dev-python/pretend[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)
+
+REQUIRES_DIST="
+	cogapp; extra == 'docs'
+	freezegun>=0.2.8; extra == 'dev'
+	freezegun>=0.2.8; extra == 'tests'
+	furo; extra == 'docs'
+	mypy>=1.4; extra == 'dev'
+	mypy>=1.4; extra == 'typing'
+	myst-parser; extra == 'docs'
+	pretend; extra == 'dev'
+	pretend; extra == 'tests'
+	pytest-asyncio>=0.17; extra == 'dev'
+	pytest-asyncio>=0.17; extra == 'tests'
+	pytest>=6.0; extra == 'dev'
+	pytest>=6.0; extra == 'tests'
+	rich; extra == 'dev'
+	rich; extra == 'typing'
+	simplejson; extra == 'dev'
+	simplejson; extra == 'tests'
+	sphinx-notfound-page; extra == 'docs'
+	sphinx; extra == 'docs'
+	sphinxcontrib-mermaid; extra == 'docs'
+	sphinxext-opengraph; extra == 'docs'
+	twisted; extra == 'dev'
+	twisted; extra == 'docs'
+	twisted; extra == 'typing'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/cogapp[${PYTHON_USEDEP}] )
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	typing? ( >=dev-python/mypy-1.4[${PYTHON_USEDEP}] )
+	docs? ( dev-python/myst-parser[${PYTHON_USEDEP}] )
+	typing? ( dev-python/rich[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-notfound-page[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxcontrib-mermaid[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinxext-opengraph[${PYTHON_USEDEP}] )
+	docs? ( dev-python/twisted[${PYTHON_USEDEP}] )
+	typing? ( dev-python/twisted[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -50,5 +82,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

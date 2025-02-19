@@ -45,7 +45,7 @@ distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/astor-0.8.1[${PYTHON_USEDEP}]
-		>=dev-python/asyncstdlib-3.9.1[${PYTHON_USEDEP}]
+		~dev-python/asyncstdlib-3.9.1[${PYTHON_USEDEP}]
 		~dev-python/black-23.9.1[${PYTHON_USEDEP}]
 		>=dev-python/coverage-6.5.0[${PYTHON_USEDEP}] <dev-python/coverage-7[${PYTHON_USEDEP}]
 		>=dev-python/deal-4[${PYTHON_USEDEP}] <dev-python/deal-5[${PYTHON_USEDEP}]

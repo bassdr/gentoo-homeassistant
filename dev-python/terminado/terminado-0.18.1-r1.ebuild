@@ -16,7 +16,7 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs typing"
+GENERATED_IUSE="docs test typing"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	mypy~=1.6; extra == 'typing'
@@ -44,14 +44,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/ptyprocess[${PYTHON_USEDEP}]
 	dev-python/tornado[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
@@ -59,7 +51,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_test() {
 	# workaround new readline defaults

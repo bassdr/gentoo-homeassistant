@@ -20,7 +20,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="pyqt5 pyside2"
+GENERATED_IUSE="pyqt5 pyside2 test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	black; extra == 'dev'
@@ -44,20 +44,19 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-2.3[${PYTHON_USEDEP}]
 	dev-python/twisted[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	# If we let pytest-twisted autoload everywhere, it breaks tests in

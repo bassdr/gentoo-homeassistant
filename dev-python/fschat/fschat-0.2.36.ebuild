@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="llm_judge model_worker train webui"
+GENERATED_IUSE="llm_judge model_worker test train webui"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

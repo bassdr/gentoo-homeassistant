@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all build doc lint rtd typing"
+GENERATED_IUSE="all doc lint rtd test typing"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -41,7 +41,6 @@ REQUIRES_DIST="
 	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	build? ( dev-python/build[${PYTHON_USEDEP}] )
 	all? ( dev-python/mizani[build,${PYTHON_USEDEP}] )
 	all? ( dev-python/mizani[dev,${PYTHON_USEDEP}] )
 	all? ( dev-python/mizani[doc,${PYTHON_USEDEP}] )
@@ -56,12 +55,13 @@ GENERATED_RDEPEND="${RDEPEND}
 	lint? ( dev-python/ruff[${PYTHON_USEDEP}] )
 	>=dev-python/scipy-1.8.0[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-7.2.0[${PYTHON_USEDEP}] )
-	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
 	test? (
 		dev-python/mizani[typing,${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]

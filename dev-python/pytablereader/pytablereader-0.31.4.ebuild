@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all excel gs logging md mediawiki sqlite url"
+GENERATED_IUSE="all excel gs logging md mediawiki sqlite test url"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

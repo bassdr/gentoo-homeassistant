@@ -16,7 +16,7 @@ HOMEPAGE="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="cache database email search"
+GENERATED_IUSE="cache database email search test"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
@@ -41,7 +41,17 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/django-3.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/dj-database-url[${PYTHON_USEDEP}]
+		dev-python/dj-email-url[${PYTHON_USEDEP}]
+		dev-python/dj-search-url[${PYTHON_USEDEP}]
+		>=dev-python/django-cache-url-1.0.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/django-cache-url[${PYTHON_USEDEP}]
@@ -64,5 +74,3 @@ python_test() {
 	local -x DJANGO_CONFIGURATION=Test
 	PYTHONPATH=. django-cadmin test -v2 || die "Tests failed with ${EPYTHON}"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

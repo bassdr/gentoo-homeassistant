@@ -20,7 +20,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs docstest pep8test"
+GENERATED_IUSE="docs docstest pep8test test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	arpeggio >=1.7
@@ -49,14 +49,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/attrs-19.2[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	test? (
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-		dev-python/pretend[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/hypothesis[${PYTHON_USEDEP}]
@@ -64,4 +56,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/pretend[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

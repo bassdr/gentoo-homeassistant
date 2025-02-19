@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_P}
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="aws docs encryption gssapi ocsp snappy zstd"
+GENERATED_IUSE="aws docs encryption gssapi ocsp snappy test zstd"
 IUSE="${GENERATED_IUSE} doc kerberos +native-extensions +test-full"
 
 REQUIRES_DIST="
@@ -72,7 +72,13 @@ RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/dnspython-3.0.0[${PYTHON_USEDEP}]
 	kerberos? ( dev-python/kerberos[${PYTHON_USEDEP}] )
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-8.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
@@ -84,13 +90,6 @@ BDEPEND="
 
 distutils_enable_sphinx doc
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-8.2[${PYTHON_USEDEP}]
-		>=dev-python/pytest-asyncio-0.24.0[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 reqcheck() {
 	if use test && use test-full; then

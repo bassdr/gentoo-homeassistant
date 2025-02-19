@@ -8,9 +8,10 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="FFMPEG wrapper for Python"
 HOMEPAGE="
-  https://pypi.org/project/imageio-ffmpeg/"
+  https://pypi.org/project/imageio-ffmpeg/
+"
 SRC_URI="
 	https://github.com/imageio/imageio-ffmpeg/archive/v${PV}.tar.gz
 		-> ${P}.gh.tar.gz

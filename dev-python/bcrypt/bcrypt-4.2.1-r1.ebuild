@@ -66,11 +66,17 @@ LICENSE+=" Apache-2.0-with-LLVM-exceptions BSD MIT Unicode-DFS-2016"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="typecheck"
+GENERATED_IUSE="test typecheck"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
-	>=dev-python/setuptools-rust-1.7.0[${PYTHON_USEDEP}]
+
+REQUIRES_DIST="
+	mypy; extra == 'typecheck'
+	pytest!=3.3.0,>=3.2.1; extra == 'tests'
 "
+GENERATED_RDEPEND="${RDEPEND}
+	typecheck? ( dev-python/mypy[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 # Rust
 QA_FLAGS_IGNORED="usr/lib.*/py.*/site-packages/bcrypt/_bcrypt.*.so"
@@ -82,6 +88,9 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
+	>=dev-python/setuptools-rust-1.7.0[${PYTHON_USEDEP}]
+"
 
 export UNSAFE_PYO3_SKIP_VERSION_CHECK=1
 
@@ -103,5 +112,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest tests
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

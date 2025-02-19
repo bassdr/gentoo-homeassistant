@@ -15,10 +15,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	chardet; extra == 'tests'
+	pytest; extra == 'tests'
+	trimesh; extra == 'tests'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/chardet[${PYTHON_USEDEP}]

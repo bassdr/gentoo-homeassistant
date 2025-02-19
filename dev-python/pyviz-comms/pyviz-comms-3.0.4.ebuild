@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="all build"
+GENERATED_IUSE="all test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -36,22 +36,22 @@ REQUIRES_DIST="
 GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/jupyterlab-4.0[${PYTHON_USEDEP}] =dev-python/jupyterlab-4*[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/jupyterlab-4.0[${PYTHON_USEDEP}] =dev-python/jupyterlab-4*[${PYTHON_USEDEP}] )
 	all? ( dev-python/keyring[${PYTHON_USEDEP}] )
-	build? ( dev-python/keyring[${PYTHON_USEDEP}] )
 	dev-python/param[${PYTHON_USEDEP}]
 	all? ( dev-python/pytest[${PYTHON_USEDEP}] )
 	all? ( dev-python/rfc3986[${PYTHON_USEDEP}] )
-	build? ( dev-python/rfc3986[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/setuptools-40.8.0[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/setuptools-40.8.0[${PYTHON_USEDEP}] )
 	all? ( dev-python/twine[${PYTHON_USEDEP}] )
-	build? ( dev-python/twine[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	>=dev-python/jupyterlab-4.0[${PYTHON_USEDEP}] =dev-python/jupyterlab-4*[${PYTHON_USEDEP}]
+	dev-python/keyring[${PYTHON_USEDEP}]
+	dev-python/rfc3986[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-40.8.0[${PYTHON_USEDEP}]
+	dev-python/twine[${PYTHON_USEDEP}]
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

@@ -14,8 +14,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-	dev-python/toml[${PYTHON_USEDEP}]
-"
 
 distutils_enable_tests pytest

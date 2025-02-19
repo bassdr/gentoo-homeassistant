@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="all docs qtpdf qtpng serve webpdf"
+GENERATED_IUSE="all docs qtpdf qtpng serve test webpdf"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	beautifulsoup4
@@ -123,7 +123,15 @@ RDEPEND="${GENERATED_RDEPEND}
 RDEPEND+="
 	dev-python/tinycss2[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/flaky[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		>=dev-python/ipywidgets-7.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/ipykernel[${PYTHON_USEDEP}]
 		>=dev-python/ipywidgets-7.5[${PYTHON_USEDEP}]
@@ -134,15 +142,6 @@ BDEPEND="
 
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/flaky[${PYTHON_USEDEP}]
-		dev-python/ipykernel[${PYTHON_USEDEP}]
-		>=dev-python/ipywidgets-7.5[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_test() {
 	virtx distutils-r1_src_test

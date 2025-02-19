@@ -14,10 +14,18 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	black ; extra == 'dev'
+	flaky ; extra == 'dev'
+	hypothesis ; extra == 'dev'
+	pre-commit ; extra == 'dev'
+	pytest ; extra == 'dev'
+	pytest-cov ; extra == 'dev'
+	pytest-memray >=1.5.0 ; extra == 'dev'
+	rich ; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]

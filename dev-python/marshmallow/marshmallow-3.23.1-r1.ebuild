@@ -26,7 +26,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	alabaster==1.0.0; extra == 'docs'
@@ -53,14 +53,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/pytz[${PYTHON_USEDEP}]
-		dev-python/simplejson[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/marshmallow[tests,${PYTHON_USEDEP}]
@@ -70,4 +62,11 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-vcs/pre-commit-3.5[${PYTHON_USEDEP}] <dev-vcs/pre-commit-5.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytz[${PYTHON_USEDEP}]
+		dev-python/simplejson[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

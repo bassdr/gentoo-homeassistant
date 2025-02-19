@@ -9,9 +9,11 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="python CFFI bindings for the olm cryptographic ratchet library"
 HOMEPAGE="
-  https://pypi.org/project/python-olm/"
+  https://pypi.org/project/python-olm/
+  homepage, https://gitlab.matrix.org/matrix-org/olm/-/tree/master/python
+"
 SRC_URI="https://gitlab.matrix.org/matrix-org/olm/-/archive/${PV}/olm-${PV}.tar.bz2"
 S="${WORKDIR}/olm-${PV}/python/"
 

@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc xcb"
+GENERATED_IUSE="doc test xcb"
 IUSE="${GENERATED_IUSE}"
 DEPEND="
 	>=dev-python/xcffib-0.3.2[${PYTHON_USEDEP}]
@@ -45,7 +45,15 @@ RDEPEND="${GENERATED_RDEPEND}
 		>=dev-python/cffi-1.1.0:=[${PYTHON_USEDEP}]
 	' 'python*')
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/pikepdf[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/ruff[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/cffi-1.1.0:=[${PYTHON_USEDEP}]
@@ -57,15 +65,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/pikepdf[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/ruff[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.8.0-tests.patch

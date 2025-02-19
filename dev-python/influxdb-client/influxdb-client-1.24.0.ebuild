@@ -15,7 +15,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="ciso extra"
+GENERATED_IUSE="ciso extra test"
 IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"

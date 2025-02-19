@@ -7,9 +7,11 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_NO_NORMALIZE=1
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
+DESCRIPTION="Marker library to detect whether urllib3 was installed with the deprecated [secure] extra"
 HOMEPAGE="
-  https://pypi.org/project/urllib3-secure-extra/"
+  https://pypi.org/project/urllib3-secure-extra/
+  Source Code, https://github.com/urllib3/urllib3-secure-extra
+"
 
 LICENSE=""
 SLOT="0"

@@ -8,9 +8,13 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="A tool for generating OIDC identities"
 HOMEPAGE="
-  https://pypi.org/project/id/"
+  https://pypi.org/project/id/
+  Homepage, https://pypi.org/project/id/
+  Issues, https://github.com/di/id/issues
+  Source, https://github.com/di/id
+"
 # no tests in sdist, https://github.com/di/id/issues/286
 SRC_URI="
 	https://github.com/di/id/archive/v${PV}.tar.gz
@@ -21,7 +25,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint"
+GENERATED_IUSE="lint test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	bandit; extra == 'lint'
@@ -49,13 +53,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/pretend[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
@@ -67,7 +64,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pretend[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_DESELECT=()

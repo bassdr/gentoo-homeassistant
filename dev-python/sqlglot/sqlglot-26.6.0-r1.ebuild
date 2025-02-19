@@ -112,10 +112,31 @@ LICENSE+="
 LICENSE+=" )"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="rs"
+GENERATED_IUSE="rs test"
 IUSE="${GENERATED_IUSE} +native-extensions"
 
-BDEPEND="
+REQUIRES_DIST="
+	duckdb>=0.6; extra == 'dev'
+	maturin<2.0,>=1.4; extra == 'dev'
+	mypy; extra == 'dev'
+	pandas-stubs; extra == 'dev'
+	pandas; extra == 'dev'
+	pdoc; extra == 'dev'
+	pre-commit; extra == 'dev'
+	python-dateutil; extra == 'dev'
+	pytz; extra == 'dev'
+	ruff==0.7.2; extra == 'dev'
+	sqlglotrs==0.3.14; extra == 'rs'
+	types-python-dateutil; extra == 'dev'
+	types-pytz; extra == 'dev'
+	typing-extensions; extra == 'dev'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	rs? ( ~dev-python/sqlglotrs-0.3.14[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+BDEPEND+="
 	native-extensions? (
 		${RUST_DEPEND}
 		dev-util/maturin[${PYTHON_USEDEP}]
@@ -191,5 +212,3 @@ python_test() {
 pkg_postinst() {
 	optfeature "simplifying timedelta expressions" dev-python/python-dateutil
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

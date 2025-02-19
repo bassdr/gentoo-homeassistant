@@ -28,7 +28,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	coverage[toml]; extra == 'test'
@@ -58,17 +58,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-vcs/git
 	>=dev-python/gitdb-4.0.1[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		>=dev-python/ddt-1.1.1[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep '
-			dev-python/typing-extensions[${PYTHON_USEDEP}]
-		' 3.10)
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[toml,${PYTHON_USEDEP}]
@@ -82,7 +71,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/ddt-1.1.1[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '
+			dev-python/typing-extensions[${PYTHON_USEDEP}]
+		' 3.10)
+	)
+"
+
+distutils_enable_tests pytest
 
 src_test() {
 	git config --global user.email "travis@ci.com" || die

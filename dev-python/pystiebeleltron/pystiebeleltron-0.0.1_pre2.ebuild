@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url ${PN} 0.0.1.dev2)"
-S="${WORKDIR}/${PN}-0.0.1.dev2"
+S="${WORKDIR}/$(pypi_normalize_name ${PN})-0.0.1.dev2"
 
 DESCRIPTION="Python API for interacting with the Stiebel Eltron ISG web gateway via Modbus for controlling integral ventilation units and heat pumps."
 HOMEPAGE="

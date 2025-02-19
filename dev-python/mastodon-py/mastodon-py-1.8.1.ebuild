@@ -17,7 +17,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="blurhash webpush"
+GENERATED_IUSE="blurhash test webpush"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 

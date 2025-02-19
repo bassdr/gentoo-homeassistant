@@ -80,7 +80,14 @@ RDEPEND="${GENERATED_RDEPEND}
 # The QtPy testsuite skips tests for bindings that are not installed, so here we
 # ensure that everything is available and all tests are run. Note that not
 # all flags are available in PyQt5/PySide2, so some tests are still skipped.
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/pytest-6[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.0[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		dev-python/pytest-qt[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/pytest-qt[${PYTHON_USEDEP}]
 		pyqt6? (
@@ -108,14 +115,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-6[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.0[${PYTHON_USEDEP}] !~dev-python/pytest-7.0.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-		dev-python/pytest-qt[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

@@ -16,6 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	packaging>=20
+"
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/packaging-20[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

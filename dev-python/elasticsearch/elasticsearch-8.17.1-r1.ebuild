@@ -22,7 +22,7 @@ LICENSE="Apache-2.0"
 SLOT="0/$(ver_cut 1)"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="async docs orjson pyarrow requests vectorstore-mmr"
+GENERATED_IUSE="async docs orjson pyarrow requests test vectorstore-mmr"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	aiohttp; extra == 'dev'
@@ -78,26 +78,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/requests-3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		${RDEPEND}
-		dev-python/mapbox-vector-tile[${PYTHON_USEDEP}]
-		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/opentelemetry-api[${PYTHON_USEDEP}]
-		dev-python/opentelemetry-sdk[${PYTHON_USEDEP}]
-		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/pyarrow[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/python-dateutil[${PYTHON_USEDEP}]
-		>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
-		dev-python/unasync[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_sphinx docs/sphinx \
-	dev-python/sphinx-autodoc-typehints \
-	dev-python/sphinx-rtd-theme
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/aiohttp[${PYTHON_USEDEP}]
@@ -123,7 +103,26 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/unasync[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		${RDEPEND}
+		dev-python/mapbox-vector-tile[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/opentelemetry-api[${PYTHON_USEDEP}]
+		dev-python/opentelemetry-sdk[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pyarrow[${PYTHON_USEDEP}]
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/python-dateutil[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-5.4[${PYTHON_USEDEP}]
+		dev-python/unasync[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_sphinx docs/sphinx \
+	dev-python/sphinx-autodoc-typehints \
+	dev-python/sphinx-rtd-theme
+distutils_enable_tests pytest
 
 python_test() {
 	local EPYTEST_IGNORE=(

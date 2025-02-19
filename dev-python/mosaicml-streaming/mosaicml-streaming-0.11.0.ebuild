@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="alipan all databricks docs hf simulator spark"
+GENERATED_IUSE="alipan all databricks docs hf simulator spark test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -127,6 +127,7 @@ REQUIRES_DIST="
 	zstd<2,>=1.5.2.5
 "
 GENERATED_RDEPEND="${RDEPEND}
+	>=app-arch/brotli-1.0.9[python,${PYTHON_USEDEP}]
 	alipan? ( >=dev-python/alipcs-py-0.8[${PYTHON_USEDEP}] <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/alipcs-py-0.8[${PYTHON_USEDEP}] <dev-python/alipcs-py-1[${PYTHON_USEDEP}] )
 	all? ( >=dev-python/altair-5.1.1[${PYTHON_USEDEP}] <dev-python/altair-6[${PYTHON_USEDEP}] )
@@ -135,7 +136,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/azure-storage-blob-12.0.0[${PYTHON_USEDEP}] <dev-python/azure-storage-blob-13[${PYTHON_USEDEP}]
 	>=dev-python/azure-storage-file-datalake-12.11.0[${PYTHON_USEDEP}] <dev-python/azure-storage-file-datalake-13[${PYTHON_USEDEP}]
 	>=dev-python/boto3-1.21.45[${PYTHON_USEDEP}] <dev-python/boto3-2[${PYTHON_USEDEP}]
-	>=app-arch/brotli-1.0.9[python,${PYTHON_USEDEP}]
 	>=dev-python/catalogue-2[${PYTHON_USEDEP}] <dev-python/catalogue-3[${PYTHON_USEDEP}]
 	all? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )
 	databricks? ( ~dev-python/databricks-sdk-0.29.0[${PYTHON_USEDEP}] )

@@ -23,12 +23,22 @@ S=${WORKDIR}/${MY_PN}-${MY_PV}
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"
 
-RDEPEND=""
+REQUIRES_DIST="
+	Sphinx; extra == 'docs'
+	furo; extra == 'docs'
+	pytest-mock; extra == 'test'
+	pytest; extra == 'test'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 PYTHON_MODULES="${PN}"
 
@@ -40,5 +50,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

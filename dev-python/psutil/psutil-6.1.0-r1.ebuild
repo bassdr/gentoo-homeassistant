@@ -19,6 +19,28 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	black; extra == 'dev'
+	check-manifest; extra == 'dev'
+	coverage; extra == 'dev'
+	packaging; extra == 'dev'
+	pylint; extra == 'dev'
+	pyperf; extra == 'dev'
+	pypinfo; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest-xdist; extra == 'test'
+	pytest; extra == 'test'
+	requests; extra == 'dev'
+	rstcheck; extra == 'dev'
+	ruff; extra == 'dev'
+	setuptools; extra == 'test'
+	sphinx; extra == 'dev'
+	sphinx_rtd_theme; extra == 'dev'
+	toml-sort; extra == 'dev'
+	twine; extra == 'dev'
+	virtualenv; extra == 'dev'
+	wheel; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]

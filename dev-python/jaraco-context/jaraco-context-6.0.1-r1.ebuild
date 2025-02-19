@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	backports.tarfile; python_version < '3.12'
@@ -49,13 +49,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		dev-python/backports-tarfile[${PYTHON_USEDEP}]
 	' 3.10 3.11)
 "
-BDEPEND="
-	test? (
-		dev-python/portend[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/portend[${PYTHON_USEDEP}]
@@ -67,7 +60,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/portend[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# Internet

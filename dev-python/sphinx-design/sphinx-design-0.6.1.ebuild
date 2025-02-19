@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="code-style rtd testing-no-myst theme-furo theme-im theme-pydata theme-rtd theme-sbt"
+GENERATED_IUSE="code-style rtd test testing-no-myst theme-furo theme-im theme-pydata theme-rtd theme-sbt"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

@@ -16,6 +16,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	packaging>=23.2
+	types-setuptools>=69.1.0
+"
+GENERATED_RDEPEND="${RDEPEND}
+	>=dev-python/packaging-23.2[${PYTHON_USEDEP}]
+	>=dev-python/types-setuptools-69.1.0[${PYTHON_USEDEP}]
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

@@ -36,16 +36,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/executing-1.2.0[${PYTHON_USEDEP}]
 	dev-python/pure-eval[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/cython[${PYTHON_USEDEP}]
-		dev-python/typeguard[${PYTHON_USEDEP}]
-		dev-python/littleutils[${PYTHON_USEDEP}]
-		dev-python/pygments[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/cython[${PYTHON_USEDEP}]
@@ -55,7 +45,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/typeguard[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/cython[${PYTHON_USEDEP}]
+		dev-python/typeguard[${PYTHON_USEDEP}]
+		dev-python/littleutils[${PYTHON_USEDEP}]
+		dev-python/pygments[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# Cython looks for the module in the wrong directory, for some reason

@@ -14,11 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/importlib-resources-1.3[${PYTHON_USEDEP}]
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	importlib-resources>=1.3; python_version < '3.9' and os_name == 'nt'
+	pytest; extra == 'testing'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

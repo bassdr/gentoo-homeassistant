@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -57,7 +57,22 @@ RDEPEND="${GENERATED_RDEPEND}
 	' 3.10)
 	!!<=dev-python/flaky-3.7.0-r5
 "
-BDEPEND="
+
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/argcomplete[${PYTHON_USEDEP}]
+		>=dev-python/attrs-19.2[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-3.56[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		>=dev-python/pygments-2.7.2[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/setuptools[${PYTHON_USEDEP}]
+		dev-python/xmlschema[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+
+BDEPEND+="
 	>=dev-python/setuptools-scm-6.2.3[${PYTHON_USEDEP}]
 	test? (
 		${RDEPEND}
@@ -138,5 +153,3 @@ python_test() {
 	local EPYTEST_XDIST=1
 	epytest
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

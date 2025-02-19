@@ -40,13 +40,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/requests-1.2.0[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		>=dev-python/pytest-httpbin-2.0.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/black-24.3.0[${PYTHON_USEDEP}] <dev-python/black-25.0.0[${PYTHON_USEDEP}]
@@ -63,4 +56,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/werkzeug-3.0.6[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/pytest-httpbin-2.0.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest

@@ -27,7 +27,27 @@ GENERATED_IUSE="all cli doc"
 IUSE="${GENERATED_IUSE} test"
 RESTRICT="!test? ( test )"
 
-RDEPEND=""
+REQUIRES_DIST="
+	cryptography>=2.0; extra == 'all'
+	ipython; extra == 'all'
+	ipython; extra == 'cli'
+	matplotlib; extra == 'all'
+	pyx; extra == 'all'
+	sphinx-rtd-theme>=1.3.0; extra == 'doc'
+	sphinx>=7.0.0; extra == 'doc'
+	tox>=3.0.0; extra == 'doc'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	all? ( >=dev-python/cryptography-2.0[${PYTHON_USEDEP}] )
+	all? ( dev-python/ipython[${PYTHON_USEDEP}] )
+	cli? ( dev-python/ipython[${PYTHON_USEDEP}] )
+	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
+	all? ( dev-python/pyx[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-7.0.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/sphinx-rtd-theme-1.3.0[${PYTHON_USEDEP}] )
+	doc? ( >=dev-python/tox-3.0.0[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
 
 BDEPEND="
 	test? (
@@ -87,5 +107,3 @@ src_install() {
 	dodoc -r doc/${PN}/*
 	DISABLE_AUTOFORMATTING=1 readme.gentoo_create_doc
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

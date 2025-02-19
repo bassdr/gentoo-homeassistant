@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="crypto docs"
+GENERATED_IUSE="crypto docs test"
 IUSE="${GENERATED_IUSE} +crypto"
 REQUIRES_DIST="
 	coverage[toml]==5.0.4; extra == 'dev'
@@ -44,13 +44,6 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	!dev-python/python-jwt
 "
-BDEPEND="
-	test? (
-		>=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/coverage-5.0.4[toml,${PYTHON_USEDEP}]
@@ -62,7 +55,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		>=dev-python/cryptography-3.4.0[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# Internet

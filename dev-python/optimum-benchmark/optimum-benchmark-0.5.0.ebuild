@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="auto-gptq autoawq bitsandbytes codecarbon deepspeed diffusers flash-attn ipex llama-cpp llm-swarm onnxruntime onnxruntime-gpu openvino peft py-txi quality sentence-transformers tensorrt-llm timm torch-ort torchao vllm"
+GENERATED_IUSE="auto-gptq autoawq bitsandbytes codecarbon deepspeed diffusers flash-attn ipex llama-cpp llm-swarm onnxruntime onnxruntime-gpu openvino peft py-txi quality sentence-transformers tensorrt-llm test timm torch-ort torchao vllm"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_NO_NORMALIZE=1

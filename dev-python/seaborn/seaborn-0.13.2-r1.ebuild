@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs stats"
+GENERATED_IUSE="docs stats test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	flake8 ; extra == 'dev'

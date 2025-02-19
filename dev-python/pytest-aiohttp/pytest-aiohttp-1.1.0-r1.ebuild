@@ -33,18 +33,17 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pytest-6.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pytest-asyncio-0.17.2[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		~dev-python/coverage-6.2[${PYTHON_USEDEP}]
 		~dev-python/mypy-1.12.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# warning doesn't seem to be emitted for some reason

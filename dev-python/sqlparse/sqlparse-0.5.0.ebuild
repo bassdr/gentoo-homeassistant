@@ -5,6 +5,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+GENERATED_IUSE="doc test"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -22,6 +24,16 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == 'dev'
+	hatch; extra == 'dev'
+	sphinx; extra == 'doc'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_sphinx docs/source
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
@@ -31,6 +43,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

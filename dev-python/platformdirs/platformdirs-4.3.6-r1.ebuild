@@ -17,9 +17,31 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs type"
+GENERATED_IUSE="docs test type"
 IUSE="${GENERATED_IUSE}"
-BDEPEND="
+
+REQUIRES_DIST="
+	appdirs==1.4.4; extra == 'test'
+	covdefaults>=2.3; extra == 'test'
+	furo>=2024.8.6; extra == 'docs'
+	mypy>=1.11.2; extra == 'type'
+	proselint>=0.14; extra == 'docs'
+	pytest-cov>=5; extra == 'test'
+	pytest-mock>=3.14; extra == 'test'
+	pytest>=8.3.2; extra == 'test'
+	sphinx-autodoc-typehints>=2.4; extra == 'docs'
+	sphinx>=8.0.2; extra == 'docs'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/furo-2024.8.6[${PYTHON_USEDEP}] )
+	type? ( >=dev-python/mypy-1.11.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/proselint-0.14[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-8.0.2[${PYTHON_USEDEP}] )
+	docs? ( >=dev-python/sphinx-autodoc-typehints-2.4[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
+BDEPEND+="
 	test? (
 		dev-python/appdirs[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
@@ -63,5 +85,3 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest -p pytest_mock
 }
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild

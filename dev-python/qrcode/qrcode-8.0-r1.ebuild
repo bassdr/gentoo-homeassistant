@@ -26,8 +26,8 @@ REQUIRES_DIST="
 	pypng; extra == 'png' or extra == 'all'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	pil? ( >=dev-python/pillow-9.1.0[${PYTHON_USEDEP}] ) all? ( >=dev-python/pillow-9.1.0[${PYTHON_USEDEP}] )
-	png? ( dev-python/pypng[${PYTHON_USEDEP}] ) all? ( dev-python/pypng[${PYTHON_USEDEP}] )
+	all? ( >=dev-python/pillow-9.1.0[${PYTHON_USEDEP}] ) pil? ( >=dev-python/pillow-9.1.0[${PYTHON_USEDEP}] )
+	all? ( dev-python/pypng[${PYTHON_USEDEP}] ) png? ( dev-python/pypng[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]

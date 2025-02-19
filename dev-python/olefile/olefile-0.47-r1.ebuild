@@ -24,6 +24,10 @@ KEYWORDS="amd64 arm64"
 distutils_enable_sphinx doc \
 	dev-python/sphinx-rtd-theme
 distutils_enable_tests unittest
+REQUIRES_DIST="
+	pytest ; extra == 'tests'
+	pytest-cov ; extra == 'tests'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

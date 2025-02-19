@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="activity parallel"
+GENERATED_IUSE="activity parallel test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	ipykernel<7,>=5.5.6
@@ -47,16 +47,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/pexpect-4.8[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
-	test? (
-		dev-python/jupyter-kernel-test[${PYTHON_USEDEP}]
-		dev-python/pydot[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/jupyter-kernel-test[${PYTHON_USEDEP}]
@@ -66,7 +56,16 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/requests[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/jupyter-kernel-test[${PYTHON_USEDEP}]
+		dev-python/pydot[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# fragile

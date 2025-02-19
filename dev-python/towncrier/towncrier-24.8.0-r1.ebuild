@@ -49,7 +49,17 @@ RDEPEND="${GENERATED_RDEPEND}
 		dev-python/tomli[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/furo-2024.05.06[${PYTHON_USEDEP}]
+		dev-python/nox[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-5[${PYTHON_USEDEP}]
+		dev-python/twisted[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND+="
 	dev-python/incremental[${PYTHON_USEDEP}]
 	test? (
 		${RDEPEND}
@@ -70,5 +80,3 @@ python_test() {
 	"${EPYTHON}" -m twisted.trial towncrier ||
 		die "tests failed with ${EPYTHON}"
 }
-# GENERATED_BDEPEND could not be inserted in this ebuild
-# BDEPEND could not be inserted in this ebuild

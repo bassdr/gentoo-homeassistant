@@ -3,8 +3,6 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="build"
-IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -16,6 +14,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+
+distutils_enable_tests pytest
 REQUIRES_DIST="
 	cmake>=3.31.2; extra == 'build'
 	git-archive-all; extra == 'build'
@@ -23,12 +23,10 @@ REQUIRES_DIST="
 	tomli>=2.1.0; python_full_version < '3.11'
 	wheel>=0.45.1; extra == 'build'
 "
-GENERATED_RDEPEND="${RDEPEND}
-	build? ( >=dev-python/cmake-3.31.2[${PYTHON_USEDEP}] )
-	build? ( dev-python/git-archive-all[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/packaging-24.2[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/wheel-0.45.1[${PYTHON_USEDEP}] )
+GENERATED_BDEPEND="${BDEPEND}
+	>=dev-python/cmake-3.31.2[${PYTHON_USEDEP}]
+	dev-python/git-archive-all[${PYTHON_USEDEP}]
+	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
+	>=dev-python/wheel-0.45.1[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}"
-
-distutils_enable_tests pytest
+BDEPEND="${GENERATED_BDEPEND}"

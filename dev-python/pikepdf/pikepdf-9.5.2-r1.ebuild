@@ -16,7 +16,7 @@ HOMEPAGE="
 LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-GENERATED_IUSE="docs mypy"
+GENERATED_IUSE="docs mypy test"
 IUSE="${GENERATED_IUSE} big-endian"
 
 # Check QPDF_MIN_VERSION in pyproject.toml on bumps, as well as
@@ -77,7 +77,25 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pillow-10.0.1[lcms,${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		>=dev-python/attrs-20.2.0[${PYTHON_USEDEP}]
+		dev-python/coverage[toml,${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.36[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
+		>=dev-python/psutil-5.9[${PYTHON_USEDEP}]
+		dev-python/pybind11[${PYTHON_USEDEP}]
+		>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
+		>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
+		>=dev-python/python-xmp-toolkit-2.0.1[${PYTHON_USEDEP}]
+		dev-python/typer[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	>=dev-python/pybind11-2.12.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-7.0.5[${PYTHON_USEDEP}]
 	test? (
@@ -99,25 +117,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/attrs-20.2.0[${PYTHON_USEDEP}]
-		dev-python/coverage[toml,${PYTHON_USEDEP}]
-		>=dev-python/hypothesis-6.36[${PYTHON_USEDEP}]
-		>=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
-		>=dev-python/psutil-5.9[${PYTHON_USEDEP}]
-		dev-python/pybind11[${PYTHON_USEDEP}]
-		>=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]
-		>=dev-python/pytest-cov-3.0.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-timeout-2.1.0[${PYTHON_USEDEP}]
-		>=dev-python/pytest-xdist-2.5.0[${PYTHON_USEDEP}]
-		>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
-		>=dev-python/python-xmp-toolkit-2.0.1[${PYTHON_USEDEP}]
-		dev-python/typer[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_prepare() {
 	distutils-r1_src_prepare

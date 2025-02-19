@@ -26,7 +26,7 @@ REQUIRES_DIST="
 	torchvision (>=0.14.0,<0.15.0) ; extra == 'dev'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	<dev-python/fvcore-0.1.5_p0221220[${PYTHON_USEDEP}]
+	<dev-python/fvcore-0.1.5_p20221220[${PYTHON_USEDEP}]
 	<dev-python/numpy-1.24.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

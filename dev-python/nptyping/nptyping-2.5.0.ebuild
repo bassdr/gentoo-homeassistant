@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="build complete pandas qa"
+GENERATED_IUSE="complete pandas qa test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -66,7 +66,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	qa? ( >=dev-python/codecov-2.1.0[${PYTHON_USEDEP}] )
 	qa? ( dev-python/coverage[${PYTHON_USEDEP}] )
 	qa? ( dev-python/feedparser[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/invoke-1.6.0[${PYTHON_USEDEP}] )
 	qa? ( dev-python/isort[${PYTHON_USEDEP}] )
 	qa? ( dev-python/mypy[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}] <dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
@@ -74,7 +73,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	pandas? ( dev-python/pandas[${PYTHON_USEDEP}] )
 	complete? ( dev-python/pandas-stubs-fork[${PYTHON_USEDEP}] )
 	pandas? ( dev-python/pandas-stubs-fork[${PYTHON_USEDEP}] )
-	build? ( >=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}] )
 	qa? ( dev-python/pylint[${PYTHON_USEDEP}] )
 	qa? ( dev-python/pyright[${PYTHON_USEDEP}] )
 	qa? ( dev-python/setuptools[${PYTHON_USEDEP}] )
@@ -85,6 +83,8 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
+	>=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}]
 	test? (
 		dev-python/autoflake[${PYTHON_USEDEP}]
 		>=dev-python/beartype-0.10.0[${PYTHON_USEDEP}]
@@ -92,12 +92,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/codecov-2.1.0[${PYTHON_USEDEP}]
 		dev-python/coverage[${PYTHON_USEDEP}]
 		dev-python/feedparser[${PYTHON_USEDEP}]
-		>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
 		dev-python/isort[${PYTHON_USEDEP}]
 		dev-python/mypy[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/pandas-stubs-fork[${PYTHON_USEDEP}]
-		>=dev-python/pip-tools-6.5.0[${PYTHON_USEDEP}]
 		dev-python/pylint[${PYTHON_USEDEP}]
 		dev-python/pyright[${PYTHON_USEDEP}]
 		dev-python/setuptools[${PYTHON_USEDEP}]

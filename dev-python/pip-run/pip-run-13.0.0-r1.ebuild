@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="doc"
+GENERATED_IUSE="doc test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	autocommand
@@ -82,17 +82,6 @@ RDEPEND="${GENERATED_RDEPEND}
 		dev-python/tomli[${PYTHON_USEDEP}]
 	' 3.10)
 "
-BDEPEND="
-	test? (
-		dev-python/flit-core[${PYTHON_USEDEP}]
-		dev-python/jaraco-path[${PYTHON_USEDEP}]
-		>=dev-python/jaraco-test-5.3[${PYTHON_USEDEP}]
-		dev-python/nbformat[${PYTHON_USEDEP}]
-		dev-python/pygments[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flit-core[${PYTHON_USEDEP}]
@@ -108,7 +97,17 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/flit-core[${PYTHON_USEDEP}]
+		dev-python/jaraco-path[${PYTHON_USEDEP}]
+		>=dev-python/jaraco-test-5.3[${PYTHON_USEDEP}]
+		dev-python/nbformat[${PYTHON_USEDEP}]
+		dev-python/pygments[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	epytest -m "not network"

@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="docs sphinx type-check yaml"
+GENERATED_IUSE="docs sphinx test type-check yaml"
 IUSE="${GENERATED_IUSE}"
 
 PYPI_NO_NORMALIZE=1

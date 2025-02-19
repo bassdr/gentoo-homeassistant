@@ -5,6 +5,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+GENERATED_IUSE="docs test"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -16,6 +18,20 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	build; extra == 'dev'
+	pytest-cov; extra == 'dev'
+	pytest; extra == 'dev'
+	sphinx-autobuild; extra == 'docs'
+	sphinx<9,>=8; extra == 'docs'
+	twine; extra == 'dev'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	docs? ( >=dev-python/sphinx-8[${PYTHON_USEDEP}] <dev-python/sphinx-9[${PYTHON_USEDEP}] )
+	docs? ( dev-python/sphinx-autobuild[${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
@@ -26,6 +42,3 @@ GENERATED_BDEPEND="${BDEPEND}
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

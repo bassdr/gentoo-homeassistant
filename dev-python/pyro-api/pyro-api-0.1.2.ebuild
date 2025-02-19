@@ -15,10 +15,15 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-"
 
 distutils_enable_tests pytest
+REQUIRES_DIST="
+	flake8 ; extra == 'test'
+	ipython ; extra == 'dev'
+	pytest (>=5.0) ; extra == 'test'
+	sphinx (>=2.0) ; extra == 'dev'
+	sphinx-rtd-theme ; extra == 'dev'
+"
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]

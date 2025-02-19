@@ -17,14 +17,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	test? (
-		dev-python/lxml[${PYTHON_USEDEP}]
-		>=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	Sphinx; extra == 'dev'
+	coverage; extra == 'dev'
+	flake8; extra == 'dev'
+	lxml-stubs; extra == 'dev'
+	lxml; extra == 'dev'
+	memory-profiler; extra == 'dev'
+	memray; extra == 'dev'
+	mypy; extra == 'dev'
+	tox; extra == 'dev'
+	xmlschema>=3.3.2; extra == 'dev'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -39,7 +43,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/lxml[${PYTHON_USEDEP}]
+		>=dev-python/xmlschema-3.3.2[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
 	# fails for some reason, more fit for upstream testing anyway

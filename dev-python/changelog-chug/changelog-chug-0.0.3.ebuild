@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="build devel publish static-analysis"
+GENERATED_IUSE="devel publish static-analysis test"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -37,8 +37,6 @@ REQUIRES_DIST="
 	wheel; extra == 'build'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	build? ( dev-python/build[${PYTHON_USEDEP}] )
-	build? ( dev-python/changelog-chug[devel,${PYTHON_USEDEP}] )
 	devel? ( dev-python/changelog-chug[test,${PYTHON_USEDEP}] )
 	publish? ( dev-python/changelog-chug[build,${PYTHON_USEDEP}] )
 	>=dev-python/docutils-0.21.0[${PYTHON_USEDEP}]
@@ -50,12 +48,14 @@ GENERATED_RDEPEND="${RDEPEND}
 	static-analysis? ( >=dev-python/ruff-0.6[${PYTHON_USEDEP}] =dev-python/ruff-0*[${PYTHON_USEDEP}] )
 	>=dev-python/semver-3.0.0[${PYTHON_USEDEP}]
 	publish? ( dev-python/twine[${PYTHON_USEDEP}] )
-	build? ( dev-python/wheel[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
+	dev-python/build[${PYTHON_USEDEP}]
+	dev-python/changelog-chug[devel,${PYTHON_USEDEP}]
+	dev-python/wheel[${PYTHON_USEDEP}]
 	test? (
 		dev-python/changelog-chug[static-analysis,${PYTHON_USEDEP}]
 		dev-python/coverage[${PYTHON_USEDEP}]

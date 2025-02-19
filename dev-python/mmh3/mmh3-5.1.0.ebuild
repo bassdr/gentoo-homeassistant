@@ -3,7 +3,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-GENERATED_IUSE="benchmark docs lint plot type"
+GENERATED_IUSE="benchmark docs lint plot test type"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi

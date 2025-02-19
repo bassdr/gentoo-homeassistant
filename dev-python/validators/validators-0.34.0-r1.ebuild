@@ -5,6 +5,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+GENERATED_IUSE="crypto-eth-addresses"
+IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
 
@@ -21,12 +23,17 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
+REQUIRES_DIST="
+	eth-hash[pycryptodome]>=0.7.0; extra == 'crypto-eth-addresses'
+"
+GENERATED_RDEPEND="${RDEPEND}
+	crypto-eth-addresses? ( >=dev-python/eth-hash-0.7.0[pycryptodome,${PYTHON_USEDEP}] )
+"
+RDEPEND="${GENERATED_RDEPEND}"
+
 distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# requires eth-hash
 	tests/crypto_addresses/test_eth_address.py
 )
-# Requires could not be inserted in this ebuild
-# RDEPEND could not be inserted in this ebuild
-# extras could not be inserted in this ebuild

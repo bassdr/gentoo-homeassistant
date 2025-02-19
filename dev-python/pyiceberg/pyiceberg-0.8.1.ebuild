@@ -56,9 +56,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	daft? ( >=dev-python/getdaft-0.2.12[${PYTHON_USEDEP}] )
 	>=dev-python/mmh3-4.0.0[${PYTHON_USEDEP}] <dev-python/mmh3-6.0.0[${PYTHON_USEDEP}]
 	glue? ( >=dev-python/mypy-boto3-glue-1.28.18[${PYTHON_USEDEP}] )
-	pandas? ( >=dev-python/pandas-1.0.0[${PYTHON_USEDEP}] <dev-python/pandas-3.0.0[${PYTHON_USEDEP}] ) ray? ( >=dev-python/pandas-1.0.0[${PYTHON_USEDEP}] <dev-python/pandas-3.0.0[${PYTHON_USEDEP}] )
+	ray? ( >=dev-python/pandas-1.0.0[${PYTHON_USEDEP}] <dev-python/pandas-3.0.0[${PYTHON_USEDEP}] ) pandas? ( >=dev-python/pandas-1.0.0[${PYTHON_USEDEP}] <dev-python/pandas-3.0.0[${PYTHON_USEDEP}] )
 	sql-postgres? ( >=dev-python/psycopg2-binary-2.9.6[${PYTHON_USEDEP}] )
-	pandas? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] ) ray? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] ) pyarrow? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] ) duckdb? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] )
+	ray? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] ) pandas? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] ) pyarrow? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] ) duckdb? ( >=dev-python/pyarrow-14.0.0[${PYTHON_USEDEP}] <dev-python/pyarrow-19.0.0[${PYTHON_USEDEP}] )
 	>=dev-python/pydantic-2.0[${PYTHON_USEDEP}] <dev-python/pydantic-3.0[${PYTHON_USEDEP}] !~dev-python/pydantic-2.4.0[${PYTHON_USEDEP}] !~dev-python/pydantic-2.4.1[${PYTHON_USEDEP}]
 	>=dev-python/pyparsing-3.1.0[${PYTHON_USEDEP}] <dev-python/pyparsing-4.0.0[${PYTHON_USEDEP}]
 	snappy? ( >=dev-python/python-snappy-0.6.0[${PYTHON_USEDEP}] <dev-python/python-snappy-1.0.0[${PYTHON_USEDEP}] )

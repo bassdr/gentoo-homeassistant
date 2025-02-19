@@ -43,8 +43,8 @@ REQUIRES_DIST="
 	zstandard>=0.18.0; extra == 'zstd'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/anyio[${PYTHON_USEDEP}]
 	brotli? ( app-arch/brotli[python,${PYTHON_USEDEP}] )
+	dev-python/anyio[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
 	cli? ( =dev-python/click-8*[${PYTHON_USEDEP}] )
 	http2? ( >=dev-python/h2-3[${PYTHON_USEDEP}] <dev-python/h2-5[${PYTHON_USEDEP}] )

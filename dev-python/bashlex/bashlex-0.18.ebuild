@@ -14,8 +14,5 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_RDEPEND="${RDEPEND}
-	dev-python/enum34[${PYTHON_USEDEP}]
-"
 
 distutils_enable_tests pytest

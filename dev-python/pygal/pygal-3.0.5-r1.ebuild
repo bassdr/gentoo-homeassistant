@@ -21,7 +21,7 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs lxml moulinrouge png"
+GENERATED_IUSE="docs lxml moulinrouge png test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	cairosvg; extra == 'png'
@@ -57,7 +57,18 @@ GENERATED_RDEPEND="${RDEPEND}
 RDEPEND="${GENERATED_RDEPEND}
 	dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/cairosvg[${PYTHON_USEDEP}]
+		dev-python/coveralls[${PYTHON_USEDEP}]
+		dev-python/lxml[${PYTHON_USEDEP}]
+		dev-python/pyquery[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		>=dev-python/ruff-0.5.6[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	test? (
 		dev-python/lxml[${PYTHON_USEDEP}]
 		dev-python/pyquery[${PYTHON_USEDEP}]
@@ -71,18 +82,6 @@ DOCS=( docs/changelog.rst README.md )
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/cairosvg[${PYTHON_USEDEP}]
-		dev-python/coveralls[${PYTHON_USEDEP}]
-		dev-python/lxml[${PYTHON_USEDEP}]
-		dev-python/pyquery[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		>=dev-python/ruff-0.5.6[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_prepare_all() {
 	# Not actually required unless we want to do setup.py test

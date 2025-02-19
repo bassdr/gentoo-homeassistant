@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="docs"
+GENERATED_IUSE="docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	hatch; extra == 'dev'
@@ -69,7 +69,22 @@ RDEPEND="${GENERATED_RDEPEND}
 	>=dev-python/tornado-6.2.0[${PYTHON_USEDEP}]
 "
 
-BDEPEND="
+GENERATED_BDEPEND="${BDEPEND}
+	test? (
+		dev-python/hatch[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-server-2.4.0[test,${PYTHON_USEDEP}] <dev-python/jupyter-server-3[test,${PYTHON_USEDEP}]
+		>=dev-python/jupyterlab-server-2.27.1[test,${PYTHON_USEDEP}] <dev-python/jupyterlab-server-3[test,${PYTHON_USEDEP}]
+		dev-python/nbval[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
+		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-vcs/pre-commit[${PYTHON_USEDEP}]
+	)
+"
+BDEPEND="${GENERATED_BDEPEND}
 	dev-python/hatch-jupyter-builder[${PYTHON_USEDEP}]
 	>=dev-python/jupyterlab-4.3.4[${PYTHON_USEDEP}]
 	<dev-python/jupyterlab-4.4[${PYTHON_USEDEP}]
@@ -86,22 +101,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		dev-python/hatch[${PYTHON_USEDEP}]
-		dev-python/ipykernel[${PYTHON_USEDEP}]
-		>=dev-python/jupyter-server-2.4.0[test,${PYTHON_USEDEP}] <dev-python/jupyter-server-3[test,${PYTHON_USEDEP}]
-		>=dev-python/jupyterlab-server-2.27.1[test,${PYTHON_USEDEP}] <dev-python/jupyterlab-server-3[test,${PYTHON_USEDEP}]
-		dev-python/nbval[${PYTHON_USEDEP}]
-		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-		dev-python/pytest-console-scripts[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 python_install_all() {
 	distutils-r1_python_install_all

@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="develop docs"
+GENERATED_IUSE="develop docs test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	Sphinx>=1.6; extra == 'docs'
@@ -66,18 +66,17 @@ RDEPEND="${GENERATED_RDEPEND}
 	dev-python/parse[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		>=dev-python/pytest-5.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-html-1.19.0[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
 
 DOCS=( CHANGES.txt README.rst )
 

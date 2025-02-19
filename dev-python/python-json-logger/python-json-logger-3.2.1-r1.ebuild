@@ -16,14 +16,29 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-BDEPEND="
-	test? (
-		dev-python/freezegun[${PYTHON_USEDEP}]
-		dev-python/tzdata[${PYTHON_USEDEP}]
-	)
+REQUIRES_DIST="
+	backports.zoneinfo; python_version < '3.9' and extra == 'dev'
+	black; extra == 'dev'
+	build; extra == 'dev'
+	freezegun; extra == 'dev'
+	mdx_truly_sane_lists; extra == 'dev'
+	mike; extra == 'dev'
+	mkdocs-awesome-pages-plugin; extra == 'dev'
+	mkdocs-gen-files; extra == 'dev'
+	mkdocs-literate-nav; extra == 'dev'
+	mkdocs-material>=8.5; extra == 'dev'
+	mkdocs; extra == 'dev'
+	mkdocstrings[python]; extra == 'dev'
+	msgspec-python313-pre; (implementation_name != 'pypy' and python_version == '3.13') and extra == 'dev'
+	msgspec; (implementation_name != 'pypy' and python_version < '3.13') and extra == 'dev'
+	mypy; extra == 'dev'
+	orjson; implementation_name != 'pypy' and extra == 'dev'
+	pylint; extra == 'dev'
+	pytest; extra == 'dev'
+	typing_extensions; python_version < '3.10'
+	tzdata; extra == 'dev'
+	validate-pyproject[all]; extra == 'dev'
 "
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/black[${PYTHON_USEDEP}]
@@ -47,7 +62,14 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/validate-pyproject[all,${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/freezegun[${PYTHON_USEDEP}]
+		dev-python/tzdata[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

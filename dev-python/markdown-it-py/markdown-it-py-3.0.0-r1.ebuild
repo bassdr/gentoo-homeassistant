@@ -23,7 +23,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="benchmarking code_style compare linkify plugins profiling rtd"
+GENERATED_IUSE="benchmarking code_style compare linkify plugins profiling rtd test"
 IUSE="${GENERATED_IUSE}"
 REQUIRES_DIST="
 	commonmark~=0.9 ; extra == 'compare'
@@ -79,13 +79,6 @@ RDEPEND="${GENERATED_RDEPEND}
 	<dev-python/linkify-it-py-3[${PYTHON_USEDEP}]
 	dev-python/mdurl[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-	)
-"
-
-distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
@@ -94,7 +87,13 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	test? (
+		dev-python/pytest-regressions[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
 	# No need to benchmark
