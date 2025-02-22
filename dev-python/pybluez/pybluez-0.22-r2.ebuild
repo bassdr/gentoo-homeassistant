@@ -8,6 +8,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="PyBluez"
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} ${PV} .zip)"
+S="${WORKDIR}/${PYPI_PN}-${PV}"
 
 DESCRIPTION="Bluetooth Python extension module"
 HOMEPAGE="

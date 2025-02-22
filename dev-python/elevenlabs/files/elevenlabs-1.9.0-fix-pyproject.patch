@@ -1,0 +1,26 @@
+Seulement dans elevenlabs-1.9.0/dist: elevenlabs-1.9.0-py3-none-any.whl
+Seulement dans elevenlabs-1.9.0/dist: elevenlabs-1.9.0.tar.gz
+diff '--color=auto' -ur elevenlabs-1.9.0.old/pyproject.toml elevenlabs-1.9.0/pyproject.toml
+--- elevenlabs-1.9.0.old/pyproject.toml	2025-02-21 23:27:31.687622604 -0500
++++ elevenlabs-1.9.0/pyproject.toml	2025-02-21 23:32:15.910141093 -0500
+@@ -1,7 +1,9 @@
+-[tool.poetry]
++[project]
+ name = "elevenlabs"
++description = "The official Python API for ElevenLabs text-to-speech software. Eleven brings the most compelling, rich and lifelike voices to creators and developers in just a few lines of code."
++
++[tool.poetry]
+ version = "1.9.0"
+-description = ""
+ readme = "README.md"
+ authors = []
+ keywords = []
+@@ -40,7 +42,7 @@
+ typing_extensions = ">= 4.0.0"
+ websockets = ">=11.0"
+ 
+-[tool.poetry.dev-dependencies]
++[poetry.group.dev.dependencies]
+ mypy = "1.0.1"
+ pytest = "^7.4.0"
+ pytest-asyncio = "^0.23.5"

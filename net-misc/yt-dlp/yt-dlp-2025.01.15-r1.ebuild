@@ -28,7 +28,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 GENERATED_IUSE="curl-cffi default pyinstaller secretstorage static-analysis test"
-IUSE="${GENERATED_IUSE}"
+IUSE="${GENERATED_IUSE} +default"
 REQUIRES_DIST="
 	autopep8~=2.0; extra == 'dev'
 	autopep8~=2.0; extra == 'static-analysis'

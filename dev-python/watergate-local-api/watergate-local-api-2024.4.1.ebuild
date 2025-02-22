@@ -14,6 +14,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-
 distutils_enable_tests pytest
 
+src_prepare() {
+	echo "${PV}" > version.txt || die
+	rm -r tests || die
+	default
+}

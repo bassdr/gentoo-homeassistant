@@ -4,7 +4,8 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/shmuelzon/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -47,3 +48,7 @@ GENERATED_BDEPEND="${BDEPEND}
 "
 BDEPEND="${GENERATED_BDEPEND}"
 
+src_prepare() {
+	sed "s/VERSION *=.*/VERSION = \"${PV}\"/g" -i setup.py || die
+	default
+}

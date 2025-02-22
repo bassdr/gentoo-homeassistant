@@ -7,6 +7,7 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYTHON_REQ_USE="threads(+),sqlite(+)"
+IUSE="+toml"  # Not doing anything with 'toml', only to satisfy dependency
 
 inherit distutils-r1 pypi
 

@@ -20,7 +20,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test +all" # all does nothing but was defined for 0.12.0. Define it to let others dependend on it.
+IUSE="test +all"  # Not doing anything with 'all', only to satisfy dependency
 RESTRICT="!test? ( test )"
 
 DOCS="README.md"

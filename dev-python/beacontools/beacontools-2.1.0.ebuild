@@ -13,7 +13,7 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-
+IUSE="+scan"  # Not doing anything with 'scan', only to satisfy dependency
 REQUIRES_DIST="
 	ahocorapy (==1.6.1)
 	check-manifest ; extra == 'dev'

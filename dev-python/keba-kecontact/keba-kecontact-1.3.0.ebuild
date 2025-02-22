@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 
 DESCRIPTION="A python library to communicate with the KEBA charging stations via udp"
@@ -15,8 +15,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 

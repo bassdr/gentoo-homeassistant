@@ -33,9 +33,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/pyquery[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/unasync[${PYTHON_USEDEP}]
-	dev-vcs/pre-commit[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}"
+RDEPEND="${GENERATED_RDEPEND}
+	!dev-python/pyhiveapi"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}

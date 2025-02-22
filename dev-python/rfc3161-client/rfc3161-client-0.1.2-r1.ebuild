@@ -6,6 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=maturin
 PYTHON_COMPAT=( python3_{12,13{,t}} )
+IUSE="lint"
 
 CRATES="
 	asn1@0.20.0
@@ -68,7 +69,7 @@ declare -A GIT_CRATES=(
 
 inherit cargo distutils-r1
 
-DESCRIPTION=""
+DESCRIPTION="An Opinionated Python RFC3161 Client"
 HOMEPAGE="
   https://pypi.org/project/rfc3161-client/
   Homepage, https://pypi.org/project/rfc3161-client
@@ -91,37 +92,17 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-GENERATED_IUSE="lint test"
-IUSE="${GENERATED_IUSE}"
-REQUIRES_DIST="
-	coverage[toml]; extra == 'test'
-	cryptography<45,>=43
-	interrogate; extra == 'lint'
-	maturin<2.0,>=1.7; extra == 'dev'
-	pretend; extra == 'test'
-	pytest-cov; extra == 'test'
-	pytest; extra == 'test'
-	rfc3161-client[doc,lint,test]; extra == 'dev'
-	ruff<0.9,>=0.7; extra == 'lint'
-"
-GENERATED_RDEPEND="${RDEPEND}
+RDEPEND="
 	>=dev-python/cryptography-43[${PYTHON_USEDEP}] <dev-python/cryptography-45[${PYTHON_USEDEP}]
-	lint? ( >=dev-python/ruff-0.7[${PYTHON_USEDEP}] <dev-python/ruff-0.9[${PYTHON_USEDEP}] )
+  lint? ( >=dev-python/ruff-0.7[${PYTHON_USEDEP}] <dev-python/ruff-0.9[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}"
-
-distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
+BDEPEND="
 	test? (
-		dev-python/coverage[toml,${PYTHON_USEDEP}]
-		>=dev-python/maturin-1.7[${PYTHON_USEDEP}] <dev-python/maturin-2.0[${PYTHON_USEDEP}]
 		dev-python/pretend[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/rfc3161-client[doc,lint,test,${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+
+distutils_enable_tests pytest
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
