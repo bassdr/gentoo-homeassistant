@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=standalone
-GENERATED_IUSE="http zeroconf"
+GENERATED_IUSE="http"
 IUSE="${GENERATED_IUSE}"
 
 inherit distutils-r1 pypi
@@ -31,7 +31,6 @@ REQUIRES_DIST="
 GENERATED_RDEPEND="${RDEPEND}
 	http? ( ~dev-python/flask-3.0.2[${PYTHON_USEDEP}] )
 	http? ( ~dev-python/swagger-ui-py-23.9.23[${PYTHON_USEDEP}] )
-	zeroconf? ( ~dev-python/zeroconf-0.88.0[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
