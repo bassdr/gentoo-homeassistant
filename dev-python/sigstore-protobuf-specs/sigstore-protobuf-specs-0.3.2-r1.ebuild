@@ -19,6 +19,7 @@ HOMEPAGE="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
+IUSE="test"
 
 REQUIRES_DIST="
 	betterproto==2.0.0b6

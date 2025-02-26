@@ -17,9 +17,9 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.rst"
+
+RDEPEND+=" !dev-python/pyCEC"
 
 distutils_enable_tests pytest

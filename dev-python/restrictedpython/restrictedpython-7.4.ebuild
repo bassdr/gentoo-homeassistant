@@ -38,7 +38,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/furo[${PYTHON_USEDEP}] )
 	docs? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}"
+RDEPEND="${GENERATED_RDEPEND}
+	!dev-python/RestrictedPython"
 
 PYTHON_MODULES="${PN}"
 

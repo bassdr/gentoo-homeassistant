@@ -50,9 +50,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/towncrier[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
-dev-python/six[${PYTHON_USEDEP}]
-	dev-python/click[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]"
+	!dev-python/gtts"
+
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
