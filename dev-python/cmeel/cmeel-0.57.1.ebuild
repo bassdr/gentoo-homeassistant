@@ -24,7 +24,7 @@ REQUIRES_DIST="
 	wheel>=0.45.1; extra == 'build'
 "
 GENERATED_BDEPEND="${BDEPEND}
-	>=dev-python/cmake-3.31.2[${PYTHON_USEDEP}]
+	>=dev-build/cmake-3.31.2[${PYTHON_USEDEP}]
 	dev-python/git-archive-all[${PYTHON_USEDEP}]
 	>=dev-python/packaging-24.2[${PYTHON_USEDEP}]
 	>=dev-python/wheel-0.45.1[${PYTHON_USEDEP}]

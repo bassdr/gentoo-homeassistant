@@ -24,7 +24,7 @@ REQUIRES_DIST="
 	packaging
 "
 GENERATED_RDEPEND="${RDEPEND}
-	>=dev-python/cmake-3.24[${PYTHON_USEDEP}]
+	>=dev-build/cmake-3.24[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"

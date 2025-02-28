@@ -22,6 +22,7 @@ S=${WORKDIR}/${MY_P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
+IUSE="test"
 
 REQUIRES_DIST="
 	flake8 ; extra == 'dev'

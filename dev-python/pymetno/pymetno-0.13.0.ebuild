@@ -15,8 +15,6 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 REQUIRES_DIST="
 	aiohttp>=3.0.6
@@ -29,7 +27,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/xmltodict[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}
-dev-python/xmltodict[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]"
+	!dev-python/PyMetno"
 
 distutils_enable_tests pytest
