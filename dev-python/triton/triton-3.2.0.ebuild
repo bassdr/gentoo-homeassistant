@@ -40,7 +40,7 @@ RDEPEND="${GENERATED_RDEPEND}"
 
 distutils_enable_tests pytest
 GENERATED_BDEPEND="${BDEPEND}
-	>=dev-python/cmake-3.20[${PYTHON_USEDEP}]
+	>=dev-build/cmake-3.20[${PYTHON_USEDEP}]
 	dev-python/lit[${PYTHON_USEDEP}]
 	test? (
 		dev-python/autopep8[${PYTHON_USEDEP}]

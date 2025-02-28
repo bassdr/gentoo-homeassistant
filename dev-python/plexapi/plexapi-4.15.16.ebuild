@@ -18,8 +18,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="alert"
-IUSE="${GENERATED_IUSE} test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.rst"
 
@@ -32,7 +31,6 @@ GENERATED_RDEPEND="${RDEPEND}
 	alert? ( >=dev-python/websocket-client-1.3.3[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
-dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/websocket-client-1.3.3[${PYTHON_USEDEP}]"
+	!dev-python/PlexAPI"
 
 distutils_enable_tests pytest
