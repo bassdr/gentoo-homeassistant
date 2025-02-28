@@ -19,8 +19,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="docs test"
-IUSE="${GENERATED_IUSE}
-	!dev-python/gTTS"
+IUSE="${GENERATED_IUSE}"
 
 DOCS="README.md"
 
@@ -51,7 +50,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	docs? ( dev-python/towncrier[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
-	!dev-python/gtts"
+	!dev-python/gTTS"
 
 GENERATED_BDEPEND="${BDEPEND}
 	test? (

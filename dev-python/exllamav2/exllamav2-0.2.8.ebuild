@@ -4,7 +4,8 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/turboderp-org/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -30,7 +31,7 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	dev-python/fastparquet[${PYTHON_USEDEP}]
-	dev-python/ninja[${PYTHON_USEDEP}]
+	dev-build/ninja[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 	>=dev-python/pillow-9.1.0[${PYTHON_USEDEP}]

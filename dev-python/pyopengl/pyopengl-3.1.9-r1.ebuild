@@ -4,17 +4,18 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+PYPI_PN=PyOpenGL
 PYTHON_REQ_USE="tk?"
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit distutils-r1 virtualx
+inherit distutils-r1 pypi virtualx
 
-DESCRIPTION=""
+DESCRIPTION="Python OpenGL bindings"
 HOMEPAGE="
-  https://pypi.org/project/pyopengl/"
-# 3.1.8 is missing from pypi: https://github.com/mcfletch/pyopengl/issues/123
-SRC_URI="https://github.com/mcfletch/pyopengl/archive/refs/tags/release-${PV}.tar.gz -> ${P}.gh.tar.gz"
-S="${WORKDIR}"/${PN}-release-${PV}
+	https://pyopengl.sourceforge.net/
+	https://github.com/mcfletch/pyopengl/
+	https://pypi.org/project/PyOpenGL/
+"
 
 LICENSE="BSD"
 SLOT="0"
@@ -38,6 +39,7 @@ BDEPEND="
 	test? (
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/pygame[${PYTHON_USEDEP},opengl,X]
+		dev-python/python-xlib[${PYTHON_USEDEP}]
 		!prefix? (
 			media-libs/mesa[llvm]
 			x11-base/xorg-server[-minimal,xorg]
@@ -50,14 +52,16 @@ distutils_enable_tests pytest
 PATCHES=(
 	# https://github.com/mcfletch/pyopengl/pull/109
 	"${FILESDIR}/${PN}-3.1.7-pypy3.patch"
-	# https://github.com/mcfletch/pyopengl/issues/123
-	"${FILESDIR}/${P}-fix-version.patch"
 )
 
 python_test() {
 	local EPYTEST_DESELECT=(
-		# unreliable memory counting test
+		# fragile memory tests
+		tests/test_checks.py::test_test_glgetfloat_leak
 		tests/test_vbo_memusage.py::test_sf_2980896
+		# missing EGL stuffs?
+		tests/test_checks.py::test_check_egl_es2
+		tests/test_checks.py::test_egl_ext_enumerate
 	)
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 

@@ -86,7 +86,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/ipywidgets[${PYTHON_USEDEP}]
 		dev-python/kornia[${PYTHON_USEDEP}]
 		dev-python/lightning[${PYTHON_USEDEP}]
-		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-build/ninja[${PYTHON_USEDEP}]
 		dev-python/opencv-python[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP}]
 		dev-python/pydicom[${PYTHON_USEDEP}]

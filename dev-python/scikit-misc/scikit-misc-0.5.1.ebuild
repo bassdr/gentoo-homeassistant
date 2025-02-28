@@ -55,7 +55,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	dev-python/build[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/meson-python[${PYTHON_USEDEP}]
-	dev-python/ninja[${PYTHON_USEDEP}]
+	dev-build/ninja[${PYTHON_USEDEP}]
 	dev-python/spin[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-cov[${PYTHON_USEDEP}]

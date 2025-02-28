@@ -141,7 +141,7 @@ GENERATED_BDEPEND="${BDEPEND}
 	>=dev-python/build-1.2.1[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0.8[${PYTHON_USEDEP}]
 	>=dev-python/meson-python-0.16[${PYTHON_USEDEP}]
-	>=dev-python/ninja-1.11.1.1[${PYTHON_USEDEP}]
+	>=dev-build/ninja-1.11.1.1[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2.0[${PYTHON_USEDEP}]
 	>=dev-python/pythran-0.16[${PYTHON_USEDEP}]
 	~dev-python/spin-0.13[${PYTHON_USEDEP}]

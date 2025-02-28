@@ -33,7 +33,7 @@ else
 	VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/jpakkane.gpg
 
 	if [[ ${PV} != *_rc* ]] ; then
-KEYWORDS="amd64 arm64"
+		KEYWORDS="~alpha amd64 ~arm arm64 ~hppa ~loong ~m68k ~mips ~ppc ppc64 ~riscv ~s390 sparc x86 ~amd64-linux ~x86-linux ~arm64-macos ~ppc-macos ~x64-macos ~x64-solaris"
 	fi
 fi
 
@@ -104,7 +104,7 @@ REQUIRES_DIST="
 "
 GENERATED_RDEPEND="${RDEPEND}
 	typing? ( dev-python/mypy[${PYTHON_USEDEP}] )
-	ninja? ( >=dev-python/ninja-1.8.2[${PYTHON_USEDEP}] )
+	ninja? ( >=dev-build/ninja-1.8.2[${PYTHON_USEDEP}] )
 	progress? ( dev-python/tqdm[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}

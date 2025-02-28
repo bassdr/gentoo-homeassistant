@@ -74,7 +74,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/cython[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
 		dev-python/nbval[${PYTHON_USEDEP}]
-		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-build/ninja[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]
 		dev-python/wheel[${PYTHON_USEDEP}]
 	)

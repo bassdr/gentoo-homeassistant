@@ -124,7 +124,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/nbsphinx-0.3.2[${PYTHON_USEDEP}]
 		dev-python/nbstripout[${PYTHON_USEDEP}]
 		dev-python/nbval[${PYTHON_USEDEP}]
-		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-build/ninja[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		>=dev-python/pillow-8.3.1[${PYTHON_USEDEP}]

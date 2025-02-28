@@ -122,7 +122,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		>=dev-python/hypothesis-6.30[${PYTHON_USEDEP}]
 		dev-python/mpmath[${PYTHON_USEDEP}]
 		~dev-python/mypy-1.10.0[${PYTHON_USEDEP}]
-		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-build/ninja[${PYTHON_USEDEP}]
 		dev-python/pooch[${PYTHON_USEDEP}]
 		dev-python/pycodestyle[${PYTHON_USEDEP}]
 		dev-python/pydevtool[${PYTHON_USEDEP}]

@@ -151,7 +151,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/mup[${PYTHON_USEDEP}] )
 	all? ( ~dev-python/neural-compressor-2.1.0[${PYTHON_USEDEP}] )
 	sparse? ( ~dev-python/neural-compressor-2.1.0[${PYTHON_USEDEP}] )
-	dev-python/ninja[${PYTHON_USEDEP}]
+	dev-build/ninja[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 	all? ( dev-python/packaging[${PYTHON_USEDEP}] )

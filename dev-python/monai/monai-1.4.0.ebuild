@@ -130,8 +130,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	mlflow? ( >=dev-python/mlflow-2.12.2[${PYTHON_USEDEP}] )
 	all? ( dev-python/nibabel[${PYTHON_USEDEP}] )
 	nibabel? ( dev-python/nibabel[${PYTHON_USEDEP}] )
-	all? ( dev-python/ninja[${PYTHON_USEDEP}] )
-	ninja? ( dev-python/ninja[${PYTHON_USEDEP}] )
+	all? ( dev-build/ninja[${PYTHON_USEDEP}] )
+	ninja? ( dev-build/ninja[${PYTHON_USEDEP}] )
 	all? ( dev-python/nni[${PYTHON_USEDEP}] )
 	nni? ( dev-python/nni[${PYTHON_USEDEP}] )
 	>=dev-python/numpy-1.24[${PYTHON_USEDEP}] <dev-python/numpy-2.0[${PYTHON_USEDEP}]

@@ -4,7 +4,9 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
+SRC_URI="https://github.com/pytorch/ao/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/ao-${PV}"
 
 DESCRIPTION=""
 HOMEPAGE="
@@ -52,7 +54,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/lm-eval[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
-		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-build/ninja[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/parameterized[${PYTHON_USEDEP}]
@@ -68,5 +70,10 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-vcs/pre-commit[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="${GENERATED_BDEPEND}"
+BDEPEND="${GENERATED_BDEPEND}
+	dev-python/torch"
 
+src_prepare() {
+	default
+	sed "s/os.getenv(\"VERSION_SUFFIX\")/'${PV}'/g" -i setup.py || die
+}

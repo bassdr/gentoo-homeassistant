@@ -47,7 +47,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	plots? ( >=dev-python/matplotlib-3.3.4[${PYTHON_USEDEP}] <dev-python/matplotlib-3.6[${PYTHON_USEDEP}] )
 	>=dev-python/natsort-7.1.0[${PYTHON_USEDEP}]
 	>=dev-python/networkx-2.6[${PYTHON_USEDEP}] <=dev-python/networkx-3.3[${PYTHON_USEDEP}]
-	>=dev-python/ninja-1.10.0_p2[${PYTHON_USEDEP}] <dev-python/ninja-1.12[${PYTHON_USEDEP}]
+	>=dev-build/ninja-1.10.0_p2[${PYTHON_USEDEP}] <dev-build/ninja-1.12[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.24.0[${PYTHON_USEDEP}] <dev-python/numpy-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/openvino-telemetry-2023.2.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.0[${PYTHON_USEDEP}]

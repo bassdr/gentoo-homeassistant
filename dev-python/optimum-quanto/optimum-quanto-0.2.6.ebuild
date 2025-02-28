@@ -37,7 +37,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	examples? ( dev-python/datasets[${PYTHON_USEDEP}] )
 	examples? ( dev-python/diffusers[${PYTHON_USEDEP}] )
 	dev-python/huggingface-hub[${PYTHON_USEDEP}]
-	dev-python/ninja[${PYTHON_USEDEP}]
+	dev-build/ninja[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/safetensors[${PYTHON_USEDEP}]
 	examples? ( dev-python/scipy[${PYTHON_USEDEP}] )
