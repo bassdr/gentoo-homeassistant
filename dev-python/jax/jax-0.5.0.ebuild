@@ -58,7 +58,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	tpu? ( >=dev-python/jaxlib-0.5.0[${PYTHON_USEDEP}] <=dev-python/jaxlib-0.5.0[${PYTHON_USEDEP}] )
 	k8s? ( dev-python/kubernetes[${PYTHON_USEDEP}] )
 	tpu? ( ~dev-python/libtpu-0.0.8[${PYTHON_USEDEP}] )
-	tpu? ( ~dev-python/libtpu-nightly-0.1_pre20241010+nightly.cleanup[${PYTHON_USEDEP}] )
+	tpu? ( ~dev-python/libtpu-nightly-0.1_pre20241010[${PYTHON_USEDEP}] )
 	>=dev-python/ml-dtypes-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
