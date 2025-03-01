@@ -20,17 +20,16 @@ DOCS="README.md"
 RDEPEND="
 	acct-user/hydroqc2mqtt
 	acct-group/hydroqc2mqtt
-	dev-python/hydroqc[${PYTHON_USEDEP}]
-	dev-python/mqtt-hass-base[${PYTHON_USEDEP}]
-	dev-python/aiohttp[${PYTHON_USEDEP}]
-	>=dev-python/aiomqtt-2[${PYTHON_USEDEP}]
-	dev-python/paho-mqtt[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
+	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
+	>=dev-python/hydroqc-4.0.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.9.0_p0[${PYTHON_USEDEP}]
+	>=dev-python/mqtt-hass-base-4.4.0[${PYTHON_USEDEP}]
+	>=dev-python/charset-normalizer-3.3.2[${PYTHON_USEDEP}]
+	>=dev-python/pytz-2024.2[${PYTHON_USEDEP}]
 	ujson? ( dev-python/ujson[${PYTHON_USEDEP}] )
-	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/homeassistant[mqtt,${PYTHON_USEDEP}]
 	dev-python/msgpack[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
 
 #BDEPEND="

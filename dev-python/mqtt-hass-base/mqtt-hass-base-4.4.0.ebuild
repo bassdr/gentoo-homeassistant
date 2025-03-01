@@ -17,8 +17,7 @@ KEYWORDS="amd64 arm arm64 x86"
 DOCS="README.md"
 
 RDEPEND="
-	>=dev-python/aiomqtt-2[${PYTHON_USEDEP}]
-	dev-python/paho-mqtt[${PYTHON_USEDEP}]
+	>=dev-python/aiomqtt-2.0.0[${PYTHON_USEDEP}] <dev-python/aiomqtt-2.1.0[${PYTHON_USEDEP}]
 	dev-python/homeassistant[mqtt,${PYTHON_USEDEP}]
 "
 
