@@ -38,10 +38,8 @@ GENERATED_RDEPEND="${RDEPEND}
 	deprecated-verify? ( >=dev-python/setuptools-60.0.0[${PYTHON_USEDEP}] )
 	deprecated-verify? ( <dev-python/sigstore-2[${PYTHON_USEDEP}] )
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/aiohttp-3.8[${PYTHON_USEDEP}]
-	dev-python/backoff[${PYTHON_USEDEP}]
-	dev-python/sigstore[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
+
 BDEPEND="
 	test? (
 		dev-python/aresponses[${PYTHON_USEDEP}]

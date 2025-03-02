@@ -84,7 +84,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	django? ( >=dev-python/django-2.2.28[${PYTHON_USEDEP}] )
 	elasticsearch? ( <=dev-python/elastic-transport-8.13.0[${PYTHON_USEDEP}] )
 	elasticsearch? ( <=dev-python/elasticsearch-8.13.0[${PYTHON_USEDEP}] )
-	solar? ( ~dev-python/ephem-4.1.5[${PYTHON_USEDEP}] )
+	solar? ( ~dev-python/ephem-4.1.6[${PYTHON_USEDEP}] )
 	gevent? ( >=dev-python/gevent-1.5.0[${PYTHON_USEDEP}] )
 	gcs? ( >=dev-python/google-cloud-storage-2.10.0[${PYTHON_USEDEP}] )
 	zookeeper? ( >=dev-python/kazoo-1.3.1[${PYTHON_USEDEP}] )
