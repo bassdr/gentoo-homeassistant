@@ -19,8 +19,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 arm64"
 GENERATED_IUSE="isal zlib-ng"
-IUSE="${GENERATED_IUSE} isal zlib_ng test"
-RESTRICT="!test? ( test )"
+IUSE="${GENERATED_IUSE} +isal +zlib_ng"
 
 DOCS="README.md"
 

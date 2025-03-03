@@ -14,5 +14,10 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm64"
 
-
 distutils_enable_tests pytest
+
+src_prepare() {
+	default
+	sed '/import versioningit/d' -i setup.py || die
+	sed "s/version=versioningit\.get_version()/version='${PV}'/g" -i setup.py || die
+}

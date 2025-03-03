@@ -19,8 +19,6 @@ HOMEPAGE="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
@@ -30,8 +28,7 @@ REQUIRES_DIST="
 GENERATED_RDEPEND="${RDEPEND}
 	>=net-analyzer/scapy-2.5.0[${PYTHON_USEDEP}]
 "
-RDEPEND="${GENERATED_RDEPEND}
-	>=net-analyzer/scapy-2.5.0[${PYTHON_USEDEP}]"
+RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND="
 	test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
