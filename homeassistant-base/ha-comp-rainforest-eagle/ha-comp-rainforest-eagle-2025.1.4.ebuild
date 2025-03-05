@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/aioeagle-1.1.0[${PYTHON_USEDEP}]
 	~dev-python/eagle100-0.1.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/habitipy-0.3.3[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

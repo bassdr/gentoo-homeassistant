@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pygatt-4.0.5[GATTTOOL,${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/coinbase-2.1.0[${PYTHON_USEDEP}]
 	~dev-python/coinbase-advanced-py-1.2.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

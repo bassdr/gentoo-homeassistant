@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/py-nightscout-1.2.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

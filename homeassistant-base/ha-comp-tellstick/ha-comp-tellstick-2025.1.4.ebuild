@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/tellcore-net-0.4[${PYTHON_USEDEP}]
 	~dev-python/tellcore-py-1.1.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

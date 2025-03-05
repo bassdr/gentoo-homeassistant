@@ -13,4 +13,7 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/bleak-esphome-2.0.0[${PYTHON_USEDEP}]
 	~dev-python/eq3btsmart-1.4.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-bluetooth-2025.1.4
+	=homeassistant-base/ha-comp-bluetooth-adapters-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

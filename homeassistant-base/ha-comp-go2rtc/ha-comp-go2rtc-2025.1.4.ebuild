@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/go2rtc-client-0.1.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-camera-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/twitchapi-4.2.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-application-credentials-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

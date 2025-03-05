@@ -15,4 +15,5 @@ RDEPEND="
 	~dev-python/crownstone-sse-2.0.5[${PYTHON_USEDEP}]
 	~dev-python/crownstone-uart-2.1.0[${PYTHON_USEDEP}]
 	~dev-python/pyserial-3.5[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

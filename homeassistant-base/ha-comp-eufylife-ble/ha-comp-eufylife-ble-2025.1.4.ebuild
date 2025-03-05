@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/eufylife-ble-client-0.1.8[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-bluetooth-adapters-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

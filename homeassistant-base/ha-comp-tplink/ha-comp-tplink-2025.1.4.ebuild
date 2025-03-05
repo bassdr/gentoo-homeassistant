@@ -12,4 +12,8 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/python-kasa-0.9.1[speedups,${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-ffmpeg-2025.1.4
+	=homeassistant-base/ha-comp-network-2025.1.4
+	=homeassistant-base/ha-comp-stream-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

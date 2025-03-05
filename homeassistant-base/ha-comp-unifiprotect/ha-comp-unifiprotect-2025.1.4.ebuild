@@ -13,4 +13,7 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/uiprotect-7.4.1[${PYTHON_USEDEP}]
 	~dev-python/unifi-discovery-1.2.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-http-2025.1.4
+	=homeassistant-base/ha-comp-repairs-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

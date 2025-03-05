@@ -13,4 +13,6 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/onvif-zeep-async-3.2.3[${PYTHON_USEDEP}]
 	~dev-python/wsdiscovery-2.0.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-ffmpeg-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

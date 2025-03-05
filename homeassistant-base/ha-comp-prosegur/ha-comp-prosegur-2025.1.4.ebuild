@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pyprosegur-0.0.9[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

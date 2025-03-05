@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/tellduslive-0.10.12[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/matrix-nio-0.25.2[${PYTHON_USEDEP}]
 	~dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -14,4 +14,5 @@ RDEPEND="
 	~dev-python/construct-2.10.68[${PYTHON_USEDEP}]
 	~dev-python/micloud-0.5[${PYTHON_USEDEP}]
 	~dev-python/python-miio-0.5.12[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

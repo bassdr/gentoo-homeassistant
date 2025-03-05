@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/pysyncthru-0.8.0[${PYTHON_USEDEP}]
 	~dev-python/url-normalize-1.4.3[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

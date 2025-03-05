@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/here-routing-1.0.1[${PYTHON_USEDEP}]
 	~dev-python/here-transit-1.2.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

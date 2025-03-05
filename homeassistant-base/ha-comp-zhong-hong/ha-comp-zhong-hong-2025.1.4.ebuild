@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/zhong-hong-hvac-1.0.13[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

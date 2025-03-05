@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/bt-proximity-0.2.1[${PYTHON_USEDEP}]
 	~dev-python/pybluez-0.22[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

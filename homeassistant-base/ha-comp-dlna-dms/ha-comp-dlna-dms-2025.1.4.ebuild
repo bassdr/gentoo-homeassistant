@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/async-upnp-client-0.42.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-ssdp-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

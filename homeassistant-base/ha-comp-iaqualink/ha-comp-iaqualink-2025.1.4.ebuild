@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/h2-4.1.0[${PYTHON_USEDEP}]
 	~dev-python/iaqualink-0.5.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

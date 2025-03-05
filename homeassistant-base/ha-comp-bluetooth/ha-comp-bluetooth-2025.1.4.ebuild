@@ -18,4 +18,6 @@ RDEPEND="
 	~dev-python/bluetooth-data-tools-1.20.0[${PYTHON_USEDEP}]
 	~dev-python/dbus-fast-2.24.3[${PYTHON_USEDEP}]
 	~dev-python/habluetooth-3.7.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-usb-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/emoji-2.8.0[${PYTHON_USEDEP}]
 	~dev-python/slixmpp-1.8.5[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

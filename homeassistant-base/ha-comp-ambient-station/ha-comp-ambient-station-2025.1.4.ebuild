@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/aioambient-2024.08.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

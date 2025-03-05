@@ -11,5 +11,6 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
+	=homeassistant-base/ha-core-2025.1.4
 	~net-analyzer/speedtest-cli-2.1.3[${PYTHON_USEDEP}]
 "

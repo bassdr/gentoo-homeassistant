@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/devolo-home-control-api-0.18.3[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

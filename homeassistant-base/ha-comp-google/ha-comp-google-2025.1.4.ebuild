@@ -14,4 +14,6 @@ RDEPEND="
 	~dev-python/gcal-sync-6.2.0[${PYTHON_USEDEP}]
 	~dev-python/ical-8.2.0[${PYTHON_USEDEP}]
 	~dev-python/oauth2client-4.1.3[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-application-credentials-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

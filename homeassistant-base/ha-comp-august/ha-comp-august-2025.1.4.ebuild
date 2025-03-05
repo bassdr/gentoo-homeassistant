@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/yalexs-8.10.0[${PYTHON_USEDEP}]
 	~dev-python/yalexs-ble-2.5.6[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

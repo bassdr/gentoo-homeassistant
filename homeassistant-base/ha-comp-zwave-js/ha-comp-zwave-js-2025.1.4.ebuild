@@ -13,4 +13,9 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/pyserial-3.5[${PYTHON_USEDEP}]
 	~dev-python/zwave-js-server-python-0.60.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-http-2025.1.4
+	=homeassistant-base/ha-comp-repairs-2025.1.4
+	=homeassistant-base/ha-comp-usb-2025.1.4
+	=homeassistant-base/ha-comp-websocket-api-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

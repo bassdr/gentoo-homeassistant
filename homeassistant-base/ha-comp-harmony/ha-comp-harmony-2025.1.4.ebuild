@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/aioharmony-0.2.10[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-remote-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

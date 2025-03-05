@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/ollama-0.4.5[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-conversation-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

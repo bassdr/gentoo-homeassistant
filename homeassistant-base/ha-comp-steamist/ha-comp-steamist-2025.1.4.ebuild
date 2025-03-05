@@ -13,4 +13,6 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/aiosteamist-1.0.0[${PYTHON_USEDEP}]
 	~dev-python/discovery30303-0.3.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-network-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

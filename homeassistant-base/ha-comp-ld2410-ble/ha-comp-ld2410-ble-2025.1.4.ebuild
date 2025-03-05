@@ -13,4 +13,6 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/bluetooth-data-tools-1.20.0[${PYTHON_USEDEP}]
 	~dev-python/ld2410-ble-0.1.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-bluetooth-adapters-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

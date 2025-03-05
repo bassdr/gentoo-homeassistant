@@ -11,5 +11,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
+	=homeassistant-base/ha-comp-media-player-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 	~net-misc/yt-dlp-2025.01.15[default,${PYTHON_USEDEP}]
 "

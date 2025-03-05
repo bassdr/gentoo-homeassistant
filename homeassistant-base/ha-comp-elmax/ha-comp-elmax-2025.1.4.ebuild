@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/elmax-api-0.0.6.4_rc0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

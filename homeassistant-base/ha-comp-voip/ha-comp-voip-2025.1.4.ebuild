@@ -12,4 +12,7 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/voip-utils-0.2.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-assist-pipeline-2025.1.4
+	=homeassistant-base/ha-comp-assist-satellite-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

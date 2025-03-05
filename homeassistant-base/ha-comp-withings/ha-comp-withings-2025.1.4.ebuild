@@ -12,4 +12,8 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/aiowithings-3.1.5[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-application-credentials-2025.1.4
+	=homeassistant-base/ha-comp-http-2025.1.4
+	=homeassistant-base/ha-comp-webhook-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

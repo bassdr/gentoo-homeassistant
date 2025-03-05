@@ -13,4 +13,6 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/soco-0.30.6[${PYTHON_USEDEP}]
 	~dev-python/sonos-websocket-0.1.3[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-ssdp-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

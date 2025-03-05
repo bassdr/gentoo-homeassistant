@@ -13,4 +13,7 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/av-13.1.0[${PYTHON_USEDEP}]
 	~dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-http-2025.1.4
+	=homeassistant-base/ha-comp-stream-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

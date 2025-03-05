@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/pycountry-24.6.1[${PYTHON_USEDEP}]
 	~dev-python/radios-0.3.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

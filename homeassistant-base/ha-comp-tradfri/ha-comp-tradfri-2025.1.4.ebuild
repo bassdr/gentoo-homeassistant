@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pytradfri-9.0.1[async,${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

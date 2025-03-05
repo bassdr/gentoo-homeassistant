@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/beacontools-2.1.0[scan,${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

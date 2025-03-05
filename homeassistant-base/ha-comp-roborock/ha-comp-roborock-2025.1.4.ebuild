@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/python-roborock-2.8.4[${PYTHON_USEDEP}]
 	~dev-python/vacuum-map-parser-roborock-0.1.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

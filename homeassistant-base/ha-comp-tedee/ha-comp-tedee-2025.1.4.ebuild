@@ -12,4 +12,7 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/aiotedee-0.2.20[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-http-2025.1.4
+	=homeassistant-base/ha-comp-webhook-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

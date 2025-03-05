@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/ical-8.2.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-file-upload-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

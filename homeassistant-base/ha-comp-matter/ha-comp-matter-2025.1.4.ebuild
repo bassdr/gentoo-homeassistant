@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/python-matter-server-6.6.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-websocket-api-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

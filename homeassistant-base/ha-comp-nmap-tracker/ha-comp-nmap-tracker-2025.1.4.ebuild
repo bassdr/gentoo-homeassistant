@@ -14,4 +14,6 @@ RDEPEND="
 	~dev-python/aiooui-0.1.9[${PYTHON_USEDEP}]
 	~dev-python/getmac-0.9.4[${PYTHON_USEDEP}]
 	~dev-python/netmap-0.7.0.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-network-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

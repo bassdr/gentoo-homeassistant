@@ -13,4 +13,6 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/google-cloud-speech-2.27.0[${PYTHON_USEDEP}]
 	~dev-python/google-cloud-texttospeech-2.17.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-file-upload-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

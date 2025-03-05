@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/moehlenhoff-alpha2-1.3.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

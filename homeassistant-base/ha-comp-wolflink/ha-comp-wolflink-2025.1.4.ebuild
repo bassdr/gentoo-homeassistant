@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/wolf-comm-0.0.15[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/pyforked-daapd-0.1.14[${PYTHON_USEDEP}]
 	~dev-python/pylibrespot-java-0.1.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

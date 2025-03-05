@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/gps3-0.33.3[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

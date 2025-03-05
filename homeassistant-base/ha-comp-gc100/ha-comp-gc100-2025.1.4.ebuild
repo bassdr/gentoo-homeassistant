@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/python-gc100-1.0.3_alpha0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

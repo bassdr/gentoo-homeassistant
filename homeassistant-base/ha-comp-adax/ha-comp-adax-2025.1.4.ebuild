@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/adax-0.4.0[${PYTHON_USEDEP}]
 	~dev-python/adax-local-0.1.5[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

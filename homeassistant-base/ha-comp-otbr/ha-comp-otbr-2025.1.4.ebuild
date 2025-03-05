@@ -12,4 +12,7 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/python-otbr-api-2.6.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-homeassistant-hardware-2025.1.4
+	=homeassistant-base/ha-comp-thread-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

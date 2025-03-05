@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pyplaato-0.0.19[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-webhook-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

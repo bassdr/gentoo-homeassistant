@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/aiobotocore-2.13.1[${PYTHON_USEDEP}]
 	~dev-python/botocore-1.34.131[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/homematicip-1.1.5[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pynws-1.8.2[retry,${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

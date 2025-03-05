@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pyitachip2ir-0.0.7[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

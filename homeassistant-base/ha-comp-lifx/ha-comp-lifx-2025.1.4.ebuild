@@ -14,4 +14,6 @@ RDEPEND="
 	~dev-python/aiolifx-1.1.2[${PYTHON_USEDEP}]
 	~dev-python/aiolifx-effects-0.3.2[${PYTHON_USEDEP}]
 	~dev-python/aiolifx-themes-0.6.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-network-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
 	~dev-python/pyzbar-0.1.7[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

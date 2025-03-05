@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/phone-modem-0.1.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-usb-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

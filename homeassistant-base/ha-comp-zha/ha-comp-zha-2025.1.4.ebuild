@@ -13,4 +13,6 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/universal-silabs-flasher-0.0.25[${PYTHON_USEDEP}]
 	~dev-python/zha-0.0.45[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-file-upload-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

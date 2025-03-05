@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/sqlalchemy-2.0.36[${PYTHON_USEDEP}]
 	~dev-python/sqlparse-0.5.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

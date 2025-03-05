@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/open-meteo-0.3.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-zone-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

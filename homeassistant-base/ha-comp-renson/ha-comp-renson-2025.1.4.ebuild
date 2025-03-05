@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/renson-endura-delta-1.7.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

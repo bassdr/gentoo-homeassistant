@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/python-fullykiosk-0.0.14[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

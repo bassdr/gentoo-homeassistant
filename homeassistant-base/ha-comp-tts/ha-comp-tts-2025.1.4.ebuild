@@ -11,5 +11,8 @@ SLOT="0"
 KEYWORDS="amd64 arm64"
 
 RDEPEND="
+	=homeassistant-base/ha-comp-ffmpeg-2025.1.4
+	=homeassistant-base/ha-comp-http-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 	~media-libs/mutagen-1.47.0[${PYTHON_USEDEP}]
 "

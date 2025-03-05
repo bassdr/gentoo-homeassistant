@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/deebot-client-11.0.0[${PYTHON_USEDEP}]
 	~dev-python/py-sucks-0.9.10[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

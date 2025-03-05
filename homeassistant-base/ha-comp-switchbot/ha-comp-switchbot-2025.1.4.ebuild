@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pyswitchbot-0.55.4[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-bluetooth-adapters-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/caldav-1.3.9[${PYTHON_USEDEP}]
 	~dev-python/icalendar-6.1.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

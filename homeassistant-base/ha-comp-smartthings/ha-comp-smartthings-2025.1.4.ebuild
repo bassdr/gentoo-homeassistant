@@ -13,4 +13,6 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/pysmartapp-0.3.5[${PYTHON_USEDEP}]
 	~dev-python/pysmartthings-0.7.8[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-webhook-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/georss-qld-bushfire-alert-client-0.8[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

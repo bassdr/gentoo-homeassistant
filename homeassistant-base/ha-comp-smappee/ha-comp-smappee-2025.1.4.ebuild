@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pysmappee-0.2.29[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-auth-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

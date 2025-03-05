@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/google-generativeai-0.8.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-conversation-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

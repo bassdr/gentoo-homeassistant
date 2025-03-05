@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/bimmer-connected-0.17.2[china,${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

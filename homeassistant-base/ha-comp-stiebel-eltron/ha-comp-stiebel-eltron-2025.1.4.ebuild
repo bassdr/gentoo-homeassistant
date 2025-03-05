@@ -12,4 +12,6 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pystiebeleltron-0.0.1_pre2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-modbus-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

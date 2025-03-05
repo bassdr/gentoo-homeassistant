@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/babel-2.15.0[${PYTHON_USEDEP}]
 	~dev-python/holidays-0.65[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

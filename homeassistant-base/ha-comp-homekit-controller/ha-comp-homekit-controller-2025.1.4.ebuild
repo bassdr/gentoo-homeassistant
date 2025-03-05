@@ -12,4 +12,7 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/aiohomekit-3.2.7[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-bluetooth-adapters-2025.1.4
+	=homeassistant-base/ha-comp-zeroconf-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

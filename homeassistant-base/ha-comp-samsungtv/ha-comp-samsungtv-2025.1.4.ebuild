@@ -16,4 +16,6 @@ RDEPEND="
 	~dev-python/samsungctl-0.7.1[websocket,${PYTHON_USEDEP}]
 	~dev-python/samsungtvws-2.7.2[async,encrypted,${PYTHON_USEDEP}]
 	~dev-python/wakeonlan-2.1.0[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-ssdp-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

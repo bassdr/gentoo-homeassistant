@@ -12,4 +12,9 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/wyoming-1.5.4[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-assist-pipeline-2025.1.4
+	=homeassistant-base/ha-comp-assist-satellite-2025.1.4
+	=homeassistant-base/ha-comp-conversation-2025.1.4
+	=homeassistant-base/ha-comp-intent-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "

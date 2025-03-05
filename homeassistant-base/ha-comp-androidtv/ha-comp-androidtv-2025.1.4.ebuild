@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/adb-shell-0.4.4[async,${PYTHON_USEDEP}]
 	~dev-python/androidtv-0.0.75[async,${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

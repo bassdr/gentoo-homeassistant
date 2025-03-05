@@ -13,4 +13,5 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/mill-local-0.3.0[${PYTHON_USEDEP}]
 	~dev-python/millheater-0.12.2[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

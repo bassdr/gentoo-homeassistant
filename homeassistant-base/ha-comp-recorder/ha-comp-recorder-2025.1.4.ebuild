@@ -14,4 +14,5 @@ RDEPEND="
 	~dev-python/fnv-hash-fast-1.0.2[${PYTHON_USEDEP}]
 	~dev-python/psutil-home-assistant-0.0.1[${PYTHON_USEDEP}]
 	~dev-python/sqlalchemy-2.0.36[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

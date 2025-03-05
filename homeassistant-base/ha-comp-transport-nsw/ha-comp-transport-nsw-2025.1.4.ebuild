@@ -12,4 +12,5 @@ KEYWORDS="amd64 arm64"
 
 RDEPEND="
 	~dev-python/pytransportnsw-0.1.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-core-2025.1.4
 "

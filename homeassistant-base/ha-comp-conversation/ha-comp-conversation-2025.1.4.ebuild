@@ -13,4 +13,7 @@ KEYWORDS="amd64 arm64"
 RDEPEND="
 	~dev-python/hassil-2.1.0[${PYTHON_USEDEP}]
 	~dev-python/home-assistant-intents-2025.1.1[${PYTHON_USEDEP}]
+	=homeassistant-base/ha-comp-http-2025.1.4
+	=homeassistant-base/ha-comp-intent-2025.1.4
+	=homeassistant-base/ha-core-2025.1.4
 "
