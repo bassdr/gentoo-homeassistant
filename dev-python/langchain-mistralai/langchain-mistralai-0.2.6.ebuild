@@ -26,7 +26,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/httpx-sse-0.3.1[${PYTHON_USEDEP}] <dev-python/httpx-sse-1[${PYTHON_USEDEP}]
 	>=dev-python/langchain-core-0.3.33[${PYTHON_USEDEP}] <dev-python/langchain-core-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2[${PYTHON_USEDEP}] <dev-python/pydantic-3[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.15.1[${PYTHON_USEDEP}] <sci-libs/tokenizers-1[${PYTHON_USEDEP}]
+	>=sci-ml/tokenizers-0.15.1[${PYTHON_USEDEP}] <sci-ml/tokenizers-1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

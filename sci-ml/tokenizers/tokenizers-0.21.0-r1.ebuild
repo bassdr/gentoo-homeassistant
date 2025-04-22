@@ -355,7 +355,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/ruff[${PYTHON_USEDEP}]
-		sci-libs/tokenizers[testing,${PYTHON_USEDEP}]
+		sci-ml/tokenizers[testing,${PYTHON_USEDEP}]
 	)
 	')
 "

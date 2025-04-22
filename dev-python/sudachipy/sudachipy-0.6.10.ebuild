@@ -23,7 +23,7 @@ REQUIRES_DIST="
 GENERATED_BDEPEND="${BDEPEND}
 	test? (
 		dev-python/sudachidict-core[${PYTHON_USEDEP}]
-		sci-libs/tokenizers[${PYTHON_USEDEP}]
+		sci-ml/tokenizers[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

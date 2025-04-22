@@ -652,12 +652,12 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-torch? ( <dev-python/urllib3-2.0.0[${PYTHON_USEDEP}] )
 	quality? ( <dev-python/urllib3-2.0.0[${PYTHON_USEDEP}] )
 	serving? ( dev-python/uvicorn[${PYTHON_USEDEP}] )
-	>=sci-libs/tokenizers-0.21[${PYTHON_USEDEP}] <sci-libs/tokenizers-0.22[${PYTHON_USEDEP}]
-	all? ( >=sci-libs/tokenizers-0.21[${PYTHON_USEDEP}] <sci-libs/tokenizers-0.22[${PYTHON_USEDEP}] )
-	dev-tensorflow? ( >=sci-libs/tokenizers-0.21[${PYTHON_USEDEP}] <sci-libs/tokenizers-0.22[${PYTHON_USEDEP}] )
-	dev-torch? ( >=sci-libs/tokenizers-0.21[${PYTHON_USEDEP}] <sci-libs/tokenizers-0.22[${PYTHON_USEDEP}] )
-	tokenizers? ( >=sci-libs/tokenizers-0.21[${PYTHON_USEDEP}] <sci-libs/tokenizers-0.22[${PYTHON_USEDEP}] )
-	torchhub? ( >=sci-libs/tokenizers-0.21[${PYTHON_USEDEP}] <sci-libs/tokenizers-0.22[${PYTHON_USEDEP}] )
+	>=sci-ml/tokenizers-0.21[${PYTHON_USEDEP}] <sci-ml/tokenizers-0.22[${PYTHON_USEDEP}]
+	all? ( >=sci-ml/tokenizers-0.21[${PYTHON_USEDEP}] <sci-ml/tokenizers-0.22[${PYTHON_USEDEP}] )
+	dev-tensorflow? ( >=sci-ml/tokenizers-0.21[${PYTHON_USEDEP}] <sci-ml/tokenizers-0.22[${PYTHON_USEDEP}] )
+	dev-torch? ( >=sci-ml/tokenizers-0.21[${PYTHON_USEDEP}] <sci-ml/tokenizers-0.22[${PYTHON_USEDEP}] )
+	tokenizers? ( >=sci-ml/tokenizers-0.21[${PYTHON_USEDEP}] <sci-ml/tokenizers-0.22[${PYTHON_USEDEP}] )
+	torchhub? ( >=sci-ml/tokenizers-0.21[${PYTHON_USEDEP}] <sci-ml/tokenizers-0.22[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

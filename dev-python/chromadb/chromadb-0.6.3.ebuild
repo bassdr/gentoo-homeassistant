@@ -73,7 +73,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/typer-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.5.0[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.18.3[standard,${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.13.2[${PYTHON_USEDEP}]
+	>=sci-ml/tokenizers-0.13.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

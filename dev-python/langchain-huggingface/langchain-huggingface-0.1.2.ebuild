@@ -26,7 +26,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/langchain-core-0.3.15[${PYTHON_USEDEP}] <dev-python/langchain-core-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/sentence-transformers-2.6.0[${PYTHON_USEDEP}]
 	>=dev-python/transformers-4.39.0[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.19.1[${PYTHON_USEDEP}]
+	>=sci-ml/tokenizers-0.19.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -34,7 +34,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}] <dev-python/requests-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/types-requests-2.0.0[${PYTHON_USEDEP}] <dev-python/types-requests-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.15[${PYTHON_USEDEP}] <sci-libs/tokenizers-1[${PYTHON_USEDEP}]
+	>=sci-ml/tokenizers-0.15[${PYTHON_USEDEP}] <sci-ml/tokenizers-1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

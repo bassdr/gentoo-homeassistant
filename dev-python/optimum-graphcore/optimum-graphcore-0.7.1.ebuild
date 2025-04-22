@@ -54,7 +54,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/sentencepiece[${PYTHON_USEDEP}]
 	~dev-python/transformers-4.29.2[${PYTHON_USEDEP}]
 	dev-python/typeguard[${PYTHON_USEDEP}]
-	sci-libs/tokenizers[${PYTHON_USEDEP}]
+	sci-ml/tokenizers[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

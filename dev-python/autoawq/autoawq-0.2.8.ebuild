@@ -56,7 +56,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/triton[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.8.0[${PYTHON_USEDEP}]
 	dev-python/zstandard[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.12.1[${PYTHON_USEDEP}]
+	>=sci-ml/tokenizers-0.12.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

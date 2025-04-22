@@ -121,7 +121,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	dev-python/uvicorn[standard,${PYTHON_USEDEP}]
 	~dev-python/xformers-0.0.28_p3[${PYTHON_USEDEP}]
 	>=dev-python/xgrammar-0.1.6[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.19.1[${PYTHON_USEDEP}]
+	>=sci-ml/tokenizers-0.19.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

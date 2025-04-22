@@ -207,7 +207,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/wheel[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
 		>=dev-vcs/pre-commit-2.15.0[${PYTHON_USEDEP}]
-		sci-libs/tokenizers[${PYTHON_USEDEP}]
+		sci-ml/tokenizers[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"

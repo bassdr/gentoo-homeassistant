@@ -43,7 +43,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	>=dev-python/py-rust-stemmers-0.1.0[${PYTHON_USEDEP}] <dev-python/py-rust-stemmers-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.31[${PYTHON_USEDEP}] <dev-python/requests-3.0[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.66[${PYTHON_USEDEP}] <dev-python/tqdm-5.0[${PYTHON_USEDEP}]
-	>=sci-libs/tokenizers-0.15[${PYTHON_USEDEP}] <sci-libs/tokenizers-1.0[${PYTHON_USEDEP}]
+	>=sci-ml/tokenizers-0.15[${PYTHON_USEDEP}] <sci-ml/tokenizers-1.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${GENERATED_RDEPEND}"
 

@@ -84,7 +84,7 @@ GENERATED_RDEPEND="${RDEPEND}
 	all? ( dev-python/transformers[${PYTHON_USEDEP}] )
 	transformers? ( dev-python/transformers[dev,${PYTHON_USEDEP}] )
 	release? ( dev-python/twine[${PYTHON_USEDEP}] )
-	all? ( sci-libs/tokenizers[${PYTHON_USEDEP}] )
+	all? ( sci-ml/tokenizers[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}"
 
@@ -101,7 +101,7 @@ GENERATED_BDEPEND="${BDEPEND}
 		dev-python/timm[${PYTHON_USEDEP}]
 		dev-python/torch[${PYTHON_USEDEP}]
 		dev-python/transformers[${PYTHON_USEDEP}]
-		sci-libs/tokenizers[${PYTHON_USEDEP}]
+		sci-ml/tokenizers[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${GENERATED_BDEPEND}"
