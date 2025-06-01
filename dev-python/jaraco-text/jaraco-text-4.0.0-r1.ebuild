@@ -1,11 +1,12 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # please keep this ebuild at EAPI 8 -- sys-apps/portage dep
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{12,13{,t}} )
+PYPI_PN=${PN/-/.}
+PYTHON_COMPAT=( python3_{11..14} python3_{13,14}t pypy3_11 )
 
 inherit distutils-r1 pypi
 
@@ -16,7 +17,7 @@ HOMEPAGE="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 arm64"
+KEYWORDS="~alpha amd64 arm arm64 hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86 ~amd64-linux ~x86-linux ~arm64-macos ~ppc-macos ~x64-macos ~x64-solaris"
 
 GENERATED_IUSE="doc inflect test"
 IUSE="${GENERATED_IUSE}"
@@ -42,7 +43,6 @@ REQUIRES_DIST="
 	sphinx>=3.5; extra == 'doc'
 "
 GENERATED_RDEPEND="${RDEPEND}
-	dev-python/autocommand[${PYTHON_USEDEP}]
 	doc? ( dev-python/furo[${PYTHON_USEDEP}] )
 	inflect? ( dev-python/inflect[${PYTHON_USEDEP}] )
 	>=dev-python/jaraco-context-4.1[${PYTHON_USEDEP}]
@@ -55,22 +55,9 @@ GENERATED_RDEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx-lint[${PYTHON_USEDEP}] )
 "
 RDEPEND="${GENERATED_RDEPEND}
-	>=dev-python/jaraco-context-4.1.1-r1[${PYTHON_USEDEP}]
-	>=dev-python/jaraco-functools-3.5.0-r1[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-GENERATED_BDEPEND="${BDEPEND}
-	test? (
-		>=dev-python/pytest-6[${PYTHON_USEDEP}] !=dev-python/pytest-8.1*[${PYTHON_USEDEP}]
-		>=dev-python/pytest-checkdocs-2.4[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
-		>=dev-python/pytest-enabler-2.2[${PYTHON_USEDEP}]
-		dev-python/pytest-mypy[${PYTHON_USEDEP}]
-		>=dev-python/pytest-ruff-0.2.1[${PYTHON_USEDEP}]
-	)
-"
-BDEPEND="${GENERATED_BDEPEND}"
 
 src_configure() {
 	grep -q 'build-backend = "setuptools' pyproject.toml ||
