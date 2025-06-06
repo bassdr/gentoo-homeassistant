@@ -271,11 +271,8 @@ homeassistant-base/ha-comp-gc100
 homeassistant-base/ha-comp-gdacs
 homeassistant-base/ha-comp-generic
 homeassistant-base/ha-comp-geniushub
-homeassistant-base/ha-comp-geo-json-events
 homeassistant-base/ha-comp-geo-rss-events
 homeassistant-base/ha-comp-geocaching
-homeassistant-base/ha-comp-geonetnz-quakes
-homeassistant-base/ha-comp-geonetnz-volcano
 homeassistant-base/ha-comp-gios
 homeassistant-base/ha-comp-github
 homeassistant-base/ha-comp-gitlab-ci
@@ -537,7 +534,6 @@ homeassistant-base/ha-comp-norway-air
 homeassistant-base/ha-comp-notify-events
 homeassistant-base/ha-comp-notion
 homeassistant-base/ha-comp-nsw-fuel-station
-homeassistant-base/ha-comp-nsw-rural-fire-service-feed
 homeassistant-base/ha-comp-nuheat
 homeassistant-base/ha-comp-nuki
 homeassistant-base/ha-comp-numato
@@ -866,7 +862,6 @@ homeassistant-base/ha-comp-upcloud
 homeassistant-base/ha-comp-upnp
 homeassistant-base/ha-comp-uptimerobot
 homeassistant-base/ha-comp-usb
-homeassistant-base/ha-comp-usgs-earthquakes-feed
 homeassistant-base/ha-comp-utility-meter
 homeassistant-base/ha-comp-uvc
 homeassistant-base/ha-comp-v2c
