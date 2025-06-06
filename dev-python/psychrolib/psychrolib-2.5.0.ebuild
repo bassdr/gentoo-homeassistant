@@ -9,6 +9,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 PYPI_PN="PsychroLib"
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PYPI_PN} ${PV} .zip)"
+S="${WORKDIR}/${PYPI_PN}-${PV}"
 
 DESCRIPTION="Library of psychrometric functions to calculate thermodynamic properties of air"
 HOMEPAGE="
