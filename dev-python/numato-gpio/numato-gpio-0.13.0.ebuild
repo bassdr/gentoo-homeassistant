@@ -20,6 +20,8 @@ RESTRICT="!test? ( test )"
 
 DOCS="README.md"
 
+PATCHES=( ${FILESDIR}/project-name.patch )
+
 REQUIRES_DIST="
 	pyserial (>=3.1,<4.0)
 "
