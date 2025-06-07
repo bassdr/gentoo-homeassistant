@@ -7,6 +7,7 @@ PYTHON_COMPAT=( python3_{12,13{,t}} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} ${PV} .zip)"
+S="${WORKDIR}/${PN}-${PV}"
 
 DESCRIPTION="Python API for accessing information from Samsung FamilyHub fridges locally."
 HOMEPAGE="
