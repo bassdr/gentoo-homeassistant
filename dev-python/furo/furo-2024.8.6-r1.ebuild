@@ -1,4 +1,4 @@
-# Copyright 2021-2024 Gentoo Authors
+# Copyright 2021-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,6 +17,9 @@ HOMEPAGE="
   https://pypi.org/project/furo/
   Github, https://github.com/pradyunsg/furo
 "
+SRC_URI="$(pypi_wheel_url)"
+S=${WORKDIR}
+
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 arm64"
@@ -35,6 +38,12 @@ GENERATED_RDEPEND="${RDEPEND}
 "
 RDEPEND="${GENERATED_RDEPEND}"
 BDEPEND+=" app-arch/unzip"
+
+src_unpack() {
+	if [[ ${PKGBUMPING} == ${PVR} ]]; then
+		unzip "${DISTDIR}/${A}" || die
+	fi
+}
 
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \
