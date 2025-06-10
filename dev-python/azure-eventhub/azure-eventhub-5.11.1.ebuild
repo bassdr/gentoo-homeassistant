@@ -5,6 +5,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12,13{,t}} )
 inherit distutils-r1 pypi
 SRC_URI="$(pypi_sdist_url --no-normalize ${PN} ${PV} .zip)"
+S="${WORKDIR}/${P}"
 
 DESCRIPTION="Microsoft Azure Event Hubs Client Library for Python"
 HOMEPAGE="

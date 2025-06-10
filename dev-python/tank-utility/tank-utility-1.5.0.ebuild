@@ -13,7 +13,6 @@ HOMEPAGE="
 "
 MY_PN=${PN/-/_}
 SRC_URI="https://github.com/krismolendyke/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
-S="${WORKDIR}/${PN}-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
