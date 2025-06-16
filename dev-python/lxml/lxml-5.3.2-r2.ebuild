@@ -1,18 +1,19 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12,13{,t}} )
+PYTHON_COMPAT=( python3_{10..13} pypy3 pypy3_11 )
 
 inherit distutils-r1 optfeature toolchain-funcs
 
-DESCRIPTION="Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
+DESCRIPTION="A Pythonic binding for the libxml2 and libxslt libraries"
 HOMEPAGE="
-  https://pypi.org/project/lxml/
-  Source, https://github.com/lxml/lxml
+	https://lxml.de/
+	https://pypi.org/project/lxml/
+	https://github.com/lxml/lxml/
 "
 SRC_URI="
 	https://github.com/lxml/lxml/archive/${P}.tar.gz
@@ -22,35 +23,22 @@ S=${WORKDIR}/lxml-${P}
 
 LICENSE="BSD ElementTree GPL-2 PSF-2"
 SLOT="0"
-KEYWORDS="amd64 arm64"
-GENERATED_IUSE="cssselect html-clean html5 htmlsoup source"
-IUSE="${GENERATED_IUSE} doc examples +threads test"
+KEYWORDS="~alpha amd64 arm arm64 hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~amd64-linux ~x86-linux ~arm64-macos ~ppc-macos ~x64-macos ~x64-solaris"
+IUSE="doc examples +threads test"
 RESTRICT="!test? ( test )"
 
 # Note: lib{xml2,xslt} are used as C libraries, not Python modules.
 DEPEND="
-	>=dev-libs/libxml2-2.10.3
+	>=dev-libs/libxml2-2.10.3:=
 	>=dev-libs/libxslt-1.1.38
 "
-REQUIRES_DIST="
-	BeautifulSoup4; extra == 'htmlsoup'
-	Cython>=3.0.11; extra == 'source'
-	cssselect>=0.7; extra == 'cssselect'
-	html5lib; extra == 'html5'
-	lxml-html-clean; extra == 'html-clean'
-"
-GENERATED_RDEPEND="${RDEPEND}
-	htmlsoup? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )
-	cssselect? ( >=dev-python/cssselect-0.7[${PYTHON_USEDEP}] )
-	source? ( >=dev-python/cython-3.0.11[${PYTHON_USEDEP}] )
-	html5? ( dev-python/html5lib[${PYTHON_USEDEP}] )
-	html-clean? ( dev-python/lxml-html-clean[${PYTHON_USEDEP}] )
-"
-RDEPEND="${GENERATED_RDEPEND}
+RDEPEND="
 	${DEPEND}
 "
+# cython: they are using __pyx_empty_tuple directly
 BDEPEND="
 	virtual/pkgconfig
+	<dev-python/cython-3.1[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0.10[${PYTHON_USEDEP}]
 	doc? (
 		$(python_gen_any_dep '
